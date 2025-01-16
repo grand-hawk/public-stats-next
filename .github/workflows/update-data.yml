@@ -93,12 +93,11 @@ jobs:
       - run: git commit -m "Update data from workflow/update-data/${{ github.run_id }}"
       - run: git push origin dev
 
-      - name: Create pull request
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          gh pr create \
-            --title "Update data" \
-            --body "Update data from workflow/update-data/${{ github.run_id }}" \
-            --base prod \
-            --head workflow/update-data/${{ github.run_id }}
+      - run: git fetch --all
+      - run: git checkout prod
+      - run: git checkout origin/workflow/update-data/${{ github.run_id }} -- ./data/**
+      - run: git add ./data/**
+      - run: git commit -m "Update data from workflow/update-data/${{ github.run_id }}"
+      - run: git push origin prod
+
+      - run: git push --delete origin workflow/update-data/${{ github.run_id }}
