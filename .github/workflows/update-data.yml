@@ -12,12 +12,14 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Setup git
         uses: fregante/setup-git-user@v2
 
       - name: Create temporary branch
-        run: git checkout -b workflow/update-data/${{ github.run_id }} origin/prod
+        run: git checkout -b workflow/update-data/${{ github.run_id }} prod
 
       - name: Push temporary branch
         run: git push origin/workflow/update-data/${{ github.run_id }}
