@@ -22,7 +22,7 @@ jobs:
         run: git checkout -b workflow/update-data/${{ github.run_id }}
 
       - name: Push temporary branch
-        run: git push origin/workflow/update-data/${{ github.run_id }}
+        run: git push origin workflow/update-data/${{ github.run_id }}
 
   update-vehicles-in-loadout:
     runs-on: ubuntu-latest
