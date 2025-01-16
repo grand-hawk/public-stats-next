@@ -3,12 +3,14 @@ import fs from 'node:fs/promises';
 import ky from 'ky';
 
 import places_json from '@config/places.json';
+import versions_json from '@config/versions.json';
 import vehiclesInLoadout_json from '@data/vehiclesInLoadout.json';
 import { env } from '@scripts/updateData.env.mts';
 
 import type { Input, Options } from 'ky';
 
 const places = places_json as Record<string, number>;
+const versions = versions_json as Record<string, number>;
 const vehiclesInLoadout = vehiclesInLoadout_json as string[];
 
 function request(url: Input, options: Partial<Options> = {}) {
@@ -54,7 +56,9 @@ for (const [, placeId] of Object.entries(places)) {
   await fs.mkdir(`./data/${placeId}`, { recursive: true });
 
   const distinct = await getDistinct(placeId);
-  const recentVersions = distinct.version.sort((a, b) => b - a).slice(0, 3);
+  const recentVersions = distinct.version
+    .sort((a, b) => b - a)
+    .slice(0, versions[String(placeId)] ?? 10);
 
   await fs.writeFile(
     `./data/${placeId}/vehicles.json`,
