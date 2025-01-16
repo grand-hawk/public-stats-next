@@ -67,9 +67,15 @@ jobs:
         run: pnpm install
 
       - run: |
-          git fetch origin workflow/update-data/${{ github.run_id }}
-          if git ls-tree -r origin/workflow/update-data/${{ github.run_id }} --name-only | grep -q '^data/vehiclesInLoadout.json$'; then
-            git checkout origin/workflow/update-data/${{ github.run_id }} -- ./data/vehiclesInLoadout.json
+          git fetch --all
+          if git branch -r | grep -q "origin/workflow/update-data/${{ github.run_id }}"; then
+            if ! git diff --quiet origin/workflow/update-data/${{ github.run_id }} -- ./data/vehiclesInLoadout.json; then
+              git checkout origin/workflow/update-data/${{ github.run_id }} -- ./data/vehiclesInLoadout.json
+            else
+              echo "No changes detected in vehiclesInLoadout.json."
+            fi
+          else
+            echo "Branch workflow/update-data/${{ github.run_id }} does not exist."
           fi
 
       - name: Update data
@@ -104,15 +110,19 @@ jobs:
 
       - run: |
           git fetch --all
-          for branch in dev prod; do
-            git checkout $branch
-            git checkout origin/workflow/update-data/${{ github.run_id }} -- ./data/**
-            git add ./data/**
-            if ! git diff --cached --quiet; then
-              git commit -m "Update data from workflow/update-data/${{ github.run_id }}"
-              git push origin $branch
-            else
-              echo "No changes to commit on $branch."
-            fi
-          done
-          git push --delete origin workflow/update-data/${{ github.run_id }}
+          if git branch -r | grep -q "origin/workflow/update-data/${{ github.run_id }}"; then
+            for branch in dev prod; do
+              git checkout $branch
+              if ! git diff --quiet origin/workflow/update-data/${{ github.run_id }} -- ./data/**; then
+                git checkout origin/workflow/update-data/${{ github.run_id }} -- ./data/**
+                git add ./data/**
+                git commit -m "Update data from workflow/update-data/${{ github.run_id }}"
+                git push origin $branch
+              else
+                echo "No changes to commit on $branch."
+              fi
+            done
+            git push --delete origin workflow/update-data/${{ github.run_id }}
+          else
+            echo "Branch workflow/update-data/${{ github.run_id }} does not exist."
+          fi
