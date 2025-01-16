@@ -49,7 +49,7 @@ jobs:
         with:
           node-version: 22
           cache: 'pnpm'
-      
+
       - name: Install pnpm packages
         run: pnpm install
 

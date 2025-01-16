@@ -13,7 +13,7 @@ const t = initTRPC.context().create({
       },
     };
   },
-  transformer: superjson
+  transformer: superjson,
 });
 
 export const createCallerFactory = t.createCallerFactory;

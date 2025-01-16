@@ -1,6 +1,10 @@
 # package managers
+package.json
 pnpm-lock.yaml
 
 # frameworks
 next-env.d.ts
 .next
+
+# production
+data
