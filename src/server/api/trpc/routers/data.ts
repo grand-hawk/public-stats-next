@@ -15,15 +15,29 @@ export interface PlaceData {
     kills: number;
     deaths: number;
   }>;
+  unique: {
+    vehicles: string[];
+    versions: number[];
+  };
 }
 
 for (const placeId of Object.values(places)) {
   const kdr = JSON.parse(
     await fs.readFile(`./data/${placeId}/kdr.json`, 'utf-8'),
   );
+  const uniqueVehicles = JSON.parse(
+    await fs.readFile(`./data/${placeId}/vehicles.json`, 'utf-8'),
+  );
+  const uniqueVersions = JSON.parse(
+    await fs.readFile(`./data/${placeId}/versions.json`, 'utf-8'),
+  );
 
   placeData.set(placeId, {
     kdr,
+    unique: {
+      vehicles: uniqueVehicles,
+      versions: uniqueVersions,
+    },
   });
 }
 
@@ -35,12 +49,24 @@ export const dataRouter = createTRPCRouter({
   kdr: publicProcedure
     .input(
       z.object({
-        placeId: z.number(),
+        placeId: z.number().optional(),
       }),
     )
     .query(async ({ input }) => {
-      if (!placeData.has(input.placeId)) return null;
+      if (!input.placeId || !placeData.has(input.placeId)) return null;
       const data = placeData.get(input.placeId)!;
       return data.kdr;
+    }),
+
+  unique: publicProcedure
+    .input(
+      z.object({
+        placeId: z.number().optional(),
+      }),
+    )
+    .query(async ({ input }) => {
+      if (!input.placeId || !placeData.has(input.placeId)) return null;
+      const data = placeData.get(input.placeId)!;
+      return data.unique;
     }),
 });

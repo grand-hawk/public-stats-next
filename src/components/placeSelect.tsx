@@ -12,9 +12,13 @@ import {
 import { useSessionStore } from '@/stores/session';
 import { trpc } from '@/utils/trpc';
 
-export default function PlaceSelect() {
+import type { SelectRootProps } from '@chakra-ui/react';
+
+export default function PlaceSelect({
+  ...props
+}: Omit<SelectRootProps, 'collection'>) {
   const setPlaceId = useSessionStore((s) => s.setPlaceId);
-  const { isLoading, data } = trpc.data.places.useQuery();
+  const { isFetching, error, data } = trpc.data.places.useQuery();
 
   const places = React.useMemo(
     () =>
@@ -30,14 +34,15 @@ export default function PlaceSelect() {
     [data],
   );
 
-  if (isLoading) return <Spinner />;
+  if (isFetching || error) return <Spinner />;
 
   return (
     <SelectRoot
       collection={places}
       size="md"
-      width="50%"
+      width="100%"
       onValueChange={({ value }) => setPlaceId(Number(value[0]))}
+      {...props}
     >
       <SelectLabel>Place</SelectLabel>
       <SelectTrigger>
