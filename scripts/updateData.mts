@@ -54,7 +54,7 @@ for (const [, placeId] of Object.entries(places)) {
   await fs.mkdir(`./data/${placeId}`, { recursive: true });
 
   const distinct = await getDistinct(placeId);
-  const recentVersions = distinct.version.sort((a, b) => b - a).slice(0, 1);
+  const recentVersions = distinct.version.sort((a, b) => b - a).slice(0, 3);
 
   await fs.writeFile(
     `./data/${placeId}/vehicles.json`,
