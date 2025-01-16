@@ -50,6 +50,7 @@ jobs:
         with:
           message: 'Update vehiclesInLoadout.json'
           add: './data/vehiclesInLoadout.json'
+          fetch: '--all'
           push: origin workflow/update-data/${{ github.run_id }}
 
   update-data:
@@ -84,6 +85,7 @@ jobs:
         with:
           message: 'Update data'
           add: './data/**'
+          fetch: '--all'
           pull: '--rebase --autostash'
           push: origin workflow/update-data/${{ github.run_id }}
 
