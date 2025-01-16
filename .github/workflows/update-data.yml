@@ -1,0 +1,61 @@
+name: Update data
+
+on:
+  schedule:
+    - cron: '0 5 * * *'
+  workflow_dispatch:
+
+jobs:
+  update-vehicles-in-loadout:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Execute script
+        id: roblox-luau-execution
+        uses: grand-hawk/action-roblox-luau-execution@1.0.0
+        with:
+          roblox_api_key: ${{ secrets.ROBLOX_LUAU_EXECUTION_API_KEY }}
+          universe_id: '3221676855'
+          place_id: '8421780146'
+          luau_file: './scripts/vehiclesInLoadout.luau'
+          output_file: 'script-execution-output.json'
+
+      - name: Process JSON output
+        run: jq ".[0]" "./script-execution-output.json" > "./data/vehiclesInLoadout.json"
+
+      - name: Commit changes
+        uses: EndBug/add-and-commit@v9
+        with:
+          message: 'Update vehiclesInLoadout.json'
+          add: './data/vehiclesInLoadout.json'
+
+  update-data:
+    runs-on: ubuntu-latest
+    needs: update-vehicles-in-loadout
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4.0.0
+        with:
+          version: 9
+
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: 'pnpm'
+
+      - name: Update data
+        run: pnpx tsx scripts/updateData.mts
+
+      - name: Commit changes
+        uses: EndBug/add-and-commit@v9
+        with:
+          message: 'Update data'
+          add: './data/**'
+          pull: '--rebase --autostash'
