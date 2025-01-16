@@ -85,14 +85,19 @@ jobs:
           INSIGHTS_API_AUTH: ${{ secrets.INSIGHTS_API_AUTH }}
 
       - run: |
-          git checkout workflow/update-data/${{ github.run_id }}
-          git add ./data/**
-          if ! git diff --cached --quiet; then
-            git commit -m "Update data"
-            git pull origin workflow/update-data/${{ github.run_id }} --rebase
-            git push origin workflow/update-data/${{ github.run_id }}
+          git fetch --all
+          if git branch -r | grep -q "origin/workflow/update-data/${{ github.run_id }}"; then
+            git checkout workflow/update-data/${{ github.run_id }}
+            git add ./data/**
+            if ! git diff --cached --quiet; then
+              git commit -m "Update data"
+              git pull origin workflow/update-data/${{ github.run_id }} --rebase
+              git push origin workflow/update-data/${{ github.run_id }}
+            else
+              echo "No changes to commit."
+            fi
           else
-            echo "No changes to commit."
+            echo "Branch workflow/update-data/${{ github.run_id }} does not exist."
           fi
 
   finalize-git-changes:
