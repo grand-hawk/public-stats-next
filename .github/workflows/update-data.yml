@@ -24,10 +24,13 @@ jobs:
           universe_id: '3221676855'
           place_id: '8421780146'
           luau_file: './scripts/vehiclesInLoadout.luau'
-          output_file: '${{runner.temp}}/output.json'
+          output_file: 'script-execution-output.json'
 
       - name: Process JSON output
-        run: jq ".[0]" "${{runner.temp}}/output.json" > "./data/vehiclesInLoadout.json"
+        run: jq ".[0]" "./script-execution-output.json" > "./data/vehiclesInLoadout.json"
+
+      - name: Remove temp file
+        run: rm script-execution-output.json
 
       - run: |
           git checkout -b workflow/update-data/${{ github.run_id }}
