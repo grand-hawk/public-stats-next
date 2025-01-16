@@ -86,18 +86,13 @@ jobs:
 
       - run: |
           git fetch --all
-          if git branch -r | grep -q "origin/workflow/update-data/${{ github.run_id }}"; then
-            git checkout workflow/update-data/${{ github.run_id }}
+          if ! git diff --quiet origin/dev -- ./data/**; then
+            git checkout -b workflow/update-data/${{ github.run_id }}
             git add ./data/**
-            if ! git diff --cached --quiet; then
-              git commit -m "Update data"
-              git pull origin workflow/update-data/${{ github.run_id }} --rebase
-              git push origin workflow/update-data/${{ github.run_id }}
-            else
-              echo "No changes to commit."
-            fi
+            git commit -m "Update data"
+            git push origin workflow/update-data/${{ github.run_id }}
           else
-            echo "Branch workflow/update-data/${{ github.run_id }} does not exist."
+            echo "No changes detected in data"
           fi
 
   finalize-git-changes:
