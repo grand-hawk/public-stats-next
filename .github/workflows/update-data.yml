@@ -86,6 +86,7 @@ jobs:
       - name: Setup git
         uses: fregante/setup-git-user@v2
 
+      - run: git fetch --all
       - run: git checkout dev
       - run: git rebase origin/workflow/update-data/${{ github.run_id }}
       - run: git push origin dev
