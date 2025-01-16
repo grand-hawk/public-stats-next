@@ -7,8 +7,9 @@ export default function Layout(props: BoxProps) {
   return (
     <Container
       display="flex"
-      height="100vh"
+      height="max-content"
       justifyContent="center"
+      minHeight="100vh"
       paddingX={8}
       width="100vw"
     >
