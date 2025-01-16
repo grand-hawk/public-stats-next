@@ -32,6 +32,9 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      - name: Setup git
+        uses: fregante/setup-git-user@v2
+
       - name: Execute script
         id: roblox-luau-execution
         uses: grand-hawk/action-roblox-luau-execution@1.0.0
@@ -46,12 +49,11 @@ jobs:
         run: jq ".[0]" "./script-execution-output.json" > "./data/vehiclesInLoadout.json"
 
       - name: Commit changes
-        uses: EndBug/add-and-commit@v9
-        with:
-          message: 'Update vehiclesInLoadout.json'
-          add: './data/vehiclesInLoadout.json'
-          fetch: '--all'
-          new_branch: workflow/update-data/${{ github.run_id }}
+        run: \
+          git add ./data/vehiclesInLoadout.json && \
+          git commit -m "Update vehiclesInLoadout.json" && \
+          git pull origin workflow/update-data/${{ github.run_id }} --rebase && \
+          git push origin workflow/update-data/${{ github.run_id }}
 
   update-data:
     runs-on: ubuntu-latest
@@ -60,6 +62,9 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+
+      - name: Setup git
+        uses: fregante/setup-git-user@v2
 
       - uses: pnpm/action-setup@v4.0.0
         with:
@@ -81,13 +86,11 @@ jobs:
           INSIGHTS_API_AUTH: ${{ secrets.INSIGHTS_API_AUTH }}
 
       - name: Commit changes
-        uses: EndBug/add-and-commit@v9
-        with:
-          message: 'Update data'
-          add: './data/**'
-          fetch: '--all'
-          pull: '--rebase --autostash'
-          new_branch: workflow/update-data/${{ github.run_id }}
+        run: \
+          git add ./data/** && \
+          git commit -m "Update data" && \
+          git pull origin workflow/update-data/${{ github.run_id }} --rebase && \
+          git push origin workflow/update-data/${{ github.run_id }}
 
   finalize-git-changes:
     runs-on: ubuntu-latest
