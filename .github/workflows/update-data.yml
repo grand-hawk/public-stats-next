@@ -99,5 +99,6 @@ jobs:
         run: |
           gh pr create \
             --title "Update data" \
+            --body "Update data from workflow/update-data/${{ github.run_id }}" \
             --base prod \
             --head workflow/update-data/${{ github.run_id }}
