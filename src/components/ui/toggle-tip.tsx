@@ -1,12 +1,12 @@
-import { Popover as ChakraPopover, IconButton, Portal } from "@chakra-ui/react"
-import * as React from "react"
-import { HiOutlineInformationCircle } from "react-icons/hi"
+import { Popover as ChakraPopover, IconButton, Portal } from '@chakra-ui/react';
+import React from 'react';
+import { HiOutlineInformationCircle } from 'react-icons/hi';
 
 export interface ToggleTipProps extends ChakraPopover.RootProps {
-  showArrow?: boolean
-  portalled?: boolean
-  portalRef?: React.RefObject<HTMLElement>
-  content?: React.ReactNode
+  showArrow?: boolean;
+  portalled?: boolean;
+  portalRef?: React.RefObject<HTMLElement>;
+  content?: React.ReactNode;
 }
 
 export const ToggleTip = React.forwardRef<HTMLDivElement, ToggleTipProps>(
@@ -18,7 +18,7 @@ export const ToggleTip = React.forwardRef<HTMLDivElement, ToggleTipProps>(
       content,
       portalRef,
       ...rest
-    } = props
+    } = props;
 
     return (
       <ChakraPopover.Root
@@ -26,15 +26,15 @@ export const ToggleTip = React.forwardRef<HTMLDivElement, ToggleTipProps>(
         positioning={{ ...rest.positioning, gutter: 4 }}
       >
         <ChakraPopover.Trigger asChild>{children}</ChakraPopover.Trigger>
-        <Portal disabled={!portalled} container={portalRef}>
+        <Portal container={portalRef} disabled={!portalled}>
           <ChakraPopover.Positioner>
             <ChakraPopover.Content
-              width="auto"
+              ref={ref}
               px="2"
               py="1"
-              textStyle="xs"
               rounded="sm"
-              ref={ref}
+              textStyle="xs"
+              width="auto"
             >
               {showArrow && (
                 <ChakraPopover.Arrow>
@@ -46,25 +46,25 @@ export const ToggleTip = React.forwardRef<HTMLDivElement, ToggleTipProps>(
           </ChakraPopover.Positioner>
         </Portal>
       </ChakraPopover.Root>
-    )
+    );
   },
-)
+);
 
 export const InfoTip = React.forwardRef<
   HTMLDivElement,
   Partial<ToggleTipProps>
 >(function InfoTip(props, ref) {
-  const { children, ...rest } = props
+  const { children, ...rest } = props;
   return (
     <ToggleTip content={children} {...rest} ref={ref}>
       <IconButton
-        variant="ghost"
         aria-label="info"
-        size="2xs"
         colorPalette="gray"
+        size="2xs"
+        variant="ghost"
       >
         <HiOutlineInformationCircle />
       </IconButton>
     </ToggleTip>
-  )
-})
+  );
+});
