@@ -1,5 +1,6 @@
 import { create } from 'zustand';
 import { immer } from 'zustand/middleware/immer';
+import { persist } from 'zustand/middleware/persist';
 
 export interface SessionStore {
   placeId?: number;
@@ -7,8 +8,13 @@ export interface SessionStore {
 }
 
 export const useSessionStore = create(
-  immer<SessionStore>((set) => ({
-    placeId: undefined,
-    setPlaceId: (placeId) => set({ placeId }),
-  })),
+  persist(
+    immer<SessionStore>((set) => ({
+      placeId: undefined,
+      setPlaceId: (placeId) => set({ placeId }),
+    })),
+    {
+      name: 'session',
+    },
+  ),
 );
