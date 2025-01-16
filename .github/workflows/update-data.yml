@@ -29,11 +29,10 @@ jobs:
       - name: Process JSON output
         run: jq ".[0]" "./script-execution-output.json" > "./data/vehiclesInLoadout.json"
 
-      - run: |
-          git checkout -b workflow/update-data/${{ github.run_id }}
-          git add ./data/vehiclesInLoadout.json
-          git commit -m "Update vehiclesInLoadout.json"
-          git push origin workflow/update-data/${{ github.run_id }}
+      - run: git checkout -b workflow/update-data/${{ github.run_id }}
+      - run: git add ./data/vehiclesInLoadout.json
+      - run: git commit -m "Update vehiclesInLoadout.json"
+      - run: git push origin workflow/update-data/${{ github.run_id }}
 
   update-data:
     runs-on: ubuntu-latest
@@ -59,7 +58,8 @@ jobs:
       - name: Install pnpm packages
         run: pnpm install
 
-      - run: git restore --source=origin/workflow/update-data/${{ github.run_id }} --staged --worktree ./data/vehiclesInLoadout.json
+      - run: git fetch --all
+      - run: git checkout origin/workflow/update-data/${{ github.run_id }} -- ./data/vehiclesInLoadout.json
 
       - name: Update data
         run: pnpm tsx scripts/updateData.mts
@@ -67,12 +67,11 @@ jobs:
           INSIGHTS_API_URL: ${{ secrets.INSIGHTS_API_URL }}
           INSIGHTS_API_AUTH: ${{ secrets.INSIGHTS_API_AUTH }}
 
-      - run: |
-          git checkout workflow/update-data/${{ github.run_id }}
-          git add ./data/**
-          git commit -m "Update data"
-          git pull origin workflow/update-data/${{ github.run_id }} --rebase
-          git push origin workflow/update-data/${{ github.run_id }}
+      - run: git checkout workflow/update-data/${{ github.run_id }}
+      - run: git add ./data/**
+      - run: git commit -m "Update data"
+      - run: git pull origin workflow/update-data/${{ github.run_id }} --rebase
+      - run: git push origin workflow/update-data/${{ github.run_id }}
 
   finalize-git-changes:
     runs-on: ubuntu-latest
@@ -87,13 +86,18 @@ jobs:
       - name: Setup git
         uses: fregante/setup-git-user@v2
 
-      - run: |
-          git fetch --all
-          for branch in dev prod; do
-            git checkout $branch
-            git checkout origin/workflow/update-data/${{ github.run_id }} -- ./data/**
-            git add ./data/**
-            git commit -m "Update data from workflow/update-data/${{ github.run_id }}"
-            git push origin $branch
-          done
-          git push --delete origin workflow/update-data/${{ github.run_id }}
+      - run: git fetch --all
+      - run: git checkout dev
+      - run: git checkout origin/workflow/update-data/${{ github.run_id }} -- ./data/**
+      - run: git add ./data/**
+      - run: git commit -m "Update data from workflow/update-data/${{ github.run_id }}"
+      - run: git push origin dev
+
+      - run: git fetch --all
+      - run: git checkout prod
+      - run: git checkout origin/workflow/update-data/${{ github.run_id }} -- ./data/**
+      - run: git add ./data/**
+      - run: git commit -m "Update data from workflow/update-data/${{ github.run_id }}"
+      - run: git push origin prod
+
+      - run: git push --delete origin workflow/update-data/${{ github.run_id }}
