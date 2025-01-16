@@ -51,7 +51,7 @@ jobs:
           message: 'Update vehiclesInLoadout.json'
           add: './data/vehiclesInLoadout.json'
           fetch: '--all'
-          push: origin workflow/update-data/${{ github.run_id }}
+          push: workflow/update-data/${{ github.run_id }}
 
   update-data:
     runs-on: ubuntu-latest
@@ -87,7 +87,7 @@ jobs:
           add: './data/**'
           fetch: '--all'
           pull: '--rebase --autostash'
-          push: origin workflow/update-data/${{ github.run_id }}
+          push: workflow/update-data/${{ github.run_id }}
 
   finalize-git-changes:
     runs-on: ubuntu-latest
