@@ -10,7 +10,7 @@ import { trpc } from '@/utils/trpc';
 
 export default function VehicleTable({ placeId }: { placeId: number }) {
   const [sortKey, setSortKey] =
-    React.useState<Exclude<keyof NonNullable<typeof kdr>[0], 'name'>>('kd');
+    React.useState<keyof NonNullable<typeof kdr>[0]>('kd');
   const [sortDirection, setSortDirection] = React.useState<'asc' | 'desc'>(
     'desc',
   );
@@ -51,9 +51,9 @@ export default function VehicleTable({ placeId }: { placeId: number }) {
             marginY: -0.5,
           },
         }}
+        float="right"
         fontSize="0.5em"
         height="min-content"
-        marginLeft={0}
         size="xs"
         variant="ghost"
         width="min-content"
@@ -84,7 +84,9 @@ export default function VehicleTable({ placeId }: { placeId: number }) {
       <Table.Root borderRadius="md" shadow="none" size="sm" variant="outline">
         <Table.Header>
           <Table.Row bg="bg.muted">
-            <Table.ColumnHeader>Vehicle</Table.ColumnHeader>
+            <Table.ColumnHeader>
+              Vehicle <SortButton name="name" />
+            </Table.ColumnHeader>
             <Table.ColumnHeader>
               K/D Ratio <SortButton name="kd" />
             </Table.ColumnHeader>
@@ -101,10 +103,14 @@ export default function VehicleTable({ placeId }: { placeId: number }) {
           {kdr &&
             kdr
               .sort((a, b) => {
+                const alphabetical = sortKey === 'name';
+
                 switch (sortDirection) {
                   case 'asc':
+                    if (alphabetical) return a.name.localeCompare(b.name);
                     return a[sortKey] - b[sortKey];
                   case 'desc':
+                    if (alphabetical) return b.name.localeCompare(a.name);
                     return b[sortKey] - a[sortKey];
                 }
               })
