@@ -49,7 +49,7 @@ jobs:
         run: jq ".[0]" "./script-execution-output.json" > "./data/vehiclesInLoadout.json"
 
       - name: Commit changes
-        run: \
+        run: |
           git add ./data/vehiclesInLoadout.json && \
           git commit -m "Update vehiclesInLoadout.json" && \
           git pull origin workflow/update-data/${{ github.run_id }} --rebase && \
@@ -85,8 +85,7 @@ jobs:
           INSIGHTS_API_URL: ${{ secrets.INSIGHTS_API_URL }}
           INSIGHTS_API_AUTH: ${{ secrets.INSIGHTS_API_AUTH }}
 
-      - name: Commit changes
-        run: \
+      - run: |
           git add ./data/** && \
           git commit -m "Update data" && \
           git pull origin workflow/update-data/${{ github.run_id }} --rebase && \
@@ -114,4 +113,4 @@ jobs:
           gh pr create \
             --title "Update data" \
             --base prod \
-            --head dev workflow/update-data/${{ github.run_id }}
+            --head workflow/update-data/${{ github.run_id }}
