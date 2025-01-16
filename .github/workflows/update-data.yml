@@ -58,6 +58,9 @@ jobs:
       - name: Install pnpm packages
         run: pnpm install
 
+      - run: git fetch --all
+      - run: git checkout origin/workflow/update-data/${{ github.run_id }} -- ./data/vehiclesInLoadout.json
+
       - name: Update data
         run: pnpm tsx scripts/updateData.mts
         env:
