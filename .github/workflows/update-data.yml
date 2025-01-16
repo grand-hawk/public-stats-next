@@ -66,7 +66,11 @@ jobs:
       - name: Install pnpm packages
         run: pnpm install
 
-      - run: git restore --source=origin/workflow/update-data/${{ github.run_id }} --staged --worktree ./data/vehiclesInLoadout.json
+      - run: |
+          git fetch origin workflow/update-data/${{ github.run_id }}
+          if git ls-tree -r origin/workflow/update-data/${{ github.run_id }} --name-only | grep -q '^data/vehiclesInLoadout.json$'; then
+            git checkout origin/workflow/update-data/${{ github.run_id }} -- ./data/vehiclesInLoadout.json
+          fi
 
       - name: Update data
         run: pnpm tsx scripts/updateData.mts
