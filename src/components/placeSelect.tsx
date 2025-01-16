@@ -17,6 +17,7 @@ import type { SelectRootProps } from '@chakra-ui/react';
 export default function PlaceSelect({
   ...props
 }: Omit<SelectRootProps, 'collection'>) {
+  const placeId = useSessionStore((s) => s.placeId);
   const setPlaceId = useSessionStore((s) => s.setPlaceId);
   const { isFetching, error, data } = trpc.data.places.useQuery();
 
@@ -40,6 +41,7 @@ export default function PlaceSelect({
     <SelectRoot
       collection={places}
       size="md"
+      value={placeId !== undefined ? [String(placeId)] : undefined}
       width="100%"
       onValueChange={({ value }) => setPlaceId(Number(value[0]))}
       {...props}
