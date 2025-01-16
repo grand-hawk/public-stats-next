@@ -49,9 +49,12 @@ jobs:
         with:
           node-version: 22
           cache: 'pnpm'
+      
+      - name: Install pnpm packages
+        run: pnpm install
 
       - name: Update data
-        run: pnpx tsx scripts/updateData.mts
+        run: pnpm tsx scripts/updateData.mts
         env:
           INSIGHTS_API_URL: ${{ secrets.INSIGHTS_API_URL }}
           INSIGHTS_API_AUTH: ${{ secrets.INSIGHTS_API_AUTH }}
