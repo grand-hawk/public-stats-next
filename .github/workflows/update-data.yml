@@ -29,7 +29,7 @@ jobs:
       - name: Process JSON output
         run: jq ".[0]" "./script-execution-output.json" > "./data/vehiclesInLoadout.json"
 
-      - run: git checkout workflow/update-data/${{ github.run_id }}
+      - run: git checkout -b workflow/update-data/${{ github.run_id }}
       - run: git add ./data/vehiclesInLoadout.json
       - run: git commit -m "Update vehiclesInLoadout.json"
       - run: git pull origin workflow/update-data/${{ github.run_id }} --rebase
