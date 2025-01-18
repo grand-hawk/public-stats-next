@@ -4,7 +4,7 @@ import { immer } from 'zustand/middleware/immer';
 
 export interface SessionStore {
   placeId?: number;
-  setPlaceId: (placeId: number) => void;
+  setPlaceId: (placeId?: number) => void;
 }
 
 export const useSessionStore = create(

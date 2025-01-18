@@ -39,6 +39,13 @@ export default function PlaceSelect({
 
   if (isFetching || error) return <Spinner />;
 
+  if (
+    data &&
+    typeof placeId === 'number' &&
+    !Object.values(data).includes(placeId)
+  )
+    setPlaceId(undefined);
+
   return (
     <SelectRoot
       collection={places}
