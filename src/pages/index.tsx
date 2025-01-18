@@ -2,11 +2,10 @@ import { Grid, GridItem, Stack } from '@chakra-ui/react';
 import Head from 'next/head';
 import React from 'react';
 
+import Metadata from '@/components/metadata';
 import PlaceSelect from '@/components/placeSelect';
-import { Toaster } from '@/components/ui/toaster';
 import Layout from '@/components/utils/layout';
 import VehicleTableRoot from '@/components/vehicleTableRoot';
-import VersionsIncluded from '@/components/versionsIncluded';
 
 export default function Index() {
   return (
@@ -23,15 +22,13 @@ export default function Index() {
             </GridItem>
 
             <GridItem>
-              <VersionsIncluded />
+              <Metadata />
             </GridItem>
           </Grid>
         </Stack>
 
         <VehicleTableRoot />
       </Layout>
-
-      <Toaster />
     </>
   );
 }

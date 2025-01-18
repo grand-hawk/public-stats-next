@@ -15,7 +15,8 @@ export interface PlaceData {
     kills: number;
     deaths: number;
   }>;
-  unique: {
+  metadata: {
+    date: string;
     vehicles: string[];
     versions: number[];
   };
@@ -25,19 +26,13 @@ for (const placeId of Object.values(places)) {
   const kdr = JSON.parse(
     await fs.readFile(`./data/${placeId}/kdr.json`, 'utf-8'),
   );
-  const uniqueVehicles = JSON.parse(
-    await fs.readFile(`./data/${placeId}/vehicles.json`, 'utf-8'),
-  );
-  const uniqueVersions = JSON.parse(
-    await fs.readFile(`./data/${placeId}/versions.json`, 'utf-8'),
+  const metadata = JSON.parse(
+    await fs.readFile(`./data/${placeId}/metadata.json`, 'utf-8'),
   );
 
   placeData.set(placeId, {
     kdr,
-    unique: {
-      vehicles: uniqueVehicles,
-      versions: uniqueVersions,
-    },
+    metadata,
   });
 }
 
@@ -58,7 +53,7 @@ export const dataRouter = createTRPCRouter({
       return data.kdr;
     }),
 
-  unique: publicProcedure
+  metadata: publicProcedure
     .input(
       z.object({
         placeId: z.number().optional(),
@@ -67,6 +62,6 @@ export const dataRouter = createTRPCRouter({
     .query(async ({ input }) => {
       if (!input.placeId || !placeData.has(input.placeId)) return null;
       const data = placeData.get(input.placeId)!;
-      return data.unique;
+      return data.metadata;
     }),
 });

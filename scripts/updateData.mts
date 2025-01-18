@@ -61,13 +61,12 @@ for (const [, placeId] of Object.entries(places)) {
     .slice(0, versions[String(placeId)] ?? 10);
 
   await fs.writeFile(
-    `./data/${placeId}/vehicles.json`,
-    JSON.stringify(distinct.name.filter((v) => vehiclesInLoadout.includes(v))),
-  );
-
-  await fs.writeFile(
-    `./data/${placeId}/versions.json`,
-    JSON.stringify(recentVersions),
+    `./data/${placeId}/metadata.json`,
+    JSON.stringify({
+      date: new Date().toISOString(),
+      vehicles: distinct.name.filter((v) => vehiclesInLoadout.includes(v)),
+      versions: recentVersions,
+    }),
   );
 
   const vehicleVersions = await getVehicleVersions(placeId, recentVersions);
