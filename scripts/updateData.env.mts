@@ -7,6 +7,5 @@ export const env = createEnv({
     INSIGHTS_API_AUTH: z.string(),
   },
   runtimeEnv: process.env,
-  skipValidation: !!process.env.SKIP_ENV_VALIDATION,
   emptyStringAsUndefined: true,
 });
