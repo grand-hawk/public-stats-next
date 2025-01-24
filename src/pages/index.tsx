@@ -5,6 +5,7 @@ import React from 'react';
 import Metadata from '@/components/metadata';
 import PlaceSelect from '@/components/placeSelect';
 import Layout from '@/components/utils/layout';
+import Umami from '@/components/utils/umami';
 import VehicleTableRoot from '@/components/vehicleTableRoot';
 
 export default function Index() {
@@ -29,6 +30,8 @@ export default function Index() {
 
         <VehicleTableRoot />
       </Layout>
+
+      <Umami />
     </>
   );
 }
