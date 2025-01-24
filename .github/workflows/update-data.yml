@@ -90,6 +90,7 @@ jobs:
             git checkout -b workflow/update-data/${{ github.run_id }}
             git add ./data/**
             git commit -m "Update data"
+            git pull origin workflow/update-data/${{ github.run_id }} --rebase
             git push origin workflow/update-data/${{ github.run_id }}
           else
             echo "No changes detected in data"
