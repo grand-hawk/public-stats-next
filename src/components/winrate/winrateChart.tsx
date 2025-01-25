@@ -87,11 +87,6 @@ export default function WinrateChart({ placeId }: { placeId: number }) {
             theme: {
               mode: 'dark',
             },
-            plotOptions: {
-              area: {
-                fillTo: 'origin',
-              },
-            },
             colors: [
               '#ef4444',
               '#3b82f6',
