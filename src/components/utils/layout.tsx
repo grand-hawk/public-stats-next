@@ -1,6 +1,7 @@
 import { Box } from '@chakra-ui/react';
 import React from 'react';
 
+import MoveWarning from '@/components/moveWarning';
 import Navigation from '@/components/navigation';
 
 import type { PropsWithChildren } from 'react';
@@ -24,6 +25,9 @@ export default function Layout({ children }: PropsWithChildren) {
         width="100%"
       >
         <Box maxWidth="600px" width="100%">
+          {/* TODO: remove */}
+          <MoveWarning />
+
           {children}
         </Box>
       </Box>
