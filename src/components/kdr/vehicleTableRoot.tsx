@@ -2,8 +2,8 @@ import { Box, Center } from '@chakra-ui/react';
 import React from 'react';
 import { GrDocumentMissing } from 'react-icons/gr';
 
+import VehicleTable from '@/components/kdr/vehicleTable';
 import { EmptyState } from '@/components/ui/empty-state';
-import VehicleTable from '@/components/vehicleTable';
 import { useSessionStore } from '@/stores/session';
 
 export default function VehicleTableRoot() {

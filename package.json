@@ -12,7 +12,7 @@
     "updateData": "pnpx dotenv-cli -- pnpx tsx scripts/updateData.mts"
   },
   "dependencies": {
-    "@chakra-ui/react": "^3.4.0",
+    "@chakra-ui/react": "^3.5.1",
     "@emotion/react": "^11.14.0",
     "@t3-oss/env-core": "^0.11.1",
     "@t3-oss/env-nextjs": "^0.11.1",
@@ -33,17 +33,17 @@
     "zustand": "^5.0.3"
   },
   "devDependencies": {
-    "@types/node": "^22.10.7",
-    "@types/react": "^19.0.7",
-    "@types/react-dom": "^18.3.5",
-    "@typescript-eslint/eslint-plugin": "^8.20.0",
-    "@typescript-eslint/parser": "^8.20.0",
+    "@types/node": "^22.10.10",
+    "@types/react": "^19.0.8",
+    "@types/react-dom": "^19.0.3",
+    "@typescript-eslint/eslint-plugin": "^8.21.0",
+    "@typescript-eslint/parser": "^8.21.0",
     "eslint": "^8.57.1",
     "eslint-config-next": "15.1.5",
     "eslint-config-prettier": "^10.0.1",
     "eslint-import-resolver-typescript": "^3.7.0",
     "eslint-plugin-import": "^2.31.0",
-    "eslint-plugin-prettier": "^5.2.2",
+    "eslint-plugin-prettier": "^5.2.3",
     "eslint-plugin-react": "^7.37.4",
     "prettier": "^3.4.2",
     "prettier-eslint": "^16.3.0",

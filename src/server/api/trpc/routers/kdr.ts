@@ -37,10 +37,6 @@ for (const placeId of Object.values(places)) {
 }
 
 export const kdrRouter = createTRPCRouter({
-  places: publicProcedure.query(async () => {
-    return places;
-  }),
-
   kdr: publicProcedure
     .input(
       z.object({

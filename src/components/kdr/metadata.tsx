@@ -51,7 +51,9 @@ export default function Metadata() {
               {data?.versions.length}
             </Code>
           )
-        ) : null}
+        ) : (
+          '0'
+        )}
       </Stat>
 
       <Stat

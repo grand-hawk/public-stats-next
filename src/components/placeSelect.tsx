@@ -15,11 +15,12 @@ import { trpc } from '@/utils/trpc';
 import type { SelectRootProps } from '@chakra-ui/react';
 
 export default function PlaceSelect({
+  noLabel = false,
   ...props
-}: Omit<SelectRootProps, 'collection'>) {
+}: Omit<SelectRootProps, 'collection'> & { noLabel?: boolean }) {
   const placeId = useSessionStore((s) => s.placeId);
   const setPlaceId = useSessionStore((s) => s.setPlaceId);
-  const { isFetching, error, data } = trpc.kdr.places.useQuery(undefined, {
+  const { isFetching, error, data } = trpc.config.places.useQuery(undefined, {
     refetchOnWindowFocus: false,
   });
 
@@ -55,7 +56,7 @@ export default function PlaceSelect({
       onValueChange={({ value }) => setPlaceId(Number(value[0]))}
       {...props}
     >
-      <SelectLabel>Place</SelectLabel>
+      {!noLabel && <SelectLabel>Place</SelectLabel>}
       <SelectTrigger>
         <SelectValueText placeholder="Select place" />
       </SelectTrigger>

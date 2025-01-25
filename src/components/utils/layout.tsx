@@ -1,31 +1,32 @@
-import { Box, Container } from '@chakra-ui/react';
+import { Box } from '@chakra-ui/react';
 import React from 'react';
 
-import type { BoxProps } from '@chakra-ui/react';
+import Navigation from '@/components/navigation';
 
-export default function Layout(props: BoxProps) {
+import type { PropsWithChildren } from 'react';
+
+export default function Layout({ children }: PropsWithChildren) {
   return (
-    <Container
-      display="flex"
+    <Box
+      display="grid"
+      gridTemplateRows="max-content 1fr"
       height="max-content"
-      justifyContent="center"
-      minHeight="100vh"
-      paddingX={8}
-      width="100vw"
+      minHeight="100svh"
+      width="100%"
     >
+      <Navigation />
+
       <Box
         as="main"
-        display="grid"
-        gridRowGap={4}
-        gridTemplateColumns="1fr"
-        gridTemplateRows="max-content 1fr"
-        maxWidth="600px"
-        paddingY={8}
+        display="flex"
+        justifyContent="center"
+        paddingY={4}
         width="100%"
-        {...props}
       >
-        {props.children}
+        <Box maxWidth="600px" width="100%">
+          {children}
+        </Box>
       </Box>
-    </Container>
+    </Box>
   );
 }
