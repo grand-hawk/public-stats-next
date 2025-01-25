@@ -48,15 +48,11 @@ export default function Navigation() {
               </Tabs.List>
               {tabPanelRef && (
                 <Portal container={tabPanelRef}>
-                  {Object.entries(tabs).map(([value, { render }]) => {
-                    console.log(value);
-
-                    return (
-                      <Tabs.Content key={value} value={value}>
-                        {render()}
-                      </Tabs.Content>
-                    );
-                  })}
+                  {Object.entries(tabs).map(([value, { render }]) => (
+                    <Tabs.Content key={value} value={value}>
+                      {render()}
+                    </Tabs.Content>
+                  ))}
                 </Portal>
               )}
             </Tabs.Root>
