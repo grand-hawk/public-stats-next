@@ -62,10 +62,14 @@ export default function WinrateChart({ placeId }: { placeId: number }) {
               stacked: false,
               background: 'transparent',
               foreColor: 'var(--chakra-colors-fg)',
+              fontFamily: 'var(--chakra-fonts-body)',
               zoom: {
                 type: 'x',
                 enabled: true,
                 autoScaleYaxis: true,
+              },
+              animations: {
+                enabled: false,
               },
             },
             dataLabels: {
@@ -88,11 +92,6 @@ export default function WinrateChart({ placeId }: { placeId: number }) {
                 fillTo: 'origin',
               },
             },
-            tooltip: {
-              marker: {
-                show: false,
-              },
-            },
             colors: [
               '#ef4444',
               '#3b82f6',
@@ -102,10 +101,16 @@ export default function WinrateChart({ placeId }: { placeId: number }) {
               '#db2777',
               '#22d3ee',
             ],
+            tooltip: {
+              shared: true,
+            },
             xaxis: {
               type: 'datetime',
               labels: {
                 format: 'MMM dd',
+              },
+              tooltip: {
+                enabled: false,
               },
             },
             yaxis: {
