@@ -18,8 +18,8 @@ export const env = createEnv({
    * `NEXT_PUBLIC_`.
    */
   client: {
-    NEXT_PUBLIC_ANALYTICS_DOMAIN: z.string().url(),
-    NEXT_PUBLIC_ANALYTICS_ID: z.string().uuid(),
+    NEXT_PUBLIC_ANALYTICS_DOMAIN: z.string().url().optional(),
+    NEXT_PUBLIC_ANALYTICS_ID: z.string().uuid().optional(),
   },
 
   /**
