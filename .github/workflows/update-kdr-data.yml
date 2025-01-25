@@ -86,10 +86,10 @@ jobs:
 
       - run: |
           git fetch --all
-          if ! git diff --quiet origin/dev -- ./data/**; then
+          if ! git diff --quiet origin/dev -- ./data/kdr/**; then
             git checkout -b workflow/update-kdr-data/${{ github.run_id }}
-            git add ./data/**
-            git commit -m "Update data"
+            git add ./data/kdr/**
+            git commit -m "Update KDR data"
             git pull origin workflow/update-kdr-data/${{ github.run_id }} --rebase
             git push origin workflow/update-kdr-data/${{ github.run_id }}
           else
@@ -114,10 +114,10 @@ jobs:
           if git branch -r | grep -q "origin/workflow/update-kdr-data/${{ github.run_id }}"; then
             for branch in dev prod; do
               git checkout $branch
-              if ! git diff --quiet origin/workflow/update-kdr-data/${{ github.run_id }} -- ./data/**; then
-                git checkout origin/workflow/update-kdr-data/${{ github.run_id }} -- ./data/**
-                git add ./data/**
-                git commit -m "Update data from workflow/update-kdr-data/${{ github.run_id }}"
+              if ! git diff --quiet origin/workflow/update-kdr-data/${{ github.run_id }} -- ./data/kdr/**; then
+                git checkout origin/workflow/update-kdr-data/${{ github.run_id }} -- ./data/kdr/**
+                git add ./data/kdr/**
+                git commit -m "Update KDR data from workflow/update-kdr-data/${{ github.run_id }}"
                 git pull origin $branch --rebase
                 git push origin $branch
               else

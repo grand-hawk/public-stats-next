@@ -1,0 +1,81 @@
+name: Update winrate data
+
+on:
+  schedule:
+    - cron: '5 */12 * * *'
+  workflow_dispatch:
+
+jobs:
+  update-winrate-data:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup git
+        uses: fregante/setup-git-user@v2
+
+      - uses: pnpm/action-setup@v4.0.0
+        with:
+          version: 9
+
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: 'pnpm'
+
+      - name: Install pnpm packages
+        run: pnpm install
+
+      - name: Update winrate data
+        run: pnpm tsx scripts/updateData-winrate.mts
+        env:
+          INSIGHTS_API_URL: ${{ secrets.INSIGHTS_API_URL }}
+          INSIGHTS_API_AUTH: ${{ secrets.INSIGHTS_API_AUTH }}
+
+      - run: |
+          git fetch --all
+          if ! git diff --quiet origin/dev -- ./data/winrate/**; then
+            git checkout -b workflow/update-winrate-data/${{ github.run_id }}
+            git add ./data/winrate/**
+            git commit -m "Update winrate data"
+            git pull origin workflow/update-winrate-data/${{ github.run_id }} --rebase
+            git push origin workflow/update-winrate-data/${{ github.run_id }}
+          else
+            echo "No changes detected in data"
+          fi
+
+  finalize-git-changes:
+    runs-on: ubuntu-latest
+    needs: update-winrate-data
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          ref: workflow/update-winrate-data/${{ github.run_id }}
+
+      - name: Setup git
+        uses: fregante/setup-git-user@v2
+
+      - run: |
+          git fetch --all
+          if git branch -r | grep -q "origin/workflow/update-winrate-data/${{ github.run_id }}"; then
+            for branch in dev prod; do
+              git checkout $branch
+              if ! git diff --quiet origin/workflow/update-winrate-data/${{ github.run_id }} -- ./data/winrate/**; then
+                git checkout origin/workflow/update-winrate-data/${{ github.run_id }} -- ./data/winrate/**
+                git add ./data/winrate/**
+                git commit -m "Update data from workflow/update-winrate-data/${{ github.run_id }}"
+                git pull origin $branch --rebase
+                git push origin $branch
+              else
+                echo "No changes to commit on $branch."
+              fi
+            done
+            git push --delete origin workflow/update-winrate-data/${{ github.run_id }}
+          else
+            echo "Branch workflow/update-winrate-data/${{ github.run_id }} does not exist."
+          fi

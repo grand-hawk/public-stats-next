@@ -1,28 +1,13 @@
 import fs from 'node:fs/promises';
 
-import ky from 'ky';
-
 import kdr_json from '@config/kdr.json';
 import places_json from '@config/places.json';
 import vehiclesInLoadout_json from '@data/kdr/vehiclesInLoadout.json';
-import { env } from '@scripts/updateData.env.mts';
-
-import type { Input, Options } from 'ky';
+import { request } from '@scripts/updateData.utils.mts';
 
 const places = places_json as Record<string, number>;
 const kdrConfig = kdr_json as { versions: Record<string, number> };
 const vehiclesInLoadout = vehiclesInLoadout_json as string[];
-
-function request(url: Input, options: Partial<Options> = {}) {
-  return ky(url, {
-    prefixUrl: new URL('/api', env.INSIGHTS_API_URL),
-    ...options,
-    headers: {
-      authorization: `Basic ${env.INSIGHTS_API_AUTH}`,
-      ...options.headers,
-    },
-  });
-}
 
 async function getDistinct(placeId: string | number) {
   return request(`vehicle/data/distinct/${placeId}`).json<{
@@ -53,7 +38,7 @@ async function getVehicleVersions(
 }
 
 for (const [, placeId] of Object.entries(places)) {
-  await fs.mkdir(`./data/${placeId}`, { recursive: true });
+  await fs.mkdir(`./data/kdr/${placeId}`, { recursive: true });
 
   const distinct = await getDistinct(placeId);
   const recentVersions = distinct.version
