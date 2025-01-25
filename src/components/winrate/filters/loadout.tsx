@@ -48,6 +48,7 @@ export default function LoadoutFilter({
   return (
     <SelectRoot
       collection={collection}
+      disabled={!placeId}
       size="md"
       value={loadout ? [loadout] : undefined}
       width="100%"

@@ -47,6 +47,7 @@ export default function MapFilter({
   return (
     <SelectRoot
       collection={collection}
+      disabled={!placeId}
       size="md"
       value={map ? [map] : undefined}
       width="100%"
