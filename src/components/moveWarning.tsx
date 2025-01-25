@@ -19,7 +19,7 @@ export default function MoveWarning() {
       title="Moving hostname"
       variant="outline"
     >
-      kdr.multicrew.dev will soon be moving to{' '}
+      kdr.multicrew.dev will soon be replaced by{' '}
       <Link href="https://stats.multicrew.dev">stats.multicrew.dev</Link>
     </Alert>
   );
