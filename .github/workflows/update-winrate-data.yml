@@ -69,7 +69,6 @@ jobs:
                 git checkout origin/workflow/update-winrate-data/${{ github.run_id }} -- ./data/winrate/**
                 git add ./data/winrate/**
                 git commit -m "Update data from workflow/update-winrate-data/${{ github.run_id }}"
-                git pull origin $branch --rebase
                 git push origin $branch
               else
                 echo "No changes to commit on $branch."
