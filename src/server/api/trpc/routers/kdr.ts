@@ -45,7 +45,9 @@ export const kdrRouter = createTRPCRouter({
     )
     .query(async ({ input }) => {
       if (!input.placeId || !placeData.has(input.placeId)) return null;
+
       const data = placeData.get(input.placeId)!;
+
       return data.kdr;
     }),
 
@@ -57,7 +59,9 @@ export const kdrRouter = createTRPCRouter({
     )
     .query(async ({ input }) => {
       if (!input.placeId || !placeData.has(input.placeId)) return null;
+
       const data = placeData.get(input.placeId)!;
+
       return data.metadata;
     }),
 });

@@ -26,6 +26,24 @@ async function getDistinct(placeId: string | number) {
   }>();
 }
 
+function seriesFromWinrate(winrate: Awaited<ReturnType<typeof getWinrate>>) {
+  type Series = { name: string; data: Array<[number, number]> };
+  const series: Array<Series> = [];
+
+  for (const [team, winrates] of Object.entries(winrate)) {
+    const teamSeries: Series = { name: team, data: [] };
+
+    for (const winrateEntry of winrates) {
+      const timestamp = new Date(winrateEntry.date).getTime();
+      teamSeries.data.push([timestamp, winrateEntry.winrate]);
+    }
+
+    series.push(teamSeries);
+  }
+
+  return series;
+}
+
 for (const [, placeId] of Object.entries(places)) {
   await fs.mkdir(`./data/winrate/${placeId}`, { recursive: true });
 
@@ -43,21 +61,29 @@ for (const [, placeId] of Object.entries(places)) {
   const winrate = await getWinrate(placeId);
   await fs.writeFile(
     `./data/winrate/${placeId}/winrate.json`,
-    JSON.stringify(winrate),
+    JSON.stringify(seriesFromWinrate(winrate)),
   );
+
+  for (const map of distinct.map) {
+    const mapWinrate = await getWinrate(placeId, undefined, map);
+    await fs.writeFile(
+      `./data/winrate/${placeId}/winrate--${map}.json`,
+      JSON.stringify(seriesFromWinrate(mapWinrate)),
+    );
+  }
 
   for (const loadout of distinct.loadout) {
     const loadoutWinrate = await getWinrate(placeId, loadout);
     await fs.writeFile(
       `./data/winrate/${placeId}/winrate-${loadout}.json`,
-      JSON.stringify(loadoutWinrate),
+      JSON.stringify(seriesFromWinrate(loadoutWinrate)),
     );
 
     for (const map of distinct.map) {
       const combinedWinrate = await getWinrate(placeId, loadout, map);
       await fs.writeFile(
         `./data/winrate/${placeId}/winrate-${loadout}-${map}.json`,
-        JSON.stringify(combinedWinrate),
+        JSON.stringify(seriesFromWinrate(combinedWinrate)),
       );
     }
   }

@@ -2,19 +2,19 @@ import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
 import { immer } from 'zustand/middleware/immer';
 
-export interface SessionStore {
+export interface PlaceSelectStore {
   placeId?: number;
   setPlaceId: (placeId?: number) => void;
 }
 
-export const useSessionStore = create(
+export const usePlaceSelectStore = create(
   persist(
-    immer<SessionStore>((set) => ({
+    immer<PlaceSelectStore>((set) => ({
       placeId: undefined,
       setPlaceId: (placeId) => set({ placeId }),
     })),
     {
-      name: 'session',
+      name: 'place-select',
     },
   ),
 );

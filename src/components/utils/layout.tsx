@@ -24,7 +24,7 @@ export default function Layout({ children }: PropsWithChildren) {
         paddingY={4}
         width="100%"
       >
-        <Box maxWidth="600px" width="100%">
+        <Box maxWidth="700px" paddingX={6} width="100%">
           {/* TODO: remove */}
           <MoveWarning />
 

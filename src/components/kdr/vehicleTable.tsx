@@ -2,12 +2,12 @@ import { Code, FormatNumber, IconButton, Table } from '@chakra-ui/react';
 import { Group, Spinner } from '@chakra-ui/react';
 import React from 'react';
 import { BiErrorAlt } from 'react-icons/bi';
+import { MdWarning } from 'react-icons/md';
 import { TiArrowSortedUp, TiArrowSortedDown } from 'react-icons/ti';
 
 import { Button } from '@/components/ui/button';
 import { EmptyState } from '@/components/ui/empty-state';
 import { trpc } from '@/utils/trpc';
-
 export default function VehicleTable({ placeId }: { placeId: number }) {
   const [sortKey, setSortKey] =
     React.useState<keyof NonNullable<typeof kdr>[0]>('kd');
@@ -37,6 +37,14 @@ export default function VehicleTable({ placeId }: { placeId: number }) {
       >
         <Group>
           <Button onClick={() => !isFetching && refetch()}>Retry</Button>
+        </Group>
+      </EmptyState>
+    );
+  if (!kdr)
+    return (
+      <EmptyState icon={<MdWarning />} title="No data found">
+        <Group>
+          <Button onClick={() => !isFetching && refetch()}>Refetch</Button>
         </Group>
       </EmptyState>
     );
@@ -100,40 +108,39 @@ export default function VehicleTable({ placeId }: { placeId: number }) {
         </Table.Header>
 
         <Table.Body>
-          {kdr &&
-            kdr
-              .sort((a, b) => {
-                const alphabetical = sortKey === 'name';
+          {kdr
+            .sort((a, b) => {
+              const alphabetical = sortKey === 'name';
 
-                switch (sortDirection) {
-                  case 'asc':
-                    if (alphabetical) return a.name.localeCompare(b.name);
-                    return a[sortKey] - b[sortKey];
-                  case 'desc':
-                    if (alphabetical) return b.name.localeCompare(a.name);
-                    return b[sortKey] - a[sortKey];
-                }
-              })
-              .map(({ name, kd, kills, deaths }) => (
-                <Table.Row key={name}>
-                  <Table.Cell>{name}</Table.Cell>
-                  <Table.Cell>
-                    <Code color="white" size="md">
-                      {kd}
-                    </Code>
-                  </Table.Cell>
-                  <Table.Cell>
-                    <Code color="white" size="md">
-                      <FormatNumber value={kills} />
-                    </Code>
-                  </Table.Cell>
-                  <Table.Cell>
-                    <Code color="white" size="md">
-                      <FormatNumber value={deaths} />
-                    </Code>
-                  </Table.Cell>
-                </Table.Row>
-              ))}
+              switch (sortDirection) {
+                case 'asc':
+                  if (alphabetical) return a.name.localeCompare(b.name);
+                  return a[sortKey] - b[sortKey];
+                case 'desc':
+                  if (alphabetical) return b.name.localeCompare(a.name);
+                  return b[sortKey] - a[sortKey];
+              }
+            })
+            .map(({ name, kd, kills, deaths }) => (
+              <Table.Row key={name}>
+                <Table.Cell>{name}</Table.Cell>
+                <Table.Cell>
+                  <Code color="white" size="md">
+                    {kd}
+                  </Code>
+                </Table.Cell>
+                <Table.Cell>
+                  <Code color="white" size="md">
+                    <FormatNumber value={kills} />
+                  </Code>
+                </Table.Cell>
+                <Table.Cell>
+                  <Code color="white" size="md">
+                    <FormatNumber value={deaths} />
+                  </Code>
+                </Table.Cell>
+              </Table.Row>
+            ))}
         </Table.Body>
       </Table.Root>
     </Table.ScrollArea>
