@@ -1,9 +1,9 @@
 import { Box, Code, Spinner } from '@chakra-ui/react';
-import { formatDistance } from 'date-fns';
 import React from 'react';
 
 import Stat from '@/components/stat';
 import { useNavStore } from '@/stores/nav';
+import relativeDate from '@/utils/relativeDate';
 import { trpc } from '@/utils/trpc';
 
 export default function Metadata() {
@@ -48,10 +48,7 @@ export default function Metadata() {
           ) : error ? (
             'Error'
           ) : (
-            data &&
-            formatDistance(new Date(data.date), new Date(), {
-              addSuffix: true,
-            })
+            data && relativeDate(new Date(data.date))
           )
         ) : null}
       </Stat>
