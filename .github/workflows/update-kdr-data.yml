@@ -1,4 +1,4 @@
-name: Update data
+name: Update KDR data
 
 on:
   schedule:
@@ -27,22 +27,22 @@ jobs:
           output_file: 'script-execution-output.json'
 
       - name: Process JSON output
-        run: jq ".[0]" "./script-execution-output.json" > "./data/vehiclesInLoadout.json"
+        run: jq ".[0]" "./script-execution-output.json" > "./data/kdr/vehiclesInLoadout.json"
 
       - name: Remove temp file
         run: rm script-execution-output.json
 
       - run: |
-          git checkout -b workflow/update-data/${{ github.run_id }}
-          git add ./data/vehiclesInLoadout.json
+          git checkout -b workflow/update-kdr-data/${{ github.run_id }}
+          git add ./data/kdr/vehiclesInLoadout.json
           if ! git diff --cached --quiet; then
             git commit -m "Update vehiclesInLoadout.json"
-            git push origin workflow/update-data/${{ github.run_id }}
+            git push origin workflow/update-kdr-data/${{ github.run_id }}
           else
             echo "No changes to commit."
           fi
 
-  update-data:
+  update-kdr-data:
     runs-on: ubuntu-latest
     needs: update-vehicles-in-loadout
 
@@ -68,18 +68,18 @@ jobs:
 
       - run: |
           git fetch --all
-          if git branch -r | grep -q "origin/workflow/update-data/${{ github.run_id }}"; then
-            if ! git diff --quiet origin/workflow/update-data/${{ github.run_id }} -- ./data/vehiclesInLoadout.json; then
-              git checkout origin/workflow/update-data/${{ github.run_id }} -- ./data/vehiclesInLoadout.json
+          if git branch -r | grep -q "origin/workflow/update-kdr-data/${{ github.run_id }}"; then
+            if ! git diff --quiet origin/workflow/update-kdr-data/${{ github.run_id }} -- ./data/kdr/vehiclesInLoadout.json; then
+              git checkout origin/workflow/update-kdr-data/${{ github.run_id }} -- ./data/kdr/vehiclesInLoadout.json
             else
               echo "No changes detected in vehiclesInLoadout.json."
             fi
           else
-            echo "Branch workflow/update-data/${{ github.run_id }} does not exist."
+            echo "Branch workflow/update-kdr-data/${{ github.run_id }} does not exist."
           fi
 
-      - name: Update data
-        run: pnpm tsx scripts/updateData.mts
+      - name: Update KDR data
+        run: pnpm tsx scripts/updateData-kdr.mts
         env:
           INSIGHTS_API_URL: ${{ secrets.INSIGHTS_API_URL }}
           INSIGHTS_API_AUTH: ${{ secrets.INSIGHTS_API_AUTH }}
@@ -87,44 +87,44 @@ jobs:
       - run: |
           git fetch --all
           if ! git diff --quiet origin/dev -- ./data/**; then
-            git checkout -b workflow/update-data/${{ github.run_id }}
+            git checkout -b workflow/update-kdr-data/${{ github.run_id }}
             git add ./data/**
             git commit -m "Update data"
-            git pull origin workflow/update-data/${{ github.run_id }} --rebase
-            git push origin workflow/update-data/${{ github.run_id }}
+            git pull origin workflow/update-kdr-data/${{ github.run_id }} --rebase
+            git push origin workflow/update-kdr-data/${{ github.run_id }}
           else
             echo "No changes detected in data"
           fi
 
   finalize-git-changes:
     runs-on: ubuntu-latest
-    needs: update-data
+    needs: update-kdr-data
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
         with:
-          ref: workflow/update-data/${{ github.run_id }}
+          ref: workflow/update-kdr-data/${{ github.run_id }}
 
       - name: Setup git
         uses: fregante/setup-git-user@v2
 
       - run: |
           git fetch --all
-          if git branch -r | grep -q "origin/workflow/update-data/${{ github.run_id }}"; then
+          if git branch -r | grep -q "origin/workflow/update-kdr-data/${{ github.run_id }}"; then
             for branch in dev prod; do
               git checkout $branch
-              if ! git diff --quiet origin/workflow/update-data/${{ github.run_id }} -- ./data/**; then
-                git checkout origin/workflow/update-data/${{ github.run_id }} -- ./data/**
+              if ! git diff --quiet origin/workflow/update-kdr-data/${{ github.run_id }} -- ./data/**; then
+                git checkout origin/workflow/update-kdr-data/${{ github.run_id }} -- ./data/**
                 git add ./data/**
-                git commit -m "Update data from workflow/update-data/${{ github.run_id }}"
+                git commit -m "Update data from workflow/update-kdr-data/${{ github.run_id }}"
                 git pull origin $branch --rebase
                 git push origin $branch
               else
                 echo "No changes to commit on $branch."
               fi
             done
-            git push --delete origin workflow/update-data/${{ github.run_id }}
+            git push --delete origin workflow/update-kdr-data/${{ github.run_id }}
           else
-            echo "Branch workflow/update-data/${{ github.run_id }} does not exist."
+            echo "Branch workflow/update-kdr-data/${{ github.run_id }} does not exist."
           fi

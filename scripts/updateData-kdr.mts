@@ -4,7 +4,7 @@ import ky from 'ky';
 
 import places_json from '@config/places.json';
 import versions_json from '@config/versions.json';
-import vehiclesInLoadout_json from '@data/vehiclesInLoadout.json';
+import vehiclesInLoadout_json from '@data/kdr/vehiclesInLoadout.json';
 import { env } from '@scripts/updateData.env.mts';
 
 import type { Input, Options } from 'ky';
@@ -61,7 +61,7 @@ for (const [, placeId] of Object.entries(places)) {
     .slice(0, versions[String(placeId)] ?? 10);
 
   await fs.writeFile(
-    `./data/${placeId}/metadata.json`,
+    `./data/kdr/${placeId}/metadata.json`,
     JSON.stringify({
       date: new Date().toISOString(),
       vehicles: distinct.name.filter((v) => vehiclesInLoadout.includes(v)),
@@ -98,5 +98,5 @@ for (const [, placeId] of Object.entries(places)) {
     .filter((v) => !!v)
     .sort((a, b) => b.kd - a.kd);
 
-  await fs.writeFile(`./data/${placeId}/kdr.json`, JSON.stringify(kdr));
+  await fs.writeFile(`./data/kdr/${placeId}/kdr.json`, JSON.stringify(kdr));
 }

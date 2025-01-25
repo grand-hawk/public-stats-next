@@ -12,7 +12,7 @@ export default function Index() {
   return (
     <>
       <Head>
-        <title>Vehicle KDR</title>
+        <title>MTC Stats</title>
       </Head>
 
       <Layout>

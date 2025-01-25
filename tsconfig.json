@@ -31,7 +31,7 @@
     "**/*.tsx",
     "next-env.d.ts",
     ".next/types/**/*.ts",
-    "scripts/updateData.mts",
+    "scripts/updateData-kdr.mts",
     "scripts/updateData.env.mts"
   ],
   "exclude": ["node_modules"]
