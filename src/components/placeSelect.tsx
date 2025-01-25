@@ -19,7 +19,7 @@ export default function PlaceSelect({
 }: Omit<SelectRootProps, 'collection'>) {
   const placeId = useSessionStore((s) => s.placeId);
   const setPlaceId = useSessionStore((s) => s.setPlaceId);
-  const { isFetching, error, data } = trpc.data.places.useQuery(undefined, {
+  const { isFetching, error, data } = trpc.kdr.places.useQuery(undefined, {
     refetchOnWindowFocus: false,
   });
 

@@ -28,7 +28,7 @@ function Stat({
 
 export default function Metadata() {
   const placeId = useSessionStore((s) => s.placeId);
-  const { isFetching, error, data } = trpc.data.metadata.useQuery(
+  const { isFetching, error, data } = trpc.kdr.metadata.useQuery(
     { placeId },
     { refetchOnWindowFocus: false },
   );

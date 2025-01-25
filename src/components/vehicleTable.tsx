@@ -19,7 +19,7 @@ export default function VehicleTable({ placeId }: { placeId: number }) {
     isFetching,
     error,
     refetch,
-  } = trpc.data.kdr.useQuery(
+  } = trpc.kdr.kdr.useQuery(
     { placeId },
     {
       refetchOnWindowFocus: false,

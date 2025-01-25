@@ -24,10 +24,10 @@ export interface PlaceData {
 
 for (const placeId of Object.values(places)) {
   const kdr = JSON.parse(
-    await fs.readFile(`./data/${placeId}/kdr.json`, 'utf-8'),
+    await fs.readFile(`./data/kdr/${placeId}/kdr.json`, 'utf-8'),
   );
   const metadata = JSON.parse(
-    await fs.readFile(`./data/${placeId}/metadata.json`, 'utf-8'),
+    await fs.readFile(`./data/kdr/${placeId}/metadata.json`, 'utf-8'),
   );
 
   placeData.set(placeId, {
@@ -36,7 +36,7 @@ for (const placeId of Object.values(places)) {
   });
 }
 
-export const dataRouter = createTRPCRouter({
+export const kdrRouter = createTRPCRouter({
   places: publicProcedure.query(async () => {
     return places;
   }),

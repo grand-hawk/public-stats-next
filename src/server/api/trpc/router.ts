@@ -1,8 +1,8 @@
 import { createTRPCRouter } from './context';
-import { dataRouter } from '@/server/api/trpc/routers/data';
+import { kdrRouter } from '@/server/api/trpc/routers/kdr';
 
 export const appRouter = createTRPCRouter({
-  data: dataRouter,
+  kdr: kdrRouter,
 });
 
 export type AppRouter = typeof appRouter;
