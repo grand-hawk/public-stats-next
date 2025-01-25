@@ -3,12 +3,12 @@ import React from 'react';
 
 import VehicleTable from '@/components/kdr/vehicleTable';
 import PlaceEmptyState from '@/components/placeEmptyState';
-import { usePlaceSelectStore } from '@/stores/placeSelect';
+import { useNavStore } from '@/stores/nav';
 
 import type { BoxProps } from '@chakra-ui/react';
 
 export default function VehicleTableRoot({ ...props }: BoxProps) {
-  const placeId = usePlaceSelectStore((s) => s.placeId);
+  const placeId = useNavStore((s) => s.placeId);
 
   return (
     <Box

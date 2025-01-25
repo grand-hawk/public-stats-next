@@ -21,6 +21,7 @@ export const useFilterStore = create(
     })),
     {
       name: 'winrate-filters',
+      version: 0,
     },
   ),
 );

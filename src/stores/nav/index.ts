@@ -2,19 +2,26 @@ import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
 import { immer } from 'zustand/middleware/immer';
 
-export interface PlaceSelectStore {
+export interface NavStore {
   placeId?: number;
   setPlaceId: (placeId?: number) => void;
+
+  tab?: string;
+  setTab: (tab?: string) => void;
 }
 
-export const usePlaceSelectStore = create(
+export const useNavStore = create(
   persist(
-    immer<PlaceSelectStore>((set) => ({
+    immer<NavStore>((set) => ({
       placeId: undefined,
       setPlaceId: (placeId) => set({ placeId }),
+
+      tab: undefined,
+      setTab: (tab) => set({ tab }),
     })),
     {
-      name: 'place-select',
+      name: 'nav',
+      version: 0,
     },
   ),
 );

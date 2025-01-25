@@ -3,12 +3,12 @@ import React from 'react';
 
 import PlaceEmptyState from '@/components/placeEmptyState';
 import WinrateChart from '@/components/winrate/winrateChart';
-import { usePlaceSelectStore } from '@/stores/placeSelect';
+import { useNavStore } from '@/stores/nav';
 
 import type { BoxProps } from '@chakra-ui/react';
 
 export default function WinrateChartRoot({ ...props }: BoxProps) {
-  const placeId = usePlaceSelectStore((s) => s.placeId);
+  const placeId = useNavStore((s) => s.placeId);
 
   return (
     <Box

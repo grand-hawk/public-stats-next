@@ -3,11 +3,11 @@ import { formatDistance } from 'date-fns';
 import React from 'react';
 
 import Stat from '@/components/stat';
-import { usePlaceSelectStore } from '@/stores/placeSelect';
+import { useNavStore } from '@/stores/nav';
 import { trpc } from '@/utils/trpc';
 
 export default function Metadata() {
-  const placeId = usePlaceSelectStore((s) => s.placeId);
+  const placeId = useNavStore((s) => s.placeId);
   const { isFetching, error, data } = trpc.kdr.metadata.useQuery(
     { placeId },
     { refetchOnWindowFocus: false },

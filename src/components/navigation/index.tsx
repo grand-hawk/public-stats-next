@@ -1,13 +1,10 @@
-import { Box, Grid, GridItem, Portal, Tabs } from '@chakra-ui/react';
-import React, { useContext } from 'react';
+import { Box, Grid, GridItem } from '@chakra-ui/react';
+import React from 'react';
 
 import PlaceSelect from '@/components/navigation/placeSelect';
-import { tabs } from '@/components/tabs';
-import { TabPanelPortalContext } from '@/hooks/tabPanelPortalContext';
+import NavigationTabs from '@/components/navigation/tabs';
 
 export default function Navigation() {
-  const tabPanelRef = useContext(TabPanelPortalContext);
-
   return (
     <Box
       as="nav"
@@ -29,30 +26,7 @@ export default function Navigation() {
           </GridItem>
 
           <GridItem>
-            <Tabs.Root
-              defaultValue={Object.keys(tabs)[0]}
-              fitted
-              lazyMount
-              size="sm"
-              variant="subtle"
-            >
-              <Tabs.List>
-                {Object.entries(tabs).map(([value, { label }]) => (
-                  <Tabs.Trigger key={value} value={value}>
-                    {label}
-                  </Tabs.Trigger>
-                ))}
-              </Tabs.List>
-              {tabPanelRef && (
-                <Portal container={tabPanelRef}>
-                  {Object.entries(tabs).map(([value, { Component }]) => (
-                    <Tabs.Content key={value} value={value}>
-                      <Component />
-                    </Tabs.Content>
-                  ))}
-                </Portal>
-              )}
-            </Tabs.Root>
+            <NavigationTabs />
           </GridItem>
         </Grid>
       </Box>

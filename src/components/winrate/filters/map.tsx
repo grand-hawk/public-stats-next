@@ -9,7 +9,7 @@ import {
   SelectTrigger,
   SelectValueText,
 } from '@/components/ui/select';
-import { usePlaceSelectStore } from '@/stores/placeSelect';
+import { useNavStore } from '@/stores/nav';
 import { useFilterStore } from '@/stores/winrate/filters';
 import { trpc } from '@/utils/trpc';
 
@@ -18,7 +18,7 @@ import type { SelectRootProps } from '@chakra-ui/react';
 export default function MapFilter({
   ...props
 }: Omit<SelectRootProps, 'collection'>) {
-  const placeId = usePlaceSelectStore((s) => s.placeId);
+  const placeId = useNavStore((s) => s.placeId);
   const map = useFilterStore((s) => s.map);
   const setMap = useFilterStore((s) => s.setMap);
   const { isFetching, error, data } = trpc.winrate.metadata.useQuery(
