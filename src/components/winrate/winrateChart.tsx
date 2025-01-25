@@ -88,6 +88,11 @@ export default function WinrateChart({ placeId }: { placeId: number }) {
                 fillTo: 'origin',
               },
             },
+            tooltip: {
+              marker: {
+                show: false,
+              },
+            },
             colors: [
               '#ef4444',
               '#3b82f6',

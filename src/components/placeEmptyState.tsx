@@ -10,7 +10,7 @@ export default function PlaceEmptyState({
 }: Partial<EmptyStateProps>) {
   return (
     <EmptyState
-      description="Start by selecting the place you want to see the vehicle KDR for"
+      description="Start by selecting the place you wish to see data for"
       icon={<GrDocumentMissing />}
       title="Select a place"
       {...props}
