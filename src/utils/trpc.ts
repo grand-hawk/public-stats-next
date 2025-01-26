@@ -1,5 +1,6 @@
 import { httpBatchLink, loggerLink } from '@trpc/client';
 import { createTRPCNext } from '@trpc/next';
+import { ssrPrepass } from '@trpc/next/ssrPrepass';
 import superjson from 'superjson';
 
 import type { AppRouter } from '@/server/api/trpc/router';
@@ -9,10 +10,14 @@ const getBaseUrl = () => {
   if (typeof window !== 'undefined') return ''; // browser should use relative url
   if (process.env.COOLIFY_URL)
     return `https://${process.env.COOLIFY_URL.split(',')[0]}`; // SSR should use coolify url
+  if (process.env.NEXT_PUBLIC_VERCEL_URL)
+    return `https://${process.env.NEXT_PUBLIC_VERCEL_URL}`; // SSR should use vercel url
   return `http://localhost:${process.env.PORT ?? 3000}`; // dev SSR should use localhost
 };
 
 export const trpc = createTRPCNext<AppRouter>({
+  ssr: true,
+  ssrPrepass,
   config() {
     return {
       links: [
@@ -28,7 +33,6 @@ export const trpc = createTRPCNext<AppRouter>({
       ],
     };
   },
-  ssr: false,
   transformer: superjson,
 });
 

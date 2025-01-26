@@ -9,7 +9,7 @@ import {
   SelectTrigger,
   SelectValueText,
 } from '@/components/ui/select';
-import { useNavStore } from '@/stores/nav';
+import { useNavigationStore } from '@/stores/navigation';
 import { trpc } from '@/utils/trpc';
 
 import type { SelectRootProps } from '@chakra-ui/react';
@@ -18,11 +18,13 @@ export default function PlaceSelect({
   noLabel = false,
   ...props
 }: Omit<SelectRootProps, 'collection'> & { noLabel?: boolean }) {
-  const placeId = useNavStore((s) => s.placeId);
-  const setPlaceId = useNavStore((s) => s.setPlaceId);
+  const placeId = useNavigationStore((s) => s.placeId);
+  const setPlaceId = useNavigationStore((s) => s.setPlaceId);
   const { isFetching, error, data } = trpc.config.places.useQuery(undefined, {
     refetchOnWindowFocus: false,
   });
+
+  console.log('placeId', placeId);
 
   const places = React.useMemo(
     () =>

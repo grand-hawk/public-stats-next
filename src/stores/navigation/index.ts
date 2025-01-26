@@ -2,26 +2,19 @@ import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
 import { immer } from 'zustand/middleware/immer';
 
-export interface NavStore {
+export interface NavigationStore {
   placeId?: number;
   setPlaceId: (placeId?: number) => void;
-
-  tab?: string;
-  setTab: (tab?: string) => void;
 }
 
-export const useNavStore = create(
+export const useNavigationStore = create(
   persist(
-    immer<NavStore>((set) => ({
+    immer<NavigationStore>((set) => ({
       placeId: undefined,
       setPlaceId: (placeId) => set({ placeId }),
-
-      tab: undefined,
-      setTab: (tab) => set({ tab }),
     })),
     {
-      name: 'nav',
-      version: 0,
+      name: 'navigation',
     },
   ),
 );

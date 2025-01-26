@@ -9,7 +9,7 @@ import {
   SelectTrigger,
   SelectValueText,
 } from '@/components/ui/select';
-import { useNavStore } from '@/stores/nav';
+import { useNavigationStore } from '@/stores/navigation';
 import { useFilterStore } from '@/stores/winrate/filters';
 import { trpc } from '@/utils/trpc';
 
@@ -18,7 +18,7 @@ import type { SelectRootProps } from '@chakra-ui/react';
 export default function LoadoutFilter({
   ...props
 }: Omit<SelectRootProps, 'collection'>) {
-  const placeId = useNavStore((s) => s.placeId);
+  const placeId = useNavigationStore((s) => s.placeId);
   const loadout = useFilterStore((s) => s.loadout);
   const setLoadout = useFilterStore((s) => s.setLoadout);
   const { isFetching, error, data } = trpc.winrate.metadata.useQuery(
