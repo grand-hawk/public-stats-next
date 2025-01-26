@@ -24,8 +24,6 @@ export default function PlaceSelect({
     refetchOnWindowFocus: false,
   });
 
-  console.log('placeId', placeId);
-
   const places = React.useMemo(
     () =>
       createListCollection({
