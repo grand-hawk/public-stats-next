@@ -30,12 +30,17 @@ function seriesFromWinrate(winrate: Awaited<ReturnType<typeof getWinrate>>) {
   type Series = { name: string; data: Array<[number, number]> };
   const series: Array<Series> = [];
 
+  const currentDate = new Date();
+  currentDate.setHours(0, 0, 0, 0);
+
   for (const [team, winrates] of Object.entries(winrate)) {
     const teamSeries: Series = { name: team, data: [] };
 
     for (const winrateEntry of winrates) {
       const date = new Date(winrateEntry.date);
       date.setHours(0, 0, 0, 0);
+
+      if (date === currentDate) continue;
 
       const timestamp = date.getTime();
       teamSeries.data.push([timestamp, winrateEntry.winrate]);
