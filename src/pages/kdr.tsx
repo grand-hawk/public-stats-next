@@ -1,10 +1,10 @@
 import { Box } from '@chakra-ui/react';
 import React from 'react';
 
-import Filters from '@/components/winrate/filters';
-import WinrateChartRoot from '@/components/winrate/winrateChartRoot';
+import Metadata from '@/components/kdr/metadata';
+import VehicleTableRoot from '@/components/kdr/vehicleTableRoot';
 
-export function WinrateTab() {
+export default function Kdr() {
   return (
     <Box
       display="grid"
@@ -12,9 +12,9 @@ export function WinrateTab() {
       gridTemplateColumns="1fr"
       gridTemplateRows="max-content 1fr"
     >
-      <Filters grow />
+      <Metadata />
 
-      <WinrateChartRoot />
+      <VehicleTableRoot />
     </Box>
   );
 }

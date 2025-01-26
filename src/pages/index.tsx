@@ -1,26 +1,20 @@
-import Head from 'next/head';
+import { Center, Spinner } from '@chakra-ui/react';
+import { useRouter } from 'next/router';
 import React from 'react';
 
-import Layout from '@/components/utils/layout';
-import Umami from '@/components/utils/umami';
-import { TabPanelPortalContext } from '@/hooks/tabPanelPortalContext';
+import { tabs } from '@/components/navigation/tabData';
 
 export default function Index() {
-  const tabContentRef = React.useRef<HTMLDivElement | null>(null);
+  const router = useRouter();
+
+  React.useLayoutEffect(() => {
+    const firstTab = Object.values(tabs)?.[0];
+    if (firstTab) router.push(firstTab.path);
+  }, [router]);
 
   return (
-    <>
-      <Head>
-        <title>MTC Stats</title>
-      </Head>
-
-      <TabPanelPortalContext.Provider value={tabContentRef}>
-        <Layout>
-          <div ref={tabContentRef} />
-        </Layout>
-      </TabPanelPortalContext.Provider>
-
-      <Umami />
-    </>
+    <Center height="100%">
+      <Spinner size="xl" />
+    </Center>
   );
 }

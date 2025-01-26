@@ -1,25 +1,29 @@
-import { Portal, Tabs } from '@chakra-ui/react';
+import { Tabs } from '@chakra-ui/react';
+import { useRouter } from 'next/router';
 import React from 'react';
 
-import { tabs } from '@/components/tabs';
-import { TabPanelPortalContext } from '@/hooks/tabPanelPortalContext';
-import { useNavStore } from '@/stores/nav';
+import { tabs } from '@/components/navigation/tabData';
 
 export default function NavigationTabs() {
-  const tabPanelRef = React.useContext(TabPanelPortalContext);
-  const tab = useNavStore((s) => s.tab);
-  const setTab = useNavStore((s) => s.setTab);
+  const router = useRouter();
 
-  if (tab && !Object.keys(tabs).includes(tab)) setTab(undefined);
+  const currentTab = Object.entries(tabs).find(
+    ([, tab]) => tab.path === router.asPath,
+  );
 
   return (
     <Tabs.Root
       fitted
       lazyMount
       size="sm"
-      value={tab ?? Object.keys(tabs)[0]}
+      value={currentTab ? currentTab[0] : undefined}
       variant="subtle"
-      onValueChange={(details) => setTab(details.value)}
+      onValueChange={(details) => {
+        const targetTab = tabs[details.value];
+        if (!targetTab) return;
+
+        router.push(targetTab.path);
+      }}
     >
       <Tabs.List>
         {Object.entries(tabs).map(([value, { label }]) => (
@@ -28,15 +32,6 @@ export default function NavigationTabs() {
           </Tabs.Trigger>
         ))}
       </Tabs.List>
-      {tabPanelRef && (
-        <Portal container={tabPanelRef}>
-          {Object.entries(tabs).map(([value, { Component }]) => (
-            <Tabs.Content key={value} value={value}>
-              <Component />
-            </Tabs.Content>
-          ))}
-        </Portal>
-      )}
     </Tabs.Root>
   );
 }
