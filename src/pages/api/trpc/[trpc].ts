@@ -29,5 +29,3 @@ export default createNextApiHandler({
     return {};
   },
 });
-
-// test
