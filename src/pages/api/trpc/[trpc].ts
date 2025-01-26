@@ -22,7 +22,7 @@ export default createNextApiHandler({
       return {
         headers: new Headers([
           ['cache-control', `s-maxage=1, stale-while-revalidate=${60 * 60}`],
-          ['etag', `W/"${getCommitHash(true)}"`],
+          ['etag', `"${getCommitHash(true)}"`],
         ]),
       };
 
