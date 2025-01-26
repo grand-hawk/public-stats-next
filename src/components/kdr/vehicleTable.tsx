@@ -19,13 +19,7 @@ export default function VehicleTable({ placeId }: { placeId: number }) {
     isFetching,
     error,
     refetch,
-  } = trpc.kdr.kdr.useQuery(
-    { placeId },
-    {
-      refetchOnWindowFocus: false,
-      refetchOnMount: false,
-    },
-  );
+  } = trpc.kdr.kdr.useQuery({ placeId }, { refetchOnWindowFocus: false });
 
   if (isFetching) return <Spinner size="lg" />;
   if (error)
