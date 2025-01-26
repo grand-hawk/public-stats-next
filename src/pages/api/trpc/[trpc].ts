@@ -2,6 +2,7 @@ import { createNextApiHandler } from '@trpc/server/adapters/next';
 
 import { env } from '@/env';
 import { appRouter } from '@/server/api/trpc/router';
+import { getCommitHash } from '@/server/utils/hash';
 
 export default createNextApiHandler({
   router: appRouter,
@@ -21,6 +22,7 @@ export default createNextApiHandler({
       return {
         headers: new Headers([
           ['cache-control', `s-maxage=1, stale-while-revalidate=${60 * 60}`],
+          ['etag', `W/"${getCommitHash(true)}"`],
         ]),
       };
 
