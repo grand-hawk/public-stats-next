@@ -13,4 +13,17 @@ export default createNextApiHandler({
           );
         }
       : undefined,
+  responseMeta({ errors, type }) {
+    const allOk = errors.length === 0;
+    const isQuery = type === 'query';
+
+    if (allOk && isQuery)
+      return {
+        headers: new Headers([
+          ['cache-control', `s-maxage=1, stale-while-revalidate=${60 * 60}`],
+        ]),
+      };
+
+    return {};
+  },
 });

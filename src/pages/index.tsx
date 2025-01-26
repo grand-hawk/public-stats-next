@@ -9,7 +9,7 @@ export default function Index() {
 
   React.useLayoutEffect(() => {
     const firstTab = Object.values(tabs)?.[0];
-    if (firstTab) router.push(firstTab.path);
+    if (firstTab) router.replace(firstTab.path);
   }, [router]);
 
   return (
