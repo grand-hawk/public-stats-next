@@ -16,10 +16,11 @@ import { useNavigationStore } from '@/stores/navigation';
 export default function Shell() {
   const router = useRouter();
   const placeId = useNavigationStore((s) => s.placeId);
-  const [rawWeapon, rawShell] = router.query.slug as [string, string];
+  const rawSlug = router.query.slug;
 
-  const weapon = decodeURIComponent(rawWeapon);
-  const shell = decodeURIComponent(rawShell);
+  const isCorrectSlug = typeof rawSlug === 'object' && rawSlug.length === 2;
+  const weapon = isCorrectSlug && decodeURIComponent(rawSlug[0]);
+  const shell = isCorrectSlug && decodeURIComponent(rawSlug[1]);
 
   return (
     <>
@@ -27,31 +28,33 @@ export default function Shell() {
         <title>{`${shell} - MTC Stats`}</title>
       </Head>
 
-      <Box
-        display="grid"
-        gridRowGap={4}
-        gridTemplateColumns="1fr"
-        gridTemplateRows="max-content 1fr"
-      >
-        <BreadcrumbRoot>
-          <NextLink href="/shells" passHref>
-            <BreadcrumbLink as="span">Search</BreadcrumbLink>
-          </NextLink>
-          <NextLink
-            href={`/shells?${new URLSearchParams({ query: weapon })}`}
-            passHref
-          >
-            <BreadcrumbLink as="span">{weapon}</BreadcrumbLink>
-          </NextLink>
-          <BreadcrumbCurrentLink>{shell}</BreadcrumbCurrentLink>
-        </BreadcrumbRoot>
+      {weapon && shell && (
+        <Box
+          display="grid"
+          gridRowGap={4}
+          gridTemplateColumns="1fr"
+          gridTemplateRows="max-content 1fr"
+        >
+          <BreadcrumbRoot>
+            <NextLink href="/shells" passHref>
+              <BreadcrumbLink as="span">Search</BreadcrumbLink>
+            </NextLink>
+            <NextLink
+              href={`/shells?${new URLSearchParams({ query: weapon })}`}
+              passHref
+            >
+              <BreadcrumbLink as="span">{weapon}</BreadcrumbLink>
+            </NextLink>
+            <BreadcrumbCurrentLink>{shell}</BreadcrumbCurrentLink>
+          </BreadcrumbRoot>
 
-        {placeId ? (
-          <ShellInfo placeId={placeId} shell={shell} weapon={weapon} />
-        ) : (
-          <PlaceEmptyState />
-        )}
-      </Box>
+          {placeId ? (
+            <ShellInfo placeId={placeId} shell={shell} weapon={weapon} />
+          ) : (
+            <PlaceEmptyState />
+          )}
+        </Box>
+      )}
     </>
   );
 }
