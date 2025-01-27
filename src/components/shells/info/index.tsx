@@ -5,15 +5,18 @@ import {
   Grid,
   GridItem,
   Heading,
+  Icon,
   Spinner,
   Stack,
 } from '@chakra-ui/react';
 import React from 'react';
+import { MdOutlineInfo } from 'react-icons/md';
 
 import PenetrationTable from '@/components/shells/info/penetrationTable';
 import Stat from '@/components/stat';
 import ErrorState from '@/components/states/errorState';
 import NoDataFoundState from '@/components/states/noDataFoundState';
+import { Tooltip } from '@/components/ui/tooltip';
 import { trpc } from '@/utils/trpc';
 
 import type { HeadingProps } from '@chakra-ui/react';
@@ -23,7 +26,10 @@ function BasicCard({
   heading,
   headingProps,
   children,
-}: PropsWithChildren<{ heading?: string; headingProps?: HeadingProps }>) {
+}: PropsWithChildren<{
+  heading?: React.ReactNode;
+  headingProps?: HeadingProps;
+}>) {
   return (
     <div>
       {heading && (
@@ -197,7 +203,25 @@ export default function ShellInfo({
       )}
 
       <GridItem colSpan={1} rowSpan={1}>
-        <BasicCard heading="Penetration">
+        <BasicCard
+          heading={
+            <>
+              Penetration
+              <Tooltip
+                closeDelay={30}
+                content="Line of sight (LOS) penetration"
+                openDelay={15}
+                positioning={{
+                  placement: 'right',
+                }}
+              >
+                <Icon marginLeft={2}>
+                  <MdOutlineInfo />
+                </Icon>
+              </Tooltip>
+            </>
+          }
+        >
           <PenetrationTable penetration={data.penetrationTable} />
         </BasicCard>
       </GridItem>

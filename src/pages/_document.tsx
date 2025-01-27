@@ -5,10 +5,6 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head />
-      <script
-        async
-        src="https://unpkg.com/react-scan/dist/auto.global.js"
-      ></script>
       <body>
         <Main />
         <NextScript />
