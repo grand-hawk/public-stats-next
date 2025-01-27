@@ -191,7 +191,11 @@ for _, moduleScript in Modules:GetChildren() do
 			end
 
 			if ammo.Behavior == "LGM" then
-				shell.type = "LASER GUIDED MISSILE"
+				if ammo.ShellType == "TANDEM" then
+					shell.type = "TANDEM LASER GUIDED MISSILE"
+				else
+					shell.type = "LASER GUIDED MISSILE"
+				end
 			end
 
 			if ammo.Behavior == "TAM" then
