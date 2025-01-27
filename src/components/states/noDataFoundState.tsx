@@ -11,7 +11,7 @@ export default function NoDataFoundState({ ...props }: ButtonProps) {
   return (
     <EmptyState icon={<MdWarning />} title="No data found">
       <Group>
-        <Button {...props}>Refetch</Button>
+        <Button {...props}>Retry</Button>
       </Group>
     </EmptyState>
   );
