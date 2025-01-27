@@ -21,27 +21,33 @@ export interface Shell {
   maxPenetration: number;
   penetrationTable: {
     [angle: number]: {
-      [distance: number]: number;
+      [distance: number]: number | undefined;
     };
   };
 
-  explosive?: {
-    mass: number;
-    blastRadiusMultiplier?: number;
-  };
+  explosive:
+    | {
+        mass: number;
+        blastRadiusMultiplier?: number;
+      }
+    | undefined;
 
-  missile?: {
-    boostTime?: number;
-    turnRate?: number;
-    limit?: number;
-    irccm?: boolean;
-    unjammable: boolean;
-  };
+  missile:
+    | {
+        boostTime?: number;
+        turnRate?: number;
+        limit?: number;
+        irccm?: boolean;
+        unjammable: boolean;
+      }
+    | undefined;
 
-  cluster?: {
-    submunitions: number;
-    dispersion: number;
-  };
+  cluster:
+    | {
+        submunitions: number;
+        dispersion: number;
+      }
+    | undefined;
 }
 
 export interface PlaceData {

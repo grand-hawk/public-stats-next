@@ -35,7 +35,7 @@ export default function PenetrationTable({
               <Table.Cell>
                 {angles.map((angle) => (
                   <Table.Cell key={angle}>
-                    {penetration[angle][distance]}
+                    {penetration[angle][distance] ?? '?'}
                   </Table.Cell>
                 ))}
               </Table.Cell>

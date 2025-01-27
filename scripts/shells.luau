@@ -18,7 +18,7 @@ type ShellModule = {
 	maxPenetration: number,
 	penetrationTable: {
 		[number]: {
-			[number]: number,
+			[number]: number?,
 		},
 	},
 
@@ -98,19 +98,19 @@ for _, moduleScript in Modules:GetChildren() do
 
 						if ammo.AngleCons then
 							local logBase05 = math.log(ammo.AngleCons / basePen) / math.log(0.5)
-							calculatedPen = basePen * math.cos(angle) ^ logBase05
+							calculatedPen = basePen * math.cos(math.rad(angle)) ^ logBase05
 
 							break
 						end
 
 						if string.find(shell.type, "APFSDS") then
-							calculatedPen = basePen * math.cos(angle) ^ -0.224
+							calculatedPen = basePen * math.cos(math.rad(angle)) ^ -0.224
 
 							break
 						end
 
 						if true then
-							calculatedPen = basePen * math.cos(angle) ^ 1.1
+							calculatedPen = basePen * math.cos(math.rad(angle)) ^ 1.1
 
 							break
 						end
