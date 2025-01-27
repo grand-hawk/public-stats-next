@@ -13,7 +13,7 @@ export default function PenetrationTable({
 }: {
   penetration: NonNullable<Shell['penetrationTable']>;
 }) {
-  const [mode, setMode] = React.useState<'los' | 'rel'>('los');
+  const [mode, setMode] = React.useState<'los' | 'rel'>('rel');
 
   const angles = Object.keys(penetration).map((angle) => Number(angle));
   angles.sort((a, b) => a - b);
@@ -92,7 +92,8 @@ export default function PenetrationTable({
 
                   if (mode === 'rel')
                     anglePens = anglePens.map(
-                      (anglePen) => anglePen && Math.round(relPenetration(anglePen, angle)),
+                      (anglePen) =>
+                        anglePen && Math.round(relPenetration(anglePen, angle)),
                     );
 
                   return (
