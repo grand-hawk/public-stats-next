@@ -42,7 +42,9 @@ function Results({ placeId, query }: { placeId: number; query: string }) {
       <Center height="100%">
         <EmptyState
           description={
-            query !== '' ? 'No shells were found' : 'Start by inputting a query'
+            query !== ''
+              ? 'No shells were found'
+              : 'Search for shells, weapons, or type'
           }
           icon={<MdOutlineSearch />}
           title="No results"
