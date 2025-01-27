@@ -92,7 +92,7 @@ export default function PenetrationTable({
 
                   if (mode === 'rel')
                     anglePens = anglePens.map(
-                      (pen) => pen && Math.round(relPenetration(pen, angle)),
+                      (anglePen) => anglePen && Math.round(relPenetration(anglePen, angle)),
                     );
 
                   return (
