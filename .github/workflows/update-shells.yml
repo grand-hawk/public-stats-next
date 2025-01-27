@@ -32,16 +32,12 @@ jobs:
       - name: Remove temp file
         run: rm script-execution-output.json
 
-      - name: Create update branch
+      - name: Commit and push changes
         run: |
           git checkout -b workflow/update-shells/${{ github.run_id }}
           git add ./data/shells/8421780146.json
-          if ! git diff --cached --quiet; then
-            git commit -m "Update Sunny Valley shells"
-            git push origin workflow/update-shells/${{ github.run_id }}
-          else
-            echo "No changes to commit."
-          fi
+          git commit -m "Update Sunny Valley shells"
+          git push origin workflow/update-shells/${{ github.run_id }}
 
   multicrew-tank-combat:
     runs-on: ubuntu-latest
@@ -69,16 +65,12 @@ jobs:
       - name: Remove temp file
         run: rm script-execution-output.json
 
-      - name: Create update branch
+      - name: Commit and push changes
         run: |
           git checkout -b workflow/update-shells/${{ github.run_id }}
           git add ./data/shells/9520328730.json
-          if ! git diff --cached --quiet; then
-            git commit -m "Update MTC shells"
-            git push origin workflow/update-shells/${{ github.run_id }}
-          else
-            echo "No changes to commit."
-          fi
+          git commit -m "Update MTC shells"
+          git push origin workflow/update-shells/${{ github.run_id }}
 
   finalize-git-changes:
     runs-on: ubuntu-latest
@@ -98,9 +90,18 @@ jobs:
           if git branch -r | grep -q "origin/workflow/update-shells/${{ github.run_id }}"; then
             for branch in dev prod; do
               git checkout $branch
-              if ! git diff --quiet origin/workflow/update-shells/${{ github.run_id }} -- ./data/shells/**; then
-                git checkout origin/workflow/update-shells/${{ github.run_id }} -- ./data/shells/**
-                git add ./data/shells/**
+
+              if ! git diff --quiet origin/workflow/update-shells/${{ github.run_id }} -- ./data/shells/8421780146.json; then
+                git checkout origin/workflow/update-shells/${{ github.run_id }} -- ./data/shells/8421780146.json
+                git add ./data/shells/8421780146.json
+              fi
+
+              if ! git diff --quiet origin/workflow/update-shells/${{ github.run_id }} -- ./data/shells/9520328730.json; then
+                git checkout origin/workflow/update-shells/${{ github.run_id }} -- ./data/shells/9520328730.json
+                git add ./data/shells/9520328730.json
+              fi
+
+              if ! git diff --cached --quiet; then
                 git commit -m "Update shells data from workflow/update-shells/${{ github.run_id }}"
                 git pull origin $branch --ff-only
                 git push origin $branch
