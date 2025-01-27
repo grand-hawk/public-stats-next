@@ -19,14 +19,16 @@ export default function PenetrationTable({
   return (
     <Table.ScrollArea height="100%" width="100%">
       <Table.Root showColumnBorder size="sm" variant="outline">
-        <Table.Header>
-          <Table.Row>
-            <Table.ColumnHeader>Distance</Table.ColumnHeader>
-            <Table.ColumnHeader>Penetration</Table.ColumnHeader>
-          </Table.Row>
-        </Table.Header>
-
         <Table.Body>
+          <Table.Row>
+            <Table.Cell />
+            <Table.Cell>
+              {angles.map((angle) => (
+                <Table.Cell key={angle}>{angle}°</Table.Cell>
+              ))}
+            </Table.Cell>
+          </Table.Row>
+
           {distances.map((distance) => (
             <Table.Row key={distance}>
               <Table.Cell>

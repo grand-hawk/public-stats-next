@@ -103,7 +103,7 @@ export default function ShellInfo({
               <FormatNumber value={data.damage} /> HP
             </Stat>
 
-            {data.shrapMultiplier && (
+            {typeof data.shrapMultiplier !== 'undefined' && (
               <Stat label="Shrapnel multiplier">
                 <FormatNumber value={data.shrapMultiplier} />
               </Stat>
@@ -160,7 +160,7 @@ export default function ShellInfo({
 
               {typeof data.missile.limit !== 'undefined' && (
                 <Stat label="G limit">
-                  <FormatNumber value={data.missile.limit} />
+                  <FormatNumber value={data.missile.limit} />G
                 </Stat>
               )}
 

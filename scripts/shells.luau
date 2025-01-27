@@ -97,7 +97,7 @@ for _, moduleScript in Modules:GetChildren() do
 						end
 
 						if ammo.AngleCons then
-							local logBase05 = math.log(ammo.AngleCons / basePen) / math.log(0.5)
+							local logBase05 = math.log(ammo.PenAt60 / basePen) / math.log(0.5)
 							calculatedPen = basePen * math.cos(math.rad(angle)) ^ logBase05
 
 							break
