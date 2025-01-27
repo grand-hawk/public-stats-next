@@ -20,7 +20,7 @@ export default function WinrateTab({
   return (
     <>
       <Head>
-        <title>Shell search - MTC Stats</title>
+        <title>Search - MTC Stats</title>
       </Head>
 
       <Search initialQuery={initialQuery} />
