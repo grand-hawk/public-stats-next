@@ -67,7 +67,7 @@ for _, moduleScript in Modules:GetChildren() do
 			damage = ammo.Damage,
 			shrapMultiplier = ammo.shrapmult,
 
-			maxPenetration = ammo.ShellMaxPen,
+			maxPenetration = math.round(ammo.ShellMaxPen),
 			penetrationTable = {},
 		}
 
@@ -82,7 +82,7 @@ for _, moduleScript in Modules:GetChildren() do
 			for _, angle in angles do
 				shell.penetrationTable[angle] = {}
 
-				local basePen = shell.maxPenetration
+				local basePen = ammo.ShellMaxPen
 				if ammo.AngleCons then
 					basePen *= math.cos(math.rad(angle)) ^ ammo.AngleCons
 				elseif string.find(shell.type, "APFSDS") then
@@ -94,7 +94,7 @@ for _, moduleScript in Modules:GetChildren() do
 				for _, distance in distances do
 					local penLoss = GlobalConstants.PenLoss(GlobalConstants.mtostud(distance), ammo)
 
-					shell.penetrationTable[angle][distance] = basePen * penLoss
+					shell.penetrationTable[angle][distance] = math.round(basePen * penLoss)
 				end
 			end
 		end
