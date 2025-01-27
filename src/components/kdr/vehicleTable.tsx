@@ -73,7 +73,7 @@ export default function VehicleTable({ placeId }: { placeId: number }) {
     <Table.ScrollArea height="100%" width="100%">
       <Table.Root borderRadius="md" shadow="none" size="sm" variant="outline">
         <Table.Header>
-          <Table.Row bg="bg.muted">
+          <Table.Row background="bg.muted">
             <Table.ColumnHeader>
               Vehicle <SortButton name="name" />
             </Table.ColumnHeader>

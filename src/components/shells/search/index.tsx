@@ -1,4 +1,5 @@
 import { Box, Center } from '@chakra-ui/react';
+import { useDebounce } from '@uidotdev/usehooks';
 import React from 'react';
 
 import SearchInput from '@/components/shells/search/input';
@@ -9,6 +10,12 @@ import { useNavigationStore } from '@/stores/navigation';
 export default function Search() {
   const placeId = useNavigationStore((s) => s.placeId);
   const [query, setQuery] = React.useState('');
+  const debouncedQuery = useDebounce(query, 250);
+
+  React.useEffect(() => {
+    const search = new URLSearchParams(window.location.search);
+    if (search.has('query')) setQuery(search.get('query')!);
+  }, []);
 
   return (
     <Box
@@ -27,10 +34,11 @@ export default function Search() {
         borderColor="border.muted"
         borderRadius="lg"
         borderWidth="1px"
+        minHeight="250px"
         padding={3}
       >
         {placeId ? (
-          <Results placeId={placeId} query={query} />
+          <Results placeId={placeId} query={debouncedQuery} />
         ) : (
           <Center height="100%">
             <PlaceEmptyState />

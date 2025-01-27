@@ -7,8 +7,8 @@ import { tabs } from '@/components/navigation/tabData';
 export default function NavigationTabs() {
   const router = useRouter();
 
-  const currentTab = Object.entries(tabs).find(
-    ([, tab]) => tab.path === router.asPath,
+  const currentTab = Object.entries(tabs).find(([, tab]) =>
+    router.asPath.startsWith(tab.path),
   );
 
   React.useEffect(() => {
@@ -30,9 +30,19 @@ export default function NavigationTabs() {
       }}
     >
       <Tabs.List>
-        {Object.entries(tabs).map(([value, { label }]) => (
-          <Tabs.Trigger key={value} value={value}>
-            {label}
+        {Object.entries(tabs).map(([value, tab]) => (
+          <Tabs.Trigger
+            key={value}
+            value={value}
+            onClick={() => {
+              if (!currentTab) return;
+              if (currentTab[0] !== value) return;
+              if (router.asPath === tab.path) return;
+
+              router.push(tab.path);
+            }}
+          >
+            {tab.label}
           </Tabs.Trigger>
         ))}
       </Tabs.List>

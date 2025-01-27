@@ -1,6 +1,6 @@
 import { Center, Stack, Text } from '@chakra-ui/react';
 import autoAnimate from '@formkit/auto-animate';
-import { useRouter } from 'next/router';
+import Link from 'next/link';
 import React from 'react';
 import { MdOutlineSearch } from 'react-icons/md';
 
@@ -12,7 +12,6 @@ import { EmptyState } from '@/components/ui/empty-state';
 import { trpc } from '@/utils/trpc';
 
 function Results({ placeId, query }: { placeId: number; query: string }) {
-  const router = useRouter();
   const autoAnimateRef = React.useRef<HTMLDivElement>(null);
   const {
     data: results,
@@ -54,19 +53,18 @@ function Results({ placeId, query }: { placeId: number; query: string }) {
   return (
     <Stack ref={autoAnimateRef} gap={1} maxHeight="60vh" overflow="auto">
       {results.map((result, index) => (
-        <Button
+        <Link
           key={`${result.weaponName}-${result.shell}-${index}`}
-          justifyContent="left"
-          variant="subtle"
-          onClick={() =>
-            router.push(`/shells/${result.weaponName}/${result.shell}`)
-          }
+          href={`/shells/${result.weaponName}/${result.shell}`}
+          passHref
         >
-          <Text>{result.shell}</Text>
-          <Text color="fg.muted" fontSize="sm" fontWeight="normal">
-            {result.weaponName}
-          </Text>
-        </Button>
+          <Button as="a" justifyContent="left" variant="subtle" width="100%">
+            <Text>{result.shell}</Text>
+            <Text color="fg.muted" fontSize="sm" fontWeight="normal">
+              {result.weaponName}
+            </Text>
+          </Button>
+        </Link>
       ))}
     </Stack>
   );

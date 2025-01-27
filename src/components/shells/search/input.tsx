@@ -8,7 +8,7 @@ import type { InputProps } from '@chakra-ui/react';
 export default function SearchInput({ ...props }: InputProps) {
   return (
     <Field.Root>
-      <Box position="relative" width="full">
+      <Box position="relative" width="100%">
         <Input className="peer" placeholder="" {...props} />
         <Field.Label
           css={{

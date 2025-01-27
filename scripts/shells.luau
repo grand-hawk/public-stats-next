@@ -80,8 +80,6 @@ for _, moduleScript in Modules:GetChildren() do
 			local distances = { 0, 1_000, 2_000, 3_000 }
 
 			for _, angle in angles do
-				shell.penetrationTable[angle] = {}
-
 				local basePen = ammo.ShellMaxPen
 				if ammo.AngleCons then
 					basePen *= math.cos(math.rad(angle)) ^ ammo.AngleCons
@@ -94,7 +92,10 @@ for _, moduleScript in Modules:GetChildren() do
 				for _, distance in distances do
 					local penLoss = GlobalConstants.PenLoss(GlobalConstants.mtostud(distance), ammo)
 
-					shell.penetrationTable[angle][distance] = math.round(basePen * penLoss)
+					if not shell.penetrationTable[distance] then
+						shell.penetrationTable[distance] = {}
+					end
+					shell.penetrationTable[distance][angle] = math.round(basePen * penLoss)
 				end
 			end
 		end

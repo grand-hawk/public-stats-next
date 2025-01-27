@@ -74,7 +74,7 @@ for (const placeId of Object.values(places)) {
 }
 
 export const shellRouter = createTRPCRouter({
-  shells: publicProcedure
+  data: publicProcedure
     .input(
       z.object({
         placeId: z.number(),
@@ -87,7 +87,10 @@ export const shellRouter = createTRPCRouter({
 
       const { weapons } = placeData.get(input.placeId)!;
 
-      return weapons[input.weapon]?.find((shell) => shell.name === input.shell);
+      return (
+        weapons[input.weapon]?.find((shell) => shell.name === input.shell) ??
+        null
+      );
     }),
 
   search: publicProcedure
