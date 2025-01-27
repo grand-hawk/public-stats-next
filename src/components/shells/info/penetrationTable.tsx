@@ -22,11 +22,10 @@ export default function PenetrationTable({
         <Table.Body>
           <Table.Row>
             <Table.Cell />
-            <Table.Cell>
-              {angles.map((angle) => (
-                <Table.Cell key={angle}>{angle}°</Table.Cell>
-              ))}
-            </Table.Cell>
+
+            {angles.map((angle) => (
+              <Table.Cell key={angle}>{angle}°</Table.Cell>
+            ))}
           </Table.Row>
 
           {distances.map((distance) => (
@@ -34,13 +33,14 @@ export default function PenetrationTable({
               <Table.Cell>
                 <FormatNumber value={distance} /> meters
               </Table.Cell>
-              <Table.Cell>
-                {angles.map((angle) => (
-                  <Table.Cell key={angle}>
-                    {penetration[angle][distance] ?? '?'}
-                  </Table.Cell>
-                ))}
-              </Table.Cell>
+
+              {angles.map((angle) => {
+                const anglePen = penetration[angle][distance];
+
+                return (
+                  <Table.Cell key={angle}>{anglePen ?? '-'} mm</Table.Cell>
+                );
+              })}
             </Table.Row>
           ))}
         </Table.Body>
