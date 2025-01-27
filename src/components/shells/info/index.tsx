@@ -79,14 +79,14 @@ export default function ShellInfo({
             <Stat label="Base damage">
               <FormatNumber value={data.damage} /> HP
             </Stat>
-            {typeof data.shrapMultiplier !== 'undefined' && (
-              <Stat label="Shrapnel multiplier">
-                <FormatNumber value={data.shrapMultiplier} />
-              </Stat>
-            )}
             {typeof data.ricochetAngle !== 'undefined' && (
               <Stat label="Ricochet angle">
                 <FormatNumber value={data.ricochetAngle} />°
+              </Stat>
+            )}
+            {typeof data.shrapMultiplier !== 'undefined' && (
+              <Stat label="Shrapnel multiplier">
+                <FormatNumber value={data.shrapMultiplier} />
               </Stat>
             )}
             {typeof data.eraTip !== 'undefined' && (
