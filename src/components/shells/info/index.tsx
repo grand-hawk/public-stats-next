@@ -172,9 +172,11 @@ export default function ShellInfo({
                 <Stat label="IRCCM">{data.missile.irccm ? 'Yes' : 'No'}</Stat>
               )}
 
-              <Stat label="Jammable">
-                {data.missile.unjammable ? 'No' : 'Yes'}
-              </Stat>
+              {typeof data.missile.unjammable !== 'undefined' && (
+                <Stat label="Jammable">
+                  {data.missile.unjammable ? 'No' : 'Yes'}
+                </Stat>
+              )}
             </Stack>
           </BasicCard>
         </GridItem>
