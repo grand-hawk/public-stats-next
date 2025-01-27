@@ -32,7 +32,8 @@ jobs:
       - name: Remove temp file
         run: rm script-execution-output.json
 
-      - run: |
+      - name: Commit and push
+        run: |
           git add ./data/shells/8421780146.json
           git commit -m "Update Sunny Valley shells"
           git push origin ${{ github.ref_name }}
