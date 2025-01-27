@@ -94,7 +94,7 @@ export default function ShellInfo({
                 label={
                   <>
                     ERA tip
-                    <InfoTooltip content="Higher value ERA tip reduces ERA effectiveness against the penetrator" />
+                    <InfoTooltip content="ERA tip reduces ERA effectiveness against the penetrator" />
                   </>
                 }
               >
