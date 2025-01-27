@@ -36,8 +36,12 @@ jobs:
         run: |
           git checkout -b workflow/update-shells/${{ github.run_id }}
           git add ./data/shells/8421780146.json
-          git commit -m "Update Sunny Valley shells"
-          git push origin workflow/update-shells/${{ github.run_id }}
+          if git diff --cached --quiet; then
+            echo "No changes to commit for Sunny Valley."
+          else
+            git commit -m "Update Sunny Valley shells"
+            git push origin workflow/update-shells/${{ github.run_id }}
+          fi
 
   multicrew-tank-combat:
     runs-on: ubuntu-latest
@@ -69,8 +73,12 @@ jobs:
         run: |
           git checkout -b workflow/update-shells/${{ github.run_id }}
           git add ./data/shells/9520328730.json
-          git commit -m "Update MTC shells"
-          git push origin workflow/update-shells/${{ github.run_id }}
+          if git diff --cached --quiet; then
+            echo "No changes to commit for MTC."
+          else
+            git commit -m "Update MTC shells"
+            git push origin workflow/update-shells/${{ github.run_id }}
+          fi
 
   finalize-git-changes:
     runs-on: ubuntu-latest
