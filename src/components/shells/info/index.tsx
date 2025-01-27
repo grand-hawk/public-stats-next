@@ -1,0 +1,207 @@
+import {
+  Card,
+  Center,
+  FormatNumber,
+  Grid,
+  GridItem,
+  Heading,
+  Spinner,
+  Stack,
+} from '@chakra-ui/react';
+import React from 'react';
+
+import PenetrationTable from '@/components/shells/info/penetrationTable';
+import Stat from '@/components/stat';
+import ErrorState from '@/components/states/errorState';
+import NoDataFoundState from '@/components/states/noDataFoundState';
+import { trpc } from '@/utils/trpc';
+
+import type { HeadingProps } from '@chakra-ui/react';
+import type { PropsWithChildren } from 'react';
+
+function BasicCard({
+  heading,
+  headingProps,
+  children,
+}: PropsWithChildren<{ heading?: string; headingProps?: HeadingProps }>) {
+  return (
+    <div>
+      {heading && (
+        <Heading size="lg" {...headingProps} paddingBottom={1}>
+          {heading}
+        </Heading>
+      )}
+
+      <Card.Root size="sm" variant="subtle" width="100%">
+        <Card.Body>{children}</Card.Body>
+      </Card.Root>
+    </div>
+  );
+}
+
+export default function ShellInfo({
+  placeId,
+  weapon,
+  shell,
+}: {
+  placeId: number;
+  weapon: string;
+  shell: string;
+}) {
+  const { data, isFetching, error, refetch } = trpc.shells.data.useQuery(
+    { placeId, weapon, shell },
+    { refetchOnWindowFocus: false },
+  );
+
+  if (isFetching)
+    return (
+      <Center minHeight="200px">
+        <Spinner />
+      </Center>
+    );
+  if (error)
+    return (
+      <ErrorState
+        error={error.message}
+        onClick={() => !isFetching && refetch()}
+      />
+    );
+  if (!data)
+    return <NoDataFoundState onClick={() => !isFetching && refetch()} />;
+
+  const hasPenetrationTable = !!Object.keys(data.penetrationTable).length;
+
+  return (
+    <Grid gap={4}>
+      <GridItem colSpan={1} rowSpan={1}>
+        <BasicCard>
+          <Stack direction="row" gap={4}>
+            <Stat label="Name">{data.name}</Stat>
+            <Stat label="Type">{data.type}</Stat>
+          </Stack>
+        </BasicCard>
+      </GridItem>
+
+      <GridItem colSpan={1} rowSpan={1}>
+        <BasicCard heading="Projectile">
+          <Stack
+            css={{
+              '& > .chakra-stat__root': {
+                flex: '0 0 calc(var(--chakra-sizes-1\\/3) - var(--chakra-spacing-4))',
+                boxSizing: 'border-box',
+              },
+            }}
+            direction="row"
+            flexWrap="wrap"
+            gap={4}
+          >
+            <Stat label="Mass">
+              <FormatNumber value={data.mass} /> kg
+            </Stat>
+            <Stat label="Velocity">
+              <FormatNumber value={data.velocity} /> m/s
+            </Stat>
+            <Stat label="Base damage">
+              <FormatNumber value={data.damage} /> HP
+            </Stat>
+
+            {data.shrapMultiplier && (
+              <Stat label="Shrapnel multiplier">
+                <FormatNumber value={data.shrapMultiplier} />
+              </Stat>
+            )}
+
+            {!hasPenetrationTable && (
+              <Stat label="Penetration">
+                <FormatNumber value={data.maxPenetration} /> mm
+              </Stat>
+            )}
+
+            {data.explosive && (
+              <>
+                <Stat label="Explosive mass">
+                  <FormatNumber value={data.explosive.mass} /> kg
+                </Stat>
+                {data.explosive.blastRadiusMultiplier && (
+                  <Stat label="Blast radius multiplier">
+                    <FormatNumber
+                      value={data.explosive.blastRadiusMultiplier}
+                    />{' '}
+                    m/s
+                  </Stat>
+                )}
+              </>
+            )}
+          </Stack>
+        </BasicCard>
+      </GridItem>
+
+      {data.missile && (
+        <GridItem colSpan={1} rowSpan={1}>
+          <BasicCard heading="Missile">
+            <Stack
+              css={{
+                '& > .chakra-stat__root': {
+                  flex: '0 0 calc(var(--chakra-sizes-1\\/3) - var(--chakra-spacing-4))',
+                  boxSizing: 'border-box',
+                },
+              }}
+              direction="row"
+              flexWrap="wrap"
+              gap={4}
+            >
+              {typeof data.missile.boostTime !== 'undefined' && (
+                <Stat label="Boost time">
+                  <FormatNumber value={data.missile.boostTime} /> seconds
+                </Stat>
+              )}
+
+              {typeof data.missile.turnRate !== 'undefined' && (
+                <Stat label="Turn rate">
+                  <FormatNumber value={data.missile.turnRate} /> °/s
+                </Stat>
+              )}
+
+              {typeof data.missile.limit !== 'undefined' && (
+                <Stat label="G limit">
+                  <FormatNumber value={data.missile.limit} />
+                </Stat>
+              )}
+
+              {typeof data.missile.irccm !== 'undefined' && (
+                <Stat label="IRCCM">{data.missile.irccm ? 'Yes' : 'No'}</Stat>
+              )}
+
+              <Stat label="Jammable">
+                {data.missile.unjammable ? 'No' : 'Yes'}
+              </Stat>
+            </Stack>
+          </BasicCard>
+        </GridItem>
+      )}
+
+      {data.cluster && (
+        <GridItem colSpan={1} rowSpan={1}>
+          <BasicCard heading="Cluster">
+            <Stack direction="row" gap={4}>
+              <Stat label="Submunitions">
+                <FormatNumber value={data.cluster.submunitions} />x
+              </Stat>
+              <Stat label="Dispersion">
+                <FormatNumber value={data.cluster.dispersion} />°
+              </Stat>
+            </Stack>
+          </BasicCard>
+        </GridItem>
+      )}
+
+      {hasPenetrationTable && (
+        <GridItem colSpan={1} rowSpan={1}>
+          <BasicCard heading="Penetration">
+            <PenetrationTable penetration={data.penetrationTable} />
+          </BasicCard>
+        </GridItem>
+      )}
+    </Grid>
+  );
+}

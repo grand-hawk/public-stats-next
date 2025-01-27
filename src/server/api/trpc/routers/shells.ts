@@ -65,7 +65,7 @@ for (const placeId of Object.values(places)) {
       }));
     }),
     {
-      keys: ['weaponName', 'name'],
+      keys: ['weaponName', 'name', 'type'],
       threshold: 0.2,
     },
   );

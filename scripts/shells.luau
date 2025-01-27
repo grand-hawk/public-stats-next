@@ -76,10 +76,16 @@ for _, moduleScript in Modules:GetChildren() do
 		end
 
 		do
+			if ammo.ShellType == "HE" then
+				break
+			end
+
 			local angles = { 0, 30, 60, 68 }
 			local distances = { 0, 1_000, 2_000, 3_000 }
 
 			for _, angle in angles do
+				shell.penetrationTable[angle] = {}
+
 				local basePen = ammo.ShellMaxPen
 				if ammo.AngleCons then
 					basePen *= math.cos(math.rad(angle)) ^ ammo.AngleCons
@@ -92,16 +98,17 @@ for _, moduleScript in Modules:GetChildren() do
 				for _, distance in distances do
 					local penLoss = GlobalConstants.PenLoss(GlobalConstants.mtostud(distance), ammo)
 
-					if not shell.penetrationTable[distance] then
-						shell.penetrationTable[distance] = {}
-					end
-					shell.penetrationTable[distance][angle] = math.round(basePen * penLoss)
+					shell.penetrationTable[angle][distance] = math.round(basePen * penLoss)
 				end
 			end
 		end
 
 		do
-			if ammo.ExplosiveMass and ammo.ExplosiveMass > 0 and table.find({ "HE", "APHE", "SAPHE" }, shell.type) then
+			if
+				ammo.ExplosiveMass
+				and ammo.ExplosiveMass > 0
+				and table.find({ "HE", "APHE", "SAPHE", "CLUSTER" }, shell.type)
+			then
 				shell.explosive = {
 					mass = ammo.ExplosiveMass,
 					blastRadiusMultiplier = ammo.blastradiusmult,
@@ -113,7 +120,7 @@ for _, moduleScript in Modules:GetChildren() do
 					boostTime = ammo.BoostTime,
 					turnRate = ammo.Turnrate,
 					limit = ammo.Glimit,
-					unjammable = ammo.Unjammable or false,
+					unjammable = if ammo.Behavior == "FOX2" then nil else (ammo.Unjammable or false),
 					irccm = if ammo.Behavior == "FOX2" then ammo.IRCCM else nil,
 				}
 			end
