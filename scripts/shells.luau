@@ -96,7 +96,7 @@ for _, moduleScript in Modules:GetChildren() do
 							break
 						end
 
-						if ammo.AngleCons then
+						if ammo.AngleCons ~= nil then
 							local logBase05 = math.log(ammo.PenAt60 / basePen) / math.log(0.5)
 							calculatedPen = basePen * math.cos(math.rad(angle)) ^ logBase05
 
@@ -123,7 +123,7 @@ for _, moduleScript in Modules:GetChildren() do
 
 		do
 			if
-				ammo.ExplosiveMass
+				ammo.ExplosiveMass ~= nil
 				and ammo.ExplosiveMass > 0
 				and table.find({ "HE", "APHE", "SAPHE", "CLUSTER" }, shell.type)
 			then
