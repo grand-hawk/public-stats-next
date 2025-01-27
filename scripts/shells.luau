@@ -179,11 +179,7 @@ for _, moduleScript in Modules:GetChildren() do
 			end
 
 			if ammo.Behavior == "SACLOS" then
-				if ammo.ShellType == "TANDEM" then
-					shell.type = "TANDEM ANTI-TANK GUIDED MISSILE"
-				else
-					shell.type = "ANTI-TANK GUIDED MISSILE"
-				end
+				shell.type = "ANTI-TANK GUIDED MISSILE"
 			end
 
 			if ammo.Behavior == "MCLOS" then
@@ -191,21 +187,19 @@ for _, moduleScript in Modules:GetChildren() do
 			end
 
 			if ammo.Behavior == "LGM" then
-				if ammo.ShellType == "TANDEM" then
-					shell.type = "TANDEM LASER GUIDED MISSILE"
-				else
-					shell.type = "LASER GUIDED MISSILE"
-				end
+				shell.type = "LASER GUIDED MISSILE"
 			end
 
 			if ammo.Behavior == "TAM" then
 				shell.type = "F&F MISSILE"
 			end
-		end
 
-		do
 			if shell.type == "SMOKE SHELL" then
 				shell.type = "SMOKE"
+			end
+
+			if ammo.ShellType == "TANDEM" then
+				shell.type = `TANDEM {shell.type}`
 			end
 		end
 
