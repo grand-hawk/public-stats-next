@@ -40,6 +40,7 @@ jobs:
             echo "No changes to commit for Sunny Valley."
           else
             git commit -m "Update Sunny Valley shells"
+            git pull --rebase origin workflow/update-shells/${{ github.run_id }} || { echo "Pull failed; possibly due to conflicts."; exit 1; }
             git push origin workflow/update-shells/${{ github.run_id }}
           fi
 
@@ -77,6 +78,7 @@ jobs:
             echo "No changes to commit for MTC."
           else
             git commit -m "Update MTC shells"
+            git pull --rebase origin workflow/update-shells/${{ github.run_id }} || { echo "Pull failed; possibly due to conflicts."; exit 1; }
             git push origin workflow/update-shells/${{ github.run_id }}
           fi
 
