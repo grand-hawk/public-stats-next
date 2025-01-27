@@ -211,7 +211,7 @@ for _, moduleScript in Modules:GetChildren() do
 	end
 
 	if #shells > 0 then
-		weapons[module.WeaponInfo.DisplayName] = shells
+		weapons[moduleScript.Name] = shells
 	end
 end
 
