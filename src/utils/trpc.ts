@@ -1,13 +1,13 @@
 import { httpBatchLink, loggerLink } from '@trpc/client';
 import { createTRPCNext } from '@trpc/next';
-// import { ssrPrepass } from '@trpc/next/ssrPrepass';
+import { ssrPrepass } from '@trpc/next/ssrPrepass';
 import superjson from 'superjson';
 
 import type { AppRouter } from '@/server/api/trpc/router';
 import type { inferRouterInputs, inferRouterOutputs } from '@trpc/server';
 
 const getBaseUrl = () => {
-  if (typeof window !== 'undefined') return ''; // browser should use relative url
+  // if (typeof window !== 'undefined') return ''; // browser should use relative url
   if (process.env.COOLIFY_URL)
     return `${process.env.COOLIFY_URL.split(',')[0]}`; // SSR should use coolify url
   if (process.env.NEXT_PUBLIC_VERCEL_URL)
@@ -16,8 +16,8 @@ const getBaseUrl = () => {
 };
 
 export const trpc = createTRPCNext<AppRouter>({
-  ssr: false,
-  // ssrPrepass,
+  ssr: true,
+  ssrPrepass,
   config() {
     return {
       links: [
