@@ -58,8 +58,16 @@ function Results({ placeId, query }: { placeId: number; query: string }) {
           href={`/shells/${result.weaponName}/${result.shell}`}
           passHref
         >
-          <Button as="a" justifyContent="left" variant="subtle" width="100%">
+          <Button
+            as="a"
+            gap={2}
+            justifyContent="left"
+            minHeight="fit-content"
+            variant="subtle"
+            width="100%"
+          >
             <Text>{result.shell}</Text>
+
             <Text color="fg.muted" fontSize="sm" fontWeight="normal">
               {result.weaponName}
             </Text>

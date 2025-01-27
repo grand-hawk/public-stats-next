@@ -137,7 +137,7 @@ for _, moduleScript in Modules:GetChildren() do
 			end
 
 			if ammo.Behavior == "SACLOS" then
-				shell.type = "SACLOS MISSILE"
+				shell.type = "ANTI-TANK GUIDED MISSILE"
 			end
 
 			if ammo.Behavior == "MCLOS" then
@@ -145,7 +145,7 @@ for _, moduleScript in Modules:GetChildren() do
 			end
 
 			if ammo.Behavior == "LGM" then
-				shell.type = "LG MISSILE"
+				shell.type = "LASER GUIDED MISSILE"
 			end
 
 			if ammo.Behavior == "TAM" then
