@@ -1,7 +1,7 @@
 {
   "105mm L7A1": [
     {
-      "damage": 513.8365471494747,
+      "damage": 514,
       "maxPenetration": 127,
       "penetrationTable": {
         "0": {
@@ -144,7 +144,7 @@
   ],
   "60 mm Soltam Mortar": [
     {
-      "damage": 297.9310689871237,
+      "damage": 298,
       "maxPenetration": 20,
       "velocity": 80,
       "type": "HE",
@@ -181,7 +181,7 @@
       }
     },
     {
-      "damage": 243.6901521971921,
+      "damage": 244,
       "maxPenetration": 15,
       "penetrationTable": {
         "0": {
@@ -215,7 +215,7 @@
       "type": "SMOKE"
     },
     {
-      "damage": 297.9310689871237,
+      "damage": 298,
       "maxPenetration": 20,
       "velocity": 150,
       "type": "HE",
@@ -252,7 +252,7 @@
       }
     },
     {
-      "damage": 297.9310689871237,
+      "damage": 298,
       "maxPenetration": 20,
       "velocity": 30,
       "type": "HE",
@@ -328,7 +328,7 @@
       }
     },
     {
-      "damage": 423.0575802345109,
+      "damage": 423,
       "maxPenetration": 29,
       "velocity": 720,
       "type": "HE",
@@ -408,7 +408,7 @@
   ],
   "128 mm PaK44": [
     {
-      "damage": 559.5724954190466,
+      "damage": 560,
       "maxPenetration": 38,
       "velocity": 750,
       "type": "HE",
@@ -521,7 +521,7 @@
       }
     },
     {
-      "damage": 720.8440221378698,
+      "damage": 721,
       "maxPenetration": 48,
       "velocity": 880,
       "type": "HE",
@@ -597,7 +597,7 @@
       }
     },
     {
-      "damage": 799.0065103574198,
+      "damage": 799,
       "maxPenetration": 52,
       "velocity": 290,
       "type": "HE",
@@ -636,7 +636,7 @@
   ],
   "125 mm 2A46": [
     {
-      "damage": 676.9604643358799,
+      "damage": 677,
       "maxPenetration": 45,
       "velocity": 850,
       "type": "HE",
@@ -850,7 +850,7 @@
   ],
   "60 mm IMI HVMS": [
     {
-      "damage": 267.1952942108573,
+      "damage": 267,
       "maxPenetration": 17,
       "velocity": 1000,
       "type": "HE",
@@ -921,7 +921,7 @@
       "type": "APFSDS"
     },
     {
-      "damage": 267.1952942108573,
+      "damage": 267,
       "maxPenetration": 17,
       "penetrationTable": {
         "0": {
@@ -1026,7 +1026,7 @@
       "shrapMultiplier": 3
     },
     {
-      "damage": 136.98140228809626,
+      "damage": 137,
       "maxPenetration": 5,
       "velocity": 1100,
       "type": "HE",
@@ -1099,7 +1099,7 @@
       "type": "APFSDS"
     },
     {
-      "damage": 143.54126835802487,
+      "damage": 144,
       "maxPenetration": 5,
       "velocity": 960,
       "type": "HE",
@@ -1138,7 +1138,7 @@
   ],
   "120 mm ASCALON": [
     {
-      "damage": 500.91237644896745,
+      "damage": 501,
       "maxPenetration": 34,
       "velocity": 1050,
       "type": "HE",
@@ -1211,7 +1211,7 @@
   ],
   "FIM-92K Stinger": [
     {
-      "damage": 234.6219159899102,
+      "damage": 235,
       "velocity": 670,
       "missile": {
         "unjammable": false,
@@ -1254,7 +1254,7 @@
   ],
   "380 mm RW61": [
     {
-      "damage": 4808.276724678092,
+      "damage": 4808,
       "maxPenetration": 221,
       "velocity": 150,
       "type": "HE",
@@ -1293,7 +1293,7 @@
   ],
   "30 mm GSh-30-2K": [
     {
-      "damage": 143.42253804929803,
+      "damage": 143,
       "maxPenetration": 5,
       "velocity": 845,
       "type": "HE",
@@ -1402,7 +1402,7 @@
   ],
   "45 mm SHV-T": [
     {
-      "damage": 131.24162064680365,
+      "damage": 131,
       "maxPenetration": 4,
       "velocity": 792,
       "type": "HE",
@@ -1511,7 +1511,7 @@
   ],
   "75 mm KwK40 L48": [
     {
-      "damage": 256.1777685377576,
+      "damage": 256,
       "maxPenetration": 16,
       "velocity": 550,
       "type": "HE",
@@ -1621,7 +1621,7 @@
       "type": "APFSDS"
     },
     {
-      "damage": 143.55905977525907,
+      "damage": 144,
       "maxPenetration": 5,
       "velocity": 960,
       "type": "HE",
@@ -1696,7 +1696,7 @@
   ],
   "75 mm KwK44": [
     {
-      "damage": 256.1777685377576,
+      "damage": 256,
       "maxPenetration": 16,
       "velocity": 420,
       "type": "HE",
@@ -1769,7 +1769,7 @@
   ],
   "9M39": [
     {
-      "damage": 233.07858571974617,
+      "damage": 233,
       "velocity": 1000,
       "missile": {
         "unjammable": false,
@@ -1849,7 +1849,7 @@
       }
     },
     {
-      "damage": 253.322619417758,
+      "damage": 253,
       "maxPenetration": 16,
       "velocity": 463,
       "type": "HE",
@@ -1886,7 +1886,7 @@
       }
     },
     {
-      "damage": 135.50617021820807,
+      "damage": 136,
       "maxPenetration": 4,
       "penetrationTable": {
         "0": {
@@ -1922,7 +1922,7 @@
   ],
   "128 mm KwK44": [
     {
-      "damage": 559.5724954190466,
+      "damage": 560,
       "maxPenetration": 38,
       "velocity": 750,
       "type": "HE",
@@ -2035,7 +2035,7 @@
       }
     },
     {
-      "damage": 178.48787709236547,
+      "damage": 178,
       "maxPenetration": 9,
       "velocity": 700,
       "type": "HE",
@@ -2074,7 +2074,7 @@
   ],
   "FAB-500 M62": [
     {
-      "damage": 6686.257565348019,
+      "damage": 6686,
       "maxPenetration": 284,
       "velocity": 30,
       "type": "HE",
@@ -2147,7 +2147,7 @@
       "type": "APDS"
     },
     {
-      "damage": 144.89195005198187,
+      "damage": 145,
       "maxPenetration": 6,
       "penetrationTable": {
         "0": {
@@ -2181,7 +2181,7 @@
       "type": "SMOKE"
     },
     {
-      "damage": 280.8747855110276,
+      "damage": 281,
       "maxPenetration": 18,
       "velocity": 732,
       "type": "HE",
@@ -2220,7 +2220,7 @@
   ],
   "20 mm Oerlikon KAA": [
     {
-      "damage": 119.29523500513518,
+      "damage": 119,
       "maxPenetration": 2,
       "velocity": 1100,
       "type": "HE",
@@ -2293,7 +2293,7 @@
   ],
   "ATO-41 Flamethrower": [
     {
-      "damage": 111.87931068987123,
+      "damage": 112,
       "maxPenetration": 1,
       "penetrationTable": {
         "0": {
@@ -2366,7 +2366,7 @@
       }
     },
     {
-      "damage": 720.8440221378698,
+      "damage": 721,
       "maxPenetration": 48,
       "velocity": 665,
       "type": "HE",
@@ -2405,7 +2405,7 @@
   ],
   "30 mm 2A72": [
     {
-      "damage": 122.42504198835431,
+      "damage": 122,
       "maxPenetration": 3,
       "velocity": 960,
       "type": "HE",
@@ -2622,7 +2622,7 @@
       "type": "CLUSTER"
     },
     {
-      "damage": 4161.550928696113,
+      "damage": 4162,
       "maxPenetration": 197,
       "penetrationTable": {
         "0": {
@@ -2694,7 +2694,7 @@
       "type": "CLUSTER"
     },
     {
-      "damage": 4161.550928696113,
+      "damage": 4162,
       "maxPenetration": 197,
       "penetrationTable": {
         "0": {
@@ -2766,7 +2766,7 @@
       "type": "CLUSTER"
     },
     {
-      "damage": 4161.550928696113,
+      "damage": 4162,
       "maxPenetration": 197,
       "penetrationTable": {
         "0": {
@@ -2839,7 +2839,7 @@
       }
     },
     {
-      "damage": 273.30090693019065,
+      "damage": 273,
       "maxPenetration": 18,
       "velocity": 522,
       "type": "HE",
@@ -2953,7 +2953,7 @@
       "type": "SACLOS MISSILE"
     },
     {
-      "damage": 709.6739102139616,
+      "damage": 710,
       "maxPenetration": 47,
       "velocity": 680,
       "type": "SACLOS MISSILE",
@@ -2992,7 +2992,7 @@
   ],
   "152 mm M-10T": [
     {
-      "damage": 720.8440221378698,
+      "damage": 721,
       "maxPenetration": 48,
       "velocity": 530,
       "type": "HE",
@@ -3102,7 +3102,7 @@
       "type": "HEAT"
     },
     {
-      "damage": 297.9310689871237,
+      "damage": 298,
       "maxPenetration": 20,
       "velocity": 820,
       "type": "HE",
@@ -3178,7 +3178,7 @@
   ],
   "Lightning Cannon": [
     {
-      "damage": 11948.915487306136,
+      "damage": 11949,
       "maxPenetration": 441,
       "penetrationTable": {
         "0": {
@@ -3402,7 +3402,7 @@
       "type": "HEAT-FS"
     },
     {
-      "damage": 667.4713070516033,
+      "damage": 667,
       "maxPenetration": 45,
       "velocity": 1015,
       "type": "HE",
@@ -3512,7 +3512,7 @@
   ],
   "155mm L62": [
     {
-      "damage": 1273.2660802901178,
+      "damage": 1273,
       "maxPenetration": 77,
       "velocity": 506,
       "type": "HE",
@@ -3549,7 +3549,7 @@
       }
     },
     {
-      "damage": 163.05497205890285,
+      "damage": 163,
       "maxPenetration": 8,
       "penetrationTable": {
         "0": {
@@ -3583,7 +3583,7 @@
       "type": "SMOKE"
     },
     {
-      "damage": 1273.2660802901178,
+      "damage": 1273,
       "maxPenetration": 77,
       "penetrationTable": {
         "0": {
@@ -3617,7 +3617,7 @@
       "type": "PROXIMITY FUZE"
     },
     {
-      "damage": 163.05497205890285,
+      "damage": 163,
       "maxPenetration": 8,
       "penetrationTable": {
         "0": {
@@ -3651,7 +3651,7 @@
       "type": "SMOKE"
     },
     {
-      "damage": 1273.2660802901178,
+      "damage": 1273,
       "maxPenetration": 77,
       "velocity": 1015,
       "type": "HE",
@@ -3688,7 +3688,7 @@
       }
     },
     {
-      "damage": 1273.2660802901178,
+      "damage": 1273,
       "maxPenetration": 77,
       "penetrationTable": {
         "0": {
@@ -3722,7 +3722,7 @@
       "type": "PROXIMITY FUZE"
     },
     {
-      "damage": 163.05497205890285,
+      "damage": 163,
       "maxPenetration": 8,
       "penetrationTable": {
         "0": {
@@ -3756,7 +3756,7 @@
       "type": "SMOKE"
     },
     {
-      "damage": 1273.2660802901178,
+      "damage": 1273,
       "maxPenetration": 77,
       "velocity": 254,
       "type": "HE",
@@ -3793,7 +3793,7 @@
       }
     },
     {
-      "damage": 1273.2660802901178,
+      "damage": 1273,
       "maxPenetration": 77,
       "penetrationTable": {
         "0": {
@@ -3865,7 +3865,7 @@
   ],
   "88 mm KwK36 cannon": [
     {
-      "damage": 257.87753383424314,
+      "damage": 258,
       "maxPenetration": 16,
       "velocity": 820,
       "type": "HE",
@@ -3941,7 +3941,7 @@
   ],
   "122 mm Grad": [
     {
-      "damage": 757.8163429770151,
+      "damage": 758,
       "maxPenetration": 50,
       "penetrationTable": {
         "0": {
@@ -4046,7 +4046,7 @@
       "type": "HEAT-FS"
     },
     {
-      "damage": 513.8365471494747,
+      "damage": 514,
       "maxPenetration": 127,
       "penetrationTable": {
         "0": {
@@ -4082,7 +4082,7 @@
   ],
   "30 mm ZTM-2": [
     {
-      "damage": 135.50617021820807,
+      "damage": 136,
       "maxPenetration": 4,
       "velocity": 960,
       "type": "HE",
@@ -4225,7 +4225,7 @@
       "type": "HEAT"
     },
     {
-      "damage": 258.1598776813744,
+      "damage": 258,
       "maxPenetration": 17,
       "velocity": 290,
       "type": "HE",
@@ -4303,7 +4303,7 @@
       "type": "SACLOS MISSILE"
     },
     {
-      "damage": 937.522666464864,
+      "damage": 938,
       "maxPenetration": 60,
       "velocity": 320,
       "type": "SACLOS MISSILE",
@@ -4416,7 +4416,7 @@
       "shrapMultiplier": 3
     },
     {
-      "damage": 676.9604643358799,
+      "damage": 677,
       "maxPenetration": 45,
       "velocity": 850,
       "type": "HE",
@@ -4664,7 +4664,7 @@
       "type": "APFSDS"
     },
     {
-      "damage": 551.4351564487783,
+      "damage": 551,
       "maxPenetration": 37,
       "penetrationTable": {
         "0": {
@@ -4700,7 +4700,7 @@
   ],
   "23 mm GSh-23L": [
     {
-      "damage": 127.3288844172715,
+      "damage": 127,
       "maxPenetration": 3,
       "velocity": 980,
       "type": "HE",
@@ -4773,7 +4773,7 @@
   ],
   "23 mm 2A14": [
     {
-      "damage": 126.83016783115207,
+      "damage": 127,
       "maxPenetration": 3,
       "velocity": 710,
       "type": "HE",
@@ -4846,7 +4846,7 @@
   ],
   "Grenade Mortar": [
     {
-      "damage": 297.9310689871237,
+      "damage": 298,
       "maxPenetration": 20,
       "velocity": 30,
       "type": "HE",
@@ -4883,7 +4883,7 @@
       }
     },
     {
-      "damage": 243.6901521971921,
+      "damage": 244,
       "maxPenetration": 15,
       "penetrationTable": {
         "0": {
@@ -4960,7 +4960,7 @@
   ],
   "125 mm 2A46MS": [
     {
-      "damage": 676.9604643358799,
+      "damage": 677,
       "maxPenetration": 45,
       "velocity": 850,
       "type": "HE",
@@ -5140,7 +5140,7 @@
   ],
   "20mm TNSh": [
     {
-      "damage": 115.92639510725498,
+      "damage": 116,
       "maxPenetration": 1,
       "velocity": 800,
       "type": "HE",
@@ -5213,7 +5213,7 @@
   ],
   "30 mm Mk44": [
     {
-      "damage": 136.84897789469017,
+      "damage": 137,
       "maxPenetration": 5,
       "penetrationTable": {
         "0": {
@@ -5281,7 +5281,7 @@
       "type": "APFSDS"
     },
     {
-      "damage": 136.84897789469017,
+      "damage": 137,
       "maxPenetration": 5,
       "velocity": 1235,
       "type": "HE",
@@ -5354,7 +5354,7 @@
       "type": "AP"
     },
     {
-      "damage": 254.61092342054923,
+      "damage": 255,
       "maxPenetration": 16,
       "velocity": 753,
       "type": "HE",
@@ -5393,7 +5393,7 @@
   ],
   "57 mm 2A90": [
     {
-      "damage": 180.75219274923404,
+      "damage": 181,
       "maxPenetration": 9,
       "penetrationTable": {
         "0": {
@@ -5427,7 +5427,7 @@
       "type": "PROXIMITY FUZE"
     },
     {
-      "damage": 181.6924384069929,
+      "damage": 182,
       "maxPenetration": 10,
       "velocity": 1000,
       "type": "HE",
@@ -5648,7 +5648,7 @@
       "type": "HEAT"
     },
     {
-      "damage": 551.4351564487783,
+      "damage": 551,
       "maxPenetration": 37,
       "velocity": 690,
       "type": "HE",
@@ -5685,7 +5685,7 @@
       }
     },
     {
-      "damage": 551.4351564487783,
+      "damage": 551,
       "maxPenetration": 37,
       "velocity": 200,
       "type": "HE",
@@ -5833,7 +5833,7 @@
       }
     },
     {
-      "damage": 246.7916697790312,
+      "damage": 247,
       "maxPenetration": 16,
       "velocity": 680,
       "type": "HE",
@@ -5906,7 +5906,7 @@
   ],
   "75 mm XM274": [
     {
-      "damage": 306.6019265337618,
+      "damage": 307,
       "maxPenetration": 20,
       "velocity": 1235,
       "type": "HE",
@@ -5943,7 +5943,7 @@
       }
     },
     {
-      "damage": 306.6019265337618,
+      "damage": 307,
       "maxPenetration": 20,
       "penetrationTable": {
         "0": {
@@ -6085,7 +6085,7 @@
   ],
   "APERS Grenade": [
     {
-      "damage": 140.38137942650852,
+      "damage": 140,
       "maxPenetration": 5,
       "velocity": 80,
       "type": "HE",
@@ -6231,7 +6231,7 @@
       }
     },
     {
-      "damage": 345.18914569089355,
+      "damage": 345,
       "maxPenetration": 23,
       "velocity": 900,
       "type": "HE",
@@ -6348,7 +6348,7 @@
       "type": "SACLOS MISSILE"
     },
     {
-      "damage": 546.5165949205009,
+      "damage": 547,
       "maxPenetration": 37,
       "velocity": 355,
       "type": "HE",
@@ -6426,7 +6426,7 @@
   ],
   "Mk84 2000 lbs LGDP Bomb": [
     {
-      "damage": 10816.418642516475,
+      "damage": 10816,
       "maxPenetration": 409,
       "velocity": 30,
       "type": "HE",
@@ -6573,7 +6573,7 @@
       "shrapMultiplier": 3
     },
     {
-      "damage": 676.9604643358799,
+      "damage": 677,
       "maxPenetration": 45,
       "velocity": 850,
       "type": "HE",
@@ -7004,7 +7004,7 @@
   ],
   "130mm Electro-Thermal MPX": [
     {
-      "damage": 583.5566194922454,
+      "damage": 584,
       "velocity": 1815,
       "maxPenetration": 39,
       "penetrationTable": {
@@ -7074,7 +7074,7 @@
       "shrapMultiplier": 4
     },
     {
-      "damage": 681.2801891336269,
+      "damage": 681,
       "velocity": 1250,
       "missile": {
         "unjammable": false,
@@ -7114,7 +7114,7 @@
       "type": "AIR-TO-AIR MISSILE"
     },
     {
-      "damage": 318.5,
+      "damage": 319,
       "maxPenetration": 80,
       "penetrationTable": {
         "0": {
@@ -7223,7 +7223,7 @@
       "type": "APFSDS"
     },
     {
-      "damage": 136.98140228809626,
+      "damage": 137,
       "maxPenetration": 5,
       "velocity": 1080,
       "type": "HE",
@@ -7335,7 +7335,7 @@
   ],
   "90 mm M3": [
     {
-      "damage": 323.3972561510532,
+      "damage": 323,
       "maxPenetration": 22,
       "velocity": 823,
       "type": "HE",
@@ -7479,7 +7479,7 @@
   ],
   "105 mm M68A1E8": [
     {
-      "damage": 513.8365471494747,
+      "damage": 514,
       "maxPenetration": 127,
       "penetrationTable": {
         "0": {
@@ -7584,7 +7584,7 @@
   ],
   "125mm D-126": [
     {
-      "damage": 580.394290099237,
+      "damage": 580,
       "maxPenetration": 39,
       "velocity": 380,
       "type": "HE",
@@ -7733,7 +7733,7 @@
       "type": "APCR"
     },
     {
-      "damage": 361.70183567614833,
+      "damage": 362,
       "maxPenetration": 25,
       "velocity": 945,
       "type": "HE",
@@ -7882,7 +7882,7 @@
       "type": "HEAT-FS"
     },
     {
-      "damage": 323.3972561510532,
+      "damage": 323,
       "maxPenetration": 22,
       "velocity": 823,
       "type": "HE",
@@ -7919,7 +7919,7 @@
       }
     },
     {
-      "damage": 135.50617021820807,
+      "damage": 136,
       "maxPenetration": 4,
       "penetrationTable": {
         "0": {
@@ -7992,7 +7992,7 @@
   ],
   "150 mm Wgr.41 Spr rocket": [
     {
-      "damage": 423.0575802345109,
+      "damage": 423,
       "maxPenetration": 29,
       "penetrationTable": {
         "0": {
@@ -8100,7 +8100,7 @@
       "shrapMultiplier": 3
     },
     {
-      "damage": 629.8010333952999,
+      "damage": 630,
       "maxPenetration": 42,
       "velocity": 1120,
       "type": "HE",
@@ -8137,7 +8137,7 @@
       }
     },
     {
-      "damage": 622.2401232341899,
+      "damage": 622,
       "maxPenetration": 42,
       "velocity": 1050,
       "type": "HE",
@@ -8242,7 +8242,7 @@
       "type": "APFSDS ANTI-ERA"
     },
     {
-      "damage": 132.70726235390248,
+      "damage": 133,
       "maxPenetration": 4,
       "penetrationTable": {
         "0": {
@@ -8419,7 +8419,7 @@
       "type": "APDS"
     },
     {
-      "damage": 144.89195005198187,
+      "damage": 145,
       "maxPenetration": 6,
       "penetrationTable": {
         "0": {
@@ -8487,7 +8487,7 @@
       "type": "APFSDS"
     },
     {
-      "damage": 766.5594223211963,
+      "damage": 767,
       "maxPenetration": 152,
       "penetrationTable": {
         "0": {
@@ -8670,7 +8670,7 @@
       "type": "AP"
     },
     {
-      "damage": 143.42253804929803,
+      "damage": 143,
       "maxPenetration": 5,
       "velocity": 960,
       "type": "HE",
@@ -8748,7 +8748,7 @@
       "type": "SACLOS MISSILE"
     },
     {
-      "damage": 546.5165949205009,
+      "damage": 547,
       "maxPenetration": 37,
       "velocity": 355,
       "type": "HE",
@@ -8785,7 +8785,7 @@
       }
     },
     {
-      "damage": 546.5165949205009,
+      "damage": 547,
       "maxPenetration": 37,
       "penetrationTable": {
         "0": {
@@ -8855,7 +8855,7 @@
       "type": "HEAT-FS"
     },
     {
-      "damage": 144.89195005198187,
+      "damage": 145,
       "maxPenetration": 6,
       "penetrationTable": {
         "0": {
@@ -8924,7 +8924,7 @@
       "shrapMultiplier": 3
     },
     {
-      "damage": 607.7180957808496,
+      "damage": 608,
       "maxPenetration": 127,
       "penetrationTable": {
         "0": {
@@ -9032,7 +9032,7 @@
   ],
   "125 mm 2A46M": [
     {
-      "damage": 676.9604643358799,
+      "damage": 677,
       "maxPenetration": 45,
       "velocity": 850,
       "type": "HE",
@@ -9281,7 +9281,7 @@
       "type": "APDS"
     },
     {
-      "damage": 175.1256437273275,
+      "damage": 175,
       "maxPenetration": 9,
       "velocity": 1175,
       "type": "HE",
@@ -9496,7 +9496,7 @@
       "shrapMultiplier": 3
     },
     {
-      "damage": 407.3267394999363,
+      "damage": 407,
       "maxPenetration": 28,
       "penetrationTable": {
         "0": {
@@ -9532,7 +9532,7 @@
   ],
   "125 mm 2A75-1": [
     {
-      "damage": 676.9604643358799,
+      "damage": 677,
       "maxPenetration": 45,
       "velocity": 850,
       "type": "HE",
@@ -9896,7 +9896,7 @@
       }
     },
     {
-      "damage": 261.6668226161048,
+      "damage": 262,
       "maxPenetration": 17,
       "velocity": 700,
       "type": "HE",
@@ -9971,7 +9971,7 @@
   ],
   "Kh-35": [
     {
-      "damage": 5296.9323716484105,
+      "damage": 5297,
       "velocity": 272,
       "missile": {
         "unjammable": false,
@@ -10012,7 +10012,7 @@
   ],
   "30 mm 2BS-T": [
     {
-      "damage": 143.42253804929803,
+      "damage": 143,
       "maxPenetration": 5,
       "velocity": 960,
       "type": "HE",
@@ -10331,7 +10331,7 @@
       "shrapMultiplier": 3
     },
     {
-      "damage": 578.015551559148,
+      "damage": 578,
       "maxPenetration": 39,
       "velocity": 1015,
       "type": "HE",
@@ -10476,7 +10476,7 @@
   ],
   "155 mm M185": [
     {
-      "damage": 163.05497205890285,
+      "damage": 163,
       "maxPenetration": 8,
       "penetrationTable": {
         "0": {
@@ -10510,7 +10510,7 @@
       "type": "SMOKE"
     },
     {
-      "damage": 931.5412628771674,
+      "damage": 932,
       "maxPenetration": 60,
       "velocity": 171,
       "type": "HE",
@@ -10547,7 +10547,7 @@
       }
     },
     {
-      "damage": 163.05497205890285,
+      "damage": 163,
       "maxPenetration": 8,
       "penetrationTable": {
         "0": {
@@ -10581,7 +10581,7 @@
       "type": "SMOKE"
     },
     {
-      "damage": 163.05497205890285,
+      "damage": 163,
       "maxPenetration": 8,
       "penetrationTable": {
         "0": {
@@ -10615,7 +10615,7 @@
       "type": "SMOKE"
     },
     {
-      "damage": 931.5412628771674,
+      "damage": 932,
       "maxPenetration": 60,
       "velocity": 684,
       "type": "HE",
@@ -10652,7 +10652,7 @@
       }
     },
     {
-      "damage": 931.5412628771674,
+      "damage": 932,
       "maxPenetration": 60,
       "velocity": 342,
       "type": "HE",
@@ -10691,7 +10691,7 @@
   ],
   "122 mm D-25T": [
     {
-      "damage": 526.5571027237711,
+      "damage": 527,
       "maxPenetration": 36,
       "velocity": 795,
       "type": "HE",
@@ -10767,7 +10767,7 @@
   ],
   "9M37M": [
     {
-      "damage": 376.63862055819624,
+      "damage": 377,
       "velocity": 700,
       "missile": {
         "unjammable": false,
@@ -10810,7 +10810,7 @@
   ],
   "BMU-100": [
     {
-      "damage": 937.522666464864,
+      "damage": 938,
       "maxPenetration": 60,
       "velocity": 550,
       "type": "SACLOS MISSILE",
@@ -10888,7 +10888,7 @@
   ],
   "152 mm 2A33": [
     {
-      "damage": 839.6359223055908,
+      "damage": 840,
       "maxPenetration": 55,
       "velocity": 400,
       "type": "HE",
@@ -10925,7 +10925,7 @@
       }
     },
     {
-      "damage": 163.05497205890285,
+      "damage": 163,
       "maxPenetration": 8,
       "penetrationTable": {
         "0": {
@@ -10959,7 +10959,7 @@
       "type": "SMOKE"
     },
     {
-      "damage": 839.6359223055908,
+      "damage": 840,
       "maxPenetration": 55,
       "velocity": 665,
       "type": "HE",
@@ -11033,7 +11033,7 @@
       }
     },
     {
-      "damage": 132.70726235390248,
+      "damage": 133,
       "maxPenetration": 4,
       "penetrationTable": {
         "0": {
@@ -11067,7 +11067,7 @@
       "type": "CANISTER SHOT"
     },
     {
-      "damage": 839.6359223055908,
+      "damage": 840,
       "maxPenetration": 55,
       "velocity": 200,
       "type": "HE",
@@ -11106,7 +11106,7 @@
   ],
   "155 mm M284": [
     {
-      "damage": 163.05497205890285,
+      "damage": 163,
       "maxPenetration": 8,
       "penetrationTable": {
         "0": {
@@ -11140,7 +11140,7 @@
       "type": "SMOKE"
     },
     {
-      "damage": 931.5412628771674,
+      "damage": 932,
       "maxPenetration": 60,
       "velocity": 171,
       "type": "HE",
@@ -11177,7 +11177,7 @@
       }
     },
     {
-      "damage": 163.05497205890285,
+      "damage": 163,
       "maxPenetration": 8,
       "penetrationTable": {
         "0": {
@@ -11211,7 +11211,7 @@
       "type": "SMOKE"
     },
     {
-      "damage": 163.05497205890285,
+      "damage": 163,
       "maxPenetration": 8,
       "penetrationTable": {
         "0": {
@@ -11245,7 +11245,7 @@
       "type": "SMOKE"
     },
     {
-      "damage": 931.5412628771674,
+      "damage": 932,
       "maxPenetration": 60,
       "velocity": 684,
       "type": "HE",
@@ -11282,7 +11282,7 @@
       }
     },
     {
-      "damage": 931.5412628771674,
+      "damage": 932,
       "maxPenetration": 60,
       "velocity": 342,
       "type": "HE",
@@ -11355,7 +11355,7 @@
       "type": "AP"
     },
     {
-      "damage": 127.3288844172715,
+      "damage": 127,
       "maxPenetration": 3,
       "velocity": 980,
       "type": "HE",
@@ -11435,7 +11435,7 @@
   ],
   "100 mm D-10S": [
     {
-      "damage": 351.8617298038306,
+      "damage": 352,
       "maxPenetration": 24,
       "velocity": 785,
       "type": "HE",
@@ -11511,7 +11511,7 @@
   ],
   "Smoke Grenade": [
     {
-      "damage": 243.6901521971921,
+      "damage": 244,
       "maxPenetration": 15,
       "penetrationTable": {
         "0": {
@@ -11547,7 +11547,7 @@
   ],
   "60 mm M2": [
     {
-      "damage": 408.32197660766843,
+      "damage": 408,
       "maxPenetration": 28,
       "velocity": 172,
       "type": "HE",
@@ -11584,7 +11584,7 @@
       }
     },
     {
-      "damage": 408.32197660766843,
+      "damage": 408,
       "maxPenetration": 28,
       "velocity": 125,
       "type": "HE",
@@ -11621,7 +11621,7 @@
       }
     },
     {
-      "damage": 408.32197660766843,
+      "damage": 408,
       "maxPenetration": 28,
       "velocity": 225,
       "type": "HE",
@@ -11660,7 +11660,7 @@
   ],
   "76 mm QF 17-pounder": [
     {
-      "damage": 240.70250558841943,
+      "damage": 241,
       "maxPenetration": 15,
       "velocity": 883,
       "type": "HE",
@@ -11697,7 +11697,7 @@
       }
     },
     {
-      "damage": 135.50617021820807,
+      "damage": 136,
       "maxPenetration": 4,
       "penetrationTable": {
         "0": {
@@ -11878,7 +11878,7 @@
       "type": "HEAT"
     },
     {
-      "damage": 425.963012959358,
+      "damage": 426,
       "maxPenetration": 29,
       "velocity": 472,
       "type": "HE",
@@ -11953,7 +11953,7 @@
   ],
   "183mm L4": [
     {
-      "damage": 1574.7758738248526,
+      "damage": 1575,
       "maxPenetration": 228,
       "penetrationTable": {
         "0": {
@@ -12060,7 +12060,7 @@
       }
     },
     {
-      "damage": 351.8617298038306,
+      "damage": 352,
       "maxPenetration": 24,
       "velocity": 900,
       "type": "HE",
@@ -12167,7 +12167,7 @@
       "type": "APFSDS"
     },
     {
-      "damage": 144.89195005198187,
+      "damage": 145,
       "maxPenetration": 6,
       "penetrationTable": {
         "0": {
@@ -12201,7 +12201,7 @@
       "type": "SMOKE"
     },
     {
-      "damage": 408.32197660766843,
+      "damage": 408,
       "maxPenetration": 28,
       "velocity": 800,
       "type": "HE",
@@ -12317,7 +12317,7 @@
   ],
   "57 mm S-68": [
     {
-      "damage": 181.56661765521054,
+      "damage": 182,
       "maxPenetration": 10,
       "velocity": 1000,
       "type": "HE",
@@ -12391,7 +12391,7 @@
       }
     },
     {
-      "damage": 174.2715215202441,
+      "damage": 174,
       "maxPenetration": 9,
       "penetrationTable": {
         "0": {
@@ -12464,7 +12464,7 @@
       }
     },
     {
-      "damage": 720.8440221378698,
+      "damage": 721,
       "maxPenetration": 48,
       "velocity": 655,
       "type": "HE",
@@ -12540,7 +12540,7 @@
       }
     },
     {
-      "damage": 253.322619417758,
+      "damage": 253,
       "maxPenetration": 16,
       "velocity": 463,
       "type": "HE",
@@ -12579,7 +12579,7 @@
   ],
   "88 mm KwK43": [
     {
-      "damage": 297.9310689871237,
+      "damage": 298,
       "maxPenetration": 20,
       "velocity": 820,
       "type": "HE",
@@ -12652,7 +12652,7 @@
   ],
   "152.4 mm 2A64": [
     {
-      "damage": 1083.016088942934,
+      "damage": 1083,
       "maxPenetration": 68,
       "velocity": 216,
       "type": "HE",
@@ -12689,7 +12689,7 @@
       }
     },
     {
-      "damage": 1083.016088942934,
+      "damage": 1083,
       "maxPenetration": 68,
       "velocity": 432,
       "type": "HE",
@@ -12726,7 +12726,7 @@
       }
     },
     {
-      "damage": 1083.016088942934,
+      "damage": 1083,
       "maxPenetration": 68,
       "velocity": 864,
       "type": "HE",
@@ -12765,7 +12765,7 @@
   ],
   "50 mm KwK39": [
     {
-      "damage": 177.9888733969084,
+      "damage": 178,
       "maxPenetration": 9,
       "velocity": 870,
       "type": "HE",
@@ -12988,7 +12988,7 @@
       "type": "APFSDS"
     },
     {
-      "damage": 513.8365471494747,
+      "damage": 514,
       "maxPenetration": 127,
       "penetrationTable": {
         "0": {
@@ -13022,7 +13022,7 @@
       "type": "HESH"
     },
     {
-      "damage": 144.89195005198187,
+      "damage": 145,
       "maxPenetration": 6,
       "penetrationTable": {
         "0": {
@@ -13090,7 +13090,7 @@
       "type": "APFSDS"
     },
     {
-      "damage": 391.16805540558545,
+      "damage": 391,
       "maxPenetration": 27,
       "velocity": 680,
       "type": "HE",
@@ -13129,7 +13129,7 @@
   ],
   "125 mm 2A46NK": [
     {
-      "damage": 688.4436936821969,
+      "damage": 688,
       "maxPenetration": 46,
       "velocity": 878,
       "type": "HE",
@@ -13236,7 +13236,7 @@
   ],
   "Kh-25ML": [
     {
-      "damage": 3599.195005198185,
+      "damage": 3599,
       "maxPenetration": 176,
       "velocity": 454,
       "type": "SACLOS MISSILE",
@@ -13275,7 +13275,7 @@
   ],
   "75 mm PaK39 L48": [
     {
-      "damage": 256.1777685377576,
+      "damage": 256,
       "maxPenetration": 16,
       "velocity": 550,
       "type": "HE",
@@ -13564,7 +13564,7 @@
       }
     },
     {
-      "damage": 263.89011449505625,
+      "damage": 264,
       "maxPenetration": 17,
       "velocity": 785,
       "type": "HE",
@@ -13644,7 +13644,7 @@
   ],
   "152 mm 2A73": [
     {
-      "damage": 941.101149815872,
+      "damage": 941,
       "maxPenetration": 60,
       "velocity": 850,
       "type": "HE",
@@ -13752,7 +13752,7 @@
   ],
   "Propane Cannon": [
     {
-      "damage": 1924.454521446562,
+      "damage": 1924,
       "maxPenetration": 108,
       "velocity": 130,
       "type": "HE",
@@ -13901,7 +13901,7 @@
       }
     },
     {
-      "damage": 263.89011449505625,
+      "damage": 264,
       "maxPenetration": 17,
       "velocity": 785,
       "type": "HE",
@@ -13975,7 +13975,7 @@
       "shrapMultiplier": 3
     },
     {
-      "damage": 692.7205659596783,
+      "damage": 693,
       "maxPenetration": 46,
       "velocity": 850,
       "type": "HE",
@@ -14085,7 +14085,7 @@
       "type": "SACLOS MISSILE"
     },
     {
-      "damage": 681.2801891336269,
+      "damage": 681,
       "maxPenetration": 45,
       "penetrationTable": {
         "0": {
@@ -14195,7 +14195,7 @@
       }
     },
     {
-      "damage": 526.5571027237711,
+      "damage": 527,
       "maxPenetration": 36,
       "velocity": 795,
       "type": "HE",
@@ -14304,7 +14304,7 @@
       "type": "APCR"
     },
     {
-      "damage": 119.29523500513518,
+      "damage": 119,
       "maxPenetration": 2,
       "velocity": 1100,
       "type": "HE",
@@ -14377,7 +14377,7 @@
   ],
   "Kh-38MLE": [
     {
-      "damage": 5415.497205890284,
+      "damage": 5415,
       "maxPenetration": 242,
       "velocity": 454,
       "type": "SACLOS MISSILE",
@@ -14491,7 +14491,7 @@
       "type": "SACLOS MISSILE"
     },
     {
-      "damage": 132.70726235390248,
+      "damage": 133,
       "maxPenetration": 4,
       "penetrationTable": {
         "0": {
@@ -14559,7 +14559,7 @@
       "type": "HEAT"
     },
     {
-      "damage": 606.9479321908816,
+      "damage": 607,
       "maxPenetration": 41,
       "velocity": 682,
       "type": "HE",
@@ -14704,7 +14704,7 @@
       "type": "APFSDS"
     },
     {
-      "damage": 123.84687955443447,
+      "damage": 124,
       "maxPenetration": 3,
       "velocity": 1150,
       "type": "HE",
@@ -14855,7 +14855,7 @@
       "type": "SACLOS MISSILE"
     },
     {
-      "damage": 852.9283788824687,
+      "damage": 853,
       "maxPenetration": 55,
       "velocity": 1027,
       "type": "SACLOS MISSILE",
@@ -14894,7 +14894,7 @@
   ],
   "165 mm L9A1": [
     {
-      "damage": 1948.5673145445478,
+      "damage": 1949,
       "maxPenetration": 203,
       "penetrationTable": {
         "0": {
@@ -14971,7 +14971,7 @@
   ],
   "M8 Rocket": [
     {
-      "damage": 403.3289932596984,
+      "damage": 403,
       "maxPenetration": 28,
       "penetrationTable": {
         "0": {
@@ -15044,7 +15044,7 @@
       }
     },
     {
-      "damage": 178.48787709236547,
+      "damage": 178,
       "maxPenetration": 9,
       "velocity": 700,
       "type": "HE",
@@ -15190,7 +15190,7 @@
       }
     },
     {
-      "damage": 263.89011449505625,
+      "damage": 264,
       "maxPenetration": 17,
       "velocity": 785,
       "type": "HE",
@@ -15377,7 +15377,7 @@
       "type": "APCR"
     },
     {
-      "damage": 288.4129630410408,
+      "damage": 288,
       "maxPenetration": 19,
       "velocity": 975,
       "type": "HE",
@@ -15416,7 +15416,7 @@
   ],
   "LAU-105A": [
     {
-      "damage": 626.7833099488096,
+      "damage": 627,
       "velocity": 1000,
       "missile": {
         "unjammable": false,
@@ -15459,7 +15459,7 @@
   ],
   "120 mm L30A1": [
     {
-      "damage": 144.89195005198187,
+      "damage": 145,
       "maxPenetration": 6,
       "penetrationTable": {
         "0": {
@@ -15493,7 +15493,7 @@
       "type": "SMOKE"
     },
     {
-      "damage": 766.5594223211963,
+      "damage": 767,
       "maxPenetration": 152,
       "penetrationTable": {
         "0": {
@@ -15635,7 +15635,7 @@
   ],
   "F-82 Automatic Mortar": [
     {
-      "damage": 408.32197660766843,
+      "damage": 408,
       "maxPenetration": 28,
       "velocity": 175,
       "type": "HE",
@@ -15672,7 +15672,7 @@
       }
     },
     {
-      "damage": 408.32197660766843,
+      "damage": 408,
       "maxPenetration": 28,
       "velocity": 75,
       "type": "HE",
@@ -15709,7 +15709,7 @@
       }
     },
     {
-      "damage": 408.32197660766843,
+      "damage": 408,
       "maxPenetration": 28,
       "velocity": 255,
       "type": "HE",
@@ -15784,7 +15784,7 @@
   ],
   "105 mm M68": [
     {
-      "damage": 144.89195005198187,
+      "damage": 145,
       "maxPenetration": 6,
       "penetrationTable": {
         "0": {
@@ -15852,7 +15852,7 @@
       "type": "APDS"
     },
     {
-      "damage": 607.7180957808496,
+      "damage": 608,
       "maxPenetration": 127,
       "penetrationTable": {
         "0": {
@@ -16030,7 +16030,7 @@
       }
     },
     {
-      "damage": 263.89011449505625,
+      "damage": 264,
       "maxPenetration": 17,
       "velocity": 785,
       "type": "HE",
@@ -16150,7 +16150,7 @@
   ],
   "40 mm Akan m/70B": [
     {
-      "damage": 172.28509975710517,
+      "damage": 172,
       "maxPenetration": 9,
       "penetrationTable": {
         "0": {
@@ -16218,7 +16218,7 @@
       "type": "APFSDS"
     },
     {
-      "damage": 168.66281571147226,
+      "damage": 169,
       "maxPenetration": 8,
       "velocity": 988,
       "type": "HE",
@@ -16327,7 +16327,7 @@
       "type": "HEAT-FS"
     },
     {
-      "damage": 407.3267394999363,
+      "damage": 407,
       "maxPenetration": 28,
       "penetrationTable": {
         "0": {
@@ -16466,7 +16466,7 @@
       "shrapMultiplier": 3
     },
     {
-      "damage": 408.32197660766843,
+      "damage": 408,
       "penetrationTable": {
         "0": {
           "0": 28,
@@ -16505,7 +16505,7 @@
       "type": "HE"
     },
     {
-      "damage": 132.70726235390248,
+      "damage": 133,
       "maxPenetration": 4,
       "penetrationTable": {
         "0": {
@@ -16719,7 +16719,7 @@
   ],
   "75 mm OQF Mk.V": [
     {
-      "damage": 242.20054895716794,
+      "damage": 242,
       "maxPenetration": 15,
       "velocity": 655,
       "type": "HE",
@@ -16826,7 +16826,7 @@
       "type": "HEAT"
     },
     {
-      "damage": 526.5571027237711,
+      "damage": 527,
       "maxPenetration": 36,
       "velocity": 530,
       "type": "HE",
@@ -16865,7 +16865,7 @@
   ],
   "125 mm KBA-3": [
     {
-      "damage": 676.9604643358799,
+      "damage": 677,
       "maxPenetration": 45,
       "velocity": 850,
       "type": "HE",
@@ -17045,7 +17045,7 @@
   ],
   "125 mm 2A82-1M": [
     {
-      "damage": 676.9604643358799,
+      "damage": 677,
       "maxPenetration": 45,
       "velocity": 850,
       "type": "HE",
@@ -17190,7 +17190,7 @@
       "type": "SACLOS MISSILE"
     },
     {
-      "damage": 551.4351564487783,
+      "damage": 551,
       "maxPenetration": 37,
       "penetrationTable": {
         "0": {
@@ -17297,7 +17297,7 @@
       }
     },
     {
-      "damage": 135.50617021820807,
+      "damage": 136,
       "maxPenetration": 4,
       "penetrationTable": {
         "0": {
@@ -17331,7 +17331,7 @@
       "type": "SMOKE"
     },
     {
-      "damage": 210.31710458739505,
+      "damage": 210,
       "maxPenetration": 12,
       "velocity": 823,
       "type": "HE",
@@ -17409,7 +17409,7 @@
       "type": "SACLOS MISSILE"
     },
     {
-      "damage": 501.78058872456927,
+      "damage": 502,
       "maxPenetration": 34,
       "velocity": 200,
       "type": "SACLOS MISSILE",
@@ -17448,7 +17448,7 @@
   ],
   "B-13L": [
     {
-      "damage": 1018.5610063136068,
+      "damage": 1019,
       "maxPenetration": 64,
       "penetrationTable": {
         "0": {
@@ -17587,7 +17587,7 @@
       "type": "HEAT-FS"
     },
     {
-      "damage": 578.015551559148,
+      "damage": 578,
       "maxPenetration": 39,
       "velocity": 1015,
       "type": "HE",
@@ -17699,7 +17699,7 @@
   ],
   "9M311": [
     {
-      "damage": 631.3066133721082,
+      "damage": 631,
       "maxPenetration": 42,
       "velocity": 910,
       "type": "SACLOS MISSILE",
@@ -17772,7 +17772,7 @@
       "type": "APFSDS"
     },
     {
-      "damage": 692.7205659596783,
+      "damage": 693,
       "maxPenetration": 46,
       "velocity": 850,
       "type": "HE",
@@ -17845,7 +17845,7 @@
   ],
   "125 mm 2A26": [
     {
-      "damage": 676.9604643358799,
+      "damage": 677,
       "maxPenetration": 45,
       "velocity": 850,
       "type": "HE",
@@ -18025,7 +18025,7 @@
       "type": "SACLOS MISSILE"
     },
     {
-      "damage": 132.70726235390248,
+      "damage": 133,
       "maxPenetration": 4,
       "penetrationTable": {
         "0": {
@@ -18093,7 +18093,7 @@
       "type": "HEAT"
     },
     {
-      "damage": 606.9479321908816,
+      "damage": 607,
       "maxPenetration": 41,
       "velocity": 682,
       "type": "HE",
@@ -18240,7 +18240,7 @@
       }
     },
     {
-      "damage": 266.0974602821153,
+      "damage": 266,
       "maxPenetration": 37,
       "penetrationTable": {
         "0": {
@@ -18312,7 +18312,7 @@
   ],
   "Rocketetet": [
     {
-      "damage": 297.9310689871237,
+      "damage": 298,
       "maxPenetration": 20,
       "penetrationTable": {
         "0": {
@@ -18418,7 +18418,7 @@
   ],
   "30 mm AGS-17": [
     {
-      "damage": 140.38137942650852,
+      "damage": 140,
       "maxPenetration": 5,
       "velocity": 185,
       "type": "HE",
@@ -18491,7 +18491,7 @@
       "type": "HEAT-FS"
     },
     {
-      "damage": 607.7180957808496,
+      "damage": 608,
       "maxPenetration": 127,
       "penetrationTable": {
         "0": {
@@ -18629,7 +18629,7 @@
       "type": "APDS"
     },
     {
-      "damage": 240.70250558841943,
+      "damage": 241,
       "maxPenetration": 15,
       "velocity": 495,
       "type": "HE",
@@ -18741,7 +18741,7 @@
       }
     },
     {
-      "damage": 1924.454521446562,
+      "damage": 1924,
       "maxPenetration": 108,
       "velocity": 194,
       "type": "HE",
@@ -18816,7 +18816,7 @@
       "type": "CLUSTER"
     },
     {
-      "damage": 1924.454521446562,
+      "damage": 1924,
       "maxPenetration": 108,
       "velocity": 388,
       "type": "HE",
@@ -18929,7 +18929,7 @@
       "type": "CLUSTER"
     },
     {
-      "damage": 1924.454521446562,
+      "damage": 1924,
       "maxPenetration": 108,
       "velocity": 775,
       "type": "HE",
@@ -18968,7 +18968,7 @@
   ],
   "230 mm TOS-1A": [
     {
-      "damage": 500.91237644896745,
+      "damage": 501,
       "maxPenetration": 34,
       "penetrationTable": {
         "0": {
@@ -19002,7 +19002,7 @@
       "type": "THERMOBARIC"
     },
     {
-      "damage": 174.2715215202441,
+      "damage": 174,
       "maxPenetration": 9,
       "penetrationTable": {
         "0": {
@@ -19036,7 +19036,7 @@
       "type": "ROCKET"
     },
     {
-      "damage": 1540.4678912583558,
+      "damage": 1540,
       "maxPenetration": 90,
       "penetrationTable": {
         "0": {
@@ -19107,7 +19107,7 @@
       "shrapMultiplier": 3
     },
     {
-      "damage": 144.89195005198187,
+      "damage": 145,
       "maxPenetration": 6,
       "penetrationTable": {
         "0": {
@@ -19141,7 +19141,7 @@
       "type": "SMOKE"
     },
     {
-      "damage": 607.7180957808496,
+      "damage": 608,
       "maxPenetration": 127,
       "penetrationTable": {
         "0": {
@@ -19245,7 +19245,7 @@
   ],
   "115 mm SB-10SM": [
     {
-      "damage": 646.245025270142,
+      "damage": 646,
       "maxPenetration": 43,
       "velocity": 800,
       "type": "HE",
@@ -19391,7 +19391,7 @@
       "type": "AP"
     },
     {
-      "damage": 135.50617021820807,
+      "damage": 136,
       "maxPenetration": 4,
       "velocity": 960,
       "type": "HE",
@@ -19501,7 +19501,7 @@
       }
     },
     {
-      "damage": 253.322619417758,
+      "damage": 253,
       "maxPenetration": 16,
       "velocity": 463,
       "type": "HE",
@@ -19644,7 +19644,7 @@
       "type": "APDS"
     },
     {
-      "damage": 175.1256437273275,
+      "damage": 175,
       "maxPenetration": 9,
       "velocity": 1175,
       "type": "HE",
@@ -19720,7 +19720,7 @@
       }
     },
     {
-      "damage": 554.6990208551881,
+      "damage": 555,
       "maxPenetration": 38,
       "velocity": 900,
       "type": "HE",
@@ -19910,7 +19910,7 @@
       "type": "HEAT-FS"
     },
     {
-      "damage": 513.8365471494747,
+      "damage": 514,
       "maxPenetration": 127,
       "penetrationTable": {
         "0": {
@@ -20053,7 +20053,7 @@
       }
     },
     {
-      "damage": 554.6990208551881,
+      "damage": 555,
       "maxPenetration": 38,
       "velocity": 900,
       "type": "HE",
@@ -20288,7 +20288,7 @@
       "type": "APFSDS"
     },
     {
-      "damage": 578.015551559148,
+      "damage": 578,
       "maxPenetration": 39,
       "velocity": 1015,
       "type": "HE",
@@ -20616,7 +20616,7 @@
       "type": "SACLOS MISSILE"
     },
     {
-      "damage": 642.5301121050422,
+      "damage": 643,
       "maxPenetration": 43,
       "velocity": 900,
       "type": "HE",
@@ -20759,7 +20759,7 @@
       "type": "APFSDS"
     },
     {
-      "damage": 291.35831648911847,
+      "damage": 291,
       "maxPenetration": 60,
       "penetrationTable": {
         "0": {
@@ -20832,7 +20832,7 @@
       }
     },
     {
-      "damage": 408.32197660766843,
+      "damage": 408,
       "maxPenetration": 28,
       "velocity": 1000,
       "type": "HE",
@@ -20871,7 +20871,7 @@
   ],
   "H5 Flamethrower": [
     {
-      "damage": 111.87931068987123,
+      "damage": 112,
       "maxPenetration": 1,
       "penetrationTable": {
         "0": {
@@ -20907,7 +20907,7 @@
   ],
   "105 mm Giat G2": [
     {
-      "damage": 144.89195005198187,
+      "damage": 145,
       "maxPenetration": 6,
       "penetrationTable": {
         "0": {
@@ -21010,7 +21010,7 @@
       "shrapMultiplier": 3
     },
     {
-      "damage": 408.32197660766843,
+      "damage": 408,
       "maxPenetration": 28,
       "velocity": 800,
       "type": "HE",
@@ -21049,7 +21049,7 @@
   ],
   "ATACMS": [
     {
-      "damage": 13344.988594278735,
+      "damage": 13345,
       "maxPenetration": 480,
       "penetrationTable": {
         "0": {
@@ -21085,7 +21085,7 @@
   ],
   "40 mm MK-19": [
     {
-      "damage": 149.37960577742177,
+      "damage": 149,
       "maxPenetration": 6,
       "velocity": 241,
       "type": "HE",
@@ -21277,7 +21277,7 @@
       "type": "SACLOS MISSILE"
     },
     {
-      "damage": 937.522666464864,
+      "damage": 938,
       "maxPenetration": 60,
       "velocity": 320,
       "type": "SACLOS MISSILE",
@@ -21464,7 +21464,7 @@
       "type": "HEAT-FS"
     },
     {
-      "damage": 468.9780289949069,
+      "damage": 469,
       "maxPenetration": 32,
       "velocity": 905,
       "type": "HE",
@@ -21501,7 +21501,7 @@
       }
     },
     {
-      "damage": 646.245025270142,
+      "damage": 646,
       "maxPenetration": 43,
       "velocity": 800,
       "type": "HE",
@@ -21609,7 +21609,7 @@
   ],
   "Mörser Karl 600mm": [
     {
-      "damage": 8324.802865988337,
+      "damage": 8325,
       "maxPenetration": 335,
       "velocity": 150,
       "type": "HE",
@@ -21683,7 +21683,7 @@
       "shrapMultiplier": 3
     },
     {
-      "damage": 578.015551559148,
+      "damage": 578,
       "maxPenetration": 39,
       "velocity": 1015,
       "type": "HE",
@@ -21832,7 +21832,7 @@
       }
     },
     {
-      "damage": 146.33104317198766,
+      "damage": 146,
       "maxPenetration": 6,
       "velocity": 1080,
       "type": "HE",
@@ -22012,7 +22012,7 @@
       }
     },
     {
-      "damage": 210.31710458739505,
+      "damage": 210,
       "maxPenetration": 12,
       "velocity": 823,
       "type": "HE",
@@ -22051,7 +22051,7 @@
   ],
   "LAU-88": [
     {
-      "damage": 5080.016795341723,
+      "damage": 5080,
       "velocity": 320,
       "missile": {
         "unjammable": false,
@@ -22092,7 +22092,7 @@
   ],
   "105 mm JSW": [
     {
-      "damage": 144.89195005198187,
+      "damage": 145,
       "maxPenetration": 6,
       "penetrationTable": {
         "0": {
@@ -22126,7 +22126,7 @@
       "type": "SMOKE"
     },
     {
-      "damage": 574.8344619312003,
+      "damage": 575,
       "maxPenetration": 127,
       "penetrationTable": {
         "0": {
@@ -22230,7 +22230,7 @@
   ],
   "125 mm 2A47": [
     {
-      "damage": 676.9604643358799,
+      "damage": 677,
       "maxPenetration": 45,
       "velocity": 850,
       "type": "HE",
@@ -22374,7 +22374,7 @@
       }
     },
     {
-      "damage": 526.5571027237711,
+      "damage": 527,
       "maxPenetration": 36,
       "velocity": 795,
       "type": "HE",
@@ -22518,7 +22518,7 @@
       "type": "HEAT-FS"
     },
     {
-      "damage": 351.8617298038306,
+      "damage": 352,
       "maxPenetration": 24,
       "velocity": 900,
       "type": "HE",
@@ -22743,7 +22743,7 @@
       "type": "APFSDS"
     },
     {
-      "damage": 483.3394972812265,
+      "damage": 483,
       "maxPenetration": 33,
       "velocity": 750,
       "type": "HE",
@@ -22816,7 +22816,7 @@
       "type": "HEAT"
     },
     {
-      "damage": 135.50617021820807,
+      "damage": 136,
       "maxPenetration": 4,
       "penetrationTable": {
         "0": {
@@ -22922,7 +22922,7 @@
       "type": "AP"
     },
     {
-      "damage": 253.322619417758,
+      "damage": 253,
       "maxPenetration": 16,
       "velocity": 463,
       "type": "HE",
@@ -22959,7 +22959,7 @@
       }
     },
     {
-      "damage": 135.50617021820807,
+      "damage": 136,
       "maxPenetration": 4,
       "penetrationTable": {
         "0": {
@@ -22995,7 +22995,7 @@
   ],
   "23mm 2A14M5": [
     {
-      "damage": 130.10838910254347,
+      "damage": 130,
       "maxPenetration": 4,
       "penetrationTable": {
         "0": {
@@ -23135,7 +23135,7 @@
       "type": "HEAT"
     },
     {
-      "damage": 253.322619417758,
+      "damage": 253,
       "maxPenetration": 16,
       "velocity": 381,
       "type": "HE",
@@ -23287,7 +23287,7 @@
   ],
   "M8 Rocket Launcher": [
     {
-      "damage": 387.05581604067714,
+      "damage": 387,
       "maxPenetration": 26,
       "penetrationTable": {
         "0": {
@@ -23361,7 +23361,7 @@
       "type": "CLUSTER"
     },
     {
-      "damage": 4161.550928696113,
+      "damage": 4162,
       "maxPenetration": 197,
       "penetrationTable": {
         "0": {
@@ -23433,7 +23433,7 @@
       "type": "CLUSTER"
     },
     {
-      "damage": 4161.550928696113,
+      "damage": 4162,
       "maxPenetration": 197,
       "penetrationTable": {
         "0": {
@@ -23505,7 +23505,7 @@
       "type": "CLUSTER"
     },
     {
-      "damage": 4161.550928696113,
+      "damage": 4162,
       "maxPenetration": 197,
       "penetrationTable": {
         "0": {
