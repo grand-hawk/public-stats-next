@@ -119,8 +119,8 @@ for _, moduleScript in Modules:GetChildren() do
 
 			if shell.type == "CLUSTER" then
 				shell.cluster = {
-					submunitions = ammo.Submunitions,
-					dispersion = ammo.SubmunitionAngularDispersion,
+					submunitions = ammo.Submunitions or ammo.Count,
+					dispersion = ammo.SubmunitionAngularDispersion or ammo.AngularDispersion,
 				}
 			end
 		end
