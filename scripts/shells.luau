@@ -129,7 +129,11 @@ for _, moduleScript in Modules:GetChildren() do
 					local penArray = { math.round(calculatedPen) }
 
 					if shell.type == "SAPHE" then
-						table.insert(penArray, math.round(GlobalConstants.GetBlastPen(ammo)))
+						table.insert(
+							penArray,
+							-- same as formula as HE
+							math.round(GlobalConstants.GetBlastPen(ammo)) / math.cos(math.rad(angle))
+						)
 					end
 
 					shell.penetrationTable[angle][distance] = penArray
