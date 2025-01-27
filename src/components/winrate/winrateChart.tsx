@@ -1,4 +1,5 @@
 import { Box, Spinner } from '@chakra-ui/react';
+import { useIsClient } from '@uidotdev/usehooks';
 import dynamic from 'next/dynamic';
 import React from 'react';
 
@@ -10,6 +11,7 @@ import { trpc } from '@/utils/trpc';
 const ApexCharts = dynamic(() => import('react-apexcharts'), { ssr: false });
 
 export default function WinrateChart({ placeId }: { placeId: number }) {
+  const isClient = useIsClient();
   const loadout = useFilterStore((s) => s.loadout);
   const map = useFilterStore((s) => s.map);
 
@@ -36,6 +38,7 @@ export default function WinrateChart({ placeId }: { placeId: number }) {
 
   return (
     <Box height="100%" width="100%">
+      {isClient && (
         <ApexCharts
           options={{
             chart: {
@@ -101,6 +104,7 @@ export default function WinrateChart({ placeId }: { placeId: number }) {
           series={data}
           type="line"
         />
+      )}
     </Box>
   );
 }

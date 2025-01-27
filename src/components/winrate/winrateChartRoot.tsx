@@ -1,16 +1,11 @@
 import { Box, Center } from '@chakra-ui/react';
-import dynamic from 'next/dynamic';
 import React from 'react';
 
 import PlaceEmptyState from '@/components/states/placeEmptyState';
+import WinrateChart from '@/components/winrate/winrateChart';
 import { useNavigationStore } from '@/stores/navigation';
 
 import type { BoxProps } from '@chakra-ui/react';
-
-const WinrateChart = dynamic(
-  () => import('@/components/winrate/winrateChart'),
-  { ssr: false },
-);
 
 export default function WinrateChartRoot({ ...props }: BoxProps) {
   const placeId = useNavigationStore((s) => s.placeId);
