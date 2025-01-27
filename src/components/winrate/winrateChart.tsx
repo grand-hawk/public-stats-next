@@ -1,12 +1,10 @@
-import { Box, Group, Spinner } from '@chakra-ui/react';
+import { Box, Spinner } from '@chakra-ui/react';
 import { useIsClient } from '@uidotdev/usehooks';
 import dynamic from 'next/dynamic';
 import React from 'react';
-import { BiErrorAlt } from 'react-icons/bi';
-import { MdWarning } from 'react-icons/md';
 
-import { Button } from '@/components/ui/button';
-import { EmptyState } from '@/components/ui/empty-state';
+import ErrorState from '@/components/states/errorState';
+import NoDataFoundState from '@/components/states/noDataFoundState';
 import { useFilterStore } from '@/stores/winrate/filters';
 import { trpc } from '@/utils/trpc';
 
@@ -25,24 +23,13 @@ export default function WinrateChart({ placeId }: { placeId: number }) {
   if (isFetching) return <Spinner size="lg" />;
   if (error)
     return (
-      <EmptyState
-        description={error.message}
-        icon={<BiErrorAlt />}
-        title="Error"
-      >
-        <Group>
-          <Button onClick={() => !isFetching && refetch()}>Retry</Button>
-        </Group>
-      </EmptyState>
+      <ErrorState
+        error={error.message}
+        onClick={() => !isFetching && refetch()}
+      />
     );
   if (!data)
-    return (
-      <EmptyState icon={<MdWarning />} title="No data found">
-        <Group>
-          <Button onClick={() => !isFetching && refetch()}>Refetch</Button>
-        </Group>
-      </EmptyState>
-    );
+    return <NoDataFoundState onClick={() => !isFetching && refetch()} />;
 
   const valueFormatter = (value: number) =>
     new Intl.NumberFormat('en-US', {

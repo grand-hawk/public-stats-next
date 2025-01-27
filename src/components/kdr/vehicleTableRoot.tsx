@@ -2,7 +2,7 @@ import { Box, Center } from '@chakra-ui/react';
 import React from 'react';
 
 import VehicleTable from '@/components/kdr/vehicleTable';
-import PlaceEmptyState from '@/components/placeEmptyState';
+import PlaceEmptyState from '@/components/states/placeEmptyState';
 import { useNavigationStore } from '@/stores/navigation';
 
 import type { BoxProps } from '@chakra-ui/react';

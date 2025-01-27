@@ -31,8 +31,8 @@ type ShellModule = {
 		boostTime: number?,
 		turnRate: number?,
 		limit: number?,
+		irccm: boolean?,
 		unjammable: boolean,
-		irccm: boolean,
 	}?,
 
 	cluster: {

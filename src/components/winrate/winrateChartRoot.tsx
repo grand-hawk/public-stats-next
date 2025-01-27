@@ -1,7 +1,7 @@
 import { Box, Center } from '@chakra-ui/react';
 import React from 'react';
 
-import PlaceEmptyState from '@/components/placeEmptyState';
+import PlaceEmptyState from '@/components/states/placeEmptyState';
 import WinrateChart from '@/components/winrate/winrateChart';
 import { useNavigationStore } from '@/stores/navigation';
 

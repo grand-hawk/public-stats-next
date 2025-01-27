@@ -1,4 +1,4 @@
-name: Update shell data
+name: Update shells
 
 on:
   # schedule:
@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  update-shell-data-sunny-valley:
+  sunny-valley:
     runs-on: ubuntu-latest
 
     steps:

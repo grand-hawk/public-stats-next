@@ -1,13 +1,12 @@
 import { Code, FormatNumber, IconButton, Table } from '@chakra-ui/react';
 import { Group, Spinner } from '@chakra-ui/react';
 import React from 'react';
-import { BiErrorAlt } from 'react-icons/bi';
-import { MdWarning } from 'react-icons/md';
 import { TiArrowSortedUp, TiArrowSortedDown } from 'react-icons/ti';
 
-import { Button } from '@/components/ui/button';
-import { EmptyState } from '@/components/ui/empty-state';
+import ErrorState from '@/components/states/errorState';
+import NoDataFoundState from '@/components/states/noDataFoundState';
 import { trpc } from '@/utils/trpc';
+
 export default function VehicleTable({ placeId }: { placeId: number }) {
   const [sortKey, setSortKey] =
     React.useState<keyof NonNullable<typeof kdr>[0]>('kd');
@@ -24,24 +23,13 @@ export default function VehicleTable({ placeId }: { placeId: number }) {
   if (isFetching) return <Spinner size="lg" />;
   if (error)
     return (
-      <EmptyState
-        description={error.message}
-        icon={<BiErrorAlt />}
-        title="Error"
-      >
-        <Group>
-          <Button onClick={() => !isFetching && refetch()}>Retry</Button>
-        </Group>
-      </EmptyState>
+      <ErrorState
+        error={error.message}
+        onClick={() => !isFetching && refetch()}
+      />
     );
   if (!kdr)
-    return (
-      <EmptyState icon={<MdWarning />} title="No data found">
-        <Group>
-          <Button onClick={() => !isFetching && refetch()}>Refetch</Button>
-        </Group>
-      </EmptyState>
-    );
+    return <NoDataFoundState onClick={() => !isFetching && refetch()} />;
 
   const SortButton = ({ name }: { name: typeof sortKey }) => {
     return (

@@ -12,4 +12,8 @@ export const tabs: Record<string, Tab> = {
     label: 'Winrate',
     path: '/winrate',
   },
+  shells: {
+    label: 'Shells',
+    path: '/shells',
+  },
 };
