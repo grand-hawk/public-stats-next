@@ -1,8 +1,8 @@
 name: Update shells
 
 on:
-  # schedule:
-  #   - cron: '5 */12 * * *'
+  schedule:
+    - cron: '10 0 * * 0'
   workflow_dispatch:
 
 jobs:
@@ -32,8 +32,83 @@ jobs:
       - name: Remove temp file
         run: rm script-execution-output.json
 
-      - name: Commit and push
+      - name: Create update branch
         run: |
+          git checkout -b workflow/update-shells/${{ github.run_id }}
           git add ./data/shells/8421780146.json
-          git commit -m "Update Sunny Valley shells"
-          git push origin ${{ github.ref_name }}
+          if ! git diff --cached --quiet; then
+            git commit -m "Update Sunny Valley shells"
+            git push origin workflow/update-shells/${{ github.run_id }}
+          else
+            echo "No changes to commit."
+          fi
+
+  multicrew-tank-combat:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup git
+        uses: fregante/setup-git-user@v2
+
+      - name: Execute script
+        id: roblox-luau-execution
+        uses: grand-hawk/action-roblox-luau-execution@1.0.0
+        with:
+          roblox_api_key: ${{ secrets.ROBLOX_LUAU_EXECUTION_API_KEY }}
+          universe_id: '3546912119'
+          place_id: '9520328730'
+          luau_file: './scripts/shells.luau'
+          output_file: 'script-execution-output.json'
+
+      - name: Process JSON output
+        run: jq ".[0]" "./script-execution-output.json" > "./data/shells/9520328730.json"
+
+      - name: Remove temp file
+        run: rm script-execution-output.json
+
+      - name: Create update branch
+        run: |
+          git checkout -b workflow/update-shells/${{ github.run_id }}
+          git add ./data/shells/9520328730.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Update MTC shells"
+            git push origin workflow/update-shells/${{ github.run_id }}
+          else
+            echo "No changes to commit."
+          fi
+
+  finalize-git-changes:
+    runs-on: ubuntu-latest
+    needs: [sunny-valley, multicrew-tank-combat]
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          ref: workflow/update-shells/${{ github.run_id }}
+
+      - name: Setup git
+        uses: fregante/setup-git-user@v2
+
+      - run: |
+          git fetch --all
+          if git branch -r | grep -q "origin/workflow/update-shells/${{ github.run_id }}"; then
+            for branch in dev prod; do
+              git checkout $branch
+              if ! git diff --quiet origin/workflow/update-shells/${{ github.run_id }} -- ./data/shells/**; then
+                git checkout origin/workflow/update-shells/${{ github.run_id }} -- ./data/shells/**
+                git add ./data/shells/**
+                git commit -m "Update shells data from workflow/update-shells/${{ github.run_id }}"
+                git pull origin $branch --ff-only
+                git push origin $branch
+              else
+                echo "No changes to commit on $branch."
+              fi
+            done
+            git push --delete origin workflow/update-shells/${{ github.run_id }}
+          else
+            echo "Branch workflow/update-shells/${{ github.run_id }} does not exist."
+          fi
