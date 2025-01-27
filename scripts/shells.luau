@@ -64,7 +64,7 @@ for _, moduleScript in Modules:GetChildren() do
 			type = ammo.DisplayType,
 			mass = ammo.ShellMass,
 			velocity = math.round(GlobalConstants.studtom(ammo.MuzzleSpeed)),
-			damage = ammo.Damage,
+			damage = math.round(ammo.Damage),
 			shrapMultiplier = ammo.shrapmult,
 
 			maxPenetration = math.round(ammo.ShellMaxPen),
