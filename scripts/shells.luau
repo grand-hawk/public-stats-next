@@ -130,7 +130,7 @@ for _, moduleScript in Modules:GetChildren() do
 
 					local penArray = { math.round(calculatedPen) }
 
-					if ammo.ShellType == "SAPHE" then
+					if ammo.SAPHE then
 						table.insert(
 							penArray,
 							-- same as formula as HE
@@ -147,7 +147,11 @@ for _, moduleScript in Modules:GetChildren() do
 			if
 				ammo.ExplosiveMass ~= nil
 				and ammo.ExplosiveMass > 0
-				and table.find({ "HE", "APHE", "SAPHE", "CLUSTER" }, shell.type)
+				and table.find({
+					"HE", -- HESH/PROXIMITY FUZE/CLUSTER
+					"HEAT",
+					"APHE", -- SAPHE
+				}, ammo.ShellType)
 			then
 				shell.explosive = {
 					mass = ammo.ExplosiveMass,
@@ -211,6 +215,6 @@ for _, moduleScript in Modules:GetChildren() do
 	end
 end
 
-print(game:GetService("HttpService"):JSONEncode(weapons))
+-- print(game:GetService("HttpService"):JSONEncode(weapons))
 
 return weapons
