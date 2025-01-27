@@ -60,6 +60,9 @@
           ]
         }
       },
+      "explosive": {
+        "mass": 3.15
+      },
       "maxPenetration": 127,
       "velocity": 720,
       "type": "HESH",
@@ -613,6 +616,9 @@
           ]
         }
       },
+      "explosive": {
+        "mass": 0.6
+      },
       "maxPenetration": 15,
       "velocity": 30,
       "type": "SMOKE",
@@ -821,6 +827,9 @@
             500
           ]
         }
+      },
+      "explosive": {
+        "mass": 3.15
       },
       "name": "9M7",
       "mass": 54,
@@ -1317,6 +1326,9 @@
           ]
         }
       },
+      "explosive": {
+        "mass": 0.2
+      },
       "maxPenetration": 9,
       "velocity": 1000,
       "type": "PROXIMITY FUZE",
@@ -1385,6 +1397,9 @@
             800
           ]
         }
+      },
+      "explosive": {
+        "mass": 4.41
       },
       "name": "TOW-2A",
       "mass": 21.45,
@@ -1457,6 +1472,9 @@
             150
           ]
         }
+      },
+      "explosive": {
+        "mass": 3.38
       },
       "name": "TOW-2B",
       "mass": 22.59,
@@ -1811,6 +1829,9 @@
           ]
         }
       },
+      "explosive": {
+        "mass": 4.77
+      },
       "name": "9M117",
       "mass": 18.8,
       "missile": {
@@ -2097,6 +2118,9 @@
           ]
         }
       },
+      "explosive": {
+        "mass": 4.48
+      },
       "name": "9M123",
       "mass": 33,
       "missile": {
@@ -2313,6 +2337,9 @@
           ]
         }
       },
+      "explosive": {
+        "mass": 6.4
+      },
       "maxPenetration": 50,
       "velocity": 180,
       "type": "ROCKET",
@@ -2449,6 +2476,9 @@
           ]
         }
       },
+      "explosive": {
+        "mass": 5.72
+      },
       "name": "9M119M1",
       "mass": 17.2,
       "missile": {
@@ -2521,6 +2551,9 @@
           ]
         }
       },
+      "explosive": {
+        "mass": 2.79
+      },
       "maxPenetration": 550,
       "velocity": 905,
       "type": "HEAT-FS",
@@ -2587,6 +2620,9 @@
             100
           ]
         }
+      },
+      "explosive": {
+        "mass": 3.6
       },
       "maxPenetration": 37,
       "velocity": 850,
@@ -2726,6 +2762,9 @@
             39
           ]
         }
+      },
+      "explosive": {
+        "mass": 0.54
       },
       "name": "FIM-92K Stinger",
       "mass": 10.1,
@@ -3572,6 +3611,9 @@
           ]
         }
       },
+      "explosive": {
+        "mass": 6.36
+      },
       "name": "9M133",
       "mass": 33,
       "missile": {
@@ -3786,6 +3828,9 @@
           ]
         }
       },
+      "explosive": {
+        "mass": 0.05
+      },
       "maxPenetration": 4,
       "velocity": 172,
       "type": "SMOKE",
@@ -3995,6 +4040,10 @@
           ]
         }
       },
+      "explosive": {
+        "mass": 0.0282,
+        "blastRadiusMultiplier": 2
+      },
       "maxPenetration": 51,
       "velocity": 805,
       "type": "HEAT",
@@ -4063,6 +4112,9 @@
             420
           ]
         }
+      },
+      "explosive": {
+        "mass": 1.38
       },
       "maxPenetration": 420,
       "velocity": 650,
@@ -4410,6 +4462,9 @@
             100
           ]
         }
+      },
+      "explosive": {
+        "mass": 0.8755
       },
       "maxPenetration": 100,
       "velocity": 800,
@@ -4965,6 +5020,9 @@
           ]
         }
       },
+      "explosive": {
+        "mass": 2.5
+      },
       "maxPenetration": 480,
       "velocity": 1140,
       "type": "HEAT-FS",
@@ -5243,6 +5301,9 @@
           ]
         }
       },
+      "explosive": {
+        "mass": 5.72
+      },
       "name": "KOMBAT ATGM",
       "mass": 17.2,
       "missile": {
@@ -5314,6 +5375,9 @@
             550
           ]
         }
+      },
+      "explosive": {
+        "mass": 2
       },
       "maxPenetration": 550,
       "velocity": 905,
@@ -5526,6 +5590,9 @@
           ]
         }
       },
+      "explosive": {
+        "mass": 1.27
+      },
       "maxPenetration": 400,
       "velocity": 1174,
       "type": "HEAT-FS",
@@ -5592,6 +5659,9 @@
             339
           ]
         }
+      },
+      "explosive": {
+        "mass": 4.31
       },
       "maxPenetration": 127,
       "velocity": 732,
@@ -5729,6 +5799,10 @@
           ]
         }
       },
+      "explosive": {
+        "mass": 3,
+        "blastRadiusMultiplier": 4
+      },
       "maxPenetration": 34,
       "velocity": 180,
       "type": "THERMOBARIC",
@@ -5796,6 +5870,10 @@
           ]
         }
       },
+      "explosive": {
+        "mass": 0.2,
+        "blastRadiusMultiplier": 2
+      },
       "maxPenetration": 9,
       "velocity": 180,
       "type": "ROCKET",
@@ -5862,6 +5940,9 @@
             241
           ]
         }
+      },
+      "explosive": {
+        "mass": 21
       },
       "maxPenetration": 90,
       "velocity": 180,
@@ -5931,6 +6012,9 @@
             1200
           ]
         }
+      },
+      "explosive": {
+        "mass": 10
       },
       "name": "TOW-2G",
       "mass": 21.45,
@@ -6003,6 +6087,9 @@
             500
           ]
         }
+      },
+      "explosive": {
+        "mass": 10
       },
       "name": "TOW-2X",
       "mass": 22.59,
@@ -6148,6 +6235,10 @@
           ]
         }
       },
+      "explosive": {
+        "mass": 0.03,
+        "blastRadiusMultiplier": 2
+      },
       "maxPenetration": 63,
       "velocity": 241,
       "type": "HEAT",
@@ -6285,6 +6376,9 @@
             700
           ]
         }
+      },
+      "explosive": {
+        "mass": 5.5
       },
       "name": "Type 79",
       "mass": 19.9,
@@ -6430,6 +6524,9 @@
           ]
         }
       },
+      "explosive": {
+        "mass": 10.63
+      },
       "maxPenetration": 64,
       "velocity": 530,
       "type": "ROCKET",
@@ -6498,6 +6595,9 @@
             267
           ]
         }
+      },
+      "explosive": {
+        "mass": 9
       },
       "maxPenetration": 100,
       "velocity": 230,
@@ -6637,6 +6737,9 @@
             110
           ]
         }
+      },
+      "explosive": {
+        "mass": 1.1
       },
       "maxPenetration": 110,
       "velocity": 600,
@@ -6989,6 +7092,9 @@
           ]
         }
       },
+      "explosive": {
+        "mass": 3.25
+      },
       "name": "9M14 MCLOS",
       "mass": 10.9,
       "missile": {
@@ -7205,6 +7311,9 @@
           ]
         }
       },
+      "explosive": {
+        "mass": 4.56
+      },
       "name": "AIM-9M",
       "mass": 84,
       "missile": {
@@ -7280,6 +7389,9 @@
           ]
         }
       },
+      "explosive": {
+        "mass": 3.54
+      },
       "maxPenetration": 37,
       "velocity": 355,
       "type": "TIME FUZE",
@@ -7346,6 +7458,9 @@
             750
           ]
         }
+      },
+      "explosive": {
+        "mass": 3.75
       },
       "name": "9M117M1",
       "mass": 18.8,
@@ -7703,6 +7818,9 @@
             160
           ]
         }
+      },
+      "explosive": {
+        "mass": 2.73
       },
       "maxPenetration": 160,
       "velocity": 336,
@@ -8190,6 +8308,9 @@
           ]
         }
       },
+      "explosive": {
+        "mass": 8.02
+      },
       "name": "Brimstone",
       "mass": 45.13,
       "missile": {
@@ -8264,6 +8385,9 @@
             10
           ]
         }
+      },
+      "explosive": {
+        "mass": 0.035
       },
       "maxPenetration": 4,
       "velocity": 1002,
@@ -8538,6 +8662,9 @@
           ]
         }
       },
+      "explosive": {
+        "mass": 0.05
+      },
       "maxPenetration": 4,
       "velocity": 259,
       "type": "SMOKE",
@@ -8676,6 +8803,9 @@
           ]
         }
       },
+      "explosive": {
+        "mass": 0.5
+      },
       "name": "Anti-Tank drone",
       "mass": 2.25,
       "missile": {
@@ -8750,6 +8880,9 @@
           ]
         }
       },
+      "explosive": {
+        "mass": 500
+      },
       "maxPenetration": 441,
       "velocity": 50,
       "type": "ROCKET",
@@ -8818,6 +8951,9 @@
             25
           ]
         }
+      },
+      "explosive": {
+        "mass": 0.231
       },
       "maxPenetration": 9,
       "velocity": 1000,
@@ -9095,6 +9231,9 @@
           ]
         }
       },
+      "explosive": {
+        "mass": 1.27
+      },
       "maxPenetration": 400,
       "velocity": 1174,
       "type": "HEAT-FS",
@@ -9161,6 +9300,9 @@
             12
           ]
         }
+      },
+      "explosive": {
+        "mass": 0.05
       },
       "maxPenetration": 4,
       "velocity": 732,
@@ -9295,6 +9437,9 @@
             339
           ]
         }
+      },
+      "explosive": {
+        "mass": 4.31
       },
       "maxPenetration": 127,
       "velocity": 732,
@@ -9573,6 +9718,9 @@
           ]
         }
       },
+      "explosive": {
+        "mass": 3.54
+      },
       "maxPenetration": 37,
       "velocity": 355,
       "type": "TIME FUZE",
@@ -9639,6 +9787,9 @@
             750
           ]
         }
+      },
+      "explosive": {
+        "mass": 4.86
       },
       "name": "APS03",
       "mass": 18.8,
@@ -9854,6 +10005,9 @@
           ]
         }
       },
+      "explosive": {
+        "mass": 0.23
+      },
       "maxPenetration": 9,
       "velocity": 200,
       "type": "CANISTER SHOT",
@@ -10062,6 +10216,9 @@
           ]
         }
       },
+      "explosive": {
+        "mass": 0.1908
+      },
       "maxPenetration": 9,
       "velocity": 1015,
       "type": "PROXIMITY FUZE",
@@ -10268,6 +10425,9 @@
           ]
         }
       },
+      "explosive": {
+        "mass": 7
+      },
       "maxPenetration": 400,
       "velocity": 260,
       "type": "ROCKET",
@@ -10336,6 +10496,9 @@
             400
           ]
         }
+      },
+      "explosive": {
+        "mass": 1.67
       },
       "maxPenetration": 400,
       "velocity": 726,
@@ -10614,6 +10777,9 @@
             12
           ]
         }
+      },
+      "explosive": {
+        "mass": 0.054
       },
       "maxPenetration": 5,
       "velocity": 1235,
@@ -11030,6 +11196,9 @@
           ]
         }
       },
+      "explosive": {
+        "mass": 0.68
+      },
       "maxPenetration": 200,
       "velocity": 700,
       "type": "HEAT-FS",
@@ -11098,6 +11267,9 @@
             54
           ]
         }
+      },
+      "explosive": {
+        "mass": 1.07
       },
       "maxPenetration": 20,
       "velocity": 1235,
@@ -11515,6 +11687,9 @@
           ]
         }
       },
+      "explosive": {
+        "mass": 1.61
+      },
       "maxPenetration": 130,
       "velocity": 381,
       "type": "HEAT",
@@ -11654,6 +11829,9 @@
           ]
         }
       },
+      "explosive": {
+        "mass": 3.44
+      },
       "name": "9M113M",
       "mass": 14.5,
       "missile": {
@@ -11727,6 +11905,9 @@
             12
           ]
         }
+      },
+      "explosive": {
+        "mass": 0.05
       },
       "maxPenetration": 4,
       "velocity": 172,
@@ -12144,6 +12325,9 @@
           ]
         }
       },
+      "explosive": {
+        "mass": 5.72
+      },
       "name": "9M112",
       "mass": 16.5,
       "missile": {
@@ -12215,6 +12399,9 @@
             550
           ]
         }
+      },
+      "explosive": {
+        "mass": 2
       },
       "maxPenetration": 550,
       "velocity": 905,
@@ -12354,6 +12541,9 @@
           ]
         }
       },
+      "explosive": {
+        "mass": 3.44
+      },
       "name": "9M113",
       "mass": 14.5,
       "missile": {
@@ -12427,6 +12617,9 @@
             38
           ]
         }
+      },
+      "explosive": {
+        "mass": 0.53
       },
       "name": "9M39",
       "mass": 10.6,
@@ -12712,6 +12905,9 @@
           ]
         }
       },
+      "explosive": {
+        "mass": 2.5
+      },
       "maxPenetration": 480,
       "velocity": 1140,
       "type": "HEAT-FS",
@@ -12923,6 +13119,9 @@
           ]
         }
       },
+      "explosive": {
+        "mass": 3.93
+      },
       "maxPenetration": 39,
       "velocity": 1015,
       "type": "TIME FUZE",
@@ -12989,6 +13188,9 @@
             480
           ]
         }
+      },
+      "explosive": {
+        "mass": 2.5
       },
       "maxPenetration": 480,
       "velocity": 1190,
@@ -13128,6 +13330,9 @@
           ]
         }
       },
+      "explosive": {
+        "mass": 0.54813
+      },
       "maxPenetration": 89,
       "velocity": 304,
       "type": "HEAT",
@@ -13266,6 +13471,9 @@
             1000
           ]
         }
+      },
+      "explosive": {
+        "mass": 1.83
       },
       "name": "Milan ER",
       "mass": 6.7,
@@ -13410,6 +13618,9 @@
             440
           ]
         }
+      },
+      "explosive": {
+        "mass": 2
       },
       "maxPenetration": 440,
       "velocity": 905,
@@ -13689,6 +13900,9 @@
           ]
         }
       },
+      "explosive": {
+        "mass": 30.6
+      },
       "maxPenetration": 203,
       "velocity": 259,
       "type": "HESH",
@@ -13757,6 +13971,9 @@
             2
           ]
         }
+      },
+      "explosive": {
+        "mass": 0.001
       },
       "maxPenetration": 1,
       "velocity": 250,
@@ -13969,6 +14186,10 @@
           ]
         }
       },
+      "explosive": {
+        "mass": 591,
+        "blastRadiusMultiplier": 4
+      },
       "maxPenetration": 480,
       "velocity": 150,
       "type": "ROCKET",
@@ -14107,6 +14328,9 @@
           ]
         }
       },
+      "explosive": {
+        "mass": 1.38
+      },
       "maxPenetration": 420,
       "velocity": 650,
       "type": "ROCKET",
@@ -14175,6 +14399,9 @@
             500
           ]
         }
+      },
+      "explosive": {
+        "mass": 3.44
       },
       "name": "9M113",
       "mass": 14.5,
@@ -14458,6 +14685,10 @@
           ]
         }
       },
+      "explosive": {
+        "mass": 4,
+        "blastRadiusMultiplier": 3
+      },
       "name": "M2 ETC-HARE",
       "mass": 16.4,
       "maxPenetration": 39,
@@ -14595,6 +14826,9 @@
           ]
         }
       },
+      "explosive": {
+        "mass": 5.3
+      },
       "name": "M5 ETC-HAAM-IR",
       "mass": 21.7,
       "missile": {
@@ -14667,6 +14901,9 @@
           ]
         }
       },
+      "explosive": {
+        "mass": 4
+      },
       "maxPenetration": 80,
       "velocity": 1990,
       "type": "HEAT",
@@ -14733,6 +14970,9 @@
             1200
           ]
         }
+      },
+      "explosive": {
+        "mass": 3.1
       },
       "name": "M4 ETC-HAMM",
       "mass": 12.5,
@@ -14944,6 +15184,9 @@
             12
           ]
         }
+      },
+      "explosive": {
+        "mass": 0.0544
       },
       "name": "PMC308",
       "mass": 0.36,
@@ -15157,6 +15400,9 @@
           ]
         }
       },
+      "explosive": {
+        "mass": 3.15
+      },
       "maxPenetration": 127,
       "velocity": 720,
       "type": "HESH",
@@ -15291,6 +15537,9 @@
             400
           ]
         }
+      },
+      "explosive": {
+        "mass": 0.9
       },
       "maxPenetration": 400,
       "velocity": 1174,
@@ -15573,6 +15822,9 @@
           ]
         }
       },
+      "explosive": {
+        "mass": 0.6
+      },
       "maxPenetration": 15,
       "velocity": 30,
       "type": "SMOKE",
@@ -15642,6 +15894,9 @@
           ]
         }
       },
+      "explosive": {
+        "mass": 2
+      },
       "maxPenetration": 200,
       "velocity": 825,
       "type": "APDS",
@@ -15710,6 +15965,9 @@
             290
           ]
         }
+      },
+      "explosive": {
+        "mass": 1.18
       },
       "maxPenetration": 290,
       "velocity": 739,
@@ -15847,6 +16105,9 @@
           ]
         }
       },
+      "explosive": {
+        "mass": 0.948
+      },
       "maxPenetration": 60,
       "velocity": 300,
       "type": "HESH",
@@ -15915,6 +16176,9 @@
             527
           ]
         }
+      },
+      "explosive": {
+        "mass": 100.1
       },
       "maxPenetration": 197,
       "velocity": 180,
@@ -16128,6 +16392,9 @@
             250
           ]
         }
+      },
+      "explosive": {
+        "mass": 1.6
       },
       "name": "9M134",
       "mass": 3.5,
@@ -16415,6 +16682,9 @@
           ]
         }
       },
+      "explosive": {
+        "mass": 0.7
+      },
       "maxPenetration": 320,
       "velocity": 1216,
       "type": "HEAT-FS",
@@ -16620,6 +16890,9 @@
             77
           ]
         }
+      },
+      "explosive": {
+        "mass": 2.15
       },
       "maxPenetration": 29,
       "velocity": 340,
@@ -16832,6 +17105,9 @@
           ]
         }
       },
+      "explosive": {
+        "mass": 1.69
+      },
       "name": "9M37M",
       "mass": 39.2,
       "missile": {
@@ -16906,6 +17182,9 @@
             1300
           ]
         }
+      },
+      "explosive": {
+        "mass": 6.36
       },
       "name": "9D135",
       "mass": 33,
@@ -17123,6 +17402,9 @@
           ]
         }
       },
+      "explosive": {
+        "mass": 4.77
+      },
       "name": "9M117",
       "mass": 18.8,
       "missile": {
@@ -17194,6 +17476,9 @@
             500
           ]
         }
+      },
+      "explosive": {
+        "mass": 2.28
       },
       "maxPenetration": 500,
       "velocity": 1060,
@@ -17610,6 +17895,9 @@
           ]
         }
       },
+      "explosive": {
+        "mass": 0.9
+      },
       "maxPenetration": 300,
       "velocity": 665,
       "type": "HEAT",
@@ -17817,6 +18105,9 @@
           ]
         }
       },
+      "explosive": {
+        "mass": 0.9
+      },
       "maxPenetration": 400,
       "velocity": 1174,
       "type": "HEAT-FS",
@@ -17883,6 +18174,9 @@
             339
           ]
         }
+      },
+      "explosive": {
+        "mass": 3.15
       },
       "maxPenetration": 127,
       "velocity": 720,
@@ -18091,6 +18385,9 @@
             400
           ]
         }
+      },
+      "explosive": {
+        "mass": 3.25
       },
       "name": "9M14M MCLOS",
       "mass": 10.9,
@@ -18374,6 +18671,9 @@
           ]
         }
       },
+      "explosive": {
+        "mass": 7.86
+      },
       "name": "MIM146 Anti-Tank Mode",
       "mass": 51,
       "missile": {
@@ -18587,6 +18887,9 @@
           ]
         }
       },
+      "explosive": {
+        "mass": 4.6
+      },
       "maxPenetration": 210,
       "velocity": 1120,
       "type": "TIME FUZE",
@@ -18653,6 +18956,9 @@
             180
           ]
         }
+      },
+      "explosive": {
+        "mass": 4.2
       },
       "name": "POLYNEGE",
       "mass": 28,
@@ -18727,6 +19033,9 @@
             700
           ]
         }
+      },
+      "explosive": {
+        "mass": 1.39
       },
       "name": "ATGM",
       "mass": 16.2,
@@ -19151,6 +19460,9 @@
           ]
         }
       },
+      "explosive": {
+        "mass": 2.15
+      },
       "maxPenetration": 480,
       "velocity": 1140,
       "type": "HEAT-FS",
@@ -19361,6 +19673,9 @@
             1250
           ]
         }
+      },
+      "explosive": {
+        "mass": 5.7
       },
       "name": "9A4172 Vikhr-1",
       "mass": 47,
@@ -19716,6 +20031,9 @@
           ]
         }
       },
+      "explosive": {
+        "mass": 1
+      },
       "maxPenetration": 20,
       "velocity": 150,
       "type": "ROCKET",
@@ -19991,6 +20309,9 @@
           ]
         }
       },
+      "explosive": {
+        "mass": 3.1
+      },
       "maxPenetration": 623,
       "velocity": 943,
       "type": "HEAT-FS",
@@ -20263,6 +20584,9 @@
             339
           ]
         }
+      },
+      "explosive": {
+        "mass": 3.15
       },
       "maxPenetration": 127,
       "velocity": 720,
@@ -20544,6 +20868,9 @@
           ]
         }
       },
+      "explosive": {
+        "mass": 3.9
+      },
       "maxPenetration": 1045,
       "velocity": 1410,
       "type": "TIME FUZE",
@@ -20680,6 +21007,9 @@
           ]
         }
       },
+      "explosive": {
+        "mass": 5.72
+      },
       "name": "MGM-51B Shiellelagh",
       "mass": 27.8,
       "missile": {
@@ -20751,6 +21081,9 @@
             380
           ]
         }
+      },
+      "explosive": {
+        "mass": 3.73
       },
       "maxPenetration": 380,
       "velocity": 682,
@@ -20891,6 +21224,9 @@
           ]
         }
       },
+      "explosive": {
+        "mass": 0.001
+      },
       "maxPenetration": 1,
       "velocity": 120,
       "type": "MG",
@@ -20959,6 +21295,9 @@
             1200
           ]
         }
+      },
+      "explosive": {
+        "mass": 4.2
       },
       "maxPenetration": 1200,
       "velocity": 1500,
@@ -21165,6 +21504,9 @@
           ]
         }
       },
+      "explosive": {
+        "mass": 1.99
+      },
       "maxPenetration": 28,
       "velocity": 1410,
       "type": "PROXIMITY FUZE",
@@ -21231,6 +21573,9 @@
             480
           ]
         }
+      },
+      "explosive": {
+        "mass": 1.64
       },
       "maxPenetration": 480,
       "velocity": 1140,
@@ -21371,6 +21716,9 @@
           ]
         }
       },
+      "explosive": {
+        "mass": 2.79
+      },
       "maxPenetration": 550,
       "velocity": 905,
       "type": "HEAT-FS",
@@ -21504,6 +21852,9 @@
             850
           ]
         }
+      },
+      "explosive": {
+        "mass": 5.72
       },
       "name": "9M119M1",
       "mass": 17.2,
@@ -21647,6 +21998,10 @@
             45
           ]
         }
+      },
+      "explosive": {
+        "mass": 2,
+        "blastRadiusMultiplier": 2
       },
       "name": "XM1069",
       "mass": 13.1,
@@ -21998,6 +22353,9 @@
             1400
           ]
         }
+      },
+      "explosive": {
+        "mass": 6.5
       },
       "name": "HJ-10",
       "mass": 43,
@@ -22559,6 +22917,9 @@
           ]
         }
       },
+      "explosive": {
+        "mass": 145
+      },
       "name": "KH-35 ASM",
       "mass": 610,
       "missile": {
@@ -22632,6 +22993,9 @@
             1007
           ]
         }
+      },
+      "explosive": {
+        "mass": 4.27
       },
       "name": "Spike-LR2",
       "mass": 13,
@@ -22776,6 +23140,9 @@
             12
           ]
         }
+      },
+      "explosive": {
+        "mass": 0.05
       },
       "maxPenetration": 4,
       "velocity": 229,
@@ -23335,6 +23702,9 @@
           ]
         }
       },
+      "explosive": {
+        "mass": 1.95
+      },
       "maxPenetration": 28,
       "velocity": 260,
       "type": "ROCKET",
@@ -23682,6 +24052,9 @@
           ]
         }
       },
+      "explosive": {
+        "mass": 3.44
+      },
       "name": "R-2",
       "mass": 14.6,
       "missile": {
@@ -23823,6 +24196,9 @@
           ]
         }
       },
+      "explosive": {
+        "mass": 2.5
+      },
       "maxPenetration": 480,
       "velocity": 1140,
       "type": "HEAT-FS",
@@ -23891,6 +24267,9 @@
             19
           ]
         }
+      },
+      "explosive": {
+        "mass": 4.77
       },
       "maxPenetration": 65,
       "velocity": 900,
@@ -24026,6 +24405,9 @@
           ]
         }
       },
+      "explosive": {
+        "mass": 3.1
+      },
       "name": "LAHAT",
       "mass": 12.5,
       "missile": {
@@ -24097,6 +24479,9 @@
             480
           ]
         }
+      },
+      "explosive": {
+        "mass": 2.36
       },
       "maxPenetration": 480,
       "velocity": 1078,
@@ -24378,6 +24763,9 @@
           ]
         }
       },
+      "explosive": {
+        "mass": 1.02
+      },
       "maxPenetration": 350,
       "velocity": 1120,
       "type": "HEAT-FS",
@@ -24511,6 +24899,9 @@
             12
           ]
         }
+      },
+      "explosive": {
+        "mass": 0.05
       },
       "maxPenetration": 4,
       "velocity": 800,
@@ -24650,6 +25041,9 @@
             609
           ]
         }
+      },
+      "explosive": {
+        "mass": 21.76
       },
       "maxPenetration": 228,
       "velocity": 716,
@@ -24932,6 +25326,9 @@
           ]
         }
       },
+      "explosive": {
+        "mass": 2
+      },
       "maxPenetration": 440,
       "velocity": 905,
       "type": "HEAT-FS",
@@ -25068,6 +25465,9 @@
           ]
         }
       },
+      "explosive": {
+        "mass": 0.05
+      },
       "maxPenetration": 4,
       "velocity": 732,
       "type": "SMOKE",
@@ -25135,6 +25535,9 @@
           ]
         }
       },
+      "explosive": {
+        "mass": 3.89
+      },
       "maxPenetration": 127,
       "velocity": 760,
       "type": "HESH",
@@ -25201,6 +25604,9 @@
             400
           ]
         }
+      },
+      "explosive": {
+        "mass": 1.57
       },
       "maxPenetration": 400,
       "velocity": 1150,
@@ -25618,6 +26024,9 @@
           ]
         }
       },
+      "explosive": {
+        "mass": 2.62
+      },
       "maxPenetration": 480,
       "velocity": 905,
       "type": "HEAT-FS",
@@ -25684,6 +26093,9 @@
             850
           ]
         }
+      },
+      "explosive": {
+        "mass": 5.72
       },
       "name": "GP125",
       "mass": 19,
@@ -25757,6 +26169,9 @@
           ]
         }
       },
+      "explosive": {
+        "mass": 5.3
+      },
       "maxPenetration": 45,
       "velocity": 850,
       "type": "TIME FUZE",
@@ -25825,6 +26240,9 @@
             431
           ]
         }
+      },
+      "explosive": {
+        "mass": 3.6
       },
       "name": "MGM-51B Shiellelagh",
       "mass": 27.8,
@@ -25897,6 +26315,9 @@
             380
           ]
         }
+      },
+      "explosive": {
+        "mass": 2.85
       },
       "maxPenetration": 380,
       "velocity": 682,
@@ -26036,6 +26457,9 @@
             480
           ]
         }
+      },
+      "explosive": {
+        "mass": 2.5
       },
       "maxPenetration": 480,
       "velocity": 1140,
@@ -26243,6 +26667,9 @@
             99
           ]
         }
+      },
+      "explosive": {
+        "mass": 0.757
       },
       "maxPenetration": 37,
       "velocity": 988,
@@ -26800,6 +27227,9 @@
           ]
         }
       },
+      "explosive": {
+        "mass": 0.6
+      },
       "maxPenetration": 15,
       "velocity": 30,
       "type": "SMOKE",
@@ -26869,6 +27299,10 @@
           ]
         }
       },
+      "explosive": {
+        "mass": 0.0282,
+        "blastRadiusMultiplier": 2
+      },
       "maxPenetration": 51,
       "velocity": 1100,
       "type": "HEAT",
@@ -26935,6 +27369,9 @@
             12
           ]
         }
+      },
+      "explosive": {
+        "mass": 0.05
       },
       "maxPenetration": 4,
       "velocity": 1100,
@@ -27286,6 +27723,9 @@
           ]
         }
       },
+      "explosive": {
+        "mass": 0.8721
+      },
       "maxPenetration": 80,
       "velocity": 450,
       "type": "HEAT",
@@ -27354,6 +27794,9 @@
             70
           ]
         }
+      },
+      "explosive": {
+        "mass": 1.79
       },
       "maxPenetration": 26,
       "velocity": 150,
@@ -27631,6 +28074,9 @@
           ]
         }
       },
+      "explosive": {
+        "mass": 1.17
+      },
       "maxPenetration": 390,
       "velocity": 1085,
       "type": "HEAT-FS",
@@ -27699,6 +28145,9 @@
             650
           ]
         }
+      },
+      "explosive": {
+        "mass": 4.41
       },
       "name": "I-TOW",
       "mass": 21.45,
@@ -28192,6 +28641,9 @@
           ]
         }
       },
+      "explosive": {
+        "mass": 3.48
+      },
       "maxPenetration": 950,
       "velocity": 655,
       "type": "HEAT",
@@ -28400,6 +28852,9 @@
             12
           ]
         }
+      },
+      "explosive": {
+        "mass": 0.05
       },
       "maxPenetration": 4,
       "velocity": 200,
@@ -28610,6 +29065,9 @@
           ]
         }
       },
+      "explosive": {
+        "mass": 0.05
+      },
       "maxPenetration": 4,
       "velocity": 800,
       "type": "SMOKE",
@@ -28676,6 +29134,9 @@
             350
           ]
         }
+      },
+      "explosive": {
+        "mass": 1.02
       },
       "maxPenetration": 350,
       "velocity": 1120,
@@ -29092,6 +29553,9 @@
             480
           ]
         }
+      },
+      "explosive": {
+        "mass": 2.62
       },
       "maxPenetration": 480,
       "velocity": 905,
@@ -29788,6 +30252,9 @@
           ]
         }
       },
+      "explosive": {
+        "mass": 2.79
+      },
       "maxPenetration": 550,
       "velocity": 905,
       "type": "HEAT-FS",
@@ -29854,6 +30321,9 @@
             950
           ]
         }
+      },
+      "explosive": {
+        "mass": 5.72
       },
       "name": "3UBK21",
       "mass": 17.2,
@@ -29926,6 +30396,9 @@
             100
           ]
         }
+      },
+      "explosive": {
+        "mass": 3.6
       },
       "maxPenetration": 37,
       "velocity": 850,
@@ -30133,6 +30606,9 @@
           ]
         }
       },
+      "explosive": {
+        "mass": 3.93
+      },
       "maxPenetration": 39,
       "velocity": 1015,
       "type": "TIME FUZE",
@@ -30199,6 +30675,9 @@
             480
           ]
         }
+      },
+      "explosive": {
+        "mass": 2.5
       },
       "maxPenetration": 480,
       "velocity": 1140,
@@ -30477,6 +30956,9 @@
           ]
         }
       },
+      "explosive": {
+        "mass": 0.75
+      },
       "name": "QN201DD",
       "mass": 7,
       "missile": {
@@ -30619,6 +31101,9 @@
           ]
         }
       },
+      "explosive": {
+        "mass": 0.9
+      },
       "maxPenetration": 400,
       "velocity": 1174,
       "type": "HEAT-FS",
@@ -30686,6 +31171,9 @@
           ]
         }
       },
+      "explosive": {
+        "mass": 0.05
+      },
       "maxPenetration": 4,
       "velocity": 732,
       "type": "SMOKE",
@@ -30752,6 +31240,9 @@
             339
           ]
         }
+      },
+      "explosive": {
+        "mass": 4.31
       },
       "maxPenetration": 127,
       "velocity": 732,
@@ -30822,6 +31313,9 @@
           ]
         }
       },
+      "explosive": {
+        "mass": 0.05
+      },
       "maxPenetration": 4,
       "velocity": 670,
       "type": "SMOKE",
@@ -30888,6 +31382,9 @@
             406
           ]
         }
+      },
+      "explosive": {
+        "mass": 6.53
       },
       "maxPenetration": 152,
       "velocity": 670,
@@ -31232,6 +31729,9 @@
           ]
         }
       },
+      "explosive": {
+        "mass": 2.5
+      },
       "maxPenetration": 480,
       "velocity": 1140,
       "type": "HEAT-FS",
@@ -31300,6 +31800,9 @@
             700
           ]
         }
+      },
+      "explosive": {
+        "mass": 3.1
       },
       "name": "ATGM",
       "mass": 8.4,
@@ -31512,6 +32015,9 @@
           ]
         }
       },
+      "explosive": {
+        "mass": 1.46
+      },
       "name": "9M117",
       "mass": 15.6,
       "missile": {
@@ -31586,6 +32092,9 @@
           ]
         }
       },
+      "explosive": {
+        "mass": 1.38
+      },
       "maxPenetration": 150,
       "velocity": 150,
       "type": "ROCKET",
@@ -31654,6 +32163,9 @@
             800
           ]
         }
+      },
+      "explosive": {
+        "mass": 4.48
       },
       "name": "9M120-1",
       "mass": 33,
@@ -32076,6 +32588,9 @@
           ]
         }
       },
+      "explosive": {
+        "mass": 1.57
+      },
       "maxPenetration": 380,
       "velocity": 1128,
       "type": "HEAT",
@@ -32287,6 +32802,9 @@
           ]
         }
       },
+      "explosive": {
+        "mass": 1.27
+      },
       "maxPenetration": 400,
       "velocity": 1150,
       "type": "HEAT-FS",
@@ -32422,6 +32940,9 @@
             1000
           ]
         }
+      },
+      "explosive": {
+        "mass": 4.27
       },
       "name": "ATGM",
       "mass": 13,
@@ -32565,6 +33086,9 @@
           ]
         }
       },
+      "explosive": {
+        "mass": 0.9
+      },
       "maxPenetration": 400,
       "velocity": 1174,
       "type": "HEAT-FS",
@@ -32632,6 +33156,9 @@
           ]
         }
       },
+      "explosive": {
+        "mass": 0.05
+      },
       "maxPenetration": 4,
       "velocity": 732,
       "type": "SMOKE",
@@ -32698,6 +33225,9 @@
             339
           ]
         }
+      },
+      "explosive": {
+        "mass": 4.31
       },
       "maxPenetration": 127,
       "velocity": 732,
@@ -33258,6 +33788,9 @@
           ]
         }
       },
+      "explosive": {
+        "mass": 2.5
+      },
       "name": "HEAT ATGM",
       "mass": 10.9,
       "missile": {
@@ -33544,6 +34077,9 @@
           ]
         }
       },
+      "explosive": {
+        "mass": 0.05
+      },
       "maxPenetration": 4,
       "velocity": 200,
       "type": "SMOKE",
@@ -33750,6 +34286,10 @@
             11
           ]
         }
+      },
+      "explosive": {
+        "mass": 0.042,
+        "blastRadiusMultiplier": 1.2
       },
       "maxPenetration": 4,
       "velocity": 200,
@@ -34032,6 +34572,9 @@
           ]
         }
       },
+      "explosive": {
+        "mass": 9.43
+      },
       "name": "AGM-114K Hellfire II",
       "mass": 45.13,
       "missile": {
@@ -34107,6 +34650,9 @@
           ]
         }
       },
+      "explosive": {
+        "mass": 1.64
+      },
       "maxPenetration": 480,
       "velocity": 1140,
       "type": "HEAT-FS",
@@ -34173,6 +34719,10 @@
             11
           ]
         }
+      },
+      "explosive": {
+        "mass": 0.042,
+        "blastRadiusMultiplier": 1.2
       },
       "maxPenetration": 4,
       "velocity": 1410,
@@ -34452,6 +35002,9 @@
             560
           ]
         }
+      },
+      "explosive": {
+        "mass": 3.93
       },
       "name": "9M114",
       "mass": 31.4,
@@ -34873,6 +35426,9 @@
           ]
         }
       },
+      "explosive": {
+        "mass": 5.1
+      },
       "name": "KONUS",
       "mass": 28,
       "missile": {
@@ -34945,6 +35501,9 @@
           ]
         }
       },
+      "explosive": {
+        "mass": 3.93
+      },
       "maxPenetration": 39,
       "velocity": 1015,
       "type": "TIME FUZE",
@@ -35011,6 +35570,9 @@
             480
           ]
         }
+      },
+      "explosive": {
+        "mass": 2.5
       },
       "maxPenetration": 480,
       "velocity": 1140,
@@ -35080,6 +35642,9 @@
             614
           ]
         }
+      },
+      "explosive": {
+        "mass": 136
       },
       "name": "AGM-65G",
       "mass": 306,
@@ -35436,6 +36001,9 @@
             480
           ]
         }
+      },
+      "explosive": {
+        "mass": 2.15
       },
       "maxPenetration": 480,
       "velocity": 1190,
