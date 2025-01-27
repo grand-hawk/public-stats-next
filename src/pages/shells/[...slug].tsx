@@ -24,7 +24,7 @@ export default function Shell() {
   return (
     <>
       <Head>
-        <title>{shell} - MTC Stats</title>
+        <title>{`${shell} - MTC Stats`}</title>
       </Head>
 
       <Box
