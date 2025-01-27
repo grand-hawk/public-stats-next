@@ -3,7 +3,7 @@ import React from 'react';
 
 import Search from '@/components/shells/search';
 
-import type { GetServerSideProps, InferGetServerSidePropsType } from 'next';
+// import type { GetServerSideProps, InferGetServerSidePropsType } from 'next';
 
 // export const getServerSideProps = (async ({ query: queryParams }) => {
 //   return {
