@@ -253,7 +253,7 @@
       },
       "mass": 54,
       "name": "9M7",
-      "type": "SACLOS MISSILE"
+      "type": "ANTI-TANK GUIDED MISSILE"
     }
   ],
   "128 mm PaK44": [
@@ -2010,13 +2010,13 @@
       },
       "mass": 47,
       "name": "9A4172 Vikhr-1",
-      "type": "SACLOS MISSILE"
+      "type": "ANTI-TANK GUIDED MISSILE"
     },
     {
       "damage": 710,
       "maxPenetration": 47,
       "velocity": 680,
-      "type": "SACLOS MISSILE",
+      "type": "ANTI-TANK GUIDED MISSILE",
       "name": "9A4172 Vikhr-1 Proxy-Fuze",
       "mass": 47,
       "penetrationTable": [],
@@ -2288,7 +2288,7 @@
       },
       "mass": 45.13,
       "name": "Brimstone",
-      "type": "LG MISSILE"
+      "type": "LASER GUIDED MISSILE"
     }
   ],
   "130 mm Rh130 L/51": [
@@ -2885,13 +2885,13 @@
       },
       "mass": 33,
       "name": "9D135",
-      "type": "SACLOS MISSILE"
+      "type": "ANTI-TANK GUIDED MISSILE"
     },
     {
       "damage": 938,
       "maxPenetration": 60,
       "velocity": 320,
-      "type": "SACLOS MISSILE",
+      "type": "ANTI-TANK GUIDED MISSILE",
       "name": "9T135",
       "mass": 33,
       "penetrationTable": [],
@@ -2938,7 +2938,7 @@
       },
       "mass": 17.2,
       "name": "9M119M1",
-      "type": "SACLOS MISSILE"
+      "type": "ANTI-TANK GUIDED MISSILE"
     },
     {
       "damage": 500,
@@ -3058,7 +3058,7 @@
       },
       "mass": 16.5,
       "name": "9M119",
-      "type": "SACLOS MISSILE"
+      "type": "ANTI-TANK GUIDED MISSILE"
     },
     {
       "damage": 500,
@@ -3365,7 +3365,7 @@
       },
       "mass": 7,
       "name": "QN201DD",
-      "type": "SACLOS MISSILE"
+      "type": "ANTI-TANK GUIDED MISSILE"
     }
   ],
   "125 mm 2A46MS": [
@@ -3844,7 +3844,7 @@
       },
       "mass": 14.5,
       "name": "9M113M",
-      "type": "SACLOS MISSILE"
+      "type": "ANTI-TANK GUIDED MISSILE"
     }
   ],
   "122 mm D-30": [
@@ -4364,7 +4364,7 @@
       },
       "mass": 18.8,
       "name": "9M117",
-      "type": "SACLOS MISSILE"
+      "type": "ANTI-TANK GUIDED MISSILE"
     }
   ],
   "100 mm 2A70": [
@@ -4405,7 +4405,7 @@
       },
       "mass": 18.8,
       "name": "9M117",
-      "type": "SACLOS MISSILE"
+      "type": "ANTI-TANK GUIDED MISSILE"
     },
     {
       "damage": 547,
@@ -4456,7 +4456,7 @@
       },
       "mass": 18.8,
       "name": "9M117M1",
-      "type": "SACLOS MISSILE"
+      "type": "ANTI-TANK GUIDED MISSILE"
     }
   ],
   "Mk84 2000 lbs LGDP Bomb": [
@@ -4545,7 +4545,7 @@
       },
       "mass": 17.2,
       "name": "9M119M1",
-      "type": "SACLOS MISSILE"
+      "type": "ANTI-TANK GUIDED MISSILE"
     },
     {
       "damage": 500,
@@ -4735,7 +4735,7 @@
       },
       "mass": 16.5,
       "name": "9M119",
-      "type": "SACLOS MISSILE"
+      "type": "ANTI-TANK GUIDED MISSILE"
     },
     {
       "damage": 500,
@@ -4808,7 +4808,7 @@
       },
       "mass": 16.5,
       "name": "9M112",
-      "type": "SACLOS MISSILE"
+      "type": "ANTI-TANK GUIDED MISSILE"
     },
     {
       "damage": 500,
@@ -5118,7 +5118,7 @@
       },
       "mass": 12.5,
       "name": "M4 ETC-HAMM",
-      "type": "SACLOS MISSILE"
+      "type": "ANTI-TANK GUIDED MISSILE"
     }
   ],
   "30 mm MK 30-2/ABM": [
@@ -5491,7 +5491,7 @@
       },
       "mass": 28.5,
       "name": "Rubin",
-      "type": "SACLOS MISSILE"
+      "type": "ANTI-TANK GUIDED MISSILE"
     }
   ],
   "105mm T5E1": [
@@ -5652,7 +5652,7 @@
       "maxPenetration": 775,
       "shrapMultiplier": 3,
       "velocity": 1520,
-      "type": "SACLOS MISSILE"
+      "type": "ANTI-TANK GUIDED MISSILE"
     }
   ],
   "90 mm M41": [
@@ -6005,7 +6005,7 @@
       },
       "mass": 28,
       "name": "POLYNEGE",
-      "type": "SACLOS MISSILE"
+      "type": "ANTI-TANK GUIDED MISSILE"
     },
     {
       "damage": 490,
@@ -6329,7 +6329,7 @@
       },
       "mass": 18.8,
       "name": "APS03",
-      "type": "SACLOS MISSILE"
+      "type": "ANTI-TANK GUIDED MISSILE"
     },
     {
       "damage": 547,
@@ -6667,7 +6667,7 @@
       },
       "mass": 16.5,
       "name": "9M119",
-      "type": "SACLOS MISSILE"
+      "type": "ANTI-TANK GUIDED MISSILE"
     },
     {
       "damage": 500,
@@ -7057,7 +7057,7 @@
       },
       "mass": 17.2,
       "name": "9M119M1",
-      "type": "SACLOS MISSILE"
+      "type": "ANTI-TANK GUIDED MISSILE"
     }
   ],
   "HJ-10": [
@@ -7896,7 +7896,7 @@
       "damage": 938,
       "maxPenetration": 60,
       "velocity": 550,
-      "type": "SACLOS MISSILE",
+      "type": "ANTI-TANK GUIDED MISSILE",
       "name": "9M123F-1",
       "mass": 33,
       "penetrationTable": [],
@@ -7941,7 +7941,7 @@
       },
       "mass": 33,
       "name": "9M123",
-      "type": "SACLOS MISSILE"
+      "type": "ANTI-TANK GUIDED MISSILE"
     }
   ],
   "152 mm 2A33": [
@@ -8188,7 +8188,7 @@
       },
       "mass": 14.5,
       "name": "9M113",
-      "type": "SACLOS MISSILE"
+      "type": "ANTI-TANK GUIDED MISSILE"
     }
   ],
   "100 mm D-10S": [
@@ -9146,7 +9146,7 @@
       },
       "mass": 19.05,
       "name": "I-TOW",
-      "type": "SACLOS MISSILE"
+      "type": "ANTI-TANK GUIDED MISSILE"
     }
   ],
   "30 cal": [
@@ -9372,7 +9372,7 @@
       "damage": 3599,
       "maxPenetration": 176,
       "velocity": 454,
-      "type": "SACLOS MISSILE",
+      "type": "ANTI-TANK GUIDED MISSILE",
       "name": "Kh-25ML",
       "mass": 300,
       "penetrationTable": [],
@@ -10040,7 +10040,7 @@
       },
       "mass": 19,
       "name": "GP125",
-      "type": "SACLOS MISSILE"
+      "type": "ANTI-TANK GUIDED MISSILE"
     },
     {
       "damage": 681,
@@ -10263,7 +10263,7 @@
       "damage": 5415,
       "maxPenetration": 242,
       "velocity": 454,
-      "type": "SACLOS MISSILE",
+      "type": "ANTI-TANK GUIDED MISSILE",
       "name": "Kh-38MLE",
       "mass": 520,
       "penetrationTable": [],
@@ -10346,7 +10346,7 @@
       },
       "mass": 27.8,
       "name": "MGM-51B Shiellelagh",
-      "type": "SACLOS MISSILE"
+      "type": "ANTI-TANK GUIDED MISSILE"
     },
     {
       "damage": 133,
@@ -10635,13 +10635,13 @@
       },
       "mass": 51,
       "name": "MIM146 Anti-Tank Mode",
-      "type": "SACLOS MISSILE"
+      "type": "ANTI-TANK GUIDED MISSILE"
     },
     {
       "damage": 853,
       "maxPenetration": 55,
       "velocity": 1027,
-      "type": "SACLOS MISSILE",
+      "type": "ANTI-TANK GUIDED MISSILE",
       "name": "MIM146 Anti-Air Mode",
       "mass": 51,
       "penetrationTable": [],
@@ -10699,7 +10699,7 @@
       },
       "mass": 14.6,
       "name": "R-2",
-      "type": "SACLOS MISSILE"
+      "type": "ANTI-TANK GUIDED MISSILE"
     }
   ],
   "M8 Rocket": [
@@ -11552,7 +11552,7 @@
       },
       "mass": 45.13,
       "name": "AGM-114K Hellfire II",
-      "type": "LG MISSILE"
+      "type": "LASER GUIDED MISSILE"
     }
   ],
   "40 mm Akan m/70B": [
@@ -12213,7 +12213,7 @@
       },
       "mass": 17.2,
       "name": "KOMBAT ATGM",
-      "type": "SACLOS MISSILE"
+      "type": "ANTI-TANK GUIDED MISSILE"
     },
     {
       "damage": 500,
@@ -12369,7 +12369,7 @@
       },
       "mass": 17.2,
       "name": "3UBK21",
-      "type": "SACLOS MISSILE"
+      "type": "ANTI-TANK GUIDED MISSILE"
     },
     {
       "damage": 551,
@@ -12513,13 +12513,13 @@
       },
       "mass": 19.9,
       "name": "Type 79",
-      "type": "SACLOS MISSILE"
+      "type": "ANTI-TANK GUIDED MISSILE"
     },
     {
       "damage": 502,
       "maxPenetration": 34,
       "velocity": 200,
-      "type": "SACLOS MISSILE",
+      "type": "ANTI-TANK GUIDED MISSILE",
       "name": "Type 79 ASM",
       "mass": 19.9,
       "penetrationTable": [],
@@ -12734,7 +12734,7 @@
       "damage": 631,
       "maxPenetration": 42,
       "velocity": 910,
-      "type": "SACLOS MISSILE",
+      "type": "ANTI-TANK GUIDED MISSILE",
       "name": "9M311",
       "mass": 41.6,
       "penetrationTable": [],
@@ -12979,7 +12979,7 @@
       },
       "mass": 27.8,
       "name": "MGM-51B Shiellelagh",
-      "type": "SACLOS MISSILE"
+      "type": "ANTI-TANK GUIDED MISSILE"
     },
     {
       "damage": 133,
@@ -13893,7 +13893,7 @@
       },
       "mass": 15.6,
       "name": "9M117",
-      "type": "SACLOS MISSILE"
+      "type": "ANTI-TANK GUIDED MISSILE"
     }
   ],
   "30 mm 2A42": [
@@ -14236,7 +14236,7 @@
       },
       "mass": 33,
       "name": "9M120-1",
-      "type": "SACLOS MISSILE"
+      "type": "ANTI-TANK GUIDED MISSILE"
     }
   ],
   "Pars 3": [
@@ -14519,7 +14519,7 @@
       },
       "mass": 21.45,
       "name": "TOW-2A",
-      "type": "SACLOS MISSILE"
+      "type": "ANTI-TANK GUIDED MISSILE"
     },
     {
       "damage": 500,
@@ -14558,7 +14558,7 @@
       },
       "mass": 22.59,
       "name": "TOW-2B",
-      "type": "SACLOS MISSILE"
+      "type": "ANTI-TANK GUIDED MISSILE"
     }
   ],
   "LFK S.11": [
@@ -14979,7 +14979,7 @@
       },
       "mass": 12.5,
       "name": "LAHAT",
-      "type": "SACLOS MISSILE"
+      "type": "ANTI-TANK GUIDED MISSILE"
     },
     {
       "damage": 643,
@@ -15360,7 +15360,7 @@
       },
       "mass": 21.45,
       "name": "TOW-2G",
-      "type": "SACLOS MISSILE"
+      "type": "ANTI-TANK GUIDED MISSILE"
     },
     {
       "damage": 390,
@@ -15399,7 +15399,7 @@
       },
       "mass": 22.59,
       "name": "TOW-2X",
-      "type": "SACLOS MISSILE"
+      "type": "ANTI-TANK GUIDED MISSILE"
     }
   ],
   "9M133": [
@@ -15440,13 +15440,13 @@
       },
       "mass": 33,
       "name": "9M133",
-      "type": "SACLOS MISSILE"
+      "type": "ANTI-TANK GUIDED MISSILE"
     },
     {
       "damage": 938,
       "maxPenetration": 60,
       "velocity": 320,
-      "type": "SACLOS MISSILE",
+      "type": "ANTI-TANK GUIDED MISSILE",
       "name": "9M133F-1",
       "mass": 33,
       "penetrationTable": [],
@@ -15493,7 +15493,7 @@
       },
       "mass": 14.5,
       "name": "9M113",
-      "type": "SACLOS MISSILE"
+      "type": "ANTI-TANK GUIDED MISSILE"
     }
   ],
   "115 mm U-5TS": [
@@ -15568,7 +15568,7 @@
       },
       "mass": 18.8,
       "name": "9M117",
-      "type": "SACLOS MISSILE"
+      "type": "ANTI-TANK GUIDED MISSILE"
     },
     {
       "damage": 470,
@@ -15797,7 +15797,7 @@
       },
       "mass": 28,
       "name": "KONUS",
-      "type": "SACLOS MISSILE"
+      "type": "ANTI-TANK GUIDED MISSILE"
     },
     {
       "damage": 490,
@@ -16434,7 +16434,7 @@
       },
       "mass": 31.4,
       "name": "9M114",
-      "type": "SACLOS MISSILE"
+      "type": "ANTI-TANK GUIDED MISSILE"
     }
   ],
   "9M134": [
@@ -16475,7 +16475,7 @@
       },
       "mass": 3.5,
       "name": "9M134",
-      "type": "SACLOS MISSILE"
+      "type": "ANTI-TANK GUIDED MISSILE"
     }
   ],
   "7.92 mm MG42": [
@@ -16901,7 +16901,7 @@
       },
       "mass": 6.7,
       "name": "Milan ER",
-      "type": "SACLOS MISSILE"
+      "type": "ANTI-TANK GUIDED MISSILE"
     }
   ],
   "30 mm M230E-1": [
