@@ -80,7 +80,7 @@ for _, moduleScript in Modules:GetChildren() do
 		end
 
 		do
-			local angles = { 0, 30, 60, 68 }
+			local angles = { 0, 30, 60 }
 			local distances = { 0, 1_000, 2_000, 3_000 }
 
 			for _, angle in angles do
