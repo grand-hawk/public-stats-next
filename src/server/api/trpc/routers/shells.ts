@@ -22,7 +22,7 @@ export interface Shell {
   maxPenetration: number;
   penetrationTable: {
     [angle: number]: {
-      [distance: number]: number | undefined;
+      [distance: number]: Array<number | undefined>;
     };
   };
 

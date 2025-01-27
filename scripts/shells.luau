@@ -19,7 +19,7 @@ type ShellModule = {
 	maxPenetration: number,
 	penetrationTable: {
 		[number]: {
-			[number]: number?,
+			[number]: { number | nil },
 		},
 	},
 
@@ -91,7 +91,13 @@ for _, moduleScript in Modules:GetChildren() do
 					local calculatedPen = 0 / 0
 
 					repeat
-						if table.find({ "HE", "HEAT", "HEAT-FS" }, shell.type) then
+						if shell.type == "HE" then
+							calculatedPen = basePen / math.cos(math.rad(angle))
+
+							break
+						end
+
+						if table.find({ "HEAT", "HEAT-FS" }, shell.type) then
 							calculatedPen = basePen
 
 							break
@@ -120,7 +126,13 @@ for _, moduleScript in Modules:GetChildren() do
 						end
 					until true
 
-					shell.penetrationTable[angle][distance] = math.round(calculatedPen)
+					local penArray = { math.round(calculatedPen) }
+
+					if shell.type == "SAPHE" then
+						table.insert(penArray, math.round(GlobalConstants.GetBlastPen(ammo)))
+					end
+
+					shell.penetrationTable[angle][distance] = penArray
 				end
 			end
 		end

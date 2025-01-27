@@ -88,13 +88,17 @@ export default function PenetrationTable({
                 </Table.Cell>
 
                 {angles.map((angle) => {
-                  let anglePen = penetration[angle][distance];
+                  let anglePens = penetration[angle][distance];
 
-                  if (typeof anglePen !== 'undefined' && mode === 'rel')
-                    anglePen = Math.round(relPenetration(anglePen, angle));
+                  if (mode === 'rel')
+                    anglePens = anglePens.map(
+                      (pen) => pen && Math.round(relPenetration(pen, angle)),
+                    );
 
                   return (
-                    <Table.Cell key={angle}>{anglePen ?? '-'} mm</Table.Cell>
+                    <Table.Cell key={angle}>
+                      {anglePens.map((anglePen) => `${anglePen ?? '-'} mm`)}{' '}
+                    </Table.Cell>
                   );
                 })}
               </Table.Row>
