@@ -76,27 +76,47 @@ for _, moduleScript in Modules:GetChildren() do
 		end
 
 		do
-			if ammo.ShellType ~= "HE" then
-				local angles = { 0, 30, 60, 68 }
-				local distances = { 0, 1_000, 2_000, 3_000 }
+			local angles = { 0, 30, 60, 68 }
+			local distances = { 0, 1_000, 2_000, 3_000 }
 
-				for _, angle in angles do
-					shell.penetrationTable[angle] = {}
+			for _, angle in angles do
+				shell.penetrationTable[angle] = {}
 
+				for _, distance in distances do
+					local penLoss = GlobalConstants.PenLoss(GlobalConstants.mtostud(distance), ammo)
 					local basePen = ammo.ShellMaxPen
-					if ammo.AngleCons then
-						basePen *= math.cos(math.rad(angle)) ^ ammo.AngleCons
-					elseif string.find(shell.type, "APFSDS") then
-						basePen *= math.cos(math.rad(angle)) ^ -0.224
-					else
-						basePen *= math.cos(math.rad(angle)) ^ 1.1
-					end
+					basePen *= penLoss
 
-					for _, distance in distances do
-						local penLoss = GlobalConstants.PenLoss(GlobalConstants.mtostud(distance), ammo)
+					local calculatedPen = 0 / 0
 
-						shell.penetrationTable[angle][distance] = math.round(basePen * penLoss)
-					end
+					repeat
+						if table.find({ "HE", "HEAT" }, shell.type) then
+							calculatedPen = basePen
+
+							break
+						end
+
+						if ammo.AngleCons then
+							local logBase05 = math.log(ammo.AngleCons / basePen) / math.log(0.5)
+							calculatedPen = basePen * math.cos(angle) ^ logBase05
+
+							break
+						end
+
+						if string.find(shell.type, "APFSDS") then
+							calculatedPen = basePen * math.cos(angle) ^ -0.224
+
+							break
+						end
+
+						if true then
+							calculatedPen = basePen * math.cos(angle) ^ 1.1
+
+							break
+						end
+					until true
+
+					shell.penetrationTable[angle][distance] = math.round(calculatedPen)
 				end
 			end
 		end

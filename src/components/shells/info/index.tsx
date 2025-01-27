@@ -69,8 +69,6 @@ export default function ShellInfo({
   if (!data)
     return <NoDataFoundState onClick={() => !isFetching && refetch()} />;
 
-  const hasPenetrationTable = !!Object.keys(data.penetrationTable).length;
-
   return (
     <Grid gap={4}>
       <GridItem colSpan={1} rowSpan={1}>
@@ -111,11 +109,9 @@ export default function ShellInfo({
               </Stat>
             )}
 
-            {!hasPenetrationTable && (
-              <Stat label="Penetration">
-                <FormatNumber value={data.maxPenetration} /> mm
-              </Stat>
-            )}
+            <Stat label="Penetration">
+              <FormatNumber value={data.maxPenetration} /> mm
+            </Stat>
 
             {data.explosive && (
               <>
@@ -197,13 +193,11 @@ export default function ShellInfo({
         </GridItem>
       )}
 
-      {hasPenetrationTable && (
-        <GridItem colSpan={1} rowSpan={1}>
-          <BasicCard heading="Penetration">
-            <PenetrationTable penetration={data.penetrationTable} />
-          </BasicCard>
-        </GridItem>
-      )}
+      <GridItem colSpan={1} rowSpan={1}>
+        <BasicCard heading="Penetration">
+          <PenetrationTable penetration={data.penetrationTable} />
+        </BasicCard>
+      </GridItem>
     </Grid>
   );
 }
