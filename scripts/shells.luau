@@ -132,7 +132,7 @@ for _, moduleScript in Modules:GetChildren() do
 						table.insert(
 							penArray,
 							-- same as formula as HE
-							math.round(GlobalConstants.GetBlastPen(ammo)) / math.cos(math.rad(angle))
+							math.round(GlobalConstants.GetBlastPen(ammo) / math.cos(math.rad(angle)))
 						)
 					end
 
