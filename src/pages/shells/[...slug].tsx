@@ -12,14 +12,11 @@ import {
   BreadcrumbRoot,
 } from '@/components/ui/breadcrumb';
 import { useNavigationStore } from '@/stores/navigation';
-import { trpc } from '@/utils/trpc';
 
 export default function Shell() {
   const router = useRouter();
   const placeId = useNavigationStore((s) => s.placeId);
   const [weapon, shell] = router.query.slug as [string, string];
-
-  if (placeId) trpc.shells.data.usePrefetchQuery({ placeId, weapon, shell });
 
   return (
     <>
