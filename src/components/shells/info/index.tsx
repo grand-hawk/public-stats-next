@@ -8,6 +8,7 @@ import {
 } from '@chakra-ui/react';
 import React from 'react';
 
+import InfoTooltip from '@/components/infoTooltip';
 import BasicCard from '@/components/shells/info/basicCard';
 import PenetrationTable from '@/components/shells/info/penetrationTable';
 import Stat from '@/components/stat';
@@ -86,6 +87,21 @@ export default function ShellInfo({
             {typeof data.ricochetAngle !== 'undefined' && (
               <Stat label="Ricochet angle">
                 <FormatNumber value={data.ricochetAngle} />°
+              </Stat>
+            )}
+            {typeof data.eraTip !== 'undefined' && (
+              <Stat
+                label={
+                  <>
+                    ERA tip
+                    <InfoTooltip
+                      content="Higher value ERA tip reduces ERA effectiveness against the penetrator"
+                      contentProps={{ marginLeft: 2 }}
+                    />
+                  </>
+                }
+              >
+                <FormatNumber value={data.eraTip} />°
               </Stat>
             )}
 

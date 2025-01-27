@@ -18,6 +18,7 @@ export interface Shell {
   damage: number;
   shrapMultiplier: number | undefined;
   ricochetAngle: number | undefined;
+  eraTip: number | undefined;
 
   maxPenetration: number;
   penetrationTable: {

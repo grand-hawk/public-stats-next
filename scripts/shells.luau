@@ -15,6 +15,7 @@ type ShellModule = {
 	damage: number,
 	shrapMultiplier: number?,
 	ricochetAngle: number?,
+	eraTip: number?,
 
 	maxPenetration: number,
 	penetrationTable: {
@@ -68,6 +69,7 @@ for _, moduleScript in Modules:GetChildren() do
 			damage = math.round(ammo.Damage),
 			shrapMultiplier = ammo.shrapmult,
 			ricochetAngle = ammo.RicochetAngle,
+			eraTip = ammo.ERAtip,
 
 			maxPenetration = math.round(ammo.ShellMaxPen),
 			penetrationTable = {},
@@ -91,13 +93,13 @@ for _, moduleScript in Modules:GetChildren() do
 					local calculatedPen = 0 / 0
 
 					repeat
-						if shell.type == "HE" then
+						if ammo.ShellType == "HE" then
 							calculatedPen = basePen / math.cos(math.rad(angle))
 
 							break
 						end
 
-						if table.find({ "HEAT", "HEAT-FS" }, shell.type) then
+						if ammo.ShellType == "HEAT" then
 							calculatedPen = basePen
 
 							break
@@ -128,7 +130,7 @@ for _, moduleScript in Modules:GetChildren() do
 
 					local penArray = { math.round(calculatedPen) }
 
-					if shell.type == "SAPHE" then
+					if ammo.ShellType == "SAPHE" then
 						table.insert(
 							penArray,
 							-- same as formula as HE
@@ -177,7 +179,11 @@ for _, moduleScript in Modules:GetChildren() do
 			end
 
 			if ammo.Behavior == "SACLOS" then
-				shell.type = "ANTI-TANK GUIDED MISSILE"
+				if ammo.ShellType == "TANDEM" then
+					shell.type = "TANDEM ANTI-TANK GUIDED MISSILE"
+				else
+					shell.type = "ANTI-TANK GUIDED MISSILE"
+				end
 			end
 
 			if ammo.Behavior == "MCLOS" then

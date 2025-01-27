@@ -10,7 +10,10 @@ export default function Stat({
   label,
   children,
   ...props
-}: PropsWithChildren<{ label: string }> & StatValueTextProps) {
+}: PropsWithChildren<{
+  label: React.ReactNode;
+}> &
+  StatValueTextProps) {
   return (
     <StatRoot>
       <StatLabel color="unset" fontWeight="medium">
