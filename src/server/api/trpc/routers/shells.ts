@@ -16,7 +16,8 @@ export interface Shell {
   mass: number;
   velocity: number;
   damage: number;
-  shrapMultiplier: number;
+  shrapMultiplier: number | undefined;
+  ricochetAngle: number | undefined;
 
   maxPenetration: number;
   penetrationTable: {

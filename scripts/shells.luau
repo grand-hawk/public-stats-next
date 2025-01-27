@@ -14,6 +14,7 @@ type ShellModule = {
 	velocity: number,
 	damage: number,
 	shrapMultiplier: number?,
+	ricochetAngle: number?,
 
 	maxPenetration: number,
 	penetrationTable: {
@@ -66,6 +67,7 @@ for _, moduleScript in Modules:GetChildren() do
 			velocity = math.round(GlobalConstants.studtom(ammo.MuzzleSpeed)),
 			damage = math.round(ammo.Damage),
 			shrapMultiplier = ammo.shrapmult,
+			ricochetAngle = ammo.RicochetAngle,
 
 			maxPenetration = math.round(ammo.ShellMaxPen),
 			penetrationTable = {},
