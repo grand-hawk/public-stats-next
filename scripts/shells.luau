@@ -87,7 +87,6 @@ for _, moduleScript in Modules:GetChildren() do
 				for _, distance in distances do
 					local penLoss = GlobalConstants.PenLoss(GlobalConstants.mtostud(distance), ammo)
 					local basePen = ammo.ShellMaxPen
-					basePen *= penLoss
 
 					local calculatedPen = 0 / 0
 
@@ -97,6 +96,9 @@ for _, moduleScript in Modules:GetChildren() do
 
 							break
 						end
+
+						-- apply pen loss after chemical types
+						basePen *= penLoss
 
 						if ammo.AngleCons ~= nil then
 							local logBase05 = math.log(ammo.PenAt60 / basePen) / math.log(0.5)
