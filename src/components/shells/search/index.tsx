@@ -25,8 +25,8 @@ export default function Search({
     >
       <SearchInput
         disabled={!placeId}
+        setValue={(value) => setQuery(value)}
         value={query}
-        onChange={(e) => setQuery(e.target.value)}
       />
 
       <Box
