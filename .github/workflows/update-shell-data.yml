@@ -1,0 +1,38 @@
+name: Update shell data
+
+on:
+  # schedule:
+  #   - cron: '5 */12 * * *'
+  workflow_dispatch:
+
+jobs:
+  update-shell-data-sunny-valley:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup git
+        uses: fregante/setup-git-user@v2
+
+      - name: Execute script
+        id: roblox-luau-execution
+        uses: grand-hawk/action-roblox-luau-execution@1.0.0
+        with:
+          roblox_api_key: ${{ secrets.ROBLOX_LUAU_EXECUTION_API_KEY }}
+          universe_id: '3221676855'
+          place_id: '8421780146'
+          luau_file: './scripts/shells.luau'
+          output_file: 'script-execution-output.json'
+
+      - name: Process JSON output
+        run: jq ".[0]" "./script-execution-output.json" > "./data/shells/8421780146.json"
+
+      - name: Remove temp file
+        run: rm script-execution-output.json
+
+      - run: |
+          git add ./data/shells/8421780146.json
+          git commit -m "Update Sunny Valley shells"
+          git push origin ${{ github.ref_name }}

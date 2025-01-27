@@ -1,0 +1,166 @@
+local ReplicatedFirst = game:GetService("ReplicatedFirst")
+local Shells = ReplicatedFirst:WaitForChild("Shells") :: Folder
+local Modules = Shells:WaitForChild("Modules") :: Folder
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local PHRST = ReplicatedStorage:WaitForChild("PHRST") :: Folder
+
+local GlobalConstants = require(Shells:WaitForChild("GlobalConstants") :: ModuleScript)
+local ShellModules = require(PHRST:WaitForChild("ShellModules") :: ModuleScript)
+
+type ShellModule = {
+	name: string,
+	type: string,
+	mass: number,
+	velocity: number,
+	damage: number,
+	shrapMultiplier: number?,
+
+	maxPenetration: number,
+	penetrationTable: {
+		[number]: {
+			[number]: number,
+		},
+	},
+
+	explosive: {
+		mass: number,
+		blastRadiusMultiplier: number?,
+	}?,
+
+	missile: {
+		boostTime: number?,
+		turnRate: number?,
+		limit: number?,
+		unjammable: boolean,
+		irccm: boolean,
+	}?,
+
+	cluster: {
+		submunitions: number,
+		dispersion: number,
+	}?,
+}
+
+local weapons: { [string]: { ShellModule } } = {}
+
+for _, moduleScript in Modules:GetChildren() do
+	if not moduleScript:IsA("ModuleScript") then
+		continue
+	end
+
+	if table.find({ "InfGuns", "Flares" }, moduleScript.Name) then
+		continue
+	end
+
+	local module = require(moduleScript)
+
+	local shells: { ShellModule } = {}
+
+	for ammoKey, _ in module.AmmoTypes do
+		local ammo = ShellModules[`{moduleScript.Name}:{ammoKey}`]
+
+		local shell: ShellModule = {
+			name = ammo.DisplayName,
+			type = ammo.DisplayType,
+			mass = ammo.ShellMass,
+			velocity = GlobalConstants.studtom(ammo.MuzzleSpeed),
+			damage = ammo.Damage,
+			shrapMultiplier = ammo.shrapmult,
+
+			maxPenetration = ammo.ShellMaxPen,
+			penetrationTable = {},
+		}
+
+		if shell.type == "ATGM HE" then
+			shell.type = "HE"
+		end
+
+		do
+			local angles = { 0, 30, 60, 68 }
+			local distances = { 0, 1_000, 2_000, 3_000 }
+
+			for _, angle in angles do
+				shell.penetrationTable[angle] = {}
+
+				local basePen = shell.maxPenetration
+				if ammo.AngleCons then
+					basePen *= math.cos(math.rad(angle)) ^ ammo.AngleCons
+				elseif string.find(shell.type, "APFSDS") then
+					basePen *= math.cos(math.rad(angle)) ^ -0.224
+				else
+					basePen *= math.cos(math.rad(angle)) ^ 1.1
+				end
+
+				for _, distance in distances do
+					local penLoss = GlobalConstants.PenLoss(GlobalConstants.mtostud(distance), ammo)
+
+					shell.penetrationTable[angle][distance] = basePen * penLoss
+				end
+			end
+		end
+
+		do
+			if ammo.ExplosiveMass and ammo.ExplosiveMass > 0 and table.find({ "HE", "APHE", "SAPHE" }, shell.type) then
+				shell.explosive = {
+					mass = ammo.ExplosiveMass,
+					blastRadiusMultiplier = ammo.blastradiusmult,
+				}
+			end
+
+			if string.find(shell.type, "ATGM") then
+				shell.missile = {
+					boostTime = ammo.BoostTime,
+					turnRate = ammo.Turnrate,
+					limit = ammo.Glimit,
+					unjammable = ammo.Unjammable or false,
+					irccm = if ammo.Behavior == "FOX2" then ammo.IRCCM else nil,
+				}
+			end
+
+			if shell.type == "CLUSTER" then
+				shell.cluster = {
+					submunitions = ammo.Submunitions,
+					dispersion = ammo.SubmunitionAngularDispersion,
+				}
+			end
+		end
+
+		do
+			if ammo.Behavior == "FOX2" then
+				shell.type = "AIR-TO-AIR MISSILE"
+			end
+
+			if ammo.Behavior == "SACLOS" then
+				shell.type = "SACLOS MISSILE"
+			end
+
+			if ammo.Behavior == "MCLOS" then
+				shell.type = "MACLOS MISSILE"
+			end
+
+			if ammo.Behavior == "LGM" then
+				shell.type = "LG MISSILE"
+			end
+
+			if ammo.Behavior == "TAM" then
+				shell.type = "F&F MISSILE"
+			end
+		end
+
+		do
+			if shell.type == "SMOKE SHELL" then
+				shell.type = "SMOKE"
+			end
+		end
+
+		table.insert(shells, shell)
+	end
+
+	if #shells > 0 then
+		weapons[module.WeaponInfo.DisplayName] = shells
+	end
+end
+
+print(game:GetService("HttpService"):JSONEncode(weapons))
+
+return weapons
