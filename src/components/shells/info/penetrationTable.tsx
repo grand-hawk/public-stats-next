@@ -72,16 +72,18 @@ export default function PenetrationTable({
         <Table.Root showColumnBorder size="sm" variant="outline">
           <Table.Body>
             <Table.Row>
-              <Table.Cell />
+              <Table.Cell fontWeight="medium">Distance/Angle</Table.Cell>
 
               {angles.map((angle) => (
-                <Table.Cell key={angle}>{angle}°</Table.Cell>
+                <Table.Cell key={angle} fontWeight="medium">
+                  {angle}°
+                </Table.Cell>
               ))}
             </Table.Row>
 
             {distances.map((distance) => (
               <Table.Row key={distance}>
-                <Table.Cell>
+                <Table.Cell fontWeight="medium">
                   <FormatNumber value={distance} /> meters
                 </Table.Cell>
 
