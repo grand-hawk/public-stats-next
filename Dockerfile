@@ -9,7 +9,7 @@ WORKDIR /build
 RUN --mount=type=cache,id=pnpm,target=/root/.local/share/pnpm/store pnpm fetch --frozen-lockfile
 RUN --mount=type=cache,id=pnpm,target=/root/.local/share/pnpm/store pnpm install --frozen-lockfile
 
-ENV NODE_ENV=production
+ENV NODE_ENV=${OVERWRITE_ENV:-production}
 ENV NEXT_TELEMETRY_DISABLED=1
 ENV NEXT_OUTPUT=standalone
 
