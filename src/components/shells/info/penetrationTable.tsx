@@ -4,7 +4,7 @@ import React from 'react';
 import BasicCard from '@/components/shells/info/basicCard';
 import { Switch } from '@/components/ui/switch';
 import { Tooltip } from '@/components/ui/tooltip';
-import relativePenetration from '@/utils/relativePenetration';
+import { relPenetration } from '@/utils/penetration';
 
 import type { Shell } from '@/server/api/trpc/routers/shells';
 
@@ -91,7 +91,7 @@ export default function PenetrationTable({
                   let anglePen = penetration[angle][distance];
 
                   if (typeof anglePen !== 'undefined' && mode === 'rel')
-                    anglePen = Math.round(relativePenetration(anglePen, angle));
+                    anglePen = Math.round(relPenetration(anglePen, angle));
 
                   return (
                     <Table.Cell key={angle}>{anglePen ?? '-'} mm</Table.Cell>

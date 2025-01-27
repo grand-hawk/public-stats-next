@@ -16,12 +16,15 @@ import { useNavigationStore } from '@/stores/navigation';
 export default function Shell() {
   const router = useRouter();
   const placeId = useNavigationStore((s) => s.placeId);
-  const [weapon, shell] = router.query.slug as [string, string];
+  const [rawWeapon, rawShell] = router.query.slug as [string, string];
+
+  const weapon = decodeURIComponent(rawWeapon);
+  const shell = decodeURIComponent(rawShell);
 
   return (
     <>
       <Head>
-        <title>{`${shell} - MTC Stats`}</title>
+        <title>{`${rawShell} - MTC Stats`}</title>
       </Head>
 
       <Box

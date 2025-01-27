@@ -55,7 +55,7 @@ function Results({ placeId, query }: { placeId: number; query: string }) {
       {results.map((result, index) => (
         <Link
           key={`${result.weaponName}-${result.shell}-${index}`}
-          href={`/shells/${result.weaponName}/${result.shell}`}
+          href={`/shells/${encodeURIComponent(result.weaponName)}/${encodeURIComponent(result.shell)}`}
           passHref
         >
           <Button
