@@ -98,7 +98,7 @@ export default function ShellInfo({
                   </>
                 }
               >
-                <FormatNumber value={data.eraTip} />°
+                <FormatNumber value={data.eraTip} />
               </Stat>
             )}
 
