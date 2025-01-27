@@ -90,7 +90,7 @@ for _, moduleScript in Modules:GetChildren() do
 					local calculatedPen = 0 / 0
 
 					repeat
-						if table.find({ "HE", "HEAT" }, shell.type) then
+						if table.find({ "HE", "HEAT", "HEAT-FS" }, shell.type) then
 							calculatedPen = basePen
 
 							break

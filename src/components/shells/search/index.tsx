@@ -7,15 +7,14 @@ import Results from '@/components/shells/search/results';
 import PlaceEmptyState from '@/components/states/placeEmptyState';
 import { useNavigationStore } from '@/stores/navigation';
 
-export default function Search() {
+export default function Search({
+  initialQuery,
+}: {
+  initialQuery: string | null;
+}) {
   const placeId = useNavigationStore((s) => s.placeId);
-  const [query, setQuery] = React.useState('');
+  const [query, setQuery] = React.useState(initialQuery || '');
   const debouncedQuery = useDebounce(query, 250);
-
-  React.useEffect(() => {
-    const search = new URLSearchParams(window.location.search);
-    if (search.has('query')) setQuery(search.get('query')!);
-  }, []);
 
   return (
     <Box

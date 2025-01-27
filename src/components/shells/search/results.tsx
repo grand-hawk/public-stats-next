@@ -59,7 +59,6 @@ function Results({ placeId, query }: { placeId: number; query: string }) {
           passHref
         >
           <Button
-            as="a"
             gap={2}
             justifyContent="left"
             minHeight="fit-content"
