@@ -40,7 +40,13 @@ export default function PenetrationTable({
               content="Line of sight penetration"
               openDelay={15}
             >
-              <Text fontSize="sm" fontWeight="normal" lineHeight={1}>
+              <Text
+                cursor="default"
+                fontSize="sm"
+                fontWeight="normal"
+                lineHeight={1}
+                marginY="auto"
+              >
                 LOS
               </Text>
             </Tooltip>
@@ -60,7 +66,13 @@ export default function PenetrationTable({
                 placement: 'bottom-end',
               }}
             >
-              <Text fontSize="sm" fontWeight="normal" lineHeight={1}>
+              <Text
+                cursor="default"
+                fontSize="sm"
+                fontWeight="normal"
+                lineHeight={1}
+                marginY="auto"
+              >
                 REL
               </Text>
             </Tooltip>
