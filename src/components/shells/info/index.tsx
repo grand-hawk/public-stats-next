@@ -141,11 +141,12 @@ export default function ShellInfo({
                 </Stat>
               )}
 
-              {typeof data.missile.turnRate !== 'undefined' && (
-                <Stat label="Turn rate">
-                  <FormatNumber value={data.missile.turnRate} /> °/s
-                </Stat>
-              )}
+              {typeof data.missile.turnRate !== 'undefined' &&
+                typeof data.missile.limit === 'undefined' && (
+                  <Stat label="Turn rate">
+                    <FormatNumber value={data.missile.turnRate} /> °/s
+                  </Stat>
+                )}
 
               {typeof data.missile.limit !== 'undefined' && (
                 <Stat label="G limit">
