@@ -75,6 +75,7 @@ for (const placeId of Object.values(places)) {
     {
       keys: ['weaponName', 'name', 'type'],
       threshold: 0.2,
+      
     },
   );
 
@@ -118,6 +119,7 @@ export const shellRouter = createTRPCRouter({
       return results.map((result) => ({
         weaponName: result.item.weaponName,
         shell: result.item.name,
+        type: result.item.type,
       }));
     }),
 

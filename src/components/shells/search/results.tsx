@@ -1,5 +1,4 @@
 import { Center, Stack, Text } from '@chakra-ui/react';
-import autoAnimate from '@formkit/auto-animate';
 import Link from 'next/link';
 import React from 'react';
 import { MdOutlineSearch } from 'react-icons/md';
@@ -12,7 +11,6 @@ import { EmptyState } from '@/components/ui/empty-state';
 import { trpc } from '@/utils/trpc';
 
 function Results({ placeId, query }: { placeId: number; query: string }) {
-  const autoAnimateRef = React.useRef<HTMLDivElement>(null);
   const {
     data: results,
     isLoading,
@@ -22,11 +20,6 @@ function Results({ placeId, query }: { placeId: number; query: string }) {
     { placeId, query },
     { refetchOnWindowFocus: false },
   );
-
-  React.useEffect(() => {
-    if (!autoAnimateRef.current) return;
-    autoAnimate(autoAnimateRef.current);
-  }, [autoAnimateRef]);
 
   if (isLoading)
     return (
@@ -53,10 +46,10 @@ function Results({ placeId, query }: { placeId: number; query: string }) {
     );
 
   return (
-    <Stack ref={autoAnimateRef} gap={1} maxHeight="60vh" overflow="auto">
-      {results.map((result, index) => (
+    <Stack gap={1} maxHeight="60vh" overflowY="auto">
+      {results.map((result) => (
         <Link
-          key={`${result.weaponName}-${result.shell}-${index}`}
+          key={`${result.weaponName}-${result.shell}-${result.type}`}
           href={`/shells/${encodeURIComponent(result.weaponName)}/${encodeURIComponent(result.shell)}`}
           passHref
         >
