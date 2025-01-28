@@ -40,7 +40,7 @@ export default function PenetrationTable({
               content="Line of sight penetration"
               openDelay={15}
             >
-              <Text fontSize="sm" fontWeight="normal">
+              <Text fontSize="sm" fontWeight="normal" lineHeight={1}>
                 LOS
               </Text>
             </Tooltip>
@@ -60,7 +60,7 @@ export default function PenetrationTable({
                 placement: 'bottom-end',
               }}
             >
-              <Text fontSize="sm" fontWeight="normal">
+              <Text fontSize="sm" fontWeight="normal" lineHeight={1}>
                 REL
               </Text>
             </Tooltip>
