@@ -67,7 +67,7 @@ jobs:
               if ! git diff --quiet origin/workflow/update-winrate-data/${{ github.run_id }} -- ./data/winrate/**; then
                 git checkout origin/workflow/update-winrate-data/${{ github.run_id }} -- ./data/winrate/**
                 git add ./data/winrate/**
-                git commit -m "Update data from workflow/update-winrate-data/${{ github.run_id }}"
+                git commit -m "Update winrate data from workflow/update-winrate-data/${{ github.run_id }}"
                 git pull origin $branch --ff-only
                 git push origin $branch
               else
