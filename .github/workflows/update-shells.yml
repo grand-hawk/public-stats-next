@@ -2,12 +2,23 @@ name: Update Shells
 
 on:
   schedule:
-    - cron: '10 0 * * 0' # Runs every Sunday at 00:10 UTC
+    - cron: '10 0 * * 0'  # Runs every Sunday at 00:10 UTC
   workflow_dispatch:
 
 jobs:
   update-shells:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        environment:
+          - name: Sunny Valley
+            universe_id: '3221676855'
+            place_id: '8421780146'
+            data_path: './data/shells/8421780146.json'
+          - name: Multicrew Tank Combat
+            universe_id: '3546912119'
+            place_id: '9520328730'
+            data_path: './data/shells/9520328730.json'
     outputs:
       changes_detected: ${{ steps.check_changes.outputs.changes_detected }}
       temp_branch: ${{ steps.create_branch.outputs.temp_branch }}
@@ -20,17 +31,22 @@ jobs:
       - name: Setup git
         uses: fregante/setup-git-user@v2
 
+      - name: Pull latest changes
+        run: |
+          git checkout dev
+          git pull --rebase origin dev
+
       - name: Execute script to update shell data
         uses: grand-hawk/action-roblox-luau-execution@1.0.0
         with:
           roblox_api_key: ${{ secrets.ROBLOX_LUAU_EXECUTION_API_KEY }}
-          universe_id: '3221676855'
-          place_id: '8421780146'
+          universe_id: ${{ matrix.environment.universe_id }}
+          place_id: ${{ matrix.environment.place_id }}
           luau_file: './scripts/shells.luau'
           output_file: 'script-execution-output.json'
 
       - name: Process JSON output
-        run: jq ".[0]" "./script-execution-output.json" > "./data/shells/8421780146.json"
+        run: jq ".[0]" "./script-execution-output.json" > "${{ matrix.environment.data_path }}"
 
       - name: Remove temporary file
         run: rm script-execution-output.json
@@ -38,13 +54,10 @@ jobs:
       - name: Check for data changes
         id: check_changes
         run: |
-          git fetch origin dev
-          if ! git diff --quiet origin/dev -- ./data/shells/; then
-            echo "true" > changes_detected.txt
+          if ! git diff --quiet origin/dev -- "${{ matrix.environment.data_path }}"; then
             echo "changes_detected=true" >> $GITHUB_ENV
             echo "changes_detected=true" >> $GITHUB_OUTPUT
           else
-            echo "false" > changes_detected.txt
             echo "changes_detected=false" >> $GITHUB_ENV
             echo "changes_detected=false" >> $GITHUB_OUTPUT
           fi
@@ -55,7 +68,7 @@ jobs:
         run: |
           BRANCH_NAME="workflow/update-shells-${{ github.run_id }}"
           git checkout -b $BRANCH_NAME
-          git add ./data/shells/
+          git add "${{ matrix.environment.data_path }}"
           git commit -m "Update shells data"
           git push origin $BRANCH_NAME
           echo "temp_branch=$BRANCH_NAME" >> $GITHUB_ENV
@@ -75,13 +88,13 @@ jobs:
       - name: Setup git
         uses: fregante/setup-git-user@v2
 
-      - name: Merge into dev and prod
+      - name: Rebase and push into dev and prod
         run: |
           TEMP_BRANCH=${{ needs.update-shells.outputs.temp_branch }}
           for branch in dev prod; do
             git checkout $branch
-            git pull origin $branch
-            git merge --no-ff $TEMP_BRANCH -m "Merge updated shells data"
+            git pull --rebase origin $branch
+            git rebase $TEMP_BRANCH
             git push origin $branch
           done
 

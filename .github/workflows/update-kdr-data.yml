@@ -15,10 +15,15 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0 # Ensure full history to allow proper diffing
+          fetch-depth: 0 # Ensure full history for rebase
 
       - name: Setup git
         uses: fregante/setup-git-user@v2
+
+      - name: Pull latest changes to prevent conflicts
+        run: |
+          git checkout dev
+          git pull --rebase origin dev
 
       - uses: pnpm/action-setup@v4.0.0
         with:
@@ -42,13 +47,10 @@ jobs:
       - name: Check for data changes
         id: check_changes
         run: |
-          git fetch origin dev
           if ! git diff --quiet origin/dev -- ./data/kdr/; then
-            echo "true" > changes_detected.txt
             echo "changes_detected=true" >> $GITHUB_ENV
             echo "changes_detected=true" >> $GITHUB_OUTPUT
           else
-            echo "false" > changes_detected.txt
             echo "changes_detected=false" >> $GITHUB_ENV
             echo "changes_detected=false" >> $GITHUB_OUTPUT
           fi
@@ -79,13 +81,13 @@ jobs:
       - name: Setup git
         uses: fregante/setup-git-user@v2
 
-      - name: Merge into dev and prod
+      - name: Rebase and push into dev and prod
         run: |
           TEMP_BRANCH=${{ needs.update-kdr-data.outputs.temp_branch }}
           for branch in dev prod; do
             git checkout $branch
-            git pull origin $branch
-            git merge --no-ff $TEMP_BRANCH -m "Merge updated KDR data"
+            git pull --rebase origin $branch
+            git rebase $TEMP_BRANCH
             git push origin $branch
           done
 
