@@ -1,4 +1,4 @@
-name: Update shells
+name: Update Shells
 
 on:
   schedule:
@@ -6,9 +6,21 @@ on:
   workflow_dispatch:
 
 jobs:
-  sunny-valley:
+  update-shells:
     runs-on: ubuntu-latest
-
+    outputs:
+      changes_detected: ${{ steps.check_changes.outputs.changes_detected }}
+    strategy:
+      matrix:
+        environment:
+          - name: Sunny Valley
+            universe_id: '3221676855'
+            place_id: '8421780146'
+            data_path: './data/shells/8421780146.json'
+          - name: Multicrew Tank Combat
+            universe_id: '3546912119'
+            place_id: '9520328730'
+            data_path: './data/shells/9520328730.json'
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -17,117 +29,51 @@ jobs:
         uses: fregante/setup-git-user@v2
 
       - name: Execute script
-        id: roblox-luau-execution
         uses: grand-hawk/action-roblox-luau-execution@1.0.0
         with:
           roblox_api_key: ${{ secrets.ROBLOX_LUAU_EXECUTION_API_KEY }}
-          universe_id: '3221676855'
-          place_id: '8421780146'
+          universe_id: ${{ matrix.environment.universe_id }}
+          place_id: ${{ matrix.environment.place_id }}
           luau_file: './scripts/shells.luau'
           output_file: 'script-execution-output.json'
 
       - name: Process JSON output
-        run: jq ".[0]" "./script-execution-output.json" > "./data/shells/8421780146.json"
+        run: jq ".[0]" "./script-execution-output.json" > "${{ matrix.environment.data_path }}"
 
-      - name: Remove temp file
-        run: rm script-execution-output.json
-
-      - name: Commit and push changes
+      - name: Check for data changes
+        id: check_changes
         run: |
-          git checkout -b workflow/update-shells/${{ github.run_id }}
-          git add ./data/shells/8421780146.json
-          if git diff --cached --quiet; then
-            echo "No changes to commit for Sunny Valley."
+          git fetch origin dev
+          if ! git diff --quiet origin/dev -- "${{ matrix.environment.data_path }}"; then
+            echo "true" > changes_detected.txt
           else
-            git commit -m "Update Sunny Valley shells"
+            echo "false" > changes_detected.txt
           fi
+        shell: bash
 
-          if git ls-remote --exit-code --heads origin workflow/update-shells/${{ github.run_id }}; then
-            git pull --rebase origin workflow/update-shells/${{ github.run_id }} || { echo "Pull failed; possibly due to conflicts."; exit 1; }
-          fi
+      - name: Set output
+        id: set_output
+        run: echo "changes_detected=$(cat changes_detected.txt)" >> "$GITHUB_ENV"
 
-          git push origin workflow/update-shells/${{ github.run_id }}
-
-  multicrew-tank-combat:
+  push-changes:
     runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Setup git
-        uses: fregante/setup-git-user@v2
-
-      - name: Execute script
-        id: roblox-luau-execution
-        uses: grand-hawk/action-roblox-luau-execution@1.0.0
-        with:
-          roblox_api_key: ${{ secrets.ROBLOX_LUAU_EXECUTION_API_KEY }}
-          universe_id: '3546912119'
-          place_id: '9520328730'
-          luau_file: './scripts/shells.luau'
-          output_file: 'script-execution-output.json'
-
-      - name: Process JSON output
-        run: jq ".[0]" "./script-execution-output.json" > "./data/shells/9520328730.json"
-
-      - name: Remove temp file
-        run: rm script-execution-output.json
-
-      - name: Commit and push changes
-        run: |
-          git checkout -b workflow/update-shells/${{ github.run_id }}
-          git add ./data/shells/9520328730.json
-          if git diff --cached --quiet; then
-            echo "No changes to commit for MTC."
-          else
-            git commit -m "Update MTC shells"
-          fi
-
-          if git ls-remote --exit-code --heads origin workflow/update-shells/${{ github.run_id }}; then
-            git pull --rebase origin workflow/update-shells/${{ github.run_id }} || { echo "Pull failed; possibly due to conflicts."; exit 1; }
-          fi
-
-          git push origin workflow/update-shells/${{ github.run_id }}
-
-  finalize-git-changes:
-    runs-on: ubuntu-latest
-    needs: [sunny-valley, multicrew-tank-combat]
-
+    needs: update-shells
+    if: needs.update-shells.outputs.changes_detected == 'true'
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
         with:
-          ref: workflow/update-shells/${{ github.run_id }}
+          ref: dev
 
       - name: Setup git
         uses: fregante/setup-git-user@v2
 
-      - run: |
-          git fetch --all
-          if git branch -r | grep -q "origin/workflow/update-shells/${{ github.run_id }}"; then
-            for branch in dev prod; do
-              git checkout $branch
-
-              if ! git diff --quiet origin/workflow/update-shells/${{ github.run_id }} -- ./data/shells/8421780146.json; then
-                git checkout origin/workflow/update-shells/${{ github.run_id }} -- ./data/shells/8421780146.json
-                git add ./data/shells/8421780146.json
-              fi
-
-              if ! git diff --quiet origin/workflow/update-shells/${{ github.run_id }} -- ./data/shells/9520328730.json; then
-                git checkout origin/workflow/update-shells/${{ github.run_id }} -- ./data/shells/9520328730.json
-                git add ./data/shells/9520328730.json
-              fi
-
-              if ! git diff --cached --quiet; then
-                git commit -m "Update shells data from workflow/update-shells/${{ github.run_id }}"
-                git pull origin $branch --rebase
-                git push origin $branch
-              else
-                echo "No changes to commit on $branch."
-              fi
-            done
-            git push --delete origin workflow/update-shells/${{ github.run_id }}
-          else
-            echo "Branch workflow/update-shells/${{ github.run_id }} does not exist."
-          fi
+      - name: Commit and push to dev and prod
+        run: |
+          for branch in dev prod; do
+            git checkout $branch
+            git pull origin $branch
+            git add ./data/shells/**
+            git commit -m "Update shells data"
+            git push origin $branch
+          done

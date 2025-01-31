@@ -1,4 +1,4 @@
-name: Update KDR data
+name: Update Winrate Data
 
 on:
   schedule:
@@ -6,46 +6,10 @@ on:
   workflow_dispatch:
 
 jobs:
-  update-vehicles-in-loadout:
+  update-winrate-data:
     runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Setup git
-        uses: fregante/setup-git-user@v2
-
-      - name: Execute script
-        id: roblox-luau-execution
-        uses: grand-hawk/action-roblox-luau-execution@1.0.0
-        with:
-          roblox_api_key: ${{ secrets.ROBLOX_LUAU_EXECUTION_API_KEY }}
-          universe_id: '3221676855'
-          place_id: '8421780146'
-          luau_file: './scripts/vehiclesInLoadout.luau'
-          output_file: 'script-execution-output.json'
-
-      - name: Process JSON output
-        run: jq ".[0]" "./script-execution-output.json" > "./data/kdr/vehiclesInLoadout.json"
-
-      - name: Remove temp file
-        run: rm script-execution-output.json
-
-      - run: |
-          git checkout -b workflow/update-kdr-data/${{ github.run_id }}
-          git add ./data/kdr/vehiclesInLoadout.json
-          if ! git diff --cached --quiet; then
-            git commit -m "Update vehiclesInLoadout.json"
-            git push origin workflow/update-kdr-data/${{ github.run_id }}
-          else
-            echo "No changes to commit."
-          fi
-
-  update-kdr-data:
-    runs-on: ubuntu-latest
-    needs: update-vehicles-in-loadout
-
+    outputs:
+      changes_detected: ${{ steps.check_changes.outputs.changes_detected }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -63,74 +27,49 @@ jobs:
           node-version: 22
           cache: 'pnpm'
 
-      - name: Install pnpm packages
+      - name: Install dependencies
         run: pnpm install
 
-      - run: |
-          git fetch --all
-          if git branch -r | grep -q "origin/workflow/update-kdr-data/${{ github.run_id }}"; then
-            if ! git diff --quiet origin/workflow/update-kdr-data/${{ github.run_id }} -- ./data/kdr/**; then
-              git checkout origin/workflow/update-kdr-data/${{ github.run_id }} -- ./data/kdr/**
-              git add ./data/kdr/**
-              git commit -m "Update KDR data"
-              git pull --rebase origin workflow/update-kdr-data/${{ github.run_id }} || echo "Pull failed; possibly due to conflicts."
-              git push origin workflow/update-kdr-data/${{ github.run_id }}
-            else
-              echo "No changes detected in data."
-            fi
-          else
-            echo "Branch workflow/update-kdr-data/${{ github.run_id }} does not exist. Continuing without changes."
-          fi
-
-      - name: Update KDR data
-        run: pnpm tsx scripts/updateData-kdr.mts
+      - name: Update winrate data
+        run: pnpm tsx scripts/updateData-winrate.mts
         env:
           INSIGHTS_API_URL: ${{ secrets.INSIGHTS_API_URL }}
           INSIGHTS_API_AUTH: ${{ secrets.INSIGHTS_API_AUTH }}
 
-      - run: |
-          git fetch --all
-          if ! git diff --quiet origin/dev -- ./data/kdr/**; then
-            git checkout -b workflow/update-kdr-data/${{ github.run_id }}
-            git add ./data/kdr/**
-            git commit -m "Update KDR data"
-            if git branch -r | grep -q "origin/workflow/update-kdr-data/${{ github.run_id }}"; then
-              git pull origin workflow/update-kdr-data/${{ github.run_id }} --rebase
-            fi
-            git push origin workflow/update-kdr-data/${{ github.run_id }}
+      - name: Check for data changes
+        id: check_changes
+        run: |
+          git fetch origin dev
+          if ! git diff --quiet origin/dev -- ./data/winrate/**; then
+            echo "true" > changes_detected.txt
           else
-            echo "No changes detected in data"
+            echo "false" > changes_detected.txt
           fi
+        shell: bash
 
-  finalize-git-changes:
+      - name: Set output
+        id: set_output
+        run: echo "changes_detected=$(cat changes_detected.txt)" >> "$GITHUB_ENV"
+
+  push-changes:
     runs-on: ubuntu-latest
-    needs: update-kdr-data
-
+    needs: update-winrate-data
+    if: needs.update-winrate-data.outputs.changes_detected == 'true'
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
         with:
-          ref: workflow/update-kdr-data/${{ github.run_id }}
+          ref: dev
 
       - name: Setup git
         uses: fregante/setup-git-user@v2
 
-      - run: |
-          git fetch --all
-          if git branch -r | grep -q "origin/workflow/update-kdr-data/${{ github.run_id }}"; then
-            for branch in dev prod; do
-              git checkout $branch
-              if ! git diff --quiet origin/workflow/update-kdr-data/${{ github.run_id }} -- ./data/kdr/**; then
-                git checkout origin/workflow/update-kdr-data/${{ github.run_id }} -- ./data/kdr/**
-                git add ./data/kdr/**
-                git commit -m "Update KDR data from workflow/update-kdr-data/${{ github.run_id }}"
-                git pull origin $branch --rebase
-                git push origin $branch
-              else
-                echo "No changes to commit on $branch."
-              fi
-            done
-            git push --delete origin workflow/update-kdr-data/${{ github.run_id }}
-          else
-            echo "Branch workflow/update-kdr-data/${{ github.run_id }} does not exist."
-          fi
+      - name: Commit and push to dev and prod
+        run: |
+          for branch in dev prod; do
+            git checkout $branch
+            git pull origin $branch
+            git add ./data/winrate/**
+            git commit -m "Update winrate data"
+            git push origin $branch
+          done
