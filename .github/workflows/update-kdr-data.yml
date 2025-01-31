@@ -68,10 +68,12 @@ jobs:
           echo "temp_branch=$BRANCH_NAME" >> $GITHUB_ENV
           echo "temp_branch=$BRANCH_NAME" >> $GITHUB_OUTPUT
 
-  push-changes:
+  push-to-dev:
     runs-on: ubuntu-latest
     needs: update-kdr-data
     if: needs.update-kdr-data.outputs.changes_detected == 'true'
+    outputs:
+      temp_branch: ${{ needs.update-kdr-data.outputs.temp_branch }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -82,15 +84,34 @@ jobs:
       - name: Setup git
         uses: fregante/setup-git-user@v2
 
-      - name: Rebase and push into dev and prod
+      - name: Apply changes to dev
         run: |
           TEMP_BRANCH=${{ needs.update-kdr-data.outputs.temp_branch }}
-          for branch in dev prod; do
-            git checkout $branch
-            git pull --rebase origin $branch --autostash
-            git rebase $TEMP_BRANCH
-            git push origin $branch --force-with-lease
-          done
+          git checkout dev
+          git pull --rebase origin dev --autostash
+          git rebase $TEMP_BRANCH
+          git push origin dev --force-with-lease
+
+  push-to-prod:
+    runs-on: ubuntu-latest
+    needs: update-kdr-data
+    if: needs.update-kdr-data.outputs.changes_detected == 'true'
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: dev
+
+      - name: Setup git
+        uses: fregante/setup-git-user@v2
+
+      - name: Apply only the latest commit to prod
+        run: |
+          git checkout prod
+          git pull origin prod --rebase --autostash
+          git cherry-pick -n $(git rev-parse dev)  # Pick only the latest commit from dev
+          git push origin prod --force-with-lease
 
       - name: Delete temporary branch
         run: |

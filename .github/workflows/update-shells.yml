@@ -2,7 +2,7 @@ name: Update Shells
 
 on:
   schedule:
-    - cron: '10 0 * * 0'  # Runs every Sunday at 00:10 UTC
+    - cron: '10 0 * * 0' # Runs every Sunday at 00:10 UTC
   workflow_dispatch:
 
 jobs:
@@ -33,8 +33,9 @@ jobs:
 
       - name: Pull latest changes
         run: |
+          git fetch --all
           git checkout dev
-          git pull --rebase origin dev
+          git pull --rebase origin dev --autostash
 
       - name: Execute script to update shell data
         uses: grand-hawk/action-roblox-luau-execution@1.0.0
@@ -70,34 +71,6 @@ jobs:
           git checkout -b $BRANCH_NAME
           git add "${{ matrix.environment.data_path }}"
           git commit -m "Update shells data"
-          git push origin $BRANCH_NAME
+          git push origin $BRANCH_NAME --force-with-lease
           echo "temp_branch=$BRANCH_NAME" >> $GITHUB_ENV
           echo "temp_branch=$BRANCH_NAME" >> $GITHUB_OUTPUT
-
-  push-changes:
-    runs-on: ubuntu-latest
-    needs: update-shells
-    if: needs.update-shells.outputs.changes_detected == 'true'
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-          ref: ${{ needs.update-shells.outputs.temp_branch }}
-
-      - name: Setup git
-        uses: fregante/setup-git-user@v2
-
-      - name: Rebase and push into dev and prod
-        run: |
-          TEMP_BRANCH=${{ needs.update-shells.outputs.temp_branch }}
-          for branch in dev prod; do
-            git checkout $branch
-            git pull --rebase origin $branch
-            git rebase $TEMP_BRANCH
-            git push origin $branch
-          done
-
-      - name: Delete temporary branch
-        run: |
-          git push origin --delete ${{ needs.update-shells.outputs.temp_branch }}
