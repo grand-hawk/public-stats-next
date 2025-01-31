@@ -79,7 +79,7 @@ jobs:
               echo "No changes detected in data."
             fi
           else
-            echo "Branch workflow/update-kdr-data/${{ github.run_id }} does not exist."
+            echo "Branch workflow/update-kdr-data/${{ github.run_id }} does not exist. Continuing without changes."
           fi
 
       - name: Update KDR data
