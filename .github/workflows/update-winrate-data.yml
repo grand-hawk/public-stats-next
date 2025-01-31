@@ -85,6 +85,12 @@ jobs:
       - name: Setup git
         uses: fregante/setup-git-user@v2
 
+      - name: Ensure dev and prod branches exist locally
+        run: |
+          git fetch --all
+          git branch --track dev origin/dev || true
+          git branch --track prod origin/prod || true
+
       - name: Push changes to ${{ matrix.branch }}
         run: |
           TEMP_BRANCH=${{ needs.update-winrate-data.outputs.temp_branch }}
@@ -94,7 +100,10 @@ jobs:
           if [ "${{ matrix.branch }}" = "dev" ]; then
             git rebase $TEMP_BRANCH
           else
+            git checkout dev
+            git pull origin dev --rebase --autostash
             git cherry-pick -n $(git rev-parse dev)  # Pick only latest commit
+            git checkout prod
           fi
 
           git push origin ${{ matrix.branch }} --force-with-lease
