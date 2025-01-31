@@ -2,7 +2,7 @@ name: Update Winrate Data
 
 on:
   schedule:
-    - cron: '15 */12 * * *' # Runs every 12h at xx:15
+    - cron: '5 */12 * * *'  # Runs every 12 hours
   workflow_dispatch:
 
 jobs:
@@ -40,17 +40,13 @@ jobs:
         id: check_changes
         run: |
           git fetch origin dev
-          if ! git diff --quiet origin/dev -- ./data/winrate/**; then
+          if [[ -n "$(git status --porcelain ./data/winrate/)" ]]; then
             echo "true" > changes_detected.txt
             echo "changes_detected=true" >> $GITHUB_ENV
           else
             echo "false" > changes_detected.txt
             echo "changes_detected=false" >> $GITHUB_ENV
           fi
-
-      - name: Set output
-        id: set_output
-        run: echo "::set-output name=changes_detected::$(cat changes_detected.txt)"
 
   push-changes:
     runs-on: ubuntu-latest

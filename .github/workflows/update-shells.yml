@@ -2,7 +2,7 @@ name: Update Shells
 
 on:
   schedule:
-    - cron: '10 0 * * 0' # Runs every Sunday at 00:10 UTC
+    - cron: '10 0 * * 0'  # Runs every Sunday at 00:10 UTC
   workflow_dispatch:
 
 jobs:
@@ -48,17 +48,13 @@ jobs:
         id: check_changes
         run: |
           git fetch origin dev
-          if ! git diff --quiet origin/dev -- "${{ matrix.environment.data_path }}"; then
+          if [[ -n "$(git status --porcelain "${{ matrix.environment.data_path }}")" ]]; then
             echo "true" > changes_detected.txt
             echo "changes_detected=true" >> $GITHUB_ENV
           else
             echo "false" > changes_detected.txt
             echo "changes_detected=false" >> $GITHUB_ENV
           fi
-
-      - name: Set output
-        id: set_output
-        run: echo "changes_detected=$(cat changes_detected.txt)" >> $GITHUB_ENV
 
   push-changes:
     runs-on: ubuntu-latest

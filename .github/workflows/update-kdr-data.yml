@@ -2,7 +2,7 @@ name: Update KDR Data
 
 on:
   schedule:
-    - cron: '15 0 * * *' # Runs daily at 00:15 UTC
+    - cron: '0 3 * * *' # Runs daily at 03:00 UTC
   workflow_dispatch:
 
 jobs:
@@ -17,6 +17,16 @@ jobs:
       - name: Setup git
         uses: fregante/setup-git-user@v2
 
+      - uses: pnpm/action-setup@v4.0.0
+        with:
+          version: 9
+
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: 'pnpm'
+
       - name: Install dependencies
         run: pnpm install
 
@@ -30,17 +40,13 @@ jobs:
         id: check_changes
         run: |
           git fetch origin dev
-          if ! git diff --quiet origin/dev -- ./data/kdr/**; then
+          if [[ -n "$(git status --porcelain ./data/kdr/)" ]]; then
             echo "true" > changes_detected.txt
             echo "changes_detected=true" >> $GITHUB_ENV
           else
             echo "false" > changes_detected.txt
             echo "changes_detected=false" >> $GITHUB_ENV
           fi
-
-      - name: Set output
-        id: set_output
-        run: echo "::set-output name=changes_detected::$(cat changes_detected.txt)"
 
   push-changes:
     runs-on: ubuntu-latest
