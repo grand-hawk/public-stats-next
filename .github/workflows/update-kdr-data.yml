@@ -15,7 +15,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0
+          fetch-depth: 0 # Ensure full history to allow proper diffing
 
       - name: Setup git
         uses: fregante/setup-git-user@v2
@@ -44,14 +44,18 @@ jobs:
         run: |
           git fetch origin dev
           if ! git diff --quiet origin/dev -- ./data/kdr/; then
+            echo "true" > changes_detected.txt
             echo "changes_detected=true" >> $GITHUB_ENV
+            echo "changes_detected=true" >> $GITHUB_OUTPUT
           else
+            echo "false" > changes_detected.txt
             echo "changes_detected=false" >> $GITHUB_ENV
+            echo "changes_detected=false" >> $GITHUB_OUTPUT
           fi
 
       - name: Create temporary branch
         id: create_branch
-        if: env.changes_detected == 'true'
+        if: steps.check_changes.outputs.changes_detected == 'true'
         run: |
           BRANCH_NAME="workflow/update-kdr-data-${{ github.run_id }}"
           git checkout -b $BRANCH_NAME
@@ -59,6 +63,7 @@ jobs:
           git commit -m "Update KDR data"
           git push origin $BRANCH_NAME
           echo "temp_branch=$BRANCH_NAME" >> $GITHUB_ENV
+          echo "temp_branch=$BRANCH_NAME" >> $GITHUB_OUTPUT
 
   push-changes:
     runs-on: ubuntu-latest

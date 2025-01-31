@@ -2,7 +2,7 @@ name: Update Winrate Data
 
 on:
   schedule:
-    - cron: '5 */12 * * *' # Runs every 12 hours
+    - cron: '5 */12 * * *'  # Runs every 12 hours
   workflow_dispatch:
 
 jobs:
@@ -15,7 +15,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0 # Ensure full history
+          fetch-depth: 0  # Fetch full history to allow proper diffing
 
       - name: Setup git
         uses: fregante/setup-git-user@v2
@@ -44,16 +44,18 @@ jobs:
         run: |
           git fetch origin dev
           if ! git diff --quiet origin/dev -- ./data/winrate/; then
-            echo "changes_detected=true" >> $GITHUB_ENV
             echo "true" > changes_detected.txt
+            echo "changes_detected=true" >> $GITHUB_ENV
+            echo "changes_detected=true" >> $GITHUB_OUTPUT
           else
-            echo "changes_detected=false" >> $GITHUB_ENV
             echo "false" > changes_detected.txt
+            echo "changes_detected=false" >> $GITHUB_ENV
+            echo "changes_detected=false" >> $GITHUB_OUTPUT
           fi
 
       - name: Create temporary branch
         id: create_branch
-        if: env.changes_detected == 'true'
+        if: steps.check_changes.outputs.changes_detected == 'true'
         run: |
           BRANCH_NAME="workflow/update-winrate-data-${{ github.run_id }}"
           git checkout -b $BRANCH_NAME
@@ -61,6 +63,7 @@ jobs:
           git commit -m "Update winrate data"
           git push origin $BRANCH_NAME
           echo "temp_branch=$BRANCH_NAME" >> $GITHUB_ENV
+          echo "temp_branch=$BRANCH_NAME" >> $GITHUB_OUTPUT
 
   push-changes:
     runs-on: ubuntu-latest

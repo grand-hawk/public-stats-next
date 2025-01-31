@@ -2,7 +2,7 @@ name: Update Shells
 
 on:
   schedule:
-    - cron: '10 0 * * 0'  # Runs every Sunday at 00:10 UTC
+    - cron: '10 0 * * 0' # Runs every Sunday at 00:10 UTC
   workflow_dispatch:
 
 jobs:
@@ -11,17 +11,6 @@ jobs:
     outputs:
       changes_detected: ${{ steps.check_changes.outputs.changes_detected }}
       temp_branch: ${{ steps.create_branch.outputs.temp_branch }}
-    strategy:
-      matrix:
-        environment:
-          - name: Sunny Valley
-            universe_id: '3221676855'
-            place_id: '8421780146'
-            data_path: './data/shells/8421780146.json'
-          - name: Multicrew Tank Combat
-            universe_id: '3546912119'
-            place_id: '9520328730'
-            data_path: './data/shells/9520328730.json'
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -35,13 +24,13 @@ jobs:
         uses: grand-hawk/action-roblox-luau-execution@1.0.0
         with:
           roblox_api_key: ${{ secrets.ROBLOX_LUAU_EXECUTION_API_KEY }}
-          universe_id: ${{ matrix.environment.universe_id }}
-          place_id: ${{ matrix.environment.place_id }}
+          universe_id: '3221676855'
+          place_id: '8421780146'
           luau_file: './scripts/shells.luau'
           output_file: 'script-execution-output.json'
 
       - name: Process JSON output
-        run: jq ".[0]" "./script-execution-output.json" > "${{ matrix.environment.data_path }}"
+        run: jq ".[0]" "./script-execution-output.json" > "./data/shells/8421780146.json"
 
       - name: Remove temporary file
         run: rm script-execution-output.json
@@ -50,22 +39,27 @@ jobs:
         id: check_changes
         run: |
           git fetch origin dev
-          if ! git diff --quiet origin/dev -- "${{ matrix.environment.data_path }}"; then
+          if ! git diff --quiet origin/dev -- ./data/shells/; then
+            echo "true" > changes_detected.txt
             echo "changes_detected=true" >> $GITHUB_ENV
+            echo "changes_detected=true" >> $GITHUB_OUTPUT
           else
+            echo "false" > changes_detected.txt
             echo "changes_detected=false" >> $GITHUB_ENV
+            echo "changes_detected=false" >> $GITHUB_OUTPUT
           fi
 
       - name: Create temporary branch
         id: create_branch
-        if: env.changes_detected == 'true'
+        if: steps.check_changes.outputs.changes_detected == 'true'
         run: |
           BRANCH_NAME="workflow/update-shells-${{ github.run_id }}"
           git checkout -b $BRANCH_NAME
-          git add "${{ matrix.environment.data_path }}"
+          git add ./data/shells/
           git commit -m "Update shells data"
           git push origin $BRANCH_NAME
           echo "temp_branch=$BRANCH_NAME" >> $GITHUB_ENV
+          echo "temp_branch=$BRANCH_NAME" >> $GITHUB_OUTPUT
 
   push-changes:
     runs-on: ubuntu-latest
