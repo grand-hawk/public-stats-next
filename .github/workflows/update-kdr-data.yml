@@ -73,7 +73,7 @@ jobs:
               git checkout origin/workflow/update-kdr-data/${{ github.run_id }} -- ./data/kdr/**
               git add ./data/kdr/**
               git commit -m "Update KDR data"
-              git pull --ff-only origin workflow/update-kdr-data/${{ github.run_id }} || echo "Pull failed; possibly due to conflicts."
+              git pull --rebase origin workflow/update-kdr-data/${{ github.run_id }} || echo "Pull failed; possibly due to conflicts."
               git push origin workflow/update-kdr-data/${{ github.run_id }}
             else
               echo "No changes detected in data."
@@ -95,7 +95,7 @@ jobs:
             git add ./data/kdr/**
             git commit -m "Update KDR data"
             if git branch -r | grep -q "origin/workflow/update-kdr-data/${{ github.run_id }}"; then
-              git pull origin workflow/update-kdr-data/${{ github.run_id }} --ff-only
+              git pull origin workflow/update-kdr-data/${{ github.run_id }} --rebase
             fi
             git push origin workflow/update-kdr-data/${{ github.run_id }}
           else
@@ -124,7 +124,7 @@ jobs:
                 git checkout origin/workflow/update-kdr-data/${{ github.run_id }} -- ./data/kdr/**
                 git add ./data/kdr/**
                 git commit -m "Update KDR data from workflow/update-kdr-data/${{ github.run_id }}"
-                git pull origin $branch --ff-only
+                git pull origin $branch --rebase
                 git push origin $branch
               else
                 echo "No changes to commit on $branch."

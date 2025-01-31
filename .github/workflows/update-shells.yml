@@ -121,7 +121,7 @@ jobs:
 
               if ! git diff --cached --quiet; then
                 git commit -m "Update shells data from workflow/update-shells/${{ github.run_id }}"
-                git pull origin $branch --ff-only
+                git pull origin $branch --rebase
                 git push origin $branch
               else
                 echo "No changes to commit on $branch."
