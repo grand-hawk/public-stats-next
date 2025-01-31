@@ -1,12 +1,12 @@
-name: Update Winrate Data
+name: Update KDR Data
 
 on:
   schedule:
-    - cron: '5 */12 * * *'
+    - cron: '0 3 * * *' # Runs daily at 03:00 UTC
   workflow_dispatch:
 
 jobs:
-  update-winrate-data:
+  update-kdr-data:
     runs-on: ubuntu-latest
     outputs:
       changes_detected: ${{ steps.check_changes.outputs.changes_detected }}
@@ -30,8 +30,8 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
-      - name: Update winrate data
-        run: pnpm tsx scripts/updateData-winrate.mts
+      - name: Update KDR data
+        run: pnpm tsx scripts/updateData-kdr.mts
         env:
           INSIGHTS_API_URL: ${{ secrets.INSIGHTS_API_URL }}
           INSIGHTS_API_AUTH: ${{ secrets.INSIGHTS_API_AUTH }}
@@ -40,7 +40,7 @@ jobs:
         id: check_changes
         run: |
           git fetch origin dev
-          if ! git diff --quiet origin/dev -- ./data/winrate/**; then
+          if ! git diff --quiet origin/dev -- ./data/kdr/**; then
             echo "true" > changes_detected.txt
           else
             echo "false" > changes_detected.txt
@@ -53,8 +53,8 @@ jobs:
 
   push-changes:
     runs-on: ubuntu-latest
-    needs: update-winrate-data
-    if: needs.update-winrate-data.outputs.changes_detected == 'true'
+    needs: update-kdr-data
+    if: needs.update-kdr-data.outputs.changes_detected == 'true'
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -69,7 +69,7 @@ jobs:
           for branch in dev prod; do
             git checkout $branch
             git pull origin $branch
-            git add ./data/winrate/**
-            git commit -m "Update winrate data"
+            git add ./data/kdr/**
+            git commit -m "Update KDR data"
             git push origin $branch
           done
