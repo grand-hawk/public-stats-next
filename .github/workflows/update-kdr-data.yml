@@ -22,8 +22,9 @@ jobs:
 
       - name: Pull latest changes to prevent conflicts
         run: |
+          git fetch --all
           git checkout dev
-          git pull --rebase origin dev
+          git pull --rebase origin dev --autostash
 
       - uses: pnpm/action-setup@v4.0.0
         with:
@@ -63,7 +64,7 @@ jobs:
           git checkout -b $BRANCH_NAME
           git add ./data/kdr/
           git commit -m "Update KDR data"
-          git push origin $BRANCH_NAME
+          git push origin $BRANCH_NAME --force-with-lease
           echo "temp_branch=$BRANCH_NAME" >> $GITHUB_ENV
           echo "temp_branch=$BRANCH_NAME" >> $GITHUB_OUTPUT
 
@@ -86,9 +87,9 @@ jobs:
           TEMP_BRANCH=${{ needs.update-kdr-data.outputs.temp_branch }}
           for branch in dev prod; do
             git checkout $branch
-            git pull --rebase origin $branch
+            git pull --rebase origin $branch --autostash
             git rebase $TEMP_BRANCH
-            git push origin $branch
+            git push origin $branch --force-with-lease
           done
 
       - name: Delete temporary branch

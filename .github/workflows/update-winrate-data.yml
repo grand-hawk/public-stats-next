@@ -2,7 +2,7 @@ name: Update Winrate Data
 
 on:
   schedule:
-    - cron: '5 */12 * * *'  # Runs every 12 hours
+    - cron: '5 */12 * * *' # Runs every 12 hours
   workflow_dispatch:
 
 jobs:
@@ -15,15 +15,16 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0  # Ensure full history for rebase
+          fetch-depth: 0 # Ensure full history for rebase
 
       - name: Setup git
         uses: fregante/setup-git-user@v2
 
       - name: Pull latest changes to prevent conflicts
         run: |
+          git fetch --all
           git checkout dev
-          git pull --rebase origin dev
+          git pull --rebase origin dev --autostash
 
       - uses: pnpm/action-setup@v4.0.0
         with:
@@ -63,7 +64,7 @@ jobs:
           git checkout -b $BRANCH_NAME
           git add ./data/winrate/
           git commit -m "Update winrate data"
-          git push origin $BRANCH_NAME
+          git push origin $BRANCH_NAME --force-with-lease
           echo "temp_branch=$BRANCH_NAME" >> $GITHUB_ENV
           echo "temp_branch=$BRANCH_NAME" >> $GITHUB_OUTPUT
 
@@ -86,9 +87,9 @@ jobs:
           TEMP_BRANCH=${{ needs.update-winrate-data.outputs.temp_branch }}
           for branch in dev prod; do
             git checkout $branch
-            git pull --rebase origin $branch
+            git pull --rebase origin $branch --autostash
             git rebase $TEMP_BRANCH
-            git push origin $branch
+            git push origin $branch --force-with-lease
           done
 
       - name: Delete temporary branch
