@@ -10,9 +10,12 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       changes_detected: ${{ steps.check_changes.outputs.changes_detected }}
+      temp_branch: ${{ steps.create_branch.outputs.temp_branch }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Setup git
         uses: fregante/setup-git-user@v2
@@ -40,28 +43,47 @@ jobs:
         id: check_changes
         run: |
           git fetch origin dev
-          git diff --exit-code ./data/kdr/ || echo "changes_detected=true" >> $GITHUB_ENV
-          echo "::set-output name=changes_detected::$(git diff --quiet ./data/kdr/ || echo true)"
+          if ! git diff --quiet origin/dev -- ./data/kdr/; then
+            echo "changes_detected=true" >> $GITHUB_ENV
+          else
+            echo "changes_detected=false" >> $GITHUB_ENV
+          fi
+
+      - name: Create temporary branch
+        id: create_branch
+        if: env.changes_detected == 'true'
+        run: |
+          BRANCH_NAME="workflow/update-kdr-data-${{ github.run_id }}"
+          git checkout -b $BRANCH_NAME
+          git add ./data/kdr/
+          git commit -m "Update KDR data"
+          git push origin $BRANCH_NAME
+          echo "temp_branch=$BRANCH_NAME" >> $GITHUB_ENV
 
   push-changes:
     runs-on: ubuntu-latest
     needs: update-kdr-data
     if: needs.update-kdr-data.outputs.changes_detected == 'true'
     steps:
-      - name: Checkout code
+      - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          ref: dev
+          fetch-depth: 0
+          ref: ${{ needs.update-kdr-data.outputs.temp_branch }}
 
       - name: Setup git
         uses: fregante/setup-git-user@v2
 
-      - name: Commit and push to dev and prod
+      - name: Merge into dev and prod
         run: |
+          TEMP_BRANCH=${{ needs.update-kdr-data.outputs.temp_branch }}
           for branch in dev prod; do
             git checkout $branch
             git pull origin $branch
-            git add ./data/kdr/**
-            git commit -m "Update KDR data"
+            git merge --no-ff $TEMP_BRANCH -m "Merge updated KDR data"
             git push origin $branch
           done
+
+      - name: Delete temporary branch
+        run: |
+          git push origin --delete ${{ needs.update-kdr-data.outputs.temp_branch }}

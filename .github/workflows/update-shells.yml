@@ -2,7 +2,7 @@ name: Update Shells
 
 on:
   schedule:
-    - cron: '10 0 * * 0' # Runs every Sunday at 00:10 UTC
+    - cron: '10 0 * * 0'  # Runs every Sunday at 00:10 UTC
   workflow_dispatch:
 
 jobs:
@@ -10,6 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       changes_detected: ${{ steps.check_changes.outputs.changes_detected }}
+      temp_branch: ${{ steps.create_branch.outputs.temp_branch }}
     strategy:
       matrix:
         environment:
@@ -24,12 +25,13 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Setup git
         uses: fregante/setup-git-user@v2
 
       - name: Execute script to update shell data
-        id: execute_script
         uses: grand-hawk/action-roblox-luau-execution@1.0.0
         with:
           roblox_api_key: ${{ secrets.ROBLOX_LUAU_EXECUTION_API_KEY }}
@@ -48,28 +50,47 @@ jobs:
         id: check_changes
         run: |
           git fetch origin dev
-          git diff --exit-code "${{ matrix.environment.data_path }}" || echo "changes_detected=true" >> $GITHUB_ENV
-          echo "::set-output name=changes_detected::$(git diff --quiet "${{ matrix.environment.data_path }}" || echo true)"
+          if ! git diff --quiet origin/dev -- "${{ matrix.environment.data_path }}"; then
+            echo "changes_detected=true" >> $GITHUB_ENV
+          else
+            echo "changes_detected=false" >> $GITHUB_ENV
+          fi
+
+      - name: Create temporary branch
+        id: create_branch
+        if: env.changes_detected == 'true'
+        run: |
+          BRANCH_NAME="workflow/update-shells-${{ github.run_id }}"
+          git checkout -b $BRANCH_NAME
+          git add "${{ matrix.environment.data_path }}"
+          git commit -m "Update shells data"
+          git push origin $BRANCH_NAME
+          echo "temp_branch=$BRANCH_NAME" >> $GITHUB_ENV
 
   push-changes:
     runs-on: ubuntu-latest
     needs: update-shells
     if: needs.update-shells.outputs.changes_detected == 'true'
     steps:
-      - name: Checkout code
+      - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          ref: dev
+          fetch-depth: 0
+          ref: ${{ needs.update-shells.outputs.temp_branch }}
 
       - name: Setup git
         uses: fregante/setup-git-user@v2
 
-      - name: Commit and push to dev and prod
+      - name: Merge into dev and prod
         run: |
+          TEMP_BRANCH=${{ needs.update-shells.outputs.temp_branch }}
           for branch in dev prod; do
             git checkout $branch
             git pull origin $branch
-            git add ./data/shells/**
-            git commit -m "Update shells data"
+            git merge --no-ff $TEMP_BRANCH -m "Merge updated shells data"
             git push origin $branch
           done
+
+      - name: Delete temporary branch
+        run: |
+          git push origin --delete ${{ needs.update-shells.outputs.temp_branch }}
