@@ -2,7 +2,7 @@ name: Update Shells
 
 on:
   schedule:
-    - cron: '10 0 * * 0'
+    - cron: '10 0 * * 0' # Runs every Sunday at 00:10 UTC
   workflow_dispatch:
 
 jobs:
@@ -28,7 +28,8 @@ jobs:
       - name: Setup git
         uses: fregante/setup-git-user@v2
 
-      - name: Execute script
+      - name: Execute script to update shell data
+        id: execute_script
         uses: grand-hawk/action-roblox-luau-execution@1.0.0
         with:
           roblox_api_key: ${{ secrets.ROBLOX_LUAU_EXECUTION_API_KEY }}
@@ -40,20 +41,24 @@ jobs:
       - name: Process JSON output
         run: jq ".[0]" "./script-execution-output.json" > "${{ matrix.environment.data_path }}"
 
+      - name: Remove temporary file
+        run: rm script-execution-output.json
+
       - name: Check for data changes
         id: check_changes
         run: |
           git fetch origin dev
           if ! git diff --quiet origin/dev -- "${{ matrix.environment.data_path }}"; then
             echo "true" > changes_detected.txt
+            echo "changes_detected=true" >> $GITHUB_ENV
           else
             echo "false" > changes_detected.txt
+            echo "changes_detected=false" >> $GITHUB_ENV
           fi
-        shell: bash
 
       - name: Set output
         id: set_output
-        run: echo "changes_detected=$(cat changes_detected.txt)" >> "$GITHUB_ENV"
+        run: echo "changes_detected=$(cat changes_detected.txt)" >> $GITHUB_ENV
 
   push-changes:
     runs-on: ubuntu-latest
