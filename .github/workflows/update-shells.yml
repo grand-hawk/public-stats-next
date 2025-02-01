@@ -2,7 +2,7 @@ name: Update Shells
 
 on:
   schedule:
-    - cron: '10 0 * * 0'  # Runs every Sunday at 00:10 UTC
+    - cron: '10 0 * * 0' # Runs every Sunday at 00:10 UTC
   workflow_dispatch:
 
 jobs:
@@ -19,7 +19,7 @@ jobs:
             universe_id: '3546912119'
             place_id: '9520328730'
             data_path: './data/shells/9520328730.json'
-    continue-on-error: true  # Ensure partial failures do not stop the workflow
+    continue-on-error: true # Ensure partial failures do not stop the workflow
     outputs:
       changes_detected: ${{ steps.check_changes.outputs.changes_detected }}
       temp_branch: ${{ steps.create_branch.outputs.temp_branch }}
@@ -77,3 +77,67 @@ jobs:
           git push origin $BRANCH_NAME --force-with-lease
           echo "temp_branch=$BRANCH_NAME" >> $GITHUB_ENV
           echo "temp_branch=$BRANCH_NAME" >> $GITHUB_OUTPUT
+
+  collect-results:
+    runs-on: ubuntu-latest
+    needs: update-shells
+    outputs:
+      any_changes: ${{ needs.update-shells.outputs.changes_detected }}
+      temp_branch: ${{ needs.update-shells.outputs.temp_branch }}
+    steps:
+      - name: Determine if any changes were detected
+        run: |
+          if [ -z "${{ needs.update-shells.outputs.temp_branch }}" ]; then
+            echo "No changes detected."
+            echo "any_changes=false" >> $GITHUB_ENV
+          else
+            echo "any_changes=true" >> $GITHUB_ENV
+          fi
+
+  push-to-branches:
+    runs-on: ubuntu-latest
+    needs: collect-results
+    if: needs.collect-results.outputs.any_changes == 'true'
+    strategy:
+      matrix:
+        branch: [dev, prod]
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: dev
+
+      - name: Setup git
+        uses: fregante/setup-git-user@v2
+
+      - name: Ensure dev and prod branches exist locally
+        run: |
+          git fetch --all
+          git branch --track dev origin/dev || true
+          git branch --track prod origin/prod || true
+
+      - name: Merge shell updates into ${{ matrix.branch }}
+        run: |
+          TEMP_BRANCH=${{ needs.collect-results.outputs.temp_branch }}
+
+          git checkout ${{ matrix.branch }}
+          git pull --rebase origin ${{ matrix.branch }} --autostash
+
+          if [ "${{ matrix.branch }}" = "dev" ]; then
+            echo "Merging changes into dev..."
+            git merge --no-ff $TEMP_BRANCH -m "Merge shell updates from $TEMP_BRANCH"
+          else
+            echo "Cherry-picking latest commit from dev to prod..."
+            git checkout dev
+            git pull origin dev --rebase --autostash
+            git cherry-pick -n $(git rev-parse $TEMP_BRANCH)  # Pick only latest commit
+            git checkout prod
+          fi
+
+          git push origin ${{ matrix.branch }} --force-with-lease
+
+      - name: Delete temporary branch
+        if: matrix.branch == 'prod'
+        run: |
+          git push origin --delete ${{ needs.collect-results.outputs.temp_branch }}
