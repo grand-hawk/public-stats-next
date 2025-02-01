@@ -117,6 +117,6 @@ jobs:
           git push origin ${{ matrix.branch }} --force-with-lease
 
       - name: Delete temporary branch
-        # if: matrix.branch == 'prod'
+        if: matrix.branch == 'prod'
         run: |
           git push origin --delete ${{ needs.update-shells.outputs.temp_branch }}
