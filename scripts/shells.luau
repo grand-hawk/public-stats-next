@@ -206,7 +206,7 @@ for _, moduleScript in Modules:GetChildren() do
 				shell.type = "CANISTER"
 			end
 
-			if ammo.ShellType == "TANDEM" then
+			if ammo.TANDEM then
 				shell.type = `TANDEM {shell.type}`
 			end
 
