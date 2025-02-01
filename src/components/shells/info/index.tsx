@@ -3,13 +3,16 @@ import {
   FormatNumber,
   Grid,
   GridItem,
+  Image,
   Spinner,
   Stack,
 } from '@chakra-ui/react';
+import NextImage from 'next/image';
 import React from 'react';
 
 import InfoTooltip from '@/components/infoTooltip';
 import BasicCard from '@/components/shells/info/basicCard';
+import { getIcon } from '@/components/shells/info/icons';
 import PenetrationTable from '@/components/shells/info/penetrationTable';
 import Stat from '@/components/stat';
 import ErrorState from '@/components/states/errorState';
@@ -46,13 +49,29 @@ export default function ShellInfo({
   if (!data)
     return <NoDataFoundState onClick={() => !isFetching && refetch()} />;
 
+  const icon = getIcon(data.type);
+
   return (
     <Grid gap={4}>
       <GridItem colSpan={1} rowSpan={1}>
         <BasicCard>
           <Stack direction="row" gap={4}>
             <Stat label="Name">{data.name}</Stat>
-            <Stat label="Type">{data.type}</Stat>
+            <Stat alignItems="center" gap={2} label="Type">
+              {icon && (
+                // eslint-disable-next-line jsx-a11y/alt-text
+                <Image asChild>
+                  <NextImage
+                    alt={data.type}
+                    height={32}
+                    src={icon}
+                    width={32}
+                  />
+                </Image>
+              )}
+
+              {data.type}
+            </Stat>
           </Stack>
         </BasicCard>
       </GridItem>
