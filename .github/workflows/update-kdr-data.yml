@@ -20,7 +20,7 @@ jobs:
       - name: Setup git
         uses: fregante/setup-git-user@v2
 
-      - name: Pull latest changes to prevent conflicts
+      - name: Pull latest changes
         run: |
           git fetch --all
           git checkout dev
@@ -93,7 +93,7 @@ jobs:
             git checkout prod
             git pull --rebase origin prod --autostash
             COMMIT_HASH=$(git rev-parse $TEMP_BRANCH)
-            git cherry-pick $COMMIT_HASH
+            git cherry-pick -X theirs $COMMIT_HASH
           fi
           git push origin ${{ matrix.branch }} --force-with-lease
 
