@@ -107,16 +107,16 @@ jobs:
 
           if [ "${{ matrix.branch }}" = "dev" ]; then
             git rebase $TEMP_BRANCH
-            git push origin dev --force-with-lease
           else
             git checkout dev
             git pull origin dev --rebase --autostash
             git cherry-pick -n $(git rev-parse dev)  # Pick only latest commit
             git checkout prod
-            git push origin prod --force-with-lease
           fi
 
+          git push origin ${{ matrix.branch }} --force-with-lease
+
       - name: Delete temporary branch
-        if: matrix.branch == 'prod'
+        # if: matrix.branch == 'prod'
         run: |
           git push origin --delete ${{ needs.update-shells.outputs.temp_branch }}
