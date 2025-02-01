@@ -50,7 +50,7 @@ for _, moduleScript in Modules:GetChildren() do
 		continue
 	end
 
-	if table.find({ "InfGuns", "Flares" }, moduleScript.Name) then
+	if table.find({ "InfGuns", "Flares", "Smoke Grenade" }, moduleScript.Name) then
 		continue
 	end
 
