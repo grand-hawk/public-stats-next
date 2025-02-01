@@ -9,6 +9,7 @@ jobs:
   update-shells:
     runs-on: ubuntu-latest
     strategy:
+      max-parallel: 1
       matrix:
         environment:
           - name: Sunny Valley
@@ -19,7 +20,6 @@ jobs:
             universe_id: '3546912119'
             place_id: '9520328730'
             data_path: './data/shells/9520328730.json'
-    continue-on-error: true # Ensure partial failures do not stop the workflow
     outputs:
       changes_detected: ${{ steps.check_changes.outputs.changes_detected }}
       temp_branch: ${{ steps.create_branch.outputs.temp_branch }}
@@ -64,16 +64,14 @@ jobs:
             echo "changes_detected=false" >> $GITHUB_OUTPUT
           fi
 
-      - name: Create sanitized temporary branch
+      - name: Create temporary branch
         id: create_branch
         if: steps.check_changes.outputs.changes_detected == 'true'
         run: |
-          SAFE_ENV_NAME=$(echo "${{ matrix.environment.name }}" | sed 's/ /-/g')  # Replace spaces with dashes
-          BRANCH_NAME="workflow/update-shells-${{ github.run_id }}-${SAFE_ENV_NAME}"
-
+          BRANCH_NAME="workflow/update-shells-${{ github.run_id }}"
           git checkout -b $BRANCH_NAME
           git add "${{ matrix.environment.data_path }}"
-          git commit -m "Update shells data for $SAFE_ENV_NAME"
+          git commit -m "Update shells data"
           git push origin $BRANCH_NAME --force-with-lease
           echo "temp_branch=$BRANCH_NAME" >> $GITHUB_ENV
           echo "temp_branch=$BRANCH_NAME" >> $GITHUB_OUTPUT
@@ -90,43 +88,33 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-          ref: dev
+          ref: ${{ needs.update-shells.outputs.temp_branch }}
 
       - name: Setup git
         uses: fregante/setup-git-user@v2
 
-      - name: Fetch all branches and ensure tracking
+      - name: Ensure dev and prod branches exist locally
         run: |
           git fetch --all
           git branch --track dev origin/dev || true
           git branch --track prod origin/prod || true
 
-      - name: Merge shell updates into ${{ matrix.branch }}
+      - name: Push changes to ${{ matrix.branch }}
         run: |
           TEMP_BRANCH=${{ needs.update-shells.outputs.temp_branch }}
-
-          git fetch origin $TEMP_BRANCH  # Ensure branch is up to date
           git checkout ${{ matrix.branch }}
           git pull --rebase origin ${{ matrix.branch }} --autostash
 
-          # Check if the branch has any commits
-          if [ -z "$(git log --oneline origin/$TEMP_BRANCH)" ]; then
-            echo "Branch $TEMP_BRANCH has no commits. Skipping merge."
-            exit 0
-          fi
-
           if [ "${{ matrix.branch }}" = "dev" ]; then
-            echo "Merging changes into dev..."
-            git merge --no-ff origin/$TEMP_BRANCH -m "Merge shell updates from $TEMP_BRANCH"
+            git rebase $TEMP_BRANCH
+            git push origin dev --force-with-lease
           else
-            echo "Cherry-picking latest commit from dev to prod..."
             git checkout dev
             git pull origin dev --rebase --autostash
-            git cherry-pick -n $(git rev-parse origin/$TEMP_BRANCH)  # Pick only latest commit
+            git cherry-pick -n $(git rev-parse dev)  # Pick only latest commit
             git checkout prod
+            git push origin prod --force-with-lease
           fi
-
-          git push origin ${{ matrix.branch }} --force-with-lease
 
       - name: Delete temporary branch
         if: matrix.branch == 'prod'
