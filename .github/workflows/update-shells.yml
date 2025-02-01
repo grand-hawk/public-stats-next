@@ -2,44 +2,37 @@ name: Update Shells
 
 on:
   schedule:
-    - cron: '10 0 * * 0' # Runs every Sunday at 00:10 UTC
+    - cron: '10 0 * * 0'
   workflow_dispatch:
 
 jobs:
-  update-shells:
+  update-and-push-shells:
     runs-on: ubuntu-latest
     strategy:
       max-parallel: 1
       matrix:
         environment:
-          - name: Sunny Valley
+          - name: SunnyValley
             universe_id: '3221676855'
             place_id: '8421780146'
             data_path: './data/shells/8421780146.json'
-          # - name: Multicrew Tank Combat
-          #   universe_id: '3546912119'
-          #   place_id: '9520328730'
-          #   data_path: './data/shells/9520328730.json'
-    outputs:
-      changes_detected: ${{ steps.check_changes.outputs.changes_detected }}
-      temp_branch: ${{ steps.create_branch.outputs.temp_branch }}
+          - name: MulticrewTankCombat
+            universe_id: '3546912119'
+            place_id: '9520328730'
+            data_path: './data/shells/9520328730.json'
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
-      - name: Setup git
-        uses: fregante/setup-git-user@v2
+      - uses: fregante/setup-git-user@v2
 
-      - name: Pull latest changes
-        run: |
+      - run: |
           git fetch --all
           git checkout dev
           git pull --rebase origin dev --autostash
 
-      - name: Execute script to update shell data
-        uses: grand-hawk/action-roblox-luau-execution@1.0.0
+      - uses: grand-hawk/action-roblox-luau-execution@1.0.0
         with:
           roblox_api_key: ${{ secrets.ROBLOX_LUAU_EXECUTION_API_KEY }}
           universe_id: ${{ matrix.environment.universe_id }}
@@ -47,76 +40,38 @@ jobs:
           luau_file: './scripts/shells.luau'
           output_file: 'script-execution-output.json'
 
-      - name: Process JSON output
-        run: jq ".[0]" "./script-execution-output.json" > "${{ matrix.environment.data_path }}"
-
-      - name: Remove temporary file
-        run: rm script-execution-output.json
+      - run: |
+          jq ".[0]" "./script-execution-output.json" > "${{ matrix.environment.data_path }}"
+          rm script-execution-output.json
 
       - name: Check for data changes
         id: check_changes
         run: |
           if ! git diff --quiet origin/dev -- "${{ matrix.environment.data_path }}"; then
-            echo "changes_detected=true" >> $GITHUB_ENV
-            echo "changes_detected=true" >> $GITHUB_OUTPUT
+            echo "changes=true" >> $GITHUB_OUTPUT
           else
-            echo "changes_detected=false" >> $GITHUB_ENV
-            echo "changes_detected=false" >> $GITHUB_OUTPUT
+            echo "changes=false" >> $GITHUB_OUTPUT
           fi
 
-      - name: Create temporary branch
-        id: create_branch
-        if: steps.check_changes.outputs.changes_detected == 'true'
+      - name: Create branch and push changes
+        if: steps.check_changes.outputs.changes == 'true'
         run: |
-          BRANCH_NAME="workflow/update-shells-${{ github.run_id }}"
-          git checkout -b $BRANCH_NAME
+          BRANCH_NAME="workflow/update-shells-${{ github.run_id }}-${{ matrix.environment.name }}"
+          git checkout -b "$BRANCH_NAME"
           git add "${{ matrix.environment.data_path }}"
-          git commit -m "Update shells data"
-          git push origin $BRANCH_NAME --force-with-lease
-          echo "temp_branch=$BRANCH_NAME" >> $GITHUB_ENV
-          echo "temp_branch=$BRANCH_NAME" >> $GITHUB_OUTPUT
+          git commit -m "Update shells data for ${{ matrix.environment.name }}"
+          git push origin "$BRANCH_NAME" --force-with-lease
 
-  push-to-branches:
-    runs-on: ubuntu-latest
-    needs: update-shells
-    if: needs.update-shells.outputs.changes_detected == 'true'
-    strategy:
-      matrix:
-        branch: [dev, prod]
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-          ref: ${{ needs.update-shells.outputs.temp_branch }}
+          git checkout dev
+          git pull --rebase origin dev --autostash
+          git rebase "$BRANCH_NAME"
+          git push origin dev --force-with-lease
 
-      - name: Setup git
-        uses: fregante/setup-git-user@v2
+          git checkout prod
+          git pull --rebase origin prod --autostash
+          COMMIT_HASH=$(git rev-parse "$BRANCH_NAME")
+          git cherry-pick -n "$COMMIT_HASH"
+          git commit -m "Update shells data for ${{ matrix.environment.name }}"
+          git push origin prod --force-with-lease
 
-      - name: Ensure dev and prod branches exist locally
-        run: |
-          git fetch --all
-          git branch --track dev origin/dev || true
-          git branch --track prod origin/prod || true
-
-      - name: Push changes to ${{ matrix.branch }}
-        run: |
-          TEMP_BRANCH=${{ needs.update-shells.outputs.temp_branch }}
-          git checkout ${{ matrix.branch }}
-          git pull --rebase origin ${{ matrix.branch }} --autostash
-
-          if [ "${{ matrix.branch }}" = "dev" ]; then
-            git rebase $TEMP_BRANCH
-          else
-            git checkout dev
-            git pull origin dev --rebase --autostash
-            git cherry-pick -n $(git rev-parse dev)  # Pick only latest commit
-            git checkout prod
-          fi
-
-          git push origin ${{ matrix.branch }} --force-with-lease
-
-      - name: Delete temporary branch
-        if: matrix.branch == 'prod'
-        run: |
-          git push origin --delete ${{ needs.update-shells.outputs.temp_branch }}
+          git push origin --delete "$BRANCH_NAME"
