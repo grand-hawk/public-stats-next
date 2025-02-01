@@ -1,4 +1,4 @@
-import { Box, Center } from '@chakra-ui/react';
+import { Box, Center, Link, Stack, Text } from '@chakra-ui/react';
 import { useDebounce } from '@uidotdev/usehooks';
 import React from 'react';
 
@@ -23,11 +23,22 @@ export default function Search({
       gridTemplateColumns="1fr"
       gridTemplateRows="max-content 1fr"
     >
-      <SearchInput
-        disabled={!placeId}
-        value={query}
-        onChange={(event) => setQuery(event.target.value)}
-      />
+      <Stack gap={1}>
+        <SearchInput
+          disabled={!placeId}
+          value={query}
+          onChange={(event) => setQuery(event.target.value)}
+        />
+        <Text color="fg.subtle" fontSize="sm">
+          Unix-like search commands are supported. See{' '}
+          <Link
+            color="fg.muted"
+            href="https://www.fusejs.io/examples.html#extended-search"
+          >
+            extended search
+          </Link>
+        </Text>
+      </Stack>
 
       <Box
         borderColor="border.muted"

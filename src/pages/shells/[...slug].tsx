@@ -40,12 +40,17 @@ export default function Shell() {
               <BreadcrumbLink as="span">Search</BreadcrumbLink>
             </NextLink>
             <NextLink
-              href={`/shells?${new URLSearchParams({ query: weapon })}`}
+              href={`/shells?${new URLSearchParams({ query: `="${weapon}"` })}`}
               passHref
             >
               <BreadcrumbLink as="span">{weapon}</BreadcrumbLink>
             </NextLink>
-            <BreadcrumbCurrentLink>{shell}</BreadcrumbCurrentLink>
+            <NextLink
+              href={`/shells?${new URLSearchParams({ query: `="${shell}"` })}`}
+              passHref
+            >
+              <BreadcrumbCurrentLink as="span">{shell}</BreadcrumbCurrentLink>
+            </NextLink>
           </BreadcrumbRoot>
 
           {placeId ? (

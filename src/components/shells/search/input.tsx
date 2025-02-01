@@ -1,5 +1,3 @@
-// https://www.chakra-ui.com/docs/components/input#floating-label
-
 import { Box, Field, Input } from '@chakra-ui/react';
 import React from 'react';
 
