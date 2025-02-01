@@ -793,7 +793,7 @@
       },
       "maxPenetration": 1007,
       "velocity": 180,
-      "type": "F&F MISSILE",
+      "type": "TANDEM F&F MISSILE",
       "ricochetAngle": 90
     }
   ],
@@ -1725,7 +1725,7 @@
       },
       "maxPenetration": 950,
       "velocity": 450,
-      "type": "ANTI-TANK GUIDED MISSILE",
+      "type": "TANDEM ANTI-TANK GUIDED MISSILE",
       "ricochetAngle": 90
     },
     {
@@ -1844,7 +1844,7 @@
       },
       "maxPenetration": 800,
       "velocity": 550,
-      "type": "ANTI-TANK GUIDED MISSILE",
+      "type": "TANDEM ANTI-TANK GUIDED MISSILE",
       "ricochetAngle": 90
     }
   ],
@@ -2237,7 +2237,7 @@
       },
       "maxPenetration": 950,
       "velocity": 445,
-      "type": "ANTI-TANK GUIDED MISSILE",
+      "type": "TANDEM ANTI-TANK GUIDED MISSILE",
       "ricochetAngle": 90
     },
     {
@@ -4448,7 +4448,7 @@
       },
       "maxPenetration": 850,
       "velocity": 445,
-      "type": "ANTI-TANK GUIDED MISSILE",
+      "type": "TANDEM ANTI-TANK GUIDED MISSILE",
       "ricochetAngle": 90
     },
     {
@@ -5649,7 +5649,7 @@
       },
       "maxPenetration": 450,
       "velocity": 50,
-      "type": "F&F MISSILE",
+      "type": "TANDEM F&F MISSILE",
       "ricochetAngle": 90
     }
   ],
@@ -6002,7 +6002,7 @@
       },
       "maxPenetration": 800,
       "velocity": 248,
-      "type": "ANTI-TANK GUIDED MISSILE",
+      "type": "TANDEM ANTI-TANK GUIDED MISSILE",
       "ricochetAngle": 90
     }
   ],
@@ -6065,7 +6065,7 @@
       },
       "maxPenetration": 700,
       "velocity": 50,
-      "type": "F&F MISSILE",
+      "type": "TANDEM F&F MISSILE",
       "ricochetAngle": 90
     }
   ],
@@ -6754,7 +6754,7 @@
       },
       "maxPenetration": 1200,
       "velocity": 475,
-      "type": "LASER GUIDED MISSILE",
+      "type": "TANDEM LASER GUIDED MISSILE",
       "ricochetAngle": 90
     }
   ],
@@ -8331,7 +8331,7 @@
       },
       "maxPenetration": 750,
       "velocity": 370,
-      "type": "ANTI-TANK GUIDED MISSILE",
+      "type": "TANDEM ANTI-TANK GUIDED MISSILE",
       "ricochetAngle": 76
     },
     {
@@ -9075,7 +9075,7 @@
       },
       "maxPenetration": 750,
       "velocity": 370,
-      "type": "ANTI-TANK GUIDED MISSILE",
+      "type": "TANDEM ANTI-TANK GUIDED MISSILE",
       "ricochetAngle": 90
     }
   ],
@@ -9138,7 +9138,7 @@
       },
       "maxPenetration": 250,
       "velocity": 300,
-      "type": "ANTI-TANK GUIDED MISSILE",
+      "type": "TANDEM ANTI-TANK GUIDED MISSILE",
       "ricochetAngle": 90
     }
   ],
@@ -10435,7 +10435,7 @@
       },
       "maxPenetration": 720,
       "velocity": 445,
-      "type": "ANTI-TANK GUIDED MISSILE",
+      "type": "TANDEM ANTI-TANK GUIDED MISSILE",
       "ricochetAngle": 90
     },
     {
@@ -10782,7 +10782,7 @@
       },
       "maxPenetration": 700,
       "velocity": 430,
-      "type": "F&F MISSILE",
+      "type": "TANDEM F&F MISSILE",
       "ricochetAngle": 90
     }
   ],
@@ -11126,7 +11126,7 @@
       },
       "maxPenetration": 1200,
       "velocity": 300,
-      "type": "ANTI-TANK GUIDED MISSILE",
+      "type": "TANDEM ANTI-TANK GUIDED MISSILE",
       "ricochetAngle": 90
     },
     {
@@ -11411,7 +11411,7 @@
       },
       "maxPenetration": 850,
       "velocity": 405,
-      "type": "ANTI-TANK GUIDED MISSILE",
+      "type": "TANDEM ANTI-TANK GUIDED MISSILE",
       "ricochetAngle": 90
     },
     {
@@ -11530,7 +11530,7 @@
       },
       "maxPenetration": 1400,
       "velocity": 150,
-      "type": "F&F MISSILE",
+      "type": "TANDEM F&F MISSILE",
       "ricochetAngle": 90
     }
   ],
@@ -13181,7 +13181,7 @@
       },
       "maxPenetration": 750,
       "velocity": 400,
-      "type": "ANTI-TANK GUIDED MISSILE",
+      "type": "TANDEM ANTI-TANK GUIDED MISSILE",
       "ricochetAngle": 76
     }
   ],
@@ -13745,7 +13745,7 @@
       },
       "maxPenetration": 1300,
       "velocity": 300,
-      "type": "ANTI-TANK GUIDED MISSILE",
+      "type": "TANDEM ANTI-TANK GUIDED MISSILE",
       "ricochetAngle": 90
     },
     {
@@ -14602,7 +14602,7 @@
       },
       "maxPenetration": 1250,
       "velocity": 680,
-      "type": "ANTI-TANK GUIDED MISSILE",
+      "type": "TANDEM ANTI-TANK GUIDED MISSILE",
       "ricochetAngle": 90
     },
     {
@@ -15615,7 +15615,7 @@
       },
       "maxPenetration": 700,
       "velocity": 125,
-      "type": "F&F MISSILE",
+      "type": "TANDEM F&F MISSILE",
       "ricochetAngle": 90
     }
   ],
@@ -17336,7 +17336,7 @@
       },
       "maxPenetration": 1200,
       "velocity": 550,
-      "type": "ANTI-TANK GUIDED MISSILE",
+      "type": "TANDEM ANTI-TANK GUIDED MISSILE",
       "ricochetAngle": 90
     }
   ],
@@ -18576,7 +18576,7 @@
       },
       "maxPenetration": 80,
       "velocity": 1990,
-      "type": "OTA HEAT",
+      "type": "OTA TANDEM HEAT",
       "name": "M3 ETC-HARA",
       "mass": 18.18,
       "ricochetAngle": 90
@@ -18639,7 +18639,7 @@
       },
       "maxPenetration": 1200,
       "velocity": 315,
-      "type": "ANTI-TANK GUIDED MISSILE",
+      "type": "TANDEM ANTI-TANK GUIDED MISSILE",
       "ricochetAngle": 90
     }
   ],
@@ -22353,7 +22353,7 @@
       },
       "maxPenetration": 1200,
       "velocity": 500,
-      "type": "ANTI-TANK GUIDED MISSILE",
+      "type": "TANDEM ANTI-TANK GUIDED MISSILE",
       "ricochetAngle": 90
     },
     {
@@ -22761,7 +22761,7 @@
       },
       "maxPenetration": 800,
       "velocity": 329,
-      "type": "ANTI-TANK GUIDED MISSILE",
+      "type": "TANDEM ANTI-TANK GUIDED MISSILE",
       "ricochetAngle": 90
     },
     {
@@ -22822,7 +22822,7 @@
       },
       "maxPenetration": 150,
       "velocity": 309,
-      "type": "OTA ANTI-TANK GUIDED MISSILE",
+      "type": "OTA TANDEM ANTI-TANK GUIDED MISSILE",
       "ricochetAngle": 90
     }
   ],
@@ -23875,7 +23875,7 @@
       },
       "maxPenetration": 750,
       "velocity": 400,
-      "type": "ANTI-TANK GUIDED MISSILE",
+      "type": "TANDEM ANTI-TANK GUIDED MISSILE",
       "ricochetAngle": 76
     }
   ],
@@ -26633,7 +26633,7 @@
       },
       "maxPenetration": 800,
       "velocity": 285,
-      "type": "ANTI-TANK GUIDED MISSILE",
+      "type": "TANDEM ANTI-TANK GUIDED MISSILE",
       "ricochetAngle": 90
     },
     {
@@ -28572,7 +28572,7 @@
       },
       "maxPenetration": 800,
       "velocity": 320,
-      "type": "ANTI-TANK GUIDED MISSILE",
+      "type": "TANDEM ANTI-TANK GUIDED MISSILE",
       "ricochetAngle": 90
     }
   ],
@@ -29420,7 +29420,7 @@
       },
       "maxPenetration": 850,
       "velocity": 445,
-      "type": "ANTI-TANK GUIDED MISSILE",
+      "type": "TANDEM ANTI-TANK GUIDED MISSILE",
       "ricochetAngle": 90
     }
   ],
@@ -33368,7 +33368,7 @@
       },
       "maxPenetration": 850,
       "velocity": 445,
-      "type": "ANTI-TANK GUIDED MISSILE",
+      "type": "TANDEM ANTI-TANK GUIDED MISSILE",
       "ricochetAngle": 90
     },
     {
@@ -34158,7 +34158,7 @@
       },
       "maxPenetration": 5000,
       "velocity": 140,
-      "type": "F&F MISSILE",
+      "type": "TANDEM F&F MISSILE",
       "ricochetAngle": 90
     }
   ],
@@ -35410,7 +35410,7 @@
       },
       "maxPenetration": 1500,
       "velocity": 325,
-      "type": "LASER GUIDED MISSILE",
+      "type": "TANDEM LASER GUIDED MISSILE",
       "ricochetAngle": 90
     }
   ],
@@ -37558,7 +37558,7 @@
       },
       "maxPenetration": 800,
       "velocity": 600,
-      "type": "ANTI-TANK GUIDED MISSILE",
+      "type": "TANDEM ANTI-TANK GUIDED MISSILE",
       "ricochetAngle": 90
     },
     {
@@ -38423,7 +38423,7 @@
       },
       "maxPenetration": 180,
       "velocity": 600,
-      "type": "OTA ANTI-TANK GUIDED MISSILE",
+      "type": "OTA TANDEM ANTI-TANK GUIDED MISSILE",
       "ricochetAngle": 90
     },
     {
@@ -38597,7 +38597,7 @@
       },
       "maxPenetration": 1000,
       "velocity": 200,
-      "type": "ANTI-TANK GUIDED MISSILE",
+      "type": "TANDEM ANTI-TANK GUIDED MISSILE",
       "ricochetAngle": 90
     }
   ],
@@ -40139,7 +40139,7 @@
       },
       "maxPenetration": 775,
       "velocity": 180,
-      "type": "F&F MISSILE",
+      "type": "TANDEM F&F MISSILE",
       "ricochetAngle": 90
     }
   ],
