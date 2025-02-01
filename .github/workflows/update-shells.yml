@@ -78,26 +78,10 @@ jobs:
           echo "temp_branch=$BRANCH_NAME" >> $GITHUB_ENV
           echo "temp_branch=$BRANCH_NAME" >> $GITHUB_OUTPUT
 
-  collect-results:
-    runs-on: ubuntu-latest
-    needs: update-shells
-    outputs:
-      any_changes: ${{ needs.update-shells.outputs.changes_detected }}
-      temp_branch: ${{ needs.update-shells.outputs.temp_branch }}
-    steps:
-      - name: Determine if any changes were detected
-        run: |
-          if [ -z "${{ needs.update-shells.outputs.temp_branch }}" ]; then
-            echo "No changes detected."
-            echo "any_changes=false" >> $GITHUB_ENV
-          else
-            echo "any_changes=true" >> $GITHUB_ENV
-          fi
-
   push-to-branches:
     runs-on: ubuntu-latest
-    needs: collect-results
-    if: needs.collect-results.outputs.any_changes == 'true'
+    needs: update-shells
+    if: needs.update-shells.outputs.changes_detected == 'true'
     strategy:
       matrix:
         branch: [dev, prod]
@@ -111,7 +95,7 @@ jobs:
       - name: Setup git
         uses: fregante/setup-git-user@v2
 
-      - name: Ensure dev and prod branches exist locally
+      - name: Fetch all branches and ensure tracking
         run: |
           git fetch --all
           git branch --track dev origin/dev || true
@@ -119,19 +103,26 @@ jobs:
 
       - name: Merge shell updates into ${{ matrix.branch }}
         run: |
-          TEMP_BRANCH=${{ needs.collect-results.outputs.temp_branch }}
+          TEMP_BRANCH=${{ needs.update-shells.outputs.temp_branch }}
 
+          git fetch origin $TEMP_BRANCH  # Ensure branch is up to date
           git checkout ${{ matrix.branch }}
           git pull --rebase origin ${{ matrix.branch }} --autostash
 
+          # Check if the branch has any commits
+          if [ -z "$(git log --oneline origin/$TEMP_BRANCH)" ]; then
+            echo "Branch $TEMP_BRANCH has no commits. Skipping merge."
+            exit 0
+          fi
+
           if [ "${{ matrix.branch }}" = "dev" ]; then
             echo "Merging changes into dev..."
-            git merge --no-ff $TEMP_BRANCH -m "Merge shell updates from $TEMP_BRANCH"
+            git merge --no-ff origin/$TEMP_BRANCH -m "Merge shell updates from $TEMP_BRANCH"
           else
             echo "Cherry-picking latest commit from dev to prod..."
             git checkout dev
             git pull origin dev --rebase --autostash
-            git cherry-pick -n $(git rev-parse $TEMP_BRANCH)  # Pick only latest commit
+            git cherry-pick -n $(git rev-parse origin/$TEMP_BRANCH)  # Pick only latest commit
             git checkout prod
           fi
 
@@ -140,4 +131,4 @@ jobs:
       - name: Delete temporary branch
         if: matrix.branch == 'prod'
         run: |
-          git push origin --delete ${{ needs.collect-results.outputs.temp_branch }}
+          git push origin --delete ${{ needs.update-shells.outputs.temp_branch }}
