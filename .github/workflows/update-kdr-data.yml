@@ -2,7 +2,7 @@ name: Update KDR Data
 
 on:
   schedule:
-    - cron: '0 3 * * *' # Runs daily at 03:00 UTC
+    - cron: '0 3 * * *'
   workflow_dispatch:
 
 jobs:
@@ -20,7 +20,7 @@ jobs:
       - name: Setup git
         uses: fregante/setup-git-user@v2
 
-      - name: Pull latest changes to prevent conflicts
+      - name: Pull latest changes
         run: |
           git fetch --all
           git checkout dev
@@ -34,7 +34,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 22
-          cache: 'pnpm'
+          cache: pnpm
 
       - name: Install dependencies
         run: pnpm install
@@ -49,10 +49,8 @@ jobs:
         id: check_changes
         run: |
           if ! git diff --quiet origin/dev -- ./data/kdr/; then
-            echo "changes_detected=true" >> $GITHUB_ENV
             echo "changes_detected=true" >> $GITHUB_OUTPUT
           else
-            echo "changes_detected=false" >> $GITHUB_ENV
             echo "changes_detected=false" >> $GITHUB_OUTPUT
           fi
 
@@ -65,7 +63,6 @@ jobs:
           git add ./data/kdr/
           git commit -m "Update KDR data"
           git push origin $BRANCH_NAME --force-with-lease
-          echo "temp_branch=$BRANCH_NAME" >> $GITHUB_ENV
           echo "temp_branch=$BRANCH_NAME" >> $GITHUB_OUTPUT
 
   push-to-branches:
@@ -85,16 +82,18 @@ jobs:
       - name: Push changes to ${{ matrix.branch }}
         run: |
           TEMP_BRANCH=${{ needs.update-kdr-data.outputs.temp_branch }}
-          git checkout ${{ matrix.branch }}
-          git pull --rebase origin ${{ matrix.branch }} --autostash
-
           if [ "${{ matrix.branch }}" = "dev" ]; then
+            git checkout dev
+            git pull --rebase origin dev --autostash
             git rebase $TEMP_BRANCH
           else
-            git checkout dev
-            git pull origin dev --rebase --autostash
-            git cherry-pick -n $(git rev-parse dev)
             git checkout prod
+            git pull --rebase origin prod --autostash
+            COMMIT_HASH=$(git rev-parse $TEMP_BRANCH)
+            git cherry-pick $COMMIT_HASH
           fi
-
           git push origin ${{ matrix.branch }} --force-with-lease
+
+      - name: Delete temporary branch
+        if: matrix.branch == 'prod'
+        run: git push origin --delete ${{ needs.update-kdr-data.outputs.temp_branch }}
