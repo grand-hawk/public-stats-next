@@ -15,6 +15,8 @@ const getBaseUrl = () => {
   return `http://localhost:${process.env.PORT ?? 3000}`; // dev SSR should use localhost
 };
 
+console.log('Base URL:', getBaseUrl());
+
 export const trpc = createTRPCNext<AppRouter>({
   ssr: true,
   ssrPrepass,
