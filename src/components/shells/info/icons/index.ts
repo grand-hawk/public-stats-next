@@ -26,7 +26,6 @@ export const shells: Record<string, string[]> = {
     'ANTI-TANK GUIDED MISSILE',
     'MACLOS MISSILE',
     'LASER GUIDED MISSILE',
-
     'AIR-TO-AIR MISSILE',
   ],
   '/assets/icons/shells/ATGM_HE.png': [],
@@ -34,13 +33,14 @@ export const shells: Record<string, string[]> = {
     'TANDEM ANTI-TANK GUIDED MISSILE',
     'TANDEM MACLOS MISSILE',
     'TANDEM LASER GUIDED MISSILE',
+    'TANDEM AIR-TO-AIR MISSILE',
   ],
   '/assets/icons/shells/ATGM_OTA.png': [
     'OTA ANTI-TANK GUIDED MISSILE',
     'OTA MACLOS MISSILE',
     'OTA LASER GUIDED MISSILE',
   ],
-  '/assets/icons/shells/ATGM_FNF.png': ['F&F MISSILE'],
+  '/assets/icons/shells/ATGM_FNF.png': ['F&F MISSILE', 'TANDEM F&F MISSILE'],
 
   '/assets/icons/shells/CANISTER.png': ['CANISTER'],
   '/assets/icons/shells/SMOKE.png': ['SMOKE'],
