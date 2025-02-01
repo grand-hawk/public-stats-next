@@ -16,10 +16,10 @@ jobs:
             universe_id: '3221676855'
             place_id: '8421780146'
             data_path: './data/shells/8421780146.json'
-          - name: Multicrew Tank Combat
-            universe_id: '3546912119'
-            place_id: '9520328730'
-            data_path: './data/shells/9520328730.json'
+          # - name: Multicrew Tank Combat
+          #   universe_id: '3546912119'
+          #   place_id: '9520328730'
+          #   data_path: './data/shells/9520328730.json'
     outputs:
       changes_detected: ${{ steps.check_changes.outputs.changes_detected }}
       temp_branch: ${{ steps.create_branch.outputs.temp_branch }}
