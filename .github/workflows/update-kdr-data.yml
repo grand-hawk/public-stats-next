@@ -20,7 +20,7 @@ jobs:
       - name: Setup git
         uses: fregante/setup-git-user@v2
 
-      - name: Pull latest changes
+      - name: Pull latest changes to prevent conflicts
         run: |
           git fetch --all
           git checkout dev
@@ -34,7 +34,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 22
-          cache: pnpm
+          cache: 'pnpm'
 
       - name: Install dependencies
         run: pnpm install
@@ -78,6 +78,9 @@ jobs:
         with:
           fetch-depth: 0
           ref: ${{ needs.update-kdr-data.outputs.temp_branch }}
+
+      - name: Setup git
+        uses: fregante/setup-git-user@v2
 
       - name: Push changes to ${{ matrix.branch }}
         run: |
