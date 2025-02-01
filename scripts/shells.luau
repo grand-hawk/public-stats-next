@@ -202,8 +202,16 @@ for _, moduleScript in Modules:GetChildren() do
 				shell.type = "SMOKE"
 			end
 
+			if shell.type == "CANISTER SHOT" then
+				shell.type = "CANISTER"
+			end
+
 			if ammo.ShellType == "TANDEM" then
 				shell.type = `TANDEM {shell.type}`
+			end
+
+			if ammo.OTA then
+				shell.type = `OTA {shell.type}`
 			end
 		end
 
