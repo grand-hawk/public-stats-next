@@ -2,7 +2,7 @@ name: Update Shells
 
 on:
   schedule:
-    - cron: '10 0 * * 0' # Runs every Sunday at 00:10 UTC
+    - cron: '10 0 * * 0'  # Runs every Sunday at 00:10 UTC
   workflow_dispatch:
 
 jobs:
@@ -19,8 +19,9 @@ jobs:
             universe_id: '3546912119'
             place_id: '9520328730'
             data_path: './data/shells/9520328730.json'
+    continue-on-error: true  # Ensure partial failures do not stop the workflow
     outputs:
-      any_changes: ${{ steps.check_changes.outputs.changes_detected }}
+      changes_detected: ${{ steps.check_changes.outputs.changes_detected }}
       temp_branch: ${{ steps.create_branch.outputs.temp_branch }}
     steps:
       - name: Checkout code
@@ -63,86 +64,16 @@ jobs:
             echo "changes_detected=false" >> $GITHUB_OUTPUT
           fi
 
-      - name: Create temporary branch
+      - name: Create sanitized temporary branch
         id: create_branch
         if: steps.check_changes.outputs.changes_detected == 'true'
         run: |
-          BRANCH_NAME="workflow/update-shells-${{ github.run_id }}-${{ matrix.environment.name }}"
+          SAFE_ENV_NAME=$(echo "${{ matrix.environment.name }}" | sed 's/ /-/g')  # Replace spaces with dashes
+          BRANCH_NAME="workflow/update-shells-${{ github.run_id }}-${SAFE_ENV_NAME}"
+
           git checkout -b $BRANCH_NAME
           git add "${{ matrix.environment.data_path }}"
-          git commit -m "Update shells data"
+          git commit -m "Update shells data for $SAFE_ENV_NAME"
           git push origin $BRANCH_NAME --force-with-lease
           echo "temp_branch=$BRANCH_NAME" >> $GITHUB_ENV
           echo "temp_branch=$BRANCH_NAME" >> $GITHUB_OUTPUT
-
-  collect-results:
-    runs-on: ubuntu-latest
-    needs: update-shells
-    outputs:
-      any_changes: ${{ needs.update-shells.outputs.any_changes }}
-      temp_branches: ${{ toJson(needs.update-shells.outputs.temp_branch) }}
-    steps:
-      - name: Determine if any changes were detected
-        run: |
-          echo "Collected branches: ${{ toJson(needs.update-shells.outputs.temp_branch) }}"
-          if [[ -z "${{ needs.update-shells.outputs.temp_branch }}" ]]; then
-            echo "No changes detected."
-            echo "any_changes=false" >> $GITHUB_ENV
-          else
-            echo "any_changes=true" >> $GITHUB_ENV
-          fi
-
-  push-to-branches:
-    runs-on: ubuntu-latest
-    needs: collect-results
-    if: needs.collect-results.outputs.any_changes == 'true'
-    strategy:
-      matrix:
-        branch: [dev, prod]
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-          ref: dev
-
-      - name: Setup git
-        uses: fregante/setup-git-user@v2
-
-      - name: Ensure dev and prod branches exist locally
-        run: |
-          git fetch --all
-          git branch --track dev origin/dev || true
-          git branch --track prod origin/prod || true
-
-      - name: Merge shell updates into ${{ matrix.branch }}
-        run: |
-          TEMP_BRANCHES=${{ fromJson(needs.collect-results.outputs.temp_branches) }}
-
-          git checkout ${{ matrix.branch }}
-          git pull --rebase origin ${{ matrix.branch }} --autostash
-
-          if [ "${{ matrix.branch }}" = "dev" ]; then
-            for BRANCH in $TEMP_BRANCHES; do
-              echo "Merging $BRANCH into dev"
-              git merge --no-ff $BRANCH -m "Merge shell updates from $BRANCH"
-            done
-          else
-            git checkout dev
-            git pull origin dev --rebase --autostash
-            for BRANCH in $TEMP_BRANCHES; do
-              echo "Cherry-picking $BRANCH into prod"
-              git cherry-pick -n $(git rev-parse $BRANCH)
-            done
-            git checkout prod
-          fi
-
-          git push origin ${{ matrix.branch }} --force-with-lease
-
-      - name: Delete temporary branches
-        if: matrix.branch == 'prod'
-        run: |
-          TEMP_BRANCHES=${{ fromJson(needs.collect-results.outputs.temp_branches) }}
-          for BRANCH in $TEMP_BRANCHES; do
-            git push origin --delete $BRANCH
-          done
