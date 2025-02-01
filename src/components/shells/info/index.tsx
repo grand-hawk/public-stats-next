@@ -64,6 +64,7 @@ export default function ShellInfo({
                   <NextImage
                     alt={data.type}
                     height={32}
+                    quality={90}
                     src={icon}
                     width={32}
                   />
