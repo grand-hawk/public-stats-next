@@ -2,7 +2,7 @@ name: Update KDR Data
 
 on:
   schedule:
-    - cron: '0 3 * * *'
+    - cron: '10 */12 * * *' # Runs every 12 hours
   workflow_dispatch:
 
 jobs:
