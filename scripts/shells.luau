@@ -49,8 +49,10 @@ for _, moduleScript in Modules:GetChildren() do
 	if not moduleScript:IsA("ModuleScript") then
 		continue
 	end
-
 	if table.find({ "InfGuns", "Flares", "Smoke Grenade" }, moduleScript.Name) then
+		continue
+	end
+	if moduleScript:GetAttribute("Hide") == true then
 		continue
 	end
 
