@@ -14,7 +14,9 @@ export default function ErrorState({
   return (
     <EmptyState description={error} icon={<BiErrorAlt />} title="Error">
       <Group>
-        <Button {...props}>Retry</Button>
+        <Button variant="surface" {...props}>
+          Retry
+        </Button>
       </Group>
     </EmptyState>
   );

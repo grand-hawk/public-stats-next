@@ -3,12 +3,15 @@ import {
   FormatNumber,
   Grid,
   GridItem,
+  Group,
   Image,
   Spinner,
   Stack,
 } from '@chakra-ui/react';
 import NextImage from 'next/image';
+import NextLink from 'next/link';
 import React from 'react';
+import { GrDocumentMissing } from 'react-icons/gr';
 
 import InfoTooltip from '@/components/infoTooltip';
 import BasicCard from '@/components/shells/info/basicCard';
@@ -16,7 +19,8 @@ import { getIcon } from '@/components/shells/info/icons';
 import PenetrationTable from '@/components/shells/info/penetrationTable';
 import Stat from '@/components/stat';
 import ErrorState from '@/components/states/errorState';
-import NoDataFoundState from '@/components/states/noDataFoundState';
+import { Button } from '@/components/ui/button';
+import { EmptyState } from '@/components/ui/empty-state';
 import { trpc } from '@/utils/trpc';
 
 export default function ShellInfo({
@@ -47,7 +51,15 @@ export default function ShellInfo({
       />
     );
   if (!data)
-    return <NoDataFoundState onClick={() => !isFetching && refetch()} />;
+    return (
+      <EmptyState icon={<GrDocumentMissing />} title="Shell not found">
+        <Group>
+          <NextLink href="/shells" passHref>
+            <Button variant="surface">Back to search</Button>
+          </NextLink>
+        </Group>
+      </EmptyState>
+    );
 
   const icon = getIcon(data.type);
 
