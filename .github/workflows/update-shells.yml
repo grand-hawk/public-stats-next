@@ -32,7 +32,7 @@ jobs:
           git checkout dev
           git pull --rebase origin dev --autostash
 
-      - uses: grand-hawk/action-roblox-luau-execution@1.0.0
+      - uses: grand-hawk/action-roblox-luau-execution@v1
         with:
           roblox_api_key: ${{ secrets.ROBLOX_LUAU_EXECUTION_API_KEY }}
           universe_id: ${{ matrix.environment.universe_id }}
