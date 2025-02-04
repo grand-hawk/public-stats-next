@@ -70,6 +70,7 @@ jobs:
     needs: update-kdr-data
     if: needs.update-kdr-data.outputs.changes_detected == 'true'
     strategy:
+      max-parallel: 1
       matrix:
         branch: [dev, prod]
     steps:

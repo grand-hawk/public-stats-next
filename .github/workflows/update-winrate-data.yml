@@ -73,6 +73,7 @@ jobs:
     needs: update-winrate-data
     if: needs.update-winrate-data.outputs.changes_detected == 'true'
     strategy:
+      max-parallel: 1
       matrix:
         branch: [dev, prod]
     steps:
