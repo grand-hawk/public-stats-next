@@ -37,15 +37,18 @@ export default function PlaceSelect({
       }),
     [data],
   );
+  const defaultPlaceId = places.items.length ? places.items[0][1] : undefined;
+
+  React.useEffect(() => {
+    if (!data) return;
+
+    if (typeof placeId === 'number' && !Object.values(data).includes(placeId))
+      setPlaceId(undefined);
+    else if (placeId === undefined && defaultPlaceId !== undefined)
+      setPlaceId(defaultPlaceId);
+  }, [data, placeId, defaultPlaceId, setPlaceId]);
 
   if (isFetching || error) return <Spinner />;
-
-  if (
-    data &&
-    typeof placeId === 'number' &&
-    !Object.values(data).includes(placeId)
-  )
-    setPlaceId(undefined);
 
   return (
     <SelectRoot
