@@ -37,7 +37,7 @@ function Results({ placeId, query }: { placeId: number; query: string }) {
           description={
             query !== ''
               ? 'No shells were found'
-              : 'Search for shells, weapons, or type'
+              : 'Search for shells, weapons, type, or vehicle name'
           }
           icon={<MdOutlineSearch />}
           title="No results"
