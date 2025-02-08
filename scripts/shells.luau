@@ -1,15 +1,61 @@
 local ReplicatedFirst = game:GetService("ReplicatedFirst")
+local ServerStorage = game:GetService("ServerStorage")
+local InsertService = game:GetService("InsertService")
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+
 local Shells = ReplicatedFirst:WaitForChild("Shells") :: Folder
 local Modules = Shells:WaitForChild("Modules") :: Folder
-local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local PHRST = ReplicatedStorage:WaitForChild("PHRST") :: Folder
+local Tanks = ServerStorage:WaitForChild("Tanks") :: Folder
 
 local GlobalConstants = require(Shells:WaitForChild("GlobalConstants") :: ModuleScript)
 local ShellModules = require(PHRST:WaitForChild("ShellModules") :: ModuleScript)
+local TankInfo = require(ReplicatedStorage:WaitForChild("TankInfo") :: ModuleScript)
+
+local vehicleWeaponReference: { [string]: { string } } = {}
+
+for name, tank in TankInfo do
+	if tank.Hidden then
+		continue
+	end
+
+	local model = Tanks:FindFirstChild(name)
+	if not model and tank.ModelID then
+		local folder = InsertService:LoadAsset(tank.ModelID)
+
+		model = folder:FindFirstAncestorWhichIsA("Model")
+	end
+
+	if model then
+		local turrets = model:FindFirstChild("Turrets") :: Folder?
+		if not turrets then
+			continue
+		end
+
+		for _, turret in turrets:GetChildren() do
+			local weapons = turret:FindFirstChild("Weapons") :: Folder?
+			if not weapons then
+				continue
+			end
+
+			for _, weapon in weapons:GetChildren() do
+				if not vehicleWeaponReference[name] then
+					vehicleWeaponReference[name] = {}
+				end
+				if table.find(vehicleWeaponReference[name], weapon.Name) then
+					continue
+				end
+
+				table.insert(vehicleWeaponReference[name], weapon.Name)
+			end
+		end
+	end
+end
 
 type ShellModule = {
 	name: string,
 	type: string,
+	relatedVehicles: { string },
 	mass: number,
 	velocity: number,
 	damage: number,
@@ -66,6 +112,7 @@ for _, moduleScript in Modules:GetChildren() do
 		local shell: ShellModule = {
 			name = ammo.DisplayName,
 			type = ammo.DisplayType,
+			relatedVehicles = {},
 			mass = ammo.ShellMass,
 			velocity = math.round(GlobalConstants.studtom(ammo.MuzzleSpeed)),
 			damage = math.round(ammo.Damage),
@@ -76,6 +123,12 @@ for _, moduleScript in Modules:GetChildren() do
 			maxPenetration = math.round(ammo.ShellMaxPen),
 			penetrationTable = {},
 		}
+
+		for vehicleName, vehicleWeapons in vehicleWeaponReference do
+			if table.find(vehicleWeapons, moduleScript.Name) then
+				table.insert(shell.relatedVehicles, vehicleName)
+			end
+		end
 
 		if shell.type == "ATGM HE" then
 			shell.type = "HE"
@@ -224,7 +277,5 @@ for _, moduleScript in Modules:GetChildren() do
 		weapons[moduleScript.Name] = shells
 	end
 end
-
--- print(game:GetService("HttpService"):JSONEncode(weapons))
 
 return weapons
