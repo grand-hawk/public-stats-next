@@ -27,6 +27,8 @@ for name, tank in TankInfo do
 	end
 
 	if model then
+		local tankName = tank.Dispname
+
 		local turrets = model:FindFirstChild("Turrets") :: Folder?
 		if not turrets then
 			continue
@@ -39,14 +41,14 @@ for name, tank in TankInfo do
 			end
 
 			for _, weapon in weapons:GetChildren() do
-				if not vehicleWeaponReference[name] then
-					vehicleWeaponReference[name] = {}
+				if not vehicleWeaponReference[tankName] then
+					vehicleWeaponReference[tankName] = {}
 				end
-				if table.find(vehicleWeaponReference[name], weapon.Name) then
+				if table.find(vehicleWeaponReference[tankName], weapon.Name) then
 					continue
 				end
 
-				table.insert(vehicleWeaponReference[name], weapon.Name)
+				table.insert(vehicleWeaponReference[tankName], weapon.Name)
 			end
 		end
 	end
