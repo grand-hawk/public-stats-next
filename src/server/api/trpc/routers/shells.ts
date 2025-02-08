@@ -13,6 +13,7 @@ const placeData = new Map<number, PlaceData>();
 export interface Shell {
   name: string;
   type: string;
+  relatedVehicles: string[];
   mass: number;
   velocity: number;
   damage: number;
@@ -65,18 +66,24 @@ for (const placeId of Object.values(places)) {
     await fs.readFile(`./data/shells/${placeId}.json`, 'utf8'),
   );
 
+  const entries = Object.entries(weapons).flatMap(([weapon, shells]) => {
+    return shells.map((shell) => ({
+      ...shell,
+      weaponName: weapon,
+    }));
+  });
+
+  const fuseKeys = ['weaponName', 'name', 'type', 'relatedVehicles'];
+  const fuseIndex = Fuse.createIndex(fuseKeys, entries);
+
   const fuse = new Fuse(
-    Object.entries(weapons).flatMap(([weapon, shells]) => {
-      return shells.map((shell) => ({
-        ...shell,
-        weaponName: weapon,
-      }));
-    }),
+    entries,
     {
-      keys: ['weaponName', 'name', 'type'],
+      keys: fuseKeys,
       threshold: 0.2,
       useExtendedSearch: true,
     },
+    Fuse.parseIndex(fuseIndex.toJSON()),
   );
 
   placeData.set(placeId, { weapons, fuse });
