@@ -40,7 +40,7 @@ function seriesFromWinrate(winrate: Awaited<ReturnType<typeof getWinrate>>) {
       const date = new Date(winrateEntry.date);
       date.setHours(0, 0, 0, 0);
 
-      if (date === currentDate) continue;
+      if (date.getTime() === currentDate.getTime()) continue;
 
       const timestamp = date.getTime();
       teamSeries.data.push([timestamp, winrateEntry.winrate]);
