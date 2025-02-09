@@ -32,6 +32,7 @@ export interface Shell {
     | {
         mass: number;
         blastRadiusMultiplier?: number;
+        explosiveRadius?: number;
       }
     | undefined;
 

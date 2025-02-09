@@ -139,12 +139,23 @@ export default function ShellInfo({
                 <Stat label="Explosive mass">
                   <FormatNumber value={data.explosive.mass} /> kg
                 </Stat>
-                {data.explosive.blastRadiusMultiplier && (
+                {typeof data.explosive.blastRadiusMultiplier !==
+                  'undefined' && (
                   <Stat label="Blast radius multiplier">
                     <FormatNumber
                       value={data.explosive.blastRadiusMultiplier}
+                    />
+                    x
+                  </Stat>
+                )}
+                {typeof data.explosive.explosiveRadius !== 'undefined' && (
+                  <Stat label="Explosive radius">
+                    ~
+                    <FormatNumber
+                      maximumFractionDigits={2}
+                      value={data.explosive.explosiveRadius}
                     />{' '}
-                    m/s
+                    m
                   </Stat>
                 )}
               </>

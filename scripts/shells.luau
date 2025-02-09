@@ -120,7 +120,7 @@ for _, moduleScript in Modules:GetChildren() do
 			velocity = math.round(GlobalConstants.studtom(ammo.MuzzleSpeed)),
 			damage = math.round(ammo.Damage),
 			shrapMultiplier = ammo.shrapmult,
-			ricochetAngle = ammo.RicochetAngle,
+			ricochetAngle = if ammo.RicochetAngle ~= 90 then ammo.RicochetAngle else nil,
 			eraTip = ammo.ERAtip,
 
 			maxPenetration = math.round(ammo.ShellMaxPen),
@@ -214,9 +214,7 @@ for _, moduleScript in Modules:GetChildren() do
 				shell.explosive = {
 					mass = ammo.ExplosiveMass,
 					blastRadiusMultiplier = ammo.blastradiusmult,
-					explosiveRadius = if ammo.DisplayType == "HE"
-						then GlobalConstants.studtom(GlobalConstants.GetExplosionRadius(ammo))
-						else nil,
+					explosiveRadius = GlobalConstants.studtom(GlobalConstants.GetExplosionRadius(ammo)),
 				}
 			end
 
