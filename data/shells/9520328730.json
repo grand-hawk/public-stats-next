@@ -46,7 +46,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 48.39613862816718,
+        "explosiveRadius": 24.19806931408359,
         "mass": 1
       },
       "name": "Blast-frag Medium Charge",
@@ -105,7 +105,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 40.81888419346799,
+        "explosiveRadius": 20.409442096733994,
         "mass": 0.6
       },
       "name": "Smoke",
@@ -164,7 +164,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 48.39613862816718,
+        "explosiveRadius": 24.19806931408359,
         "mass": 1
       },
       "name": "Blast-frag High Charge",
@@ -223,7 +223,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 48.39613862816718,
+        "explosiveRadius": 24.19806931408359,
         "mass": 1
       },
       "name": "Blast-frag Low Charge",
@@ -284,7 +284,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 17.829289911873463,
+        "explosiveRadius": 8.914644955936732,
         "mass": 0.05
       },
       "name": "3UOF8",
@@ -413,7 +413,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 84.05969458234782,
+        "explosiveRadius": 42.02984729117391,
         "mass": 5.24
       },
       "name": "3OF26",
@@ -524,7 +524,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 86.55179018742949,
+        "explosiveRadius": 43.275895093714745,
         "mass": 5.72
       },
       "name": "9M119",
@@ -586,7 +586,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 68.13110716389825,
+        "explosiveRadius": 34.065553581949125,
         "mass": 2.79
       },
       "name": "3BK18M",
@@ -709,7 +709,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 17.829289911873463,
+        "explosiveRadius": 8.914644955936732,
         "mass": 0.05
       },
       "name": "3UOF8",
@@ -826,7 +826,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 78.51512692274994,
+        "explosiveRadius": 39.25756346137497,
         "mass": 4.27
       },
       "name": "Spike-LR2",
@@ -951,7 +951,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 76.37330102638222,
+        "explosiveRadius": 38.18665051319111,
         "mass": 3.93
       },
       "name": "DM11",
@@ -1011,7 +1011,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 65.68366563373311,
+        "explosiveRadius": 32.84183281686656,
         "mass": 2.5
       },
       "name": "DM12",
@@ -1135,7 +1135,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 89.85399065859075,
+        "explosiveRadius": 44.92699532929537,
         "mass": 6.4
       },
       "name": "9M22/M21 HE-Frag",
@@ -1196,7 +1196,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 27.861436362739784,
+        "explosiveRadius": 13.930718181369892,
         "mass": 0.1908
       },
       "name": "kulsgr m/90",
@@ -1311,7 +1311,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 27.03913986550328,
+        "explosiveRadius": 13.51956993275164,
         "mass": 0.1744
       },
       "name": "slsgr m/90 ",
@@ -1372,7 +1372,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 39.410199380239874,
+        "explosiveRadius": 19.705099690119937,
         "mass": 0.54
       },
       "name": "FIM-92K Stinger",
@@ -1499,7 +1499,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 49.95837157072676,
+        "explosiveRadius": 24.97918578536338,
         "mass": 1.1
       },
       "name": "HI.Gr 39",
@@ -1558,7 +1558,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 48.39613862816718,
+        "explosiveRadius": 24.19806931408359,
         "mass": 1
       },
       "name": "Sprgr.43",
@@ -1617,7 +1617,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 23.047224410865418,
+        "explosiveRadius": 11.523612205432709,
         "mass": 0.108
       },
       "name": "PzGr 39/43",
@@ -1679,7 +1679,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 101.77435567749612,
+        "explosiveRadius": 50.88717783874806,
         "mass": 9.3
       },
       "name": "Grifel-3",
@@ -1854,7 +1854,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 29.69486615035402,
+        "explosiveRadius": 14.84743307517701,
         "mass": 0.231
       },
       "name": "3UO8",
@@ -1913,7 +1913,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 29.89152662429425,
+        "explosiveRadius": 14.945763312147125,
         "mass": 0.23562
       },
       "name": "OR-281U",
@@ -1972,7 +1972,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 13.141110578962229,
+        "explosiveRadius": 6.570555289481114,
         "mass": 0.02002
       },
       "name": "BR-281U",
@@ -2090,7 +2090,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 57.64650035114329,
+        "explosiveRadius": 28.823250175571644,
         "mass": 1.69
       },
       "name": "9M37M",
@@ -2266,7 +2266,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 17.829289911873463,
+        "explosiveRadius": 8.914644955936732,
         "mass": 0.05
       },
       "name": "BR-354",
@@ -2326,7 +2326,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 41.28965417908905,
+        "explosiveRadius": 20.644827089544524,
         "mass": 0.621
       },
       "name": "OF-350M",
@@ -2385,7 +2385,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 42.557915667641225,
+        "explosiveRadius": 21.278957833820613,
         "mass": 0.68
       },
       "name": "BK-354M",
@@ -2446,7 +2446,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 42.68271965388075,
+        "explosiveRadius": 21.341359826940376,
         "mass": 0.686
       },
       "name": "Sprgr. 34",
@@ -2505,7 +2505,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 14.851716812597385,
+        "explosiveRadius": 7.425858406298692,
         "mass": 0.0289
       },
       "name": "PzGr 39",
@@ -2565,7 +2565,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 46.23804616312886,
+        "explosiveRadius": 23.11902308156443,
         "mass": 0.8721
       },
       "name": "Hl.Gr 38B",
@@ -2626,7 +2626,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 180,
+        "explosiveRadius": 90,
         "mass": 80
       },
       "name": "Kh-25ML",
@@ -2685,7 +2685,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 16.270662785193135,
+        "explosiveRadius": 8.135331392596568,
         "mass": 0.038
       },
       "name": "HE",
@@ -2798,7 +2798,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 46.29805667325597,
+        "explosiveRadius": 23.149028336627985,
         "mass": 0.8755
       },
       "name": "Hl.Gr 38C",
@@ -2857,7 +2857,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 42.68271965388075,
+        "explosiveRadius": 21.341359826940376,
         "mass": 0.686
       },
       "name": "Sprgr. 34",
@@ -2918,7 +2918,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 19.45876011985187,
+        "explosiveRadius": 9.729380059925935,
         "mass": 0.065
       },
       "name": "VOG-17M",
@@ -2979,7 +2979,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 40.36020621984831,
+        "explosiveRadius": 20.180103109924154,
         "mass": 0.58
       },
       "name": "Shell Mk.1",
@@ -3038,7 +3038,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 17.829289911873463,
+        "explosiveRadius": 8.914644955936732,
         "mass": 0.05
       },
       "name": "Shell SS Mk.1",
@@ -3155,7 +3155,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 39.165409217601145,
+        "explosiveRadius": 19.582704608800572,
         "mass": 0.53
       },
       "name": "9M39",
@@ -3223,7 +3223,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 74.85335778253685,
+        "explosiveRadius": 37.42667889126842,
         "mass": 3.7
       },
       "name": "Sprgr. L/5",
@@ -3282,7 +3282,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 44.64442813519196,
+        "explosiveRadius": 22.32221406759598,
         "mass": 0.785
       },
       "name": "PzGr43",
@@ -3344,7 +3344,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 48.39613862816718,
+        "explosiveRadius": 24.19806931408359,
         "mass": 1
       },
       "name": "Frag",
@@ -3406,7 +3406,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 40.81888419346799,
+        "explosiveRadius": 20.409442096733994,
         "mass": 0.6
       },
       "name": "Smoke",
@@ -3470,7 +3470,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 13.136733126746623,
+        "explosiveRadius": 6.568366563373312,
         "mass": 0.02
       },
       "name": "BR-271M",
@@ -3530,7 +3530,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 29.21583292900689,
+        "explosiveRadius": 14.607916464503445,
         "mass": 0.22
       },
       "name": "O-271",
@@ -3591,7 +3591,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 76.17847033047524,
+        "explosiveRadius": 38.08923516523762,
         "mass": 3.9
       },
       "name": "140mm Pz Kan HL Pat MZ HEAT-MP ",
@@ -3765,7 +3765,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 10.76320487694764,
+        "explosiveRadius": 5.38160243847382,
         "mass": 0.011
       },
       "name": "HE-T",
@@ -3958,7 +3958,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 47.17453361066568,
+        "explosiveRadius": 23.58726680533284,
         "mass": 0.92617
       },
       "name": "M348 shell",
@@ -4017,7 +4017,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 24.948871209724267,
+        "explosiveRadius": 12.474435604862133,
         "mass": 0.137
       },
       "name": "M82 shot",
@@ -4079,7 +4079,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 39.60699584856883,
+        "explosiveRadius": 19.803497924284414,
         "mass": 0.54813
       },
       "name": "M66",
@@ -4138,7 +4138,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 42.26382393365358,
+        "explosiveRadius": 21.13191196682679,
         "mass": 0.666
       },
       "name": "M48 shell",
@@ -4199,7 +4199,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 84.05969458234782,
+        "explosiveRadius": 42.02984729117391,
         "mass": 5.24
       },
       "name": "3OF26",
@@ -4260,7 +4260,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 68.13110716389825,
+        "explosiveRadius": 34.065553581949125,
         "mass": 2.79
       },
       "name": "3BK18M",
@@ -4321,7 +4321,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 86.55179018742949,
+        "explosiveRadius": 43.275895093714745,
         "mass": 5.72
       },
       "name": "9M119",
@@ -4448,7 +4448,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 76.37330102638222,
+        "explosiveRadius": 38.18665051319111,
         "mass": 3.93
       },
       "name": "DM11",
@@ -4507,7 +4507,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 65.68366563373311,
+        "explosiveRadius": 32.84183281686656,
         "mass": 2.5
       },
       "name": "DM12A1",
@@ -4626,7 +4626,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 53.88117702025614,
+        "explosiveRadius": 26.94058851012807,
         "mass": 1.38
       },
       "name": "HEAT Rockets",
@@ -4743,7 +4743,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 101.77435567749612,
+        "explosiveRadius": 50.88717783874806,
         "mass": 9.3
       },
       "name": "Grifel-3",
@@ -4860,7 +4860,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 60.97531379125822,
+        "explosiveRadius": 30.48765689562911,
         "mass": 2
       },
       "name": "Ordinary, Mod.1 ",
@@ -4920,7 +4920,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 107.63204876947638,
+        "explosiveRadius": 53.81602438473819,
         "mass": 11
       },
       "name": "OF-91 Low Charge",
@@ -4977,7 +4977,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 107.63204876947638,
+        "explosiveRadius": 53.81602438473819,
         "mass": 11
       },
       "name": "OF-91 Medium Charge",
@@ -5034,7 +5034,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 107.63204876947638,
+        "explosiveRadius": 53.81602438473819,
         "mass": 11
       },
       "name": "OF-91 Proxy Fuze",
@@ -5091,7 +5091,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 73.33936185303816,
+        "explosiveRadius": 36.66968092651908,
         "mass": 3.48
       },
       "name": "BP-540",
@@ -5148,7 +5148,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 107.63204876947638,
+        "explosiveRadius": 53.81602438473819,
         "mass": 11
       },
       "name": "OF-91",
@@ -5264,7 +5264,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 65.68366563373311,
+        "explosiveRadius": 32.84183281686656,
         "mass": 2.5
       },
       "name": "DM12",
@@ -5381,7 +5381,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 46.72595810139787,
+        "explosiveRadius": 23.362979050698936,
         "mass": 0.9
       },
       "name": "M456A2",
@@ -5438,7 +5438,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 17.829289911873463,
+        "explosiveRadius": 8.914644955936732,
         "mass": 0.05
       },
       "name": "M416",
@@ -5495,7 +5495,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 78.75953356348667,
+        "explosiveRadius": 39.379766781743335,
         "mass": 4.31
       },
       "name": "M393A2",
@@ -5615,7 +5615,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 38.4120406847757,
+        "explosiveRadius": 19.20602034238785,
         "mass": 0.5
       },
       "name": "Anti-Tank drone",
@@ -5681,7 +5681,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 180,
+        "explosiveRadius": 90,
         "mass": 500
       },
       "name": "Lightning Ball",
@@ -5740,7 +5740,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 21.26225534828102,
+        "explosiveRadius": 10.63112767414051,
         "mass": 0.0848
       },
       "name": "Type 1 APHE",
@@ -5798,7 +5798,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 45.113416532427074,
+        "explosiveRadius": 22.556708266213537,
         "mass": 0.81
       },
       "name": "Type 94 HE",
@@ -5857,7 +5857,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 89.66640349363516,
+        "explosiveRadius": 44.83320174681758,
         "mass": 6.36
       },
       "name": "9D135",
@@ -5921,7 +5921,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 101.55501371377886,
+        "explosiveRadius": 50.77750685688943,
         "mass": 9.24
       },
       "name": "9T135",
@@ -5982,7 +5982,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 20.409442096733994,
+        "explosiveRadius": 10.204721048366997,
         "mass": 0.075
       },
       "name": "HE",
@@ -6095,7 +6095,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 102.24638049133821,
+        "explosiveRadius": 51.12319024566911,
         "mass": 9.43
       },
       "name": "AGM-114K Hellfire II",
@@ -6221,7 +6221,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 94.27532353025371,
+        "explosiveRadius": 47.13766176512686,
         "mass": 7.392
       },
       "name": "BR-540B ",
@@ -6281,7 +6281,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 87.25223975753306,
+        "explosiveRadius": 43.62611987876653,
         "mass": 5.86
       },
       "name": "OF-540 ",
@@ -6468,7 +6468,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 56.60446712390788,
+        "explosiveRadius": 28.30223356195394,
         "mass": 1.6
       },
       "name": "9M134",
@@ -6534,7 +6534,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 73.75845301802343,
+        "explosiveRadius": 36.879226509011716,
         "mass": 3.54
       },
       "name": "3OF70",
@@ -6594,7 +6594,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 75.18902755404511,
+        "explosiveRadius": 37.594513777022556,
         "mass": 3.75
       },
       "name": "9M117M1",
@@ -6717,7 +6717,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 28.48967103473724,
+        "explosiveRadius": 14.24483551736862,
         "mass": 0.204
       },
       "name": "DM11A1",
@@ -6778,7 +6778,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 180,
+        "explosiveRadius": 90,
         "mass": 207
       },
       "name": "FAB-500 M62",
@@ -6837,7 +6837,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 101.18732398594953,
+        "explosiveRadius": 50.593661992974766,
         "mass": 9.14
       },
       "name": "M107 ",
@@ -6896,7 +6896,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 17.829289911873463,
+        "explosiveRadius": 8.914644955936732,
         "mass": 0.05
       },
       "name": "M110",
@@ -6955,7 +6955,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 101.18732398594953,
+        "explosiveRadius": 50.593661992974766,
         "mass": 9.14
       },
       "name": "M107 Low Charge",
@@ -7014,7 +7014,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 101.18732398594953,
+        "explosiveRadius": 50.593661992974766,
         "mass": 9.14
       },
       "name": "M107 Medium Charge",
@@ -7075,7 +7075,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 73.75845301802343,
+        "explosiveRadius": 36.879226509011716,
         "mass": 3.54
       },
       "name": "3OF70-1",
@@ -7134,7 +7134,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 81.97651819408715,
+        "explosiveRadius": 40.988259097043574,
         "mass": 4.86
       },
       "name": "APS03",
@@ -7200,7 +7200,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 49.50001204731895,
+        "explosiveRadius": 24.750006023659473,
         "mass": 1.07
       },
       "name": "XM884 Proxy-Fuze",
@@ -7311,7 +7311,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 49.50001204731895,
+        "explosiveRadius": 24.750006023659473,
         "mass": 1.07
       },
       "name": "XM884",
@@ -7370,7 +7370,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 65.68366563373311,
+        "explosiveRadius": 32.84183281686656,
         "mass": 2.5
       },
       "name": "HEAT ATGM",
@@ -7493,7 +7493,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 83.304303461421,
+        "explosiveRadius": 41.6521517307105,
         "mass": 5.1
       },
       "name": "KONUS",
@@ -7557,7 +7557,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 76.37330102638222,
+        "explosiveRadius": 38.18665051319111,
         "mass": 3.93
       },
       "name": "DM11",
@@ -7616,7 +7616,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 65.68366563373311,
+        "explosiveRadius": 32.84183281686656,
         "mass": 2.5
       },
       "name": "DM12",
@@ -7677,7 +7677,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 84.05969458234782,
+        "explosiveRadius": 42.02984729117391,
         "mass": 5.24
       },
       "name": "3OF26",
@@ -7792,7 +7792,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 86.55179018742949,
+        "explosiveRadius": 43.275895093714745,
         "mass": 5.72
       },
       "name": "KOMBAT ATGM",
@@ -7856,7 +7856,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 60.97531379125822,
+        "explosiveRadius": 30.48765689562911,
         "mass": 2
       },
       "name": "3BK18M ",
@@ -7917,7 +7917,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 14.695918083965822,
+        "explosiveRadius": 7.347959041982911,
         "mass": 0.028
       },
       "name": "HEF-I ",
@@ -8034,7 +8034,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 27.861436362739784,
+        "explosiveRadius": 13.930718181369892,
         "mass": 0.1908
       },
       "name": "kulsgr m/90",
@@ -8093,7 +8093,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 27.03913986550328,
+        "explosiveRadius": 13.51956993275164,
         "mass": 0.1744
       },
       "name": "slsgr m/90 ",
@@ -8210,7 +8210,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 37.086417522190494,
+        "explosiveRadius": 18.543208761095247,
         "mass": 0.45
       },
       "name": "Pzgr. 57 TS",
@@ -8270,7 +8270,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 74.85335778253685,
+        "explosiveRadius": 37.42667889126842,
         "mass": 3.7
       },
       "name": "Sprgr. L/5",
@@ -8331,7 +8331,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 43.970810057400776,
+        "explosiveRadius": 21.985405028700388,
         "mass": 0.75
       },
       "name": "QN201DD",
@@ -8397,7 +8397,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 8.59422503136786,
+        "explosiveRadius": 4.29711251568393,
         "mass": 0.0056
       },
       "name": "FI",
@@ -8514,7 +8514,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 89.66640349363516,
+        "explosiveRadius": 44.83320174681758,
         "mass": 6.36
       },
       "name": "9M133",
@@ -8585,7 +8585,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 101.55501371377886,
+        "explosiveRadius": 50.77750685688943,
         "mass": 9.24
       },
       "name": "9M133F-1",
@@ -8653,7 +8653,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 19.257100424276164,
+        "explosiveRadius": 9.628550212138082,
         "mass": 0.063
       },
       "name": "M61 shot",
@@ -8711,7 +8711,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 42.26382393365358,
+        "explosiveRadius": 21.13191196682679,
         "mass": 0.666
       },
       "name": "M48 shell",
@@ -8770,7 +8770,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 54.90286366901195,
+        "explosiveRadius": 27.451431834505975,
         "mass": 1.46
       },
       "name": "OF-412",
@@ -8829,7 +8829,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 22.463497664647686,
+        "explosiveRadius": 11.231748832323843,
         "mass": 0.1
       },
       "name": "BR-412D",
@@ -8891,7 +8891,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 70.56639694876347,
+        "explosiveRadius": 35.283198474381734,
         "mass": 3.1
       },
       "name": "ATGM",
@@ -9016,7 +9016,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 85.2200123833784,
+        "explosiveRadius": 42.6100061916892,
         "mass": 5.46
       },
       "name": "DTB-125",
@@ -9075,7 +9075,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 66.71822380407224,
+        "explosiveRadius": 33.35911190203612,
         "mass": 2.62
       },
       "name": "DTP-125",
@@ -9134,7 +9134,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 86.55179018742949,
+        "explosiveRadius": 43.275895093714745,
         "mass": 5.72
       },
       "name": "GP125",
@@ -9198,7 +9198,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 84.3793162676944,
+        "explosiveRadius": 42.1896581338472,
         "mass": 5.3
       },
       "name": "DTB12-125",
@@ -9259,7 +9259,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 180,
+        "explosiveRadius": 90,
         "mass": 430
       },
       "name": "Mk84 2000 lbs LGDP Bomb",
@@ -9318,7 +9318,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 56.722148267486205,
+        "explosiveRadius": 28.361074133743102,
         "mass": 1.61
       },
       "name": "M67 shot",
@@ -9378,7 +9378,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 62.752284835107076,
+        "explosiveRadius": 31.376142417553538,
         "mass": 2.18
       },
       "name": "M1 shell",
@@ -9498,7 +9498,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 80.48778748288755,
+        "explosiveRadius": 40.24389374144378,
         "mass": 4.6
       },
       "name": "M3M",
@@ -9558,7 +9558,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 78.0837164196599,
+        "explosiveRadius": 39.04185820982995,
         "mass": 4.2
       },
       "name": "POLYNEGE",
@@ -9624,7 +9624,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 17.829289911873463,
+        "explosiveRadius": 8.914644955936732,
         "mass": 0.05
       },
       "name": "3UOF8",
@@ -9743,7 +9743,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 84.05969458234782,
+        "explosiveRadius": 42.02984729117391,
         "mass": 5.24
       },
       "name": "3OF26",
@@ -9802,7 +9802,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 86.55179018742949,
+        "explosiveRadius": 43.275895093714745,
         "mass": 5.72
       },
       "name": "9M119M1",
@@ -9923,7 +9923,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 68.13110716389825,
+        "explosiveRadius": 34.065553581949125,
         "mass": 2.79
       },
       "name": "3BK18M",
@@ -9982,7 +9982,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 74.17283504438099,
+        "explosiveRadius": 37.086417522190494,
         "mass": 3.6
       },
       "name": "3VOF128",
@@ -10043,7 +10043,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 14.482903714773,
+        "explosiveRadius": 7.2414518573865,
         "mass": 0.0268
       },
       "name": "HEF-I ",
@@ -10222,7 +10222,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 18.33764996996353,
+        "explosiveRadius": 9.168824984981764,
         "mass": 0.0544
       },
       "name": "M792",
@@ -10342,7 +10342,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 65.68366563373311,
+        "explosiveRadius": 32.84183281686656,
         "mass": 2.5
       },
       "name": "DM12A1",
@@ -10401,7 +10401,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 76.37330102638222,
+        "explosiveRadius": 38.18665051319111,
         "mass": 3.93
       },
       "name": "DM11",
@@ -10463,7 +10463,7 @@
       },
       "explosive": {
         "mass": 3,
-        "explosiveRadius": 69.79931014101187,
+        "explosiveRadius": 139.59862028202375,
         "blastRadiusMultiplier": 4
       },
       "name": "Thermobaric",
@@ -10582,7 +10582,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 133.52127690474265,
+        "explosiveRadius": 66.76063845237132,
         "mass": 21
       },
       "name": "Blast fragmentation",
@@ -10643,7 +10643,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 79.78171787830497,
+        "explosiveRadius": 39.89085893915249,
         "mass": 4.48
       },
       "name": "9M120-1",
@@ -10769,7 +10769,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 26.490612185505288,
+        "explosiveRadius": 13.245306092752644,
         "mass": 0.164
       },
       "name": "BR-365A",
@@ -10830,7 +10830,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 43.794218556135455,
+        "explosiveRadius": 21.897109278067727,
         "mass": 0.741
       },
       "name": "O-365K",
@@ -10892,7 +10892,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 72.05243993113852,
+        "explosiveRadius": 36.02621996556926,
         "mass": 3.3
       },
       "name": "OF-471",
@@ -10954,7 +10954,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 34.10620463911193,
+        "explosiveRadius": 17.053102319555965,
         "mass": 0.35
       },
       "name": "BR-471",
@@ -11019,7 +11019,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 53.88117702025614,
+        "explosiveRadius": 26.94058851012807,
         "mass": 1.38
       },
       "name": "S-8KO",
@@ -11148,7 +11148,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 12.444010031355017,
+        "explosiveRadius": 6.222005015677508,
         "mass": 0.017
       },
       "name": "HE",
@@ -11218,7 +11218,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 22.463497664647686,
+        "explosiveRadius": 11.231748832323843,
         "mass": 0.1
       },
       "name": "BR-412D",
@@ -11276,7 +11276,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 54.14022512276897,
+        "explosiveRadius": 27.070112561384484,
         "mass": 1.4
       },
       "name": "OF-412",
@@ -11333,7 +11333,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 81.46733413674008,
+        "explosiveRadius": 40.73366706837004,
         "mass": 4.77
       },
       "name": "9M117",
@@ -11397,7 +11397,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 51.14125497870814,
+        "explosiveRadius": 25.57062748935407,
         "mass": 1.18
       },
       "name": "M247 Rocket",
@@ -11517,7 +11517,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 42.26382393365358,
+        "explosiveRadius": 21.13191196682679,
         "mass": 0.666
       },
       "name": "M48  shell",
@@ -11574,7 +11574,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 17.829289911873463,
+        "explosiveRadius": 8.914644955936732,
         "mass": 0.05
       },
       "name": "M89",
@@ -11760,7 +11760,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 76.37330102638222,
+        "explosiveRadius": 38.18665051319111,
         "mass": 3.93
       },
       "name": "9M114",
@@ -11886,7 +11886,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 73.75845301802343,
+        "explosiveRadius": 36.879226509011716,
         "mass": 3.54
       },
       "name": "3OF70-1",
@@ -11946,7 +11946,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 75.18902755404511,
+        "explosiveRadius": 37.594513777022556,
         "mass": 3.75
       },
       "name": "9M117M1",
@@ -12013,7 +12013,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 42.93016123767542,
+        "explosiveRadius": 21.46508061883771,
         "mass": 0.698
       },
       "name": "Sprgr. L/4.5",
@@ -12074,7 +12074,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 23.047224410865418,
+        "explosiveRadius": 11.523612205432709,
         "mass": 0.108
       },
       "name": "PzGr 39",
@@ -12138,7 +12138,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 20.409442096733994,
+        "explosiveRadius": 10.204721048366997,
         "mass": 0.075
       },
       "name": "HEF-I",
@@ -12251,7 +12251,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 21.19518154187258,
+        "explosiveRadius": 10.59759077093629,
         "mass": 0.084
       },
       "name": "Type 1 APHE",
@@ -12421,7 +12421,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 65.68366563373311,
+        "explosiveRadius": 32.84183281686656,
         "mass": 2.5
       },
       "name": "DM12",
@@ -12543,7 +12543,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 17.829289911873463,
+        "explosiveRadius": 8.914644955936732,
         "mass": 0.05
       },
       "name": "XM1211",
@@ -12605,7 +12605,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 42.68271965388075,
+        "explosiveRadius": 21.341359826940376,
         "mass": 0.686
       },
       "name": "Sprgr. 34",
@@ -12666,7 +12666,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 14.851716812597385,
+        "explosiveRadius": 7.425858406298692,
         "mass": 0.0289
       },
       "name": "PzGr 39",
@@ -12788,7 +12788,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 100.6680250586279,
+        "explosiveRadius": 50.33401252931395,
         "mass": 9
       },
       "name": "BruhHeSh",
@@ -12845,7 +12845,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 141.5300334502825,
+        "explosiveRadius": 70.76501672514125,
         "mass": 25.01
       },
       "name": "BruhHe",
@@ -12904,7 +12904,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 54.01101168372532,
+        "explosiveRadius": 27.00550584186266,
         "mass": 1.39
       },
       "name": "ATGM",
@@ -12970,7 +12970,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 51.571033573041916,
+        "explosiveRadius": 25.785516786520958,
         "mass": 1.21
       },
       "name": "M71 shell",
@@ -13027,7 +13027,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 42.97112515683929,
+        "explosiveRadius": 21.485562578419646,
         "mass": 0.7
       },
       "name": "M431 shell",
@@ -13138,7 +13138,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 24.948871209724267,
+        "explosiveRadius": 12.474435604862133,
         "mass": 0.137
       },
       "name": "M82 shot",
@@ -13256,7 +13256,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 46.72595810139787,
+        "explosiveRadius": 23.362979050698936,
         "mass": 0.9
       },
       "name": "M456A2",
@@ -13316,7 +13316,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 17.829289911873463,
+        "explosiveRadius": 8.914644955936732,
         "mass": 0.05
       },
       "name": "M416",
@@ -13376,7 +13376,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 78.75953356348667,
+        "explosiveRadius": 39.379766781743335,
         "mass": 4.31
       },
       "name": "M393A2",
@@ -13496,7 +13496,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 4.8396138628167185,
+        "explosiveRadius": 2.4198069314083592,
         "mass": 0.001
       },
       "name": "Napalm",
@@ -13555,7 +13555,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 22.463497664647686,
+        "explosiveRadius": 11.231748832323843,
         "mass": 0.1
       },
       "name": "BR-350B",
@@ -13613,7 +13613,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 60.97531379125822,
+        "explosiveRadius": 30.48765689562911,
         "mass": 2
       },
       "name": "OF-350M",
@@ -13672,7 +13672,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 34.10620463911193,
+        "explosiveRadius": 17.053102319555965,
         "mass": 0.35
       },
       "name": "BR-471D",
@@ -13732,7 +13732,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 72.05243993113852,
+        "explosiveRadius": 36.02621996556926,
         "mass": 3.3
       },
       "name": "OF-471",
@@ -13793,7 +13793,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 40.36020621984831,
+        "explosiveRadius": 20.180103109924154,
         "mass": 0.58
       },
       "name": "Shell Mk.1",
@@ -13968,7 +13968,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 29.109204852944732,
+        "explosiveRadius": 14.554602426472366,
         "mass": 0.2176
       },
       "name": "Sprgr. 38",
@@ -14029,7 +14029,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 14.851716812597385,
+        "explosiveRadius": 7.425858406298692,
         "mass": 0.0289
       },
       "name": "PzGr 39",
@@ -14093,7 +14093,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 48.71665219813249,
+        "explosiveRadius": 24.358326099066247,
         "mass": 1.02
       },
       "name": "OCC 105 F3",
@@ -14208,7 +14208,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 17.829289911873463,
+        "explosiveRadius": 8.914644955936732,
         "mass": 0.05
       },
       "name": "O-FUM-PH-105 F3",
@@ -14267,7 +14267,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 60.97531379125822,
+        "explosiveRadius": 30.48765689562911,
         "mass": 2
       },
       "name": "OE 105 F3",
@@ -14328,7 +14328,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 14.86882710055428,
+        "explosiveRadius": 7.43441355027714,
         "mass": 0.029
       },
       "name": "PzGr 39/42",
@@ -14389,7 +14389,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 43.47671418844089,
+        "explosiveRadius": 21.738357094220444,
         "mass": 0.725
       },
       "name": "Sprgr.42",
@@ -14451,7 +14451,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 84.05969458234782,
+        "explosiveRadius": 42.02984729117391,
         "mass": 5.24
       },
       "name": "3OF26",
@@ -14510,7 +14510,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 60.97531379125822,
+        "explosiveRadius": 30.48765689562911,
         "mass": 2
       },
       "name": "3BK12M ",
@@ -14627,7 +14627,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 180,
+        "explosiveRadius": 90,
         "mass": 100.1
       },
       "name": "M31A2",
@@ -14754,7 +14754,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 73.05728459716151,
+        "explosiveRadius": 36.528642298580756,
         "mass": 3.44
       },
       "name": "9M113",
@@ -14820,7 +14820,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 48.39613862816718,
+        "explosiveRadius": 24.19806931408359,
         "mass": 1
       },
       "name": "Sprgr.43",
@@ -14879,7 +14879,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 65.68366563373311,
+        "explosiveRadius": 32.84183281686656,
         "mass": 2.5
       },
       "name": "Hl.GR 63",
@@ -14940,7 +14940,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 80.48778748288755,
+        "explosiveRadius": 40.24389374144378,
         "mass": 4.6
       },
       "name": "M3M",
@@ -15059,7 +15059,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 17.829289911873463,
+        "explosiveRadius": 8.914644955936732,
         "mass": 0.05
       },
       "name": "Shell L34A2",
@@ -15120,7 +15120,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 90.45830363550174,
+        "explosiveRadius": 45.22915181775087,
         "mass": 6.53
       },
       "name": "Shell L31A7",
@@ -15242,7 +15242,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 101.55501371377886,
+        "explosiveRadius": 50.77750685688943,
         "mass": 9.24
       },
       "name": "9M123F-1",
@@ -15301,7 +15301,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 79.78171787830497,
+        "explosiveRadius": 39.89085893915249,
         "mass": 4.48
       },
       "name": "9M123",
@@ -15425,7 +15425,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 49.50001204731895,
+        "explosiveRadius": 24.750006023659473,
         "mass": 1.07
       },
       "name": "XM884 Proxy-Fuze",
@@ -15485,7 +15485,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 49.50001204731895,
+        "explosiveRadius": 24.750006023659473,
         "mass": 1.07
       },
       "name": "XM884",
@@ -15605,7 +15605,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 180,
+        "explosiveRadius": 90,
         "mass": 145
       },
       "name": "KH-35 ASM",
@@ -15669,7 +15669,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 21.910890954511913,
+        "explosiveRadius": 10.955445477255957,
         "mass": 0.0928
       },
       "name": "HVAP-T HEI",
@@ -15731,7 +15731,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 70.94376453551452,
+        "explosiveRadius": 35.47188226775726,
         "mass": 3.15
       },
       "name": "9M7",
@@ -15797,7 +15797,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 43.774509184186364,
+        "explosiveRadius": 21.887254592093182,
         "mass": 0.74
       },
       "name": "BR-540B",
@@ -15857,7 +15857,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 87.25223975753306,
+        "explosiveRadius": 43.62611987876653,
         "mass": 5.86
       },
       "name": "OF-540",
@@ -15978,7 +15978,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 12.444010031355017,
+        "explosiveRadius": 6.222005015677508,
         "mass": 0.017
       },
       "name": "HE",
@@ -16160,7 +16160,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 62.46309969533009,
+        "explosiveRadius": 31.231549847665043,
         "mass": 2.15
       },
       "name": "DM12A1",
@@ -16219,7 +16219,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 19.257100424276164,
+        "explosiveRadius": 9.628550212138082,
         "mass": 0.063
       },
       "name": "M61 shot",
@@ -16279,7 +16279,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 42.26382393365358,
+        "explosiveRadius": 21.13191196682679,
         "mass": 0.666
       },
       "name": "M48  shell",
@@ -16341,7 +16341,7 @@
       },
       "explosive": {
         "mass": 4,
-        "explosiveRadius": 76.8240813695514,
+        "explosiveRadius": 115.23612205432708,
         "blastRadiusMultiplier": 3
       },
       "name": "M2 ETC-HARE",
@@ -16459,7 +16459,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 84.3793162676944,
+        "explosiveRadius": 42.1896581338472,
         "mass": 5.3
       },
       "name": "M5 ETC-HAAM-IR",
@@ -16523,7 +16523,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 76.8240813695514,
+        "explosiveRadius": 38.4120406847757,
         "mass": 4
       },
       "name": "M3 ETC-HARA",
@@ -16582,7 +16582,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 70.56639694876347,
+        "explosiveRadius": 35.283198474381734,
         "mass": 3.1
       },
       "name": "M4 ETC-HAMM",
@@ -16705,7 +16705,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 46.72595810139787,
+        "explosiveRadius": 23.362979050698936,
         "mass": 0.9
       },
       "name": "M456A2",
@@ -16764,7 +16764,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 70.94376453551452,
+        "explosiveRadius": 35.47188226775726,
         "mass": 3.15
       },
       "name": "M393A3",
@@ -16825,7 +16825,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 20.409442096733994,
+        "explosiveRadius": 10.204721048366997,
         "mass": 0.075
       },
       "name": "HEF-I ",
@@ -16944,7 +16944,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 71.68668520602166,
+        "explosiveRadius": 35.84334260301083,
         "mass": 3.25
       },
       "name": "9M14M MCLOS",
@@ -17010,7 +17010,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 19.45876011985187,
+        "explosiveRadius": 9.729380059925935,
         "mass": 0.065
       },
       "name": "VOG-17M",
@@ -17077,7 +17077,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 78.51512692274994,
+        "explosiveRadius": 39.25756346137497,
         "mass": 4.27
       },
       "name": "Spike-LR",
@@ -17145,7 +17145,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 74.17283504438099,
+        "explosiveRadius": 37.086417522190494,
         "mass": 3.6
       },
       "name": "MGM-51B Shiellelagh",
@@ -17209,7 +17209,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 68.61604239570715,
+        "explosiveRadius": 34.30802119785358,
         "mass": 2.85
       },
       "name": "M409A1",
@@ -17268,7 +17268,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 78.6985741478284,
+        "explosiveRadius": 39.3492870739142,
         "mass": 4.3
       },
       "name": "M657A2",
@@ -17386,7 +17386,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 60.97531379125822,
+        "explosiveRadius": 30.48765689562911,
         "mass": 2
       },
       "name": "Medium Charge",
@@ -17443,7 +17443,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 60.97531379125822,
+        "explosiveRadius": 30.48765689562911,
         "mass": 2
       },
       "name": "Low Charge",
@@ -17500,7 +17500,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 60.97531379125822,
+        "explosiveRadius": 30.48765689562911,
         "mass": 2
       },
       "name": "High Charge",
@@ -17615,7 +17615,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 86.55179018742949,
+        "explosiveRadius": 43.275895093714745,
         "mass": 5.72
       },
       "name": "9M119M1",
@@ -17679,7 +17679,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 68.13110716389825,
+        "explosiveRadius": 34.065553581949125,
         "mass": 2.79
       },
       "name": "3BK18M",
@@ -17738,7 +17738,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 74.17283504438099,
+        "explosiveRadius": 37.086417522190494,
         "mass": 3.6
       },
       "name": "3VOF128",
@@ -17797,7 +17797,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 84.05969458234782,
+        "explosiveRadius": 42.02984729117391,
         "mass": 5.24
       },
       "name": "3OF26",
@@ -17858,7 +17858,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 52.4097336254342,
+        "explosiveRadius": 26.2048668127171,
         "mass": 1.27
       },
       "name": "M456",
@@ -17917,7 +17917,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 17.829289911873463,
+        "explosiveRadius": 8.914644955936732,
         "mass": 0.05
       },
       "name": "M416",
@@ -18090,7 +18090,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 65.68366563373311,
+        "explosiveRadius": 32.84183281686656,
         "mass": 2.5
       },
       "name": "JM12A1",
@@ -18151,7 +18151,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 17.829289911873463,
+        "explosiveRadius": 8.914644955936732,
         "mass": 0.05
       },
       "name": "Chili",
@@ -18209,7 +18209,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 44.1071847322675,
+        "explosiveRadius": 22.05359236613375,
         "mass": 0.757
       },
       "name": "Pears",
@@ -18324,7 +18324,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 20.45108305030482,
+        "explosiveRadius": 10.22554152515241,
         "mass": 0.07546
       },
       "name": "HEF-I",
@@ -18385,7 +18385,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 67.63916865305893,
+        "explosiveRadius": 33.819584326529466,
         "mass": 2.73
       },
       "name": "BP-460A",
@@ -18444,7 +18444,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 72.05243993113852,
+        "explosiveRadius": 36.02621996556926,
         "mass": 3.3
       },
       "name": "OF-462",
@@ -18505,7 +18505,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 58.76179526933378,
+        "explosiveRadius": 29.38089763466689,
         "mass": 1.79
       },
       "name": "M8 Rockets",
@@ -18678,7 +18678,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 51.571033573041916,
+        "explosiveRadius": 25.785516786520958,
         "mass": 1.21
       },
       "name": "M71 shell",
@@ -18789,7 +18789,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 24.948871209724267,
+        "explosiveRadius": 12.474435604862133,
         "mass": 0.137
       },
       "name": "M82 shot",
@@ -18849,7 +18849,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 19.257100424276164,
+        "explosiveRadius": 9.628550212138082,
         "mass": 0.063
       },
       "name": "M62 shot",
@@ -18965,7 +18965,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 35.358913724763624,
+        "explosiveRadius": 17.679456862381812,
         "mass": 0.39
       },
       "name": "M42A1 shell",
@@ -19085,7 +19085,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 78.0837164196599,
+        "explosiveRadius": 39.04185820982995,
         "mass": 4.2
       },
       "name": "XM965",
@@ -19203,7 +19203,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 15.83069786098143,
+        "explosiveRadius": 7.915348930490715,
         "mass": 0.035
       },
       "name": "HEF-I (P)",
@@ -19320,7 +19320,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 76.37330102638222,
+        "explosiveRadius": 38.18665051319111,
         "mass": 3.93
       },
       "name": "DM11",
@@ -19379,7 +19379,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 65.68366563373311,
+        "explosiveRadius": 32.84183281686656,
         "mass": 2.5
       },
       "name": "DM12A1",
@@ -19498,7 +19498,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 54.90286366901195,
+        "explosiveRadius": 27.451431834505975,
         "mass": 1.46
       },
       "name": "OF-412",
@@ -19558,7 +19558,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 22.463497664647686,
+        "explosiveRadius": 11.231748832323843,
         "mass": 0.1
       },
       "name": "BR-412D",
@@ -19679,7 +19679,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 70.94376453551452,
+        "explosiveRadius": 35.47188226775726,
         "mass": 3.15
       },
       "name": "Shell L35",
@@ -19738,7 +19738,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 59.196279033338065,
+        "explosiveRadius": 29.598139516669033,
         "mass": 1.83
       },
       "name": "slsgr m/61A",
@@ -19857,7 +19857,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 100.6680250586279,
+        "explosiveRadius": 50.33401252931395,
         "mass": 9
       },
       "name": "OF-72 Medium Charge",
@@ -19914,7 +19914,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 100.6680250586279,
+        "explosiveRadius": 50.33401252931395,
         "mass": 9
       },
       "name": "OF-72",
@@ -19971,7 +19971,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 73.33936185303816,
+        "explosiveRadius": 36.66968092651908,
         "mass": 3.48
       },
       "name": "BP-540",
@@ -20028,7 +20028,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 100.6680250586279,
+        "explosiveRadius": 50.33401252931395,
         "mass": 9
       },
       "name": "OF-72 Low Charge",
@@ -20087,7 +20087,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 53.88117702025614,
+        "explosiveRadius": 26.94058851012807,
         "mass": 1.38
       },
       "name": "S-8KO",
@@ -20148,7 +20148,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 17.829289911873463,
+        "explosiveRadius": 8.914644955936732,
         "mass": 0.05
       },
       "name": "3UOF8",
@@ -20267,7 +20267,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 28.30223356195394,
+        "explosiveRadius": 14.15111678097697,
         "mass": 0.2
       },
       "name": "T13",
@@ -20383,7 +20383,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 56.00858637503634,
+        "explosiveRadius": 28.00429318751817,
         "mass": 1.55
       },
       "name": "T30E1",
@@ -20556,7 +20556,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 20.445661235880458,
+        "explosiveRadius": 10.222830617940229,
         "mass": 0.0754
       },
       "name": "HE",
@@ -20617,7 +20617,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 79.36400489550647,
+        "explosiveRadius": 39.682002447753234,
         "mass": 4.41
       },
       "name": "I-TOW",
@@ -20743,7 +20743,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 86.55179018742949,
+        "explosiveRadius": 43.275895093714745,
         "mass": 5.72
       },
       "name": "9M119M1",
@@ -20807,7 +20807,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 68.13110716389825,
+        "explosiveRadius": 34.065553581949125,
         "mass": 2.79
       },
       "name": "3BK18M",
@@ -20866,7 +20866,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 74.17283504438099,
+        "explosiveRadius": 37.086417522190494,
         "mass": 3.6
       },
       "name": "3VOF128",
@@ -20925,7 +20925,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 84.05969458234782,
+        "explosiveRadius": 42.02984729117391,
         "mass": 5.24
       },
       "name": "3OF26",
@@ -20986,7 +20986,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 74.85335778253685,
+        "explosiveRadius": 37.42667889126842,
         "mass": 3.7
       },
       "name": "Sprgr. L/5",
@@ -21045,7 +21045,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 44.64442813519196,
+        "explosiveRadius": 22.32221406759598,
         "mass": 0.785
       },
       "name": "PzGr43",
@@ -21107,7 +21107,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 19.257100424276164,
+        "explosiveRadius": 9.628550212138082,
         "mass": 0.063
       },
       "name": "M62 shot",
@@ -21169,7 +21169,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 17.829289911873463,
+        "explosiveRadius": 8.914644955936732,
         "mass": 0.05
       },
       "name": "M88",
@@ -21230,7 +21230,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 35.358913724763624,
+        "explosiveRadius": 17.679456862381812,
         "mass": 0.39
       },
       "name": "M42A1 shell",
@@ -21293,7 +21293,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 16.270662785193135,
+        "explosiveRadius": 8.135331392596568,
         "mass": 0.038
       },
       "name": "M63  shell",
@@ -21411,7 +21411,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 150.37805510809022,
+        "explosiveRadius": 75.18902755404511,
         "mass": 30
       },
       "name": "Propane",
@@ -21531,7 +21531,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 65.68366563373311,
+        "explosiveRadius": 32.84183281686656,
         "mass": 2.5
       },
       "name": "M830",
@@ -21645,7 +21645,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 120.40678277197883,
+        "explosiveRadius": 60.20339138598941,
         "mass": 15.4
       },
       "name": "DM121 Low Charge",
@@ -21704,7 +21704,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 17.829289911873463,
+        "explosiveRadius": 8.914644955936732,
         "mass": 0.05
       },
       "name": "DM702A1",
@@ -21763,7 +21763,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 120.40678277197883,
+        "explosiveRadius": 60.20339138598941,
         "mass": 15.4
       },
       "name": "DM121 Medium Charge",
@@ -21822,7 +21822,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 120.40678277197883,
+        "explosiveRadius": 60.20339138598941,
         "mass": 15.4
       },
       "name": "DM121",
@@ -21939,7 +21939,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 47.542296679079044,
+        "explosiveRadius": 23.771148339539522,
         "mass": 0.948
       },
       "name": "VBOF-57",
@@ -22000,7 +22000,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 104.26631992411542,
+        "explosiveRadius": 52.13315996205771,
         "mass": 10
       },
       "name": "TOW-2G",
@@ -22064,7 +22064,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 104.26631992411542,
+        "explosiveRadius": 52.13315996205771,
         "mass": 10
       },
       "name": "TOW-2X",
@@ -22191,7 +22191,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 73.75845301802343,
+        "explosiveRadius": 36.879226509011716,
         "mass": 3.54
       },
       "name": "3OF70-1",
@@ -22251,7 +22251,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 75.18902755404511,
+        "explosiveRadius": 37.594513777022556,
         "mass": 3.75
       },
       "name": "9M117M1",
@@ -22318,7 +22318,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 80.60426780094873,
+        "explosiveRadius": 40.30213390047437,
         "mass": 4.62
       },
       "name": "9M311",
@@ -22433,7 +22433,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 20.589270235680992,
+        "explosiveRadius": 10.294635117840496,
         "mass": 0.077
       },
       "name": "BR-367",
@@ -22493,7 +22493,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 43.794218556135455,
+        "explosiveRadius": 21.897109278067727,
         "mass": 0.741
       },
       "name": "O-365K",
@@ -22554,7 +22554,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 84.05969458234782,
+        "explosiveRadius": 42.02984729117391,
         "mass": 5.24
       },
       "name": "3OF26",
@@ -22613,7 +22613,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 68.13110716389825,
+        "explosiveRadius": 34.065553581949125,
         "mass": 2.79
       },
       "name": "3BK18M",
@@ -22728,7 +22728,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 86.55179018742949,
+        "explosiveRadius": 43.275895093714745,
         "mass": 5.72
       },
       "name": "9M119M1",
@@ -22908,7 +22908,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 85.2200123833784,
+        "explosiveRadius": 42.6100061916892,
         "mass": 5.46
       },
       "name": "DTB-125",
@@ -22967,7 +22967,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 66.71822380407224,
+        "explosiveRadius": 33.35911190203612,
         "mass": 2.62
       },
       "name": "DTP-125",
@@ -23028,7 +23028,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 66.54802351419691,
+        "explosiveRadius": 33.27401175709846,
         "mass": 2.6
       },
       "name": "Type 95 APHE",
@@ -23086,7 +23086,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 92.66656885274911,
+        "explosiveRadius": 46.333284426374554,
         "mass": 7.02
       },
       "name": "Type 92 HE",
@@ -23145,7 +23145,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 150.37805510809022,
+        "explosiveRadius": 75.18902755404511,
         "mass": 30
       },
       "name": "3VOF34",
@@ -23202,7 +23202,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 104.26631992411542,
+        "explosiveRadius": 52.13315996205771,
         "mass": 10
       },
       "name": "2VG11",
@@ -23260,7 +23260,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 29.65195443428312,
+        "explosiveRadius": 14.82597721714156,
         "mass": 0.23
       },
       "name": "3VOF42",
@@ -23317,7 +23317,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 150.37805510809022,
+        "explosiveRadius": 75.18902755404511,
         "mass": 30
       },
       "name": "3VOF42",
@@ -23376,7 +23376,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 319.9705390758956,
+        "explosiveRadius": 159.9852695379478,
         "mass": 289
       },
       "name": "Schwere Betongranate",
@@ -23437,7 +23437,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 73.05728459716151,
+        "explosiveRadius": 36.528642298580756,
         "mass": 3.44
       },
       "name": "9M113",
@@ -23509,7 +23509,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 84.05969458234782,
+        "explosiveRadius": 42.02984729117391,
         "mass": 5.24
       },
       "name": "3OF26",
@@ -23568,7 +23568,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 68.13110716389825,
+        "explosiveRadius": 34.065553581949125,
         "mass": 2.79
       },
       "name": "3BK18M",
@@ -23683,7 +23683,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 86.55179018742949,
+        "explosiveRadius": 43.275895093714745,
         "mass": 5.72
       },
       "name": "9M119",
@@ -23749,7 +23749,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 85.42761372107967,
+        "explosiveRadius": 42.71380686053983,
         "mass": 5.5
       },
       "name": "Type 79",
@@ -23813,7 +23813,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 69.87677891729362,
+        "explosiveRadius": 34.93838945864681,
         "mass": 3.01
       },
       "name": "Type 79 ASM",
@@ -23874,7 +23874,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 43.774509184186364,
+        "explosiveRadius": 21.887254592093182,
         "mass": 0.74
       },
       "name": "BR-540B",
@@ -23934,7 +23934,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 87.25223975753306,
+        "explosiveRadius": 43.62611987876653,
         "mass": 5.86
       },
       "name": "OF-540",
@@ -23995,7 +23995,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 106.4114759305387,
+        "explosiveRadius": 53.20573796526935,
         "mass": 10.63
       },
       "name": "S-13OF",
@@ -24114,7 +24114,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 28.48967103473724,
+        "explosiveRadius": 14.24483551736862,
         "mass": 0.204
       },
       "name": "DM11A1",
@@ -24175,7 +24175,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 62.46309969533009,
+        "explosiveRadius": 31.231549847665043,
         "mass": 2.15
       },
       "name": "HE Rockets",
@@ -24236,7 +24236,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 84.05969458234782,
+        "explosiveRadius": 42.02984729117391,
         "mass": 5.24
       },
       "name": "3OF26",
@@ -24355,7 +24355,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 86.55179018742949,
+        "explosiveRadius": 43.275895093714745,
         "mass": 5.72
       },
       "name": "9M112",
@@ -24421,7 +24421,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 60.97531379125822,
+        "explosiveRadius": 30.48765689562911,
         "mass": 2
       },
       "name": "3BK18M ",
@@ -24485,7 +24485,7 @@
       },
       "explosive": {
         "mass": 0.042,
-        "explosiveRadius": 16.822626738112746,
+        "explosiveRadius": 10.093576042867646,
         "blastRadiusMultiplier": 1.2
       },
       "name": "OEFC F1",
@@ -24544,7 +24544,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 79.9002644388135,
+        "explosiveRadius": 39.95013221940675,
         "mass": 4.5
       },
       "name": "OE 120 F1",
@@ -24603,7 +24603,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 62.46309969533009,
+        "explosiveRadius": 31.231549847665043,
         "mass": 2.15
       },
       "name": "OCC 120 G1",
@@ -24721,7 +24721,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 84.05969458234782,
+        "explosiveRadius": 42.02984729117391,
         "mass": 5.24
       },
       "name": "3OF26",
@@ -24780,7 +24780,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 86.55179018742949,
+        "explosiveRadius": 43.275895093714745,
         "mass": 5.72
       },
       "name": "9M119M1",
@@ -24844,7 +24844,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 68.13110716389825,
+        "explosiveRadius": 34.065553581949125,
         "mass": 2.79
       },
       "name": "3BK18M",
@@ -24903,7 +24903,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 74.17283504438099,
+        "explosiveRadius": 37.086417522190494,
         "mass": 3.6
       },
       "name": "3VOF128",
@@ -25021,7 +25021,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 17.829289911873463,
+        "explosiveRadius": 8.914644955936732,
         "mass": 0.05
       },
       "name": "O-FUM-PH-105 F3",
@@ -25080,7 +25080,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 48.71665219813249,
+        "explosiveRadius": 24.358326099066247,
         "mass": 1.02
       },
       "name": "OCC 105 F3",
@@ -25196,7 +25196,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 60.97531379125822,
+        "explosiveRadius": 30.48765689562911,
         "mass": 2
       },
       "name": "OE 105 F3",
@@ -25317,7 +25317,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 18.33764996996353,
+        "explosiveRadius": 9.168824984981764,
         "mass": 0.0544
       },
       "name": "M792",
@@ -25381,7 +25381,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 29.865285182244474,
+        "explosiveRadius": 14.932642591122237,
         "mass": 0.235
       },
       "name": "OR-281U",
@@ -25441,7 +25441,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 13.136733126746623,
+        "explosiveRadius": 6.568366563373312,
         "mass": 0.02
       },
       "name": "BR-281U",
@@ -25502,7 +25502,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 28.30223356195394,
+        "explosiveRadius": 14.15111678097697,
         "mass": 0.2
       },
       "name": "UOR-281U",
@@ -25564,7 +25564,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 27.177962754409283,
+        "explosiveRadius": 13.588981377204641,
         "mass": 0.1771
       },
       "name": "BR-482B",
@@ -25624,7 +25624,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 74.44653802270486,
+        "explosiveRadius": 37.22326901135243,
         "mass": 3.64
       },
       "name": "OF-482M",
@@ -25685,7 +25685,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 84.05969458234782,
+        "explosiveRadius": 42.02984729117391,
         "mass": 5.24
       },
       "name": "3OF26",
@@ -25744,7 +25744,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 60.97531379125822,
+        "explosiveRadius": 30.48765689562911,
         "mass": 2
       },
       "name": "3BK12M ",
@@ -25919,7 +25919,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 42.68271965388075,
+        "explosiveRadius": 21.341359826940376,
         "mass": 0.686
       },
       "name": "Sprgr. 34",
@@ -25978,7 +25978,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 46.29805667325597,
+        "explosiveRadius": 23.149028336627985,
         "mass": 0.8755
       },
       "name": "Hl.Gr 63C",
@@ -26170,7 +26170,7 @@
       },
       "explosive": {
         "mass": 0.042,
-        "explosiveRadius": 16.822626738112746,
+        "explosiveRadius": 10.093576042867646,
         "blastRadiusMultiplier": 1.2
       },
       "name": "M1028",
@@ -26227,7 +26227,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 57.07229385263392,
+        "explosiveRadius": 28.53614692631696,
         "mass": 1.64
       },
       "name": "M830",
@@ -26286,7 +26286,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 57.07229385263392,
+        "explosiveRadius": 28.53614692631696,
         "mass": 1.64
       },
       "name": "M830",
@@ -26398,7 +26398,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 60.87351842033854,
+        "explosiveRadius": 30.43675921016927,
         "mass": 1.99
       },
       "name": "M830A1",
@@ -26455,7 +26455,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 55.399749172248434,
+        "explosiveRadius": 27.699874586124217,
         "mass": 1.5
       },
       "name": "XM943",
@@ -26514,7 +26514,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 27.177962754409283,
+        "explosiveRadius": 13.588981377204641,
         "mass": 0.1771
       },
       "name": "BR-482B",
@@ -26574,7 +26574,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 74.44653802270486,
+        "explosiveRadius": 37.22326901135243,
         "mass": 3.64
       },
       "name": "OF-482M",
@@ -26635,7 +26635,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 70.94376453551452,
+        "explosiveRadius": 35.47188226775726,
         "mass": 3.15
       },
       "name": "Shell L35",
@@ -26806,7 +26806,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 56.24845476804727,
+        "explosiveRadius": 28.124227384023634,
         "mass": 1.57
       },
       "name": "T298E1",
@@ -26865,7 +26865,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 71.68668520602166,
+        "explosiveRadius": 35.84334260301083,
         "mass": 3.25
       },
       "name": "9M14 MCLOS",
@@ -26934,7 +26934,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 80.2538100364055,
+        "explosiveRadius": 40.12690501820275,
         "mass": 4.56
       },
       "name": "AIM-9M",
@@ -27001,7 +27001,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 81.46733413674008,
+        "explosiveRadius": 40.73366706837004,
         "mass": 4.77
       },
       "name": "M339",
@@ -27117,7 +27117,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 70.56639694876347,
+        "explosiveRadius": 35.283198474381734,
         "mass": 3.1
       },
       "name": "LAHAT",
@@ -27181,7 +27181,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 64.43394366571536,
+        "explosiveRadius": 32.21697183285768,
         "mass": 2.36
       },
       "name": "DM12A1",
@@ -27242,7 +27242,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 36.80964289746756,
+        "explosiveRadius": 18.40482144873378,
         "mass": 0.44
       },
       "name": "B-420",
@@ -27302,7 +27302,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 62.46309969533009,
+        "explosiveRadius": 31.231549847665043,
         "mass": 2.15
       },
       "name": "OF-420",
@@ -27363,7 +27363,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 104.26631992411542,
+        "explosiveRadius": 52.13315996205771,
         "mass": 10
       },
       "name": "M247 Rocket",
@@ -27558,7 +27558,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 28.48967103473724,
+        "explosiveRadius": 14.24483551736862,
         "mass": 0.204
       },
       "name": "DM11A1",
@@ -27619,7 +27619,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 84.05969458234782,
+        "explosiveRadius": 42.02984729117391,
         "mass": 5.24
       },
       "name": "3OF26",
@@ -27734,7 +27734,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 86.55179018742949,
+        "explosiveRadius": 43.275895093714745,
         "mass": 5.72
       },
       "name": "9M119",
@@ -27798,7 +27798,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 60.97531379125822,
+        "explosiveRadius": 30.48765689562911,
         "mass": 2
       },
       "name": "3BK18M ",
@@ -27859,7 +27859,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 4.8396138628167185,
+        "explosiveRadius": 2.4198069314083592,
         "mass": 0.001
       },
       "name": "Napalm",
@@ -27920,7 +27920,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 22.463497664647686,
+        "explosiveRadius": 11.231748832323843,
         "mass": 0.1
       },
       "name": "BR-350B",
@@ -27982,7 +27982,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 41.28965417908905,
+        "explosiveRadius": 20.644827089544524,
         "mass": 0.621
       },
       "name": "OF-350M",
@@ -28102,7 +28102,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 65.68366563373311,
+        "explosiveRadius": 32.84183281686656,
         "mass": 2.5
       },
       "name": "JM12A1",
@@ -28218,7 +28218,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 20.409442096733994,
+        "explosiveRadius": 10.204721048366997,
         "mass": 0.075
       },
       "name": "HEF-I",
@@ -28277,7 +28277,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 42.68271965388075,
+        "explosiveRadius": 21.341359826940376,
         "mass": 0.686
       },
       "name": "Sprgr. L/4.5",
@@ -28337,7 +28337,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 14.851716812597385,
+        "explosiveRadius": 7.425858406298692,
         "mass": 0.0289
       },
       "name": "PzGr 39",
@@ -28459,7 +28459,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 18.292594137377467,
+        "explosiveRadius": 9.146297068688733,
         "mass": 0.054
       },
       "name": "Mk310",
@@ -28580,7 +28580,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 70.94376453551452,
+        "explosiveRadius": 35.47188226775726,
         "mass": 3.15
       },
       "name": "M393A3",
@@ -28696,7 +28696,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 46.72595810139787,
+        "explosiveRadius": 23.362979050698936,
         "mass": 0.9
       },
       "name": "M456A2",
@@ -28813,7 +28813,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 30.324181062704742,
+        "explosiveRadius": 15.162090531352371,
         "mass": 0.246
       },
       "name": "BR-471B",
@@ -28873,7 +28873,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 72.05243993113852,
+        "explosiveRadius": 36.02621996556926,
         "mass": 3.3
       },
       "name": "OF-471",
@@ -28934,7 +28934,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 73.05728459716151,
+        "explosiveRadius": 36.528642298580756,
         "mass": 3.44
       },
       "name": "R-2",
@@ -29057,7 +29057,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 70.94376453551452,
+        "explosiveRadius": 35.47188226775726,
         "mass": 3.15
       },
       "name": "M393A2",
@@ -29116,7 +29116,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 46.72595810139787,
+        "explosiveRadius": 23.362979050698936,
         "mass": 0.9
       },
       "name": "M456A2",
@@ -29235,7 +29235,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 26.490612185505288,
+        "explosiveRadius": 13.245306092752644,
         "mass": 0.164
       },
       "name": "BR-365",
@@ -29296,7 +29296,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 43.794218556135455,
+        "explosiveRadius": 21.897109278067727,
         "mass": 0.741
       },
       "name": "O-365K",
@@ -29358,7 +29358,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 57.418194987423945,
+        "explosiveRadius": 28.709097493711973,
         "mass": 1.67
       },
       "name": "3BK-10",
@@ -29417,7 +29417,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 74.17283504438099,
+        "explosiveRadius": 37.086417522190494,
         "mass": 3.6
       },
       "name": "3OF56",
@@ -29476,7 +29476,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 74.17283504438099,
+        "explosiveRadius": 37.086417522190494,
         "mass": 3.6
       },
       "name": "3OF56 Low Charge",
@@ -29537,7 +29537,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 59.196279033338065,
+        "explosiveRadius": 29.598139516669033,
         "mass": 1.83
       },
       "name": "Milan ER",
@@ -29604,7 +29604,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 180,
+        "explosiveRadius": 90,
         "mass": 125
       },
       "name": "38 cm R Spgr.4581",
@@ -29665,7 +29665,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 13.35212769047427,
+        "explosiveRadius": 6.676063845237135,
         "mass": 0.021
       },
       "name": "BR-271",
@@ -29726,7 +29726,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 29.21583292900689,
+        "explosiveRadius": 14.607916464503445,
         "mass": 0.22
       },
       "name": "O-271",
@@ -29788,7 +29788,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 60.97531379125822,
+        "explosiveRadius": 30.48765689562911,
         "mass": 2
       },
       "name": "Medium Charge",
@@ -29845,7 +29845,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 60.97531379125822,
+        "explosiveRadius": 30.48765689562911,
         "mass": 2
       },
       "name": "Low Charge",
@@ -29902,7 +29902,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 60.97531379125822,
+        "explosiveRadius": 30.48765689562911,
         "mass": 2
       },
       "name": "High Charge",
@@ -29961,7 +29961,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 14.695918083965822,
+        "explosiveRadius": 7.347959041982911,
         "mass": 0.028
       },
       "name": "HE",
@@ -30084,7 +30084,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 84.90670068586182,
+        "explosiveRadius": 42.45335034293091,
         "mass": 5.4
       },
       "name": "UnHE",
@@ -30143,7 +30143,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 70.56639694876347,
+        "explosiveRadius": 35.283198474381734,
         "mass": 3.1
       },
       "name": "JoHEAT",
@@ -30260,7 +30260,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 84.05969458234782,
+        "explosiveRadius": 42.02984729117391,
         "mass": 5.24
       },
       "name": "3OF26",
@@ -30319,7 +30319,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 68.13110716389825,
+        "explosiveRadius": 34.065553581949125,
         "mass": 2.79
       },
       "name": "3BK18M",
@@ -30378,7 +30378,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 86.55179018742949,
+        "explosiveRadius": 43.275895093714745,
         "mass": 5.72
       },
       "name": "9M119M1",
@@ -30501,7 +30501,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 180,
+        "explosiveRadius": 90,
         "mass": 150
       },
       "name": "Kh-38MLE",
@@ -30560,7 +30560,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 84.05969458234782,
+        "explosiveRadius": 42.02984729117391,
         "mass": 5.24
       },
       "name": "3OF26",
@@ -30677,7 +30677,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 68.13110716389825,
+        "explosiveRadius": 34.065553581949125,
         "mass": 2.79
       },
       "name": "3BK18M",
@@ -30737,7 +30737,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 86.55179018742949,
+        "explosiveRadius": 43.275895093714745,
         "mass": 5.72
       },
       "name": "9M119M1",
@@ -30802,7 +30802,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 74.17283504438099,
+        "explosiveRadius": 37.086417522190494,
         "mass": 3.6
       },
       "name": "3VOF128",
@@ -30864,7 +30864,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 15.137396529128578,
+        "explosiveRadius": 7.568698264564289,
         "mass": 0.0306
       },
       "name": "APHE-I",
@@ -30924,7 +30924,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 21.278957833820613,
+        "explosiveRadius": 10.639478916910306,
         "mass": 0.085
       },
       "name": "HE-I-T",
@@ -31121,7 +31121,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 87.25223975753306,
+        "explosiveRadius": 43.62611987876653,
         "mass": 5.86
       },
       "name": "OF-530",
@@ -31180,7 +31180,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 81.92025426550298,
+        "explosiveRadius": 40.96012713275149,
         "mass": 4.85
       },
       "name": "PB-35",
@@ -31242,7 +31242,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 59.196279033338065,
+        "explosiveRadius": 29.598139516669033,
         "mass": 1.83
       },
       "name": "slsgr m/61A",
@@ -31357,7 +31357,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 70.94376453551452,
+        "explosiveRadius": 35.47188226775726,
         "mass": 3.15
       },
       "name": "Shell L35",
@@ -31418,7 +31418,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 92.57848270759634,
+        "explosiveRadius": 46.28924135379817,
         "mass": 7
       },
       "name": "HEAT Rockets",
@@ -31533,7 +31533,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 65.68366563373311,
+        "explosiveRadius": 32.84183281686656,
         "mass": 2.5
       },
       "name": "DM12",
@@ -31594,7 +31594,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 84.05969458234782,
+        "explosiveRadius": 42.02984729117391,
         "mass": 5.24
       },
       "name": "3OF26",
@@ -31653,7 +31653,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 68.13110716389825,
+        "explosiveRadius": 34.065553581949125,
         "mass": 2.79
       },
       "name": "3BK18M",
@@ -31768,7 +31768,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 86.55179018742949,
+        "explosiveRadius": 43.275895093714745,
         "mass": 5.72
       },
       "name": "9M119",
@@ -31891,7 +31891,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 60.87351842033854,
+        "explosiveRadius": 30.43675921016927,
         "mass": 1.99
       },
       "name": "M830A1",
@@ -31950,7 +31950,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 57.07229385263392,
+        "explosiveRadius": 28.53614692631696,
         "mass": 1.64
       },
       "name": "M830",
@@ -32011,7 +32011,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 78.51512692274994,
+        "explosiveRadius": 39.25756346137497,
         "mass": 4.27
       },
       "name": "ATGM",
@@ -32078,7 +32078,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 60.462891969962314,
+        "explosiveRadius": 30.231445984981157,
         "mass": 1.95
       },
       "name": "HE Rockets",
@@ -32139,7 +32139,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 52.4097336254342,
+        "explosiveRadius": 26.2048668127171,
         "mass": 1.27
       },
       "name": "Type 91",
@@ -32252,7 +32252,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 4.8396138628167185,
+        "explosiveRadius": 2.4198069314083592,
         "mass": 0.001
       },
       "name": "Napalm",
@@ -32313,7 +32313,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 86.55179018742949,
+        "explosiveRadius": 43.275895093714745,
         "mass": 5.72
       },
       "name": "MGM-51B Shiellelagh",
@@ -32375,7 +32375,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 75.05511983065396,
+        "explosiveRadius": 37.52755991532698,
         "mass": 3.73
       },
       "name": "M409A1",
@@ -32432,7 +32432,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 78.6985741478284,
+        "explosiveRadius": 39.3492870739142,
         "mass": 4.3
       },
       "name": "M657A2",
@@ -32595,7 +32595,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 86.45079617483047,
+        "explosiveRadius": 43.225398087415236,
         "mass": 5.7
       },
       "name": "9A4172 Vikhr-1",
@@ -32659,7 +32659,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 86.45079617483047,
+        "explosiveRadius": 43.225398087415236,
         "mass": 5.7
       },
       "name": "9A4172 Vikhr-1 Proxy-Fuze",
@@ -32720,7 +32720,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 51.571033573041916,
+        "explosiveRadius": 25.785516786520958,
         "mass": 1.21
       },
       "name": "M71 shell",
@@ -32779,7 +32779,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 24.948871209724267,
+        "explosiveRadius": 12.474435604862133,
         "mass": 0.137
       },
       "name": "M82 shot",
@@ -32841,7 +32841,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 10.76320487694764,
+        "explosiveRadius": 5.38160243847382,
         "mass": 0.011
       },
       "name": "HE-T",
@@ -32960,7 +32960,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 59.196279033338065,
+        "explosiveRadius": 29.598139516669033,
         "mass": 1.83
       },
       "name": "Milan 2",
@@ -33027,7 +33027,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 96.87287036372352,
+        "explosiveRadius": 48.43643518186176,
         "mass": 8.02
       },
       "name": "Brimstone",
@@ -33153,7 +33153,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 18.33764996996353,
+        "explosiveRadius": 9.168824984981764,
         "mass": 0.0544
       },
       "name": "MK266",
@@ -33213,7 +33213,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 18.33764996996353,
+        "explosiveRadius": 9.168824984981764,
         "mass": 0.0544
       },
       "name": "PMC308",
@@ -33276,7 +33276,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 81.75099705962731,
+        "explosiveRadius": 40.875498529813655,
         "mass": 4.82
       },
       "name": "3OF27",
@@ -33387,7 +33387,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 54.90286366901195,
+        "explosiveRadius": 27.451431834505975,
         "mass": 1.46
       },
       "name": "9M117",
@@ -33571,7 +33571,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 16.270662785193135,
+        "explosiveRadius": 8.135331392596568,
         "mass": 0.038
       },
       "name": "HE",
@@ -33690,7 +33690,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 135.11296020077518,
+        "explosiveRadius": 67.55648010038759,
         "mass": 21.76
       },
       "name": "Shell L1",
@@ -33807,7 +33807,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 19.257100424276164,
+        "explosiveRadius": 9.628550212138082,
         "mass": 0.063
       },
       "name": "M62 shot",
@@ -33867,7 +33867,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 35.358913724763624,
+        "explosiveRadius": 17.679456862381812,
         "mass": 0.39
       },
       "name": "M42A1 shell",
@@ -33928,7 +33928,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 79.36400489550647,
+        "explosiveRadius": 39.682002447753234,
         "mass": 4.41
       },
       "name": "TOW-2A",
@@ -33997,7 +33997,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 72.63003924517763,
+        "explosiveRadius": 36.315019622588814,
         "mass": 3.38
       },
       "name": "TOW-2B",
@@ -34068,7 +34068,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 66.88756012378562,
+        "explosiveRadius": 33.44378006189281,
         "mass": 2.64
       },
       "name": "3OF11",
@@ -34129,7 +34129,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 59.411149443675505,
+        "explosiveRadius": 29.705574721837753,
         "mass": 1.85
       },
       "name": "3BK4",
@@ -34250,7 +34250,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 84.05969458234782,
+        "explosiveRadius": 42.02984729117391,
         "mass": 5.24
       },
       "name": "3OF26",
@@ -34309,7 +34309,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 68.13110716389825,
+        "explosiveRadius": 34.065553581949125,
         "mass": 2.79
       },
       "name": "3BK18M",
@@ -34368,7 +34368,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 86.55179018742949,
+        "explosiveRadius": 43.275895093714745,
         "mass": 5.72
       },
       "name": "9M119",
@@ -34491,7 +34491,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 73.05728459716151,
+        "explosiveRadius": 36.528642298580756,
         "mass": 3.44
       },
       "name": "9M113M",
@@ -34614,7 +34614,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 13.136733126746623,
+        "explosiveRadius": 6.568366563373312,
         "mass": 0.02
       },
       "name": "HE-T",
@@ -34732,7 +34732,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 60.87351842033854,
+        "explosiveRadius": 30.43675921016927,
         "mass": 1.99
       },
       "name": "M830A1",
@@ -34791,7 +34791,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 57.07229385263392,
+        "explosiveRadius": 28.53614692631696,
         "mass": 1.64
       },
       "name": "M830",
@@ -34974,7 +34974,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 17.829289911873463,
+        "explosiveRadius": 8.914644955936732,
         "mass": 0.05
       },
       "name": "M110",
@@ -35033,7 +35033,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 101.18732398594953,
+        "explosiveRadius": 50.593661992974766,
         "mass": 9.14
       },
       "name": "M107",
@@ -35092,7 +35092,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 101.18732398594953,
+        "explosiveRadius": 50.593661992974766,
         "mass": 9.14
       },
       "name": "M107 Low Charge",
@@ -35151,7 +35151,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 101.18732398594953,
+        "explosiveRadius": 50.593661992974766,
         "mass": 9.14
       },
       "name": "M107 Medium Charge",
@@ -35212,7 +35212,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 84.05969458234782,
+        "explosiveRadius": 42.02984729117391,
         "mass": 5.24
       },
       "name": "3OF26",
@@ -35269,7 +35269,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 68.13110716389825,
+        "explosiveRadius": 34.065553581949125,
         "mass": 2.79
       },
       "name": "3BK18M",
@@ -35326,7 +35326,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 86.55179018742949,
+        "explosiveRadius": 43.275895093714745,
         "mass": 5.72
       },
       "name": "9M119",
@@ -35445,7 +35445,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 69.79931014101187,
+        "explosiveRadius": 34.899655070505936,
         "mass": 3
       },
       "name": "HE F1",
@@ -35563,7 +35563,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 34.10620463911193,
+        "explosiveRadius": 17.053102319555965,
         "mass": 0.35
       },
       "name": "BR-471D",
@@ -35623,7 +35623,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 72.05243993113852,
+        "explosiveRadius": 36.02621996556926,
         "mass": 3.3
       },
       "name": "OF-471",
@@ -35684,7 +35684,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 17.829289911873463,
+        "explosiveRadius": 8.914644955936732,
         "mass": 0.05
       },
       "name": "M416",
@@ -35743,7 +35743,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 76.1133047979607,
+        "explosiveRadius": 38.05665239898035,
         "mass": 3.89
       },
       "name": "Type 75",
@@ -35802,7 +35802,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 56.24845476804727,
+        "explosiveRadius": 28.124227384023634,
         "mass": 1.57
       },
       "name": "Type 91",
@@ -35976,7 +35976,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 48.39613862816718,
+        "explosiveRadius": 24.19806931408359,
         "mass": 1
       },
       "name": "Sprgr.43",
@@ -36036,7 +36036,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 23.047224410865418,
+        "explosiveRadius": 11.523612205432709,
         "mass": 0.108
       },
       "name": "PzGr 39/43",
@@ -36099,7 +36099,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 48.39613862816718,
+        "explosiveRadius": 24.19806931408359,
         "mass": 1
       },
       "name": "HE Rockets",
@@ -36160,7 +36160,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 24.948871209724267,
+        "explosiveRadius": 12.474435604862133,
         "mass": 0.137
       },
       "name": "T41",
@@ -36220,7 +36220,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 47.1546605627652,
+        "explosiveRadius": 23.5773302813826,
         "mass": 0.925
       },
       "name": "T42 shell",
@@ -36282,7 +36282,7 @@
       },
       "explosive": {
         "mass": 591,
-        "explosiveRadius": 180,
+        "explosiveRadius": 360,
         "blastRadiusMultiplier": 4
       },
       "name": "GPS GUIDED",
@@ -36396,7 +36396,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 62.46309969533009,
+        "explosiveRadius": 31.231549847665043,
         "mass": 2.15
       },
       "name": "DM12A1",
@@ -36455,7 +36455,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 84.05969458234782,
+        "explosiveRadius": 42.02984729117391,
         "mass": 5.24
       },
       "name": "3OF26",
@@ -36512,7 +36512,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 68.13110716389825,
+        "explosiveRadius": 34.065553581949125,
         "mass": 2.79
       },
       "name": "3BK18M",
@@ -36623,7 +36623,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 86.55179018742949,
+        "explosiveRadius": 43.275895093714745,
         "mass": 5.72
       },
       "name": "9M119M1",
@@ -36687,7 +36687,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 57.07229385263392,
+        "explosiveRadius": 28.53614692631696,
         "mass": 1.64
       },
       "name": "M830",
@@ -36747,7 +36747,7 @@
       },
       "explosive": {
         "mass": 0.042,
-        "explosiveRadius": 16.822626738112746,
+        "explosiveRadius": 10.093576042867646,
         "blastRadiusMultiplier": 1.2
       },
       "name": "M1028",
@@ -36865,7 +36865,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 48.39613862816718,
+        "explosiveRadius": 24.19806931408359,
         "mass": 1
       },
       "name": "Sprgr.43",
@@ -36925,7 +36925,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 23.047224410865418,
+        "explosiveRadius": 11.523612205432709,
         "mass": 0.108
       },
       "name": "PzGr 39/43",
@@ -36988,7 +36988,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 151.37396529128577,
+        "explosiveRadius": 75.68698264564289,
         "mass": 30.6
       },
       "name": "L33A1",
@@ -37108,7 +37108,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 81.46733413674008,
+        "explosiveRadius": 40.73366706837004,
         "mass": 4.77
       },
       "name": "9M117",
@@ -37172,7 +37172,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 63.69749123812307,
+        "explosiveRadius": 31.848745619061535,
         "mass": 2.28
       },
       "name": "3BK15M",
@@ -37231,7 +37231,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 81.75099705962731,
+        "explosiveRadius": 40.875498529813655,
         "mass": 4.82
       },
       "name": "3OF27",
@@ -37349,7 +37349,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 17.829289911873463,
+        "explosiveRadius": 8.914644955936732,
         "mass": 0.05
       },
       "name": "3UOF8",
@@ -37466,7 +37466,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 22.15374243055272,
+        "explosiveRadius": 11.07687121527636,
         "mass": 0.09592
       },
       "name": "M383",
@@ -37709,7 +37709,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 29.21583292900689,
+        "explosiveRadius": 14.607916464503445,
         "mass": 0.22
       },
       "name": "M86",
@@ -37827,7 +37827,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 96.22432961309669,
+        "explosiveRadius": 48.11216480654834,
         "mass": 7.86
       },
       "name": "MIM146 Anti-Tank Mode",
@@ -37892,7 +37892,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 96.22432961309669,
+        "explosiveRadius": 48.11216480654834,
         "mass": 7.86
       },
       "name": "MIM146 Anti-Air Mode",
@@ -37954,7 +37954,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 16.270662785193135,
+        "explosiveRadius": 8.135331392596568,
         "mass": 0.038
       },
       "name": "M63  shell",
@@ -38130,7 +38130,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 84.05969458234782,
+        "explosiveRadius": 42.02984729117391,
         "mass": 5.24
       },
       "name": "3OF26",
@@ -38246,7 +38246,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 68.13110716389825,
+        "explosiveRadius": 34.065553581949125,
         "mass": 2.79
       },
       "name": "3BK18M",
@@ -38305,7 +38305,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 86.55179018742949,
+        "explosiveRadius": 43.275895093714745,
         "mass": 5.72
       },
       "name": "3UBK21",
@@ -38369,7 +38369,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 74.17283504438099,
+        "explosiveRadius": 37.086417522190494,
         "mass": 3.6
       },
       "name": "3VOF128",
@@ -38430,7 +38430,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 57.07229385263392,
+        "explosiveRadius": 28.53614692631696,
         "mass": 1.64
       },
       "name": "M830",
@@ -38548,7 +38548,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 75.18902755404511,
+        "explosiveRadius": 37.594513777022556,
         "mass": 3.75
       },
       "name": "TOW",
@@ -38676,7 +38676,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 19.257100424276164,
+        "explosiveRadius": 9.628550212138082,
         "mass": 0.063
       },
       "name": "M61 shot",
@@ -38740,7 +38740,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 42.26382393365358,
+        "explosiveRadius": 21.13191196682679,
         "mass": 0.666
       },
       "name": "M48  shell",
@@ -38805,7 +38805,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 46.72595810139787,
+        "explosiveRadius": 23.362979050698936,
         "mass": 0.9
       },
       "name": "PG-9",
@@ -38867,7 +38867,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 42.97112515683929,
+        "explosiveRadius": 21.485562578419646,
         "mass": 0.7
       },
       "name": "OG-9",
@@ -38931,7 +38931,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 72.05243993113852,
+        "explosiveRadius": 36.02621996556926,
         "mass": 3.3
       },
       "name": "OF-471",
@@ -38990,7 +38990,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 34.10620463911193,
+        "explosiveRadius": 17.053102319555965,
         "mass": 0.35
       },
       "name": "BR-471",
@@ -39052,7 +39052,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 52.4097336254342,
+        "explosiveRadius": 26.2048668127171,
         "mass": 1.27
       },
       "name": "M456A2",
@@ -39111,7 +39111,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 17.829289911873463,
+        "explosiveRadius": 8.914644955936732,
         "mass": 0.05
       },
       "name": "M416",
@@ -39226,7 +39226,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 78.75953356348667,
+        "explosiveRadius": 39.379766781743335,
         "mass": 4.31
       },
       "name": "M393A2",
@@ -39287,7 +39287,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 90.31956368825409,
+        "explosiveRadius": 45.159781844127046,
         "mass": 6.5
       },
       "name": "HJ-10",
@@ -39353,7 +39353,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 180,
+        "explosiveRadius": 90,
         "mass": 136
       },
       "name": "AGM-65G",
@@ -39417,7 +39417,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 52.4097336254342,
+        "explosiveRadius": 26.2048668127171,
         "mass": 1.27
       },
       "name": "DM12",
@@ -39474,7 +39474,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 78.75953356348667,
+        "explosiveRadius": 39.379766781743335,
         "mass": 4.31
       },
       "name": "DM512",
@@ -39587,7 +39587,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 76.8240813695514,
+        "explosiveRadius": 38.4120406847757,
         "mass": 4
       },
       "name": "M67 shot",
@@ -39644,7 +39644,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 62.752284835107076,
+        "explosiveRadius": 31.376142417553538,
         "mass": 2.18
       },
       "name": "M1 shell",
@@ -39703,7 +39703,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 51.571033573041916,
+        "explosiveRadius": 25.785516786520958,
         "mass": 1.21
       },
       "name": "M71 shell",
@@ -39820,7 +39820,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 24.948871209724267,
+        "explosiveRadius": 12.474435604862133,
         "mass": 0.137
       },
       "name": "M82 shot",
@@ -39941,7 +39941,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 95.35962263827344,
+        "explosiveRadius": 47.67981131913672,
         "mass": 7.65
       },
       "name": "3OF25 Medium Charge",
@@ -40000,7 +40000,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 17.829289911873463,
+        "explosiveRadius": 8.914644955936732,
         "mass": 0.05
       },
       "name": "Smoke Shell",
@@ -40059,7 +40059,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 95.35962263827344,
+        "explosiveRadius": 47.67981131913672,
         "mass": 7.65
       },
       "name": "3OF25 ",
@@ -40118,7 +40118,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 72.715890435317,
+        "explosiveRadius": 36.3579452176585,
         "mass": 3.392
       },
       "name": "BR-540B ",
@@ -40179,7 +40179,7 @@
       },
       "explosive": {
         "mass": 0.042,
-        "explosiveRadius": 16.822626738112746,
+        "explosiveRadius": 10.093576042867646,
         "blastRadiusMultiplier": 1.2
       },
       "name": "3VO28",
@@ -40238,7 +40238,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 95.35962263827344,
+        "explosiveRadius": 47.67981131913672,
         "mass": 7.65
       },
       "name": "3OF25 Low Charge",
@@ -40355,7 +40355,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 20.589270235680992,
+        "explosiveRadius": 10.294635117840496,
         "mass": 0.077
       },
       "name": "BR-367",
@@ -40415,7 +40415,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 43.794218556135455,
+        "explosiveRadius": 21.897109278067727,
         "mass": 0.741
       },
       "name": "O-365K",
@@ -40476,7 +40476,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 22.15374243055272,
+        "explosiveRadius": 11.07687121527636,
         "mass": 0.09592
       },
       "name": "M383",
@@ -40538,7 +40538,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 49.50001204731895,
+        "explosiveRadius": 24.750006023659473,
         "mass": 1.07
       },
       "name": "XM884 Proxy-Fuze",
@@ -40655,7 +40655,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 49.50001204731895,
+        "explosiveRadius": 24.750006023659473,
         "mass": 1.07
       },
       "name": "XM884",
@@ -40773,7 +40773,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 76.37330102638222,
+        "explosiveRadius": 38.18665051319111,
         "mass": 3.93
       },
       "name": "DM11",
@@ -40832,7 +40832,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 65.68366563373311,
+        "explosiveRadius": 32.84183281686656,
         "mass": 2.5
       },
       "name": "DM12",
@@ -40949,7 +40949,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 65.68366563373311,
+        "explosiveRadius": 32.84183281686656,
         "mass": 2.5
       },
       "name": "DM12",
@@ -41010,7 +41010,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 86.45079617483047,
+        "explosiveRadius": 43.225398087415236,
         "mass": 5.7
       },
       "name": "9K121 Vikhr Proxy-Fuze",
@@ -41069,7 +41069,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 86.45079617483047,
+        "explosiveRadius": 43.225398087415236,
         "mass": 5.7
       },
       "name": "9K121 Vikhr",
@@ -41135,7 +41135,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 54.90286366901195,
+        "explosiveRadius": 27.451431834505975,
         "mass": 1.46
       },
       "name": "3OF11",
@@ -41194,7 +41194,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 22.463497664647686,
+        "explosiveRadius": 11.231748832323843,
         "mass": 0.1
       },
       "name": "BR-412D",
@@ -41310,7 +41310,7 @@
         }
       },
       "explosive": {
-        "explosiveRadius": 50.99637812607707,
+        "explosiveRadius": 25.498189063038534,
         "mass": 1.17
       },
       "name": "3BK4",
