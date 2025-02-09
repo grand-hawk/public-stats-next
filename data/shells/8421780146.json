@@ -108,6 +108,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 14.851716812597385,
         "mass": 0.0289
       },
       "name": "PzGr 39",
@@ -407,6 +408,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 40.81888419346799,
         "mass": 0.6
       },
       "name": "Smoke",
@@ -604,8 +606,7 @@
         "Ka-52M Alligator-M"
       ],
       "velocity": 960,
-      "type": "HE",
-      "ricochetAngle": 90
+      "type": "HE"
     },
     {
       "penetrationTable": {
@@ -716,6 +717,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 71.68668520602166,
         "mass": 3.25
       },
       "name": "9M14M MCLOS",
@@ -735,8 +737,7 @@
         "Mi-8AMTSh"
       ],
       "velocity": 140,
-      "type": "MACLOS MISSILE",
-      "ricochetAngle": 90
+      "type": "MACLOS MISSILE"
     }
   ],
   "37mm M6": [
@@ -798,6 +799,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 16.270662785193135,
         "mass": 0.038
       },
       "name": "M63 shell",
@@ -979,6 +981,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 78.51512692274994,
         "mass": 4.27
       },
       "name": "Spike-LR2",
@@ -995,8 +998,7 @@
         "KF41 Lynx"
       ],
       "velocity": 180,
-      "type": "TANDEM F&F MISSILE",
-      "ricochetAngle": 90
+      "type": "TANDEM F&F MISSILE"
     }
   ],
   "227mm M269 silly": [
@@ -1047,7 +1049,12 @@
       },
       "explosive": {
         "mass": 0.0638,
+        "explosiveRadius": 19.338269351693004,
         "blastRadiusMultiplier": 2
+      },
+      "cluster": {
+        "submunitions": 518,
+        "dispersion": 45
       },
       "name": "M26A1 Low Charge",
       "mass": 299.792,
@@ -1055,12 +1062,7 @@
       "damage": 400,
       "relatedVehicles": [],
       "velocity": 180,
-      "type": "CLUSTER",
-      "cluster": {
-        "submunitions": 518,
-        "dispersion": 45
-      },
-      "ricochetAngle": 90
+      "type": "CLUSTER"
     },
     {
       "penetrationTable": {
@@ -1108,6 +1110,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 180,
         "mass": 100.1
       },
       "name": "M31A2 High Charge",
@@ -1116,8 +1119,7 @@
       "damage": 4162,
       "relatedVehicles": [],
       "velocity": 420,
-      "type": "ROCKET",
-      "ricochetAngle": 90
+      "type": "ROCKET"
     },
     {
       "penetrationTable": {
@@ -1166,7 +1168,12 @@
       },
       "explosive": {
         "mass": 0.0638,
+        "explosiveRadius": 19.338269351693004,
         "blastRadiusMultiplier": 2
+      },
+      "cluster": {
+        "submunitions": 518,
+        "dispersion": 30
       },
       "name": "M26A1 High Charge",
       "mass": 299.792,
@@ -1174,12 +1181,7 @@
       "damage": 400,
       "relatedVehicles": [],
       "velocity": 420,
-      "type": "CLUSTER",
-      "cluster": {
-        "submunitions": 518,
-        "dispersion": 30
-      },
-      "ricochetAngle": 90
+      "type": "CLUSTER"
     },
     {
       "penetrationTable": {
@@ -1227,6 +1229,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 180,
         "mass": 100.1
       },
       "name": "M31A2 Medium Charge",
@@ -1235,8 +1238,7 @@
       "damage": 4162,
       "relatedVehicles": [],
       "velocity": 300,
-      "type": "ROCKET",
-      "ricochetAngle": 90
+      "type": "ROCKET"
     },
     {
       "penetrationTable": {
@@ -1285,7 +1287,12 @@
       },
       "explosive": {
         "mass": 0.0638,
+        "explosiveRadius": 19.338269351693004,
         "blastRadiusMultiplier": 2
+      },
+      "cluster": {
+        "submunitions": 518,
+        "dispersion": 35
       },
       "name": "M26A1 Medium Charge",
       "mass": 299.792,
@@ -1293,12 +1300,7 @@
       "damage": 400,
       "relatedVehicles": [],
       "velocity": 300,
-      "type": "CLUSTER",
-      "cluster": {
-        "submunitions": 518,
-        "dispersion": 35
-      },
-      "ricochetAngle": 90
+      "type": "CLUSTER"
     },
     {
       "penetrationTable": {
@@ -1346,6 +1348,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 180,
         "mass": 100.1
       },
       "name": "M31A2 Low Charge",
@@ -1354,8 +1357,7 @@
       "damage": 4162,
       "relatedVehicles": [],
       "velocity": 180,
-      "type": "ROCKET",
-      "ricochetAngle": 90
+      "type": "ROCKET"
     }
   ],
   "120mm Rh120 L/55": [
@@ -1476,6 +1478,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 76.37330102638222,
         "mass": 3.93
       },
       "name": "DM11 VT",
@@ -1536,6 +1539,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 65.68366563373311,
         "mass": 2.5
       },
       "name": "DM12",
@@ -1547,8 +1551,7 @@
         "Leopard 2A6"
       ],
       "velocity": 1140,
-      "type": "HEAT-FS",
-      "ricochetAngle": 90
+      "type": "HEAT-FS"
     },
     {
       "penetrationTable": {
@@ -1669,6 +1672,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 76.37330102638222,
         "mass": 3.93
       },
       "name": "DM11 PDD",
@@ -1731,6 +1735,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 27.861436362739784,
         "mass": 0.1908
       },
       "name": "kulsgr m/90",
@@ -1741,8 +1746,7 @@
         "Strf 9040C"
       ],
       "velocity": 1015,
-      "type": "PROXIMITY FUZE",
-      "ricochetAngle": 90
+      "type": "PROXIMITY FUZE"
     },
     {
       "penetrationTable": {
@@ -1857,8 +1861,7 @@
         "Strf 9040C"
       ],
       "velocity": 988,
-      "type": "HE",
-      "ricochetAngle": 90
+      "type": "HE"
     }
   ],
   "FIM-92K Stinger": [
@@ -1908,6 +1911,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 39.410199380239874,
         "mass": 0.54
       },
       "name": "FIM-92K Stinger",
@@ -1926,8 +1930,7 @@
         "JayElTeeVee"
       ],
       "velocity": 670,
-      "type": "AIR-TO-AIR MISSILE",
-      "ricochetAngle": 90
+      "type": "AIR-TO-AIR MISSILE"
     }
   ],
   "125mm 2A82-1M": [
@@ -2094,6 +2097,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 68.13110716389825,
         "mass": 2.79
       },
       "name": "3BK18M",
@@ -2153,6 +2157,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 86.55179018742949,
         "mass": 5.72
       },
       "name": "3UBK21",
@@ -2168,8 +2173,7 @@
         "T-14 Armata"
       ],
       "velocity": 450,
-      "type": "TANDEM ANTI-TANK GUIDED MISSILE",
-      "ricochetAngle": 90
+      "type": "TANDEM ANTI-TANK GUIDED MISSILE"
     },
     {
       "penetrationTable": {
@@ -2217,6 +2221,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 74.17283504438099,
         "mass": 3.6
       },
       "name": "3VOF128",
@@ -2278,6 +2283,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 79.78171787830497,
         "mass": 4.48
       },
       "name": "9M120-1",
@@ -2295,8 +2301,7 @@
         "Mi-24VM"
       ],
       "velocity": 550,
-      "type": "TANDEM ANTI-TANK GUIDED MISSILE",
-      "ricochetAngle": 90
+      "type": "TANDEM ANTI-TANK GUIDED MISSILE"
     }
   ],
   "12.7mm KORD": [
@@ -2408,6 +2413,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 89.85399065859075,
         "mass": 6.4
       },
       "name": "9M22/M21 HE-Frag",
@@ -2418,8 +2424,7 @@
         "LUAZ-672"
       ],
       "velocity": 180,
-      "type": "ROCKET",
-      "ricochetAngle": 90
+      "type": "ROCKET"
     }
   ],
   "sentry": [
@@ -2474,8 +2479,7 @@
       "damage": 15,
       "relatedVehicles": [],
       "velocity": 900,
-      "type": "MG",
-      "ricochetAngle": 90
+      "type": "MG"
     }
   ],
   "125 mm KBA-3": [
@@ -2697,6 +2701,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 86.55179018742949,
         "mass": 5.72
       },
       "name": "KOMBAT ATGM",
@@ -2712,8 +2717,7 @@
         "T-84 Oplot-M"
       ],
       "velocity": 445,
-      "type": "TANDEM ANTI-TANK GUIDED MISSILE",
-      "ricochetAngle": 90
+      "type": "TANDEM ANTI-TANK GUIDED MISSILE"
     },
     {
       "penetrationTable": {
@@ -2761,6 +2765,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 60.97531379125822,
         "mass": 2
       },
       "name": "3BK18M",
@@ -2822,6 +2827,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 17.829289911873463,
         "mass": 0.05
       },
       "name": "BR-354",
@@ -2941,6 +2947,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 42.557915667641225,
         "mass": 0.68
       },
       "name": "BK-354M",
@@ -3124,6 +3131,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 23.047224410865418,
         "mass": 0.108
       },
       "name": "PzGr 39/43",
@@ -3201,8 +3209,7 @@
         "Object 477"
       ],
       "velocity": 850,
-      "type": "HE",
-      "ricochetAngle": 90
+      "type": "HE"
     },
     {
       "penetrationTable": {
@@ -3429,6 +3436,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 62.46309969533009,
         "mass": 2.15
       },
       "name": "HE Rockets",
@@ -3439,8 +3447,7 @@
         "PzWf. 15"
       ],
       "velocity": 340,
-      "type": "ROCKET",
-      "ricochetAngle": 90
+      "type": "ROCKET"
     }
   ],
   "75 mm KwK44": [
@@ -3490,6 +3497,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 46.29805667325597,
         "mass": 0.8755
       },
       "name": "Hl.Gr 38C",
@@ -3850,6 +3858,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 44.64442813519196,
         "mass": 0.785
       },
       "name": "PzGr43",
@@ -3977,6 +3986,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 40.81888419346799,
         "mass": 0.6
       },
       "name": "Smoke",
@@ -4044,6 +4054,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 13.136733126746623,
         "mass": 0.02
       },
       "name": "BR-271M",
@@ -4165,6 +4176,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 78.0837164196599,
         "mass": 4.2
       },
       "name": "XM965",
@@ -4283,6 +4295,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 15.83069786098143,
         "mass": 0.035
       },
       "name": "HEF-I (P)",
@@ -4293,8 +4306,7 @@
         "Neovenator 'Besiege'"
       ],
       "velocity": 1002,
-      "type": "PROXIMITY FUZE",
-      "ricochetAngle": 90
+      "type": "PROXIMITY FUZE"
     },
     {
       "penetrationTable": {
@@ -4460,6 +4472,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 17.829289911873463,
         "mass": 0.05
       },
       "name": "Shell SS Mk.1",
@@ -4633,6 +4646,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 39.60699584856883,
         "mass": 0.54813
       },
       "name": "M66",
@@ -4754,6 +4768,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 86.55179018742949,
         "mass": 5.72
       },
       "name": "9M119M1",
@@ -4774,8 +4789,7 @@
         "T-90M"
       ],
       "velocity": 445,
-      "type": "TANDEM ANTI-TANK GUIDED MISSILE",
-      "ricochetAngle": 90
+      "type": "TANDEM ANTI-TANK GUIDED MISSILE"
     },
     {
       "penetrationTable": {
@@ -5011,6 +5025,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 86.55179018742949,
         "mass": 5.72
       },
       "name": "9M119",
@@ -5031,8 +5046,7 @@
         "T-90M"
       ],
       "velocity": 445,
-      "type": "ANTI-TANK GUIDED MISSILE",
-      "ricochetAngle": 90
+      "type": "ANTI-TANK GUIDED MISSILE"
     },
     {
       "penetrationTable": {
@@ -5204,6 +5218,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 68.13110716389825,
         "mass": 2.79
       },
       "name": "3BK18M",
@@ -5329,6 +5344,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 74.17283504438099,
         "mass": 3.6
       },
       "name": "3VOF128",
@@ -5395,6 +5411,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 39.165409217601145,
         "mass": 0.53
       },
       "name": "9M39",
@@ -5412,8 +5429,7 @@
         "Ka-52M Alligator-M"
       ],
       "velocity": 1000,
-      "type": "AIR-TO-AIR MISSILE",
-      "ricochetAngle": 90
+      "type": "AIR-TO-AIR MISSILE"
     }
   ],
   "MG42": [
@@ -5639,6 +5655,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 53.88117702025614,
         "mass": 1.38
       },
       "name": "HEAT Rockets",
@@ -5647,8 +5664,7 @@
       "damage": 400,
       "relatedVehicles": [],
       "velocity": 150,
-      "type": "ROCKET",
-      "ricochetAngle": 90
+      "type": "ROCKET"
     }
   ],
   "60mm IMI HVMS": [
@@ -5814,6 +5830,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 44.262015961533834,
         "mass": 0.765
       },
       "name": "OTO HE-VT",
@@ -5875,6 +5892,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 180,
         "mass": 500
       },
       "name": "Lightning Ball",
@@ -5883,8 +5901,7 @@
       "damage": 11949,
       "relatedVehicles": [],
       "velocity": 50,
-      "type": "ROCKET",
-      "ricochetAngle": 90
+      "type": "ROCKET"
     }
   ],
   "Loitering Drone": [
@@ -5934,6 +5951,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 38.4120406847757,
         "mass": 0.5
       },
       "name": "Anti-Tank drone",
@@ -5949,8 +5967,7 @@
         "Abrams X"
       ],
       "velocity": 50,
-      "type": "TANDEM F&F MISSILE",
-      "ricochetAngle": 90
+      "type": "TANDEM F&F MISSILE"
     }
   ],
   "88 mm KwK36": [
@@ -6062,6 +6079,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 23.047224410865418,
         "mass": 0.108
       },
       "name": "PzGr 39",
@@ -6125,6 +6143,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 29.69486615035402,
         "mass": 0.231
       },
       "name": "3UO8",
@@ -6244,6 +6263,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 13.141110578962229,
         "mass": 0.02002
       },
       "name": "BR-281U",
@@ -6361,6 +6381,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 73.05728459716151,
         "mass": 3.44
       },
       "name": "9M113M",
@@ -6378,8 +6399,7 @@
         "BTR-90"
       ],
       "velocity": 248,
-      "type": "TANDEM ANTI-TANK GUIDED MISSILE",
-      "ricochetAngle": 90
+      "type": "TANDEM ANTI-TANK GUIDED MISSILE"
     }
   ],
   "HERO-120": [
@@ -6429,6 +6449,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 79.9002644388135,
         "mass": 4.5
       },
       "name": "Anti-Tank drone",
@@ -6444,8 +6465,7 @@
         "KF51 Panther"
       ],
       "velocity": 50,
-      "type": "TANDEM F&F MISSILE",
-      "ricochetAngle": 90
+      "type": "TANDEM F&F MISSILE"
     }
   ],
   "85mm HV-T": [
@@ -6495,6 +6515,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 21.26225534828102,
         "mass": 0.0848
       },
       "name": "Type 1 APHE",
@@ -6621,8 +6642,7 @@
       "damage": 143,
       "relatedVehicles": [],
       "velocity": 960,
-      "type": "HE",
-      "ricochetAngle": 90
+      "type": "HE"
     },
     {
       "penetrationTable": {
@@ -6726,6 +6746,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 102.24638049133821,
         "mass": 9.43
       },
       "name": "AGM-114K Hellfire II",
@@ -6742,8 +6763,7 @@
         "AH-64D"
       ],
       "velocity": 475,
-      "type": "TANDEM LASER GUIDED MISSILE",
-      "ricochetAngle": 90
+      "type": "TANDEM LASER GUIDED MISSILE"
     }
   ],
   "20mm M618": [
@@ -6912,6 +6932,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 65.68366563373311,
         "mass": 2.5
       },
       "name": "Hl.GR 63",
@@ -6922,8 +6943,7 @@
         "Tiger 2A4"
       ],
       "velocity": 1140,
-      "type": "HEAT-FS",
-      "ricochetAngle": 90
+      "type": "HEAT-FS"
     }
   ],
   "BMU-50": [
@@ -6973,6 +6993,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 73.05728459716151,
         "mass": 3.44
       },
       "name": "9M113",
@@ -6989,8 +7010,7 @@
         "BMP-30"
       ],
       "velocity": 248,
-      "type": "ANTI-TANK GUIDED MISSILE",
-      "ricochetAngle": 90
+      "type": "ANTI-TANK GUIDED MISSILE"
     }
   ],
   "40mm MK-19": [
@@ -7103,6 +7123,7 @@
       },
       "explosive": {
         "mass": 0.03,
+        "explosiveRadius": 15.037805510809024,
         "blastRadiusMultiplier": 2
       },
       "name": "M430A1",
@@ -7228,6 +7249,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 49.50001204731895,
         "mass": 1.07
       },
       "name": "XM884 Proxy-Fuze",
@@ -7470,6 +7492,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 76.17847033047524,
         "mass": 3.9
       },
       "name": "140mm Pz Kan HL Pat MZ HEAT-MP VT",
@@ -7585,6 +7608,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 76.17847033047524,
         "mass": 3.9
       },
       "name": "140mm Pz Kan HL Pat MZ HEAT-MP PD",
@@ -8116,6 +8140,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 25.71428571428571,
         "mass": 0.15
       },
       "name": "M110 Medium Charge",
@@ -8186,8 +8211,7 @@
         "M109"
       ],
       "velocity": 171,
-      "type": "HE",
-      "ricochetAngle": 90
+      "type": "HE"
     },
     {
       "penetrationTable": {
@@ -8235,6 +8259,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 25.71428571428571,
         "mass": 0.15
       },
       "name": "M110 Low Charge",
@@ -8294,6 +8319,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 25.71428571428571,
         "mass": 0.15
       },
       "name": "M110 High Charge",
@@ -8364,8 +8390,7 @@
         "M109"
       ],
       "velocity": 684,
-      "type": "HE",
-      "ricochetAngle": 90
+      "type": "HE"
     },
     {
       "penetrationTable": {
@@ -8424,8 +8449,7 @@
         "M109"
       ],
       "velocity": 342,
-      "type": "HE",
-      "ricochetAngle": 90
+      "type": "HE"
     }
   ],
   "L7A1 105mm": [
@@ -8475,6 +8499,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 70.94376453551452,
         "mass": 3.15
       },
       "name": "Shell L35",
@@ -8485,8 +8510,7 @@
         "Centurion Mk 10"
       ],
       "velocity": 720,
-      "type": "HESH",
-      "ricochetAngle": 90
+      "type": "HESH"
     },
     {
       "penetrationTable": {
@@ -8592,6 +8616,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 81.97651819408715,
         "mass": 4.86
       },
       "name": "APS03",
@@ -8716,6 +8741,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 73.75845301802343,
         "mass": 3.54
       },
       "name": "3OF70-1",
@@ -8777,6 +8803,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 65.68366563373311,
         "mass": 2.5
       },
       "name": "HEAT ATGM",
@@ -8792,8 +8819,7 @@
         "Tiger II"
       ],
       "velocity": 100,
-      "type": "MACLOS MISSILE",
-      "ricochetAngle": 90
+      "type": "MACLOS MISSILE"
     }
   ],
   "20mm Rh202": [
@@ -9086,6 +9112,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 79.12332410026907,
         "mass": 4.37
       },
       "name": "Rubin",
@@ -9101,8 +9128,7 @@
         "Object 775"
       ],
       "velocity": 550,
-      "type": "ANTI-TANK GUIDED MISSILE",
-      "ricochetAngle": 90
+      "type": "ANTI-TANK GUIDED MISSILE"
     }
   ],
   "12.7mm NSVT": [
@@ -9223,6 +9249,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 81.97651819408715,
         "mass": 4.86
       },
       "name": "9M117",
@@ -9239,8 +9266,7 @@
         "BMP-3"
       ],
       "velocity": 370,
-      "type": "ANTI-TANK GUIDED MISSILE",
-      "ricochetAngle": 90
+      "type": "ANTI-TANK GUIDED MISSILE"
     },
     {
       "penetrationTable": {
@@ -9349,6 +9375,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 81.97651819408715,
         "mass": 4.86
       },
       "name": "9M117M1",
@@ -9365,8 +9392,7 @@
         "BMP-3"
       ],
       "velocity": 370,
-      "type": "TANDEM ANTI-TANK GUIDED MISSILE",
-      "ricochetAngle": 90
+      "type": "TANDEM ANTI-TANK GUIDED MISSILE"
     }
   ],
   "9M134 Bulat": [
@@ -9416,6 +9442,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 56.60446712390788,
         "mass": 1.6
       },
       "name": "9M134",
@@ -9431,8 +9458,7 @@
         "Kurganets-25"
       ],
       "velocity": 300,
-      "type": "TANDEM ANTI-TANK GUIDED MISSILE",
-      "ricochetAngle": 90
+      "type": "TANDEM ANTI-TANK GUIDED MISSILE"
     }
   ],
   "122mm HW-T": [
@@ -9482,6 +9508,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 67.63916865305893,
         "mass": 2.73
       },
       "name": "BP-460A",
@@ -9837,6 +9864,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 60.97531379125822,
         "mass": 2
       },
       "name": "3BK12M",
@@ -10190,6 +10218,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 27.861436362739784,
         "mass": 0.1908
       },
       "name": "kulsgr m/90",
@@ -10200,8 +10229,7 @@
         "Strf 9040C"
       ],
       "velocity": 1015,
-      "type": "PROXIMITY FUZE",
-      "ricochetAngle": 90
+      "type": "PROXIMITY FUZE"
     },
     {
       "penetrationTable": {
@@ -10260,8 +10288,7 @@
         "Strf 9040C"
       ],
       "velocity": 988,
-      "type": "HE",
-      "ricochetAngle": 90
+      "type": "HE"
     },
     {
       "penetrationTable": {
@@ -10367,6 +10394,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 74.17283504438099,
         "mass": 3.6
       },
       "name": "MGM-51B Shiellelagh",
@@ -10382,8 +10410,7 @@
         "M60A2 Starship"
       ],
       "velocity": 286,
-      "type": "ANTI-TANK GUIDED MISSILE",
-      "ricochetAngle": 90
+      "type": "ANTI-TANK GUIDED MISSILE"
     },
     {
       "penetrationTable": {
@@ -10432,6 +10459,7 @@
       },
       "explosive": {
         "mass": 0.042,
+        "explosiveRadius": 16.822626738112746,
         "blastRadiusMultiplier": 1.2
       },
       "name": "M625A1",
@@ -10442,8 +10470,7 @@
         "M60A2 Starship"
       ],
       "velocity": 1410,
-      "type": "CANISTER",
-      "ricochetAngle": 90
+      "type": "CANISTER"
     },
     {
       "penetrationTable": {
@@ -10491,6 +10518,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 68.61604239570715,
         "mass": 2.85
       },
       "name": "M409A1",
@@ -10619,8 +10647,7 @@
         "Willys Avenger Blankfire"
       ],
       "velocity": 1000,
-      "type": "AP",
-      "ricochetAngle": 90
+      "type": "AP"
     }
   ],
   "120mm KBM-2": [
@@ -10788,6 +10815,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 83.304303461421,
         "mass": 5.1
       },
       "name": "KONUS",
@@ -10803,8 +10831,7 @@
         "T-84-120"
       ],
       "velocity": 445,
-      "type": "TANDEM ANTI-TANK GUIDED MISSILE",
-      "ricochetAngle": 90
+      "type": "TANDEM ANTI-TANK GUIDED MISSILE"
     },
     {
       "penetrationTable": {
@@ -10852,6 +10879,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 65.68366563373311,
         "mass": 2.5
       },
       "name": "DM12",
@@ -10862,8 +10890,7 @@
         "T-84-120"
       ],
       "velocity": 1140,
-      "type": "HEAT-FS",
-      "ricochetAngle": 90
+      "type": "HEAT-FS"
     }
   ],
   "Mk84 2000 lbs LGDP Bomb": [
@@ -10975,6 +11002,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 56.722148267486205,
         "mass": 1.61
       },
       "name": "M67 shot",
@@ -11096,6 +11124,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 21.19518154187258,
         "mass": 0.084
       },
       "name": "Type 1 APHE",
@@ -11209,6 +11238,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 51.42857142857142,
         "mass": 1.2
       },
       "name": "3BK-5",
@@ -11268,6 +11298,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 22.463497664647686,
         "mass": 0.1
       },
       "name": "BR-412D",
@@ -11389,6 +11420,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 70.56639694876347,
         "mass": 3.1
       },
       "name": "ATGM",
@@ -11406,8 +11438,7 @@
         "M1126"
       ],
       "velocity": 430,
-      "type": "TANDEM F&F MISSILE",
-      "ricochetAngle": 90
+      "type": "TANDEM F&F MISSILE"
     }
   ],
   "152mm L-30NS": [
@@ -11457,6 +11488,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 94.27532353025371,
         "mass": 7.392
       },
       "name": "BR-540B ",
@@ -11527,8 +11559,7 @@
         "TPSU-152"
       ],
       "velocity": 665,
-      "type": "HE",
-      "ricochetAngle": 90
+      "type": "HE"
     }
   ],
   "125mm Type 99A": [
@@ -11750,6 +11781,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 66.71822380407224,
         "mass": 2.62
       },
       "name": "DTP-125",
@@ -11809,6 +11841,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 86.55179018742949,
         "mass": 5.72
       },
       "name": "GP125",
@@ -11824,8 +11857,7 @@
         "ZTZ99A"
       ],
       "velocity": 405,
-      "type": "TANDEM ANTI-TANK GUIDED MISSILE",
-      "ricochetAngle": 90
+      "type": "TANDEM ANTI-TANK GUIDED MISSILE"
     },
     {
       "penetrationTable": {
@@ -11873,6 +11905,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 84.3793162676944,
         "mass": 5.3
       },
       "name": "DTB12-125",
@@ -11934,6 +11967,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 90.31956368825409,
         "mass": 6.5
       },
       "name": "HJ-10",
@@ -11949,8 +11983,7 @@
         "AFT-10"
       ],
       "velocity": 150,
-      "type": "TANDEM F&F MISSILE",
-      "ricochetAngle": 90
+      "type": "TANDEM F&F MISSILE"
     }
   ],
   "23mm GSh-23L": [
@@ -12367,6 +12400,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 65.68366563373311,
         "mass": 2.5
       },
       "name": "DM12A1",
@@ -12377,8 +12411,7 @@
         "Leopard 2A7V"
       ],
       "velocity": 1190,
-      "type": "HEAT-FS",
-      "ricochetAngle": 90
+      "type": "HEAT-FS"
     },
     {
       "penetrationTable": {
@@ -12556,6 +12589,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 76.37330102638222,
         "mass": 3.93
       },
       "name": "DM11 PDD",
@@ -12627,6 +12661,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 76.37330102638222,
         "mass": 3.93
       },
       "name": "DM11 VT",
@@ -12747,6 +12782,7 @@
       },
       "explosive": {
         "mass": 3,
+        "explosiveRadius": 69.79931014101187,
         "blastRadiusMultiplier": 4
       },
       "name": "Thermobaric",
@@ -12757,8 +12793,7 @@
         "TOS-1A BM-1"
       ],
       "velocity": 180,
-      "type": "THERMOBARIC",
-      "ricochetAngle": 90
+      "type": "THERMOBARIC"
     },
     {
       "penetrationTable": {
@@ -12807,6 +12842,7 @@
       },
       "explosive": {
         "mass": 0.2,
+        "explosiveRadius": 28.30223356195394,
         "blastRadiusMultiplier": 2
       },
       "name": "Incendiary",
@@ -12817,8 +12853,7 @@
         "TOS-1A BM-1"
       ],
       "velocity": 180,
-      "type": "ROCKET",
-      "ricochetAngle": 90
+      "type": "ROCKET"
     },
     {
       "penetrationTable": {
@@ -12866,6 +12901,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 133.52127690474265,
         "mass": 21
       },
       "name": "Blast fragmentation",
@@ -12876,8 +12912,7 @@
         "TOS-1A BM-1"
       ],
       "velocity": 180,
-      "type": "ROCKET",
-      "ricochetAngle": 90
+      "type": "ROCKET"
     }
   ],
   "30mm ZTM-2": [
@@ -12938,8 +12973,7 @@
         "BTR-4"
       ],
       "velocity": 960,
-      "type": "HE",
-      "ricochetAngle": 90
+      "type": "HE"
     },
     {
       "penetrationTable": {
@@ -13045,6 +13079,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 30.324181062704742,
         "mass": 0.246
       },
       "name": "BR-471B",
@@ -13281,6 +13316,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 19.257100424276164,
         "mass": 0.063
       },
       "name": "M62 shot",
@@ -13343,6 +13379,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 17.829289911873463,
         "mass": 0.05
       },
       "name": "M88",
@@ -13470,6 +13507,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 4.8396138628167185,
         "mass": 0.001
       },
       "name": "Napalm",
@@ -13591,6 +13629,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 60.97531379125822,
         "mass": 2
       },
       "name": "3BK12M",
@@ -13823,6 +13862,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 73.75845301802343,
         "mass": 3.54
       },
       "name": "3OF70-1",
@@ -13944,6 +13984,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 75.18902755404511,
         "mass": 3.75
       },
       "name": "9M117M1",
@@ -14020,8 +14061,7 @@
       "damage": 136,
       "relatedVehicles": [],
       "velocity": 960,
-      "type": "HE",
-      "ricochetAngle": 90
+      "type": "HE"
     },
     {
       "penetrationTable": {
@@ -14240,6 +14280,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 70.94376453551452,
         "mass": 3.15
       },
       "name": "M393A2",
@@ -14250,8 +14291,7 @@
         "M1IP"
       ],
       "velocity": 732,
-      "type": "HESH",
-      "ricochetAngle": 90
+      "type": "HESH"
     },
     {
       "penetrationTable": {
@@ -14299,6 +14339,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 46.72595810139787,
         "mass": 0.9
       },
       "name": "M456A2",
@@ -14360,6 +14401,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 89.66640349363516,
         "mass": 6.36
       },
       "name": "9D135",
@@ -14375,8 +14417,7 @@
         "Cheonma-2"
       ],
       "velocity": 300,
-      "type": "TANDEM ANTI-TANK GUIDED MISSILE",
-      "ricochetAngle": 90
+      "type": "TANDEM ANTI-TANK GUIDED MISSILE"
     },
     {
       "penetrationTable": {
@@ -14424,6 +14465,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 101.55501371377886,
         "mass": 9.24
       },
       "name": "9T135",
@@ -14434,8 +14476,7 @@
         "Cheonma-2"
       ],
       "velocity": 320,
-      "type": "ANTI-TANK GUIDED MISSILE",
-      "ricochetAngle": 90
+      "type": "ANTI-TANK GUIDED MISSILE"
     }
   ],
   "75mm OQF Mk.V": [
@@ -14603,6 +14644,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 17.829289911873463,
         "mass": 0.05
       },
       "name": "M89",
@@ -14794,6 +14836,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 76.37330102638222,
         "mass": 3.93
       },
       "name": "9M114",
@@ -14810,8 +14853,7 @@
         "Mi-8AMTSh"
       ],
       "velocity": 550,
-      "type": "ANTI-TANK GUIDED MISSILE",
-      "ricochetAngle": 90
+      "type": "ANTI-TANK GUIDED MISSILE"
     }
   ],
   "75mm M3": [
@@ -14861,6 +14903,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 19.257100424276164,
         "mass": 0.063
       },
       "name": "M61 shot",
@@ -15051,6 +15094,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 75.18902755404511,
         "mass": 3.75
       },
       "name": "TOW",
@@ -15069,8 +15113,7 @@
         "Begleitpanzer 57"
       ],
       "velocity": 299,
-      "type": "ANTI-TANK GUIDED MISSILE",
-      "ricochetAngle": 90
+      "type": "ANTI-TANK GUIDED MISSILE"
     }
   ],
   "7.62mm L8A1": [
@@ -15296,6 +15339,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 86.45079617483047,
         "mass": 5.7
       },
       "name": "9A4172 Vikhr-1",
@@ -15311,8 +15355,7 @@
         "Ka-52M Alligator-M"
       ],
       "velocity": 680,
-      "type": "TANDEM ANTI-TANK GUIDED MISSILE",
-      "ricochetAngle": 90
+      "type": "TANDEM ANTI-TANK GUIDED MISSILE"
     },
     {
       "penetrationTable": {
@@ -15360,6 +15403,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 86.45079617483047,
         "mass": 5.7
       },
       "name": "9A4172 Vikhr-1 Proxy-Fuze",
@@ -15370,8 +15414,7 @@
         "Ka-52M Alligator-M"
       ],
       "velocity": 680,
-      "type": "ANTI-TANK GUIDED MISSILE",
-      "ricochetAngle": 90
+      "type": "ANTI-TANK GUIDED MISSILE"
     }
   ],
   "90mm M3": [
@@ -15543,6 +15586,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 47.17453361066568,
         "mass": 0.92617
       },
       "name": "M348 shell",
@@ -15605,6 +15649,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 24.948871209724267,
         "mass": 0.137
       },
       "name": "M82 shot",
@@ -15669,6 +15714,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 27.177962754409283,
         "mass": 0.1771
       },
       "name": "BR-482B",
@@ -15908,6 +15954,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 60.97531379125822,
         "mass": 2
       },
       "name": "3BK12M",
@@ -16197,6 +16244,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 65.68366563373311,
         "mass": 2.5
       },
       "name": "DM12",
@@ -16207,8 +16255,7 @@
         "Ariete C1"
       ],
       "velocity": 1140,
-      "type": "HEAT-FS",
-      "ricochetAngle": 90
+      "type": "HEAT-FS"
     }
   ],
   "105mm M7B1": [
@@ -16258,6 +16305,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 56.722148267486205,
         "mass": 1.61
       },
       "name": "M67 shot",
@@ -16376,6 +16424,7 @@
       },
       "explosive": {
         "mass": 0.0282,
+        "explosiveRadius": 14.730825383954837,
         "blastRadiusMultiplier": 2
       },
       "name": "M789",
@@ -16436,6 +16485,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 17.829289911873463,
         "mass": 0.05
       },
       "name": "XM1211",
@@ -16621,6 +16671,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 22.463497664647686,
         "mass": 0.1
       },
       "name": "BR-412D",
@@ -16680,6 +16731,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 51.42857142857142,
         "mass": 1.2
       },
       "name": "3BK17M",
@@ -16801,6 +16853,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 54.01101168372532,
         "mass": 1.39
       },
       "name": "ATGM",
@@ -16816,8 +16869,7 @@
         "QN506"
       ],
       "velocity": 125,
-      "type": "TANDEM F&F MISSILE",
-      "ricochetAngle": 90
+      "type": "TANDEM F&F MISSILE"
     }
   ],
   "120mm FR-34/DS": [
@@ -16923,6 +16975,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 62.46309969533009,
         "mass": 2.15
       },
       "name": "DM12A1",
@@ -16931,8 +16984,7 @@
       "damage": 490,
       "relatedVehicles": [],
       "velocity": 1140,
-      "type": "HEAT-FS",
-      "ricochetAngle": 90
+      "type": "HEAT-FS"
     }
   ],
   "105mm JSW": [
@@ -16982,6 +17034,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 20.853263984823087,
         "mass": 0.08
       },
       "name": "M416",
@@ -17041,6 +17094,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 76.1133047979607,
         "mass": 3.89
       },
       "name": "Type 75",
@@ -17051,8 +17105,7 @@
         "Type 16 MCV"
       ],
       "velocity": 760,
-      "type": "HESH",
-      "ricochetAngle": 90
+      "type": "HESH"
     },
     {
       "penetrationTable": {
@@ -17100,6 +17153,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 56.24845476804727,
         "mass": 1.57
       },
       "name": "Type 91",
@@ -17274,6 +17328,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 46.72595810139787,
         "mass": 0.9
       },
       "name": "M456A2",
@@ -17333,6 +17388,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 70.94376453551452,
         "mass": 3.15
       },
       "name": "M393A2",
@@ -17343,8 +17399,7 @@
         "M1 Abrams"
       ],
       "velocity": 732,
-      "type": "HESH",
-      "ricochetAngle": 90
+      "type": "HESH"
     }
   ],
   "12.7mm YAK-B": [
@@ -17512,6 +17567,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 44.262015961533834,
         "mass": 0.765
       },
       "name": "57х438 HE-VT",
@@ -17627,6 +17683,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 21.92662024272411,
         "mass": 0.093
       },
       "name": "57х438 AP-HE",
@@ -17688,6 +17745,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 4.8396138628167185,
         "mass": 0.001
       },
       "name": "Napalm",
@@ -17748,7 +17806,12 @@
       },
       "explosive": {
         "mass": 0.21894999999999998,
+        "explosiveRadius": 29.169279053077542,
         "blastRadiusMultiplier": 2
+      },
+      "cluster": {
+        "submunitions": 150,
+        "dispersion": 32.5
       },
       "name": "M26A1 Low Charge",
       "mass": 299.65,
@@ -17759,12 +17822,7 @@
         "M270 MLRS"
       ],
       "velocity": 180,
-      "type": "CLUSTER",
-      "cluster": {
-        "submunitions": 150,
-        "dispersion": 32.5
-      },
-      "ricochetAngle": 90
+      "type": "CLUSTER"
     },
     {
       "penetrationTable": {
@@ -17812,6 +17870,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 180,
         "mass": 100.1
       },
       "name": "M31A2 High Charge",
@@ -17823,8 +17882,7 @@
         "M270 MLRS"
       ],
       "velocity": 420,
-      "type": "ROCKET",
-      "ricochetAngle": 90
+      "type": "ROCKET"
     },
     {
       "penetrationTable": {
@@ -17873,7 +17931,12 @@
       },
       "explosive": {
         "mass": 0.21894999999999998,
+        "explosiveRadius": 29.169279053077542,
         "blastRadiusMultiplier": 2
+      },
+      "cluster": {
+        "submunitions": 150,
+        "dispersion": 10
       },
       "name": "M26A1 High Charge",
       "mass": 299.65,
@@ -17884,12 +17947,7 @@
         "M270 MLRS"
       ],
       "velocity": 420,
-      "type": "CLUSTER",
-      "cluster": {
-        "submunitions": 150,
-        "dispersion": 10
-      },
-      "ricochetAngle": 90
+      "type": "CLUSTER"
     },
     {
       "penetrationTable": {
@@ -17937,6 +17995,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 180,
         "mass": 100.1
       },
       "name": "M31A2 Medium Charge",
@@ -17948,8 +18007,7 @@
         "M270 MLRS"
       ],
       "velocity": 300,
-      "type": "ROCKET",
-      "ricochetAngle": 90
+      "type": "ROCKET"
     },
     {
       "penetrationTable": {
@@ -17998,7 +18056,12 @@
       },
       "explosive": {
         "mass": 0.21894999999999998,
+        "explosiveRadius": 29.169279053077542,
         "blastRadiusMultiplier": 2
+      },
+      "cluster": {
+        "submunitions": 150,
+        "dispersion": 15
       },
       "name": "M26A1 Medium Charge",
       "mass": 299.65,
@@ -18009,12 +18072,7 @@
         "M270 MLRS"
       ],
       "velocity": 300,
-      "type": "CLUSTER",
-      "cluster": {
-        "submunitions": 150,
-        "dispersion": 15
-      },
-      "ricochetAngle": 90
+      "type": "CLUSTER"
     },
     {
       "penetrationTable": {
@@ -18062,6 +18120,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 180,
         "mass": 100.1
       },
       "name": "M31A2 Low Charge",
@@ -18073,8 +18132,7 @@
         "M270 MLRS"
       ],
       "velocity": 180,
-      "type": "ROCKET",
-      "ricochetAngle": 90
+      "type": "ROCKET"
     }
   ],
   "30mm Avenger": [
@@ -18124,6 +18182,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 21.910890954511913,
         "mass": 0.0928
       },
       "name": "HVAP-T HEI",
@@ -18186,6 +18245,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 180,
         "mass": 145
       },
       "name": "KH-35 ASM",
@@ -18199,8 +18259,7 @@
       "damage": 5297,
       "relatedVehicles": [],
       "velocity": 272,
-      "type": "F&F MISSILE",
-      "ricochetAngle": 90
+      "type": "F&F MISSILE"
     }
   ],
   "12.7mm M3P": [
@@ -18308,6 +18367,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 20.853263984823087,
         "mass": 0.08
       },
       "name": "Shell L34A2",
@@ -18369,6 +18429,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 90.45830363550174,
         "mass": 6.53
       },
       "name": "Shell L31A7",
@@ -18491,6 +18552,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 27.177962754409283,
         "mass": 0.1771
       },
       "name": "BR-482B",
@@ -18612,6 +18674,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 57.64650035114329,
         "mass": 1.69
       },
       "name": "9M37M",
@@ -18628,8 +18691,7 @@
         "Strela-10"
       ],
       "velocity": 700,
-      "type": "AIR-TO-AIR MISSILE",
-      "ricochetAngle": 90
+      "type": "AIR-TO-AIR MISSILE"
     }
   ],
   "7.62mm ksp 58": [
@@ -18739,6 +18801,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 101.55501371377886,
         "mass": 9.24
       },
       "name": "9M123F-1",
@@ -18749,8 +18812,7 @@
         "SRK-1"
       ],
       "velocity": 550,
-      "type": "ANTI-TANK GUIDED MISSILE",
-      "ricochetAngle": 90
+      "type": "ANTI-TANK GUIDED MISSILE"
     },
     {
       "penetrationTable": {
@@ -18798,6 +18860,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 79.78171787830497,
         "mass": 4.48
       },
       "name": "9M123",
@@ -18813,8 +18876,7 @@
         "SRK-1"
       ],
       "velocity": 550,
-      "type": "TANDEM ANTI-TANK GUIDED MISSILE",
-      "ricochetAngle": 90
+      "type": "TANDEM ANTI-TANK GUIDED MISSILE"
     }
   ],
   "9M7 Drakon": [
@@ -18864,6 +18926,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 70.94376453551452,
         "mass": 3.15
       },
       "name": "9M7",
@@ -18879,8 +18942,7 @@
         "IT-1"
       ],
       "velocity": 228,
-      "type": "ANTI-TANK GUIDED MISSILE",
-      "ricochetAngle": 90
+      "type": "ANTI-TANK GUIDED MISSILE"
     }
   ],
   "152mm ML-20S": [
@@ -18930,6 +18992,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 43.774509184186364,
         "mass": 0.74
       },
       "name": "BR-540B",
@@ -19112,6 +19175,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 29.21583292900689,
         "mass": 0.22
       },
       "name": "M86",
@@ -19289,6 +19353,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 60.97531379125822,
         "mass": 2
       },
       "name": "3BK12M",
@@ -19485,8 +19550,7 @@
         "Object 477"
       ],
       "velocity": 960,
-      "type": "HE",
-      "ricochetAngle": 90
+      "type": "HE"
     },
     {
       "penetrationTable": {
@@ -19728,6 +19792,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 62.46309969533009,
         "mass": 2.15
       },
       "name": "DM12A1",
@@ -19787,6 +19852,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 19.257100424276164,
         "mass": 0.063
       },
       "name": "M61 shot",
@@ -19906,6 +19972,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 17.829289911873463,
         "mass": 0.05
       },
       "name": "M89",
@@ -19968,6 +20035,7 @@
       },
       "explosive": {
         "mass": 4,
+        "explosiveRadius": 76.8240813695514,
         "blastRadiusMultiplier": 3
       },
       "name": "M2 ETC-HARE",
@@ -20086,6 +20154,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 84.3793162676944,
         "mass": 5.3
       },
       "name": "M5 ETC-HAAM-IR",
@@ -20101,8 +20170,7 @@
         "Neovenator 'Besiege'"
       ],
       "velocity": 1250,
-      "type": "AIR-TO-AIR MISSILE",
-      "ricochetAngle": 90
+      "type": "AIR-TO-AIR MISSILE"
     },
     {
       "penetrationTable": {
@@ -20150,6 +20218,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 76.8240813695514,
         "mass": 4
       },
       "name": "M3 ETC-HARA",
@@ -20160,8 +20229,7 @@
         "Neovenator 'Besiege'"
       ],
       "velocity": 1990,
-      "type": "OTA TANDEM HEAT",
-      "ricochetAngle": 90
+      "type": "OTA TANDEM HEAT"
     },
     {
       "penetrationTable": {
@@ -20209,6 +20277,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 70.56639694876347,
         "mass": 3.1
       },
       "name": "M4 ETC-HAMM",
@@ -20224,8 +20293,7 @@
         "Neovenator 'Besiege'"
       ],
       "velocity": 315,
-      "type": "TANDEM ANTI-TANK GUIDED MISSILE",
-      "ricochetAngle": 90
+      "type": "TANDEM ANTI-TANK GUIDED MISSILE"
     }
   ],
   "122mm D-25TM": [
@@ -20275,6 +20343,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 34.10620463911193,
         "mass": 0.35
       },
       "name": "BR-471D",
@@ -20516,6 +20585,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 14.851716812597385,
         "mass": 0.0289
       },
       "name": "PzGr 39",
@@ -20579,6 +20649,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 48.71665219813249,
         "mass": 1.02
       },
       "name": "OCC 105 F3",
@@ -20694,6 +20765,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 20.853263984823087,
         "mass": 0.08
       },
       "name": "O-FUM-PH-105 F3",
@@ -20815,6 +20887,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 22.463497664647686,
         "mass": 0.1
       },
       "name": "BR-350B",
@@ -21048,6 +21121,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 58.09776333494638,
         "mass": 1.73
       },
       "name": "120-HEAT",
@@ -21109,6 +21183,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 20.853263984823087,
         "mass": 0.08
       },
       "name": "M416",
@@ -21224,6 +21299,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 78.75953356348667,
         "mass": 4.31
       },
       "name": "M393A2",
@@ -21283,6 +21359,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 52.4097336254342,
         "mass": 1.27
       },
       "name": "M456",
@@ -21401,6 +21478,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 26.490612185505288,
         "mass": 0.164
       },
       "name": "BR-365A",
@@ -21524,6 +21602,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 53.88117702025614,
         "mass": 1.38
       },
       "name": "S-8KO",
@@ -21537,8 +21616,7 @@
         "Mi-8AMTSh"
       ],
       "velocity": 650,
-      "type": "ROCKET",
-      "ricochetAngle": 90
+      "type": "ROCKET"
     }
   ],
   "122mm D-25T": [
@@ -21651,6 +21729,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 34.10620463911193,
         "mass": 0.35
       },
       "name": "BR-471",
@@ -21715,6 +21794,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 17.829289911873463,
         "mass": 0.05
       },
       "name": "Chili",
@@ -21772,6 +21852,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 44.1071847322675,
         "mass": 0.757
       },
       "name": "Pears",
@@ -21780,8 +21861,7 @@
       "damage": 266,
       "relatedVehicles": [],
       "velocity": 988,
-      "type": "HESH",
-      "ricochetAngle": 90
+      "type": "HESH"
     }
   ],
   "FN-16": [
@@ -21831,6 +21911,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 57.64650035114329,
         "mass": 1.69
       },
       "name": "FN-16",
@@ -21847,8 +21928,7 @@
         "Type 625E"
       ],
       "velocity": 700,
-      "type": "AIR-TO-AIR MISSILE",
-      "ricochetAngle": 90
+      "type": "AIR-TO-AIR MISSILE"
     }
   ],
   "T34 Rocket Launcher": [
@@ -21898,6 +21978,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 58.76179526933378,
         "mass": 1.79
       },
       "name": "M8 Rockets",
@@ -21906,8 +21987,7 @@
       "damage": 387,
       "relatedVehicles": [],
       "velocity": 150,
-      "type": "ROCKET",
-      "ricochetAngle": 90
+      "type": "ROCKET"
     }
   ],
   "7.62mm PKT": [
@@ -22134,6 +22214,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 65.68366563373311,
         "mass": 2.5
       },
       "name": "M830",
@@ -22142,8 +22223,7 @@
       "damage": 490,
       "relatedVehicles": [],
       "velocity": 1140,
-      "type": "HEAT-FS",
-      "ricochetAngle": 90
+      "type": "HEAT-FS"
     },
     {
       "penetrationTable": {
@@ -22257,8 +22337,7 @@
       "damage": 1083,
       "relatedVehicles": [],
       "velocity": 216,
-      "type": "HE",
-      "ricochetAngle": 90
+      "type": "HE"
     },
     {
       "penetrationTable": {
@@ -22315,8 +22394,7 @@
       "damage": 1083,
       "relatedVehicles": [],
       "velocity": 432,
-      "type": "HE",
-      "ricochetAngle": 90
+      "type": "HE"
     },
     {
       "penetrationTable": {
@@ -22373,8 +22451,7 @@
       "damage": 1083,
       "relatedVehicles": [],
       "velocity": 864,
-      "type": "HE",
-      "ricochetAngle": 90
+      "type": "HE"
     }
   ],
   "30mm 2A42": [
@@ -22499,8 +22576,7 @@
         "BTR-90"
       ],
       "velocity": 960,
-      "type": "HE",
-      "ricochetAngle": 90
+      "type": "HE"
     },
     {
       "penetrationTable": {
@@ -22610,6 +22686,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 53.88117702025614,
         "mass": 1.38
       },
       "name": "S-8KO",
@@ -22620,8 +22697,7 @@
         "Ka-52M Alligator-M"
       ],
       "velocity": 650,
-      "type": "ROCKET",
-      "ricochetAngle": 90
+      "type": "ROCKET"
     }
   ],
   "85mm ZIS-S-53M": [
@@ -22727,6 +22803,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 20.589270235680992,
         "mass": 0.077
       },
       "name": "BR-367",
@@ -22919,8 +22996,7 @@
         "PzH-2000"
       ],
       "velocity": 506,
-      "type": "HE",
-      "ricochetAngle": 90
+      "type": "HE"
     },
     {
       "penetrationTable": {
@@ -22968,6 +23044,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 25.71428571428571,
         "mass": 0.15
       },
       "name": "DM702A1 High Charge",
@@ -23040,8 +23117,7 @@
         "PzH-2000"
       ],
       "velocity": 254,
-      "type": "HE",
-      "ricochetAngle": 90
+      "type": "HE"
     },
     {
       "penetrationTable": {
@@ -23089,6 +23165,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 25.71428571428571,
         "mass": 0.15
       },
       "name": "DM702A1 Medium Charge",
@@ -23161,8 +23238,7 @@
         "PzH-2000"
       ],
       "velocity": 1015,
-      "type": "HE",
-      "ricochetAngle": 90
+      "type": "HE"
     },
     {
       "penetrationTable": {
@@ -23210,6 +23286,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 120.40678277197883,
         "mass": 15.4
       },
       "name": "DM121 Proxy Medium Charge",
@@ -23221,8 +23298,7 @@
         "PzH-2000"
       ],
       "velocity": 506,
-      "type": "PROXIMITY FUZE",
-      "ricochetAngle": 90
+      "type": "PROXIMITY FUZE"
     },
     {
       "penetrationTable": {
@@ -23270,6 +23346,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 25.71428571428571,
         "mass": 0.15
       },
       "name": "DM702A1 Low Charge",
@@ -23330,6 +23407,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 120.40678277197883,
         "mass": 15.4
       },
       "name": "DM121 Proxy High Charge",
@@ -23341,8 +23419,7 @@
         "PzH-2000"
       ],
       "velocity": 1015,
-      "type": "PROXIMITY FUZE",
-      "ricochetAngle": 90
+      "type": "PROXIMITY FUZE"
     },
     {
       "penetrationTable": {
@@ -23390,6 +23467,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 120.40678277197883,
         "mass": 15.4
       },
       "name": "DM121 Proxy Low Charge",
@@ -23401,8 +23479,7 @@
         "PzH-2000"
       ],
       "velocity": 254,
-      "type": "PROXIMITY FUZE",
-      "ricochetAngle": 90
+      "type": "PROXIMITY FUZE"
     }
   ],
   "57mm 2A94": [
@@ -23508,6 +23585,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 47.542296679079044,
         "mass": 0.948
       },
       "name": "VBOF-57",
@@ -23625,6 +23703,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 20.853263984823087,
         "mass": 0.08
       },
       "name": "M361",
@@ -23806,6 +23885,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 46.29805667325597,
         "mass": 0.8755
       },
       "name": "Hl.Gr 63C",
@@ -23925,6 +24005,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 15.137396529128578,
         "mass": 0.0306
       },
       "name": "APHE-I",
@@ -24161,6 +24242,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 42.97112515683929,
         "mass": 0.7
       },
       "name": "M431 shell",
@@ -24280,6 +24362,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 17.829289911873463,
         "mass": 0.05
       },
       "name": "M313",
@@ -24339,6 +24422,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 24.948871209724267,
         "mass": 0.137
       },
       "name": "M82 shot",
@@ -24515,6 +24599,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 20.853263984823087,
         "mass": 0.08
       },
       "name": "M416",
@@ -24574,6 +24659,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 78.75953356348667,
         "mass": 4.31
       },
       "name": "M393A2",
@@ -24633,6 +24719,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 46.72595810139787,
         "mass": 0.9
       },
       "name": "M456A2",
@@ -24750,6 +24837,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 14.86882710055428,
         "mass": 0.029
       },
       "name": "PzGr 39/42",
@@ -24991,6 +25079,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 104.26631992411542,
         "mass": 10
       },
       "name": "TOW-2G",
@@ -25006,8 +25095,7 @@
         "Towvee S"
       ],
       "velocity": 500,
-      "type": "TANDEM ANTI-TANK GUIDED MISSILE",
-      "ricochetAngle": 90
+      "type": "TANDEM ANTI-TANK GUIDED MISSILE"
     },
     {
       "penetrationTable": {
@@ -25055,6 +25143,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 104.26631992411542,
         "mass": 10
       },
       "name": "TOW-2X",
@@ -25070,8 +25159,7 @@
         "Towvee S"
       ],
       "velocity": 500,
-      "type": "OTA ANTI-TANK GUIDED MISSILE",
-      "ricochetAngle": 90
+      "type": "OTA ANTI-TANK GUIDED MISSILE"
     }
   ],
   "30mm M230E-1": [
@@ -25122,6 +25210,7 @@
       },
       "explosive": {
         "mass": 0.0282,
+        "explosiveRadius": 14.730825383954837,
         "blastRadiusMultiplier": 2
       },
       "name": "M789",
@@ -25183,6 +25272,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 135.11296020077518,
         "mass": 21.76
       },
       "name": "Shell L1",
@@ -25300,6 +25390,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 19.257100424276164,
         "mass": 0.063
       },
       "name": "M62 shot",
@@ -25421,6 +25512,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 79.36400489550647,
         "mass": 4.41
       },
       "name": "TOW-2A",
@@ -25441,8 +25533,7 @@
         "Towvee"
       ],
       "velocity": 329,
-      "type": "TANDEM ANTI-TANK GUIDED MISSILE",
-      "ricochetAngle": 90
+      "type": "TANDEM ANTI-TANK GUIDED MISSILE"
     },
     {
       "penetrationTable": {
@@ -25490,6 +25581,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 72.63003924517763,
         "mass": 3.38
       },
       "name": "TOW-2B",
@@ -25510,8 +25602,7 @@
         "Towvee"
       ],
       "velocity": 309,
-      "type": "OTA TANDEM ANTI-TANK GUIDED MISSILE",
-      "ricochetAngle": 90
+      "type": "OTA TANDEM ANTI-TANK GUIDED MISSILE"
     }
   ],
   "7.62 Beretta MG42/59": [
@@ -25799,6 +25890,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 44.64442813519196,
         "mass": 0.785
       },
       "name": "PzGr43",
@@ -25919,6 +26011,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 65.68366563373311,
         "mass": 2.5
       },
       "name": "DM12A1",
@@ -25930,8 +26023,7 @@
         "KF51 Panther"
       ],
       "velocity": 1190,
-      "type": "HEAT-FS",
-      "ricochetAngle": 90
+      "type": "HEAT-FS"
     },
     {
       "penetrationTable": {
@@ -26111,6 +26203,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 83.35327719607702,
         "mass": 5.109
       },
       "name": "DM11 VT",
@@ -26183,6 +26276,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 83.35327719607702,
         "mass": 5.109
       },
       "name": "DM11 PDD",
@@ -26306,6 +26400,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 80.60426780094873,
         "mass": 4.62
       },
       "name": "9M311",
@@ -26314,8 +26409,7 @@
       "damage": 631,
       "relatedVehicles": [],
       "velocity": 910,
-      "type": "ANTI-TANK GUIDED MISSILE",
-      "ricochetAngle": 90
+      "type": "ANTI-TANK GUIDED MISSILE"
     }
   ],
   "100mm 2A70M": [
@@ -26365,6 +26459,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 73.75845301802343,
         "mass": 3.54
       },
       "name": "3OF70-1",
@@ -26486,6 +26581,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 75.18902755404511,
         "mass": 3.75
       },
       "name": "9M117M1",
@@ -26609,6 +26705,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 20.589270235680992,
         "mass": 0.077
       },
       "name": "BR-367",
@@ -26904,6 +27001,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 66.71822380407224,
         "mass": 2.62
       },
       "name": "DTP-125",
@@ -26965,6 +27063,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 85.42761372107967,
         "mass": 5.5
       },
       "name": "Type 79",
@@ -26980,8 +27079,7 @@
         "Type 89"
       ],
       "velocity": 200,
-      "type": "ANTI-TANK GUIDED MISSILE",
-      "ricochetAngle": 90
+      "type": "ANTI-TANK GUIDED MISSILE"
     },
     {
       "penetrationTable": {
@@ -27029,6 +27127,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 69.87677891729362,
         "mass": 3.01
       },
       "name": "Type 79 ASM",
@@ -27039,8 +27138,7 @@
         "Type 89"
       ],
       "velocity": 200,
-      "type": "OTA ANTI-TANK GUIDED MISSILE",
-      "ricochetAngle": 90
+      "type": "OTA ANTI-TANK GUIDED MISSILE"
     }
   ],
   "152.4mm BL-8": [
@@ -27090,6 +27188,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 43.774509184186364,
         "mass": 0.74
       },
       "name": "BR-540B",
@@ -27211,6 +27310,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 106.4114759305387,
         "mass": 10.63
       },
       "name": "S-13OF",
@@ -27223,8 +27323,7 @@
         "Ka-52M Alligator-M"
       ],
       "velocity": 530,
-      "type": "ROCKET",
-      "ricochetAngle": 90
+      "type": "ROCKET"
     }
   ],
   "30mm 2A72Z": [
@@ -27341,8 +27440,7 @@
         "Lilbirb"
       ],
       "velocity": 1600,
-      "type": "HE",
-      "ricochetAngle": 90
+      "type": "HE"
     }
   ],
   "150mm Type 38": [
@@ -27392,6 +27490,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 66.54802351419691,
         "mass": 2.6
       },
       "name": "Type 95 APHE",
@@ -27509,6 +27608,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 104.26631992411542,
         "mass": 10
       },
       "name": "2VG11",
@@ -27575,8 +27675,7 @@
       "damage": 1924,
       "relatedVehicles": [],
       "velocity": 194,
-      "type": "HE",
-      "ricochetAngle": 90
+      "type": "HE"
     },
     {
       "penetrationTable": {
@@ -27624,7 +27723,12 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 34.2420873675391,
         "mass": 0.3542
+      },
+      "cluster": {
+        "submunitions": 24,
+        "dispersion": 15
       },
       "name": "3VO15 Low Charge",
       "mass": 1.375,
@@ -27632,12 +27736,7 @@
       "damage": 400,
       "relatedVehicles": [],
       "velocity": 194,
-      "type": "CLUSTER",
-      "cluster": {
-        "submunitions": 24,
-        "dispersion": 15
-      },
-      "ricochetAngle": 90
+      "type": "CLUSTER"
     },
     {
       "penetrationTable": {
@@ -27694,8 +27793,7 @@
       "damage": 1924,
       "relatedVehicles": [],
       "velocity": 388,
-      "type": "HE",
-      "ricochetAngle": 90
+      "type": "HE"
     },
     {
       "penetrationTable": {
@@ -27743,7 +27841,12 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 34.2420873675391,
         "mass": 0.3542
+      },
+      "cluster": {
+        "submunitions": 24,
+        "dispersion": 9
       },
       "name": "3VO15 High Charge",
       "mass": 1.375,
@@ -27751,12 +27854,7 @@
       "damage": 400,
       "relatedVehicles": [],
       "velocity": 775,
-      "type": "CLUSTER",
-      "cluster": {
-        "submunitions": 24,
-        "dispersion": 9
-      },
-      "ricochetAngle": 90
+      "type": "CLUSTER"
     },
     {
       "penetrationTable": {
@@ -27804,7 +27902,12 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 34.2420873675391,
         "mass": 0.3542
+      },
+      "cluster": {
+        "submunitions": 24,
+        "dispersion": 11
       },
       "name": "3VO15 Medium Charge",
       "mass": 1.375,
@@ -27812,12 +27915,7 @@
       "damage": 400,
       "relatedVehicles": [],
       "velocity": 388,
-      "type": "CLUSTER",
-      "cluster": {
-        "submunitions": 24,
-        "dispersion": 11
-      },
-      "ricochetAngle": 90
+      "type": "CLUSTER"
     },
     {
       "penetrationTable": {
@@ -27874,8 +27972,7 @@
       "damage": 1924,
       "relatedVehicles": [],
       "velocity": 775,
-      "type": "HE",
-      "ricochetAngle": 90
+      "type": "HE"
     }
   ],
   "Mörser Karl 600mm": [
@@ -27936,8 +28033,7 @@
         "Karl-Gerät"
       ],
       "velocity": 150,
-      "type": "HE",
-      "ricochetAngle": 90
+      "type": "HE"
     }
   ],
   "9M113 Konkurs": [
@@ -27987,6 +28083,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 73.05728459716151,
         "mass": 3.44
       },
       "name": "9M113",
@@ -28009,8 +28106,7 @@
         "BTR-90"
       ],
       "velocity": 248,
-      "type": "ANTI-TANK GUIDED MISSILE",
-      "ricochetAngle": 90
+      "type": "ANTI-TANK GUIDED MISSILE"
     }
   ],
   "120mm IMI MG251": [
@@ -28072,6 +28168,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 81.46733413674008,
         "mass": 4.77
       },
       "name": "M339 PDD",
@@ -28199,6 +28296,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 81.46733413674008,
         "mass": 4.77
       },
       "name": "M339 VT",
@@ -28258,6 +28356,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 70.56639694876347,
         "mass": 3.1
       },
       "name": "LAHAT",
@@ -28273,8 +28372,7 @@
         "Merkava Mk.4M"
       ],
       "velocity": 285,
-      "type": "TANDEM ANTI-TANK GUIDED MISSILE",
-      "ricochetAngle": 90
+      "type": "TANDEM ANTI-TANK GUIDED MISSILE"
     },
     {
       "penetrationTable": {
@@ -28382,6 +28480,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 64.43394366571536,
         "mass": 2.36
       },
       "name": "DM12A1",
@@ -28443,6 +28542,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 71.68668520602166,
         "mass": 3.25
       },
       "name": "9M14 MCLOS",
@@ -28456,8 +28556,7 @@
       "damage": 400,
       "relatedVehicles": [],
       "velocity": 115,
-      "type": "MACLOS MISSILE",
-      "ricochetAngle": 90
+      "type": "MACLOS MISSILE"
     }
   ],
   "LAU-105A": [
@@ -28507,6 +28606,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 80.2538100364055,
         "mass": 4.56
       },
       "name": "AIM-9M",
@@ -28525,8 +28625,7 @@
         "AH-64D"
       ],
       "velocity": 1000,
-      "type": "AIR-TO-AIR MISSILE",
-      "ricochetAngle": 90
+      "type": "AIR-TO-AIR MISSILE"
     }
   ],
   "125mm 2A46NK": [
@@ -28636,6 +28735,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 70.56639694876347,
         "mass": 3.1
       },
       "name": "JoHEAT",
@@ -28824,8 +28924,7 @@
         "BMT-1"
       ],
       "velocity": 980,
-      "type": "HE",
-      "ricochetAngle": 90
+      "type": "HE"
     }
   ],
   "7.62mm M240": [
@@ -28952,6 +29051,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 28.30223356195394,
         "mass": 0.2
       },
       "name": "T13",
@@ -29185,6 +29285,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 68.85596057988029,
         "mass": 2.88
       },
       "name": "I-TOW",
@@ -29207,8 +29308,7 @@
         "Towvee"
       ],
       "velocity": 296,
-      "type": "ANTI-TANK GUIDED MISSILE",
-      "ricochetAngle": 90
+      "type": "ANTI-TANK GUIDED MISSILE"
     }
   ],
   "30mm ZPL02": [
@@ -29325,8 +29425,7 @@
         "ZBD04"
       ],
       "velocity": 960,
-      "type": "HE",
-      "ricochetAngle": 90
+      "type": "HE"
     }
   ],
   "LOSAT/MGM-166": [
@@ -29377,7 +29476,6 @@
       },
       "name": "MGM-166",
       "mass": 11.83,
-      "shrapMultiplier": 3,
       "missile": {
         "unjammable": false,
         "boostTime": 1.5,
@@ -29388,9 +29486,9 @@
       "relatedVehicles": [
         "LOSAT M8"
       ],
+      "shrapMultiplier": 3,
       "velocity": 1520,
-      "type": "ANTI-TANK GUIDED MISSILE",
-      "ricochetAngle": 90
+      "type": "ANTI-TANK GUIDED MISSILE"
     }
   ],
   "105mm Giat G2": [
@@ -29440,6 +29538,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 20.853263984823087,
         "mass": 0.08
       },
       "name": "O-FUM-PH-105 F3",
@@ -29499,6 +29598,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 48.71665219813249,
         "mass": 1.02
       },
       "name": "OCC 105 F3",
@@ -29738,6 +29838,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 13.136733126746623,
         "mass": 0.02
       },
       "name": "BR-281U",
@@ -29798,6 +29899,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 28.30223356195394,
         "mass": 0.2
       },
       "name": "UOR-281U",
@@ -29860,6 +29962,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 36.80964289746756,
         "mass": 0.44
       },
       "name": "B-420",
@@ -29981,6 +30084,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 104.26631992411542,
         "mass": 10
       },
       "name": "M247 Rocket",
@@ -30255,6 +30359,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 22.463497664647686,
         "mass": 0.1
       },
       "name": "BR-412D",
@@ -30374,6 +30479,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 20.853263984823087,
         "mass": 0.08
       },
       "name": "Shell L34A2",
@@ -30491,6 +30597,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 90.45830363550174,
         "mass": 6.53
       },
       "name": "Shell L31A7",
@@ -30553,6 +30660,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 14.851716812597385,
         "mass": 0.0289
       },
       "name": "PzGr 39",
@@ -30669,6 +30777,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 65.68366563373311,
         "mass": 2.5
       },
       "name": "JM12A1",
@@ -30680,8 +30789,7 @@
         "HULL TEST"
       ],
       "velocity": 1140,
-      "type": "HEAT-FS",
-      "ricochetAngle": 90
+      "type": "HEAT-FS"
     }
   ],
   "M8 Rocketer": [
@@ -30731,6 +30839,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 92.57848270759634,
         "mass": 7
       },
       "name": "HEAT Rockets",
@@ -30739,8 +30848,7 @@
       "damage": 400,
       "relatedVehicles": [],
       "velocity": 260,
-      "type": "ROCKET",
-      "ricochetAngle": 90
+      "type": "ROCKET"
     }
   ],
   "120mm Rh120M L/44": [
@@ -30802,6 +30910,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 60.97531379125822,
         "mass": 2
       },
       "name": "IM HE-T PDD",
@@ -30917,6 +31026,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 65.68366563373311,
         "mass": 2.5
       },
       "name": "DM12",
@@ -30927,8 +31037,7 @@
         "Leopard 2A4"
       ],
       "velocity": 1140,
-      "type": "HEAT-FS",
-      "ricochetAngle": 90
+      "type": "HEAT-FS"
     },
     {
       "penetrationTable": {
@@ -30977,6 +31086,7 @@
       },
       "explosive": {
         "mass": 0.042,
+        "explosiveRadius": 16.822626738112746,
         "blastRadiusMultiplier": 1.2
       },
       "name": "M1028",
@@ -30987,8 +31097,7 @@
         "Leopard 2A4"
       ],
       "velocity": 1410,
-      "type": "CANISTER",
-      "ricochetAngle": 90
+      "type": "CANISTER"
     },
     {
       "penetrationTable": {
@@ -31156,6 +31265,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 49.95837157072676,
         "mass": 1.1
       },
       "name": "HI.Gr 39",
@@ -31275,6 +31385,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 23.047224410865418,
         "mass": 0.108
       },
       "name": "PzGr 39/43",
@@ -31336,6 +31447,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 22.463497664647686,
         "mass": 0.1
       },
       "name": "BR-412D",
@@ -31451,6 +31563,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 81.46733413674008,
         "mass": 4.77
       },
       "name": "9M117",
@@ -31464,8 +31577,7 @@
       "damage": 400,
       "relatedVehicles": [],
       "velocity": 370,
-      "type": "ANTI-TANK GUIDED MISSILE",
-      "ricochetAngle": 90
+      "type": "ANTI-TANK GUIDED MISSILE"
     }
   ],
   "M229 Hydra-70": [
@@ -31515,6 +31627,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 51.14125497870814,
         "mass": 1.18
       },
       "name": "M247 Rocket",
@@ -31531,8 +31644,7 @@
         "MH-6 LARP"
       ],
       "velocity": 739,
-      "type": "ROCKET",
-      "ricochetAngle": 90
+      "type": "ROCKET"
     }
   ],
   "90mm T15E1": [
@@ -31582,6 +31694,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 24.948871209724267,
         "mass": 0.137
       },
       "name": "T41",
@@ -31760,6 +31873,7 @@
       },
       "explosive": {
         "mass": 591,
+        "explosiveRadius": 180,
         "blastRadiusMultiplier": 4
       },
       "name": "GPS GUIDED",
@@ -31768,8 +31882,7 @@
       "damage": 13345,
       "relatedVehicles": [],
       "velocity": 150,
-      "type": "ROCKET",
-      "ricochetAngle": 90
+      "type": "ROCKET"
     }
   ],
   "105mm M68A1E4": [
@@ -31819,6 +31932,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 70.94376453551452,
         "mass": 3.15
       },
       "name": "M393A3",
@@ -31829,8 +31943,7 @@
         "M1128 MGS"
       ],
       "velocity": 720,
-      "type": "HESH",
-      "ricochetAngle": 90
+      "type": "HESH"
     },
     {
       "penetrationTable": {
@@ -31935,6 +32048,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 46.72595810139787,
         "mass": 0.9
       },
       "name": "M456A2",
@@ -31996,6 +32110,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 18.292594137377467,
         "mass": 0.054
       },
       "name": "Mk310 VT",
@@ -32179,6 +32294,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 63.69749123812307,
         "mass": 2.28
       },
       "name": "3BK15M",
@@ -32356,6 +32472,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 89.66640349363516,
         "mass": 6.36
       },
       "name": "9M133",
@@ -32377,8 +32494,7 @@
         "BTR-90"
       ],
       "velocity": 300,
-      "type": "TANDEM ANTI-TANK GUIDED MISSILE",
-      "ricochetAngle": 90
+      "type": "TANDEM ANTI-TANK GUIDED MISSILE"
     },
     {
       "penetrationTable": {
@@ -32426,6 +32542,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 101.55501371377886,
         "mass": 9.24
       },
       "name": "9M133F-1",
@@ -32442,8 +32559,7 @@
         "BTR-90"
       ],
       "velocity": 320,
-      "type": "ANTI-TANK GUIDED MISSILE",
-      "ricochetAngle": 90
+      "type": "ANTI-TANK GUIDED MISSILE"
     }
   ],
   "75mm M3 Potato": [
@@ -32493,6 +32609,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 19.257100424276164,
         "mass": 0.063
       },
       "name": "M61 shot",
@@ -32610,6 +32727,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 56.722148267486205,
         "mass": 1.61
       },
       "name": "M67 shot",
@@ -32733,6 +32851,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 57.418194987423945,
         "mass": 1.67
       },
       "name": "3BK-10",
@@ -32914,6 +33033,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 60.87351842033854,
         "mass": 1.99
       },
       "name": "M830A1 PD",
@@ -32924,8 +33044,7 @@
         "K1"
       ],
       "velocity": 1410,
-      "type": "HEAT-FS",
-      "ricochetAngle": 90
+      "type": "HEAT-FS"
     },
     {
       "penetrationTable": {
@@ -33030,6 +33149,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 60.87351842033854,
         "mass": 1.99
       },
       "name": "M830A1 Proxy",
@@ -33040,8 +33160,7 @@
         "K1"
       ],
       "velocity": 1410,
-      "type": "PROXIMITY FUZE",
-      "ricochetAngle": 90
+      "type": "PROXIMITY FUZE"
     }
   ],
   "155mm M284": [
@@ -33091,6 +33210,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 25.71428571428571,
         "mass": 0.15
       },
       "name": "M110 Medium Charge",
@@ -33161,8 +33281,7 @@
         "M109A6"
       ],
       "velocity": 171,
-      "type": "HE",
-      "ricochetAngle": 90
+      "type": "HE"
     },
     {
       "penetrationTable": {
@@ -33210,6 +33329,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 25.71428571428571,
         "mass": 0.15
       },
       "name": "M110 Low Charge",
@@ -33269,6 +33389,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 25.71428571428571,
         "mass": 0.15
       },
       "name": "M110 High Charge",
@@ -33339,8 +33460,7 @@
         "M109A6"
       ],
       "velocity": 684,
-      "type": "HE",
-      "ricochetAngle": 90
+      "type": "HE"
     },
     {
       "penetrationTable": {
@@ -33399,8 +33519,7 @@
         "M109A6"
       ],
       "velocity": 342,
-      "type": "HE",
-      "ricochetAngle": 90
+      "type": "HE"
     }
   ],
   "125mm 2A75": [
@@ -33510,6 +33629,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 68.13110716389825,
         "mass": 2.79
       },
       "name": "3BK18M",
@@ -33625,6 +33745,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 86.55179018742949,
         "mass": 5.72
       },
       "name": "9M119M1",
@@ -33640,8 +33761,7 @@
         "Sprut-SDM1"
       ],
       "velocity": 445,
-      "type": "TANDEM ANTI-TANK GUIDED MISSILE",
-      "ricochetAngle": 90
+      "type": "TANDEM ANTI-TANK GUIDED MISSILE"
     }
   ],
   "120mm ASCALON": [
@@ -33810,6 +33930,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 180,
         "mass": 150
       },
       "name": "Kh-38MLE",
@@ -33818,8 +33939,7 @@
       "damage": 5415,
       "relatedVehicles": [],
       "velocity": 454,
-      "type": "ANTI-TANK GUIDED MISSILE",
-      "ricochetAngle": 90
+      "type": "ANTI-TANK GUIDED MISSILE"
     }
   ],
   "7.92mm MG34": [
@@ -34066,6 +34186,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 81.92025426550298,
         "mass": 4.85
       },
       "name": "PB-35",
@@ -34184,6 +34305,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 70.94376453551452,
         "mass": 3.15
       },
       "name": "Shell L35",
@@ -34195,8 +34317,7 @@
         "Strv 103C"
       ],
       "velocity": 720,
-      "type": "HESH",
-      "ricochetAngle": 90
+      "type": "HESH"
     },
     {
       "penetrationTable": {
@@ -34244,6 +34365,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 20.853263984823087,
         "mass": 0.08
       },
       "name": "rökgr m/61",
@@ -34255,8 +34377,7 @@
         "Strv 103C"
       ],
       "velocity": 330,
-      "type": "SMOKE",
-      "ricochetAngle": 90
+      "type": "SMOKE"
     },
     {
       "penetrationTable": {
@@ -34435,8 +34556,7 @@
         "BMT-AA"
       ],
       "velocity": 980,
-      "type": "HE",
-      "ricochetAngle": 90
+      "type": "HE"
     },
     {
       "penetrationTable": {
@@ -34542,6 +34662,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 60.97531379125822,
         "mass": 2
       },
       "name": "Ordinary, Mod.1 ",
@@ -34774,6 +34895,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 68.13110716389825,
         "mass": 2.79
       },
       "name": "3BK18M",
@@ -34833,6 +34955,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 86.55179018742949,
         "mass": 5.72
       },
       "name": "9M119",
@@ -34848,8 +34971,7 @@
         "T-72B"
       ],
       "velocity": 445,
-      "type": "ANTI-TANK GUIDED MISSILE",
-      "ricochetAngle": 90
+      "type": "ANTI-TANK GUIDED MISSILE"
     },
     {
       "penetrationTable": {
@@ -34955,6 +35077,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 48.39613862816718,
         "mass": 1
       },
       "name": "HE Rockets",
@@ -34965,8 +35088,7 @@
         "RSZO-2"
       ],
       "velocity": 150,
-      "type": "ROCKET",
-      "ricochetAngle": 90
+      "type": "ROCKET"
     }
   ],
   "12.7mm QJC88A": [
@@ -35136,6 +35258,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 14.851716812597385,
         "mass": 0.0289
       },
       "name": "PzGr 39",
@@ -35198,6 +35321,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 60.462891969962314,
         "mass": 1.95
       },
       "name": "HE Rockets",
@@ -35208,8 +35332,7 @@
         "T34 Calliope"
       ],
       "velocity": 260,
-      "type": "ROCKET",
-      "ricochetAngle": 90
+      "type": "ROCKET"
     }
   ],
   "105mm Typhoon": [
@@ -35259,6 +35382,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 52.4097336254342,
         "mass": 1.27
       },
       "name": "Type 91",
@@ -35372,6 +35496,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 151.37396529128577,
         "mass": 30.6
       },
       "name": "L33A1",
@@ -35383,8 +35508,7 @@
         "Centurion Mk 5 AVRE"
       ],
       "velocity": 259,
-      "type": "HESH",
-      "ricochetAngle": 90
+      "type": "HESH"
     }
   ],
   "Kh-25ML": [
@@ -35434,6 +35558,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 180,
         "mass": 80
       },
       "name": "Kh-25ML",
@@ -35442,8 +35567,7 @@
       "damage": 3599,
       "relatedVehicles": [],
       "velocity": 454,
-      "type": "ANTI-TANK GUIDED MISSILE",
-      "ricochetAngle": 90
+      "type": "ANTI-TANK GUIDED MISSILE"
     }
   ],
   "75 mm PaK39 L48": [
@@ -35553,6 +35677,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 14.851716812597385,
         "mass": 0.0289
       },
       "name": "PzGr 39",
@@ -35612,6 +35737,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 46.23804616312886,
         "mass": 0.8721
       },
       "name": "Hl.Gr 38B",
@@ -35673,6 +35799,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 4.8396138628167185,
         "mass": 0.001
       },
       "name": "Napalm",
@@ -35734,6 +35861,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 86.55179018742949,
         "mass": 5.72
       },
       "name": "MGM-51B Shiellelagh",
@@ -35749,8 +35877,7 @@
         "M551 Sheridan"
       ],
       "velocity": 286,
-      "type": "ANTI-TANK GUIDED MISSILE",
-      "ricochetAngle": 90
+      "type": "ANTI-TANK GUIDED MISSILE"
     },
     {
       "penetrationTable": {
@@ -35799,6 +35926,7 @@
       },
       "explosive": {
         "mass": 0.042,
+        "explosiveRadius": 16.822626738112746,
         "blastRadiusMultiplier": 1.2
       },
       "name": "M625A1",
@@ -35809,8 +35937,7 @@
         "M551 Sheridan"
       ],
       "velocity": 1410,
-      "type": "CANISTER",
-      "ricochetAngle": 90
+      "type": "CANISTER"
     },
     {
       "penetrationTable": {
@@ -35858,6 +35985,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 75.05511983065396,
         "mass": 3.73
       },
       "name": "M409A1",
@@ -35979,6 +36107,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 52.4097336254342,
         "mass": 1.27
       },
       "name": "DM12",
@@ -36039,6 +36168,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 78.75953356348667,
         "mass": 4.31
       },
       "name": "DM512",
@@ -36050,8 +36180,7 @@
         "M48 Super"
       ],
       "velocity": 732,
-      "type": "HESH",
-      "ricochetAngle": 90
+      "type": "HESH"
     },
     {
       "penetrationTable": {
@@ -36382,6 +36511,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 180,
         "mass": 136
       },
       "name": "AGM-65G",
@@ -36397,8 +36527,7 @@
         "A-10"
       ],
       "velocity": 320,
-      "type": "F&F MISSILE",
-      "ricochetAngle": 90
+      "type": "F&F MISSILE"
     }
   ],
   "125mm 2A46M-1": [
@@ -36508,6 +36637,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 86.55179018742949,
         "mass": 5.72
       },
       "name": "9M119M1",
@@ -36527,8 +36657,7 @@
         "T-80B"
       ],
       "velocity": 445,
-      "type": "TANDEM ANTI-TANK GUIDED MISSILE",
-      "ricochetAngle": 90
+      "type": "TANDEM ANTI-TANK GUIDED MISSILE"
     },
     {
       "penetrationTable": {
@@ -36883,6 +37012,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 86.55179018742949,
         "mass": 5.72
       },
       "name": "9M119",
@@ -36902,8 +37032,7 @@
         "T-80B"
       ],
       "velocity": 445,
-      "type": "ANTI-TANK GUIDED MISSILE",
-      "ricochetAngle": 90
+      "type": "ANTI-TANK GUIDED MISSILE"
     },
     {
       "penetrationTable": {
@@ -36951,6 +37080,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 68.13110716389825,
         "mass": 2.79
       },
       "name": "3BK18M",
@@ -37014,6 +37144,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 86.55179018742949,
         "mass": 5.72
       },
       "name": "9M112",
@@ -37033,8 +37164,7 @@
         "T-80B"
       ],
       "velocity": 400,
-      "type": "ATGM",
-      "ricochetAngle": 90
+      "type": "ATGM"
     },
     {
       "penetrationTable": {
@@ -37144,6 +37274,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 96.22432961309669,
         "mass": 7.86
       },
       "name": "MIM146 Anti-Tank Mode",
@@ -37161,8 +37292,7 @@
         "XM1069"
       ],
       "velocity": 1027,
-      "type": "ANTI-TANK GUIDED MISSILE",
-      "ricochetAngle": 90
+      "type": "ANTI-TANK GUIDED MISSILE"
     },
     {
       "penetrationTable": {
@@ -37210,6 +37340,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 96.22432961309669,
         "mass": 7.86
       },
       "name": "MIM146 Anti-Air Mode",
@@ -37222,8 +37353,7 @@
         "XM1069"
       ],
       "velocity": 1027,
-      "type": "ANTI-TANK GUIDED MISSILE",
-      "ricochetAngle": 90
+      "type": "ANTI-TANK GUIDED MISSILE"
     }
   ],
   "37mm M5": [
@@ -37285,6 +37415,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 16.270662785193135,
         "mass": 0.038
       },
       "name": "M63 shell",
@@ -37402,6 +37533,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 37.086417522190494,
         "mass": 0.45
       },
       "name": "Pzgr. 57 TS",
@@ -37641,6 +37773,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 119.35514143575715,
         "mass": 15
       },
       "name": "ATGM",
@@ -37658,8 +37791,7 @@
         "Tiger EC665 UHT S"
       ],
       "velocity": 140,
-      "type": "TANDEM F&F MISSILE",
-      "ricochetAngle": 90
+      "type": "TANDEM F&F MISSILE"
     }
   ],
   "120mm M256": [
@@ -37709,6 +37841,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 60.87351842033854,
         "mass": 1.99
       },
       "name": "M830A1 PD",
@@ -37722,8 +37855,7 @@
         "M1A2 SEP V3"
       ],
       "velocity": 1410,
-      "type": "HEAT-FS",
-      "ricochetAngle": 90
+      "type": "HEAT-FS"
     },
     {
       "penetrationTable": {
@@ -37771,6 +37903,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 60.87351842033854,
         "mass": 1.99
       },
       "name": "M830A1 Proxy",
@@ -37784,8 +37917,7 @@
         "M1A2 SEP V3"
       ],
       "velocity": 1410,
-      "type": "PROXIMITY FUZE",
-      "ricochetAngle": 90
+      "type": "PROXIMITY FUZE"
     },
     {
       "penetrationTable": {
@@ -37893,6 +38025,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 60.97531379125822,
         "mass": 2
       },
       "name": "XM1069 VT",
@@ -38082,6 +38215,7 @@
       },
       "explosive": {
         "mass": 0.042,
+        "explosiveRadius": 16.822626738112746,
         "blastRadiusMultiplier": 1.2
       },
       "name": "M1028",
@@ -38095,8 +38229,7 @@
         "M1A2 SEP V3"
       ],
       "velocity": 1410,
-      "type": "CANISTER",
-      "ricochetAngle": 90
+      "type": "CANISTER"
     },
     {
       "penetrationTable": {
@@ -38144,6 +38277,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 57.07229385263392,
         "mass": 1.64
       },
       "name": "M830",
@@ -38206,6 +38340,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 60.97531379125822,
         "mass": 2
       },
       "name": "XM1069 PDD",
@@ -38463,8 +38598,7 @@
         "Sturmtiger"
       ],
       "velocity": 150,
-      "type": "HE",
-      "ricochetAngle": 90
+      "type": "HE"
     }
   ],
   "F-82 Automatic Mortar": [
@@ -38690,6 +38824,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 13.35212769047427,
         "mass": 0.021
       },
       "name": "BR-271",
@@ -38872,6 +39007,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 59.196279033338065,
         "mass": 1.83
       },
       "name": "Milan 2",
@@ -38889,8 +39025,7 @@
         "FV510 Warrior"
       ],
       "velocity": 200,
-      "type": "ANTI-TANK GUIDED MISSILE",
-      "ricochetAngle": 90
+      "type": "ANTI-TANK GUIDED MISSILE"
     }
   ],
   "Brimstone": [
@@ -38940,6 +39075,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 96.87287036372352,
         "mass": 8.02
       },
       "name": "Brimstone",
@@ -38958,8 +39094,7 @@
         "CullingTestRig"
       ],
       "velocity": 325,
-      "type": "TANDEM LASER GUIDED MISSILE",
-      "ricochetAngle": 90
+      "type": "TANDEM LASER GUIDED MISSILE"
     }
   ],
   "30mm MK 30-2/ABM": [
@@ -39127,6 +39262,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 18.33764996996353,
         "mass": 0.0544
       },
       "name": "PMC308 PDD",
@@ -39188,6 +39324,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 18.33764996996353,
         "mass": 0.0544
       },
       "name": "PMC308 VT",
@@ -39363,6 +39500,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 54.90286366901195,
         "mass": 1.46
       },
       "name": "9M117",
@@ -39601,6 +39739,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 18.33764996996353,
         "mass": 0.0544
       },
       "name": "HE-VT",
@@ -39778,6 +39917,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 22.463497664647686,
         "mass": 0.1
       },
       "name": "BR-350B",
@@ -39903,6 +40043,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 60.97531379125822,
         "mass": 2
       },
       "name": "LFK S.11",
@@ -39918,8 +40059,7 @@
         "AMX-13"
       ],
       "velocity": 220,
-      "type": "MACLOS MISSILE",
-      "ricochetAngle": 90
+      "type": "MACLOS MISSILE"
     }
   ],
   "115mm U-5TS": [
@@ -39969,6 +40109,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 63.69749123812307,
         "mass": 2.28
       },
       "name": "3BK15M",
@@ -40031,6 +40172,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 81.46733413674008,
         "mass": 4.77
       },
       "name": "9M117",
@@ -40049,8 +40191,7 @@
         "T-62M-1"
       ],
       "velocity": 370,
-      "type": "ANTI-TANK GUIDED MISSILE",
-      "ricochetAngle": 90
+      "type": "ANTI-TANK GUIDED MISSILE"
     },
     {
       "penetrationTable": {
@@ -40098,6 +40239,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 59.411149443675505,
         "mass": 1.85
       },
       "name": "3BK4",
@@ -40521,6 +40663,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 46.72595810139787,
         "mass": 0.9
       },
       "name": "PG-9",
@@ -40648,6 +40791,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 34.10620463911193,
         "mass": 0.35
       },
       "name": "BR-471D",
@@ -40707,6 +40851,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 34.10620463911193,
         "mass": 0.35
       },
       "name": "BR-471",
@@ -40828,6 +40973,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 52.4097336254342,
         "mass": 1.27
       },
       "name": "M456A2",
@@ -40887,6 +41033,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 20.853263984823087,
         "mass": 0.08
       },
       "name": "M416",
@@ -41003,6 +41150,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 78.75953356348667,
         "mass": 4.31
       },
       "name": "M393A2",
@@ -41122,6 +41270,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 86.45079617483047,
         "mass": 5.7
       },
       "name": "9M121 Vikhr",
@@ -41137,8 +41286,7 @@
         "Mi-24VM"
       ],
       "velocity": 600,
-      "type": "TANDEM ANTI-TANK GUIDED MISSILE",
-      "ricochetAngle": 90
+      "type": "TANDEM ANTI-TANK GUIDED MISSILE"
     },
     {
       "penetrationTable": {
@@ -41186,6 +41334,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 86.45079617483047,
         "mass": 5.7
       },
       "name": "9M121 Vikhr Proxy-Fuze",
@@ -41196,8 +41345,7 @@
         "Mi-24VM"
       ],
       "velocity": 600,
-      "type": "ANTI-TANK GUIDED MISSILE",
-      "ricochetAngle": 90
+      "type": "ANTI-TANK GUIDED MISSILE"
     }
   ],
   "Stugna-P": [
@@ -41247,6 +41395,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 73.05728459716151,
         "mass": 3.44
       },
       "name": "R-2",
@@ -41262,8 +41411,7 @@
         "BTR-4"
       ],
       "velocity": 320,
-      "type": "TANDEM ANTI-TANK GUIDED MISSILE",
-      "ricochetAngle": 90
+      "type": "TANDEM ANTI-TANK GUIDED MISSILE"
     }
   ],
   "85mm ZIS-S-53": [
@@ -41313,6 +41461,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 26.490612185505288,
         "mass": 0.164
       },
       "name": "BR-365",
@@ -41448,6 +41597,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 80.48778748288755,
         "mass": 4.6
       },
       "name": "M3M PDD",
@@ -41697,6 +41847,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 80.48778748288755,
         "mass": 4.6
       },
       "name": "M3M VT",
@@ -41814,6 +41965,7 @@
       },
       "explosive": {
         "mass": 0.042,
+        "explosiveRadius": 16.822626738112746,
         "blastRadiusMultiplier": 1.2
       },
       "name": "OEFC F1",
@@ -41824,8 +41976,7 @@
         "Leclerc S21"
       ],
       "velocity": 1410,
-      "type": "CANISTER",
-      "ricochetAngle": 90
+      "type": "CANISTER"
     },
     {
       "penetrationTable": {
@@ -41930,6 +42081,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 78.0837164196599,
         "mass": 4.2
       },
       "name": "POLYNEGE",
@@ -41945,8 +42097,7 @@
         "Leclerc S21"
       ],
       "velocity": 600,
-      "type": "OTA TANDEM ANTI-TANK GUIDED MISSILE",
-      "ricochetAngle": 90
+      "type": "OTA TANDEM ANTI-TANK GUIDED MISSILE"
     },
     {
       "penetrationTable": {
@@ -41994,6 +42145,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 62.46309969533009,
         "mass": 2.15
       },
       "name": "OCC 120 G1",
@@ -42113,6 +42265,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 59.196279033338065,
         "mass": 1.83
       },
       "name": "Milan ER",
@@ -42129,8 +42282,7 @@
         "FV510 Warrior"
       ],
       "velocity": 200,
-      "type": "TANDEM ANTI-TANK GUIDED MISSILE",
-      "ricochetAngle": 90
+      "type": "TANDEM ANTI-TANK GUIDED MISSILE"
     }
   ],
   "152mm 2A33": [
@@ -42191,8 +42343,7 @@
         "SAU-2"
       ],
       "velocity": 400,
-      "type": "HE",
-      "ricochetAngle": 90
+      "type": "HE"
     },
     {
       "penetrationTable": {
@@ -42240,6 +42391,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 25.71428571428571,
         "mass": 0.15
       },
       "name": "Smoke Shell",
@@ -42310,8 +42462,7 @@
         "SAU-2"
       ],
       "velocity": 665,
-      "type": "HE",
-      "ricochetAngle": 90
+      "type": "HE"
     },
     {
       "penetrationTable": {
@@ -42359,6 +42510,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 72.715890435317,
         "mass": 3.392
       },
       "name": "BR-540B ",
@@ -42419,6 +42571,7 @@
       },
       "explosive": {
         "mass": 0.042,
+        "explosiveRadius": 16.822626738112746,
         "blastRadiusMultiplier": 1.2
       },
       "name": "3VO28",
@@ -42429,8 +42582,7 @@
         "SAU-2"
       ],
       "velocity": 200,
-      "type": "CANISTER",
-      "ricochetAngle": 90
+      "type": "CANISTER"
     },
     {
       "penetrationTable": {
@@ -42489,8 +42641,7 @@
         "SAU-2"
       ],
       "velocity": 200,
-      "type": "HE",
-      "ricochetAngle": 90
+      "type": "HE"
     }
   ],
   "QN201DD": [
@@ -42540,6 +42691,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 43.970810057400776,
         "mass": 0.75
       },
       "name": "QN201DD",
@@ -42555,8 +42707,7 @@
         "QN506"
       ],
       "velocity": 450,
-      "type": "ANTI-TANK GUIDED MISSILE",
-      "ricochetAngle": 90
+      "type": "ANTI-TANK GUIDED MISSILE"
     }
   ],
   "152mm 2A64M": [
@@ -42615,8 +42766,7 @@
       "damage": 1096,
       "relatedVehicles": [],
       "velocity": 432,
-      "type": "HE",
-      "ricochetAngle": 90
+      "type": "HE"
     },
     {
       "penetrationTable": {
@@ -42673,8 +42823,7 @@
       "damage": 1096,
       "relatedVehicles": [],
       "velocity": 216,
-      "type": "HE",
-      "ricochetAngle": 90
+      "type": "HE"
     },
     {
       "penetrationTable": {
@@ -42722,7 +42871,12 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 19.65632449141382,
         "mass": 0.067
+      },
+      "cluster": {
+        "submunitions": 40,
+        "dispersion": 15
       },
       "name": "3VO28 Low Charge",
       "mass": 0.36,
@@ -42730,12 +42884,7 @@
       "damage": 400,
       "relatedVehicles": [],
       "velocity": 207,
-      "type": "CLUSTER",
-      "cluster": {
-        "submunitions": 40,
-        "dispersion": 15
-      },
-      "ricochetAngle": 90
+      "type": "CLUSTER"
     },
     {
       "penetrationTable": {
@@ -42783,6 +42932,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 110.83641920639126,
         "mass": 12.012
       },
       "name": "3VOF91 Proxy Medium Charge",
@@ -42840,7 +42990,12 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 19.65632449141382,
         "mass": 0.067
+      },
+      "cluster": {
+        "submunitions": 40,
+        "dispersion": 11
       },
       "name": "3VO28 Medium Charge",
       "mass": 0.36,
@@ -42848,12 +43003,7 @@
       "damage": 400,
       "relatedVehicles": [],
       "velocity": 414,
-      "type": "CLUSTER",
-      "cluster": {
-        "submunitions": 40,
-        "dispersion": 11
-      },
-      "ricochetAngle": 90
+      "type": "CLUSTER"
     },
     {
       "penetrationTable": {
@@ -42901,6 +43051,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 110.83641920639126,
         "mass": 12.012
       },
       "name": "3VOF91 Proxy High Charge",
@@ -42967,8 +43118,7 @@
       "damage": 1096,
       "relatedVehicles": [],
       "velocity": 864,
-      "type": "HE",
-      "ricochetAngle": 90
+      "type": "HE"
     },
     {
       "penetrationTable": {
@@ -43016,6 +43166,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 110.83641920639126,
         "mass": 12.012
       },
       "name": "3VOF91 Proxy Low Charge",
@@ -43073,7 +43224,12 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 19.65632449141382,
         "mass": 0.067
+      },
+      "cluster": {
+        "submunitions": 40,
+        "dispersion": 9
       },
       "name": "3VO28 High Charge",
       "mass": 0.36,
@@ -43081,12 +43237,7 @@
       "damage": 400,
       "relatedVehicles": [],
       "velocity": 828,
-      "type": "CLUSTER",
-      "cluster": {
-        "submunitions": 40,
-        "dispersion": 9
-      },
-      "ricochetAngle": 90
+      "type": "CLUSTER"
     }
   ],
   "120mm Rh120 L/44": [
@@ -43193,6 +43344,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 65.68366563373311,
         "mass": 2.5
       },
       "name": "DM12",
@@ -43204,8 +43356,7 @@
         "VT1-2"
       ],
       "velocity": 1140,
-      "type": "HEAT-FS",
-      "ricochetAngle": 90
+      "type": "HEAT-FS"
     }
   ],
   "30mm 2A38": [
@@ -43318,8 +43469,7 @@
       "damage": 143,
       "relatedVehicles": [],
       "velocity": 960,
-      "type": "HE",
-      "ricochetAngle": 90
+      "type": "HE"
     }
   ],
   "105mm KM68A1": [
@@ -43426,6 +43576,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 46.72595810139787,
         "mass": 0.9
       },
       "name": "M456A2",
@@ -43485,6 +43636,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 70.94376453551452,
         "mass": 3.15
       },
       "name": "M393A3",
@@ -43495,8 +43647,7 @@
         "K1"
       ],
       "velocity": 720,
-      "type": "HESH",
-      "ricochetAngle": 90
+      "type": "HESH"
     }
   ],
   "30mm GSh-30-2K": [
@@ -43732,6 +43883,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 78.51512692274994,
         "mass": 4.27
       },
       "name": "Spike-LR",
@@ -43749,8 +43901,7 @@
         "Rosomak"
       ],
       "velocity": 180,
-      "type": "TANDEM F&F MISSILE",
-      "ricochetAngle": 90
+      "type": "TANDEM F&F MISSILE"
     }
   ],
   "302 Anti-tank Missile": [
@@ -43800,6 +43951,7 @@
         }
       },
       "explosive": {
+        "explosiveRadius": 60.56607116663907,
         "mass": 1.96
       },
       "name": "302 Anti-tank Missile",
@@ -43815,8 +43967,7 @@
         "WZ-122"
       ],
       "velocity": 220,
-      "type": "ANTI-TANK GUIDED MISSILE",
-      "ricochetAngle": 90
+      "type": "ANTI-TANK GUIDED MISSILE"
     }
   ]
 }
