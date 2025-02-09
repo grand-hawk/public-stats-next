@@ -12,6 +12,11 @@ local GlobalConstants = require(Shells:WaitForChild("GlobalConstants") :: Module
 local ShellModules = require(PHRST:WaitForChild("ShellModules") :: ModuleScript)
 local TankInfo = require(ReplicatedStorage:WaitForChild("TankInfo") :: ModuleScript)
 
+-- function was renamed in sunny valley
+if not GlobalConstants.GetExplosionDiameter then
+	GlobalConstants.GetExplosionDiameter = GlobalConstants.GetExplosionRadius
+end
+
 local vehicleWeaponReference: { [string]: { string } } = {}
 
 for name, tank in TankInfo do
