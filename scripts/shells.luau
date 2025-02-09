@@ -75,6 +75,7 @@ type ShellModule = {
 	explosive: {
 		mass: number,
 		blastRadiusMultiplier: number?,
+		explosiveRadius: number?,
 	}?,
 
 	missile: {
@@ -213,6 +214,9 @@ for _, moduleScript in Modules:GetChildren() do
 				shell.explosive = {
 					mass = ammo.ExplosiveMass,
 					blastRadiusMultiplier = ammo.blastradiusmult,
+					explosiveRadius = if ammo.DisplayType == "HE"
+						then GlobalConstants.GetExplosionRadius(ammo)
+						else nil,
 				}
 			end
 
