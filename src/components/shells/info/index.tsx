@@ -140,7 +140,14 @@ export default function ShellInfo({
                   <FormatNumber value={data.explosive.mass} /> kg
                 </Stat>
                 {typeof data.explosive.explosiveRadius !== 'undefined' && (
-                  <Stat label="Explosive radius">
+                  <Stat
+                    label={
+                      <>
+                        Explosion radius
+                        <InfoTooltip content="This is the radius of the explosion, and not the kill zone. Drop-off applies in-game." />
+                      </>
+                    }
+                  >
                     ~
                     <FormatNumber
                       maximumFractionDigits={2}
@@ -174,24 +181,20 @@ export default function ShellInfo({
                   <FormatNumber value={data.missile.boostTime} /> seconds
                 </Stat>
               )}
-
               {typeof data.missile.turnRate !== 'undefined' &&
                 typeof data.missile.limit === 'undefined' && (
                   <Stat label="Turn rate">
                     <FormatNumber value={data.missile.turnRate} /> °/s
                   </Stat>
                 )}
-
               {typeof data.missile.limit !== 'undefined' && (
                 <Stat label="G limit">
                   <FormatNumber value={data.missile.limit} />G
                 </Stat>
               )}
-
               {typeof data.missile.irccm !== 'undefined' && (
                 <Stat label="IRCCM">{data.missile.irccm ? 'Yes' : 'No'}</Stat>
               )}
-
               {typeof data.missile.unjammable !== 'undefined' && (
                 <Stat label="Jammable">
                   {data.missile.unjammable ? 'No' : 'Yes'}
