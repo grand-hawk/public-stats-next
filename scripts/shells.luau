@@ -120,7 +120,9 @@ for _, moduleScript in Modules:GetChildren() do
 			velocity = math.round(GlobalConstants.studtom(ammo.MuzzleSpeed)),
 			damage = math.round(ammo.Damage),
 			shrapMultiplier = ammo.shrapmult,
-			ricochetAngle = if ammo.RicochetAngle ~= 90 then ammo.RicochetAngle else nil,
+			ricochetAngle = if ammo.RicochetAngle == 90 or table.find({ "HE", "HEAT" }, ammo.ShellType)
+				then nil
+				else ammo.RicochetAngle,
 			eraTip = ammo.ERAtip,
 
 			maxPenetration = math.round(ammo.ShellMaxPen),
