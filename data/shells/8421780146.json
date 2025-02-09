@@ -723,10 +723,10 @@
       "damage": 400,
       "relatedVehicles": [
         "BMD-1",
-        "Mi-8AMTSh",
         "Bumpee",
         "Object 166",
-        "BMP-1"
+        "BMP-1",
+        "Mi-8AMTSh"
       ],
       "velocity": 140,
       "type": "MACLOS MISSILE",
@@ -914,12 +914,12 @@
       "damage": 35,
       "relatedVehicles": [
         "BTR-55",
-        "T-14 Armata",
         "BRDM-2",
         "Object 279",
         "BTR-60PB",
         "Burlak",
-        "IS-7"
+        "IS-7",
+        "T-14 Armata"
       ],
       "velocity": 1000,
       "type": "MG",
@@ -1986,56 +1986,56 @@
       "penetrationTable": {
         "0": {
           "0": [
-            737
+            723
           ],
           "1000": [
-            708
+            695
           ],
           "2000": [
-            680
+            667
           ],
           "3000": [
-            653
+            641
           ]
         },
         "30": {
           "0": [
-            761
+            747
           ],
           "1000": [
-            732
+            718
           ],
           "2000": [
-            702
+            689
           ],
           "3000": [
-            674
+            662
           ]
         },
         "60": {
           "0": [
-            861
+            844
           ],
           "1000": [
-            827
+            812
           ],
           "2000": [
-            794
+            779
           ],
           "3000": [
-            763
+            748
           ]
         }
       },
       "name": "3BM69",
       "mass": 7.36,
       "shrapMultiplier": 3,
-      "maxPenetration": 737,
+      "maxPenetration": 723,
       "damage": 500,
       "relatedVehicles": [
         "T-14 Armata"
       ],
-      "velocity": 1750,
+      "velocity": 1698,
       "type": "DU APFSDS",
       "ricochetAngle": 81
     },
@@ -2342,10 +2342,10 @@
       "damage": 30,
       "relatedVehicles": [
         "T-90A",
-        "T-14 Armata",
-        "T-90M",
         "T-72B3",
-        "Tutel"
+        "Tutel",
+        "T-90M",
+        "T-14 Armata"
       ],
       "velocity": 820,
       "type": "MG",
@@ -3183,8 +3183,8 @@
       "maxPenetration": 60,
       "damage": 941,
       "relatedVehicles": [
-        "T-14 Armata",
         "Object 195",
+        "T-14 Armata",
         "Object 477"
       ],
       "velocity": 850,
@@ -3242,8 +3242,8 @@
       "maxPenetration": 831,
       "damage": 680,
       "relatedVehicles": [
-        "T-14 Armata",
         "Object 195",
+        "T-14 Armata",
         "Object 477"
       ],
       "velocity": 1780,
@@ -3300,8 +3300,8 @@
       "maxPenetration": 835,
       "damage": 680,
       "relatedVehicles": [
-        "T-14 Armata",
         "Object 195",
+        "T-14 Armata",
         "Object 477"
       ],
       "velocity": 1780,
@@ -4747,11 +4747,11 @@
       "damage": 400,
       "relatedVehicles": [
         "T-90A",
-        "T-90M",
+        "Object 640 \"Black Eagle\"",
         "Burlak",
         "T-72B3",
         "Tutel",
-        "Object 640 \"Black Eagle\""
+        "T-90M"
       ],
       "velocity": 445,
       "type": "TANDEM ANTI-TANK GUIDED MISSILE",
@@ -4761,61 +4761,61 @@
       "penetrationTable": {
         "0": {
           "0": [
-            607
+            578
           ],
           "1000": [
-            582
+            554
           ],
           "2000": [
-            558
+            531
           ],
           "3000": [
-            534
+            508
           ]
         },
         "30": {
           "0": [
-            627
+            597
           ],
           "1000": [
-            601
+            572
           ],
           "2000": [
-            576
+            548
           ],
           "3000": [
-            551
+            525
           ]
         },
         "60": {
           "0": [
-            709
+            675
           ],
           "1000": [
-            680
+            647
           ],
           "2000": [
-            651
+            620
           ],
           "3000": [
-            624
+            594
           ]
         }
       },
       "name": "3BM59",
-      "mass": 3.86,
+      "mass": 4.53,
       "shrapMultiplier": 3,
-      "maxPenetration": 607,
+      "maxPenetration": 578,
       "damage": 500,
       "relatedVehicles": [
         "T-90A",
-        "T-90M",
+        "Object 640 \"Black Eagle\"",
         "Burlak",
         "T-72B3",
         "Tutel",
-        "Object 640 \"Black Eagle\""
+        "T-90M"
       ],
-      "velocity": 1660,
+      "velocity": 1610,
       "type": "DU APFSDS",
       "ricochetAngle": 81
     },
@@ -4873,11 +4873,11 @@
       "damage": 677,
       "relatedVehicles": [
         "T-90A",
-        "T-90M",
+        "Object 640 \"Black Eagle\"",
         "Burlak",
         "T-72B3",
         "Tutel",
-        "Object 640 \"Black Eagle\""
+        "T-90M"
       ],
       "velocity": 850,
       "type": "HE",
@@ -4934,11 +4934,11 @@
       "damage": 500,
       "relatedVehicles": [
         "T-90A",
-        "T-90M",
+        "Object 640 \"Black Eagle\"",
         "Burlak",
         "T-72B3",
         "Tutel",
-        "Object 640 \"Black Eagle\""
+        "T-90M"
       ],
       "velocity": 1750,
       "type": "APFSDS",
@@ -5003,11 +5003,11 @@
       "damage": 400,
       "relatedVehicles": [
         "T-90A",
-        "T-90M",
+        "Object 640 \"Black Eagle\"",
         "Burlak",
         "T-72B3",
         "Tutel",
-        "Object 640 \"Black Eagle\""
+        "T-90M"
       ],
       "velocity": 445,
       "type": "ANTI-TANK GUIDED MISSILE",
@@ -5065,11 +5065,11 @@
       "damage": 500,
       "relatedVehicles": [
         "T-90A",
-        "T-90M",
+        "Object 640 \"Black Eagle\"",
         "Burlak",
         "T-72B3",
         "Tutel",
-        "Object 640 \"Black Eagle\""
+        "T-90M"
       ],
       "velocity": 1660,
       "type": "DU APFSDS",
@@ -5079,61 +5079,61 @@
       "penetrationTable": {
         "0": {
           "0": [
-            737
+            723
           ],
           "1000": [
-            708
+            695
           ],
           "2000": [
-            680
+            667
           ],
           "3000": [
-            653
+            641
           ]
         },
         "30": {
           "0": [
-            761
+            747
           ],
           "1000": [
-            732
+            718
           ],
           "2000": [
-            702
+            689
           ],
           "3000": [
-            674
+            662
           ]
         },
         "60": {
           "0": [
-            861
+            844
           ],
           "1000": [
-            827
+            812
           ],
           "2000": [
-            794
+            779
           ],
           "3000": [
-            763
+            748
           ]
         }
       },
       "name": "3BM69",
       "mass": 7.36,
       "shrapMultiplier": 3,
-      "maxPenetration": 737,
+      "maxPenetration": 723,
       "damage": 500,
       "relatedVehicles": [
         "T-90A",
-        "T-90M",
+        "Object 640 \"Black Eagle\"",
         "Burlak",
         "T-72B3",
         "Tutel",
-        "Object 640 \"Black Eagle\""
+        "T-90M"
       ],
-      "velocity": 1750,
+      "velocity": 1698,
       "type": "DU APFSDS",
       "ricochetAngle": 81
     },
@@ -5191,11 +5191,11 @@
       "damage": 500,
       "relatedVehicles": [
         "T-90A",
-        "T-90M",
+        "Object 640 \"Black Eagle\"",
         "Burlak",
         "T-72B3",
         "Tutel",
-        "Object 640 \"Black Eagle\""
+        "T-90M"
       ],
       "velocity": 905,
       "type": "HEAT-FS",
@@ -5205,58 +5205,58 @@
       "penetrationTable": {
         "0": {
           "0": [
-            597
+            580
           ],
           "1000": [
-            572
+            556
           ],
           "2000": [
-            548
+            533
           ],
           "3000": [
-            525
+            510
           ]
         },
         "30": {
           "0": [
-            617
+            599
           ],
           "1000": [
-            591
+            574
           ],
           "2000": [
-            566
+            550
           ],
           "3000": [
-            542
+            527
           ]
         },
         "60": {
           "0": [
-            697
+            677
           ],
           "1000": [
-            669
+            650
           ],
           "2000": [
-            640
+            622
           ],
           "3000": [
-            613
+            596
           ]
         }
       },
       "name": "3BM60",
-      "mass": 3.63,
-      "maxPenetration": 597,
+      "mass": 4.26,
+      "maxPenetration": 580,
       "damage": 500,
       "relatedVehicles": [
         "T-90A",
-        "T-90M",
+        "Object 640 \"Black Eagle\"",
         "Burlak",
         "T-72B3",
         "Tutel",
-        "Object 640 \"Black Eagle\""
+        "T-90M"
       ],
       "velocity": 1660,
       "type": "APFSDS",
@@ -5316,11 +5316,11 @@
       "damage": 551,
       "relatedVehicles": [
         "T-90A",
-        "T-90M",
+        "Object 640 \"Black Eagle\"",
         "Burlak",
         "T-72B3",
         "Tutel",
-        "Object 640 \"Black Eagle\""
+        "T-90M"
       ],
       "velocity": 850,
       "type": "TIME FUZE",
@@ -9120,15 +9120,15 @@
         "T-55",
         "T-84-120",
         "T-72A",
+        "T-72B",
         "T-80BVM",
         "T-64BM \"Bulat\"",
         "Strela-10",
         "T-64BV",
         "T-80U",
         "T-80B",
-        "T-84 Oplot-M",
-        "T-72B",
-        "T-64A"
+        "T-64A",
+        "T-84 Oplot-M"
       ],
       "velocity": 820,
       "type": "MG",
@@ -11482,57 +11482,112 @@
       "penetrationTable": {
         "0": {
           "0": [
-            613
+            647
           ],
           "1000": [
-            589
+            622
           ],
           "2000": [
-            566
+            597
           ],
           "3000": [
-            543
+            573
           ]
         },
         "30": {
           "0": [
-            633
+            668
           ],
           "1000": [
-            609
+            642
           ],
           "2000": [
-            584
+            617
           ],
           "3000": [
-            561
+            592
           ]
         },
         "60": {
           "0": [
-            716
+            756
           ],
           "1000": [
-            688
+            726
           ],
           "2000": [
-            661
+            697
           ],
           "3000": [
-            634
+            670
+          ]
+        }
+      },
+      "name": "DTC201",
+      "mass": 6.9,
+      "maxPenetration": 647,
+      "damage": 500,
+      "relatedVehicles": [
+        "ZTZ99A"
+      ],
+      "velocity": 1800,
+      "type": "APFSDS",
+      "ricochetAngle": 81
+    },
+    {
+      "penetrationTable": {
+        "0": {
+          "0": [
+            597
+          ],
+          "1000": [
+            574
+          ],
+          "2000": [
+            551
+          ],
+          "3000": [
+            529
+          ]
+        },
+        "30": {
+          "0": [
+            617
+          ],
+          "1000": [
+            593
+          ],
+          "2000": [
+            569
+          ],
+          "3000": [
+            546
+          ]
+        },
+        "60": {
+          "0": [
+            697
+          ],
+          "1000": [
+            670
+          ],
+          "2000": [
+            643
+          ],
+          "3000": [
+            618
           ]
         }
       },
       "name": "DTC10-125",
-      "mass": 4.53,
-      "shrapMultiplier": 3,
-      "maxPenetration": 613,
+      "mass": 4.12,
+      "maxPenetration": 597,
       "damage": 500,
       "relatedVehicles": [
         "ZTZ99A"
       ],
       "velocity": 1760,
-      "type": "DU APFSDS",
+      "type": "APFSDS",
       "ricochetAngle": 81
     },
     {
@@ -12767,308 +12822,6 @@
       "ricochetAngle": 90
     }
   ],
-  "7.62mm MG3": [
-    {
-      "penetrationTable": {
-        "0": {
-          "0": [
-            13
-          ],
-          "1000": [
-            2
-          ],
-          "2000": [
-            0
-          ],
-          "3000": [
-            0
-          ]
-        },
-        "30": {
-          "0": [
-            11
-          ],
-          "1000": [
-            2
-          ],
-          "2000": [
-            0
-          ],
-          "3000": [
-            0
-          ]
-        },
-        "60": {
-          "0": [
-            6
-          ],
-          "1000": [
-            1
-          ],
-          "2000": [
-            0
-          ],
-          "3000": [
-            0
-          ]
-        }
-      },
-      "name": "AP",
-      "mass": 0.01,
-      "maxPenetration": 13,
-      "damage": 16,
-      "relatedVehicles": [
-        "Leopard 2A7V",
-        "Leopard 2K",
-        "Marder 1A3",
-        "Marder A1",
-        "Leopard 2A4",
-        "Begleitpanzer 57",
-        "Leopard 2A4 140MM",
-        "Leopard 1A5",
-        "Leopard 2A6",
-        "M48 Super"
-      ],
-      "velocity": 900,
-      "type": "MG",
-      "ricochetAngle": 65
-    }
-  ],
-  "100mm D-10TS2": [
-    {
-      "penetrationTable": {
-        "0": {
-          "0": [
-            335
-          ],
-          "1000": [
-            298
-          ],
-          "2000": [
-            264
-          ],
-          "3000": [
-            234
-          ]
-        },
-        "30": {
-          "0": [
-            317
-          ],
-          "1000": [
-            288
-          ],
-          "2000": [
-            262
-          ],
-          "3000": [
-            239
-          ]
-        },
-        "60": {
-          "0": [
-            256
-          ],
-          "1000": [
-            256
-          ],
-          "2000": [
-            256
-          ],
-          "3000": [
-            256
-          ]
-        }
-      },
-      "name": "3BM-8",
-      "mass": 4.13,
-      "maxPenetration": 335,
-      "damage": 400,
-      "relatedVehicles": [
-        "T-55"
-      ],
-      "velocity": 1415,
-      "type": "APDS",
-      "ricochetAngle": 80
-    },
-    {
-      "penetrationTable": {
-        "0": {
-          "0": [
-            239
-          ],
-          "1000": [
-            201
-          ],
-          "2000": [
-            170
-          ],
-          "3000": [
-            143
-          ]
-        },
-        "30": {
-          "0": [
-            204
-          ],
-          "1000": [
-            172
-          ],
-          "2000": [
-            145
-          ],
-          "3000": [
-            122
-          ]
-        },
-        "60": {
-          "0": [
-            111
-          ],
-          "1000": [
-            94
-          ],
-          "2000": [
-            79
-          ],
-          "3000": [
-            67
-          ]
-        }
-      },
-      "explosive": {
-        "mass": 0.1
-      },
-      "name": "BR-412D",
-      "mass": 15.8,
-      "maxPenetration": 239,
-      "damage": 400,
-      "relatedVehicles": [
-        "T-55"
-      ],
-      "velocity": 887,
-      "type": "APHE",
-      "ricochetAngle": 71
-    },
-    {
-      "penetrationTable": {
-        "0": {
-          "0": [
-            390
-          ],
-          "1000": [
-            390
-          ],
-          "2000": [
-            390
-          ],
-          "3000": [
-            390
-          ]
-        },
-        "30": {
-          "0": [
-            390
-          ],
-          "1000": [
-            390
-          ],
-          "2000": [
-            390
-          ],
-          "3000": [
-            390
-          ]
-        },
-        "60": {
-          "0": [
-            390
-          ],
-          "1000": [
-            390
-          ],
-          "2000": [
-            390
-          ],
-          "3000": [
-            390
-          ]
-        }
-      },
-      "explosive": {
-        "mass": 1.2
-      },
-      "name": "3BK17M",
-      "mass": 9.96,
-      "maxPenetration": 390,
-      "damage": 400,
-      "relatedVehicles": [
-        "T-55"
-      ],
-      "velocity": 1085,
-      "type": "HEAT-FS",
-      "ricochetAngle": 77
-    },
-    {
-      "penetrationTable": {
-        "0": {
-          "0": [
-            24
-          ],
-          "1000": [
-            24
-          ],
-          "2000": [
-            24
-          ],
-          "3000": [
-            24
-          ]
-        },
-        "30": {
-          "0": [
-            28
-          ],
-          "1000": [
-            28
-          ],
-          "2000": [
-            28
-          ],
-          "3000": [
-            28
-          ]
-        },
-        "60": {
-          "0": [
-            48
-          ],
-          "1000": [
-            48
-          ],
-          "2000": [
-            48
-          ],
-          "3000": [
-            48
-          ]
-        }
-      },
-      "explosive": {
-        "mass": 1.46
-      },
-      "name": "OF-412",
-      "mass": 15.6,
-      "maxPenetration": 24,
-      "damage": 352,
-      "relatedVehicles": [
-        "T-55"
-      ],
-      "velocity": 900,
-      "type": "HE",
-      "ricochetAngle": 76
-    }
-  ],
   "30mm ZTM-2": [
     {
       "penetrationTable": {
@@ -13607,241 +13360,6 @@
       "velocity": 823,
       "type": "HE",
       "ricochetAngle": 76
-    }
-  ],
-  "7.62 mm FN MAG 60-40": [
-    {
-      "penetrationTable": {
-        "0": {
-          "0": [
-            13
-          ],
-          "1000": [
-            2
-          ],
-          "2000": [
-            0
-          ],
-          "3000": [
-            0
-          ]
-        },
-        "30": {
-          "0": [
-            11
-          ],
-          "1000": [
-            2
-          ],
-          "2000": [
-            0
-          ],
-          "3000": [
-            0
-          ]
-        },
-        "60": {
-          "0": [
-            6
-          ],
-          "1000": [
-            1
-          ],
-          "2000": [
-            0
-          ],
-          "3000": [
-            0
-          ]
-        }
-      },
-      "name": "AP",
-      "mass": 0.01,
-      "maxPenetration": 13,
-      "damage": 16,
-      "relatedVehicles": [
-        "Merkava Mk.4M"
-      ],
-      "velocity": 853,
-      "type": "MG",
-      "ricochetAngle": 65
-    }
-  ],
-  "105mm M68A1E2": [
-    {
-      "penetrationTable": {
-        "0": {
-          "0": [
-            395
-          ],
-          "1000": [
-            382
-          ],
-          "2000": [
-            370
-          ],
-          "3000": [
-            358
-          ]
-        },
-        "30": {
-          "0": [
-            408
-          ],
-          "1000": [
-            395
-          ],
-          "2000": [
-            382
-          ],
-          "3000": [
-            369
-          ]
-        },
-        "60": {
-          "0": [
-            461
-          ],
-          "1000": [
-            447
-          ],
-          "2000": [
-            432
-          ],
-          "3000": [
-            418
-          ]
-        }
-      },
-      "name": "M833",
-      "mass": 3.59,
-      "shrapMultiplier": 3,
-      "maxPenetration": 395,
-      "damage": 420,
-      "relatedVehicles": [
-        "M1IP"
-      ],
-      "velocity": 1485,
-      "type": "DU APFSDS",
-      "ricochetAngle": 81
-    },
-    {
-      "penetrationTable": {
-        "0": {
-          "0": [
-            127
-          ],
-          "1000": [
-            127
-          ],
-          "2000": [
-            127
-          ],
-          "3000": [
-            127
-          ]
-        },
-        "30": {
-          "0": [
-            147
-          ],
-          "1000": [
-            147
-          ],
-          "2000": [
-            147
-          ],
-          "3000": [
-            147
-          ]
-        },
-        "60": {
-          "0": [
-            254
-          ],
-          "1000": [
-            254
-          ],
-          "2000": [
-            254
-          ],
-          "3000": [
-            254
-          ]
-        }
-      },
-      "explosive": {
-        "mass": 3.15
-      },
-      "name": "M393A2",
-      "mass": 11.2,
-      "maxPenetration": 127,
-      "damage": 514,
-      "relatedVehicles": [
-        "M1IP"
-      ],
-      "velocity": 732,
-      "type": "HESH",
-      "ricochetAngle": 90
-    },
-    {
-      "penetrationTable": {
-        "0": {
-          "0": [
-            400
-          ],
-          "1000": [
-            400
-          ],
-          "2000": [
-            400
-          ],
-          "3000": [
-            400
-          ]
-        },
-        "30": {
-          "0": [
-            400
-          ],
-          "1000": [
-            400
-          ],
-          "2000": [
-            400
-          ],
-          "3000": [
-            400
-          ]
-        },
-        "60": {
-          "0": [
-            400
-          ],
-          "1000": [
-            400
-          ],
-          "2000": [
-            400
-          ],
-          "3000": [
-            400
-          ]
-        }
-      },
-      "explosive": {
-        "mass": 0.9
-      },
-      "name": "M456A2",
-      "mass": 13,
-      "maxPenetration": 400,
-      "damage": 420,
-      "relatedVehicles": [
-        "M1IP"
-      ],
-      "velocity": 1174,
-      "type": "HEAT-FS",
-      "ricochetAngle": 77
     }
   ],
   "H5 Flamethrower": [
@@ -14494,6 +14012,241 @@
       "velocity": 1260,
       "type": "APFSDS",
       "ricochetAngle": 81
+    }
+  ],
+  "7.62 mm FN MAG 60-40": [
+    {
+      "penetrationTable": {
+        "0": {
+          "0": [
+            13
+          ],
+          "1000": [
+            2
+          ],
+          "2000": [
+            0
+          ],
+          "3000": [
+            0
+          ]
+        },
+        "30": {
+          "0": [
+            11
+          ],
+          "1000": [
+            2
+          ],
+          "2000": [
+            0
+          ],
+          "3000": [
+            0
+          ]
+        },
+        "60": {
+          "0": [
+            6
+          ],
+          "1000": [
+            1
+          ],
+          "2000": [
+            0
+          ],
+          "3000": [
+            0
+          ]
+        }
+      },
+      "name": "AP",
+      "mass": 0.01,
+      "maxPenetration": 13,
+      "damage": 16,
+      "relatedVehicles": [
+        "Merkava Mk.4M"
+      ],
+      "velocity": 853,
+      "type": "MG",
+      "ricochetAngle": 65
+    }
+  ],
+  "105mm M68A1E2": [
+    {
+      "penetrationTable": {
+        "0": {
+          "0": [
+            395
+          ],
+          "1000": [
+            382
+          ],
+          "2000": [
+            370
+          ],
+          "3000": [
+            358
+          ]
+        },
+        "30": {
+          "0": [
+            408
+          ],
+          "1000": [
+            395
+          ],
+          "2000": [
+            382
+          ],
+          "3000": [
+            369
+          ]
+        },
+        "60": {
+          "0": [
+            461
+          ],
+          "1000": [
+            447
+          ],
+          "2000": [
+            432
+          ],
+          "3000": [
+            418
+          ]
+        }
+      },
+      "name": "M833",
+      "mass": 3.59,
+      "shrapMultiplier": 3,
+      "maxPenetration": 395,
+      "damage": 420,
+      "relatedVehicles": [
+        "M1IP"
+      ],
+      "velocity": 1485,
+      "type": "DU APFSDS",
+      "ricochetAngle": 81
+    },
+    {
+      "penetrationTable": {
+        "0": {
+          "0": [
+            127
+          ],
+          "1000": [
+            127
+          ],
+          "2000": [
+            127
+          ],
+          "3000": [
+            127
+          ]
+        },
+        "30": {
+          "0": [
+            147
+          ],
+          "1000": [
+            147
+          ],
+          "2000": [
+            147
+          ],
+          "3000": [
+            147
+          ]
+        },
+        "60": {
+          "0": [
+            254
+          ],
+          "1000": [
+            254
+          ],
+          "2000": [
+            254
+          ],
+          "3000": [
+            254
+          ]
+        }
+      },
+      "explosive": {
+        "mass": 3.15
+      },
+      "name": "M393A2",
+      "mass": 11.2,
+      "maxPenetration": 127,
+      "damage": 514,
+      "relatedVehicles": [
+        "M1IP"
+      ],
+      "velocity": 732,
+      "type": "HESH",
+      "ricochetAngle": 90
+    },
+    {
+      "penetrationTable": {
+        "0": {
+          "0": [
+            400
+          ],
+          "1000": [
+            400
+          ],
+          "2000": [
+            400
+          ],
+          "3000": [
+            400
+          ]
+        },
+        "30": {
+          "0": [
+            400
+          ],
+          "1000": [
+            400
+          ],
+          "2000": [
+            400
+          ],
+          "3000": [
+            400
+          ]
+        },
+        "60": {
+          "0": [
+            400
+          ],
+          "1000": [
+            400
+          ],
+          "2000": [
+            400
+          ],
+          "3000": [
+            400
+          ]
+        }
+      },
+      "explosive": {
+        "mass": 0.9
+      },
+      "name": "M456A2",
+      "mass": 13,
+      "maxPenetration": 400,
+      "damage": 420,
+      "relatedVehicles": [
+        "M1IP"
+      ],
+      "velocity": 1174,
+      "type": "HEAT-FS",
+      "ricochetAngle": 77
     }
   ],
   "Bulsae-3": [
@@ -16624,6 +16377,308 @@
       "velocity": 1100,
       "type": "PROXIMITY FUZE",
       "ricochetAngle": 80
+    }
+  ],
+  "7.62mm MG3": [
+    {
+      "penetrationTable": {
+        "0": {
+          "0": [
+            13
+          ],
+          "1000": [
+            2
+          ],
+          "2000": [
+            0
+          ],
+          "3000": [
+            0
+          ]
+        },
+        "30": {
+          "0": [
+            11
+          ],
+          "1000": [
+            2
+          ],
+          "2000": [
+            0
+          ],
+          "3000": [
+            0
+          ]
+        },
+        "60": {
+          "0": [
+            6
+          ],
+          "1000": [
+            1
+          ],
+          "2000": [
+            0
+          ],
+          "3000": [
+            0
+          ]
+        }
+      },
+      "name": "AP",
+      "mass": 0.01,
+      "maxPenetration": 13,
+      "damage": 16,
+      "relatedVehicles": [
+        "Leopard 2A7V",
+        "Leopard 2K",
+        "Marder 1A3",
+        "Marder A1",
+        "Leopard 2A4",
+        "Begleitpanzer 57",
+        "Leopard 2A4 140MM",
+        "Leopard 2A6",
+        "Leopard 1A5",
+        "M48 Super"
+      ],
+      "velocity": 900,
+      "type": "MG",
+      "ricochetAngle": 65
+    }
+  ],
+  "100mm D-10TS2": [
+    {
+      "penetrationTable": {
+        "0": {
+          "0": [
+            335
+          ],
+          "1000": [
+            298
+          ],
+          "2000": [
+            264
+          ],
+          "3000": [
+            234
+          ]
+        },
+        "30": {
+          "0": [
+            317
+          ],
+          "1000": [
+            288
+          ],
+          "2000": [
+            262
+          ],
+          "3000": [
+            239
+          ]
+        },
+        "60": {
+          "0": [
+            256
+          ],
+          "1000": [
+            256
+          ],
+          "2000": [
+            256
+          ],
+          "3000": [
+            256
+          ]
+        }
+      },
+      "name": "3BM-8",
+      "mass": 4.13,
+      "maxPenetration": 335,
+      "damage": 400,
+      "relatedVehicles": [
+        "T-55"
+      ],
+      "velocity": 1415,
+      "type": "APDS",
+      "ricochetAngle": 80
+    },
+    {
+      "penetrationTable": {
+        "0": {
+          "0": [
+            239
+          ],
+          "1000": [
+            201
+          ],
+          "2000": [
+            170
+          ],
+          "3000": [
+            143
+          ]
+        },
+        "30": {
+          "0": [
+            204
+          ],
+          "1000": [
+            172
+          ],
+          "2000": [
+            145
+          ],
+          "3000": [
+            122
+          ]
+        },
+        "60": {
+          "0": [
+            111
+          ],
+          "1000": [
+            94
+          ],
+          "2000": [
+            79
+          ],
+          "3000": [
+            67
+          ]
+        }
+      },
+      "explosive": {
+        "mass": 0.1
+      },
+      "name": "BR-412D",
+      "mass": 15.8,
+      "maxPenetration": 239,
+      "damage": 400,
+      "relatedVehicles": [
+        "T-55"
+      ],
+      "velocity": 887,
+      "type": "APHE",
+      "ricochetAngle": 71
+    },
+    {
+      "penetrationTable": {
+        "0": {
+          "0": [
+            390
+          ],
+          "1000": [
+            390
+          ],
+          "2000": [
+            390
+          ],
+          "3000": [
+            390
+          ]
+        },
+        "30": {
+          "0": [
+            390
+          ],
+          "1000": [
+            390
+          ],
+          "2000": [
+            390
+          ],
+          "3000": [
+            390
+          ]
+        },
+        "60": {
+          "0": [
+            390
+          ],
+          "1000": [
+            390
+          ],
+          "2000": [
+            390
+          ],
+          "3000": [
+            390
+          ]
+        }
+      },
+      "explosive": {
+        "mass": 1.2
+      },
+      "name": "3BK17M",
+      "mass": 9.96,
+      "maxPenetration": 390,
+      "damage": 400,
+      "relatedVehicles": [
+        "T-55"
+      ],
+      "velocity": 1085,
+      "type": "HEAT-FS",
+      "ricochetAngle": 77
+    },
+    {
+      "penetrationTable": {
+        "0": {
+          "0": [
+            24
+          ],
+          "1000": [
+            24
+          ],
+          "2000": [
+            24
+          ],
+          "3000": [
+            24
+          ]
+        },
+        "30": {
+          "0": [
+            28
+          ],
+          "1000": [
+            28
+          ],
+          "2000": [
+            28
+          ],
+          "3000": [
+            28
+          ]
+        },
+        "60": {
+          "0": [
+            48
+          ],
+          "1000": [
+            48
+          ],
+          "2000": [
+            48
+          ],
+          "3000": [
+            48
+          ]
+        }
+      },
+      "explosive": {
+        "mass": 1.46
+      },
+      "name": "OF-412",
+      "mass": 15.6,
+      "maxPenetration": 24,
+      "damage": 352,
+      "relatedVehicles": [
+        "T-55"
+      ],
+      "velocity": 900,
+      "type": "HE",
+      "ricochetAngle": 76
     }
   ],
   "QN502CDD": [
@@ -19344,9 +19399,9 @@
         "BMP-100",
         "BMP-3",
         "Tiger EC665 UHT S",
+        "BMD-4M",
         "BTR-4",
         "BMP-3M",
-        "BMD-4M",
         "BTR-82A",
         "BTR-90",
         "Object 477"
@@ -19412,9 +19467,9 @@
         "BMP-100",
         "BMP-3",
         "Tiger EC665 UHT S",
+        "BMD-4M",
         "BTR-4",
         "BMP-3M",
-        "BMD-4M",
         "BTR-82A",
         "BTR-90",
         "Object 477"
@@ -19480,9 +19535,9 @@
         "BMP-100",
         "BMP-3",
         "Tiger EC665 UHT S",
+        "BMD-4M",
         "BTR-4",
         "BMP-3M",
-        "BMD-4M",
         "BTR-82A",
         "BTR-90",
         "Object 477"
@@ -21209,8 +21264,8 @@
       "maxPenetration": 195,
       "damage": 350,
       "relatedVehicles": [
-        "SU-85M",
-        "IS-1"
+        "IS-1",
+        "SU-85M"
       ],
       "velocity": 1050,
       "type": "APCR",
@@ -21269,8 +21324,8 @@
       "maxPenetration": 135,
       "damage": 350,
       "relatedVehicles": [
-        "SU-85M",
-        "IS-1"
+        "IS-1",
+        "SU-85M"
       ],
       "velocity": 792,
       "type": "APHE",
@@ -21329,8 +21384,8 @@
       "maxPenetration": 17,
       "damage": 264,
       "relatedVehicles": [
-        "SU-85M",
-        "IS-1"
+        "IS-1",
+        "SU-85M"
       ],
       "velocity": 785,
       "type": "HE",
@@ -21393,8 +21448,8 @@
       "relatedVehicles": [
         "Strela-MLRS",
         "Mi-24V",
-        "Mi-8AMTSh",
-        "Mi-24VM"
+        "Mi-24VM",
+        "Mi-8AMTSh"
       ],
       "velocity": 650,
       "type": "ROCKET",
@@ -21643,6 +21698,73 @@
       "ricochetAngle": 90
     }
   ],
+  "FN-16": [
+    {
+      "penetrationTable": {
+        "0": {
+          "0": [
+            26
+          ],
+          "1000": [
+            26
+          ],
+          "2000": [
+            26
+          ],
+          "3000": [
+            26
+          ]
+        },
+        "30": {
+          "0": [
+            30
+          ],
+          "1000": [
+            30
+          ],
+          "2000": [
+            30
+          ],
+          "3000": [
+            30
+          ]
+        },
+        "60": {
+          "0": [
+            51
+          ],
+          "1000": [
+            51
+          ],
+          "2000": [
+            51
+          ],
+          "3000": [
+            51
+          ]
+        }
+      },
+      "explosive": {
+        "mass": 1.69
+      },
+      "name": "FN-16",
+      "mass": 39.2,
+      "missile": {
+        "boostTime": 5,
+        "irccm": true,
+        "limit": 18,
+        "turnRate": 180
+      },
+      "maxPenetration": 26,
+      "damage": 377,
+      "relatedVehicles": [
+        "Type 625E"
+      ],
+      "velocity": 700,
+      "type": "AIR-TO-AIR MISSILE",
+      "ricochetAngle": 90
+    }
+  ],
   "T34 Rocket Launcher": [
     {
       "penetrationTable": {
@@ -21758,6 +21880,7 @@
         "T-84-120",
         "T-90A",
         "T-72A",
+        "T-72B",
         "Kurganets-25",
         "BTR-55",
         "M23 Pickett",
@@ -21770,7 +21893,6 @@
         "BMP-2",
         "BMD-2",
         "BMP-73",
-        "T-14 Armata",
         "BRDM-2",
         "BMP-2MD",
         "Sprut-SDM1",
@@ -21780,36 +21902,36 @@
         "BTR-60PB",
         "T-64BV",
         "GAZ Tigr",
-        "T-64R",
         "BMP-3",
         "BMP-30",
         "T-80U",
         "T-80B",
+        "BMD-4M",
         "Object 775",
-        "T-90M",
         "Burlak",
         "BTR-4",
-        "T-72M2",
         "Object 450",
+        "T-72M2",
         "MT-LB AA",
-        "T-84 Oplot-M",
         "Bumpee",
         "Object 166",
-        "Rosomak",
         "T-15 Armata",
+        "Rosomak",
         "T-62",
         "BMP-3M",
         "T-72B3",
-        "T-72B",
         "T-64A",
         "Cheonma-2",
-        "Tutel",
         "BMP-1",
         "ZIT-122",
-        "BMD-4M",
+        "T-64R",
+        "Tutel",
         "BTR-82A",
         "BTR-90",
         "IT-1",
+        "T-90M",
+        "T-14 Armata",
+        "T-84 Oplot-M",
         "Object 477",
         "T-62M-1"
       ],
@@ -25593,51 +25715,51 @@
       "penetrationTable": {
         "0": {
           "0": [
-            808
+            715
           ],
           "1000": [
-            780
+            691
           ],
           "2000": [
-            753
+            666
           ],
           "3000": [
-            726
+            643
           ]
         },
         "30": {
           "0": [
-            834
+            738
           ],
           "1000": [
-            806
+            713
+          ],
+          "2000": [
+            688
+          ],
+          "3000": [
+            664
+          ]
+        },
+        "60": {
+          "0": [
+            835
+          ],
+          "1000": [
+            807
           ],
           "2000": [
             778
           ],
           "3000": [
-            750
-          ]
-        },
-        "60": {
-          "0": [
-            944
-          ],
-          "1000": [
-            911
-          ],
-          "2000": [
-            879
-          ],
-          "3000": [
-            848
+            751
           ]
         }
       },
       "name": "DM13",
-      "mass": 9.86,
+      "mass": 5.01,
       "shrapMultiplier": 3,
-      "maxPenetration": 808,
+      "maxPenetration": 715,
       "damage": 540,
       "relatedVehicles": [
         "Panther EVO",
@@ -25707,6 +25829,65 @@
       "velocity": 1190,
       "type": "HEAT-FS",
       "ricochetAngle": 90
+    },
+    {
+      "penetrationTable": {
+        "0": {
+          "0": [
+            808
+          ],
+          "1000": [
+            780
+          ],
+          "2000": [
+            753
+          ],
+          "3000": [
+            726
+          ]
+        },
+        "30": {
+          "0": [
+            834
+          ],
+          "1000": [
+            806
+          ],
+          "2000": [
+            778
+          ],
+          "3000": [
+            750
+          ]
+        },
+        "60": {
+          "0": [
+            944
+          ],
+          "1000": [
+            911
+          ],
+          "2000": [
+            879
+          ],
+          "3000": [
+            848
+          ]
+        }
+      },
+      "name": "DM23",
+      "mass": 9.86,
+      "shrapMultiplier": 3,
+      "maxPenetration": 808,
+      "damage": 540,
+      "relatedVehicles": [
+        "Panther EVO",
+        "KF51 Panther"
+      ],
+      "eraTip": 0.4,
+      "velocity": 1848,
+      "type": "APFSDS INCENDIARY ANTI-ERA",
+      "ricochetAngle": 81
     },
     {
       "penetrationTable": {
@@ -28460,8 +28641,8 @@
       "maxPenetration": 51,
       "damage": 70,
       "relatedVehicles": [
-        "Panzerspähwagen 201",
         "MT-LB AA",
+        "Panzerspähwagen 201",
         "BMT-1"
       ],
       "velocity": 970,
@@ -28521,8 +28702,8 @@
       "maxPenetration": 3,
       "damage": 127,
       "relatedVehicles": [
-        "Panzerspähwagen 201",
         "MT-LB AA",
+        "Panzerspähwagen 201",
         "BMT-1"
       ],
       "velocity": 980,
@@ -28594,13 +28775,13 @@
         "M1A2 SEP V3",
         "HSTV-L",
         "JayElTeeVee",
+        "M1 Abrams",
+        "K1",
         "M60A1 RISE Passive",
         "M60A1 Add-On Stabilization",
         "Desert Warrior",
         "KF41 Lynx",
-        "M1 Abrams",
-        "LAV-25",
-        "K1"
+        "LAV-25"
       ],
       "velocity": 640,
       "type": "MG",
@@ -29747,7 +29928,6 @@
         "KV-1E",
         "T-34-122",
         "T-34-57E",
-        "Abandoned Tank Hull",
         "TP-2",
         "T-54 Obr. 1951",
         "KV-2",
@@ -29755,13 +29935,14 @@
         "KV-2 (ZIS-6)",
         "Ba-40",
         "IS-6",
+        "IS-1",
         "T-34",
         "T-60",
+        "Abandoned Tank Hull",
         "T-34-57",
         "T-44",
         "KV-220",
         "IS-2 1944",
-        "IS-1",
         "T-34E",
         "IS-3"
       ],
@@ -33209,50 +33390,50 @@
       "penetrationTable": {
         "0": {
           "0": [
-            597
+            580
           ],
           "1000": [
-            572
+            556
           ],
           "2000": [
-            548
+            533
           ],
           "3000": [
-            525
+            510
           ]
         },
         "30": {
           "0": [
-            617
+            599
           ],
           "1000": [
-            591
+            574
           ],
           "2000": [
-            566
+            550
           ],
           "3000": [
-            542
+            527
           ]
         },
         "60": {
           "0": [
-            697
+            677
           ],
           "1000": [
-            669
+            650
           ],
           "2000": [
-            640
+            622
           ],
           "3000": [
-            613
+            596
           ]
         }
       },
       "name": "3BM60",
-      "mass": 3.63,
-      "maxPenetration": 597,
+      "mass": 4.26,
+      "maxPenetration": 580,
       "damage": 500,
       "relatedVehicles": [
         "Sprut-SDM1"
@@ -33573,8 +33754,8 @@
         "Hornisse",
         "Sd Kfz 251",
         "Tiger I",
-        "Tiger II",
         "Pz IV Ausf. 1946",
+        "Tiger II",
         "Elefant"
       ],
       "velocity": 900,
@@ -35982,26 +36163,26 @@
         "M1A1",
         "XM8",
         "M1A2 SEP V3",
-        "Black Night",
         "M26 Pershing",
         "IFV-30",
         "HSTV-L",
+        "M1 Abrams",
         "M4A3E2 (76) Jumbo",
         "90mm GMC Super Hellcat",
-        "M4A3 (105) Zippo",
+        "K1",
         "M60A1 RISE Passive",
+        "M4A3 (105) Zippo",
         "M109A6",
         "M60A1 Add-On Stabilization",
-        "T26E4 Super Pershing",
         "Willys MB",
+        "T26E4 Super Pershing",
         "KF41 Lynx",
         "M48A2 Patton",
-        "Type 16 MCV",
-        "M1 Abrams",
         "M551 Sheridan",
         "M1126",
-        "K1",
+        "Black Night",
         "M7 Priest",
+        "Type 16 MCV",
         "CullingTestRig"
       ],
       "velocity": 929,
@@ -36208,51 +36389,51 @@
       "penetrationTable": {
         "0": {
           "0": [
-            607
+            578
           ],
           "1000": [
-            582
+            554
           ],
           "2000": [
-            558
+            531
           ],
           "3000": [
-            534
+            508
           ]
         },
         "30": {
           "0": [
-            627
+            597
           ],
           "1000": [
-            601
+            572
           ],
           "2000": [
-            576
+            548
           ],
           "3000": [
-            551
+            525
           ]
         },
         "60": {
           "0": [
-            709
+            675
           ],
           "1000": [
-            680
+            647
           ],
           "2000": [
-            651
+            620
           ],
           "3000": [
-            624
+            594
           ]
         }
       },
       "name": "3BM59",
-      "mass": 3.86,
+      "mass": 4.53,
       "shrapMultiplier": 3,
-      "maxPenetration": 607,
+      "maxPenetration": 578,
       "damage": 500,
       "relatedVehicles": [
         "T-80BVM",
@@ -36261,7 +36442,7 @@
         "T-80U",
         "T-80B"
       ],
-      "velocity": 1660,
+      "velocity": 1610,
       "type": "DU APFSDS",
       "ricochetAngle": 81
     },
@@ -36332,50 +36513,50 @@
       "penetrationTable": {
         "0": {
           "0": [
-            597
+            580
           ],
           "1000": [
-            572
+            556
           ],
           "2000": [
-            548
+            533
           ],
           "3000": [
-            525
+            510
           ]
         },
         "30": {
           "0": [
-            617
+            599
           ],
           "1000": [
-            591
+            574
           ],
           "2000": [
-            566
+            550
           ],
           "3000": [
-            542
+            527
           ]
         },
         "60": {
           "0": [
-            697
+            677
           ],
           "1000": [
-            669
+            650
           ],
           "2000": [
-            640
+            622
           ],
           "3000": [
-            613
+            596
           ]
         }
       },
       "name": "3BM60",
-      "mass": 3.63,
-      "maxPenetration": 597,
+      "mass": 4.26,
+      "maxPenetration": 580,
       "damage": 500,
       "relatedVehicles": [
         "T-80BVM",
@@ -36829,9 +37010,9 @@
       "maxPenetration": 900,
       "damage": 400,
       "relatedVehicles": [
+        "Air Defense Anti Tank System",
         "Leopard 2 Giraffe",
-        "XM1069",
-        "Air Defense Anti Tank System"
+        "XM1069"
       ],
       "velocity": 1027,
       "type": "ANTI-TANK GUIDED MISSILE",
@@ -36890,9 +37071,9 @@
       "maxPenetration": 55,
       "damage": 853,
       "relatedVehicles": [
+        "Air Defense Anti Tank System",
         "Leopard 2 Giraffe",
-        "XM1069",
-        "Air Defense Anti Tank System"
+        "XM1069"
       ],
       "velocity": 1027,
       "type": "ANTI-TANK GUIDED MISSILE",
@@ -39214,6 +39395,182 @@
       "velocity": 1175,
       "type": "HE",
       "ricochetAngle": 81
+    }
+  ],
+  "25mm Type 625": [
+    {
+      "penetrationTable": {
+        "0": {
+          "0": [
+            5
+          ],
+          "1000": [
+            5
+          ],
+          "2000": [
+            5
+          ],
+          "3000": [
+            5
+          ]
+        },
+        "30": {
+          "0": [
+            5
+          ],
+          "1000": [
+            5
+          ],
+          "2000": [
+            5
+          ],
+          "3000": [
+            5
+          ]
+        },
+        "60": {
+          "0": [
+            9
+          ],
+          "1000": [
+            9
+          ],
+          "2000": [
+            9
+          ],
+          "3000": [
+            9
+          ]
+        }
+      },
+      "explosive": {
+        "mass": 0.0544
+      },
+      "name": "HE-VT",
+      "mass": 0.19,
+      "maxPenetration": 5,
+      "damage": 137,
+      "relatedVehicles": [
+        "Type 625E"
+      ],
+      "velocity": 1100,
+      "type": "TIME FUZE",
+      "ricochetAngle": 81
+    },
+    {
+      "penetrationTable": {
+        "0": {
+          "0": [
+            5
+          ],
+          "1000": [
+            5
+          ],
+          "2000": [
+            5
+          ],
+          "3000": [
+            5
+          ]
+        },
+        "30": {
+          "0": [
+            5
+          ],
+          "1000": [
+            5
+          ],
+          "2000": [
+            5
+          ],
+          "3000": [
+            5
+          ]
+        },
+        "60": {
+          "0": [
+            9
+          ],
+          "1000": [
+            9
+          ],
+          "2000": [
+            9
+          ],
+          "3000": [
+            9
+          ]
+        }
+      },
+      "explosive": {
+        "mass": 0.0544
+      },
+      "name": "HE",
+      "mass": 0.19,
+      "maxPenetration": 5,
+      "damage": 137,
+      "relatedVehicles": [
+        "Type 625E"
+      ],
+      "velocity": 1100,
+      "type": "HE",
+      "ricochetAngle": 81
+    },
+    {
+      "penetrationTable": {
+        "0": {
+          "0": [
+            81
+          ],
+          "1000": [
+            67
+          ],
+          "2000": [
+            56
+          ],
+          "3000": [
+            46
+          ]
+        },
+        "30": {
+          "0": [
+            77
+          ],
+          "1000": [
+            66
+          ],
+          "2000": [
+            57
+          ],
+          "3000": [
+            49
+          ]
+        },
+        "60": {
+          "0": [
+            62
+          ],
+          "1000": [
+            62
+          ],
+          "2000": [
+            62
+          ],
+          "3000": [
+            62
+          ]
+        }
+      },
+      "name": "APDS",
+      "mass": 0.13,
+      "maxPenetration": 81,
+      "damage": 70,
+      "relatedVehicles": [
+        "Type 625E"
+      ],
+      "velocity": 1345,
+      "type": "APDS",
+      "ricochetAngle": 80
     }
   ],
   "76mm F-34": [
