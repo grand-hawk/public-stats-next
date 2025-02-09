@@ -59,8 +59,7 @@
         "Sd.Kfz.234/4 Pak Puma"
       ],
       "velocity": 550,
-      "type": "HE",
-      "ricochetAngle": 81
+      "type": "HE"
     },
     {
       "penetrationTable": {
@@ -239,8 +238,7 @@
       "damage": 1924,
       "relatedVehicles": [],
       "velocity": 130,
-      "type": "HE",
-      "ricochetAngle": 76
+      "type": "HE"
     }
   ],
   "7.5 mm MAC 31": [
@@ -359,8 +357,7 @@
         "Merkava Mk.4M"
       ],
       "velocity": 80,
-      "type": "HE",
-      "ricochetAngle": 81
+      "type": "HE"
     },
     {
       "penetrationTable": {
@@ -419,8 +416,7 @@
         "Merkava Mk.4M"
       ],
       "velocity": 30,
-      "type": "SMOKE",
-      "ricochetAngle": 81
+      "type": "SMOKE"
     },
     {
       "penetrationTable": {
@@ -479,8 +475,7 @@
         "Merkava Mk.4M"
       ],
       "velocity": 150,
-      "type": "HE",
-      "ricochetAngle": 81
+      "type": "HE"
     },
     {
       "penetrationTable": {
@@ -539,8 +534,7 @@
         "Merkava Mk.4M"
       ],
       "velocity": 30,
-      "type": "HE",
-      "ricochetAngle": 81
+      "type": "HE"
     }
   ],
   "30mm 2A42M": [
@@ -1611,8 +1605,7 @@
         "Leopard 2A6"
       ],
       "velocity": 1015,
-      "type": "HE",
-      "ricochetAngle": 81
+      "type": "HE"
     },
     {
       "penetrationTable": {
@@ -1991,8 +1984,7 @@
         "T-14 Armata"
       ],
       "velocity": 850,
-      "type": "HE",
-      "ricochetAngle": 81
+      "type": "HE"
     },
     {
       "penetrationTable": {
@@ -2108,8 +2100,7 @@
         "T-14 Armata"
       ],
       "velocity": 905,
-      "type": "HEAT-FS",
-      "ricochetAngle": 77
+      "type": "HEAT-FS"
     },
     {
       "penetrationTable": {
@@ -2232,8 +2223,7 @@
         "T-14 Armata"
       ],
       "velocity": 850,
-      "type": "TIME FUZE",
-      "ricochetAngle": 76
+      "type": "TIME FUZE"
     }
   ],
   "9M120 Ataka": [
@@ -2540,8 +2530,7 @@
         "T-84 Oplot-M"
       ],
       "velocity": 850,
-      "type": "HE",
-      "ricochetAngle": 81
+      "type": "HE"
     },
     {
       "penetrationTable": {
@@ -2776,8 +2765,7 @@
         "T-84 Oplot-M"
       ],
       "velocity": 905,
-      "type": "HEAT-FS",
-      "ricochetAngle": 77
+      "type": "HEAT-FS"
     }
   ],
   "76.2 mm D-56TM": [
@@ -2898,8 +2886,7 @@
         "PT-76B"
       ],
       "velocity": 680,
-      "type": "HE",
-      "ricochetAngle": 81
+      "type": "HE"
     },
     {
       "penetrationTable": {
@@ -2958,8 +2945,7 @@
         "PT-76B"
       ],
       "velocity": 700,
-      "type": "HEAT-FS",
-      "ricochetAngle": 77
+      "type": "HEAT-FS"
     }
   ],
   "88 mm KwK43": [
@@ -3082,8 +3068,7 @@
         "Elefant"
       ],
       "velocity": 820,
-      "type": "HE",
-      "ricochetAngle": 76
+      "type": "HE"
     },
     {
       "penetrationTable": {
@@ -3508,8 +3493,7 @@
         "Maus"
       ],
       "velocity": 450,
-      "type": "HEAT",
-      "ricochetAngle": 73
+      "type": "HEAT"
     },
     {
       "penetrationTable": {
@@ -3568,8 +3552,7 @@
         "Maus"
       ],
       "velocity": 420,
-      "type": "HE",
-      "ricochetAngle": 81
+      "type": "HE"
     }
   ],
   "APERS Grenade": [
@@ -3630,8 +3613,7 @@
         "Neovenator 'Besiege'"
       ],
       "velocity": 80,
-      "type": "HE",
-      "ricochetAngle": 81
+      "type": "HE"
     }
   ],
   "7.62mm SGMT": [
@@ -3809,8 +3791,7 @@
         "Maus"
       ],
       "velocity": 750,
-      "type": "HE",
-      "ricochetAngle": 81
+      "type": "HE"
     },
     {
       "penetrationTable": {
@@ -3937,8 +3918,7 @@
         "Comet Mk.1"
       ],
       "velocity": 30,
-      "type": "HE",
-      "ricochetAngle": 76
+      "type": "HE"
     },
     {
       "penetrationTable": {
@@ -4003,8 +3983,7 @@
         "Comet Mk.1"
       ],
       "velocity": 30,
-      "type": "SMOKE",
-      "ricochetAngle": 76
+      "type": "SMOKE"
     }
   ],
   "57mm Ch-51M": [
@@ -4125,8 +4104,7 @@
         "ASU-57"
       ],
       "velocity": 700,
-      "type": "HE",
-      "ricochetAngle": 76
+      "type": "HE"
     }
   ],
   "140mm XM291": [
@@ -4187,8 +4165,7 @@
         "CATTB"
       ],
       "velocity": 1500,
-      "type": "HEAT-FS",
-      "ricochetAngle": 85
+      "type": "HEAT-FS"
     },
     {
       "penetrationTable": {
@@ -4423,8 +4400,7 @@
         "Sherman Firefly"
       ],
       "velocity": 883,
-      "type": "HE",
-      "ricochetAngle": 76
+      "type": "HE"
     },
     {
       "penetrationTable": {
@@ -4483,8 +4459,7 @@
         "Sherman Firefly"
       ],
       "velocity": 229,
-      "type": "SMOKE",
-      "ricochetAngle": 76
+      "type": "SMOKE"
     },
     {
       "penetrationTable": {
@@ -4657,8 +4632,7 @@
         "LVT-6 Gator"
       ],
       "velocity": 304,
-      "type": "HEAT",
-      "ricochetAngle": 73
+      "type": "HEAT"
     },
     {
       "penetrationTable": {
@@ -4717,8 +4691,7 @@
         "LVT-6 Gator"
       ],
       "velocity": 381,
-      "type": "HE",
-      "ricochetAngle": 81
+      "type": "HE"
     }
   ],
   "125mm 2A46M-5": [
@@ -4915,8 +4888,7 @@
         "T-90M"
       ],
       "velocity": 850,
-      "type": "HE",
-      "ricochetAngle": 81
+      "type": "HE"
     },
     {
       "penetrationTable": {
@@ -5234,8 +5206,7 @@
         "T-90M"
       ],
       "velocity": 905,
-      "type": "HEAT-FS",
-      "ricochetAngle": 77
+      "type": "HEAT-FS"
     },
     {
       "penetrationTable": {
@@ -5360,8 +5331,7 @@
         "T-90M"
       ],
       "velocity": 850,
-      "type": "TIME FUZE",
-      "ricochetAngle": 76
+      "type": "TIME FUZE"
     }
   ],
   "9M39": [
@@ -5604,8 +5574,7 @@
         "Neovenator 'Besiege'"
       ],
       "velocity": 1150,
-      "type": "HE",
-      "ricochetAngle": 81
+      "type": "HE"
     }
   ],
   "S-8": [
@@ -5725,8 +5694,7 @@
         "M113 HVMS"
       ],
       "velocity": 1000,
-      "type": "HE",
-      "ricochetAngle": 81
+      "type": "HE"
     },
     {
       "penetrationTable": {
@@ -5841,8 +5809,7 @@
         "M113 HVMS"
       ],
       "velocity": 1000,
-      "type": "PROXIMITY FUZE",
-      "ricochetAngle": 81
+      "type": "PROXIMITY FUZE"
     }
   ],
   "Lightning Cannon": [
@@ -6030,8 +5997,7 @@
         "Tiger I"
       ],
       "velocity": 820,
-      "type": "HE",
-      "ricochetAngle": 76
+      "type": "HE"
     },
     {
       "penetrationTable": {
@@ -6154,8 +6120,7 @@
         "T-15 Armata"
       ],
       "velocity": 1000,
-      "type": "PROXIMITY FUZE",
-      "ricochetAngle": 81
+      "type": "PROXIMITY FUZE"
     },
     {
       "penetrationTable": {
@@ -6214,8 +6179,7 @@
         "T-15 Armata"
       ],
       "velocity": 1000,
-      "type": "HE",
-      "ricochetAngle": 80
+      "type": "HE"
     },
     {
       "penetrationTable": {
@@ -6582,8 +6546,7 @@
       "damage": 273,
       "relatedVehicles": [],
       "velocity": 522,
-      "type": "HE",
-      "ricochetAngle": 76
+      "type": "HE"
     }
   ],
   "30mm 2BS-T": [
@@ -6883,8 +6846,7 @@
         "Tiger 2A4"
       ],
       "velocity": 820,
-      "type": "HE",
-      "ricochetAngle": 76
+      "type": "HE"
     },
     {
       "penetrationTable": {
@@ -7073,8 +7035,7 @@
         "Humvee"
       ],
       "velocity": 241,
-      "type": "HE",
-      "ricochetAngle": 81
+      "type": "HE"
     },
     {
       "penetrationTable": {
@@ -7136,8 +7097,7 @@
         "Humvee"
       ],
       "velocity": 241,
-      "type": "HEAT",
-      "ricochetAngle": 81
+      "type": "HEAT"
     }
   ],
   "75mm XM274": [
@@ -7200,8 +7160,7 @@
         "JayElTeeVee"
       ],
       "velocity": 1235,
-      "type": "HE",
-      "ricochetAngle": 81
+      "type": "HE"
     },
     {
       "penetrationTable": {
@@ -7262,8 +7221,7 @@
         "JayElTeeVee"
       ],
       "velocity": 1235,
-      "type": "PROXIMITY FUZE",
-      "ricochetAngle": 81
+      "type": "PROXIMITY FUZE"
     },
     {
       "penetrationTable": {
@@ -7503,8 +7461,7 @@
         "Leopard 2A4 140MM"
       ],
       "velocity": 1410,
-      "type": "TIME FUZE",
-      "ricochetAngle": 86
+      "type": "TIME FUZE"
     },
     {
       "penetrationTable": {
@@ -7619,8 +7576,7 @@
         "Leopard 2A4 140MM"
       ],
       "velocity": 1410,
-      "type": "HEAT-FS",
-      "ricochetAngle": 86
+      "type": "HEAT-FS"
     }
   ],
   "5.56mm MG4": [
@@ -7737,8 +7693,7 @@
       "damage": 408,
       "relatedVehicles": [],
       "velocity": 172,
-      "type": "HE",
-      "ricochetAngle": 76
+      "type": "HE"
     },
     {
       "penetrationTable": {
@@ -7795,8 +7750,7 @@
       "damage": 408,
       "relatedVehicles": [],
       "velocity": 125,
-      "type": "HE",
-      "ricochetAngle": 76
+      "type": "HE"
     },
     {
       "penetrationTable": {
@@ -7853,8 +7807,7 @@
       "damage": 408,
       "relatedVehicles": [],
       "velocity": 225,
-      "type": "HE",
-      "ricochetAngle": 76
+      "type": "HE"
     }
   ],
   "35mm Oerlikon KDE": [
@@ -7971,8 +7924,7 @@
         "Type 89"
       ],
       "velocity": 1175,
-      "type": "HE",
-      "ricochetAngle": 81
+      "type": "HE"
     }
   ],
   "7.62mm L37A1": [
@@ -8089,8 +8041,7 @@
       "damage": 6686,
       "relatedVehicles": [],
       "velocity": 30,
-      "type": "HE",
-      "ricochetAngle": 76
+      "type": "HE"
     }
   ],
   "155mm M185": [
@@ -8151,8 +8102,7 @@
         "M109"
       ],
       "velocity": 342,
-      "type": "SMOKE",
-      "ricochetAngle": 76
+      "type": "SMOKE"
     },
     {
       "penetrationTable": {
@@ -8270,8 +8220,7 @@
         "M109"
       ],
       "velocity": 171,
-      "type": "SMOKE",
-      "ricochetAngle": 76
+      "type": "SMOKE"
     },
     {
       "penetrationTable": {
@@ -8330,8 +8279,7 @@
         "M109"
       ],
       "velocity": 684,
-      "type": "SMOKE",
-      "ricochetAngle": 76
+      "type": "SMOKE"
     },
     {
       "penetrationTable": {
@@ -8632,8 +8580,7 @@
         "ZBD04"
       ],
       "velocity": 370,
-      "type": "TANDEM ANTI-TANK GUIDED MISSILE",
-      "ricochetAngle": 76
+      "type": "TANDEM ANTI-TANK GUIDED MISSILE"
     },
     {
       "penetrationTable": {
@@ -8692,8 +8639,7 @@
         "ZBD04"
       ],
       "velocity": 355,
-      "type": "HE",
-      "ricochetAngle": 81
+      "type": "HE"
     },
     {
       "penetrationTable": {
@@ -8752,8 +8698,7 @@
         "ZBD04"
       ],
       "velocity": 355,
-      "type": "PROXIMITY FUZE",
-      "ricochetAngle": 81
+      "type": "PROXIMITY FUZE"
     }
   ],
   "X7 Rotkäppchen": [
@@ -8942,8 +8887,7 @@
         "Wiesel 1A4"
       ],
       "velocity": 1100,
-      "type": "HE",
-      "ricochetAngle": 81
+      "type": "HE"
     },
     {
       "penetrationTable": {
@@ -9063,8 +9007,7 @@
         "Object 775"
       ],
       "velocity": 380,
-      "type": "HE",
-      "ricochetAngle": 81
+      "type": "HE"
     },
     {
       "penetrationTable": {
@@ -9326,8 +9269,7 @@
         "BMP-3"
       ],
       "velocity": 355,
-      "type": "HE",
-      "ricochetAngle": 81
+      "type": "HE"
     },
     {
       "penetrationTable": {
@@ -9519,8 +9461,7 @@
         "ZIT-122"
       ],
       "velocity": 336,
-      "type": "HEAT",
-      "ricochetAngle": 80
+      "type": "HEAT"
     },
     {
       "penetrationTable": {
@@ -9579,8 +9520,7 @@
         "ZIT-122"
       ],
       "velocity": 530,
-      "type": "HE",
-      "ricochetAngle": 80
+      "type": "HE"
     }
   ],
   "30mm ZPZ02": [
@@ -9697,8 +9637,7 @@
         "QN506"
       ],
       "velocity": 960,
-      "type": "HE",
-      "ricochetAngle": 81
+      "type": "HE"
     }
   ],
   "125mm 2A46MS": [
@@ -9759,8 +9698,7 @@
         "T-72M2"
       ],
       "velocity": 850,
-      "type": "HE",
-      "ricochetAngle": 81
+      "type": "HE"
     },
     {
       "penetrationTable": {
@@ -9875,8 +9813,7 @@
         "T-72M2"
       ],
       "velocity": 905,
-      "type": "HEAT-FS",
-      "ricochetAngle": 77
+      "type": "HEAT-FS"
     }
   ],
   "7.62mm AA NF1": [
@@ -9993,8 +9930,7 @@
         "T-60"
       ],
       "velocity": 800,
-      "type": "HE",
-      "ricochetAngle": 65
+      "type": "HE"
     },
     {
       "penetrationTable": {
@@ -10167,8 +10103,7 @@
         "Comet Mk.1"
       ],
       "velocity": 495,
-      "type": "HE",
-      "ricochetAngle": 81
+      "type": "HE"
     }
   ],
   "40mm Akan m/70B": [
@@ -10529,8 +10464,7 @@
         "M60A2 Starship"
       ],
       "velocity": 682,
-      "type": "HEAT",
-      "ricochetAngle": 73
+      "type": "HEAT"
     },
     {
       "penetrationTable": {
@@ -10589,8 +10523,7 @@
         "M60A2 Starship"
       ],
       "velocity": 682,
-      "type": "HE",
-      "ricochetAngle": 81
+      "type": "HE"
     }
   ],
   "30mm Avenger Blankfire": [
@@ -10766,8 +10699,7 @@
         "T-84-120"
       ],
       "velocity": 1015,
-      "type": "HE",
-      "ricochetAngle": 81
+      "type": "HE"
     },
     {
       "penetrationTable": {
@@ -10951,8 +10883,7 @@
         "A-10"
       ],
       "velocity": 30,
-      "type": "HE",
-      "ricochetAngle": 76
+      "type": "HE"
     }
   ],
   "105mm M2A1": [
@@ -11013,8 +10944,7 @@
         "M7 Priest"
       ],
       "velocity": 381,
-      "type": "HEAT",
-      "ricochetAngle": 76
+      "type": "HEAT"
     },
     {
       "penetrationTable": {
@@ -11073,8 +11003,7 @@
         "M7 Priest"
       ],
       "velocity": 472,
-      "type": "HE",
-      "ricochetAngle": 71
+      "type": "HE"
     }
   ],
   "105mm Type 5": [
@@ -11249,8 +11178,7 @@
         "T-54 Obr. 1951"
       ],
       "velocity": 900,
-      "type": "HEAT-FS",
-      "ricochetAngle": 77
+      "type": "HEAT-FS"
     },
     {
       "penetrationTable": {
@@ -11369,8 +11297,7 @@
         "T-54 Obr. 1951"
       ],
       "velocity": 900,
-      "type": "HE",
-      "ricochetAngle": 76
+      "type": "HE"
     }
   ],
   "FGM-148": [
@@ -11732,8 +11659,7 @@
         "ZTZ99A"
       ],
       "velocity": 850,
-      "type": "HE",
-      "ricochetAngle": 81
+      "type": "HE"
     },
     {
       "penetrationTable": {
@@ -11792,8 +11718,7 @@
         "ZTZ99A"
       ],
       "velocity": 905,
-      "type": "HEAT-FS",
-      "ricochetAngle": 77
+      "type": "HEAT-FS"
     },
     {
       "penetrationTable": {
@@ -11916,8 +11841,7 @@
         "ZTZ99A"
       ],
       "velocity": 850,
-      "type": "TIME FUZE",
-      "ricochetAngle": 81
+      "type": "TIME FUZE"
     }
   ],
   "HJ-10": [
@@ -12046,8 +11970,7 @@
         "Ka-52M Alligator-M"
       ],
       "velocity": 710,
-      "type": "HE",
-      "ricochetAngle": 81
+      "type": "HE"
     },
     {
       "penetrationTable": {
@@ -12291,8 +12214,7 @@
         "LAV-25"
       ],
       "velocity": 1100,
-      "type": "HE",
-      "ricochetAngle": 81
+      "type": "HE"
     }
   ],
   "120mm Rh120 L/55 A1": [
@@ -12528,8 +12450,7 @@
         "Leopard 2A7V"
       ],
       "velocity": 1015,
-      "type": "HE",
-      "ricochetAngle": 81
+      "type": "HE"
     },
     {
       "penetrationTable": {
@@ -13150,8 +13071,7 @@
         "ISU-152"
       ],
       "velocity": 795,
-      "type": "HE",
-      "ricochetAngle": 81
+      "type": "HE"
     }
   ],
   "7.62mm ksp 58 Dual": [
@@ -13393,8 +13313,7 @@
         "M4A3E2 (76) Jumbo"
       ],
       "velocity": 274,
-      "type": "SMOKE",
-      "ricochetAngle": 76
+      "type": "SMOKE"
     },
     {
       "penetrationTable": {
@@ -13456,8 +13375,7 @@
         "M4A3E2 (76) Jumbo"
       ],
       "velocity": 823,
-      "type": "HE",
-      "ricochetAngle": 76
+      "type": "HE"
     }
   ],
   "H5 Flamethrower": [
@@ -13518,8 +13436,7 @@
         "M4A3 (105) Zippo"
       ],
       "velocity": 120,
-      "type": "MG",
-      "ricochetAngle": 65
+      "type": "MG"
     }
   ],
   "125mm 2A46": [
@@ -13580,8 +13497,7 @@
         "T-72A"
       ],
       "velocity": 850,
-      "type": "HE",
-      "ricochetAngle": 81
+      "type": "HE"
     },
     {
       "penetrationTable": {
@@ -13640,8 +13556,7 @@
         "T-72A"
       ],
       "velocity": 905,
-      "type": "HEAT-FS",
-      "ricochetAngle": 77
+      "type": "HEAT-FS"
     },
     {
       "penetrationTable": {
@@ -13874,8 +13789,7 @@
         "BTR-90"
       ],
       "velocity": 355,
-      "type": "PROXIMITY FUZE",
-      "ricochetAngle": 81
+      "type": "PROXIMITY FUZE"
     },
     {
       "penetrationTable": {
@@ -13935,8 +13849,7 @@
         "BTR-90"
       ],
       "velocity": 355,
-      "type": "HE",
-      "ricochetAngle": 81
+      "type": "HE"
     },
     {
       "penetrationTable": {
@@ -14001,8 +13914,7 @@
         "BTR-90"
       ],
       "velocity": 400,
-      "type": "TANDEM ANTI-TANK GUIDED MISSILE",
-      "ricochetAngle": 76
+      "type": "TANDEM ANTI-TANK GUIDED MISSILE"
     }
   ],
   "30mm 2A42M (BMPT)": [
@@ -14350,8 +14262,7 @@
         "M1IP"
       ],
       "velocity": 1174,
-      "type": "HEAT-FS",
-      "ricochetAngle": 77
+      "type": "HEAT-FS"
     }
   ],
   "Bulsae-3": [
@@ -14595,8 +14506,7 @@
         "Churchill VII"
       ],
       "velocity": 463,
-      "type": "HE",
-      "ricochetAngle": 81
+      "type": "HE"
     },
     {
       "penetrationTable": {
@@ -14656,8 +14566,7 @@
         "Churchill VII"
       ],
       "velocity": 259,
-      "type": "SMOKE",
-      "ricochetAngle": 76
+      "type": "SMOKE"
     }
   ],
   "37mm M3": [
@@ -14982,8 +14891,7 @@
         "T34 Calliope"
       ],
       "velocity": 463,
-      "type": "HE",
-      "ricochetAngle": 76
+      "type": "HE"
     }
   ],
   "7.62mm M134": [
@@ -15288,8 +15196,7 @@
         "XM1069"
       ],
       "velocity": 1100,
-      "type": "HE",
-      "ricochetAngle": 81
+      "type": "HE"
     }
   ],
   "9M127M Vikhr-1": [
@@ -15478,8 +15385,7 @@
         "90mm GMC Super Hellcat"
       ],
       "velocity": 823,
-      "type": "HE",
-      "ricochetAngle": 76
+      "type": "HE"
     },
     {
       "penetrationTable": {
@@ -15600,8 +15506,7 @@
         "90mm GMC Super Hellcat"
       ],
       "velocity": 853,
-      "type": "HEAT-FS",
-      "ricochetAngle": 77
+      "type": "HEAT-FS"
     },
     {
       "penetrationTable": {
@@ -15785,8 +15690,7 @@
         "Object 279"
       ],
       "velocity": 900,
-      "type": "HE",
-      "ricochetAngle": 81
+      "type": "HE"
     }
   ],
   "20mm Solothurn S-18/1000": [
@@ -15905,8 +15809,7 @@
         "Object 450"
       ],
       "velocity": 850,
-      "type": "HE",
-      "ricochetAngle": 81
+      "type": "HE"
     },
     {
       "penetrationTable": {
@@ -15965,8 +15868,7 @@
         "Object 450"
       ],
       "velocity": 905,
-      "type": "HEAT-FS",
-      "ricochetAngle": 77
+      "type": "HEAT-FS"
     },
     {
       "penetrationTable": {
@@ -16139,8 +16041,7 @@
         "Ariete C1"
       ],
       "velocity": 1015,
-      "type": "HE",
-      "ricochetAngle": 81
+      "type": "HE"
     },
     {
       "penetrationTable": {
@@ -16314,8 +16215,7 @@
       "damage": 210,
       "relatedVehicles": [],
       "velocity": 381,
-      "type": "HEAT",
-      "ricochetAngle": 76
+      "type": "HEAT"
     },
     {
       "penetrationTable": {
@@ -16372,8 +16272,7 @@
       "damage": 426,
       "relatedVehicles": [],
       "velocity": 472,
-      "type": "HE",
-      "ricochetAngle": 71
+      "type": "HE"
     }
   ],
   "30mm M230LF": [
@@ -16436,8 +16335,7 @@
         "Joint Light Tactical Vehicle"
       ],
       "velocity": 1100,
-      "type": "HEAT",
-      "ricochetAngle": 73
+      "type": "HEAT"
     },
     {
       "penetrationTable": {
@@ -16497,8 +16395,7 @@
         "Joint Light Tactical Vehicle"
       ],
       "velocity": 1100,
-      "type": "PROXIMITY FUZE",
-      "ricochetAngle": 80
+      "type": "PROXIMITY FUZE"
     }
   ],
   "7.62mm MG3": [
@@ -16742,8 +16639,7 @@
         "T-55"
       ],
       "velocity": 1085,
-      "type": "HEAT-FS",
-      "ricochetAngle": 77
+      "type": "HEAT-FS"
     },
     {
       "penetrationTable": {
@@ -16802,8 +16698,7 @@
         "T-55"
       ],
       "velocity": 900,
-      "type": "HE",
-      "ricochetAngle": 76
+      "type": "HE"
     }
   ],
   "QN502CDD": [
@@ -17045,8 +16940,7 @@
         "Type 16 MCV"
       ],
       "velocity": 732,
-      "type": "SMOKE",
-      "ricochetAngle": 76
+      "type": "SMOKE"
     },
     {
       "penetrationTable": {
@@ -17164,8 +17058,7 @@
         "Type 16 MCV"
       ],
       "velocity": 1150,
-      "type": "HEAT-FS",
-      "ricochetAngle": 77
+      "type": "HEAT-FS"
     },
     {
       "penetrationTable": {
@@ -17339,8 +17232,7 @@
         "M1 Abrams"
       ],
       "velocity": 1174,
-      "type": "HEAT-FS",
-      "ricochetAngle": 77
+      "type": "HEAT-FS"
     },
     {
       "penetrationTable": {
@@ -17518,8 +17410,7 @@
         "Begleitpanzer 57"
       ],
       "velocity": 1020,
-      "type": "HE",
-      "ricochetAngle": 81
+      "type": "HE"
     },
     {
       "penetrationTable": {
@@ -17578,8 +17469,7 @@
         "Begleitpanzer 57"
       ],
       "velocity": 1020,
-      "type": "PROXIMITY FUZE",
-      "ricochetAngle": 81
+      "type": "PROXIMITY FUZE"
     },
     {
       "penetrationTable": {
@@ -17754,8 +17644,7 @@
       "damage": 112,
       "relatedVehicles": [],
       "velocity": 250,
-      "type": "MG",
-      "ricochetAngle": 99
+      "type": "MG"
     }
   ],
   "227mm M269": [
@@ -18380,8 +18269,7 @@
         "CullingTestRig"
       ],
       "velocity": 670,
-      "type": "SMOKE",
-      "ricochetAngle": 77
+      "type": "SMOKE"
     },
     {
       "penetrationTable": {
@@ -18442,8 +18330,7 @@
         "CullingTestRig"
       ],
       "velocity": 670,
-      "type": "HESH",
-      "ricochetAngle": 77
+      "type": "HESH"
     },
     {
       "penetrationTable": {
@@ -18623,8 +18510,7 @@
         "IS-7"
       ],
       "velocity": 900,
-      "type": "HE",
-      "ricochetAngle": 81
+      "type": "HE"
     }
   ],
   "9M37M": [
@@ -19063,8 +18949,7 @@
         "ISU-152"
       ],
       "velocity": 655,
-      "type": "HE",
-      "ricochetAngle": 81
+      "type": "HE"
     }
   ],
   "7.62mm L37A2": [
@@ -19304,8 +19189,7 @@
         "T-64A"
       ],
       "velocity": 850,
-      "type": "HE",
-      "ricochetAngle": 81
+      "type": "HE"
     },
     {
       "penetrationTable": {
@@ -19364,8 +19248,7 @@
         "T-64A"
       ],
       "velocity": 905,
-      "type": "HEAT-FS",
-      "ricochetAngle": 77
+      "type": "HEAT-FS"
     },
     {
       "penetrationTable": {
@@ -19801,8 +19684,7 @@
       "damage": 490,
       "relatedVehicles": [],
       "velocity": 1190,
-      "type": "HEAT-FS",
-      "ricochetAngle": 76
+      "type": "HEAT-FS"
     }
   ],
   "75mm M2": [
@@ -19923,8 +19805,7 @@
         "M3 Lee"
       ],
       "velocity": 463,
-      "type": "HE",
-      "ricochetAngle": 76
+      "type": "HE"
     },
     {
       "penetrationTable": {
@@ -19983,8 +19864,7 @@
         "M3 Lee"
       ],
       "velocity": 259,
-      "type": "SMOKE",
-      "ricochetAngle": 76
+      "type": "SMOKE"
     }
   ],
   "130mm Electro-Thermal MPX": [
@@ -20040,15 +19920,14 @@
       },
       "name": "M2 ETC-HARE",
       "mass": 16.4,
-      "shrapMultiplier": 16,
       "maxPenetration": 39,
       "damage": 584,
       "relatedVehicles": [
         "Neovenator 'Besiege'"
       ],
+      "shrapMultiplier": 16,
       "velocity": 1815,
-      "type": "PROXIMITY FUZE",
-      "ricochetAngle": 75
+      "type": "PROXIMITY FUZE"
     },
     {
       "penetrationTable": {
@@ -20414,8 +20293,7 @@
         "IS-3"
       ],
       "velocity": 795,
-      "type": "HE",
-      "ricochetAngle": 76
+      "type": "HE"
     }
   ],
   "12.7mm CRC F1": [
@@ -20536,8 +20414,7 @@
         "VK 16.02 Leopard"
       ],
       "velocity": 870,
-      "type": "HE",
-      "ricochetAngle": 76
+      "type": "HE"
     },
     {
       "penetrationTable": {
@@ -20660,8 +20537,7 @@
         "AMX-10RC"
       ],
       "velocity": 1120,
-      "type": "HEAT-FS",
-      "ricochetAngle": 77
+      "type": "HEAT-FS"
     },
     {
       "penetrationTable": {
@@ -20776,8 +20652,7 @@
         "AMX-10RC"
       ],
       "velocity": 800,
-      "type": "SMOKE",
-      "ricochetAngle": 76
+      "type": "SMOKE"
     },
     {
       "penetrationTable": {
@@ -20836,8 +20711,7 @@
         "AMX-10RC"
       ],
       "velocity": 800,
-      "type": "HE",
-      "ricochetAngle": 81
+      "type": "HE"
     }
   ],
   "76mm F34": [
@@ -20954,8 +20828,7 @@
       "damage": 408,
       "relatedVehicles": [],
       "velocity": 1000,
-      "type": "HE",
-      "ricochetAngle": 76
+      "type": "HE"
     }
   ],
   "120mm Cannon Type 71": [
@@ -21016,8 +20889,7 @@
         "WZ-122"
       ],
       "velocity": 940,
-      "type": "HE",
-      "ricochetAngle": 81
+      "type": "HE"
     },
     {
       "penetrationTable": {
@@ -21132,8 +21004,7 @@
         "WZ-122"
       ],
       "velocity": 1000,
-      "type": "HEAT-FS",
-      "ricochetAngle": 77
+      "type": "HEAT-FS"
     }
   ],
   "105mm M68": [
@@ -21194,8 +21065,7 @@
         "M60A1 Add-On Stabilization"
       ],
       "velocity": 732,
-      "type": "SMOKE",
-      "ricochetAngle": 76
+      "type": "SMOKE"
     },
     {
       "penetrationTable": {
@@ -21310,8 +21180,7 @@
         "M60A1 Add-On Stabilization"
       ],
       "velocity": 732,
-      "type": "HESH",
-      "ricochetAngle": 80
+      "type": "HESH"
     },
     {
       "penetrationTable": {
@@ -21370,8 +21239,7 @@
         "M60A1 Add-On Stabilization"
       ],
       "velocity": 1174,
-      "type": "HEAT-FS",
-      "ricochetAngle": 77
+      "type": "HEAT-FS"
     }
   ],
   "85mm D-5S": [
@@ -21551,8 +21419,7 @@
         "SU-85M"
       ],
       "velocity": 785,
-      "type": "HE",
-      "ricochetAngle": 76
+      "type": "HE"
     }
   ],
   "S-8KO": [
@@ -21680,8 +21547,7 @@
         "IS-3"
       ],
       "velocity": 795,
-      "type": "HE",
-      "ricochetAngle": 76
+      "type": "HE"
     },
     {
       "penetrationTable": {
@@ -22874,8 +22740,7 @@
         "T-44"
       ],
       "velocity": 785,
-      "type": "HE",
-      "ricochetAngle": 76
+      "type": "HE"
     }
   ],
   "12.7mm RMG": [
@@ -23056,8 +22921,7 @@
         "PzH-2000"
       ],
       "velocity": 1015,
-      "type": "SMOKE",
-      "ricochetAngle": 76
+      "type": "SMOKE"
     },
     {
       "penetrationTable": {
@@ -23177,8 +23041,7 @@
         "PzH-2000"
       ],
       "velocity": 506,
-      "type": "SMOKE",
-      "ricochetAngle": 76
+      "type": "SMOKE"
     },
     {
       "penetrationTable": {
@@ -23358,8 +23221,7 @@
         "PzH-2000"
       ],
       "velocity": 254,
-      "type": "SMOKE",
-      "ricochetAngle": 76
+      "type": "SMOKE"
     },
     {
       "penetrationTable": {
@@ -23596,8 +23458,7 @@
         "Kurganets-25"
       ],
       "velocity": 300,
-      "type": "HESH",
-      "ricochetAngle": 81
+      "type": "HESH"
     }
   ],
   "76mm M32": [
@@ -23714,8 +23575,7 @@
         "M551 Sheridan"
       ],
       "velocity": 274,
-      "type": "SMOKE",
-      "ricochetAngle": 80
+      "type": "SMOKE"
     },
     {
       "penetrationTable": {
@@ -23774,8 +23634,7 @@
         "M551 Sheridan"
       ],
       "velocity": 732,
-      "type": "HE",
-      "ricochetAngle": 80
+      "type": "HE"
     }
   ],
   "75 mm KwK44 ALT": [
@@ -23836,8 +23695,7 @@
         "Maus A3"
       ],
       "velocity": 420,
-      "type": "HE",
-      "ricochetAngle": 81
+      "type": "HE"
     },
     {
       "penetrationTable": {
@@ -23896,8 +23754,7 @@
         "Maus A3"
       ],
       "velocity": 800,
-      "type": "HEAT",
-      "ricochetAngle": 73
+      "type": "HEAT"
     }
   ],
   "7.62mm M73": [
@@ -24076,8 +23933,7 @@
         "FV510 Warrior"
       ],
       "velocity": 1080,
-      "type": "HE",
-      "ricochetAngle": 81
+      "type": "HE"
     },
     {
       "penetrationTable": {
@@ -24253,8 +24109,7 @@
         "M48A2 Patton"
       ],
       "velocity": 1216,
-      "type": "HEAT-FS",
-      "ricochetAngle": 77
+      "type": "HEAT-FS"
     },
     {
       "penetrationTable": {
@@ -24313,8 +24168,7 @@
         "M48A2 Patton"
       ],
       "velocity": 823,
-      "type": "HE",
-      "ricochetAngle": 81
+      "type": "HE"
     },
     {
       "penetrationTable": {
@@ -24373,8 +24227,7 @@
         "M48A2 Patton"
       ],
       "velocity": 821,
-      "type": "SMOKE",
-      "ricochetAngle": 80
+      "type": "SMOKE"
     },
     {
       "penetrationTable": {
@@ -24610,8 +24463,7 @@
         "M60A1 RISE Passive"
       ],
       "velocity": 732,
-      "type": "SMOKE",
-      "ricochetAngle": 76
+      "type": "SMOKE"
     },
     {
       "penetrationTable": {
@@ -24670,8 +24522,7 @@
         "M60A1 RISE Passive"
       ],
       "velocity": 732,
-      "type": "HESH",
-      "ricochetAngle": 80
+      "type": "HESH"
     },
     {
       "penetrationTable": {
@@ -24730,8 +24581,7 @@
         "M60A1 RISE Passive"
       ],
       "velocity": 1174,
-      "type": "HEAT-FS",
-      "ricochetAngle": 77
+      "type": "HEAT-FS"
     },
     {
       "penetrationTable": {
@@ -24910,8 +24760,7 @@
         "T-V"
       ],
       "velocity": 700,
-      "type": "HE",
-      "ricochetAngle": 76
+      "type": "HE"
     }
   ],
   "20mm Oerlikon KAA": [
@@ -24972,8 +24821,7 @@
         "T-72M2"
       ],
       "velocity": 1100,
-      "type": "HE",
-      "ricochetAngle": 81
+      "type": "HE"
     },
     {
       "penetrationTable": {
@@ -25221,8 +25069,7 @@
         "AH-64D"
       ],
       "velocity": 805,
-      "type": "HEAT",
-      "ricochetAngle": 73
+      "type": "HEAT"
     }
   ],
   "183mm L4": [
@@ -25283,8 +25130,7 @@
         "FV4005"
       ],
       "velocity": 716,
-      "type": "HESH",
-      "ricochetAngle": 80
+      "type": "HESH"
     }
   ],
   "76mm M7": [
@@ -25461,8 +25307,7 @@
         "M10 Wolverine"
       ],
       "velocity": 823,
-      "type": "HE",
-      "ricochetAngle": 76
+      "type": "HE"
     }
   ],
   "BGM-71F TOW 2A/B": [
@@ -25722,8 +25567,7 @@
         "Ba-40"
       ],
       "velocity": 792,
-      "type": "HE",
-      "ricochetAngle": 76
+      "type": "HE"
     },
     {
       "penetrationTable": {
@@ -25841,8 +25685,7 @@
         "Jagdtiger"
       ],
       "velocity": 750,
-      "type": "HE",
-      "ricochetAngle": 81
+      "type": "HE"
     },
     {
       "penetrationTable": {
@@ -26142,8 +25985,7 @@
         "KF51 Panther"
       ],
       "velocity": 1015,
-      "type": "HE",
-      "ricochetAngle": 81
+      "type": "HE"
     },
     {
       "penetrationTable": {
@@ -26471,8 +26313,7 @@
         "BMP-3M"
       ],
       "velocity": 355,
-      "type": "PROXIMITY FUZE",
-      "ricochetAngle": 81
+      "type": "PROXIMITY FUZE"
     },
     {
       "penetrationTable": {
@@ -26532,8 +26373,7 @@
         "BMP-3M"
       ],
       "velocity": 355,
-      "type": "HE",
-      "ricochetAngle": 81
+      "type": "HE"
     },
     {
       "penetrationTable": {
@@ -26598,8 +26438,7 @@
         "BMP-3M"
       ],
       "velocity": 400,
-      "type": "TANDEM ANTI-TANK GUIDED MISSILE",
-      "ricochetAngle": 76
+      "type": "TANDEM ANTI-TANK GUIDED MISSILE"
     }
   ],
   "85mm F-30": [
@@ -26776,8 +26615,7 @@
         "KV-220"
       ],
       "velocity": 785,
-      "type": "HE",
-      "ricochetAngle": 76
+      "type": "HE"
     }
   ],
   "8mm Breda M37": [
@@ -26952,8 +26790,7 @@
         "ZTZ96A"
       ],
       "velocity": 850,
-      "type": "HE",
-      "ricochetAngle": 81
+      "type": "HE"
     },
     {
       "penetrationTable": {
@@ -27012,8 +26849,7 @@
         "ZTZ96A"
       ],
       "velocity": 905,
-      "type": "HEAT-FS",
-      "ricochetAngle": 77
+      "type": "HEAT-FS"
     }
   ],
   "Type 79 ATGM": [
@@ -27259,8 +27095,7 @@
         "ISU-152BM"
       ],
       "velocity": 880,
-      "type": "HE",
-      "ricochetAngle": 81
+      "type": "HE"
     }
   ],
   "B-13L": [
@@ -27557,8 +27392,7 @@
       "damage": 799,
       "relatedVehicles": [],
       "velocity": 290,
-      "type": "HE",
-      "ricochetAngle": 71
+      "type": "HE"
     }
   ],
   "203mm 2A44": [
@@ -28431,8 +28265,7 @@
         "Merkava Mk.4M"
       ],
       "velocity": 900,
-      "type": "HE",
-      "ricochetAngle": 81
+      "type": "HE"
     },
     {
       "penetrationTable": {
@@ -28491,8 +28324,7 @@
         "Merkava Mk.4M"
       ],
       "velocity": 1078,
-      "type": "HEAT-FS",
-      "ricochetAngle": 77
+      "type": "HEAT-FS"
     }
   ],
   "9M14": [
@@ -28686,8 +28518,7 @@
         "Cheonma-2"
       ],
       "velocity": 878,
-      "type": "HE",
-      "ricochetAngle": 81
+      "type": "HE"
     },
     {
       "penetrationTable": {
@@ -28746,8 +28577,7 @@
         "Cheonma-2"
       ],
       "velocity": 943,
-      "type": "HEAT-FS",
-      "ricochetAngle": 77
+      "type": "HEAT-FS"
     },
     {
       "penetrationTable": {
@@ -29178,8 +29008,7 @@
         "T29E3"
       ],
       "velocity": 945,
-      "type": "HE",
-      "ricochetAngle": 81
+      "type": "HE"
     },
     {
       "penetrationTable": {
@@ -29549,8 +29378,7 @@
         "AMX-10RC"
       ],
       "velocity": 800,
-      "type": "SMOKE",
-      "ricochetAngle": 76
+      "type": "SMOKE"
     },
     {
       "penetrationTable": {
@@ -29609,8 +29437,7 @@
         "AMX-10RC"
       ],
       "velocity": 1120,
-      "type": "HEAT-FS",
-      "ricochetAngle": 77
+      "type": "HEAT-FS"
     },
     {
       "penetrationTable": {
@@ -29726,8 +29553,7 @@
         "AMX-10RC"
       ],
       "velocity": 800,
-      "type": "HE",
-      "ricochetAngle": 81
+      "type": "HE"
     }
   ],
   "57mm S-68": [
@@ -29789,8 +29615,7 @@
         "ZSU-57-2"
       ],
       "velocity": 1000,
-      "type": "HE",
-      "ricochetAngle": 81
+      "type": "HE"
     },
     {
       "penetrationTable": {
@@ -29911,8 +29736,7 @@
         "ZSU-57-2"
       ],
       "velocity": 1000,
-      "type": "PROXIMITY FUZE",
-      "ricochetAngle": 81
+      "type": "PROXIMITY FUZE"
     }
   ],
   "107mm ZIS-6": [
@@ -30033,8 +29857,7 @@
         "KV-2 (ZIS-6)"
       ],
       "velocity": 720,
-      "type": "HE",
-      "ricochetAngle": 89
+      "type": "HE"
     }
   ],
   "M229 Hydra 70": [
@@ -30095,8 +29918,7 @@
         "Lilbirb"
       ],
       "velocity": 1111,
-      "type": "ROCKET",
-      "ricochetAngle": 99
+      "type": "ROCKET"
     }
   ],
   "7.62mm DT-28": [
@@ -30310,8 +30132,7 @@
         "SU-100"
       ],
       "velocity": 785,
-      "type": "HE",
-      "ricochetAngle": 76
+      "type": "HE"
     },
     {
       "penetrationTable": {
@@ -30491,8 +30312,7 @@
         "Challenger 1"
       ],
       "velocity": 670,
-      "type": "SMOKE",
-      "ricochetAngle": 77
+      "type": "SMOKE"
     },
     {
       "penetrationTable": {
@@ -30609,8 +30429,7 @@
         "Challenger 1"
       ],
       "velocity": 670,
-      "type": "HESH",
-      "ricochetAngle": 77
+      "type": "HESH"
     }
   ],
   "ScaryPz4": [
@@ -31156,8 +30975,7 @@
         "Leopard 2A4"
       ],
       "velocity": 1000,
-      "type": "HE",
-      "ricochetAngle": 89
+      "type": "HE"
     },
     {
       "penetrationTable": {
@@ -31276,8 +31094,7 @@
         "Hornisse"
       ],
       "velocity": 600,
-      "type": "HEAT",
-      "ricochetAngle": 73
+      "type": "HEAT"
     },
     {
       "penetrationTable": {
@@ -31336,8 +31153,7 @@
         "Hornisse"
       ],
       "velocity": 820,
-      "type": "HE",
-      "ricochetAngle": 81
+      "type": "HE"
     },
     {
       "penetrationTable": {
@@ -31514,8 +31330,7 @@
       "damage": 345,
       "relatedVehicles": [],
       "velocity": 900,
-      "type": "HE",
-      "ricochetAngle": 76
+      "type": "HE"
     },
     {
       "penetrationTable": {
@@ -31821,8 +31636,7 @@
         "T26E4 Super Pershing"
       ],
       "velocity": 975,
-      "type": "HE",
-      "ricochetAngle": 76
+      "type": "HE"
     }
   ],
   "ATACMS": [
@@ -32059,8 +31873,7 @@
         "M1128 MGS"
       ],
       "velocity": 1174,
-      "type": "HEAT-FS",
-      "ricochetAngle": 77
+      "type": "HEAT-FS"
     }
   ],
   "30mm Treemaster": [
@@ -32123,8 +31936,7 @@
         "Rosomak"
       ],
       "velocity": 1235,
-      "type": "TIME FUZE",
-      "ricochetAngle": 80
+      "type": "TIME FUZE"
     },
     {
       "penetrationTable": {
@@ -32243,8 +32055,7 @@
         "Rosomak"
       ],
       "velocity": 1235,
-      "type": "HE",
-      "ricochetAngle": 80
+      "type": "HE"
     }
   ],
   "115mm D-68": [
@@ -32305,8 +32116,7 @@
         "T-64R"
       ],
       "velocity": 1060,
-      "type": "HEAT-FS",
-      "ricochetAngle": 77
+      "type": "HEAT-FS"
     },
     {
       "penetrationTable": {
@@ -32421,8 +32231,7 @@
         "T-64R"
       ],
       "velocity": 750,
-      "type": "HE",
-      "ricochetAngle": 81
+      "type": "HE"
     }
   ],
   "9M133 Kornet": [
@@ -32676,8 +32485,7 @@
       "damage": 253,
       "relatedVehicles": [],
       "velocity": 463,
-      "type": "HE",
-      "ricochetAngle": 76
+      "type": "HE"
     }
   ],
   "105 mm M4": [
@@ -32739,8 +32547,7 @@
         "M4A3 (105) Zippo"
       ],
       "velocity": 381,
-      "type": "HEAT",
-      "ricochetAngle": 76
+      "type": "HEAT"
     },
     {
       "penetrationTable": {
@@ -32800,8 +32607,7 @@
         "M4A3 (105) Zippo"
       ],
       "velocity": 472,
-      "type": "HE",
-      "ricochetAngle": 71
+      "type": "HE"
     }
   ],
   "122mm D-30": [
@@ -32862,8 +32668,7 @@
         "T-34-122"
       ],
       "velocity": 726,
-      "type": "HEAT",
-      "ricochetAngle": 76
+      "type": "HEAT"
     },
     {
       "penetrationTable": {
@@ -32922,8 +32727,7 @@
         "T-34-122"
       ],
       "velocity": 690,
-      "type": "HE",
-      "ricochetAngle": 76
+      "type": "HE"
     },
     {
       "penetrationTable": {
@@ -32982,8 +32786,7 @@
         "T-34-122"
       ],
       "velocity": 200,
-      "type": "HE",
-      "ricochetAngle": 76
+      "type": "HE"
     }
   ],
   "120mm KM256": [
@@ -33221,8 +33024,7 @@
         "M109A6"
       ],
       "velocity": 342,
-      "type": "SMOKE",
-      "ricochetAngle": 76
+      "type": "SMOKE"
     },
     {
       "penetrationTable": {
@@ -33340,8 +33142,7 @@
         "M109A6"
       ],
       "velocity": 171,
-      "type": "SMOKE",
-      "ricochetAngle": 76
+      "type": "SMOKE"
     },
     {
       "penetrationTable": {
@@ -33400,8 +33201,7 @@
         "M109A6"
       ],
       "velocity": 684,
-      "type": "SMOKE",
-      "ricochetAngle": 76
+      "type": "SMOKE"
     },
     {
       "penetrationTable": {
@@ -33580,8 +33380,7 @@
         "Sprut-SDM1"
       ],
       "velocity": 850,
-      "type": "HE",
-      "ricochetAngle": 81
+      "type": "HE"
     },
     {
       "penetrationTable": {
@@ -33640,8 +33439,7 @@
         "Sprut-SDM1"
       ],
       "velocity": 905,
-      "type": "HEAT-FS",
-      "ricochetAngle": 77
+      "type": "HEAT-FS"
     },
     {
       "penetrationTable": {
@@ -33822,8 +33620,7 @@
         "Leopard 2A4 140MM"
       ],
       "velocity": 1050,
-      "type": "HE",
-      "ricochetAngle": 81
+      "type": "HE"
     },
     {
       "penetrationTable": {
@@ -34137,8 +33934,7 @@
         "KV-2"
       ],
       "velocity": 530,
-      "type": "HE",
-      "ricochetAngle": 89
+      "type": "HE"
     },
     {
       "penetrationTable": {
@@ -34494,8 +34290,7 @@
         "Strv 103C"
       ],
       "velocity": 680,
-      "type": "HE",
-      "ricochetAngle": 81
+      "type": "HE"
     }
   ],
   "23mm 2A14": [
@@ -34733,8 +34528,7 @@
         "T-72B"
       ],
       "velocity": 850,
-      "type": "HE",
-      "ricochetAngle": 81
+      "type": "HE"
     },
     {
       "penetrationTable": {
@@ -34906,8 +34700,7 @@
         "T-72B"
       ],
       "velocity": 905,
-      "type": "HEAT-FS",
-      "ricochetAngle": 77
+      "type": "HEAT-FS"
     },
     {
       "penetrationTable": {
@@ -35209,8 +35002,7 @@
         "Pz IV Ausf. 1946"
       ],
       "velocity": 550,
-      "type": "HE",
-      "ricochetAngle": 76
+      "type": "HE"
     },
     {
       "penetrationTable": {
@@ -35391,8 +35183,7 @@
       "damage": 420,
       "relatedVehicles": [],
       "velocity": 1150,
-      "type": "HEAT-FS",
-      "ricochetAngle": 72
+      "type": "HEAT-FS"
     },
     {
       "penetrationTable": {
@@ -35628,8 +35419,7 @@
         "Hetzer"
       ],
       "velocity": 550,
-      "type": "HE",
-      "ricochetAngle": 81
+      "type": "HE"
     },
     {
       "penetrationTable": {
@@ -35748,8 +35538,7 @@
         "Hetzer"
       ],
       "velocity": 450,
-      "type": "HEAT",
-      "ricochetAngle": 73
+      "type": "HEAT"
     }
   ],
   "ATO-41 Flamethrower": [
@@ -35810,8 +35599,7 @@
         "OT-34-85"
       ],
       "velocity": 120,
-      "type": "MG",
-      "ricochetAngle": 65
+      "type": "MG"
     }
   ],
   "152mm M81E1": [
@@ -35996,8 +35784,7 @@
         "M551 Sheridan"
       ],
       "velocity": 682,
-      "type": "HEAT",
-      "ricochetAngle": 73
+      "type": "HEAT"
     },
     {
       "penetrationTable": {
@@ -36056,8 +35843,7 @@
         "M551 Sheridan"
       ],
       "velocity": 682,
-      "type": "HE",
-      "ricochetAngle": 81
+      "type": "HE"
     }
   ],
   "L7A3 105mm": [
@@ -36119,8 +35905,7 @@
         "M48 Super"
       ],
       "velocity": 1174,
-      "type": "HEAT-FS",
-      "ricochetAngle": 77
+      "type": "HEAT-FS"
     },
     {
       "penetrationTable": {
@@ -36781,8 +36566,7 @@
         "T-80B"
       ],
       "velocity": 850,
-      "type": "HE",
-      "ricochetAngle": 81
+      "type": "HE"
     },
     {
       "penetrationTable": {
@@ -37095,8 +36879,7 @@
         "T-80B"
       ],
       "velocity": 905,
-      "type": "HEAT-FS",
-      "ricochetAngle": 77
+      "type": "HEAT-FS"
     },
     {
       "penetrationTable": {
@@ -37604,8 +37387,7 @@
         "Maus A3"
       ],
       "velocity": 750,
-      "type": "HE",
-      "ricochetAngle": 81
+      "type": "HE"
     }
   ],
   "75mm SA50 L/57": [
@@ -37722,8 +37504,7 @@
         "AMX-13"
       ],
       "velocity": 753,
-      "type": "HE",
-      "ricochetAngle": 81
+      "type": "HE"
     }
   ],
   "Pars 3": [
@@ -38155,7 +37936,6 @@
       },
       "name": "XM1069 PD",
       "mass": 13.1,
-      "shrapMultiplier": 12,
       "maxPenetration": 28,
       "damage": 408,
       "relatedVehicles": [
@@ -38164,9 +37944,9 @@
         "M1A1",
         "M1A2 SEP V3"
       ],
+      "shrapMultiplier": 12,
       "velocity": 1020,
-      "type": "HE",
-      "ricochetAngle": 75
+      "type": "HE"
     },
     {
       "penetrationTable": {
@@ -38291,8 +38071,7 @@
         "M1A2 SEP V3"
       ],
       "velocity": 1140,
-      "type": "HEAT-FS",
-      "ricochetAngle": 77
+      "type": "HEAT-FS"
     },
     {
       "penetrationTable": {
@@ -38657,8 +38436,7 @@
       "damage": 408,
       "relatedVehicles": [],
       "velocity": 175,
-      "type": "HE",
-      "ricochetAngle": 76
+      "type": "HE"
     },
     {
       "penetrationTable": {
@@ -38715,8 +38493,7 @@
       "damage": 408,
       "relatedVehicles": [],
       "velocity": 75,
-      "type": "HE",
-      "ricochetAngle": 76
+      "type": "HE"
     },
     {
       "penetrationTable": {
@@ -38773,8 +38550,7 @@
       "damage": 408,
       "relatedVehicles": [],
       "velocity": 255,
-      "type": "HE",
-      "ricochetAngle": 76
+      "type": "HE"
     }
   ],
   "57mm ZiS-4": [
@@ -38897,8 +38673,7 @@
         "T-34-57"
       ],
       "velocity": 700,
-      "type": "HE",
-      "ricochetAngle": 76
+      "type": "HE"
     }
   ],
   "7.62mm A-A-F1N": [
@@ -39213,8 +38988,7 @@
         "KF41 Lynx"
       ],
       "velocity": 1080,
-      "type": "HE",
-      "ricochetAngle": 80
+      "type": "HE"
     },
     {
       "penetrationTable": {
@@ -39397,8 +39171,7 @@
       "damage": 646,
       "relatedVehicles": [],
       "velocity": 800,
-      "type": "HE",
-      "ricochetAngle": 76
+      "type": "HE"
     },
     {
       "penetrationTable": {
@@ -39514,8 +39287,7 @@
       "damage": 400,
       "relatedVehicles": [],
       "velocity": 900,
-      "type": "ANTI-TANK GUIDED MISSILE",
-      "ricochetAngle": 76
+      "type": "ANTI-TANK GUIDED MISSILE"
     }
   ],
   "35mm Oerlikon KDA": [
@@ -39688,8 +39460,7 @@
         "Type 87"
       ],
       "velocity": 1175,
-      "type": "HE",
-      "ricochetAngle": 81
+      "type": "HE"
     }
   ],
   "25mm Type 625": [
@@ -39750,8 +39521,7 @@
         "Type 625E"
       ],
       "velocity": 1100,
-      "type": "TIME FUZE",
-      "ricochetAngle": 81
+      "type": "TIME FUZE"
     },
     {
       "penetrationTable": {
@@ -39810,8 +39580,7 @@
         "Type 625E"
       ],
       "velocity": 1100,
-      "type": "HE",
-      "ricochetAngle": 81
+      "type": "HE"
     },
     {
       "penetrationTable": {
@@ -39992,8 +39761,7 @@
         "T-34E"
       ],
       "velocity": 680,
-      "type": "HE",
-      "ricochetAngle": 76
+      "type": "HE"
     }
   ],
   "LFK SS.11": [
@@ -40123,8 +39891,7 @@
         "T-62M-1"
       ],
       "velocity": 1060,
-      "type": "HEAT-FS",
-      "ricochetAngle": 77
+      "type": "HEAT-FS"
     },
     {
       "penetrationTable": {
@@ -40253,8 +40020,7 @@
         "T-62M-1"
       ],
       "velocity": 950,
-      "type": "HEAT-FS",
-      "ricochetAngle": 77
+      "type": "HEAT-FS"
     },
     {
       "penetrationTable": {
@@ -40316,8 +40082,7 @@
         "T-62M-1"
       ],
       "velocity": 905,
-      "type": "HE",
-      "ricochetAngle": 81
+      "type": "HE"
     },
     {
       "penetrationTable": {
@@ -40379,8 +40144,7 @@
         "T-62M-1"
       ],
       "velocity": 800,
-      "type": "HE",
-      "ricochetAngle": 81
+      "type": "HE"
     },
     {
       "penetrationTable": {
@@ -40558,8 +40322,7 @@
       "damage": 242,
       "relatedVehicles": [],
       "velocity": 655,
-      "type": "HE",
-      "ricochetAngle": 81
+      "type": "HE"
     },
     {
       "penetrationTable": {
@@ -40677,8 +40440,7 @@
         "BMP-1"
       ],
       "velocity": 665,
-      "type": "HEAT",
-      "ricochetAngle": 76
+      "type": "HEAT"
     },
     {
       "penetrationTable": {
@@ -40740,8 +40502,7 @@
         "BMP-1"
       ],
       "velocity": 290,
-      "type": "HE",
-      "ricochetAngle": 76
+      "type": "HE"
     }
   ],
   "122mm D-30T": [
@@ -40922,8 +40683,7 @@
         "IS-6"
       ],
       "velocity": 795,
-      "type": "HE",
-      "ricochetAngle": 76
+      "type": "HE"
     }
   ],
   "105mm XM35": [
@@ -40984,8 +40744,7 @@
         "XM8"
       ],
       "velocity": 1174,
-      "type": "HEAT-FS",
-      "ricochetAngle": 77
+      "type": "HEAT-FS"
     },
     {
       "penetrationTable": {
@@ -41044,8 +40803,7 @@
         "XM8"
       ],
       "velocity": 732,
-      "type": "SMOKE",
-      "ricochetAngle": 76
+      "type": "SMOKE"
     },
     {
       "penetrationTable": {
@@ -41161,8 +40919,7 @@
         "XM8"
       ],
       "velocity": 732,
-      "type": "HESH",
-      "ricochetAngle": 80
+      "type": "HESH"
     }
   ],
   "7.62mm L8A2": [
@@ -41534,8 +41291,7 @@
         "T-34-85"
       ],
       "velocity": 785,
-      "type": "HE",
-      "ricochetAngle": 76
+      "type": "HE"
     }
   ],
   "120mm GIAT CN120-26 F1": [
@@ -41726,8 +41482,7 @@
         "Leclerc S21"
       ],
       "velocity": 1120,
-      "type": "HE",
-      "ricochetAngle": 75
+      "type": "HE"
     },
     {
       "penetrationTable": {
@@ -41786,8 +41541,7 @@
         "Leclerc S21"
       ],
       "velocity": 1050,
-      "type": "HE",
-      "ricochetAngle": 81
+      "type": "HE"
     },
     {
       "penetrationTable": {
@@ -42156,8 +41910,7 @@
         "Leclerc S21"
       ],
       "velocity": 1100,
-      "type": "HEAT-FS",
-      "ricochetAngle": 77
+      "type": "HEAT-FS"
     }
   ],
   "7.62mm Type 59": [
@@ -42402,8 +42155,7 @@
         "SAU-2"
       ],
       "velocity": 200,
-      "type": "SMOKE",
-      "ricochetAngle": 76
+      "type": "SMOKE"
     },
     {
       "penetrationTable": {
@@ -42941,8 +42693,7 @@
       "damage": 1096,
       "relatedVehicles": [],
       "velocity": 432,
-      "type": "PROXIMITY FUZE",
-      "ricochetAngle": 76
+      "type": "PROXIMITY FUZE"
     },
     {
       "penetrationTable": {
@@ -43060,8 +42811,7 @@
       "damage": 1096,
       "relatedVehicles": [],
       "velocity": 864,
-      "type": "PROXIMITY FUZE",
-      "ricochetAngle": 76
+      "type": "PROXIMITY FUZE"
     },
     {
       "penetrationTable": {
@@ -43175,8 +42925,7 @@
       "damage": 1096,
       "relatedVehicles": [],
       "velocity": 216,
-      "type": "PROXIMITY FUZE",
-      "ricochetAngle": 76
+      "type": "PROXIMITY FUZE"
     },
     {
       "penetrationTable": {
@@ -43587,8 +43336,7 @@
         "K1"
       ],
       "velocity": 1174,
-      "type": "HEAT-FS",
-      "ricochetAngle": 77
+      "type": "HEAT-FS"
     },
     {
       "penetrationTable": {
@@ -43709,8 +43457,7 @@
         "Mi-24VM"
       ],
       "velocity": 845,
-      "type": "HE",
-      "ricochetAngle": 81
+      "type": "HE"
     },
     {
       "penetrationTable": {
@@ -43832,8 +43579,7 @@
         "BTR-90"
       ],
       "velocity": 185,
-      "type": "HE",
-      "ricochetAngle": 81
+      "type": "HE"
     }
   ],
   "Spike ATGM": [
