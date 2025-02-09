@@ -79,7 +79,6 @@ type ShellModule = {
 
 	explosive: {
 		mass: number,
-		blastRadiusMultiplier: number?,
 		explosiveRadius: number?,
 	}?,
 
@@ -220,7 +219,6 @@ for _, moduleScript in Modules:GetChildren() do
 			then
 				shell.explosive = {
 					mass = ammo.ExplosiveMass,
-					blastRadiusMultiplier = ammo.blastradiusmult, -- TODO: remove blast radius multiplier
 					explosiveRadius = GlobalConstants.studtom(
 						(GlobalConstants.GetExplosionDiameter(ammo) * (ammo.blastradiusmult or 1)) / 2
 					),
