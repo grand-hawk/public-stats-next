@@ -215,7 +215,7 @@ for _, moduleScript in Modules:GetChildren() do
 					mass = ammo.ExplosiveMass,
 					blastRadiusMultiplier = ammo.blastradiusmult,
 					explosiveRadius = if ammo.DisplayType == "HE"
-						then GlobalConstants.GetExplosionRadius(ammo)
+						then GlobalConstants.studtom(GlobalConstants.GetExplosionRadius(ammo))
 						else nil,
 				}
 			end
