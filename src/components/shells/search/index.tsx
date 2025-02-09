@@ -6,6 +6,7 @@ import SearchInput from '@/components/shells/search/input';
 import Results from '@/components/shells/search/results';
 import PlaceEmptyState from '@/components/states/placeEmptyState';
 import { useNavigationStore } from '@/stores/navigation';
+import { useSearchStore } from '@/stores/shells/search';
 
 export default function Search({
   initialQuery,
@@ -13,8 +14,14 @@ export default function Search({
   initialQuery: string | null;
 }) {
   const placeId = useNavigationStore((s) => s.placeId);
-  const [query, setQuery] = React.useState(initialQuery || '');
+  const savedSearch = useSearchStore((s) => s.input);
+  const setSavedSearch = useSearchStore((s) => s.setInput);
+  const [query, setQuery] = React.useState(initialQuery || savedSearch);
   const debouncedQuery = useDebounce(query, 250);
+
+  React.useEffect(() => {
+    setSavedSearch(query || '');
+  }, [setSavedSearch, query]);
 
   return (
     <Box
