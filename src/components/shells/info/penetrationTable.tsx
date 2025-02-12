@@ -111,7 +111,17 @@ export default function PenetrationTable({
                   return (
                     <Table.Cell key={angle}>
                       {anglePens.map((anglePen, index) => (
-                        <Text key={index}>{anglePen ?? '-'} mm</Text>
+                        <Text key={index}>
+                          {anglePen ? (
+                            <FormatNumber
+                              maximumFractionDigits={2}
+                              value={anglePen}
+                            />
+                          ) : (
+                            '-'
+                          )}{' '}
+                          mm
+                        </Text>
                       ))}
                     </Table.Cell>
                   );

@@ -192,13 +192,13 @@ for _, moduleScript in Modules:GetChildren() do
 						end
 					until true
 
-					local penArray = { math.round(calculatedPen) }
+					local penArray = { calculatedPen }
 
 					if ammo.SAPHE then
 						table.insert(
 							penArray,
 							-- same as formula as HE
-							math.round(GlobalConstants.GetBlastPen(ammo) / math.cos(math.rad(angle)))
+							GlobalConstants.GetBlastPen(ammo) / math.cos(math.rad(angle))
 						)
 					end
 
