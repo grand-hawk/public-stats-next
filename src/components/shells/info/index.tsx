@@ -156,6 +156,23 @@ export default function ShellInfo({
                     m
                   </Stat>
                 )}
+                {typeof data.explosive.killRadius !== 'undefined' && (
+                  <Stat
+                    label={
+                      <>
+                        Kill radius
+                        <InfoTooltip content="This is the maximum distance from the center of the explosion where humanoid death is guaranteed." />
+                      </>
+                    }
+                  >
+                    ~
+                    <FormatNumber
+                      maximumFractionDigits={2}
+                      value={data.explosive.killRadius}
+                    />{' '}
+                    m
+                  </Stat>
+                )}
               </>
             )}
           </Stack>

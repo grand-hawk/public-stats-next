@@ -80,6 +80,7 @@ type ShellModule = {
 	explosive: {
 		mass: number,
 		explosiveRadius: number?,
+		killRadius: number?,
 	}?,
 
 	missile: {
@@ -110,7 +111,6 @@ for _, moduleScript in Modules:GetChildren() do
 	end
 
 	local module = require(moduleScript)
-
 	local shells: { ShellModule } = {}
 
 	for ammoKey, _ in module.AmmoTypes do
@@ -217,11 +217,20 @@ for _, moduleScript in Modules:GetChildren() do
 					"APHE", -- SAPHE
 				}, ammo.ShellType)
 			then
+				local explosiveRadius = (GlobalConstants.GetExplosionDiameter(ammo) * (ammo.blastradiusmult or 1)) / 2
+				local blastDamage = GlobalConstants.GetBlastDamage(ammo)
+				local killRadius = nil
+
+				-- blast damage is more than 100 from the center
+				if blastDamage >= 100 then
+					killRadius = explosiveRadius * ((math.sqrt(1.04 / (100 / blastDamage + 0.04)) - 1) / 4)
+					print(killRadius, ammo.DisplayName)
+				end
+
 				shell.explosive = {
 					mass = ammo.ExplosiveMass,
-					explosiveRadius = GlobalConstants.studtom(
-						(GlobalConstants.GetExplosionDiameter(ammo) * (ammo.blastradiusmult or 1)) / 2
-					),
+					explosiveRadius = GlobalConstants.studtom(explosiveRadius),
+					killRadius = if killRadius ~= nil then GlobalConstants.studtom(killRadius) else nil,
 				}
 			end
 

@@ -32,6 +32,7 @@ export interface Shell {
     | {
         mass: number;
         explosiveRadius?: number;
+        killRadius?: number;
       }
     | undefined;
 
