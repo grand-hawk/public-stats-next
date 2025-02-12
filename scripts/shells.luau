@@ -221,7 +221,7 @@ for _, moduleScript in Modules:GetChildren() do
 				local blastDamage = GlobalConstants.GetBlastDamage(ammo)
 				local killRadius = nil
 
-				-- blast damage is more than 100 from the center
+				-- if it's less than 100 there is no guaranteed kill radius
 				if blastDamage >= 100 then
 					killRadius = explosiveRadius * ((math.sqrt(1.04 / (100 / blastDamage + 0.04)) - 1) / 4)
 				end
