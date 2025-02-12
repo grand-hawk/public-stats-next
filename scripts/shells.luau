@@ -102,10 +102,10 @@ for _, moduleScript in Modules:GetChildren() do
 	if not moduleScript:IsA("ModuleScript") then
 		continue
 	end
-	if table.find({ "InfGuns", "Flares", "Smoke Grenade" }, moduleScript.Name) then
+	if moduleScript:GetAttribute("Hide") == true then
 		continue
 	end
-	if moduleScript:GetAttribute("Hide") == true then
+	if table.find({ "InfGuns", "Flares", "Smoke Grenade" }, moduleScript.Name) then
 		continue
 	end
 
@@ -278,6 +278,14 @@ for _, moduleScript in Modules:GetChildren() do
 
 			if ammo.OTA then
 				shell.type = `OTA {shell.type}`
+			end
+
+			if ammo.Fire then
+				shell.type = `INCENDIARY {shell.type}`
+			end
+
+			if ammo.ShellType == "PROXIMITY FUZE" and shell.type ~= "PROXIMITY FUZE" then
+				shell.type = `PROXIMITY {shell.type}`
 			end
 		end
 
