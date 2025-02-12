@@ -10532,7 +10532,7 @@
         "TOS-1A BM-1"
       ],
       "velocity": 180,
-      "type": "ROCKET"
+      "type": "INCENDIARY ROCKET"
     },
     {
       "penetrationTable": {
@@ -13502,7 +13502,7 @@
       "damage": 112,
       "relatedVehicles": [],
       "velocity": 250,
-      "type": "MG"
+      "type": "INCENDIARY MG"
     }
   ],
   "76mm F34": [
@@ -27863,7 +27863,7 @@
         "M4A3 (105) Zippo"
       ],
       "velocity": 120,
-      "type": "MG"
+      "type": "INCENDIARY MG"
     }
   ],
   "76mm F-34": [
@@ -32256,7 +32256,7 @@
         "OT-34-85"
       ],
       "velocity": 120,
-      "type": "MG"
+      "type": "INCENDIARY MG"
     }
   ],
   "152mm M81E1": [
