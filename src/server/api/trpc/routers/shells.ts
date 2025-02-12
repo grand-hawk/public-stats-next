@@ -20,6 +20,7 @@ export interface Shell {
   shrapMultiplier: number | undefined;
   ricochetAngle: number | undefined;
   eraTip: number | undefined;
+  diameter: number | undefined;
 
   maxPenetration: number;
   penetrationTable: {

@@ -69,6 +69,7 @@ type ShellModule = {
 	shrapMultiplier: number?,
 	ricochetAngle: number?,
 	eraTip: number?,
+	diameter: number?,
 
 	maxPenetration: number,
 	penetrationTable: {
@@ -128,6 +129,7 @@ for _, moduleScript in Modules:GetChildren() do
 				then nil
 				else ammo.RicochetAngle,
 			eraTip = ammo.ERAtip,
+			diameter = ammo.Diameter,
 
 			maxPenetration = math.round(ammo.ShellMaxPen),
 			penetrationTable = {},

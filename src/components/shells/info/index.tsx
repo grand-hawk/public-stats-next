@@ -133,6 +133,11 @@ export default function ShellInfo({
                 <FormatNumber value={data.eraTip} />
               </Stat>
             )}
+            {typeof data.diameter !== 'undefined' && (
+              <Stat label="Penetrator diameter">
+                <FormatNumber value={data.diameter} />
+              </Stat>
+            )}
 
             {data.explosive && (
               <>
