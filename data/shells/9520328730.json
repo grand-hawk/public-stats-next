@@ -46,6 +46,7 @@
         }
       },
       "explosive": {
+        "killRadius": 4.016247767665595,
         "mass": 1,
         "explosiveRadius": 24.19806931408359
       },
@@ -105,6 +106,7 @@
         }
       },
       "explosive": {
+        "killRadius": 2.6513444676635016,
         "mass": 0.6,
         "explosiveRadius": 20.409442096733994
       },
@@ -164,6 +166,7 @@
         }
       },
       "explosive": {
+        "killRadius": 4.016247767665595,
         "mass": 1,
         "explosiveRadius": 24.19806931408359
       },
@@ -223,6 +226,7 @@
         }
       },
       "explosive": {
+        "killRadius": 4.016247767665595,
         "mass": 1,
         "explosiveRadius": 24.19806931408359
       },
@@ -284,6 +288,7 @@
         }
       },
       "explosive": {
+        "killRadius": 0.34812415868998436,
         "mass": 0.05,
         "explosiveRadius": 8.914644955936732
       },
@@ -413,6 +418,7 @@
         }
       },
       "explosive": {
+        "killRadius": 14.224595392071189,
         "mass": 5.24,
         "explosiveRadius": 42.02984729117391
       },
@@ -524,6 +530,7 @@
         }
       },
       "explosive": {
+        "killRadius": 15.14107005439156,
         "mass": 5.72,
         "explosiveRadius": 43.275895093714745
       },
@@ -586,6 +593,7 @@
         }
       },
       "explosive": {
+        "killRadius": 8.949139918658982,
         "mass": 2.79,
         "explosiveRadius": 34.065553581949125
       },
@@ -709,6 +717,7 @@
         }
       },
       "explosive": {
+        "killRadius": 0.34812415868998436,
         "mass": 0.05,
         "explosiveRadius": 8.914644955936732
       },
@@ -826,6 +835,7 @@
         }
       },
       "explosive": {
+        "killRadius": 12.270286479535361,
         "mass": 4.27,
         "explosiveRadius": 39.25756346137497
       },
@@ -951,6 +961,7 @@
         }
       },
       "explosive": {
+        "killRadius": 11.548001066692109,
         "mass": 3.93,
         "explosiveRadius": 38.18665051319111
       },
@@ -1011,6 +1022,7 @@
         }
       },
       "explosive": {
+        "killRadius": 8.235285843361464,
         "mass": 2.5,
         "explosiveRadius": 32.84183281686656
       },
@@ -1135,6 +1147,7 @@
         }
       },
       "explosive": {
+        "killRadius": 16.39009984657512,
         "mass": 6.4,
         "explosiveRadius": 44.92699532929537
       },
@@ -1196,6 +1209,7 @@
         }
       },
       "explosive": {
+        "killRadius": 1.0263455609896863,
         "mass": 0.1908,
         "explosiveRadius": 13.930718181369892
       },
@@ -1311,6 +1325,7 @@
         }
       },
       "explosive": {
+        "killRadius": 0.9527452754318488,
         "mass": 0.1744,
         "explosiveRadius": 13.51956993275164
       },
@@ -1372,6 +1387,7 @@
         }
       },
       "explosive": {
+        "killRadius": 2.4314062113408172,
         "mass": 0.54,
         "explosiveRadius": 19.705099690119937
       },
@@ -1499,6 +1515,7 @@
         }
       },
       "explosive": {
+        "killRadius": 4.335417727329299,
         "mass": 1.1,
         "explosiveRadius": 24.97918578536338
       },
@@ -1558,6 +1575,7 @@
         }
       },
       "explosive": {
+        "killRadius": 4.016247767665595,
         "mass": 1,
         "explosiveRadius": 24.19806931408359
       },
@@ -1617,6 +1635,7 @@
         }
       },
       "explosive": {
+        "killRadius": 0.6426730091599914,
         "mass": 0.108,
         "explosiveRadius": 11.523612205432709
       },
@@ -1679,6 +1698,7 @@
         }
       },
       "explosive": {
+        "killRadius": 21.202004532765343,
         "mass": 9.3,
         "explosiveRadius": 50.88717783874806
       },
@@ -1854,6 +1874,7 @@
         }
       },
       "explosive": {
+        "killRadius": 1.2027794714912676,
         "mass": 0.231,
         "explosiveRadius": 14.84743307517701
       },
@@ -1913,6 +1934,7 @@
         }
       },
       "explosive": {
+        "killRadius": 1.2227260867773653,
         "mass": 0.23562,
         "explosiveRadius": 14.945763312147125
       },
@@ -1972,6 +1994,7 @@
         }
       },
       "explosive": {
+        "killRadius": 0.17713522035471357,
         "mass": 0.02002,
         "explosiveRadius": 6.570555289481114
       },
@@ -2090,6 +2113,7 @@
         }
       },
       "explosive": {
+        "killRadius": 6.089220032537719,
         "mass": 1.69,
         "explosiveRadius": 28.823250175571644
       },
@@ -2266,6 +2290,7 @@
         }
       },
       "explosive": {
+        "killRadius": 0.34812415868998436,
         "mass": 0.05,
         "explosiveRadius": 8.914644955936732
       },
@@ -2326,6 +2351,7 @@
         }
       },
       "explosive": {
+        "killRadius": 2.727218573665509,
         "mass": 0.621,
         "explosiveRadius": 20.644827089544524
       },
@@ -2385,6 +2411,7 @@
         }
       },
       "explosive": {
+        "killRadius": 2.937533708413511,
         "mass": 0.68,
         "explosiveRadius": 21.278957833820613
       },
@@ -2446,6 +2473,7 @@
         }
       },
       "explosive": {
+        "killRadius": 2.958695306045367,
         "mass": 0.686,
         "explosiveRadius": 21.341359826940376
       },
@@ -2505,6 +2533,7 @@
         }
       },
       "explosive": {
+        "killRadius": 0.2303222117648018,
         "mass": 0.0289,
         "explosiveRadius": 7.425858406298692
       },
@@ -2565,6 +2594,7 @@
         }
       },
       "explosive": {
+        "killRadius": 3.596436187520783,
         "mass": 0.8721,
         "explosiveRadius": 23.11902308156443
       },
@@ -2626,6 +2656,7 @@
         }
       },
       "explosive": {
+        "killRadius": 65.63240496389598,
         "mass": 80,
         "explosiveRadius": 90
       },
@@ -2685,6 +2716,7 @@
         }
       },
       "explosive": {
+        "killRadius": 0.28226742894673607,
         "mass": 0.038,
         "explosiveRadius": 8.135331392596568
       },
@@ -2798,6 +2830,7 @@
         }
       },
       "explosive": {
+        "killRadius": 3.6077774399209956,
         "mass": 0.8755,
         "explosiveRadius": 23.149028336627985
       },
@@ -2857,6 +2890,7 @@
         }
       },
       "explosive": {
+        "killRadius": 2.958695306045367,
         "mass": 0.686,
         "explosiveRadius": 21.341359826940376
       },
@@ -2918,6 +2952,7 @@
         }
       },
       "explosive": {
+        "killRadius": 0.42743925747175665,
         "mass": 0.065,
         "explosiveRadius": 9.729380059925935
       },
@@ -2979,6 +3014,7 @@
         }
       },
       "explosive": {
+        "killRadius": 2.5785622739660847,
         "mass": 0.58,
         "explosiveRadius": 20.180103109924154
       },
@@ -3038,6 +3074,7 @@
         }
       },
       "explosive": {
+        "killRadius": 0.34812415868998436,
         "mass": 0.05,
         "explosiveRadius": 8.914644955936732
       },
@@ -3155,6 +3192,7 @@
         }
       },
       "explosive": {
+        "killRadius": 2.3942727298801256,
         "mass": 0.53,
         "explosiveRadius": 19.582704608800572
       },
@@ -3223,6 +3261,7 @@
         }
       },
       "explosive": {
+        "killRadius": 11.046882290993368,
         "mass": 3.7,
         "explosiveRadius": 37.42667889126842
       },
@@ -3282,6 +3321,7 @@
         }
       },
       "explosive": {
+        "killRadius": 3.302254022104485,
         "mass": 0.785,
         "explosiveRadius": 22.32221406759598
       },
@@ -3344,6 +3384,7 @@
         }
       },
       "explosive": {
+        "killRadius": 4.016247767665595,
         "mass": 1,
         "explosiveRadius": 24.19806931408359
       },
@@ -3406,6 +3447,7 @@
         }
       },
       "explosive": {
+        "killRadius": 2.6513444676635016,
         "mass": 0.6,
         "explosiveRadius": 20.409442096733994
       },
@@ -3470,6 +3512,7 @@
         }
       },
       "explosive": {
+        "killRadius": 0.1770116309211526,
         "mass": 0.02,
         "explosiveRadius": 6.568366563373312
       },
@@ -3530,6 +3573,7 @@
         }
       },
       "explosive": {
+        "killRadius": 1.1550248324381784,
         "mass": 0.22,
         "explosiveRadius": 14.607916464503445
       },
@@ -3591,6 +3635,7 @@
         }
       },
       "explosive": {
+        "killRadius": 11.48323026909671,
         "mass": 3.9,
         "explosiveRadius": 38.08923516523762
       },
@@ -3765,6 +3810,7 @@
         }
       },
       "explosive": {
+        "killRadius": 0.1186551457722138,
         "mass": 0.011,
         "explosiveRadius": 5.38160243847382
       },
@@ -3958,6 +4004,7 @@
         }
       },
       "explosive": {
+        "killRadius": 3.7755922066459693,
         "mass": 0.92617,
         "explosiveRadius": 23.58726680533284
       },
@@ -4017,6 +4064,7 @@
         }
       },
       "explosive": {
+        "killRadius": 0.7807631819662219,
         "mass": 0.137,
         "explosiveRadius": 12.474435604862133
       },
@@ -4079,6 +4127,7 @@
         }
       },
       "explosive": {
+        "killRadius": 2.461492383225594,
         "mass": 0.54813,
         "explosiveRadius": 19.803497924284414
       },
@@ -4138,6 +4187,7 @@
         }
       },
       "explosive": {
+        "killRadius": 2.887997524671131,
         "mass": 0.666,
         "explosiveRadius": 21.13191196682679
       },
@@ -4199,6 +4249,7 @@
         }
       },
       "explosive": {
+        "killRadius": 14.224595392071189,
         "mass": 5.24,
         "explosiveRadius": 42.02984729117391
       },
@@ -4260,6 +4311,7 @@
         }
       },
       "explosive": {
+        "killRadius": 8.949139918658982,
         "mass": 2.79,
         "explosiveRadius": 34.065553581949125
       },
@@ -4321,6 +4373,7 @@
         }
       },
       "explosive": {
+        "killRadius": 15.14107005439156,
         "mass": 5.72,
         "explosiveRadius": 43.275895093714745
       },
@@ -4448,6 +4501,7 @@
         }
       },
       "explosive": {
+        "killRadius": 11.548001066692109,
         "mass": 3.93,
         "explosiveRadius": 38.18665051319111
       },
@@ -4507,6 +4561,7 @@
         }
       },
       "explosive": {
+        "killRadius": 8.235285843361464,
         "mass": 2.5,
         "explosiveRadius": 32.84183281686656
       },
@@ -4626,6 +4681,7 @@
         }
       },
       "explosive": {
+        "killRadius": 5.192674814698315,
         "mass": 1.38,
         "explosiveRadius": 26.94058851012807
       },
@@ -4743,6 +4799,7 @@
         }
       },
       "explosive": {
+        "killRadius": 21.202004532765343,
         "mass": 9.3,
         "explosiveRadius": 50.88717783874806
       },
@@ -4860,6 +4917,7 @@
         }
       },
       "explosive": {
+        "killRadius": 6.940415691998389,
         "mass": 2,
         "explosiveRadius": 30.48765689562911
       },
@@ -4920,6 +4978,7 @@
         }
       },
       "explosive": {
+        "killRadius": 23.723739390614845,
         "mass": 11,
         "explosiveRadius": 53.81602438473819
       },
@@ -4977,6 +5036,7 @@
         }
       },
       "explosive": {
+        "killRadius": 23.723739390614845,
         "mass": 11,
         "explosiveRadius": 53.81602438473819
       },
@@ -5034,6 +5094,7 @@
         }
       },
       "explosive": {
+        "killRadius": 23.723739390614845,
         "mass": 11,
         "explosiveRadius": 53.81602438473819
       },
@@ -5091,6 +5152,7 @@
         }
       },
       "explosive": {
+        "killRadius": 10.557363920118588,
         "mass": 3.48,
         "explosiveRadius": 36.66968092651908
       },
@@ -5148,6 +5210,7 @@
         }
       },
       "explosive": {
+        "killRadius": 23.723739390614845,
         "mass": 11,
         "explosiveRadius": 53.81602438473819
       },
@@ -5264,6 +5327,7 @@
         }
       },
       "explosive": {
+        "killRadius": 8.235285843361464,
         "mass": 2.5,
         "explosiveRadius": 32.84183281686656
       },
@@ -5381,6 +5445,7 @@
         }
       },
       "explosive": {
+        "killRadius": 3.6891981849547824,
         "mass": 0.9,
         "explosiveRadius": 23.362979050698936
       },
@@ -5438,6 +5503,7 @@
         }
       },
       "explosive": {
+        "killRadius": 0.34812415868998436,
         "mass": 0.05,
         "explosiveRadius": 8.914644955936732
       },
@@ -5495,6 +5561,7 @@
         }
       },
       "explosive": {
+        "killRadius": 12.353888966980085,
         "mass": 4.31,
         "explosiveRadius": 39.379766781743335
       },
@@ -5615,6 +5682,7 @@
         }
       },
       "explosive": {
+        "killRadius": 2.2820071533456128,
         "mass": 0.5,
         "explosiveRadius": 19.20602034238785
       },
@@ -5681,6 +5749,7 @@
         }
       },
       "explosive": {
+        "killRadius": 81.83158648435018,
         "mass": 500,
         "explosiveRadius": 90
       },
@@ -5740,6 +5809,7 @@
         }
       },
       "explosive": {
+        "killRadius": 0.5284121428250256,
         "mass": 0.0848,
         "explosiveRadius": 10.63112767414051
       },
@@ -5798,6 +5868,7 @@
         }
       },
       "explosive": {
+        "killRadius": 3.3874280706402833,
         "mass": 0.81,
         "explosiveRadius": 22.556708266213537
       },
@@ -5857,6 +5928,7 @@
         }
       },
       "explosive": {
+        "killRadius": 16.31811505956971,
         "mass": 6.36,
         "explosiveRadius": 44.83320174681758
       },
@@ -5921,6 +5993,7 @@
         }
       },
       "explosive": {
+        "killRadius": 21.109472755906207,
         "mass": 9.24,
         "explosiveRadius": 50.77750685688943
       },
@@ -5982,6 +6055,7 @@
         }
       },
       "explosive": {
+        "killRadius": 0.4788936880625824,
         "mass": 0.075,
         "explosiveRadius": 10.204721048366997
       },
@@ -6095,6 +6169,7 @@
         }
       },
       "explosive": {
+        "killRadius": 21.401610076052073,
         "mass": 9.43,
         "explosiveRadius": 51.12319024566911
       },
@@ -6221,6 +6296,7 @@
         }
       },
       "explosive": {
+        "killRadius": 18.12147513009742,
         "mass": 7.392,
         "explosiveRadius": 47.13766176512686
       },
@@ -6281,6 +6357,7 @@
         }
       },
       "explosive": {
+        "killRadius": 15.402756812315365,
         "mass": 5.86,
         "explosiveRadius": 43.62611987876653
       },
@@ -6468,6 +6545,7 @@
         }
       },
       "explosive": {
+        "killRadius": 5.833988176913397,
         "mass": 1.6,
         "explosiveRadius": 28.30223356195394
       },
@@ -6534,6 +6612,7 @@
         }
       },
       "explosive": {
+        "killRadius": 10.691895614063933,
         "mass": 3.54,
         "explosiveRadius": 36.879226509011716
       },
@@ -6594,6 +6673,7 @@
         }
       },
       "explosive": {
+        "killRadius": 11.156722794825376,
         "mass": 3.75,
         "explosiveRadius": 37.594513777022556
       },
@@ -6717,6 +6797,7 @@
         }
       },
       "explosive": {
+        "killRadius": 1.0848734533602984,
         "mass": 0.204,
         "explosiveRadius": 14.24483551736862
       },
@@ -6778,6 +6859,7 @@
         }
       },
       "explosive": {
+        "killRadius": 75.3794305956485,
         "mass": 207,
         "explosiveRadius": 90
       },
@@ -6837,6 +6919,7 @@
         }
       },
       "explosive": {
+        "killRadius": 20.954675909739393,
         "mass": 9.14,
         "explosiveRadius": 50.593661992974766
       },
@@ -6896,6 +6979,7 @@
         }
       },
       "explosive": {
+        "killRadius": 0.34812415868998436,
         "mass": 0.05,
         "explosiveRadius": 8.914644955936732
       },
@@ -6955,6 +7039,7 @@
         }
       },
       "explosive": {
+        "killRadius": 20.954675909739393,
         "mass": 9.14,
         "explosiveRadius": 50.593661992974766
       },
@@ -7014,6 +7099,7 @@
         }
       },
       "explosive": {
+        "killRadius": 20.954675909739393,
         "mass": 9.14,
         "explosiveRadius": 50.593661992974766
       },
@@ -7075,6 +7161,7 @@
         }
       },
       "explosive": {
+        "killRadius": 10.691895614063933,
         "mass": 3.54,
         "explosiveRadius": 36.879226509011716
       },
@@ -7134,6 +7221,7 @@
         }
       },
       "explosive": {
+        "killRadius": 13.476357431849806,
         "mass": 4.86,
         "explosiveRadius": 40.988259097043574
       },
@@ -7200,6 +7288,7 @@
         }
       },
       "explosive": {
+        "killRadius": 4.240450455745094,
         "mass": 1.07,
         "explosiveRadius": 24.750006023659473
       },
@@ -7311,6 +7400,7 @@
         }
       },
       "explosive": {
+        "killRadius": 4.240450455745094,
         "mass": 1.07,
         "explosiveRadius": 24.750006023659473
       },
@@ -7370,6 +7460,7 @@
         }
       },
       "explosive": {
+        "killRadius": 8.235285843361464,
         "mass": 2.5,
         "explosiveRadius": 32.84183281686656
       },
@@ -7493,6 +7584,7 @@
         }
       },
       "explosive": {
+        "killRadius": 13.951367826370035,
         "mass": 5.1,
         "explosiveRadius": 41.6521517307105
       },
@@ -7557,6 +7649,7 @@
         }
       },
       "explosive": {
+        "killRadius": 11.548001066692109,
         "mass": 3.93,
         "explosiveRadius": 38.18665051319111
       },
@@ -7616,6 +7709,7 @@
         }
       },
       "explosive": {
+        "killRadius": 8.235285843361464,
         "mass": 2.5,
         "explosiveRadius": 32.84183281686656
       },
@@ -7677,6 +7771,7 @@
         }
       },
       "explosive": {
+        "killRadius": 14.224595392071189,
         "mass": 5.24,
         "explosiveRadius": 42.02984729117391
       },
@@ -7792,6 +7887,7 @@
         }
       },
       "explosive": {
+        "killRadius": 15.14107005439156,
         "mass": 5.72,
         "explosiveRadius": 43.275895093714745
       },
@@ -7856,6 +7952,7 @@
         }
       },
       "explosive": {
+        "killRadius": 6.940415691998389,
         "mass": 2,
         "explosiveRadius": 30.48765689562911
       },
@@ -7917,6 +8014,7 @@
         }
       },
       "explosive": {
+        "killRadius": 0.22506244549553772,
         "mass": 0.028,
         "explosiveRadius": 7.347959041982911
       },
@@ -8034,6 +8132,7 @@
         }
       },
       "explosive": {
+        "killRadius": 1.0263455609896863,
         "mass": 0.1908,
         "explosiveRadius": 13.930718181369892
       },
@@ -8093,6 +8192,7 @@
         }
       },
       "explosive": {
+        "killRadius": 0.9527452754318488,
         "mass": 0.1744,
         "explosiveRadius": 13.51956993275164
       },
@@ -8210,6 +8310,7 @@
         }
       },
       "explosive": {
+        "killRadius": 2.091852082260378,
         "mass": 0.45,
         "explosiveRadius": 18.543208761095247
       },
@@ -8270,6 +8371,7 @@
         }
       },
       "explosive": {
+        "killRadius": 11.046882290993368,
         "mass": 3.7,
         "explosiveRadius": 37.42667889126842
       },
@@ -8331,6 +8433,7 @@
         }
       },
       "explosive": {
+        "killRadius": 3.1819662830013873,
         "mass": 0.75,
         "explosiveRadius": 21.985405028700388
       },
@@ -8397,6 +8500,7 @@
         }
       },
       "explosive": {
+        "killRadius": 0.07886127751694466,
         "mass": 0.0056,
         "explosiveRadius": 4.29711251568393
       },
@@ -8514,6 +8618,7 @@
         }
       },
       "explosive": {
+        "killRadius": 16.31811505956971,
         "mass": 6.36,
         "explosiveRadius": 44.83320174681758
       },
@@ -8585,6 +8690,7 @@
         }
       },
       "explosive": {
+        "killRadius": 21.109472755906207,
         "mass": 9.24,
         "explosiveRadius": 50.77750685688943
       },
@@ -8653,6 +8759,7 @@
         }
       },
       "explosive": {
+        "killRadius": 0.4170227725468601,
         "mass": 0.063,
         "explosiveRadius": 9.628550212138082
       },
@@ -8711,6 +8818,7 @@
         }
       },
       "explosive": {
+        "killRadius": 2.887997524671131,
         "mass": 0.666,
         "explosiveRadius": 21.13191196682679
       },
@@ -8770,6 +8878,7 @@
         }
       },
       "explosive": {
+        "killRadius": 5.428884959212148,
         "mass": 1.46,
         "explosiveRadius": 27.451431834505975
       },
@@ -8829,6 +8938,7 @@
         }
       },
       "explosive": {
+        "killRadius": 0.6036995851731218,
         "mass": 0.1,
         "explosiveRadius": 11.231748832323843
       },
@@ -8891,6 +9001,7 @@
         }
       },
       "explosive": {
+        "killRadius": 9.686279193466934,
         "mass": 3.1,
         "explosiveRadius": 35.283198474381734
       },
@@ -9016,6 +9127,7 @@
         }
       },
       "explosive": {
+        "killRadius": 14.648450632969144,
         "mass": 5.46,
         "explosiveRadius": 42.6100061916892
       },
@@ -9075,6 +9187,7 @@
         }
       },
       "explosive": {
+        "killRadius": 8.533698365986702,
         "mass": 2.62,
         "explosiveRadius": 33.35911190203612
       },
@@ -9134,6 +9247,7 @@
         }
       },
       "explosive": {
+        "killRadius": 15.14107005439156,
         "mass": 5.72,
         "explosiveRadius": 43.275895093714745
       },
@@ -9198,6 +9312,7 @@
         }
       },
       "explosive": {
+        "killRadius": 14.34084968054905,
         "mass": 5.3,
         "explosiveRadius": 42.1896581338472
       },
@@ -9259,6 +9374,7 @@
         }
       },
       "explosive": {
+        "killRadius": 80.89920891139188,
         "mass": 430,
         "explosiveRadius": 90
       },
@@ -9318,6 +9434,7 @@
         }
       },
       "explosive": {
+        "killRadius": 5.862541601957777,
         "mass": 1.61,
         "explosiveRadius": 28.361074133743102
       },
@@ -9378,6 +9495,7 @@
         }
       },
       "explosive": {
+        "killRadius": 7.416780513521174,
         "mass": 2.18,
         "explosiveRadius": 31.376142417553538
       },
@@ -9498,6 +9616,7 @@
         }
       },
       "explosive": {
+        "killRadius": 12.951854798738914,
         "mass": 4.6,
         "explosiveRadius": 40.24389374144378
       },
@@ -9558,6 +9677,7 @@
         }
       },
       "explosive": {
+        "killRadius": 12.123303527719845,
         "mass": 4.2,
         "explosiveRadius": 39.04185820982995
       },
@@ -9624,6 +9744,7 @@
         }
       },
       "explosive": {
+        "killRadius": 0.34812415868998436,
         "mass": 0.05,
         "explosiveRadius": 8.914644955936732
       },
@@ -9743,6 +9864,7 @@
         }
       },
       "explosive": {
+        "killRadius": 14.224595392071189,
         "mass": 5.24,
         "explosiveRadius": 42.02984729117391
       },
@@ -9802,6 +9924,7 @@
         }
       },
       "explosive": {
+        "killRadius": 15.14107005439156,
         "mass": 5.72,
         "explosiveRadius": 43.275895093714745
       },
@@ -9923,6 +10046,7 @@
         }
       },
       "explosive": {
+        "killRadius": 8.949139918658982,
         "mass": 2.79,
         "explosiveRadius": 34.065553581949125
       },
@@ -9982,6 +10106,7 @@
         }
       },
       "explosive": {
+        "killRadius": 10.82564949197137,
         "mass": 3.6,
         "explosiveRadius": 37.086417522190494
       },
@@ -10043,6 +10168,7 @@
         }
       },
       "explosive": {
+        "killRadius": 0.2180090799706562,
         "mass": 0.0268,
         "explosiveRadius": 7.2414518573865
       },
@@ -10222,6 +10348,7 @@
         }
       },
       "explosive": {
+        "killRadius": 0.37169202550787145,
         "mass": 0.0544,
         "explosiveRadius": 9.168824984981764
       },
@@ -10342,6 +10469,7 @@
         }
       },
       "explosive": {
+        "killRadius": 8.235285843361464,
         "mass": 2.5,
         "explosiveRadius": 32.84183281686656
       },
@@ -10401,6 +10529,7 @@
         }
       },
       "explosive": {
+        "killRadius": 11.548001066692109,
         "mass": 3.93,
         "explosiveRadius": 38.18665051319111
       },
@@ -10462,6 +10591,7 @@
         }
       },
       "explosive": {
+        "killRadius": 37.80496887334658,
         "mass": 3,
         "explosiveRadius": 139.59862028202375
       },
@@ -10521,6 +10651,7 @@
         }
       },
       "explosive": {
+        "killRadius": 2.134403962957015,
         "mass": 0.2,
         "explosiveRadius": 28.30223356195394
       },
@@ -10580,6 +10711,7 @@
         }
       },
       "explosive": {
+        "killRadius": 35.858018017681744,
         "mass": 21,
         "explosiveRadius": 66.76063845237132
       },
@@ -10641,6 +10773,7 @@
         }
       },
       "explosive": {
+        "killRadius": 12.706127899859503,
         "mass": 4.48,
         "explosiveRadius": 39.89085893915249
       },
@@ -10767,6 +10900,7 @@
         }
       },
       "explosive": {
+        "killRadius": 0.9055285309698758,
         "mass": 0.164,
         "explosiveRadius": 13.245306092752644
       },
@@ -10828,6 +10962,7 @@
         }
       },
       "explosive": {
+        "killRadius": 3.1508326874310417,
         "mass": 0.741,
         "explosiveRadius": 21.897109278067727
       },
@@ -10890,6 +11025,7 @@
         }
       },
       "explosive": {
+        "killRadius": 10.1489533038945,
         "mass": 3.3,
         "explosiveRadius": 36.02621996556926
       },
@@ -10952,6 +11088,7 @@
         }
       },
       "explosive": {
+        "killRadius": 1.6986437151487852,
         "mass": 0.35,
         "explosiveRadius": 17.053102319555965
       },
@@ -11017,6 +11154,7 @@
         }
       },
       "explosive": {
+        "killRadius": 5.192674814698315,
         "mass": 1.38,
         "explosiveRadius": 26.94058851012807
       },
@@ -11146,6 +11284,7 @@
         }
       },
       "explosive": {
+        "killRadius": 0.15822175861723947,
         "mass": 0.017,
         "explosiveRadius": 6.222005015677508
       },
@@ -11216,6 +11355,7 @@
         }
       },
       "explosive": {
+        "killRadius": 0.6036995851731218,
         "mass": 0.1,
         "explosiveRadius": 11.231748832323843
       },
@@ -11274,6 +11414,7 @@
         }
       },
       "explosive": {
+        "killRadius": 5.252064198665129,
         "mass": 1.4,
         "explosiveRadius": 27.070112561384484
       },
@@ -11331,6 +11472,7 @@
         }
       },
       "explosive": {
+        "killRadius": 13.295994930072908,
         "mass": 4.77,
         "explosiveRadius": 40.73366706837004
       },
@@ -11395,6 +11537,7 @@
         }
       },
       "explosive": {
+        "killRadius": 4.58555040933458,
         "mass": 1.18,
         "explosiveRadius": 25.57062748935407
       },
@@ -11515,6 +11658,7 @@
         }
       },
       "explosive": {
+        "killRadius": 2.887997524671131,
         "mass": 0.666,
         "explosiveRadius": 21.13191196682679
       },
@@ -11572,6 +11716,7 @@
         }
       },
       "explosive": {
+        "killRadius": 0.34812415868998436,
         "mass": 0.05,
         "explosiveRadius": 8.914644955936732
       },
@@ -11758,6 +11903,7 @@
         }
       },
       "explosive": {
+        "killRadius": 11.548001066692109,
         "mass": 3.93,
         "explosiveRadius": 38.18665051319111
       },
@@ -11884,6 +12030,7 @@
         }
       },
       "explosive": {
+        "killRadius": 10.691895614063933,
         "mass": 3.54,
         "explosiveRadius": 36.879226509011716
       },
@@ -11944,6 +12091,7 @@
         }
       },
       "explosive": {
+        "killRadius": 11.156722794825376,
         "mass": 3.75,
         "explosiveRadius": 37.594513777022556
       },
@@ -12011,6 +12159,7 @@
         }
       },
       "explosive": {
+        "killRadius": 3.000897521332953,
         "mass": 0.698,
         "explosiveRadius": 21.46508061883771
       },
@@ -12072,6 +12221,7 @@
         }
       },
       "explosive": {
+        "killRadius": 0.6426730091599914,
         "mass": 0.108,
         "explosiveRadius": 11.523612205432709
       },
@@ -12136,6 +12286,7 @@
         }
       },
       "explosive": {
+        "killRadius": 0.4788936880625824,
         "mass": 0.075,
         "explosiveRadius": 10.204721048366997
       },
@@ -12249,6 +12400,7 @@
         }
       },
       "explosive": {
+        "killRadius": 0.524400503291783,
         "mass": 0.084,
         "explosiveRadius": 10.59759077093629
       },
@@ -12419,6 +12571,7 @@
         }
       },
       "explosive": {
+        "killRadius": 8.235285843361464,
         "mass": 2.5,
         "explosiveRadius": 32.84183281686656
       },
@@ -12480,6 +12633,7 @@
         }
       },
       "explosive": {
+        "killRadius": 0.4524669445087861,
         "mass": 0.0282,
         "explosiveRadius": 14.730825383954837
       },
@@ -12540,6 +12694,7 @@
         }
       },
       "explosive": {
+        "killRadius": 0.34812415868998436,
         "mass": 0.05,
         "explosiveRadius": 8.914644955936732
       },
@@ -12602,6 +12757,7 @@
         }
       },
       "explosive": {
+        "killRadius": 2.958695306045367,
         "mass": 0.686,
         "explosiveRadius": 21.341359826940376
       },
@@ -12663,6 +12819,7 @@
         }
       },
       "explosive": {
+        "killRadius": 0.2303222117648018,
         "mass": 0.0289,
         "explosiveRadius": 7.425858406298692
       },
@@ -12785,6 +12942,7 @@
         }
       },
       "explosive": {
+        "killRadius": 20.73673215008327,
         "mass": 9,
         "explosiveRadius": 50.33401252931395
       },
@@ -12842,6 +13000,7 @@
         }
       },
       "explosive": {
+        "killRadius": 39.871938437868955,
         "mass": 25.01,
         "explosiveRadius": 70.76501672514125
       },
@@ -12901,6 +13060,7 @@
         }
       },
       "explosive": {
+        "killRadius": 5.2223980409368025,
         "mass": 1.39,
         "explosiveRadius": 27.00550584186266
       },
@@ -12967,6 +13127,7 @@
         }
       },
       "explosive": {
+        "killRadius": 4.678228218264098,
         "mass": 1.21,
         "explosiveRadius": 25.785516786520958
       },
@@ -13024,6 +13185,7 @@
         }
       },
       "explosive": {
+        "killRadius": 3.0079156815631003,
         "mass": 0.7,
         "explosiveRadius": 21.485562578419646
       },
@@ -13135,6 +13297,7 @@
         }
       },
       "explosive": {
+        "killRadius": 0.7807631819662219,
         "mass": 0.137,
         "explosiveRadius": 12.474435604862133
       },
@@ -13253,6 +13416,7 @@
         }
       },
       "explosive": {
+        "killRadius": 3.6891981849547824,
         "mass": 0.9,
         "explosiveRadius": 23.362979050698936
       },
@@ -13313,6 +13477,7 @@
         }
       },
       "explosive": {
+        "killRadius": 0.34812415868998436,
         "mass": 0.05,
         "explosiveRadius": 8.914644955936732
       },
@@ -13373,6 +13538,7 @@
         }
       },
       "explosive": {
+        "killRadius": 12.353888966980085,
         "mass": 4.31,
         "explosiveRadius": 39.379766781743335
       },
@@ -13493,6 +13659,7 @@
         }
       },
       "explosive": {
+        "killRadius": 0.0334671698661856,
         "mass": 0.001,
         "explosiveRadius": 2.4198069314083592
       },
@@ -13552,6 +13719,7 @@
         }
       },
       "explosive": {
+        "killRadius": 0.6036995851731218,
         "mass": 0.1,
         "explosiveRadius": 11.231748832323843
       },
@@ -13610,6 +13778,7 @@
         }
       },
       "explosive": {
+        "killRadius": 6.940415691998389,
         "mass": 2,
         "explosiveRadius": 30.48765689562911
       },
@@ -13669,6 +13838,7 @@
         }
       },
       "explosive": {
+        "killRadius": 1.6986437151487852,
         "mass": 0.35,
         "explosiveRadius": 17.053102319555965
       },
@@ -13729,6 +13899,7 @@
         }
       },
       "explosive": {
+        "killRadius": 10.1489533038945,
         "mass": 3.3,
         "explosiveRadius": 36.02621996556926
       },
@@ -13790,6 +13961,7 @@
         }
       },
       "explosive": {
+        "killRadius": 2.5785622739660847,
         "mass": 0.58,
         "explosiveRadius": 20.180103109924154
       },
@@ -13965,6 +14137,7 @@
         }
       },
       "explosive": {
+        "killRadius": 1.1445552519940798,
         "mass": 0.2176,
         "explosiveRadius": 14.554602426472366
       },
@@ -14026,6 +14199,7 @@
         }
       },
       "explosive": {
+        "killRadius": 0.2303222117648018,
         "mass": 0.0289,
         "explosiveRadius": 7.425858406298692
       },
@@ -14090,6 +14264,7 @@
         }
       },
       "explosive": {
+        "killRadius": 4.080688118054157,
         "mass": 1.02,
         "explosiveRadius": 24.358326099066247
       },
@@ -14205,6 +14380,7 @@
         }
       },
       "explosive": {
+        "killRadius": 0.34812415868998436,
         "mass": 0.05,
         "explosiveRadius": 8.914644955936732
       },
@@ -14264,6 +14440,7 @@
         }
       },
       "explosive": {
+        "killRadius": 6.940415691998389,
         "mass": 2,
         "explosiveRadius": 30.48765689562911
       },
@@ -14325,6 +14502,7 @@
         }
       },
       "explosive": {
+        "killRadius": 0.23090508608360044,
         "mass": 0.029,
         "explosiveRadius": 7.43441355027714
       },
@@ -14386,6 +14564,7 @@
         }
       },
       "explosive": {
+        "killRadius": 3.0952744036363744,
         "mass": 0.725,
         "explosiveRadius": 21.738357094220444
       },
@@ -14448,6 +14627,7 @@
         }
       },
       "explosive": {
+        "killRadius": 14.224595392071189,
         "mass": 5.24,
         "explosiveRadius": 42.02984729117391
       },
@@ -14507,6 +14687,7 @@
         }
       },
       "explosive": {
+        "killRadius": 6.940415691998389,
         "mass": 2,
         "explosiveRadius": 30.48765689562911
       },
@@ -14624,6 +14805,7 @@
         }
       },
       "explosive": {
+        "killRadius": 68.1795012494287,
         "mass": 100.1,
         "explosiveRadius": 90
       },
@@ -14684,6 +14866,7 @@
         }
       },
       "explosive": {
+        "killRadius": 2.134403962957015,
         "mass": 0.2,
         "explosiveRadius": 28.30223356195394
       },
@@ -14750,6 +14933,7 @@
         }
       },
       "explosive": {
+        "killRadius": 10.467236811565481,
         "mass": 3.44,
         "explosiveRadius": 36.528642298580756
       },
@@ -14816,6 +15000,7 @@
         }
       },
       "explosive": {
+        "killRadius": 4.016247767665595,
         "mass": 1,
         "explosiveRadius": 24.19806931408359
       },
@@ -14875,6 +15060,7 @@
         }
       },
       "explosive": {
+        "killRadius": 8.235285843361464,
         "mass": 2.5,
         "explosiveRadius": 32.84183281686656
       },
@@ -14936,6 +15122,7 @@
         }
       },
       "explosive": {
+        "killRadius": 12.951854798738914,
         "mass": 4.6,
         "explosiveRadius": 40.24389374144378
       },
@@ -15055,6 +15242,7 @@
         }
       },
       "explosive": {
+        "killRadius": 0.34812415868998436,
         "mass": 0.05,
         "explosiveRadius": 8.914644955936732
       },
@@ -15116,6 +15304,7 @@
         }
       },
       "explosive": {
+        "killRadius": 16.62282922871878,
         "mass": 6.53,
         "explosiveRadius": 45.22915181775087
       },
@@ -15238,6 +15427,7 @@
         }
       },
       "explosive": {
+        "killRadius": 21.109472755906207,
         "mass": 9.24,
         "explosiveRadius": 50.77750685688943
       },
@@ -15297,6 +15487,7 @@
         }
       },
       "explosive": {
+        "killRadius": 12.706127899859503,
         "mass": 4.48,
         "explosiveRadius": 39.89085893915249
       },
@@ -15421,6 +15612,7 @@
         }
       },
       "explosive": {
+        "killRadius": 4.240450455745094,
         "mass": 1.07,
         "explosiveRadius": 24.750006023659473
       },
@@ -15481,6 +15673,7 @@
         }
       },
       "explosive": {
+        "killRadius": 4.240450455745094,
         "mass": 1.07,
         "explosiveRadius": 24.750006023659473
       },
@@ -15601,6 +15794,7 @@
         }
       },
       "explosive": {
+        "killRadius": 72.0626256679966,
         "mass": 145,
         "explosiveRadius": 90
       },
@@ -15665,6 +15859,7 @@
         }
       },
       "explosive": {
+        "killRadius": 0.568250663835717,
         "mass": 0.0928,
         "explosiveRadius": 10.955445477255957
       },
@@ -15727,6 +15922,7 @@
         }
       },
       "explosive": {
+        "killRadius": 9.802856859952685,
         "mass": 3.15,
         "explosiveRadius": 35.47188226775726
       },
@@ -15793,6 +15989,7 @@
         }
       },
       "explosive": {
+        "killRadius": 3.1473681904648205,
         "mass": 0.74,
         "explosiveRadius": 21.887254592093182
       },
@@ -15853,6 +16050,7 @@
         }
       },
       "explosive": {
+        "killRadius": 15.402756812315365,
         "mass": 5.86,
         "explosiveRadius": 43.62611987876653
       },
@@ -15974,6 +16172,7 @@
         }
       },
       "explosive": {
+        "killRadius": 0.15822175861723947,
         "mass": 0.017,
         "explosiveRadius": 6.222005015677508
       },
@@ -16156,6 +16355,7 @@
         }
       },
       "explosive": {
+        "killRadius": 7.338228387478061,
         "mass": 2.15,
         "explosiveRadius": 31.231549847665043
       },
@@ -16215,6 +16415,7 @@
         }
       },
       "explosive": {
+        "killRadius": 0.4170227725468601,
         "mass": 0.063,
         "explosiveRadius": 9.628550212138082
       },
@@ -16275,6 +16476,7 @@
         }
       },
       "explosive": {
+        "killRadius": 2.887997524671131,
         "mass": 0.666,
         "explosiveRadius": 21.13191196682679
       },
@@ -16336,6 +16538,7 @@
         }
       },
       "explosive": {
+        "killRadius": 35.095383057539664,
         "mass": 4,
         "explosiveRadius": 115.23612205432708
       },
@@ -16454,6 +16657,7 @@
         }
       },
       "explosive": {
+        "killRadius": 14.34084968054905,
         "mass": 5.3,
         "explosiveRadius": 42.1896581338472
       },
@@ -16518,6 +16722,7 @@
         }
       },
       "explosive": {
+        "killRadius": 11.69846101917989,
         "mass": 4,
         "explosiveRadius": 38.4120406847757
       },
@@ -16577,6 +16782,7 @@
         }
       },
       "explosive": {
+        "killRadius": 9.686279193466934,
         "mass": 3.1,
         "explosiveRadius": 35.283198474381734
       },
@@ -16700,6 +16906,7 @@
         }
       },
       "explosive": {
+        "killRadius": 3.6891981849547824,
         "mass": 0.9,
         "explosiveRadius": 23.362979050698936
       },
@@ -16759,6 +16966,7 @@
         }
       },
       "explosive": {
+        "killRadius": 9.802856859952685,
         "mass": 3.15,
         "explosiveRadius": 35.47188226775726
       },
@@ -16820,6 +17028,7 @@
         }
       },
       "explosive": {
+        "killRadius": 0.4788936880625824,
         "mass": 0.075,
         "explosiveRadius": 10.204721048366997
       },
@@ -16939,6 +17148,7 @@
         }
       },
       "explosive": {
+        "killRadius": 10.034183761301225,
         "mass": 3.25,
         "explosiveRadius": 35.84334260301083
       },
@@ -17005,6 +17215,7 @@
         }
       },
       "explosive": {
+        "killRadius": 0.42743925747175665,
         "mass": 0.065,
         "explosiveRadius": 9.729380059925935
       },
@@ -17072,6 +17283,7 @@
         }
       },
       "explosive": {
+        "killRadius": 12.270286479535361,
         "mass": 4.27,
         "explosiveRadius": 39.25756346137497
       },
@@ -17140,6 +17352,7 @@
         }
       },
       "explosive": {
+        "killRadius": 10.82564949197137,
         "mass": 3.6,
         "explosiveRadius": 37.086417522190494
       },
@@ -17204,6 +17417,7 @@
         }
       },
       "explosive": {
+        "killRadius": 9.09381238633043,
         "mass": 2.85,
         "explosiveRadius": 34.30802119785358
       },
@@ -17263,6 +17477,7 @@
         }
       },
       "explosive": {
+        "killRadius": 12.333014555466667,
         "mass": 4.3,
         "explosiveRadius": 39.3492870739142
       },
@@ -17381,6 +17596,7 @@
         }
       },
       "explosive": {
+        "killRadius": 6.940415691998389,
         "mass": 2,
         "explosiveRadius": 30.48765689562911
       },
@@ -17438,6 +17654,7 @@
         }
       },
       "explosive": {
+        "killRadius": 6.940415691998389,
         "mass": 2,
         "explosiveRadius": 30.48765689562911
       },
@@ -17495,6 +17712,7 @@
         }
       },
       "explosive": {
+        "killRadius": 6.940415691998389,
         "mass": 2,
         "explosiveRadius": 30.48765689562911
       },
@@ -17610,6 +17828,7 @@
         }
       },
       "explosive": {
+        "killRadius": 15.14107005439156,
         "mass": 5.72,
         "explosiveRadius": 43.275895093714745
       },
@@ -17674,6 +17893,7 @@
         }
       },
       "explosive": {
+        "killRadius": 8.949139918658982,
         "mass": 2.79,
         "explosiveRadius": 34.065553581949125
       },
@@ -17733,6 +17953,7 @@
         }
       },
       "explosive": {
+        "killRadius": 10.82564949197137,
         "mass": 3.6,
         "explosiveRadius": 37.086417522190494
       },
@@ -17792,6 +18013,7 @@
         }
       },
       "explosive": {
+        "killRadius": 14.224595392071189,
         "mass": 5.24,
         "explosiveRadius": 42.02984729117391
       },
@@ -17853,6 +18075,7 @@
         }
       },
       "explosive": {
+        "killRadius": 4.8618314636337505,
         "mass": 1.27,
         "explosiveRadius": 26.2048668127171
       },
@@ -17912,6 +18135,7 @@
         }
       },
       "explosive": {
+        "killRadius": 0.34812415868998436,
         "mass": 0.05,
         "explosiveRadius": 8.914644955936732
       },
@@ -18085,6 +18309,7 @@
         }
       },
       "explosive": {
+        "killRadius": 8.235285843361464,
         "mass": 2.5,
         "explosiveRadius": 32.84183281686656
       },
@@ -18146,6 +18371,7 @@
         }
       },
       "explosive": {
+        "killRadius": 0.34812415868998436,
         "mass": 0.05,
         "explosiveRadius": 8.914644955936732
       },
@@ -18204,6 +18430,7 @@
         }
       },
       "explosive": {
+        "killRadius": 3.2061233784445635,
         "mass": 0.757,
         "explosiveRadius": 22.05359236613375
       },
@@ -18319,6 +18546,7 @@
         }
       },
       "explosive": {
+        "killRadius": 0.48123706472697,
         "mass": 0.07546,
         "explosiveRadius": 10.22554152515241
       },
@@ -18380,6 +18608,7 @@
         }
       },
       "explosive": {
+        "killRadius": 8.803462469149416,
         "mass": 2.73,
         "explosiveRadius": 33.819584326529466
       },
@@ -18439,6 +18668,7 @@
         }
       },
       "explosive": {
+        "killRadius": 10.1489533038945,
         "mass": 3.3,
         "explosiveRadius": 36.02621996556926
       },
@@ -18500,6 +18730,7 @@
         }
       },
       "explosive": {
+        "killRadius": 6.368358972082267,
         "mass": 1.79,
         "explosiveRadius": 29.38089763466689
       },
@@ -18673,6 +18904,7 @@
         }
       },
       "explosive": {
+        "killRadius": 4.678228218264098,
         "mass": 1.21,
         "explosiveRadius": 25.785516786520958
       },
@@ -18784,6 +19016,7 @@
         }
       },
       "explosive": {
+        "killRadius": 0.7807631819662219,
         "mass": 0.137,
         "explosiveRadius": 12.474435604862133
       },
@@ -18844,6 +19077,7 @@
         }
       },
       "explosive": {
+        "killRadius": 0.4170227725468601,
         "mass": 0.063,
         "explosiveRadius": 9.628550212138082
       },
@@ -18960,6 +19194,7 @@
         }
       },
       "explosive": {
+        "killRadius": 1.8581579625611455,
         "mass": 0.39,
         "explosiveRadius": 17.679456862381812
       },
@@ -19080,6 +19315,7 @@
         }
       },
       "explosive": {
+        "killRadius": 12.123303527719845,
         "mass": 4.2,
         "explosiveRadius": 39.04185820982995
       },
@@ -19198,6 +19434,7 @@
         }
       },
       "explosive": {
+        "killRadius": 0.26536801647388014,
         "mass": 0.035,
         "explosiveRadius": 7.915348930490715
       },
@@ -19315,6 +19552,7 @@
         }
       },
       "explosive": {
+        "killRadius": 11.548001066692109,
         "mass": 3.93,
         "explosiveRadius": 38.18665051319111
       },
@@ -19374,6 +19612,7 @@
         }
       },
       "explosive": {
+        "killRadius": 8.235285843361464,
         "mass": 2.5,
         "explosiveRadius": 32.84183281686656
       },
@@ -19493,6 +19732,7 @@
         }
       },
       "explosive": {
+        "killRadius": 5.428884959212148,
         "mass": 1.46,
         "explosiveRadius": 27.451431834505975
       },
@@ -19553,6 +19793,7 @@
         }
       },
       "explosive": {
+        "killRadius": 0.6036995851731218,
         "mass": 0.1,
         "explosiveRadius": 11.231748832323843
       },
@@ -19674,6 +19915,7 @@
         }
       },
       "explosive": {
+        "killRadius": 9.802856859952685,
         "mass": 3.15,
         "explosiveRadius": 35.47188226775726
       },
@@ -19733,6 +19975,7 @@
         }
       },
       "explosive": {
+        "killRadius": 6.47876022018661,
         "mass": 1.83,
         "explosiveRadius": 29.598139516669033
       },
@@ -19852,6 +20095,7 @@
         }
       },
       "explosive": {
+        "killRadius": 20.73673215008327,
         "mass": 9,
         "explosiveRadius": 50.33401252931395
       },
@@ -19909,6 +20153,7 @@
         }
       },
       "explosive": {
+        "killRadius": 20.73673215008327,
         "mass": 9,
         "explosiveRadius": 50.33401252931395
       },
@@ -19966,6 +20211,7 @@
         }
       },
       "explosive": {
+        "killRadius": 10.557363920118588,
         "mass": 3.48,
         "explosiveRadius": 36.66968092651908
       },
@@ -20023,6 +20269,7 @@
         }
       },
       "explosive": {
+        "killRadius": 20.73673215008327,
         "mass": 9,
         "explosiveRadius": 50.33401252931395
       },
@@ -20082,6 +20329,7 @@
         }
       },
       "explosive": {
+        "killRadius": 5.192674814698315,
         "mass": 1.38,
         "explosiveRadius": 26.94058851012807
       },
@@ -20143,6 +20391,7 @@
         }
       },
       "explosive": {
+        "killRadius": 0.34812415868998436,
         "mass": 0.05,
         "explosiveRadius": 8.914644955936732
       },
@@ -20262,6 +20511,7 @@
         }
       },
       "explosive": {
+        "killRadius": 1.0672019814785074,
         "mass": 0.2,
         "explosiveRadius": 14.15111678097697
       },
@@ -20378,6 +20628,7 @@
         }
       },
       "explosive": {
+        "killRadius": 5.690470822482993,
         "mass": 1.55,
         "explosiveRadius": 28.00429318751817
       },
@@ -20551,6 +20802,7 @@
         }
       },
       "explosive": {
+        "killRadius": 0.4809315180581155,
         "mass": 0.0754,
         "explosiveRadius": 10.222830617940229
       },
@@ -20612,6 +20864,7 @@
         }
       },
       "explosive": {
+        "killRadius": 12.561683484915045,
         "mass": 4.41,
         "explosiveRadius": 39.682002447753234
       },
@@ -20738,6 +20991,7 @@
         }
       },
       "explosive": {
+        "killRadius": 15.14107005439156,
         "mass": 5.72,
         "explosiveRadius": 43.275895093714745
       },
@@ -20802,6 +21056,7 @@
         }
       },
       "explosive": {
+        "killRadius": 8.949139918658982,
         "mass": 2.79,
         "explosiveRadius": 34.065553581949125
       },
@@ -20861,6 +21116,7 @@
         }
       },
       "explosive": {
+        "killRadius": 10.82564949197137,
         "mass": 3.6,
         "explosiveRadius": 37.086417522190494
       },
@@ -20920,6 +21176,7 @@
         }
       },
       "explosive": {
+        "killRadius": 14.224595392071189,
         "mass": 5.24,
         "explosiveRadius": 42.02984729117391
       },
@@ -20981,6 +21238,7 @@
         }
       },
       "explosive": {
+        "killRadius": 11.046882290993368,
         "mass": 3.7,
         "explosiveRadius": 37.42667889126842
       },
@@ -21040,6 +21298,7 @@
         }
       },
       "explosive": {
+        "killRadius": 3.302254022104485,
         "mass": 0.785,
         "explosiveRadius": 22.32221406759598
       },
@@ -21102,6 +21361,7 @@
         }
       },
       "explosive": {
+        "killRadius": 0.4170227725468601,
         "mass": 0.063,
         "explosiveRadius": 9.628550212138082
       },
@@ -21164,6 +21424,7 @@
         }
       },
       "explosive": {
+        "killRadius": 0.34812415868998436,
         "mass": 0.05,
         "explosiveRadius": 8.914644955936732
       },
@@ -21225,6 +21486,7 @@
         }
       },
       "explosive": {
+        "killRadius": 1.8581579625611455,
         "mass": 0.39,
         "explosiveRadius": 17.679456862381812
       },
@@ -21288,6 +21550,7 @@
         }
       },
       "explosive": {
+        "killRadius": 0.28226742894673607,
         "mass": 0.038,
         "explosiveRadius": 8.135331392596568
       },
@@ -21406,6 +21669,7 @@
         }
       },
       "explosive": {
+        "killRadius": 44.41555495368478,
         "mass": 30,
         "explosiveRadius": 75.18902755404511
       },
@@ -21526,6 +21790,7 @@
         }
       },
       "explosive": {
+        "killRadius": 8.235285843361464,
         "mass": 2.5,
         "explosiveRadius": 32.84183281686656
       },
@@ -21640,6 +21905,7 @@
         }
       },
       "explosive": {
+        "killRadius": 29.530018959382,
         "mass": 15.4,
         "explosiveRadius": 60.20339138598941
       },
@@ -21699,6 +21965,7 @@
         }
       },
       "explosive": {
+        "killRadius": 0.34812415868998436,
         "mass": 0.05,
         "explosiveRadius": 8.914644955936732
       },
@@ -21758,6 +22025,7 @@
         }
       },
       "explosive": {
+        "killRadius": 29.530018959382,
         "mass": 15.4,
         "explosiveRadius": 60.20339138598941
       },
@@ -21817,6 +22085,7 @@
         }
       },
       "explosive": {
+        "killRadius": 29.530018959382,
         "mass": 15.4,
         "explosiveRadius": 60.20339138598941
       },
@@ -21934,6 +22203,7 @@
         }
       },
       "explosive": {
+        "killRadius": 3.847214450870363,
         "mass": 0.948,
         "explosiveRadius": 23.771148339539522
       },
@@ -21995,6 +22265,7 @@
         }
       },
       "explosive": {
+        "killRadius": 22.263037055079266,
         "mass": 10,
         "explosiveRadius": 52.13315996205771
       },
@@ -22059,6 +22330,7 @@
         }
       },
       "explosive": {
+        "killRadius": 22.263037055079266,
         "mass": 10,
         "explosiveRadius": 52.13315996205771
       },
@@ -22186,6 +22458,7 @@
         }
       },
       "explosive": {
+        "killRadius": 10.691895614063933,
         "mass": 3.54,
         "explosiveRadius": 36.879226509011716
       },
@@ -22246,6 +22519,7 @@
         }
       },
       "explosive": {
+        "killRadius": 11.156722794825376,
         "mass": 3.75,
         "explosiveRadius": 37.594513777022556
       },
@@ -22313,6 +22587,7 @@
         }
       },
       "explosive": {
+        "killRadius": 12.992580901780855,
         "mass": 4.62,
         "explosiveRadius": 40.30213390047437
       },
@@ -22428,6 +22703,7 @@
         }
       },
       "explosive": {
+        "killRadius": 0.4890681279870902,
         "mass": 0.077,
         "explosiveRadius": 10.294635117840496
       },
@@ -22488,6 +22764,7 @@
         }
       },
       "explosive": {
+        "killRadius": 3.1508326874310417,
         "mass": 0.741,
         "explosiveRadius": 21.897109278067727
       },
@@ -22549,6 +22826,7 @@
         }
       },
       "explosive": {
+        "killRadius": 14.224595392071189,
         "mass": 5.24,
         "explosiveRadius": 42.02984729117391
       },
@@ -22608,6 +22886,7 @@
         }
       },
       "explosive": {
+        "killRadius": 8.949139918658982,
         "mass": 2.79,
         "explosiveRadius": 34.065553581949125
       },
@@ -22723,6 +23002,7 @@
         }
       },
       "explosive": {
+        "killRadius": 15.14107005439156,
         "mass": 5.72,
         "explosiveRadius": 43.275895093714745
       },
@@ -22903,6 +23183,7 @@
         }
       },
       "explosive": {
+        "killRadius": 14.648450632969144,
         "mass": 5.46,
         "explosiveRadius": 42.6100061916892
       },
@@ -22962,6 +23243,7 @@
         }
       },
       "explosive": {
+        "killRadius": 8.533698365986702,
         "mass": 2.62,
         "explosiveRadius": 33.35911190203612
       },
@@ -23023,6 +23305,7 @@
         }
       },
       "explosive": {
+        "killRadius": 8.484267060871545,
         "mass": 2.6,
         "explosiveRadius": 33.27401175709846
       },
@@ -23081,6 +23364,7 @@
         }
       },
       "explosive": {
+        "killRadius": 17.48388850613606,
         "mass": 7.02,
         "explosiveRadius": 46.333284426374554
       },
@@ -23140,6 +23424,7 @@
         }
       },
       "explosive": {
+        "killRadius": 44.41555495368478,
         "mass": 30,
         "explosiveRadius": 75.18902755404511
       },
@@ -23197,6 +23482,7 @@
         }
       },
       "explosive": {
+        "killRadius": 22.263037055079266,
         "mass": 10,
         "explosiveRadius": 52.13315996205771
       },
@@ -23255,6 +23541,7 @@
         }
       },
       "explosive": {
+        "killRadius": 1.1984535445856748,
         "mass": 0.23,
         "explosiveRadius": 14.82597721714156
       },
@@ -23312,6 +23599,7 @@
         }
       },
       "explosive": {
+        "killRadius": 44.41555495368478,
         "mass": 30,
         "explosiveRadius": 75.18902755404511
       },
@@ -23371,6 +23659,7 @@
         }
       },
       "explosive": {
+        "killRadius": 138.85150680076904,
         "mass": 289,
         "explosiveRadius": 159.9852695379478
       },
@@ -23432,6 +23721,7 @@
         }
       },
       "explosive": {
+        "killRadius": 10.467236811565481,
         "mass": 3.44,
         "explosiveRadius": 36.528642298580756
       },
@@ -23504,6 +23794,7 @@
         }
       },
       "explosive": {
+        "killRadius": 14.224595392071189,
         "mass": 5.24,
         "explosiveRadius": 42.02984729117391
       },
@@ -23563,6 +23854,7 @@
         }
       },
       "explosive": {
+        "killRadius": 8.949139918658982,
         "mass": 2.79,
         "explosiveRadius": 34.065553581949125
       },
@@ -23678,6 +23970,7 @@
         }
       },
       "explosive": {
+        "killRadius": 15.14107005439156,
         "mass": 5.72,
         "explosiveRadius": 43.275895093714745
       },
@@ -23744,6 +24037,7 @@
         }
       },
       "explosive": {
+        "killRadius": 14.724812989472126,
         "mass": 5.5,
         "explosiveRadius": 42.71380686053983
       },
@@ -23808,6 +24102,7 @@
         }
       },
       "explosive": {
+        "killRadius": 9.474860671501698,
         "mass": 3.01,
         "explosiveRadius": 34.93838945864681
       },
@@ -23869,6 +24164,7 @@
         }
       },
       "explosive": {
+        "killRadius": 3.1473681904648205,
         "mass": 0.74,
         "explosiveRadius": 21.887254592093182
       },
@@ -23929,6 +24225,7 @@
         }
       },
       "explosive": {
+        "killRadius": 15.402756812315365,
         "mass": 5.86,
         "explosiveRadius": 43.62611987876653
       },
@@ -23990,6 +24287,7 @@
         }
       },
       "explosive": {
+        "killRadius": 23.19043678236268,
         "mass": 10.63,
         "explosiveRadius": 53.20573796526935
       },
@@ -24109,6 +24407,7 @@
         }
       },
       "explosive": {
+        "killRadius": 1.0848734533602984,
         "mass": 0.204,
         "explosiveRadius": 14.24483551736862
       },
@@ -24170,6 +24469,7 @@
         }
       },
       "explosive": {
+        "killRadius": 7.338228387478061,
         "mass": 2.15,
         "explosiveRadius": 31.231549847665043
       },
@@ -24231,6 +24531,7 @@
         }
       },
       "explosive": {
+        "killRadius": 14.224595392071189,
         "mass": 5.24,
         "explosiveRadius": 42.02984729117391
       },
@@ -24350,6 +24651,7 @@
         }
       },
       "explosive": {
+        "killRadius": 15.14107005439156,
         "mass": 5.72,
         "explosiveRadius": 43.275895093714745
       },
@@ -24416,6 +24718,7 @@
         }
       },
       "explosive": {
+        "killRadius": 6.940415691998389,
         "mass": 2,
         "explosiveRadius": 30.48765689562911
       },
@@ -24479,6 +24782,7 @@
         }
       },
       "explosive": {
+        "killRadius": 0.36540815658582043,
         "mass": 0.042,
         "explosiveRadius": 10.093576042867646
       },
@@ -24538,6 +24842,7 @@
         }
       },
       "explosive": {
+        "killRadius": 12.747247120962717,
         "mass": 4.5,
         "explosiveRadius": 39.95013221940675
       },
@@ -24597,6 +24902,7 @@
         }
       },
       "explosive": {
+        "killRadius": 7.338228387478061,
         "mass": 2.15,
         "explosiveRadius": 31.231549847665043
       },
@@ -24715,6 +25021,7 @@
         }
       },
       "explosive": {
+        "killRadius": 14.224595392071189,
         "mass": 5.24,
         "explosiveRadius": 42.02984729117391
       },
@@ -24774,6 +25081,7 @@
         }
       },
       "explosive": {
+        "killRadius": 15.14107005439156,
         "mass": 5.72,
         "explosiveRadius": 43.275895093714745
       },
@@ -24838,6 +25146,7 @@
         }
       },
       "explosive": {
+        "killRadius": 8.949139918658982,
         "mass": 2.79,
         "explosiveRadius": 34.065553581949125
       },
@@ -24897,6 +25206,7 @@
         }
       },
       "explosive": {
+        "killRadius": 10.82564949197137,
         "mass": 3.6,
         "explosiveRadius": 37.086417522190494
       },
@@ -25015,6 +25325,7 @@
         }
       },
       "explosive": {
+        "killRadius": 0.34812415868998436,
         "mass": 0.05,
         "explosiveRadius": 8.914644955936732
       },
@@ -25074,6 +25385,7 @@
         }
       },
       "explosive": {
+        "killRadius": 4.080688118054157,
         "mass": 1.02,
         "explosiveRadius": 24.358326099066247
       },
@@ -25190,6 +25502,7 @@
         }
       },
       "explosive": {
+        "killRadius": 6.940415691998389,
         "mass": 2,
         "explosiveRadius": 30.48765689562911
       },
@@ -25311,6 +25624,7 @@
         }
       },
       "explosive": {
+        "killRadius": 0.37169202550787145,
         "mass": 0.0544,
         "explosiveRadius": 9.168824984981764
       },
@@ -25375,6 +25689,7 @@
         }
       },
       "explosive": {
+        "killRadius": 1.2200529848169817,
         "mass": 0.235,
         "explosiveRadius": 14.932642591122237
       },
@@ -25435,6 +25750,7 @@
         }
       },
       "explosive": {
+        "killRadius": 0.1770116309211526,
         "mass": 0.02,
         "explosiveRadius": 6.568366563373312
       },
@@ -25496,6 +25812,7 @@
         }
       },
       "explosive": {
+        "killRadius": 1.0672019814785074,
         "mass": 0.2,
         "explosiveRadius": 14.15111678097697
       },
@@ -25558,6 +25875,7 @@
         }
       },
       "explosive": {
+        "killRadius": 0.9649328283202401,
         "mass": 0.1771,
         "explosiveRadius": 13.588981377204641
       },
@@ -25618,6 +25936,7 @@
         }
       },
       "explosive": {
+        "killRadius": 10.914393617350257,
         "mass": 3.64,
         "explosiveRadius": 37.22326901135243
       },
@@ -25679,6 +25998,7 @@
         }
       },
       "explosive": {
+        "killRadius": 14.224595392071189,
         "mass": 5.24,
         "explosiveRadius": 42.02984729117391
       },
@@ -25738,6 +26058,7 @@
         }
       },
       "explosive": {
+        "killRadius": 6.940415691998389,
         "mass": 2,
         "explosiveRadius": 30.48765689562911
       },
@@ -25913,6 +26234,7 @@
         }
       },
       "explosive": {
+        "killRadius": 2.958695306045367,
         "mass": 0.686,
         "explosiveRadius": 21.341359826940376
       },
@@ -25972,6 +26294,7 @@
         }
       },
       "explosive": {
+        "killRadius": 3.6077774399209956,
         "mass": 0.8755,
         "explosiveRadius": 23.149028336627985
       },
@@ -26163,6 +26486,7 @@
         }
       },
       "explosive": {
+        "killRadius": 0.36540815658582043,
         "mass": 0.042,
         "explosiveRadius": 10.093576042867646
       },
@@ -26220,6 +26544,7 @@
         }
       },
       "explosive": {
+        "killRadius": 5.9479073927174575,
         "mass": 1.64,
         "explosiveRadius": 28.53614692631696
       },
@@ -26279,6 +26604,7 @@
         }
       },
       "explosive": {
+        "killRadius": 5.9479073927174575,
         "mass": 1.64,
         "explosiveRadius": 28.53614692631696
       },
@@ -26391,6 +26717,7 @@
         }
       },
       "explosive": {
+        "killRadius": 6.9135859124326915,
         "mass": 1.99,
         "explosiveRadius": 30.43675921016927
       },
@@ -26448,6 +26775,7 @@
         }
       },
       "explosive": {
+        "killRadius": 5.545673296337527,
         "mass": 1.5,
         "explosiveRadius": 27.699874586124217
       },
@@ -26507,6 +26835,7 @@
         }
       },
       "explosive": {
+        "killRadius": 0.9649328283202401,
         "mass": 0.1771,
         "explosiveRadius": 13.588981377204641
       },
@@ -26567,6 +26896,7 @@
         }
       },
       "explosive": {
+        "killRadius": 10.914393617350257,
         "mass": 3.64,
         "explosiveRadius": 37.22326901135243
       },
@@ -26628,6 +26958,7 @@
         }
       },
       "explosive": {
+        "killRadius": 9.802856859952685,
         "mass": 3.15,
         "explosiveRadius": 35.47188226775726
       },
@@ -26799,6 +27130,7 @@
         }
       },
       "explosive": {
+        "killRadius": 5.748029082404475,
         "mass": 1.57,
         "explosiveRadius": 28.124227384023634
       },
@@ -26858,6 +27190,7 @@
         }
       },
       "explosive": {
+        "killRadius": 10.034183761301225,
         "mass": 3.25,
         "explosiveRadius": 35.84334260301083
       },
@@ -26927,6 +27260,7 @@
         }
       },
       "explosive": {
+        "killRadius": 12.870208117186799,
         "mass": 4.56,
         "explosiveRadius": 40.12690501820275
       },
@@ -26994,6 +27328,7 @@
         }
       },
       "explosive": {
+        "killRadius": 13.295994930072908,
         "mass": 4.77,
         "explosiveRadius": 40.73366706837004
       },
@@ -27110,6 +27445,7 @@
         }
       },
       "explosive": {
+        "killRadius": 9.686279193466934,
         "mass": 3.1,
         "explosiveRadius": 35.283198474381734
       },
@@ -27174,6 +27510,7 @@
         }
       },
       "explosive": {
+        "killRadius": 7.881413843317962,
         "mass": 2.36,
         "explosiveRadius": 32.21697183285768
       },
@@ -27235,6 +27572,7 @@
         }
       },
       "explosive": {
+        "killRadius": 2.0533374696293754,
         "mass": 0.44,
         "explosiveRadius": 18.40482144873378
       },
@@ -27295,6 +27633,7 @@
         }
       },
       "explosive": {
+        "killRadius": 7.338228387478061,
         "mass": 2.15,
         "explosiveRadius": 31.231549847665043
       },
@@ -27356,6 +27695,7 @@
         }
       },
       "explosive": {
+        "killRadius": 22.263037055079266,
         "mass": 10,
         "explosiveRadius": 52.13315996205771
       },
@@ -27551,6 +27891,7 @@
         }
       },
       "explosive": {
+        "killRadius": 1.0848734533602984,
         "mass": 0.204,
         "explosiveRadius": 14.24483551736862
       },
@@ -27612,6 +27953,7 @@
         }
       },
       "explosive": {
+        "killRadius": 14.224595392071189,
         "mass": 5.24,
         "explosiveRadius": 42.02984729117391
       },
@@ -27727,6 +28069,7 @@
         }
       },
       "explosive": {
+        "killRadius": 15.14107005439156,
         "mass": 5.72,
         "explosiveRadius": 43.275895093714745
       },
@@ -27791,6 +28134,7 @@
         }
       },
       "explosive": {
+        "killRadius": 6.940415691998389,
         "mass": 2,
         "explosiveRadius": 30.48765689562911
       },
@@ -27852,6 +28196,7 @@
         }
       },
       "explosive": {
+        "killRadius": 0.0334671698661856,
         "mass": 0.001,
         "explosiveRadius": 2.4198069314083592
       },
@@ -27913,6 +28258,7 @@
         }
       },
       "explosive": {
+        "killRadius": 0.6036995851731218,
         "mass": 0.1,
         "explosiveRadius": 11.231748832323843
       },
@@ -27975,6 +28321,7 @@
         }
       },
       "explosive": {
+        "killRadius": 2.727218573665509,
         "mass": 0.621,
         "explosiveRadius": 20.644827089544524
       },
@@ -28095,6 +28442,7 @@
         }
       },
       "explosive": {
+        "killRadius": 8.235285843361464,
         "mass": 2.5,
         "explosiveRadius": 32.84183281686656
       },
@@ -28211,6 +28559,7 @@
         }
       },
       "explosive": {
+        "killRadius": 0.4788936880625824,
         "mass": 0.075,
         "explosiveRadius": 10.204721048366997
       },
@@ -28270,6 +28619,7 @@
         }
       },
       "explosive": {
+        "killRadius": 2.958695306045367,
         "mass": 0.686,
         "explosiveRadius": 21.341359826940376
       },
@@ -28330,6 +28680,7 @@
         }
       },
       "explosive": {
+        "killRadius": 0.2303222117648018,
         "mass": 0.0289,
         "explosiveRadius": 7.425858406298692
       },
@@ -28452,6 +28803,7 @@
         }
       },
       "explosive": {
+        "killRadius": 0.3695606820165091,
         "mass": 0.054,
         "explosiveRadius": 9.146297068688733
       },
@@ -28573,6 +28925,7 @@
         }
       },
       "explosive": {
+        "killRadius": 9.802856859952685,
         "mass": 3.15,
         "explosiveRadius": 35.47188226775726
       },
@@ -28689,6 +29042,7 @@
         }
       },
       "explosive": {
+        "killRadius": 3.6891981849547824,
         "mass": 0.9,
         "explosiveRadius": 23.362979050698936
       },
@@ -28806,6 +29160,7 @@
         }
       },
       "explosive": {
+        "killRadius": 1.267311150380175,
         "mass": 0.246,
         "explosiveRadius": 15.162090531352371
       },
@@ -28866,6 +29221,7 @@
         }
       },
       "explosive": {
+        "killRadius": 10.1489533038945,
         "mass": 3.3,
         "explosiveRadius": 36.02621996556926
       },
@@ -28927,6 +29283,7 @@
         }
       },
       "explosive": {
+        "killRadius": 10.467236811565481,
         "mass": 3.44,
         "explosiveRadius": 36.528642298580756
       },
@@ -29050,6 +29407,7 @@
         }
       },
       "explosive": {
+        "killRadius": 9.802856859952685,
         "mass": 3.15,
         "explosiveRadius": 35.47188226775726
       },
@@ -29109,6 +29467,7 @@
         }
       },
       "explosive": {
+        "killRadius": 3.6891981849547824,
         "mass": 0.9,
         "explosiveRadius": 23.362979050698936
       },
@@ -29228,6 +29587,7 @@
         }
       },
       "explosive": {
+        "killRadius": 0.9055285309698758,
         "mass": 0.164,
         "explosiveRadius": 13.245306092752644
       },
@@ -29289,6 +29649,7 @@
         }
       },
       "explosive": {
+        "killRadius": 3.1508326874310417,
         "mass": 0.741,
         "explosiveRadius": 21.897109278067727
       },
@@ -29351,6 +29712,7 @@
         }
       },
       "explosive": {
+        "killRadius": 6.0328377708415974,
         "mass": 1.67,
         "explosiveRadius": 28.709097493711973
       },
@@ -29410,6 +29772,7 @@
         }
       },
       "explosive": {
+        "killRadius": 10.82564949197137,
         "mass": 3.6,
         "explosiveRadius": 37.086417522190494
       },
@@ -29469,6 +29832,7 @@
         }
       },
       "explosive": {
+        "killRadius": 10.82564949197137,
         "mass": 3.6,
         "explosiveRadius": 37.086417522190494
       },
@@ -29530,6 +29894,7 @@
         }
       },
       "explosive": {
+        "killRadius": 6.47876022018661,
         "mass": 1.83,
         "explosiveRadius": 29.598139516669033
       },
@@ -29597,6 +29962,7 @@
         }
       },
       "explosive": {
+        "killRadius": 70.55858133174469,
         "mass": 125,
         "explosiveRadius": 90
       },
@@ -29658,6 +30024,7 @@
         }
       },
       "explosive": {
+        "killRadius": 0.1831665306359704,
         "mass": 0.021,
         "explosiveRadius": 6.676063845237135
       },
@@ -29719,6 +30086,7 @@
         }
       },
       "explosive": {
+        "killRadius": 1.1550248324381784,
         "mass": 0.22,
         "explosiveRadius": 14.607916464503445
       },
@@ -29781,6 +30149,7 @@
         }
       },
       "explosive": {
+        "killRadius": 6.940415691998389,
         "mass": 2,
         "explosiveRadius": 30.48765689562911
       },
@@ -29838,6 +30207,7 @@
         }
       },
       "explosive": {
+        "killRadius": 6.940415691998389,
         "mass": 2,
         "explosiveRadius": 30.48765689562911
       },
@@ -29895,6 +30265,7 @@
         }
       },
       "explosive": {
+        "killRadius": 6.940415691998389,
         "mass": 2,
         "explosiveRadius": 30.48765689562911
       },
@@ -29954,6 +30325,7 @@
         }
       },
       "explosive": {
+        "killRadius": 0.22506244549553772,
         "mass": 0.028,
         "explosiveRadius": 7.347959041982911
       },
@@ -30077,6 +30449,7 @@
         }
       },
       "explosive": {
+        "killRadius": 14.533506515467506,
         "mass": 5.4,
         "explosiveRadius": 42.45335034293091
       },
@@ -30136,6 +30509,7 @@
         }
       },
       "explosive": {
+        "killRadius": 9.686279193466934,
         "mass": 3.1,
         "explosiveRadius": 35.283198474381734
       },
@@ -30253,6 +30627,7 @@
         }
       },
       "explosive": {
+        "killRadius": 14.224595392071189,
         "mass": 5.24,
         "explosiveRadius": 42.02984729117391
       },
@@ -30312,6 +30687,7 @@
         }
       },
       "explosive": {
+        "killRadius": 8.949139918658982,
         "mass": 2.79,
         "explosiveRadius": 34.065553581949125
       },
@@ -30371,6 +30747,7 @@
         }
       },
       "explosive": {
+        "killRadius": 15.14107005439156,
         "mass": 5.72,
         "explosiveRadius": 43.275895093714745
       },
@@ -30494,6 +30871,7 @@
         }
       },
       "explosive": {
+        "killRadius": 72.39629574654018,
         "mass": 150,
         "explosiveRadius": 90
       },
@@ -30553,6 +30931,7 @@
         }
       },
       "explosive": {
+        "killRadius": 14.224595392071189,
         "mass": 5.24,
         "explosiveRadius": 42.02984729117391
       },
@@ -30670,6 +31049,7 @@
         }
       },
       "explosive": {
+        "killRadius": 8.949139918658982,
         "mass": 2.79,
         "explosiveRadius": 34.065553581949125
       },
@@ -30730,6 +31110,7 @@
         }
       },
       "explosive": {
+        "killRadius": 15.14107005439156,
         "mass": 5.72,
         "explosiveRadius": 43.275895093714745
       },
@@ -30795,6 +31176,7 @@
         }
       },
       "explosive": {
+        "killRadius": 10.82564949197137,
         "mass": 3.6,
         "explosiveRadius": 37.086417522190494
       },
@@ -30857,6 +31239,7 @@
         }
       },
       "explosive": {
+        "killRadius": 0.24019075128053255,
         "mass": 0.0306,
         "explosiveRadius": 7.568698264564289
       },
@@ -30917,6 +31300,7 @@
         }
       },
       "explosive": {
+        "killRadius": 0.5294142376144831,
         "mass": 0.085,
         "explosiveRadius": 10.639478916910306
       },
@@ -31114,6 +31498,7 @@
         }
       },
       "explosive": {
+        "killRadius": 15.402756812315365,
         "mass": 5.86,
         "explosiveRadius": 43.62611987876653
       },
@@ -31173,6 +31558,7 @@
         }
       },
       "explosive": {
+        "killRadius": 13.456378475707218,
         "mass": 4.85,
         "explosiveRadius": 40.96012713275149
       },
@@ -31235,6 +31621,7 @@
         }
       },
       "explosive": {
+        "killRadius": 6.47876022018661,
         "mass": 1.83,
         "explosiveRadius": 29.598139516669033
       },
@@ -31350,6 +31737,7 @@
         }
       },
       "explosive": {
+        "killRadius": 9.802856859952685,
         "mass": 3.15,
         "explosiveRadius": 35.47188226775726
       },
@@ -31411,6 +31799,7 @@
         }
       },
       "explosive": {
+        "killRadius": 17.449225963042405,
         "mass": 7,
         "explosiveRadius": 46.28924135379817
       },
@@ -31526,6 +31915,7 @@
         }
       },
       "explosive": {
+        "killRadius": 8.235285843361464,
         "mass": 2.5,
         "explosiveRadius": 32.84183281686656
       },
@@ -31587,6 +31977,7 @@
         }
       },
       "explosive": {
+        "killRadius": 14.224595392071189,
         "mass": 5.24,
         "explosiveRadius": 42.02984729117391
       },
@@ -31646,6 +32037,7 @@
         }
       },
       "explosive": {
+        "killRadius": 8.949139918658982,
         "mass": 2.79,
         "explosiveRadius": 34.065553581949125
       },
@@ -31761,6 +32153,7 @@
         }
       },
       "explosive": {
+        "killRadius": 15.14107005439156,
         "mass": 5.72,
         "explosiveRadius": 43.275895093714745
       },
@@ -31884,6 +32277,7 @@
         }
       },
       "explosive": {
+        "killRadius": 6.9135859124326915,
         "mass": 1.99,
         "explosiveRadius": 30.43675921016927
       },
@@ -31943,6 +32337,7 @@
         }
       },
       "explosive": {
+        "killRadius": 5.9479073927174575,
         "mass": 1.64,
         "explosiveRadius": 28.53614692631696
       },
@@ -32004,6 +32399,7 @@
         }
       },
       "explosive": {
+        "killRadius": 12.270286479535361,
         "mass": 4.27,
         "explosiveRadius": 39.25756346137497
       },
@@ -32071,6 +32467,7 @@
         }
       },
       "explosive": {
+        "killRadius": 6.805867363871544,
         "mass": 1.95,
         "explosiveRadius": 30.231445984981157
       },
@@ -32132,6 +32529,7 @@
         }
       },
       "explosive": {
+        "killRadius": 4.8618314636337505,
         "mass": 1.27,
         "explosiveRadius": 26.2048668127171
       },
@@ -32245,6 +32643,7 @@
         }
       },
       "explosive": {
+        "killRadius": 0.0334671698661856,
         "mass": 0.001,
         "explosiveRadius": 2.4198069314083592
       },
@@ -32306,6 +32705,7 @@
         }
       },
       "explosive": {
+        "killRadius": 15.14107005439156,
         "mass": 5.72,
         "explosiveRadius": 43.275895093714745
       },
@@ -32368,6 +32768,7 @@
         }
       },
       "explosive": {
+        "killRadius": 11.112847871273113,
         "mass": 3.73,
         "explosiveRadius": 37.52755991532698
       },
@@ -32425,6 +32826,7 @@
         }
       },
       "explosive": {
+        "killRadius": 12.333014555466667,
         "mass": 4.3,
         "explosiveRadius": 39.3492870739142
       },
@@ -32588,6 +32990,7 @@
         }
       },
       "explosive": {
+        "killRadius": 15.103485519870496,
         "mass": 5.7,
         "explosiveRadius": 43.225398087415236
       },
@@ -32652,6 +33055,7 @@
         }
       },
       "explosive": {
+        "killRadius": 15.103485519870496,
         "mass": 5.7,
         "explosiveRadius": 43.225398087415236
       },
@@ -32713,6 +33117,7 @@
         }
       },
       "explosive": {
+        "killRadius": 4.678228218264098,
         "mass": 1.21,
         "explosiveRadius": 25.785516786520958
       },
@@ -32772,6 +33177,7 @@
         }
       },
       "explosive": {
+        "killRadius": 0.7807631819662219,
         "mass": 0.137,
         "explosiveRadius": 12.474435604862133
       },
@@ -32834,6 +33240,7 @@
         }
       },
       "explosive": {
+        "killRadius": 0.1186551457722138,
         "mass": 0.011,
         "explosiveRadius": 5.38160243847382
       },
@@ -32953,6 +33360,7 @@
         }
       },
       "explosive": {
+        "killRadius": 6.47876022018661,
         "mass": 1.83,
         "explosiveRadius": 29.598139516669033
       },
@@ -33020,6 +33428,7 @@
         }
       },
       "explosive": {
+        "killRadius": 19.168709159906385,
         "mass": 8.02,
         "explosiveRadius": 48.43643518186176
       },
@@ -33146,6 +33555,7 @@
         }
       },
       "explosive": {
+        "killRadius": 0.37169202550787145,
         "mass": 0.0544,
         "explosiveRadius": 9.168824984981764
       },
@@ -33206,6 +33616,7 @@
         }
       },
       "explosive": {
+        "killRadius": 0.37169202550787145,
         "mass": 0.0544,
         "explosiveRadius": 9.168824984981764
       },
@@ -33269,6 +33680,7 @@
         }
       },
       "explosive": {
+        "killRadius": 13.396349981895256,
         "mass": 4.82,
         "explosiveRadius": 40.875498529813655
       },
@@ -33380,6 +33792,7 @@
         }
       },
       "explosive": {
+        "killRadius": 5.428884959212148,
         "mass": 1.46,
         "explosiveRadius": 27.451431834505975
       },
@@ -33444,6 +33857,7 @@
         }
       },
       "explosive": {
+        "killRadius": 0.4524669445087861,
         "mass": 0.0282,
         "explosiveRadius": 14.730825383954837
       },
@@ -33563,6 +33977,7 @@
         }
       },
       "explosive": {
+        "killRadius": 0.28226742894673607,
         "mass": 0.038,
         "explosiveRadius": 8.135331392596568
       },
@@ -33682,6 +34097,7 @@
         }
       },
       "explosive": {
+        "killRadius": 36.64753208924351,
         "mass": 21.76,
         "explosiveRadius": 67.55648010038759
       },
@@ -33799,6 +34215,7 @@
         }
       },
       "explosive": {
+        "killRadius": 0.4170227725468601,
         "mass": 0.063,
         "explosiveRadius": 9.628550212138082
       },
@@ -33859,6 +34276,7 @@
         }
       },
       "explosive": {
+        "killRadius": 1.8581579625611455,
         "mass": 0.39,
         "explosiveRadius": 17.679456862381812
       },
@@ -33920,6 +34338,7 @@
         }
       },
       "explosive": {
+        "killRadius": 12.561683484915045,
         "mass": 4.41,
         "explosiveRadius": 39.682002447753234
       },
@@ -33989,6 +34408,7 @@
         }
       },
       "explosive": {
+        "killRadius": 10.331376047893704,
         "mass": 3.38,
         "explosiveRadius": 36.315019622588814
       },
@@ -34060,6 +34480,7 @@
         }
       },
       "explosive": {
+        "killRadius": 8.583010322171525,
         "mass": 2.64,
         "explosiveRadius": 33.44378006189281
       },
@@ -34121,6 +34542,7 @@
         }
       },
       "explosive": {
+        "killRadius": 6.533700108931059,
         "mass": 1.85,
         "explosiveRadius": 29.705574721837753
       },
@@ -34242,6 +34664,7 @@
         }
       },
       "explosive": {
+        "killRadius": 14.224595392071189,
         "mass": 5.24,
         "explosiveRadius": 42.02984729117391
       },
@@ -34301,6 +34724,7 @@
         }
       },
       "explosive": {
+        "killRadius": 8.949139918658982,
         "mass": 2.79,
         "explosiveRadius": 34.065553581949125
       },
@@ -34360,6 +34784,7 @@
         }
       },
       "explosive": {
+        "killRadius": 15.14107005439156,
         "mass": 5.72,
         "explosiveRadius": 43.275895093714745
       },
@@ -34483,6 +34908,7 @@
         }
       },
       "explosive": {
+        "killRadius": 10.467236811565481,
         "mass": 3.44,
         "explosiveRadius": 36.528642298580756
       },
@@ -34606,6 +35032,7 @@
         }
       },
       "explosive": {
+        "killRadius": 0.1770116309211526,
         "mass": 0.02,
         "explosiveRadius": 6.568366563373312
       },
@@ -34724,6 +35151,7 @@
         }
       },
       "explosive": {
+        "killRadius": 6.9135859124326915,
         "mass": 1.99,
         "explosiveRadius": 30.43675921016927
       },
@@ -34783,6 +35211,7 @@
         }
       },
       "explosive": {
+        "killRadius": 5.9479073927174575,
         "mass": 1.64,
         "explosiveRadius": 28.53614692631696
       },
@@ -34902,6 +35331,7 @@
         }
       },
       "explosive": {
+        "killRadius": 13.880831383996778,
         "mass": 2,
         "explosiveRadius": 60.97531379125822
       },
@@ -34965,6 +35395,7 @@
         }
       },
       "explosive": {
+        "killRadius": 0.34812415868998436,
         "mass": 0.05,
         "explosiveRadius": 8.914644955936732
       },
@@ -35024,6 +35455,7 @@
         }
       },
       "explosive": {
+        "killRadius": 20.954675909739393,
         "mass": 9.14,
         "explosiveRadius": 50.593661992974766
       },
@@ -35083,6 +35515,7 @@
         }
       },
       "explosive": {
+        "killRadius": 20.954675909739393,
         "mass": 9.14,
         "explosiveRadius": 50.593661992974766
       },
@@ -35142,6 +35575,7 @@
         }
       },
       "explosive": {
+        "killRadius": 20.954675909739393,
         "mass": 9.14,
         "explosiveRadius": 50.593661992974766
       },
@@ -35203,6 +35637,7 @@
         }
       },
       "explosive": {
+        "killRadius": 14.224595392071189,
         "mass": 5.24,
         "explosiveRadius": 42.02984729117391
       },
@@ -35260,6 +35695,7 @@
         }
       },
       "explosive": {
+        "killRadius": 8.949139918658982,
         "mass": 2.79,
         "explosiveRadius": 34.065553581949125
       },
@@ -35317,6 +35753,7 @@
         }
       },
       "explosive": {
+        "killRadius": 15.14107005439156,
         "mass": 5.72,
         "explosiveRadius": 43.275895093714745
       },
@@ -35436,6 +35873,7 @@
         }
       },
       "explosive": {
+        "killRadius": 9.451242218336645,
         "mass": 3,
         "explosiveRadius": 34.899655070505936
       },
@@ -35554,6 +35992,7 @@
         }
       },
       "explosive": {
+        "killRadius": 1.6986437151487852,
         "mass": 0.35,
         "explosiveRadius": 17.053102319555965
       },
@@ -35614,6 +36053,7 @@
         }
       },
       "explosive": {
+        "killRadius": 10.1489533038945,
         "mass": 3.3,
         "explosiveRadius": 36.02621996556926
       },
@@ -35675,6 +36115,7 @@
         }
       },
       "explosive": {
+        "killRadius": 0.34812415868998436,
         "mass": 0.05,
         "explosiveRadius": 8.914644955936732
       },
@@ -35734,6 +36175,7 @@
         }
       },
       "explosive": {
+        "killRadius": 11.461601212600232,
         "mass": 3.89,
         "explosiveRadius": 38.05665239898035
       },
@@ -35793,6 +36235,7 @@
         }
       },
       "explosive": {
+        "killRadius": 5.748029082404475,
         "mass": 1.57,
         "explosiveRadius": 28.124227384023634
       },
@@ -35967,6 +36410,7 @@
         }
       },
       "explosive": {
+        "killRadius": 4.016247767665595,
         "mass": 1,
         "explosiveRadius": 24.19806931408359
       },
@@ -36027,6 +36471,7 @@
         }
       },
       "explosive": {
+        "killRadius": 0.6426730091599914,
         "mass": 0.108,
         "explosiveRadius": 11.523612205432709
       },
@@ -36090,6 +36535,7 @@
         }
       },
       "explosive": {
+        "killRadius": 4.016247767665595,
         "mass": 1,
         "explosiveRadius": 24.19806931408359
       },
@@ -36151,6 +36597,7 @@
         }
       },
       "explosive": {
+        "killRadius": 0.7807631819662219,
         "mass": 0.137,
         "explosiveRadius": 12.474435604862133
       },
@@ -36211,6 +36658,7 @@
         }
       },
       "explosive": {
+        "killRadius": 3.7717422308150206,
         "mass": 0.925,
         "explosiveRadius": 23.5773302813826
       },
@@ -36272,6 +36720,7 @@
         }
       },
       "explosive": {
+        "killRadius": 331.15534948600333,
         "mass": 591,
         "explosiveRadius": 360
       },
@@ -36386,6 +36835,7 @@
         }
       },
       "explosive": {
+        "killRadius": 7.338228387478061,
         "mass": 2.15,
         "explosiveRadius": 31.231549847665043
       },
@@ -36445,6 +36895,7 @@
         }
       },
       "explosive": {
+        "killRadius": 14.224595392071189,
         "mass": 5.24,
         "explosiveRadius": 42.02984729117391
       },
@@ -36502,6 +36953,7 @@
         }
       },
       "explosive": {
+        "killRadius": 8.949139918658982,
         "mass": 2.79,
         "explosiveRadius": 34.065553581949125
       },
@@ -36613,6 +37065,7 @@
         }
       },
       "explosive": {
+        "killRadius": 15.14107005439156,
         "mass": 5.72,
         "explosiveRadius": 43.275895093714745
       },
@@ -36677,6 +37130,7 @@
         }
       },
       "explosive": {
+        "killRadius": 5.9479073927174575,
         "mass": 1.64,
         "explosiveRadius": 28.53614692631696
       },
@@ -36736,6 +37190,7 @@
         }
       },
       "explosive": {
+        "killRadius": 0.36540815658582043,
         "mass": 0.042,
         "explosiveRadius": 10.093576042867646
       },
@@ -36854,6 +37309,7 @@
         }
       },
       "explosive": {
+        "killRadius": 4.016247767665595,
         "mass": 1,
         "explosiveRadius": 24.19806931408359
       },
@@ -36914,6 +37370,7 @@
         }
       },
       "explosive": {
+        "killRadius": 0.6426730091599914,
         "mass": 0.108,
         "explosiveRadius": 11.523612205432709
       },
@@ -36977,6 +37434,7 @@
         }
       },
       "explosive": {
+        "killRadius": 44.93334089938392,
         "mass": 30.6,
         "explosiveRadius": 75.68698264564289
       },
@@ -37097,6 +37555,7 @@
         }
       },
       "explosive": {
+        "killRadius": 13.295994930072908,
         "mass": 4.77,
         "explosiveRadius": 40.73366706837004
       },
@@ -37161,6 +37620,7 @@
         }
       },
       "explosive": {
+        "killRadius": 7.676295529488409,
         "mass": 2.28,
         "explosiveRadius": 31.848745619061535
       },
@@ -37220,6 +37680,7 @@
         }
       },
       "explosive": {
+        "killRadius": 13.396349981895256,
         "mass": 4.82,
         "explosiveRadius": 40.875498529813655
       },
@@ -37338,6 +37799,7 @@
         }
       },
       "explosive": {
+        "killRadius": 0.34812415868998436,
         "mass": 0.05,
         "explosiveRadius": 8.914644955936732
       },
@@ -37455,6 +37917,7 @@
         }
       },
       "explosive": {
+        "killRadius": 0.5836570921069263,
         "mass": 0.09592,
         "explosiveRadius": 11.07687121527636
       },
@@ -37514,6 +37977,7 @@
         }
       },
       "explosive": {
+        "killRadius": 0.4734347440276987,
         "mass": 0.03,
         "explosiveRadius": 15.037805510809024
       },
@@ -37633,6 +38097,7 @@
         }
       },
       "explosive": {
+        "killRadius": 13.880831383996778,
         "mass": 2,
         "explosiveRadius": 60.97531379125822
       },
@@ -37696,6 +38161,7 @@
         }
       },
       "explosive": {
+        "killRadius": 1.1550248324381784,
         "mass": 0.22,
         "explosiveRadius": 14.607916464503445
       },
@@ -37814,6 +38280,7 @@
         }
       },
       "explosive": {
+        "killRadius": 18.905221158501238,
         "mass": 7.86,
         "explosiveRadius": 48.11216480654834
       },
@@ -37879,6 +38346,7 @@
         }
       },
       "explosive": {
+        "killRadius": 18.905221158501238,
         "mass": 7.86,
         "explosiveRadius": 48.11216480654834
       },
@@ -37941,6 +38409,7 @@
         }
       },
       "explosive": {
+        "killRadius": 0.28226742894673607,
         "mass": 0.038,
         "explosiveRadius": 8.135331392596568
       },
@@ -38117,6 +38586,7 @@
         }
       },
       "explosive": {
+        "killRadius": 14.224595392071189,
         "mass": 5.24,
         "explosiveRadius": 42.02984729117391
       },
@@ -38233,6 +38703,7 @@
         }
       },
       "explosive": {
+        "killRadius": 8.949139918658982,
         "mass": 2.79,
         "explosiveRadius": 34.065553581949125
       },
@@ -38292,6 +38763,7 @@
         }
       },
       "explosive": {
+        "killRadius": 15.14107005439156,
         "mass": 5.72,
         "explosiveRadius": 43.275895093714745
       },
@@ -38356,6 +38828,7 @@
         }
       },
       "explosive": {
+        "killRadius": 10.82564949197137,
         "mass": 3.6,
         "explosiveRadius": 37.086417522190494
       },
@@ -38417,6 +38890,7 @@
         }
       },
       "explosive": {
+        "killRadius": 5.9479073927174575,
         "mass": 1.64,
         "explosiveRadius": 28.53614692631696
       },
@@ -38535,6 +39009,7 @@
         }
       },
       "explosive": {
+        "killRadius": 11.156722794825376,
         "mass": 3.75,
         "explosiveRadius": 37.594513777022556
       },
@@ -38663,6 +39138,7 @@
         }
       },
       "explosive": {
+        "killRadius": 0.4170227725468601,
         "mass": 0.063,
         "explosiveRadius": 9.628550212138082
       },
@@ -38727,6 +39203,7 @@
         }
       },
       "explosive": {
+        "killRadius": 2.887997524671131,
         "mass": 0.666,
         "explosiveRadius": 21.13191196682679
       },
@@ -38792,6 +39269,7 @@
         }
       },
       "explosive": {
+        "killRadius": 3.6891981849547824,
         "mass": 0.9,
         "explosiveRadius": 23.362979050698936
       },
@@ -38854,6 +39332,7 @@
         }
       },
       "explosive": {
+        "killRadius": 3.0079156815631003,
         "mass": 0.7,
         "explosiveRadius": 21.485562578419646
       },
@@ -38918,6 +39397,7 @@
         }
       },
       "explosive": {
+        "killRadius": 10.1489533038945,
         "mass": 3.3,
         "explosiveRadius": 36.02621996556926
       },
@@ -38977,6 +39457,7 @@
         }
       },
       "explosive": {
+        "killRadius": 1.6986437151487852,
         "mass": 0.35,
         "explosiveRadius": 17.053102319555965
       },
@@ -39039,6 +39520,7 @@
         }
       },
       "explosive": {
+        "killRadius": 4.8618314636337505,
         "mass": 1.27,
         "explosiveRadius": 26.2048668127171
       },
@@ -39098,6 +39580,7 @@
         }
       },
       "explosive": {
+        "killRadius": 0.34812415868998436,
         "mass": 0.05,
         "explosiveRadius": 8.914644955936732
       },
@@ -39213,6 +39696,7 @@
         }
       },
       "explosive": {
+        "killRadius": 12.353888966980085,
         "mass": 4.31,
         "explosiveRadius": 39.379766781743335
       },
@@ -39274,6 +39758,7 @@
         }
       },
       "explosive": {
+        "killRadius": 16.569286832891496,
         "mass": 6.5,
         "explosiveRadius": 45.159781844127046
       },
@@ -39340,6 +39825,7 @@
         }
       },
       "explosive": {
+        "killRadius": 71.42185947667316,
         "mass": 136,
         "explosiveRadius": 90
       },
@@ -39404,6 +39890,7 @@
         }
       },
       "explosive": {
+        "killRadius": 4.8618314636337505,
         "mass": 1.27,
         "explosiveRadius": 26.2048668127171
       },
@@ -39461,6 +39948,7 @@
         }
       },
       "explosive": {
+        "killRadius": 12.353888966980085,
         "mass": 4.31,
         "explosiveRadius": 39.379766781743335
       },
@@ -39574,6 +40062,7 @@
         }
       },
       "explosive": {
+        "killRadius": 11.69846101917989,
         "mass": 4,
         "explosiveRadius": 38.4120406847757
       },
@@ -39631,6 +40120,7 @@
         }
       },
       "explosive": {
+        "killRadius": 7.416780513521174,
         "mass": 2.18,
         "explosiveRadius": 31.376142417553538
       },
@@ -39690,6 +40180,7 @@
         }
       },
       "explosive": {
+        "killRadius": 4.678228218264098,
         "mass": 1.21,
         "explosiveRadius": 25.785516786520958
       },
@@ -39807,6 +40298,7 @@
         }
       },
       "explosive": {
+        "killRadius": 0.7807631819662219,
         "mass": 0.137,
         "explosiveRadius": 12.474435604862133
       },
@@ -39928,6 +40420,7 @@
         }
       },
       "explosive": {
+        "killRadius": 18.555990285535078,
         "mass": 7.65,
         "explosiveRadius": 47.67981131913672
       },
@@ -39987,6 +40480,7 @@
         }
       },
       "explosive": {
+        "killRadius": 0.34812415868998436,
         "mass": 0.05,
         "explosiveRadius": 8.914644955936732
       },
@@ -40046,6 +40540,7 @@
         }
       },
       "explosive": {
+        "killRadius": 18.555990285535078,
         "mass": 7.65,
         "explosiveRadius": 47.67981131913672
       },
@@ -40105,6 +40600,7 @@
         }
       },
       "explosive": {
+        "killRadius": 10.358613130697083,
         "mass": 3.392,
         "explosiveRadius": 36.3579452176585
       },
@@ -40165,6 +40661,7 @@
         }
       },
       "explosive": {
+        "killRadius": 0.36540815658582043,
         "mass": 0.042,
         "explosiveRadius": 10.093576042867646
       },
@@ -40224,6 +40721,7 @@
         }
       },
       "explosive": {
+        "killRadius": 18.555990285535078,
         "mass": 7.65,
         "explosiveRadius": 47.67981131913672
       },
@@ -40341,6 +40839,7 @@
         }
       },
       "explosive": {
+        "killRadius": 0.4890681279870902,
         "mass": 0.077,
         "explosiveRadius": 10.294635117840496
       },
@@ -40401,6 +40900,7 @@
         }
       },
       "explosive": {
+        "killRadius": 3.1508326874310417,
         "mass": 0.741,
         "explosiveRadius": 21.897109278067727
       },
@@ -40462,6 +40962,7 @@
         }
       },
       "explosive": {
+        "killRadius": 0.5836570921069263,
         "mass": 0.09592,
         "explosiveRadius": 11.07687121527636
       },
@@ -40524,6 +41025,7 @@
         }
       },
       "explosive": {
+        "killRadius": 4.240450455745094,
         "mass": 1.07,
         "explosiveRadius": 24.750006023659473
       },
@@ -40641,6 +41143,7 @@
         }
       },
       "explosive": {
+        "killRadius": 4.240450455745094,
         "mass": 1.07,
         "explosiveRadius": 24.750006023659473
       },
@@ -40759,6 +41262,7 @@
         }
       },
       "explosive": {
+        "killRadius": 11.548001066692109,
         "mass": 3.93,
         "explosiveRadius": 38.18665051319111
       },
@@ -40818,6 +41322,7 @@
         }
       },
       "explosive": {
+        "killRadius": 8.235285843361464,
         "mass": 2.5,
         "explosiveRadius": 32.84183281686656
       },
@@ -40935,6 +41440,7 @@
         }
       },
       "explosive": {
+        "killRadius": 8.235285843361464,
         "mass": 2.5,
         "explosiveRadius": 32.84183281686656
       },
@@ -40996,6 +41502,7 @@
         }
       },
       "explosive": {
+        "killRadius": 15.103485519870496,
         "mass": 5.7,
         "explosiveRadius": 43.225398087415236
       },
@@ -41055,6 +41562,7 @@
         }
       },
       "explosive": {
+        "killRadius": 15.103485519870496,
         "mass": 5.7,
         "explosiveRadius": 43.225398087415236
       },
@@ -41121,6 +41629,7 @@
         }
       },
       "explosive": {
+        "killRadius": 5.428884959212148,
         "mass": 1.46,
         "explosiveRadius": 27.451431834505975
       },
@@ -41180,6 +41689,7 @@
         }
       },
       "explosive": {
+        "killRadius": 0.6036995851731218,
         "mass": 0.1,
         "explosiveRadius": 11.231748832323843
       },
@@ -41296,6 +41806,7 @@
         }
       },
       "explosive": {
+        "killRadius": 4.554524462523033,
         "mass": 1.17,
         "explosiveRadius": 25.498189063038534
       },
