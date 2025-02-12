@@ -135,7 +135,7 @@ export default function ShellInfo({
             )}
             {typeof data.diameter !== 'undefined' && (
               <Stat label="Penetrator diameter">
-                <FormatNumber value={data.diameter} />
+                <FormatNumber value={data.diameter} /> mm
               </Stat>
             )}
 
