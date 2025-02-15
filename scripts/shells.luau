@@ -229,12 +229,16 @@ for _, moduleScript in Modules:GetChildren() do
 				end
 
 				repeat
-					if shell.type == "HESH" then
+					if ammo.HESH then
 						killRadius *= 0.8
+
+						break
 					end
 
-					if shell.type == "HEAT" then
+					if ammo.ShellType == "HEAT" then
 						killRadius *= 0.66
+
+						break
 					end
 				until true
 
