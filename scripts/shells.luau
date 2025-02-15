@@ -228,6 +228,16 @@ for _, moduleScript in Modules:GetChildren() do
 					killRadius = explosiveRadius * ((math.sqrt(1.04 / (100 / blastDamage + 0.04)) - 1) / 4)
 				end
 
+				repeat
+					if shell.type == "HESH" then
+						killRadius *= 0.8
+					end
+
+					if shell.type == "HEAT" then
+						killRadius *= 0.66
+					end
+				until true
+
 				shell.explosive = {
 					mass = ammo.ExplosiveMass,
 					explosiveRadius = GlobalConstants.studtom(explosiveRadius),
