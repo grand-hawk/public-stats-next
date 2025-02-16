@@ -1925,9 +1925,9 @@
       "damage": 30,
       "relatedVehicles": [
         "T-90A",
-        "Tutel",
         "T-14 Armata",
         "T-72B3",
+        "Tutel",
         "T-90M"
       ],
       "velocity": 820,
@@ -2589,8 +2589,8 @@
       "relatedVehicles": [
         "Panther II",
         "Jagdpanther",
-        "Tiger II",
-        "Elefant"
+        "Elefant",
+        "Tiger II"
       ],
       "velocity": 1130,
       "type": "APCR",
@@ -2653,8 +2653,8 @@
       "relatedVehicles": [
         "Panther II",
         "Jagdpanther",
-        "Tiger II",
-        "Elefant"
+        "Elefant",
+        "Tiger II"
       ],
       "velocity": 820,
       "type": "HE"
@@ -2716,8 +2716,8 @@
       "relatedVehicles": [
         "Panther II",
         "Jagdpanther",
-        "Tiger II",
-        "Elefant"
+        "Elefant",
+        "Tiger II"
       ],
       "velocity": 1000,
       "type": "APHE",
@@ -4323,10 +4323,10 @@
       "damage": 400,
       "relatedVehicles": [
         "T-90A",
-        "Tutel",
         "Object 640 \"Black Eagle\"",
         "Burlak",
         "T-72B3",
+        "Tutel",
         "T-90M"
       ],
       "velocity": 445,
@@ -4384,10 +4384,10 @@
       "damage": 500,
       "relatedVehicles": [
         "T-90A",
-        "Tutel",
         "Object 640 \"Black Eagle\"",
         "Burlak",
         "T-72B3",
+        "Tutel",
         "T-90M"
       ],
       "velocity": 1610,
@@ -4451,10 +4451,10 @@
       "damage": 677,
       "relatedVehicles": [
         "T-90A",
-        "Tutel",
         "Object 640 \"Black Eagle\"",
         "Burlak",
         "T-72B3",
+        "Tutel",
         "T-90M"
       ],
       "velocity": 850,
@@ -4511,10 +4511,10 @@
       "damage": 500,
       "relatedVehicles": [
         "T-90A",
-        "Tutel",
         "Object 640 \"Black Eagle\"",
         "Burlak",
         "T-72B3",
+        "Tutel",
         "T-90M"
       ],
       "velocity": 1750,
@@ -4583,10 +4583,10 @@
       "damage": 400,
       "relatedVehicles": [
         "T-90A",
-        "Tutel",
         "Object 640 \"Black Eagle\"",
         "Burlak",
         "T-72B3",
+        "Tutel",
         "T-90M"
       ],
       "velocity": 445,
@@ -4644,10 +4644,10 @@
       "damage": 500,
       "relatedVehicles": [
         "T-90A",
-        "Tutel",
         "Object 640 \"Black Eagle\"",
         "Burlak",
         "T-72B3",
+        "Tutel",
         "T-90M"
       ],
       "velocity": 1660,
@@ -4707,10 +4707,10 @@
       "damage": 500,
       "relatedVehicles": [
         "T-90A",
-        "Tutel",
         "Object 640 \"Black Eagle\"",
         "Burlak",
         "T-72B3",
+        "Tutel",
         "T-90M"
       ],
       "velocity": 1698,
@@ -4774,10 +4774,10 @@
       "damage": 500,
       "relatedVehicles": [
         "T-90A",
-        "Tutel",
         "Object 640 \"Black Eagle\"",
         "Burlak",
         "T-72B3",
+        "Tutel",
         "T-90M"
       ],
       "velocity": 905,
@@ -4834,10 +4834,10 @@
       "damage": 500,
       "relatedVehicles": [
         "T-90A",
-        "Tutel",
         "Object 640 \"Black Eagle\"",
         "Burlak",
         "T-72B3",
+        "Tutel",
         "T-90M"
       ],
       "velocity": 1660,
@@ -4901,10 +4901,10 @@
       "damage": 551,
       "relatedVehicles": [
         "T-90A",
-        "Tutel",
         "Object 640 \"Black Eagle\"",
         "Burlak",
         "T-72B3",
+        "Tutel",
         "T-90M"
       ],
       "velocity": 850,
@@ -20597,7 +20597,7 @@
         "T-72B",
         "Kurganets-25",
         "BTR-55",
-        "Tutel",
+        "M23 Pickett",
         "LeichterJagdpanzer 201/3 Schwable",
         "LWV-30",
         "PT-76B",
@@ -20620,7 +20620,6 @@
         "BMP-30",
         "T-80U",
         "T-80B",
-        "BMD-4M",
         "Object 775",
         "Burlak",
         "T-84 Oplot-M",
@@ -20639,9 +20638,10 @@
         "T-64A",
         "Cheonma-2",
         "BMP-1",
+        "BMD-4M",
         "ZIT-122",
         "Object 477",
-        "M23 Pickett",
+        "Tutel",
         "BTR-82A",
         "BTR-90",
         "T-90M",
@@ -24775,8 +24775,8 @@
       "maxPenetration": 4,
       "damage": 131,
       "relatedVehicles": [
-        "Ba-40",
-        "M23 Pickett"
+        "M23 Pickett",
+        "Ba-40"
       ],
       "velocity": 792,
       "type": "HE"
@@ -24831,8 +24831,8 @@
       "maxPenetration": 84,
       "damage": 190,
       "relatedVehicles": [
-        "Ba-40",
-        "M23 Pickett"
+        "M23 Pickett",
+        "Ba-40"
       ],
       "velocity": 883,
       "type": "APDS",
@@ -26102,8 +26102,8 @@
         "JayElTeeVee",
         "M1 Abrams",
         "K1",
-        "LAV-25",
         "M60A1 Add-On Stabilization",
+        "LAV-25",
         "Desert Warrior",
         "RDF/LT",
         "KF41 Lynx",
@@ -29884,15 +29884,15 @@
         "KV-2 (ZIS-6)",
         "Ba-40",
         "IS-6",
+        "IS-1",
         "T-34",
-        "T-60",
         "Abandoned Tank Hull",
+        "T-60",
         "T-34-57",
         "T-44",
         "KV-220",
         "IS-2 1944",
         "T-34E",
-        "IS-1",
         "IS-3"
       ],
       "velocity": 640,
@@ -33687,8 +33687,8 @@
         "Hornisse",
         "Sd Kfz 251",
         "Tiger I",
-        "Tiger II",
         "Elefant",
+        "Tiger II",
         "Pz IV Ausf. 1946",
         "Sturmtiger"
       ],
@@ -37079,6 +37079,7 @@
         "M1A1",
         "XM8",
         "M1A2 SEP V3",
+        "Black Night",
         "M26 Pershing",
         "IFV-30",
         "HSTV-L",
@@ -37095,9 +37096,8 @@
         "M48A2 Patton",
         "M551 Sheridan",
         "M1126",
-        "M7 Priest",
-        "Black Night",
         "M60A1 RISE Passive",
+        "M7 Priest",
         "CullingTestRig"
       ],
       "velocity": 929,
@@ -42448,9 +42448,9 @@
         "BMP-100",
         "BMP-3",
         "Tiger EC665 UHT S",
-        "BMD-4M",
         "BTR-4",
         "BMP-3M",
+        "BMD-4M",
         "Object 477",
         "BTR-82A",
         "BTR-90"
@@ -42515,9 +42515,9 @@
         "BMP-100",
         "BMP-3",
         "Tiger EC665 UHT S",
-        "BMD-4M",
         "BTR-4",
         "BMP-3M",
+        "BMD-4M",
         "Object 477",
         "BTR-82A",
         "BTR-90"
@@ -42583,9 +42583,9 @@
         "BMP-100",
         "BMP-3",
         "Tiger EC665 UHT S",
-        "BMD-4M",
         "BTR-4",
         "BMP-3M",
+        "BMD-4M",
         "Object 477",
         "BTR-82A",
         "BTR-90"
