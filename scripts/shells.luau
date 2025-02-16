@@ -107,7 +107,7 @@ for _, moduleScript in Modules:GetChildren() do
 	if moduleScript:GetAttribute("Hide") == true then
 		continue
 	end
-	if table.find({ "Flares", "Smoke Grenade" }, moduleScript.Name) then
+	if table.find({ "InfGuns", "Flares", "Smoke Grenade" }, moduleScript.Name) then
 		continue
 	end
 
@@ -317,7 +317,7 @@ for _, moduleScript in Modules:GetChildren() do
 	end
 
 	if #shells > 0 then
-		weapons[if moduleScript.Name == "InfGuns" then "Infantry" else moduleScript.Name] = shells
+		weapons[moduleScript.Name] = shells
 	end
 end
 
