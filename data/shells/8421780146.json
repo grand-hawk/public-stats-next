@@ -10512,7 +10512,8 @@
       "maxPenetration": 380,
       "damage": 400,
       "relatedVehicles": [
-        "T-54 Obr. 1951"
+        "T-54 Obr. 1951",
+        "T-44"
       ],
       "velocity": 900,
       "type": "HEAT-FS"
@@ -10572,7 +10573,8 @@
       "maxPenetration": 239,
       "damage": 400,
       "relatedVehicles": [
-        "T-54 Obr. 1951"
+        "T-54 Obr. 1951",
+        "T-44"
       ],
       "velocity": 887,
       "type": "APHE",
@@ -10633,7 +10635,8 @@
       "maxPenetration": 24,
       "damage": 352,
       "relatedVehicles": [
-        "T-54 Obr. 1951"
+        "T-54 Obr. 1951",
+        "T-44"
       ],
       "velocity": 900,
       "type": "HE"
@@ -30143,6 +30146,7 @@
         "IFV-30",
         "T-62",
         "ZIT-122",
+        "T-44",
         "IS-2 1944",
         "Towvee S",
         "IS-3",
