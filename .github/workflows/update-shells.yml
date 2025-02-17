@@ -71,7 +71,7 @@ jobs:
           git pull --rebase origin prod --autostash
           COMMIT_HASH=$(git rev-parse "$BRANCH_NAME")
           git cherry-pick -n "$COMMIT_HASH"
-          if ! git diff --quiet; then
+          if ! git diff --cached --quiet; then
             git commit -m "Update shells data for ${{ matrix.environment.name }}"
             git push origin prod --force-with-lease
           else
