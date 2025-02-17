@@ -1,8 +1,6 @@
 name: Update Shells
 
 on:
-  schedule:
-    - cron: '15 */12 * * *' # Runs every 12 hours
   workflow_dispatch:
 
 jobs:
