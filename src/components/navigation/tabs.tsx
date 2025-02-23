@@ -29,10 +29,11 @@ export default function NavigationTabs() {
         router.push(targetTab.path);
       }}
     >
-      <Tabs.List>
+      <Tabs.List justifyContent="end">
         {Object.entries(tabs).map(([value, tab]) => (
           <Tabs.Trigger
             key={value}
+            maxWidth="150px"
             value={value}
             onClick={() => {
               if (!currentTab) return;

@@ -19,9 +19,14 @@ export default function Navigation() {
       }}
       paddingY={4}
     >
-      <Box gap={4} maxWidth="750px" width="100%">
-        <Grid alignItems="center" gap={4} templateColumns="repeat(2, 1fr)">
-          <GridItem>
+      <Box gap={4} width="100%">
+        <Grid
+          alignItems="center"
+          gap={4}
+          justifyContent="space-between"
+          templateColumns="repeat(2, 1fr)"
+        >
+          <GridItem maxWidth="250px">
             <PlaceSelect noLabel />
           </GridItem>
 
