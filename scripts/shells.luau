@@ -147,7 +147,7 @@ for _, moduleScript in Modules:GetChildren() do
 
 		do
 			local angles = { 0, 30, 60 }
-			local distances = { 0, 1_000, 2_000, 3_000 }
+			local distances = { 0, 500, 1_000, 2_000 }
 
 			for _, angle in angles do
 				shell.penetrationTable[angle] = {}
@@ -194,13 +194,13 @@ for _, moduleScript in Modules:GetChildren() do
 						end
 					until true
 
-					local penArray = { calculatedPen }
+					local penArray = { math.round(calculatedPen) }
 
 					if ammo.SAPHE then
 						table.insert(
 							penArray,
 							-- same as formula as HE
-							GlobalConstants.GetBlastPen(ammo) / math.cos(math.rad(angle))
+							math.round(GlobalConstants.GetBlastPen(ammo) / math.cos(math.rad(angle)))
 						)
 					end
 

@@ -113,7 +113,11 @@ export default function ShellInfo({
             </Stat>
             {typeof data.ricochetAngle !== 'undefined' && (
               <Stat label="Ricochet angle">
-                <FormatNumber value={data.ricochetAngle} />°
+                <FormatNumber
+                  maximumFractionDigits={2}
+                  value={data.ricochetAngle}
+                />
+                °
               </Stat>
             )}
             {typeof data.shrapMultiplier !== 'undefined' && (
