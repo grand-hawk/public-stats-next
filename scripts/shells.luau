@@ -175,8 +175,7 @@ for _, moduleScript in Modules:GetChildren() do
 						basePen *= penLoss
 
 						if ammo.AngleCons ~= nil then
-							local logBase05 = math.log(ammo.PenAt60 / basePen) / math.log(0.5)
-							calculatedPen = basePen * math.cos(math.rad(angle)) ^ logBase05
+							calculatedPen = basePen * math.cos(math.rad(angle)) ^ ammo.AngleCons
 
 							break
 						end
