@@ -63,8 +63,8 @@ importers:
         specifier: 19.0.0
         version: 19.0.0(react@19.0.0)
       react-icons:
-        specifier: ^5.4.0
-        version: 5.4.0(react@19.0.0)
+        specifier: ^5.5.0
+        version: 5.5.0(react@19.0.0)
       superjson:
         specifier: ^2.2.2
         version: 2.2.2
@@ -638,8 +638,8 @@ packages:
     peerDependencies:
       '@svgdotjs/svg.js': ^3.2.4
 
-  '@svgdotjs/svg.filter.js@3.0.8':
-    resolution: {integrity: sha512-YshF2YDaeRA2StyzAs5nUPrev7npQ38oWD0eTRwnsciSL2KrRPMoUw8BzjIXItb3+dccKGTX3IQOd2NFzmHkog==}
+  '@svgdotjs/svg.filter.js@3.0.9':
+    resolution: {integrity: sha512-/69XMRCDoam2HgC4ldHIaDgeQf1ViHIsa0Ld4uWgiXtZ+E24DWHe/9Ib6kbNiZ7WRIdlVokUDR1Fg0kjIpkfbw==}
     engines: {node: '>= 0.8.0'}
 
   '@svgdotjs/svg.js@3.2.4':
@@ -2094,8 +2094,8 @@ packages:
     peerDependencies:
       react: ^19.0.0
 
-  react-icons@5.4.0:
-    resolution: {integrity: sha512-7eltJxgVt7X64oHh6wSWNwwbKTCtMfK35hcjvJS0yxEAhPM8oUKdS3+kqaW1vicIltw+kR2unHaa12S9pPALoQ==}
+  react-icons@5.5.0:
+    resolution: {integrity: sha512-MEFcXdkP3dLo8uumGI5xN3lDFNsRtrjbOEKDLD7yv76v4wpnEq2Lt2qeHaQOr34I/wPN3s3+N08WkQ+CW37Xiw==}
     peerDependencies:
       react: '*'
 
@@ -2932,7 +2932,7 @@ snapshots:
     dependencies:
       '@svgdotjs/svg.js': 3.2.4
 
-  '@svgdotjs/svg.filter.js@3.0.8':
+  '@svgdotjs/svg.filter.js@3.0.9':
     dependencies:
       '@svgdotjs/svg.js': 3.2.4
 
@@ -3631,7 +3631,7 @@ snapshots:
   apexcharts@4.4.0:
     dependencies:
       '@svgdotjs/svg.draggable.js': 3.0.6(@svgdotjs/svg.js@3.2.4)
-      '@svgdotjs/svg.filter.js': 3.0.8
+      '@svgdotjs/svg.filter.js': 3.0.9
       '@svgdotjs/svg.js': 3.2.4
       '@svgdotjs/svg.resize.js': 2.0.5(@svgdotjs/svg.js@3.2.4)(@svgdotjs/svg.select.js@4.0.2(@svgdotjs/svg.js@3.2.4))
       '@svgdotjs/svg.select.js': 4.0.2(@svgdotjs/svg.js@3.2.4)
@@ -4861,7 +4861,7 @@ snapshots:
       react: 19.0.0
       scheduler: 0.25.0
 
-  react-icons@5.4.0(react@19.0.0):
+  react-icons@5.5.0(react@19.0.0):
     dependencies:
       react: 19.0.0
 
