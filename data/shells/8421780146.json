@@ -25687,7 +25687,7 @@
         "mass": 0.038,
         "explosiveRadius": 8.135331392596568
       },
-      "name": "HE",
+      "name": "SHV-T HE",
       "mass": 0.73,
       "maxPenetration": 4,
       "damage": 131,
@@ -25743,7 +25743,7 @@
           ]
         }
       },
-      "name": "AP",
+      "name": "SHV-T AP",
       "mass": 0.87,
       "maxPenetration": 84,
       "damage": 190,
@@ -34034,7 +34034,7 @@
         "mass": 591,
         "explosiveRadius": 360
       },
-      "name": "GPS GUIDED",
+      "name": "ATACMS",
       "mass": 1318,
       "maxPenetration": 480,
       "damage": 13345,
