@@ -733,10 +733,10 @@
       "damage": 400,
       "relatedVehicles": [
         "BMD-1",
-        "Mi-8AMTSh",
         "Bumpee",
         "Object 166",
-        "BMP-1"
+        "BMP-1",
+        "Mi-8AMTSh"
       ],
       "velocity": 140,
       "type": "MACLOS MISSILE"
@@ -1804,10 +1804,10 @@
       "damage": 30,
       "relatedVehicles": [
         "T-90A",
-        "T-14 Armata",
+        "T-90M",
         "T-72B3",
         "Tutel",
-        "T-90M"
+        "T-14 Armata"
       ],
       "velocity": 820,
       "type": "MG",
@@ -5074,10 +5074,10 @@
       "relatedVehicles": [
         "T-90A",
         "Object 640 \"Black Eagle\"",
+        "T-90M",
         "Burlak",
         "T-72B3",
-        "Tutel",
-        "T-90M"
+        "Tutel"
       ],
       "velocity": 850,
       "type": "TIME FUZE"
@@ -5144,10 +5144,10 @@
       "relatedVehicles": [
         "T-90A",
         "Object 640 \"Black Eagle\"",
+        "T-90M",
         "Burlak",
         "T-72B3",
-        "Tutel",
-        "T-90M"
+        "Tutel"
       ],
       "velocity": 445,
       "type": "TANDEM ANTI-TANK GUIDED MISSILE"
@@ -5204,10 +5204,10 @@
       "relatedVehicles": [
         "T-90A",
         "Object 640 \"Black Eagle\"",
+        "T-90M",
         "Burlak",
         "T-72B3",
-        "Tutel",
-        "T-90M"
+        "Tutel"
       ],
       "velocity": 1750,
       "diameter": 25.5,
@@ -5267,10 +5267,10 @@
       "relatedVehicles": [
         "T-90A",
         "Object 640 \"Black Eagle\"",
+        "T-90M",
         "Burlak",
         "T-72B3",
-        "Tutel",
-        "T-90M"
+        "Tutel"
       ],
       "velocity": 1610,
       "diameter": 22,
@@ -5334,10 +5334,10 @@
       "relatedVehicles": [
         "T-90A",
         "Object 640 \"Black Eagle\"",
+        "T-90M",
         "Burlak",
         "T-72B3",
-        "Tutel",
-        "T-90M"
+        "Tutel"
       ],
       "velocity": 850,
       "type": "HE"
@@ -5404,10 +5404,10 @@
       "relatedVehicles": [
         "T-90A",
         "Object 640 \"Black Eagle\"",
+        "T-90M",
         "Burlak",
         "T-72B3",
-        "Tutel",
-        "T-90M"
+        "Tutel"
       ],
       "velocity": 445,
       "type": "ANTI-TANK GUIDED MISSILE"
@@ -5464,10 +5464,10 @@
       "relatedVehicles": [
         "T-90A",
         "Object 640 \"Black Eagle\"",
+        "T-90M",
         "Burlak",
         "T-72B3",
-        "Tutel",
-        "T-90M"
+        "Tutel"
       ],
       "velocity": 1660,
       "diameter": 22,
@@ -5527,10 +5527,10 @@
       "relatedVehicles": [
         "T-90A",
         "Object 640 \"Black Eagle\"",
+        "T-90M",
         "Burlak",
         "T-72B3",
-        "Tutel",
-        "T-90M"
+        "Tutel"
       ],
       "velocity": 1660,
       "diameter": 25,
@@ -5590,10 +5590,10 @@
       "relatedVehicles": [
         "T-90A",
         "Object 640 \"Black Eagle\"",
+        "T-90M",
         "Burlak",
         "T-72B3",
-        "Tutel",
-        "T-90M"
+        "Tutel"
       ],
       "velocity": 1698,
       "diameter": 25.5,
@@ -5657,10 +5657,10 @@
       "relatedVehicles": [
         "T-90A",
         "Object 640 \"Black Eagle\"",
+        "T-90M",
         "Burlak",
         "T-72B3",
-        "Tutel",
-        "T-90M"
+        "Tutel"
       ],
       "velocity": 905,
       "type": "HEAT-FS"
@@ -5722,10 +5722,10 @@
       "relatedVehicles": [
         "T-90A",
         "Object 640 \"Black Eagle\"",
+        "T-90M",
         "Burlak",
         "T-72B3",
-        "Tutel",
-        "T-90M"
+        "Tutel"
       ],
       "velocity": 850,
       "type": "HE"
@@ -5787,10 +5787,10 @@
       "relatedVehicles": [
         "T-90A",
         "Object 640 \"Black Eagle\"",
+        "T-90M",
         "Burlak",
         "T-72B3",
-        "Tutel",
-        "T-90M"
+        "Tutel"
       ],
       "velocity": 850,
       "type": "TIME FUZE"
@@ -7062,8 +7062,7 @@
       "relatedVehicles": [
         "Challenger 2",
         "FV510 Warrior",
-        "Black Night",
-        "CullingTestRig"
+        "Black Night"
       ],
       "velocity": 800,
       "type": "MG",
@@ -18164,8 +18163,7 @@
       "damage": 145,
       "relatedVehicles": [
         "Challenger 2",
-        "Black Night",
-        "CullingTestRig"
+        "Black Night"
       ],
       "velocity": 670,
       "type": "SMOKE"
@@ -18226,8 +18224,7 @@
       "damage": 767,
       "relatedVehicles": [
         "Challenger 2",
-        "Black Night",
-        "CullingTestRig"
+        "Black Night"
       ],
       "velocity": 670,
       "type": "HESH"
@@ -18282,8 +18279,7 @@
       "mass": 4.3,
       "relatedVehicles": [
         "Challenger 2",
-        "Black Night",
-        "CullingTestRig"
+        "Black Night"
       ],
       "shrapMultiplier": 3,
       "maxPenetration": 564,
@@ -18968,8 +18964,7 @@
       "relatedVehicles": [
         "Challenger 2",
         "Black Night",
-        "Challenger 1",
-        "CullingTestRig"
+        "Challenger 1"
       ],
       "velocity": 800,
       "type": "MG",
@@ -21139,8 +21134,8 @@
       "relatedVehicles": [
         "Strela-MLRS",
         "Mi-24V",
-        "Mi-8AMTSh",
-        "Mi-24VM"
+        "Mi-24VM",
+        "Mi-8AMTSh"
       ],
       "velocity": 650,
       "type": "ROCKET"
@@ -21585,7 +21580,6 @@
         "BMD-2",
         "BTR-82A",
         "BMP-73",
-        "T-14 Armata",
         "BRDM-2",
         "BMP-2MD",
         "Sprut-SDM1",
@@ -21600,6 +21594,7 @@
         "T-80U",
         "T-80B",
         "Object 775",
+        "T-90M",
         "Burlak",
         "T-84 Oplot-M",
         "BTR-4",
@@ -21607,25 +21602,25 @@
         "T-72M2",
         "MT-LB AA",
         "Bumpee",
-        "T-15 Armata",
         "Object 166",
+        "T-15 Armata",
         "Rosomak",
         "BMP-3M",
         "T-62",
-        "BTR-90",
         "T-72B3",
         "IT-1",
+        "BTR-90",
         "T-64A",
         "Cheonma-2",
-        "Object 477",
         "BMP-1",
+        "Object 477",
         "BMD-4M",
         "T-64R",
         "ZIT-122",
         "Tutel",
         "T-64BM \"Bulat\"",
         "PT-76E",
-        "T-90M",
+        "T-14 Armata",
         "T-62M-1"
       ],
       "velocity": 800,
@@ -28694,9 +28689,9 @@
       "maxPenetration": 60,
       "damage": 941,
       "relatedVehicles": [
-        "T-14 Armata",
         "Object 195",
-        "Object 477"
+        "Object 477",
+        "T-14 Armata"
       ],
       "velocity": 850,
       "type": "HE"
@@ -28752,9 +28747,9 @@
       "maxPenetration": 831,
       "damage": 680,
       "relatedVehicles": [
-        "T-14 Armata",
         "Object 195",
-        "Object 477"
+        "Object 477",
+        "T-14 Armata"
       ],
       "velocity": 1780,
       "diameter": 30,
@@ -28811,9 +28806,9 @@
       "maxPenetration": 835,
       "damage": 680,
       "relatedVehicles": [
-        "T-14 Armata",
         "Object 195",
-        "Object 477"
+        "Object 477",
+        "T-14 Armata"
       ],
       "velocity": 1780,
       "diameter": 30,
@@ -30185,12 +30180,12 @@
       "damage": 35,
       "relatedVehicles": [
         "BTR-55",
-        "T-14 Armata",
         "BRDM-2",
         "Object 279",
         "BTR-60PB",
         "Burlak",
-        "IS-7"
+        "IS-7",
+        "T-14 Armata"
       ],
       "velocity": 1000,
       "type": "MG",
@@ -31296,6 +31291,7 @@
         "Ba-40",
         "IS-6",
         "T-34E",
+        "IS-1",
         "T-34",
         "T-60",
         "T-34-57",
@@ -31303,7 +31299,6 @@
         "KV-220",
         "IS-2 1944",
         "T-54 Obr. 1951",
-        "IS-1",
         "KV-2",
         "Abandoned Tank Hull",
         "IS-3"
@@ -31613,9 +31608,9 @@
         "IS-6",
         "IFV-30",
         "T-62",
-        "Towvee S",
         "ZIT-122",
         "T-44",
+        "Towvee S",
         "IS-2 1944",
         "T-54 Obr. 1951",
         "IS-3",
@@ -38102,8 +38097,7 @@
         "M551 Sheridan",
         "M1 Abrams",
         "M1126",
-        "M7 Priest",
-        "CullingTestRig"
+        "M7 Priest"
       ],
       "velocity": 929,
       "type": "MG",
@@ -39760,8 +39754,7 @@
       "damage": 400,
       "relatedVehicles": [
         "M14 Jacob",
-        "Black Night",
-        "CullingTestRig"
+        "Black Night"
       ],
       "velocity": 325,
       "type": "TANDEM LASER GUIDED MISSILE"
@@ -42691,8 +42684,8 @@
         "Leopard 2A4",
         "Begleitpanzer 57",
         "Leopard 2A4 140MM",
-        "Leopard 2A6",
-        "M48 Super"
+        "M48 Super",
+        "Leopard 2A6"
       ],
       "velocity": 900,
       "type": "MG",
