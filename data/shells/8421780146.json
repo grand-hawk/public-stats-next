@@ -599,11 +599,12 @@
       "maxPenetration": 4,
       "damage": 136,
       "relatedVehicles": [
+        "BMP-2M",
         "Kurganets-25",
         "BMP-2MD",
         "BMP-30M",
-        "T-15 Armata",
         "BTR-90",
+        "T-15 Armata",
         "Ka-52M Alligator-M"
       ],
       "velocity": 960,
@@ -659,11 +660,12 @@
       "maxPenetration": 102,
       "damage": 90,
       "relatedVehicles": [
+        "BMP-2M",
         "Kurganets-25",
         "BMP-2MD",
         "BMP-30M",
-        "T-15 Armata",
         "BTR-90",
+        "T-15 Armata",
         "Ka-52M Alligator-M"
       ],
       "velocity": 1260,
@@ -733,8 +735,8 @@
       "damage": 400,
       "relatedVehicles": [
         "BMD-1",
-        "Mi-8AMTSh",
         "Bumpee",
+        "Mi-8AMTSh",
         "Object 166",
         "BMP-1"
       ],
@@ -797,7 +799,9 @@
       "mass": 0.4,
       "maxPenetration": 4,
       "damage": 136,
-      "relatedVehicles": [],
+      "relatedVehicles": [
+        "BMPT Terminator"
+      ],
       "velocity": 960,
       "type": "HE"
     },
@@ -850,7 +854,9 @@
       "mass": 0.1,
       "maxPenetration": 102,
       "damage": 90,
-      "relatedVehicles": [],
+      "relatedVehicles": [
+        "BMPT Terminator"
+      ],
       "velocity": 1260,
       "type": "APFSDS",
       "ricochetAngle": 81
@@ -1550,10 +1556,10 @@
       "damage": 30,
       "relatedVehicles": [
         "T-90A",
+        "T-14 Armata",
         "T-90M",
-        "T-72B3",
         "Tutel",
-        "T-14 Armata"
+        "T-72B3"
       ],
       "velocity": 820,
       "type": "MG",
@@ -1616,6 +1622,7 @@
       "maxPenetration": 50,
       "damage": 758,
       "relatedVehicles": [
+        "BM-21 Grad",
         "LUAZ-672"
       ],
       "velocity": 180,
@@ -2288,6 +2295,7 @@
       "maxPenetration": 3,
       "damage": 122,
       "relatedVehicles": [
+        "BTR-2A",
         "Tiger EC665 UHT",
         "Object 195",
         "BMP-1AM",
@@ -2295,9 +2303,9 @@
         "BMP-100",
         "BMP-3",
         "Tiger EC665 UHT S",
+        "BTR-90",
         "BMD-4M",
         "BTR-4",
-        "BTR-90",
         "Object 477",
         "BTR-82A",
         "BMP-3M"
@@ -2355,6 +2363,7 @@
       "maxPenetration": 102,
       "damage": 90,
       "relatedVehicles": [
+        "BTR-2A",
         "Tiger EC665 UHT",
         "Object 195",
         "BMP-1AM",
@@ -2362,9 +2371,9 @@
         "BMP-100",
         "BMP-3",
         "Tiger EC665 UHT S",
+        "BTR-90",
         "BMD-4M",
         "BTR-4",
-        "BTR-90",
         "Object 477",
         "BTR-82A",
         "BMP-3M"
@@ -2423,6 +2432,7 @@
       "maxPenetration": 82,
       "damage": 90,
       "relatedVehicles": [
+        "BTR-2A",
         "Tiger EC665 UHT",
         "Object 195",
         "BMP-1AM",
@@ -2430,9 +2440,9 @@
         "BMP-100",
         "BMP-3",
         "Tiger EC665 UHT S",
+        "BTR-90",
         "BMD-4M",
         "BTR-4",
-        "BTR-90",
         "Object 477",
         "BTR-82A",
         "BMP-3M"
@@ -2862,8 +2872,8 @@
       "damage": 360,
       "relatedVehicles": [
         "Panther II",
-        "Tiger II",
         "Elefant",
+        "Tiger II",
         "Jagdpanther"
       ],
       "velocity": 1130,
@@ -2926,8 +2936,8 @@
       "damage": 298,
       "relatedVehicles": [
         "Panther II",
-        "Tiger II",
         "Elefant",
+        "Tiger II",
         "Jagdpanther"
       ],
       "velocity": 820,
@@ -2989,8 +2999,8 @@
       "damage": 360,
       "relatedVehicles": [
         "Panther II",
-        "Tiger II",
         "Elefant",
+        "Tiger II",
         "Jagdpanther"
       ],
       "velocity": 1000,
@@ -4086,8 +4096,8 @@
       "maxPenetration": 13,
       "damage": 16,
       "relatedVehicles": [
-        "Panther EVO",
-        "KF51 Panther"
+        "KF51 Panther",
+        "Panther EVO"
       ],
       "velocity": 840,
       "type": "MG",
@@ -5006,8 +5016,8 @@
         "Object 640 \"Black Eagle\"",
         "T-90M",
         "Burlak",
-        "T-72B3",
-        "Tutel"
+        "Tutel",
+        "T-72B3"
       ],
       "velocity": 850,
       "type": "TIME FUZE"
@@ -5076,8 +5086,8 @@
         "Object 640 \"Black Eagle\"",
         "T-90M",
         "Burlak",
-        "T-72B3",
-        "Tutel"
+        "Tutel",
+        "T-72B3"
       ],
       "velocity": 445,
       "type": "TANDEM ANTI-TANK GUIDED MISSILE"
@@ -5136,8 +5146,8 @@
         "Object 640 \"Black Eagle\"",
         "T-90M",
         "Burlak",
-        "T-72B3",
-        "Tutel"
+        "Tutel",
+        "T-72B3"
       ],
       "velocity": 1750,
       "diameter": 25.5,
@@ -5199,8 +5209,8 @@
         "Object 640 \"Black Eagle\"",
         "T-90M",
         "Burlak",
-        "T-72B3",
-        "Tutel"
+        "Tutel",
+        "T-72B3"
       ],
       "velocity": 1610,
       "diameter": 22,
@@ -5266,8 +5276,8 @@
         "Object 640 \"Black Eagle\"",
         "T-90M",
         "Burlak",
-        "T-72B3",
-        "Tutel"
+        "Tutel",
+        "T-72B3"
       ],
       "velocity": 850,
       "type": "HE"
@@ -5336,8 +5346,8 @@
         "Object 640 \"Black Eagle\"",
         "T-90M",
         "Burlak",
-        "T-72B3",
-        "Tutel"
+        "Tutel",
+        "T-72B3"
       ],
       "velocity": 445,
       "type": "ANTI-TANK GUIDED MISSILE"
@@ -5396,8 +5406,8 @@
         "Object 640 \"Black Eagle\"",
         "T-90M",
         "Burlak",
-        "T-72B3",
-        "Tutel"
+        "Tutel",
+        "T-72B3"
       ],
       "velocity": 1660,
       "diameter": 22,
@@ -5459,8 +5469,8 @@
         "Object 640 \"Black Eagle\"",
         "T-90M",
         "Burlak",
-        "T-72B3",
-        "Tutel"
+        "Tutel",
+        "T-72B3"
       ],
       "velocity": 1660,
       "diameter": 25,
@@ -5522,8 +5532,8 @@
         "Object 640 \"Black Eagle\"",
         "T-90M",
         "Burlak",
-        "T-72B3",
-        "Tutel"
+        "Tutel",
+        "T-72B3"
       ],
       "velocity": 1698,
       "diameter": 25.5,
@@ -5589,8 +5599,8 @@
         "Object 640 \"Black Eagle\"",
         "T-90M",
         "Burlak",
-        "T-72B3",
-        "Tutel"
+        "Tutel",
+        "T-72B3"
       ],
       "velocity": 905,
       "type": "HEAT-FS"
@@ -5654,8 +5664,8 @@
         "Object 640 \"Black Eagle\"",
         "T-90M",
         "Burlak",
-        "T-72B3",
-        "Tutel"
+        "Tutel",
+        "T-72B3"
       ],
       "velocity": 850,
       "type": "HE"
@@ -5719,8 +5729,8 @@
         "Object 640 \"Black Eagle\"",
         "T-90M",
         "Burlak",
-        "T-72B3",
-        "Tutel"
+        "Tutel",
+        "T-72B3"
       ],
       "velocity": 850,
       "type": "TIME FUZE"
@@ -8815,8 +8825,8 @@
       "relatedVehicles": [
         "Leopard 2K",
         "Marder 1A3",
-        "Marder A1",
         "KPz-70",
+        "Marder A1",
         "Wiesel 1A4"
       ],
       "velocity": 1150,
@@ -8880,8 +8890,8 @@
       "relatedVehicles": [
         "Leopard 2K",
         "Marder 1A3",
-        "Marder A1",
         "KPz-70",
+        "Marder A1",
         "Wiesel 1A4"
       ],
       "velocity": 1100,
@@ -8939,8 +8949,8 @@
       "relatedVehicles": [
         "Leopard 2K",
         "Marder 1A3",
-        "Marder A1",
         "KPz-70",
+        "Marder A1",
         "Wiesel 1A4"
       ],
       "velocity": 1150,
@@ -9126,20 +9136,21 @@
       "maxPenetration": 29,
       "damage": 30,
       "relatedVehicles": [
-        "Strela-MLRS",
         "MT-LB",
         "T-55",
         "T-84-120",
         "T-72A",
-        "T-72B",
         "T-80BVM",
         "Strela-10",
         "T-64BV",
         "T-80U",
         "T-80B",
         "T-84 Oplot-M",
-        "T-64BM \"Bulat\"",
-        "T-64A"
+        "2S19 Msta-S",
+        "T-64A",
+        "Strela-MLRS",
+        "T-72B",
+        "T-64BM \"Bulat\""
       ],
       "velocity": 820,
       "type": "MG",
@@ -10428,6 +10439,7 @@
       "relatedVehicles": [
         "BMP-3",
         "T-15 Armata",
+        "BMPT Terminator",
         "Mi-24VM"
       ],
       "velocity": 550,
@@ -10667,8 +10679,8 @@
       "maxPenetration": 16,
       "damage": 256,
       "relatedVehicles": [
-        "Pz IV H",
-        "Pz IV Ausf. 1946"
+        "Pz IV Ausf. 1946",
+        "Pz IV H"
       ],
       "velocity": 550,
       "type": "HE"
@@ -10728,8 +10740,8 @@
       "maxPenetration": 145,
       "damage": 330,
       "relatedVehicles": [
-        "Pz IV H",
-        "Pz IV Ausf. 1946"
+        "Pz IV Ausf. 1946",
+        "Pz IV H"
       ],
       "velocity": 770,
       "type": "APHE",
@@ -11351,12 +11363,13 @@
       "damage": 400,
       "relatedVehicles": [
         "Kornet D GAZ Tigr",
+        "BMP-2M",
         "Kurganets-25",
         "BMP-30M",
         "LT-SE",
         "Kornet D BMD-4M",
-        "T-15 Armata",
-        "BTR-90"
+        "BTR-90",
+        "T-15 Armata"
       ],
       "velocity": 300,
       "type": "TANDEM ANTI-TANK GUIDED MISSILE"
@@ -11422,12 +11435,13 @@
       "damage": 938,
       "relatedVehicles": [
         "Kornet D GAZ Tigr",
+        "BMP-2M",
         "Kurganets-25",
         "BMP-30M",
         "LT-SE",
         "Kornet D BMD-4M",
-        "T-15 Armata",
-        "BTR-90"
+        "BTR-90",
+        "T-15 Armata"
       ],
       "velocity": 320,
       "type": "ANTI-TANK GUIDED MISSILE"
@@ -13029,7 +13043,10 @@
       "maxPenetration": 45,
       "damage": 677,
       "relatedVehicles": [
-        "T-72A"
+        "T-72A",
+        "OBT-2U",
+        "OBT-3",
+        "OBT-2UM"
       ],
       "velocity": 850,
       "type": "HE"
@@ -13089,7 +13106,10 @@
       "maxPenetration": 440,
       "damage": 500,
       "relatedVehicles": [
-        "T-72A"
+        "T-72A",
+        "OBT-2U",
+        "OBT-3",
+        "OBT-2UM"
       ],
       "velocity": 905,
       "type": "HEAT-FS"
@@ -13144,7 +13164,10 @@
       "maxPenetration": 321,
       "damage": 500,
       "relatedVehicles": [
-        "T-72A"
+        "T-72A",
+        "OBT-2U",
+        "OBT-3",
+        "OBT-2UM"
       ],
       "velocity": 1800,
       "type": "APFSDS",
@@ -13200,7 +13223,10 @@
       "maxPenetration": 425,
       "damage": 500,
       "relatedVehicles": [
-        "T-72A"
+        "T-72A",
+        "OBT-2U",
+        "OBT-3",
+        "OBT-2UM"
       ],
       "velocity": 1760,
       "type": "APFSDS",
@@ -13322,8 +13348,8 @@
       "maxPenetration": 37,
       "damage": 547,
       "relatedVehicles": [
-        "BMD-4M",
-        "BTR-90"
+        "BTR-90",
+        "BMD-4M"
       ],
       "velocity": 355,
       "type": "PROXIMITY FUZE"
@@ -13383,8 +13409,8 @@
       "maxPenetration": 37,
       "damage": 547,
       "relatedVehicles": [
-        "BMD-4M",
-        "BTR-90"
+        "BTR-90",
+        "BMD-4M"
       ],
       "velocity": 355,
       "type": "HE"
@@ -13449,8 +13475,8 @@
       "maxPenetration": 750,
       "damage": 400,
       "relatedVehicles": [
-        "BMD-4M",
-        "BTR-90"
+        "BTR-90",
+        "BMD-4M"
       ],
       "velocity": 400,
       "type": "TANDEM ANTI-TANK GUIDED MISSILE"
@@ -14547,7 +14573,6 @@
         "M4A1 (76) Sherman",
         "M4A3 (105)",
         "M113 HVMS",
-        "M4A2 Sherman",
         "M4A1 Sherman",
         "M4A2E8 Sherman",
         "M3 Lee",
@@ -14557,9 +14582,10 @@
         "M26 Pershing",
         "M4A3E2 (76) Jumbo",
         "M4A3 (105) Zippo",
-        "T26E4 Super Pershing",
         "M48A2 Patton",
-        "T34 Calliope"
+        "T26E4 Super Pershing",
+        "T34 Calliope",
+        "M4A2 Sherman"
       ],
       "velocity": 900,
       "type": "MG",
@@ -14751,11 +14777,11 @@
       "maxPenetration": 104,
       "damage": 330,
       "relatedVehicles": [
-        "M4A2 Sherman",
         "M4A1 Sherman",
         "M3 GMC",
         "M4A3E2 (75) Jumbo",
-        "T34 Calliope"
+        "T34 Calliope",
+        "M4A2 Sherman"
       ],
       "velocity": 618,
       "type": "APHE",
@@ -14816,11 +14842,11 @@
       "maxPenetration": 16,
       "damage": 253,
       "relatedVehicles": [
-        "M4A2 Sherman",
         "M4A1 Sherman",
         "M3 GMC",
         "M4A3E2 (75) Jumbo",
-        "T34 Calliope"
+        "T34 Calliope",
+        "M4A2 Sherman"
       ],
       "velocity": 463,
       "type": "HE"
@@ -15493,10 +15519,10 @@
       "maxPenetration": 22,
       "damage": 323,
       "relatedVehicles": [
-        "M36B2 Jackson",
         "M36 Jackson",
         "M26 Pershing",
-        "90mm GMC Super Hellcat"
+        "90mm GMC Super Hellcat",
+        "M36B2 Jackson"
       ],
       "velocity": 823,
       "type": "HE"
@@ -15551,10 +15577,10 @@
       "maxPenetration": 287,
       "damage": 365,
       "relatedVehicles": [
-        "M36B2 Jackson",
         "M36 Jackson",
         "M26 Pershing",
-        "90mm GMC Super Hellcat"
+        "90mm GMC Super Hellcat",
+        "M36B2 Jackson"
       ],
       "velocity": 1021,
       "type": "APCR",
@@ -15615,10 +15641,10 @@
       "maxPenetration": 305,
       "damage": 365,
       "relatedVehicles": [
-        "M36B2 Jackson",
         "M36 Jackson",
         "M26 Pershing",
-        "90mm GMC Super Hellcat"
+        "90mm GMC Super Hellcat",
+        "M36B2 Jackson"
       ],
       "velocity": 853,
       "type": "HEAT-FS"
@@ -15678,10 +15704,10 @@
       "maxPenetration": 185,
       "damage": 365,
       "relatedVehicles": [
-        "M36B2 Jackson",
         "M36 Jackson",
         "M26 Pershing",
-        "90mm GMC Super Hellcat"
+        "90mm GMC Super Hellcat",
+        "M36B2 Jackson"
       ],
       "velocity": 853,
       "type": "APHE",
@@ -16641,7 +16667,9 @@
       "damage": 490,
       "name": "DM53",
       "mass": 5.01,
-      "relatedVehicles": [],
+      "relatedVehicles": [
+        "Ariete PSO"
+      ],
       "shrapMultiplier": 3,
       "maxPenetration": 683,
       "eraTip": 0.4,
@@ -16704,7 +16732,9 @@
       "mass": 13.5,
       "maxPenetration": 480,
       "damage": 490,
-      "relatedVehicles": [],
+      "relatedVehicles": [
+        "Ariete PSO"
+      ],
       "velocity": 1140,
       "type": "HEAT-FS"
     }
@@ -21015,9 +21045,9 @@
       "maxPenetration": 420,
       "damage": 400,
       "relatedVehicles": [
-        "Strela-MLRS",
         "Mi-24V",
         "Mi-8AMTSh",
+        "Strela-MLRS",
         "Mi-24VM"
       ],
       "velocity": 650,
@@ -21445,12 +21475,15 @@
       "maxPenetration": 13,
       "damage": 16,
       "relatedVehicles": [
+        "BTR-2A",
+        "MBT-3H",
         "MT-LB",
         "T-55",
         "T-84-120",
         "T-90A",
         "T-72A",
-        "T-72B",
+        "OBT-2AM",
+        "BMP-2M",
         "Kurganets-25",
         "BTR-55",
         "M23 Pickett",
@@ -21462,48 +21495,58 @@
         "BMP-2",
         "BMD-2",
         "BMP-73",
+        "T-14 Armata",
         "BRDM-2",
         "BMP-2MD",
         "Sprut-SDM1",
         "BMP-1AM",
         "BMP-30M",
+        "OBT-2U",
         "BMD-1",
         "BTR-60PB",
         "T-64BV",
         "GAZ Tigr",
+        "ZIT-122",
         "BMP-3",
         "BMP-30",
         "T-80U",
+        "BTR-90",
+        "MBT-3",
         "T-80B",
+        "OBT-3",
         "BMD-4M",
-        "Object 775",
+        "Object 450",
+        "Bumpee",
         "T-90M",
         "Burlak",
+        "T-15 Armata",
+        "OBT-2BV",
         "T-84 Oplot-M",
         "BTR-4",
+        "Ariete PSO",
         "T-72M2",
-        "Object 450",
         "MT-LB AA",
-        "Bumpee",
+        "OBT-2B",
         "Object 166",
         "Rosomak",
-        "T-15 Armata",
+        "Tutel",
         "T-62",
-        "T-64BM \"Bulat\"",
+        "Object 477",
         "T-72B3",
         "IT-1",
-        "BTR-90",
+        "BMPT Terminator",
         "T-64A",
         "Cheonma-2",
-        "BMP-1",
-        "Object 477",
-        "ZIT-122",
         "BTR-82A",
-        "BMP-3M",
-        "Tutel",
+        "OBT-2UM",
+        "BMP-1",
+        "Object 775",
+        "T-72B",
         "T-64R",
         "PT-76E",
-        "T-14 Armata",
+        "T-64BM \"Bulat\"",
+        "MBT-3E",
+        "BMP-3M",
         "T-62M-1"
       ],
       "velocity": 800,
@@ -21567,6 +21610,7 @@
       "maxPenetration": 20,
       "damage": 298,
       "relatedVehicles": [
+        "RSZO-1",
         "RSZO-2"
       ],
       "velocity": 150,
@@ -22058,7 +22102,9 @@
       "mass": 41.6,
       "maxPenetration": 42,
       "damage": 631,
-      "relatedVehicles": [],
+      "relatedVehicles": [
+        "2S6 Tunguska"
+      ],
       "velocity": 910,
       "type": "ANTI-TANK GUIDED MISSILE"
     }
@@ -22416,7 +22462,11 @@
       "mass": 13,
       "maxPenetration": 480,
       "damage": 490,
-      "relatedVehicles": [],
+      "relatedVehicles": [
+        "MBT-3H",
+        "MBT-3",
+        "MBT-3E"
+      ],
       "velocity": 1140,
       "type": "HEAT-FS"
     },
@@ -22470,7 +22520,11 @@
       "shrapMultiplier": 3,
       "maxPenetration": 469,
       "damage": 490,
-      "relatedVehicles": [],
+      "relatedVehicles": [
+        "MBT-3H",
+        "MBT-3",
+        "MBT-3E"
+      ],
       "velocity": 1670,
       "diameter": 27,
       "type": "DU APFSDS",
@@ -22532,7 +22586,9 @@
       "mass": 43.56,
       "maxPenetration": 68,
       "damage": 1083,
-      "relatedVehicles": [],
+      "relatedVehicles": [
+        "2S19 Msta-S"
+      ],
       "velocity": 216,
       "type": "HE"
     },
@@ -22590,7 +22646,9 @@
       "mass": 43.56,
       "maxPenetration": 68,
       "damage": 1083,
-      "relatedVehicles": [],
+      "relatedVehicles": [
+        "2S19 Msta-S"
+      ],
       "velocity": 432,
       "type": "HE"
     },
@@ -22648,7 +22706,9 @@
       "mass": 43.56,
       "maxPenetration": 68,
       "damage": 1083,
-      "relatedVehicles": [],
+      "relatedVehicles": [
+        "2S19 Msta-S"
+      ],
       "velocity": 864,
       "type": "HE"
     }
@@ -22707,8 +22767,8 @@
         "BMP-2",
         "BMD-2",
         "BMP-30",
-        "Object 450",
-        "BTR-90"
+        "BTR-90",
+        "Object 450"
       ],
       "velocity": 970,
       "type": "AP",
@@ -22772,8 +22832,8 @@
         "BMP-2",
         "BMD-2",
         "BMP-30",
-        "Object 450",
-        "BTR-90"
+        "BTR-90",
+        "Object 450"
       ],
       "velocity": 960,
       "type": "HE"
@@ -22831,8 +22891,8 @@
         "BMP-2",
         "BMD-2",
         "BMP-30",
-        "Object 450",
-        "BTR-90"
+        "BTR-90",
+        "Object 450"
       ],
       "velocity": 1120,
       "type": "APDS",
@@ -22952,8 +23012,8 @@
       "maxPenetration": 29,
       "damage": 30,
       "relatedVehicles": [
-        "Panther EVO",
-        "KF51 Panther"
+        "KF51 Panther",
+        "Panther EVO"
       ],
       "velocity": 929,
       "type": "MG",
@@ -24871,7 +24931,8 @@
       "damage": 330,
       "relatedVehicles": [
         "Panther G",
-        "T-V"
+        "T-V",
+        "Ersatz M10"
       ],
       "velocity": 935,
       "type": "APHE",
@@ -24933,7 +24994,8 @@
       "damage": 262,
       "relatedVehicles": [
         "Panther G",
-        "T-V"
+        "T-V",
+        "Ersatz M10"
       ],
       "velocity": 700,
       "type": "HE"
@@ -25500,8 +25562,9 @@
         "M2A2 Bradley",
         "Wiesel 1A2",
         "Joint Light Tactical Vehicle",
-        "IFV-30",
         "Desert Warrior",
+        "IFV-30",
+        "LAV-AT",
         "Towvee"
       ],
       "velocity": 329,
@@ -25570,8 +25633,9 @@
         "M2A2 Bradley",
         "Wiesel 1A2",
         "Joint Light Tactical Vehicle",
-        "IFV-30",
         "Desert Warrior",
+        "IFV-30",
+        "LAV-AT",
         "Towvee"
       ],
       "velocity": 309,
@@ -25809,8 +25873,8 @@
       "relatedVehicles": [
         "M4A1 (76) Sherman",
         "M4A2E8 Sherman",
-        "M18 Hellcat",
-        "M4A3E2 (76) Jumbo"
+        "M4A3E2 (76) Jumbo",
+        "M18 Hellcat"
       ],
       "velocity": 1036,
       "type": "APCR",
@@ -25873,8 +25937,8 @@
       "relatedVehicles": [
         "M4A1 (76) Sherman",
         "M4A2E8 Sherman",
-        "M18 Hellcat",
-        "M4A3E2 (76) Jumbo"
+        "M4A3E2 (76) Jumbo",
+        "M18 Hellcat"
       ],
       "velocity": 792,
       "type": "APHE",
@@ -25937,8 +26001,8 @@
       "relatedVehicles": [
         "M4A1 (76) Sherman",
         "M4A2E8 Sherman",
-        "M18 Hellcat",
-        "M4A3E2 (76) Jumbo"
+        "M4A3E2 (76) Jumbo",
+        "M18 Hellcat"
       ],
       "velocity": 274,
       "type": "SMOKE"
@@ -26000,8 +26064,8 @@
       "relatedVehicles": [
         "M4A1 (76) Sherman",
         "M4A2E8 Sherman",
-        "M18 Hellcat",
-        "M4A3E2 (76) Jumbo"
+        "M4A3E2 (76) Jumbo",
+        "M18 Hellcat"
       ],
       "velocity": 823,
       "type": "HE"
@@ -26311,8 +26375,8 @@
       "name": "DM13",
       "mass": 5.01,
       "relatedVehicles": [
-        "Panther EVO",
-        "KF51 Panther"
+        "KF51 Panther",
+        "Panther EVO"
       ],
       "shrapMultiplier": 3,
       "maxPenetration": 715,
@@ -26377,8 +26441,8 @@
       "maxPenetration": 480,
       "damage": 540,
       "relatedVehicles": [
-        "Panther EVO",
-        "KF51 Panther"
+        "KF51 Panther",
+        "Panther EVO"
       ],
       "velocity": 1190,
       "type": "HEAT-FS"
@@ -26432,8 +26496,8 @@
       "name": "DM23",
       "mass": 9.86,
       "relatedVehicles": [
-        "Panther EVO",
-        "KF51 Panther"
+        "KF51 Panther",
+        "Panther EVO"
       ],
       "shrapMultiplier": 3,
       "maxPenetration": 808,
@@ -26498,8 +26562,8 @@
       "maxPenetration": 45,
       "damage": 667,
       "relatedVehicles": [
-        "Panther EVO",
-        "KF51 Panther"
+        "KF51 Panther",
+        "Panther EVO"
       ],
       "velocity": 1015,
       "type": "HE"
@@ -26571,8 +26635,8 @@
       "maxPenetration": 45,
       "damage": 540,
       "relatedVehicles": [
-        "Panther EVO",
-        "KF51 Panther"
+        "KF51 Panther",
+        "Panther EVO"
       ],
       "velocity": 1015,
       "type": "TIME FUZE",
@@ -26645,8 +26709,8 @@
       "maxPenetration": 45,
       "damage": 540,
       "relatedVehicles": [
-        "Panther EVO",
-        "KF51 Panther"
+        "KF51 Panther",
+        "Panther EVO"
       ],
       "velocity": 1015,
       "type": "SAPHE",
@@ -26882,9 +26946,10 @@
       "maxPenetration": 51,
       "damage": 70,
       "relatedVehicles": [
-        "MT-LB AA",
         "Panzerspähwagen 201",
-        "BMT-1"
+        "MT-LB AA",
+        "BMT-1",
+        "BTR-2"
       ],
       "velocity": 970,
       "type": "AP",
@@ -26945,9 +27010,10 @@
       "maxPenetration": 3,
       "damage": 127,
       "relatedVehicles": [
-        "MT-LB AA",
         "Panzerspähwagen 201",
-        "BMT-1"
+        "MT-LB AA",
+        "BMT-1",
+        "BTR-2"
       ],
       "velocity": 980,
       "type": "HE"
@@ -27009,24 +27075,25 @@
         "120S",
         "M2A2 Bradley",
         "M2A1 Bradley",
+        "K1",
         "Joint Light Tactical Vehicle",
         "M60A2 Starship",
         "M1A1HA",
-        "M1IP",
         "M1A1",
         "XM8",
         "M1A2 SEP V3",
+        "M60A1 RISE Passive",
         "HSTV-L",
         "JayElTeeVee",
         "Desert Warrior",
-        "M60A1 Add-On Stabilization",
-        "K1",
-        "LAV-25",
+        "M1 Abrams",
         "RDF/LT",
+        "LAV-25",
+        "M60A1 Add-On Stabilization",
         "KF41 Lynx",
         "ErDeEfElTee",
-        "M1 Abrams",
-        "M60A1 RISE Passive"
+        "M1IP",
+        "LAV-AT"
       ],
       "velocity": 640,
       "type": "MG",
@@ -27708,6 +27775,7 @@
       "relatedVehicles": [
         "Strf 9040C",
         "M1117 ASV",
+        "Ariete PSO",
         "Humvee"
       ],
       "velocity": 241,
@@ -27770,6 +27838,7 @@
       "relatedVehicles": [
         "Strf 9040C",
         "M1117 ASV",
+        "Ariete PSO",
         "Humvee"
       ],
       "velocity": 241,
@@ -28382,9 +28451,9 @@
       "maxPenetration": 60,
       "damage": 941,
       "relatedVehicles": [
+        "T-14 Armata",
         "Object 195",
-        "Object 477",
-        "T-14 Armata"
+        "Object 477"
       ],
       "velocity": 850,
       "type": "HE"
@@ -28440,9 +28509,9 @@
       "maxPenetration": 831,
       "damage": 680,
       "relatedVehicles": [
+        "T-14 Armata",
         "Object 195",
-        "Object 477",
-        "T-14 Armata"
+        "Object 477"
       ],
       "velocity": 1780,
       "diameter": 30,
@@ -28499,9 +28568,9 @@
       "maxPenetration": 835,
       "damage": 680,
       "relatedVehicles": [
+        "T-14 Armata",
         "Object 195",
-        "Object 477",
-        "T-14 Armata"
+        "Object 477"
       ],
       "velocity": 1780,
       "diameter": 30,
@@ -28801,7 +28870,9 @@
       "mass": 110,
       "maxPenetration": 500,
       "damage": 1000,
-      "relatedVehicles": [],
+      "relatedVehicles": [
+        "2S7 Pion"
+      ],
       "velocity": 864,
       "type": "APHE",
       "ricochetAngle": 81
@@ -28860,7 +28931,9 @@
       "mass": 110,
       "maxPenetration": 108,
       "damage": 1924,
-      "relatedVehicles": [],
+      "relatedVehicles": [
+        "2S7 Pion"
+      ],
       "velocity": 194,
       "type": "HE"
     },
@@ -28922,7 +28995,9 @@
       "mass": 1.375,
       "maxPenetration": 275,
       "damage": 400,
-      "relatedVehicles": [],
+      "relatedVehicles": [
+        "2S7 Pion"
+      ],
       "velocity": 194,
       "type": "CLUSTER"
     },
@@ -28980,7 +29055,9 @@
       "mass": 110,
       "maxPenetration": 108,
       "damage": 1924,
-      "relatedVehicles": [],
+      "relatedVehicles": [
+        "2S7 Pion"
+      ],
       "velocity": 388,
       "type": "HE"
     },
@@ -29042,7 +29119,9 @@
       "mass": 1.375,
       "maxPenetration": 275,
       "damage": 400,
-      "relatedVehicles": [],
+      "relatedVehicles": [
+        "2S7 Pion"
+      ],
       "velocity": 775,
       "type": "CLUSTER"
     },
@@ -29104,7 +29183,9 @@
       "mass": 1.375,
       "maxPenetration": 275,
       "damage": 400,
-      "relatedVehicles": [],
+      "relatedVehicles": [
+        "2S7 Pion"
+      ],
       "velocity": 388,
       "type": "CLUSTER"
     },
@@ -29162,7 +29243,9 @@
       "mass": 110,
       "maxPenetration": 108,
       "damage": 1924,
-      "relatedVehicles": [],
+      "relatedVehicles": [
+        "2S7 Pion"
+      ],
       "velocity": 775,
       "type": "HE"
     }
@@ -29295,8 +29378,8 @@
         "BRDM-2 Konkurs",
         "BMD-1",
         "TestHeli",
-        "Bumpee",
         "BTR-90",
+        "Bumpee",
         "BMP-1"
       ],
       "velocity": 248,
@@ -29873,12 +29956,12 @@
       "damage": 35,
       "relatedVehicles": [
         "BTR-55",
+        "T-14 Armata",
         "BRDM-2",
         "Object 279",
         "BTR-60PB",
         "Burlak",
-        "IS-7",
-        "T-14 Armata"
+        "IS-7"
       ],
       "velocity": 1000,
       "type": "MG",
@@ -30180,8 +30263,8 @@
       "maxPenetration": 10,
       "damage": 182,
       "relatedVehicles": [
-        "MT-LB AA",
-        "ZSU-57-2"
+        "ZSU-57-2",
+        "MT-LB AA"
       ],
       "velocity": 1000,
       "type": "HE"
@@ -30241,8 +30324,8 @@
       "maxPenetration": 151,
       "damage": 260,
       "relatedVehicles": [
-        "MT-LB AA",
-        "ZSU-57-2"
+        "ZSU-57-2",
+        "MT-LB AA"
       ],
       "velocity": 1000,
       "type": "APHE",
@@ -30303,8 +30386,8 @@
       "maxPenetration": 9,
       "damage": 174,
       "relatedVehicles": [
-        "MT-LB AA",
-        "ZSU-57-2"
+        "ZSU-57-2",
+        "MT-LB AA"
       ],
       "velocity": 1000,
       "type": "PROXIMITY FUZE"
@@ -30613,6 +30696,7 @@
         "Begleitpanzer 57",
         "Desert Warrior",
         "Humvee",
+        "LAV-AT",
         "Towvee"
       ],
       "velocity": 296,
@@ -30980,20 +31064,20 @@
         "T-34-57E",
         "TP-2",
         "T-54 Obr. 1951",
-        "KV-2",
         "T-34-85",
         "KV-2 (ZIS-6)",
         "T-34-57",
         "Ba-40",
         "IS-6",
+        "Abandoned Tank Hull",
+        "T-34",
         "T-34E",
         "IS-1",
-        "T-34",
-        "Abandoned Tank Hull",
         "T-60",
         "T-44",
         "KV-220",
         "IS-2 1944",
+        "KV-2",
         "IS-3"
       ],
       "velocity": 640,
@@ -31291,19 +31375,28 @@
       "damage": 30,
       "relatedVehicles": [
         "TPSU-152",
+        "OBT-2A",
+        "OBT-2AM",
         "TP-2",
         "T-54 Obr. 1951",
         "BMP-2MD",
         "SAU-2",
+        "OBT-2U",
         "ISU-152",
+        "OBT-2",
         "SU-122P",
         "Plastun SN",
-        "BMP-100",
-        "IS-6",
-        "IFV-30",
-        "T-62",
-        "Towvee S",
         "ZIT-122",
+        "BMP-100",
+        "OBT-3",
+        "IS-6",
+        "OBT-2BV",
+        "IFV-30",
+        "OBT-2B",
+        "T-62",
+        "OBT-2 Super",
+        "Towvee S",
+        "OBT-2UM",
         "T-44",
         "IS-2 1944",
         "IS-3",
@@ -33610,7 +33703,13 @@
       "mass": 15.8,
       "maxPenetration": 239,
       "damage": 400,
-      "relatedVehicles": [],
+      "relatedVehicles": [
+        "OBT-2AM",
+        "OBT-2",
+        "OBT-2BV",
+        "OBT-2B",
+        "OBT-2 Super"
+      ],
       "velocity": 887,
       "type": "APHE",
       "ricochetAngle": 71
@@ -33669,7 +33768,13 @@
       "mass": 15,
       "maxPenetration": 23,
       "damage": 345,
-      "relatedVehicles": [],
+      "relatedVehicles": [
+        "OBT-2AM",
+        "OBT-2",
+        "OBT-2BV",
+        "OBT-2B",
+        "OBT-2 Super"
+      ],
       "velocity": 900,
       "type": "HE"
     },
@@ -33732,7 +33837,13 @@
       },
       "maxPenetration": 600,
       "damage": 400,
-      "relatedVehicles": [],
+      "relatedVehicles": [
+        "OBT-2AM",
+        "OBT-2",
+        "OBT-2BV",
+        "OBT-2B",
+        "OBT-2 Super"
+      ],
       "velocity": 370,
       "type": "ANTI-TANK GUIDED MISSILE"
     }
@@ -33797,8 +33908,8 @@
         "Tiger EC665 UHT",
         "MH-6 Little Bird",
         "Tiger EC665 UHT S",
-        "MH-6 LARP",
-        "AH-64D"
+        "AH-64D",
+        "MH-6 LARP"
       ],
       "velocity": 739,
       "type": "ROCKET"
@@ -35006,6 +35117,7 @@
       "damage": 16,
       "relatedVehicles": [
         "Porsche Tiger",
+        "Pz IV Ausf. 1946",
         "Pz.III M",
         "Sd.Kfz.234/2 Puma",
         "Toramaru",
@@ -35021,11 +35133,11 @@
         "Pz IV H",
         "Sd Kfz 251",
         "Tiger I",
-        "Tiger II",
         "Elefant",
-        "Pz IV Ausf. 1946",
+        "Tiger II",
         "Sturmtiger",
         "Jagdpanther",
+        "Ersatz M10",
         "Hornisse"
       ],
       "velocity": 900,
@@ -36493,7 +36605,9 @@
       "mass": 10.5,
       "maxPenetration": 400,
       "damage": 420,
-      "relatedVehicles": [],
+      "relatedVehicles": [
+        "AFV-16"
+      ],
       "velocity": 1150,
       "type": "HEAT-FS"
     },
@@ -36546,7 +36660,9 @@
       "mass": 3.11,
       "maxPenetration": 406,
       "damage": 420,
-      "relatedVehicles": [],
+      "relatedVehicles": [
+        "AFV-16"
+      ],
       "velocity": 1501,
       "diameter": 21.6,
       "type": "APFSDS",
@@ -37738,20 +37854,21 @@
       "maxPenetration": 29,
       "damage": 30,
       "relatedVehicles": [
+        "MBT-3H",
         "M4A1 (76) Sherman",
         "Type 16 MCV",
         "M4A3 (105)",
         "M1128 MGS",
-        "M4A2 Sherman",
         "M4A1 Sherman",
         "120S",
         "M4A2E8 Sherman",
-        "M36B2 Jackson",
+        "AFV-16",
         "M1117 ASV",
         "M38",
         "Tiger EC665 UHT",
         "M3 half-track",
-        "M113",
+        "APC-C",
+        "K1",
         "LVT-6 Gator",
         "Merkava Mk.4M",
         "M109",
@@ -37766,31 +37883,36 @@
         "M4A3E2 (75) Jumbo",
         "Tiger EC665 UHT S",
         "M8 Greyhound",
-        "M18 Hellcat",
-        "M1IP",
+        "MBT-3",
         "M1A1",
-        "M551 Sheridan",
         "XM8",
         "M1A2 SEP V3",
-        "M26 Pershing",
-        "IFV-30",
+        "M60A1 RISE Passive",
         "HSTV-L",
+        "M26 Pershing",
         "M4A3E2 (76) Jumbo",
         "90mm GMC Super Hellcat",
-        "M4A3 (105) Zippo",
+        "Supply Truck",
+        "IFV-30",
         "M109A6",
-        "M60A1 Add-On Stabilization",
         "Willys MB",
-        "K1",
-        "T26E4 Super Pershing",
-        "Humvee",
-        "KF41 Lynx",
-        "M48A2 Patton",
         "M1 Abrams",
-        "M1126",
+        "M36B2 Jackson",
+        "Humvee",
+        "M4A3 (105) Zippo",
+        "M48A2 Patton",
+        "M60A1 Add-On Stabilization",
+        "T26E4 Super Pershing",
+        "M113",
+        "KF41 Lynx",
+        "M18 Hellcat",
         "M7 Priest",
+        "M1IP",
+        "M4A2 Sherman",
+        "M551 Sheridan",
+        "M1126",
         "Black Night",
-        "M60A1 RISE Passive"
+        "MBT-3E"
       ],
       "velocity": 929,
       "type": "MG",
@@ -39321,8 +39443,8 @@
       "damage": 400,
       "relatedVehicles": [
         "Marder 1A3",
-        "Marder A1",
-        "FV510 Warrior"
+        "FV510 Warrior",
+        "Marder A1"
       ],
       "velocity": 185,
       "type": "ANTI-TANK GUIDED MISSILE"
@@ -39754,7 +39876,9 @@
       "mass": 17.82,
       "maxPenetration": 43,
       "damage": 646,
-      "relatedVehicles": [],
+      "relatedVehicles": [
+        "OBT-2A"
+      ],
       "velocity": 800,
       "type": "HE"
     },
@@ -39807,7 +39931,9 @@
       "mass": 4.55,
       "maxPenetration": 420,
       "damage": 470,
-      "relatedVehicles": [],
+      "relatedVehicles": [
+        "OBT-2A"
+      ],
       "velocity": 1600,
       "type": "APFSDS",
       "ricochetAngle": 80
@@ -39871,7 +39997,9 @@
       },
       "maxPenetration": 600,
       "damage": 400,
-      "relatedVehicles": [],
+      "relatedVehicles": [
+        "OBT-2A"
+      ],
       "velocity": 900,
       "type": "ANTI-TANK GUIDED MISSILE"
     }
@@ -40285,8 +40413,8 @@
       "damage": 335,
       "relatedVehicles": [
         "KV-1E",
-        "T-34E",
-        "T-34"
+        "T-34",
+        "T-34E"
       ],
       "velocity": 655,
       "type": "APHE",
@@ -40348,8 +40476,8 @@
       "damage": 247,
       "relatedVehicles": [
         "KV-1E",
-        "T-34E",
-        "T-34"
+        "T-34",
+        "T-34E"
       ],
       "velocity": 680,
       "type": "HE"
@@ -42372,11 +42500,11 @@
         "Leopard 2K",
         "Leopard 1A5",
         "Marder 1A3",
-        "Marder A1",
         "KPz-70",
         "Leopard 2A4",
         "Begleitpanzer 57",
         "Leopard 2A4 140MM",
+        "Marder A1",
         "M48 Super",
         "Leopard 2A6"
       ],
@@ -43574,7 +43702,10 @@
       "mass": 42.86,
       "maxPenetration": 68,
       "damage": 1096,
-      "relatedVehicles": [],
+      "relatedVehicles": [
+        "2S43",
+        "2S19 Msta-S"
+      ],
       "velocity": 432,
       "type": "HE"
     },
@@ -43632,7 +43763,10 @@
       "mass": 42.86,
       "maxPenetration": 68,
       "damage": 1096,
-      "relatedVehicles": [],
+      "relatedVehicles": [
+        "2S43",
+        "2S19 Msta-S"
+      ],
       "velocity": 216,
       "type": "HE"
     },
@@ -43694,7 +43828,10 @@
       "mass": 0.36,
       "maxPenetration": 100,
       "damage": 400,
-      "relatedVehicles": [],
+      "relatedVehicles": [
+        "2S43",
+        "2S19 Msta-S"
+      ],
       "velocity": 207,
       "type": "CLUSTER"
     },
@@ -43752,7 +43889,10 @@
       "mass": 42.86,
       "maxPenetration": 68,
       "damage": 1096,
-      "relatedVehicles": [],
+      "relatedVehicles": [
+        "2S43",
+        "2S19 Msta-S"
+      ],
       "velocity": 432,
       "type": "PROXIMITY FUZE"
     },
@@ -43814,7 +43954,10 @@
       "mass": 0.36,
       "maxPenetration": 100,
       "damage": 400,
-      "relatedVehicles": [],
+      "relatedVehicles": [
+        "2S43",
+        "2S19 Msta-S"
+      ],
       "velocity": 414,
       "type": "CLUSTER"
     },
@@ -43872,7 +44015,10 @@
       "mass": 42.86,
       "maxPenetration": 68,
       "damage": 1096,
-      "relatedVehicles": [],
+      "relatedVehicles": [
+        "2S43",
+        "2S19 Msta-S"
+      ],
       "velocity": 864,
       "type": "PROXIMITY FUZE"
     },
@@ -43930,7 +44076,10 @@
       "mass": 42.86,
       "maxPenetration": 68,
       "damage": 1096,
-      "relatedVehicles": [],
+      "relatedVehicles": [
+        "2S43",
+        "2S19 Msta-S"
+      ],
       "velocity": 864,
       "type": "HE"
     },
@@ -43988,7 +44137,10 @@
       "mass": 42.86,
       "maxPenetration": 68,
       "damage": 1096,
-      "relatedVehicles": [],
+      "relatedVehicles": [
+        "2S43",
+        "2S19 Msta-S"
+      ],
       "velocity": 216,
       "type": "PROXIMITY FUZE"
     },
@@ -44050,7 +44202,10 @@
       "mass": 0.36,
       "maxPenetration": 100,
       "damage": 400,
-      "relatedVehicles": [],
+      "relatedVehicles": [
+        "2S43",
+        "2S19 Msta-S"
+      ],
       "velocity": 828,
       "type": "CLUSTER"
     }
@@ -44225,7 +44380,9 @@
       "mass": 0.4,
       "maxPenetration": 65,
       "damage": 90,
-      "relatedVehicles": [],
+      "relatedVehicles": [
+        "2S6 Tunguska"
+      ],
       "velocity": 970,
       "type": "AP",
       "ricochetAngle": 65
@@ -44284,7 +44441,9 @@
       "mass": 0.4,
       "maxPenetration": 5,
       "damage": 143,
-      "relatedVehicles": [],
+      "relatedVehicles": [
+        "2S6 Tunguska"
+      ],
       "velocity": 960,
       "type": "HE"
     }
@@ -44645,10 +44804,12 @@
       "maxPenetration": 5,
       "damage": 140,
       "relatedVehicles": [
+        "BMP-2M",
         "BMP-30M",
         "GAZ Tigr",
-        "BTR-4",
         "BTR-90",
+        "BTR-4",
+        "BMPT Terminator",
         "Cheonma-2"
       ],
       "velocity": 185,
