@@ -1498,7 +1498,8 @@
       "relatedVehicles": [
         "Joint Light Tactical Vehicle",
         "HSTV-L",
-        "JayElTeeVee"
+        "JayElTeeVee",
+        "RDF/LT"
       ],
       "velocity": 670,
       "type": "AIR-TO-AIR MISSILE"
@@ -2872,8 +2873,8 @@
       "damage": 360,
       "relatedVehicles": [
         "Panther II",
-        "Elefant",
         "Tiger II",
+        "Elefant",
         "Jagdpanther"
       ],
       "velocity": 1130,
@@ -2936,8 +2937,8 @@
       "damage": 298,
       "relatedVehicles": [
         "Panther II",
-        "Elefant",
         "Tiger II",
+        "Elefant",
         "Jagdpanther"
       ],
       "velocity": 820,
@@ -2999,8 +3000,8 @@
       "damage": 360,
       "relatedVehicles": [
         "Panther II",
-        "Elefant",
         "Tiger II",
+        "Elefant",
         "Jagdpanther"
       ],
       "velocity": 1000,
@@ -4096,8 +4097,8 @@
       "maxPenetration": 13,
       "damage": 16,
       "relatedVehicles": [
-        "KF51 Panther",
-        "Panther EVO"
+        "Panther EVO",
+        "KF51 Panther"
       ],
       "velocity": 840,
       "type": "MG",
@@ -7804,7 +7805,8 @@
       "maxPenetration": 5,
       "damage": 13,
       "relatedVehicles": [
-        "PUMA"
+        "PUMA",
+        "Class 3(P)"
       ],
       "velocity": 920,
       "type": "MG",
@@ -11808,73 +11810,6 @@
       "type": "TIME FUZE"
     }
   ],
-  "HJ-10": [
-    {
-      "penetrationTable": {
-        "0": {
-          "0": [
-            1400
-          ],
-          "500": [
-            1400
-          ],
-          "1000": [
-            1400
-          ],
-          "2000": [
-            1400
-          ]
-        },
-        "30": {
-          "0": [
-            1400
-          ],
-          "500": [
-            1400
-          ],
-          "1000": [
-            1400
-          ],
-          "2000": [
-            1400
-          ]
-        },
-        "60": {
-          "0": [
-            1400
-          ],
-          "500": [
-            1400
-          ],
-          "1000": [
-            1400
-          ],
-          "2000": [
-            1400
-          ]
-        }
-      },
-      "explosive": {
-        "killRadius": 10.935729309708387,
-        "mass": 6.5,
-        "explosiveRadius": 45.159781844127046
-      },
-      "name": "HJ-10",
-      "mass": 43,
-      "missile": {
-        "unjammable": false,
-        "boostTime": 3,
-        "turnRate": 160
-      },
-      "maxPenetration": 1400,
-      "damage": 400,
-      "relatedVehicles": [
-        "AFT-10"
-      ],
-      "velocity": 150,
-      "type": "TANDEM F&F MISSILE"
-    }
-  ],
   "20mm Rh203": [
     {
       "penetrationTable": {
@@ -13838,10 +13773,11 @@
         "Churchill VII",
         "Jagdtiger",
         "Panther II",
+        "Sturmtiger",
         "Tiger II",
         "Comet Mk.1",
-        "Sturmtiger",
-        "Jagdpanther"
+        "Jagdpanther",
+        "Class 3(P)"
       ],
       "velocity": 30,
       "type": "HE"
@@ -13904,10 +13840,11 @@
         "Churchill VII",
         "Jagdtiger",
         "Panther II",
+        "Sturmtiger",
         "Tiger II",
         "Comet Mk.1",
-        "Sturmtiger",
-        "Jagdpanther"
+        "Jagdpanther",
+        "Class 3(P)"
       ],
       "velocity": 30,
       "type": "SMOKE"
@@ -14153,6 +14090,309 @@
       "diameter": 20,
       "type": "DU APFSDS",
       "ricochetAngle": 81.77
+    }
+  ],
+  "HJ-10": [
+    {
+      "penetrationTable": {
+        "0": {
+          "0": [
+            1400
+          ],
+          "500": [
+            1400
+          ],
+          "1000": [
+            1400
+          ],
+          "2000": [
+            1400
+          ]
+        },
+        "30": {
+          "0": [
+            1400
+          ],
+          "500": [
+            1400
+          ],
+          "1000": [
+            1400
+          ],
+          "2000": [
+            1400
+          ]
+        },
+        "60": {
+          "0": [
+            1400
+          ],
+          "500": [
+            1400
+          ],
+          "1000": [
+            1400
+          ],
+          "2000": [
+            1400
+          ]
+        }
+      },
+      "explosive": {
+        "killRadius": 10.935729309708387,
+        "mass": 6.5,
+        "explosiveRadius": 45.159781844127046
+      },
+      "name": "HJ-10",
+      "mass": 43,
+      "missile": {
+        "unjammable": false,
+        "boostTime": 3,
+        "turnRate": 160
+      },
+      "maxPenetration": 1400,
+      "damage": 400,
+      "relatedVehicles": [
+        "AFT-10"
+      ],
+      "velocity": 150,
+      "type": "TANDEM F&F MISSILE"
+    }
+  ],
+  "GT-3B 105mm": [
+    {
+      "penetrationTable": {
+        "0": {
+          "0": [
+            400
+          ],
+          "500": [
+            400
+          ],
+          "1000": [
+            400
+          ],
+          "2000": [
+            400
+          ]
+        },
+        "30": {
+          "0": [
+            400
+          ],
+          "500": [
+            400
+          ],
+          "1000": [
+            400
+          ],
+          "2000": [
+            400
+          ]
+        },
+        "60": {
+          "0": [
+            400
+          ],
+          "500": [
+            400
+          ],
+          "1000": [
+            400
+          ],
+          "2000": [
+            400
+          ]
+        }
+      },
+      "explosive": {
+        "killRadius": 3.208808765998276,
+        "mass": 1.27,
+        "explosiveRadius": 26.2048668127171
+      },
+      "name": "DM12",
+      "mass": 10.5,
+      "maxPenetration": 400,
+      "damage": 420,
+      "relatedVehicles": [
+        "Class 3(P)"
+      ],
+      "velocity": 1174,
+      "type": "HEAT-FS"
+    },
+    {
+      "penetrationTable": {
+        "0": {
+          "0": [
+            127
+          ],
+          "500": [
+            127
+          ],
+          "1000": [
+            127
+          ],
+          "2000": [
+            127
+          ]
+        },
+        "30": {
+          "0": [
+            147
+          ],
+          "500": [
+            147
+          ],
+          "1000": [
+            147
+          ],
+          "2000": [
+            147
+          ]
+        },
+        "60": {
+          "0": [
+            254
+          ],
+          "500": [
+            254
+          ],
+          "1000": [
+            254
+          ],
+          "2000": [
+            254
+          ]
+        }
+      },
+      "explosive": {
+        "killRadius": 9.88311117358407,
+        "mass": 4.31,
+        "explosiveRadius": 39.379766781743335
+      },
+      "name": "DM512",
+      "mass": 11.2,
+      "maxPenetration": 127,
+      "damage": 608,
+      "relatedVehicles": [
+        "Class 3(P)"
+      ],
+      "velocity": 732,
+      "type": "HESH"
+    },
+    {
+      "penetrationTable": {
+        "0": {
+          "0": [
+            408
+          ],
+          "500": [
+            399
+          ],
+          "1000": [
+            389
+          ],
+          "2000": [
+            371
+          ]
+        },
+        "30": {
+          "0": [
+            421
+          ],
+          "500": [
+            412
+          ],
+          "1000": [
+            402
+          ],
+          "2000": [
+            383
+          ]
+        },
+        "60": {
+          "0": [
+            477
+          ],
+          "500": [
+            466
+          ],
+          "1000": [
+            455
+          ],
+          "2000": [
+            434
+          ]
+        }
+      },
+      "name": "DM33",
+      "mass": 4.55,
+      "maxPenetration": 408,
+      "damage": 420,
+      "relatedVehicles": [
+        "Class 3(P)"
+      ],
+      "velocity": 1455,
+      "diameter": 26,
+      "type": "APFSDS",
+      "ricochetAngle": 80.2
+    },
+    {
+      "penetrationTable": {
+        "0": {
+          "0": [
+            334
+          ],
+          "500": [
+            326
+          ],
+          "1000": [
+            319
+          ],
+          "2000": [
+            304
+          ]
+        },
+        "30": {
+          "0": [
+            345
+          ],
+          "500": [
+            337
+          ],
+          "1000": [
+            329
+          ],
+          "2000": [
+            314
+          ]
+        },
+        "60": {
+          "0": [
+            390
+          ],
+          "500": [
+            381
+          ],
+          "1000": [
+            372
+          ],
+          "2000": [
+            355
+          ]
+        }
+      },
+      "name": "DM23",
+      "mass": 4.91,
+      "maxPenetration": 334,
+      "damage": 420,
+      "relatedVehicles": [
+        "Class 3(P)"
+      ],
+      "velocity": 1455,
+      "diameter": 33,
+      "type": "APFSDS",
+      "ricochetAngle": 80.2
     }
   ],
   "Bulsae-3": [
@@ -21515,11 +21755,12 @@
         "T-80B",
         "OBT-3",
         "BMD-4M",
+        "Object 775",
         "Object 450",
         "Bumpee",
+        "T-15 Armata",
         "T-90M",
         "Burlak",
-        "T-15 Armata",
         "OBT-2BV",
         "T-84 Oplot-M",
         "BTR-4",
@@ -21528,8 +21769,8 @@
         "MT-LB AA",
         "OBT-2B",
         "Object 166",
-        "Rosomak",
         "Tutel",
+        "Rosomak",
         "T-62",
         "Object 477",
         "T-72B3",
@@ -21540,7 +21781,6 @@
         "BTR-82A",
         "OBT-2UM",
         "BMP-1",
-        "Object 775",
         "T-72B",
         "T-64R",
         "PT-76E",
@@ -23012,8 +23252,8 @@
       "maxPenetration": 29,
       "damage": 30,
       "relatedVehicles": [
-        "KF51 Panther",
-        "Panther EVO"
+        "Panther EVO",
+        "KF51 Panther"
       ],
       "velocity": 929,
       "type": "MG",
@@ -26375,8 +26615,8 @@
       "name": "DM13",
       "mass": 5.01,
       "relatedVehicles": [
-        "KF51 Panther",
-        "Panther EVO"
+        "Panther EVO",
+        "KF51 Panther"
       ],
       "shrapMultiplier": 3,
       "maxPenetration": 715,
@@ -26441,8 +26681,8 @@
       "maxPenetration": 480,
       "damage": 540,
       "relatedVehicles": [
-        "KF51 Panther",
-        "Panther EVO"
+        "Panther EVO",
+        "KF51 Panther"
       ],
       "velocity": 1190,
       "type": "HEAT-FS"
@@ -26496,8 +26736,8 @@
       "name": "DM23",
       "mass": 9.86,
       "relatedVehicles": [
-        "KF51 Panther",
-        "Panther EVO"
+        "Panther EVO",
+        "KF51 Panther"
       ],
       "shrapMultiplier": 3,
       "maxPenetration": 808,
@@ -26562,8 +26802,8 @@
       "maxPenetration": 45,
       "damage": 667,
       "relatedVehicles": [
-        "KF51 Panther",
-        "Panther EVO"
+        "Panther EVO",
+        "KF51 Panther"
       ],
       "velocity": 1015,
       "type": "HE"
@@ -26635,8 +26875,8 @@
       "maxPenetration": 45,
       "damage": 540,
       "relatedVehicles": [
-        "KF51 Panther",
-        "Panther EVO"
+        "Panther EVO",
+        "KF51 Panther"
       ],
       "velocity": 1015,
       "type": "TIME FUZE",
@@ -26709,8 +26949,8 @@
       "maxPenetration": 45,
       "damage": 540,
       "relatedVehicles": [
-        "KF51 Panther",
-        "Panther EVO"
+        "Panther EVO",
+        "KF51 Panther"
       ],
       "velocity": 1015,
       "type": "SAPHE",
@@ -27075,24 +27315,24 @@
         "120S",
         "M2A2 Bradley",
         "M2A1 Bradley",
-        "K1",
         "Joint Light Tactical Vehicle",
         "M60A2 Starship",
         "M1A1HA",
         "M1A1",
         "XM8",
         "M1A2 SEP V3",
-        "M60A1 RISE Passive",
         "HSTV-L",
         "JayElTeeVee",
         "Desert Warrior",
         "M1 Abrams",
         "RDF/LT",
         "LAV-25",
+        "K1",
         "M60A1 Add-On Stabilization",
         "KF41 Lynx",
         "ErDeEfElTee",
         "M1IP",
+        "M60A1 RISE Passive",
         "LAV-AT"
       ],
       "velocity": 640,
@@ -31064,6 +31304,7 @@
         "T-34-57E",
         "TP-2",
         "T-54 Obr. 1951",
+        "KV-2",
         "T-34-85",
         "KV-2 (ZIS-6)",
         "T-34-57",
@@ -31072,12 +31313,11 @@
         "Abandoned Tank Hull",
         "T-34",
         "T-34E",
-        "IS-1",
         "T-60",
         "T-44",
         "KV-220",
         "IS-2 1944",
-        "KV-2",
+        "IS-1",
         "IS-3"
       ],
       "velocity": 640,
@@ -35131,13 +35371,13 @@
         "Panther II",
         "T-V",
         "Pz IV H",
+        "Sturmtiger",
         "Sd Kfz 251",
         "Tiger I",
-        "Elefant",
         "Tiger II",
-        "Sturmtiger",
-        "Jagdpanther",
+        "Elefant",
         "Ersatz M10",
+        "Jagdpanther",
         "Hornisse"
       ],
       "velocity": 900,
@@ -37868,7 +38108,6 @@
         "Tiger EC665 UHT",
         "M3 half-track",
         "APC-C",
-        "K1",
         "LVT-6 Gator",
         "Merkava Mk.4M",
         "M109",
@@ -37887,7 +38126,6 @@
         "M1A1",
         "XM8",
         "M1A2 SEP V3",
-        "M60A1 RISE Passive",
         "HSTV-L",
         "M26 Pershing",
         "M4A3E2 (76) Jumbo",
@@ -37897,22 +38135,24 @@
         "M109A6",
         "Willys MB",
         "M1 Abrams",
-        "M36B2 Jackson",
         "Humvee",
         "M4A3 (105) Zippo",
         "M48A2 Patton",
+        "K1",
         "M60A1 Add-On Stabilization",
         "T26E4 Super Pershing",
-        "M113",
         "KF41 Lynx",
         "M18 Hellcat",
         "M7 Priest",
         "M1IP",
         "M4A2 Sherman",
+        "M36B2 Jackson",
         "M551 Sheridan",
         "M1126",
         "Black Night",
-        "MBT-3E"
+        "MBT-3E",
+        "M60A1 RISE Passive",
+        "M113"
       ],
       "velocity": 929,
       "type": "MG",
@@ -42504,8 +42744,8 @@
         "Leopard 2A4",
         "Begleitpanzer 57",
         "Leopard 2A4 140MM",
-        "Marder A1",
         "M48 Super",
+        "Marder A1",
         "Leopard 2A6"
       ],
       "velocity": 900,
