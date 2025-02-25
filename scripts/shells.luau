@@ -28,7 +28,7 @@ for name, tank in TankInfo do
 	if not model and tank.ModelID then
 		local folder = InsertService:LoadAsset(tank.ModelID)
 
-		model = folder:FindFirstAncestorWhichIsA("Model")
+		model = folder:FindFirstChildWhichIsA("Model")
 	end
 
 	if model then
