@@ -1557,9 +1557,9 @@
       "damage": 30,
       "relatedVehicles": [
         "T-90A",
+        "Tutel",
         "T-14 Armata",
         "T-72B3",
-        "Tutel",
         "T-90M"
       ],
       "velocity": 820,
@@ -5014,10 +5014,10 @@
       "damage": 677,
       "relatedVehicles": [
         "T-90A",
+        "Tutel",
         "Object 640 \"Black Eagle\"",
         "Burlak",
         "T-72B3",
-        "Tutel",
         "T-90M"
       ],
       "velocity": 850,
@@ -5084,10 +5084,10 @@
       "damage": 400,
       "relatedVehicles": [
         "T-90A",
+        "Tutel",
         "Object 640 \"Black Eagle\"",
         "Burlak",
         "T-72B3",
-        "Tutel",
         "T-90M"
       ],
       "velocity": 445,
@@ -5144,10 +5144,10 @@
       "damage": 500,
       "relatedVehicles": [
         "T-90A",
+        "Tutel",
         "Object 640 \"Black Eagle\"",
         "Burlak",
         "T-72B3",
-        "Tutel",
         "T-90M"
       ],
       "velocity": 1750,
@@ -5207,10 +5207,10 @@
       "damage": 500,
       "relatedVehicles": [
         "T-90A",
+        "Tutel",
         "Object 640 \"Black Eagle\"",
         "Burlak",
         "T-72B3",
-        "Tutel",
         "T-90M"
       ],
       "velocity": 1610,
@@ -5274,10 +5274,10 @@
       "damage": 677,
       "relatedVehicles": [
         "T-90A",
+        "Tutel",
         "Object 640 \"Black Eagle\"",
         "Burlak",
         "T-72B3",
-        "Tutel",
         "T-90M"
       ],
       "velocity": 850,
@@ -5344,10 +5344,10 @@
       "damage": 400,
       "relatedVehicles": [
         "T-90A",
+        "Tutel",
         "Object 640 \"Black Eagle\"",
         "Burlak",
         "T-72B3",
-        "Tutel",
         "T-90M"
       ],
       "velocity": 445,
@@ -5404,10 +5404,10 @@
       "damage": 500,
       "relatedVehicles": [
         "T-90A",
+        "Tutel",
         "Object 640 \"Black Eagle\"",
         "Burlak",
         "T-72B3",
-        "Tutel",
         "T-90M"
       ],
       "velocity": 1660,
@@ -5467,10 +5467,10 @@
       "damage": 500,
       "relatedVehicles": [
         "T-90A",
+        "Tutel",
         "Object 640 \"Black Eagle\"",
         "Burlak",
         "T-72B3",
-        "Tutel",
         "T-90M"
       ],
       "velocity": 1660,
@@ -5530,10 +5530,10 @@
       "damage": 500,
       "relatedVehicles": [
         "T-90A",
+        "Tutel",
         "Object 640 \"Black Eagle\"",
         "Burlak",
         "T-72B3",
-        "Tutel",
         "T-90M"
       ],
       "velocity": 1698,
@@ -5597,10 +5597,10 @@
       "damage": 500,
       "relatedVehicles": [
         "T-90A",
+        "Tutel",
         "Object 640 \"Black Eagle\"",
         "Burlak",
         "T-72B3",
-        "Tutel",
         "T-90M"
       ],
       "velocity": 905,
@@ -5662,10 +5662,10 @@
       "damage": 677,
       "relatedVehicles": [
         "T-90A",
+        "Tutel",
         "Object 640 \"Black Eagle\"",
         "Burlak",
         "T-72B3",
-        "Tutel",
         "T-90M"
       ],
       "velocity": 850,
@@ -5727,10 +5727,10 @@
       "damage": 551,
       "relatedVehicles": [
         "T-90A",
+        "Tutel",
         "Object 640 \"Black Eagle\"",
         "Burlak",
         "T-72B3",
-        "Tutel",
         "T-90M"
       ],
       "velocity": 850,
@@ -21726,7 +21726,7 @@
         "BMP-2M",
         "Kurganets-25",
         "BTR-55",
-        "M23 Pickett",
+        "Tutel",
         "LeichterJagdpanzer 201/3 Schwable",
         "LWV-30",
         "PT-76B",
@@ -21776,14 +21776,14 @@
         "BMPT Terminator",
         "T-72B3",
         "IT-1",
-        "BMP-1",
         "T-64A",
         "Cheonma-2",
+        "M23 Pickett",
         "BTR-82A",
         "OBT-2UM",
+        "BMP-1",
         "Object 775",
         "T-72B",
-        "Tutel",
         "T-64BM \"Bulat\"",
         "T-90M",
         "MBT-3E",
@@ -25996,8 +25996,8 @@
       "maxPenetration": 4,
       "damage": 131,
       "relatedVehicles": [
-        "M23 Pickett",
-        "Ba-40"
+        "Ba-40",
+        "M23 Pickett"
       ],
       "velocity": 792,
       "type": "HE"
@@ -26052,8 +26052,8 @@
       "maxPenetration": 84,
       "damage": 190,
       "relatedVehicles": [
-        "M23 Pickett",
-        "Ba-40"
+        "Ba-40",
+        "M23 Pickett"
       ],
       "velocity": 883,
       "type": "APDS",
@@ -27326,12 +27326,12 @@
         "M1A2 SEP V3",
         "M60A1 RISE Passive",
         "JayElTeeVee",
+        "M1IP",
         "RDF/LT",
         "LAV-25",
         "M60A1 Add-On Stabilization",
         "KF41 Lynx",
         "ErDeEfElTee",
-        "M1IP",
         "M1 Abrams",
         "LAV-AT"
       ],
@@ -31311,8 +31311,8 @@
         "IS-6",
         "T-34",
         "T-34E",
-        "T-60",
         "KV-1E",
+        "T-60",
         "T-44",
         "KV-220",
         "IS-2 1944",
@@ -36965,8 +36965,8 @@
       "maxPenetration": 400,
       "damage": 420,
       "relatedVehicles": [
-        "Leopard 1A5",
-        "M48 Super"
+        "M48 Super",
+        "Leopard 1A5"
       ],
       "velocity": 1174,
       "type": "HEAT-FS"
@@ -37026,8 +37026,8 @@
       "maxPenetration": 127,
       "damage": 608,
       "relatedVehicles": [
-        "Leopard 1A5",
-        "M48 Super"
+        "M48 Super",
+        "Leopard 1A5"
       ],
       "velocity": 732,
       "type": "HESH"
@@ -37082,8 +37082,8 @@
       "maxPenetration": 408,
       "damage": 420,
       "relatedVehicles": [
-        "Leopard 1A5",
-        "M48 Super"
+        "M48 Super",
+        "Leopard 1A5"
       ],
       "velocity": 1455,
       "diameter": 26,
@@ -37140,8 +37140,8 @@
       "maxPenetration": 334,
       "damage": 420,
       "relatedVehicles": [
-        "Leopard 1A5",
-        "M48 Super"
+        "M48 Super",
+        "Leopard 1A5"
       ],
       "velocity": 1455,
       "diameter": 33,
@@ -38137,8 +38137,8 @@
         "IFV-30",
         "M109A6",
         "Willys MB",
-        "M36B2 Jackson",
         "M4A2 Sherman",
+        "M1IP",
         "M4A3 (105) Zippo",
         "Humvee",
         "M48A2 Patton",
@@ -38146,7 +38146,7 @@
         "T26E4 Super Pershing",
         "KF41 Lynx",
         "M18 Hellcat",
-        "M1IP",
+        "M36B2 Jackson",
         "M1 Abrams",
         "M1126",
         "Black Night",
@@ -42745,8 +42745,8 @@
         "Leopard 2A4 140MM",
         "Leopard 2A6",
         "Marder A1",
-        "Leopard 1A5",
-        "M48 Super"
+        "M48 Super",
+        "Leopard 1A5"
       ],
       "velocity": 900,
       "type": "MG",
