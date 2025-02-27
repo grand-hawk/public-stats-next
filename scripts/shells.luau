@@ -1,16 +1,16 @@
 local ReplicatedFirst = game:GetService("ReplicatedFirst")
 local ServerStorage = game:GetService("ServerStorage")
+local InsertService = game:GetService("InsertService")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 
 local Shells = ReplicatedFirst:WaitForChild("Shells") :: Folder
 local Modules = Shells:WaitForChild("Modules") :: Folder
 local PHRST = ReplicatedStorage:WaitForChild("PHRST") :: Folder
-local ServerModules = ServerStorage:WaitForChild("Modules") :: Folder
+local Tanks = ServerStorage:WaitForChild("Tanks") :: Folder
 
 local GlobalConstants = require(Shells:WaitForChild("GlobalConstants") :: ModuleScript)
 local ShellModules = require(PHRST:WaitForChild("ShellModules") :: ModuleScript)
 local TankInfo = require(ReplicatedStorage:WaitForChild("TankInfo") :: ModuleScript)
-local GetVehicle = require(ServerModules:WaitForChild("GetVehicle") :: ModuleScript)
 
 -- function was renamed in sunny valley
 if not GlobalConstants.GetExplosionDiameter then
@@ -24,7 +24,12 @@ for name, tank in TankInfo do
 		continue
 	end
 
-	local model = GetVehicle.getVehicle(name) :: Model?
+	local model = Tanks:FindFirstChild(name)
+	if not model and tank.ModelID then
+		local folder = InsertService:LoadAsset(tank.ModelID)
+
+		model = folder:FindFirstChildWhichIsA("Model")
+	end
 
 	if model then
 		local tankName = tank.Dispname
