@@ -35,15 +35,19 @@ export default function LoadoutFilter({
     [loadouts],
   );
 
+  React.useEffect(() => {
+    if (!data) return;
+
+    if (loadouts && typeof loadout === 'string' && !loadouts.includes(loadout))
+      setLoadout(undefined);
+  }, [data, loadout, loadouts, setLoadout]);
+
   if (isFetching || error)
     return (
       <div>
         <Spinner />
       </div>
     );
-
-  if (loadouts && typeof loadout === 'string' && !loadouts.includes(loadout))
-    setLoadout(undefined);
 
   return (
     <SelectRoot

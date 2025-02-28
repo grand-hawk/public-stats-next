@@ -1,4 +1,4 @@
-import { Box, Spinner } from '@chakra-ui/react';
+import { Spinner, Stack } from '@chakra-ui/react';
 import { useIsClient } from '@uidotdev/usehooks';
 import dynamic from 'next/dynamic';
 import React from 'react';
@@ -20,6 +20,23 @@ export default function WinrateChart({ placeId }: { placeId: number }) {
     { refetchOnWindowFocus: false },
   );
 
+  const winrateData = React.useMemo(
+    () =>
+      data &&
+      data.map((value) => {
+        return { name: value.name, data: value.data };
+      }),
+    [data],
+  );
+  const matchesData = React.useMemo(
+    () =>
+      data &&
+      data.map((value) => {
+        return { name: value.name, data: value.matches };
+      }),
+    [data],
+  );
+
   if (isFetching) return <Spinner size="lg" />;
   if (error)
     return (
@@ -28,83 +45,114 @@ export default function WinrateChart({ placeId }: { placeId: number }) {
         onClick={() => !isFetching && refetch()}
       />
     );
-  if (!data)
+  if (!winrateData || !matchesData)
     return <NoDataFoundState onClick={() => !isFetching && refetch()} />;
 
-  const valueFormatter = (value: number) =>
+  const percentageFormatter = (value: number) =>
     new Intl.NumberFormat('en-US', {
       style: 'percent',
     }).format(value / 100);
 
+  const numberFormatter = (value: number) =>
+    new Intl.NumberFormat('en-US', {
+      style: 'decimal',
+    }).format(value);
+
+  const colors = [
+    '#ef4444',
+    '#3b82f6',
+    '#22c55e',
+    '#f97316',
+    '#a855f7',
+    '#db2777',
+    '#22d3ee',
+  ];
+
+  const baseOptions = {
+    chart: {
+      id: 'winrate',
+      toolbar: {
+        show: false,
+      },
+      stacked: false,
+      background: 'transparent',
+      foreColor: 'var(--chakra-colors-fg)',
+      fontFamily: 'var(--chakra-fonts-body)',
+      zoom: {
+        type: 'x',
+        enabled: true,
+        autoScaleYaxis: true,
+      },
+      animations: {
+        enabled: false,
+      },
+    },
+    dataLabels: {
+      enabled: false,
+    },
+    stroke: {
+      curve: 'smooth',
+    },
+    markers: {
+      strokeColors: 'var(--chakra-colors-border-muted)',
+    },
+    theme: {
+      mode: 'dark',
+    },
+    colors,
+    tooltip: {
+      shared: true,
+    },
+    xaxis: {
+      type: 'datetime',
+      labels: {
+        format: 'MMM dd',
+      },
+      tooltip: {
+        enabled: false,
+      },
+    },
+  } satisfies ApexCharts.ApexOptions;
+
   return (
-    <Box height="100%" width="100%">
+    <Stack gap={4} height="100%" width="100%">
       {isClient && (
-        <ApexCharts
-          options={{
-            chart: {
-              id: 'winrate',
-              toolbar: {
-                show: false,
+        <>
+          <ApexCharts
+            options={{
+              ...baseOptions,
+              yaxis: {
+                min: 0,
+                max: 100,
+                title: {
+                  text: 'Winrate',
+                },
+                labels: {
+                  formatter: percentageFormatter,
+                },
               },
-              stacked: false,
-              background: 'transparent',
-              foreColor: 'var(--chakra-colors-fg)',
-              fontFamily: 'var(--chakra-fonts-body)',
-              zoom: {
-                type: 'x',
-                enabled: true,
-                autoScaleYaxis: true,
+            }}
+            series={winrateData}
+            type="line"
+          />
+
+          <ApexCharts
+            options={{
+              ...baseOptions,
+              yaxis: {
+                title: {
+                  text: 'Matches played',
+                },
+                labels: {
+                  formatter: numberFormatter,
+                },
               },
-              animations: {
-                enabled: false,
-              },
-            },
-            dataLabels: {
-              enabled: false,
-            },
-            stroke: {
-              curve: 'smooth',
-            },
-            markers: {
-              // size: 4,
-              // shape: 'circle',
-              // strokeWidth: 1,
-              strokeColors: 'var(--chakra-colors-border-muted)',
-            },
-            theme: {
-              mode: 'dark',
-            },
-            colors: [
-              '#ef4444',
-              '#3b82f6',
-              '#22c55e',
-              '#f97316',
-              '#a855f7',
-              '#db2777',
-              '#22d3ee',
-            ],
-            tooltip: {
-              shared: true,
-            },
-            xaxis: {
-              type: 'datetime',
-              labels: {
-                format: 'MMM dd',
-              },
-              tooltip: {
-                enabled: false,
-              },
-            },
-            yaxis: {
-              labels: {
-                formatter: valueFormatter,
-              },
-            },
-          }}
-          series={data}
-          type="line"
-        />
+            }}
+            series={matchesData}
+            type="line"
+          />
+        </>
       )}
-    </Box>
+    </Stack>
   );
 }

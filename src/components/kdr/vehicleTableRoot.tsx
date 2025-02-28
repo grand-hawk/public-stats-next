@@ -15,7 +15,7 @@ export default function VehicleTableRoot({ ...props }: BoxProps) {
       borderColor="border.muted"
       borderRadius="lg"
       borderWidth="1px"
-      padding={3}
+      padding={2}
       {...props}
     >
       <Center height="100%">

@@ -15,7 +15,7 @@ export default function Navigation() {
       paddingX={{
         base: 2,
         sm: 4,
-        md: 8,
+        // md: 8,
       }}
       paddingY={4}
     >

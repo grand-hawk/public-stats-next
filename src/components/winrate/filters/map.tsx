@@ -35,14 +35,19 @@ export default function MapFilter({
     [maps],
   );
 
+  React.useEffect(() => {
+    if (!data) return;
+
+    if (maps && typeof map === 'string' && !maps.includes(map))
+      setMap(undefined);
+  }, [data, map, maps, setMap]);
+
   if (isFetching || error)
     return (
       <div>
         <Spinner />
       </div>
     );
-
-  if (maps && typeof map === 'string' && !maps.includes(map)) setMap(undefined);
 
   return (
     <SelectRoot
