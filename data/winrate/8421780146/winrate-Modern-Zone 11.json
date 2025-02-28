@@ -1,1 +1,32 @@
-[{"name":"Eagle Federation","data":[[1738281600000,0]]},{"name":"Hawk Republic","data":[[1738281600000,100]]}]
+[
+    {
+        "name": "Eagle Federation",
+        "data": [
+            [
+                1738281600000,
+                0
+            ]
+        ],
+        "matches": [
+            [
+                1738281600000,
+                1
+            ]
+        ]
+    },
+    {
+        "name": "Hawk Republic",
+        "data": [
+            [
+                1738281600000,
+                100
+            ]
+        ],
+        "matches": [
+            [
+                1738281600000,
+                1
+            ]
+        ]
+    }
+]
