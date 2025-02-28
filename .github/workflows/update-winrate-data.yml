@@ -103,7 +103,7 @@ jobs:
           else
             git checkout dev
             git pull origin dev --rebase --autostash
-            git cherry-pick -n $(git rev-parse dev)  # Pick only latest commit
+            git cherry-pick -n $(git rev-parse dev)
             git checkout prod
           fi
 
