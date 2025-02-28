@@ -86,30 +86,21 @@ jobs:
       - name: Setup git
         uses: fregante/setup-git-user@v2
 
-      - name: Ensure dev and prod branches exist locally
-        run: |
-          git fetch --all
-          git branch --track dev origin/dev || true
-          git branch --track prod origin/prod || true
-
       - name: Push changes to ${{ matrix.branch }}
         run: |
           TEMP_BRANCH=${{ needs.update-winrate-data.outputs.temp_branch }}
-          git checkout ${{ matrix.branch }}
-          git pull --rebase origin ${{ matrix.branch }} --autostash
-
           if [ "${{ matrix.branch }}" = "dev" ]; then
+            git checkout dev
+            git pull --rebase origin dev --autostash
             git rebase $TEMP_BRANCH
           else
-            git checkout dev
-            git pull origin dev --rebase --autostash
-            git cherry-pick -n $(git rev-parse dev)
             git checkout prod
+            git pull --rebase origin prod --autostash
+            COMMIT_HASH=$(git rev-parse $TEMP_BRANCH)
+            git cherry-pick -X theirs $COMMIT_HASH
           fi
-
           git push origin ${{ matrix.branch }} --force-with-lease
 
       - name: Delete temporary branch
         if: matrix.branch == 'prod'
-        run: |
-          git push origin --delete ${{ needs.update-winrate-data.outputs.temp_branch }}
+        run: git push origin --delete ${{ needs.update-winrate-data.outputs.temp_branch }}
