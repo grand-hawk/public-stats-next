@@ -59,24 +59,28 @@ for (const [, placeId] of Object.entries(places)) {
 
   await fs.writeFile(
     `./data/winrate/${placeId}/metadata.json`,
-    JSON.stringify({
-      date: new Date().toISOString(),
-      loadouts: distinct.loadout,
-      maps: distinct.map,
-    }),
+    JSON.stringify(
+      {
+        date: new Date().toISOString(),
+        loadouts: distinct.loadout,
+        maps: distinct.map,
+      },
+      undefined,
+      4,
+    ),
   );
 
   const winrate = await getWinrate(placeId);
   await fs.writeFile(
     `./data/winrate/${placeId}/winrate.json`,
-    JSON.stringify(seriesFromWinrate(winrate)),
+    JSON.stringify(seriesFromWinrate(winrate), undefined, 4),
   );
 
   for (const map of distinct.map) {
     const mapWinrate = await getWinrate(placeId, undefined, map);
     await fs.writeFile(
       `./data/winrate/${placeId}/winrate--${map}.json`,
-      JSON.stringify(seriesFromWinrate(mapWinrate)),
+      JSON.stringify(seriesFromWinrate(mapWinrate), undefined, 4),
     );
   }
 
@@ -84,14 +88,14 @@ for (const [, placeId] of Object.entries(places)) {
     const loadoutWinrate = await getWinrate(placeId, loadout);
     await fs.writeFile(
       `./data/winrate/${placeId}/winrate-${loadout}.json`,
-      JSON.stringify(seriesFromWinrate(loadoutWinrate)),
+      JSON.stringify(seriesFromWinrate(loadoutWinrate), undefined, 4),
     );
 
     for (const map of distinct.map) {
       const combinedWinrate = await getWinrate(placeId, loadout, map);
       await fs.writeFile(
         `./data/winrate/${placeId}/winrate-${loadout}-${map}.json`,
-        JSON.stringify(seriesFromWinrate(combinedWinrate)),
+        JSON.stringify(seriesFromWinrate(combinedWinrate), undefined, 4),
       );
     }
   }

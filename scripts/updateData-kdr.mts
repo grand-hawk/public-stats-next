@@ -47,11 +47,15 @@ for (const [, placeId] of Object.entries(places)) {
 
   await fs.writeFile(
     `./data/kdr/${placeId}/metadata.json`,
-    JSON.stringify({
-      date: new Date().toISOString(),
-      vehicles: distinct.name.filter((v) => vehiclesInLoadout.includes(v)),
-      versions: recentVersions,
-    }),
+    JSON.stringify(
+      {
+        date: new Date().toISOString(),
+        vehicles: distinct.name.filter((v) => vehiclesInLoadout.includes(v)),
+        versions: recentVersions,
+      },
+      undefined,
+      4,
+    ),
   );
 
   const vehicleVersions = await getVehicleVersions(placeId, recentVersions);
@@ -83,5 +87,8 @@ for (const [, placeId] of Object.entries(places)) {
     .filter((v) => !!v)
     .sort((a, b) => b.kd - a.kd);
 
-  await fs.writeFile(`./data/kdr/${placeId}/kdr.json`, JSON.stringify(kdr));
+  await fs.writeFile(
+    `./data/kdr/${placeId}/kdr.json`,
+    JSON.stringify(kdr, undefined, 4),
+  );
 }
