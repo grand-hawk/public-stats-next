@@ -16,7 +16,16 @@ async function getWinrate(
       ...(loadout && { loadout }),
       ...(map && { map }),
     }),
-  }).json<Record<string, Array<{ date: string; winrate: number }>>>();
+  }).json<
+    Record<
+      string,
+      Array<{
+        date: string;
+        winrate: number;
+        matches: number;
+      }>
+    >
+  >();
 }
 
 async function getDistinct(placeId: string | number) {
@@ -27,14 +36,22 @@ async function getDistinct(placeId: string | number) {
 }
 
 function seriesFromWinrate(winrate: Awaited<ReturnType<typeof getWinrate>>) {
-  type Series = { name: string; data: Array<[number, number]> };
+  type Series = {
+    name: string;
+    data: Array<[number, number]>;
+    matches: Array<[number, number]>;
+  };
   const series: Array<Series> = [];
 
   const currentDate = new Date();
   currentDate.setHours(0, 0, 0, 0);
 
   for (const [team, winrates] of Object.entries(winrate)) {
-    const teamSeries: Series = { name: team, data: [] };
+    const teamSeries: Series = {
+      name: team,
+      data: [],
+      matches: [],
+    };
 
     for (const winrateEntry of winrates) {
       const date = new Date(winrateEntry.date);
@@ -44,6 +61,7 @@ function seriesFromWinrate(winrate: Awaited<ReturnType<typeof getWinrate>>) {
 
       const timestamp = date.getTime();
       teamSeries.data.push([timestamp, winrateEntry.winrate]);
+      teamSeries.matches.push([timestamp, winrateEntry.matches]);
     }
 
     series.push(teamSeries);

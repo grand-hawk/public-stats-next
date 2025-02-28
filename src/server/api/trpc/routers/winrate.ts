@@ -9,7 +9,14 @@ const places = places_json as Record<string, number>;
 const placeData = new Map<number, PlaceData>();
 
 export interface PlaceData {
-  winrate: Record<string, Array<{ name: string; data: number[] }>>;
+  winrate: Record<
+    string,
+    Array<{
+      name: string;
+      data: Array<[number, number]>;
+      matches: Array<[number, number]>;
+    }>
+  >;
   metadata: {
     date: string;
     loadouts: string[];
