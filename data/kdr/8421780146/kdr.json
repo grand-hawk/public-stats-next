@@ -1,14 +1,152 @@
 [
     {
-        "name": "ZSU-57-2",
+        "name": "Centurion Mk 10",
+        "kd": 5,
+        "kills": 5,
+        "deaths": 0
+    },
+    {
+        "name": "T-62",
+        "kd": 4,
+        "kills": 4,
+        "deaths": 0
+    },
+    {
+        "name": "ASU-57",
+        "kd": 2.5,
+        "kills": 5,
+        "deaths": 2
+    },
+    {
+        "name": "M48 Patton",
+        "kd": 2.5,
+        "kills": 5,
+        "deaths": 2
+    },
+    {
+        "name": "Chieftain Mk 5",
+        "kd": 2,
+        "kills": 2,
+        "deaths": 1
+    },
+    {
+        "name": "Strv 103C",
+        "kd": 2,
+        "kills": 2,
+        "deaths": 1
+    },
+    {
+        "name": "IS-7",
+        "kd": 1,
+        "kills": 3,
+        "deaths": 3
+    },
+    {
+        "name": "IT-1",
+        "kd": 1,
+        "kills": 1,
+        "deaths": 1
+    },
+    {
+        "name": "M60A1 AOS",
+        "kd": 1,
+        "kills": 1,
+        "deaths": 1
+    },
+    {
+        "name": "M60A1 RISE P",
+        "kd": 1,
+        "kills": 1,
+        "deaths": 1
+    },
+    {
+        "name": "Object 279",
+        "kd": 1,
+        "kills": 1,
+        "deaths": 1
+    },
+    {
+        "name": "PT-76B",
         "kd": 1,
         "kills": 1,
         "deaths": 0
     },
     {
+        "name": "T-54",
+        "kd": 1,
+        "kills": 1,
+        "deaths": 1
+    },
+    {
+        "name": "BMP-1",
+        "kd": 0.83,
+        "kills": 5,
+        "deaths": 6
+    },
+    {
+        "name": "AMX-13",
+        "kd": 0.5,
+        "kills": 2,
+        "deaths": 4
+    },
+    {
         "name": "M551 Sheridan",
+        "kd": 0.33,
+        "kills": 1,
+        "deaths": 3
+    },
+    {
+        "name": "T-55",
+        "kd": 0.33,
+        "kills": 1,
+        "deaths": 3
+    },
+    {
+        "name": "Wiesel 1A4",
+        "kd": 0.25,
+        "kills": 1,
+        "deaths": 4
+    },
+    {
+        "name": "BRDM-2",
+        "kd": 0,
+        "kills": 0,
+        "deaths": 2
+    },
+    {
+        "name": "BTR-60PB",
+        "kd": 0,
+        "kills": 0,
+        "deaths": 2
+    },
+    {
+        "name": "M113",
         "kd": 0,
         "kills": 0,
         "deaths": 1
+    },
+    {
+        "name": "M939",
+        "kd": 0,
+        "kills": 0,
+        "deaths": 1
+    },
+    {
+        "name": "Marder A1",
+        "kd": 0,
+        "kills": 0,
+        "deaths": 1
+    },
+    {
+        "name": "Ural-375D",
+        "kd": 0,
+        "kills": 0,
+        "deaths": 1
+    },
+    {
+        "name": "VT1-2",
+        "kd": 0,
+        "kills": 0,
+        "deaths": 2
     }
 ]
