@@ -4,6 +4,5 @@
   },
   "files.eol": "\r\n",
   "typescript.enablePromptUseWorkspaceTsdk": true,
-  "typescript.preferences.importModuleSpecifier": "non-relative",
-  "stylua.targetReleaseVersion": "latest"
+  "typescript.preferences.importModuleSpecifier": "non-relative"
 }
