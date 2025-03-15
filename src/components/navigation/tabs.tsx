@@ -12,8 +12,9 @@ export default function NavigationTabs() {
   );
 
   React.useEffect(() => {
-    for (const tab of Object.values(tabs)) router.prefetch(tab.path);
-  }, [router]);
+    for (const [tabName, tab] of Object.entries(tabs))
+      if (currentTab?.[0] !== tabName) router.prefetch(tab.path);
+  }, [currentTab, router]);
 
   return (
     <Tabs.Root

@@ -14,7 +14,7 @@ export const getServerSideProps = (async ({ query: queryParams }) => {
   };
 }) satisfies GetServerSideProps<{ initialQuery: string | null }>;
 
-export default function WinrateTab({
+export default function ShellSearch({
   initialQuery,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
   return (

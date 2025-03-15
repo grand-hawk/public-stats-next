@@ -1,4 +1,4 @@
-import { createListCollection, Spinner } from '@chakra-ui/react';
+import { Box, createListCollection, Spinner } from '@chakra-ui/react';
 import React from 'react';
 
 import {
@@ -45,7 +45,12 @@ export default function PlaceSelect({
       setPlaceId(undefined);
   }, [data, placeId, setPlaceId]);
 
-  if (isFetching || error) return <Spinner />;
+  if (isFetching || error)
+    return (
+      <Box alignItems="center" display="flex" height="100%">
+        <Spinner />
+      </Box>
+    );
 
   return (
     <SelectRoot
