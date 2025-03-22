@@ -11,8 +11,8 @@ jobs:
       matrix:
         environment:
           - name: RainyValley
-            universe_id: '3221676855'
-            place_id: '7414497778'
+            universe_id: '7414497778'
+            place_id: '95721658376580'
             data_path: './data/shells/95721658376580.json'
           - name: SunnyValley
             universe_id: '3221676855'
