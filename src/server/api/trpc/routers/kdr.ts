@@ -3,6 +3,7 @@ import fs from 'node:fs/promises';
 import { z } from 'zod';
 
 import { createTRPCRouter, publicProcedure } from '@/server/api/trpc/context';
+import { safeStat } from '@/server/utils/safeStat';
 import places_json from '@config/places.json';
 
 const places = places_json as Record<string, number>;
@@ -23,6 +24,11 @@ export interface PlaceData {
 }
 
 for (const placeId of Object.values(places)) {
+  const metadataExists = !!(await safeStat(
+    `./data/kdr/${placeId}/metadata.json`,
+  ));
+  if (!metadataExists) continue;
+
   const kdr = JSON.parse(
     await fs.readFile(`./data/kdr/${placeId}/kdr.json`, 'utf-8'),
   );
