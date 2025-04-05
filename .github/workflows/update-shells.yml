@@ -14,14 +14,6 @@ jobs:
             universe_id: '7414497778'
             place_id: '95721658376580'
             data_path: './data/shells/95721658376580.json'
-          - name: SunnyValley
-            universe_id: '3221676855'
-            place_id: '8421780146'
-            data_path: './data/shells/8421780146.json'
-          - name: MulticrewTankCombat
-            universe_id: '3546912119'
-            place_id: '9520328730'
-            data_path: './data/shells/9520328730.json'
     steps:
       - uses: actions/checkout@v4
         with:
