@@ -4128,8 +4128,8 @@
       "maxPenetration": 13,
       "damage": 16,
       "relatedVehicles": [
-        "KF51 Panther",
-        "Panther EVO"
+        "Panther EVO",
+        "KF51 Panther"
       ],
       "velocity": 840,
       "type": "MG",
@@ -14754,11 +14754,11 @@
         "M4A1 Sherman",
         "M4A2E8 Sherman",
         "M3 Lee",
+        "T29E3",
         "M4A3E2 (75) Jumbo",
         "M8 Greyhound",
         "M26 Pershing",
         "M4A3E2 (76) Jumbo",
-        "T29E3",
         "M4A3 (105) Zippo",
         "M48A2 Patton",
         "T26E4 Super Pershing",
@@ -22952,8 +22952,8 @@
       "maxPenetration": 29,
       "damage": 30,
       "relatedVehicles": [
-        "KF51 Panther",
-        "Panther EVO"
+        "Panther EVO",
+        "KF51 Panther"
       ],
       "velocity": 929,
       "type": "MG",
@@ -26008,8 +26008,8 @@
       "name": "DM13",
       "mass": 5.01,
       "relatedVehicles": [
-        "KF51 Panther",
-        "Panther EVO"
+        "Panther EVO",
+        "KF51 Panther"
       ],
       "shrapMultiplier": 3,
       "maxPenetration": 715,
@@ -26074,8 +26074,8 @@
       "maxPenetration": 480,
       "damage": 540,
       "relatedVehicles": [
-        "KF51 Panther",
-        "Panther EVO"
+        "Panther EVO",
+        "KF51 Panther"
       ],
       "velocity": 1190,
       "type": "HEAT-FS"
@@ -26129,8 +26129,8 @@
       "name": "DM23",
       "mass": 9.86,
       "relatedVehicles": [
-        "KF51 Panther",
-        "Panther EVO"
+        "Panther EVO",
+        "KF51 Panther"
       ],
       "shrapMultiplier": 3,
       "maxPenetration": 808,
@@ -26195,8 +26195,8 @@
       "maxPenetration": 45,
       "damage": 667,
       "relatedVehicles": [
-        "KF51 Panther",
-        "Panther EVO"
+        "Panther EVO",
+        "KF51 Panther"
       ],
       "velocity": 1015,
       "type": "HE"
@@ -26268,8 +26268,8 @@
       "maxPenetration": 45,
       "damage": 540,
       "relatedVehicles": [
-        "KF51 Panther",
-        "Panther EVO"
+        "Panther EVO",
+        "KF51 Panther"
       ],
       "velocity": 1015,
       "type": "TIME FUZE",
@@ -26342,8 +26342,8 @@
       "maxPenetration": 45,
       "damage": 540,
       "relatedVehicles": [
-        "KF51 Panther",
-        "Panther EVO"
+        "Panther EVO",
+        "KF51 Panther"
       ],
       "velocity": 1015,
       "type": "SAPHE",
@@ -26580,9 +26580,9 @@
       "damage": 70,
       "relatedVehicles": [
         "Panzerspähwagen 201",
+        "BTR-2",
         "MT-LB AA",
-        "BMT-1",
-        "BTR-2"
+        "BMT-1"
       ],
       "velocity": 970,
       "type": "AP",
@@ -26644,9 +26644,9 @@
       "damage": 127,
       "relatedVehicles": [
         "Panzerspähwagen 201",
+        "BTR-2",
         "MT-LB AA",
-        "BMT-1",
-        "BTR-2"
+        "BMT-1"
       ],
       "velocity": 980,
       "type": "HE"
@@ -26717,7 +26717,6 @@
         "XM8",
         "M1A2 SEP V3",
         "JayElTeeVee",
-        "M1IP",
         "M1 Abrams",
         "RDF/LT",
         "M60A1 Add-On Stabilization",
@@ -26726,7 +26725,8 @@
         "K1",
         "ErDeEfElTee",
         "M60A1 RISE Passive",
-        "LAV-AT"
+        "LAV-AT",
+        "M1IP"
       ],
       "velocity": 640,
       "type": "MG",
@@ -30638,15 +30638,15 @@
         "T-34-57",
         "Ba-40",
         "IS-6",
-        "Abandoned Tank Hull",
         "T-34",
         "T-34E",
+        "Abandoned Tank Hull",
         "T-60",
         "KV-1E",
+        "IS-1",
         "T-44",
         "KV-220",
         "IS-2 1944",
-        "IS-1",
         "IS-3"
       ],
       "velocity": 640,
@@ -37435,6 +37435,7 @@
         "Merkava Mk.4M",
         "M109",
         "LOSAT M8",
+        "T29E3",
         "M36 Jackson",
         "HSTV-L",
         "Type 90",
@@ -37450,13 +37451,10 @@
         "XM8",
         "M1A2 SEP V3",
         "Black Night",
-        "M551 Sheridan",
         "M26 Pershing",
         "M4A3E2 (76) Jumbo",
         "90mm GMC Super Hellcat",
-        "M1IP",
         "Supply Truck",
-        "T29E3",
         "IFV-30",
         "M109A6",
         "M36B2 Jackson",
@@ -37475,7 +37473,9 @@
         "M60A1 RISE Passive",
         "M113",
         "M7 Priest",
-        "MBT-3E"
+        "MBT-3E",
+        "M551 Sheridan",
+        "M1IP"
       ],
       "velocity": 929,
       "type": "MG",
@@ -38754,9 +38754,7 @@
       "mass": 0.13,
       "maxPenetration": 169,
       "damage": 70,
-      "relatedVehicles": [
-        "M2A1 Bradley"
-      ],
+      "relatedVehicles": [],
       "velocity": 2000,
       "type": "APDS",
       "ricochetAngle": 99
@@ -38815,9 +38813,7 @@
       "mass": 0.19,
       "maxPenetration": 6,
       "damage": 150,
-      "relatedVehicles": [
-        "M2A1 Bradley"
-      ],
+      "relatedVehicles": [],
       "velocity": 2000,
       "type": "HE"
     }
@@ -42551,8 +42547,8 @@
         "Begleitpanzer 57",
         "Leopard 2A4 140MM",
         "M48 Super",
-        "Marder A1",
-        "Leopard 2A6"
+        "Leopard 2A6",
+        "Marder A1"
       ],
       "velocity": 900,
       "type": "MG",
