@@ -41,7 +41,7 @@ jobs:
       - name: Check for data changes
         id: check_changes
         run: |
-          if ! git diff --quiet origin/dev -- "${{ matrix.environment.data_path }}"; then
+          if ! git diff --quiet origin/dev -- "${{ matrix.environment.data_path }}" || [ -n "$(git ls-files --others --exclude-standard "${{ matrix.environment.data_path }}")" ]; then
             echo "changes=true" >> $GITHUB_OUTPUT
           else
             echo "changes=false" >> $GITHUB_OUTPUT

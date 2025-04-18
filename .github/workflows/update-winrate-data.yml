@@ -48,7 +48,7 @@ jobs:
       - name: Check for data changes
         id: check_changes
         run: |
-          if ! git diff --quiet origin/dev -- ./data/winrate/; then
+          if ! git diff --quiet origin/dev -- ./data/winrate/ || [ -n "$(git ls-files --others --exclude-standard ./data/winrate/)" ]; then
             echo "changes_detected=true" >> $GITHUB_ENV
             echo "changes_detected=true" >> $GITHUB_OUTPUT
           else

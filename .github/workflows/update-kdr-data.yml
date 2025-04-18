@@ -48,7 +48,7 @@ jobs:
       - name: Check for data changes
         id: check_changes
         run: |
-          if ! git diff --quiet origin/dev -- ./data/kdr/; then
+          if ! git diff --quiet origin/dev -- ./data/kdr/ || [ -n "$(git ls-files --others --exclude-standard ./data/kdr/)" ]; then
             echo "changes_detected=true" >> $GITHUB_OUTPUT
           else
             echo "changes_detected=false" >> $GITHUB_OUTPUT
