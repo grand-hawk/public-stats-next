@@ -90,6 +90,16 @@ jobs:
         with:
           fetch-depth: 0
 
+      - run: |
+          git fetch --all
+          git checkout dev
+          git pull --rebase origin dev --autostash
+
+      - run: |
+          git fetch origin dev
+          git checkout dev
+          git pull --rebase origin dev --autostash
+
       - uses: fregante/setup-git-user@v2
 
       - run: |
