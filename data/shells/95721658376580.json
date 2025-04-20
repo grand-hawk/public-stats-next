@@ -2410,10 +2410,10 @@
       "damage": 30,
       "relatedVehicles": [
         "T-90A",
+        "Tutel",
         "T-14 Armata",
-        "T-90M",
         "T-72B3",
-        "Tutel"
+        "T-90M"
       ],
       "velocity": 820,
       "type": "MG",
@@ -4617,11 +4617,11 @@
       "damage": 677,
       "relatedVehicles": [
         "T-90A",
+        "Tutel",
         "Object 640 \"Black Eagle\"",
-        "T-90M",
         "Burlak",
         "T-72B3",
-        "Tutel"
+        "T-90M"
       ],
       "velocity": 850,
       "type": "TIME FUZE"
@@ -4687,11 +4687,11 @@
       "damage": 400,
       "relatedVehicles": [
         "T-90A",
+        "Tutel",
         "Object 640 \"Black Eagle\"",
-        "T-90M",
         "Burlak",
         "T-72B3",
-        "Tutel"
+        "T-90M"
       ],
       "velocity": 445,
       "type": "TANDEM ANTI-TANK GUIDED MISSILE"
@@ -4747,11 +4747,11 @@
       "damage": 500,
       "relatedVehicles": [
         "T-90A",
+        "Tutel",
         "Object 640 \"Black Eagle\"",
-        "T-90M",
         "Burlak",
         "T-72B3",
-        "Tutel"
+        "T-90M"
       ],
       "velocity": 1750,
       "diameter": 25.5,
@@ -4810,11 +4810,11 @@
       "damage": 500,
       "relatedVehicles": [
         "T-90A",
+        "Tutel",
         "Object 640 \"Black Eagle\"",
-        "T-90M",
         "Burlak",
         "T-72B3",
-        "Tutel"
+        "T-90M"
       ],
       "velocity": 1610,
       "diameter": 22,
@@ -4877,11 +4877,11 @@
       "damage": 677,
       "relatedVehicles": [
         "T-90A",
+        "Tutel",
         "Object 640 \"Black Eagle\"",
-        "T-90M",
         "Burlak",
         "T-72B3",
-        "Tutel"
+        "T-90M"
       ],
       "velocity": 850,
       "type": "HE"
@@ -4947,11 +4947,11 @@
       "damage": 400,
       "relatedVehicles": [
         "T-90A",
+        "Tutel",
         "Object 640 \"Black Eagle\"",
-        "T-90M",
         "Burlak",
         "T-72B3",
-        "Tutel"
+        "T-90M"
       ],
       "velocity": 445,
       "type": "ANTI-TANK GUIDED MISSILE"
@@ -5007,11 +5007,11 @@
       "damage": 500,
       "relatedVehicles": [
         "T-90A",
+        "Tutel",
         "Object 640 \"Black Eagle\"",
-        "T-90M",
         "Burlak",
         "T-72B3",
-        "Tutel"
+        "T-90M"
       ],
       "velocity": 1660,
       "diameter": 22,
@@ -5070,11 +5070,11 @@
       "damage": 500,
       "relatedVehicles": [
         "T-90A",
+        "Tutel",
         "Object 640 \"Black Eagle\"",
-        "T-90M",
         "Burlak",
         "T-72B3",
-        "Tutel"
+        "T-90M"
       ],
       "velocity": 1660,
       "diameter": 25,
@@ -5133,11 +5133,11 @@
       "damage": 500,
       "relatedVehicles": [
         "T-90A",
+        "Tutel",
         "Object 640 \"Black Eagle\"",
-        "T-90M",
         "Burlak",
         "T-72B3",
-        "Tutel"
+        "T-90M"
       ],
       "velocity": 1698,
       "diameter": 25.5,
@@ -5200,11 +5200,11 @@
       "damage": 500,
       "relatedVehicles": [
         "T-90A",
+        "Tutel",
         "Object 640 \"Black Eagle\"",
-        "T-90M",
         "Burlak",
         "T-72B3",
-        "Tutel"
+        "T-90M"
       ],
       "velocity": 905,
       "type": "HEAT-FS"
@@ -5265,11 +5265,11 @@
       "damage": 677,
       "relatedVehicles": [
         "T-90A",
+        "Tutel",
         "Object 640 \"Black Eagle\"",
-        "T-90M",
         "Burlak",
         "T-72B3",
-        "Tutel"
+        "T-90M"
       ],
       "velocity": 850,
       "type": "HE"
@@ -5330,11 +5330,11 @@
       "damage": 551,
       "relatedVehicles": [
         "T-90A",
+        "Tutel",
         "Object 640 \"Black Eagle\"",
-        "T-90M",
         "Burlak",
         "T-72B3",
-        "Tutel"
+        "T-90M"
       ],
       "velocity": 850,
       "type": "TIME FUZE"
@@ -5405,11 +5405,11 @@
         "BMP-3",
         "Tiger EC665 UHT S",
         "BTR-90",
+        "BMD-4M",
         "Object 477",
         "BMP-3M",
         "BTR-4",
-        "BTR-82A",
-        "BMD-4M"
+        "BTR-82A"
       ],
       "velocity": 960,
       "type": "HE"
@@ -5473,11 +5473,11 @@
         "BMP-3",
         "Tiger EC665 UHT S",
         "BTR-90",
+        "BMD-4M",
         "Object 477",
         "BMP-3M",
         "BTR-4",
-        "BTR-82A",
-        "BMD-4M"
+        "BTR-82A"
       ],
       "velocity": 1260,
       "type": "APFSDS",
@@ -5542,11 +5542,11 @@
         "BMP-3",
         "Tiger EC665 UHT S",
         "BTR-90",
+        "BMD-4M",
         "Object 477",
         "BMP-3M",
         "BTR-4",
-        "BTR-82A",
-        "BMD-4M"
+        "BTR-82A"
       ],
       "velocity": 1120,
       "type": "APDS",
@@ -7690,6 +7690,7 @@
       "maxPenetration": 5,
       "damage": 13,
       "relatedVehicles": [
+        "PUMA IFV",
         "PUMA"
       ],
       "velocity": 920,
@@ -9152,11 +9153,11 @@
         "T-80U",
         "T-80B",
         "T-84 Oplot-M",
-        "T-64BM \"Bulat\"",
         "2S19 Msta-S",
-        "T-72B",
         "T-64A",
-        "Strela-MLRS"
+        "Strela-MLRS",
+        "T-72B",
+        "T-64BM \"Bulat\""
       ],
       "velocity": 820,
       "type": "MG",
@@ -10823,450 +10824,6 @@
       ],
       "velocity": 430,
       "type": "TANDEM F&F MISSILE"
-    }
-  ],
-  "115mm D-68": [
-    {
-      "penetrationTable": {
-        "0": {
-          "0": [
-            500
-          ],
-          "500": [
-            500
-          ],
-          "1000": [
-            500
-          ],
-          "2000": [
-            500
-          ]
-        },
-        "30": {
-          "0": [
-            500
-          ],
-          "500": [
-            500
-          ],
-          "1000": [
-            500
-          ],
-          "2000": [
-            500
-          ]
-        },
-        "60": {
-          "0": [
-            500
-          ],
-          "500": [
-            500
-          ],
-          "1000": [
-            500
-          ],
-          "2000": [
-            500
-          ]
-        }
-      },
-      "explosive": {
-        "killRadius": 5.06635504946235,
-        "mass": 2.28,
-        "explosiveRadius": 31.848745619061535
-      },
-      "name": "3BK15M",
-      "mass": 12.2,
-      "maxPenetration": 500,
-      "damage": 470,
-      "relatedVehicles": [
-        "T-64R"
-      ],
-      "velocity": 1060,
-      "type": "HEAT-FS"
-    },
-    {
-      "penetrationTable": {
-        "0": {
-          "0": [
-            296
-          ],
-          "500": [
-            280
-          ],
-          "1000": [
-            264
-          ],
-          "2000": [
-            236
-          ]
-        },
-        "30": {
-          "0": [
-            306
-          ],
-          "500": [
-            289
-          ],
-          "1000": [
-            273
-          ],
-          "2000": [
-            243
-          ]
-        },
-        "60": {
-          "0": [
-            346
-          ],
-          "500": [
-            327
-          ],
-          "1000": [
-            309
-          ],
-          "2000": [
-            275
-          ]
-        }
-      },
-      "name": "3BM6",
-      "mass": 4.69,
-      "maxPenetration": 296,
-      "damage": 470,
-      "relatedVehicles": [
-        "T-64R"
-      ],
-      "velocity": 1680,
-      "diameter": 42,
-      "type": "APFSDS",
-      "ricochetAngle": 75.33
-    },
-    {
-      "penetrationTable": {
-        "0": {
-          "0": [
-            33
-          ],
-          "500": [
-            33
-          ],
-          "1000": [
-            33
-          ],
-          "2000": [
-            33
-          ]
-        },
-        "30": {
-          "0": [
-            38
-          ],
-          "500": [
-            38
-          ],
-          "1000": [
-            38
-          ],
-          "2000": [
-            38
-          ]
-        },
-        "60": {
-          "0": [
-            66
-          ],
-          "500": [
-            66
-          ],
-          "1000": [
-            66
-          ],
-          "2000": [
-            66
-          ]
-        }
-      },
-      "explosive": {
-        "killRadius": 8.973321167557229,
-        "mass": 2.8,
-        "explosiveRadius": 34.10620463911193
-      },
-      "name": "3OF18",
-      "mass": 17.86,
-      "maxPenetration": 33,
-      "damage": 483,
-      "relatedVehicles": [
-        "T-64R"
-      ],
-      "velocity": 750,
-      "type": "HE"
-    }
-  ],
-  "75mm M3 Potato": [
-    {
-      "penetrationTable": {
-        "0": {
-          "0": [
-            104
-          ],
-          "500": [
-            93
-          ],
-          "1000": [
-            84
-          ],
-          "2000": [
-            68
-          ]
-        },
-        "30": {
-          "0": [
-            98
-          ],
-          "500": [
-            88
-          ],
-          "1000": [
-            79
-          ],
-          "2000": [
-            64
-          ]
-        },
-        "60": {
-          "0": [
-            78
-          ],
-          "500": [
-            70
-          ],
-          "1000": [
-            63
-          ],
-          "2000": [
-            51
-          ]
-        }
-      },
-      "explosive": {
-        "killRadius": 0.4170227725468601,
-        "mass": 0.063,
-        "explosiveRadius": 9.628550212138082
-      },
-      "name": "M61 shot",
-      "mass": 6.79,
-      "maxPenetration": 104,
-      "damage": 330,
-      "relatedVehicles": [],
-      "velocity": 618,
-      "type": "APHE",
-      "ricochetAngle": 71
-    },
-    {
-      "penetrationTable": {
-        "0": {
-          "0": [
-            16
-          ],
-          "500": [
-            16
-          ],
-          "1000": [
-            16
-          ],
-          "2000": [
-            16
-          ]
-        },
-        "30": {
-          "0": [
-            19
-          ],
-          "500": [
-            19
-          ],
-          "1000": [
-            19
-          ],
-          "2000": [
-            19
-          ]
-        },
-        "60": {
-          "0": [
-            32
-          ],
-          "500": [
-            32
-          ],
-          "1000": [
-            32
-          ],
-          "2000": [
-            32
-          ]
-        }
-      },
-      "explosive": {
-        "killRadius": 2.887997524671131,
-        "mass": 0.666,
-        "explosiveRadius": 21.13191196682679
-      },
-      "name": "M48 shell",
-      "mass": 6.3,
-      "maxPenetration": 16,
-      "damage": 253,
-      "relatedVehicles": [],
-      "velocity": 463,
-      "type": "HE"
-    }
-  ],
-  "9M133 Kornet": [
-    {
-      "penetrationTable": {
-        "0": {
-          "0": [
-            1200
-          ],
-          "500": [
-            1200
-          ],
-          "1000": [
-            1200
-          ],
-          "2000": [
-            1200
-          ]
-        },
-        "30": {
-          "0": [
-            1200
-          ],
-          "500": [
-            1200
-          ],
-          "1000": [
-            1200
-          ],
-          "2000": [
-            1200
-          ]
-        },
-        "60": {
-          "0": [
-            1200
-          ],
-          "500": [
-            1200
-          ],
-          "1000": [
-            1200
-          ],
-          "2000": [
-            1200
-          ]
-        }
-      },
-      "explosive": {
-        "killRadius": 10.76995593931601,
-        "mass": 6.36,
-        "explosiveRadius": 44.83320174681758
-      },
-      "name": "9M133",
-      "mass": 33,
-      "missile": {
-        "unjammable": true,
-        "boostTime": 5,
-        "turnRate": 10
-      },
-      "maxPenetration": 1200,
-      "damage": 400,
-      "relatedVehicles": [
-        "Kornet D GAZ Tigr",
-        "BMP-2M",
-        "Kurganets-25",
-        "BMP-30M",
-        "LT-SE",
-        "Kornet D BMD-4M",
-        "BTR-90",
-        "T-15 Armata"
-      ],
-      "velocity": 300,
-      "type": "TANDEM ANTI-TANK GUIDED MISSILE"
-    },
-    {
-      "penetrationTable": {
-        "0": {
-          "0": [
-            60
-          ],
-          "500": [
-            60
-          ],
-          "1000": [
-            60
-          ],
-          "2000": [
-            60
-          ]
-        },
-        "30": {
-          "0": [
-            69
-          ],
-          "500": [
-            69
-          ],
-          "1000": [
-            69
-          ],
-          "2000": [
-            69
-          ]
-        },
-        "60": {
-          "0": [
-            120
-          ],
-          "500": [
-            120
-          ],
-          "1000": [
-            120
-          ],
-          "2000": [
-            120
-          ]
-        }
-      },
-      "explosive": {
-        "killRadius": 21.109472755906207,
-        "mass": 9.24,
-        "explosiveRadius": 50.77750685688943
-      },
-      "name": "9M133F-1",
-      "mass": 33,
-      "missile": {
-        "unjammable": true,
-        "boostTime": 5,
-        "turnRate": 5
-      },
-      "maxPenetration": 60,
-      "damage": 938,
-      "relatedVehicles": [
-        "Kornet D GAZ Tigr",
-        "BMP-2M",
-        "Kurganets-25",
-        "BMP-30M",
-        "LT-SE",
-        "Kornet D BMD-4M",
-        "BTR-90",
-        "T-15 Armata"
-      ],
-      "velocity": 320,
-      "type": "ANTI-TANK GUIDED MISSILE"
     }
   ],
   "125mm Type 99A": [
@@ -13711,8 +13268,8 @@
         "Churchill VII",
         "Jagdtiger",
         "Panther II",
-        "Tiger II",
         "Comet Mk.1",
+        "Tiger II",
         "Sturmtiger",
         "Jagdpanther",
         "Class 3(P)"
@@ -13778,8 +13335,8 @@
         "Churchill VII",
         "Jagdtiger",
         "Panther II",
-        "Tiger II",
         "Comet Mk.1",
+        "Tiger II",
         "Sturmtiger",
         "Jagdpanther",
         "Class 3(P)"
@@ -14759,11 +14316,11 @@
         "M8 Greyhound",
         "M26 Pershing",
         "M4A3E2 (76) Jumbo",
+        "M4A2 Sherman",
         "M4A3 (105) Zippo",
         "M48A2 Patton",
         "T26E4 Super Pershing",
         "T34 Calliope",
-        "M4A2 Sherman",
         "Class 3(P)"
       ],
       "velocity": 900,
@@ -14898,8 +14455,8 @@
         "M4A1 Sherman",
         "M3 GMC",
         "M4A3E2 (75) Jumbo",
-        "T34 Calliope",
-        "M4A2 Sherman"
+        "M4A2 Sherman",
+        "T34 Calliope"
       ],
       "velocity": 618,
       "type": "APHE",
@@ -14963,8 +14520,8 @@
         "M4A1 Sherman",
         "M3 GMC",
         "M4A3E2 (75) Jumbo",
-        "T34 Calliope",
-        "M4A2 Sherman"
+        "M4A2 Sherman",
+        "T34 Calliope"
       ],
       "velocity": 463,
       "type": "HE"
@@ -16727,6 +16284,315 @@
       ],
       "velocity": 1100,
       "type": "PROXIMITY FUZE"
+    }
+  ],
+  "30mm MK 30-2/ABMs": [
+    {
+      "penetrationTable": {
+        "0": {
+          "0": [
+            388
+          ],
+          "500": [
+            354
+          ],
+          "1000": [
+            322
+          ],
+          "2000": [
+            267
+          ]
+        },
+        "30": {
+          "0": [
+            401
+          ],
+          "500": [
+            365
+          ],
+          "1000": [
+            333
+          ],
+          "2000": [
+            276
+          ]
+        },
+        "60": {
+          "0": [
+            453
+          ],
+          "500": [
+            413
+          ],
+          "1000": [
+            376
+          ],
+          "2000": [
+            312
+          ]
+        }
+      },
+      "name": "PMC287",
+      "mass": 0.2,
+      "maxPenetration": 388,
+      "damage": 90,
+      "relatedVehicles": [
+        "PUMA IFV"
+      ],
+      "velocity": 3333,
+      "type": "APFSDS",
+      "ricochetAngle": 99
+    },
+    {
+      "penetrationTable": {
+        "0": {
+          "0": [
+            5
+          ],
+          "500": [
+            5
+          ],
+          "1000": [
+            5
+          ],
+          "2000": [
+            5
+          ]
+        },
+        "30": {
+          "0": [
+            5
+          ],
+          "500": [
+            5
+          ],
+          "1000": [
+            5
+          ],
+          "2000": [
+            5
+          ]
+        },
+        "60": {
+          "0": [
+            9
+          ],
+          "500": [
+            9
+          ],
+          "1000": [
+            9
+          ],
+          "2000": [
+            9
+          ]
+        }
+      },
+      "explosive": {
+        "killRadius": 0.37169202550787145,
+        "mass": 0.0544,
+        "explosiveRadius": 9.168824984981764
+      },
+      "name": "MK266",
+      "mass": 0.36,
+      "maxPenetration": 5,
+      "damage": 137,
+      "relatedVehicles": [
+        "PUMA IFV"
+      ],
+      "velocity": 2000,
+      "type": "HE"
+    },
+    {
+      "penetrationTable": {
+        "0": {
+          "0": [
+            44
+          ],
+          "500": [
+            43
+          ],
+          "1000": [
+            42
+          ],
+          "2000": [
+            40
+          ]
+        },
+        "30": {
+          "0": [
+            38
+          ],
+          "500": [
+            37
+          ],
+          "1000": [
+            36
+          ],
+          "2000": [
+            34
+          ]
+        },
+        "60": {
+          "0": [
+            21
+          ],
+          "500": [
+            20
+          ],
+          "1000": [
+            20
+          ],
+          "2000": [
+            19
+          ]
+        }
+      },
+      "explosive": {
+        "killRadius": 0.37169202550787145,
+        "mass": 0.0544,
+        "explosiveRadius": 9.168824984981764
+      },
+      "name": "PMC308 PDD",
+      "mass": 0.36,
+      "shrapMultiplier": 3,
+      "maxPenetration": 44,
+      "damage": 90,
+      "relatedVehicles": [
+        "PUMA IFV"
+      ],
+      "velocity": 2000,
+      "type": "APHE",
+      "ricochetAngle": 81
+    },
+    {
+      "penetrationTable": {
+        "0": {
+          "0": [
+            44
+          ],
+          "500": [
+            43
+          ],
+          "1000": [
+            42
+          ],
+          "2000": [
+            40
+          ]
+        },
+        "30": {
+          "0": [
+            38
+          ],
+          "500": [
+            37
+          ],
+          "1000": [
+            36
+          ],
+          "2000": [
+            34
+          ]
+        },
+        "60": {
+          "0": [
+            21
+          ],
+          "500": [
+            20
+          ],
+          "1000": [
+            20
+          ],
+          "2000": [
+            19
+          ]
+        }
+      },
+      "explosive": {
+        "killRadius": 0.37169202550787145,
+        "mass": 0.0544,
+        "explosiveRadius": 9.168824984981764
+      },
+      "name": "PMC308 VT",
+      "mass": 0.36,
+      "shrapMultiplier": 3,
+      "maxPenetration": 44,
+      "damage": 90,
+      "relatedVehicles": [
+        "PUMA IFV"
+      ],
+      "velocity": 2000,
+      "type": "TIME FUZE",
+      "ricochetAngle": 81
+    }
+  ],
+  "Spike-LR2MRs": [
+    {
+      "penetrationTable": {
+        "0": {
+          "0": [
+            1007
+          ],
+          "500": [
+            1007
+          ],
+          "1000": [
+            1007
+          ],
+          "2000": [
+            1007
+          ]
+        },
+        "30": {
+          "0": [
+            1007
+          ],
+          "500": [
+            1007
+          ],
+          "1000": [
+            1007
+          ],
+          "2000": [
+            1007
+          ]
+        },
+        "60": {
+          "0": [
+            1007
+          ],
+          "500": [
+            1007
+          ],
+          "1000": [
+            1007
+          ],
+          "2000": [
+            1007
+          ]
+        }
+      },
+      "explosive": {
+        "killRadius": 26.309161947598295,
+        "mass": 25,
+        "explosiveRadius": 70.75558390488486
+      },
+      "name": "Spike LR2",
+      "mass": 13,
+      "missile": {
+        "unjammable": false,
+        "boostTime": 3,
+        "turnRate": 160
+      },
+      "maxPenetration": 1007,
+      "damage": 400,
+      "relatedVehicles": [
+        "PUMA IFV"
+      ],
+      "velocity": 300,
+      "type": "TANDEM F&F MISSILE"
     }
   ],
   "QN502CDD": [
@@ -21664,7 +21530,7 @@
         "BMP-2M",
         "Kurganets-25",
         "BTR-55",
-        "M23 Pickett",
+        "Tutel",
         "LeichterJagdpanzer 201/3 Schwable",
         "LWV-30",
         "PT-76B",
@@ -21692,11 +21558,10 @@
         "MBT-3",
         "T-80B",
         "OBT-3",
-        "Object 775",
+        "BMD-4M",
         "Object 450",
         "T-64R",
         "Bumpee",
-        "T-90M",
         "Burlak",
         "Object 477",
         "T-15 Armata",
@@ -21704,7 +21569,7 @@
         "T-84 Oplot-M",
         "BMP-3M",
         "BTR-4",
-        "T-64BM \"Bulat\"",
+        "PT-76E",
         "T-72M2",
         "Ariete PSO",
         "MT-LB AA",
@@ -21712,7 +21577,6 @@
         "OBT-2B",
         "Rosomak",
         "T-62",
-        "T-72B",
         "T-72B3",
         "IT-1",
         "BMPT Terminator",
@@ -21720,11 +21584,13 @@
         "Cheonma-2",
         "OBT-2UM",
         "BTR-82A",
-        "BMD-4M",
+        "M23 Pickett",
         "BMP-1",
-        "Tutel",
-        "PT-76E",
+        "Object 775",
+        "T-72B",
+        "T-64BM \"Bulat\"",
         "MBT-3E",
+        "T-90M",
         "T-62M-1"
       ],
       "velocity": 800,
@@ -25196,8 +25062,8 @@
         "M2A2 Bradley",
         "Wiesel 1A2",
         "Joint Light Tactical Vehicle",
-        "IFV-30",
         "LAV-AT",
+        "IFV-30",
         "Towvee"
       ],
       "velocity": 329,
@@ -25267,8 +25133,8 @@
         "M2A2 Bradley",
         "Wiesel 1A2",
         "Joint Light Tactical Vehicle",
-        "IFV-30",
         "LAV-AT",
+        "IFV-30",
         "Towvee"
       ],
       "velocity": 309,
@@ -25389,8 +25255,8 @@
       "maxPenetration": 4,
       "damage": 131,
       "relatedVehicles": [
-        "M23 Pickett",
-        "Ba-40"
+        "Ba-40",
+        "M23 Pickett"
       ],
       "velocity": 792,
       "type": "HE"
@@ -25445,8 +25311,8 @@
       "maxPenetration": 84,
       "damage": 190,
       "relatedVehicles": [
-        "M23 Pickett",
-        "Ba-40"
+        "Ba-40",
+        "M23 Pickett"
       ],
       "velocity": 883,
       "type": "APDS",
@@ -26580,9 +26446,9 @@
       "damage": 70,
       "relatedVehicles": [
         "Panzerspähwagen 201",
-        "BTR-2",
         "MT-LB AA",
-        "BMT-1"
+        "BMT-1",
+        "BTR-2"
       ],
       "velocity": 970,
       "type": "AP",
@@ -26644,9 +26510,9 @@
       "damage": 127,
       "relatedVehicles": [
         "Panzerspähwagen 201",
-        "BTR-2",
         "MT-LB AA",
-        "BMT-1"
+        "BMT-1",
+        "BTR-2"
       ],
       "velocity": 980,
       "type": "HE"
@@ -26716,6 +26582,8 @@
         "M1A1",
         "XM8",
         "M1A2 SEP V3",
+        "M60A1 RISE Passive",
+        "LAV-AT",
         "JayElTeeVee",
         "M1 Abrams",
         "RDF/LT",
@@ -26724,8 +26592,6 @@
         "KF41 Lynx",
         "K1",
         "ErDeEfElTee",
-        "M60A1 RISE Passive",
-        "LAV-AT",
         "M1IP"
       ],
       "velocity": 640,
@@ -30264,8 +30130,8 @@
         "M901ITV",
         "Wiesel 1A2",
         "Begleitpanzer 57",
-        "Humvee",
         "LAV-AT",
+        "Humvee",
         "Towvee"
       ],
       "velocity": 296,
@@ -30640,13 +30506,13 @@
         "IS-6",
         "T-34",
         "T-34E",
-        "Abandoned Tank Hull",
         "T-60",
+        "Abandoned Tank Hull",
         "KV-1E",
-        "IS-1",
         "T-44",
         "KV-220",
         "IS-2 1944",
+        "IS-1",
         "IS-3"
       ],
       "velocity": 640,
@@ -34081,6 +33947,450 @@
       "type": "HE"
     }
   ],
+  "115mm D-68": [
+    {
+      "penetrationTable": {
+        "0": {
+          "0": [
+            500
+          ],
+          "500": [
+            500
+          ],
+          "1000": [
+            500
+          ],
+          "2000": [
+            500
+          ]
+        },
+        "30": {
+          "0": [
+            500
+          ],
+          "500": [
+            500
+          ],
+          "1000": [
+            500
+          ],
+          "2000": [
+            500
+          ]
+        },
+        "60": {
+          "0": [
+            500
+          ],
+          "500": [
+            500
+          ],
+          "1000": [
+            500
+          ],
+          "2000": [
+            500
+          ]
+        }
+      },
+      "explosive": {
+        "killRadius": 5.06635504946235,
+        "mass": 2.28,
+        "explosiveRadius": 31.848745619061535
+      },
+      "name": "3BK15M",
+      "mass": 12.2,
+      "maxPenetration": 500,
+      "damage": 470,
+      "relatedVehicles": [
+        "T-64R"
+      ],
+      "velocity": 1060,
+      "type": "HEAT-FS"
+    },
+    {
+      "penetrationTable": {
+        "0": {
+          "0": [
+            296
+          ],
+          "500": [
+            280
+          ],
+          "1000": [
+            264
+          ],
+          "2000": [
+            236
+          ]
+        },
+        "30": {
+          "0": [
+            306
+          ],
+          "500": [
+            289
+          ],
+          "1000": [
+            273
+          ],
+          "2000": [
+            243
+          ]
+        },
+        "60": {
+          "0": [
+            346
+          ],
+          "500": [
+            327
+          ],
+          "1000": [
+            309
+          ],
+          "2000": [
+            275
+          ]
+        }
+      },
+      "name": "3BM6",
+      "mass": 4.69,
+      "maxPenetration": 296,
+      "damage": 470,
+      "relatedVehicles": [
+        "T-64R"
+      ],
+      "velocity": 1680,
+      "diameter": 42,
+      "type": "APFSDS",
+      "ricochetAngle": 75.33
+    },
+    {
+      "penetrationTable": {
+        "0": {
+          "0": [
+            33
+          ],
+          "500": [
+            33
+          ],
+          "1000": [
+            33
+          ],
+          "2000": [
+            33
+          ]
+        },
+        "30": {
+          "0": [
+            38
+          ],
+          "500": [
+            38
+          ],
+          "1000": [
+            38
+          ],
+          "2000": [
+            38
+          ]
+        },
+        "60": {
+          "0": [
+            66
+          ],
+          "500": [
+            66
+          ],
+          "1000": [
+            66
+          ],
+          "2000": [
+            66
+          ]
+        }
+      },
+      "explosive": {
+        "killRadius": 8.973321167557229,
+        "mass": 2.8,
+        "explosiveRadius": 34.10620463911193
+      },
+      "name": "3OF18",
+      "mass": 17.86,
+      "maxPenetration": 33,
+      "damage": 483,
+      "relatedVehicles": [
+        "T-64R"
+      ],
+      "velocity": 750,
+      "type": "HE"
+    }
+  ],
+  "9M133 Kornet": [
+    {
+      "penetrationTable": {
+        "0": {
+          "0": [
+            1200
+          ],
+          "500": [
+            1200
+          ],
+          "1000": [
+            1200
+          ],
+          "2000": [
+            1200
+          ]
+        },
+        "30": {
+          "0": [
+            1200
+          ],
+          "500": [
+            1200
+          ],
+          "1000": [
+            1200
+          ],
+          "2000": [
+            1200
+          ]
+        },
+        "60": {
+          "0": [
+            1200
+          ],
+          "500": [
+            1200
+          ],
+          "1000": [
+            1200
+          ],
+          "2000": [
+            1200
+          ]
+        }
+      },
+      "explosive": {
+        "killRadius": 10.76995593931601,
+        "mass": 6.36,
+        "explosiveRadius": 44.83320174681758
+      },
+      "name": "9M133",
+      "mass": 33,
+      "missile": {
+        "unjammable": true,
+        "boostTime": 5,
+        "turnRate": 10
+      },
+      "maxPenetration": 1200,
+      "damage": 400,
+      "relatedVehicles": [
+        "Kornet D GAZ Tigr",
+        "BMP-2M",
+        "Kurganets-25",
+        "BMP-30M",
+        "LT-SE",
+        "Kornet D BMD-4M",
+        "BTR-90",
+        "T-15 Armata"
+      ],
+      "velocity": 300,
+      "type": "TANDEM ANTI-TANK GUIDED MISSILE"
+    },
+    {
+      "penetrationTable": {
+        "0": {
+          "0": [
+            60
+          ],
+          "500": [
+            60
+          ],
+          "1000": [
+            60
+          ],
+          "2000": [
+            60
+          ]
+        },
+        "30": {
+          "0": [
+            69
+          ],
+          "500": [
+            69
+          ],
+          "1000": [
+            69
+          ],
+          "2000": [
+            69
+          ]
+        },
+        "60": {
+          "0": [
+            120
+          ],
+          "500": [
+            120
+          ],
+          "1000": [
+            120
+          ],
+          "2000": [
+            120
+          ]
+        }
+      },
+      "explosive": {
+        "killRadius": 21.109472755906207,
+        "mass": 9.24,
+        "explosiveRadius": 50.77750685688943
+      },
+      "name": "9M133F-1",
+      "mass": 33,
+      "missile": {
+        "unjammable": true,
+        "boostTime": 5,
+        "turnRate": 5
+      },
+      "maxPenetration": 60,
+      "damage": 938,
+      "relatedVehicles": [
+        "Kornet D GAZ Tigr",
+        "BMP-2M",
+        "Kurganets-25",
+        "BMP-30M",
+        "LT-SE",
+        "Kornet D BMD-4M",
+        "BTR-90",
+        "T-15 Armata"
+      ],
+      "velocity": 320,
+      "type": "ANTI-TANK GUIDED MISSILE"
+    }
+  ],
+  "75mm M3 Potato": [
+    {
+      "penetrationTable": {
+        "0": {
+          "0": [
+            104
+          ],
+          "500": [
+            93
+          ],
+          "1000": [
+            84
+          ],
+          "2000": [
+            68
+          ]
+        },
+        "30": {
+          "0": [
+            98
+          ],
+          "500": [
+            88
+          ],
+          "1000": [
+            79
+          ],
+          "2000": [
+            64
+          ]
+        },
+        "60": {
+          "0": [
+            78
+          ],
+          "500": [
+            70
+          ],
+          "1000": [
+            63
+          ],
+          "2000": [
+            51
+          ]
+        }
+      },
+      "explosive": {
+        "killRadius": 0.4170227725468601,
+        "mass": 0.063,
+        "explosiveRadius": 9.628550212138082
+      },
+      "name": "M61 shot",
+      "mass": 6.79,
+      "maxPenetration": 104,
+      "damage": 330,
+      "relatedVehicles": [],
+      "velocity": 618,
+      "type": "APHE",
+      "ricochetAngle": 71
+    },
+    {
+      "penetrationTable": {
+        "0": {
+          "0": [
+            16
+          ],
+          "500": [
+            16
+          ],
+          "1000": [
+            16
+          ],
+          "2000": [
+            16
+          ]
+        },
+        "30": {
+          "0": [
+            19
+          ],
+          "500": [
+            19
+          ],
+          "1000": [
+            19
+          ],
+          "2000": [
+            19
+          ]
+        },
+        "60": {
+          "0": [
+            32
+          ],
+          "500": [
+            32
+          ],
+          "1000": [
+            32
+          ],
+          "2000": [
+            32
+          ]
+        }
+      },
+      "explosive": {
+        "killRadius": 2.887997524671131,
+        "mass": 0.666,
+        "explosiveRadius": 21.13191196682679
+      },
+      "name": "M48 shell",
+      "mass": 6.3,
+      "maxPenetration": 16,
+      "damage": 253,
+      "relatedVehicles": [],
+      "velocity": 463,
+      "type": "HE"
+    }
+  ],
   "7.62mm L37A1": [
     {
       "penetrationTable": {
@@ -34694,11 +35004,11 @@
         "Panther II",
         "T-V",
         "Pz IV H",
+        "Hornisse",
         "Sd Kfz 251",
         "Tiger I",
         "Elefant",
         "Tiger II",
-        "Hornisse",
         "Sturmtiger",
         "Jagdpanther",
         "Ersatz M10"
@@ -37450,14 +37760,15 @@
         "M1A1",
         "XM8",
         "M1A2 SEP V3",
-        "Black Night",
+        "M60A1 RISE Passive",
         "M26 Pershing",
         "M4A3E2 (76) Jumbo",
         "90mm GMC Super Hellcat",
         "Supply Truck",
+        "Black Night",
         "IFV-30",
         "M109A6",
-        "M36B2 Jackson",
+        "M4A2 Sherman",
         "M1 Abrams",
         "Willys MB",
         "M18 Hellcat",
@@ -37468,14 +37779,13 @@
         "T26E4 Super Pershing",
         "KF41 Lynx",
         "K1",
-        "M4A2 Sherman",
-        "M1126",
-        "M60A1 RISE Passive",
-        "M113",
-        "M7 Priest",
-        "MBT-3E",
+        "M1IP",
+        "M36B2 Jackson",
         "M551 Sheridan",
-        "M1IP"
+        "M1126",
+        "MBT-3E",
+        "M7 Priest",
+        "M113"
       ],
       "velocity": 929,
       "type": "MG",
@@ -42546,8 +42856,8 @@
         "Leopard 2A4",
         "Begleitpanzer 57",
         "Leopard 2A4 140MM",
-        "M48 Super",
         "Leopard 2A6",
+        "M48 Super",
         "Marder A1"
       ],
       "velocity": 900,
