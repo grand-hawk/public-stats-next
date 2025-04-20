@@ -1,0 +1,146 @@
+name: Update Workflow
+
+on:
+  workflow_dispatch:
+
+jobs:
+  update-shells:
+    runs-on: ubuntu-latest
+    strategy:
+      max-parallel: 1
+      matrix:
+        environment:
+          - name: RainyValley
+            universe_id: '7414497778'
+            place_id: '95721658376580'
+            data_path: './data/shells/95721658376580.json'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: fregante/setup-git-user@v2
+
+      - run: |
+          git fetch --all
+          git checkout dev
+          git pull --rebase origin dev --autostash
+
+      - uses: grand-hawk/action-roblox-luau-execution@v1
+        with:
+          roblox_api_key: ${{ secrets.ROBLOX_LUAU_EXECUTION_API_KEY }}
+          universe_id: ${{ matrix.environment.universe_id }}
+          place_id: ${{ matrix.environment.place_id }}
+          luau_file: './scripts/shells.luau'
+          output_file: 'script-execution-output.json'
+
+      - run: |
+          jq ".[0]" "./script-execution-output.json" > "${{ matrix.environment.data_path }}"
+          rm script-execution-output.json
+
+      - name: Check for data changes
+        id: check_changes
+        run: |
+          if ! git diff --quiet origin/dev -- "${{ matrix.environment.data_path }}" || [ -n "$(git ls-files --others --exclude-standard "${{ matrix.environment.data_path }}")" ]; then
+            echo "changes=true" >> $GITHUB_OUTPUT
+          else
+            echo "changes=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Create branch and push changes
+        if: steps.check_changes.outputs.changes == 'true'
+        run: |
+          BRANCH_NAME="workflow/update-shells-${{ github.run_id }}-${{ matrix.environment.name }}"
+          git checkout -b "$BRANCH_NAME"
+          git add "${{ matrix.environment.data_path }}"
+          git commit -m "Update shells data for ${{ matrix.environment.name }}"
+          git push origin "$BRANCH_NAME" --force-with-lease
+
+          git checkout dev
+          git pull --rebase origin dev --autostash
+          git rebase "$BRANCH_NAME"
+          git push origin dev --force-with-lease
+
+          git checkout prod
+          git pull --rebase origin prod --autostash
+          COMMIT_HASH=$(git rev-parse "$BRANCH_NAME")
+          git cherry-pick -n "$COMMIT_HASH"
+          if ! git diff --cached --quiet; then
+            git commit -m "Update shells data for ${{ matrix.environment.name }}"
+            git push origin prod --force-with-lease
+          else
+            echo "No changes to commit on prod."
+          fi
+
+          git push origin --delete "$BRANCH_NAME"
+
+  update-vehicles:
+    runs-on: ubuntu-latest
+    needs: update-shells
+    strategy:
+      max-parallel: 1
+      matrix:
+        environment:
+          - name: RainyValley
+            universe_id: '7414497778'
+            place_id: '95721658376580'
+            data_path: './data/vehicles/95721658376580.json'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: fregante/setup-git-user@v2
+
+      - run: |
+          git fetch --all
+          git checkout dev
+          git pull --rebase origin dev --autostash
+
+      - uses: grand-hawk/action-roblox-luau-execution@v1
+        with:
+          roblox_api_key: ${{ secrets.ROBLOX_LUAU_EXECUTION_API_KEY }}
+          universe_id: ${{ matrix.environment.universe_id }}
+          place_id: ${{ matrix.environment.place_id }}
+          luau_file: './scripts/vehicles.luau'
+          output_file: 'script-execution-output.json'
+
+      - run: |
+          jq ".[0]" "./script-execution-output.json" > "${{ matrix.environment.data_path }}"
+          rm script-execution-output.json
+
+      - name: Check for data changes
+        id: check_changes
+        run: |
+          if ! git diff --quiet origin/dev -- "${{ matrix.environment.data_path }}" || [ -n "$(git ls-files --others --exclude-standard "${{ matrix.environment.data_path }}")" ]; then
+            echo "changes=true" >> $GITHUB_OUTPUT
+          else
+            echo "changes=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Create branch and push changes
+        if: steps.check_changes.outputs.changes == 'true'
+        run: |
+          BRANCH_NAME="workflow/update-vehicles-${{ github.run_id }}-${{ matrix.environment.name }}"
+          git checkout -b "$BRANCH_NAME"
+          git add "${{ matrix.environment.data_path }}"
+          git commit -m "Update vehicles data for ${{ matrix.environment.name }}"
+          git push origin "$BRANCH_NAME" --force-with-lease
+
+          git checkout dev
+          git pull --rebase origin dev --autostash
+          git rebase "$BRANCH_NAME"
+          git push origin dev --force-with-lease
+
+          git checkout prod
+          git pull --rebase origin prod --autostash
+          COMMIT_HASH=$(git rev-parse "$BRANCH_NAME")
+          git cherry-pick -n "$COMMIT_HASH"
+          if ! git diff --cached --quiet; then
+            git commit -m "Update vehicles data for ${{ matrix.environment.name }}"
+            git push origin prod --force-with-lease
+          else
+            echo "No changes to commit on prod."
+          fi
+
+          git push origin --delete "$BRANCH_NAME"

@@ -16,4 +16,8 @@ export const tabs: Record<string, Tab> = {
     label: 'Shells',
     path: '/shells',
   },
+  vehicles: {
+    label: 'Vehicles',
+    path: '/vehicles',
+  },
 };

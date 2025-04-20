@@ -3,10 +3,10 @@ import { useDebounce } from '@uidotdev/usehooks';
 import React from 'react';
 
 import SearchInput from '@/components/search/input';
-import Results from '@/components/shells/search/results';
 import PlaceEmptyState from '@/components/states/placeEmptyState';
+import Results from '@/components/vehicles/search/results';
 import { useNavigationStore } from '@/stores/navigation';
-import { useSearchStore } from '@/stores/shells/search';
+import { useSearchStore } from '@/stores/vehicles/search';
 
 export default function Search({
   initialQuery,

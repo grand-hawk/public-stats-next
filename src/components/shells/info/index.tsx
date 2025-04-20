@@ -13,12 +13,13 @@ import NextLink from 'next/link';
 import React from 'react';
 import { GrDocumentMissing } from 'react-icons/gr';
 
+import BasicCard from '@/components/basicCard';
 import InfoTooltip from '@/components/infoTooltip';
-import BasicCard from '@/components/shells/info/basicCard';
 import { getIcon } from '@/components/shells/info/icons';
 import PenetrationTable from '@/components/shells/info/penetrationTable';
 import Stat from '@/components/stat';
 import ErrorState from '@/components/states/errorState';
+import StatStack from '@/components/statStack';
 import { Button } from '@/components/ui/button';
 import { EmptyState } from '@/components/ui/empty-state';
 import { trpc } from '@/utils/trpc';
@@ -91,17 +92,7 @@ export default function ShellInfo({
 
       <GridItem colSpan={1} rowSpan={1}>
         <BasicCard heading="Projectile">
-          <Stack
-            css={{
-              '& > .chakra-stat__root': {
-                flex: '0 0 calc(var(--chakra-sizes-1\\/3) - var(--chakra-spacing-4))',
-                boxSizing: 'border-box',
-              },
-            }}
-            direction="row"
-            flexWrap="wrap"
-            gap={4}
-          >
+          <StatStack>
             <Stat label="Mass">
               <FormatNumber value={data.mass} /> kg
             </Stat>
@@ -184,24 +175,14 @@ export default function ShellInfo({
                 )}
               </>
             )}
-          </Stack>
+          </StatStack>
         </BasicCard>
       </GridItem>
 
       {data.missile && (
         <GridItem colSpan={1} rowSpan={1}>
           <BasicCard heading="Missile">
-            <Stack
-              css={{
-                '& > .chakra-stat__root': {
-                  flex: '0 0 calc(var(--chakra-sizes-1\\/3) - var(--chakra-spacing-4))',
-                  boxSizing: 'border-box',
-                },
-              }}
-              direction="row"
-              flexWrap="wrap"
-              gap={4}
-            >
+            <StatStack>
               {typeof data.missile.boostTime !== 'undefined' && (
                 <Stat label="Boost time">
                   <FormatNumber value={data.missile.boostTime} /> seconds
@@ -226,7 +207,7 @@ export default function ShellInfo({
                   {data.missile.unjammable ? 'No' : 'Yes'}
                 </Stat>
               )}
-            </Stack>
+            </StatStack>
           </BasicCard>
         </GridItem>
       )}

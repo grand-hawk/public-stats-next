@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import React from 'react';
 
-import Search from '@/components/shells/search';
+import Search from '@/components/vehicles/search';
 
 import type { GetServerSideProps, InferGetServerSidePropsType } from 'next';
 
@@ -14,13 +14,13 @@ export const getServerSideProps = (async ({ query: queryParams }) => {
   };
 }) satisfies GetServerSideProps<{ initialQuery: string | null }>;
 
-export default function ShellSearch({
+export default function VehicleSearch({
   initialQuery,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
   return (
     <>
       <Head>
-        <title>Shell search - MTC Stats</title>
+        <title>Vehicle search - MTC Stats</title>
       </Head>
 
       <Search initialQuery={initialQuery} />
