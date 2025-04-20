@@ -1,7 +1,7 @@
 import { FormatNumber, Stack, Table, Text } from '@chakra-ui/react';
 import React from 'react';
 
-import BasicCard from '@/components/shells/info/basicCard';
+import BasicCard from '@/components/basicCard';
 import { Switch } from '@/components/ui/switch';
 import { Tooltip } from '@/components/ui/tooltip';
 import { relPenetration } from '@/utils/penetration';
