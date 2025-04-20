@@ -1,21 +1,16 @@
 local ReplicatedFirst = game:GetService("ReplicatedFirst")
 local ServerStorage = game:GetService("ServerStorage")
-local InsertService = game:GetService("InsertService")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 
 local Shells = ReplicatedFirst:WaitForChild("Shells") :: Folder
-local Modules = Shells:WaitForChild("Modules") :: Folder
+local ShellModuleFolder = Shells:WaitForChild("Modules") :: Folder
 local PHRST = ReplicatedStorage:WaitForChild("PHRST") :: Folder
-local Tanks = ServerStorage:WaitForChild("Tanks") :: Folder
+local Modules = ServerStorage:WaitForChild("Modules") :: Folder
 
 local GlobalConstants = require(Shells:WaitForChild("GlobalConstants") :: ModuleScript)
 local ShellModules = require(PHRST:WaitForChild("ShellModules") :: ModuleScript)
 local TankInfo = require(ReplicatedStorage:WaitForChild("TankInfo") :: ModuleScript)
-
--- function was renamed in sunny valley
-if not GlobalConstants.GetExplosionDiameter then
-	GlobalConstants.GetExplosionDiameter = GlobalConstants.GetExplosionRadius
-end
+local GetVehicle = require(Modules:WaitForChild("GetVehicle") :: ModuleScript)
 
 local vehicleWeaponReference: { [string]: { string } } = {}
 
@@ -24,12 +19,7 @@ for name, tank in TankInfo do
 		continue
 	end
 
-	local model = Tanks:FindFirstChild(name)
-	if not model and tank.ModelID then
-		local folder = InsertService:LoadAsset(tank.ModelID)
-
-		model = folder:FindFirstChildWhichIsA("Model")
-	end
+	local model = GetVehicle.getVehicle(name)
 
 	if model then
 		local tankName = tank.Dispname
@@ -100,7 +90,7 @@ type ShellModule = {
 
 local weapons: { [string]: { ShellModule } } = {}
 
-for _, moduleScript in Modules:GetChildren() do
+for _, moduleScript in ShellModuleFolder:GetChildren() do
 	if not moduleScript:IsA("ModuleScript") then
 		continue
 	end
