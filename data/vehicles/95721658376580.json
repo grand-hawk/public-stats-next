@@ -1,3198 +1,3181 @@
 [
   {
-    "mass": 25,
+    "engine": {
+      "transmission": {
+        "reverseGears": 2,
+        "neutralSteering": true,
+        "forwardGears": 6
+      },
+      "reverseSpeed": 14,
+      "forwardSpeed": 66,
+      "type": "Diesel",
+      "maxRPM": 2600,
+      "horsepower": 600,
+      "name": "VTA-903T"
+    },
     "name": "Air Defense Anti Tank System",
-    "engine": {
-      "type": "Diesel",
-      "name": "VTA-903T",
-      "forwardSpeed": 66,
-      "horsepower": 600,
-      "maxRPM": 2600,
-      "reverseSpeed": 14,
-      "transmission": {
-        "forwardGears": 6,
-        "neutralSteering": true,
-        "reverseGears": 2
-      }
-    }
+    "mass": 25
   },
   {
-    "mass": 65,
+    "engine": {
+      "transmission": {
+        "reverseGears": 3,
+        "neutralSteering": true,
+        "forwardGears": 4
+      },
+      "reverseSpeed": 38,
+      "forwardSpeed": 56,
+      "type": "Diesel",
+      "maxRPM": 2300,
+      "horsepower": 1217,
+      "name": "Perkins CV12"
+    },
     "name": "Black Night",
-    "engine": {
-      "type": "Diesel",
-      "name": "Perkins CV12",
-      "forwardSpeed": 56,
-      "horsepower": 1217,
-      "maxRPM": 2300,
-      "reverseSpeed": 38,
-      "transmission": {
-        "forwardGears": 4,
-        "neutralSteering": true,
-        "reverseGears": 3
-      }
-    }
+    "mass": 65
   },
   {
-    "mass": 11.5,
+    "engine": {
+      "transmission": {
+        "reverseGears": 2,
+        "neutralSteering": false,
+        "forwardGears": 11
+      },
+      "reverseSpeed": 10,
+      "forwardSpeed": 62,
+      "type": "Diesel",
+      "maxRPM": 2100,
+      "horsepower": 240,
+      "name": "YaMZ 238"
+    },
     "name": "Strela-MLRS",
-    "engine": {
-      "type": "Diesel",
-      "name": "YaMZ 238",
-      "forwardSpeed": 62,
-      "horsepower": 240,
-      "maxRPM": 2100,
-      "reverseSpeed": 10,
-      "transmission": {
-        "forwardGears": 11,
-        "neutralSteering": false,
-        "reverseGears": 2
-      }
-    }
+    "mass": 11.5
   },
   {
-    "mass": 32.2,
+    "engine": {
+      "transmission": {
+        "reverseGears": 1,
+        "neutralSteering": false,
+        "forwardGears": 6
+      },
+      "reverseSpeed": 8.4,
+      "forwardSpeed": 55,
+      "type": "Diesel",
+      "maxRPM": 1800,
+      "horsepower": 500,
+      "name": "Model V-2-34"
+    },
     "name": "OT-34-85",
-    "engine": {
-      "type": "Diesel",
-      "name": "Model V-2-34",
-      "forwardSpeed": 55,
-      "horsepower": 500,
-      "maxRPM": 1800,
-      "reverseSpeed": 8.4,
-      "transmission": {
-        "forwardGears": 6,
-        "neutralSteering": false,
-        "reverseGears": 1
-      }
-    }
+    "mass": 32.2
   },
   {
-    "mass": 49,
+    "engine": {
+      "transmission": {
+        "reverseGears": 1,
+        "neutralSteering": false,
+        "forwardGears": 5
+      },
+      "reverseSpeed": 6.2,
+      "forwardSpeed": 34,
+      "type": "Diesel",
+      "maxRPM": 2000,
+      "horsepower": 600,
+      "name": "V-2K"
+    },
     "name": "KV-1E",
-    "engine": {
-      "type": "Diesel",
-      "name": "V-2K",
-      "forwardSpeed": 34,
-      "horsepower": 600,
-      "maxRPM": 2000,
-      "reverseSpeed": 6.2,
-      "transmission": {
-        "forwardGears": 5,
-        "neutralSteering": false,
-        "reverseGears": 1
-      }
-    }
+    "mass": 49
   },
   {
-    "mass": 42,
-    "name": "2S43",
     "engine": {
-      "type": "Diesel",
-      "name": "YaMZ-8424.10",
-      "forwardSpeed": 80,
-      "horsepower": 470,
-      "maxRPM": 2100,
+      "transmission": {
+        "reverseGears": 2,
+        "neutralSteering": false,
+        "forwardGears": 9
+      },
       "reverseSpeed": 16,
-      "transmission": {
-        "forwardGears": 9,
-        "neutralSteering": false,
-        "reverseGears": 2
-      }
-    }
+      "forwardSpeed": 80,
+      "type": "Diesel",
+      "maxRPM": 2100,
+      "horsepower": 470,
+      "name": "YaMZ-8424.10"
+    },
+    "name": "2S43",
+    "mass": 42
   },
   {
-    "mass": 11.5,
+    "engine": {
+      "transmission": {
+        "reverseGears": 2,
+        "neutralSteering": false,
+        "forwardGears": 11
+      },
+      "reverseSpeed": 10,
+      "forwardSpeed": 62,
+      "type": "Diesel",
+      "maxRPM": 2100,
+      "horsepower": 240,
+      "name": "YaMZ 238"
+    },
     "name": "MT-LB",
-    "engine": {
-      "type": "Diesel",
-      "name": "YaMZ 238",
-      "forwardSpeed": 62,
-      "horsepower": 240,
-      "maxRPM": 2100,
-      "reverseSpeed": 10,
-      "transmission": {
-        "forwardGears": 11,
-        "neutralSteering": false,
-        "reverseGears": 2
-      }
-    }
+    "mass": 11.5
   },
   {
-    "mass": 13.4,
+    "engine": {
+      "transmission": {
+        "reverseGears": 1,
+        "neutralSteering": false,
+        "forwardGears": 5
+      },
+      "reverseSpeed": 11,
+      "forwardSpeed": 65,
+      "type": "Diesel",
+      "maxRPM": 2600,
+      "horsepower": 300,
+      "name": "UTD-20"
+    },
     "name": "BMP-1",
-    "engine": {
-      "type": "Diesel",
-      "name": "UTD-20",
-      "forwardSpeed": 65,
-      "horsepower": 300,
-      "maxRPM": 2600,
-      "reverseSpeed": 11,
-      "transmission": {
-        "forwardGears": 5,
-        "neutralSteering": false,
-        "reverseGears": 1
-      }
-    }
+    "mass": 13.4
   },
   {
-    "mass": 36,
+    "engine": {
+      "transmission": {
+        "reverseGears": 1,
+        "neutralSteering": false,
+        "forwardGears": 5
+      },
+      "reverseSpeed": 7,
+      "forwardSpeed": 50,
+      "type": "Diesel",
+      "maxRPM": 2000,
+      "horsepower": 580,
+      "name": "ChTZ V-55V"
+    },
     "name": "T-55",
-    "engine": {
-      "type": "Diesel",
-      "name": "ChTZ V-55V",
-      "forwardSpeed": 50,
-      "horsepower": 580,
-      "maxRPM": 2000,
-      "reverseSpeed": 7,
-      "transmission": {
-        "forwardGears": 5,
-        "neutralSteering": false,
-        "reverseGears": 1
-      }
-    }
+    "mass": 36
   },
   {
-    "mass": 46,
+    "engine": {
+      "transmission": {
+        "reverseGears": 4,
+        "neutralSteering": false,
+        "forwardGears": 7
+      },
+      "reverseSpeed": 31,
+      "forwardSpeed": 70,
+      "type": "Diesel",
+      "maxRPM": 2400,
+      "horsepower": 1200,
+      "name": "KMDB 6TD-2"
+    },
     "name": "T-84-120",
-    "engine": {
-      "type": "Diesel",
-      "name": "KMDB 6TD-2",
-      "forwardSpeed": 70,
-      "horsepower": 1200,
-      "maxRPM": 2400,
-      "reverseSpeed": 31,
-      "transmission": {
-        "forwardGears": 7,
-        "neutralSteering": false,
-        "reverseGears": 4
-      }
-    }
+    "mass": 46
   },
   {
-    "mass": 1.27,
+    "engine": {
+      "transmission": {
+        "reverseGears": 1,
+        "neutralSteering": false,
+        "forwardGears": 5
+      },
+      "reverseSpeed": 15,
+      "forwardSpeed": 110,
+      "type": "Diesel",
+      "maxRPM": 4000,
+      "horsepower": 150,
+      "name": "3VZ-E V6"
+    },
     "name": "MiKi Truck Company Model 1",
-    "engine": {
-      "type": "Diesel",
-      "name": "3VZ-E V6",
-      "forwardSpeed": 110,
-      "horsepower": 150,
-      "maxRPM": 4000,
-      "reverseSpeed": 15,
-      "transmission": {
-        "forwardGears": 5,
-        "neutralSteering": false,
-        "reverseGears": 1
-      }
-    }
+    "mass": 1.27
   },
   {
-    "mass": 46.5,
+    "engine": {
+      "transmission": {
+        "reverseGears": 1,
+        "neutralSteering": false,
+        "forwardGears": 7
+      },
+      "reverseSpeed": 4,
+      "forwardSpeed": 60,
+      "type": "Diesel",
+      "maxRPM": 2000,
+      "horsepower": 1000,
+      "name": "ChTZ V-92S2"
+    },
     "name": "T-90A",
-    "engine": {
-      "type": "Diesel",
-      "name": "ChTZ V-92S2",
-      "forwardSpeed": 60,
-      "horsepower": 1000,
-      "maxRPM": 2000,
-      "reverseSpeed": 4,
-      "transmission": {
-        "forwardGears": 7,
-        "neutralSteering": false,
-        "reverseGears": 1
-      }
-    }
+    "mass": 46.5
   },
   {
-    "mass": 14,
+    "engine": {
+      "transmission": {
+        "reverseGears": 2,
+        "neutralSteering": false,
+        "forwardGears": 6
+      },
+      "reverseSpeed": 15,
+      "forwardSpeed": 64,
+      "type": "Diesel",
+      "maxRPM": 2800,
+      "horsepower": 212,
+      "name": "6V53"
+    },
     "name": "M163",
-    "engine": {
-      "type": "Diesel",
-      "name": "6V53",
-      "forwardSpeed": 64,
-      "horsepower": 212,
-      "maxRPM": 2800,
-      "reverseSpeed": 15,
-      "transmission": {
-        "forwardGears": 6,
-        "neutralSteering": false,
-        "reverseGears": 2
-      }
-    }
+    "mass": 14
   },
   {
-    "mass": 33,
+    "engine": {
+      "transmission": {
+        "reverseGears": 1,
+        "neutralSteering": false,
+        "forwardGears": 6
+      },
+      "reverseSpeed": 8.4,
+      "forwardSpeed": 55,
+      "type": "Diesel",
+      "maxRPM": 1800,
+      "horsepower": 500,
+      "name": "Model V-2-34"
+    },
     "name": "T-34-122",
-    "engine": {
-      "type": "Diesel",
-      "name": "Model V-2-34",
-      "forwardSpeed": 55,
-      "horsepower": 500,
-      "maxRPM": 1800,
-      "reverseSpeed": 8.4,
-      "transmission": {
-        "forwardGears": 6,
-        "neutralSteering": false,
-        "reverseGears": 1
-      }
-    }
+    "mass": 33
   },
   {
-    "mass": 46.5,
+    "engine": {
+      "transmission": {
+        "reverseGears": 1,
+        "neutralSteering": false,
+        "forwardGears": 7
+      },
+      "reverseSpeed": 4,
+      "forwardSpeed": 50,
+      "type": "Diesel",
+      "maxRPM": 2000,
+      "horsepower": 840,
+      "name": "V-46-I"
+    },
     "name": "2S7 Pion",
-    "engine": {
-      "type": "Diesel",
-      "name": "V-46-I",
-      "forwardSpeed": 50,
-      "horsepower": 840,
-      "maxRPM": 2000,
-      "reverseSpeed": 4,
-      "transmission": {
-        "forwardGears": 7,
-        "neutralSteering": false,
-        "reverseGears": 1
-      }
-    }
+    "mass": 46.5
   },
   {
-    "mass": 26,
-    "name": "Type 16 MCV",
     "engine": {
-      "type": "Diesel",
-      "name": "MHI 4VA",
-      "forwardSpeed": 100,
-      "horsepower": 570,
-      "maxRPM": 2100,
+      "transmission": {
+        "reverseGears": 2,
+        "neutralSteering": false,
+        "forwardGears": 5
+      },
       "reverseSpeed": 36,
-      "transmission": {
-        "forwardGears": 5,
-        "neutralSteering": false,
-        "reverseGears": 2
-      }
-    }
+      "forwardSpeed": 100,
+      "type": "Diesel",
+      "maxRPM": 2100,
+      "horsepower": 570,
+      "name": "MHI 4VA"
+    },
+    "name": "Type 16 MCV",
+    "mass": 26
   },
   {
-    "mass": 41,
-    "name": "T-72A",
     "engine": {
-      "type": "Diesel",
-      "name": "ChTZ V-46-6",
+      "transmission": {
+        "reverseGears": 1,
+        "neutralSteering": false,
+        "forwardGears": 7
+      },
+      "reverseSpeed": 4,
       "forwardSpeed": 60,
+      "type": "Diesel",
+      "maxRPM": 2000,
       "horsepower": 740,
-      "maxRPM": 2000,
-      "reverseSpeed": 4,
-      "transmission": {
-        "forwardGears": 7,
-        "neutralSteering": false,
-        "reverseGears": 1
-      }
-    }
+      "name": "ChTZ V-46-6"
+    },
+    "name": "T-72A",
+    "mass": 41
   },
   {
-    "mass": 14.5,
+    "engine": {
+      "transmission": {
+        "reverseGears": 1,
+        "neutralSteering": false,
+        "forwardGears": 5
+      },
+      "reverseSpeed": 11,
+      "forwardSpeed": 65,
+      "type": "Diesel",
+      "maxRPM": 2600,
+      "horsepower": 400,
+      "name": "UTD-23"
+    },
     "name": "BMP-2M",
-    "engine": {
-      "type": "Diesel",
-      "name": "UTD-23",
-      "forwardSpeed": 65,
-      "horsepower": 400,
-      "maxRPM": 2600,
-      "reverseSpeed": 11,
-      "transmission": {
-        "forwardGears": 5,
-        "neutralSteering": false,
-        "reverseGears": 1
-      }
-    }
+    "mass": 14.5
   },
   {
-    "mass": 18.7,
+    "engine": {
+      "transmission": {
+        "reverseGears": 2,
+        "neutralSteering": true,
+        "forwardGears": 4
+      },
+      "reverseSpeed": 17.2,
+      "forwardSpeed": 70,
+      "type": "Diesel",
+      "maxRPM": 2000,
+      "horsepower": 670,
+      "name": "Type 6V150"
+    },
     "name": "ZBD04",
-    "engine": {
-      "type": "Diesel",
-      "name": "Type 6V150",
-      "forwardSpeed": 70,
-      "horsepower": 670,
-      "maxRPM": 2000,
-      "reverseSpeed": 17.2,
-      "transmission": {
-        "forwardGears": 4,
-        "neutralSteering": true,
-        "reverseGears": 2
-      }
-    }
+    "mass": 18.7
   },
   {
-    "mass": 15,
+    "engine": {
+      "transmission": {
+        "reverseGears": 2,
+        "neutralSteering": false,
+        "forwardGears": 6
+      },
+      "reverseSpeed": 15,
+      "forwardSpeed": 64,
+      "type": "Diesel",
+      "maxRPM": 2800,
+      "horsepower": 212,
+      "name": "6V53"
+    },
     "name": "M113 HVMS",
-    "engine": {
-      "type": "Diesel",
-      "name": "6V53",
-      "forwardSpeed": 64,
-      "horsepower": 212,
-      "maxRPM": 2800,
-      "reverseSpeed": 15,
-      "transmission": {
-        "forwardGears": 6,
-        "neutralSteering": false,
-        "reverseGears": 2
-      }
-    }
+    "mass": 15
   },
   {
-    "mass": 12.3,
+    "engine": {
+      "transmission": {
+        "reverseGears": 2,
+        "neutralSteering": false,
+        "forwardGears": 11
+      },
+      "reverseSpeed": 10,
+      "forwardSpeed": 62,
+      "type": "Diesel",
+      "maxRPM": 2100,
+      "horsepower": 240,
+      "name": "YaMZ 238"
+    },
     "name": "MT-LeBrams",
-    "engine": {
-      "type": "Diesel",
-      "name": "YaMZ 238",
-      "forwardSpeed": 62,
-      "horsepower": 240,
-      "maxRPM": 2100,
-      "reverseSpeed": 10,
-      "transmission": {
-        "forwardGears": 11,
-        "neutralSteering": false,
-        "reverseGears": 2
-      }
-    }
+    "mass": 12.3
   },
   {
-    "mass": 43,
-    "name": "PUMA IFV",
     "engine": {
-      "type": "Diesel",
-      "name": "MTU MT 892 Ka-501",
-      "forwardSpeed": 90,
-      "horsepower": 800,
-      "maxRPM": 3800,
+      "transmission": {
+        "reverseGears": 4,
+        "neutralSteering": true,
+        "forwardGears": 4
+      },
       "reverseSpeed": 90,
-      "transmission": {
-        "forwardGears": 4,
-        "neutralSteering": true,
-        "reverseGears": 4
-      }
-    }
-  },
-  {
-    "mass": 45,
-    "name": "HIMAG",
-    "engine": {
+      "forwardSpeed": 90,
       "type": "Diesel",
-      "name": "AVCR-1360",
-      "forwardSpeed": 72,
-      "horsepower": 1500,
-      "maxRPM": 2600,
-      "reverseSpeed": 40,
-      "transmission": {
-        "forwardGears": 6,
-        "neutralSteering": true,
-        "reverseGears": 2
-      }
-    }
-  },
-  {
-    "mass": 44.5,
-    "name": "T-72B",
-    "engine": {
-      "type": "Diesel",
-      "name": "ChTZ V-84-1",
-      "forwardSpeed": 60,
-      "horsepower": 840,
-      "maxRPM": 2000,
-      "reverseSpeed": 4,
-      "transmission": {
-        "forwardGears": 7,
-        "neutralSteering": false,
-        "reverseGears": 1
-      }
-    }
-  },
-  {
-    "mass": 25,
-    "name": "Kurganets-25",
-    "engine": {
-      "type": "Diesel",
-      "name": "YaMZ 780",
-      "forwardSpeed": 80,
-      "horsepower": 750,
-      "maxRPM": 2300,
-      "reverseSpeed": 20,
-      "transmission": {
-        "forwardGears": 6,
-        "neutralSteering": true,
-        "reverseGears": 3
-      }
-    }
-  },
-  {
-    "mass": 18.8,
-    "name": "M1128 MGS",
-    "engine": {
-      "type": "Diesel",
-      "name": "Caterpillar 3126",
-      "forwardSpeed": 96,
-      "horsepower": 350,
-      "maxRPM": 2400,
-      "reverseSpeed": 12.5,
-      "transmission": {
-        "forwardGears": 6,
-        "neutralSteering": false,
-        "reverseGears": 1
-      }
-    }
-  },
-  {
-    "mass": 49,
-    "name": "Abrams X",
-    "engine": {
-      "type": "Diesel",
-      "name": "XAP-1000",
-      "forwardSpeed": 78,
-      "horsepower": 1500,
-      "maxRPM": 2600,
-      "reverseSpeed": 78,
-      "transmission": {
-        "forwardGears": 4,
-        "neutralSteering": true,
-        "reverseGears": 4
-      }
-    }
-  },
-  {
-    "mass": 30,
-    "name": "BTR-55",
-    "engine": {
-      "type": "Diesel",
-      "name": "ChTZ V-55V",
-      "forwardSpeed": 50,
-      "horsepower": 580,
-      "maxRPM": 2000,
-      "reverseSpeed": 7,
-      "transmission": {
-        "forwardGears": 5,
-        "neutralSteering": false,
-        "reverseGears": 1
-      }
-    }
-  },
-  {
-    "mass": 28.5,
-    "name": "Strf 9040C",
-    "engine": {
-      "type": "Diesel",
-      "name": "Scania DSI14",
-      "forwardSpeed": 70,
-      "horsepower": 550,
-      "maxRPM": 2100,
-      "reverseSpeed": 45,
-      "transmission": {
-        "forwardGears": 6,
-        "neutralSteering": true,
-        "reverseGears": 3
-      }
-    }
-  },
-  {
-    "mass": 14,
-    "name": "PT-76B",
-    "engine": {
-      "type": "Diesel",
-      "name": "V-6",
-      "forwardSpeed": 44,
-      "horsepower": 240,
-      "maxRPM": 2100,
-      "reverseSpeed": 6,
-      "transmission": {
-        "forwardGears": 5,
-        "neutralSteering": false,
-        "reverseGears": 1
-      }
-    }
-  },
-  {
-    "mass": 47,
-    "name": "T-64BM \"Bulat\"",
-    "engine": {
-      "type": "Diesel",
-      "name": "HPZ 5TDFM",
-      "forwardSpeed": 61,
-      "horsepower": 850,
-      "maxRPM": 2800,
-      "reverseSpeed": 4.2,
-      "transmission": {
-        "forwardGears": 7,
-        "neutralSteering": false,
-        "reverseGears": 1
-      }
-    }
-  },
-  {
-    "mass": 47,
-    "name": "T-80BVM",
-    "engine": {
-      "type": "Turbine",
-      "name": "GTD-1250",
-      "forwardSpeed": 70,
-      "horsepower": 1250,
-      "maxRPM": 3154,
-      "reverseSpeed": 11.1,
-      "transmission": {
-        "forwardGears": 4,
-        "neutralSteering": false,
-        "reverseGears": 1
-      }
-    }
-  },
-  {
-    "mass": 7.2,
-    "name": "GAZ Tigr",
-    "engine": {
-      "type": "Diesel",
-      "name": "YaMZ-5347-10",
-      "forwardSpeed": 140,
-      "horsepower": 215,
-      "maxRPM": 4000,
-      "reverseSpeed": 25,
-      "transmission": {
-        "forwardGears": 5,
-        "neutralSteering": false,
-        "reverseGears": 1
-      }
-    }
-  },
-  {
-    "mass": 56.3,
-    "name": "120S",
-    "engine": {
-      "type": "Diesel",
-      "name": "AVDS-1790-2",
-      "forwardSpeed": 48,
-      "horsepower": 750,
-      "maxRPM": 2400,
-      "reverseSpeed": 11,
-      "transmission": {
-        "forwardGears": 2,
-        "neutralSteering": true,
-        "reverseGears": 1
-      }
-    }
-  },
-  {
-    "mass": 15,
-    "name": "Kornet D BMD-4M",
-    "engine": {
-      "type": "Diesel",
-      "name": "UTD-29",
-      "forwardSpeed": 70,
-      "horsepower": 500,
-      "maxRPM": 2600,
-      "reverseSpeed": 20,
-      "transmission": {
-        "forwardGears": 4,
-        "neutralSteering": true,
-        "reverseGears": 2
-      }
-    }
-  },
-  {
-    "mass": 4.23,
-    "name": "RSZO-1",
-    "engine": {
-      "type": "Diesel",
-      "name": "5.55 L ZiS-5",
-      "forwardSpeed": 50,
-      "horsepower": 73,
-      "maxRPM": 4000,
-      "reverseSpeed": 10,
-      "transmission": {
-        "forwardGears": 4,
-        "neutralSteering": false,
-        "reverseGears": 1
-      }
-    }
-  },
-  {
-    "mass": 43,
-    "name": "PUMA",
-    "engine": {
-      "type": "Diesel",
-      "name": "MTU MT 892 Ka-501",
-      "forwardSpeed": 70,
-      "horsepower": 800,
       "maxRPM": 3800,
-      "reverseSpeed": 70,
+      "horsepower": 800,
+      "name": "MTU MT 892 Ka-501"
+    },
+    "name": "PUMA IFV",
+    "mass": 43
+  },
+  {
+    "engine": {
       "transmission": {
-        "forwardGears": 6,
+        "reverseGears": 2,
         "neutralSteering": true,
-        "reverseGears": 6
-      }
-    }
-  },
-  {
-    "mass": 11,
-    "name": "M1117 ASV",
-    "engine": {
-      "type": "Diesel",
-      "name": "6CTA8.3 IMO 2",
-      "forwardSpeed": 89,
-      "horsepower": 270,
-      "maxRPM": 1800,
-      "reverseSpeed": 15,
-      "transmission": {
-        "forwardGears": 5,
-        "neutralSteering": false,
-        "reverseGears": 1
-      }
-    }
-  },
-  {
-    "mass": 100,
-    "name": "KV-5",
-    "engine": {
-      "type": "Diesel",
-      "name": "V-2K",
-      "forwardSpeed": 40,
-      "horsepower": 600,
-      "maxRPM": 2000,
-      "reverseSpeed": 11,
-      "transmission": {
-        "forwardGears": 5,
-        "neutralSteering": false,
-        "reverseGears": 1
-      }
-    }
-  },
-  {
-    "mass": 47,
-    "name": "Tutel",
-    "engine": {
-      "type": "Diesel",
-      "name": "ChTZ V-84-1",
-      "forwardSpeed": 60,
-      "horsepower": 840,
-      "maxRPM": 2000,
-      "reverseSpeed": 4,
-      "transmission": {
-        "forwardGears": 7,
-        "neutralSteering": false,
-        "reverseGears": 1
-      }
-    }
-  },
-  {
-    "mass": 14.5,
-    "name": "BMP-2",
-    "engine": {
-      "type": "Diesel",
-      "name": "UTD-20",
-      "forwardSpeed": 65,
-      "horsepower": 300,
-      "maxRPM": 2600,
-      "reverseSpeed": 11,
-      "transmission": {
-        "forwardGears": 5,
-        "neutralSteering": false,
-        "reverseGears": 1
-      }
-    }
-  },
-  {
-    "mass": 42.5,
-    "name": "Leopard 1A5",
-    "engine": {
-      "type": "Diesel",
-      "name": "MTU MB 838 CaM 500",
-      "forwardSpeed": 65,
-      "horsepower": 830,
-      "maxRPM": 2200,
-      "reverseSpeed": 25,
-      "transmission": {
-        "forwardGears": 8,
-        "neutralSteering": true,
-        "reverseGears": 4
-      }
-    }
-  },
-  {
-    "mass": 1.2,
-    "name": "M38",
-    "engine": {
-      "type": "Diesel",
-      "name": "F4-134 Hurricane",
-      "forwardSpeed": 89,
-      "horsepower": 72,
-      "maxRPM": 4000,
-      "reverseSpeed": 15,
-      "transmission": {
-        "forwardGears": 3,
-        "neutralSteering": false,
-        "reverseGears": 1
-      }
-    }
-  },
-  {
-    "mass": 33.5,
-    "name": "Marder 1A3",
-    "engine": {
-      "type": "Diesel",
-      "name": "MTU MB 833 Ea-500",
-      "forwardSpeed": 75,
-      "horsepower": 600,
-      "maxRPM": 2100,
-      "reverseSpeed": 75,
-      "transmission": {
-        "forwardGears": 8,
-        "neutralSteering": true,
-        "reverseGears": 8
-      }
-    }
-  },
-  {
-    "mass": 11.5,
-    "name": "BMD-2",
-    "engine": {
-      "type": "Diesel",
-      "name": "5D-20",
-      "forwardSpeed": 80,
-      "horsepower": 241,
-      "maxRPM": 2600,
-      "reverseSpeed": 11,
-      "transmission": {
-        "forwardGears": 5,
-        "neutralSteering": false,
-        "reverseGears": 1
-      }
-    }
-  },
-  {
-    "mass": 11.8,
-    "name": "M901ITV",
-    "engine": {
-      "type": "Diesel",
-      "name": "6V53",
-      "forwardSpeed": 64,
-      "horsepower": 212,
-      "maxRPM": 2800,
-      "reverseSpeed": 15,
-      "transmission": {
-        "forwardGears": 6,
-        "neutralSteering": false,
-        "reverseGears": 2
-      }
-    }
-  },
-  {
-    "mass": 55,
-    "name": "Chieftain Mk 5",
-    "engine": {
-      "type": "Diesel",
-      "name": "Leyland L60",
-      "forwardSpeed": 48,
-      "horsepower": 760,
-      "maxRPM": 2550,
-      "reverseSpeed": 11.1,
-      "transmission": {
-        "forwardGears": 6,
-        "neutralSteering": true,
-        "reverseGears": 2
-      }
-    }
-  },
-  {
-    "mass": 53.2,
-    "name": "M60A1 RISE Passive",
-    "engine": {
-      "type": "Diesel",
-      "name": "AVDS-1790-2",
-      "forwardSpeed": 48,
-      "horsepower": 750,
-      "maxRPM": 2400,
-      "reverseSpeed": 11,
-      "transmission": {
-        "forwardGears": 2,
-        "neutralSteering": true,
-        "reverseGears": 1
-      }
-    }
-  },
-  {
-    "mass": 7,
-    "name": "BRDM-2 Konkurs",
-    "engine": {
-      "type": "Diesel",
-      "name": "GAZ-41",
-      "forwardSpeed": 100,
-      "horsepower": 140,
-      "maxRPM": 2600,
-      "reverseSpeed": 12,
-      "transmission": {
-        "forwardGears": 5,
-        "neutralSteering": false,
-        "reverseGears": 1
-      }
-    }
-  },
-  {
-    "mass": 42.8,
-    "name": "ZTZ96A",
-    "engine": {
-      "type": "Diesel",
-      "name": "12V150ZLD",
-      "forwardSpeed": 59,
-      "horsepower": 865,
-      "maxRPM": 2000,
-      "reverseSpeed": 5.9,
-      "transmission": {
-        "forwardGears": 5,
-        "neutralSteering": false,
-        "reverseGears": 1
-      }
-    }
-  },
-  {
-    "mass": 7,
-    "name": "BRDM-2",
-    "engine": {
-      "type": "Diesel",
-      "name": "GAZ-41",
-      "forwardSpeed": 100,
-      "horsepower": 140,
-      "maxRPM": 2600,
-      "reverseSpeed": 12,
-      "transmission": {
-        "forwardGears": 5,
-        "neutralSteering": false,
-        "reverseGears": 1
-      }
-    }
-  },
-  {
-    "mass": 24,
-    "name": "M270 MLRS",
-    "engine": {
-      "type": "Diesel",
-      "name": "VTA-903T",
-      "forwardSpeed": 64,
-      "horsepower": 600,
-      "maxRPM": 2600,
-      "reverseSpeed": 15,
-      "transmission": {
-        "forwardGears": 6,
-        "neutralSteering": true,
-        "reverseGears": 2
-      }
-    }
-  },
-  {
-    "mass": 12.3,
-    "name": "M113",
-    "engine": {
-      "type": "Diesel",
-      "name": "6V53",
-      "forwardSpeed": 64,
-      "horsepower": 212,
-      "maxRPM": 2800,
-      "reverseSpeed": 15,
-      "transmission": {
-        "forwardGears": 6,
-        "neutralSteering": false,
-        "reverseGears": 2
-      }
-    }
-  },
-  {
-    "mass": 3.3,
-    "name": "ASU-57",
-    "engine": {
-      "type": "Diesel",
-      "name": "M-20",
-      "forwardSpeed": 46,
-      "horsepower": 55,
-      "maxRPM": 3600,
-      "reverseSpeed": 5,
-      "transmission": {
-        "forwardGears": 4,
-        "neutralSteering": false,
-        "reverseGears": 1
-      }
-    }
-  },
-  {
-    "mass": 12.9,
-    "name": "LAV-AT",
-    "engine": {
-      "type": "Diesel",
-      "name": "Detroit 6V53T",
-      "forwardSpeed": 100,
-      "horsepower": 300,
-      "maxRPM": 2800,
-      "reverseSpeed": 17.6,
-      "transmission": {
-        "forwardGears": 5,
-        "neutralSteering": false,
-        "reverseGears": 1
-      }
-    }
-  },
-  {
-    "mass": 18,
-    "name": "Sprut-SDM1",
-    "engine": {
-      "type": "Diesel",
-      "name": "UTD-29",
-      "forwardSpeed": 70,
-      "horsepower": 500,
-      "maxRPM": 2600,
-      "reverseSpeed": 20,
-      "transmission": {
-        "forwardGears": 4,
-        "neutralSteering": true,
-        "reverseGears": 2
-      }
-    }
-  },
-  {
-    "mass": 11.5,
-    "name": "Strela-10",
-    "engine": {
-      "type": "Diesel",
-      "name": "YaMZ 238",
-      "forwardSpeed": 62,
-      "horsepower": 240,
-      "maxRPM": 2100,
-      "reverseSpeed": 10,
-      "transmission": {
-        "forwardGears": 11,
-        "neutralSteering": false,
-        "reverseGears": 2
-      }
-    }
-  },
-  {
-    "mass": 52.4,
-    "name": "KV-2",
-    "engine": {
-      "type": "Diesel",
-      "name": "V-2K",
-      "forwardSpeed": 34,
-      "horsepower": 600,
-      "maxRPM": 2000,
-      "reverseSpeed": 6.2,
-      "transmission": {
-        "forwardGears": 5,
-        "neutralSteering": false,
-        "reverseGears": 1
-      }
-    }
-  },
-  {
-    "mass": 60,
-    "name": "Object 195",
-    "engine": {
-      "type": "Diesel",
-      "name": "A-85-3A",
-      "forwardSpeed": 70,
-      "horsepower": 1500,
-      "maxRPM": 2000,
-      "reverseSpeed": 70,
-      "transmission": {
-        "forwardGears": 6,
-        "neutralSteering": false,
-        "reverseGears": 6
-      }
-    }
-  },
-  {
-    "mass": 14.2,
-    "name": "BMP-1AM",
-    "engine": {
-      "type": "Diesel",
-      "name": "UTD-20",
-      "forwardSpeed": 65,
-      "horsepower": 300,
-      "maxRPM": 2600,
-      "reverseSpeed": 11,
-      "transmission": {
-        "forwardGears": 5,
-        "neutralSteering": false,
-        "reverseGears": 1
-      }
-    }
-  },
-  {
-    "mass": 22.3,
-    "name": "M2A2 Bradley",
-    "engine": {
-      "type": "Diesel",
-      "name": "VTA-903T",
-      "forwardSpeed": 61,
-      "horsepower": 600,
-      "maxRPM": 2600,
-      "reverseSpeed": 14,
-      "transmission": {
-        "forwardGears": 6,
-        "neutralSteering": true,
-        "reverseGears": 2
-      }
-    }
-  },
-  {
-    "mass": 43.5,
-    "name": "VT1-2",
-    "engine": {
-      "type": "Diesel",
-      "name": "MTU MB 803 Ra-500",
-      "forwardSpeed": 70,
-      "horsepower": 2200,
-      "maxRPM": 2600,
+        "forwardGears": 6
+      },
       "reverseSpeed": 40,
-      "transmission": {
-        "forwardGears": 8,
-        "neutralSteering": true,
-        "reverseGears": 7
-      }
-    }
-  },
-  {
-    "mass": 55.4,
-    "name": "KF51 Panther",
-    "engine": {
-      "type": "Diesel",
-      "name": "MTU MB 873 Ka-501",
-      "forwardSpeed": 68,
-      "horsepower": 1500,
-      "maxRPM": 2600,
-      "reverseSpeed": 31,
-      "transmission": {
-        "forwardGears": 6,
-        "neutralSteering": true,
-        "reverseGears": 3
-      }
-    }
-  },
-  {
-    "mass": 60.4,
-    "name": "Object 279",
-    "engine": {
-      "type": "Diesel",
-      "name": "UTMZ 2DG-8M",
-      "forwardSpeed": 55,
-      "horsepower": 1000,
-      "maxRPM": 2400,
-      "reverseSpeed": 18,
-      "transmission": {
-        "forwardGears": 8,
-        "neutralSteering": false,
-        "reverseGears": 2
-      }
-    }
-  },
-  {
-    "mass": 14.5,
-    "name": "AMX-13",
-    "engine": {
-      "type": "Diesel",
-      "name": "SOFAM 8Gxb",
-      "forwardSpeed": 61,
-      "horsepower": 270,
-      "maxRPM": 3300,
-      "reverseSpeed": 6.8,
-      "transmission": {
-        "forwardGears": 5,
-        "neutralSteering": false,
-        "reverseGears": 1
-      }
-    }
-  },
-  {
-    "mass": 65.5,
-    "name": "Merkava Mk.4M",
-    "engine": {
-      "type": "Diesel",
-      "name": "MTU 12V883",
-      "forwardSpeed": 64,
-      "horsepower": 1500,
-      "maxRPM": 2700,
-      "reverseSpeed": 64,
-      "transmission": {
-        "forwardGears": 7,
-        "neutralSteering": true,
-        "reverseGears": 7
-      }
-    }
-  },
-  {
-    "mass": 24.1,
-    "name": "M109",
-    "engine": {
-      "type": "Diesel",
-      "name": "8V71T",
-      "forwardSpeed": 56,
-      "horsepower": 405,
-      "maxRPM": 2300,
-      "reverseSpeed": 12,
-      "transmission": {
-        "forwardGears": 8,
-        "neutralSteering": false,
-        "reverseGears": 4
-      }
-    }
-  },
-  {
-    "mass": 64.2,
-    "name": "T29E3",
-    "engine": {
-      "type": "Diesel",
-      "name": "GAC V12",
-      "forwardSpeed": 35,
-      "horsepower": 770,
-      "maxRPM": 2800,
-      "reverseSpeed": 14,
-      "transmission": {
-        "forwardGears": 8,
-        "neutralSteering": false,
-        "reverseGears": 2
-      }
-    }
-  },
-  {
-    "mass": 32.2,
-    "name": "T-34-85",
-    "engine": {
-      "type": "Diesel",
-      "name": "Model V-2-34",
-      "forwardSpeed": 55,
-      "horsepower": 500,
-      "maxRPM": 1800,
-      "reverseSpeed": 8.4,
-      "transmission": {
-        "forwardGears": 6,
-        "neutralSteering": false,
-        "reverseGears": 1
-      }
-    }
-  },
-  {
-    "mass": 55,
-    "name": "ZTZ99A",
-    "engine": {
-      "type": "Diesel",
-      "name": "HP150",
-      "forwardSpeed": 75,
-      "horsepower": 1500,
-      "maxRPM": 2000,
-      "reverseSpeed": 34,
-      "transmission": {
-        "forwardGears": 8,
-        "neutralSteering": true,
-        "reverseGears": 3
-      }
-    }
-  },
-  {
-    "mass": 7.5,
-    "name": "BMD-1",
-    "engine": {
-      "type": "Diesel",
-      "name": "5D-20",
-      "forwardSpeed": 80,
-      "horsepower": 241,
-      "maxRPM": 2600,
-      "reverseSpeed": 11,
-      "transmission": {
-        "forwardGears": 5,
-        "neutralSteering": false,
-        "reverseGears": 1
-      }
-    }
-  },
-  {
-    "mass": 28.1,
-    "name": "M36 Jackson",
-    "engine": {
-      "type": "Diesel",
-      "name": "Ford GAA V8",
-      "forwardSpeed": 48,
-      "horsepower": 500,
-      "maxRPM": 2600,
-      "reverseSpeed": 6.2,
-      "transmission": {
-        "forwardGears": 5,
-        "neutralSteering": false,
-        "reverseGears": 1
-      }
-    }
-  },
-  {
-    "mass": 52.4,
-    "name": "KV-2 (ZIS-6)",
-    "engine": {
-      "type": "Diesel",
-      "name": "V-2K",
-      "forwardSpeed": 34,
-      "horsepower": 600,
-      "maxRPM": 2000,
-      "reverseSpeed": 6.2,
-      "transmission": {
-        "forwardGears": 5,
-        "neutralSteering": false,
-        "reverseGears": 1
-      }
-    }
-  },
-  {
-    "mass": 1.65,
-    "name": "UAZ-469",
-    "engine": {
-      "type": "Diesel",
-      "name": "2445cc UMZ",
-      "forwardSpeed": 105,
-      "horsepower": 75,
-      "maxRPM": 4000,
-      "reverseSpeed": 22,
-      "transmission": {
-        "forwardGears": 4,
-        "neutralSteering": false,
-        "reverseGears": 1
-      }
-    }
-  },
-  {
-    "mass": 50,
-    "name": "FV4005",
-    "engine": {
-      "type": "Diesel",
-      "name": "Rolls-Royce Meteor 4B",
-      "forwardSpeed": 35,
-      "horsepower": 650,
-      "maxRPM": 2550,
-      "reverseSpeed": 12,
-      "transmission": {
-        "forwardGears": 5,
-        "neutralSteering": true,
-        "reverseGears": 2
-      }
-    }
-  },
-  {
-    "mass": 10.3,
-    "name": "BTR-60PB",
-    "engine": {
-      "type": "Diesel",
-      "name": "2xGAZ-49B",
-      "forwardSpeed": 80,
-      "horsepower": 180,
-      "maxRPM": 2600,
-      "reverseSpeed": 12,
-      "transmission": {
-        "forwardGears": 5,
-        "neutralSteering": false,
-        "reverseGears": 1
-      }
-    }
-  },
-  {
-    "mass": 45.3,
-    "name": "TOS-1A BM-1",
-    "engine": {
-      "type": "Diesel",
-      "name": "ChTZ V-84-1",
-      "forwardSpeed": 60,
-      "horsepower": 840,
-      "maxRPM": 2000,
-      "reverseSpeed": 4,
-      "transmission": {
-        "forwardGears": 7,
-        "neutralSteering": false,
-        "reverseGears": 1
-      }
-    }
-  },
-  {
-    "mass": 50.2,
-    "name": "Type 90",
-    "engine": {
-      "type": "Diesel",
-      "name": "MHI 10ZG32WT",
-      "forwardSpeed": 73,
-      "horsepower": 1500,
-      "maxRPM": 2400,
-      "reverseSpeed": 34,
-      "transmission": {
-        "forwardGears": 7,
-        "neutralSteering": true,
-        "reverseGears": 2
-      }
-    }
-  },
-  {
-    "mass": 37.5,
-    "name": "WZ-122",
-    "engine": {
-      "type": "Diesel",
-      "name": "CNGC 12150L",
-      "forwardSpeed": 55,
-      "horsepower": 650,
-      "maxRPM": 2000,
-      "reverseSpeed": 7,
-      "transmission": {
-        "forwardGears": 5,
-        "neutralSteering": false,
-        "reverseGears": 1
-      }
-    }
-  },
-  {
-    "mass": 41.2,
-    "name": "T-64BV",
-    "engine": {
-      "type": "Diesel",
-      "name": "HPZ 5TDF",
-      "forwardSpeed": 61,
-      "horsepower": 700,
-      "maxRPM": 2800,
-      "reverseSpeed": 4.2,
-      "transmission": {
-        "forwardGears": 7,
-        "neutralSteering": false,
-        "reverseGears": 1
-      }
-    }
-  },
-  {
-    "mass": 30,
-    "name": "T-34-57",
-    "engine": {
-      "type": "Diesel",
-      "name": "Model V-2-34",
-      "forwardSpeed": 55,
-      "horsepower": 500,
-      "maxRPM": 1800,
-      "reverseSpeed": 8.4,
-      "transmission": {
-        "forwardGears": 6,
-        "neutralSteering": false,
-        "reverseGears": 1
-      }
-    }
-  },
-  {
-    "mass": 56.2,
-    "name": "Leclerc S21",
-    "engine": {
-      "type": "Diesel",
-      "name": "V8X-1500",
       "forwardSpeed": 72,
-      "horsepower": 1500,
-      "maxRPM": 2500,
-      "reverseSpeed": 38,
-      "transmission": {
-        "forwardGears": 10,
-        "neutralSteering": true,
-        "reverseGears": 4
-      }
-    }
-  },
-  {
-    "mass": 26,
-    "name": "Type 625E",
-    "engine": {
       "type": "Diesel",
-      "name": "CA6DL2-35E3R",
-      "forwardSpeed": 90,
-      "horsepower": 380,
-      "maxRPM": 3000,
-      "reverseSpeed": 12,
-      "transmission": {
-        "forwardGears": 5,
-        "neutralSteering": false,
-        "reverseGears": 1
-      }
-    }
-  },
-  {
-    "mass": 64,
-    "name": "Challenger 2",
-    "engine": {
-      "type": "Diesel",
-      "name": "Perkins CV12",
-      "forwardSpeed": 56,
-      "horsepower": 1217,
-      "maxRPM": 2300,
-      "reverseSpeed": 38,
-      "transmission": {
-        "forwardGears": 6,
-        "neutralSteering": true,
-        "reverseGears": 2
-      }
-    }
-  },
-  {
-    "mass": 57,
-    "name": "PzH-2000",
-    "engine": {
-      "type": "Diesel",
-      "name": "MTU MT881 Ka-500",
-      "forwardSpeed": 60,
-      "horsepower": 1000,
-      "maxRPM": 2700,
-      "reverseSpeed": 25,
-      "transmission": {
-        "forwardGears": 4,
-        "neutralSteering": true,
-        "reverseGears": 2
-      }
-    }
-  },
-  {
-    "mass": 18.7,
-    "name": "BMP-3",
-    "engine": {
-      "type": "Diesel",
-      "name": "UTD-29",
-      "forwardSpeed": 70,
-      "horsepower": 500,
       "maxRPM": 2600,
+      "horsepower": 1500,
+      "name": "AVCR-1360"
+    },
+    "name": "HIMAG",
+    "mass": 45
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 1,
+        "neutralSteering": false,
+        "forwardGears": 7
+      },
+      "reverseSpeed": 4,
+      "forwardSpeed": 60,
+      "type": "Diesel",
+      "maxRPM": 2000,
+      "horsepower": 840,
+      "name": "ChTZ V-84-1"
+    },
+    "name": "T-72B",
+    "mass": 44.5
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 3,
+        "neutralSteering": true,
+        "forwardGears": 6
+      },
       "reverseSpeed": 20,
-      "transmission": {
-        "forwardGears": 4,
-        "neutralSteering": true,
-        "reverseGears": 2
-      }
-    }
-  },
-  {
-    "mass": 46,
-    "name": "T-80U",
-    "engine": {
-      "type": "Turbine",
-      "name": "GTD-1250",
-      "forwardSpeed": 70,
-      "horsepower": 1250,
-      "maxRPM": 3154,
-      "reverseSpeed": 11.1,
-      "transmission": {
-        "forwardGears": 4,
-        "neutralSteering": false,
-        "reverseGears": 1
-      }
-    }
-  },
-  {
-    "mass": 51.7,
-    "name": "KPz-70",
-    "engine": {
-      "type": "Diesel",
-      "name": "MTU MB 873 Ka-501",
-      "forwardSpeed": 64,
-      "horsepower": 1500,
-      "maxRPM": 2600,
-      "reverseSpeed": 64,
-      "transmission": {
-        "forwardGears": 8,
-        "neutralSteering": true,
-        "reverseGears": 8
-      }
-    }
-  },
-  {
-    "mass": 55.4,
-    "name": "Leopard 2A4",
-    "engine": {
-      "type": "Diesel",
-      "name": "MTU MB 873 Ka-501",
-      "forwardSpeed": 68,
-      "horsepower": 1500,
-      "maxRPM": 2600,
-      "reverseSpeed": 31,
-      "transmission": {
-        "forwardGears": 6,
-        "neutralSteering": true,
-        "reverseGears": 3
-      }
-    }
-  },
-  {
-    "mass": 7.2,
-    "name": "Kornet D GAZ Tigr",
-    "engine": {
-      "type": "Diesel",
-      "name": "YaMZ-5347-10",
-      "forwardSpeed": 140,
-      "horsepower": 215,
-      "maxRPM": 4000,
-      "reverseSpeed": 25,
-      "transmission": {
-        "forwardGears": 5,
-        "neutralSteering": false,
-        "reverseGears": 1
-      }
-    }
-  },
-  {
-    "mass": 11,
-    "name": "M939",
-    "engine": {
-      "type": "Diesel",
-      "name": "6CTA8.3 IMO 1",
-      "forwardSpeed": 89,
-      "horsepower": 240,
-      "maxRPM": 1800,
-      "reverseSpeed": 15,
-      "transmission": {
-        "forwardGears": 5,
-        "neutralSteering": false,
-        "reverseGears": 1
-      }
-    }
-  },
-  {
-    "mass": 24.9,
-    "name": "FV510 Warrior",
-    "engine": {
-      "type": "Diesel",
-      "name": "Perkins CV-8",
       "forwardSpeed": 80,
-      "horsepower": 550,
+      "type": "Diesel",
       "maxRPM": 2300,
-      "reverseSpeed": 80,
-      "transmission": {
-        "forwardGears": 9,
-        "neutralSteering": true,
-        "reverseGears": 4
-      }
-    }
-  },
-  {
-    "mass": 20.9,
-    "name": "BTR-90",
-    "engine": {
-      "type": "Diesel",
-      "name": "ChTZ 510",
-      "forwardSpeed": 100,
-      "horsepower": 510,
-      "maxRPM": 2000,
-      "reverseSpeed": 12,
-      "transmission": {
-        "forwardGears": 5,
-        "neutralSteering": false,
-        "reverseGears": 1
-      }
-    }
-  },
-  {
-    "mass": 30,
-    "name": "QN506",
-    "engine": {
-      "type": "Diesel",
-      "name": "CNGC 12150L",
-      "forwardSpeed": 50,
-      "horsepower": 650,
-      "maxRPM": 2000,
-      "reverseSpeed": 7,
-      "transmission": {
-        "forwardGears": 5,
-        "neutralSteering": false,
-        "reverseGears": 1
-      }
-    }
-  },
-  {
-    "mass": 35.5,
-    "name": "T-54 Obr. 1951",
-    "engine": {
-      "type": "Diesel",
-      "name": "ChTZ V-54",
-      "forwardSpeed": 50,
-      "horsepower": 520,
-      "maxRPM": 2000,
-      "reverseSpeed": 7,
-      "transmission": {
-        "forwardGears": 5,
-        "neutralSteering": false,
-        "reverseGears": 1
-      }
-    }
-  },
-  {
-    "mass": 17.6,
-    "name": "XM8",
-    "engine": {
-      "type": "Diesel",
-      "name": "Detroit 6V92TA",
-      "forwardSpeed": 72,
-      "horsepower": 580,
-      "maxRPM": 2400,
-      "reverseSpeed": 15,
-      "transmission": {
-        "forwardGears": 6,
-        "neutralSteering": true,
-        "reverseGears": 2
-      }
-    }
-  },
-  {
-    "mass": 25,
-    "name": "XM1069",
-    "engine": {
-      "type": "Diesel",
-      "name": "VTA-903T",
-      "forwardSpeed": 66,
-      "horsepower": 600,
-      "maxRPM": 2600,
-      "reverseSpeed": 14,
-      "transmission": {
-        "forwardGears": 6,
-        "neutralSteering": true,
-        "reverseGears": 2
-      }
-    }
-  },
-  {
-    "mass": 48,
-    "name": "Object 640 \"Black Eagle\"",
-    "engine": {
-      "type": "Turbine",
-      "name": "GTD-1400",
-      "forwardSpeed": 70,
-      "horsepower": 1400,
-      "maxRPM": 3154,
-      "reverseSpeed": 11.1,
-      "transmission": {
-        "forwardGears": 4,
-        "neutralSteering": false,
-        "reverseGears": 1
-      }
-    }
-  },
-  {
-    "mass": 42,
-    "name": "T-80B",
-    "engine": {
-      "type": "Turbine",
-      "name": "GTD-1000TF",
-      "forwardSpeed": 70,
-      "horsepower": 1100,
-      "maxRPM": 3154,
-      "reverseSpeed": 11.1,
-      "transmission": {
-        "forwardGears": 4,
-        "neutralSteering": false,
-        "reverseGears": 1
-      }
-    }
-  },
-  {
-    "mass": 22,
-    "name": "Rosomak",
-    "engine": {
-      "type": "Diesel",
-      "name": "Scania DC 13",
-      "forwardSpeed": 100,
-      "horsepower": 600,
-      "maxRPM": 1800,
-      "reverseSpeed": 15,
-      "transmission": {
-        "forwardGears": 7,
-        "neutralSteering": false,
-        "reverseGears": 1
-      }
-    }
-  },
-  {
-    "mass": 10.2,
-    "name": "Joint Light Tactical Vehicle",
-    "engine": {
-      "type": "Diesel",
-      "name": "6.6 L Gale Banks Engineering 866T",
-      "forwardSpeed": 110,
-      "horsepower": 400,
-      "maxRPM": 4000,
-      "reverseSpeed": 13,
-      "transmission": {
-        "forwardGears": 6,
-        "neutralSteering": false,
-        "reverseGears": 1
-      }
-    }
-  },
-  {
-    "mass": 51.8,
-    "name": "Centurion Mk 10",
-    "engine": {
-      "type": "Diesel",
-      "name": "Rolls-Royce Meteor 4B",
-      "forwardSpeed": 35,
-      "horsepower": 650,
-      "maxRPM": 2550,
-      "reverseSpeed": 12,
-      "transmission": {
-        "forwardGears": 5,
-        "neutralSteering": true,
-        "reverseGears": 2
-      }
-    }
-  },
-  {
-    "mass": 22.3,
-    "name": "M2A1 Bradley",
-    "engine": {
-      "type": "Diesel",
-      "name": "VT903",
-      "forwardSpeed": 66,
-      "horsepower": 507,
-      "maxRPM": 2600,
-      "reverseSpeed": 14,
-      "transmission": {
-        "forwardGears": 6,
-        "neutralSteering": true,
-        "reverseGears": 2
-      }
-    }
-  },
-  {
-    "mass": 51.1,
-    "name": "IS-6",
-    "engine": {
-      "type": "Diesel",
-      "name": "V-2-12",
-      "forwardSpeed": 44,
-      "horsepower": 700,
-      "maxRPM": 2100,
-      "reverseSpeed": 17.1,
-      "transmission": {
-        "forwardGears": 8,
-        "neutralSteering": false,
-        "reverseGears": 2
-      }
-    }
-  },
-  {
-    "mass": 18.2,
-    "name": "Ural-375D",
-    "engine": {
-      "type": "Diesel",
-      "name": "ZiL-375",
-      "forwardSpeed": 100,
-      "horsepower": 180,
-      "maxRPM": 2100,
-      "reverseSpeed": 15,
-      "transmission": {
-        "forwardGears": 5,
-        "neutralSteering": false,
-        "reverseGears": 1
-      }
-    }
-  },
-  {
-    "mass": 66.8,
-    "name": "M1A2 SEP V3",
-    "engine": {
-      "type": "Turbine",
-      "name": "Honeywell AGT1500",
-      "forwardSpeed": 68,
-      "horsepower": 1519,
-      "maxRPM": 3000,
-      "reverseSpeed": 38,
-      "transmission": {
-        "forwardGears": 4,
-        "neutralSteering": true,
-        "reverseGears": 2
-      }
-    }
-  },
-  {
-    "mass": 20,
-    "name": "Abandoned Tank Hull",
-    "engine": {
-      "type": "Diesel",
-      "name": "ChTZ V-54",
-      "forwardSpeed": 50,
-      "horsepower": 520,
-      "maxRPM": 2000,
-      "reverseSpeed": 7,
-      "transmission": {
-        "forwardGears": 5,
-        "neutralSteering": false,
-        "reverseGears": 1
-      }
-    }
-  },
-  {
-    "mass": 15,
-    "name": "BMD-4M",
-    "engine": {
-      "type": "Diesel",
-      "name": "UTD-29",
-      "forwardSpeed": 70,
-      "horsepower": 500,
-      "maxRPM": 2600,
-      "reverseSpeed": 20,
-      "transmission": {
-        "forwardGears": 4,
-        "neutralSteering": true,
-        "reverseGears": 2
-      }
-    }
-  },
-  {
-    "mass": 28.5,
-    "name": "Begleitpanzer 57",
-    "engine": {
-      "type": "Diesel",
-      "name": "MTU MB 833 Ea-500",
-      "forwardSpeed": 75,
-      "horsepower": 600,
-      "maxRPM": 2100,
-      "reverseSpeed": 75,
-      "transmission": {
-        "forwardGears": 8,
-        "neutralSteering": true,
-        "reverseGears": 8
-      }
-    }
-  },
-  {
-    "mass": 57,
-    "name": "Leopard 2A4 140MM",
-    "engine": {
-      "type": "Diesel",
-      "name": "MTU MB 873 Ka-501",
-      "forwardSpeed": 68,
-      "horsepower": 1500,
-      "maxRPM": 2600,
-      "reverseSpeed": 31,
-      "transmission": {
-        "forwardGears": 6,
-        "neutralSteering": true,
-        "reverseGears": 3
-      }
-    }
-  },
-  {
-    "mass": 35.5,
-    "name": "Object 775",
-    "engine": {
-      "type": "Diesel",
-      "name": "HPZ 5TDF",
-      "forwardSpeed": 66,
-      "horsepower": 700,
-      "maxRPM": 2800,
-      "reverseSpeed": 4,
-      "transmission": {
-        "forwardGears": 7,
-        "neutralSteering": false,
-        "reverseGears": 1
-      }
-    }
-  },
-  {
-    "mass": 54.5,
-    "name": "K1",
-    "engine": {
-      "type": "Diesel",
-      "name": "MTU MB 871 Ka-501",
-      "forwardSpeed": 65,
-      "horsepower": 1200,
-      "maxRPM": 2600,
-      "reverseSpeed": 32,
-      "transmission": {
-        "forwardGears": 4,
-        "neutralSteering": true,
-        "reverseGears": 2
-      }
-    }
-  },
-  {
-    "mass": 57,
-    "name": "CATTB",
-    "engine": {
-      "type": "Diesel",
-      "name": "XAP-1000",
-      "forwardSpeed": 68,
-      "horsepower": 1500,
-      "maxRPM": 2600,
-      "reverseSpeed": 38,
-      "transmission": {
-        "forwardGears": 4,
-        "neutralSteering": true,
-        "reverseGears": 2
-      }
-    }
-  },
-  {
-    "mass": 55.7,
-    "name": "M1IP",
-    "engine": {
-      "type": "Turbine",
-      "name": "Honeywell AGT1500",
-      "forwardSpeed": 72,
-      "horsepower": 1519,
-      "maxRPM": 3000,
-      "reverseSpeed": 38,
-      "transmission": {
-        "forwardGears": 4,
-        "neutralSteering": true,
-        "reverseGears": 2
-      }
-    }
-  },
-  {
-    "mass": 57.2,
-    "name": "M1A1",
-    "engine": {
-      "type": "Turbine",
-      "name": "Honeywell AGT1500",
-      "forwardSpeed": 68,
-      "horsepower": 1519,
-      "maxRPM": 3000,
-      "reverseSpeed": 38,
-      "transmission": {
-        "forwardGears": 4,
-        "neutralSteering": true,
-        "reverseGears": 2
-      }
-    }
-  },
-  {
-    "mass": 51.9,
-    "name": "M60A2 Starship",
-    "engine": {
-      "type": "Diesel",
-      "name": "AVDS-1790-2",
-      "forwardSpeed": 48,
       "horsepower": 750,
-      "maxRPM": 2400,
-      "reverseSpeed": 11,
-      "transmission": {
-        "forwardGears": 2,
-        "neutralSteering": true,
-        "reverseGears": 1
-      }
-    }
+      "name": "YaMZ 780"
+    },
+    "name": "Kurganets-25",
+    "mass": 25
   },
   {
-    "mass": 48,
-    "name": "M60A1 Add-On Stabilization",
     "engine": {
-      "type": "Diesel",
-      "name": "AVDS-1790-2",
-      "forwardSpeed": 48,
-      "horsepower": 750,
-      "maxRPM": 2400,
-      "reverseSpeed": 11,
       "transmission": {
-        "forwardGears": 2,
-        "neutralSteering": true,
-        "reverseGears": 1
-      }
-    }
-  },
-  {
-    "mass": 55.7,
-    "name": "M1 Abrams",
-    "engine": {
-      "type": "Turbine",
-      "name": "Honeywell AGT1500",
-      "forwardSpeed": 72,
-      "horsepower": 1519,
-      "maxRPM": 3000,
-      "reverseSpeed": 38,
-      "transmission": {
-        "forwardGears": 4,
-        "neutralSteering": true,
-        "reverseGears": 2
-      }
-    }
-  },
-  {
-    "mass": 15.3,
-    "name": "M551 Sheridan",
-    "engine": {
-      "type": "Diesel",
-      "name": "6V53T-5301",
-      "forwardSpeed": 69,
-      "horsepower": 300,
-      "maxRPM": 2800,
-      "reverseSpeed": 15,
-      "transmission": {
-        "forwardGears": 6,
-        "neutralSteering": true,
-        "reverseGears": 2
-      }
-    }
-  },
-  {
-    "mass": 26.5,
-    "name": "Type 89",
-    "engine": {
-      "type": "Diesel",
-      "name": "MHI 6SY31WA",
-      "forwardSpeed": 70,
-      "horsepower": 600,
-      "maxRPM": 2100,
-      "reverseSpeed": 43,
-      "transmission": {
-        "forwardGears": 4,
-        "neutralSteering": true,
-        "reverseGears": 2
-      }
-    }
-  },
-  {
-    "mass": 50,
-    "name": "T-90M",
-    "engine": {
-      "type": "Diesel",
-      "name": "ChTZ V-92S2F",
-      "forwardSpeed": 60,
-      "horsepower": 1130,
-      "maxRPM": 2000,
-      "reverseSpeed": 4,
-      "transmission": {
-        "forwardGears": 7,
+        "reverseGears": 1,
         "neutralSteering": false,
-        "reverseGears": 1
-      }
-    }
-  },
-  {
-    "mass": 47,
-    "name": "Burlak",
-    "engine": {
-      "type": "Diesel",
-      "name": "ChTZ V-84-1",
-      "forwardSpeed": 60,
-      "horsepower": 840,
-      "maxRPM": 2000,
-      "reverseSpeed": 4,
-      "transmission": {
-        "forwardGears": 7,
-        "neutralSteering": false,
-        "reverseGears": 1
-      }
-    }
-  },
-  {
-    "mass": 55.4,
-    "name": "Leopard 2K",
-    "engine": {
-      "type": "Diesel",
-      "name": "MTU MB 873 Ka-501",
-      "forwardSpeed": 68,
-      "horsepower": 1500,
-      "maxRPM": 2600,
-      "reverseSpeed": 31,
-      "transmission": {
-        "forwardGears": 6,
-        "neutralSteering": true,
-        "reverseGears": 3
-      }
-    }
-  },
-  {
-    "mass": 42.5,
-    "name": "Strv 103C",
-    "engine": {
-      "type": "Turbine",
-      "name": "6V53T + Caterpillar 553",
-      "forwardSpeed": 49,
-      "horsepower": 600,
-      "maxRPM": 3960,
-      "reverseSpeed": 44,
-      "transmission": {
-        "forwardGears": 7,
-        "neutralSteering": true,
-        "reverseGears": 6
-      }
-    }
-  },
-  {
-    "mass": 62.5,
-    "name": "Challenger 1",
-    "engine": {
-      "type": "Diesel",
-      "name": "Perkins CV12",
-      "forwardSpeed": 56,
-      "horsepower": 1217,
-      "maxRPM": 2300,
-      "reverseSpeed": 38,
-      "transmission": {
-        "forwardGears": 6,
-        "neutralSteering": true,
-        "reverseGears": 2
-      }
-    }
-  },
-  {
-    "mass": 54,
-    "name": "Ariete C1",
-    "engine": {
-      "type": "Diesel",
-      "name": "Fiat MTCA 12V",
-      "forwardSpeed": 65,
-      "horsepower": 1300,
-      "maxRPM": 2300,
-      "reverseSpeed": 46,
-      "transmission": {
-        "forwardGears": 8,
-        "neutralSteering": true,
-        "reverseGears": 4
-      }
-    }
-  },
-  {
-    "mass": 64.1,
-    "name": "Leopard 2A7V",
-    "engine": {
-      "type": "Diesel",
-      "name": "MTU MB 873 Ka-501",
-      "forwardSpeed": 68,
-      "horsepower": 1500,
-      "maxRPM": 2600,
-      "reverseSpeed": 31,
-      "transmission": {
-        "forwardGears": 6,
-        "neutralSteering": true,
-        "reverseGears": 3
-      }
-    }
-  },
-  {
-    "mass": 30.6,
-    "name": "T-34E",
-    "engine": {
-      "type": "Diesel",
-      "name": "Model V-2-34",
-      "forwardSpeed": 55,
-      "horsepower": 500,
-      "maxRPM": 1800,
-      "reverseSpeed": 8.4,
-      "transmission": {
-        "forwardGears": 6,
-        "neutralSteering": false,
-        "reverseGears": 1
-      }
-    }
-  },
-  {
-    "mass": 52.2,
-    "name": "Centurion Mk 5 AVRE",
-    "engine": {
-      "type": "Diesel",
-      "name": "Rolls-Royce Meteor 4B",
-      "forwardSpeed": 35,
-      "horsepower": 650,
-      "maxRPM": 2550,
-      "reverseSpeed": 12,
-      "transmission": {
-        "forwardGears": 5,
-        "neutralSteering": true,
-        "reverseGears": 2
-      }
-    }
-  },
-  {
-    "mass": 51,
-    "name": "T-84 Oplot-M",
-    "engine": {
-      "type": "Diesel",
-      "name": "KMDB 6TD-2",
-      "forwardSpeed": 70,
-      "horsepower": 1200,
-      "maxRPM": 2400,
-      "reverseSpeed": 31,
-      "transmission": {
-        "forwardGears": 7,
-        "neutralSteering": false,
-        "reverseGears": 4
-      }
-    }
-  },
-  {
-    "mass": 59.9,
-    "name": "Leopard 2A6",
-    "engine": {
-      "type": "Diesel",
-      "name": "MTU MB 873 Ka-501",
-      "forwardSpeed": 68,
-      "horsepower": 1500,
-      "maxRPM": 2600,
-      "reverseSpeed": 31,
-      "transmission": {
-        "forwardGears": 6,
-        "neutralSteering": true,
-        "reverseGears": 3
-      }
-    }
-  },
-  {
-    "mass": 2.9,
-    "name": "Wiesel 1A2",
-    "engine": {
-      "type": "Diesel",
-      "name": "Audi 2.1 diesel",
-      "forwardSpeed": 80,
-      "horsepower": 87,
-      "maxRPM": 4500,
-      "reverseSpeed": 25,
-      "transmission": {
-        "forwardGears": 6,
-        "neutralSteering": true,
-        "reverseGears": 2
-      }
-    }
-  },
-  {
-    "mass": 2.9,
-    "name": "Wiesel 1A4",
-    "engine": {
-      "type": "Diesel",
-      "name": "Audi 2.1 diesel",
-      "forwardSpeed": 80,
-      "horsepower": 87,
-      "maxRPM": 4500,
-      "reverseSpeed": 25,
-      "transmission": {
-        "forwardGears": 6,
-        "neutralSteering": true,
-        "reverseGears": 2
-      }
-    }
-  },
-  {
-    "mass": 28,
-    "name": "BTR-4",
-    "engine": {
-      "type": "Diesel",
-      "name": "DEUTZ EURO III",
-      "forwardSpeed": 110,
-      "horsepower": 598,
-      "maxRPM": 2000,
-      "reverseSpeed": 15,
-      "transmission": {
-        "forwardGears": 5,
-        "neutralSteering": false,
-        "reverseGears": 1
-      }
-    }
-  },
-  {
-    "mass": 44,
-    "name": "IS-1",
-    "engine": {
-      "type": "Diesel",
-      "name": "V-2IS",
-      "forwardSpeed": 37,
-      "horsepower": 520,
-      "maxRPM": 2000,
-      "reverseSpeed": 14.3,
-      "transmission": {
-        "forwardGears": 8,
-        "neutralSteering": false,
-        "reverseGears": 2
-      }
-    }
-  },
-  {
-    "mass": 29.1,
-    "name": "Marder A1",
-    "engine": {
-      "type": "Diesel",
-      "name": "MTU MB 833 Ea-500",
-      "forwardSpeed": 75,
-      "horsepower": 600,
-      "maxRPM": 2100,
-      "reverseSpeed": 75,
-      "transmission": {
-        "forwardGears": 8,
-        "neutralSteering": true,
-        "reverseGears": 8
-      }
-    }
-  },
-  {
-    "mass": 52,
-    "name": "Leopard 2 Giraffe",
-    "engine": {
-      "type": "Diesel",
-      "name": "MTU MB 873 Ka-501",
-      "forwardSpeed": 68,
-      "horsepower": 1500,
-      "maxRPM": 2600,
-      "reverseSpeed": 31,
-      "transmission": {
-        "forwardGears": 6,
-        "neutralSteering": true,
-        "reverseGears": 3
-      }
-    }
-  },
-  {
-    "mass": 55.4,
-    "name": "Panther EVO",
-    "engine": {
-      "type": "Diesel",
-      "name": "MTU MB 873 Ka-501",
-      "forwardSpeed": 68,
-      "horsepower": 1500,
-      "maxRPM": 2600,
-      "reverseSpeed": 31,
-      "transmission": {
-        "forwardGears": 6,
-        "neutralSteering": true,
-        "reverseGears": 3
-      }
-    }
-  },
-  {
-    "mass": 44.5,
-    "name": "T-72M2",
-    "engine": {
-      "type": "Diesel",
-      "name": "S12U",
-      "forwardSpeed": 60,
-      "horsepower": 850,
-      "maxRPM": 2000,
-      "reverseSpeed": 4,
-      "transmission": {
-        "forwardGears": 7,
-        "neutralSteering": false,
-        "reverseGears": 1
-      }
-    }
-  },
-  {
-    "mass": 12,
-    "name": "MT-LB AA",
-    "engine": {
-      "type": "Diesel",
-      "name": "YaMZ 238",
-      "forwardSpeed": 62,
-      "horsepower": 240,
-      "maxRPM": 2100,
-      "reverseSpeed": 10,
-      "transmission": {
-        "forwardGears": 11,
-        "neutralSteering": false,
-        "reverseGears": 2
-      }
-    }
-  },
-  {
-    "mass": 1.8,
-    "name": "UAZ-3909",
-    "engine": {
-      "type": "Diesel",
-      "name": "UMZ-417",
-      "forwardSpeed": 115,
-      "horsepower": 90,
-      "maxRPM": 4000,
-      "reverseSpeed": 25,
-      "transmission": {
-        "forwardGears": 5,
-        "neutralSteering": false,
-        "reverseGears": 1
-      }
-    }
-  },
-  {
-    "mass": 18.2,
-    "name": "BM-21 Grad",
-    "engine": {
-      "type": "Diesel",
-      "name": "ZiL-375",
-      "forwardSpeed": 100,
-      "horsepower": 180,
-      "maxRPM": 2100,
-      "reverseSpeed": 15,
-      "transmission": {
-        "forwardGears": 5,
-        "neutralSteering": false,
-        "reverseGears": 1
-      }
-    }
-  },
-  {
-    "mass": 38,
-    "name": "Object 166",
-    "engine": {
-      "type": "Diesel",
-      "name": "ChTZ V-55V",
-      "forwardSpeed": 50,
-      "horsepower": 580,
-      "maxRPM": 2000,
-      "reverseSpeed": 7,
-      "transmission": {
-        "forwardGears": 5,
-        "neutralSteering": false,
-        "reverseGears": 1
-      }
-    }
-  },
-  {
-    "mass": 29,
-    "name": "Desert Warrior",
-    "engine": {
-      "type": "Diesel",
-      "name": "Perkins CV-8",
-      "forwardSpeed": 75,
-      "horsepower": 550,
-      "maxRPM": 2300,
-      "reverseSpeed": 75,
-      "transmission": {
-        "forwardGears": 7,
-        "neutralSteering": true,
-        "reverseGears": 4
-      }
-    }
-  },
-  {
-    "mass": 41,
-    "name": "Class 3(P)",
-    "engine": {
-      "type": "Diesel",
-      "name": "TH800 Engine",
-      "forwardSpeed": 86,
-      "horsepower": 786,
-      "maxRPM": 2400,
-      "reverseSpeed": 35,
-      "transmission": {
-        "forwardGears": 5,
-        "neutralSteering": false,
-        "reverseGears": 2
-      }
-    }
-  },
-  {
-    "mass": 68,
-    "name": "IS-7",
-    "engine": {
-      "type": "Diesel",
-      "name": "M50T",
-      "forwardSpeed": 60,
-      "horsepower": 1050,
-      "maxRPM": 1850,
-      "reverseSpeed": 23,
-      "transmission": {
-        "forwardGears": 8,
-        "neutralSteering": false,
-        "reverseGears": 2
-      }
-    }
-  },
-  {
-    "mass": 14,
-    "name": "PT-76E",
-    "engine": {
-      "type": "Diesel",
-      "name": "UTD-20",
-      "forwardSpeed": 44,
-      "horsepower": 300,
-      "maxRPM": 2600,
-      "reverseSpeed": 6,
-      "transmission": {
-        "forwardGears": 5,
-        "neutralSteering": false,
-        "reverseGears": 1
-      }
-    }
-  },
-  {
-    "mass": 188,
-    "name": "Maus",
-    "engine": {
-      "type": "Diesel",
-      "name": "MB 517",
-      "forwardSpeed": 20.7,
-      "horsepower": 1200,
-      "maxRPM": 3000,
-      "reverseSpeed": 20.7,
-      "transmission": {
-        "forwardGears": 8,
-        "neutralSteering": false,
-        "reverseGears": 8
-      }
-    }
-  },
-  {
-    "mass": 37,
-    "name": "T-62",
-    "engine": {
-      "type": "Diesel",
-      "name": "ChTZ V-55V",
-      "forwardSpeed": 50,
-      "horsepower": 580,
-      "maxRPM": 2000,
-      "reverseSpeed": 7,
-      "transmission": {
-        "forwardGears": 5,
-        "neutralSteering": false,
-        "reverseGears": 1
-      }
-    }
-  },
-  {
-    "mass": 20,
-    "name": "HSTV-L",
-    "engine": {
-      "type": "Turbine",
-      "name": "Lycoming 650 gas turbine",
-      "forwardSpeed": 83,
-      "horsepower": 650,
-      "maxRPM": 3000,
-      "reverseSpeed": 24,
-      "transmission": {
-        "forwardGears": 8,
-        "neutralSteering": true,
-        "reverseGears": 4
-      }
-    }
-  },
-  {
-    "mass": 29.9,
-    "name": "M36B2 Jackson",
-    "engine": {
-      "type": "Diesel",
-      "name": "GM 6046",
-      "forwardSpeed": 48,
-      "horsepower": 410,
-      "maxRPM": 2100,
-      "reverseSpeed": 6.2,
-      "transmission": {
-        "forwardGears": 5,
-        "neutralSteering": false,
-        "reverseGears": 1
-      }
-    }
-  },
-  {
-    "mass": 46,
-    "name": "T-72B3",
-    "engine": {
-      "type": "Diesel",
-      "name": "ChTZ V-84-1",
-      "forwardSpeed": 60,
-      "horsepower": 840,
-      "maxRPM": 2000,
-      "reverseSpeed": 4,
-      "transmission": {
-        "forwardGears": 7,
-        "neutralSteering": false,
-        "reverseGears": 1
-      }
-    }
-  },
-  {
-    "mass": 34.5,
-    "name": "IT-1",
-    "engine": {
-      "type": "Diesel",
-      "name": "ChTZ V-55V",
-      "forwardSpeed": 50,
-      "horsepower": 580,
-      "maxRPM": 2000,
-      "reverseSpeed": 7,
-      "transmission": {
-        "forwardGears": 5,
-        "neutralSteering": false,
-        "reverseGears": 1
-      }
-    }
-  },
-  {
-    "mass": 1.56,
-    "name": "Kettenkrad",
-    "engine": {
-      "type": "Diesel",
-      "name": "OHV",
-      "forwardSpeed": 70,
-      "horsepower": 26,
-      "maxRPM": 3400,
-      "reverseSpeed": 15,
-      "transmission": {
-        "forwardGears": 3,
-        "neutralSteering": true,
-        "reverseGears": 1
-      }
-    }
-  },
-  {
-    "mass": 38,
-    "name": "T-64A",
-    "engine": {
-      "type": "Diesel",
-      "name": "HPZ 5TDF",
-      "forwardSpeed": 61,
-      "horsepower": 700,
-      "maxRPM": 2800,
-      "reverseSpeed": 4.2,
-      "transmission": {
-        "forwardGears": 7,
-        "neutralSteering": false,
-        "reverseGears": 1
-      }
-    }
-  },
-  {
-    "mass": 56,
-    "name": "Cheonma-2",
-    "engine": {
-      "type": "Diesel",
-      "name": "HP150",
-      "forwardSpeed": 75,
-      "horsepower": 1500,
-      "maxRPM": 2000,
-      "reverseSpeed": 34,
-      "transmission": {
-        "forwardGears": 8,
-        "neutralSteering": true,
-        "reverseGears": 3
-      }
-    }
-  },
-  {
-    "mass": 16,
-    "name": "AMX-10RC",
-    "engine": {
-      "type": "Diesel",
-      "name": "6F11 SRX",
-      "forwardSpeed": 85,
-      "horsepower": 280,
-      "maxRPM": 2600,
-      "reverseSpeed": 65,
-      "transmission": {
-        "forwardGears": 4,
-        "neutralSteering": true,
-        "reverseGears": 2
-      }
-    }
-  },
-  {
-    "mass": 53,
-    "name": "M48 Super",
-    "engine": {
-      "type": "Diesel",
-      "name": "MTU MB 837 Ka-501",
-      "forwardSpeed": 56,
-      "horsepower": 1000,
-      "maxRPM": 2300,
-      "reverseSpeed": 24,
-      "transmission": {
-        "forwardGears": 8,
-        "neutralSteering": true,
-        "reverseGears": 4
-      }
-    }
-  },
-  {
-    "mass": 19.5,
-    "name": "LOSAT M8",
-    "engine": {
-      "type": "Diesel",
-      "name": "Detroit 6V92TA",
-      "forwardSpeed": 72,
-      "horsepower": 580,
-      "maxRPM": 2400,
-      "reverseSpeed": 15,
-      "transmission": {
-        "forwardGears": 6,
-        "neutralSteering": true,
-        "reverseGears": 2
-      }
-    }
-  },
-  {
-    "mass": 15,
-    "name": "BTR-82A",
-    "engine": {
-      "type": "Diesel",
-      "name": "KamAZ 740.14-300",
-      "forwardSpeed": 90,
-      "horsepower": 300,
-      "maxRPM": 2600,
-      "reverseSpeed": 12,
-      "transmission": {
-        "forwardGears": 5,
-        "neutralSteering": false,
-        "reverseGears": 1
-      }
-    }
-  },
-  {
-    "mass": 44,
-    "name": "KF41 Lynx",
-    "engine": {
-      "type": "Diesel",
-      "name": "Liebherr D976",
-      "forwardSpeed": 70,
-      "horsepower": 1140,
-      "maxRPM": 2300,
-      "reverseSpeed": 70,
-      "transmission": {
-        "forwardGears": 6,
-        "neutralSteering": true,
-        "reverseGears": 6
-      }
-    }
-  },
-  {
-    "mass": 12.9,
-    "name": "LAV-25",
-    "engine": {
-      "type": "Diesel",
-      "name": "Detroit 6V53T",
-      "forwardSpeed": 100,
-      "horsepower": 300,
-      "maxRPM": 2800,
-      "reverseSpeed": 17.6,
-      "transmission": {
-        "forwardGears": 5,
-        "neutralSteering": false,
-        "reverseGears": 1
-      }
-    }
-  },
-  {
-    "mass": 44.9,
-    "name": "M48A2 Patton",
-    "engine": {
-      "type": "Diesel",
-      "name": "AV1790",
-      "forwardSpeed": 45,
-      "horsepower": 830,
-      "maxRPM": 2800,
-      "reverseSpeed": 8,
-      "transmission": {
-        "forwardGears": 6,
-        "neutralSteering": true,
-        "reverseGears": 2
-      }
-    }
-  },
-  {
-    "mass": 48,
-    "name": "BMPT Terminator",
-    "engine": {
-      "type": "Diesel",
-      "name": "V-92S2",
-      "forwardSpeed": 60,
-      "horsepower": 1000,
-      "maxRPM": 2000,
-      "reverseSpeed": 4,
-      "transmission": {
-        "forwardGears": 7,
-        "neutralSteering": false,
-        "reverseGears": 1
-      }
-    }
-  },
-  {
-    "mass": 2.7,
-    "name": "Humvee",
-    "engine": {
-      "type": "Diesel",
-      "name": "YaMZ-5347-10",
-      "forwardSpeed": 90,
-      "horsepower": 215,
-      "maxRPM": 4000,
-      "reverseSpeed": 22,
-      "transmission": {
-        "forwardGears": 4,
-        "neutralSteering": false,
-        "reverseGears": 1
-      }
-    }
-  },
-  {
-    "mass": 40,
-    "name": "OBT-2 Super",
-    "engine": {
-      "type": "Diesel",
-      "name": "ChTZ V-55V",
-      "forwardSpeed": 50,
-      "horsepower": 580,
-      "maxRPM": 2000,
-      "reverseSpeed": 7,
-      "transmission": {
-        "forwardGears": 5,
-        "neutralSteering": false,
-        "reverseGears": 1
-      }
-    }
-  },
-  {
-    "mass": 4,
-    "name": "MiKi Truck Company Model 2",
-    "engine": {
-      "type": "Diesel",
-      "name": "3VZ-E V6",
-      "forwardSpeed": 110,
-      "horsepower": 150,
-      "maxRPM": 4000,
-      "reverseSpeed": 15,
-      "transmission": {
-        "forwardGears": 5,
-        "neutralSteering": false,
-        "reverseGears": 1
-      }
-    }
-  },
-  {
-    "mass": 10,
-    "name": "Abandoned IFV Hull",
-    "engine": {
-      "type": "Diesel",
-      "name": "UTD-20",
-      "forwardSpeed": 65,
-      "horsepower": 300,
-      "maxRPM": 2600,
-      "reverseSpeed": 11,
-      "transmission": {
-        "forwardGears": 5,
-        "neutralSteering": false,
-        "reverseGears": 1
-      }
-    }
-  },
-  {
-    "mass": 5.5,
-    "name": "MiKi Truck Company Model 1 ARMOURED",
-    "engine": {
-      "type": "Diesel",
-      "name": "3VZ-E V6",
-      "forwardSpeed": 110,
-      "horsepower": 150,
-      "maxRPM": 4000,
-      "reverseSpeed": 15,
-      "transmission": {
-        "forwardGears": 5,
-        "neutralSteering": false,
-        "reverseGears": 1
-      }
-    }
-  },
-  {
-    "mass": 13.4,
-    "name": "RDF/LT",
-    "engine": {
-      "type": "Diesel",
-      "name": "6V53T-5301",
-      "forwardSpeed": 64,
-      "horsepower": 300,
-      "maxRPM": 2800,
-      "reverseSpeed": 15,
-      "transmission": {
-        "forwardGears": 6,
-        "neutralSteering": true,
-        "reverseGears": 2
-      }
-    }
-  },
-  {
-    "mass": 62.4,
-    "name": "KV-220",
-    "engine": {
-      "type": "Diesel",
-      "name": "V-2SN",
-      "forwardSpeed": 34,
-      "horsepower": 850,
-      "maxRPM": 1900,
-      "reverseSpeed": 6.2,
-      "transmission": {
-        "forwardGears": 5,
-        "neutralSteering": false,
-        "reverseGears": 1
-      }
-    }
-  },
-  {
-    "mass": 1.2,
-    "name": "Willys MB",
-    "engine": {
-      "type": "Diesel",
-      "name": "L134",
-      "forwardSpeed": 89,
-      "horsepower": 60,
-      "maxRPM": 4000,
-      "reverseSpeed": 15,
-      "transmission": {
-        "forwardGears": 3,
-        "neutralSteering": false,
-        "reverseGears": 1
-      }
-    }
-  },
-  {
-    "mass": 9.5,
-    "name": "LT-SE",
-    "engine": {
-      "type": "Turbine",
-      "name": "TK-53",
-      "forwardSpeed": 75,
-      "horsepower": 200,
-      "maxRPM": 3000,
-      "reverseSpeed": 10,
-      "transmission": {
-        "forwardGears": 6,
-        "neutralSteering": true,
-        "reverseGears": 1
-      }
-    }
-  },
-  {
-    "mass": 38,
-    "name": "Type 87",
-    "engine": {
-      "type": "Diesel",
-      "name": "MHI 10ZF 22WT",
-      "forwardSpeed": 53,
-      "horsepower": 750,
-      "maxRPM": 2200,
-      "reverseSpeed": 7.4,
-      "transmission": {
-        "forwardGears": 6,
-        "neutralSteering": true,
-        "reverseGears": 1
-      }
-    }
-  },
-  {
-    "mass": 26,
-    "name": "M109A6",
-    "engine": {
-      "type": "Diesel",
-      "name": "8V71T",
-      "forwardSpeed": 56,
-      "horsepower": 405,
-      "maxRPM": 2300,
-      "reverseSpeed": 12,
-      "transmission": {
-        "forwardGears": 8,
-        "neutralSteering": false,
-        "reverseGears": 4
-      }
-    }
-  },
-  {
-    "mass": 42,
-    "name": "2S19 Msta-S",
-    "engine": {
-      "type": "Diesel",
-      "name": "ChTZ V-84-1",
-      "forwardSpeed": 60,
-      "horsepower": 840,
-      "maxRPM": 2000,
-      "reverseSpeed": 4,
-      "transmission": {
-        "forwardGears": 7,
-        "neutralSteering": false,
-        "reverseGears": 1
-      }
-    }
-  },
-  {
-    "mass": 16.5,
-    "name": "M1126",
-    "engine": {
-      "type": "Diesel",
-      "name": "Caterpillar 3126",
-      "forwardSpeed": 96,
-      "horsepower": 350,
-      "maxRPM": 2400,
+        "forwardGears": 6
+      },
       "reverseSpeed": 12.5,
-      "transmission": {
-        "forwardGears": 6,
-        "neutralSteering": false,
-        "reverseGears": 1
-      }
-    }
-  },
-  {
-    "mass": 41,
-    "name": "2S6 Tunguska",
-    "engine": {
+      "forwardSpeed": 96,
       "type": "Diesel",
-      "name": "ChTZ V-84DT",
-      "forwardSpeed": 65,
-      "horsepower": 780,
-      "maxRPM": 2000,
-      "reverseSpeed": 65,
-      "transmission": {
-        "forwardGears": 7,
-        "neutralSteering": true,
-        "reverseGears": 7
-      }
-    }
-  },
-  {
-    "mass": 18.7,
-    "name": "AFT-10",
-    "engine": {
-      "type": "Diesel",
-      "name": "Type 6V150",
-      "forwardSpeed": 70,
-      "horsepower": 670,
-      "maxRPM": 2000,
-      "reverseSpeed": 17.2,
-      "transmission": {
-        "forwardGears": 4,
-        "neutralSteering": true,
-        "reverseGears": 2
-      }
-    }
-  },
-  {
-    "mass": 48,
-    "name": "IS-3",
-    "engine": {
-      "type": "Diesel",
-      "name": "V-2IS",
-      "forwardSpeed": 40,
-      "horsepower": 520,
-      "maxRPM": 2000,
-      "reverseSpeed": 15.5,
-      "transmission": {
-        "forwardGears": 8,
-        "neutralSteering": false,
-        "reverseGears": 2
-      }
-    }
-  },
-  {
-    "mass": 41,
-    "name": "T-15 Armata",
-    "engine": {
-      "type": "Diesel",
-      "name": "12N360",
-      "forwardSpeed": 80,
-      "horsepower": 1500,
-      "maxRPM": 2000,
-      "reverseSpeed": 80,
-      "transmission": {
-        "forwardGears": 8,
-        "neutralSteering": true,
-        "reverseGears": 8
-      }
-    }
-  },
-  {
-    "mass": 28,
-    "name": "ZSU-57-2",
-    "engine": {
-      "type": "Diesel",
-      "name": "V-54",
-      "forwardSpeed": 50,
-      "horsepower": 520,
-      "maxRPM": 2000,
-      "reverseSpeed": 7,
-      "transmission": {
-        "forwardGears": 5,
-        "neutralSteering": false,
-        "reverseGears": 1
-      }
-    }
-  },
-  {
-    "mass": 55,
-    "name": "Object 477",
-    "engine": {
-      "type": "Diesel",
-      "name": "KMDB 6TD-A",
-      "forwardSpeed": 62,
-      "horsepower": 1500,
       "maxRPM": 2400,
-      "reverseSpeed": 12,
-      "transmission": {
-        "forwardGears": 4,
-        "neutralSteering": false,
-        "reverseGears": 1
-      }
-    }
+      "horsepower": 350,
+      "name": "Caterpillar 3126"
+    },
+    "name": "M1128 MGS",
+    "mass": 18.8
   },
   {
-    "mass": 6,
-    "name": "Bumpee",
     "engine": {
-      "type": "Diesel",
-      "name": "YaMZ-5347-10",
-      "forwardSpeed": 84,
-      "horsepower": 215,
-      "maxRPM": 4000,
-      "reverseSpeed": 18,
       "transmission": {
-        "forwardGears": 4,
-        "neutralSteering": false,
-        "reverseGears": 1
-      }
-    }
+        "reverseGears": 4,
+        "neutralSteering": true,
+        "forwardGears": 4
+      },
+      "reverseSpeed": 78,
+      "forwardSpeed": 78,
+      "type": "Diesel",
+      "maxRPM": 2600,
+      "horsepower": 1500,
+      "name": "XAP-1000"
+    },
+    "name": "Abrams X",
+    "mass": 49
   },
   {
-    "mass": 36.5,
-    "name": "T-64R",
     "engine": {
-      "type": "Diesel",
-      "name": "HPZ 5TDF",
-      "forwardSpeed": 61,
-      "horsepower": 700,
-      "maxRPM": 2800,
-      "reverseSpeed": 4.2,
       "transmission": {
-        "forwardGears": 7,
+        "reverseGears": 1,
         "neutralSteering": false,
-        "reverseGears": 1
-      }
-    }
-  },
-  {
-    "mass": 30,
-    "name": "T-34",
-    "engine": {
-      "type": "Diesel",
-      "name": "Model V-2-34",
-      "forwardSpeed": 55,
-      "horsepower": 500,
-      "maxRPM": 1800,
-      "reverseSpeed": 8.4,
-      "transmission": {
-        "forwardGears": 6,
-        "neutralSteering": false,
-        "reverseGears": 1
-      }
-    }
-  },
-  {
-    "mass": 38,
-    "name": "Object 450",
-    "engine": {
-      "type": "Diesel",
-      "name": "HPZ 5TDF",
-      "forwardSpeed": 61,
-      "horsepower": 700,
-      "maxRPM": 2800,
-      "reverseSpeed": 4,
-      "transmission": {
-        "forwardGears": 7,
-        "neutralSteering": false,
-        "reverseGears": 1
-      }
-    }
-  },
-  {
-    "mass": 42,
-    "name": "T-62M-1",
-    "engine": {
-      "type": "Diesel",
-      "name": "ChTZ V-46-5M",
-      "forwardSpeed": 50,
-      "horsepower": 690,
-      "maxRPM": 2000,
+        "forwardGears": 5
+      },
       "reverseSpeed": 7,
+      "forwardSpeed": 50,
+      "type": "Diesel",
+      "maxRPM": 2000,
+      "horsepower": 580,
+      "name": "ChTZ V-55V"
+    },
+    "name": "BTR-55",
+    "mass": 30
+  },
+  {
+    "engine": {
       "transmission": {
-        "forwardGears": 5,
+        "reverseGears": 3,
+        "neutralSteering": true,
+        "forwardGears": 6
+      },
+      "reverseSpeed": 45,
+      "forwardSpeed": 70,
+      "type": "Diesel",
+      "maxRPM": 2100,
+      "horsepower": 550,
+      "name": "Scania DSI14"
+    },
+    "name": "Strf 9040C",
+    "mass": 28.5
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 1,
         "neutralSteering": false,
-        "reverseGears": 1
-      }
-    }
+        "forwardGears": 5
+      },
+      "reverseSpeed": 6,
+      "forwardSpeed": 44,
+      "type": "Diesel",
+      "maxRPM": 2100,
+      "horsepower": 240,
+      "name": "V-6"
+    },
+    "name": "PT-76B",
+    "mass": 14
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 1,
+        "neutralSteering": false,
+        "forwardGears": 7
+      },
+      "reverseSpeed": 4.2,
+      "forwardSpeed": 61,
+      "type": "Diesel",
+      "maxRPM": 2800,
+      "horsepower": 850,
+      "name": "HPZ 5TDFM"
+    },
+    "name": "T-64BM \"Bulat\"",
+    "mass": 47
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 1,
+        "neutralSteering": false,
+        "forwardGears": 4
+      },
+      "reverseSpeed": 11.1,
+      "forwardSpeed": 70,
+      "type": "Turbine",
+      "maxRPM": 3154,
+      "horsepower": 1250,
+      "name": "GTD-1250"
+    },
+    "name": "T-80BVM",
+    "mass": 47
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 1,
+        "neutralSteering": false,
+        "forwardGears": 5
+      },
+      "reverseSpeed": 25,
+      "forwardSpeed": 140,
+      "type": "Diesel",
+      "maxRPM": 4000,
+      "horsepower": 215,
+      "name": "YaMZ-5347-10"
+    },
+    "name": "GAZ Tigr",
+    "mass": 7.2
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 1,
+        "neutralSteering": true,
+        "forwardGears": 2
+      },
+      "reverseSpeed": 11,
+      "forwardSpeed": 48,
+      "type": "Diesel",
+      "maxRPM": 2400,
+      "horsepower": 750,
+      "name": "AVDS-1790-2"
+    },
+    "name": "120S",
+    "mass": 56.3
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 2,
+        "neutralSteering": true,
+        "forwardGears": 4
+      },
+      "reverseSpeed": 20,
+      "forwardSpeed": 70,
+      "type": "Diesel",
+      "maxRPM": 2600,
+      "horsepower": 500,
+      "name": "UTD-29"
+    },
+    "name": "Kornet D BMD-4M",
+    "mass": 15
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 1,
+        "neutralSteering": false,
+        "forwardGears": 4
+      },
+      "reverseSpeed": 10,
+      "forwardSpeed": 50,
+      "type": "Diesel",
+      "maxRPM": 4000,
+      "horsepower": 73,
+      "name": "5.55 L ZiS-5"
+    },
+    "name": "RSZO-1",
+    "mass": 4.23
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 6,
+        "neutralSteering": true,
+        "forwardGears": 6
+      },
+      "reverseSpeed": 70,
+      "forwardSpeed": 70,
+      "type": "Diesel",
+      "maxRPM": 3800,
+      "horsepower": 800,
+      "name": "MTU MT 892 Ka-501"
+    },
+    "name": "PUMA",
+    "mass": 43
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 1,
+        "neutralSteering": false,
+        "forwardGears": 5
+      },
+      "reverseSpeed": 15,
+      "forwardSpeed": 89,
+      "type": "Diesel",
+      "maxRPM": 1800,
+      "horsepower": 270,
+      "name": "6CTA8.3 IMO 2"
+    },
+    "name": "M1117 ASV",
+    "mass": 11
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 1,
+        "neutralSteering": false,
+        "forwardGears": 5
+      },
+      "reverseSpeed": 11,
+      "forwardSpeed": 40,
+      "type": "Diesel",
+      "maxRPM": 2000,
+      "horsepower": 600,
+      "name": "V-2K"
+    },
+    "name": "KV-5",
+    "mass": 100
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 1,
+        "neutralSteering": false,
+        "forwardGears": 7
+      },
+      "reverseSpeed": 4,
+      "forwardSpeed": 60,
+      "type": "Diesel",
+      "maxRPM": 2000,
+      "horsepower": 840,
+      "name": "ChTZ V-84-1"
+    },
+    "name": "Tutel",
+    "mass": 47
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 1,
+        "neutralSteering": false,
+        "forwardGears": 5
+      },
+      "reverseSpeed": 11,
+      "forwardSpeed": 65,
+      "type": "Diesel",
+      "maxRPM": 2600,
+      "horsepower": 300,
+      "name": "UTD-20"
+    },
+    "name": "BMP-2",
+    "mass": 14.5
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 4,
+        "neutralSteering": true,
+        "forwardGears": 8
+      },
+      "reverseSpeed": 25,
+      "forwardSpeed": 65,
+      "type": "Diesel",
+      "maxRPM": 2200,
+      "horsepower": 830,
+      "name": "MTU MB 838 CaM 500"
+    },
+    "name": "Leopard 1A5",
+    "mass": 42.5
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 1,
+        "neutralSteering": false,
+        "forwardGears": 3
+      },
+      "reverseSpeed": 15,
+      "forwardSpeed": 89,
+      "type": "Diesel",
+      "maxRPM": 4000,
+      "horsepower": 72,
+      "name": "F4-134 Hurricane"
+    },
+    "name": "M38",
+    "mass": 1.2
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 8,
+        "neutralSteering": true,
+        "forwardGears": 8
+      },
+      "reverseSpeed": 75,
+      "forwardSpeed": 75,
+      "type": "Diesel",
+      "maxRPM": 2100,
+      "horsepower": 600,
+      "name": "MTU MB 833 Ea-500"
+    },
+    "name": "Marder 1A3",
+    "mass": 33.5
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 1,
+        "neutralSteering": false,
+        "forwardGears": 5
+      },
+      "reverseSpeed": 11,
+      "forwardSpeed": 80,
+      "type": "Diesel",
+      "maxRPM": 2600,
+      "horsepower": 241,
+      "name": "5D-20"
+    },
+    "name": "BMD-2",
+    "mass": 11.5
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 2,
+        "neutralSteering": false,
+        "forwardGears": 6
+      },
+      "reverseSpeed": 15,
+      "forwardSpeed": 64,
+      "type": "Diesel",
+      "maxRPM": 2800,
+      "horsepower": 212,
+      "name": "6V53"
+    },
+    "name": "M901ITV",
+    "mass": 11.8
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 2,
+        "neutralSteering": true,
+        "forwardGears": 6
+      },
+      "reverseSpeed": 11.1,
+      "forwardSpeed": 48,
+      "type": "Diesel",
+      "maxRPM": 2550,
+      "horsepower": 760,
+      "name": "Leyland L60"
+    },
+    "name": "Chieftain Mk 5",
+    "mass": 55
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 1,
+        "neutralSteering": true,
+        "forwardGears": 2
+      },
+      "reverseSpeed": 11,
+      "forwardSpeed": 48,
+      "type": "Diesel",
+      "maxRPM": 2400,
+      "horsepower": 750,
+      "name": "AVDS-1790-2"
+    },
+    "name": "M60A1 RISE Passive",
+    "mass": 53.2
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 1,
+        "neutralSteering": false,
+        "forwardGears": 5
+      },
+      "reverseSpeed": 12,
+      "forwardSpeed": 100,
+      "type": "Diesel",
+      "maxRPM": 2600,
+      "horsepower": 140,
+      "name": "GAZ-41"
+    },
+    "name": "BRDM-2 Konkurs",
+    "mass": 7
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 1,
+        "neutralSteering": false,
+        "forwardGears": 5
+      },
+      "reverseSpeed": 5.9,
+      "forwardSpeed": 59,
+      "type": "Diesel",
+      "maxRPM": 2000,
+      "horsepower": 865,
+      "name": "12V150ZLD"
+    },
+    "name": "ZTZ96A",
+    "mass": 42.8
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 1,
+        "neutralSteering": false,
+        "forwardGears": 5
+      },
+      "reverseSpeed": 12,
+      "forwardSpeed": 100,
+      "type": "Diesel",
+      "maxRPM": 2600,
+      "horsepower": 140,
+      "name": "GAZ-41"
+    },
+    "name": "BRDM-2",
+    "mass": 7
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 2,
+        "neutralSteering": true,
+        "forwardGears": 6
+      },
+      "reverseSpeed": 15,
+      "forwardSpeed": 64,
+      "type": "Diesel",
+      "maxRPM": 2600,
+      "horsepower": 600,
+      "name": "VTA-903T"
+    },
+    "name": "M270 MLRS",
+    "mass": 24
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 2,
+        "neutralSteering": false,
+        "forwardGears": 6
+      },
+      "reverseSpeed": 15,
+      "forwardSpeed": 64,
+      "type": "Diesel",
+      "maxRPM": 2800,
+      "horsepower": 212,
+      "name": "6V53"
+    },
+    "name": "M113",
+    "mass": 12.3
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 1,
+        "neutralSteering": false,
+        "forwardGears": 4
+      },
+      "reverseSpeed": 5,
+      "forwardSpeed": 46,
+      "type": "Diesel",
+      "maxRPM": 3600,
+      "horsepower": 55,
+      "name": "M-20"
+    },
+    "name": "ASU-57",
+    "mass": 3.3
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 1,
+        "neutralSteering": false,
+        "forwardGears": 5
+      },
+      "reverseSpeed": 17.6,
+      "forwardSpeed": 100,
+      "type": "Diesel",
+      "maxRPM": 2800,
+      "horsepower": 300,
+      "name": "Detroit 6V53T"
+    },
+    "name": "LAV-AT",
+    "mass": 12.9
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 2,
+        "neutralSteering": true,
+        "forwardGears": 4
+      },
+      "reverseSpeed": 20,
+      "forwardSpeed": 70,
+      "type": "Diesel",
+      "maxRPM": 2600,
+      "horsepower": 500,
+      "name": "UTD-29"
+    },
+    "name": "Sprut-SDM1",
+    "mass": 18
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 2,
+        "neutralSteering": false,
+        "forwardGears": 11
+      },
+      "reverseSpeed": 10,
+      "forwardSpeed": 62,
+      "type": "Diesel",
+      "maxRPM": 2100,
+      "horsepower": 240,
+      "name": "YaMZ 238"
+    },
+    "name": "Strela-10",
+    "mass": 11.5
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 1,
+        "neutralSteering": false,
+        "forwardGears": 5
+      },
+      "reverseSpeed": 6.2,
+      "forwardSpeed": 34,
+      "type": "Diesel",
+      "maxRPM": 2000,
+      "horsepower": 600,
+      "name": "V-2K"
+    },
+    "name": "KV-2",
+    "mass": 52.4
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 6,
+        "neutralSteering": false,
+        "forwardGears": 6
+      },
+      "reverseSpeed": 70,
+      "forwardSpeed": 70,
+      "type": "Diesel",
+      "maxRPM": 2000,
+      "horsepower": 1500,
+      "name": "A-85-3A"
+    },
+    "name": "Object 195",
+    "mass": 60
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 1,
+        "neutralSteering": false,
+        "forwardGears": 5
+      },
+      "reverseSpeed": 11,
+      "forwardSpeed": 65,
+      "type": "Diesel",
+      "maxRPM": 2600,
+      "horsepower": 300,
+      "name": "UTD-20"
+    },
+    "name": "BMP-1AM",
+    "mass": 14.2
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 2,
+        "neutralSteering": true,
+        "forwardGears": 6
+      },
+      "reverseSpeed": 14,
+      "forwardSpeed": 61,
+      "type": "Diesel",
+      "maxRPM": 2600,
+      "horsepower": 600,
+      "name": "VTA-903T"
+    },
+    "name": "M2A2 Bradley",
+    "mass": 22.3
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 7,
+        "neutralSteering": true,
+        "forwardGears": 8
+      },
+      "reverseSpeed": 40,
+      "forwardSpeed": 70,
+      "type": "Diesel",
+      "maxRPM": 2600,
+      "horsepower": 2200,
+      "name": "MTU MB 803 Ra-500"
+    },
+    "name": "VT1-2",
+    "mass": 43.5
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 3,
+        "neutralSteering": true,
+        "forwardGears": 6
+      },
+      "reverseSpeed": 31,
+      "forwardSpeed": 68,
+      "type": "Diesel",
+      "maxRPM": 2600,
+      "horsepower": 1500,
+      "name": "MTU MB 873 Ka-501"
+    },
+    "name": "KF51 Panther",
+    "mass": 55.4
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 2,
+        "neutralSteering": false,
+        "forwardGears": 8
+      },
+      "reverseSpeed": 18,
+      "forwardSpeed": 55,
+      "type": "Diesel",
+      "maxRPM": 2400,
+      "horsepower": 1000,
+      "name": "UTMZ 2DG-8M"
+    },
+    "name": "Object 279",
+    "mass": 60.4
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 1,
+        "neutralSteering": false,
+        "forwardGears": 5
+      },
+      "reverseSpeed": 6.8,
+      "forwardSpeed": 61,
+      "type": "Diesel",
+      "maxRPM": 3300,
+      "horsepower": 270,
+      "name": "SOFAM 8Gxb"
+    },
+    "name": "AMX-13",
+    "mass": 14.5
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 7,
+        "neutralSteering": true,
+        "forwardGears": 7
+      },
+      "reverseSpeed": 64,
+      "forwardSpeed": 64,
+      "type": "Diesel",
+      "maxRPM": 2700,
+      "horsepower": 1500,
+      "name": "MTU 12V883"
+    },
+    "name": "Merkava Mk.4M",
+    "mass": 65.5
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 4,
+        "neutralSteering": false,
+        "forwardGears": 8
+      },
+      "reverseSpeed": 12,
+      "forwardSpeed": 56,
+      "type": "Diesel",
+      "maxRPM": 2300,
+      "horsepower": 405,
+      "name": "8V71T"
+    },
+    "name": "M109",
+    "mass": 24.1
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 2,
+        "neutralSteering": false,
+        "forwardGears": 8
+      },
+      "reverseSpeed": 14,
+      "forwardSpeed": 35,
+      "type": "Diesel",
+      "maxRPM": 2800,
+      "horsepower": 770,
+      "name": "GAC V12"
+    },
+    "name": "T29E3",
+    "mass": 64.2
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 1,
+        "neutralSteering": false,
+        "forwardGears": 6
+      },
+      "reverseSpeed": 8.4,
+      "forwardSpeed": 55,
+      "type": "Diesel",
+      "maxRPM": 1800,
+      "horsepower": 500,
+      "name": "Model V-2-34"
+    },
+    "name": "T-34-85",
+    "mass": 32.2
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 3,
+        "neutralSteering": true,
+        "forwardGears": 8
+      },
+      "reverseSpeed": 34,
+      "forwardSpeed": 75,
+      "type": "Diesel",
+      "maxRPM": 2000,
+      "horsepower": 1500,
+      "name": "HP150"
+    },
+    "name": "ZTZ99A",
+    "mass": 55
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 1,
+        "neutralSteering": false,
+        "forwardGears": 5
+      },
+      "reverseSpeed": 11,
+      "forwardSpeed": 80,
+      "type": "Diesel",
+      "maxRPM": 2600,
+      "horsepower": 241,
+      "name": "5D-20"
+    },
+    "name": "BMD-1",
+    "mass": 7.5
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 1,
+        "neutralSteering": false,
+        "forwardGears": 5
+      },
+      "reverseSpeed": 6.2,
+      "forwardSpeed": 48,
+      "type": "Diesel",
+      "maxRPM": 2600,
+      "horsepower": 500,
+      "name": "Ford GAA V8"
+    },
+    "name": "M36 Jackson",
+    "mass": 28.1
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 1,
+        "neutralSteering": false,
+        "forwardGears": 5
+      },
+      "reverseSpeed": 6.2,
+      "forwardSpeed": 34,
+      "type": "Diesel",
+      "maxRPM": 2000,
+      "horsepower": 600,
+      "name": "V-2K"
+    },
+    "name": "KV-2 (ZIS-6)",
+    "mass": 52.4
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 1,
+        "neutralSteering": false,
+        "forwardGears": 4
+      },
+      "reverseSpeed": 22,
+      "forwardSpeed": 105,
+      "type": "Diesel",
+      "maxRPM": 4000,
+      "horsepower": 75,
+      "name": "2445cc UMZ"
+    },
+    "name": "UAZ-469",
+    "mass": 1.65
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 2,
+        "neutralSteering": true,
+        "forwardGears": 5
+      },
+      "reverseSpeed": 12,
+      "forwardSpeed": 35,
+      "type": "Diesel",
+      "maxRPM": 2550,
+      "horsepower": 650,
+      "name": "Rolls-Royce Meteor 4B"
+    },
+    "name": "FV4005",
+    "mass": 50
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 1,
+        "neutralSteering": false,
+        "forwardGears": 5
+      },
+      "reverseSpeed": 12,
+      "forwardSpeed": 80,
+      "type": "Diesel",
+      "maxRPM": 2600,
+      "horsepower": 180,
+      "name": "2xGAZ-49B"
+    },
+    "name": "BTR-60PB",
+    "mass": 10.3
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 1,
+        "neutralSteering": false,
+        "forwardGears": 7
+      },
+      "reverseSpeed": 4,
+      "forwardSpeed": 60,
+      "type": "Diesel",
+      "maxRPM": 2000,
+      "horsepower": 840,
+      "name": "ChTZ V-84-1"
+    },
+    "name": "TOS-1A BM-1",
+    "mass": 45.3
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 2,
+        "neutralSteering": true,
+        "forwardGears": 7
+      },
+      "reverseSpeed": 34,
+      "forwardSpeed": 73,
+      "type": "Diesel",
+      "maxRPM": 2400,
+      "horsepower": 1500,
+      "name": "MHI 10ZG32WT"
+    },
+    "name": "Type 90",
+    "mass": 50.2
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 1,
+        "neutralSteering": false,
+        "forwardGears": 5
+      },
+      "reverseSpeed": 7,
+      "forwardSpeed": 55,
+      "type": "Diesel",
+      "maxRPM": 2000,
+      "horsepower": 650,
+      "name": "CNGC 12150L"
+    },
+    "name": "WZ-122",
+    "mass": 37.5
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 1,
+        "neutralSteering": false,
+        "forwardGears": 7
+      },
+      "reverseSpeed": 4.2,
+      "forwardSpeed": 61,
+      "type": "Diesel",
+      "maxRPM": 2800,
+      "horsepower": 700,
+      "name": "HPZ 5TDF"
+    },
+    "name": "T-64BV",
+    "mass": 41.2
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 1,
+        "neutralSteering": false,
+        "forwardGears": 6
+      },
+      "reverseSpeed": 8.4,
+      "forwardSpeed": 55,
+      "type": "Diesel",
+      "maxRPM": 1800,
+      "horsepower": 500,
+      "name": "Model V-2-34"
+    },
+    "name": "T-34-57",
+    "mass": 30
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 4,
+        "neutralSteering": true,
+        "forwardGears": 10
+      },
+      "reverseSpeed": 38,
+      "forwardSpeed": 72,
+      "type": "Diesel",
+      "maxRPM": 2500,
+      "horsepower": 1500,
+      "name": "V8X-1500"
+    },
+    "name": "Leclerc S21",
+    "mass": 56.2
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 1,
+        "neutralSteering": false,
+        "forwardGears": 5
+      },
+      "reverseSpeed": 12,
+      "forwardSpeed": 90,
+      "type": "Diesel",
+      "maxRPM": 3000,
+      "horsepower": 380,
+      "name": "CA6DL2-35E3R"
+    },
+    "name": "Type 625E",
+    "mass": 26
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 2,
+        "neutralSteering": true,
+        "forwardGears": 6
+      },
+      "reverseSpeed": 38,
+      "forwardSpeed": 56,
+      "type": "Diesel",
+      "maxRPM": 2300,
+      "horsepower": 1217,
+      "name": "Perkins CV12"
+    },
+    "name": "Challenger 2",
+    "mass": 64
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 2,
+        "neutralSteering": true,
+        "forwardGears": 4
+      },
+      "reverseSpeed": 25,
+      "forwardSpeed": 60,
+      "type": "Diesel",
+      "maxRPM": 2700,
+      "horsepower": 1000,
+      "name": "MTU MT881 Ka-500"
+    },
+    "name": "PzH-2000",
+    "mass": 57
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 2,
+        "neutralSteering": true,
+        "forwardGears": 4
+      },
+      "reverseSpeed": 20,
+      "forwardSpeed": 70,
+      "type": "Diesel",
+      "maxRPM": 2600,
+      "horsepower": 500,
+      "name": "UTD-29"
+    },
+    "name": "BMP-3",
+    "mass": 18.7
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 1,
+        "neutralSteering": false,
+        "forwardGears": 4
+      },
+      "reverseSpeed": 11.1,
+      "forwardSpeed": 70,
+      "type": "Turbine",
+      "maxRPM": 3154,
+      "horsepower": 1250,
+      "name": "GTD-1250"
+    },
+    "name": "T-80U",
+    "mass": 46
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 8,
+        "neutralSteering": true,
+        "forwardGears": 8
+      },
+      "reverseSpeed": 64,
+      "forwardSpeed": 64,
+      "type": "Diesel",
+      "maxRPM": 2600,
+      "horsepower": 1500,
+      "name": "MTU MB 873 Ka-501"
+    },
+    "name": "KPz-70",
+    "mass": 51.7
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 3,
+        "neutralSteering": true,
+        "forwardGears": 6
+      },
+      "reverseSpeed": 31,
+      "forwardSpeed": 68,
+      "type": "Diesel",
+      "maxRPM": 2600,
+      "horsepower": 1500,
+      "name": "MTU MB 873 Ka-501"
+    },
+    "name": "Leopard 2A4",
+    "mass": 55.4
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 1,
+        "neutralSteering": false,
+        "forwardGears": 5
+      },
+      "reverseSpeed": 25,
+      "forwardSpeed": 140,
+      "type": "Diesel",
+      "maxRPM": 4000,
+      "horsepower": 215,
+      "name": "YaMZ-5347-10"
+    },
+    "name": "Kornet D GAZ Tigr",
+    "mass": 7.2
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 1,
+        "neutralSteering": false,
+        "forwardGears": 5
+      },
+      "reverseSpeed": 15,
+      "forwardSpeed": 89,
+      "type": "Diesel",
+      "maxRPM": 1800,
+      "horsepower": 240,
+      "name": "6CTA8.3 IMO 1"
+    },
+    "name": "M939",
+    "mass": 11
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 4,
+        "neutralSteering": true,
+        "forwardGears": 9
+      },
+      "reverseSpeed": 80,
+      "forwardSpeed": 80,
+      "type": "Diesel",
+      "maxRPM": 2300,
+      "horsepower": 550,
+      "name": "Perkins CV-8"
+    },
+    "name": "FV510 Warrior",
+    "mass": 24.9
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 1,
+        "neutralSteering": false,
+        "forwardGears": 5
+      },
+      "reverseSpeed": 12,
+      "forwardSpeed": 100,
+      "type": "Diesel",
+      "maxRPM": 2000,
+      "horsepower": 510,
+      "name": "ChTZ 510"
+    },
+    "name": "BTR-90",
+    "mass": 20.9
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 1,
+        "neutralSteering": false,
+        "forwardGears": 5
+      },
+      "reverseSpeed": 7,
+      "forwardSpeed": 50,
+      "type": "Diesel",
+      "maxRPM": 2000,
+      "horsepower": 650,
+      "name": "CNGC 12150L"
+    },
+    "name": "QN506",
+    "mass": 30
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 1,
+        "neutralSteering": false,
+        "forwardGears": 5
+      },
+      "reverseSpeed": 7,
+      "forwardSpeed": 50,
+      "type": "Diesel",
+      "maxRPM": 2000,
+      "horsepower": 520,
+      "name": "ChTZ V-54"
+    },
+    "name": "T-54 Obr. 1951",
+    "mass": 35.5
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 2,
+        "neutralSteering": true,
+        "forwardGears": 6
+      },
+      "reverseSpeed": 15,
+      "forwardSpeed": 72,
+      "type": "Diesel",
+      "maxRPM": 2400,
+      "horsepower": 580,
+      "name": "Detroit 6V92TA"
+    },
+    "name": "XM8",
+    "mass": 17.6
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 2,
+        "neutralSteering": true,
+        "forwardGears": 6
+      },
+      "reverseSpeed": 14,
+      "forwardSpeed": 66,
+      "type": "Diesel",
+      "maxRPM": 2600,
+      "horsepower": 600,
+      "name": "VTA-903T"
+    },
+    "name": "XM1069",
+    "mass": 25
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 1,
+        "neutralSteering": false,
+        "forwardGears": 4
+      },
+      "reverseSpeed": 11.1,
+      "forwardSpeed": 70,
+      "type": "Turbine",
+      "maxRPM": 3154,
+      "horsepower": 1400,
+      "name": "GTD-1400"
+    },
+    "name": "Object 640 \"Black Eagle\"",
+    "mass": 48
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 1,
+        "neutralSteering": false,
+        "forwardGears": 4
+      },
+      "reverseSpeed": 11.1,
+      "forwardSpeed": 70,
+      "type": "Turbine",
+      "maxRPM": 3154,
+      "horsepower": 1100,
+      "name": "GTD-1000TF"
+    },
+    "name": "T-80B",
+    "mass": 42
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 1,
+        "neutralSteering": false,
+        "forwardGears": 7
+      },
+      "reverseSpeed": 15,
+      "forwardSpeed": 100,
+      "type": "Diesel",
+      "maxRPM": 1800,
+      "horsepower": 600,
+      "name": "Scania DC 13"
+    },
+    "name": "Rosomak",
+    "mass": 22
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 1,
+        "neutralSteering": false,
+        "forwardGears": 6
+      },
+      "reverseSpeed": 13,
+      "forwardSpeed": 110,
+      "type": "Diesel",
+      "maxRPM": 4000,
+      "horsepower": 400,
+      "name": "6.6 L Gale Banks Engineering 866T"
+    },
+    "name": "Joint Light Tactical Vehicle",
+    "mass": 10.2
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 2,
+        "neutralSteering": true,
+        "forwardGears": 5
+      },
+      "reverseSpeed": 12,
+      "forwardSpeed": 35,
+      "type": "Diesel",
+      "maxRPM": 2550,
+      "horsepower": 650,
+      "name": "Rolls-Royce Meteor 4B"
+    },
+    "name": "Centurion Mk 10",
+    "mass": 51.8
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 2,
+        "neutralSteering": true,
+        "forwardGears": 6
+      },
+      "reverseSpeed": 14,
+      "forwardSpeed": 66,
+      "type": "Diesel",
+      "maxRPM": 2600,
+      "horsepower": 507,
+      "name": "VT903"
+    },
+    "name": "M2A1 Bradley",
+    "mass": 22.3
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 2,
+        "neutralSteering": false,
+        "forwardGears": 8
+      },
+      "reverseSpeed": 17.1,
+      "forwardSpeed": 44,
+      "type": "Diesel",
+      "maxRPM": 2100,
+      "horsepower": 700,
+      "name": "V-2-12"
+    },
+    "name": "IS-6",
+    "mass": 51.1
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 1,
+        "neutralSteering": false,
+        "forwardGears": 5
+      },
+      "reverseSpeed": 15,
+      "forwardSpeed": 100,
+      "type": "Diesel",
+      "maxRPM": 2100,
+      "horsepower": 180,
+      "name": "ZiL-375"
+    },
+    "name": "Ural-375D",
+    "mass": 18.2
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 2,
+        "neutralSteering": true,
+        "forwardGears": 4
+      },
+      "reverseSpeed": 38,
+      "forwardSpeed": 68,
+      "type": "Turbine",
+      "maxRPM": 3000,
+      "horsepower": 1519,
+      "name": "Honeywell AGT1500"
+    },
+    "name": "M1A2 SEP V3",
+    "mass": 66.8
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 1,
+        "neutralSteering": false,
+        "forwardGears": 5
+      },
+      "reverseSpeed": 7,
+      "forwardSpeed": 50,
+      "type": "Diesel",
+      "maxRPM": 2000,
+      "horsepower": 520,
+      "name": "ChTZ V-54"
+    },
+    "name": "Abandoned Tank Hull",
+    "mass": 20
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 2,
+        "neutralSteering": true,
+        "forwardGears": 4
+      },
+      "reverseSpeed": 20,
+      "forwardSpeed": 70,
+      "type": "Diesel",
+      "maxRPM": 2600,
+      "horsepower": 500,
+      "name": "UTD-29"
+    },
+    "name": "BMD-4M",
+    "mass": 15
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 8,
+        "neutralSteering": true,
+        "forwardGears": 8
+      },
+      "reverseSpeed": 75,
+      "forwardSpeed": 75,
+      "type": "Diesel",
+      "maxRPM": 2100,
+      "horsepower": 600,
+      "name": "MTU MB 833 Ea-500"
+    },
+    "name": "Begleitpanzer 57",
+    "mass": 28.5
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 3,
+        "neutralSteering": true,
+        "forwardGears": 6
+      },
+      "reverseSpeed": 31,
+      "forwardSpeed": 68,
+      "type": "Diesel",
+      "maxRPM": 2600,
+      "horsepower": 1500,
+      "name": "MTU MB 873 Ka-501"
+    },
+    "name": "Leopard 2A4 140MM",
+    "mass": 57
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 1,
+        "neutralSteering": false,
+        "forwardGears": 7
+      },
+      "reverseSpeed": 4,
+      "forwardSpeed": 66,
+      "type": "Diesel",
+      "maxRPM": 2800,
+      "horsepower": 700,
+      "name": "HPZ 5TDF"
+    },
+    "name": "Object 775",
+    "mass": 35.5
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 2,
+        "neutralSteering": true,
+        "forwardGears": 4
+      },
+      "reverseSpeed": 32,
+      "forwardSpeed": 65,
+      "type": "Diesel",
+      "maxRPM": 2600,
+      "horsepower": 1200,
+      "name": "MTU MB 871 Ka-501"
+    },
+    "name": "K1",
+    "mass": 54.5
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 2,
+        "neutralSteering": true,
+        "forwardGears": 4
+      },
+      "reverseSpeed": 38,
+      "forwardSpeed": 68,
+      "type": "Diesel",
+      "maxRPM": 2600,
+      "horsepower": 1500,
+      "name": "XAP-1000"
+    },
+    "name": "CATTB",
+    "mass": 57
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 2,
+        "neutralSteering": true,
+        "forwardGears": 4
+      },
+      "reverseSpeed": 38,
+      "forwardSpeed": 72,
+      "type": "Turbine",
+      "maxRPM": 3000,
+      "horsepower": 1519,
+      "name": "Honeywell AGT1500"
+    },
+    "name": "M1IP",
+    "mass": 55.7
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 2,
+        "neutralSteering": true,
+        "forwardGears": 4
+      },
+      "reverseSpeed": 38,
+      "forwardSpeed": 68,
+      "type": "Turbine",
+      "maxRPM": 3000,
+      "horsepower": 1519,
+      "name": "Honeywell AGT1500"
+    },
+    "name": "M1A1",
+    "mass": 57.2
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 1,
+        "neutralSteering": true,
+        "forwardGears": 2
+      },
+      "reverseSpeed": 11,
+      "forwardSpeed": 48,
+      "type": "Diesel",
+      "maxRPM": 2400,
+      "horsepower": 750,
+      "name": "AVDS-1790-2"
+    },
+    "name": "M60A2 Starship",
+    "mass": 51.9
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 1,
+        "neutralSteering": true,
+        "forwardGears": 2
+      },
+      "reverseSpeed": 11,
+      "forwardSpeed": 48,
+      "type": "Diesel",
+      "maxRPM": 2400,
+      "horsepower": 750,
+      "name": "AVDS-1790-2"
+    },
+    "name": "M60A1 Add-On Stabilization",
+    "mass": 48
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 2,
+        "neutralSteering": true,
+        "forwardGears": 4
+      },
+      "reverseSpeed": 38,
+      "forwardSpeed": 72,
+      "type": "Turbine",
+      "maxRPM": 3000,
+      "horsepower": 1519,
+      "name": "Honeywell AGT1500"
+    },
+    "name": "M1 Abrams",
+    "mass": 55.7
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 2,
+        "neutralSteering": true,
+        "forwardGears": 6
+      },
+      "reverseSpeed": 15,
+      "forwardSpeed": 69,
+      "type": "Diesel",
+      "maxRPM": 2800,
+      "horsepower": 300,
+      "name": "6V53T-5301"
+    },
+    "name": "M551 Sheridan",
+    "mass": 15.3
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 2,
+        "neutralSteering": true,
+        "forwardGears": 4
+      },
+      "reverseSpeed": 43,
+      "forwardSpeed": 70,
+      "type": "Diesel",
+      "maxRPM": 2100,
+      "horsepower": 600,
+      "name": "MHI 6SY31WA"
+    },
+    "name": "Type 89",
+    "mass": 26.5
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 1,
+        "neutralSteering": false,
+        "forwardGears": 7
+      },
+      "reverseSpeed": 4,
+      "forwardSpeed": 60,
+      "type": "Diesel",
+      "maxRPM": 2000,
+      "horsepower": 1130,
+      "name": "ChTZ V-92S2F"
+    },
+    "name": "T-90M",
+    "mass": 50
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 1,
+        "neutralSteering": false,
+        "forwardGears": 7
+      },
+      "reverseSpeed": 4,
+      "forwardSpeed": 60,
+      "type": "Diesel",
+      "maxRPM": 2000,
+      "horsepower": 840,
+      "name": "ChTZ V-84-1"
+    },
+    "name": "Burlak",
+    "mass": 47
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 3,
+        "neutralSteering": true,
+        "forwardGears": 6
+      },
+      "reverseSpeed": 31,
+      "forwardSpeed": 68,
+      "type": "Diesel",
+      "maxRPM": 2600,
+      "horsepower": 1500,
+      "name": "MTU MB 873 Ka-501"
+    },
+    "name": "Leopard 2K",
+    "mass": 55.4
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 6,
+        "neutralSteering": true,
+        "forwardGears": 7
+      },
+      "reverseSpeed": 44,
+      "forwardSpeed": 49,
+      "type": "Turbine",
+      "maxRPM": 3960,
+      "horsepower": 600,
+      "name": "6V53T + Caterpillar 553"
+    },
+    "name": "Strv 103C",
+    "mass": 42.5
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 2,
+        "neutralSteering": true,
+        "forwardGears": 6
+      },
+      "reverseSpeed": 38,
+      "forwardSpeed": 56,
+      "type": "Diesel",
+      "maxRPM": 2300,
+      "horsepower": 1217,
+      "name": "Perkins CV12"
+    },
+    "name": "Challenger 1",
+    "mass": 62.5
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 4,
+        "neutralSteering": true,
+        "forwardGears": 8
+      },
+      "reverseSpeed": 46,
+      "forwardSpeed": 65,
+      "type": "Diesel",
+      "maxRPM": 2300,
+      "horsepower": 1300,
+      "name": "Fiat MTCA 12V"
+    },
+    "name": "Ariete C1",
+    "mass": 54
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 3,
+        "neutralSteering": true,
+        "forwardGears": 6
+      },
+      "reverseSpeed": 31,
+      "forwardSpeed": 68,
+      "type": "Diesel",
+      "maxRPM": 2600,
+      "horsepower": 1500,
+      "name": "MTU MB 873 Ka-501"
+    },
+    "name": "Leopard 2A7V",
+    "mass": 64.1
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 1,
+        "neutralSteering": false,
+        "forwardGears": 6
+      },
+      "reverseSpeed": 8.4,
+      "forwardSpeed": 55,
+      "type": "Diesel",
+      "maxRPM": 1800,
+      "horsepower": 500,
+      "name": "Model V-2-34"
+    },
+    "name": "T-34E",
+    "mass": 30.6
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 2,
+        "neutralSteering": true,
+        "forwardGears": 5
+      },
+      "reverseSpeed": 12,
+      "forwardSpeed": 35,
+      "type": "Diesel",
+      "maxRPM": 2550,
+      "horsepower": 650,
+      "name": "Rolls-Royce Meteor 4B"
+    },
+    "name": "Centurion Mk 5 AVRE",
+    "mass": 52.2
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 4,
+        "neutralSteering": false,
+        "forwardGears": 7
+      },
+      "reverseSpeed": 31,
+      "forwardSpeed": 70,
+      "type": "Diesel",
+      "maxRPM": 2400,
+      "horsepower": 1200,
+      "name": "KMDB 6TD-2"
+    },
+    "name": "T-84 Oplot-M",
+    "mass": 51
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 3,
+        "neutralSteering": true,
+        "forwardGears": 6
+      },
+      "reverseSpeed": 31,
+      "forwardSpeed": 68,
+      "type": "Diesel",
+      "maxRPM": 2600,
+      "horsepower": 1500,
+      "name": "MTU MB 873 Ka-501"
+    },
+    "name": "Leopard 2A6",
+    "mass": 59.9
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 2,
+        "neutralSteering": true,
+        "forwardGears": 6
+      },
+      "reverseSpeed": 25,
+      "forwardSpeed": 80,
+      "type": "Diesel",
+      "maxRPM": 4500,
+      "horsepower": 87,
+      "name": "Audi 2.1 diesel"
+    },
+    "name": "Wiesel 1A2",
+    "mass": 2.9
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 2,
+        "neutralSteering": true,
+        "forwardGears": 6
+      },
+      "reverseSpeed": 25,
+      "forwardSpeed": 80,
+      "type": "Diesel",
+      "maxRPM": 4500,
+      "horsepower": 87,
+      "name": "Audi 2.1 diesel"
+    },
+    "name": "Wiesel 1A4",
+    "mass": 2.9
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 1,
+        "neutralSteering": false,
+        "forwardGears": 5
+      },
+      "reverseSpeed": 15,
+      "forwardSpeed": 110,
+      "type": "Diesel",
+      "maxRPM": 2000,
+      "horsepower": 598,
+      "name": "DEUTZ EURO III"
+    },
+    "name": "BTR-4",
+    "mass": 28
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 2,
+        "neutralSteering": false,
+        "forwardGears": 8
+      },
+      "reverseSpeed": 14.3,
+      "forwardSpeed": 37,
+      "type": "Diesel",
+      "maxRPM": 2000,
+      "horsepower": 520,
+      "name": "V-2IS"
+    },
+    "name": "IS-1",
+    "mass": 44
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 8,
+        "neutralSteering": true,
+        "forwardGears": 8
+      },
+      "reverseSpeed": 75,
+      "forwardSpeed": 75,
+      "type": "Diesel",
+      "maxRPM": 2100,
+      "horsepower": 600,
+      "name": "MTU MB 833 Ea-500"
+    },
+    "name": "Marder A1",
+    "mass": 29.1
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 3,
+        "neutralSteering": true,
+        "forwardGears": 6
+      },
+      "reverseSpeed": 31,
+      "forwardSpeed": 68,
+      "type": "Diesel",
+      "maxRPM": 2600,
+      "horsepower": 1500,
+      "name": "MTU MB 873 Ka-501"
+    },
+    "name": "Leopard 2 Giraffe",
+    "mass": 52
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 3,
+        "neutralSteering": true,
+        "forwardGears": 6
+      },
+      "reverseSpeed": 31,
+      "forwardSpeed": 68,
+      "type": "Diesel",
+      "maxRPM": 2600,
+      "horsepower": 1500,
+      "name": "MTU MB 873 Ka-501"
+    },
+    "name": "Panther EVO",
+    "mass": 55.4
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 1,
+        "neutralSteering": false,
+        "forwardGears": 7
+      },
+      "reverseSpeed": 4,
+      "forwardSpeed": 60,
+      "type": "Diesel",
+      "maxRPM": 2000,
+      "horsepower": 850,
+      "name": "S12U"
+    },
+    "name": "T-72M2",
+    "mass": 44.5
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 2,
+        "neutralSteering": false,
+        "forwardGears": 11
+      },
+      "reverseSpeed": 10,
+      "forwardSpeed": 62,
+      "type": "Diesel",
+      "maxRPM": 2100,
+      "horsepower": 240,
+      "name": "YaMZ 238"
+    },
+    "name": "MT-LB AA",
+    "mass": 12
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 1,
+        "neutralSteering": false,
+        "forwardGears": 5
+      },
+      "reverseSpeed": 25,
+      "forwardSpeed": 115,
+      "type": "Diesel",
+      "maxRPM": 4000,
+      "horsepower": 90,
+      "name": "UMZ-417"
+    },
+    "name": "UAZ-3909",
+    "mass": 1.8
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 1,
+        "neutralSteering": false,
+        "forwardGears": 5
+      },
+      "reverseSpeed": 15,
+      "forwardSpeed": 100,
+      "type": "Diesel",
+      "maxRPM": 2100,
+      "horsepower": 180,
+      "name": "ZiL-375"
+    },
+    "name": "BM-21 Grad",
+    "mass": 18.2
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 1,
+        "neutralSteering": false,
+        "forwardGears": 5
+      },
+      "reverseSpeed": 7,
+      "forwardSpeed": 50,
+      "type": "Diesel",
+      "maxRPM": 2000,
+      "horsepower": 580,
+      "name": "ChTZ V-55V"
+    },
+    "name": "Object 166",
+    "mass": 38
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 4,
+        "neutralSteering": true,
+        "forwardGears": 7
+      },
+      "reverseSpeed": 75,
+      "forwardSpeed": 75,
+      "type": "Diesel",
+      "maxRPM": 2300,
+      "horsepower": 550,
+      "name": "Perkins CV-8"
+    },
+    "name": "Desert Warrior",
+    "mass": 29
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 2,
+        "neutralSteering": false,
+        "forwardGears": 5
+      },
+      "reverseSpeed": 35,
+      "forwardSpeed": 86,
+      "type": "Diesel",
+      "maxRPM": 2400,
+      "horsepower": 786,
+      "name": "TH800 Engine"
+    },
+    "name": "Class 3(P)",
+    "mass": 41
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 2,
+        "neutralSteering": false,
+        "forwardGears": 8
+      },
+      "reverseSpeed": 23,
+      "forwardSpeed": 60,
+      "type": "Diesel",
+      "maxRPM": 1850,
+      "horsepower": 1050,
+      "name": "M50T"
+    },
+    "name": "IS-7",
+    "mass": 68
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 1,
+        "neutralSteering": false,
+        "forwardGears": 5
+      },
+      "reverseSpeed": 6,
+      "forwardSpeed": 44,
+      "type": "Diesel",
+      "maxRPM": 2600,
+      "horsepower": 300,
+      "name": "UTD-20"
+    },
+    "name": "PT-76E",
+    "mass": 14
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 8,
+        "neutralSteering": false,
+        "forwardGears": 8
+      },
+      "reverseSpeed": 20.7,
+      "forwardSpeed": 20.7,
+      "type": "Diesel",
+      "maxRPM": 3000,
+      "horsepower": 1200,
+      "name": "MB 517"
+    },
+    "name": "Maus",
+    "mass": 188
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 1,
+        "neutralSteering": false,
+        "forwardGears": 5
+      },
+      "reverseSpeed": 7,
+      "forwardSpeed": 50,
+      "type": "Diesel",
+      "maxRPM": 2000,
+      "horsepower": 580,
+      "name": "ChTZ V-55V"
+    },
+    "name": "T-62",
+    "mass": 37
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 4,
+        "neutralSteering": true,
+        "forwardGears": 8
+      },
+      "reverseSpeed": 24,
+      "forwardSpeed": 83,
+      "type": "Turbine",
+      "maxRPM": 3000,
+      "horsepower": 650,
+      "name": "Lycoming 650 gas turbine"
+    },
+    "name": "HSTV-L",
+    "mass": 20
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 1,
+        "neutralSteering": false,
+        "forwardGears": 5
+      },
+      "reverseSpeed": 6.2,
+      "forwardSpeed": 48,
+      "type": "Diesel",
+      "maxRPM": 2100,
+      "horsepower": 410,
+      "name": "GM 6046"
+    },
+    "name": "M36B2 Jackson",
+    "mass": 29.9
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 1,
+        "neutralSteering": false,
+        "forwardGears": 7
+      },
+      "reverseSpeed": 4,
+      "forwardSpeed": 60,
+      "type": "Diesel",
+      "maxRPM": 2000,
+      "horsepower": 840,
+      "name": "ChTZ V-84-1"
+    },
+    "name": "T-72B3",
+    "mass": 46
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 1,
+        "neutralSteering": false,
+        "forwardGears": 5
+      },
+      "reverseSpeed": 7,
+      "forwardSpeed": 50,
+      "type": "Diesel",
+      "maxRPM": 2000,
+      "horsepower": 580,
+      "name": "ChTZ V-55V"
+    },
+    "name": "IT-1",
+    "mass": 34.5
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 1,
+        "neutralSteering": true,
+        "forwardGears": 3
+      },
+      "reverseSpeed": 15,
+      "forwardSpeed": 70,
+      "type": "Diesel",
+      "maxRPM": 3400,
+      "horsepower": 26,
+      "name": "OHV"
+    },
+    "name": "Kettenkrad",
+    "mass": 1.56
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 1,
+        "neutralSteering": false,
+        "forwardGears": 7
+      },
+      "reverseSpeed": 4.2,
+      "forwardSpeed": 61,
+      "type": "Diesel",
+      "maxRPM": 2800,
+      "horsepower": 700,
+      "name": "HPZ 5TDF"
+    },
+    "name": "T-64A",
+    "mass": 38
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 3,
+        "neutralSteering": true,
+        "forwardGears": 8
+      },
+      "reverseSpeed": 34,
+      "forwardSpeed": 75,
+      "type": "Diesel",
+      "maxRPM": 2000,
+      "horsepower": 1500,
+      "name": "HP150"
+    },
+    "name": "Cheonma-2",
+    "mass": 56
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 2,
+        "neutralSteering": true,
+        "forwardGears": 4
+      },
+      "reverseSpeed": 65,
+      "forwardSpeed": 85,
+      "type": "Diesel",
+      "maxRPM": 2600,
+      "horsepower": 280,
+      "name": "6F11 SRX"
+    },
+    "name": "AMX-10RC",
+    "mass": 16
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 4,
+        "neutralSteering": true,
+        "forwardGears": 8
+      },
+      "reverseSpeed": 24,
+      "forwardSpeed": 56,
+      "type": "Diesel",
+      "maxRPM": 2300,
+      "horsepower": 1000,
+      "name": "MTU MB 837 Ka-501"
+    },
+    "name": "M48 Super",
+    "mass": 53
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 2,
+        "neutralSteering": true,
+        "forwardGears": 6
+      },
+      "reverseSpeed": 15,
+      "forwardSpeed": 72,
+      "type": "Diesel",
+      "maxRPM": 2400,
+      "horsepower": 580,
+      "name": "Detroit 6V92TA"
+    },
+    "name": "LOSAT M8",
+    "mass": 19.5
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 6,
+        "neutralSteering": true,
+        "forwardGears": 6
+      },
+      "reverseSpeed": 70,
+      "forwardSpeed": 70,
+      "type": "Diesel",
+      "maxRPM": 2300,
+      "horsepower": 1140,
+      "name": "Liebherr D976"
+    },
+    "name": "KF41 Lynx",
+    "mass": 44
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 1,
+        "neutralSteering": false,
+        "forwardGears": 5
+      },
+      "reverseSpeed": 17.6,
+      "forwardSpeed": 100,
+      "type": "Diesel",
+      "maxRPM": 2800,
+      "horsepower": 300,
+      "name": "Detroit 6V53T"
+    },
+    "name": "LAV-25",
+    "mass": 12.9
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 2,
+        "neutralSteering": true,
+        "forwardGears": 6
+      },
+      "reverseSpeed": 8,
+      "forwardSpeed": 45,
+      "type": "Diesel",
+      "maxRPM": 2800,
+      "horsepower": 830,
+      "name": "AV1790"
+    },
+    "name": "M48A2 Patton",
+    "mass": 44.9
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 1,
+        "neutralSteering": false,
+        "forwardGears": 7
+      },
+      "reverseSpeed": 4,
+      "forwardSpeed": 60,
+      "type": "Diesel",
+      "maxRPM": 2000,
+      "horsepower": 1000,
+      "name": "V-92S2"
+    },
+    "name": "BMPT Terminator",
+    "mass": 48
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 1,
+        "neutralSteering": false,
+        "forwardGears": 4
+      },
+      "reverseSpeed": 22,
+      "forwardSpeed": 90,
+      "type": "Diesel",
+      "maxRPM": 4000,
+      "horsepower": 215,
+      "name": "YaMZ-5347-10"
+    },
+    "name": "Humvee",
+    "mass": 2.7
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 1,
+        "neutralSteering": false,
+        "forwardGears": 5
+      },
+      "reverseSpeed": 7,
+      "forwardSpeed": 50,
+      "type": "Diesel",
+      "maxRPM": 2000,
+      "horsepower": 580,
+      "name": "ChTZ V-55V"
+    },
+    "name": "OBT-2 Super",
+    "mass": 40
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 1,
+        "neutralSteering": false,
+        "forwardGears": 5
+      },
+      "reverseSpeed": 15,
+      "forwardSpeed": 110,
+      "type": "Diesel",
+      "maxRPM": 4000,
+      "horsepower": 150,
+      "name": "3VZ-E V6"
+    },
+    "name": "MiKi Truck Company Model 2",
+    "mass": 4
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 1,
+        "neutralSteering": false,
+        "forwardGears": 5
+      },
+      "reverseSpeed": 11,
+      "forwardSpeed": 65,
+      "type": "Diesel",
+      "maxRPM": 2600,
+      "horsepower": 300,
+      "name": "UTD-20"
+    },
+    "name": "Abandoned IFV Hull",
+    "mass": 10
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 1,
+        "neutralSteering": false,
+        "forwardGears": 5
+      },
+      "reverseSpeed": 15,
+      "forwardSpeed": 110,
+      "type": "Diesel",
+      "maxRPM": 4000,
+      "horsepower": 150,
+      "name": "3VZ-E V6"
+    },
+    "name": "MiKi Truck Company Model 1 ARMOURED",
+    "mass": 5.5
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 2,
+        "neutralSteering": true,
+        "forwardGears": 6
+      },
+      "reverseSpeed": 15,
+      "forwardSpeed": 64,
+      "type": "Diesel",
+      "maxRPM": 2800,
+      "horsepower": 300,
+      "name": "6V53T-5301"
+    },
+    "name": "RDF/LT",
+    "mass": 13.4
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 1,
+        "neutralSteering": false,
+        "forwardGears": 5
+      },
+      "reverseSpeed": 6.2,
+      "forwardSpeed": 34,
+      "type": "Diesel",
+      "maxRPM": 1900,
+      "horsepower": 850,
+      "name": "V-2SN"
+    },
+    "name": "KV-220",
+    "mass": 62.4
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 1,
+        "neutralSteering": false,
+        "forwardGears": 3
+      },
+      "reverseSpeed": 15,
+      "forwardSpeed": 89,
+      "type": "Diesel",
+      "maxRPM": 4000,
+      "horsepower": 60,
+      "name": "L134"
+    },
+    "name": "Willys MB",
+    "mass": 1.2
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 1,
+        "neutralSteering": true,
+        "forwardGears": 6
+      },
+      "reverseSpeed": 10,
+      "forwardSpeed": 75,
+      "type": "Turbine",
+      "maxRPM": 3000,
+      "horsepower": 200,
+      "name": "TK-53"
+    },
+    "name": "LT-SE",
+    "mass": 9.5
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 1,
+        "neutralSteering": true,
+        "forwardGears": 6
+      },
+      "reverseSpeed": 7.4,
+      "forwardSpeed": 53,
+      "type": "Diesel",
+      "maxRPM": 2200,
+      "horsepower": 750,
+      "name": "MHI 10ZF 22WT"
+    },
+    "name": "Type 87",
+    "mass": 38
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 4,
+        "neutralSteering": false,
+        "forwardGears": 8
+      },
+      "reverseSpeed": 12,
+      "forwardSpeed": 56,
+      "type": "Diesel",
+      "maxRPM": 2300,
+      "horsepower": 405,
+      "name": "8V71T"
+    },
+    "name": "M109A6",
+    "mass": 26
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 1,
+        "neutralSteering": false,
+        "forwardGears": 7
+      },
+      "reverseSpeed": 4,
+      "forwardSpeed": 60,
+      "type": "Diesel",
+      "maxRPM": 2000,
+      "horsepower": 840,
+      "name": "ChTZ V-84-1"
+    },
+    "name": "2S19 Msta-S",
+    "mass": 42
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 1,
+        "neutralSteering": false,
+        "forwardGears": 6
+      },
+      "reverseSpeed": 12.5,
+      "forwardSpeed": 96,
+      "type": "Diesel",
+      "maxRPM": 2400,
+      "horsepower": 350,
+      "name": "Caterpillar 3126"
+    },
+    "name": "M1126",
+    "mass": 16.5
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 7,
+        "neutralSteering": true,
+        "forwardGears": 7
+      },
+      "reverseSpeed": 65,
+      "forwardSpeed": 65,
+      "type": "Diesel",
+      "maxRPM": 2000,
+      "horsepower": 780,
+      "name": "ChTZ V-84DT"
+    },
+    "name": "2S6 Tunguska",
+    "mass": 41
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 2,
+        "neutralSteering": true,
+        "forwardGears": 4
+      },
+      "reverseSpeed": 17.2,
+      "forwardSpeed": 70,
+      "type": "Diesel",
+      "maxRPM": 2000,
+      "horsepower": 670,
+      "name": "Type 6V150"
+    },
+    "name": "AFT-10",
+    "mass": 18.7
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 2,
+        "neutralSteering": false,
+        "forwardGears": 8
+      },
+      "reverseSpeed": 15.5,
+      "forwardSpeed": 40,
+      "type": "Diesel",
+      "maxRPM": 2000,
+      "horsepower": 520,
+      "name": "V-2IS"
+    },
+    "name": "IS-3",
+    "mass": 48
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 8,
+        "neutralSteering": true,
+        "forwardGears": 8
+      },
+      "reverseSpeed": 80,
+      "forwardSpeed": 80,
+      "type": "Diesel",
+      "maxRPM": 2000,
+      "horsepower": 1500,
+      "name": "12N360"
+    },
+    "name": "T-15 Armata",
+    "mass": 41
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 1,
+        "neutralSteering": false,
+        "forwardGears": 5
+      },
+      "reverseSpeed": 7,
+      "forwardSpeed": 50,
+      "type": "Diesel",
+      "maxRPM": 2000,
+      "horsepower": 520,
+      "name": "V-54"
+    },
+    "name": "ZSU-57-2",
+    "mass": 28
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 1,
+        "neutralSteering": false,
+        "forwardGears": 4
+      },
+      "reverseSpeed": 12,
+      "forwardSpeed": 62,
+      "type": "Diesel",
+      "maxRPM": 2400,
+      "horsepower": 1500,
+      "name": "KMDB 6TD-A"
+    },
+    "name": "Object 477",
+    "mass": 55
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 1,
+        "neutralSteering": false,
+        "forwardGears": 4
+      },
+      "reverseSpeed": 18,
+      "forwardSpeed": 84,
+      "type": "Diesel",
+      "maxRPM": 4000,
+      "horsepower": 215,
+      "name": "YaMZ-5347-10"
+    },
+    "name": "Bumpee",
+    "mass": 6
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 1,
+        "neutralSteering": false,
+        "forwardGears": 7
+      },
+      "reverseSpeed": 4.2,
+      "forwardSpeed": 61,
+      "type": "Diesel",
+      "maxRPM": 2800,
+      "horsepower": 700,
+      "name": "HPZ 5TDF"
+    },
+    "name": "T-64R",
+    "mass": 36.5
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 1,
+        "neutralSteering": false,
+        "forwardGears": 6
+      },
+      "reverseSpeed": 8.4,
+      "forwardSpeed": 55,
+      "type": "Diesel",
+      "maxRPM": 1800,
+      "horsepower": 500,
+      "name": "Model V-2-34"
+    },
+    "name": "T-34",
+    "mass": 30
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 1,
+        "neutralSteering": false,
+        "forwardGears": 7
+      },
+      "reverseSpeed": 4,
+      "forwardSpeed": 61,
+      "type": "Diesel",
+      "maxRPM": 2800,
+      "horsepower": 700,
+      "name": "HPZ 5TDF"
+    },
+    "name": "Object 450",
+    "mass": 38
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 1,
+        "neutralSteering": false,
+        "forwardGears": 5
+      },
+      "reverseSpeed": 7,
+      "forwardSpeed": 50,
+      "type": "Diesel",
+      "maxRPM": 2000,
+      "horsepower": 690,
+      "name": "ChTZ V-46-5M"
+    },
+    "name": "T-62M-1",
+    "mass": 42
   }
 ]
