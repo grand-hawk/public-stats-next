@@ -1,5 +1,5 @@
 {
-    "date": "2025-04-21T00:38:13.984Z",
+    "date": "2025-04-21T12:19:55.043Z",
     "vehicles": [
         "120S",
         "2S19",
@@ -17,6 +17,7 @@
         "BMD-2",
         "BMD-4M",
         "BMP-1",
+        "BMP-1AM",
         "BMP-2",
         "BMP-2M",
         "BMP-3",
@@ -37,6 +38,7 @@
         "Centurion Mk 5 AVRE",
         "Challenger 1",
         "Challenger 2",
+        "Cheonma-2",
         "Chieftain Mk 5",
         "Class 3(P)",
         "Desert Warrior",
@@ -162,6 +164,7 @@
         "Wiesel 1A4",
         "XM1069",
         "XM8",
+        "ZBD04A",
         "ZSU-57-2",
         "ZTZ96A",
         "ZTZ99A",
@@ -170,6 +173,6 @@
         "pickupTruck"
     ],
     "versions": [
-        70
+        71
     ]
 }
