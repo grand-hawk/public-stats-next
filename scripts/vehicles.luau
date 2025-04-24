@@ -42,7 +42,8 @@ type VehicleModule = {
 				min: number,
 				max: number,
 			},
-			smokes: boolean,
+			flares: boolean?,
+			smokes: boolean?,
 			weapons: { string },
 		},
 	},
@@ -108,8 +109,12 @@ for name, tank in TankInfo do
 	local turretsFolder = model:FindFirstChild("Turrets") :: Folder
 	for _, turret: Folder in turretsFolder:GetChildren() do
 		local controlValue = turret:FindFirstChild("Control") :: ObjectValue
-		local seatName = controlValue.Value.Name
+		if not controlValue.Value then
+			warn(`{turret:GetFullName()} has no seat value`)
+			continue
+		end
 
+		local seatName = controlValue.Value.Name
 		if vehicle.turrets[seatName] then
 			warn(`{controlValue.Value:GetFullName()} has multiple turrets`)
 			continue
@@ -124,13 +129,19 @@ for name, tank in TankInfo do
 				min = BaseFOV / turretInfo.Zoom[1],
 				max = BaseFOV / turretInfo.Zoom[2],
 			},
-			smokes = not not weaponsFolder:FindFirstChild("Smoke Grenade"),
 			weapons = {},
 		}
 
+		if weaponsFolder:FindFirstChild("Flares") then
+			vehicle.turrets[seatName].flares = true
+		end
+		if weaponsFolder:FindFirstChild("Smoke Grenade") then
+			vehicle.turrets[seatName].smokes = true
+		end
+
 		for _, weapon: Folder in weaponsFolder:GetChildren() do
 			local weaponName = weapon.Name
-			if weaponName == "Smoke Grenade" then
+			if weaponName == "Smoke Grenade" or weaponName == "Flares" then
 				continue
 			end
 
