@@ -14,7 +14,26 @@
       "name": "VTA-903T"
     },
     "name": "Air Defense Anti Tank System",
-    "mass": 25
+    "mass": 25,
+    "turrets": {
+      "Driver": {
+        "weapons": [],
+        "smokes": true,
+        "zoom": {
+          "max": 1.75,
+          "min": 2.8
+        }
+      },
+      "Gunner": {
+        "zoom": {
+          "max": 5.833333333333333,
+          "min": 11.666666666666666
+        },
+        "weapons": [
+          "MIM146 Launcher"
+        ]
+      }
+    }
   },
   {
     "engine": {
@@ -31,7 +50,37 @@
       "name": "Perkins CV12"
     },
     "name": "Black Night",
-    "mass": 65
+    "mass": 65,
+    "turrets": {
+      "Loader": {
+        "zoom": {
+          "max": 1.75,
+          "min": 2.8
+        },
+        "weapons": [
+          "7.62mm L37A2"
+        ]
+      },
+      "Gunner": {
+        "weapons": [
+          "120mm L30A1",
+          "7.62 mm L94A1",
+          "Brimstone"
+        ],
+        "smokes": true,
+        "zoom": {
+          "max": 3.6842105263157894,
+          "min": 10
+        }
+      },
+      "Commander": {
+        "zoom": {
+          "max": 7.777777777777778,
+          "min": 7.777777777777778
+        },
+        "weapons": []
+      }
+    }
   },
   {
     "engine": {
@@ -48,7 +97,27 @@
       "name": "YaMZ 238"
     },
     "name": "Strela-MLRS",
-    "mass": 11.5
+    "mass": 11.5,
+    "turrets": {
+      "Commander": {
+        "zoom": {
+          "max": 1.75,
+          "min": 2.8
+        },
+        "weapons": [
+          "12.7mm NSVT"
+        ]
+      },
+      "Gunner": {
+        "zoom": {
+          "max": 7.777777777777778,
+          "min": 7.777777777777778
+        },
+        "weapons": [
+          "S-8KO"
+        ]
+      }
+    }
   },
   {
     "engine": {
@@ -65,7 +134,28 @@
       "name": "Model V-2-34"
     },
     "name": "OT-34-85",
-    "mass": 32.2
+    "mass": 32.2,
+    "turrets": {
+      "Bow Gunner": {
+        "zoom": {
+          "max": 1.75,
+          "min": 2.8
+        },
+        "weapons": [
+          "ATO-41 Flamethrower"
+        ]
+      },
+      "Gunner": {
+        "zoom": {
+          "max": 3.6842105263157894,
+          "min": 3.6842105263157894
+        },
+        "weapons": [
+          "85mm ZIS-S-53",
+          "7.62mm DT-28"
+        ]
+      }
+    }
   },
   {
     "engine": {
@@ -82,7 +172,37 @@
       "name": "V-2K"
     },
     "name": "KV-1E",
-    "mass": 49
+    "mass": 49,
+    "turrets": {
+      "Loader": {
+        "zoom": {
+          "max": 1.75,
+          "min": 2.8
+        },
+        "weapons": [
+          "7.62mm DT-28"
+        ]
+      },
+      "Gunner": {
+        "zoom": {
+          "max": 1.75,
+          "min": 3.3333333333333335
+        },
+        "weapons": [
+          "76mm F-34",
+          "7.62mm DT-28"
+        ]
+      },
+      "Bow Gunner": {
+        "zoom": {
+          "max": 1.75,
+          "min": 2.8
+        },
+        "weapons": [
+          "7.62mm DT-28"
+        ]
+      }
+    }
   },
   {
     "engine": {
@@ -99,7 +219,26 @@
       "name": "YaMZ-8424.10"
     },
     "name": "2S43",
-    "mass": 42
+    "mass": 42,
+    "turrets": {
+      "Driver": {
+        "weapons": [],
+        "smokes": true,
+        "zoom": {
+          "max": 0.7,
+          "min": 0.7
+        }
+      },
+      "Gunner": {
+        "zoom": {
+          "max": 1.75,
+          "min": 3.5
+        },
+        "weapons": [
+          "152mm 2A64M"
+        ]
+      }
+    }
   },
   {
     "engine": {
@@ -116,7 +255,37 @@
       "name": "Continental R975-C4"
     },
     "name": "M4A1 (76) Sherman",
-    "mass": 32
+    "mass": 32,
+    "turrets": {
+      "Gunner": {
+        "zoom": {
+          "max": 4.666666666666667,
+          "min": 4.666666666666667
+        },
+        "weapons": [
+          "76mm M1",
+          ".30 cal M1919"
+        ]
+      },
+      "Commander": {
+        "zoom": {
+          "max": 1.75,
+          "min": 2.8
+        },
+        "weapons": [
+          "12.7mm M2"
+        ]
+      },
+      "Bow Gunner": {
+        "zoom": {
+          "max": 1.75,
+          "min": 2.8
+        },
+        "weapons": [
+          ".30 cal M1919"
+        ]
+      }
+    }
   },
   {
     "engine": {
@@ -133,7 +302,18 @@
       "name": "YaMZ 238"
     },
     "name": "MT-LB",
-    "mass": 11.5
+    "mass": 11.5,
+    "turrets": {
+      "Commander": {
+        "zoom": {
+          "max": 1.75,
+          "min": 2.8
+        },
+        "weapons": [
+          "7.62mm PKT"
+        ]
+      }
+    }
   },
   {
     "engine": {
@@ -150,7 +330,29 @@
       "name": "UTD-20"
     },
     "name": "BMP-1",
-    "mass": 13.4
+    "mass": 13.4,
+    "turrets": {
+      "Commander": {
+        "zoom": {
+          "max": 4.666666666666667,
+          "min": 4.666666666666667
+        },
+        "weapons": []
+      },
+      "Gunner": {
+        "weapons": [
+          "9M113 Konkurs",
+          "9M14M",
+          "73mm 2A28",
+          "7.62mm PKT"
+        ],
+        "smokes": true,
+        "zoom": {
+          "max": 5.833333333333333,
+          "min": 5.833333333333333
+        }
+      }
+    }
   },
   {
     "engine": {
@@ -167,7 +369,44 @@
       "name": "ChTZ V-55V"
     },
     "name": "T-55",
-    "mass": 36
+    "mass": 36,
+    "turrets": {
+      "Loader": {
+        "zoom": {
+          "max": 1.75,
+          "min": 2.8
+        },
+        "weapons": [
+          "12.7mm NSVT"
+        ]
+      },
+      "Gunner": {
+        "zoom": {
+          "max": 3.3333333333333335,
+          "min": 6.363636363636363
+        },
+        "weapons": [
+          "100mm D-10TS2",
+          "7.62mm PKT"
+        ]
+      },
+      "Commander": {
+        "zoom": {
+          "max": 4.666666666666667,
+          "min": 4.666666666666667
+        },
+        "weapons": []
+      },
+      "Driver": {
+        "zoom": {
+          "max": 1.75,
+          "min": 2.8
+        },
+        "weapons": [
+          "7.62mm PKT"
+        ]
+      }
+    }
   },
   {
     "engine": {
@@ -184,7 +423,29 @@
       "name": "KMDB 6TD-2"
     },
     "name": "T-84-120",
-    "mass": 46
+    "mass": 46,
+    "turrets": {
+      "Commander": {
+        "zoom": {
+          "max": 0.875,
+          "min": 7.777777777777778
+        },
+        "weapons": [
+          "12.7mm NSVT"
+        ]
+      },
+      "Gunner": {
+        "weapons": [
+          "7.62mm PKT",
+          "120mm KBM-2"
+        ],
+        "smokes": true,
+        "zoom": {
+          "max": 2.5,
+          "min": 11.666666666666666
+        }
+      }
+    }
   },
   {
     "engine": {
@@ -201,7 +462,47 @@
       "name": "MB HL230 P30"
     },
     "name": "Tiger II",
-    "mass": 69.8
+    "mass": 69.8,
+    "turrets": {
+      "Loader": {
+        "zoom": {
+          "max": 1.75,
+          "min": 2.8
+        },
+        "weapons": [
+          "Grenade Mortar",
+          "X7 Rotkäppchen"
+        ]
+      },
+      "Gunner": {
+        "zoom": {
+          "max": 1.75,
+          "min": 3.3333333333333335
+        },
+        "weapons": [
+          "88 mm KwK43",
+          "7.92mm MG34"
+        ]
+      },
+      "Commander": {
+        "zoom": {
+          "max": 1.75,
+          "min": 2.8
+        },
+        "weapons": [
+          "7.92mm MG34"
+        ]
+      },
+      "Bow Gunner": {
+        "zoom": {
+          "max": 1.75,
+          "min": 2.8
+        },
+        "weapons": [
+          "7.92mm MG34"
+        ]
+      }
+    }
   },
   {
     "engine": {
@@ -218,7 +519,8 @@
       "name": "3VZ-E V6"
     },
     "name": "MiKi Truck Company Model 1",
-    "mass": 1.27
+    "mass": 1.27,
+    "turrets": []
   },
   {
     "engine": {
@@ -235,7 +537,29 @@
       "name": "ChTZ V-92S2"
     },
     "name": "T-90A",
-    "mass": 46.5
+    "mass": 46.5,
+    "turrets": {
+      "Commander": {
+        "zoom": {
+          "max": 0.875,
+          "min": 7.777777777777778
+        },
+        "weapons": [
+          "12.7mm KORD"
+        ]
+      },
+      "Gunner": {
+        "weapons": [
+          "7.62mm PKT",
+          "125mm 2A46M-5"
+        ],
+        "smokes": true,
+        "zoom": {
+          "max": 2.5,
+          "min": 11.666666666666666
+        }
+      }
+    }
   },
   {
     "engine": {
@@ -252,7 +576,18 @@
       "name": "6V53"
     },
     "name": "M163",
-    "mass": 14
+    "mass": 14,
+    "turrets": {
+      "Gunner": {
+        "zoom": {
+          "max": 5.833333333333333,
+          "min": 5.833333333333333
+        },
+        "weapons": [
+          "20mm M618"
+        ]
+      }
+    }
   },
   {
     "engine": {
@@ -269,7 +604,27 @@
       "name": "Model V-2-34"
     },
     "name": "T-34-122",
-    "mass": 33
+    "mass": 33,
+    "turrets": {
+      "Bow Gunner": {
+        "zoom": {
+          "max": 1.75,
+          "min": 2.8
+        },
+        "weapons": [
+          "7.62mm DT-28"
+        ]
+      },
+      "Gunner": {
+        "zoom": {
+          "max": 1.75,
+          "min": 3.3333333333333335
+        },
+        "weapons": [
+          "122mm D-30"
+        ]
+      }
+    }
   },
   {
     "engine": {
@@ -286,7 +641,18 @@
       "name": "V-46-I"
     },
     "name": "2S7 Pion",
-    "mass": 46.5
+    "mass": 46.5,
+    "turrets": {
+      "Gunner": {
+        "zoom": {
+          "max": 1.75,
+          "min": 3.5
+        },
+        "weapons": [
+          "203mm 2A44"
+        ]
+      }
+    }
   },
   {
     "engine": {
@@ -303,7 +669,28 @@
       "name": "Rolls-Royce Meteor Mark III"
     },
     "name": "Cromwell V",
-    "mass": 28
+    "mass": 28,
+    "turrets": {
+      "Bow Gunner": {
+        "zoom": {
+          "max": 1.75,
+          "min": 2.8
+        },
+        "weapons": [
+          "7.92 mm BESA"
+        ]
+      },
+      "Gunner": {
+        "zoom": {
+          "max": 1.75,
+          "min": 3.3333333333333335
+        },
+        "weapons": [
+          "75mm OQF Mk.V",
+          "7.92 mm BESA"
+        ]
+      }
+    }
   },
   {
     "engine": {
@@ -320,7 +707,29 @@
       "name": "MHI 4VA"
     },
     "name": "Type 16 MCV",
-    "mass": 26
+    "mass": 26,
+    "turrets": {
+      "Commander": {
+        "zoom": {
+          "max": 3.6842105263157894,
+          "min": 11.666666666666666
+        },
+        "weapons": [
+          "12.7mm M2"
+        ]
+      },
+      "Gunner": {
+        "weapons": [
+          "105mm JSW",
+          "7.62mm Type 74"
+        ],
+        "smokes": true,
+        "zoom": {
+          "max": 3.6842105263157894,
+          "min": 11.666666666666666
+        }
+      }
+    }
   },
   {
     "engine": {
@@ -337,7 +746,29 @@
       "name": "ChTZ V-46-6"
     },
     "name": "T-72A",
-    "mass": 41
+    "mass": 41,
+    "turrets": {
+      "Commander": {
+        "zoom": {
+          "max": 4.666666666666667,
+          "min": 4.666666666666667
+        },
+        "weapons": [
+          "12.7mm NSVT"
+        ]
+      },
+      "Gunner": {
+        "weapons": [
+          "7.62mm PKT",
+          "125mm 2A46"
+        ],
+        "smokes": true,
+        "zoom": {
+          "max": 7.777777777777778,
+          "min": 7.777777777777778
+        }
+      }
+    }
   },
   {
     "engine": {
@@ -354,7 +785,30 @@
       "name": "UTD-23"
     },
     "name": "BMP-2M",
-    "mass": 14.5
+    "mass": 14.5,
+    "turrets": {
+      "Commander": {
+        "zoom": {
+          "max": 3.6842105263157894,
+          "min": 17.5
+        },
+        "weapons": [
+          "30mm AGS-17"
+        ]
+      },
+      "Gunner": {
+        "weapons": [
+          "30mm 2A42M",
+          "7.62mm PKT",
+          "9M133 Kornet"
+        ],
+        "smokes": true,
+        "zoom": {
+          "max": 2.3333333333333335,
+          "min": 11.666666666666666
+        }
+      }
+    }
   },
   {
     "engine": {
@@ -371,7 +825,28 @@
       "name": "Type 6V150"
     },
     "name": "ZBD04",
-    "mass": 18.7
+    "mass": 18.7,
+    "turrets": {
+      "Commander": {
+        "zoom": {
+          "max": 0.875,
+          "min": 4.666666666666667
+        },
+        "weapons": []
+      },
+      "Gunner": {
+        "weapons": [
+          "100mm ZPL04",
+          "30mm ZPL02",
+          "5.8mm QJT"
+        ],
+        "smokes": true,
+        "zoom": {
+          "max": 5.833333333333333,
+          "min": 10
+        }
+      }
+    }
   },
   {
     "engine": {
@@ -388,7 +863,37 @@
       "name": "Ford GAA V8"
     },
     "name": "M4A3 (105)",
-    "mass": 31.7
+    "mass": 31.7,
+    "turrets": {
+      "Gunner": {
+        "zoom": {
+          "max": 1.75,
+          "min": 3.3333333333333335
+        },
+        "weapons": [
+          "105 mm M4",
+          ".30 cal M1919"
+        ]
+      },
+      "Commander": {
+        "zoom": {
+          "max": 1.75,
+          "min": 2.8
+        },
+        "weapons": [
+          "12.7mm M2"
+        ]
+      },
+      "Bow Gunner": {
+        "zoom": {
+          "max": 1.75,
+          "min": 2.8
+        },
+        "weapons": [
+          ".30 cal M1919"
+        ]
+      }
+    }
   },
   {
     "engine": {
@@ -405,7 +910,19 @@
       "name": "6V53"
     },
     "name": "M113 HVMS",
-    "mass": 15
+    "mass": 15,
+    "turrets": {
+      "Gunner": {
+        "zoom": {
+          "max": 7.777777777777778,
+          "min": 7.777777777777778
+        },
+        "weapons": [
+          "60mm IMI HVMS",
+          ".30 cal M1919"
+        ]
+      }
+    }
   },
   {
     "engine": {
@@ -422,7 +939,18 @@
       "name": "YaMZ 238"
     },
     "name": "MT-LeBrams",
-    "mass": 12.3
+    "mass": 12.3,
+    "turrets": {
+      "Gunner": {
+        "zoom": {
+          "max": 2.3333333333333335,
+          "min": 2.8
+        },
+        "weapons": [
+          "115mm U-5TS"
+        ]
+      }
+    }
   },
   {
     "engine": {
@@ -439,9 +967,35 @@
       "name": "MTU MT 892 Ka-501"
     },
     "name": "PUMA auth version",
-    "mass": 43
+    "mass": 43,
+    "turrets": {
+      "Commander": {
+        "zoom": {
+          "max": 1.8421052631578947,
+          "min": 14
+        },
+        "weapons": []
+      },
+      "Gunner": {
+        "weapons": [
+          "5.56mm MG4",
+          "30mm MK 30-2/ABMs",
+          "Spike-LR2MRs"
+        ],
+        "smokes": true,
+        "zoom": {
+          "max": 1.8421052631578947,
+          "min": 14
+        }
+      }
+    }
   },
   {
+    "suspension": {
+      "vertical": true,
+      "horizontal": true,
+      "height": true
+    },
     "engine": {
       "transmission": {
         "reverseGears": 2,
@@ -454,6 +1008,24 @@
       "maxRPM": 2600,
       "horsepower": 1500,
       "name": "AVCR-1360"
+    },
+    "turrets": {
+      "Commander": {
+        "zoom": {
+          "max": 1.8421052631578947,
+          "min": 7.777777777777778
+        },
+        "weapons": []
+      },
+      "Gunner": {
+        "zoom": {
+          "max": 1.8421052631578947,
+          "min": 7.777777777777778
+        },
+        "weapons": [
+          "75mm XM274"
+        ]
+      }
     },
     "name": "HIMAG",
     "mass": 45
@@ -473,9 +1045,36 @@
       "name": "ChTZ V-84-1"
     },
     "name": "T-72B",
-    "mass": 44.5
+    "mass": 44.5,
+    "turrets": {
+      "Commander": {
+        "zoom": {
+          "max": 4.666666666666667,
+          "min": 4.666666666666667
+        },
+        "weapons": [
+          "12.7mm NSVT"
+        ]
+      },
+      "Gunner": {
+        "weapons": [
+          "7.62mm PKT",
+          "125mm 2A46M"
+        ],
+        "smokes": true,
+        "zoom": {
+          "max": 7.777777777777778,
+          "min": 7.777777777777778
+        }
+      }
+    }
   },
   {
+    "suspension": {
+      "vertical": true,
+      "horizontal": false,
+      "height": true
+    },
     "engine": {
       "transmission": {
         "reverseGears": 3,
@@ -488,6 +1087,28 @@
       "maxRPM": 2300,
       "horsepower": 750,
       "name": "YaMZ 780"
+    },
+    "turrets": {
+      "Commander": {
+        "zoom": {
+          "max": 3.6842105263157894,
+          "min": 11.666666666666666
+        },
+        "weapons": []
+      },
+      "Gunner": {
+        "weapons": [
+          "9M134 Bulat",
+          "9M133 Kornet",
+          "57mm 2A94",
+          "7.62mm PKT"
+        ],
+        "smokes": true,
+        "zoom": {
+          "max": 3.6842105263157894,
+          "min": 11.666666666666666
+        }
+      }
     },
     "name": "Kurganets-25",
     "mass": 25
@@ -507,7 +1128,29 @@
       "name": "Caterpillar 3126"
     },
     "name": "M1128 MGS",
-    "mass": 18.8
+    "mass": 18.8,
+    "turrets": {
+      "Commander": {
+        "zoom": {
+          "max": 1.8421052631578947,
+          "min": 7.777777777777778
+        },
+        "weapons": [
+          "12.7mm M2"
+        ]
+      },
+      "Gunner": {
+        "weapons": [
+          "7.62mm M240",
+          "105mm M68A1E4"
+        ],
+        "smokes": true,
+        "zoom": {
+          "max": 3.1818181818181817,
+          "min": 10
+        }
+      }
+    }
   },
   {
     "engine": {
@@ -524,7 +1167,30 @@
       "name": "XAP-1000"
     },
     "name": "Abrams X",
-    "mass": 49
+    "mass": 49,
+    "turrets": {
+      "Commander": {
+        "zoom": {
+          "max": 2.8,
+          "min": 11.666666666666666
+        },
+        "weapons": [
+          "30mm M230LF",
+          "Loitering Drone"
+        ]
+      },
+      "Gunner": {
+        "weapons": [
+          "120mm M256",
+          "7.62mm M240"
+        ],
+        "smokes": true,
+        "zoom": {
+          "max": 2.8,
+          "min": 11.666666666666666
+        }
+      }
+    }
   },
   {
     "engine": {
@@ -541,7 +1207,19 @@
       "name": "ChTZ V-55V"
     },
     "name": "BTR-55",
-    "mass": 30
+    "mass": 30,
+    "turrets": {
+      "Gunner": {
+        "zoom": {
+          "max": 4.666666666666667,
+          "min": 4.666666666666667
+        },
+        "weapons": [
+          "14.5mm KPVT",
+          "7.62mm PKT"
+        ]
+      }
+    }
   },
   {
     "engine": {
@@ -558,7 +1236,18 @@
       "name": "White 160AX"
     },
     "name": "SU-57",
-    "mass": 8.6
+    "mass": 8.6,
+    "turrets": {
+      "Gunner": {
+        "zoom": {
+          "max": 1.75,
+          "min": 3.3333333333333335
+        },
+        "weapons": [
+          "57mm M1"
+        ]
+      }
+    }
   },
   {
     "engine": {
@@ -575,7 +1264,29 @@
       "name": "Scania DSI14"
     },
     "name": "Strf 9040C",
-    "mass": 28.5
+    "mass": 28.5,
+    "turrets": {
+      "Commander": {
+        "zoom": {
+          "max": 2.8,
+          "min": 11.666666666666666
+        },
+        "weapons": [
+          "40mm MK-19"
+        ]
+      },
+      "Gunner": {
+        "weapons": [
+          "40mm Akan m/70B",
+          "40mm Akan m/70BM"
+        ],
+        "smokes": true,
+        "zoom": {
+          "max": 7.777777777777778,
+          "min": 7.777777777777778
+        }
+      }
+    }
   },
   {
     "engine": {
@@ -592,7 +1303,37 @@
       "name": "MB HL234"
     },
     "name": "Pz IV Ausf. 1946",
-    "mass": 26
+    "mass": 26,
+    "turrets": {
+      "Gunner": {
+        "zoom": {
+          "max": 1.75,
+          "min": 3.3333333333333335
+        },
+        "weapons": [
+          "75 mm KwK40 L48",
+          "7.92mm MG34"
+        ]
+      },
+      "Commander": {
+        "zoom": {
+          "max": 1.75,
+          "min": 2.8
+        },
+        "weapons": [
+          "7.92mm MG34"
+        ]
+      },
+      "Bow Gunner": {
+        "zoom": {
+          "max": 1.75,
+          "min": 2.8
+        },
+        "weapons": [
+          "7.92mm MG34"
+        ]
+      }
+    }
   },
   {
     "engine": {
@@ -609,7 +1350,39 @@
       "name": "Bedford 12-cylinder"
     },
     "name": "Churchill VII",
-    "mass": 41
+    "mass": 41,
+    "turrets": {
+      "Loader": {
+        "zoom": {
+          "max": 10,
+          "min": 10
+        },
+        "weapons": [
+          "Grenade Mortar"
+        ]
+      },
+      "Gunner": {
+        "weapons": [
+          "7.92 mm BESA",
+          "L9A1 165mm",
+          "75mm OQF Mk.V"
+        ],
+        "smokes": true,
+        "zoom": {
+          "max": 2.8,
+          "min": 5.833333333333333
+        }
+      },
+      "Bow Gunner": {
+        "zoom": {
+          "max": 1.75,
+          "min": 2.8
+        },
+        "weapons": [
+          "7.92 mm BESA"
+        ]
+      }
+    }
   },
   {
     "engine": {
@@ -626,7 +1399,19 @@
       "name": "V-6"
     },
     "name": "PT-76B",
-    "mass": 14
+    "mass": 14,
+    "turrets": {
+      "Commander": {
+        "zoom": {
+          "max": 3.6842105263157894,
+          "min": 3.6842105263157894
+        },
+        "weapons": [
+          "7.62mm PKT",
+          "76.2 mm D-56TM"
+        ]
+      }
+    }
   },
   {
     "engine": {
@@ -643,7 +1428,29 @@
       "name": "HPZ 5TDFM"
     },
     "name": "T-64BM \"Bulat\"",
-    "mass": 47
+    "mass": 47,
+    "turrets": {
+      "Commander": {
+        "zoom": {
+          "max": 4.666666666666667,
+          "min": 4.666666666666667
+        },
+        "weapons": [
+          "12.7mm NSVT"
+        ]
+      },
+      "Gunner": {
+        "weapons": [
+          "7.62mm PKT",
+          "125mm 2A46M-1"
+        ],
+        "smokes": true,
+        "zoom": {
+          "max": 3.6842105263157894,
+          "min": 8.75
+        }
+      }
+    }
   },
   {
     "engine": {
@@ -660,7 +1467,37 @@
       "name": "Continental R975-C4"
     },
     "name": "M4A1 Sherman",
-    "mass": 30.6
+    "mass": 30.6,
+    "turrets": {
+      "Gunner": {
+        "zoom": {
+          "max": 4.666666666666667,
+          "min": 4.666666666666667
+        },
+        "weapons": [
+          "75mm M3",
+          ".30 cal M1919"
+        ]
+      },
+      "Commander": {
+        "zoom": {
+          "max": 1.75,
+          "min": 2.8
+        },
+        "weapons": [
+          "12.7mm M2"
+        ]
+      },
+      "Bow Gunner": {
+        "zoom": {
+          "max": 1.75,
+          "min": 2.8
+        },
+        "weapons": [
+          ".30 cal M1919"
+        ]
+      }
+    }
   },
   {
     "engine": {
@@ -677,7 +1514,29 @@
       "name": "GTD-1250"
     },
     "name": "T-80BVM",
-    "mass": 47
+    "mass": 47,
+    "turrets": {
+      "Commander": {
+        "zoom": {
+          "max": 4.666666666666667,
+          "min": 4.666666666666667
+        },
+        "weapons": [
+          "12.7mm NSVT"
+        ]
+      },
+      "Gunner": {
+        "weapons": [
+          "7.62mm PKT",
+          "125mm 2A46M-1"
+        ],
+        "smokes": true,
+        "zoom": {
+          "max": 3.6842105263157894,
+          "min": 11.666666666666666
+        }
+      }
+    }
   },
   {
     "engine": {
@@ -694,7 +1553,20 @@
       "name": "YaMZ-5347-10"
     },
     "name": "GAZ Tigr",
-    "mass": 7.2
+    "mass": 7.2,
+    "turrets": {
+      "Gunner": {
+        "weapons": [
+          "7.62mm PKT",
+          "30mm AGS-17"
+        ],
+        "smokes": true,
+        "zoom": {
+          "max": 1.75,
+          "min": 2.8
+        }
+      }
+    }
   },
   {
     "engine": {
@@ -711,9 +1583,45 @@
       "name": "AVDS-1790-2"
     },
     "name": "120S",
-    "mass": 56.3
+    "mass": 56.3,
+    "turrets": {
+      "Loader": {
+        "zoom": {
+          "max": 1.75,
+          "min": 2.8
+        },
+        "weapons": [
+          "7.62mm M240"
+        ]
+      },
+      "Gunner": {
+        "weapons": [
+          "7.62mm M240",
+          "120mm M256"
+        ],
+        "smokes": true,
+        "zoom": {
+          "max": 2.8,
+          "min": 10
+        }
+      },
+      "Commander": {
+        "zoom": {
+          "max": 1.75,
+          "min": 2.8
+        },
+        "weapons": [
+          "12.7mm M2"
+        ]
+      }
+    }
   },
   {
+    "suspension": {
+      "vertical": true,
+      "horizontal": false,
+      "height": true
+    },
     "engine": {
       "transmission": {
         "reverseGears": 2,
@@ -726,6 +1634,18 @@
       "maxRPM": 2600,
       "horsepower": 500,
       "name": "UTD-29"
+    },
+    "turrets": {
+      "Gunner": {
+        "weapons": [
+          "9M133 Kornet"
+        ],
+        "smokes": true,
+        "zoom": {
+          "max": 3.6842105263157894,
+          "min": 11.666666666666666
+        }
+      }
     },
     "name": "Kornet D BMD-4M",
     "mass": 15
@@ -745,7 +1665,18 @@
       "name": "5.55 L ZiS-5"
     },
     "name": "RSZO-1",
-    "mass": 4.23
+    "mass": 4.23,
+    "turrets": {
+      "Commander": {
+        "zoom": {
+          "max": 1.75,
+          "min": 3.5
+        },
+        "weapons": [
+          "Rocketetet"
+        ]
+      }
+    }
   },
   {
     "engine": {
@@ -762,7 +1693,37 @@
       "name": "GM 6046"
     },
     "name": "M4A2E8 Sherman",
-    "mass": 33
+    "mass": 33,
+    "turrets": {
+      "Gunner": {
+        "zoom": {
+          "max": 4.666666666666667,
+          "min": 4.666666666666667
+        },
+        "weapons": [
+          "76mm M1",
+          ".30 cal M1919"
+        ]
+      },
+      "Commander": {
+        "zoom": {
+          "max": 1.75,
+          "min": 2.8
+        },
+        "weapons": [
+          "12.7mm M2"
+        ]
+      },
+      "Bow Gunner": {
+        "zoom": {
+          "max": 1.75,
+          "min": 2.8
+        },
+        "weapons": [
+          ".30 cal M1919"
+        ]
+      }
+    }
   },
   {
     "engine": {
@@ -779,7 +1740,38 @@
       "name": "MB HL120 TRM"
     },
     "name": "Pz.III M",
-    "mass": 23
+    "mass": 23,
+    "turrets": {
+      "Gunner": {
+        "weapons": [
+          "50 mm KwK39",
+          "7.92mm MG34"
+        ],
+        "smokes": true,
+        "zoom": {
+          "max": 1.75,
+          "min": 3.3333333333333335
+        }
+      },
+      "Commander": {
+        "zoom": {
+          "max": 1.75,
+          "min": 2.8
+        },
+        "weapons": [
+          "7.92mm MG34"
+        ]
+      },
+      "Bow Gunner": {
+        "zoom": {
+          "max": 1.75,
+          "min": 2.8
+        },
+        "weapons": [
+          "7.92mm MG34"
+        ]
+      }
+    }
   },
   {
     "engine": {
@@ -796,7 +1788,18 @@
       "name": "Model V-2-34"
     },
     "name": "SU-85M",
-    "mass": 31.6
+    "mass": 31.6,
+    "turrets": {
+      "Gunner": {
+        "zoom": {
+          "max": 1.75,
+          "min": 3.3333333333333335
+        },
+        "weapons": [
+          "85mm D-5S"
+        ]
+      }
+    }
   },
   {
     "engine": {
@@ -813,7 +1816,28 @@
       "name": "MTU MT 892 Ka-501"
     },
     "name": "PUMA",
-    "mass": 43
+    "mass": 43,
+    "turrets": {
+      "Commander": {
+        "zoom": {
+          "max": 1.8421052631578947,
+          "min": 14
+        },
+        "weapons": []
+      },
+      "Gunner": {
+        "weapons": [
+          "5.56mm MG4",
+          "30mm MK 30-2/ABM",
+          "Spike-LR2MR"
+        ],
+        "smokes": true,
+        "zoom": {
+          "max": 1.8421052631578947,
+          "min": 14
+        }
+      }
+    }
   },
   {
     "engine": {
@@ -830,7 +1854,20 @@
       "name": "6CTA8.3 IMO 2"
     },
     "name": "M1117 ASV",
-    "mass": 11
+    "mass": 11,
+    "turrets": {
+      "Gunner": {
+        "weapons": [
+          "12.7mm M2",
+          "40mm MK-19"
+        ],
+        "smokes": true,
+        "zoom": {
+          "max": 1.75,
+          "min": 3.3333333333333335
+        }
+      }
+    }
   },
   {
     "engine": {
@@ -847,7 +1884,37 @@
       "name": "V-2K"
     },
     "name": "KV-5",
-    "mass": 100
+    "mass": 100,
+    "turrets": {
+      "Gunner": {
+        "zoom": {
+          "max": 1.75,
+          "min": 3.3333333333333335
+        },
+        "weapons": [
+          "100mm D-10S",
+          "7.62mm PKT"
+        ]
+      },
+      "Commander": {
+        "zoom": {
+          "max": 1.75,
+          "min": 2.8
+        },
+        "weapons": [
+          "7.62mm PKT"
+        ]
+      },
+      "BowGunner": {
+        "zoom": {
+          "max": 1.75,
+          "min": 2.8
+        },
+        "weapons": [
+          "7.62mm PKT"
+        ]
+      }
+    }
   },
   {
     "engine": {
@@ -864,7 +1931,29 @@
       "name": "ChTZ V-84-1"
     },
     "name": "Tutel",
-    "mass": 47
+    "mass": 47,
+    "turrets": {
+      "Commander": {
+        "zoom": {
+          "max": 4.666666666666667,
+          "min": 4.666666666666667
+        },
+        "weapons": [
+          "12.7mm KORD"
+        ]
+      },
+      "Gunner": {
+        "weapons": [
+          "7.62mm PKT",
+          "125mm 2A46M-5"
+        ],
+        "smokes": true,
+        "zoom": {
+          "max": 3.6842105263157894,
+          "min": 11.666666666666666
+        }
+      }
+    }
   },
   {
     "engine": {
@@ -881,7 +1970,29 @@
       "name": "UTD-20"
     },
     "name": "BMP-2",
-    "mass": 14.5
+    "mass": 14.5,
+    "turrets": {
+      "Commander": {
+        "zoom": {
+          "max": 4.666666666666667,
+          "min": 4.666666666666667
+        },
+        "weapons": []
+      },
+      "Gunner": {
+        "weapons": [
+          "30mm 2A42",
+          "7.62mm PKT",
+          "9M113M Konkurs",
+          "9M113 Konkurs"
+        ],
+        "smokes": true,
+        "zoom": {
+          "max": 5.833333333333333,
+          "min": 5.833333333333333
+        }
+      }
+    }
   },
   {
     "engine": {
@@ -898,7 +2009,36 @@
       "name": "MTU MB 838 CaM 500"
     },
     "name": "Leopard 1A5",
-    "mass": 42.5
+    "mass": 42.5,
+    "turrets": {
+      "Loader": {
+        "zoom": {
+          "max": 1.75,
+          "min": 2.8
+        },
+        "weapons": [
+          "7.62mm MG3"
+        ]
+      },
+      "Gunner": {
+        "weapons": [
+          "L7A3 105mm",
+          "7.62mm MG3"
+        ],
+        "smokes": true,
+        "zoom": {
+          "max": 3.6842105263157894,
+          "min": 11.666666666666666
+        }
+      },
+      "Commander": {
+        "zoom": {
+          "max": 3.6842105263157894,
+          "min": 17.5
+        },
+        "weapons": []
+      }
+    }
   },
   {
     "engine": {
@@ -915,7 +2055,18 @@
       "name": "White 160AX"
     },
     "name": "M3 GMC",
-    "mass": 9.1
+    "mass": 9.1,
+    "turrets": {
+      "Gunner": {
+        "zoom": {
+          "max": 1.75,
+          "min": 3.3333333333333335
+        },
+        "weapons": [
+          "75mm M3"
+        ]
+      }
+    }
   },
   {
     "engine": {
@@ -932,7 +2083,18 @@
       "name": "F4-134 Hurricane"
     },
     "name": "M38",
-    "mass": 1.2
+    "mass": 1.2,
+    "turrets": {
+      "Gunner": {
+        "zoom": {
+          "max": 1.1666666666666667,
+          "min": 1.75
+        },
+        "weapons": [
+          "12.7mm M2"
+        ]
+      }
+    }
   },
   {
     "engine": {
@@ -949,9 +2111,37 @@
       "name": "MTU MB 833 Ea-500"
     },
     "name": "Marder 1A3",
-    "mass": 33.5
+    "mass": 33.5,
+    "turrets": {
+      "Commander": {
+        "zoom": {
+          "max": 1.8421052631578947,
+          "min": 5.833333333333333
+        },
+        "weapons": [
+          "Milan 2",
+          "Milan ER"
+        ]
+      },
+      "Gunner": {
+        "weapons": [
+          "20mm Rh202",
+          "7.62mm MG3"
+        ],
+        "smokes": true,
+        "zoom": {
+          "max": 1.8421052631578947,
+          "min": 5.833333333333333
+        }
+      }
+    }
   },
   {
+    "suspension": {
+      "vertical": true,
+      "horizontal": false,
+      "height": true
+    },
     "engine": {
       "transmission": {
         "reverseGears": 1,
@@ -964,6 +2154,20 @@
       "maxRPM": 2600,
       "horsepower": 241,
       "name": "5D-20"
+    },
+    "turrets": {
+      "Gunner": {
+        "zoom": {
+          "max": 5.833333333333333,
+          "min": 5.833333333333333
+        },
+        "weapons": [
+          "30mm 2A42",
+          "9M113 Konkurs",
+          "7.62mm PKT",
+          "9M113M Konkurs"
+        ]
+      }
     },
     "name": "BMD-2",
     "mass": 11.5
@@ -983,7 +2187,20 @@
       "name": "6V53"
     },
     "name": "M901ITV",
-    "mass": 11.8
+    "mass": 11.8,
+    "turrets": {
+      "Commander": {
+        "weapons": [
+          "BGM-71A TOW",
+          "BGM-71C I-TOW"
+        ],
+        "smokes": true,
+        "zoom": {
+          "max": 2.8,
+          "min": 11.666666666666666
+        }
+      }
+    }
   },
   {
     "engine": {
@@ -1000,7 +2217,30 @@
       "name": "Leyland L60"
     },
     "name": "Chieftain Mk 5",
-    "mass": 55
+    "mass": 55,
+    "turrets": {
+      "Commander": {
+        "zoom": {
+          "max": 0.875,
+          "min": 10
+        },
+        "weapons": [
+          "7.62mm L37A1"
+        ]
+      },
+      "Gunner": {
+        "weapons": [
+          "120mm L11A5",
+          "7.62mm L8A1",
+          "12.7 mm L21A1"
+        ],
+        "smokes": true,
+        "zoom": {
+          "max": 6.363636363636363,
+          "min": 7.777777777777778
+        }
+      }
+    }
   },
   {
     "engine": {
@@ -1017,7 +2257,29 @@
       "name": "AVDS-1790-2"
     },
     "name": "M60A1 RISE Passive",
-    "mass": 53.2
+    "mass": 53.2,
+    "turrets": {
+      "Commander": {
+        "zoom": {
+          "max": 0.875,
+          "min": 6.363636363636363
+        },
+        "weapons": [
+          "12.7mm M2"
+        ]
+      },
+      "Gunner": {
+        "weapons": [
+          "7.62mm M240",
+          "105mm M68E1"
+        ],
+        "smokes": true,
+        "zoom": {
+          "max": 7.777777777777778,
+          "min": 7.777777777777778
+        }
+      }
+    }
   },
   {
     "engine": {
@@ -1034,7 +2296,18 @@
       "name": "GAZ-41"
     },
     "name": "BRDM-2 Konkurs",
-    "mass": 7
+    "mass": 7,
+    "turrets": {
+      "Scout Commander": {
+        "zoom": {
+          "max": 4.666666666666667,
+          "min": 8.75
+        },
+        "weapons": [
+          "9M113 Konkurs"
+        ]
+      }
+    }
   },
   {
     "engine": {
@@ -1051,7 +2324,31 @@
       "name": "12N360"
     },
     "name": "T-14 Armata",
-    "mass": 55
+    "mass": 55,
+    "turrets": {
+      "Commander": {
+        "zoom": {
+          "max": 2.8,
+          "min": 11.666666666666666
+        },
+        "weapons": [
+          "14.5mm KPVT",
+          "12.7mm KORD"
+        ]
+      },
+      "Gunner": {
+        "weapons": [
+          "7.62mm PKT",
+          "125mm 2A82-1M",
+          "152mm 2A73"
+        ],
+        "smokes": true,
+        "zoom": {
+          "max": 2.8,
+          "min": 11.666666666666666
+        }
+      }
+    }
   },
   {
     "engine": {
@@ -1068,7 +2365,18 @@
       "name": "White 160AX"
     },
     "name": "M3 half-track",
-    "mass": 8
+    "mass": 8,
+    "turrets": {
+      "Gunner": {
+        "zoom": {
+          "max": 1.1666666666666667,
+          "min": 1.75
+        },
+        "weapons": [
+          "12.7mm M2"
+        ]
+      }
+    }
   },
   {
     "engine": {
@@ -1085,7 +2393,29 @@
       "name": "12V150ZLD"
     },
     "name": "ZTZ96A",
-    "mass": 42.8
+    "mass": 42.8,
+    "turrets": {
+      "Commander": {
+        "zoom": {
+          "max": 0.875,
+          "min": 4.666666666666667
+        },
+        "weapons": [
+          "12.7mm QJC88A"
+        ]
+      },
+      "Gunner": {
+        "weapons": [
+          "7.62mm Type 86",
+          "125mm Type 88C"
+        ],
+        "smokes": true,
+        "zoom": {
+          "max": 5.833333333333333,
+          "min": 10
+        }
+      }
+    }
   },
   {
     "engine": {
@@ -1102,7 +2432,29 @@
       "name": "2 x Porsche Type 101"
     },
     "name": "Porsche Tiger",
-    "mass": 60
+    "mass": 60,
+    "turrets": {
+      "Bow Gunner": {
+        "zoom": {
+          "max": 1.75,
+          "min": 2.8
+        },
+        "weapons": [
+          "7.92mm MG34"
+        ]
+      },
+      "Gunner": {
+        "weapons": [
+          "88 mm KwK36",
+          "7.92mm MG34"
+        ],
+        "smokes": true,
+        "zoom": {
+          "max": 1.75,
+          "min": 3.3333333333333335
+        }
+      }
+    }
   },
   {
     "engine": {
@@ -1119,7 +2471,26 @@
       "name": "GAZ-41"
     },
     "name": "BRDM-2",
-    "mass": 7
+    "mass": 7,
+    "turrets": {
+      "Scout Commander": {
+        "zoom": {
+          "max": 1.75,
+          "min": 2.8
+        },
+        "weapons": []
+      },
+      "Gunner": {
+        "zoom": {
+          "max": 4.666666666666667,
+          "min": 4.666666666666667
+        },
+        "weapons": [
+          "14.5mm KPVT",
+          "7.62mm PKT"
+        ]
+      }
+    }
   },
   {
     "engine": {
@@ -1136,7 +2507,18 @@
       "name": "VTA-903T"
     },
     "name": "M270 MLRS",
-    "mass": 24
+    "mass": 24,
+    "turrets": {
+      "Gunner": {
+        "zoom": {
+          "max": 1.75,
+          "min": 3.5
+        },
+        "weapons": [
+          "227mm M269"
+        ]
+      }
+    }
   },
   {
     "engine": {
@@ -1153,7 +2535,43 @@
       "name": "MB HL230 P30"
     },
     "name": "Jagdtiger",
-    "mass": 75.2
+    "mass": 75.2,
+    "turrets": {
+      "Loader": {
+        "zoom": {
+          "max": 1.75,
+          "min": 2.8
+        },
+        "weapons": [
+          "Grenade Mortar"
+        ]
+      },
+      "Gunner": {
+        "zoom": {
+          "max": 10,
+          "min": 10
+        },
+        "weapons": [
+          "128 mm PaK44"
+        ]
+      },
+      "Commander": {
+        "zoom": {
+          "max": 10,
+          "min": 10
+        },
+        "weapons": []
+      },
+      "Bow Gunner": {
+        "zoom": {
+          "max": 1.75,
+          "min": 2.8
+        },
+        "weapons": [
+          "7.92mm MG34"
+        ]
+      }
+    }
   },
   {
     "engine": {
@@ -1170,7 +2588,18 @@
       "name": "6V53"
     },
     "name": "M113",
-    "mass": 12.3
+    "mass": 12.3,
+    "turrets": {
+      "Commander": {
+        "zoom": {
+          "max": 1.1666666666666667,
+          "min": 1.75
+        },
+        "weapons": [
+          "12.7mm M2"
+        ]
+      }
+    }
   },
   {
     "engine": {
@@ -1187,7 +2616,18 @@
       "name": "M-20"
     },
     "name": "ASU-57",
-    "mass": 3.3
+    "mass": 3.3,
+    "turrets": {
+      "Gunner": {
+        "zoom": {
+          "max": 5.384615384615385,
+          "min": 5.384615384615385
+        },
+        "weapons": [
+          "57mm Ch-51M"
+        ]
+      }
+    }
   },
   {
     "engine": {
@@ -1204,9 +2644,36 @@
       "name": "Detroit 6V53T"
     },
     "name": "LAV-AT",
-    "mass": 12.9
+    "mass": 12.9,
+    "turrets": {
+      "Commander": {
+        "zoom": {
+          "max": 1.75,
+          "min": 2.8
+        },
+        "weapons": [
+          "7.62mm M240"
+        ]
+      },
+      "Gunner": {
+        "weapons": [
+          "BGM-71C I-TOW",
+          "BGM-71F TOW 2A/B"
+        ],
+        "smokes": true,
+        "zoom": {
+          "max": 2.8,
+          "min": 11.666666666666666
+        }
+      }
+    }
   },
   {
+    "suspension": {
+      "vertical": true,
+      "horizontal": false,
+      "height": true
+    },
     "engine": {
       "transmission": {
         "reverseGears": 2,
@@ -1219,6 +2686,28 @@
       "maxRPM": 2600,
       "horsepower": 500,
       "name": "UTD-29"
+    },
+    "turrets": {
+      "Commander": {
+        "zoom": {
+          "max": 3.6842105263157894,
+          "min": 11.666666666666666
+        },
+        "weapons": [
+          "7.62mm PKT"
+        ]
+      },
+      "Gunner": {
+        "weapons": [
+          "7.62mm PKT",
+          "125mm 2A75"
+        ],
+        "smokes": true,
+        "zoom": {
+          "max": 3.6842105263157894,
+          "min": 11.666666666666666
+        }
+      }
     },
     "name": "Sprut-SDM1",
     "mass": 18
@@ -1238,7 +2727,27 @@
       "name": "YaMZ 238"
     },
     "name": "Strela-10",
-    "mass": 11.5
+    "mass": 11.5,
+    "turrets": {
+      "Commander": {
+        "zoom": {
+          "max": 1.75,
+          "min": 2.8
+        },
+        "weapons": [
+          "12.7mm NSVT"
+        ]
+      },
+      "Gunner": {
+        "zoom": {
+          "max": 7.777777777777778,
+          "min": 7.777777777777778
+        },
+        "weapons": [
+          "9M37M"
+        ]
+      }
+    }
   },
   {
     "engine": {
@@ -1255,7 +2764,37 @@
       "name": "V-2K"
     },
     "name": "KV-2",
-    "mass": 52.4
+    "mass": 52.4,
+    "turrets": {
+      "Loader": {
+        "zoom": {
+          "max": 1.75,
+          "min": 2.8
+        },
+        "weapons": [
+          "7.62mm DT-28"
+        ]
+      },
+      "Gunner": {
+        "zoom": {
+          "max": 1.75,
+          "min": 3.3333333333333335
+        },
+        "weapons": [
+          "152mm M-10T",
+          "7.62mm DT-28"
+        ]
+      },
+      "Bow Gunner": {
+        "zoom": {
+          "max": 1.75,
+          "min": 2.8
+        },
+        "weapons": [
+          "7.62mm DT-28"
+        ]
+      }
+    }
   },
   {
     "engine": {
@@ -1272,7 +2811,36 @@
       "name": "Continental W-670-9A"
     },
     "name": "LVT-6 Gator",
-    "mass": 14.9
+    "mass": 14.9,
+    "turrets": {
+      "Gunner": {
+        "zoom": {
+          "max": 1.75,
+          "min": 3.3333333333333335
+        },
+        "weapons": [
+          "M2 Howitzer"
+        ]
+      },
+      "Commander": {
+        "zoom": {
+          "max": 1.1666666666666667,
+          "min": 1.75
+        },
+        "weapons": [
+          "12.7mm M2"
+        ]
+      },
+      "MGGunner": {
+        "zoom": {
+          "max": 1.1666666666666667,
+          "min": 1.75
+        },
+        "weapons": [
+          "12.7mm M2"
+        ]
+      }
+    }
   },
   {
     "engine": {
@@ -1289,7 +2857,27 @@
       "name": "A-85-3A"
     },
     "name": "Object 195",
-    "mass": 60
+    "mass": 60,
+    "turrets": {
+      "Commander": {
+        "zoom": {
+          "max": 2.8,
+          "min": 11.666666666666666
+        },
+        "weapons": []
+      },
+      "Gunner": {
+        "weapons": [
+          "30mm 2A72",
+          "152mm 2A73"
+        ],
+        "smokes": true,
+        "zoom": {
+          "max": 2.8,
+          "min": 11.666666666666666
+        }
+      }
+    }
   },
   {
     "engine": {
@@ -1306,7 +2894,20 @@
       "name": "UTD-20"
     },
     "name": "BMP-1AM",
-    "mass": 14.2
+    "mass": 14.2,
+    "turrets": {
+      "Gunner": {
+        "weapons": [
+          "7.62mm PKT",
+          "30mm 2A72"
+        ],
+        "smokes": true,
+        "zoom": {
+          "max": 1.4285714285714286,
+          "min": 10
+        }
+      }
+    }
   },
   {
     "engine": {
@@ -1323,9 +2924,36 @@
       "name": "VTA-903T"
     },
     "name": "M2A2 Bradley",
-    "mass": 22.3
+    "mass": 22.3,
+    "turrets": {
+      "Commander": {
+        "zoom": {
+          "max": 1.8421052631578947,
+          "min": 7.777777777777778
+        },
+        "weapons": []
+      },
+      "Gunner": {
+        "weapons": [
+          "BGM-71C I-TOW",
+          "25mm M242 Bushmaster",
+          "BGM-71F TOW 2A/B",
+          "7.62mm M240"
+        ],
+        "smokes": true,
+        "zoom": {
+          "max": 3.888888888888889,
+          "min": 11.666666666666666
+        }
+      }
+    }
   },
   {
+    "suspension": {
+      "vertical": true,
+      "horizontal": false,
+      "height": false
+    },
     "engine": {
       "transmission": {
         "reverseGears": 7,
@@ -1338,6 +2966,18 @@
       "maxRPM": 2600,
       "horsepower": 2200,
       "name": "MTU MB 803 Ra-500"
+    },
+    "turrets": {
+      "Gunner": {
+        "zoom": {
+          "max": 7.777777777777778,
+          "min": 14
+        },
+        "weapons": [
+          "120mm Rh120 L/44 Dupe",
+          "120mm Rh120 L/44"
+        ]
+      }
     },
     "name": "VT1-2",
     "mass": 43.5
@@ -1357,7 +2997,27 @@
       "name": "Opel 3.6L"
     },
     "name": "Pz.W.42",
-    "mass": 9.1
+    "mass": 9.1,
+    "turrets": {
+      "Commander": {
+        "zoom": {
+          "max": 1.75,
+          "min": 2.8
+        },
+        "weapons": [
+          "7.92mm MG34"
+        ]
+      },
+      "Gunner": {
+        "zoom": {
+          "max": 1.75,
+          "min": 3.3333333333333335
+        },
+        "weapons": [
+          "150 mm Wgr.41 Spr rocket"
+        ]
+      }
+    }
   },
   {
     "engine": {
@@ -1374,7 +3034,30 @@
       "name": "MTU MB 873 Ka-501"
     },
     "name": "KF51 Panther",
-    "mass": 55.4
+    "mass": 55.4,
+    "turrets": {
+      "Commander": {
+        "zoom": {
+          "max": 2.7559055118110236,
+          "min": 11.864406779661016
+        },
+        "weapons": [
+          "7.62mm NATTER",
+          "HERO-120"
+        ]
+      },
+      "Gunner": {
+        "weapons": [
+          "12.7mm RMG",
+          "130mm Rh130 L/51"
+        ],
+        "smokes": true,
+        "zoom": {
+          "max": 2.2435897435897436,
+          "min": 17.5
+        }
+      }
+    }
   },
   {
     "engine": {
@@ -1391,7 +3074,19 @@
       "name": "UTMZ 2DG-8M"
     },
     "name": "Object 279",
-    "mass": 60.4
+    "mass": 60.4,
+    "turrets": {
+      "Gunner": {
+        "zoom": {
+          "max": 7.777777777777778,
+          "min": 7.777777777777778
+        },
+        "weapons": [
+          "130mm M-65",
+          "14.5mm KPVT"
+        ]
+      }
+    }
   },
   {
     "engine": {
@@ -1408,7 +3103,21 @@
       "name": "SOFAM 8Gxb"
     },
     "name": "AMX-13",
-    "mass": 14.5
+    "mass": 14.5,
+    "turrets": {
+      "Gunner": {
+        "weapons": [
+          "75mm SA50 L/57",
+          "7.5 mm MAC 31",
+          "LFK SS.11"
+        ],
+        "smokes": true,
+        "zoom": {
+          "max": 7,
+          "min": 7
+        }
+      }
+    }
   },
   {
     "engine": {
@@ -1425,7 +3134,27 @@
       "name": "MB HL120 TRM"
     },
     "name": "Stug III G",
-    "mass": 23.9
+    "mass": 23.9,
+    "turrets": {
+      "Loader": {
+        "zoom": {
+          "max": 1.75,
+          "min": 2.8
+        },
+        "weapons": [
+          "7.92mm MG34"
+        ]
+      },
+      "Gunner": {
+        "zoom": {
+          "max": 4.666666666666667,
+          "min": 4.666666666666667
+        },
+        "weapons": [
+          "7.5 cm KwK 40 L/48"
+        ]
+      }
+    }
   },
   {
     "engine": {
@@ -1442,7 +3171,39 @@
       "name": "MTU 12V883"
     },
     "name": "Merkava Mk.4M",
-    "mass": 65.5
+    "mass": 65.5,
+    "turrets": {
+      "Loader": {
+        "zoom": {
+          "max": 1.75,
+          "min": 2.8
+        },
+        "weapons": [
+          "60 mm Soltam Mortar"
+        ]
+      },
+      "Gunner": {
+        "weapons": [
+          "120mm IMI MG251",
+          "7.62 mm FN MAG 60-40",
+          "12.7mm M2"
+        ],
+        "smokes": true,
+        "zoom": {
+          "max": 3.6842105263157894,
+          "min": 11.666666666666666
+        }
+      },
+      "Commander": {
+        "zoom": {
+          "max": 3.6842105263157894,
+          "min": 14
+        },
+        "weapons": [
+          "7.62 mm FN MAG 60-40"
+        ]
+      }
+    }
   },
   {
     "engine": {
@@ -1459,7 +3220,27 @@
       "name": "8V71T"
     },
     "name": "M109",
-    "mass": 24.1
+    "mass": 24.1,
+    "turrets": {
+      "Commander": {
+        "zoom": {
+          "max": 1.75,
+          "min": 2.8
+        },
+        "weapons": [
+          "12.7mm M2"
+        ]
+      },
+      "Gunner": {
+        "zoom": {
+          "max": 3.6842105263157894,
+          "min": 3.6842105263157894
+        },
+        "weapons": [
+          "155mm M185"
+        ]
+      }
+    }
   },
   {
     "engine": {
@@ -1476,7 +3257,44 @@
       "name": "GAC V12"
     },
     "name": "T29E3",
-    "mass": 64.2
+    "mass": 64.2,
+    "turrets": {
+      "Loader": {
+        "zoom": {
+          "max": 1.75,
+          "min": 2.8
+        },
+        "weapons": [
+          "12.7mm M2"
+        ]
+      },
+      "Gunner": {
+        "zoom": {
+          "max": 3.6842105263157894,
+          "min": 7.777777777777778
+        },
+        "weapons": [
+          "12.7mm M2",
+          "105mm T5E1"
+        ]
+      },
+      "Commander": {
+        "zoom": {
+          "max": 1.75,
+          "min": 2.8
+        },
+        "weapons": []
+      },
+      "BowGunner": {
+        "zoom": {
+          "max": 1.75,
+          "min": 2.8
+        },
+        "weapons": [
+          ".30 cal M1919"
+        ]
+      }
+    }
   },
   {
     "engine": {
@@ -1493,7 +3311,28 @@
       "name": "Model V-2-34"
     },
     "name": "T-34-85",
-    "mass": 32.2
+    "mass": 32.2,
+    "turrets": {
+      "Bow Gunner": {
+        "zoom": {
+          "max": 1.75,
+          "min": 2.8
+        },
+        "weapons": [
+          "7.62mm DT-28"
+        ]
+      },
+      "Gunner": {
+        "zoom": {
+          "max": 3.6842105263157894,
+          "min": 3.6842105263157894
+        },
+        "weapons": [
+          "85mm ZIS-S-53",
+          "7.62mm DT-28"
+        ]
+      }
+    }
   },
   {
     "engine": {
@@ -1510,9 +3349,36 @@
       "name": "HP150"
     },
     "name": "ZTZ99A",
-    "mass": 55
+    "mass": 55,
+    "turrets": {
+      "Commander": {
+        "zoom": {
+          "max": 2.8,
+          "min": 10
+        },
+        "weapons": [
+          "12.7mm QJC88A"
+        ]
+      },
+      "Gunner": {
+        "weapons": [
+          "5.8mm QJT",
+          "125mm Type 99A"
+        ],
+        "smokes": true,
+        "zoom": {
+          "max": 5.833333333333333,
+          "min": 10
+        }
+      }
+    }
   },
   {
+    "suspension": {
+      "vertical": true,
+      "horizontal": false,
+      "height": true
+    },
     "engine": {
       "transmission": {
         "reverseGears": 1,
@@ -1525,6 +3391,39 @@
       "maxRPM": 2600,
       "horsepower": 241,
       "name": "5D-20"
+    },
+    "turrets": {
+      "Commander": {
+        "zoom": {
+          "max": 1.75,
+          "min": 2.8
+        },
+        "weapons": [
+          "7.62mm PKT"
+        ]
+      },
+      "Gunner": {
+        "weapons": [
+          "7.62mm PKT",
+          "73mm 2A28",
+          "9M14M",
+          "9M113 Konkurs"
+        ],
+        "smokes": true,
+        "zoom": {
+          "max": 5.833333333333333,
+          "min": 5.833333333333333
+        }
+      },
+      "Passenger": {
+        "zoom": {
+          "max": 1.75,
+          "min": 2.8
+        },
+        "weapons": [
+          "7.62mm PKT"
+        ]
+      }
     },
     "name": "BMD-1",
     "mass": 7.5
@@ -1544,7 +3443,28 @@
       "name": "V-2IS"
     },
     "name": "ISU-152",
-    "mass": 46
+    "mass": 46,
+    "turrets": {
+      "Commander": {
+        "zoom": {
+          "max": 1.75,
+          "min": 2.8
+        },
+        "weapons": [
+          "12.7mm DSHK"
+        ]
+      },
+      "Gunner": {
+        "zoom": {
+          "max": 1.75,
+          "min": 3.3333333333333335
+        },
+        "weapons": [
+          "152mm ML-20S",
+          "122mm A-19C"
+        ]
+      }
+    }
   },
   {
     "engine": {
@@ -1561,7 +3481,27 @@
       "name": "Ford GAA V8"
     },
     "name": "M36 Jackson",
-    "mass": 28.1
+    "mass": 28.1,
+    "turrets": {
+      "Commander": {
+        "zoom": {
+          "max": 1.75,
+          "min": 2.8
+        },
+        "weapons": [
+          "12.7mm M2"
+        ]
+      },
+      "Gunner": {
+        "zoom": {
+          "max": 4.666666666666667,
+          "min": 4.666666666666667
+        },
+        "weapons": [
+          "90mm M3"
+        ]
+      }
+    }
   },
   {
     "engine": {
@@ -1578,7 +3518,27 @@
       "name": "Model V-2-34"
     },
     "name": "SU-122P",
-    "mass": 31.6
+    "mass": 31.6,
+    "turrets": {
+      "Commander": {
+        "zoom": {
+          "max": 1.75,
+          "min": 2.8
+        },
+        "weapons": [
+          "12.7mm DSHK"
+        ]
+      },
+      "Gunner": {
+        "zoom": {
+          "max": 3.6842105263157894,
+          "min": 3.6842105263157894
+        },
+        "weapons": [
+          "122mm D-25T"
+        ]
+      }
+    }
   },
   {
     "engine": {
@@ -1595,7 +3555,37 @@
       "name": "V-2K"
     },
     "name": "KV-2 (ZIS-6)",
-    "mass": 52.4
+    "mass": 52.4,
+    "turrets": {
+      "Loader": {
+        "zoom": {
+          "max": 1.75,
+          "min": 2.8
+        },
+        "weapons": [
+          "7.62mm DT-28"
+        ]
+      },
+      "Gunner": {
+        "zoom": {
+          "max": 1.75,
+          "min": 3.3333333333333335
+        },
+        "weapons": [
+          "107mm ZIS-6",
+          "7.62mm DT-28"
+        ]
+      },
+      "Bow Gunner": {
+        "zoom": {
+          "max": 1.75,
+          "min": 2.8
+        },
+        "weapons": [
+          "7.62mm DT-28"
+        ]
+      }
+    }
   },
   {
     "engine": {
@@ -1612,7 +3602,8 @@
       "name": "2445cc UMZ"
     },
     "name": "UAZ-469",
-    "mass": 1.65
+    "mass": 1.65,
+    "turrets": []
   },
   {
     "engine": {
@@ -1629,7 +3620,26 @@
       "name": "Rolls-Royce Meteor 4B"
     },
     "name": "FV4005",
-    "mass": 50
+    "mass": 50,
+    "turrets": {
+      "Commander": {
+        "zoom": {
+          "max": 1.75,
+          "min": 2.8
+        },
+        "weapons": []
+      },
+      "Gunner": {
+        "zoom": {
+          "max": 4.666666666666667,
+          "min": 5.833333333333333
+        },
+        "weapons": [
+          "183mm L4",
+          "7.62mm L3A1"
+        ]
+      }
+    }
   },
   {
     "engine": {
@@ -1646,7 +3656,19 @@
       "name": "2xGAZ-49B"
     },
     "name": "BTR-60PB",
-    "mass": 10.3
+    "mass": 10.3,
+    "turrets": {
+      "Gunner": {
+        "zoom": {
+          "max": 3.888888888888889,
+          "min": 3.888888888888889
+        },
+        "weapons": [
+          "14.5mm KPVT",
+          "7.62mm PKT"
+        ]
+      }
+    }
   },
   {
     "engine": {
@@ -1663,9 +3685,33 @@
       "name": "ChTZ V-84-1"
     },
     "name": "TOS-1A BM-1",
-    "mass": 45.3
+    "mass": 45.3,
+    "turrets": {
+      "Commander": {
+        "zoom": {
+          "max": 4.666666666666667,
+          "min": 4.666666666666667
+        },
+        "weapons": []
+      },
+      "Gunner": {
+        "weapons": [
+          "230mm TOS-1A"
+        ],
+        "smokes": true,
+        "zoom": {
+          "max": 1.75,
+          "min": 3.5
+        }
+      }
+    }
   },
   {
+    "suspension": {
+      "vertical": true,
+      "horizontal": false,
+      "height": true
+    },
     "engine": {
       "transmission": {
         "reverseGears": 2,
@@ -1678,6 +3724,28 @@
       "maxRPM": 2400,
       "horsepower": 1500,
       "name": "MHI 10ZG32WT"
+    },
+    "turrets": {
+      "Commander": {
+        "zoom": {
+          "max": 2.8,
+          "min": 10
+        },
+        "weapons": [
+          "12.7mm M2"
+        ]
+      },
+      "Gunner": {
+        "weapons": [
+          "7.62mm Type 74",
+          "120mm Type 90 L/44"
+        ],
+        "smokes": true,
+        "zoom": {
+          "max": 0.875,
+          "min": 10
+        }
+      }
     },
     "name": "Type 90",
     "mass": 50.2
@@ -1697,7 +3765,36 @@
       "name": "CNGC 12150L"
     },
     "name": "WZ-122",
-    "mass": 37.5
+    "mass": 37.5,
+    "turrets": {
+      "Loader": {
+        "zoom": {
+          "max": 1.75,
+          "min": 2.8
+        },
+        "weapons": [
+          "12.7mm Type 54"
+        ]
+      },
+      "Gunner": {
+        "zoom": {
+          "max": 3.3333333333333335,
+          "min": 6.363636363636363
+        },
+        "weapons": [
+          "120mm Cannon Type 71",
+          "7.62mm Type 59",
+          "302 Anti-tank Missile"
+        ]
+      },
+      "Commander": {
+        "zoom": {
+          "max": 0.875,
+          "min": 4.666666666666667
+        },
+        "weapons": []
+      }
+    }
   },
   {
     "engine": {
@@ -1714,7 +3811,29 @@
       "name": "HPZ 5TDF"
     },
     "name": "T-64BV",
-    "mass": 41.2
+    "mass": 41.2,
+    "turrets": {
+      "Commander": {
+        "zoom": {
+          "max": 4.666666666666667,
+          "min": 4.666666666666667
+        },
+        "weapons": [
+          "12.7mm NSVT"
+        ]
+      },
+      "Gunner": {
+        "weapons": [
+          "7.62mm PKT",
+          "125mm 2A46M-1"
+        ],
+        "smokes": true,
+        "zoom": {
+          "max": 3.6842105263157894,
+          "min": 8.75
+        }
+      }
+    }
   },
   {
     "engine": {
@@ -1731,7 +3850,18 @@
       "name": "VAZ-3416"
     },
     "name": "Plastun SN",
-    "mass": 3.8
+    "mass": 3.8,
+    "turrets": {
+      "Gunner": {
+        "zoom": {
+          "max": 1.75,
+          "min": 2.8
+        },
+        "weapons": [
+          "12.7mm DSHK"
+        ]
+      }
+    }
   },
   {
     "engine": {
@@ -1748,7 +3878,28 @@
       "name": "Model V-2-34"
     },
     "name": "T-34-57",
-    "mass": 30
+    "mass": 30,
+    "turrets": {
+      "Bow Gunner": {
+        "zoom": {
+          "max": 1.75,
+          "min": 3.3333333333333335
+        },
+        "weapons": [
+          "7.62mm DT-28"
+        ]
+      },
+      "Gunner": {
+        "zoom": {
+          "max": 1.75,
+          "min": 3.3333333333333335
+        },
+        "weapons": [
+          "57mm ZiS-4",
+          "7.62mm DT-28"
+        ]
+      }
+    }
   },
   {
     "engine": {
@@ -1765,7 +3916,29 @@
       "name": "V8X-1500"
     },
     "name": "Leclerc S21",
-    "mass": 56.2
+    "mass": 56.2,
+    "turrets": {
+      "Commander": {
+        "zoom": {
+          "max": 2.3333333333333335,
+          "min": 10
+        },
+        "weapons": [
+          "7.62mm A-A-F1N"
+        ]
+      },
+      "Gunner": {
+        "weapons": [
+          "12.7mm CRC F1",
+          "120mm GIAT CN120-26 F1"
+        ],
+        "smokes": true,
+        "zoom": {
+          "max": 3.1818181818181817,
+          "min": 10
+        }
+      }
+    }
   },
   {
     "engine": {
@@ -1782,7 +3955,27 @@
       "name": "GM 6046"
     },
     "name": "M10 Wolverine",
-    "mass": 30.4
+    "mass": 30.4,
+    "turrets": {
+      "Commander": {
+        "zoom": {
+          "max": 1.75,
+          "min": 2.8
+        },
+        "weapons": [
+          "12.7mm M2"
+        ]
+      },
+      "Gunner": {
+        "zoom": {
+          "max": 1.75,
+          "min": 3.3333333333333335
+        },
+        "weapons": [
+          "76mm M7"
+        ]
+      }
+    }
   },
   {
     "engine": {
@@ -1799,7 +3992,47 @@
       "name": "V-2K"
     },
     "name": "ZIT-122",
-    "mass": 52.4
+    "mass": 52.4,
+    "turrets": {
+      "Loader": {
+        "zoom": {
+          "max": 1.75,
+          "min": 2.8
+        },
+        "weapons": [
+          "7.62mm PKT"
+        ]
+      },
+      "Gunner": {
+        "weapons": [
+          "122mm HW-T",
+          "12.7mm DSHK"
+        ],
+        "smokes": true,
+        "zoom": {
+          "max": 1.75,
+          "min": 3.3333333333333335
+        }
+      },
+      "Commander": {
+        "zoom": {
+          "max": 1.75,
+          "min": 2.8
+        },
+        "weapons": [
+          "12.7mm DSHK"
+        ]
+      },
+      "Bow Gunner": {
+        "zoom": {
+          "max": 1.75,
+          "min": 2.8
+        },
+        "weapons": [
+          "7.62mm PKT"
+        ]
+      }
+    }
   },
   {
     "engine": {
@@ -1816,7 +4049,37 @@
       "name": "ChTZ V-44"
     },
     "name": "T-44",
-    "mass": 31
+    "mass": 31,
+    "turrets": {
+      "Commander": {
+        "zoom": {
+          "max": 1.75,
+          "min": 2.8
+        },
+        "weapons": [
+          "12.7mm DSHK"
+        ]
+      },
+      "Gunner": {
+        "zoom": {
+          "max": 3.6842105263157894,
+          "min": 3.6842105263157894
+        },
+        "weapons": [
+          "85mm ZIS-S-53",
+          "7.62mm DT-28"
+        ]
+      },
+      "Driver": {
+        "zoom": {
+          "max": 1.75,
+          "min": 2.8
+        },
+        "weapons": [
+          "7.62mm DT-28"
+        ]
+      }
+    }
   },
   {
     "engine": {
@@ -1833,7 +4096,20 @@
       "name": "CA6DL2-35E3R"
     },
     "name": "Type 625E",
-    "mass": 26
+    "mass": 26,
+    "turrets": {
+      "Gunner": {
+        "weapons": [
+          "25mm Type 625",
+          "FN-16"
+        ],
+        "smokes": true,
+        "zoom": {
+          "max": 1.8421052631578947,
+          "min": 14
+        }
+      }
+    }
   },
   {
     "engine": {
@@ -1850,7 +4126,36 @@
       "name": "Perkins CV12"
     },
     "name": "Challenger 2",
-    "mass": 64
+    "mass": 64,
+    "turrets": {
+      "Loader": {
+        "zoom": {
+          "max": 2.8,
+          "min": 11.666666666666666
+        },
+        "weapons": [
+          "12.7mm M2"
+        ]
+      },
+      "Gunner": {
+        "weapons": [
+          "7.62 mm L94A1",
+          "120mm L30A1"
+        ],
+        "smokes": true,
+        "zoom": {
+          "max": 3.6842105263157894,
+          "min": 10
+        }
+      },
+      "Commander": {
+        "zoom": {
+          "max": 2.8,
+          "min": 10
+        },
+        "weapons": []
+      }
+    }
   },
   {
     "engine": {
@@ -1867,7 +4172,44 @@
       "name": "Rolls-Royce Meteor Mark III"
     },
     "name": "Comet Mk.1",
-    "mass": 33.5
+    "mass": 33.5,
+    "turrets": {
+      "Loader": {
+        "zoom": {
+          "max": 1.75,
+          "min": 2.8
+        },
+        "weapons": [
+          "Grenade Mortar"
+        ]
+      },
+      "Gunner": {
+        "zoom": {
+          "max": 2.8,
+          "min": 5.833333333333333
+        },
+        "weapons": [
+          "77mm OQF Mk.II",
+          "7.92 mm BESA"
+        ]
+      },
+      "Commander": {
+        "zoom": {
+          "max": 1.75,
+          "min": 2.8
+        },
+        "weapons": []
+      },
+      "Bow Gunner": {
+        "zoom": {
+          "max": 1.75,
+          "min": 2.8
+        },
+        "weapons": [
+          "7.92 mm BESA"
+        ]
+      }
+    }
   },
   {
     "engine": {
@@ -1884,9 +4226,33 @@
       "name": "MTU MT881 Ka-500"
     },
     "name": "PzH-2000",
-    "mass": 57
+    "mass": 57,
+    "turrets": {
+      "Commander": {
+        "zoom": {
+          "max": 2.5,
+          "min": 10
+        },
+        "weapons": []
+      },
+      "Gunner": {
+        "weapons": [
+          "155mm L62"
+        ],
+        "smokes": true,
+        "zoom": {
+          "max": 7,
+          "min": 7
+        }
+      }
+    }
   },
   {
+    "suspension": {
+      "vertical": true,
+      "horizontal": false,
+      "height": true
+    },
     "engine": {
       "transmission": {
         "reverseGears": 2,
@@ -1899,6 +4265,30 @@
       "maxRPM": 2600,
       "horsepower": 500,
       "name": "UTD-29"
+    },
+    "turrets": {
+      "Commander": {
+        "zoom": {
+          "max": 3.6842105263157894,
+          "min": 17.5
+        },
+        "weapons": [
+          "9M120 Ataka"
+        ]
+      },
+      "Gunner": {
+        "weapons": [
+          "7.62mm PKT",
+          "100mm 2A70",
+          "100mm 2A70M",
+          "30mm 2A72"
+        ],
+        "smokes": true,
+        "zoom": {
+          "max": 7.777777777777778,
+          "min": 7.777777777777778
+        }
+      }
     },
     "name": "BMP-3",
     "mass": 18.7
@@ -1918,7 +4308,29 @@
       "name": "GTD-1250"
     },
     "name": "T-80U",
-    "mass": 46
+    "mass": 46,
+    "turrets": {
+      "Commander": {
+        "zoom": {
+          "max": 0.875,
+          "min": 7.777777777777778
+        },
+        "weapons": [
+          "12.7mm NSVT"
+        ]
+      },
+      "Gunner": {
+        "weapons": [
+          "7.62mm PKT",
+          "125mm 2A46M-1"
+        ],
+        "smokes": true,
+        "zoom": {
+          "max": 2.5,
+          "min": 11.666666666666666
+        }
+      }
+    }
   },
   {
     "engine": {
@@ -1935,9 +4347,44 @@
       "name": "Ford GAA V8"
     },
     "name": "M4A3E2 (75) Jumbo",
-    "mass": 37.8
+    "mass": 37.8,
+    "turrets": {
+      "Gunner": {
+        "zoom": {
+          "max": 4.666666666666667,
+          "min": 4.666666666666667
+        },
+        "weapons": [
+          "75mm M3",
+          ".30 cal M1919"
+        ]
+      },
+      "Commander": {
+        "zoom": {
+          "max": 1.75,
+          "min": 2.8
+        },
+        "weapons": [
+          "12.7mm M2"
+        ]
+      },
+      "Bow Gunner": {
+        "zoom": {
+          "max": 1.75,
+          "min": 2.8
+        },
+        "weapons": [
+          ".30 cal M1919"
+        ]
+      }
+    }
   },
   {
+    "suspension": {
+      "vertical": true,
+      "horizontal": true,
+      "height": true
+    },
     "engine": {
       "transmission": {
         "reverseGears": 8,
@@ -1950,6 +4397,35 @@
       "maxRPM": 2600,
       "horsepower": 1500,
       "name": "MTU MB 873 Ka-501"
+    },
+    "turrets": {
+      "Driver": {
+        "zoom": {
+          "max": 0.875,
+          "min": 2.8
+        },
+        "weapons": []
+      },
+      "Gunner": {
+        "weapons": [
+          "152mm XM150E5",
+          "7.62mm MG3"
+        ],
+        "smokes": true,
+        "zoom": {
+          "max": 6.363636363636363,
+          "min": 14
+        }
+      },
+      "Commander": {
+        "zoom": {
+          "max": 1.8421052631578947,
+          "min": 7.777777777777778
+        },
+        "weapons": [
+          "20mm Rh202"
+        ]
+      }
     },
     "name": "KPz-70",
     "mass": 51.7
@@ -1969,7 +4445,38 @@
       "name": "MTU MB 873 Ka-501"
     },
     "name": "Leopard 2A4",
-    "mass": 55.4
+    "mass": 55.4,
+    "turrets": {
+      "Loader": {
+        "zoom": {
+          "max": 1.75,
+          "min": 2.8
+        },
+        "weapons": [
+          "7.62mm MG3"
+        ]
+      },
+      "Gunner": {
+        "weapons": [
+          "7.62mm MG3",
+          "120mm Rh120M L/44"
+        ],
+        "smokes": true,
+        "zoom": {
+          "max": 3.6842105263157894,
+          "min": 11.666666666666666
+        }
+      },
+      "Commander": {
+        "zoom": {
+          "max": 1.8421052631578947,
+          "min": 7.777777777777778
+        },
+        "weapons": [
+          "7.62mm MG3"
+        ]
+      }
+    }
   },
   {
     "engine": {
@@ -1986,7 +4493,19 @@
       "name": "YaMZ-5347-10"
     },
     "name": "Kornet D GAZ Tigr",
-    "mass": 7.2
+    "mass": 7.2,
+    "turrets": {
+      "Gunner": {
+        "weapons": [
+          "9M133 Kornet"
+        ],
+        "smokes": true,
+        "zoom": {
+          "max": 3.6842105263157894,
+          "min": 11.666666666666666
+        }
+      }
+    }
   },
   {
     "engine": {
@@ -2003,7 +4522,28 @@
       "name": "F4-134 Hurricane"
     },
     "name": "M8 Greyhound",
-    "mass": 7.9
+    "mass": 7.9,
+    "turrets": {
+      "Commander": {
+        "zoom": {
+          "max": 1.75,
+          "min": 2.8
+        },
+        "weapons": [
+          "12.7mm M2"
+        ]
+      },
+      "Gunner": {
+        "zoom": {
+          "max": 1.75,
+          "min": 3.3333333333333335
+        },
+        "weapons": [
+          "37mm M6",
+          ".30 cal M1919"
+        ]
+      }
+    }
   },
   {
     "engine": {
@@ -2020,7 +4560,8 @@
       "name": "6CTA8.3 IMO 1"
     },
     "name": "M939",
-    "mass": 11
+    "mass": 11,
+    "turrets": []
   },
   {
     "engine": {
@@ -2037,7 +4578,30 @@
       "name": "Perkins CV-8"
     },
     "name": "FV510 Warrior",
-    "mass": 24.9
+    "mass": 24.9,
+    "turrets": {
+      "Commander": {
+        "zoom": {
+          "max": 0.875,
+          "min": 7.446808510638298
+        },
+        "weapons": [
+          "Milan 2",
+          "Milan ER"
+        ]
+      },
+      "Gunner": {
+        "weapons": [
+          "30mm L21A1",
+          "7.62 mm L94A1"
+        ],
+        "smokes": true,
+        "zoom": {
+          "max": 0.875,
+          "min": 7.446808510638298
+        }
+      }
+    }
   },
   {
     "engine": {
@@ -2054,7 +4618,29 @@
       "name": "ChTZ 510"
     },
     "name": "BTR-90",
-    "mass": 20.9
+    "mass": 20.9,
+    "turrets": {
+      "Commander": {
+        "zoom": {
+          "max": 4.666666666666667,
+          "min": 4.666666666666667
+        },
+        "weapons": []
+      },
+      "Gunner": {
+        "weapons": [
+          "30mm 2A42",
+          "7.62mm PKT",
+          "9M113 Konkurs",
+          "9M113M Konkurs"
+        ],
+        "smokes": true,
+        "zoom": {
+          "max": 5.833333333333333,
+          "min": 5.833333333333333
+        }
+      }
+    }
   },
   {
     "engine": {
@@ -2071,7 +4657,29 @@
       "name": "CNGC 12150L"
     },
     "name": "QN506",
-    "mass": 30
+    "mass": 30,
+    "turrets": {
+      "Commander": {
+        "zoom": {
+          "max": 2.8,
+          "min": 10
+        },
+        "weapons": []
+      },
+      "Gunner": {
+        "weapons": [
+          "7.62mm Type 86",
+          "30mm ZPZ02",
+          "QN502CDD",
+          "QN201DD"
+        ],
+        "smokes": true,
+        "zoom": {
+          "max": 3.888888888888889,
+          "min": 11.666666666666666
+        }
+      }
+    }
   },
   {
     "engine": {
@@ -2088,7 +4696,37 @@
       "name": "ChTZ V-54"
     },
     "name": "T-54 Obr. 1951",
-    "mass": 35.5
+    "mass": 35.5,
+    "turrets": {
+      "Loader": {
+        "zoom": {
+          "max": 1.75,
+          "min": 2.8
+        },
+        "weapons": [
+          "12.7mm DSHK"
+        ]
+      },
+      "Gunner": {
+        "zoom": {
+          "max": 3.6842105263157894,
+          "min": 3.6842105263157894
+        },
+        "weapons": [
+          "100mm D-10T",
+          "7.62mm SGMT"
+        ]
+      },
+      "Driver": {
+        "zoom": {
+          "max": 1.75,
+          "min": 2.8
+        },
+        "weapons": [
+          "7.62mm DT-28"
+        ]
+      }
+    }
   },
   {
     "engine": {
@@ -2105,7 +4743,29 @@
       "name": "Detroit 6V92TA"
     },
     "name": "XM8",
-    "mass": 17.6
+    "mass": 17.6,
+    "turrets": {
+      "Commander": {
+        "zoom": {
+          "max": 1.75,
+          "min": 2.8
+        },
+        "weapons": [
+          "12.7mm M2"
+        ]
+      },
+      "Gunner": {
+        "weapons": [
+          "105mm XM35",
+          "7.62mm M240"
+        ],
+        "smokes": true,
+        "zoom": {
+          "max": 2.8,
+          "min": 10
+        }
+      }
+    }
   },
   {
     "engine": {
@@ -2122,7 +4782,20 @@
       "name": "VTA-903T"
     },
     "name": "XM1069",
-    "mass": 25
+    "mass": 25,
+    "turrets": {
+      "Gunner": {
+        "zoom": {
+          "max": 5.833333333333333,
+          "min": 11.666666666666666
+        },
+        "weapons": [
+          "MIM146 Launcher",
+          "25mm M242AA Bushmaster",
+          "12.7mm M3P"
+        ]
+      }
+    }
   },
   {
     "engine": {
@@ -2139,7 +4812,25 @@
       "name": "GTD-1400"
     },
     "name": "Object 640 \"Black Eagle\"",
-    "mass": 48
+    "mass": 48,
+    "turrets": {
+      "Commander": {
+        "zoom": {
+          "max": 3.6842105263157894,
+          "min": 11.666666666666666
+        },
+        "weapons": []
+      },
+      "Gunner": {
+        "zoom": {
+          "max": 3.6842105263157894,
+          "min": 11.666666666666666
+        },
+        "weapons": [
+          "125mm 2A46M-5"
+        ]
+      }
+    }
   },
   {
     "engine": {
@@ -2156,7 +4847,37 @@
       "name": "MB HL230 P30"
     },
     "name": "Panther G",
-    "mass": 44.3
+    "mass": 44.3,
+    "turrets": {
+      "Gunner": {
+        "zoom": {
+          "max": 2.3333333333333335,
+          "min": 4.666666666666667
+        },
+        "weapons": [
+          "75 mm KwK42",
+          "7.92mm MG34"
+        ]
+      },
+      "Commander": {
+        "zoom": {
+          "max": 1.75,
+          "min": 2.8
+        },
+        "weapons": [
+          "7.92mm MG34"
+        ]
+      },
+      "Bow Gunner": {
+        "zoom": {
+          "max": 1.75,
+          "min": 2.8
+        },
+        "weapons": [
+          "7.92mm MG34"
+        ]
+      }
+    }
   },
   {
     "engine": {
@@ -2173,7 +4894,29 @@
       "name": "GTD-1000TF"
     },
     "name": "T-80B",
-    "mass": 42
+    "mass": 42,
+    "turrets": {
+      "Commander": {
+        "zoom": {
+          "max": 4.666666666666667,
+          "min": 4.666666666666667
+        },
+        "weapons": [
+          "12.7mm NSVT"
+        ]
+      },
+      "Gunner": {
+        "weapons": [
+          "7.62mm PKT",
+          "125mm 2A46M-1"
+        ],
+        "smokes": true,
+        "zoom": {
+          "max": 3.6842105263157894,
+          "min": 8.75
+        }
+      }
+    }
   },
   {
     "engine": {
@@ -2190,7 +4933,30 @@
       "name": "6.6 L Gale Banks Engineering 866T"
     },
     "name": "Joint Light Tactical Vehicle",
-    "mass": 10.2
+    "mass": 10.2,
+    "turrets": {
+      "Commander": {
+        "zoom": {
+          "max": 2.8,
+          "min": 10
+        },
+        "weapons": [
+          "7.62mm M240",
+          "30mm M230LF",
+          "FGM-148",
+          "FIM-92K Stinger"
+        ]
+      },
+      "Gunner": {
+        "zoom": {
+          "max": 3.888888888888889,
+          "min": 10
+        },
+        "weapons": [
+          "BGM-71F TOW 2A/B"
+        ]
+      }
+    }
   },
   {
     "engine": {
@@ -2207,7 +4973,20 @@
       "name": "Rolls-Royce Meteor 4B"
     },
     "name": "Centurion Mk 10",
-    "mass": 51.8
+    "mass": 51.8,
+    "turrets": {
+      "Gunner": {
+        "weapons": [
+          "L7A1 105mm",
+          "7.62mm L3A1"
+        ],
+        "smokes": true,
+        "zoom": {
+          "max": 5.833333333333333,
+          "min": 5.833333333333333
+        }
+      }
+    }
   },
   {
     "engine": {
@@ -2224,7 +5003,22 @@
       "name": "VT903"
     },
     "name": "M2A1 Bradley",
-    "mass": 22.3
+    "mass": 22.3,
+    "turrets": {
+      "Gunner": {
+        "weapons": [
+          "BGM-71A TOW",
+          "25mm M242 Bushmaster",
+          "7.62mm M240",
+          "BGM-71C I-TOW"
+        ],
+        "smokes": true,
+        "zoom": {
+          "max": 3.888888888888889,
+          "min": 11.666666666666666
+        }
+      }
+    }
   },
   {
     "engine": {
@@ -2241,7 +5035,21 @@
       "name": "Scania DC 13"
     },
     "name": "Rosomak",
-    "mass": 22
+    "mass": 22,
+    "turrets": {
+      "Gunner": {
+        "weapons": [
+          "30mm Treemaster",
+          "7.62mm PKT",
+          "Spike ATGM"
+        ],
+        "smokes": true,
+        "zoom": {
+          "max": 1.8421052631578947,
+          "min": 14
+        }
+      }
+    }
   },
   {
     "engine": {
@@ -2258,7 +5066,28 @@
       "name": "V-2-12"
     },
     "name": "IS-6",
-    "mass": 51.1
+    "mass": 51.1,
+    "turrets": {
+      "Loader": {
+        "zoom": {
+          "max": 1.75,
+          "min": 2.8
+        },
+        "weapons": [
+          "12.7mm DSHK"
+        ]
+      },
+      "Gunner": {
+        "zoom": {
+          "max": 1.75,
+          "min": 3.3333333333333335
+        },
+        "weapons": [
+          "122mm D-30T",
+          "7.62mm DT-28"
+        ]
+      }
+    }
   },
   {
     "engine": {
@@ -2275,7 +5104,39 @@
       "name": "Honeywell AGT1500"
     },
     "name": "M1A2 SEP V3",
-    "mass": 66.8
+    "mass": 66.8,
+    "turrets": {
+      "Loader": {
+        "zoom": {
+          "max": 1.75,
+          "min": 2.8
+        },
+        "weapons": [
+          "7.62mm M240"
+        ]
+      },
+      "Gunner": {
+        "weapons": [
+          "7.62mm M240",
+          "120mm M256",
+          "12.7mm M2"
+        ],
+        "smokes": true,
+        "zoom": {
+          "max": 2.8,
+          "min": 14
+        }
+      },
+      "Commander": {
+        "zoom": {
+          "max": 2.8,
+          "min": 11.666666666666666
+        },
+        "weapons": [
+          "12.7mm M2"
+        ]
+      }
+    }
   },
   {
     "engine": {
@@ -2292,9 +5153,25 @@
       "name": "ChTZ V-54"
     },
     "name": "Abandoned Tank Hull",
-    "mass": 20
+    "mass": 20,
+    "turrets": {
+      "Driver": {
+        "zoom": {
+          "max": 1.75,
+          "min": 2.8
+        },
+        "weapons": [
+          "7.62mm DT-28"
+        ]
+      }
+    }
   },
   {
+    "suspension": {
+      "vertical": true,
+      "horizontal": false,
+      "height": true
+    },
     "engine": {
       "transmission": {
         "reverseGears": 2,
@@ -2307,6 +5184,27 @@
       "maxRPM": 2600,
       "horsepower": 500,
       "name": "UTD-29"
+    },
+    "turrets": {
+      "Commander": {
+        "zoom": {
+          "max": 3.6842105263157894,
+          "min": 17.5
+        },
+        "weapons": []
+      },
+      "Gunner": {
+        "weapons": [
+          "7.62mm PKT",
+          "100mm 2A70M BMD-4M",
+          "30mm 2A72"
+        ],
+        "smokes": true,
+        "zoom": {
+          "max": 2.3333333333333335,
+          "min": 11.666666666666666
+        }
+      }
     },
     "name": "BMD-4M",
     "mass": 15
@@ -2326,7 +5224,51 @@
       "name": "MB HL234"
     },
     "name": "Panther II",
-    "mass": 53
+    "mass": 53,
+    "turrets": {
+      "Bow Gunner": {
+        "zoom": {
+          "max": 1.75,
+          "min": 2.8
+        },
+        "weapons": [
+          "7.92mm MG34"
+        ]
+      },
+      "Commander": {
+        "zoom": {
+          "max": 2.3333333333333335,
+          "min": 3.5
+        },
+        "weapons": []
+      },
+      "Loader": {
+        "zoom": {
+          "max": 1.75,
+          "min": 2.8
+        },
+        "weapons": [
+          "Grenade Mortar"
+        ]
+      },
+      "Gunner": {
+        "zoom": {
+          "max": 2.3333333333333335,
+          "min": 5.833333333333333
+        },
+        "weapons": [
+          "88 mm KwK43",
+          "7.92mm MG34"
+        ]
+      },
+      "Driver": {
+        "zoom": {
+          "max": 1.75,
+          "min": 2.8
+        },
+        "weapons": []
+      }
+    }
   },
   {
     "engine": {
@@ -2343,7 +5285,28 @@
       "name": "MTU MB 833 Ea-500"
     },
     "name": "Begleitpanzer 57",
-    "mass": 28.5
+    "mass": 28.5,
+    "turrets": {
+      "Commander": {
+        "zoom": {
+          "max": 1.8421052631578947,
+          "min": 7.777777777777778
+        },
+        "weapons": []
+      },
+      "Gunner": {
+        "zoom": {
+          "max": 4.666666666666667,
+          "min": 35
+        },
+        "weapons": [
+          "7.62mm MG3",
+          "57mm L/70",
+          "BGM-71A TOW",
+          "BGM-71C I-TOW"
+        ]
+      }
+    }
   },
   {
     "engine": {
@@ -2360,7 +5323,19 @@
       "name": "FIAT-SPA CV3"
     },
     "name": "L3/35",
-    "mass": 3.2
+    "mass": 3.2,
+    "turrets": {
+      "Gunner": {
+        "zoom": {
+          "max": 4.666666666666667,
+          "min": 10
+        },
+        "weapons": [
+          "8mm Breda M37",
+          "20mm Solothurn S-18/1000"
+        ]
+      }
+    }
   },
   {
     "engine": {
@@ -2377,7 +5352,8 @@
       "name": "ZiL-375"
     },
     "name": "Ural-375D",
-    "mass": 18.2
+    "mass": 18.2,
+    "turrets": []
   },
   {
     "engine": {
@@ -2394,9 +5370,37 @@
       "name": "MTU MB 873 Ka-501"
     },
     "name": "Leopard 2A4 140MM",
-    "mass": 57
+    "mass": 57,
+    "turrets": {
+      "Commander": {
+        "zoom": {
+          "max": 1.8421052631578947,
+          "min": 7.777777777777778
+        },
+        "weapons": [
+          "7.62mm MG3"
+        ]
+      },
+      "Gunner": {
+        "weapons": [
+          "140mm RUAG L/47",
+          "7.62mm MG3",
+          "120mm ASCALON"
+        ],
+        "smokes": true,
+        "zoom": {
+          "max": 3.6842105263157894,
+          "min": 11.666666666666666
+        }
+      }
+    }
   },
   {
+    "suspension": {
+      "vertical": false,
+      "horizontal": false,
+      "height": true
+    },
     "engine": {
       "transmission": {
         "reverseGears": 1,
@@ -2410,10 +5414,34 @@
       "horsepower": 700,
       "name": "HPZ 5TDF"
     },
+    "turrets": {
+      "Driver": {
+        "zoom": {
+          "max": 1.75,
+          "min": 2.8
+        },
+        "weapons": []
+      },
+      "Commander": {
+        "zoom": {
+          "max": 3.888888888888889,
+          "min": 10
+        },
+        "weapons": [
+          "7.62mm PKT",
+          "125mm D-126"
+        ]
+      }
+    },
     "name": "Object 775",
     "mass": 35.5
   },
   {
+    "suspension": {
+      "vertical": true,
+      "horizontal": false,
+      "height": true
+    },
     "engine": {
       "transmission": {
         "reverseGears": 2,
@@ -2426,6 +5454,38 @@
       "maxRPM": 2600,
       "horsepower": 1200,
       "name": "MTU MB 871 Ka-501"
+    },
+    "turrets": {
+      "Loader": {
+        "zoom": {
+          "max": 1.75,
+          "min": 2.8
+        },
+        "weapons": [
+          "12.7mm M2"
+        ]
+      },
+      "Gunner": {
+        "weapons": [
+          "7.62mm M240",
+          "120mm KM256",
+          "105mm KM68A1"
+        ],
+        "smokes": true,
+        "zoom": {
+          "max": 2.8,
+          "min": 10
+        }
+      },
+      "Commander": {
+        "zoom": {
+          "max": 1.75,
+          "min": 2.8
+        },
+        "weapons": [
+          "12.7mm M2"
+        ]
+      }
     },
     "name": "K1",
     "mass": 54.5
@@ -2445,7 +5505,27 @@
       "name": "MB HL120 TRM"
     },
     "name": "Hornisse",
-    "mass": 24.3
+    "mass": 24.3,
+    "turrets": {
+      "Commander": {
+        "zoom": {
+          "max": 1.75,
+          "min": 2.8
+        },
+        "weapons": [
+          "7.92mm MG34"
+        ]
+      },
+      "Gunner": {
+        "zoom": {
+          "max": 4.666666666666667,
+          "min": 8.75
+        },
+        "weapons": [
+          "8.8 cm Pak 43/1"
+        ]
+      }
+    }
   },
   {
     "engine": {
@@ -2462,7 +5542,26 @@
       "name": "XAP-1000"
     },
     "name": "CATTB",
-    "mass": 57
+    "mass": 57,
+    "turrets": {
+      "Commander": {
+        "zoom": {
+          "max": 2.8,
+          "min": 11.666666666666666
+        },
+        "weapons": []
+      },
+      "Gunner": {
+        "weapons": [
+          "140mm XM291"
+        ],
+        "smokes": true,
+        "zoom": {
+          "max": 2.8,
+          "min": 11.666666666666666
+        }
+      }
+    }
   },
   {
     "engine": {
@@ -2479,7 +5578,38 @@
       "name": "Honeywell AGT1500"
     },
     "name": "M1IP",
-    "mass": 55.7
+    "mass": 55.7,
+    "turrets": {
+      "Loader": {
+        "zoom": {
+          "max": 1.75,
+          "min": 2.8
+        },
+        "weapons": [
+          "7.62mm M240"
+        ]
+      },
+      "Gunner": {
+        "weapons": [
+          "105mm M68A1E2",
+          "7.62mm M240"
+        ],
+        "smokes": true,
+        "zoom": {
+          "max": 2.8,
+          "min": 10
+        }
+      },
+      "Commander": {
+        "zoom": {
+          "max": 1.75,
+          "min": 2.8
+        },
+        "weapons": [
+          "12.7mm M2"
+        ]
+      }
+    }
   },
   {
     "engine": {
@@ -2496,7 +5626,39 @@
       "name": "Honeywell AGT1500"
     },
     "name": "M1A1",
-    "mass": 57.2
+    "mass": 57.2,
+    "turrets": {
+      "Loader": {
+        "zoom": {
+          "max": 1.75,
+          "min": 2.8
+        },
+        "weapons": [
+          "7.62mm M240"
+        ]
+      },
+      "Gunner": {
+        "weapons": [
+          "7.62mm M240",
+          "120mm M256",
+          "12.7mm M2"
+        ],
+        "smokes": true,
+        "zoom": {
+          "max": 2.8,
+          "min": 10
+        }
+      },
+      "Commander": {
+        "zoom": {
+          "max": 3.5,
+          "min": 10
+        },
+        "weapons": [
+          "12.7mm M2"
+        ]
+      }
+    }
   },
   {
     "engine": {
@@ -2513,7 +5675,28 @@
       "name": "AVDS-1790-2"
     },
     "name": "M60A2 Starship",
-    "mass": 51.9
+    "mass": 51.9,
+    "turrets": {
+      "Commander": {
+        "zoom": {
+          "max": 7.777777777777778,
+          "min": 7.777777777777778
+        },
+        "weapons": [
+          "12.7mm M2"
+        ]
+      },
+      "Gunner": {
+        "zoom": {
+          "max": 7.777777777777778,
+          "min": 10
+        },
+        "weapons": [
+          "152mm M162",
+          "7.62mm M240"
+        ]
+      }
+    }
   },
   {
     "engine": {
@@ -2530,7 +5713,28 @@
       "name": "AVDS-1790-2"
     },
     "name": "M60A1 Add-On Stabilization",
-    "mass": 48
+    "mass": 48,
+    "turrets": {
+      "Commander": {
+        "zoom": {
+          "max": 0.875,
+          "min": 6.363636363636363
+        },
+        "weapons": [
+          "12.7mm M2"
+        ]
+      },
+      "Gunner": {
+        "zoom": {
+          "max": 7.777777777777778,
+          "min": 7.777777777777778
+        },
+        "weapons": [
+          "105mm M68",
+          "7.62mm M240"
+        ]
+      }
+    }
   },
   {
     "engine": {
@@ -2547,7 +5751,38 @@
       "name": "Honeywell AGT1500"
     },
     "name": "M1 Abrams",
-    "mass": 55.7
+    "mass": 55.7,
+    "turrets": {
+      "Loader": {
+        "zoom": {
+          "max": 1.75,
+          "min": 2.8
+        },
+        "weapons": [
+          "7.62mm M240"
+        ]
+      },
+      "Gunner": {
+        "weapons": [
+          "105mm M68A1",
+          "7.62mm M240"
+        ],
+        "smokes": true,
+        "zoom": {
+          "max": 2.8,
+          "min": 10
+        }
+      },
+      "Commander": {
+        "zoom": {
+          "max": 1.75,
+          "min": 2.8
+        },
+        "weapons": [
+          "12.7mm M2"
+        ]
+      }
+    }
   },
   {
     "engine": {
@@ -2564,7 +5799,28 @@
       "name": "MB HL230 P30"
     },
     "name": "T-V",
-    "mass": 44.3
+    "mass": 44.3,
+    "turrets": {
+      "Bow Gunner": {
+        "zoom": {
+          "max": 1.75,
+          "min": 2.8
+        },
+        "weapons": [
+          "7.92mm MG34"
+        ]
+      },
+      "Gunner": {
+        "zoom": {
+          "max": 2.3333333333333335,
+          "min": 4.666666666666667
+        },
+        "weapons": [
+          "75 mm KwK42",
+          "7.92mm MG34"
+        ]
+      }
+    }
   },
   {
     "engine": {
@@ -2581,7 +5837,28 @@
       "name": "MHI 6SY31WA"
     },
     "name": "Type 89",
-    "mass": 26.5
+    "mass": 26.5,
+    "turrets": {
+      "Commander": {
+        "zoom": {
+          "max": 1.8918918918918919,
+          "min": 7.777777777777778
+        },
+        "weapons": []
+      },
+      "Gunner": {
+        "weapons": [
+          "35mm Oerlikon KDE",
+          "7.62mm Type 74",
+          "Type 79 ATGM"
+        ],
+        "smokes": true,
+        "zoom": {
+          "max": 1.8918918918918919,
+          "min": 7.777777777777778
+        }
+      }
+    }
   },
   {
     "engine": {
@@ -2598,7 +5875,29 @@
       "name": "ChTZ V-92S2F"
     },
     "name": "T-90M",
-    "mass": 50
+    "mass": 50,
+    "turrets": {
+      "Commander": {
+        "zoom": {
+          "max": 3.6842105263157894,
+          "min": 11.666666666666666
+        },
+        "weapons": [
+          "12.7mm KORD"
+        ]
+      },
+      "Gunner": {
+        "weapons": [
+          "7.62mm PKT",
+          "125mm 2A46M-5"
+        ],
+        "smokes": true,
+        "zoom": {
+          "max": 3.6842105263157894,
+          "min": 11.666666666666666
+        }
+      }
+    }
   },
   {
     "engine": {
@@ -2615,7 +5914,29 @@
       "name": "ChTZ V-84-1"
     },
     "name": "Burlak",
-    "mass": 47
+    "mass": 47,
+    "turrets": {
+      "Commander": {
+        "zoom": {
+          "max": 3.6842105263157894,
+          "min": 11.666666666666666
+        },
+        "weapons": [
+          "14.5mm KPVT"
+        ]
+      },
+      "Gunner": {
+        "weapons": [
+          "125mm 2A46M-5",
+          "7.62mm PKT"
+        ],
+        "smokes": true,
+        "zoom": {
+          "max": 3.6842105263157894,
+          "min": 11.666666666666666
+        }
+      }
+    }
   },
   {
     "engine": {
@@ -2632,7 +5953,30 @@
       "name": "6V53T-5301"
     },
     "name": "M551 Sheridan",
-    "mass": 15.3
+    "mass": 15.3,
+    "turrets": {
+      "Commander": {
+        "zoom": {
+          "max": 1.75,
+          "min": 2.8
+        },
+        "weapons": [
+          "12.7mm M2"
+        ]
+      },
+      "Gunner": {
+        "weapons": [
+          "7.62mm M73",
+          "152mm M81E1",
+          "76mm M32"
+        ],
+        "smokes": true,
+        "zoom": {
+          "max": 7.777777777777778,
+          "min": 11.666666666666666
+        }
+      }
+    }
   },
   {
     "engine": {
@@ -2649,7 +5993,37 @@
       "name": "Ford GAF"
     },
     "name": "M26 Pershing",
-    "mass": 41.6
+    "mass": 41.6,
+    "turrets": {
+      "Gunner": {
+        "zoom": {
+          "max": 4.666666666666667,
+          "min": 4.666666666666667
+        },
+        "weapons": [
+          "90mm M3",
+          ".30 cal M1919"
+        ]
+      },
+      "Commander": {
+        "zoom": {
+          "max": 1.75,
+          "min": 2.8
+        },
+        "weapons": [
+          "12.7mm M2"
+        ]
+      },
+      "Bow Gunner": {
+        "zoom": {
+          "max": 1.75,
+          "min": 2.8
+        },
+        "weapons": [
+          ".30 cal M1919"
+        ]
+      }
+    }
   },
   {
     "engine": {
@@ -2666,7 +6040,38 @@
       "name": "MTU MB 873 Ka-501"
     },
     "name": "Leopard 2K",
-    "mass": 55.4
+    "mass": 55.4,
+    "turrets": {
+      "Loader": {
+        "zoom": {
+          "max": 1.75,
+          "min": 2.8
+        },
+        "weapons": [
+          "7.62mm MG3"
+        ]
+      },
+      "Gunner": {
+        "weapons": [
+          "120mm Rh120 L/44",
+          "7.62mm MG3"
+        ],
+        "smokes": true,
+        "zoom": {
+          "max": 7.777777777777778,
+          "min": 14
+        }
+      },
+      "Commander": {
+        "zoom": {
+          "max": 1.8421052631578947,
+          "min": 7.777777777777778
+        },
+        "weapons": [
+          "20mm Rh202"
+        ]
+      }
+    }
   },
   {
     "engine": {
@@ -2683,9 +6088,44 @@
       "name": "MB HL234"
     },
     "name": "Pz IV H",
-    "mass": 26
+    "mass": 26,
+    "turrets": {
+      "Gunner": {
+        "zoom": {
+          "max": 1.75,
+          "min": 3.3333333333333335
+        },
+        "weapons": [
+          "75 mm KwK40 L48",
+          "7.92mm MG34"
+        ]
+      },
+      "Commander": {
+        "zoom": {
+          "max": 1.75,
+          "min": 2.8
+        },
+        "weapons": [
+          "7.92mm MG34"
+        ]
+      },
+      "Bow Gunner": {
+        "zoom": {
+          "max": 1.75,
+          "min": 2.8
+        },
+        "weapons": [
+          "7.92mm MG34"
+        ]
+      }
+    }
   },
   {
+    "suspension": {
+      "vertical": true,
+      "horizontal": false,
+      "height": false
+    },
     "engine": {
       "transmission": {
         "reverseGears": 6,
@@ -2698,6 +6138,28 @@
       "maxRPM": 3960,
       "horsepower": 600,
       "name": "6V53T + Caterpillar 553"
+    },
+    "turrets": {
+      "Commander": {
+        "weapons": [
+          "7.62mm ksp 58"
+        ],
+        "smokes": true,
+        "zoom": {
+          "max": 10,
+          "min": 10
+        }
+      },
+      "Driver": {
+        "zoom": {
+          "max": 5.833333333333333,
+          "min": 17.5
+        },
+        "weapons": [
+          "7.62mm ksp 58",
+          "105 mm L74"
+        ]
+      }
     },
     "name": "Strv 103C",
     "mass": 42.5
@@ -2717,7 +6179,27 @@
       "name": "Continental R975-C4"
     },
     "name": "M7 Priest",
-    "mass": 32
+    "mass": 32,
+    "turrets": {
+      "Commander": {
+        "zoom": {
+          "max": 1.75,
+          "min": 2.8
+        },
+        "weapons": [
+          "12.7mm M2"
+        ]
+      },
+      "Gunner": {
+        "zoom": {
+          "max": 1.75,
+          "min": 3.5
+        },
+        "weapons": [
+          "105mm M2A1"
+        ]
+      }
+    }
   },
   {
     "engine": {
@@ -2734,7 +6216,38 @@
       "name": "Fiat MTCA 12V"
     },
     "name": "Ariete C1",
-    "mass": 54
+    "mass": 54,
+    "turrets": {
+      "Loader": {
+        "zoom": {
+          "max": 1.75,
+          "min": 2.8
+        },
+        "weapons": [
+          "7.62 Beretta MG42/59"
+        ]
+      },
+      "Gunner": {
+        "weapons": [
+          "120mm OTO Breda 120/44",
+          "7.62 Beretta MG42/59"
+        ],
+        "smokes": true,
+        "zoom": {
+          "max": 7.777777777777778,
+          "min": 11.666666666666666
+        }
+      },
+      "Commander": {
+        "zoom": {
+          "max": 2.3333333333333335,
+          "min": 10
+        },
+        "weapons": [
+          "7.62 Beretta MG42/59"
+        ]
+      }
+    }
   },
   {
     "engine": {
@@ -2751,7 +6264,29 @@
       "name": "Perkins CV12"
     },
     "name": "Challenger 1",
-    "mass": 62.5
+    "mass": 62.5,
+    "turrets": {
+      "Commander": {
+        "zoom": {
+          "max": 1.75,
+          "min": 2.8
+        },
+        "weapons": [
+          "7.62mm L37A2"
+        ]
+      },
+      "Gunner": {
+        "weapons": [
+          "7.62mm L8A2",
+          "120mm L11A5"
+        ],
+        "smokes": true,
+        "zoom": {
+          "max": 3.6842105263157894,
+          "min": 11.666666666666666
+        }
+      }
+    }
   },
   {
     "engine": {
@@ -2768,7 +6303,28 @@
       "name": "Model V-2-34"
     },
     "name": "T-34E",
-    "mass": 30.6
+    "mass": 30.6,
+    "turrets": {
+      "Bow Gunner": {
+        "zoom": {
+          "max": 1.75,
+          "min": 2.8
+        },
+        "weapons": [
+          "7.62mm DT-28"
+        ]
+      },
+      "Gunner": {
+        "zoom": {
+          "max": 1.75,
+          "min": 3.3333333333333335
+        },
+        "weapons": [
+          "76mm F-34",
+          "7.62mm DT-28"
+        ]
+      }
+    }
   },
   {
     "engine": {
@@ -2785,7 +6341,20 @@
       "name": "Rolls-Royce Meteor 4B"
     },
     "name": "Centurion Mk 5 AVRE",
-    "mass": 52.2
+    "mass": 52.2,
+    "turrets": {
+      "Gunner": {
+        "weapons": [
+          "L9A1 165mm",
+          "7.62mm L3A1"
+        ],
+        "smokes": true,
+        "zoom": {
+          "max": 5.833333333333333,
+          "min": 5.833333333333333
+        }
+      }
+    }
   },
   {
     "engine": {
@@ -2802,7 +6371,29 @@
       "name": "KMDB 6TD-2"
     },
     "name": "T-84 Oplot-M",
-    "mass": 51
+    "mass": 51,
+    "turrets": {
+      "Commander": {
+        "zoom": {
+          "max": 0.875,
+          "min": 7.777777777777778
+        },
+        "weapons": [
+          "12.7mm NSVT"
+        ]
+      },
+      "Gunner": {
+        "weapons": [
+          "7.62mm PKT",
+          "125 mm KBA-3"
+        ],
+        "smokes": true,
+        "zoom": {
+          "max": 2.5,
+          "min": 11.666666666666666
+        }
+      }
+    }
   },
   {
     "engine": {
@@ -2819,7 +6410,36 @@
       "name": "MTU MB 873 Ka-501"
     },
     "name": "Leopard 2A7V",
-    "mass": 64.1
+    "mass": 64.1,
+    "turrets": {
+      "Loader": {
+        "zoom": {
+          "max": 1.75,
+          "min": 2.8
+        },
+        "weapons": [
+          "7.62mm MG3"
+        ]
+      },
+      "Gunner": {
+        "weapons": [
+          "120mm Rh120 L/55 A1",
+          "7.62mm MG3"
+        ],
+        "smokes": true,
+        "zoom": {
+          "max": 3.6842105263157894,
+          "min": 11.666666666666666
+        }
+      },
+      "Commander": {
+        "zoom": {
+          "max": 1.8421052631578947,
+          "min": 7.777777777777778
+        },
+        "weapons": []
+      }
+    }
   },
   {
     "engine": {
@@ -2836,7 +6456,36 @@
       "name": "MTU MB 873 Ka-501"
     },
     "name": "Leopard 2A6",
-    "mass": 59.9
+    "mass": 59.9,
+    "turrets": {
+      "Loader": {
+        "zoom": {
+          "max": 1.75,
+          "min": 2.8
+        },
+        "weapons": [
+          "7.62mm MG3"
+        ]
+      },
+      "Gunner": {
+        "weapons": [
+          "120mm Rh120 L/55",
+          "7.62mm MG3"
+        ],
+        "smokes": true,
+        "zoom": {
+          "max": 3.6842105263157894,
+          "min": 11.666666666666666
+        }
+      },
+      "Commander": {
+        "zoom": {
+          "max": 1.8421052631578947,
+          "min": 7.777777777777778
+        },
+        "weapons": []
+      }
+    }
   },
   {
     "engine": {
@@ -2853,7 +6502,20 @@
       "name": "Audi 2.1 diesel"
     },
     "name": "Wiesel 1A2",
-    "mass": 2.9
+    "mass": 2.9,
+    "turrets": {
+      "Gunner": {
+        "zoom": {
+          "max": 3.888888888888889,
+          "min": 7.777777777777778
+        },
+        "weapons": [
+          "BGM-71F TOW 2A/B",
+          "BGM-71C I-TOW",
+          "BGM-71A TOW"
+        ]
+      }
+    }
   },
   {
     "engine": {
@@ -2870,7 +6532,22 @@
       "name": "3TD-4"
     },
     "name": "BTR-4",
-    "mass": 28
+    "mass": 28,
+    "turrets": {
+      "Gunner": {
+        "weapons": [
+          "30mm AGS-17",
+          "Stugna-P",
+          "7.62mm PKT",
+          "30mm ZTM-2"
+        ],
+        "smokes": true,
+        "zoom": {
+          "max": 3.6842105263157894,
+          "min": 11.666666666666666
+        }
+      }
+    }
   },
   {
     "engine": {
@@ -2887,7 +6564,37 @@
       "name": "V-2IS"
     },
     "name": "IS-1",
-    "mass": 44
+    "mass": 44,
+    "turrets": {
+      "Loader": {
+        "zoom": {
+          "max": 1.75,
+          "min": 2.8
+        },
+        "weapons": [
+          "7.62mm DT-28"
+        ]
+      },
+      "Gunner": {
+        "zoom": {
+          "max": 1.75,
+          "min": 3.3333333333333335
+        },
+        "weapons": [
+          "85mm D-5S",
+          "7.62mm DT-28"
+        ]
+      },
+      "Driver": {
+        "zoom": {
+          "max": 1.75,
+          "min": 2.8
+        },
+        "weapons": [
+          "7.62mm DT-28"
+        ]
+      }
+    }
   },
   {
     "engine": {
@@ -2904,7 +6611,18 @@
       "name": "Audi 2.1 diesel"
     },
     "name": "Wiesel 1A4",
-    "mass": 2.9
+    "mass": 2.9,
+    "turrets": {
+      "Gunner": {
+        "zoom": {
+          "max": 1.8421052631578947,
+          "min": 5.833333333333333
+        },
+        "weapons": [
+          "20mm Rh202"
+        ]
+      }
+    }
   },
   {
     "engine": {
@@ -2921,7 +6639,38 @@
       "name": "MTU MB 833 Ea-500"
     },
     "name": "Marder A1",
-    "mass": 29.1
+    "mass": 29.1,
+    "turrets": {
+      "Passenger": {
+        "zoom": {
+          "max": 1.75,
+          "min": 2.8
+        },
+        "weapons": [
+          "7.62mm MG3"
+        ]
+      },
+      "Gunner": {
+        "weapons": [
+          "20mm Rh202",
+          "7.62mm MG3"
+        ],
+        "smokes": true,
+        "zoom": {
+          "max": 1.8421052631578947,
+          "min": 5.833333333333333
+        }
+      },
+      "Commander": {
+        "zoom": {
+          "max": 1.8421052631578947,
+          "min": 5.833333333333333
+        },
+        "weapons": [
+          "Milan 2"
+        ]
+      }
+    }
   },
   {
     "engine": {
@@ -2938,7 +6687,18 @@
       "name": "MTU MB 873 Ka-501"
     },
     "name": "Leopard 2 Giraffe",
-    "mass": 52
+    "mass": 52,
+    "turrets": {
+      "Gunner": {
+        "zoom": {
+          "max": 5.833333333333333,
+          "min": 11.666666666666666
+        },
+        "weapons": [
+          "MIM146 Launcher"
+        ]
+      }
+    }
   },
   {
     "engine": {
@@ -2955,7 +6715,28 @@
       "name": "S12U"
     },
     "name": "T-72M2",
-    "mass": 44.5
+    "mass": 44.5,
+    "turrets": {
+      "Commander": {
+        "zoom": {
+          "max": 2.3333333333333335,
+          "min": 10
+        },
+        "weapons": []
+      },
+      "Gunner": {
+        "weapons": [
+          "7.62mm PKT",
+          "125mm 2A46MS",
+          "20mm Oerlikon KAA"
+        ],
+        "smokes": true,
+        "zoom": {
+          "max": 7.777777777777778,
+          "min": 7.777777777777778
+        }
+      }
+    }
   },
   {
     "engine": {
@@ -2972,7 +6753,29 @@
       "name": "MTU MB 873 Ka-501"
     },
     "name": "Panther EVO",
-    "mass": 55.4
+    "mass": 55.4,
+    "turrets": {
+      "Commander": {
+        "zoom": {
+          "max": 2.7559055118110236,
+          "min": 11.864406779661016
+        },
+        "weapons": [
+          "7.62mm NATTER"
+        ]
+      },
+      "Gunner": {
+        "weapons": [
+          "12.7mm RMG",
+          "130mm Rh130 L/51"
+        ],
+        "smokes": true,
+        "zoom": {
+          "max": 2.2435897435897436,
+          "min": 17.5
+        }
+      }
+    }
   },
   {
     "engine": {
@@ -2989,7 +6792,27 @@
       "name": "YaMZ 238"
     },
     "name": "MT-LB AA",
-    "mass": 12
+    "mass": 12,
+    "turrets": {
+      "Commander": {
+        "zoom": {
+          "max": 1.75,
+          "min": 2.8
+        },
+        "weapons": [
+          "7.62mm PKT"
+        ]
+      },
+      "Gunner": {
+        "zoom": {
+          "max": 1.75,
+          "min": 2.8
+        },
+        "weapons": [
+          "25mm DBTSU"
+        ]
+      }
+    }
   },
   {
     "engine": {
@@ -3006,7 +6829,20 @@
       "name": "MB HL157P"
     },
     "name": "VK 16.02 Leopard",
-    "mass": 21.9
+    "mass": 21.9,
+    "turrets": {
+      "Gunner": {
+        "weapons": [
+          "50 mm KwK39",
+          "7.92mm MG34"
+        ],
+        "smokes": true,
+        "zoom": {
+          "max": 1.75,
+          "min": 3.3333333333333335
+        }
+      }
+    }
   },
   {
     "engine": {
@@ -3023,7 +6859,8 @@
       "name": "UMZ-417"
     },
     "name": "UAZ-3909",
-    "mass": 1.8
+    "mass": 1.8,
+    "turrets": []
   },
   {
     "engine": {
@@ -3040,7 +6877,27 @@
       "name": "Tatra 103"
     },
     "name": "Sd.Kfz.234/4 Pak Puma",
-    "mass": 11.7
+    "mass": 11.7,
+    "turrets": {
+      "Commander": {
+        "zoom": {
+          "max": 1.75,
+          "min": 2.8
+        },
+        "weapons": [
+          "MG42"
+        ]
+      },
+      "Gunner": {
+        "zoom": {
+          "max": 1.75,
+          "min": 3.3333333333333335
+        },
+        "weapons": [
+          "7.5 cm KwK 40 L/48"
+        ]
+      }
+    }
   },
   {
     "engine": {
@@ -3057,7 +6914,18 @@
       "name": "ZiL-375"
     },
     "name": "BM-21 Grad",
-    "mass": 18.2
+    "mass": 18.2,
+    "turrets": {
+      "Gunner": {
+        "zoom": {
+          "max": 1.75,
+          "min": 3.5
+        },
+        "weapons": [
+          "122mm Grad"
+        ]
+      }
+    }
   },
   {
     "engine": {
@@ -3074,7 +6942,28 @@
       "name": "ChTZ V-55V"
     },
     "name": "Object 166",
-    "mass": 38
+    "mass": 38,
+    "turrets": {
+      "Commander": {
+        "zoom": {
+          "max": 4.666666666666667,
+          "min": 4.666666666666667
+        },
+        "weapons": [
+          "9M14M"
+        ]
+      },
+      "Gunner": {
+        "zoom": {
+          "max": 3.3333333333333335,
+          "min": 6.363636363636363
+        },
+        "weapons": [
+          "115mm U-5TS",
+          "7.62mm PKT"
+        ]
+      }
+    }
   },
   {
     "engine": {
@@ -3091,7 +6980,29 @@
       "name": "Perkins CV-8"
     },
     "name": "Desert Warrior",
-    "mass": 29
+    "mass": 29,
+    "turrets": {
+      "Commander": {
+        "zoom": {
+          "max": 1.8421052631578947,
+          "min": 7.777777777777778
+        },
+        "weapons": []
+      },
+      "Gunner": {
+        "weapons": [
+          "25mm M242 Bushmaster",
+          "7.62mm M240",
+          "BGM-71C I-TOW",
+          "BGM-71F TOW 2A/B"
+        ],
+        "smokes": true,
+        "zoom": {
+          "max": 7.777777777777778,
+          "min": 7.777777777777778
+        }
+      }
+    }
   },
   {
     "engine": {
@@ -3108,7 +7019,38 @@
       "name": "TH800 Engine"
     },
     "name": "Class 3(P)",
-    "mass": 41
+    "mass": 41,
+    "turrets": {
+      "Loader": {
+        "zoom": {
+          "max": 1.75,
+          "min": 2.8
+        },
+        "weapons": [
+          "Grenade Mortar"
+        ]
+      },
+      "Gunner": {
+        "weapons": [
+          "GT-3B 105mm",
+          ".30 cal M1919"
+        ],
+        "smokes": true,
+        "zoom": {
+          "max": 7.777777777777778,
+          "min": 14
+        }
+      },
+      "Commander": {
+        "zoom": {
+          "max": 3.6842105263157894,
+          "min": 17.5
+        },
+        "weapons": [
+          ".30 cal M1919"
+        ]
+      }
+    }
   },
   {
     "engine": {
@@ -3125,7 +7067,28 @@
       "name": "MB HL230 P30"
     },
     "name": "Ersatz M10",
-    "mass": 44.3
+    "mass": 44.3,
+    "turrets": {
+      "Bow Gunner": {
+        "zoom": {
+          "max": 1.75,
+          "min": 2.8
+        },
+        "weapons": [
+          "7.92mm MG34"
+        ]
+      },
+      "Gunner": {
+        "zoom": {
+          "max": 2.3333333333333335,
+          "min": 4.666666666666667
+        },
+        "weapons": [
+          "75 mm KwK42",
+          "7.92mm MG34"
+        ]
+      }
+    }
   },
   {
     "engine": {
@@ -3142,7 +7105,38 @@
       "name": "M50T"
     },
     "name": "IS-7",
-    "mass": 68
+    "mass": 68,
+    "turrets": {
+      "Driver": {
+        "zoom": {
+          "max": 1.75,
+          "min": 2.8
+        },
+        "weapons": [
+          "7.62mm RP-46"
+        ]
+      },
+      "Gunner": {
+        "zoom": {
+          "max": 3.3333333333333335,
+          "min": 6.363636363636363
+        },
+        "weapons": [
+          "130mm S-70",
+          "7.62mm RP-46",
+          "14.5mm KPVT"
+        ]
+      },
+      "Commander": {
+        "zoom": {
+          "max": 0.875,
+          "min": 4.666666666666667
+        },
+        "weapons": [
+          "14.5mm KPVT"
+        ]
+      }
+    }
   },
   {
     "engine": {
@@ -3159,7 +7153,21 @@
       "name": "UTD-20"
     },
     "name": "PT-76E",
-    "mass": 14
+    "mass": 14,
+    "turrets": {
+      "Gunner": {
+        "weapons": [
+          "7.62mm PKT",
+          "57mm AU-220",
+          "57mm 2A90"
+        ],
+        "smokes": true,
+        "zoom": {
+          "max": 4.666666666666667,
+          "min": 14
+        }
+      }
+    }
   },
   {
     "engine": {
@@ -3176,7 +7184,19 @@
       "name": "MB 517"
     },
     "name": "Maus",
-    "mass": 188
+    "mass": 188,
+    "turrets": {
+      "Gunner": {
+        "zoom": {
+          "max": 10,
+          "min": 10
+        },
+        "weapons": [
+          "128 mm KwK44",
+          "75 mm KwK44"
+        ]
+      }
+    }
   },
   {
     "engine": {
@@ -3193,7 +7213,18 @@
       "name": "MB HL42"
     },
     "name": "Sd Kfz 251",
-    "mass": 7.81
+    "mass": 7.81,
+    "turrets": {
+      "Gunner": {
+        "zoom": {
+          "max": 1.75,
+          "min": 2.8
+        },
+        "weapons": [
+          "7.92mm MG34"
+        ]
+      }
+    }
   },
   {
     "engine": {
@@ -3210,7 +7241,36 @@
       "name": "MB HL230 P30"
     },
     "name": "Jagdpanther",
-    "mass": 46
+    "mass": 46,
+    "turrets": {
+      "Loader": {
+        "zoom": {
+          "max": 1.75,
+          "min": 2.8
+        },
+        "weapons": [
+          "Grenade Mortar"
+        ]
+      },
+      "Gunner": {
+        "zoom": {
+          "max": 4.666666666666667,
+          "min": 4.666666666666667
+        },
+        "weapons": [
+          "88 mm KwK43"
+        ]
+      },
+      "Bow Gunner": {
+        "zoom": {
+          "max": 1.75,
+          "min": 2.8
+        },
+        "weapons": [
+          "7.92mm MG34"
+        ]
+      }
+    }
   },
   {
     "engine": {
@@ -3227,7 +7287,35 @@
       "name": "ChTZ V-55V"
     },
     "name": "T-62",
-    "mass": 37
+    "mass": 37,
+    "turrets": {
+      "Loader": {
+        "zoom": {
+          "max": 1.75,
+          "min": 2.8
+        },
+        "weapons": [
+          "12.7mm DSHK"
+        ]
+      },
+      "Gunner": {
+        "zoom": {
+          "max": 3.3333333333333335,
+          "min": 6.363636363636363
+        },
+        "weapons": [
+          "115mm U-5TS",
+          "7.62mm PKT"
+        ]
+      },
+      "Commander": {
+        "zoom": {
+          "max": 4.666666666666667,
+          "min": 4.666666666666667
+        },
+        "weapons": []
+      }
+    }
   },
   {
     "engine": {
@@ -3244,7 +7332,29 @@
       "name": "Lycoming 650 gas turbine"
     },
     "name": "HSTV-L",
-    "mass": 20
+    "mass": 20,
+    "turrets": {
+      "Commander": {
+        "zoom": {
+          "max": 1.8421052631578947,
+          "min": 7.777777777777778
+        },
+        "weapons": [
+          "12.7mm M2"
+        ]
+      },
+      "Gunner": {
+        "zoom": {
+          "max": 1.8421052631578947,
+          "min": 7.777777777777778
+        },
+        "weapons": [
+          "FIM-92K Stinger",
+          "75mm XM274",
+          "7.62mm M240"
+        ]
+      }
+    }
   },
   {
     "engine": {
@@ -3261,7 +7371,36 @@
       "name": "MB HL230 P45"
     },
     "name": "Sturmtiger",
-    "mass": 65
+    "mass": 65,
+    "turrets": {
+      "Loader": {
+        "zoom": {
+          "max": 1.75,
+          "min": 2.8
+        },
+        "weapons": [
+          "Grenade Mortar"
+        ]
+      },
+      "Gunner": {
+        "zoom": {
+          "max": 1.75,
+          "min": 3.3333333333333335
+        },
+        "weapons": [
+          "380mm RW61"
+        ]
+      },
+      "Bow Gunner": {
+        "zoom": {
+          "max": 1.75,
+          "min": 2.8
+        },
+        "weapons": [
+          "7.92mm MG34"
+        ]
+      }
+    }
   },
   {
     "engine": {
@@ -3278,7 +7417,27 @@
       "name": "GM 6046"
     },
     "name": "M36B2 Jackson",
-    "mass": 29.9
+    "mass": 29.9,
+    "turrets": {
+      "Commander": {
+        "zoom": {
+          "max": 1.75,
+          "min": 2.8
+        },
+        "weapons": [
+          "12.7mm M2"
+        ]
+      },
+      "Gunner": {
+        "zoom": {
+          "max": 4.666666666666667,
+          "min": 4.666666666666667
+        },
+        "weapons": [
+          "90mm M3"
+        ]
+      }
+    }
   },
   {
     "engine": {
@@ -3295,7 +7454,38 @@
       "name": "Ford GAA V8"
     },
     "name": "M4A3 (105) Zippo",
-    "mass": 31.7
+    "mass": 31.7,
+    "turrets": {
+      "Gunner": {
+        "zoom": {
+          "max": 1.75,
+          "min": 3.3333333333333335
+        },
+        "weapons": [
+          "105 mm M4",
+          ".30 cal M1919",
+          "H5 Flamethrower"
+        ]
+      },
+      "Commander": {
+        "zoom": {
+          "max": 1.75,
+          "min": 2.8
+        },
+        "weapons": [
+          "12.7mm M2"
+        ]
+      },
+      "Bow Gunner": {
+        "zoom": {
+          "max": 1.75,
+          "min": 2.8
+        },
+        "weapons": [
+          ".30 cal M1919"
+        ]
+      }
+    }
   },
   {
     "engine": {
@@ -3312,7 +7502,29 @@
       "name": "MB HL230 P45"
     },
     "name": "Tiger I",
-    "mass": 57.3
+    "mass": 57.3,
+    "turrets": {
+      "Bow Gunner": {
+        "zoom": {
+          "max": 1.75,
+          "min": 2.8
+        },
+        "weapons": [
+          "7.92mm MG34"
+        ]
+      },
+      "Gunner": {
+        "weapons": [
+          "88 mm KwK36",
+          "7.92mm MG34"
+        ],
+        "smokes": true,
+        "zoom": {
+          "max": 1.75,
+          "min": 3.3333333333333335
+        }
+      }
+    }
   },
   {
     "engine": {
@@ -3329,7 +7541,29 @@
       "name": "GM 6046"
     },
     "name": "T34 Calliope",
-    "mass": 32.5
+    "mass": 32.5,
+    "turrets": {
+      "Gunner": {
+        "zoom": {
+          "max": 1.75,
+          "min": 3.3333333333333335
+        },
+        "weapons": [
+          "75mm M3",
+          ".30 cal M1919",
+          "M8 Rocket"
+        ]
+      },
+      "Bow Gunner": {
+        "zoom": {
+          "max": 1.75,
+          "min": 2.8
+        },
+        "weapons": [
+          ".30 cal M1919"
+        ]
+      }
+    }
   },
   {
     "engine": {
@@ -3346,7 +7580,37 @@
       "name": "GM 6046"
     },
     "name": "M4A2 Sherman",
-    "mass": 32.5
+    "mass": 32.5,
+    "turrets": {
+      "Gunner": {
+        "zoom": {
+          "max": 4.666666666666667,
+          "min": 4.666666666666667
+        },
+        "weapons": [
+          "75mm M3",
+          ".30 cal M1919"
+        ]
+      },
+      "Commander": {
+        "zoom": {
+          "max": 1.75,
+          "min": 2.8
+        },
+        "weapons": [
+          "12.7mm M2"
+        ]
+      },
+      "Bow Gunner": {
+        "zoom": {
+          "max": 1.75,
+          "min": 2.8
+        },
+        "weapons": [
+          ".30 cal M1919"
+        ]
+      }
+    }
   },
   {
     "engine": {
@@ -3363,7 +7627,29 @@
       "name": "ChTZ V-84-1"
     },
     "name": "T-72B3",
-    "mass": 46
+    "mass": 46,
+    "turrets": {
+      "Commander": {
+        "zoom": {
+          "max": 4.666666666666667,
+          "min": 4.666666666666667
+        },
+        "weapons": [
+          "12.7mm KORD"
+        ]
+      },
+      "Gunner": {
+        "weapons": [
+          "7.62mm PKT",
+          "125mm 2A46M-5"
+        ],
+        "smokes": true,
+        "zoom": {
+          "max": 3.6842105263157894,
+          "min": 11.666666666666666
+        }
+      }
+    }
   },
   {
     "engine": {
@@ -3380,7 +7666,26 @@
       "name": "ChTZ V-55V"
     },
     "name": "IT-1",
-    "mass": 34.5
+    "mass": 34.5,
+    "turrets": {
+      "Commander": {
+        "zoom": {
+          "max": 4.666666666666667,
+          "min": 4.666666666666667
+        },
+        "weapons": []
+      },
+      "Gunner": {
+        "zoom": {
+          "max": 3.888888888888889,
+          "min": 7.777777777777778
+        },
+        "weapons": [
+          "3M7 Drakon",
+          "7.62mm PKT"
+        ]
+      }
+    }
   },
   {
     "engine": {
@@ -3397,7 +7702,8 @@
       "name": "OHV"
     },
     "name": "Kettenkrad",
-    "mass": 1.56
+    "mass": 1.56,
+    "turrets": []
   },
   {
     "engine": {
@@ -3414,7 +7720,27 @@
       "name": "Continental R975-C4"
     },
     "name": "M18 Hellcat",
-    "mass": 17.7
+    "mass": 17.7,
+    "turrets": {
+      "Commander": {
+        "zoom": {
+          "max": 1.1666666666666667,
+          "min": 1.75
+        },
+        "weapons": [
+          "12.7mm M2"
+        ]
+      },
+      "Gunner": {
+        "zoom": {
+          "max": 1.75,
+          "min": 3.3333333333333335
+        },
+        "weapons": [
+          "76mm M1"
+        ]
+      }
+    }
   },
   {
     "engine": {
@@ -3431,7 +7757,36 @@
       "name": "Continental R975 EC2"
     },
     "name": "M3 Lee",
-    "mass": 27.7
+    "mass": 27.7,
+    "turrets": {
+      "Gunner": {
+        "zoom": {
+          "max": 1.75,
+          "min": 3.3333333333333335
+        },
+        "weapons": [
+          "75mm M2"
+        ]
+      },
+      "Commander": {
+        "zoom": {
+          "max": 1.75,
+          "min": 2.8
+        },
+        "weapons": [
+          ".30 cal M1919"
+        ]
+      },
+      "Bow Gunner": {
+        "zoom": {
+          "max": 1.75,
+          "min": 2.8
+        },
+        "weapons": [
+          ".30 cal M1919"
+        ]
+      }
+    }
   },
   {
     "engine": {
@@ -3448,7 +7803,19 @@
       "name": "GAZ-202"
     },
     "name": "T-60",
-    "mass": 5.8
+    "mass": 5.8,
+    "turrets": {
+      "Gunner": {
+        "zoom": {
+          "max": 1.75,
+          "min": 3.3333333333333335
+        },
+        "weapons": [
+          "20mm TNSh",
+          "7.62mm DT-28"
+        ]
+      }
+    }
   },
   {
     "engine": {
@@ -3465,7 +7832,29 @@
       "name": "HPZ 5TDF"
     },
     "name": "T-64A",
-    "mass": 38
+    "mass": 38,
+    "turrets": {
+      "Commander": {
+        "zoom": {
+          "max": 4.666666666666667,
+          "min": 4.666666666666667
+        },
+        "weapons": [
+          "12.7mm NSVT"
+        ]
+      },
+      "Gunner": {
+        "weapons": [
+          "7.62mm PKT",
+          "125mm 2A26"
+        ],
+        "smokes": true,
+        "zoom": {
+          "max": 7.777777777777778,
+          "min": 7.777777777777778
+        }
+      }
+    }
   },
   {
     "engine": {
@@ -3482,7 +7871,37 @@
       "name": "HP150"
     },
     "name": "Cheonma-2",
-    "mass": 56
+    "mass": 56,
+    "turrets": {
+      "Loader": {
+        "zoom": {
+          "max": 1.75,
+          "min": 2.8
+        },
+        "weapons": [
+          "30mm AGS-17"
+        ]
+      },
+      "Gunner": {
+        "weapons": [
+          "125mm 2A46NK",
+          "7.62mm PKT",
+          "Bulsae-3"
+        ],
+        "smokes": true,
+        "zoom": {
+          "max": 3.6842105263157894,
+          "min": 11.666666666666666
+        }
+      },
+      "Commander": {
+        "zoom": {
+          "max": 3.6842105263157894,
+          "min": 11.666666666666666
+        },
+        "weapons": []
+      }
+    }
   },
   {
     "engine": {
@@ -3499,9 +7918,26 @@
       "name": "Chrysler A57 multibank"
     },
     "name": "Sherman Firefly",
-    "mass": 35.3
+    "mass": 35.3,
+    "turrets": {
+      "Gunner": {
+        "zoom": {
+          "max": 2.8,
+          "min": 5.833333333333333
+        },
+        "weapons": [
+          "76mm QF 17-pounder",
+          "7.62mm L3A1"
+        ]
+      }
+    }
   },
   {
+    "suspension": {
+      "vertical": true,
+      "horizontal": true,
+      "height": true
+    },
     "engine": {
       "transmission": {
         "reverseGears": 2,
@@ -3514,6 +7950,36 @@
       "maxRPM": 2600,
       "horsepower": 280,
       "name": "6F11 SRX"
+    },
+    "turrets": {
+      "Loader": {
+        "zoom": {
+          "max": 1.75,
+          "min": 2.8
+        },
+        "weapons": [
+          "7.62mm A-A-F1N"
+        ]
+      },
+      "Gunner": {
+        "weapons": [
+          "105mm Modele F2",
+          "7.62mm A-A-F1N",
+          "105mm Giat G2"
+        ],
+        "smokes": true,
+        "zoom": {
+          "max": 10,
+          "min": 10
+        }
+      },
+      "Commander": {
+        "zoom": {
+          "max": 1.8421052631578947,
+          "min": 7.777777777777778
+        },
+        "weapons": []
+      }
     },
     "name": "AMX-10RC",
     "mass": 16
@@ -3533,7 +7999,18 @@
       "name": "Model V-2-34"
     },
     "name": "SU-100",
-    "mass": 31.6
+    "mass": 31.6,
+    "turrets": {
+      "Gunner": {
+        "zoom": {
+          "max": 3.6842105263157894,
+          "min": 3.6842105263157894
+        },
+        "weapons": [
+          "100mm D-10S"
+        ]
+      }
+    }
   },
   {
     "engine": {
@@ -3550,7 +8027,27 @@
       "name": "2 x MB HL120 TRM"
     },
     "name": "Elefant",
-    "mass": 65
+    "mass": 65,
+    "turrets": {
+      "Bow Gunner": {
+        "zoom": {
+          "max": 1.75,
+          "min": 2.8
+        },
+        "weapons": [
+          "7.92mm MG34"
+        ]
+      },
+      "Gunner": {
+        "zoom": {
+          "max": 4.666666666666667,
+          "min": 4.666666666666667
+        },
+        "weapons": [
+          "88 mm KwK43"
+        ]
+      }
+    }
   },
   {
     "engine": {
@@ -3567,7 +8064,28 @@
       "name": "MTU MB 837 Ka-501"
     },
     "name": "M48 Super",
-    "mass": 53
+    "mass": 53,
+    "turrets": {
+      "Commander": {
+        "zoom": {
+          "max": 10,
+          "min": 10
+        },
+        "weapons": [
+          "7.62mm MG3"
+        ]
+      },
+      "Gunner": {
+        "zoom": {
+          "max": 3.6842105263157894,
+          "min": 11.666666666666666
+        },
+        "weapons": [
+          "7.62mm MG3",
+          "L7A3 105mm"
+        ]
+      }
+    }
   },
   {
     "engine": {
@@ -3584,7 +8102,27 @@
       "name": "Detroit 6V92TA"
     },
     "name": "LOSAT M8",
-    "mass": 19.5
+    "mass": 19.5,
+    "turrets": {
+      "Commander": {
+        "zoom": {
+          "max": 1.75,
+          "min": 2.8
+        },
+        "weapons": [
+          "12.7mm M2"
+        ]
+      },
+      "Gunner": {
+        "zoom": {
+          "max": 3.6842105263157894,
+          "min": 11.666666666666666
+        },
+        "weapons": [
+          "LOSAT/MGM-166"
+        ]
+      }
+    }
   },
   {
     "engine": {
@@ -3601,7 +8139,27 @@
       "name": "Praga EPA AC2800"
     },
     "name": "Hetzer",
-    "mass": 24
+    "mass": 24,
+    "turrets": {
+      "Commander": {
+        "zoom": {
+          "max": 1.75,
+          "min": 2.8
+        },
+        "weapons": [
+          "7.92mm MG34"
+        ]
+      },
+      "Gunner": {
+        "zoom": {
+          "max": 4.666666666666667,
+          "min": 4.666666666666667
+        },
+        "weapons": [
+          "75 mm PaK39 L48"
+        ]
+      }
+    }
   },
   {
     "engine": {
@@ -3618,7 +8176,37 @@
       "name": "Ford GAF"
     },
     "name": "T26E4 Super Pershing",
-    "mass": 49.9
+    "mass": 49.9,
+    "turrets": {
+      "Gunner": {
+        "zoom": {
+          "max": 4.666666666666667,
+          "min": 4.666666666666667
+        },
+        "weapons": [
+          "90mm T15E1",
+          ".30 cal M1919"
+        ]
+      },
+      "Commander": {
+        "zoom": {
+          "max": 1.75,
+          "min": 2.8
+        },
+        "weapons": [
+          "12.7mm M2"
+        ]
+      },
+      "Bow Gunner": {
+        "zoom": {
+          "max": 1.75,
+          "min": 2.8
+        },
+        "weapons": [
+          ".30 cal M1919"
+        ]
+      }
+    }
   },
   {
     "engine": {
@@ -3635,7 +8223,27 @@
       "name": "KamAZ 740.14-300"
     },
     "name": "BTR-82A",
-    "mass": 15
+    "mass": 15,
+    "turrets": {
+      "Commander": {
+        "zoom": {
+          "max": 4.666666666666667,
+          "min": 4.666666666666667
+        },
+        "weapons": []
+      },
+      "Gunner": {
+        "weapons": [
+          "7.62mm PKT",
+          "30mm 2A72"
+        ],
+        "smokes": true,
+        "zoom": {
+          "max": 3.6842105263157894,
+          "min": 11.666666666666666
+        }
+      }
+    }
   },
   {
     "engine": {
@@ -3652,7 +8260,20 @@
       "name": "Tatra 103"
     },
     "name": "Sd.Kfz.234/2 Puma",
-    "mass": 11.7
+    "mass": 11.7,
+    "turrets": {
+      "Gunner": {
+        "weapons": [
+          "50 mm KwK39",
+          "7.92mm MG34"
+        ],
+        "smokes": true,
+        "zoom": {
+          "max": 1.75,
+          "min": 3.3333333333333335
+        }
+      }
+    }
   },
   {
     "engine": {
@@ -3669,7 +8290,30 @@
       "name": "Liebherr D976"
     },
     "name": "KF41 Lynx",
-    "mass": 44
+    "mass": 44,
+    "turrets": {
+      "Commander": {
+        "zoom": {
+          "max": 4.117647058823529,
+          "min": 17.5
+        },
+        "weapons": [
+          "12.7mm M2"
+        ]
+      },
+      "Gunner": {
+        "weapons": [
+          "30mm MK 30-2/ABM",
+          "7.62mm M240",
+          "Spike-LR2MR"
+        ],
+        "smokes": true,
+        "zoom": {
+          "max": 4.117647058823529,
+          "min": 17.5
+        }
+      }
+    }
   },
   {
     "engine": {
@@ -3686,7 +8330,29 @@
       "name": "Detroit 6V53T"
     },
     "name": "LAV-25",
-    "mass": 12.9
+    "mass": 12.9,
+    "turrets": {
+      "Commander": {
+        "zoom": {
+          "max": 1.75,
+          "min": 2.8
+        },
+        "weapons": [
+          "7.62mm M240"
+        ]
+      },
+      "Gunner": {
+        "weapons": [
+          "25mm M242 Bushmaster",
+          "7.62mm M240"
+        ],
+        "smokes": true,
+        "zoom": {
+          "max": 3.6842105263157894,
+          "min": 11.666666666666666
+        }
+      }
+    }
   },
   {
     "engine": {
@@ -3703,7 +8369,18 @@
       "name": "V-2IS"
     },
     "name": "ISU-152BM",
-    "mass": 46
+    "mass": 46,
+    "turrets": {
+      "Gunner": {
+        "zoom": {
+          "max": 1.75,
+          "min": 3.3333333333333335
+        },
+        "weapons": [
+          "152.4mm BL-8"
+        ]
+      }
+    }
   },
   {
     "engine": {
@@ -3720,7 +8397,28 @@
       "name": "AV1790"
     },
     "name": "M48A2 Patton",
-    "mass": 44.9
+    "mass": 44.9,
+    "turrets": {
+      "Commander": {
+        "zoom": {
+          "max": 7.777777777777778,
+          "min": 7.777777777777778
+        },
+        "weapons": [
+          "12.7mm M2"
+        ]
+      },
+      "Gunner": {
+        "zoom": {
+          "max": 5.833333333333333,
+          "min": 7.777777777777778
+        },
+        "weapons": [
+          "90mm M41",
+          ".30 cal M1919"
+        ]
+      }
+    }
   },
   {
     "engine": {
@@ -3737,7 +8435,37 @@
       "name": "V-92S2"
     },
     "name": "BMPT Terminator",
-    "mass": 48
+    "mass": 48,
+    "turrets": {
+      "Passenger": {
+        "zoom": {
+          "max": 1.75,
+          "min": 2.8
+        },
+        "weapons": [
+          "30mm AGS-17"
+        ]
+      },
+      "Gunner": {
+        "weapons": [
+          "7.62mm PKT",
+          "30mm 2A42M (BMPT)",
+          "9M120 Ataka"
+        ],
+        "smokes": true,
+        "zoom": {
+          "max": 3.6842105263157894,
+          "min": 11.666666666666666
+        }
+      },
+      "Commander": {
+        "zoom": {
+          "max": 3.6842105263157894,
+          "min": 11.666666666666666
+        },
+        "weapons": []
+      }
+    }
   },
   {
     "engine": {
@@ -3754,7 +8482,20 @@
       "name": "YaMZ-5347-10"
     },
     "name": "Humvee",
-    "mass": 2.7
+    "mass": 2.7,
+    "turrets": {
+      "Gunner": {
+        "zoom": {
+          "max": 1.1666666666666667,
+          "min": 1.75
+        },
+        "weapons": [
+          "12.7mm M2",
+          "40mm MK-19",
+          "BGM-71C I-TOW"
+        ]
+      }
+    }
   },
   {
     "engine": {
@@ -3771,7 +8512,28 @@
       "name": "ChTZ V-55V"
     },
     "name": "OBT-2 Super",
-    "mass": 40
+    "mass": 40,
+    "turrets": {
+      "Commander": {
+        "zoom": {
+          "max": 4.666666666666667,
+          "min": 4.666666666666667
+        },
+        "weapons": [
+          "12.7mm DSHK"
+        ]
+      },
+      "Gunner": {
+        "zoom": {
+          "max": 3.3333333333333335,
+          "min": 6.363636363636363
+        },
+        "weapons": [
+          "100mm SB-10S",
+          "12.7mm DSHK"
+        ]
+      }
+    }
   },
   {
     "engine": {
@@ -3788,7 +8550,8 @@
       "name": "3VZ-E V6"
     },
     "name": "MiKi Truck Company Model 2",
-    "mass": 4
+    "mass": 4,
+    "turrets": []
   },
   {
     "engine": {
@@ -3805,7 +8568,8 @@
       "name": "UTD-20"
     },
     "name": "Abandoned IFV Hull",
-    "mass": 10
+    "mass": 10,
+    "turrets": []
   },
   {
     "engine": {
@@ -3822,7 +8586,8 @@
       "name": "3VZ-E V6"
     },
     "name": "MiKi Truck Company Model 1 ARMOURED",
-    "mass": 5.5
+    "mass": 5.5,
+    "turrets": []
   },
   {
     "engine": {
@@ -3839,7 +8604,20 @@
       "name": "6V53T-5301"
     },
     "name": "RDF/LT",
-    "mass": 13.4
+    "mass": 13.4,
+    "turrets": {
+      "Gunner": {
+        "weapons": [
+          "75mm XM274 66.7RPM",
+          "7.62mm M240"
+        ],
+        "smokes": true,
+        "zoom": {
+          "max": 1.8421052631578947,
+          "min": 7.777777777777778
+        }
+      }
+    }
   },
   {
     "engine": {
@@ -3856,7 +8634,37 @@
       "name": "V-2SN"
     },
     "name": "KV-220",
-    "mass": 62.4
+    "mass": 62.4,
+    "turrets": {
+      "Gunner": {
+        "zoom": {
+          "max": 1.75,
+          "min": 3.3333333333333335
+        },
+        "weapons": [
+          "85mm F-30",
+          "7.62mm DT-28"
+        ]
+      },
+      "Commander": {
+        "zoom": {
+          "max": 1.75,
+          "min": 2.8
+        },
+        "weapons": [
+          "7.62mm DT-28"
+        ]
+      },
+      "Bow Gunner": {
+        "zoom": {
+          "max": 1.75,
+          "min": 2.8
+        },
+        "weapons": [
+          "7.62mm DT-28"
+        ]
+      }
+    }
   },
   {
     "engine": {
@@ -3873,7 +8681,18 @@
       "name": "L134"
     },
     "name": "Willys MB",
-    "mass": 1.2
+    "mass": 1.2,
+    "turrets": {
+      "Gunner": {
+        "zoom": {
+          "max": 1.1666666666666667,
+          "min": 1.75
+        },
+        "weapons": [
+          "12.7mm M2"
+        ]
+      }
+    }
   },
   {
     "engine": {
@@ -3890,7 +8709,19 @@
       "name": "TK-53"
     },
     "name": "LT-SE",
-    "mass": 9.5
+    "mass": 9.5,
+    "turrets": {
+      "Driver": {
+        "zoom": {
+          "max": 2.8,
+          "min": 7
+        },
+        "weapons": [
+          "30mm 2A72",
+          "9M133 Kornet"
+        ]
+      }
+    }
   },
   {
     "engine": {
@@ -3907,7 +8738,26 @@
       "name": "MHI 10ZF 22WT"
     },
     "name": "Type 87",
-    "mass": 38
+    "mass": 38,
+    "turrets": {
+      "Commander": {
+        "zoom": {
+          "max": 1.3725490196078431,
+          "min": 5.833333333333333
+        },
+        "weapons": []
+      },
+      "Gunner": {
+        "weapons": [
+          "35mm Oerlikon KDA"
+        ],
+        "smokes": true,
+        "zoom": {
+          "max": 1.3725490196078431,
+          "min": 5.833333333333333
+        }
+      }
+    }
   },
   {
     "engine": {
@@ -3924,7 +8774,27 @@
       "name": "8V71T"
     },
     "name": "M109A6",
-    "mass": 26
+    "mass": 26,
+    "turrets": {
+      "Commander": {
+        "zoom": {
+          "max": 1.75,
+          "min": 2.8
+        },
+        "weapons": [
+          "12.7mm M2"
+        ]
+      },
+      "Gunner": {
+        "zoom": {
+          "max": 3.6842105263157894,
+          "min": 3.6842105263157894
+        },
+        "weapons": [
+          "155mm M284"
+        ]
+      }
+    }
   },
   {
     "engine": {
@@ -3941,7 +8811,29 @@
       "name": "ChTZ V-84-1"
     },
     "name": "2S19 Msta-S",
-    "mass": 42
+    "mass": 42,
+    "turrets": {
+      "Commander": {
+        "zoom": {
+          "max": 4.666666666666667,
+          "min": 4.666666666666667
+        },
+        "weapons": [
+          "12.7mm NSVT"
+        ]
+      },
+      "Gunner": {
+        "weapons": [
+          "152mm 2A64",
+          "152mm 2A64M"
+        ],
+        "smokes": true,
+        "zoom": {
+          "max": 3.5,
+          "min": 7
+        }
+      }
+    }
   },
   {
     "engine": {
@@ -3958,9 +8850,27 @@
       "name": "Caterpillar 3126"
     },
     "name": "M1126",
-    "mass": 16.5
+    "mass": 16.5,
+    "turrets": {
+      "Gunner": {
+        "weapons": [
+          "12.7mm M2",
+          "FGM-148"
+        ],
+        "smokes": true,
+        "zoom": {
+          "max": 3.5,
+          "min": 10
+        }
+      }
+    }
   },
   {
+    "suspension": {
+      "vertical": true,
+      "horizontal": false,
+      "height": true
+    },
     "engine": {
       "transmission": {
         "reverseGears": 7,
@@ -3973,6 +8883,32 @@
       "maxRPM": 2000,
       "horsepower": 780,
       "name": "ChTZ V-84DT"
+    },
+    "turrets": {
+      "Commander": {
+        "zoom": {
+          "max": 4.666666666666667,
+          "min": 4.666666666666667
+        },
+        "weapons": []
+      },
+      "Gunner": {
+        "zoom": {
+          "max": 7.777777777777778,
+          "min": 7.777777777777778
+        },
+        "weapons": [
+          "9M311",
+          "30mm 2A38"
+        ]
+      },
+      "Radar Operator": {
+        "zoom": {
+          "max": 1.75,
+          "min": 2.8
+        },
+        "weapons": []
+      }
     },
     "name": "2S6 Tunguska",
     "mass": 41
@@ -3992,7 +8928,19 @@
       "name": "Type 6V150"
     },
     "name": "AFT-10",
-    "mass": 18.7
+    "mass": 18.7,
+    "turrets": {
+      "Gunner": {
+        "weapons": [
+          "HJ-10"
+        ],
+        "smokes": true,
+        "zoom": {
+          "max": 2.5925925925925926,
+          "min": 10
+        }
+      }
+    }
   },
   {
     "engine": {
@@ -4009,7 +8957,46 @@
       "name": "V-2IS"
     },
     "name": "IS-2 1944",
-    "mass": 46
+    "mass": 46,
+    "turrets": {
+      "Driver": {
+        "zoom": {
+          "max": 1.75,
+          "min": 2.8
+        },
+        "weapons": [
+          "7.62mm DT-28"
+        ]
+      },
+      "Loader": {
+        "zoom": {
+          "max": 1.75,
+          "min": 2.8
+        },
+        "weapons": [
+          "7.62mm DT-28"
+        ]
+      },
+      "Gunner": {
+        "zoom": {
+          "max": 3.6842105263157894,
+          "min": 3.6842105263157894
+        },
+        "weapons": [
+          "122mm D-25T",
+          "7.62mm DT-28"
+        ]
+      },
+      "Commander": {
+        "zoom": {
+          "max": 1.75,
+          "min": 2.8
+        },
+        "weapons": [
+          "12.7mm DSHK"
+        ]
+      }
+    }
   },
   {
     "engine": {
@@ -4026,7 +9013,18 @@
       "name": "6CTA8.3 IMO 1"
     },
     "name": "Supply Truck",
-    "mass": 11
+    "mass": 11,
+    "turrets": {
+      "Gunner": {
+        "zoom": {
+          "max": 1.75,
+          "min": 3.5
+        },
+        "weapons": [
+          "12.7mm M2"
+        ]
+      }
+    }
   },
   {
     "engine": {
@@ -4043,7 +9041,29 @@
       "name": "V-2IS"
     },
     "name": "IS-3",
-    "mass": 48
+    "mass": 48,
+    "turrets": {
+      "Commander": {
+        "zoom": {
+          "max": 1.75,
+          "min": 2.8
+        },
+        "weapons": [
+          "12.7mm DSHK"
+        ]
+      },
+      "Gunner": {
+        "zoom": {
+          "max": 3.6842105263157894,
+          "min": 3.6842105263157894
+        },
+        "weapons": [
+          "122mm D-25T",
+          "7.62mm DT-28",
+          "122mm D-25TM"
+        ]
+      }
+    }
   },
   {
     "engine": {
@@ -4060,7 +9080,27 @@
       "name": "Continental R975-C4"
     },
     "name": "90mm GMC Super Hellcat",
-    "mass": 22
+    "mass": 22,
+    "turrets": {
+      "Commander": {
+        "zoom": {
+          "max": 1.1666666666666667,
+          "min": 1.75
+        },
+        "weapons": [
+          "12.7mm M2"
+        ]
+      },
+      "Gunner": {
+        "zoom": {
+          "max": 4.666666666666667,
+          "min": 4.666666666666667
+        },
+        "weapons": [
+          "90mm M3"
+        ]
+      }
+    }
   },
   {
     "engine": {
@@ -4077,7 +9117,37 @@
       "name": "Ford GAA V8"
     },
     "name": "M4A3E2 (76) Jumbo",
-    "mass": 37.8
+    "mass": 37.8,
+    "turrets": {
+      "Gunner": {
+        "zoom": {
+          "max": 4.666666666666667,
+          "min": 4.666666666666667
+        },
+        "weapons": [
+          "76mm M1",
+          ".30 cal M1919"
+        ]
+      },
+      "Commander": {
+        "zoom": {
+          "max": 1.75,
+          "min": 2.8
+        },
+        "weapons": [
+          "12.7mm M2"
+        ]
+      },
+      "Bow Gunner": {
+        "zoom": {
+          "max": 1.75,
+          "min": 2.8
+        },
+        "weapons": [
+          ".30 cal M1919"
+        ]
+      }
+    }
   },
   {
     "engine": {
@@ -4094,7 +9164,36 @@
       "name": "12N360"
     },
     "name": "T-15 Armata",
-    "mass": 41
+    "mass": 41,
+    "turrets": {
+      "Driver": {
+        "weapons": [],
+        "smokes": true,
+        "zoom": {
+          "max": 1.75,
+          "min": 2.8
+        }
+      },
+      "Gunner": {
+        "weapons": [
+          "7.62mm PKT",
+          "30mm 2A42M",
+          "9M133 Kornet"
+        ],
+        "smokes": true,
+        "zoom": {
+          "max": 3.6842105263157894,
+          "min": 11.666666666666666
+        }
+      },
+      "Commander": {
+        "zoom": {
+          "max": 3.6842105263157894,
+          "min": 11.666666666666666
+        },
+        "weapons": []
+      }
+    }
   },
   {
     "engine": {
@@ -4111,7 +9210,18 @@
       "name": "V-54"
     },
     "name": "ZSU-57-2",
-    "mass": 28
+    "mass": 28,
+    "turrets": {
+      "Gunner": {
+        "zoom": {
+          "max": 1.75,
+          "min": 3.3333333333333335
+        },
+        "weapons": [
+          "57mm S-68"
+        ]
+      }
+    }
   },
   {
     "engine": {
@@ -4128,7 +9238,28 @@
       "name": "KMDB 6TD-A"
     },
     "name": "Object 477",
-    "mass": 55
+    "mass": 55,
+    "turrets": {
+      "Commander": {
+        "zoom": {
+          "max": 2.8,
+          "min": 11.666666666666666
+        },
+        "weapons": []
+      },
+      "Gunner": {
+        "weapons": [
+          "30mm 2A72",
+          "152mm 2A73",
+          "7.62mm PKT"
+        ],
+        "smokes": true,
+        "zoom": {
+          "max": 2.8,
+          "min": 11.666666666666666
+        }
+      }
+    }
   },
   {
     "engine": {
@@ -4145,7 +9276,22 @@
       "name": "YaMZ-5347-10"
     },
     "name": "Bumpee",
-    "mass": 6
+    "mass": 6,
+    "turrets": {
+      "Gunner": {
+        "weapons": [
+          "7.62mm PKT",
+          "73mm 2A28",
+          "9M14M",
+          "9M113 Konkurs"
+        ],
+        "smokes": true,
+        "zoom": {
+          "max": 5.833333333333333,
+          "min": 5.833333333333333
+        }
+      }
+    }
   },
   {
     "engine": {
@@ -4162,7 +9308,26 @@
       "name": "HPZ 5TDF"
     },
     "name": "T-64R",
-    "mass": 36.5
+    "mass": 36.5,
+    "turrets": {
+      "Commander": {
+        "zoom": {
+          "max": 4.666666666666667,
+          "min": 4.666666666666667
+        },
+        "weapons": []
+      },
+      "Gunner": {
+        "zoom": {
+          "max": 7.777777777777778,
+          "min": 7.777777777777778
+        },
+        "weapons": [
+          "7.62mm PKT",
+          "115mm D-68"
+        ]
+      }
+    }
   },
   {
     "engine": {
@@ -4179,7 +9344,28 @@
       "name": "Model V-2-34"
     },
     "name": "T-34",
-    "mass": 30
+    "mass": 30,
+    "turrets": {
+      "Bow Gunner": {
+        "zoom": {
+          "max": 1.75,
+          "min": 2.8
+        },
+        "weapons": [
+          "7.62mm DT-28"
+        ]
+      },
+      "Gunner": {
+        "zoom": {
+          "max": 1.75,
+          "min": 3.3333333333333335
+        },
+        "weapons": [
+          "76mm F-34",
+          "7.62mm DT-28"
+        ]
+      }
+    }
   },
   {
     "engine": {
@@ -4196,7 +9382,28 @@
       "name": "HPZ 5TDF"
     },
     "name": "Object 450",
-    "mass": 38
+    "mass": 38,
+    "turrets": {
+      "Commander": {
+        "zoom": {
+          "max": 2.8,
+          "min": 4.666666666666667
+        },
+        "weapons": [
+          "30mm 2A42"
+        ]
+      },
+      "Gunner": {
+        "zoom": {
+          "max": 4.117647058823529,
+          "min": 8.75
+        },
+        "weapons": [
+          "7.62mm PKT",
+          "125mm 2A47"
+        ]
+      }
+    }
   },
   {
     "engine": {
@@ -4213,6 +9420,35 @@
       "name": "ChTZ V-46-5M"
     },
     "name": "T-62M-1",
-    "mass": 42
+    "mass": 42,
+    "turrets": {
+      "Loader": {
+        "zoom": {
+          "max": 1.75,
+          "min": 2.8
+        },
+        "weapons": [
+          "12.7mm DSHK"
+        ]
+      },
+      "Gunner": {
+        "weapons": [
+          "115mm U-5TS",
+          "7.62mm PKT"
+        ],
+        "smokes": true,
+        "zoom": {
+          "max": 3.3333333333333335,
+          "min": 6.363636363636363
+        }
+      },
+      "Commander": {
+        "zoom": {
+          "max": 4.666666666666667,
+          "min": 4.666666666666667
+        },
+        "weapons": []
+      }
+    }
   }
 ]
