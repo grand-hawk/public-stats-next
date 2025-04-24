@@ -1,5 +1,5 @@
 {
-    "date": "2025-04-23T12:20:00.974Z",
+    "date": "2025-04-24T00:35:56.374Z",
     "vehicles": [
         "120S",
         "2S19",
@@ -28,6 +28,7 @@
         "BRDM-2",
         "BRDM-2 Konkurs",
         "BTR-4",
+        "BTR-55",
         "BTR-60PB",
         "BTR-82A",
         "BTR-90",
@@ -154,6 +155,7 @@
         "T-90A",
         "T-90M",
         "T29E3",
+        "TOS-1A BM-1",
         "Tigr",
         "Type 16 MCV",
         "Type 625E",
@@ -179,6 +181,6 @@
         "pickupTruck"
     ],
     "versions": [
-        75
+        80
     ]
 }
