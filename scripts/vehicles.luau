@@ -9,6 +9,8 @@ local Engines = require(DriveData:WaitForChild("Engines") :: ModuleScript)
 local TankInfo = require(ReplicatedStorage:WaitForChild("TankInfo") :: ModuleScript)
 local GetVehicle = require(Modules:WaitForChild("GetVehicle") :: ModuleScript)
 
+local BaseFOV = workspace.CurrentCamera.FieldOfView
+
 type VehicleModule = {
 	name: string,
 	mass: number,
@@ -27,6 +29,23 @@ type VehicleModule = {
 			reverseGears: number,
 		},
 	},
+
+	suspension: {
+		horizontal: boolean,
+		vertical: boolean,
+		height: boolean,
+	}?,
+
+	turrets: {
+		[string]: {
+			zoom: {
+				min: number,
+				max: number,
+			},
+			smokes: boolean,
+			weapons: { string },
+		},
+	},
 }
 
 local vehicles: { VehicleModule } = {}
@@ -36,7 +55,7 @@ for name, tank in TankInfo do
 		continue
 	end
 
-	local model = GetVehicle.getVehicle(name)
+	local model = GetVehicle.getVehicle(name) :: Model?
 	if not model then
 		continue
 	end
@@ -72,7 +91,54 @@ for name, tank in TankInfo do
 				reverseGears = module.MaxReverseGear,
 			},
 		},
+
+		-- suspension = {},
+
+		turrets = {},
 	}
+
+	if module.adjustSusp then
+		vehicle.suspension = {
+			horizontal = module.adjustSusp.Directions.HorLean or false,
+			vertical = module.adjustSusp.Directions.VertTilt or false,
+			height = module.adjustSusp.Directions.Height or false,
+		}
+	end
+
+	local turretsFolder = model:FindFirstChild("Turrets") :: Folder
+	for _, turret: Folder in turretsFolder:GetChildren() do
+		local controlValue = turret:FindFirstChild("Control") :: ObjectValue
+		local seatName = controlValue.Value.Name
+
+		if vehicle.turrets[seatName] then
+			warn(`{controlValue.Value:GetFullName()} has multiple turrets`)
+			continue
+		end
+
+		local weaponsFolder = turret:FindFirstChild("Weapons") :: Folder
+		local turretInfoModule = turret:FindFirstChild("TurretInfo") :: ModuleScript
+		local turretInfo = require(turretInfoModule)
+
+		vehicle.turrets[seatName] = {
+			zoom = {
+				min = BaseFOV / turretInfo.Zoom[1],
+				max = BaseFOV / turretInfo.Zoom[2],
+			},
+			smokes = not not weaponsFolder:FindFirstChild("Smoke Grenade"),
+			weapons = {},
+		}
+
+		for _, weapon: Folder in weaponsFolder:GetChildren() do
+			local weaponName = weapon.Name
+			if weaponName == "Smoke Grenade" then
+				continue
+			end
+
+			if not table.find(vehicle.turrets[seatName], weaponName) then
+				table.insert(vehicle.turrets[seatName].weapons, weaponName)
+			end
+		end
+	end
 
 	table.insert(vehicles, vehicle)
 end
