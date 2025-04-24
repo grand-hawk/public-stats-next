@@ -9,7 +9,7 @@ local Engines = require(DriveData:WaitForChild("Engines") :: ModuleScript)
 local TankInfo = require(ReplicatedStorage:WaitForChild("TankInfo") :: ModuleScript)
 local GetVehicle = require(Modules:WaitForChild("GetVehicle") :: ModuleScript)
 
-local BaseFOV = workspace.CurrentCamera.FieldOfView
+local BaseFOV = 75
 
 type VehicleModule = {
 	name: string,
@@ -42,7 +42,7 @@ type VehicleModule = {
 				min: number,
 				max: number,
 			},
-			flares: boolean?,
+			-- flares: boolean?,
 			smokes: boolean?,
 			weapons: { string },
 		},
@@ -132,9 +132,9 @@ for name, tank in TankInfo do
 			weapons = {},
 		}
 
-		if weaponsFolder:FindFirstChild("Flares") then
-			vehicle.turrets[seatName].flares = true
-		end
+		-- if weaponsFolder:FindFirstChild("Flares") then
+		-- 	vehicle.turrets[seatName].flares = true
+		-- end
 		if weaponsFolder:FindFirstChild("Smoke Grenade") then
 			vehicle.turrets[seatName].smokes = true
 		end
