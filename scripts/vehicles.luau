@@ -2,14 +2,31 @@ local ServerStorage = game:GetService("ServerStorage")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 
 local DriveData = ReplicatedStorage:WaitForChild("NewDriveData") :: Folder
+local TankModules = ReplicatedStorage:WaitForChild("TankModules") :: Folder
 local VehicleDriveData = DriveData:WaitForChild("Vehicles") :: Folder
 local Modules = ServerStorage:WaitForChild("Modules") :: Folder
 
 local Engines = require(DriveData:WaitForChild("Engines") :: ModuleScript)
 local TankInfo = require(ReplicatedStorage:WaitForChild("TankInfo") :: ModuleScript)
 local GetVehicle = require(Modules:WaitForChild("GetVehicle") :: ModuleScript)
+local ThermalNames = require(TankModules:WaitForChild("ThermalNames") :: ModuleScript)
+local GeneralConfigs = require(TankModules:WaitForChild("Turrets"):WaitForChild("GeneralConfigs") :: ModuleScript)
 
 local BaseFOV = 75
+
+function tableEquals(table1, table2)
+	for i, v in next, table1 do
+		if table2[i] ~= v then
+			return false
+		end
+	end
+	for i, v in next, table2 do
+		if table1[i] ~= v then
+			return false
+		end
+	end
+	return true
+end
 
 type VehicleModule = {
 	name: string,
@@ -55,6 +72,8 @@ type VehicleModule = {
 			-- flares: boolean?,
 			smokes: boolean?,
 			stabilizer: boolean,
+			thermals: string?,
+			rangefinder: string?,
 			weapons: { string },
 		},
 	},
@@ -162,6 +181,19 @@ for name, tank in TankInfo do
 			vehicle.turrets[seatName].smokes = not not weaponsFolder:FindFirstChild("Smoke Grenade")
 		end
 
+		if turretInfo.Thermal then
+			vehicle.turrets[seatName].thermals = ThermalNames[turretInfo.Thermal.Type] or "Unknown"
+		end
+
+		if turretInfo.rangeFinderAccuracy then
+			for name, referenceValues in GeneralConfigs.RangeFinder do
+				if tableEquals(turretInfo.rangeFinderAccuracy, referenceValues) then
+					vehicle.turrets[seatName].rangefinder = name
+					break
+				end
+			end
+		end
+
 		for _, weapon: Folder in weaponsFolder:GetChildren() do
 			local weaponName = weapon.Name
 			if weaponName == "Smoke Grenade" or weaponName == "Flares" then
@@ -176,7 +208,5 @@ for name, tank in TankInfo do
 
 	table.insert(vehicles, vehicle)
 end
-
-print(game:GetService("HttpService"):JSONEncode(vehicles))
 
 return vehicles
