@@ -42,8 +42,19 @@ type VehicleModule = {
 				min: number,
 				max: number,
 			},
+			traverse: {
+				speed: {
+					horizontal: number,
+					vertical: number,
+				},
+				vertical: {
+					min: number,
+					max: number,
+				},
+			},
 			-- flares: boolean?,
 			smokes: boolean?,
+			stabilizer: boolean,
 			weapons: { string },
 		},
 	},
@@ -129,6 +140,17 @@ for name, tank in TankInfo do
 				min = BaseFOV / turretInfo.Zoom[2],
 				max = BaseFOV / turretInfo.Zoom[1],
 			},
+			traverse = {
+				speed = {
+					horizontal = turretInfo.anglelimits.horizontal[3],
+					vertical = turretInfo.anglelimits.vertical[3],
+				},
+				vertical = {
+					min = turretInfo.anglelimits.vertical[1],
+					max = turretInfo.anglelimits.vertical[2],
+				},
+			},
+			stabilizer = not not turretInfo.Stabiliser,
 			weapons = {},
 		}
 
