@@ -88,6 +88,7 @@ for name, tank in TankInfo do
 	local vehicle: VehicleModule = {
 		name = tank.Dispname,
 		mass = module.MassTon,
+		amphibious = not not model:GetAttribute("Amphibious"),
 
 		engine = {
 			name = module.Engine,
