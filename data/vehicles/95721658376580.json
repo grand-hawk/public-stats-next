@@ -46,7 +46,10 @@
           }
         },
         "weapons": [
-          "MIM146 Launcher"
+          {
+            "addons": [],
+            "name": "MIM146 Launcher"
+          }
         ],
         "smokes": false,
         "rangefinder": "Laser",
@@ -89,7 +92,10 @@
           }
         },
         "weapons": [
-          "7.62mm L37A2"
+          {
+            "addons": [],
+            "name": "7.62mm L37A2"
+          }
         ],
         "stabilizer": true,
         "zoom": {
@@ -110,9 +116,20 @@
           }
         },
         "weapons": [
-          "120mm L30A1",
-          "7.62 mm L94A1",
-          "Brimstone"
+          {
+            "addons": [],
+            "name": "120mm L30A1"
+          },
+          {
+            "addons": [],
+            "name": "7.62 mm L94A1"
+          },
+          {
+            "addons": [
+              "Streetfigher II"
+            ],
+            "name": "Brimstone"
+          }
         ],
         "smokes": true,
         "rangefinder": "Laser",
@@ -175,7 +192,10 @@
           }
         },
         "weapons": [
-          "12.7mm NSVT"
+          {
+            "addons": [],
+            "name": "12.7mm NSVT"
+          }
         ],
         "stabilizer": false,
         "zoom": {
@@ -196,7 +216,10 @@
           }
         },
         "weapons": [
-          "S-8KO"
+          {
+            "addons": [],
+            "name": "S-8KO"
+          }
         ],
         "rangefinder": "None",
         "stabilizer": false,
@@ -227,7 +250,10 @@
     "turrets": {
       "Bow Gunner": {
         "weapons": [
-          "ATO-41 Flamethrower"
+          {
+            "addons": [],
+            "name": "ATO-41 Flamethrower"
+          }
         ],
         "traverse": {
           "vertical": {
@@ -258,8 +284,14 @@
           }
         },
         "weapons": [
-          "85mm ZIS-S-53",
-          "7.62mm DT-28"
+          {
+            "addons": [],
+            "name": "85mm ZIS-S-53"
+          },
+          {
+            "addons": [],
+            "name": "7.62mm DT-28"
+          }
         ],
         "rangefinder": "None",
         "stabilizer": false,
@@ -290,7 +322,10 @@
     "turrets": {
       "Loader": {
         "weapons": [
-          "7.62mm DT-28"
+          {
+            "addons": [],
+            "name": "7.62mm DT-28"
+          }
         ],
         "traverse": {
           "vertical": {
@@ -321,8 +356,14 @@
           }
         },
         "weapons": [
-          "76mm F-34",
-          "7.62mm DT-28"
+          {
+            "addons": [],
+            "name": "76mm F-34"
+          },
+          {
+            "addons": [],
+            "name": "7.62mm DT-28"
+          }
         ],
         "rangefinder": "None",
         "stabilizer": false,
@@ -333,7 +374,10 @@
       },
       "Bow Gunner": {
         "weapons": [
-          "7.62mm DT-28"
+          {
+            "addons": [],
+            "name": "7.62mm DT-28"
+          }
         ],
         "traverse": {
           "vertical": {
@@ -404,7 +448,10 @@
           }
         },
         "weapons": [
-          "152mm 2A64M"
+          {
+            "addons": [],
+            "name": "152mm 2A64M"
+          }
         ],
         "rangefinder": "None",
         "stabilizer": false,
@@ -446,8 +493,14 @@
           }
         },
         "weapons": [
-          "76mm M1",
-          ".30 cal M1919"
+          {
+            "addons": [],
+            "name": "76mm M1"
+          },
+          {
+            "addons": [],
+            "name": ".30 cal M1919"
+          }
         ],
         "rangefinder": "None",
         "stabilizer": true,
@@ -458,7 +511,10 @@
       },
       "Commander": {
         "weapons": [
-          "12.7mm M2"
+          {
+            "addons": [],
+            "name": "12.7mm M2"
+          }
         ],
         "traverse": {
           "vertical": {
@@ -478,7 +534,10 @@
       },
       "Bow Gunner": {
         "weapons": [
-          ".30 cal M1919"
+          {
+            "addons": [],
+            "name": ".30 cal M1919"
+          }
         ],
         "traverse": {
           "vertical": {
@@ -529,7 +588,10 @@
           }
         },
         "weapons": [
-          "7.62mm PKT"
+          {
+            "addons": [],
+            "name": "7.62mm PKT"
+          }
         ],
         "stabilizer": false,
         "zoom": {
@@ -589,10 +651,24 @@
           }
         },
         "weapons": [
-          "9M113 Konkurs",
-          "9M14M",
-          "73mm 2A28",
-          "7.62mm PKT"
+          {
+            "addons": [
+              "BMP-1PK Conversion"
+            ],
+            "name": "9M113 Konkurs"
+          },
+          {
+            "addons": [],
+            "name": "9M14M"
+          },
+          {
+            "addons": [],
+            "name": "73mm 2A28"
+          },
+          {
+            "addons": [],
+            "name": "7.62mm PKT"
+          }
         ],
         "rangefinder": "None",
         "stabilizer": false,
@@ -634,7 +710,10 @@
           }
         },
         "weapons": [
-          "12.7mm NSVT"
+          {
+            "addons": [],
+            "name": "12.7mm NSVT"
+          }
         ],
         "stabilizer": true,
         "zoom": {
@@ -655,8 +734,14 @@
           }
         },
         "weapons": [
-          "100mm D-10TS2",
-          "7.62mm PKT"
+          {
+            "addons": [],
+            "name": "100mm D-10TS2"
+          },
+          {
+            "addons": [],
+            "name": "7.62mm PKT"
+          }
         ],
         "rangefinder": "None",
         "stabilizer": true,
@@ -697,7 +782,10 @@
           }
         },
         "weapons": [
-          "7.62mm PKT"
+          {
+            "addons": [],
+            "name": "7.62mm PKT"
+          }
         ],
         "stabilizer": false,
         "zoom": {
@@ -738,7 +826,10 @@
           }
         },
         "weapons": [
-          "12.7mm NSVT"
+          {
+            "addons": [],
+            "name": "12.7mm NSVT"
+          }
         ],
         "stabilizer": true,
         "zoom": {
@@ -759,8 +850,14 @@
           }
         },
         "weapons": [
-          "7.62mm PKT",
-          "120mm KBM-2"
+          {
+            "addons": [],
+            "name": "7.62mm PKT"
+          },
+          {
+            "addons": [],
+            "name": "120mm KBM-2"
+          }
         ],
         "smokes": true,
         "rangefinder": "Laser",
@@ -803,8 +900,16 @@
           }
         },
         "weapons": [
-          "Grenade Mortar",
-          "X7 Rotkäppchen"
+          {
+            "addons": [],
+            "name": "Grenade Mortar"
+          },
+          {
+            "addons": [
+              "X7 Rotkäppchen"
+            ],
+            "name": "X7 Rotkäppchen"
+          }
         ],
         "stabilizer": false,
         "zoom": {
@@ -825,8 +930,14 @@
           }
         },
         "weapons": [
-          "88 mm KwK43",
-          "7.92mm MG34"
+          {
+            "addons": [],
+            "name": "88 mm KwK43"
+          },
+          {
+            "addons": [],
+            "name": "7.92mm MG34"
+          }
         ],
         "rangefinder": "None",
         "stabilizer": false,
@@ -837,7 +948,10 @@
       },
       "Commander": {
         "weapons": [
-          "7.92mm MG34"
+          {
+            "addons": [],
+            "name": "7.92mm MG34"
+          }
         ],
         "traverse": {
           "vertical": {
@@ -857,7 +971,10 @@
       },
       "Bow Gunner": {
         "weapons": [
-          "7.92mm MG34"
+          {
+            "addons": [],
+            "name": "7.92mm MG34"
+          }
         ],
         "traverse": {
           "vertical": {
@@ -927,7 +1044,10 @@
           }
         },
         "weapons": [
-          "12.7mm KORD"
+          {
+            "addons": [],
+            "name": "12.7mm KORD"
+          }
         ],
         "stabilizer": true,
         "zoom": {
@@ -948,8 +1068,14 @@
           }
         },
         "weapons": [
-          "7.62mm PKT",
-          "125mm 2A46M-5"
+          {
+            "addons": [],
+            "name": "7.62mm PKT"
+          },
+          {
+            "addons": [],
+            "name": "125mm 2A46M-5"
+          }
         ],
         "smokes": true,
         "rangefinder": "Laser",
@@ -992,7 +1118,10 @@
           }
         },
         "weapons": [
-          "20mm M618"
+          {
+            "addons": [],
+            "name": "20mm M618"
+          }
         ],
         "stabilizer": false,
         "zoom": {
@@ -1022,7 +1151,10 @@
     "turrets": {
       "Bow Gunner": {
         "weapons": [
-          "7.62mm DT-28"
+          {
+            "addons": [],
+            "name": "7.62mm DT-28"
+          }
         ],
         "traverse": {
           "vertical": {
@@ -1053,7 +1185,10 @@
           }
         },
         "weapons": [
-          "122mm D-30"
+          {
+            "addons": [],
+            "name": "122mm D-30"
+          }
         ],
         "rangefinder": "None",
         "stabilizer": false,
@@ -1095,7 +1230,10 @@
           }
         },
         "weapons": [
-          "203mm 2A44"
+          {
+            "addons": [],
+            "name": "203mm 2A44"
+          }
         ],
         "rangefinder": "None",
         "stabilizer": false,
@@ -1126,7 +1264,10 @@
     "turrets": {
       "Bow Gunner": {
         "weapons": [
-          "7.92 mm BESA"
+          {
+            "addons": [],
+            "name": "7.92 mm BESA"
+          }
         ],
         "traverse": {
           "vertical": {
@@ -1157,8 +1298,14 @@
           }
         },
         "weapons": [
-          "75mm OQF Mk.V",
-          "7.92 mm BESA"
+          {
+            "addons": [],
+            "name": "75mm OQF Mk.V"
+          },
+          {
+            "addons": [],
+            "name": "7.92 mm BESA"
+          }
         ],
         "rangefinder": "None",
         "stabilizer": false,
@@ -1200,7 +1347,10 @@
           }
         },
         "weapons": [
-          "12.7mm M2"
+          {
+            "addons": [],
+            "name": "12.7mm M2"
+          }
         ],
         "rangefinder": "Laser",
         "stabilizer": true,
@@ -1222,8 +1372,14 @@
           }
         },
         "weapons": [
-          "105mm JSW",
-          "7.62mm Type 74"
+          {
+            "addons": [],
+            "name": "105mm JSW"
+          },
+          {
+            "addons": [],
+            "name": "7.62mm Type 74"
+          }
         ],
         "smokes": true,
         "rangefinder": "Laser",
@@ -1266,7 +1422,10 @@
           }
         },
         "weapons": [
-          "12.7mm NSVT"
+          {
+            "addons": [],
+            "name": "12.7mm NSVT"
+          }
         ],
         "stabilizer": true,
         "zoom": {
@@ -1287,8 +1446,14 @@
           }
         },
         "weapons": [
-          "7.62mm PKT",
-          "125mm 2A46"
+          {
+            "addons": [],
+            "name": "7.62mm PKT"
+          },
+          {
+            "addons": [],
+            "name": "125mm 2A46"
+          }
         ],
         "rangefinder": "Laser",
         "stabilizer": true,
@@ -1318,7 +1483,7 @@
     },
     "turrets": {
       "Commander": {
-        "thermals": "White (Gen 1)",
+        "rangefinder": "Laser",
         "traverse": {
           "vertical": {
             "max": 80,
@@ -1330,9 +1495,11 @@
           }
         },
         "weapons": [
-          "30mm AGS-17"
+          {
+            "addons": [],
+            "name": "30mm AGS-17"
+          }
         ],
-        "rangefinder": "Laser",
         "stabilizer": true,
         "zoom": {
           "max": 18,
@@ -1340,7 +1507,7 @@
         }
       },
       "Gunner": {
-        "smokes": true,
+        "thermals": "White (Gen 2)",
         "traverse": {
           "vertical": {
             "max": 74,
@@ -1352,10 +1519,20 @@
           }
         },
         "weapons": [
-          "30mm 2A42M",
-          "7.62mm PKT",
-          "9M133 Kornet"
+          {
+            "addons": [],
+            "name": "30mm 2A42M"
+          },
+          {
+            "addons": [],
+            "name": "7.62mm PKT"
+          },
+          {
+            "addons": [],
+            "name": "9M133 Kornet"
+          }
         ],
+        "smokes": true,
         "rangefinder": "Laser",
         "stabilizer": true,
         "zoom": {
@@ -1416,9 +1593,18 @@
           }
         },
         "weapons": [
-          "100mm ZPL04",
-          "30mm ZPL02",
-          "5.8mm QJT"
+          {
+            "addons": [],
+            "name": "100mm ZPL04"
+          },
+          {
+            "addons": [],
+            "name": "30mm ZPL02"
+          },
+          {
+            "addons": [],
+            "name": "5.8mm QJT"
+          }
         ],
         "smokes": true,
         "rangefinder": "Laser",
@@ -1461,8 +1647,14 @@
           }
         },
         "weapons": [
-          "105 mm M4",
-          ".30 cal M1919"
+          {
+            "addons": [],
+            "name": "105 mm M4"
+          },
+          {
+            "addons": [],
+            "name": ".30 cal M1919"
+          }
         ],
         "rangefinder": "None",
         "stabilizer": false,
@@ -1473,7 +1665,10 @@
       },
       "Commander": {
         "weapons": [
-          "12.7mm M2"
+          {
+            "addons": [],
+            "name": "12.7mm M2"
+          }
         ],
         "traverse": {
           "vertical": {
@@ -1493,7 +1688,10 @@
       },
       "Bow Gunner": {
         "weapons": [
-          ".30 cal M1919"
+          {
+            "addons": [],
+            "name": ".30 cal M1919"
+          }
         ],
         "traverse": {
           "vertical": {
@@ -1544,8 +1742,14 @@
           }
         },
         "weapons": [
-          "60mm IMI HVMS",
-          ".30 cal M1919"
+          {
+            "addons": [],
+            "name": "60mm IMI HVMS"
+          },
+          {
+            "addons": [],
+            "name": ".30 cal M1919"
+          }
         ],
         "rangefinder": "Laser",
         "stabilizer": false,
@@ -1587,7 +1791,10 @@
           }
         },
         "weapons": [
-          "115mm U-5TS"
+          {
+            "addons": [],
+            "name": "115mm U-5TS"
+          }
         ],
         "rangefinder": "None",
         "stabilizer": false,
@@ -1654,7 +1861,10 @@
           }
         },
         "weapons": [
-          "75mm XM274"
+          {
+            "addons": [],
+            "name": "75mm XM274"
+          }
         ],
         "smokes": false,
         "rangefinder": "Laser",
@@ -1697,7 +1907,10 @@
           }
         },
         "weapons": [
-          "12.7mm NSVT"
+          {
+            "addons": [],
+            "name": "12.7mm NSVT"
+          }
         ],
         "stabilizer": true,
         "zoom": {
@@ -1718,8 +1931,14 @@
           }
         },
         "weapons": [
-          "7.62mm PKT",
-          "125mm 2A46M"
+          {
+            "addons": [],
+            "name": "7.62mm PKT"
+          },
+          {
+            "addons": [],
+            "name": "125mm 2A46M"
+          }
         ],
         "rangefinder": "Laser",
         "stabilizer": true,
@@ -1786,10 +2005,22 @@
           }
         },
         "weapons": [
-          "9M134 Bulat",
-          "9M133 Kornet",
-          "57mm 2A94",
-          "7.62mm PKT"
+          {
+            "addons": [],
+            "name": "9M134 Bulat"
+          },
+          {
+            "addons": [],
+            "name": "9M133 Kornet"
+          },
+          {
+            "addons": [],
+            "name": "57mm 2A94"
+          },
+          {
+            "addons": [],
+            "name": "7.62mm PKT"
+          }
         ],
         "smokes": true,
         "rangefinder": "Laser",
@@ -1832,7 +2063,12 @@
           }
         },
         "weapons": [
-          "12.7mm M2"
+          {
+            "addons": [
+              "Commander MG"
+            ],
+            "name": "12.7mm M2"
+          }
         ],
         "rangefinder": "Laser",
         "stabilizer": true,
@@ -1854,8 +2090,14 @@
           }
         },
         "weapons": [
-          "7.62mm M240",
-          "105mm M68A1E4"
+          {
+            "addons": [],
+            "name": "7.62mm M240"
+          },
+          {
+            "addons": [],
+            "name": "105mm M68A1E4"
+          }
         ],
         "smokes": true,
         "rangefinder": "Laser",
@@ -1898,8 +2140,14 @@
           }
         },
         "weapons": [
-          "30mm M230LF",
-          "Loitering Drone"
+          {
+            "addons": [],
+            "name": "30mm M230LF"
+          },
+          {
+            "addons": [],
+            "name": "Loitering Drone"
+          }
         ],
         "rangefinder": "Laser",
         "stabilizer": true,
@@ -1921,8 +2169,14 @@
           }
         },
         "weapons": [
-          "120mm M256",
-          "7.62mm M240"
+          {
+            "addons": [],
+            "name": "120mm M256"
+          },
+          {
+            "addons": [],
+            "name": "7.62mm M240"
+          }
         ],
         "smokes": true,
         "rangefinder": "Laser",
@@ -1965,8 +2219,14 @@
           }
         },
         "weapons": [
-          "14.5mm KPVT",
-          "7.62mm PKT"
+          {
+            "addons": [],
+            "name": "14.5mm KPVT"
+          },
+          {
+            "addons": [],
+            "name": "7.62mm PKT"
+          }
         ],
         "rangefinder": "None",
         "stabilizer": false,
@@ -2008,7 +2268,10 @@
           }
         },
         "weapons": [
-          "57mm M1"
+          {
+            "addons": [],
+            "name": "57mm M1"
+          }
         ],
         "rangefinder": "None",
         "stabilizer": false,
@@ -2050,7 +2313,10 @@
           }
         },
         "weapons": [
-          "40mm MK-19"
+          {
+            "addons": [],
+            "name": "40mm MK-19"
+          }
         ],
         "stabilizer": true,
         "zoom": {
@@ -2071,8 +2337,16 @@
           }
         },
         "weapons": [
-          "40mm Akan m/70B",
-          "40mm Akan m/70BM"
+          {
+            "addons": [],
+            "name": "40mm Akan m/70B"
+          },
+          {
+            "addons": [
+              "Improved Ammunition"
+            ],
+            "name": "40mm Akan m/70BM"
+          }
         ],
         "smokes": true,
         "rangefinder": "Laser",
@@ -2115,8 +2389,14 @@
           }
         },
         "weapons": [
-          "75 mm KwK40 L48",
-          "7.92mm MG34"
+          {
+            "addons": [],
+            "name": "75 mm KwK40 L48"
+          },
+          {
+            "addons": [],
+            "name": "7.92mm MG34"
+          }
         ],
         "rangefinder": "None",
         "stabilizer": false,
@@ -2127,7 +2407,10 @@
       },
       "Commander": {
         "weapons": [
-          "7.92mm MG34"
+          {
+            "addons": [],
+            "name": "7.92mm MG34"
+          }
         ],
         "traverse": {
           "vertical": {
@@ -2147,7 +2430,10 @@
       },
       "Bow Gunner": {
         "weapons": [
-          "7.92mm MG34"
+          {
+            "addons": [],
+            "name": "7.92mm MG34"
+          }
         ],
         "traverse": {
           "vertical": {
@@ -2187,7 +2473,10 @@
     "turrets": {
       "Loader": {
         "weapons": [
-          "Grenade Mortar"
+          {
+            "addons": [],
+            "name": "Grenade Mortar"
+          }
         ],
         "traverse": {
           "vertical": {
@@ -2218,9 +2507,20 @@
           }
         },
         "weapons": [
-          "7.92 mm BESA",
-          "L9A1 165mm",
-          "75mm OQF Mk.V"
+          {
+            "addons": [],
+            "name": "7.92 mm BESA"
+          },
+          {
+            "addons": [
+              "A.V.R.E"
+            ],
+            "name": "L9A1 165mm"
+          },
+          {
+            "addons": [],
+            "name": "75mm OQF Mk.V"
+          }
         ],
         "rangefinder": "None",
         "stabilizer": false,
@@ -2231,7 +2531,10 @@
       },
       "Bow Gunner": {
         "weapons": [
-          "7.92 mm BESA"
+          {
+            "addons": [],
+            "name": "7.92 mm BESA"
+          }
         ],
         "traverse": {
           "vertical": {
@@ -2282,8 +2585,14 @@
           }
         },
         "weapons": [
-          "7.62mm PKT",
-          "76.2 mm D-56TM"
+          {
+            "addons": [],
+            "name": "7.62mm PKT"
+          },
+          {
+            "addons": [],
+            "name": "76.2 mm D-56TM"
+          }
         ],
         "stabilizer": true,
         "zoom": {
@@ -2324,7 +2633,10 @@
           }
         },
         "weapons": [
-          "12.7mm NSVT"
+          {
+            "addons": [],
+            "name": "12.7mm NSVT"
+          }
         ],
         "stabilizer": true,
         "zoom": {
@@ -2345,8 +2657,14 @@
           }
         },
         "weapons": [
-          "7.62mm PKT",
-          "125mm 2A46M-1"
+          {
+            "addons": [],
+            "name": "7.62mm PKT"
+          },
+          {
+            "addons": [],
+            "name": "125mm 2A46M-1"
+          }
         ],
         "smokes": true,
         "rangefinder": "Laser",
@@ -2389,8 +2707,14 @@
           }
         },
         "weapons": [
-          "75mm M3",
-          ".30 cal M1919"
+          {
+            "addons": [],
+            "name": "75mm M3"
+          },
+          {
+            "addons": [],
+            "name": ".30 cal M1919"
+          }
         ],
         "rangefinder": "None",
         "stabilizer": true,
@@ -2401,7 +2725,10 @@
       },
       "Commander": {
         "weapons": [
-          "12.7mm M2"
+          {
+            "addons": [],
+            "name": "12.7mm M2"
+          }
         ],
         "traverse": {
           "vertical": {
@@ -2421,7 +2748,10 @@
       },
       "Bow Gunner": {
         "weapons": [
-          ".30 cal M1919"
+          {
+            "addons": [],
+            "name": ".30 cal M1919"
+          }
         ],
         "traverse": {
           "vertical": {
@@ -2472,7 +2802,10 @@
           }
         },
         "weapons": [
-          "12.7mm NSVT"
+          {
+            "addons": [],
+            "name": "12.7mm NSVT"
+          }
         ],
         "stabilizer": true,
         "zoom": {
@@ -2493,8 +2826,14 @@
           }
         },
         "weapons": [
-          "7.62mm PKT",
-          "125mm 2A46M-1"
+          {
+            "addons": [],
+            "name": "7.62mm PKT"
+          },
+          {
+            "addons": [],
+            "name": "125mm 2A46M-1"
+          }
         ],
         "smokes": true,
         "rangefinder": "Laser",
@@ -2537,8 +2876,16 @@
           }
         },
         "weapons": [
-          "7.62mm PKT",
-          "30mm AGS-17"
+          {
+            "addons": [],
+            "name": "7.62mm PKT"
+          },
+          {
+            "addons": [
+              "Grenade Launcher"
+            ],
+            "name": "30mm AGS-17"
+          }
         ],
         "stabilizer": true,
         "zoom": {
@@ -2579,7 +2926,10 @@
           }
         },
         "weapons": [
-          "7.62mm M240"
+          {
+            "addons": [],
+            "name": "7.62mm M240"
+          }
         ],
         "stabilizer": true,
         "zoom": {
@@ -2600,8 +2950,14 @@
           }
         },
         "weapons": [
-          "7.62mm M240",
-          "120mm M256"
+          {
+            "addons": [],
+            "name": "7.62mm M240"
+          },
+          {
+            "addons": [],
+            "name": "120mm M256"
+          }
         ],
         "smokes": true,
         "rangefinder": "Laser",
@@ -2624,7 +2980,10 @@
           }
         },
         "weapons": [
-          "12.7mm M2"
+          {
+            "addons": [],
+            "name": "12.7mm M2"
+          }
         ],
         "stabilizer": true,
         "zoom": {
@@ -2670,7 +3029,10 @@
           }
         },
         "weapons": [
-          "9M133 Kornet"
+          {
+            "addons": [],
+            "name": "9M133 Kornet"
+          }
         ],
         "smokes": true,
         "rangefinder": "Laser",
@@ -2702,7 +3064,10 @@
     "turrets": {
       "Commander": {
         "weapons": [
-          "Rocketetet"
+          {
+            "addons": [],
+            "name": "Rocketetet"
+          }
         ],
         "traverse": {
           "vertical": {
@@ -2753,8 +3118,14 @@
           }
         },
         "weapons": [
-          "76mm M1",
-          ".30 cal M1919"
+          {
+            "addons": [],
+            "name": "76mm M1"
+          },
+          {
+            "addons": [],
+            "name": ".30 cal M1919"
+          }
         ],
         "rangefinder": "None",
         "stabilizer": true,
@@ -2765,7 +3136,10 @@
       },
       "Commander": {
         "weapons": [
-          "12.7mm M2"
+          {
+            "addons": [],
+            "name": "12.7mm M2"
+          }
         ],
         "traverse": {
           "vertical": {
@@ -2785,7 +3159,10 @@
       },
       "Bow Gunner": {
         "weapons": [
-          ".30 cal M1919"
+          {
+            "addons": [],
+            "name": ".30 cal M1919"
+          }
         ],
         "traverse": {
           "vertical": {
@@ -2836,8 +3213,14 @@
           }
         },
         "weapons": [
-          "50 mm KwK39",
-          "7.92mm MG34"
+          {
+            "addons": [],
+            "name": "50 mm KwK39"
+          },
+          {
+            "addons": [],
+            "name": "7.92mm MG34"
+          }
         ],
         "rangefinder": "None",
         "stabilizer": false,
@@ -2848,7 +3231,10 @@
       },
       "Commander": {
         "weapons": [
-          "7.92mm MG34"
+          {
+            "addons": [],
+            "name": "7.92mm MG34"
+          }
         ],
         "traverse": {
           "vertical": {
@@ -2868,7 +3254,10 @@
       },
       "Bow Gunner": {
         "weapons": [
-          "7.92mm MG34"
+          {
+            "addons": [],
+            "name": "7.92mm MG34"
+          }
         ],
         "traverse": {
           "vertical": {
@@ -2919,7 +3308,10 @@
           }
         },
         "weapons": [
-          "85mm D-5S"
+          {
+            "addons": [],
+            "name": "85mm D-5S"
+          }
         ],
         "rangefinder": "None",
         "stabilizer": false,
@@ -2981,9 +3373,20 @@
           }
         },
         "weapons": [
-          "5.56mm MG4",
-          "30mm MK 30-2/ABM",
-          "Spike-LR2MR"
+          {
+            "addons": [],
+            "name": "5.56mm MG4"
+          },
+          {
+            "addons": [],
+            "name": "30mm MK 30-2/ABM"
+          },
+          {
+            "addons": [
+              "Spike-LR"
+            ],
+            "name": "Spike-LR2MR"
+          }
         ],
         "smokes": true,
         "rangefinder": "Laser",
@@ -3026,8 +3429,14 @@
           }
         },
         "weapons": [
-          "12.7mm M2",
-          "40mm MK-19"
+          {
+            "addons": [],
+            "name": "12.7mm M2"
+          },
+          {
+            "addons": [],
+            "name": "40mm MK-19"
+          }
         ],
         "rangefinder": "Laser",
         "stabilizer": false,
@@ -3069,8 +3478,14 @@
           }
         },
         "weapons": [
-          "100mm D-10S",
-          "7.62mm PKT"
+          {
+            "addons": [],
+            "name": "100mm D-10S"
+          },
+          {
+            "addons": [],
+            "name": "7.62mm PKT"
+          }
         ],
         "rangefinder": "None",
         "stabilizer": false,
@@ -3081,7 +3496,10 @@
       },
       "Commander": {
         "weapons": [
-          "7.62mm PKT"
+          {
+            "addons": [],
+            "name": "7.62mm PKT"
+          }
         ],
         "traverse": {
           "vertical": {
@@ -3101,7 +3519,10 @@
       },
       "BowGunner": {
         "weapons": [
-          "7.62mm PKT"
+          {
+            "addons": [],
+            "name": "7.62mm PKT"
+          }
         ],
         "traverse": {
           "vertical": {
@@ -3152,7 +3573,10 @@
           }
         },
         "weapons": [
-          "12.7mm KORD"
+          {
+            "addons": [],
+            "name": "12.7mm KORD"
+          }
         ],
         "stabilizer": true,
         "zoom": {
@@ -3173,8 +3597,14 @@
           }
         },
         "weapons": [
-          "7.62mm PKT",
-          "125mm 2A46M-5"
+          {
+            "addons": [],
+            "name": "7.62mm PKT"
+          },
+          {
+            "addons": [],
+            "name": "125mm 2A46M-5"
+          }
         ],
         "smokes": true,
         "rangefinder": "Laser",
@@ -3236,10 +3666,26 @@
           }
         },
         "weapons": [
-          "30mm 2A42",
-          "7.62mm PKT",
-          "9M113M Konkurs",
-          "9M113 Konkurs"
+          {
+            "addons": [],
+            "name": "30mm 2A42"
+          },
+          {
+            "addons": [],
+            "name": "7.62mm PKT"
+          },
+          {
+            "addons": [
+              "9M113M Konkurs"
+            ],
+            "name": "9M113M Konkurs"
+          },
+          {
+            "addons": [
+              "9M113 Konkurs"
+            ],
+            "name": "9M113 Konkurs"
+          }
         ],
         "rangefinder": "None",
         "stabilizer": true,
@@ -3281,7 +3727,10 @@
           }
         },
         "weapons": [
-          "7.62mm MG3"
+          {
+            "addons": [],
+            "name": "7.62mm MG3"
+          }
         ],
         "stabilizer": true,
         "zoom": {
@@ -3302,8 +3751,14 @@
           }
         },
         "weapons": [
-          "L7A3 105mm",
-          "7.62mm MG3"
+          {
+            "addons": [],
+            "name": "L7A3 105mm"
+          },
+          {
+            "addons": [],
+            "name": "7.62mm MG3"
+          }
         ],
         "smokes": true,
         "rangefinder": "Laser",
@@ -3365,7 +3820,10 @@
           }
         },
         "weapons": [
-          "75mm M3"
+          {
+            "addons": [],
+            "name": "75mm M3"
+          }
         ],
         "rangefinder": "None",
         "stabilizer": false,
@@ -3407,7 +3865,10 @@
           }
         },
         "weapons": [
-          "12.7mm M2"
+          {
+            "addons": [],
+            "name": "12.7mm M2"
+          }
         ],
         "stabilizer": true,
         "zoom": {
@@ -3448,8 +3909,16 @@
           }
         },
         "weapons": [
-          "Milan 2",
-          "Milan ER"
+          {
+            "addons": [],
+            "name": "Milan 2"
+          },
+          {
+            "addons": [
+              "Milan ER"
+            ],
+            "name": "Milan ER"
+          }
         ],
         "stabilizer": true,
         "zoom": {
@@ -3470,8 +3939,14 @@
           }
         },
         "weapons": [
-          "20mm Rh202",
-          "7.62mm MG3"
+          {
+            "addons": [],
+            "name": "20mm Rh202"
+          },
+          {
+            "addons": [],
+            "name": "7.62mm MG3"
+          }
         ],
         "smokes": true,
         "rangefinder": "Laser",
@@ -3519,10 +3994,24 @@
           }
         },
         "weapons": [
-          "30mm 2A42",
-          "9M113 Konkurs",
-          "7.62mm PKT",
-          "9M113M Konkurs"
+          {
+            "addons": [],
+            "name": "30mm 2A42"
+          },
+          {
+            "addons": [],
+            "name": "9M113 Konkurs"
+          },
+          {
+            "addons": [],
+            "name": "7.62mm PKT"
+          },
+          {
+            "addons": [
+              "9M113M Konkurs"
+            ],
+            "name": "9M113M Konkurs"
+          }
         ],
         "stabilizer": true,
         "zoom": {
@@ -3563,8 +4052,16 @@
           }
         },
         "weapons": [
-          "BGM-71A TOW",
-          "BGM-71C I-TOW"
+          {
+            "addons": [],
+            "name": "BGM-71A TOW"
+          },
+          {
+            "addons": [
+              "I-TOW"
+            ],
+            "name": "BGM-71C I-TOW"
+          }
         ],
         "smokes": true,
         "stabilizer": false,
@@ -3595,7 +4092,10 @@
     "turrets": {
       "Commander": {
         "weapons": [
-          "7.62mm L37A1"
+          {
+            "addons": [],
+            "name": "7.62mm L37A1"
+          }
         ],
         "traverse": {
           "vertical": {
@@ -3626,9 +4126,18 @@
           }
         },
         "weapons": [
-          "120mm L11A5",
-          "7.62mm L8A1",
-          "12.7 mm L21A1"
+          {
+            "addons": [],
+            "name": "120mm L11A5"
+          },
+          {
+            "addons": [],
+            "name": "7.62mm L8A1"
+          },
+          {
+            "addons": [],
+            "name": "12.7 mm L21A1"
+          }
         ],
         "rangefinder": "Optical",
         "stabilizer": true,
@@ -3670,7 +4179,10 @@
           }
         },
         "weapons": [
-          "12.7mm M2"
+          {
+            "addons": [],
+            "name": "12.7mm M2"
+          }
         ],
         "stabilizer": true,
         "zoom": {
@@ -3691,8 +4203,14 @@
           }
         },
         "weapons": [
-          "7.62mm M240",
-          "105mm M68E1"
+          {
+            "addons": [],
+            "name": "7.62mm M240"
+          },
+          {
+            "addons": [],
+            "name": "105mm M68E1"
+          }
         ],
         "stabilizer": true,
         "zoom": {
@@ -3733,7 +4251,10 @@
           }
         },
         "weapons": [
-          "9M113 Konkurs"
+          {
+            "addons": [],
+            "name": "9M113 Konkurs"
+          }
         ],
         "stabilizer": false,
         "zoom": {
@@ -3774,8 +4295,16 @@
           }
         },
         "weapons": [
-          "14.5mm KPVT",
-          "12.7mm KORD"
+          {
+            "addons": [
+              "Model 2025 Conversion"
+            ],
+            "name": "14.5mm KPVT"
+          },
+          {
+            "addons": [],
+            "name": "12.7mm KORD"
+          }
         ],
         "rangefinder": "Laser",
         "stabilizer": true,
@@ -3797,9 +4326,20 @@
           }
         },
         "weapons": [
-          "7.62mm PKT",
-          "125mm 2A82-1M",
-          "152mm 2A73"
+          {
+            "addons": [],
+            "name": "7.62mm PKT"
+          },
+          {
+            "addons": [],
+            "name": "125mm 2A82-1M"
+          },
+          {
+            "addons": [
+              "152 mm Conversion"
+            ],
+            "name": "152mm 2A73"
+          }
         ],
         "smokes": true,
         "rangefinder": "Laser",
@@ -3842,7 +4382,10 @@
           }
         },
         "weapons": [
-          "12.7mm M2"
+          {
+            "addons": [],
+            "name": "12.7mm M2"
+          }
         ],
         "stabilizer": true,
         "zoom": {
@@ -3883,7 +4426,10 @@
           }
         },
         "weapons": [
-          "12.7mm QJC88A"
+          {
+            "addons": [],
+            "name": "12.7mm QJC88A"
+          }
         ],
         "stabilizer": true,
         "zoom": {
@@ -3904,8 +4450,14 @@
           }
         },
         "weapons": [
-          "7.62mm Type 86",
-          "125mm Type 88C"
+          {
+            "addons": [],
+            "name": "7.62mm Type 86"
+          },
+          {
+            "addons": [],
+            "name": "125mm Type 88C"
+          }
         ],
         "smokes": true,
         "rangefinder": "Laser",
@@ -3937,7 +4489,10 @@
     "turrets": {
       "Bow Gunner": {
         "weapons": [
-          "7.92mm MG34"
+          {
+            "addons": [],
+            "name": "7.92mm MG34"
+          }
         ],
         "traverse": {
           "vertical": {
@@ -3968,8 +4523,14 @@
           }
         },
         "weapons": [
-          "88 mm KwK36",
-          "7.92mm MG34"
+          {
+            "addons": [],
+            "name": "88 mm KwK36"
+          },
+          {
+            "addons": [],
+            "name": "7.92mm MG34"
+          }
         ],
         "rangefinder": "None",
         "stabilizer": false,
@@ -4030,8 +4591,14 @@
           }
         },
         "weapons": [
-          "14.5mm KPVT",
-          "7.62mm PKT"
+          {
+            "addons": [],
+            "name": "14.5mm KPVT"
+          },
+          {
+            "addons": [],
+            "name": "7.62mm PKT"
+          }
         ],
         "rangefinder": "None",
         "stabilizer": false,
@@ -4073,7 +4640,10 @@
           }
         },
         "weapons": [
-          "227mm M269"
+          {
+            "addons": [],
+            "name": "227mm M269"
+          }
         ],
         "rangefinder": "None",
         "stabilizer": false,
@@ -4104,7 +4674,10 @@
     "turrets": {
       "Loader": {
         "weapons": [
-          "Grenade Mortar"
+          {
+            "addons": [],
+            "name": "Grenade Mortar"
+          }
         ],
         "traverse": {
           "vertical": {
@@ -4135,7 +4708,10 @@
           }
         },
         "weapons": [
-          "128 mm PaK44"
+          {
+            "addons": [],
+            "name": "128 mm PaK44"
+          }
         ],
         "rangefinder": "None",
         "stabilizer": false,
@@ -4165,7 +4741,10 @@
       },
       "Bow Gunner": {
         "weapons": [
-          "7.92mm MG34"
+          {
+            "addons": [],
+            "name": "7.92mm MG34"
+          }
         ],
         "traverse": {
           "vertical": {
@@ -4205,7 +4784,10 @@
     "turrets": {
       "Commander": {
         "weapons": [
-          "12.7mm M2"
+          {
+            "addons": [],
+            "name": "12.7mm M2"
+          }
         ],
         "traverse": {
           "vertical": {
@@ -4256,7 +4838,10 @@
           }
         },
         "weapons": [
-          "57mm Ch-51M"
+          {
+            "addons": [],
+            "name": "57mm Ch-51M"
+          }
         ],
         "rangefinder": "None",
         "stabilizer": false,
@@ -4298,7 +4883,10 @@
           }
         },
         "weapons": [
-          "7.62mm M240"
+          {
+            "addons": [],
+            "name": "7.62mm M240"
+          }
         ],
         "stabilizer": true,
         "zoom": {
@@ -4319,8 +4907,16 @@
           }
         },
         "weapons": [
-          "BGM-71C I-TOW",
-          "BGM-71F TOW 2A/B"
+          {
+            "addons": [],
+            "name": "BGM-71C I-TOW"
+          },
+          {
+            "addons": [
+              "TOW2A/TOW2B"
+            ],
+            "name": "BGM-71F TOW 2A/B"
+          }
         ],
         "smokes": true,
         "stabilizer": false,
@@ -4367,7 +4963,10 @@
           }
         },
         "weapons": [
-          "7.62mm PKT"
+          {
+            "addons": [],
+            "name": "7.62mm PKT"
+          }
         ],
         "rangefinder": "Laser",
         "stabilizer": true,
@@ -4389,8 +4988,14 @@
           }
         },
         "weapons": [
-          "7.62mm PKT",
-          "125mm 2A75"
+          {
+            "addons": [],
+            "name": "7.62mm PKT"
+          },
+          {
+            "addons": [],
+            "name": "125mm 2A75"
+          }
         ],
         "smokes": true,
         "rangefinder": "Laser",
@@ -4433,7 +5038,10 @@
           }
         },
         "weapons": [
-          "12.7mm NSVT"
+          {
+            "addons": [],
+            "name": "12.7mm NSVT"
+          }
         ],
         "stabilizer": false,
         "zoom": {
@@ -4454,7 +5062,10 @@
           }
         },
         "weapons": [
-          "9M37M"
+          {
+            "addons": [],
+            "name": "9M37M"
+          }
         ],
         "rangefinder": "None",
         "stabilizer": false,
@@ -4485,7 +5096,10 @@
     "turrets": {
       "Loader": {
         "weapons": [
-          "7.62mm DT-28"
+          {
+            "addons": [],
+            "name": "7.62mm DT-28"
+          }
         ],
         "traverse": {
           "vertical": {
@@ -4516,8 +5130,14 @@
           }
         },
         "weapons": [
-          "152mm M-10T",
-          "7.62mm DT-28"
+          {
+            "addons": [],
+            "name": "152mm M-10T"
+          },
+          {
+            "addons": [],
+            "name": "7.62mm DT-28"
+          }
         ],
         "rangefinder": "None",
         "stabilizer": false,
@@ -4528,7 +5148,10 @@
       },
       "Bow Gunner": {
         "weapons": [
-          "7.62mm DT-28"
+          {
+            "addons": [],
+            "name": "7.62mm DT-28"
+          }
         ],
         "traverse": {
           "vertical": {
@@ -4579,7 +5202,10 @@
           }
         },
         "weapons": [
-          "M2 Howitzer"
+          {
+            "addons": [],
+            "name": "M2 Howitzer"
+          }
         ],
         "rangefinder": "None",
         "stabilizer": true,
@@ -4590,7 +5216,10 @@
       },
       "Commander": {
         "weapons": [
-          "12.7mm M2"
+          {
+            "addons": [],
+            "name": "12.7mm M2"
+          }
         ],
         "traverse": {
           "vertical": {
@@ -4610,7 +5239,10 @@
       },
       "MGGunner": {
         "weapons": [
-          "12.7mm M2"
+          {
+            "addons": [],
+            "name": "12.7mm M2"
+          }
         ],
         "traverse": {
           "vertical": {
@@ -4681,8 +5313,14 @@
           }
         },
         "weapons": [
-          "30mm 2A72",
-          "152mm 2A73"
+          {
+            "addons": [],
+            "name": "30mm 2A72"
+          },
+          {
+            "addons": [],
+            "name": "152mm 2A73"
+          }
         ],
         "smokes": true,
         "rangefinder": "Laser",
@@ -4725,8 +5363,14 @@
           }
         },
         "weapons": [
-          "7.62mm PKT",
-          "30mm 2A72"
+          {
+            "addons": [],
+            "name": "7.62mm PKT"
+          },
+          {
+            "addons": [],
+            "name": "30mm 2A72"
+          }
         ],
         "rangefinder": "Laser",
         "stabilizer": true,
@@ -4788,10 +5432,24 @@
           }
         },
         "weapons": [
-          "BGM-71C I-TOW",
-          "25mm M242 Bushmaster",
-          "BGM-71F TOW 2A/B",
-          "7.62mm M240"
+          {
+            "addons": [],
+            "name": "BGM-71C I-TOW"
+          },
+          {
+            "addons": [],
+            "name": "25mm M242 Bushmaster"
+          },
+          {
+            "addons": [
+              "Improved Missiles"
+            ],
+            "name": "BGM-71F TOW 2A/B"
+          },
+          {
+            "addons": [],
+            "name": "7.62mm M240"
+          }
         ],
         "smokes": true,
         "rangefinder": "Laser",
@@ -4839,8 +5497,14 @@
           }
         },
         "weapons": [
-          "120mm Rh120 L/44 Dupe",
-          "120mm Rh120 L/44"
+          {
+            "addons": [],
+            "name": "120mm Rh120 L/44 Dupe"
+          },
+          {
+            "addons": [],
+            "name": "120mm Rh120 L/44"
+          }
         ],
         "rangefinder": "Laser",
         "stabilizer": true,
@@ -4871,7 +5535,10 @@
     "turrets": {
       "Commander": {
         "weapons": [
-          "7.92mm MG34"
+          {
+            "addons": [],
+            "name": "7.92mm MG34"
+          }
         ],
         "traverse": {
           "vertical": {
@@ -4902,7 +5569,10 @@
           }
         },
         "weapons": [
-          "150 mm Wgr.41 Spr rocket"
+          {
+            "addons": [],
+            "name": "150 mm Wgr.41 Spr rocket"
+          }
         ],
         "rangefinder": "None",
         "stabilizer": false,
@@ -4944,8 +5614,16 @@
           }
         },
         "weapons": [
-          "7.62mm NATTER",
-          "HERO-120"
+          {
+            "addons": [],
+            "name": "7.62mm NATTER"
+          },
+          {
+            "addons": [
+              "Anti-Tank Drones"
+            ],
+            "name": "HERO-120"
+          }
         ],
         "rangefinder": "Laser",
         "stabilizer": true,
@@ -4967,8 +5645,14 @@
           }
         },
         "weapons": [
-          "12.7mm RMG",
-          "130mm Rh130 L/51"
+          {
+            "addons": [],
+            "name": "12.7mm RMG"
+          },
+          {
+            "addons": [],
+            "name": "130mm Rh130 L/51"
+          }
         ],
         "smokes": true,
         "rangefinder": "Laser",
@@ -5011,8 +5695,14 @@
           }
         },
         "weapons": [
-          "130mm M-65",
-          "14.5mm KPVT"
+          {
+            "addons": [],
+            "name": "130mm M-65"
+          },
+          {
+            "addons": [],
+            "name": "14.5mm KPVT"
+          }
         ],
         "rangefinder": "Optical",
         "stabilizer": true,
@@ -5054,9 +5744,20 @@
           }
         },
         "weapons": [
-          "75mm SA50 L/57",
-          "7.5 mm MAC 31",
-          "LFK SS.11"
+          {
+            "addons": [],
+            "name": "75mm SA50 L/57"
+          },
+          {
+            "addons": [],
+            "name": "7.5 mm MAC 31"
+          },
+          {
+            "addons": [
+              "SS.11 ATGMs"
+            ],
+            "name": "LFK SS.11"
+          }
         ],
         "rangefinder": "None",
         "stabilizer": false,
@@ -5087,7 +5788,10 @@
     "turrets": {
       "Loader": {
         "weapons": [
-          "7.92mm MG34"
+          {
+            "addons": [],
+            "name": "7.92mm MG34"
+          }
         ],
         "traverse": {
           "vertical": {
@@ -5118,7 +5822,10 @@
           }
         },
         "weapons": [
-          "7.5 cm KwK 40 L/48"
+          {
+            "addons": [],
+            "name": "7.5 cm KwK 40 L/48"
+          }
         ],
         "rangefinder": "None",
         "stabilizer": false,
@@ -5160,7 +5867,10 @@
           }
         },
         "weapons": [
-          "60 mm Soltam Mortar"
+          {
+            "addons": [],
+            "name": "60 mm Soltam Mortar"
+          }
         ],
         "stabilizer": false,
         "zoom": {
@@ -5181,9 +5891,20 @@
           }
         },
         "weapons": [
-          "120mm IMI MG251",
-          "7.62 mm FN MAG 60-40",
-          "12.7mm M2"
+          {
+            "addons": [],
+            "name": "120mm IMI MG251"
+          },
+          {
+            "addons": [],
+            "name": "7.62 mm FN MAG 60-40"
+          },
+          {
+            "addons": [
+              ".50 Coaxial"
+            ],
+            "name": "12.7mm M2"
+          }
         ],
         "smokes": true,
         "rangefinder": "Laser",
@@ -5206,7 +5927,10 @@
           }
         },
         "weapons": [
-          "7.62 mm FN MAG 60-40"
+          {
+            "addons": [],
+            "name": "7.62 mm FN MAG 60-40"
+          }
         ],
         "rangefinder": "Laser",
         "stabilizer": true,
@@ -5248,7 +5972,10 @@
           }
         },
         "weapons": [
-          "12.7mm M2"
+          {
+            "addons": [],
+            "name": "12.7mm M2"
+          }
         ],
         "stabilizer": true,
         "zoom": {
@@ -5269,7 +5996,10 @@
           }
         },
         "weapons": [
-          "155mm M185"
+          {
+            "addons": [],
+            "name": "155mm M185"
+          }
         ],
         "rangefinder": "None",
         "stabilizer": false,
@@ -5311,7 +6041,10 @@
           }
         },
         "weapons": [
-          "12.7mm M2"
+          {
+            "addons": [],
+            "name": "12.7mm M2"
+          }
         ],
         "stabilizer": false,
         "zoom": {
@@ -5332,8 +6065,14 @@
           }
         },
         "weapons": [
-          "12.7mm M2",
-          "105mm T5E1"
+          {
+            "addons": [],
+            "name": "12.7mm M2"
+          },
+          {
+            "addons": [],
+            "name": "105mm T5E1"
+          }
         ],
         "rangefinder": "Optical",
         "stabilizer": false,
@@ -5374,7 +6113,10 @@
           }
         },
         "weapons": [
-          ".30 cal M1919"
+          {
+            "addons": [],
+            "name": ".30 cal M1919"
+          }
         ],
         "stabilizer": false,
         "zoom": {
@@ -5404,7 +6146,10 @@
     "turrets": {
       "Bow Gunner": {
         "weapons": [
-          "7.62mm DT-28"
+          {
+            "addons": [],
+            "name": "7.62mm DT-28"
+          }
         ],
         "traverse": {
           "vertical": {
@@ -5435,8 +6180,14 @@
           }
         },
         "weapons": [
-          "85mm ZIS-S-53",
-          "7.62mm DT-28"
+          {
+            "addons": [],
+            "name": "85mm ZIS-S-53"
+          },
+          {
+            "addons": [],
+            "name": "7.62mm DT-28"
+          }
         ],
         "rangefinder": "None",
         "stabilizer": false,
@@ -5478,7 +6229,10 @@
           }
         },
         "weapons": [
-          "12.7mm QJC88A"
+          {
+            "addons": [],
+            "name": "12.7mm QJC88A"
+          }
         ],
         "rangefinder": "Laser",
         "stabilizer": true,
@@ -5500,8 +6254,14 @@
           }
         },
         "weapons": [
-          "5.8mm QJT",
-          "125mm Type 99A"
+          {
+            "addons": [],
+            "name": "5.8mm QJT"
+          },
+          {
+            "addons": [],
+            "name": "125mm Type 99A"
+          }
         ],
         "smokes": true,
         "rangefinder": "Laser",
@@ -5538,7 +6298,10 @@
     "turrets": {
       "Commander": {
         "weapons": [
-          "7.62mm PKT"
+          {
+            "addons": [],
+            "name": "7.62mm PKT"
+          }
         ],
         "traverse": {
           "vertical": {
@@ -5569,10 +6332,24 @@
           }
         },
         "weapons": [
-          "7.62mm PKT",
-          "73mm 2A28",
-          "9M14M",
-          "9M113 Konkurs"
+          {
+            "addons": [],
+            "name": "7.62mm PKT"
+          },
+          {
+            "addons": [],
+            "name": "73mm 2A28"
+          },
+          {
+            "addons": [],
+            "name": "9M14M"
+          },
+          {
+            "addons": [
+              "BMD-1PK Conversion"
+            ],
+            "name": "9M113 Konkurs"
+          }
         ],
         "rangefinder": "None",
         "stabilizer": false,
@@ -5583,7 +6360,10 @@
       },
       "Passenger": {
         "weapons": [
-          "7.62mm PKT"
+          {
+            "addons": [],
+            "name": "7.62mm PKT"
+          }
         ],
         "traverse": {
           "vertical": {
@@ -5623,7 +6403,10 @@
     "turrets": {
       "Commander": {
         "weapons": [
-          "12.7mm DSHK"
+          {
+            "addons": [],
+            "name": "12.7mm DSHK"
+          }
         ],
         "traverse": {
           "vertical": {
@@ -5654,8 +6437,16 @@
           }
         },
         "weapons": [
-          "152mm ML-20S",
-          "122mm A-19C"
+          {
+            "addons": [],
+            "name": "152mm ML-20S"
+          },
+          {
+            "addons": [
+              "122mn A-19C"
+            ],
+            "name": "122mm A-19C"
+          }
         ],
         "rangefinder": "None",
         "stabilizer": false,
@@ -5686,7 +6477,10 @@
     "turrets": {
       "Commander": {
         "weapons": [
-          "12.7mm M2"
+          {
+            "addons": [],
+            "name": "12.7mm M2"
+          }
         ],
         "traverse": {
           "vertical": {
@@ -5717,7 +6511,10 @@
           }
         },
         "weapons": [
-          "90mm M3"
+          {
+            "addons": [],
+            "name": "90mm M3"
+          }
         ],
         "rangefinder": "None",
         "stabilizer": false,
@@ -5748,7 +6545,10 @@
     "turrets": {
       "Commander": {
         "weapons": [
-          "12.7mm DSHK"
+          {
+            "addons": [],
+            "name": "12.7mm DSHK"
+          }
         ],
         "traverse": {
           "vertical": {
@@ -5779,7 +6579,10 @@
           }
         },
         "weapons": [
-          "122mm D-25T"
+          {
+            "addons": [],
+            "name": "122mm D-25T"
+          }
         ],
         "rangefinder": "None",
         "stabilizer": false,
@@ -5810,7 +6613,10 @@
     "turrets": {
       "Loader": {
         "weapons": [
-          "7.62mm DT-28"
+          {
+            "addons": [],
+            "name": "7.62mm DT-28"
+          }
         ],
         "traverse": {
           "vertical": {
@@ -5841,8 +6647,14 @@
           }
         },
         "weapons": [
-          "107mm ZIS-6",
-          "7.62mm DT-28"
+          {
+            "addons": [],
+            "name": "107mm ZIS-6"
+          },
+          {
+            "addons": [],
+            "name": "7.62mm DT-28"
+          }
         ],
         "rangefinder": "None",
         "stabilizer": false,
@@ -5853,7 +6665,10 @@
       },
       "Bow Gunner": {
         "weapons": [
-          "7.62mm DT-28"
+          {
+            "addons": [],
+            "name": "7.62mm DT-28"
+          }
         ],
         "traverse": {
           "vertical": {
@@ -5941,8 +6756,14 @@
           }
         },
         "weapons": [
-          "183mm L4",
-          "7.62mm L3A1"
+          {
+            "addons": [],
+            "name": "183mm L4"
+          },
+          {
+            "addons": [],
+            "name": "7.62mm L3A1"
+          }
         ],
         "rangefinder": "None",
         "stabilizer": false,
@@ -5984,8 +6805,14 @@
           }
         },
         "weapons": [
-          "14.5mm KPVT",
-          "7.62mm PKT"
+          {
+            "addons": [],
+            "name": "14.5mm KPVT"
+          },
+          {
+            "addons": [],
+            "name": "7.62mm PKT"
+          }
         ],
         "rangefinder": "None",
         "stabilizer": false,
@@ -6046,7 +6873,10 @@
           }
         },
         "weapons": [
-          "230mm TOS-1A"
+          {
+            "addons": [],
+            "name": "230mm TOS-1A"
+          }
         ],
         "rangefinder": "Laser",
         "stabilizer": true,
@@ -6093,7 +6923,10 @@
           }
         },
         "weapons": [
-          "12.7mm M2"
+          {
+            "addons": [],
+            "name": "12.7mm M2"
+          }
         ],
         "stabilizer": true,
         "zoom": {
@@ -6114,8 +6947,14 @@
           }
         },
         "weapons": [
-          "7.62mm Type 74",
-          "120mm Type 90 L/44"
+          {
+            "addons": [],
+            "name": "7.62mm Type 74"
+          },
+          {
+            "addons": [],
+            "name": "120mm Type 90 L/44"
+          }
         ],
         "smokes": true,
         "rangefinder": "Laser",
@@ -6147,7 +6986,10 @@
     "turrets": {
       "Loader": {
         "weapons": [
-          "12.7mm Type 54"
+          {
+            "addons": [],
+            "name": "12.7mm Type 54"
+          }
         ],
         "traverse": {
           "vertical": {
@@ -6178,9 +7020,18 @@
           }
         },
         "weapons": [
-          "120mm Cannon Type 71",
-          "7.62mm Type 59",
-          "302 Anti-tank Missile"
+          {
+            "addons": [],
+            "name": "120mm Cannon Type 71"
+          },
+          {
+            "addons": [],
+            "name": "7.62mm Type 59"
+          },
+          {
+            "addons": [],
+            "name": "302 Anti-tank Missile"
+          }
         ],
         "stabilizer": true,
         "zoom": {
@@ -6239,7 +7090,10 @@
           }
         },
         "weapons": [
-          "12.7mm NSVT"
+          {
+            "addons": [],
+            "name": "12.7mm NSVT"
+          }
         ],
         "stabilizer": true,
         "zoom": {
@@ -6260,8 +7114,14 @@
           }
         },
         "weapons": [
-          "7.62mm PKT",
-          "125mm 2A46M-1"
+          {
+            "addons": [],
+            "name": "7.62mm PKT"
+          },
+          {
+            "addons": [],
+            "name": "125mm 2A46M-1"
+          }
         ],
         "rangefinder": "Laser",
         "stabilizer": true,
@@ -6303,7 +7163,10 @@
           }
         },
         "weapons": [
-          "12.7mm DSHK"
+          {
+            "addons": [],
+            "name": "12.7mm DSHK"
+          }
         ],
         "rangefinder": "Laser",
         "stabilizer": true,
@@ -6334,7 +7197,10 @@
     "turrets": {
       "Bow Gunner": {
         "weapons": [
-          "7.62mm DT-28"
+          {
+            "addons": [],
+            "name": "7.62mm DT-28"
+          }
         ],
         "traverse": {
           "vertical": {
@@ -6365,8 +7231,14 @@
           }
         },
         "weapons": [
-          "57mm ZiS-4",
-          "7.62mm DT-28"
+          {
+            "addons": [],
+            "name": "57mm ZiS-4"
+          },
+          {
+            "addons": [],
+            "name": "7.62mm DT-28"
+          }
         ],
         "rangefinder": "None",
         "stabilizer": false,
@@ -6408,7 +7280,10 @@
           }
         },
         "weapons": [
-          "7.62mm A-A-F1N"
+          {
+            "addons": [],
+            "name": "7.62mm A-A-F1N"
+          }
         ],
         "rangefinder": "Laser",
         "stabilizer": true,
@@ -6430,8 +7305,14 @@
           }
         },
         "weapons": [
-          "12.7mm CRC F1",
-          "120mm GIAT CN120-26 F1"
+          {
+            "addons": [],
+            "name": "12.7mm CRC F1"
+          },
+          {
+            "addons": [],
+            "name": "120mm GIAT CN120-26 F1"
+          }
         ],
         "smokes": true,
         "rangefinder": "Laser",
@@ -6463,7 +7344,10 @@
     "turrets": {
       "Commander": {
         "weapons": [
-          "12.7mm M2"
+          {
+            "addons": [],
+            "name": "12.7mm M2"
+          }
         ],
         "traverse": {
           "vertical": {
@@ -6494,7 +7378,10 @@
           }
         },
         "weapons": [
-          "76mm M7"
+          {
+            "addons": [],
+            "name": "76mm M7"
+          }
         ],
         "rangefinder": "None",
         "stabilizer": false,
@@ -6525,7 +7412,10 @@
     "turrets": {
       "Loader": {
         "weapons": [
-          "7.62mm PKT"
+          {
+            "addons": [],
+            "name": "7.62mm PKT"
+          }
         ],
         "traverse": {
           "vertical": {
@@ -6556,8 +7446,14 @@
           }
         },
         "weapons": [
-          "122mm HW-T",
-          "12.7mm DSHK"
+          {
+            "addons": [],
+            "name": "122mm HW-T"
+          },
+          {
+            "addons": [],
+            "name": "12.7mm DSHK"
+          }
         ],
         "rangefinder": "None",
         "stabilizer": false,
@@ -6568,7 +7464,10 @@
       },
       "Commander": {
         "weapons": [
-          "12.7mm DSHK"
+          {
+            "addons": [],
+            "name": "12.7mm DSHK"
+          }
         ],
         "traverse": {
           "vertical": {
@@ -6588,7 +7487,10 @@
       },
       "Bow Gunner": {
         "weapons": [
-          "7.62mm PKT"
+          {
+            "addons": [],
+            "name": "7.62mm PKT"
+          }
         ],
         "traverse": {
           "vertical": {
@@ -6628,7 +7530,10 @@
     "turrets": {
       "Commander": {
         "weapons": [
-          "12.7mm DSHK"
+          {
+            "addons": [],
+            "name": "12.7mm DSHK"
+          }
         ],
         "traverse": {
           "vertical": {
@@ -6659,8 +7564,14 @@
           }
         },
         "weapons": [
-          "85mm ZIS-S-53",
-          "7.62mm DT-28"
+          {
+            "addons": [],
+            "name": "85mm ZIS-S-53"
+          },
+          {
+            "addons": [],
+            "name": "7.62mm DT-28"
+          }
         ],
         "rangefinder": "None",
         "stabilizer": false,
@@ -6682,7 +7593,10 @@
           }
         },
         "weapons": [
-          "7.62mm DT-28"
+          {
+            "addons": [],
+            "name": "7.62mm DT-28"
+          }
         ],
         "stabilizer": false,
         "zoom": {
@@ -6723,8 +7637,14 @@
           }
         },
         "weapons": [
-          "25mm Type 625",
-          "FN-16"
+          {
+            "addons": [],
+            "name": "25mm Type 625"
+          },
+          {
+            "addons": [],
+            "name": "FN-16"
+          }
         ],
         "smokes": true,
         "rangefinder": "Laser",
@@ -6767,7 +7687,10 @@
           }
         },
         "weapons": [
-          "12.7mm M2"
+          {
+            "addons": [],
+            "name": "12.7mm M2"
+          }
         ],
         "rangefinder": "Laser",
         "stabilizer": true,
@@ -6789,8 +7712,14 @@
           }
         },
         "weapons": [
-          "7.62 mm L94A1",
-          "120mm L30A1"
+          {
+            "addons": [],
+            "name": "7.62 mm L94A1"
+          },
+          {
+            "addons": [],
+            "name": "120mm L30A1"
+          }
         ],
         "smokes": true,
         "rangefinder": "Laser",
@@ -6852,7 +7781,10 @@
           }
         },
         "weapons": [
-          "Grenade Mortar"
+          {
+            "addons": [],
+            "name": "Grenade Mortar"
+          }
         ],
         "stabilizer": false,
         "zoom": {
@@ -6873,8 +7805,14 @@
           }
         },
         "weapons": [
-          "77mm OQF Mk.II",
-          "7.92 mm BESA"
+          {
+            "addons": [],
+            "name": "77mm OQF Mk.II"
+          },
+          {
+            "addons": [],
+            "name": "7.92 mm BESA"
+          }
         ],
         "rangefinder": "None",
         "stabilizer": false,
@@ -6903,7 +7841,10 @@
       },
       "Bow Gunner": {
         "weapons": [
-          "7.92 mm BESA"
+          {
+            "addons": [],
+            "name": "7.92 mm BESA"
+          }
         ],
         "traverse": {
           "vertical": {
@@ -6973,7 +7914,10 @@
           }
         },
         "weapons": [
-          "155mm L62"
+          {
+            "addons": [],
+            "name": "155mm L62"
+          }
         ],
         "rangefinder": "Laser",
         "stabilizer": false,
@@ -7020,7 +7964,12 @@
           }
         },
         "weapons": [
-          "9M120 Ataka"
+          {
+            "addons": [
+              "Commander Weapon"
+            ],
+            "name": "9M120 Ataka"
+          }
         ],
         "stabilizer": true,
         "zoom": {
@@ -7041,10 +7990,24 @@
           }
         },
         "weapons": [
-          "7.62mm PKT",
-          "100mm 2A70",
-          "100mm 2A70M",
-          "30mm 2A72"
+          {
+            "addons": [],
+            "name": "7.62mm PKT"
+          },
+          {
+            "addons": [],
+            "name": "100mm 2A70"
+          },
+          {
+            "addons": [
+              "ATGM Autoloader"
+            ],
+            "name": "100mm 2A70M"
+          },
+          {
+            "addons": [],
+            "name": "30mm 2A72"
+          }
         ],
         "smokes": true,
         "rangefinder": "Laser",
@@ -7087,7 +8050,10 @@
           }
         },
         "weapons": [
-          "12.7mm NSVT"
+          {
+            "addons": [],
+            "name": "12.7mm NSVT"
+          }
         ],
         "stabilizer": true,
         "zoom": {
@@ -7108,8 +8074,14 @@
           }
         },
         "weapons": [
-          "7.62mm PKT",
-          "125mm 2A46M-1"
+          {
+            "addons": [],
+            "name": "7.62mm PKT"
+          },
+          {
+            "addons": [],
+            "name": "125mm 2A46M-1"
+          }
         ],
         "rangefinder": "Laser",
         "stabilizer": true,
@@ -7151,8 +8123,14 @@
           }
         },
         "weapons": [
-          "75mm M3",
-          ".30 cal M1919"
+          {
+            "addons": [],
+            "name": "75mm M3"
+          },
+          {
+            "addons": [],
+            "name": ".30 cal M1919"
+          }
         ],
         "rangefinder": "None",
         "stabilizer": true,
@@ -7163,7 +8141,10 @@
       },
       "Commander": {
         "weapons": [
-          "12.7mm M2"
+          {
+            "addons": [],
+            "name": "12.7mm M2"
+          }
         ],
         "traverse": {
           "vertical": {
@@ -7183,7 +8164,10 @@
       },
       "Bow Gunner": {
         "weapons": [
-          ".30 cal M1919"
+          {
+            "addons": [],
+            "name": ".30 cal M1919"
+          }
         ],
         "traverse": {
           "vertical": {
@@ -7257,8 +8241,14 @@
           }
         },
         "weapons": [
-          "152mm XM150E5",
-          "7.62mm MG3"
+          {
+            "addons": [],
+            "name": "152mm XM150E5"
+          },
+          {
+            "addons": [],
+            "name": "7.62mm MG3"
+          }
         ],
         "smokes": true,
         "stabilizer": true,
@@ -7269,7 +8259,10 @@
       },
       "Commander": {
         "weapons": [
-          "20mm Rh202"
+          {
+            "addons": [],
+            "name": "20mm Rh202"
+          }
         ],
         "traverse": {
           "vertical": {
@@ -7309,7 +8302,10 @@
     "turrets": {
       "Loader": {
         "weapons": [
-          "7.62mm MG3"
+          {
+            "addons": [],
+            "name": "7.62mm MG3"
+          }
         ],
         "traverse": {
           "vertical": {
@@ -7340,8 +8336,14 @@
           }
         },
         "weapons": [
-          "7.62mm MG3",
-          "120mm Rh120M L/44"
+          {
+            "addons": [],
+            "name": "7.62mm MG3"
+          },
+          {
+            "addons": [],
+            "name": "120mm Rh120M L/44"
+          }
         ],
         "smokes": true,
         "rangefinder": "Laser",
@@ -7364,7 +8366,12 @@
           }
         },
         "weapons": [
-          "7.62mm MG3"
+          {
+            "addons": [
+              "2A4N Conversion"
+            ],
+            "name": "7.62mm MG3"
+          }
         ],
         "rangefinder": "Laser",
         "stabilizer": true,
@@ -7406,7 +8413,10 @@
           }
         },
         "weapons": [
-          "9M133 Kornet"
+          {
+            "addons": [],
+            "name": "9M133 Kornet"
+          }
         ],
         "smokes": true,
         "rangefinder": "Laser",
@@ -7438,7 +8448,10 @@
     "turrets": {
       "Commander": {
         "weapons": [
-          "12.7mm M2"
+          {
+            "addons": [],
+            "name": "12.7mm M2"
+          }
         ],
         "traverse": {
           "vertical": {
@@ -7469,8 +8482,14 @@
           }
         },
         "weapons": [
-          "37mm M6",
-          ".30 cal M1919"
+          {
+            "addons": [],
+            "name": "37mm M6"
+          },
+          {
+            "addons": [],
+            "name": ".30 cal M1919"
+          }
         ],
         "stabilizer": true,
         "zoom": {
@@ -7519,8 +8538,16 @@
     "turrets": {
       "Commander": {
         "weapons": [
-          "Milan 2",
-          "Milan ER"
+          {
+            "addons": [
+              "Milan"
+            ],
+            "name": "Milan 2"
+          },
+          {
+            "addons": [],
+            "name": "Milan ER"
+          }
         ],
         "traverse": {
           "vertical": {
@@ -7551,8 +8578,14 @@
           }
         },
         "weapons": [
-          "30mm L21A1",
-          "7.62 mm L94A1"
+          {
+            "addons": [],
+            "name": "30mm L21A1"
+          },
+          {
+            "addons": [],
+            "name": "7.62 mm L94A1"
+          }
         ],
         "stabilizer": false,
         "zoom": {
@@ -7612,10 +8645,24 @@
           }
         },
         "weapons": [
-          "30mm 2A42",
-          "7.62mm PKT",
-          "9M113 Konkurs",
-          "9M113M Konkurs"
+          {
+            "addons": [],
+            "name": "30mm 2A42"
+          },
+          {
+            "addons": [],
+            "name": "7.62mm PKT"
+          },
+          {
+            "addons": [],
+            "name": "9M113 Konkurs"
+          },
+          {
+            "addons": [
+              "9M113M Konkurs"
+            ],
+            "name": "9M113M Konkurs"
+          }
         ],
         "rangefinder": "None",
         "stabilizer": true,
@@ -7677,10 +8724,22 @@
           }
         },
         "weapons": [
-          "7.62mm Type 86",
-          "30mm ZPZ02",
-          "QN502CDD",
-          "QN201DD"
+          {
+            "addons": [],
+            "name": "7.62mm Type 86"
+          },
+          {
+            "addons": [],
+            "name": "30mm ZPZ02"
+          },
+          {
+            "addons": [],
+            "name": "QN502CDD"
+          },
+          {
+            "addons": [],
+            "name": "QN201DD"
+          }
         ],
         "smokes": true,
         "rangefinder": "Laser",
@@ -7723,7 +8782,10 @@
           }
         },
         "weapons": [
-          "12.7mm DSHK"
+          {
+            "addons": [],
+            "name": "12.7mm DSHK"
+          }
         ],
         "stabilizer": true,
         "zoom": {
@@ -7744,8 +8806,14 @@
           }
         },
         "weapons": [
-          "100mm D-10T",
-          "7.62mm SGMT"
+          {
+            "addons": [],
+            "name": "100mm D-10T"
+          },
+          {
+            "addons": [],
+            "name": "7.62mm SGMT"
+          }
         ],
         "rangefinder": "None",
         "stabilizer": false,
@@ -7767,7 +8835,10 @@
           }
         },
         "weapons": [
-          "7.62mm DT-28"
+          {
+            "addons": [],
+            "name": "7.62mm DT-28"
+          }
         ],
         "stabilizer": false,
         "zoom": {
@@ -7797,7 +8868,10 @@
     "turrets": {
       "Commander": {
         "weapons": [
-          "12.7mm M2"
+          {
+            "addons": [],
+            "name": "12.7mm M2"
+          }
         ],
         "traverse": {
           "vertical": {
@@ -7828,8 +8902,14 @@
           }
         },
         "weapons": [
-          "105mm XM35",
-          "7.62mm M240"
+          {
+            "addons": [],
+            "name": "105mm XM35"
+          },
+          {
+            "addons": [],
+            "name": "7.62mm M240"
+          }
         ],
         "smokes": true,
         "stabilizer": true,
@@ -7871,9 +8951,18 @@
           }
         },
         "weapons": [
-          "MIM146 Launcher",
-          "25mm M242AA Bushmaster",
-          "12.7mm M3P"
+          {
+            "addons": [],
+            "name": "MIM146 Launcher"
+          },
+          {
+            "addons": [],
+            "name": "25mm M242AA Bushmaster"
+          },
+          {
+            "addons": [],
+            "name": "12.7mm M3P"
+          }
         ],
         "smokes": false,
         "rangefinder": "Laser",
@@ -7936,7 +9025,10 @@
           }
         },
         "weapons": [
-          "125mm 2A46M-5"
+          {
+            "addons": [],
+            "name": "125mm 2A46M-5"
+          }
         ],
         "smokes": false,
         "rangefinder": "Laser",
@@ -7979,8 +9071,14 @@
           }
         },
         "weapons": [
-          "75 mm KwK42",
-          "7.92mm MG34"
+          {
+            "addons": [],
+            "name": "75 mm KwK42"
+          },
+          {
+            "addons": [],
+            "name": "7.92mm MG34"
+          }
         ],
         "rangefinder": "None",
         "stabilizer": false,
@@ -7991,7 +9089,10 @@
       },
       "Commander": {
         "weapons": [
-          "7.92mm MG34"
+          {
+            "addons": [],
+            "name": "7.92mm MG34"
+          }
         ],
         "traverse": {
           "vertical": {
@@ -8011,7 +9112,10 @@
       },
       "Bow Gunner": {
         "weapons": [
-          "7.92mm MG34"
+          {
+            "addons": [],
+            "name": "7.92mm MG34"
+          }
         ],
         "traverse": {
           "vertical": {
@@ -8062,7 +9166,10 @@
           }
         },
         "weapons": [
-          "12.7mm NSVT"
+          {
+            "addons": [],
+            "name": "12.7mm NSVT"
+          }
         ],
         "stabilizer": true,
         "zoom": {
@@ -8083,8 +9190,14 @@
           }
         },
         "weapons": [
-          "7.62mm PKT",
-          "125mm 2A46M-1"
+          {
+            "addons": [],
+            "name": "7.62mm PKT"
+          },
+          {
+            "addons": [],
+            "name": "125mm 2A46M-1"
+          }
         ],
         "rangefinder": "Laser",
         "stabilizer": true,
@@ -8126,10 +9239,24 @@
           }
         },
         "weapons": [
-          "7.62mm M240",
-          "30mm M230LF",
-          "FGM-148",
-          "FIM-92K Stinger"
+          {
+            "addons": [],
+            "name": "7.62mm M240"
+          },
+          {
+            "addons": [],
+            "name": "30mm M230LF"
+          },
+          {
+            "addons": [
+              "XM914 FGM-148 Swap"
+            ],
+            "name": "FGM-148"
+          },
+          {
+            "addons": [],
+            "name": "FIM-92K Stinger"
+          }
         ],
         "stabilizer": true,
         "zoom": {
@@ -8150,7 +9277,10 @@
           }
         },
         "weapons": [
-          "BGM-71F TOW 2A/B"
+          {
+            "addons": [],
+            "name": "BGM-71F TOW 2A/B"
+          }
         ],
         "rangefinder": "Laser",
         "stabilizer": true,
@@ -8192,8 +9322,14 @@
           }
         },
         "weapons": [
-          "L7A1 105mm",
-          "7.62mm L3A1"
+          {
+            "addons": [],
+            "name": "L7A1 105mm"
+          },
+          {
+            "addons": [],
+            "name": "7.62mm L3A1"
+          }
         ],
         "rangefinder": "None",
         "stabilizer": true,
@@ -8235,10 +9371,24 @@
           }
         },
         "weapons": [
-          "BGM-71A TOW",
-          "25mm M242 Bushmaster",
-          "7.62mm M240",
-          "BGM-71C I-TOW"
+          {
+            "addons": [],
+            "name": "BGM-71A TOW"
+          },
+          {
+            "addons": [],
+            "name": "25mm M242 Bushmaster"
+          },
+          {
+            "addons": [],
+            "name": "7.62mm M240"
+          },
+          {
+            "addons": [
+              "I-TOW"
+            ],
+            "name": "BGM-71C I-TOW"
+          }
         ],
         "smokes": true,
         "rangefinder": "None",
@@ -8281,9 +9431,20 @@
           }
         },
         "weapons": [
-          "30mm Treemaster",
-          "7.62mm PKT",
-          "Spike ATGM"
+          {
+            "addons": [],
+            "name": "30mm Treemaster"
+          },
+          {
+            "addons": [],
+            "name": "7.62mm PKT"
+          },
+          {
+            "addons": [
+              "Spike ATGM (Engineer & Crewman only)"
+            ],
+            "name": "Spike ATGM"
+          }
         ],
         "smokes": true,
         "rangefinder": "Laser",
@@ -8315,7 +9476,10 @@
     "turrets": {
       "Loader": {
         "weapons": [
-          "12.7mm DSHK"
+          {
+            "addons": [],
+            "name": "12.7mm DSHK"
+          }
         ],
         "traverse": {
           "vertical": {
@@ -8346,8 +9510,14 @@
           }
         },
         "weapons": [
-          "122mm D-30T",
-          "7.62mm DT-28"
+          {
+            "addons": [],
+            "name": "122mm D-30T"
+          },
+          {
+            "addons": [],
+            "name": "7.62mm DT-28"
+          }
         ],
         "rangefinder": "None",
         "stabilizer": false,
@@ -8389,7 +9559,10 @@
           }
         },
         "weapons": [
-          "7.62mm M240"
+          {
+            "addons": [],
+            "name": "7.62mm M240"
+          }
         ],
         "stabilizer": true,
         "zoom": {
@@ -8410,9 +9583,20 @@
           }
         },
         "weapons": [
-          "7.62mm M240",
-          "120mm M256",
-          "12.7mm M2"
+          {
+            "addons": [],
+            "name": "7.62mm M240"
+          },
+          {
+            "addons": [],
+            "name": "120mm M256"
+          },
+          {
+            "addons": [
+              ".50 Coaxial"
+            ],
+            "name": "12.7mm M2"
+          }
         ],
         "smokes": true,
         "rangefinder": "Laser",
@@ -8435,7 +9619,10 @@
           }
         },
         "weapons": [
-          "12.7mm M2"
+          {
+            "addons": [],
+            "name": "12.7mm M2"
+          }
         ],
         "rangefinder": "Laser",
         "stabilizer": true,
@@ -8477,7 +9664,10 @@
           }
         },
         "weapons": [
-          "7.62mm DT-28"
+          {
+            "addons": [],
+            "name": "7.62mm DT-28"
+          }
         ],
         "stabilizer": false,
         "zoom": {
@@ -8542,9 +9732,18 @@
           }
         },
         "weapons": [
-          "7.62mm PKT",
-          "100mm 2A70M BMD-4M",
-          "30mm 2A72"
+          {
+            "addons": [],
+            "name": "7.62mm PKT"
+          },
+          {
+            "addons": [],
+            "name": "100mm 2A70M BMD-4M"
+          },
+          {
+            "addons": [],
+            "name": "30mm 2A72"
+          }
         ],
         "smokes": true,
         "rangefinder": "Laser",
@@ -8576,7 +9775,10 @@
     "turrets": {
       "Bow Gunner": {
         "weapons": [
-          "7.92mm MG34"
+          {
+            "addons": [],
+            "name": "7.92mm MG34"
+          }
         ],
         "traverse": {
           "vertical": {
@@ -8615,7 +9817,10 @@
       },
       "Loader": {
         "weapons": [
-          "Grenade Mortar"
+          {
+            "addons": [],
+            "name": "Grenade Mortar"
+          }
         ],
         "traverse": {
           "vertical": {
@@ -8646,8 +9851,14 @@
           }
         },
         "weapons": [
-          "88 mm KwK43",
-          "7.92mm MG34"
+          {
+            "addons": [],
+            "name": "88 mm KwK43"
+          },
+          {
+            "addons": [],
+            "name": "7.92mm MG34"
+          }
         ],
         "stabilizer": false,
         "zoom": {
@@ -8725,10 +9936,24 @@
           }
         },
         "weapons": [
-          "7.62mm MG3",
-          "57mm L/70",
-          "BGM-71A TOW",
-          "BGM-71C I-TOW"
+          {
+            "addons": [],
+            "name": "7.62mm MG3"
+          },
+          {
+            "addons": [],
+            "name": "57mm L/70"
+          },
+          {
+            "addons": [],
+            "name": "BGM-71A TOW"
+          },
+          {
+            "addons": [
+              "I-TOW"
+            ],
+            "name": "BGM-71C I-TOW"
+          }
         ],
         "smokes": false,
         "stabilizer": true,
@@ -8770,8 +9995,14 @@
           }
         },
         "weapons": [
-          "8mm Breda M37",
-          "20mm Solothurn S-18/1000"
+          {
+            "addons": [],
+            "name": "8mm Breda M37"
+          },
+          {
+            "addons": [],
+            "name": "20mm Solothurn S-18/1000"
+          }
         ],
         "rangefinder": "None",
         "stabilizer": true,
@@ -8832,7 +10063,12 @@
           }
         },
         "weapons": [
-          "7.62mm MG3"
+          {
+            "addons": [
+              "2A4N Conversion"
+            ],
+            "name": "7.62mm MG3"
+          }
         ],
         "rangefinder": "Laser",
         "stabilizer": true,
@@ -8854,9 +10090,20 @@
           }
         },
         "weapons": [
-          "140mm RUAG L/47",
-          "7.62mm MG3",
-          "120mm ASCALON"
+          {
+            "addons": [],
+            "name": "140mm RUAG L/47"
+          },
+          {
+            "addons": [],
+            "name": "7.62mm MG3"
+          },
+          {
+            "addons": [
+              "ASCALON 120"
+            ],
+            "name": "120mm ASCALON"
+          }
         ],
         "smokes": true,
         "rangefinder": "Laser",
@@ -8922,8 +10169,14 @@
           }
         },
         "weapons": [
-          "7.62mm PKT",
-          "125mm D-126"
+          {
+            "addons": [],
+            "name": "7.62mm PKT"
+          },
+          {
+            "addons": [],
+            "name": "125mm D-126"
+          }
         ],
         "stabilizer": true,
         "zoom": {
@@ -8958,7 +10211,10 @@
     "turrets": {
       "Loader": {
         "weapons": [
-          "12.7mm M2"
+          {
+            "addons": [],
+            "name": "12.7mm M2"
+          }
         ],
         "traverse": {
           "vertical": {
@@ -8989,9 +10245,20 @@
           }
         },
         "weapons": [
-          "7.62mm M240",
-          "120mm KM256",
-          "105mm KM68A1"
+          {
+            "addons": [],
+            "name": "7.62mm M240"
+          },
+          {
+            "addons": [
+              "K1A1"
+            ],
+            "name": "120mm KM256"
+          },
+          {
+            "addons": [],
+            "name": "105mm KM68A1"
+          }
         ],
         "smokes": true,
         "rangefinder": "Laser",
@@ -9014,7 +10281,10 @@
           }
         },
         "weapons": [
-          "12.7mm M2"
+          {
+            "addons": [],
+            "name": "12.7mm M2"
+          }
         ],
         "stabilizer": true,
         "zoom": {
@@ -9044,7 +10314,10 @@
     "turrets": {
       "Commander": {
         "weapons": [
-          "7.92mm MG34"
+          {
+            "addons": [],
+            "name": "7.92mm MG34"
+          }
         ],
         "traverse": {
           "vertical": {
@@ -9075,7 +10348,10 @@
           }
         },
         "weapons": [
-          "8.8 cm Pak 43/1"
+          {
+            "addons": [],
+            "name": "8.8 cm Pak 43/1"
+          }
         ],
         "stabilizer": false,
         "zoom": {
@@ -9136,7 +10412,10 @@
           }
         },
         "weapons": [
-          "140mm XM291"
+          {
+            "addons": [],
+            "name": "140mm XM291"
+          }
         ],
         "smokes": true,
         "rangefinder": "Laser",
@@ -9179,7 +10458,10 @@
           }
         },
         "weapons": [
-          "7.62mm M240"
+          {
+            "addons": [],
+            "name": "7.62mm M240"
+          }
         ],
         "stabilizer": true,
         "zoom": {
@@ -9200,8 +10482,14 @@
           }
         },
         "weapons": [
-          "105mm M68A1E2",
-          "7.62mm M240"
+          {
+            "addons": [],
+            "name": "105mm M68A1E2"
+          },
+          {
+            "addons": [],
+            "name": "7.62mm M240"
+          }
         ],
         "smokes": true,
         "rangefinder": "Laser",
@@ -9224,7 +10512,10 @@
           }
         },
         "weapons": [
-          "12.7mm M2"
+          {
+            "addons": [],
+            "name": "12.7mm M2"
+          }
         ],
         "stabilizer": true,
         "zoom": {
@@ -9265,7 +10556,10 @@
           }
         },
         "weapons": [
-          "7.62mm M240"
+          {
+            "addons": [],
+            "name": "7.62mm M240"
+          }
         ],
         "stabilizer": true,
         "zoom": {
@@ -9286,9 +10580,20 @@
           }
         },
         "weapons": [
-          "7.62mm M240",
-          "120mm M256",
-          "12.7mm M2"
+          {
+            "addons": [],
+            "name": "7.62mm M240"
+          },
+          {
+            "addons": [],
+            "name": "120mm M256"
+          },
+          {
+            "addons": [
+              ".50 Coaxial"
+            ],
+            "name": "12.7mm M2"
+          }
         ],
         "smokes": true,
         "rangefinder": "Laser",
@@ -9311,7 +10616,10 @@
           }
         },
         "weapons": [
-          "12.7mm M2"
+          {
+            "addons": [],
+            "name": "12.7mm M2"
+          }
         ],
         "rangefinder": "Laser",
         "stabilizer": true,
@@ -9353,7 +10661,10 @@
           }
         },
         "weapons": [
-          "12.7mm M2"
+          {
+            "addons": [],
+            "name": "12.7mm M2"
+          }
         ],
         "stabilizer": true,
         "zoom": {
@@ -9374,8 +10685,14 @@
           }
         },
         "weapons": [
-          "152mm M162",
-          "7.62mm M240"
+          {
+            "addons": [],
+            "name": "152mm M162"
+          },
+          {
+            "addons": [],
+            "name": "7.62mm M240"
+          }
         ],
         "rangefinder": "Laser",
         "stabilizer": true,
@@ -9417,7 +10734,10 @@
           }
         },
         "weapons": [
-          "12.7mm M2"
+          {
+            "addons": [],
+            "name": "12.7mm M2"
+          }
         ],
         "stabilizer": true,
         "zoom": {
@@ -9438,8 +10758,14 @@
           }
         },
         "weapons": [
-          "105mm M68",
-          "7.62mm M240"
+          {
+            "addons": [],
+            "name": "105mm M68"
+          },
+          {
+            "addons": [],
+            "name": "7.62mm M240"
+          }
         ],
         "rangefinder": "Optical",
         "stabilizer": true,
@@ -9481,7 +10807,10 @@
           }
         },
         "weapons": [
-          "7.62mm M240"
+          {
+            "addons": [],
+            "name": "7.62mm M240"
+          }
         ],
         "stabilizer": true,
         "zoom": {
@@ -9502,8 +10831,14 @@
           }
         },
         "weapons": [
-          "105mm M68A1",
-          "7.62mm M240"
+          {
+            "addons": [],
+            "name": "105mm M68A1"
+          },
+          {
+            "addons": [],
+            "name": "7.62mm M240"
+          }
         ],
         "smokes": true,
         "rangefinder": "Laser",
@@ -9526,7 +10861,10 @@
           }
         },
         "weapons": [
-          "12.7mm M2"
+          {
+            "addons": [],
+            "name": "12.7mm M2"
+          }
         ],
         "stabilizer": true,
         "zoom": {
@@ -9556,7 +10894,10 @@
     "turrets": {
       "Bow Gunner": {
         "weapons": [
-          "7.92mm MG34"
+          {
+            "addons": [],
+            "name": "7.92mm MG34"
+          }
         ],
         "traverse": {
           "vertical": {
@@ -9587,8 +10928,14 @@
           }
         },
         "weapons": [
-          "75 mm KwK42",
-          "7.92mm MG34"
+          {
+            "addons": [],
+            "name": "75 mm KwK42"
+          },
+          {
+            "addons": [],
+            "name": "7.92mm MG34"
+          }
         ],
         "rangefinder": "None",
         "stabilizer": false,
@@ -9649,9 +10996,18 @@
           }
         },
         "weapons": [
-          "35mm Oerlikon KDE",
-          "7.62mm Type 74",
-          "Type 79 ATGM"
+          {
+            "addons": [],
+            "name": "35mm Oerlikon KDE"
+          },
+          {
+            "addons": [],
+            "name": "7.62mm Type 74"
+          },
+          {
+            "addons": [],
+            "name": "Type 79 ATGM"
+          }
         ],
         "smokes": true,
         "rangefinder": "Laser",
@@ -9694,7 +11050,10 @@
           }
         },
         "weapons": [
-          "12.7mm KORD"
+          {
+            "addons": [],
+            "name": "12.7mm KORD"
+          }
         ],
         "rangefinder": "Laser",
         "stabilizer": true,
@@ -9716,8 +11075,14 @@
           }
         },
         "weapons": [
-          "7.62mm PKT",
-          "125mm 2A46M-5"
+          {
+            "addons": [],
+            "name": "7.62mm PKT"
+          },
+          {
+            "addons": [],
+            "name": "125mm 2A46M-5"
+          }
         ],
         "smokes": true,
         "rangefinder": "Laser",
@@ -9760,7 +11125,10 @@
           }
         },
         "weapons": [
-          "14.5mm KPVT"
+          {
+            "addons": [],
+            "name": "14.5mm KPVT"
+          }
         ],
         "rangefinder": "Laser",
         "stabilizer": true,
@@ -9782,8 +11150,14 @@
           }
         },
         "weapons": [
-          "125mm 2A46M-5",
-          "7.62mm PKT"
+          {
+            "addons": [],
+            "name": "125mm 2A46M-5"
+          },
+          {
+            "addons": [],
+            "name": "7.62mm PKT"
+          }
         ],
         "smokes": true,
         "rangefinder": "Laser",
@@ -9815,7 +11189,10 @@
     "turrets": {
       "Commander": {
         "weapons": [
-          "12.7mm M2"
+          {
+            "addons": [],
+            "name": "12.7mm M2"
+          }
         ],
         "traverse": {
           "vertical": {
@@ -9846,9 +11223,20 @@
           }
         },
         "weapons": [
-          "7.62mm M73",
-          "152mm M81E1",
-          "76mm M32"
+          {
+            "addons": [],
+            "name": "7.62mm M73"
+          },
+          {
+            "addons": [],
+            "name": "152mm M81E1"
+          },
+          {
+            "addons": [
+              "76mm M32"
+            ],
+            "name": "76mm M32"
+          }
         ],
         "rangefinder": "None",
         "stabilizer": true,
@@ -9890,8 +11278,14 @@
           }
         },
         "weapons": [
-          "90mm M3",
-          ".30 cal M1919"
+          {
+            "addons": [],
+            "name": "90mm M3"
+          },
+          {
+            "addons": [],
+            "name": ".30 cal M1919"
+          }
         ],
         "rangefinder": "None",
         "stabilizer": false,
@@ -9902,7 +11296,10 @@
       },
       "Commander": {
         "weapons": [
-          "12.7mm M2"
+          {
+            "addons": [],
+            "name": "12.7mm M2"
+          }
         ],
         "traverse": {
           "vertical": {
@@ -9922,7 +11319,10 @@
       },
       "Bow Gunner": {
         "weapons": [
-          ".30 cal M1919"
+          {
+            "addons": [],
+            "name": ".30 cal M1919"
+          }
         ],
         "traverse": {
           "vertical": {
@@ -9962,7 +11362,10 @@
     "turrets": {
       "Loader": {
         "weapons": [
-          "7.62mm MG3"
+          {
+            "addons": [],
+            "name": "7.62mm MG3"
+          }
         ],
         "traverse": {
           "vertical": {
@@ -9993,8 +11396,14 @@
           }
         },
         "weapons": [
-          "120mm Rh120 L/44",
-          "7.62mm MG3"
+          {
+            "addons": [],
+            "name": "120mm Rh120 L/44"
+          },
+          {
+            "addons": [],
+            "name": "7.62mm MG3"
+          }
         ],
         "rangefinder": "Laser",
         "stabilizer": true,
@@ -10005,7 +11414,10 @@
       },
       "Commander": {
         "weapons": [
-          "20mm Rh202"
+          {
+            "addons": [],
+            "name": "20mm Rh202"
+          }
         ],
         "traverse": {
           "vertical": {
@@ -10056,8 +11468,14 @@
           }
         },
         "weapons": [
-          "75 mm KwK40 L48",
-          "7.92mm MG34"
+          {
+            "addons": [],
+            "name": "75 mm KwK40 L48"
+          },
+          {
+            "addons": [],
+            "name": "7.92mm MG34"
+          }
         ],
         "rangefinder": "None",
         "stabilizer": false,
@@ -10068,7 +11486,10 @@
       },
       "Commander": {
         "weapons": [
-          "7.92mm MG34"
+          {
+            "addons": [],
+            "name": "7.92mm MG34"
+          }
         ],
         "traverse": {
           "vertical": {
@@ -10088,7 +11509,10 @@
       },
       "Bow Gunner": {
         "weapons": [
-          "7.92mm MG34"
+          {
+            "addons": [],
+            "name": "7.92mm MG34"
+          }
         ],
         "traverse": {
           "vertical": {
@@ -10144,7 +11568,10 @@
           }
         },
         "weapons": [
-          "7.62mm ksp 58"
+          {
+            "addons": [],
+            "name": "7.62mm ksp 58"
+          }
         ],
         "stabilizer": true,
         "zoom": {
@@ -10165,8 +11592,14 @@
           }
         },
         "weapons": [
-          "7.62mm ksp 58",
-          "105 mm L74"
+          {
+            "addons": [],
+            "name": "7.62mm ksp 58"
+          },
+          {
+            "addons": [],
+            "name": "105 mm L74"
+          }
         ],
         "stabilizer": false,
         "zoom": {
@@ -10196,7 +11629,10 @@
     "turrets": {
       "Commander": {
         "weapons": [
-          "12.7mm M2"
+          {
+            "addons": [],
+            "name": "12.7mm M2"
+          }
         ],
         "traverse": {
           "vertical": {
@@ -10227,7 +11663,10 @@
           }
         },
         "weapons": [
-          "105mm M2A1"
+          {
+            "addons": [],
+            "name": "105mm M2A1"
+          }
         ],
         "stabilizer": false,
         "zoom": {
@@ -10268,7 +11707,10 @@
           }
         },
         "weapons": [
-          "7.62 Beretta MG42/59"
+          {
+            "addons": [],
+            "name": "7.62 Beretta MG42/59"
+          }
         ],
         "stabilizer": true,
         "zoom": {
@@ -10289,8 +11731,14 @@
           }
         },
         "weapons": [
-          "120mm OTO Breda 120/44",
-          "7.62 Beretta MG42/59"
+          {
+            "addons": [],
+            "name": "120mm OTO Breda 120/44"
+          },
+          {
+            "addons": [],
+            "name": "7.62 Beretta MG42/59"
+          }
         ],
         "smokes": true,
         "rangefinder": "Laser",
@@ -10313,7 +11761,10 @@
           }
         },
         "weapons": [
-          "7.62 Beretta MG42/59"
+          {
+            "addons": [],
+            "name": "7.62 Beretta MG42/59"
+          }
         ],
         "rangefinder": "Laser",
         "stabilizer": true,
@@ -10355,7 +11806,10 @@
           }
         },
         "weapons": [
-          "7.62mm L37A2"
+          {
+            "addons": [],
+            "name": "7.62mm L37A2"
+          }
         ],
         "stabilizer": true,
         "zoom": {
@@ -10376,8 +11830,14 @@
           }
         },
         "weapons": [
-          "7.62mm L8A2",
-          "120mm L11A5"
+          {
+            "addons": [],
+            "name": "7.62mm L8A2"
+          },
+          {
+            "addons": [],
+            "name": "120mm L11A5"
+          }
         ],
         "rangefinder": "Laser",
         "stabilizer": true,
@@ -10408,7 +11868,10 @@
     "turrets": {
       "Bow Gunner": {
         "weapons": [
-          "7.62mm DT-28"
+          {
+            "addons": [],
+            "name": "7.62mm DT-28"
+          }
         ],
         "traverse": {
           "vertical": {
@@ -10439,8 +11902,14 @@
           }
         },
         "weapons": [
-          "76mm F-34",
-          "7.62mm DT-28"
+          {
+            "addons": [],
+            "name": "76mm F-34"
+          },
+          {
+            "addons": [],
+            "name": "7.62mm DT-28"
+          }
         ],
         "rangefinder": "None",
         "stabilizer": false,
@@ -10482,8 +11951,14 @@
           }
         },
         "weapons": [
-          "L9A1 165mm",
-          "7.62mm L3A1"
+          {
+            "addons": [],
+            "name": "L9A1 165mm"
+          },
+          {
+            "addons": [],
+            "name": "7.62mm L3A1"
+          }
         ],
         "rangefinder": "None",
         "stabilizer": false,
@@ -10525,7 +12000,10 @@
           }
         },
         "weapons": [
-          "12.7mm NSVT"
+          {
+            "addons": [],
+            "name": "12.7mm NSVT"
+          }
         ],
         "rangefinder": "Laser",
         "stabilizer": true,
@@ -10547,8 +12025,14 @@
           }
         },
         "weapons": [
-          "7.62mm PKT",
-          "125 mm KBA-3"
+          {
+            "addons": [],
+            "name": "7.62mm PKT"
+          },
+          {
+            "addons": [],
+            "name": "125 mm KBA-3"
+          }
         ],
         "smokes": true,
         "rangefinder": "Laser",
@@ -10591,7 +12075,10 @@
           }
         },
         "weapons": [
-          "7.62mm MG3"
+          {
+            "addons": [],
+            "name": "7.62mm MG3"
+          }
         ],
         "stabilizer": true,
         "zoom": {
@@ -10612,8 +12099,14 @@
           }
         },
         "weapons": [
-          "120mm Rh120 L/55 A1",
-          "7.62mm MG3"
+          {
+            "addons": [],
+            "name": "120mm Rh120 L/55 A1"
+          },
+          {
+            "addons": [],
+            "name": "7.62mm MG3"
+          }
         ],
         "smokes": true,
         "rangefinder": "Laser",
@@ -10676,7 +12169,10 @@
           }
         },
         "weapons": [
-          "7.62mm MG3"
+          {
+            "addons": [],
+            "name": "7.62mm MG3"
+          }
         ],
         "stabilizer": true,
         "zoom": {
@@ -10697,8 +12193,14 @@
           }
         },
         "weapons": [
-          "120mm Rh120 L/55",
-          "7.62mm MG3"
+          {
+            "addons": [],
+            "name": "120mm Rh120 L/55"
+          },
+          {
+            "addons": [],
+            "name": "7.62mm MG3"
+          }
         ],
         "smokes": true,
         "rangefinder": "Laser",
@@ -10761,9 +12263,22 @@
           }
         },
         "weapons": [
-          "BGM-71F TOW 2A/B",
-          "BGM-71C I-TOW",
-          "BGM-71A TOW"
+          {
+            "addons": [
+              "TOW2A/TOW2B"
+            ],
+            "name": "BGM-71F TOW 2A/B"
+          },
+          {
+            "addons": [
+              "I-TOW"
+            ],
+            "name": "BGM-71C I-TOW"
+          },
+          {
+            "addons": [],
+            "name": "BGM-71A TOW"
+          }
         ],
         "smokes": false,
         "rangefinder": "Laser",
@@ -10806,10 +12321,22 @@
           }
         },
         "weapons": [
-          "30mm AGS-17",
-          "Stugna-P",
-          "7.62mm PKT",
-          "30mm ZTM-2"
+          {
+            "addons": [],
+            "name": "30mm AGS-17"
+          },
+          {
+            "addons": [],
+            "name": "Stugna-P"
+          },
+          {
+            "addons": [],
+            "name": "7.62mm PKT"
+          },
+          {
+            "addons": [],
+            "name": "30mm ZTM-2"
+          }
         ],
         "smokes": true,
         "rangefinder": "Laser",
@@ -10841,7 +12368,10 @@
     "turrets": {
       "Loader": {
         "weapons": [
-          "7.62mm DT-28"
+          {
+            "addons": [],
+            "name": "7.62mm DT-28"
+          }
         ],
         "traverse": {
           "vertical": {
@@ -10872,8 +12402,14 @@
           }
         },
         "weapons": [
-          "85mm D-5S",
-          "7.62mm DT-28"
+          {
+            "addons": [],
+            "name": "85mm D-5S"
+          },
+          {
+            "addons": [],
+            "name": "7.62mm DT-28"
+          }
         ],
         "rangefinder": "None",
         "stabilizer": false,
@@ -10884,7 +12420,10 @@
       },
       "Driver": {
         "weapons": [
-          "7.62mm DT-28"
+          {
+            "addons": [],
+            "name": "7.62mm DT-28"
+          }
         ],
         "traverse": {
           "vertical": {
@@ -10935,7 +12474,10 @@
           }
         },
         "weapons": [
-          "20mm Rh202"
+          {
+            "addons": [],
+            "name": "20mm Rh202"
+          }
         ],
         "smokes": false,
         "rangefinder": "Laser",
@@ -10978,7 +12520,10 @@
           }
         },
         "weapons": [
-          "7.62mm MG3"
+          {
+            "addons": [],
+            "name": "7.62mm MG3"
+          }
         ],
         "stabilizer": false,
         "zoom": {
@@ -10999,8 +12544,14 @@
           }
         },
         "weapons": [
-          "20mm Rh202",
-          "7.62mm MG3"
+          {
+            "addons": [],
+            "name": "20mm Rh202"
+          },
+          {
+            "addons": [],
+            "name": "7.62mm MG3"
+          }
         ],
         "rangefinder": "Laser",
         "stabilizer": false,
@@ -11022,7 +12573,12 @@
           }
         },
         "weapons": [
-          "Milan 2"
+          {
+            "addons": [
+              "MILAN"
+            ],
+            "name": "Milan 2"
+          }
         ],
         "stabilizer": false,
         "zoom": {
@@ -11063,7 +12619,10 @@
           }
         },
         "weapons": [
-          "MIM146 Launcher"
+          {
+            "addons": [],
+            "name": "MIM146 Launcher"
+          }
         ],
         "smokes": false,
         "rangefinder": "Laser",
@@ -11126,9 +12685,18 @@
           }
         },
         "weapons": [
-          "7.62mm PKT",
-          "125mm 2A46MS",
-          "20mm Oerlikon KAA"
+          {
+            "addons": [],
+            "name": "7.62mm PKT"
+          },
+          {
+            "addons": [],
+            "name": "125mm 2A46MS"
+          },
+          {
+            "addons": [],
+            "name": "20mm Oerlikon KAA"
+          }
         ],
         "smokes": true,
         "rangefinder": "Laser",
@@ -11171,7 +12739,10 @@
           }
         },
         "weapons": [
-          "7.62mm NATTER"
+          {
+            "addons": [],
+            "name": "7.62mm NATTER"
+          }
         ],
         "rangefinder": "Laser",
         "stabilizer": true,
@@ -11193,8 +12764,14 @@
           }
         },
         "weapons": [
-          "12.7mm RMG",
-          "130mm Rh130 L/51"
+          {
+            "addons": [],
+            "name": "12.7mm RMG"
+          },
+          {
+            "addons": [],
+            "name": "130mm Rh130 L/51"
+          }
         ],
         "smokes": true,
         "rangefinder": "Laser",
@@ -11237,7 +12814,10 @@
           }
         },
         "weapons": [
-          "7.62mm PKT"
+          {
+            "addons": [],
+            "name": "7.62mm PKT"
+          }
         ],
         "stabilizer": false,
         "zoom": {
@@ -11258,7 +12838,10 @@
           }
         },
         "weapons": [
-          "25mm DBTSU"
+          {
+            "addons": [],
+            "name": "25mm DBTSU"
+          }
         ],
         "rangefinder": "None",
         "stabilizer": false,
@@ -11300,8 +12883,14 @@
           }
         },
         "weapons": [
-          "50 mm KwK39",
-          "7.92mm MG34"
+          {
+            "addons": [],
+            "name": "50 mm KwK39"
+          },
+          {
+            "addons": [],
+            "name": "7.92mm MG34"
+          }
         ],
         "rangefinder": "None",
         "stabilizer": false,
@@ -11351,7 +12940,10 @@
     "turrets": {
       "Commander": {
         "weapons": [
-          "MG42"
+          {
+            "addons": [],
+            "name": "MG42"
+          }
         ],
         "traverse": {
           "vertical": {
@@ -11382,7 +12974,10 @@
           }
         },
         "weapons": [
-          "7.5 cm KwK 40 L/48"
+          {
+            "addons": [],
+            "name": "7.5 cm KwK 40 L/48"
+          }
         ],
         "stabilizer": false,
         "zoom": {
@@ -11423,7 +13018,10 @@
           }
         },
         "weapons": [
-          "122mm Grad"
+          {
+            "addons": [],
+            "name": "122mm Grad"
+          }
         ],
         "stabilizer": false,
         "zoom": {
@@ -11464,7 +13062,12 @@
           }
         },
         "weapons": [
-          "9M14M"
+          {
+            "addons": [
+              "9M14 Malyutka"
+            ],
+            "name": "9M14M"
+          }
         ],
         "stabilizer": true,
         "zoom": {
@@ -11485,8 +13088,14 @@
           }
         },
         "weapons": [
-          "115mm U-5TS",
-          "7.62mm PKT"
+          {
+            "addons": [],
+            "name": "115mm U-5TS"
+          },
+          {
+            "addons": [],
+            "name": "7.62mm PKT"
+          }
         ],
         "rangefinder": "None",
         "stabilizer": true,
@@ -11547,10 +13156,24 @@
           }
         },
         "weapons": [
-          "25mm M242 Bushmaster",
-          "7.62mm M240",
-          "BGM-71C I-TOW",
-          "BGM-71F TOW 2A/B"
+          {
+            "addons": [],
+            "name": "25mm M242 Bushmaster"
+          },
+          {
+            "addons": [],
+            "name": "7.62mm M240"
+          },
+          {
+            "addons": [],
+            "name": "BGM-71C I-TOW"
+          },
+          {
+            "addons": [
+              "Improved Missiles"
+            ],
+            "name": "BGM-71F TOW 2A/B"
+          }
         ],
         "smokes": true,
         "rangefinder": "Laser",
@@ -11593,7 +13216,10 @@
           }
         },
         "weapons": [
-          "Grenade Mortar"
+          {
+            "addons": [],
+            "name": "Grenade Mortar"
+          }
         ],
         "stabilizer": true,
         "zoom": {
@@ -11614,8 +13240,14 @@
           }
         },
         "weapons": [
-          "GT-3B 105mm",
-          ".30 cal M1919"
+          {
+            "addons": [],
+            "name": "GT-3B 105mm"
+          },
+          {
+            "addons": [],
+            "name": ".30 cal M1919"
+          }
         ],
         "rangefinder": "Laser",
         "stabilizer": true,
@@ -11637,7 +13269,10 @@
           }
         },
         "weapons": [
-          ".30 cal M1919"
+          {
+            "addons": [],
+            "name": ".30 cal M1919"
+          }
         ],
         "stabilizer": true,
         "zoom": {
@@ -11667,7 +13302,10 @@
     "turrets": {
       "Bow Gunner": {
         "weapons": [
-          "7.92mm MG34"
+          {
+            "addons": [],
+            "name": "7.92mm MG34"
+          }
         ],
         "traverse": {
           "vertical": {
@@ -11698,8 +13336,14 @@
           }
         },
         "weapons": [
-          "75 mm KwK42",
-          "7.92mm MG34"
+          {
+            "addons": [],
+            "name": "75 mm KwK42"
+          },
+          {
+            "addons": [],
+            "name": "7.92mm MG34"
+          }
         ],
         "rangefinder": "None",
         "stabilizer": false,
@@ -11730,7 +13374,10 @@
     "turrets": {
       "Driver": {
         "weapons": [
-          "7.62mm RP-46"
+          {
+            "addons": [],
+            "name": "7.62mm RP-46"
+          }
         ],
         "traverse": {
           "vertical": {
@@ -11761,9 +13408,18 @@
           }
         },
         "weapons": [
-          "130mm S-70",
-          "7.62mm RP-46",
-          "14.5mm KPVT"
+          {
+            "addons": [],
+            "name": "130mm S-70"
+          },
+          {
+            "addons": [],
+            "name": "7.62mm RP-46"
+          },
+          {
+            "addons": [],
+            "name": "14.5mm KPVT"
+          }
         ],
         "rangefinder": "None",
         "stabilizer": false,
@@ -11774,7 +13430,10 @@
       },
       "Commander": {
         "weapons": [
-          "14.5mm KPVT"
+          {
+            "addons": [],
+            "name": "14.5mm KPVT"
+          }
         ],
         "traverse": {
           "vertical": {
@@ -11825,9 +13484,20 @@
           }
         },
         "weapons": [
-          "7.62mm PKT",
-          "57mm AU-220",
-          "57mm 2A90"
+          {
+            "addons": [],
+            "name": "7.62mm PKT"
+          },
+          {
+            "addons": [],
+            "name": "57mm AU-220"
+          },
+          {
+            "addons": [
+              "Improved Ammunition"
+            ],
+            "name": "57mm 2A90"
+          }
         ],
         "stabilizer": true,
         "zoom": {
@@ -11868,8 +13538,14 @@
           }
         },
         "weapons": [
-          "128 mm KwK44",
-          "75 mm KwK44"
+          {
+            "addons": [],
+            "name": "128 mm KwK44"
+          },
+          {
+            "addons": [],
+            "name": "75 mm KwK44"
+          }
         ],
         "rangefinder": "None",
         "stabilizer": false,
@@ -11911,7 +13587,10 @@
           }
         },
         "weapons": [
-          "7.92mm MG34"
+          {
+            "addons": [],
+            "name": "7.92mm MG34"
+          }
         ],
         "stabilizer": false,
         "zoom": {
@@ -11941,7 +13620,10 @@
     "turrets": {
       "Loader": {
         "weapons": [
-          "Grenade Mortar"
+          {
+            "addons": [],
+            "name": "Grenade Mortar"
+          }
         ],
         "traverse": {
           "vertical": {
@@ -11972,7 +13654,10 @@
           }
         },
         "weapons": [
-          "88 mm KwK43"
+          {
+            "addons": [],
+            "name": "88 mm KwK43"
+          }
         ],
         "rangefinder": "None",
         "stabilizer": false,
@@ -11983,7 +13668,10 @@
       },
       "Bow Gunner": {
         "weapons": [
-          "7.92mm MG34"
+          {
+            "addons": [],
+            "name": "7.92mm MG34"
+          }
         ],
         "traverse": {
           "vertical": {
@@ -12034,7 +13722,10 @@
           }
         },
         "weapons": [
-          "12.7mm DSHK"
+          {
+            "addons": [],
+            "name": "12.7mm DSHK"
+          }
         ],
         "stabilizer": true,
         "zoom": {
@@ -12055,8 +13746,14 @@
           }
         },
         "weapons": [
-          "115mm U-5TS",
-          "7.62mm PKT"
+          {
+            "addons": [],
+            "name": "115mm U-5TS"
+          },
+          {
+            "addons": [],
+            "name": "7.62mm PKT"
+          }
         ],
         "rangefinder": "None",
         "stabilizer": true,
@@ -12117,7 +13814,10 @@
           }
         },
         "weapons": [
-          "12.7mm M2"
+          {
+            "addons": [],
+            "name": "12.7mm M2"
+          }
         ],
         "rangefinder": "Laser",
         "stabilizer": true,
@@ -12139,9 +13839,18 @@
           }
         },
         "weapons": [
-          "FIM-92K Stinger",
-          "75mm XM274",
-          "7.62mm M240"
+          {
+            "addons": [],
+            "name": "FIM-92K Stinger"
+          },
+          {
+            "addons": [],
+            "name": "75mm XM274"
+          },
+          {
+            "addons": [],
+            "name": "7.62mm M240"
+          }
         ],
         "smokes": false,
         "rangefinder": "Laser",
@@ -12184,7 +13893,10 @@
           }
         },
         "weapons": [
-          "Grenade Mortar"
+          {
+            "addons": [],
+            "name": "Grenade Mortar"
+          }
         ],
         "stabilizer": false,
         "zoom": {
@@ -12205,7 +13917,10 @@
           }
         },
         "weapons": [
-          "380mm RW61"
+          {
+            "addons": [],
+            "name": "380mm RW61"
+          }
         ],
         "rangefinder": "None",
         "stabilizer": false,
@@ -12216,7 +13931,10 @@
       },
       "Bow Gunner": {
         "weapons": [
-          "7.92mm MG34"
+          {
+            "addons": [],
+            "name": "7.92mm MG34"
+          }
         ],
         "traverse": {
           "vertical": {
@@ -12256,7 +13974,10 @@
     "turrets": {
       "Commander": {
         "weapons": [
-          "12.7mm M2"
+          {
+            "addons": [],
+            "name": "12.7mm M2"
+          }
         ],
         "traverse": {
           "vertical": {
@@ -12287,7 +14008,10 @@
           }
         },
         "weapons": [
-          "90mm M3"
+          {
+            "addons": [],
+            "name": "90mm M3"
+          }
         ],
         "rangefinder": "None",
         "stabilizer": false,
@@ -12329,9 +14053,18 @@
           }
         },
         "weapons": [
-          "105 mm M4",
-          ".30 cal M1919",
-          "H5 Flamethrower"
+          {
+            "addons": [],
+            "name": "105 mm M4"
+          },
+          {
+            "addons": [],
+            "name": ".30 cal M1919"
+          },
+          {
+            "addons": [],
+            "name": "H5 Flamethrower"
+          }
         ],
         "rangefinder": "None",
         "stabilizer": false,
@@ -12342,7 +14075,10 @@
       },
       "Commander": {
         "weapons": [
-          "12.7mm M2"
+          {
+            "addons": [],
+            "name": "12.7mm M2"
+          }
         ],
         "traverse": {
           "vertical": {
@@ -12362,7 +14098,10 @@
       },
       "Bow Gunner": {
         "weapons": [
-          ".30 cal M1919"
+          {
+            "addons": [],
+            "name": ".30 cal M1919"
+          }
         ],
         "traverse": {
           "vertical": {
@@ -12402,7 +14141,10 @@
     "turrets": {
       "Bow Gunner": {
         "weapons": [
-          "7.92mm MG34"
+          {
+            "addons": [],
+            "name": "7.92mm MG34"
+          }
         ],
         "traverse": {
           "vertical": {
@@ -12433,8 +14175,14 @@
           }
         },
         "weapons": [
-          "88 mm KwK36",
-          "7.92mm MG34"
+          {
+            "addons": [],
+            "name": "88 mm KwK36"
+          },
+          {
+            "addons": [],
+            "name": "7.92mm MG34"
+          }
         ],
         "rangefinder": "None",
         "stabilizer": false,
@@ -12476,9 +14224,18 @@
           }
         },
         "weapons": [
-          "75mm M3",
-          ".30 cal M1919",
-          "M8 Rocket"
+          {
+            "addons": [],
+            "name": "75mm M3"
+          },
+          {
+            "addons": [],
+            "name": ".30 cal M1919"
+          },
+          {
+            "addons": [],
+            "name": "M8 Rocket"
+          }
         ],
         "rangefinder": "None",
         "stabilizer": true,
@@ -12489,7 +14246,10 @@
       },
       "Bow Gunner": {
         "weapons": [
-          ".30 cal M1919"
+          {
+            "addons": [],
+            "name": ".30 cal M1919"
+          }
         ],
         "traverse": {
           "vertical": {
@@ -12540,8 +14300,14 @@
           }
         },
         "weapons": [
-          "75mm M3",
-          ".30 cal M1919"
+          {
+            "addons": [],
+            "name": "75mm M3"
+          },
+          {
+            "addons": [],
+            "name": ".30 cal M1919"
+          }
         ],
         "rangefinder": "None",
         "stabilizer": true,
@@ -12552,7 +14318,10 @@
       },
       "Commander": {
         "weapons": [
-          "12.7mm M2"
+          {
+            "addons": [],
+            "name": "12.7mm M2"
+          }
         ],
         "traverse": {
           "vertical": {
@@ -12572,7 +14341,10 @@
       },
       "Bow Gunner": {
         "weapons": [
-          ".30 cal M1919"
+          {
+            "addons": [],
+            "name": ".30 cal M1919"
+          }
         ],
         "traverse": {
           "vertical": {
@@ -12623,7 +14395,10 @@
           }
         },
         "weapons": [
-          "12.7mm KORD"
+          {
+            "addons": [],
+            "name": "12.7mm KORD"
+          }
         ],
         "stabilizer": true,
         "zoom": {
@@ -12644,8 +14419,14 @@
           }
         },
         "weapons": [
-          "7.62mm PKT",
-          "125mm 2A46M-5"
+          {
+            "addons": [],
+            "name": "7.62mm PKT"
+          },
+          {
+            "addons": [],
+            "name": "125mm 2A46M-5"
+          }
         ],
         "smokes": true,
         "rangefinder": "Laser",
@@ -12707,8 +14488,14 @@
           }
         },
         "weapons": [
-          "3M7 Drakon",
-          "7.62mm PKT"
+          {
+            "addons": [],
+            "name": "3M7 Drakon"
+          },
+          {
+            "addons": [],
+            "name": "7.62mm PKT"
+          }
         ],
         "rangefinder": "None",
         "stabilizer": true,
@@ -12758,7 +14545,10 @@
     "turrets": {
       "Commander": {
         "weapons": [
-          "12.7mm M2"
+          {
+            "addons": [],
+            "name": "12.7mm M2"
+          }
         ],
         "traverse": {
           "vertical": {
@@ -12789,7 +14579,10 @@
           }
         },
         "weapons": [
-          "76mm M1"
+          {
+            "addons": [],
+            "name": "76mm M1"
+          }
         ],
         "rangefinder": "None",
         "stabilizer": false,
@@ -12831,7 +14624,10 @@
           }
         },
         "weapons": [
-          "75mm M2"
+          {
+            "addons": [],
+            "name": "75mm M2"
+          }
         ],
         "rangefinder": "None",
         "stabilizer": true,
@@ -12842,7 +14638,10 @@
       },
       "Commander": {
         "weapons": [
-          ".30 cal M1919"
+          {
+            "addons": [],
+            "name": ".30 cal M1919"
+          }
         ],
         "traverse": {
           "vertical": {
@@ -12862,7 +14661,10 @@
       },
       "Bow Gunner": {
         "weapons": [
-          ".30 cal M1919"
+          {
+            "addons": [],
+            "name": ".30 cal M1919"
+          }
         ],
         "traverse": {
           "vertical": {
@@ -12913,8 +14715,14 @@
           }
         },
         "weapons": [
-          "20mm TNSh",
-          "7.62mm DT-28"
+          {
+            "addons": [],
+            "name": "20mm TNSh"
+          },
+          {
+            "addons": [],
+            "name": "7.62mm DT-28"
+          }
         ],
         "rangefinder": "None",
         "stabilizer": false,
@@ -12956,7 +14764,10 @@
           }
         },
         "weapons": [
-          "12.7mm NSVT"
+          {
+            "addons": [],
+            "name": "12.7mm NSVT"
+          }
         ],
         "stabilizer": true,
         "zoom": {
@@ -12977,8 +14788,14 @@
           }
         },
         "weapons": [
-          "7.62mm PKT",
-          "125mm 2A26"
+          {
+            "addons": [],
+            "name": "7.62mm PKT"
+          },
+          {
+            "addons": [],
+            "name": "125mm 2A26"
+          }
         ],
         "rangefinder": "Optical",
         "stabilizer": true,
@@ -13020,7 +14837,10 @@
           }
         },
         "weapons": [
-          "30mm AGS-17"
+          {
+            "addons": [],
+            "name": "30mm AGS-17"
+          }
         ],
         "stabilizer": true,
         "zoom": {
@@ -13041,9 +14861,18 @@
           }
         },
         "weapons": [
-          "125mm 2A46NK",
-          "7.62mm PKT",
-          "Bulsae-3"
+          {
+            "addons": [],
+            "name": "125mm 2A46NK"
+          },
+          {
+            "addons": [],
+            "name": "7.62mm PKT"
+          },
+          {
+            "addons": [],
+            "name": "Bulsae-3"
+          }
         ],
         "smokes": true,
         "rangefinder": "Laser",
@@ -13106,8 +14935,14 @@
           }
         },
         "weapons": [
-          "76mm QF 17-pounder",
-          "7.62mm L3A1"
+          {
+            "addons": [],
+            "name": "76mm QF 17-pounder"
+          },
+          {
+            "addons": [],
+            "name": "7.62mm L3A1"
+          }
         ],
         "rangefinder": "None",
         "stabilizer": false,
@@ -13143,7 +14978,10 @@
     "turrets": {
       "Loader": {
         "weapons": [
-          "7.62mm A-A-F1N"
+          {
+            "addons": [],
+            "name": "7.62mm A-A-F1N"
+          }
         ],
         "traverse": {
           "vertical": {
@@ -13174,9 +15012,20 @@
           }
         },
         "weapons": [
-          "105mm Modele F2",
-          "7.62mm A-A-F1N",
-          "105mm Giat G2"
+          {
+            "addons": [],
+            "name": "105mm Modele F2"
+          },
+          {
+            "addons": [],
+            "name": "7.62mm A-A-F1N"
+          },
+          {
+            "addons": [
+              "105 mm Giat G2"
+            ],
+            "name": "105mm Giat G2"
+          }
         ],
         "smokes": true,
         "rangefinder": "Laser",
@@ -13238,7 +15087,10 @@
           }
         },
         "weapons": [
-          "100mm D-10S"
+          {
+            "addons": [],
+            "name": "100mm D-10S"
+          }
         ],
         "rangefinder": "None",
         "stabilizer": false,
@@ -13269,7 +15121,10 @@
     "turrets": {
       "Bow Gunner": {
         "weapons": [
-          "7.92mm MG34"
+          {
+            "addons": [],
+            "name": "7.92mm MG34"
+          }
         ],
         "traverse": {
           "vertical": {
@@ -13300,7 +15155,10 @@
           }
         },
         "weapons": [
-          "88 mm KwK43"
+          {
+            "addons": [],
+            "name": "88 mm KwK43"
+          }
         ],
         "rangefinder": "None",
         "stabilizer": false,
@@ -13342,7 +15200,10 @@
           }
         },
         "weapons": [
-          "7.62mm MG3"
+          {
+            "addons": [],
+            "name": "7.62mm MG3"
+          }
         ],
         "stabilizer": true,
         "zoom": {
@@ -13363,8 +15224,14 @@
           }
         },
         "weapons": [
-          "7.62mm MG3",
-          "L7A3 105mm"
+          {
+            "addons": [],
+            "name": "7.62mm MG3"
+          },
+          {
+            "addons": [],
+            "name": "L7A3 105mm"
+          }
         ],
         "smokes": false,
         "rangefinder": "Laser",
@@ -13396,7 +15263,10 @@
     "turrets": {
       "Commander": {
         "weapons": [
-          "12.7mm M2"
+          {
+            "addons": [],
+            "name": "12.7mm M2"
+          }
         ],
         "traverse": {
           "vertical": {
@@ -13427,7 +15297,10 @@
           }
         },
         "weapons": [
-          "LOSAT/MGM-166"
+          {
+            "addons": [],
+            "name": "LOSAT/MGM-166"
+          }
         ],
         "smokes": false,
         "stabilizer": false,
@@ -13458,7 +15331,10 @@
     "turrets": {
       "Commander": {
         "weapons": [
-          "7.92mm MG34"
+          {
+            "addons": [],
+            "name": "7.92mm MG34"
+          }
         ],
         "traverse": {
           "vertical": {
@@ -13489,7 +15365,10 @@
           }
         },
         "weapons": [
-          "75 mm PaK39 L48"
+          {
+            "addons": [],
+            "name": "75 mm PaK39 L48"
+          }
         ],
         "rangefinder": "None",
         "stabilizer": false,
@@ -13531,8 +15410,14 @@
           }
         },
         "weapons": [
-          "90mm T15E1",
-          ".30 cal M1919"
+          {
+            "addons": [],
+            "name": "90mm T15E1"
+          },
+          {
+            "addons": [],
+            "name": ".30 cal M1919"
+          }
         ],
         "rangefinder": "None",
         "stabilizer": false,
@@ -13543,7 +15428,10 @@
       },
       "Commander": {
         "weapons": [
-          "12.7mm M2"
+          {
+            "addons": [],
+            "name": "12.7mm M2"
+          }
         ],
         "traverse": {
           "vertical": {
@@ -13563,7 +15451,10 @@
       },
       "Bow Gunner": {
         "weapons": [
-          ".30 cal M1919"
+          {
+            "addons": [],
+            "name": ".30 cal M1919"
+          }
         ],
         "traverse": {
           "vertical": {
@@ -13633,8 +15524,14 @@
           }
         },
         "weapons": [
-          "7.62mm PKT",
-          "30mm 2A72"
+          {
+            "addons": [],
+            "name": "7.62mm PKT"
+          },
+          {
+            "addons": [],
+            "name": "30mm 2A72"
+          }
         ],
         "rangefinder": "Laser",
         "stabilizer": true,
@@ -13676,8 +15573,14 @@
           }
         },
         "weapons": [
-          "50 mm KwK39",
-          "7.92mm MG34"
+          {
+            "addons": [],
+            "name": "50 mm KwK39"
+          },
+          {
+            "addons": [],
+            "name": "7.92mm MG34"
+          }
         ],
         "stabilizer": false,
         "zoom": {
@@ -13718,7 +15621,10 @@
           }
         },
         "weapons": [
-          "12.7mm M2"
+          {
+            "addons": [],
+            "name": "12.7mm M2"
+          }
         ],
         "rangefinder": "Laser",
         "stabilizer": true,
@@ -13740,9 +15646,18 @@
           }
         },
         "weapons": [
-          "30mm MK 30-2/ABM",
-          "7.62mm M240",
-          "Spike-LR2MR"
+          {
+            "addons": [],
+            "name": "30mm MK 30-2/ABM"
+          },
+          {
+            "addons": [],
+            "name": "7.62mm M240"
+          },
+          {
+            "addons": [],
+            "name": "Spike-LR2MR"
+          }
         ],
         "smokes": true,
         "rangefinder": "Laser",
@@ -13785,7 +15700,10 @@
           }
         },
         "weapons": [
-          "7.62mm M240"
+          {
+            "addons": [],
+            "name": "7.62mm M240"
+          }
         ],
         "stabilizer": true,
         "zoom": {
@@ -13806,8 +15724,14 @@
           }
         },
         "weapons": [
-          "25mm M242 Bushmaster",
-          "7.62mm M240"
+          {
+            "addons": [],
+            "name": "25mm M242 Bushmaster"
+          },
+          {
+            "addons": [],
+            "name": "7.62mm M240"
+          }
         ],
         "rangefinder": "Laser",
         "stabilizer": true,
@@ -13849,7 +15773,10 @@
           }
         },
         "weapons": [
-          "152.4mm BL-8"
+          {
+            "addons": [],
+            "name": "152.4mm BL-8"
+          }
         ],
         "rangefinder": "None",
         "stabilizer": false,
@@ -13891,7 +15818,10 @@
           }
         },
         "weapons": [
-          "12.7mm M2"
+          {
+            "addons": [],
+            "name": "12.7mm M2"
+          }
         ],
         "stabilizer": true,
         "zoom": {
@@ -13912,8 +15842,14 @@
           }
         },
         "weapons": [
-          "90mm M41",
-          ".30 cal M1919"
+          {
+            "addons": [],
+            "name": "90mm M41"
+          },
+          {
+            "addons": [],
+            "name": ".30 cal M1919"
+          }
         ],
         "rangefinder": "Optical",
         "stabilizer": false,
@@ -13944,7 +15880,10 @@
     "turrets": {
       "Passenger": {
         "weapons": [
-          "30mm AGS-17"
+          {
+            "addons": [],
+            "name": "30mm AGS-17"
+          }
         ],
         "traverse": {
           "vertical": {
@@ -13975,9 +15914,18 @@
           }
         },
         "weapons": [
-          "7.62mm PKT",
-          "30mm 2A42M (BMPT)",
-          "9M120 Ataka"
+          {
+            "addons": [],
+            "name": "7.62mm PKT"
+          },
+          {
+            "addons": [],
+            "name": "30mm 2A42M (BMPT)"
+          },
+          {
+            "addons": [],
+            "name": "9M120 Ataka"
+          }
         ],
         "rangefinder": "Laser",
         "stabilizer": true,
@@ -14039,9 +15987,22 @@
           }
         },
         "weapons": [
-          "12.7mm M2",
-          "40mm MK-19",
-          "BGM-71C I-TOW"
+          {
+            "addons": [],
+            "name": "12.7mm M2"
+          },
+          {
+            "addons": [
+              "MK19"
+            ],
+            "name": "40mm MK-19"
+          },
+          {
+            "addons": [
+              "I-TOW"
+            ],
+            "name": "BGM-71C I-TOW"
+          }
         ],
         "stabilizer": true,
         "zoom": {
@@ -14082,7 +16043,10 @@
           }
         },
         "weapons": [
-          "12.7mm DSHK"
+          {
+            "addons": [],
+            "name": "12.7mm DSHK"
+          }
         ],
         "stabilizer": true,
         "zoom": {
@@ -14103,8 +16067,14 @@
           }
         },
         "weapons": [
-          "100mm SB-10S",
-          "12.7mm DSHK"
+          {
+            "addons": [],
+            "name": "100mm SB-10S"
+          },
+          {
+            "addons": [],
+            "name": "12.7mm DSHK"
+          }
         ],
         "stabilizer": true,
         "zoom": {
@@ -14202,8 +16172,14 @@
           }
         },
         "weapons": [
-          "75mm XM274 66.7RPM",
-          "7.62mm M240"
+          {
+            "addons": [],
+            "name": "75mm XM274 66.7RPM"
+          },
+          {
+            "addons": [],
+            "name": "7.62mm M240"
+          }
         ],
         "smokes": true,
         "rangefinder": "Laser",
@@ -14246,8 +16222,14 @@
           }
         },
         "weapons": [
-          "85mm F-30",
-          "7.62mm DT-28"
+          {
+            "addons": [],
+            "name": "85mm F-30"
+          },
+          {
+            "addons": [],
+            "name": "7.62mm DT-28"
+          }
         ],
         "rangefinder": "None",
         "stabilizer": false,
@@ -14258,7 +16240,10 @@
       },
       "Commander": {
         "weapons": [
-          "7.62mm DT-28"
+          {
+            "addons": [],
+            "name": "7.62mm DT-28"
+          }
         ],
         "traverse": {
           "vertical": {
@@ -14278,7 +16263,10 @@
       },
       "Bow Gunner": {
         "weapons": [
-          "7.62mm DT-28"
+          {
+            "addons": [],
+            "name": "7.62mm DT-28"
+          }
         ],
         "traverse": {
           "vertical": {
@@ -14329,7 +16317,10 @@
           }
         },
         "weapons": [
-          "12.7mm M2"
+          {
+            "addons": [],
+            "name": "12.7mm M2"
+          }
         ],
         "stabilizer": true,
         "zoom": {
@@ -14370,8 +16361,14 @@
           }
         },
         "weapons": [
-          "30mm 2A72",
-          "9M133 Kornet"
+          {
+            "addons": [],
+            "name": "30mm 2A72"
+          },
+          {
+            "addons": [],
+            "name": "9M133 Kornet"
+          }
         ],
         "stabilizer": true,
         "zoom": {
@@ -14431,7 +16428,10 @@
           }
         },
         "weapons": [
-          "35mm Oerlikon KDA"
+          {
+            "addons": [],
+            "name": "35mm Oerlikon KDA"
+          }
         ],
         "rangefinder": "Laser",
         "stabilizer": true,
@@ -14473,7 +16473,10 @@
           }
         },
         "weapons": [
-          "12.7mm M2"
+          {
+            "addons": [],
+            "name": "12.7mm M2"
+          }
         ],
         "stabilizer": true,
         "zoom": {
@@ -14494,7 +16497,10 @@
           }
         },
         "weapons": [
-          "155mm M284"
+          {
+            "addons": [],
+            "name": "155mm M284"
+          }
         ],
         "rangefinder": "None",
         "stabilizer": false,
@@ -14536,7 +16542,10 @@
           }
         },
         "weapons": [
-          "12.7mm NSVT"
+          {
+            "addons": [],
+            "name": "12.7mm NSVT"
+          }
         ],
         "stabilizer": true,
         "zoom": {
@@ -14557,8 +16566,16 @@
           }
         },
         "weapons": [
-          "152mm 2A64",
-          "152mm 2A64M"
+          {
+            "addons": [],
+            "name": "152mm 2A64"
+          },
+          {
+            "addons": [
+              "2S33 Conversion"
+            ],
+            "name": "152mm 2A64M"
+          }
         ],
         "rangefinder": "Laser",
         "stabilizer": false,
@@ -14600,8 +16617,16 @@
           }
         },
         "weapons": [
-          "12.7mm M2",
-          "FGM-148"
+          {
+            "addons": [],
+            "name": "12.7mm M2"
+          },
+          {
+            "addons": [
+              "Javelin"
+            ],
+            "name": "FGM-148"
+          }
         ],
         "smokes": true,
         "rangefinder": "Laser",
@@ -14668,8 +16693,14 @@
           }
         },
         "weapons": [
-          "9M311",
-          "30mm 2A38"
+          {
+            "addons": [],
+            "name": "9M311"
+          },
+          {
+            "addons": [],
+            "name": "30mm 2A38"
+          }
         ],
         "smokes": false,
         "rangefinder": "Laser",
@@ -14731,7 +16762,10 @@
           }
         },
         "weapons": [
-          "HJ-10"
+          {
+            "addons": [],
+            "name": "HJ-10"
+          }
         ],
         "smokes": true,
         "rangefinder": "Laser",
@@ -14763,7 +16797,10 @@
     "turrets": {
       "Driver": {
         "weapons": [
-          "7.62mm DT-28"
+          {
+            "addons": [],
+            "name": "7.62mm DT-28"
+          }
         ],
         "traverse": {
           "vertical": {
@@ -14783,7 +16820,10 @@
       },
       "Loader": {
         "weapons": [
-          "7.62mm DT-28"
+          {
+            "addons": [],
+            "name": "7.62mm DT-28"
+          }
         ],
         "traverse": {
           "vertical": {
@@ -14814,8 +16854,14 @@
           }
         },
         "weapons": [
-          "122mm D-25T",
-          "7.62mm DT-28"
+          {
+            "addons": [],
+            "name": "122mm D-25T"
+          },
+          {
+            "addons": [],
+            "name": "7.62mm DT-28"
+          }
         ],
         "rangefinder": "None",
         "stabilizer": false,
@@ -14826,7 +16872,10 @@
       },
       "Commander": {
         "weapons": [
-          "12.7mm DSHK"
+          {
+            "addons": [],
+            "name": "12.7mm DSHK"
+          }
         ],
         "traverse": {
           "vertical": {
@@ -14877,7 +16926,10 @@
           }
         },
         "weapons": [
-          "12.7mm M2"
+          {
+            "addons": [],
+            "name": "12.7mm M2"
+          }
         ],
         "stabilizer": true,
         "zoom": {
@@ -14907,7 +16959,10 @@
     "turrets": {
       "Commander": {
         "weapons": [
-          "12.7mm DSHK"
+          {
+            "addons": [],
+            "name": "12.7mm DSHK"
+          }
         ],
         "traverse": {
           "vertical": {
@@ -14938,9 +16993,20 @@
           }
         },
         "weapons": [
-          "122mm D-25T",
-          "7.62mm DT-28",
-          "122mm D-25TM"
+          {
+            "addons": [],
+            "name": "122mm D-25T"
+          },
+          {
+            "addons": [],
+            "name": "7.62mm DT-28"
+          },
+          {
+            "addons": [
+              "Improved Ammunition"
+            ],
+            "name": "122mm D-25TM"
+          }
         ],
         "rangefinder": "None",
         "stabilizer": false,
@@ -14971,7 +17037,10 @@
     "turrets": {
       "Commander": {
         "weapons": [
-          "12.7mm M2"
+          {
+            "addons": [],
+            "name": "12.7mm M2"
+          }
         ],
         "traverse": {
           "vertical": {
@@ -15002,7 +17071,10 @@
           }
         },
         "weapons": [
-          "90mm M3"
+          {
+            "addons": [],
+            "name": "90mm M3"
+          }
         ],
         "rangefinder": "None",
         "stabilizer": false,
@@ -15044,8 +17116,14 @@
           }
         },
         "weapons": [
-          "76mm M1",
-          ".30 cal M1919"
+          {
+            "addons": [],
+            "name": "76mm M1"
+          },
+          {
+            "addons": [],
+            "name": ".30 cal M1919"
+          }
         ],
         "rangefinder": "None",
         "stabilizer": true,
@@ -15056,7 +17134,10 @@
       },
       "Commander": {
         "weapons": [
-          "12.7mm M2"
+          {
+            "addons": [],
+            "name": "12.7mm M2"
+          }
         ],
         "traverse": {
           "vertical": {
@@ -15076,7 +17157,10 @@
       },
       "Bow Gunner": {
         "weapons": [
-          ".30 cal M1919"
+          {
+            "addons": [],
+            "name": ".30 cal M1919"
+          }
         ],
         "traverse": {
           "vertical": {
@@ -15146,9 +17230,18 @@
           }
         },
         "weapons": [
-          "7.62mm PKT",
-          "30mm 2A42M",
-          "9M133 Kornet"
+          {
+            "addons": [],
+            "name": "7.62mm PKT"
+          },
+          {
+            "addons": [],
+            "name": "30mm 2A42M"
+          },
+          {
+            "addons": [],
+            "name": "9M133 Kornet"
+          }
         ],
         "smokes": true,
         "rangefinder": "Laser",
@@ -15211,7 +17304,10 @@
           }
         },
         "weapons": [
-          "57mm S-68"
+          {
+            "addons": [],
+            "name": "57mm S-68"
+          }
         ],
         "rangefinder": "None",
         "stabilizer": false,
@@ -15273,9 +17369,18 @@
           }
         },
         "weapons": [
-          "30mm 2A72",
-          "152mm 2A73",
-          "7.62mm PKT"
+          {
+            "addons": [],
+            "name": "30mm 2A72"
+          },
+          {
+            "addons": [],
+            "name": "152mm 2A73"
+          },
+          {
+            "addons": [],
+            "name": "7.62mm PKT"
+          }
         ],
         "smokes": true,
         "rangefinder": "Laser",
@@ -15318,10 +17423,24 @@
           }
         },
         "weapons": [
-          "7.62mm PKT",
-          "73mm 2A28",
-          "9M14M",
-          "9M113 Konkurs"
+          {
+            "addons": [],
+            "name": "7.62mm PKT"
+          },
+          {
+            "addons": [],
+            "name": "73mm 2A28"
+          },
+          {
+            "addons": [],
+            "name": "9M14M"
+          },
+          {
+            "addons": [
+              "BMP-1PK Conversion"
+            ],
+            "name": "9M113 Konkurs"
+          }
         ],
         "rangefinder": "None",
         "stabilizer": false,
@@ -15382,8 +17501,14 @@
           }
         },
         "weapons": [
-          "7.62mm PKT",
-          "115mm D-68"
+          {
+            "addons": [],
+            "name": "7.62mm PKT"
+          },
+          {
+            "addons": [],
+            "name": "115mm D-68"
+          }
         ],
         "rangefinder": "Optical",
         "stabilizer": true,
@@ -15414,7 +17539,10 @@
     "turrets": {
       "Bow Gunner": {
         "weapons": [
-          "7.62mm DT-28"
+          {
+            "addons": [],
+            "name": "7.62mm DT-28"
+          }
         ],
         "traverse": {
           "vertical": {
@@ -15445,8 +17573,14 @@
           }
         },
         "weapons": [
-          "76mm F-34",
-          "7.62mm DT-28"
+          {
+            "addons": [],
+            "name": "76mm F-34"
+          },
+          {
+            "addons": [],
+            "name": "7.62mm DT-28"
+          }
         ],
         "rangefinder": "None",
         "stabilizer": false,
@@ -15488,7 +17622,10 @@
           }
         },
         "weapons": [
-          "30mm 2A42"
+          {
+            "addons": [],
+            "name": "30mm 2A42"
+          }
         ],
         "stabilizer": false,
         "zoom": {
@@ -15509,8 +17646,14 @@
           }
         },
         "weapons": [
-          "7.62mm PKT",
-          "125mm 2A47"
+          {
+            "addons": [],
+            "name": "7.62mm PKT"
+          },
+          {
+            "addons": [],
+            "name": "125mm 2A47"
+          }
         ],
         "rangefinder": "Laser",
         "stabilizer": true,
@@ -15552,7 +17695,10 @@
           }
         },
         "weapons": [
-          "12.7mm DSHK"
+          {
+            "addons": [],
+            "name": "12.7mm DSHK"
+          }
         ],
         "stabilizer": true,
         "zoom": {
@@ -15573,8 +17719,14 @@
           }
         },
         "weapons": [
-          "115mm U-5TS",
-          "7.62mm PKT"
+          {
+            "addons": [],
+            "name": "115mm U-5TS"
+          },
+          {
+            "addons": [],
+            "name": "7.62mm PKT"
+          }
         ],
         "rangefinder": "Laser",
         "stabilizer": true,
