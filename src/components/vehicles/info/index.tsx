@@ -134,6 +134,16 @@ export default function VehicleInfo({
                               </Stat>
                             )}
 
+                            {turret.thermals !== undefined && (
+                              <Stat label="Thermals">{turret.thermals}</Stat>
+                            )}
+
+                            {turret.rangefinder !== undefined && (
+                              <Stat label="Rangefinder">
+                                {turret.rangefinder}
+                              </Stat>
+                            )}
+
                             <Stat
                               label={
                                 <>

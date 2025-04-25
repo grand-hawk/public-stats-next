@@ -57,6 +57,8 @@ export interface Vehicle {
       // flares: boolean | undefined;
       smokes: boolean | undefined;
       stabilizer: boolean;
+      thermals: string | undefined;
+      rangefinder: string | undefined;
       weapons: string[];
     };
   };
