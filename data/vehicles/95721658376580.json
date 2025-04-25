@@ -20,18 +20,19 @@
         "weapons": [],
         "smokes": true,
         "zoom": {
-          "max": 1.875,
-          "min": 3
+          "max": 3,
+          "min": 1.875
         }
       },
       "Gunner": {
-        "zoom": {
-          "max": 6.25,
-          "min": 12.5
-        },
         "weapons": [
           "MIM146 Launcher"
-        ]
+        ],
+        "smokes": false,
+        "zoom": {
+          "max": 12.5,
+          "min": 6.25
+        }
       }
     }
   },
@@ -54,8 +55,8 @@
     "turrets": {
       "Loader": {
         "zoom": {
-          "max": 1.875,
-          "min": 3
+          "max": 3,
+          "min": 1.875
         },
         "weapons": [
           "7.62mm L37A2"
@@ -69,8 +70,8 @@
         ],
         "smokes": true,
         "zoom": {
-          "max": 3.9473684210526314,
-          "min": 10.714285714285714
+          "max": 10.714285714285714,
+          "min": 3.9473684210526314
         }
       },
       "Commander": {
@@ -101,21 +102,22 @@
     "turrets": {
       "Commander": {
         "zoom": {
-          "max": 1.875,
-          "min": 3
+          "max": 3,
+          "min": 1.875
         },
         "weapons": [
           "12.7mm NSVT"
         ]
       },
       "Gunner": {
+        "weapons": [
+          "S-8KO"
+        ],
+        "smokes": false,
         "zoom": {
           "max": 8.333333333333334,
           "min": 8.333333333333334
-        },
-        "weapons": [
-          "S-8KO"
-        ]
+        }
       }
     }
   },
@@ -138,22 +140,23 @@
     "turrets": {
       "Bow Gunner": {
         "zoom": {
-          "max": 1.875,
-          "min": 3
+          "max": 3,
+          "min": 1.875
         },
         "weapons": [
           "ATO-41 Flamethrower"
         ]
       },
       "Gunner": {
-        "zoom": {
-          "max": 3.9473684210526314,
-          "min": 3.9473684210526314
-        },
         "weapons": [
           "85mm ZIS-S-53",
           "7.62mm DT-28"
-        ]
+        ],
+        "smokes": false,
+        "zoom": {
+          "max": 3.9473684210526314,
+          "min": 3.9473684210526314
+        }
       }
     }
   },
@@ -176,27 +179,28 @@
     "turrets": {
       "Loader": {
         "zoom": {
-          "max": 1.875,
-          "min": 3
+          "max": 3,
+          "min": 1.875
         },
         "weapons": [
           "7.62mm DT-28"
         ]
       },
       "Gunner": {
-        "zoom": {
-          "max": 1.875,
-          "min": 3.5714285714285716
-        },
         "weapons": [
           "76mm F-34",
           "7.62mm DT-28"
-        ]
+        ],
+        "smokes": false,
+        "zoom": {
+          "max": 3.5714285714285716,
+          "min": 1.875
+        }
       },
       "Bow Gunner": {
         "zoom": {
-          "max": 1.875,
-          "min": 3
+          "max": 3,
+          "min": 1.875
         },
         "weapons": [
           "7.62mm DT-28"
@@ -230,13 +234,14 @@
         }
       },
       "Gunner": {
-        "zoom": {
-          "max": 1.875,
-          "min": 3.75
-        },
         "weapons": [
           "152mm 2A64M"
-        ]
+        ],
+        "smokes": false,
+        "zoom": {
+          "max": 3.75,
+          "min": 1.875
+        }
       }
     }
   },
@@ -258,19 +263,20 @@
     "mass": 32,
     "turrets": {
       "Gunner": {
-        "zoom": {
-          "max": 5,
-          "min": 5
-        },
         "weapons": [
           "76mm M1",
           ".30 cal M1919"
-        ]
+        ],
+        "smokes": false,
+        "zoom": {
+          "max": 5,
+          "min": 5
+        }
       },
       "Commander": {
         "zoom": {
-          "max": 1.875,
-          "min": 3
+          "max": 3,
+          "min": 1.875
         },
         "weapons": [
           "12.7mm M2"
@@ -278,8 +284,8 @@
       },
       "Bow Gunner": {
         "zoom": {
-          "max": 1.875,
-          "min": 3
+          "max": 3,
+          "min": 1.875
         },
         "weapons": [
           ".30 cal M1919"
@@ -306,8 +312,8 @@
     "turrets": {
       "Commander": {
         "zoom": {
-          "max": 1.875,
-          "min": 3
+          "max": 3,
+          "min": 1.875
         },
         "weapons": [
           "7.62mm PKT"
@@ -373,22 +379,23 @@
     "turrets": {
       "Loader": {
         "zoom": {
-          "max": 1.875,
-          "min": 3
+          "max": 3,
+          "min": 1.875
         },
         "weapons": [
           "12.7mm NSVT"
         ]
       },
       "Gunner": {
-        "zoom": {
-          "max": 3.5714285714285716,
-          "min": 6.818181818181818
-        },
         "weapons": [
           "100mm D-10TS2",
           "7.62mm PKT"
-        ]
+        ],
+        "smokes": false,
+        "zoom": {
+          "max": 6.818181818181818,
+          "min": 3.5714285714285716
+        }
       },
       "Commander": {
         "zoom": {
@@ -399,8 +406,8 @@
       },
       "Driver": {
         "zoom": {
-          "max": 1.875,
-          "min": 3
+          "max": 3,
+          "min": 1.875
         },
         "weapons": [
           "7.62mm PKT"
@@ -427,8 +434,8 @@
     "turrets": {
       "Commander": {
         "zoom": {
-          "max": 0.9375,
-          "min": 8.333333333333334
+          "max": 8.333333333333334,
+          "min": 0.9375
         },
         "weapons": [
           "12.7mm NSVT"
@@ -441,8 +448,8 @@
         ],
         "smokes": true,
         "zoom": {
-          "max": 2.6785714285714284,
-          "min": 12.5
+          "max": 12.5,
+          "min": 2.6785714285714284
         }
       }
     }
@@ -466,8 +473,8 @@
     "turrets": {
       "Loader": {
         "zoom": {
-          "max": 1.875,
-          "min": 3
+          "max": 3,
+          "min": 1.875
         },
         "weapons": [
           "Grenade Mortar",
@@ -475,19 +482,20 @@
         ]
       },
       "Gunner": {
-        "zoom": {
-          "max": 1.875,
-          "min": 3.5714285714285716
-        },
         "weapons": [
           "88 mm KwK43",
           "7.92mm MG34"
-        ]
+        ],
+        "smokes": false,
+        "zoom": {
+          "max": 3.5714285714285716,
+          "min": 1.875
+        }
       },
       "Commander": {
         "zoom": {
-          "max": 1.875,
-          "min": 3
+          "max": 3,
+          "min": 1.875
         },
         "weapons": [
           "7.92mm MG34"
@@ -495,8 +503,8 @@
       },
       "Bow Gunner": {
         "zoom": {
-          "max": 1.875,
-          "min": 3
+          "max": 3,
+          "min": 1.875
         },
         "weapons": [
           "7.92mm MG34"
@@ -541,8 +549,8 @@
     "turrets": {
       "Commander": {
         "zoom": {
-          "max": 0.9375,
-          "min": 8.333333333333334
+          "max": 8.333333333333334,
+          "min": 0.9375
         },
         "weapons": [
           "12.7mm KORD"
@@ -555,8 +563,8 @@
         ],
         "smokes": true,
         "zoom": {
-          "max": 2.6785714285714284,
-          "min": 12.5
+          "max": 12.5,
+          "min": 2.6785714285714284
         }
       }
     }
@@ -579,13 +587,14 @@
     "mass": 14,
     "turrets": {
       "Gunner": {
+        "weapons": [
+          "20mm M618"
+        ],
+        "smokes": false,
         "zoom": {
           "max": 6.25,
           "min": 6.25
-        },
-        "weapons": [
-          "20mm M618"
-        ]
+        }
       }
     }
   },
@@ -608,21 +617,22 @@
     "turrets": {
       "Bow Gunner": {
         "zoom": {
-          "max": 1.875,
-          "min": 3
+          "max": 3,
+          "min": 1.875
         },
         "weapons": [
           "7.62mm DT-28"
         ]
       },
       "Gunner": {
-        "zoom": {
-          "max": 1.875,
-          "min": 3.5714285714285716
-        },
         "weapons": [
           "122mm D-30"
-        ]
+        ],
+        "smokes": false,
+        "zoom": {
+          "max": 3.5714285714285716,
+          "min": 1.875
+        }
       }
     }
   },
@@ -644,13 +654,14 @@
     "mass": 46.5,
     "turrets": {
       "Gunner": {
-        "zoom": {
-          "max": 1.875,
-          "min": 3.75
-        },
         "weapons": [
           "203mm 2A44"
-        ]
+        ],
+        "smokes": false,
+        "zoom": {
+          "max": 3.75,
+          "min": 1.875
+        }
       }
     }
   },
@@ -673,22 +684,23 @@
     "turrets": {
       "Bow Gunner": {
         "zoom": {
-          "max": 1.875,
-          "min": 3
+          "max": 3,
+          "min": 1.875
         },
         "weapons": [
           "7.92 mm BESA"
         ]
       },
       "Gunner": {
-        "zoom": {
-          "max": 1.875,
-          "min": 3.5714285714285716
-        },
         "weapons": [
           "75mm OQF Mk.V",
           "7.92 mm BESA"
-        ]
+        ],
+        "smokes": false,
+        "zoom": {
+          "max": 3.5714285714285716,
+          "min": 1.875
+        }
       }
     }
   },
@@ -711,8 +723,8 @@
     "turrets": {
       "Commander": {
         "zoom": {
-          "max": 3.9473684210526314,
-          "min": 12.5
+          "max": 12.5,
+          "min": 3.9473684210526314
         },
         "weapons": [
           "12.7mm M2"
@@ -725,8 +737,8 @@
         ],
         "smokes": true,
         "zoom": {
-          "max": 3.9473684210526314,
-          "min": 12.5
+          "max": 12.5,
+          "min": 3.9473684210526314
         }
       }
     }
@@ -789,8 +801,8 @@
     "turrets": {
       "Commander": {
         "zoom": {
-          "max": 3.9473684210526314,
-          "min": 18.75
+          "max": 18.75,
+          "min": 3.9473684210526314
         },
         "weapons": [
           "30mm AGS-17"
@@ -804,8 +816,8 @@
         ],
         "smokes": true,
         "zoom": {
-          "max": 2.5,
-          "min": 12.5
+          "max": 12.5,
+          "min": 2.5
         }
       }
     }
@@ -829,8 +841,8 @@
     "turrets": {
       "Commander": {
         "zoom": {
-          "max": 0.9375,
-          "min": 5
+          "max": 5,
+          "min": 0.9375
         },
         "weapons": []
       },
@@ -842,8 +854,8 @@
         ],
         "smokes": true,
         "zoom": {
-          "max": 6.25,
-          "min": 10.714285714285714
+          "max": 10.714285714285714,
+          "min": 6.25
         }
       }
     }
@@ -866,19 +878,20 @@
     "mass": 31.7,
     "turrets": {
       "Gunner": {
-        "zoom": {
-          "max": 1.875,
-          "min": 3.5714285714285716
-        },
         "weapons": [
           "105 mm M4",
           ".30 cal M1919"
-        ]
+        ],
+        "smokes": false,
+        "zoom": {
+          "max": 3.5714285714285716,
+          "min": 1.875
+        }
       },
       "Commander": {
         "zoom": {
-          "max": 1.875,
-          "min": 3
+          "max": 3,
+          "min": 1.875
         },
         "weapons": [
           "12.7mm M2"
@@ -886,8 +899,8 @@
       },
       "Bow Gunner": {
         "zoom": {
-          "max": 1.875,
-          "min": 3
+          "max": 3,
+          "min": 1.875
         },
         "weapons": [
           ".30 cal M1919"
@@ -913,14 +926,15 @@
     "mass": 15,
     "turrets": {
       "Gunner": {
-        "zoom": {
-          "max": 8.333333333333334,
-          "min": 8.333333333333334
-        },
         "weapons": [
           "60mm IMI HVMS",
           ".30 cal M1919"
-        ]
+        ],
+        "smokes": false,
+        "zoom": {
+          "max": 8.333333333333334,
+          "min": 8.333333333333334
+        }
       }
     }
   },
@@ -942,13 +956,14 @@
     "mass": 12.3,
     "turrets": {
       "Gunner": {
-        "zoom": {
-          "max": 2.5,
-          "min": 3
-        },
         "weapons": [
           "115mm U-5TS"
-        ]
+        ],
+        "smokes": false,
+        "zoom": {
+          "max": 3,
+          "min": 2.5
+        }
       }
     }
   },
@@ -971,8 +986,8 @@
     "turrets": {
       "Commander": {
         "zoom": {
-          "max": 1.9736842105263157,
-          "min": 15
+          "max": 15,
+          "min": 1.9736842105263157
         },
         "weapons": []
       },
@@ -984,8 +999,8 @@
         ],
         "smokes": true,
         "zoom": {
-          "max": 1.9736842105263157,
-          "min": 15
+          "max": 15,
+          "min": 1.9736842105263157
         }
       }
     }
@@ -1012,19 +1027,20 @@
     "turrets": {
       "Commander": {
         "zoom": {
-          "max": 1.9736842105263157,
-          "min": 8.333333333333334
+          "max": 8.333333333333334,
+          "min": 1.9736842105263157
         },
         "weapons": []
       },
       "Gunner": {
-        "zoom": {
-          "max": 1.9736842105263157,
-          "min": 8.333333333333334
-        },
         "weapons": [
           "75mm XM274"
-        ]
+        ],
+        "smokes": false,
+        "zoom": {
+          "max": 8.333333333333334,
+          "min": 1.9736842105263157
+        }
       }
     },
     "name": "HIMAG",
@@ -1091,8 +1107,8 @@
     "turrets": {
       "Commander": {
         "zoom": {
-          "max": 3.9473684210526314,
-          "min": 12.5
+          "max": 12.5,
+          "min": 3.9473684210526314
         },
         "weapons": []
       },
@@ -1105,8 +1121,8 @@
         ],
         "smokes": true,
         "zoom": {
-          "max": 3.9473684210526314,
-          "min": 12.5
+          "max": 12.5,
+          "min": 3.9473684210526314
         }
       }
     },
@@ -1132,8 +1148,8 @@
     "turrets": {
       "Commander": {
         "zoom": {
-          "max": 1.9736842105263157,
-          "min": 8.333333333333334
+          "max": 8.333333333333334,
+          "min": 1.9736842105263157
         },
         "weapons": [
           "12.7mm M2"
@@ -1146,8 +1162,8 @@
         ],
         "smokes": true,
         "zoom": {
-          "max": 3.409090909090909,
-          "min": 10.714285714285714
+          "max": 10.714285714285714,
+          "min": 3.409090909090909
         }
       }
     }
@@ -1171,8 +1187,8 @@
     "turrets": {
       "Commander": {
         "zoom": {
-          "max": 3,
-          "min": 12.5
+          "max": 12.5,
+          "min": 3
         },
         "weapons": [
           "30mm M230LF",
@@ -1186,8 +1202,8 @@
         ],
         "smokes": true,
         "zoom": {
-          "max": 3,
-          "min": 12.5
+          "max": 12.5,
+          "min": 3
         }
       }
     }
@@ -1210,14 +1226,15 @@
     "mass": 30,
     "turrets": {
       "Gunner": {
-        "zoom": {
-          "max": 5,
-          "min": 5
-        },
         "weapons": [
           "14.5mm KPVT",
           "7.62mm PKT"
-        ]
+        ],
+        "smokes": false,
+        "zoom": {
+          "max": 5,
+          "min": 5
+        }
       }
     }
   },
@@ -1239,13 +1256,14 @@
     "mass": 8.6,
     "turrets": {
       "Gunner": {
-        "zoom": {
-          "max": 1.875,
-          "min": 3.5714285714285716
-        },
         "weapons": [
           "57mm M1"
-        ]
+        ],
+        "smokes": false,
+        "zoom": {
+          "max": 3.5714285714285716,
+          "min": 1.875
+        }
       }
     }
   },
@@ -1268,8 +1286,8 @@
     "turrets": {
       "Commander": {
         "zoom": {
-          "max": 3,
-          "min": 12.5
+          "max": 12.5,
+          "min": 3
         },
         "weapons": [
           "40mm MK-19"
@@ -1306,19 +1324,20 @@
     "mass": 26,
     "turrets": {
       "Gunner": {
-        "zoom": {
-          "max": 1.875,
-          "min": 3.5714285714285716
-        },
         "weapons": [
           "75 mm KwK40 L48",
           "7.92mm MG34"
-        ]
+        ],
+        "smokes": false,
+        "zoom": {
+          "max": 3.5714285714285716,
+          "min": 1.875
+        }
       },
       "Commander": {
         "zoom": {
-          "max": 1.875,
-          "min": 3
+          "max": 3,
+          "min": 1.875
         },
         "weapons": [
           "7.92mm MG34"
@@ -1326,8 +1345,8 @@
       },
       "Bow Gunner": {
         "zoom": {
-          "max": 1.875,
-          "min": 3
+          "max": 3,
+          "min": 1.875
         },
         "weapons": [
           "7.92mm MG34"
@@ -1369,14 +1388,14 @@
         ],
         "smokes": true,
         "zoom": {
-          "max": 3,
-          "min": 6.25
+          "max": 6.25,
+          "min": 3
         }
       },
       "Bow Gunner": {
         "zoom": {
-          "max": 1.875,
-          "min": 3
+          "max": 3,
+          "min": 1.875
         },
         "weapons": [
           "7.92 mm BESA"
@@ -1446,8 +1465,8 @@
         ],
         "smokes": true,
         "zoom": {
-          "max": 3.9473684210526314,
-          "min": 9.375
+          "max": 9.375,
+          "min": 3.9473684210526314
         }
       }
     }
@@ -1470,19 +1489,20 @@
     "mass": 30.6,
     "turrets": {
       "Gunner": {
-        "zoom": {
-          "max": 5,
-          "min": 5
-        },
         "weapons": [
           "75mm M3",
           ".30 cal M1919"
-        ]
+        ],
+        "smokes": false,
+        "zoom": {
+          "max": 5,
+          "min": 5
+        }
       },
       "Commander": {
         "zoom": {
-          "max": 1.875,
-          "min": 3
+          "max": 3,
+          "min": 1.875
         },
         "weapons": [
           "12.7mm M2"
@@ -1490,8 +1510,8 @@
       },
       "Bow Gunner": {
         "zoom": {
-          "max": 1.875,
-          "min": 3
+          "max": 3,
+          "min": 1.875
         },
         "weapons": [
           ".30 cal M1919"
@@ -1532,8 +1552,8 @@
         ],
         "smokes": true,
         "zoom": {
-          "max": 3.9473684210526314,
-          "min": 12.5
+          "max": 12.5,
+          "min": 3.9473684210526314
         }
       }
     }
@@ -1562,8 +1582,8 @@
         ],
         "smokes": true,
         "zoom": {
-          "max": 1.875,
-          "min": 3
+          "max": 3,
+          "min": 1.875
         }
       }
     }
@@ -1587,8 +1607,8 @@
     "turrets": {
       "Loader": {
         "zoom": {
-          "max": 1.875,
-          "min": 3
+          "max": 3,
+          "min": 1.875
         },
         "weapons": [
           "7.62mm M240"
@@ -1601,14 +1621,14 @@
         ],
         "smokes": true,
         "zoom": {
-          "max": 3,
-          "min": 10.714285714285714
+          "max": 10.714285714285714,
+          "min": 3
         }
       },
       "Commander": {
         "zoom": {
-          "max": 1.875,
-          "min": 3
+          "max": 3,
+          "min": 1.875
         },
         "weapons": [
           "12.7mm M2"
@@ -1642,8 +1662,8 @@
         ],
         "smokes": true,
         "zoom": {
-          "max": 3.9473684210526314,
-          "min": 12.5
+          "max": 12.5,
+          "min": 3.9473684210526314
         }
       }
     },
@@ -1669,8 +1689,8 @@
     "turrets": {
       "Commander": {
         "zoom": {
-          "max": 1.875,
-          "min": 3.75
+          "max": 3.75,
+          "min": 1.875
         },
         "weapons": [
           "Rocketetet"
@@ -1696,19 +1716,20 @@
     "mass": 33,
     "turrets": {
       "Gunner": {
-        "zoom": {
-          "max": 5,
-          "min": 5
-        },
         "weapons": [
           "76mm M1",
           ".30 cal M1919"
-        ]
+        ],
+        "smokes": false,
+        "zoom": {
+          "max": 5,
+          "min": 5
+        }
       },
       "Commander": {
         "zoom": {
-          "max": 1.875,
-          "min": 3
+          "max": 3,
+          "min": 1.875
         },
         "weapons": [
           "12.7mm M2"
@@ -1716,8 +1737,8 @@
       },
       "Bow Gunner": {
         "zoom": {
-          "max": 1.875,
-          "min": 3
+          "max": 3,
+          "min": 1.875
         },
         "weapons": [
           ".30 cal M1919"
@@ -1749,14 +1770,14 @@
         ],
         "smokes": true,
         "zoom": {
-          "max": 1.875,
-          "min": 3.5714285714285716
+          "max": 3.5714285714285716,
+          "min": 1.875
         }
       },
       "Commander": {
         "zoom": {
-          "max": 1.875,
-          "min": 3
+          "max": 3,
+          "min": 1.875
         },
         "weapons": [
           "7.92mm MG34"
@@ -1764,8 +1785,8 @@
       },
       "Bow Gunner": {
         "zoom": {
-          "max": 1.875,
-          "min": 3
+          "max": 3,
+          "min": 1.875
         },
         "weapons": [
           "7.92mm MG34"
@@ -1791,13 +1812,14 @@
     "mass": 31.6,
     "turrets": {
       "Gunner": {
-        "zoom": {
-          "max": 1.875,
-          "min": 3.5714285714285716
-        },
         "weapons": [
           "85mm D-5S"
-        ]
+        ],
+        "smokes": false,
+        "zoom": {
+          "max": 3.5714285714285716,
+          "min": 1.875
+        }
       }
     }
   },
@@ -1820,8 +1842,8 @@
     "turrets": {
       "Commander": {
         "zoom": {
-          "max": 1.9736842105263157,
-          "min": 15
+          "max": 15,
+          "min": 1.9736842105263157
         },
         "weapons": []
       },
@@ -1833,8 +1855,8 @@
         ],
         "smokes": true,
         "zoom": {
-          "max": 1.9736842105263157,
-          "min": 15
+          "max": 15,
+          "min": 1.9736842105263157
         }
       }
     }
@@ -1863,8 +1885,8 @@
         ],
         "smokes": true,
         "zoom": {
-          "max": 1.875,
-          "min": 3.5714285714285716
+          "max": 3.5714285714285716,
+          "min": 1.875
         }
       }
     }
@@ -1887,19 +1909,20 @@
     "mass": 100,
     "turrets": {
       "Gunner": {
-        "zoom": {
-          "max": 1.875,
-          "min": 3.5714285714285716
-        },
         "weapons": [
           "100mm D-10S",
           "7.62mm PKT"
-        ]
+        ],
+        "smokes": false,
+        "zoom": {
+          "max": 3.5714285714285716,
+          "min": 1.875
+        }
       },
       "Commander": {
         "zoom": {
-          "max": 1.875,
-          "min": 3
+          "max": 3,
+          "min": 1.875
         },
         "weapons": [
           "7.62mm PKT"
@@ -1907,8 +1930,8 @@
       },
       "BowGunner": {
         "zoom": {
-          "max": 1.875,
-          "min": 3
+          "max": 3,
+          "min": 1.875
         },
         "weapons": [
           "7.62mm PKT"
@@ -1949,8 +1972,8 @@
         ],
         "smokes": true,
         "zoom": {
-          "max": 3.9473684210526314,
-          "min": 12.5
+          "max": 12.5,
+          "min": 3.9473684210526314
         }
       }
     }
@@ -2013,8 +2036,8 @@
     "turrets": {
       "Loader": {
         "zoom": {
-          "max": 1.875,
-          "min": 3
+          "max": 3,
+          "min": 1.875
         },
         "weapons": [
           "7.62mm MG3"
@@ -2027,14 +2050,14 @@
         ],
         "smokes": true,
         "zoom": {
-          "max": 3.9473684210526314,
-          "min": 12.5
+          "max": 12.5,
+          "min": 3.9473684210526314
         }
       },
       "Commander": {
         "zoom": {
-          "max": 3.9473684210526314,
-          "min": 18.75
+          "max": 18.75,
+          "min": 3.9473684210526314
         },
         "weapons": []
       }
@@ -2058,13 +2081,14 @@
     "mass": 9.1,
     "turrets": {
       "Gunner": {
-        "zoom": {
-          "max": 1.875,
-          "min": 3.5714285714285716
-        },
         "weapons": [
           "75mm M3"
-        ]
+        ],
+        "smokes": false,
+        "zoom": {
+          "max": 3.5714285714285716,
+          "min": 1.875
+        }
       }
     }
   },
@@ -2086,13 +2110,14 @@
     "mass": 1.2,
     "turrets": {
       "Gunner": {
-        "zoom": {
-          "max": 1.25,
-          "min": 1.875
-        },
         "weapons": [
           "12.7mm M2"
-        ]
+        ],
+        "smokes": false,
+        "zoom": {
+          "max": 1.875,
+          "min": 1.25
+        }
       }
     }
   },
@@ -2115,8 +2140,8 @@
     "turrets": {
       "Commander": {
         "zoom": {
-          "max": 1.9736842105263157,
-          "min": 6.25
+          "max": 6.25,
+          "min": 1.9736842105263157
         },
         "weapons": [
           "Milan 2",
@@ -2130,8 +2155,8 @@
         ],
         "smokes": true,
         "zoom": {
-          "max": 1.9736842105263157,
-          "min": 6.25
+          "max": 6.25,
+          "min": 1.9736842105263157
         }
       }
     }
@@ -2157,16 +2182,17 @@
     },
     "turrets": {
       "Gunner": {
-        "zoom": {
-          "max": 6.25,
-          "min": 6.25
-        },
         "weapons": [
           "30mm 2A42",
           "9M113 Konkurs",
           "7.62mm PKT",
           "9M113M Konkurs"
-        ]
+        ],
+        "smokes": false,
+        "zoom": {
+          "max": 6.25,
+          "min": 6.25
+        }
       }
     },
     "name": "BMD-2",
@@ -2196,8 +2222,8 @@
         ],
         "smokes": true,
         "zoom": {
-          "max": 3,
-          "min": 12.5
+          "max": 12.5,
+          "min": 3
         }
       }
     }
@@ -2221,8 +2247,8 @@
     "turrets": {
       "Commander": {
         "zoom": {
-          "max": 0.9375,
-          "min": 10.714285714285714
+          "max": 10.714285714285714,
+          "min": 0.9375
         },
         "weapons": [
           "7.62mm L37A1"
@@ -2236,8 +2262,8 @@
         ],
         "smokes": true,
         "zoom": {
-          "max": 6.818181818181818,
-          "min": 8.333333333333334
+          "max": 8.333333333333334,
+          "min": 6.818181818181818
         }
       }
     }
@@ -2261,8 +2287,8 @@
     "turrets": {
       "Commander": {
         "zoom": {
-          "max": 0.9375,
-          "min": 6.818181818181818
+          "max": 6.818181818181818,
+          "min": 0.9375
         },
         "weapons": [
           "12.7mm M2"
@@ -2300,8 +2326,8 @@
     "turrets": {
       "Scout Commander": {
         "zoom": {
-          "max": 5,
-          "min": 9.375
+          "max": 9.375,
+          "min": 5
         },
         "weapons": [
           "9M113 Konkurs"
@@ -2328,8 +2354,8 @@
     "turrets": {
       "Commander": {
         "zoom": {
-          "max": 3,
-          "min": 12.5
+          "max": 12.5,
+          "min": 3
         },
         "weapons": [
           "14.5mm KPVT",
@@ -2344,8 +2370,8 @@
         ],
         "smokes": true,
         "zoom": {
-          "max": 3,
-          "min": 12.5
+          "max": 12.5,
+          "min": 3
         }
       }
     }
@@ -2368,13 +2394,14 @@
     "mass": 8,
     "turrets": {
       "Gunner": {
-        "zoom": {
-          "max": 1.25,
-          "min": 1.875
-        },
         "weapons": [
           "12.7mm M2"
-        ]
+        ],
+        "smokes": false,
+        "zoom": {
+          "max": 1.875,
+          "min": 1.25
+        }
       }
     }
   },
@@ -2397,8 +2424,8 @@
     "turrets": {
       "Commander": {
         "zoom": {
-          "max": 0.9375,
-          "min": 5
+          "max": 5,
+          "min": 0.9375
         },
         "weapons": [
           "12.7mm QJC88A"
@@ -2411,8 +2438,8 @@
         ],
         "smokes": true,
         "zoom": {
-          "max": 6.25,
-          "min": 10.714285714285714
+          "max": 10.714285714285714,
+          "min": 6.25
         }
       }
     }
@@ -2436,8 +2463,8 @@
     "turrets": {
       "Bow Gunner": {
         "zoom": {
-          "max": 1.875,
-          "min": 3
+          "max": 3,
+          "min": 1.875
         },
         "weapons": [
           "7.92mm MG34"
@@ -2450,8 +2477,8 @@
         ],
         "smokes": true,
         "zoom": {
-          "max": 1.875,
-          "min": 3.5714285714285716
+          "max": 3.5714285714285716,
+          "min": 1.875
         }
       }
     }
@@ -2475,20 +2502,21 @@
     "turrets": {
       "Scout Commander": {
         "zoom": {
-          "max": 1.875,
-          "min": 3
+          "max": 3,
+          "min": 1.875
         },
         "weapons": []
       },
       "Gunner": {
-        "zoom": {
-          "max": 5,
-          "min": 5
-        },
         "weapons": [
           "14.5mm KPVT",
           "7.62mm PKT"
-        ]
+        ],
+        "smokes": false,
+        "zoom": {
+          "max": 5,
+          "min": 5
+        }
       }
     }
   },
@@ -2510,13 +2538,14 @@
     "mass": 24,
     "turrets": {
       "Gunner": {
-        "zoom": {
-          "max": 1.875,
-          "min": 3.75
-        },
         "weapons": [
           "227mm M269"
-        ]
+        ],
+        "smokes": false,
+        "zoom": {
+          "max": 3.75,
+          "min": 1.875
+        }
       }
     }
   },
@@ -2539,21 +2568,22 @@
     "turrets": {
       "Loader": {
         "zoom": {
-          "max": 1.875,
-          "min": 3
+          "max": 3,
+          "min": 1.875
         },
         "weapons": [
           "Grenade Mortar"
         ]
       },
       "Gunner": {
+        "weapons": [
+          "128 mm PaK44"
+        ],
+        "smokes": false,
         "zoom": {
           "max": 10.714285714285714,
           "min": 10.714285714285714
-        },
-        "weapons": [
-          "128 mm PaK44"
-        ]
+        }
       },
       "Commander": {
         "zoom": {
@@ -2564,8 +2594,8 @@
       },
       "Bow Gunner": {
         "zoom": {
-          "max": 1.875,
-          "min": 3
+          "max": 3,
+          "min": 1.875
         },
         "weapons": [
           "7.92mm MG34"
@@ -2592,8 +2622,8 @@
     "turrets": {
       "Commander": {
         "zoom": {
-          "max": 1.25,
-          "min": 1.875
+          "max": 1.875,
+          "min": 1.25
         },
         "weapons": [
           "12.7mm M2"
@@ -2619,13 +2649,14 @@
     "mass": 3.3,
     "turrets": {
       "Gunner": {
+        "weapons": [
+          "57mm Ch-51M"
+        ],
+        "smokes": false,
         "zoom": {
           "max": 5.769230769230769,
           "min": 5.769230769230769
-        },
-        "weapons": [
-          "57mm Ch-51M"
-        ]
+        }
       }
     }
   },
@@ -2648,8 +2679,8 @@
     "turrets": {
       "Commander": {
         "zoom": {
-          "max": 1.875,
-          "min": 3
+          "max": 3,
+          "min": 1.875
         },
         "weapons": [
           "7.62mm M240"
@@ -2662,8 +2693,8 @@
         ],
         "smokes": true,
         "zoom": {
-          "max": 3,
-          "min": 12.5
+          "max": 12.5,
+          "min": 3
         }
       }
     }
@@ -2690,8 +2721,8 @@
     "turrets": {
       "Commander": {
         "zoom": {
-          "max": 3.9473684210526314,
-          "min": 12.5
+          "max": 12.5,
+          "min": 3.9473684210526314
         },
         "weapons": [
           "7.62mm PKT"
@@ -2704,8 +2735,8 @@
         ],
         "smokes": true,
         "zoom": {
-          "max": 3.9473684210526314,
-          "min": 12.5
+          "max": 12.5,
+          "min": 3.9473684210526314
         }
       }
     },
@@ -2731,21 +2762,22 @@
     "turrets": {
       "Commander": {
         "zoom": {
-          "max": 1.875,
-          "min": 3
+          "max": 3,
+          "min": 1.875
         },
         "weapons": [
           "12.7mm NSVT"
         ]
       },
       "Gunner": {
+        "weapons": [
+          "9M37M"
+        ],
+        "smokes": false,
         "zoom": {
           "max": 8.333333333333334,
           "min": 8.333333333333334
-        },
-        "weapons": [
-          "9M37M"
-        ]
+        }
       }
     }
   },
@@ -2768,27 +2800,28 @@
     "turrets": {
       "Loader": {
         "zoom": {
-          "max": 1.875,
-          "min": 3
+          "max": 3,
+          "min": 1.875
         },
         "weapons": [
           "7.62mm DT-28"
         ]
       },
       "Gunner": {
-        "zoom": {
-          "max": 1.875,
-          "min": 3.5714285714285716
-        },
         "weapons": [
           "152mm M-10T",
           "7.62mm DT-28"
-        ]
+        ],
+        "smokes": false,
+        "zoom": {
+          "max": 3.5714285714285716,
+          "min": 1.875
+        }
       },
       "Bow Gunner": {
         "zoom": {
-          "max": 1.875,
-          "min": 3
+          "max": 3,
+          "min": 1.875
         },
         "weapons": [
           "7.62mm DT-28"
@@ -2814,18 +2847,19 @@
     "mass": 14.9,
     "turrets": {
       "Gunner": {
-        "zoom": {
-          "max": 1.875,
-          "min": 3.5714285714285716
-        },
         "weapons": [
           "M2 Howitzer"
-        ]
+        ],
+        "smokes": false,
+        "zoom": {
+          "max": 3.5714285714285716,
+          "min": 1.875
+        }
       },
       "Commander": {
         "zoom": {
-          "max": 1.25,
-          "min": 1.875
+          "max": 1.875,
+          "min": 1.25
         },
         "weapons": [
           "12.7mm M2"
@@ -2833,8 +2867,8 @@
       },
       "MGGunner": {
         "zoom": {
-          "max": 1.25,
-          "min": 1.875
+          "max": 1.875,
+          "min": 1.25
         },
         "weapons": [
           "12.7mm M2"
@@ -2861,8 +2895,8 @@
     "turrets": {
       "Commander": {
         "zoom": {
-          "max": 3,
-          "min": 12.5
+          "max": 12.5,
+          "min": 3
         },
         "weapons": []
       },
@@ -2873,8 +2907,8 @@
         ],
         "smokes": true,
         "zoom": {
-          "max": 3,
-          "min": 12.5
+          "max": 12.5,
+          "min": 3
         }
       }
     }
@@ -2903,8 +2937,8 @@
         ],
         "smokes": true,
         "zoom": {
-          "max": 1.530612244897959,
-          "min": 10.714285714285714
+          "max": 10.714285714285714,
+          "min": 1.530612244897959
         }
       }
     }
@@ -2928,8 +2962,8 @@
     "turrets": {
       "Commander": {
         "zoom": {
-          "max": 1.9736842105263157,
-          "min": 8.333333333333334
+          "max": 8.333333333333334,
+          "min": 1.9736842105263157
         },
         "weapons": []
       },
@@ -2942,8 +2976,8 @@
         ],
         "smokes": true,
         "zoom": {
-          "max": 4.166666666666667,
-          "min": 12.5
+          "max": 12.5,
+          "min": 4.166666666666667
         }
       }
     }
@@ -2969,14 +3003,15 @@
     },
     "turrets": {
       "Gunner": {
-        "zoom": {
-          "max": 8.333333333333334,
-          "min": 15
-        },
         "weapons": [
           "120mm Rh120 L/44 Dupe",
           "120mm Rh120 L/44"
-        ]
+        ],
+        "smokes": false,
+        "zoom": {
+          "max": 15,
+          "min": 8.333333333333334
+        }
       }
     },
     "name": "VT1-2",
@@ -3001,21 +3036,22 @@
     "turrets": {
       "Commander": {
         "zoom": {
-          "max": 1.875,
-          "min": 3
+          "max": 3,
+          "min": 1.875
         },
         "weapons": [
           "7.92mm MG34"
         ]
       },
       "Gunner": {
-        "zoom": {
-          "max": 1.875,
-          "min": 3.5714285714285716
-        },
         "weapons": [
           "150 mm Wgr.41 Spr rocket"
-        ]
+        ],
+        "smokes": false,
+        "zoom": {
+          "max": 3.5714285714285716,
+          "min": 1.875
+        }
       }
     }
   },
@@ -3038,8 +3074,8 @@
     "turrets": {
       "Commander": {
         "zoom": {
-          "max": 2.952755905511811,
-          "min": 12.711864406779661
+          "max": 12.711864406779661,
+          "min": 2.952755905511811
         },
         "weapons": [
           "7.62mm NATTER",
@@ -3053,8 +3089,8 @@
         ],
         "smokes": true,
         "zoom": {
-          "max": 2.4038461538461537,
-          "min": 18.75
+          "max": 18.75,
+          "min": 2.4038461538461537
         }
       }
     }
@@ -3077,14 +3113,15 @@
     "mass": 60.4,
     "turrets": {
       "Gunner": {
-        "zoom": {
-          "max": 8.333333333333334,
-          "min": 8.333333333333334
-        },
         "weapons": [
           "130mm M-65",
           "14.5mm KPVT"
-        ]
+        ],
+        "smokes": false,
+        "zoom": {
+          "max": 8.333333333333334,
+          "min": 8.333333333333334
+        }
       }
     }
   },
@@ -3138,21 +3175,22 @@
     "turrets": {
       "Loader": {
         "zoom": {
-          "max": 1.875,
-          "min": 3
+          "max": 3,
+          "min": 1.875
         },
         "weapons": [
           "7.92mm MG34"
         ]
       },
       "Gunner": {
+        "weapons": [
+          "7.5 cm KwK 40 L/48"
+        ],
+        "smokes": false,
         "zoom": {
           "max": 5,
           "min": 5
-        },
-        "weapons": [
-          "7.5 cm KwK 40 L/48"
-        ]
+        }
       }
     }
   },
@@ -3175,8 +3213,8 @@
     "turrets": {
       "Loader": {
         "zoom": {
-          "max": 1.875,
-          "min": 3
+          "max": 3,
+          "min": 1.875
         },
         "weapons": [
           "60 mm Soltam Mortar"
@@ -3190,14 +3228,14 @@
         ],
         "smokes": true,
         "zoom": {
-          "max": 3.9473684210526314,
-          "min": 12.5
+          "max": 12.5,
+          "min": 3.9473684210526314
         }
       },
       "Commander": {
         "zoom": {
-          "max": 3.9473684210526314,
-          "min": 15
+          "max": 15,
+          "min": 3.9473684210526314
         },
         "weapons": [
           "7.62 mm FN MAG 60-40"
@@ -3224,21 +3262,22 @@
     "turrets": {
       "Commander": {
         "zoom": {
-          "max": 1.875,
-          "min": 3
+          "max": 3,
+          "min": 1.875
         },
         "weapons": [
           "12.7mm M2"
         ]
       },
       "Gunner": {
+        "weapons": [
+          "155mm M185"
+        ],
+        "smokes": false,
         "zoom": {
           "max": 3.9473684210526314,
           "min": 3.9473684210526314
-        },
-        "weapons": [
-          "155mm M185"
-        ]
+        }
       }
     }
   },
@@ -3261,34 +3300,35 @@
     "turrets": {
       "Loader": {
         "zoom": {
-          "max": 1.875,
-          "min": 3
+          "max": 3,
+          "min": 1.875
         },
         "weapons": [
           "12.7mm M2"
         ]
       },
       "Gunner": {
-        "zoom": {
-          "max": 3.9473684210526314,
-          "min": 8.333333333333334
-        },
         "weapons": [
           "12.7mm M2",
           "105mm T5E1"
-        ]
+        ],
+        "smokes": false,
+        "zoom": {
+          "max": 8.333333333333334,
+          "min": 3.9473684210526314
+        }
       },
       "Commander": {
         "zoom": {
-          "max": 1.875,
-          "min": 3
+          "max": 3,
+          "min": 1.875
         },
         "weapons": []
       },
       "BowGunner": {
         "zoom": {
-          "max": 1.875,
-          "min": 3
+          "max": 3,
+          "min": 1.875
         },
         "weapons": [
           ".30 cal M1919"
@@ -3315,22 +3355,23 @@
     "turrets": {
       "Bow Gunner": {
         "zoom": {
-          "max": 1.875,
-          "min": 3
+          "max": 3,
+          "min": 1.875
         },
         "weapons": [
           "7.62mm DT-28"
         ]
       },
       "Gunner": {
-        "zoom": {
-          "max": 3.9473684210526314,
-          "min": 3.9473684210526314
-        },
         "weapons": [
           "85mm ZIS-S-53",
           "7.62mm DT-28"
-        ]
+        ],
+        "smokes": false,
+        "zoom": {
+          "max": 3.9473684210526314,
+          "min": 3.9473684210526314
+        }
       }
     }
   },
@@ -3353,8 +3394,8 @@
     "turrets": {
       "Commander": {
         "zoom": {
-          "max": 3,
-          "min": 10.714285714285714
+          "max": 10.714285714285714,
+          "min": 3
         },
         "weapons": [
           "12.7mm QJC88A"
@@ -3367,8 +3408,8 @@
         ],
         "smokes": true,
         "zoom": {
-          "max": 6.25,
-          "min": 10.714285714285714
+          "max": 10.714285714285714,
+          "min": 6.25
         }
       }
     }
@@ -3395,8 +3436,8 @@
     "turrets": {
       "Commander": {
         "zoom": {
-          "max": 1.875,
-          "min": 3
+          "max": 3,
+          "min": 1.875
         },
         "weapons": [
           "7.62mm PKT"
@@ -3417,8 +3458,8 @@
       },
       "Passenger": {
         "zoom": {
-          "max": 1.875,
-          "min": 3
+          "max": 3,
+          "min": 1.875
         },
         "weapons": [
           "7.62mm PKT"
@@ -3447,22 +3488,23 @@
     "turrets": {
       "Commander": {
         "zoom": {
-          "max": 1.875,
-          "min": 3
+          "max": 3,
+          "min": 1.875
         },
         "weapons": [
           "12.7mm DSHK"
         ]
       },
       "Gunner": {
-        "zoom": {
-          "max": 1.875,
-          "min": 3.5714285714285716
-        },
         "weapons": [
           "152mm ML-20S",
           "122mm A-19C"
-        ]
+        ],
+        "smokes": false,
+        "zoom": {
+          "max": 3.5714285714285716,
+          "min": 1.875
+        }
       }
     }
   },
@@ -3485,21 +3527,22 @@
     "turrets": {
       "Commander": {
         "zoom": {
-          "max": 1.875,
-          "min": 3
+          "max": 3,
+          "min": 1.875
         },
         "weapons": [
           "12.7mm M2"
         ]
       },
       "Gunner": {
+        "weapons": [
+          "90mm M3"
+        ],
+        "smokes": false,
         "zoom": {
           "max": 5,
           "min": 5
-        },
-        "weapons": [
-          "90mm M3"
-        ]
+        }
       }
     }
   },
@@ -3522,21 +3565,22 @@
     "turrets": {
       "Commander": {
         "zoom": {
-          "max": 1.875,
-          "min": 3
+          "max": 3,
+          "min": 1.875
         },
         "weapons": [
           "12.7mm DSHK"
         ]
       },
       "Gunner": {
+        "weapons": [
+          "122mm D-25T"
+        ],
+        "smokes": false,
         "zoom": {
           "max": 3.9473684210526314,
           "min": 3.9473684210526314
-        },
-        "weapons": [
-          "122mm D-25T"
-        ]
+        }
       }
     }
   },
@@ -3559,27 +3603,28 @@
     "turrets": {
       "Loader": {
         "zoom": {
-          "max": 1.875,
-          "min": 3
+          "max": 3,
+          "min": 1.875
         },
         "weapons": [
           "7.62mm DT-28"
         ]
       },
       "Gunner": {
-        "zoom": {
-          "max": 1.875,
-          "min": 3.5714285714285716
-        },
         "weapons": [
           "107mm ZIS-6",
           "7.62mm DT-28"
-        ]
+        ],
+        "smokes": false,
+        "zoom": {
+          "max": 3.5714285714285716,
+          "min": 1.875
+        }
       },
       "Bow Gunner": {
         "zoom": {
-          "max": 1.875,
-          "min": 3
+          "max": 3,
+          "min": 1.875
         },
         "weapons": [
           "7.62mm DT-28"
@@ -3624,20 +3669,21 @@
     "turrets": {
       "Commander": {
         "zoom": {
-          "max": 1.875,
-          "min": 3
+          "max": 3,
+          "min": 1.875
         },
         "weapons": []
       },
       "Gunner": {
-        "zoom": {
-          "max": 5,
-          "min": 6.25
-        },
         "weapons": [
           "183mm L4",
           "7.62mm L3A1"
-        ]
+        ],
+        "smokes": false,
+        "zoom": {
+          "max": 6.25,
+          "min": 5
+        }
       }
     }
   },
@@ -3659,14 +3705,15 @@
     "mass": 10.3,
     "turrets": {
       "Gunner": {
-        "zoom": {
-          "max": 4.166666666666667,
-          "min": 4.166666666666667
-        },
         "weapons": [
           "14.5mm KPVT",
           "7.62mm PKT"
-        ]
+        ],
+        "smokes": false,
+        "zoom": {
+          "max": 4.166666666666667,
+          "min": 4.166666666666667
+        }
       }
     }
   },
@@ -3700,8 +3747,8 @@
         ],
         "smokes": true,
         "zoom": {
-          "max": 1.875,
-          "min": 3.75
+          "max": 3.75,
+          "min": 1.875
         }
       }
     }
@@ -3728,8 +3775,8 @@
     "turrets": {
       "Commander": {
         "zoom": {
-          "max": 3,
-          "min": 10.714285714285714
+          "max": 10.714285714285714,
+          "min": 3
         },
         "weapons": [
           "12.7mm M2"
@@ -3742,8 +3789,8 @@
         ],
         "smokes": true,
         "zoom": {
-          "max": 0.9375,
-          "min": 10.714285714285714
+          "max": 10.714285714285714,
+          "min": 0.9375
         }
       }
     },
@@ -3769,28 +3816,29 @@
     "turrets": {
       "Loader": {
         "zoom": {
-          "max": 1.875,
-          "min": 3
+          "max": 3,
+          "min": 1.875
         },
         "weapons": [
           "12.7mm Type 54"
         ]
       },
       "Gunner": {
-        "zoom": {
-          "max": 3.5714285714285716,
-          "min": 6.818181818181818
-        },
         "weapons": [
           "120mm Cannon Type 71",
           "7.62mm Type 59",
           "302 Anti-tank Missile"
-        ]
+        ],
+        "smokes": false,
+        "zoom": {
+          "max": 6.818181818181818,
+          "min": 3.5714285714285716
+        }
       },
       "Commander": {
         "zoom": {
-          "max": 0.9375,
-          "min": 5
+          "max": 5,
+          "min": 0.9375
         },
         "weapons": []
       }
@@ -3829,8 +3877,8 @@
         ],
         "smokes": true,
         "zoom": {
-          "max": 3.9473684210526314,
-          "min": 9.375
+          "max": 9.375,
+          "min": 3.9473684210526314
         }
       }
     }
@@ -3853,13 +3901,14 @@
     "mass": 3.8,
     "turrets": {
       "Gunner": {
-        "zoom": {
-          "max": 1.875,
-          "min": 3
-        },
         "weapons": [
           "12.7mm DSHK"
-        ]
+        ],
+        "smokes": false,
+        "zoom": {
+          "max": 3,
+          "min": 1.875
+        }
       }
     }
   },
@@ -3882,22 +3931,23 @@
     "turrets": {
       "Bow Gunner": {
         "zoom": {
-          "max": 1.875,
-          "min": 3.5714285714285716
+          "max": 3.5714285714285716,
+          "min": 1.875
         },
         "weapons": [
           "7.62mm DT-28"
         ]
       },
       "Gunner": {
-        "zoom": {
-          "max": 1.875,
-          "min": 3.5714285714285716
-        },
         "weapons": [
           "57mm ZiS-4",
           "7.62mm DT-28"
-        ]
+        ],
+        "smokes": false,
+        "zoom": {
+          "max": 3.5714285714285716,
+          "min": 1.875
+        }
       }
     }
   },
@@ -3920,8 +3970,8 @@
     "turrets": {
       "Commander": {
         "zoom": {
-          "max": 2.5,
-          "min": 10.714285714285714
+          "max": 10.714285714285714,
+          "min": 2.5
         },
         "weapons": [
           "7.62mm A-A-F1N"
@@ -3934,8 +3984,8 @@
         ],
         "smokes": true,
         "zoom": {
-          "max": 3.409090909090909,
-          "min": 10.714285714285714
+          "max": 10.714285714285714,
+          "min": 3.409090909090909
         }
       }
     }
@@ -3959,21 +4009,22 @@
     "turrets": {
       "Commander": {
         "zoom": {
-          "max": 1.875,
-          "min": 3
+          "max": 3,
+          "min": 1.875
         },
         "weapons": [
           "12.7mm M2"
         ]
       },
       "Gunner": {
-        "zoom": {
-          "max": 1.875,
-          "min": 3.5714285714285716
-        },
         "weapons": [
           "76mm M7"
-        ]
+        ],
+        "smokes": false,
+        "zoom": {
+          "max": 3.5714285714285716,
+          "min": 1.875
+        }
       }
     }
   },
@@ -3996,8 +4047,8 @@
     "turrets": {
       "Loader": {
         "zoom": {
-          "max": 1.875,
-          "min": 3
+          "max": 3,
+          "min": 1.875
         },
         "weapons": [
           "7.62mm PKT"
@@ -4010,14 +4061,14 @@
         ],
         "smokes": true,
         "zoom": {
-          "max": 1.875,
-          "min": 3.5714285714285716
+          "max": 3.5714285714285716,
+          "min": 1.875
         }
       },
       "Commander": {
         "zoom": {
-          "max": 1.875,
-          "min": 3
+          "max": 3,
+          "min": 1.875
         },
         "weapons": [
           "12.7mm DSHK"
@@ -4025,8 +4076,8 @@
       },
       "Bow Gunner": {
         "zoom": {
-          "max": 1.875,
-          "min": 3
+          "max": 3,
+          "min": 1.875
         },
         "weapons": [
           "7.62mm PKT"
@@ -4053,27 +4104,28 @@
     "turrets": {
       "Commander": {
         "zoom": {
-          "max": 1.875,
-          "min": 3
+          "max": 3,
+          "min": 1.875
         },
         "weapons": [
           "12.7mm DSHK"
         ]
       },
       "Gunner": {
-        "zoom": {
-          "max": 3.9473684210526314,
-          "min": 3.9473684210526314
-        },
         "weapons": [
           "85mm ZIS-S-53",
           "7.62mm DT-28"
-        ]
+        ],
+        "smokes": false,
+        "zoom": {
+          "max": 3.9473684210526314,
+          "min": 3.9473684210526314
+        }
       },
       "Driver": {
         "zoom": {
-          "max": 1.875,
-          "min": 3
+          "max": 3,
+          "min": 1.875
         },
         "weapons": [
           "7.62mm DT-28"
@@ -4105,8 +4157,8 @@
         ],
         "smokes": true,
         "zoom": {
-          "max": 1.9736842105263157,
-          "min": 15
+          "max": 15,
+          "min": 1.9736842105263157
         }
       }
     }
@@ -4130,8 +4182,8 @@
     "turrets": {
       "Loader": {
         "zoom": {
-          "max": 3,
-          "min": 12.5
+          "max": 12.5,
+          "min": 3
         },
         "weapons": [
           "12.7mm M2"
@@ -4144,14 +4196,14 @@
         ],
         "smokes": true,
         "zoom": {
-          "max": 3.9473684210526314,
-          "min": 10.714285714285714
+          "max": 10.714285714285714,
+          "min": 3.9473684210526314
         }
       },
       "Commander": {
         "zoom": {
-          "max": 3,
-          "min": 10.714285714285714
+          "max": 10.714285714285714,
+          "min": 3
         },
         "weapons": []
       }
@@ -4176,34 +4228,35 @@
     "turrets": {
       "Loader": {
         "zoom": {
-          "max": 1.875,
-          "min": 3
+          "max": 3,
+          "min": 1.875
         },
         "weapons": [
           "Grenade Mortar"
         ]
       },
       "Gunner": {
-        "zoom": {
-          "max": 3,
-          "min": 6.25
-        },
         "weapons": [
           "77mm OQF Mk.II",
           "7.92 mm BESA"
-        ]
+        ],
+        "smokes": false,
+        "zoom": {
+          "max": 6.25,
+          "min": 3
+        }
       },
       "Commander": {
         "zoom": {
-          "max": 1.875,
-          "min": 3
+          "max": 3,
+          "min": 1.875
         },
         "weapons": []
       },
       "Bow Gunner": {
         "zoom": {
-          "max": 1.875,
-          "min": 3
+          "max": 3,
+          "min": 1.875
         },
         "weapons": [
           "7.92 mm BESA"
@@ -4230,8 +4283,8 @@
     "turrets": {
       "Commander": {
         "zoom": {
-          "max": 2.6785714285714284,
-          "min": 10.714285714285714
+          "max": 10.714285714285714,
+          "min": 2.6785714285714284
         },
         "weapons": []
       },
@@ -4269,8 +4322,8 @@
     "turrets": {
       "Commander": {
         "zoom": {
-          "max": 3.9473684210526314,
-          "min": 18.75
+          "max": 18.75,
+          "min": 3.9473684210526314
         },
         "weapons": [
           "9M120 Ataka"
@@ -4312,8 +4365,8 @@
     "turrets": {
       "Commander": {
         "zoom": {
-          "max": 0.9375,
-          "min": 8.333333333333334
+          "max": 8.333333333333334,
+          "min": 0.9375
         },
         "weapons": [
           "12.7mm NSVT"
@@ -4326,8 +4379,8 @@
         ],
         "smokes": true,
         "zoom": {
-          "max": 2.6785714285714284,
-          "min": 12.5
+          "max": 12.5,
+          "min": 2.6785714285714284
         }
       }
     }
@@ -4350,19 +4403,20 @@
     "mass": 37.8,
     "turrets": {
       "Gunner": {
-        "zoom": {
-          "max": 5,
-          "min": 5
-        },
         "weapons": [
           "75mm M3",
           ".30 cal M1919"
-        ]
+        ],
+        "smokes": false,
+        "zoom": {
+          "max": 5,
+          "min": 5
+        }
       },
       "Commander": {
         "zoom": {
-          "max": 1.875,
-          "min": 3
+          "max": 3,
+          "min": 1.875
         },
         "weapons": [
           "12.7mm M2"
@@ -4370,8 +4424,8 @@
       },
       "Bow Gunner": {
         "zoom": {
-          "max": 1.875,
-          "min": 3
+          "max": 3,
+          "min": 1.875
         },
         "weapons": [
           ".30 cal M1919"
@@ -4401,8 +4455,8 @@
     "turrets": {
       "Driver": {
         "zoom": {
-          "max": 0.9375,
-          "min": 3
+          "max": 3,
+          "min": 0.9375
         },
         "weapons": []
       },
@@ -4413,14 +4467,14 @@
         ],
         "smokes": true,
         "zoom": {
-          "max": 6.818181818181818,
-          "min": 15
+          "max": 15,
+          "min": 6.818181818181818
         }
       },
       "Commander": {
         "zoom": {
-          "max": 1.9736842105263157,
-          "min": 8.333333333333334
+          "max": 8.333333333333334,
+          "min": 1.9736842105263157
         },
         "weapons": [
           "20mm Rh202"
@@ -4449,8 +4503,8 @@
     "turrets": {
       "Loader": {
         "zoom": {
-          "max": 1.875,
-          "min": 3
+          "max": 3,
+          "min": 1.875
         },
         "weapons": [
           "7.62mm MG3"
@@ -4463,14 +4517,14 @@
         ],
         "smokes": true,
         "zoom": {
-          "max": 3.9473684210526314,
-          "min": 12.5
+          "max": 12.5,
+          "min": 3.9473684210526314
         }
       },
       "Commander": {
         "zoom": {
-          "max": 1.9736842105263157,
-          "min": 8.333333333333334
+          "max": 8.333333333333334,
+          "min": 1.9736842105263157
         },
         "weapons": [
           "7.62mm MG3"
@@ -4501,8 +4555,8 @@
         ],
         "smokes": true,
         "zoom": {
-          "max": 3.9473684210526314,
-          "min": 12.5
+          "max": 12.5,
+          "min": 3.9473684210526314
         }
       }
     }
@@ -4526,22 +4580,23 @@
     "turrets": {
       "Commander": {
         "zoom": {
-          "max": 1.875,
-          "min": 3
+          "max": 3,
+          "min": 1.875
         },
         "weapons": [
           "12.7mm M2"
         ]
       },
       "Gunner": {
-        "zoom": {
-          "max": 1.875,
-          "min": 3.5714285714285716
-        },
         "weapons": [
           "37mm M6",
           ".30 cal M1919"
-        ]
+        ],
+        "smokes": false,
+        "zoom": {
+          "max": 3.5714285714285716,
+          "min": 1.875
+        }
       }
     }
   },
@@ -4582,8 +4637,8 @@
     "turrets": {
       "Commander": {
         "zoom": {
-          "max": 0.9375,
-          "min": 7.978723404255319
+          "max": 7.978723404255319,
+          "min": 0.9375
         },
         "weapons": [
           "Milan 2",
@@ -4597,8 +4652,8 @@
         ],
         "smokes": true,
         "zoom": {
-          "max": 0.9375,
-          "min": 7.978723404255319
+          "max": 7.978723404255319,
+          "min": 0.9375
         }
       }
     }
@@ -4661,8 +4716,8 @@
     "turrets": {
       "Commander": {
         "zoom": {
-          "max": 3,
-          "min": 10.714285714285714
+          "max": 10.714285714285714,
+          "min": 3
         },
         "weapons": []
       },
@@ -4675,8 +4730,8 @@
         ],
         "smokes": true,
         "zoom": {
-          "max": 4.166666666666667,
-          "min": 12.5
+          "max": 12.5,
+          "min": 4.166666666666667
         }
       }
     }
@@ -4700,27 +4755,28 @@
     "turrets": {
       "Loader": {
         "zoom": {
-          "max": 1.875,
-          "min": 3
+          "max": 3,
+          "min": 1.875
         },
         "weapons": [
           "12.7mm DSHK"
         ]
       },
       "Gunner": {
-        "zoom": {
-          "max": 3.9473684210526314,
-          "min": 3.9473684210526314
-        },
         "weapons": [
           "100mm D-10T",
           "7.62mm SGMT"
-        ]
+        ],
+        "smokes": false,
+        "zoom": {
+          "max": 3.9473684210526314,
+          "min": 3.9473684210526314
+        }
       },
       "Driver": {
         "zoom": {
-          "max": 1.875,
-          "min": 3
+          "max": 3,
+          "min": 1.875
         },
         "weapons": [
           "7.62mm DT-28"
@@ -4747,8 +4803,8 @@
     "turrets": {
       "Commander": {
         "zoom": {
-          "max": 1.875,
-          "min": 3
+          "max": 3,
+          "min": 1.875
         },
         "weapons": [
           "12.7mm M2"
@@ -4761,8 +4817,8 @@
         ],
         "smokes": true,
         "zoom": {
-          "max": 3,
-          "min": 10.714285714285714
+          "max": 10.714285714285714,
+          "min": 3
         }
       }
     }
@@ -4785,15 +4841,16 @@
     "mass": 25,
     "turrets": {
       "Gunner": {
-        "zoom": {
-          "max": 6.25,
-          "min": 12.5
-        },
         "weapons": [
           "MIM146 Launcher",
           "25mm M242AA Bushmaster",
           "12.7mm M3P"
-        ]
+        ],
+        "smokes": false,
+        "zoom": {
+          "max": 12.5,
+          "min": 6.25
+        }
       }
     }
   },
@@ -4816,19 +4873,20 @@
     "turrets": {
       "Commander": {
         "zoom": {
-          "max": 3.9473684210526314,
-          "min": 12.5
+          "max": 12.5,
+          "min": 3.9473684210526314
         },
         "weapons": []
       },
       "Gunner": {
-        "zoom": {
-          "max": 3.9473684210526314,
-          "min": 12.5
-        },
         "weapons": [
           "125mm 2A46M-5"
-        ]
+        ],
+        "smokes": false,
+        "zoom": {
+          "max": 12.5,
+          "min": 3.9473684210526314
+        }
       }
     }
   },
@@ -4850,19 +4908,20 @@
     "mass": 44.3,
     "turrets": {
       "Gunner": {
-        "zoom": {
-          "max": 2.5,
-          "min": 5
-        },
         "weapons": [
           "75 mm KwK42",
           "7.92mm MG34"
-        ]
+        ],
+        "smokes": false,
+        "zoom": {
+          "max": 5,
+          "min": 2.5
+        }
       },
       "Commander": {
         "zoom": {
-          "max": 1.875,
-          "min": 3
+          "max": 3,
+          "min": 1.875
         },
         "weapons": [
           "7.92mm MG34"
@@ -4870,8 +4929,8 @@
       },
       "Bow Gunner": {
         "zoom": {
-          "max": 1.875,
-          "min": 3
+          "max": 3,
+          "min": 1.875
         },
         "weapons": [
           "7.92mm MG34"
@@ -4912,8 +4971,8 @@
         ],
         "smokes": true,
         "zoom": {
-          "max": 3.9473684210526314,
-          "min": 9.375
+          "max": 9.375,
+          "min": 3.9473684210526314
         }
       }
     }
@@ -4937,8 +4996,8 @@
     "turrets": {
       "Commander": {
         "zoom": {
-          "max": 3,
-          "min": 10.714285714285714
+          "max": 10.714285714285714,
+          "min": 3
         },
         "weapons": [
           "7.62mm M240",
@@ -4948,13 +5007,14 @@
         ]
       },
       "Gunner": {
-        "zoom": {
-          "max": 4.166666666666667,
-          "min": 10.714285714285714
-        },
         "weapons": [
           "BGM-71F TOW 2A/B"
-        ]
+        ],
+        "smokes": false,
+        "zoom": {
+          "max": 10.714285714285714,
+          "min": 4.166666666666667
+        }
       }
     }
   },
@@ -5014,8 +5074,8 @@
         ],
         "smokes": true,
         "zoom": {
-          "max": 4.166666666666667,
-          "min": 12.5
+          "max": 12.5,
+          "min": 4.166666666666667
         }
       }
     }
@@ -5045,8 +5105,8 @@
         ],
         "smokes": true,
         "zoom": {
-          "max": 1.9736842105263157,
-          "min": 15
+          "max": 15,
+          "min": 1.9736842105263157
         }
       }
     }
@@ -5070,22 +5130,23 @@
     "turrets": {
       "Loader": {
         "zoom": {
-          "max": 1.875,
-          "min": 3
+          "max": 3,
+          "min": 1.875
         },
         "weapons": [
           "12.7mm DSHK"
         ]
       },
       "Gunner": {
-        "zoom": {
-          "max": 1.875,
-          "min": 3.5714285714285716
-        },
         "weapons": [
           "122mm D-30T",
           "7.62mm DT-28"
-        ]
+        ],
+        "smokes": false,
+        "zoom": {
+          "max": 3.5714285714285716,
+          "min": 1.875
+        }
       }
     }
   },
@@ -5108,8 +5169,8 @@
     "turrets": {
       "Loader": {
         "zoom": {
-          "max": 1.875,
-          "min": 3
+          "max": 3,
+          "min": 1.875
         },
         "weapons": [
           "7.62mm M240"
@@ -5123,14 +5184,14 @@
         ],
         "smokes": true,
         "zoom": {
-          "max": 3,
-          "min": 15
+          "max": 15,
+          "min": 3
         }
       },
       "Commander": {
         "zoom": {
-          "max": 3,
-          "min": 12.5
+          "max": 12.5,
+          "min": 3
         },
         "weapons": [
           "12.7mm M2"
@@ -5157,8 +5218,8 @@
     "turrets": {
       "Driver": {
         "zoom": {
-          "max": 1.875,
-          "min": 3
+          "max": 3,
+          "min": 1.875
         },
         "weapons": [
           "7.62mm DT-28"
@@ -5188,8 +5249,8 @@
     "turrets": {
       "Commander": {
         "zoom": {
-          "max": 3.9473684210526314,
-          "min": 18.75
+          "max": 18.75,
+          "min": 3.9473684210526314
         },
         "weapons": []
       },
@@ -5201,8 +5262,8 @@
         ],
         "smokes": true,
         "zoom": {
-          "max": 2.5,
-          "min": 12.5
+          "max": 12.5,
+          "min": 2.5
         }
       }
     },
@@ -5228,8 +5289,8 @@
     "turrets": {
       "Bow Gunner": {
         "zoom": {
-          "max": 1.875,
-          "min": 3
+          "max": 3,
+          "min": 1.875
         },
         "weapons": [
           "7.92mm MG34"
@@ -5237,34 +5298,35 @@
       },
       "Commander": {
         "zoom": {
-          "max": 2.5,
-          "min": 3.75
+          "max": 3.75,
+          "min": 2.5
         },
         "weapons": []
       },
       "Loader": {
         "zoom": {
-          "max": 1.875,
-          "min": 3
+          "max": 3,
+          "min": 1.875
         },
         "weapons": [
           "Grenade Mortar"
         ]
       },
       "Gunner": {
-        "zoom": {
-          "max": 2.5,
-          "min": 6.25
-        },
         "weapons": [
           "88 mm KwK43",
           "7.92mm MG34"
-        ]
+        ],
+        "smokes": false,
+        "zoom": {
+          "max": 6.25,
+          "min": 2.5
+        }
       },
       "Driver": {
         "zoom": {
-          "max": 1.875,
-          "min": 3
+          "max": 3,
+          "min": 1.875
         },
         "weapons": []
       }
@@ -5289,22 +5351,23 @@
     "turrets": {
       "Commander": {
         "zoom": {
-          "max": 1.9736842105263157,
-          "min": 8.333333333333334
+          "max": 8.333333333333334,
+          "min": 1.9736842105263157
         },
         "weapons": []
       },
       "Gunner": {
-        "zoom": {
-          "max": 5,
-          "min": 37.5
-        },
         "weapons": [
           "7.62mm MG3",
           "57mm L/70",
           "BGM-71A TOW",
           "BGM-71C I-TOW"
-        ]
+        ],
+        "smokes": false,
+        "zoom": {
+          "max": 37.5,
+          "min": 5
+        }
       }
     }
   },
@@ -5326,14 +5389,15 @@
     "mass": 3.2,
     "turrets": {
       "Gunner": {
-        "zoom": {
-          "max": 5,
-          "min": 10.714285714285714
-        },
         "weapons": [
           "8mm Breda M37",
           "20mm Solothurn S-18/1000"
-        ]
+        ],
+        "smokes": false,
+        "zoom": {
+          "max": 10.714285714285714,
+          "min": 5
+        }
       }
     }
   },
@@ -5374,8 +5438,8 @@
     "turrets": {
       "Commander": {
         "zoom": {
-          "max": 1.9736842105263157,
-          "min": 8.333333333333334
+          "max": 8.333333333333334,
+          "min": 1.9736842105263157
         },
         "weapons": [
           "7.62mm MG3"
@@ -5389,8 +5453,8 @@
         ],
         "smokes": true,
         "zoom": {
-          "max": 3.9473684210526314,
-          "min": 12.5
+          "max": 12.5,
+          "min": 3.9473684210526314
         }
       }
     }
@@ -5417,15 +5481,15 @@
     "turrets": {
       "Driver": {
         "zoom": {
-          "max": 1.875,
-          "min": 3
+          "max": 3,
+          "min": 1.875
         },
         "weapons": []
       },
       "Commander": {
         "zoom": {
-          "max": 4.166666666666667,
-          "min": 10.714285714285714
+          "max": 10.714285714285714,
+          "min": 4.166666666666667
         },
         "weapons": [
           "7.62mm PKT",
@@ -5458,8 +5522,8 @@
     "turrets": {
       "Loader": {
         "zoom": {
-          "max": 1.875,
-          "min": 3
+          "max": 3,
+          "min": 1.875
         },
         "weapons": [
           "12.7mm M2"
@@ -5473,14 +5537,14 @@
         ],
         "smokes": true,
         "zoom": {
-          "max": 3,
-          "min": 10.714285714285714
+          "max": 10.714285714285714,
+          "min": 3
         }
       },
       "Commander": {
         "zoom": {
-          "max": 1.875,
-          "min": 3
+          "max": 3,
+          "min": 1.875
         },
         "weapons": [
           "12.7mm M2"
@@ -5509,21 +5573,22 @@
     "turrets": {
       "Commander": {
         "zoom": {
-          "max": 1.875,
-          "min": 3
+          "max": 3,
+          "min": 1.875
         },
         "weapons": [
           "7.92mm MG34"
         ]
       },
       "Gunner": {
-        "zoom": {
-          "max": 5,
-          "min": 9.375
-        },
         "weapons": [
           "8.8 cm Pak 43/1"
-        ]
+        ],
+        "smokes": false,
+        "zoom": {
+          "max": 9.375,
+          "min": 5
+        }
       }
     }
   },
@@ -5546,8 +5611,8 @@
     "turrets": {
       "Commander": {
         "zoom": {
-          "max": 3,
-          "min": 12.5
+          "max": 12.5,
+          "min": 3
         },
         "weapons": []
       },
@@ -5557,8 +5622,8 @@
         ],
         "smokes": true,
         "zoom": {
-          "max": 3,
-          "min": 12.5
+          "max": 12.5,
+          "min": 3
         }
       }
     }
@@ -5582,8 +5647,8 @@
     "turrets": {
       "Loader": {
         "zoom": {
-          "max": 1.875,
-          "min": 3
+          "max": 3,
+          "min": 1.875
         },
         "weapons": [
           "7.62mm M240"
@@ -5596,14 +5661,14 @@
         ],
         "smokes": true,
         "zoom": {
-          "max": 3,
-          "min": 10.714285714285714
+          "max": 10.714285714285714,
+          "min": 3
         }
       },
       "Commander": {
         "zoom": {
-          "max": 1.875,
-          "min": 3
+          "max": 3,
+          "min": 1.875
         },
         "weapons": [
           "12.7mm M2"
@@ -5630,8 +5695,8 @@
     "turrets": {
       "Loader": {
         "zoom": {
-          "max": 1.875,
-          "min": 3
+          "max": 3,
+          "min": 1.875
         },
         "weapons": [
           "7.62mm M240"
@@ -5645,14 +5710,14 @@
         ],
         "smokes": true,
         "zoom": {
-          "max": 3,
-          "min": 10.714285714285714
+          "max": 10.714285714285714,
+          "min": 3
         }
       },
       "Commander": {
         "zoom": {
-          "max": 3.75,
-          "min": 10.714285714285714
+          "max": 10.714285714285714,
+          "min": 3.75
         },
         "weapons": [
           "12.7mm M2"
@@ -5687,14 +5752,15 @@
         ]
       },
       "Gunner": {
-        "zoom": {
-          "max": 8.333333333333334,
-          "min": 10.714285714285714
-        },
         "weapons": [
           "152mm M162",
           "7.62mm M240"
-        ]
+        ],
+        "smokes": false,
+        "zoom": {
+          "max": 10.714285714285714,
+          "min": 8.333333333333334
+        }
       }
     }
   },
@@ -5717,22 +5783,23 @@
     "turrets": {
       "Commander": {
         "zoom": {
-          "max": 0.9375,
-          "min": 6.818181818181818
+          "max": 6.818181818181818,
+          "min": 0.9375
         },
         "weapons": [
           "12.7mm M2"
         ]
       },
       "Gunner": {
-        "zoom": {
-          "max": 8.333333333333334,
-          "min": 8.333333333333334
-        },
         "weapons": [
           "105mm M68",
           "7.62mm M240"
-        ]
+        ],
+        "smokes": false,
+        "zoom": {
+          "max": 8.333333333333334,
+          "min": 8.333333333333334
+        }
       }
     }
   },
@@ -5755,8 +5822,8 @@
     "turrets": {
       "Loader": {
         "zoom": {
-          "max": 1.875,
-          "min": 3
+          "max": 3,
+          "min": 1.875
         },
         "weapons": [
           "7.62mm M240"
@@ -5769,14 +5836,14 @@
         ],
         "smokes": true,
         "zoom": {
-          "max": 3,
-          "min": 10.714285714285714
+          "max": 10.714285714285714,
+          "min": 3
         }
       },
       "Commander": {
         "zoom": {
-          "max": 1.875,
-          "min": 3
+          "max": 3,
+          "min": 1.875
         },
         "weapons": [
           "12.7mm M2"
@@ -5803,22 +5870,23 @@
     "turrets": {
       "Bow Gunner": {
         "zoom": {
-          "max": 1.875,
-          "min": 3
+          "max": 3,
+          "min": 1.875
         },
         "weapons": [
           "7.92mm MG34"
         ]
       },
       "Gunner": {
-        "zoom": {
-          "max": 2.5,
-          "min": 5
-        },
         "weapons": [
           "75 mm KwK42",
           "7.92mm MG34"
-        ]
+        ],
+        "smokes": false,
+        "zoom": {
+          "max": 5,
+          "min": 2.5
+        }
       }
     }
   },
@@ -5841,8 +5909,8 @@
     "turrets": {
       "Commander": {
         "zoom": {
-          "max": 2.027027027027027,
-          "min": 8.333333333333334
+          "max": 8.333333333333334,
+          "min": 2.027027027027027
         },
         "weapons": []
       },
@@ -5854,8 +5922,8 @@
         ],
         "smokes": true,
         "zoom": {
-          "max": 2.027027027027027,
-          "min": 8.333333333333334
+          "max": 8.333333333333334,
+          "min": 2.027027027027027
         }
       }
     }
@@ -5879,8 +5947,8 @@
     "turrets": {
       "Commander": {
         "zoom": {
-          "max": 3.9473684210526314,
-          "min": 12.5
+          "max": 12.5,
+          "min": 3.9473684210526314
         },
         "weapons": [
           "12.7mm KORD"
@@ -5893,8 +5961,8 @@
         ],
         "smokes": true,
         "zoom": {
-          "max": 3.9473684210526314,
-          "min": 12.5
+          "max": 12.5,
+          "min": 3.9473684210526314
         }
       }
     }
@@ -5918,8 +5986,8 @@
     "turrets": {
       "Commander": {
         "zoom": {
-          "max": 3.9473684210526314,
-          "min": 12.5
+          "max": 12.5,
+          "min": 3.9473684210526314
         },
         "weapons": [
           "14.5mm KPVT"
@@ -5932,8 +6000,8 @@
         ],
         "smokes": true,
         "zoom": {
-          "max": 3.9473684210526314,
-          "min": 12.5
+          "max": 12.5,
+          "min": 3.9473684210526314
         }
       }
     }
@@ -5957,8 +6025,8 @@
     "turrets": {
       "Commander": {
         "zoom": {
-          "max": 1.875,
-          "min": 3
+          "max": 3,
+          "min": 1.875
         },
         "weapons": [
           "12.7mm M2"
@@ -5972,8 +6040,8 @@
         ],
         "smokes": true,
         "zoom": {
-          "max": 8.333333333333334,
-          "min": 12.5
+          "max": 12.5,
+          "min": 8.333333333333334
         }
       }
     }
@@ -5996,19 +6064,20 @@
     "mass": 41.6,
     "turrets": {
       "Gunner": {
-        "zoom": {
-          "max": 5,
-          "min": 5
-        },
         "weapons": [
           "90mm M3",
           ".30 cal M1919"
-        ]
+        ],
+        "smokes": false,
+        "zoom": {
+          "max": 5,
+          "min": 5
+        }
       },
       "Commander": {
         "zoom": {
-          "max": 1.875,
-          "min": 3
+          "max": 3,
+          "min": 1.875
         },
         "weapons": [
           "12.7mm M2"
@@ -6016,8 +6085,8 @@
       },
       "Bow Gunner": {
         "zoom": {
-          "max": 1.875,
-          "min": 3
+          "max": 3,
+          "min": 1.875
         },
         "weapons": [
           ".30 cal M1919"
@@ -6044,8 +6113,8 @@
     "turrets": {
       "Loader": {
         "zoom": {
-          "max": 1.875,
-          "min": 3
+          "max": 3,
+          "min": 1.875
         },
         "weapons": [
           "7.62mm MG3"
@@ -6058,14 +6127,14 @@
         ],
         "smokes": true,
         "zoom": {
-          "max": 8.333333333333334,
-          "min": 15
+          "max": 15,
+          "min": 8.333333333333334
         }
       },
       "Commander": {
         "zoom": {
-          "max": 1.9736842105263157,
-          "min": 8.333333333333334
+          "max": 8.333333333333334,
+          "min": 1.9736842105263157
         },
         "weapons": [
           "20mm Rh202"
@@ -6091,19 +6160,20 @@
     "mass": 26,
     "turrets": {
       "Gunner": {
-        "zoom": {
-          "max": 1.875,
-          "min": 3.5714285714285716
-        },
         "weapons": [
           "75 mm KwK40 L48",
           "7.92mm MG34"
-        ]
+        ],
+        "smokes": false,
+        "zoom": {
+          "max": 3.5714285714285716,
+          "min": 1.875
+        }
       },
       "Commander": {
         "zoom": {
-          "max": 1.875,
-          "min": 3
+          "max": 3,
+          "min": 1.875
         },
         "weapons": [
           "7.92mm MG34"
@@ -6111,8 +6181,8 @@
       },
       "Bow Gunner": {
         "zoom": {
-          "max": 1.875,
-          "min": 3
+          "max": 3,
+          "min": 1.875
         },
         "weapons": [
           "7.92mm MG34"
@@ -6152,8 +6222,8 @@
       },
       "Driver": {
         "zoom": {
-          "max": 6.25,
-          "min": 18.75
+          "max": 18.75,
+          "min": 6.25
         },
         "weapons": [
           "7.62mm ksp 58",
@@ -6183,21 +6253,22 @@
     "turrets": {
       "Commander": {
         "zoom": {
-          "max": 1.875,
-          "min": 3
+          "max": 3,
+          "min": 1.875
         },
         "weapons": [
           "12.7mm M2"
         ]
       },
       "Gunner": {
-        "zoom": {
-          "max": 1.875,
-          "min": 3.75
-        },
         "weapons": [
           "105mm M2A1"
-        ]
+        ],
+        "smokes": false,
+        "zoom": {
+          "max": 3.75,
+          "min": 1.875
+        }
       }
     }
   },
@@ -6220,8 +6291,8 @@
     "turrets": {
       "Loader": {
         "zoom": {
-          "max": 1.875,
-          "min": 3
+          "max": 3,
+          "min": 1.875
         },
         "weapons": [
           "7.62 Beretta MG42/59"
@@ -6234,14 +6305,14 @@
         ],
         "smokes": true,
         "zoom": {
-          "max": 8.333333333333334,
-          "min": 12.5
+          "max": 12.5,
+          "min": 8.333333333333334
         }
       },
       "Commander": {
         "zoom": {
-          "max": 2.5,
-          "min": 10.714285714285714
+          "max": 10.714285714285714,
+          "min": 2.5
         },
         "weapons": [
           "7.62 Beretta MG42/59"
@@ -6268,8 +6339,8 @@
     "turrets": {
       "Commander": {
         "zoom": {
-          "max": 1.875,
-          "min": 3
+          "max": 3,
+          "min": 1.875
         },
         "weapons": [
           "7.62mm L37A2"
@@ -6282,8 +6353,8 @@
         ],
         "smokes": true,
         "zoom": {
-          "max": 3.9473684210526314,
-          "min": 12.5
+          "max": 12.5,
+          "min": 3.9473684210526314
         }
       }
     }
@@ -6307,22 +6378,23 @@
     "turrets": {
       "Bow Gunner": {
         "zoom": {
-          "max": 1.875,
-          "min": 3
+          "max": 3,
+          "min": 1.875
         },
         "weapons": [
           "7.62mm DT-28"
         ]
       },
       "Gunner": {
-        "zoom": {
-          "max": 1.875,
-          "min": 3.5714285714285716
-        },
         "weapons": [
           "76mm F-34",
           "7.62mm DT-28"
-        ]
+        ],
+        "smokes": false,
+        "zoom": {
+          "max": 3.5714285714285716,
+          "min": 1.875
+        }
       }
     }
   },
@@ -6375,8 +6447,8 @@
     "turrets": {
       "Commander": {
         "zoom": {
-          "max": 0.9375,
-          "min": 8.333333333333334
+          "max": 8.333333333333334,
+          "min": 0.9375
         },
         "weapons": [
           "12.7mm NSVT"
@@ -6389,8 +6461,8 @@
         ],
         "smokes": true,
         "zoom": {
-          "max": 2.6785714285714284,
-          "min": 12.5
+          "max": 12.5,
+          "min": 2.6785714285714284
         }
       }
     }
@@ -6414,8 +6486,8 @@
     "turrets": {
       "Loader": {
         "zoom": {
-          "max": 1.875,
-          "min": 3
+          "max": 3,
+          "min": 1.875
         },
         "weapons": [
           "7.62mm MG3"
@@ -6428,14 +6500,14 @@
         ],
         "smokes": true,
         "zoom": {
-          "max": 3.9473684210526314,
-          "min": 12.5
+          "max": 12.5,
+          "min": 3.9473684210526314
         }
       },
       "Commander": {
         "zoom": {
-          "max": 1.9736842105263157,
-          "min": 8.333333333333334
+          "max": 8.333333333333334,
+          "min": 1.9736842105263157
         },
         "weapons": []
       }
@@ -6460,8 +6532,8 @@
     "turrets": {
       "Loader": {
         "zoom": {
-          "max": 1.875,
-          "min": 3
+          "max": 3,
+          "min": 1.875
         },
         "weapons": [
           "7.62mm MG3"
@@ -6474,14 +6546,14 @@
         ],
         "smokes": true,
         "zoom": {
-          "max": 3.9473684210526314,
-          "min": 12.5
+          "max": 12.5,
+          "min": 3.9473684210526314
         }
       },
       "Commander": {
         "zoom": {
-          "max": 1.9736842105263157,
-          "min": 8.333333333333334
+          "max": 8.333333333333334,
+          "min": 1.9736842105263157
         },
         "weapons": []
       }
@@ -6505,15 +6577,16 @@
     "mass": 2.9,
     "turrets": {
       "Gunner": {
-        "zoom": {
-          "max": 4.166666666666667,
-          "min": 8.333333333333334
-        },
         "weapons": [
           "BGM-71F TOW 2A/B",
           "BGM-71C I-TOW",
           "BGM-71A TOW"
-        ]
+        ],
+        "smokes": false,
+        "zoom": {
+          "max": 8.333333333333334,
+          "min": 4.166666666666667
+        }
       }
     }
   },
@@ -6543,8 +6616,8 @@
         ],
         "smokes": true,
         "zoom": {
-          "max": 3.9473684210526314,
-          "min": 12.5
+          "max": 12.5,
+          "min": 3.9473684210526314
         }
       }
     }
@@ -6568,27 +6641,28 @@
     "turrets": {
       "Loader": {
         "zoom": {
-          "max": 1.875,
-          "min": 3
+          "max": 3,
+          "min": 1.875
         },
         "weapons": [
           "7.62mm DT-28"
         ]
       },
       "Gunner": {
-        "zoom": {
-          "max": 1.875,
-          "min": 3.5714285714285716
-        },
         "weapons": [
           "85mm D-5S",
           "7.62mm DT-28"
-        ]
+        ],
+        "smokes": false,
+        "zoom": {
+          "max": 3.5714285714285716,
+          "min": 1.875
+        }
       },
       "Driver": {
         "zoom": {
-          "max": 1.875,
-          "min": 3
+          "max": 3,
+          "min": 1.875
         },
         "weapons": [
           "7.62mm DT-28"
@@ -6614,13 +6688,14 @@
     "mass": 2.9,
     "turrets": {
       "Gunner": {
-        "zoom": {
-          "max": 1.9736842105263157,
-          "min": 6.25
-        },
         "weapons": [
           "20mm Rh202"
-        ]
+        ],
+        "smokes": false,
+        "zoom": {
+          "max": 6.25,
+          "min": 1.9736842105263157
+        }
       }
     }
   },
@@ -6643,8 +6718,8 @@
     "turrets": {
       "Passenger": {
         "zoom": {
-          "max": 1.875,
-          "min": 3
+          "max": 3,
+          "min": 1.875
         },
         "weapons": [
           "7.62mm MG3"
@@ -6657,14 +6732,14 @@
         ],
         "smokes": true,
         "zoom": {
-          "max": 1.9736842105263157,
-          "min": 6.25
+          "max": 6.25,
+          "min": 1.9736842105263157
         }
       },
       "Commander": {
         "zoom": {
-          "max": 1.9736842105263157,
-          "min": 6.25
+          "max": 6.25,
+          "min": 1.9736842105263157
         },
         "weapons": [
           "Milan 2"
@@ -6690,13 +6765,14 @@
     "mass": 52,
     "turrets": {
       "Gunner": {
-        "zoom": {
-          "max": 6.25,
-          "min": 12.5
-        },
         "weapons": [
           "MIM146 Launcher"
-        ]
+        ],
+        "smokes": false,
+        "zoom": {
+          "max": 12.5,
+          "min": 6.25
+        }
       }
     }
   },
@@ -6719,8 +6795,8 @@
     "turrets": {
       "Commander": {
         "zoom": {
-          "max": 2.5,
-          "min": 10.714285714285714
+          "max": 10.714285714285714,
+          "min": 2.5
         },
         "weapons": []
       },
@@ -6757,8 +6833,8 @@
     "turrets": {
       "Commander": {
         "zoom": {
-          "max": 2.952755905511811,
-          "min": 12.711864406779661
+          "max": 12.711864406779661,
+          "min": 2.952755905511811
         },
         "weapons": [
           "7.62mm NATTER"
@@ -6771,8 +6847,8 @@
         ],
         "smokes": true,
         "zoom": {
-          "max": 2.4038461538461537,
-          "min": 18.75
+          "max": 18.75,
+          "min": 2.4038461538461537
         }
       }
     }
@@ -6796,21 +6872,22 @@
     "turrets": {
       "Commander": {
         "zoom": {
-          "max": 1.875,
-          "min": 3
+          "max": 3,
+          "min": 1.875
         },
         "weapons": [
           "7.62mm PKT"
         ]
       },
       "Gunner": {
-        "zoom": {
-          "max": 1.875,
-          "min": 3
-        },
         "weapons": [
           "25mm DBTSU"
-        ]
+        ],
+        "smokes": false,
+        "zoom": {
+          "max": 3,
+          "min": 1.875
+        }
       }
     }
   },
@@ -6838,8 +6915,8 @@
         ],
         "smokes": true,
         "zoom": {
-          "max": 1.875,
-          "min": 3.5714285714285716
+          "max": 3.5714285714285716,
+          "min": 1.875
         }
       }
     }
@@ -6881,21 +6958,22 @@
     "turrets": {
       "Commander": {
         "zoom": {
-          "max": 1.875,
-          "min": 3
+          "max": 3,
+          "min": 1.875
         },
         "weapons": [
           "MG42"
         ]
       },
       "Gunner": {
-        "zoom": {
-          "max": 1.875,
-          "min": 3.5714285714285716
-        },
         "weapons": [
           "7.5 cm KwK 40 L/48"
-        ]
+        ],
+        "smokes": false,
+        "zoom": {
+          "max": 3.5714285714285716,
+          "min": 1.875
+        }
       }
     }
   },
@@ -6917,13 +6995,14 @@
     "mass": 18.2,
     "turrets": {
       "Gunner": {
-        "zoom": {
-          "max": 1.875,
-          "min": 3.75
-        },
         "weapons": [
           "122mm Grad"
-        ]
+        ],
+        "smokes": false,
+        "zoom": {
+          "max": 3.75,
+          "min": 1.875
+        }
       }
     }
   },
@@ -6954,14 +7033,15 @@
         ]
       },
       "Gunner": {
-        "zoom": {
-          "max": 3.5714285714285716,
-          "min": 6.818181818181818
-        },
         "weapons": [
           "115mm U-5TS",
           "7.62mm PKT"
-        ]
+        ],
+        "smokes": false,
+        "zoom": {
+          "max": 6.818181818181818,
+          "min": 3.5714285714285716
+        }
       }
     }
   },
@@ -6984,8 +7064,8 @@
     "turrets": {
       "Commander": {
         "zoom": {
-          "max": 1.9736842105263157,
-          "min": 8.333333333333334
+          "max": 8.333333333333334,
+          "min": 1.9736842105263157
         },
         "weapons": []
       },
@@ -7023,8 +7103,8 @@
     "turrets": {
       "Loader": {
         "zoom": {
-          "max": 1.875,
-          "min": 3
+          "max": 3,
+          "min": 1.875
         },
         "weapons": [
           "Grenade Mortar"
@@ -7037,14 +7117,14 @@
         ],
         "smokes": true,
         "zoom": {
-          "max": 8.333333333333334,
-          "min": 15
+          "max": 15,
+          "min": 8.333333333333334
         }
       },
       "Commander": {
         "zoom": {
-          "max": 3.9473684210526314,
-          "min": 18.75
+          "max": 18.75,
+          "min": 3.9473684210526314
         },
         "weapons": [
           ".30 cal M1919"
@@ -7071,22 +7151,23 @@
     "turrets": {
       "Bow Gunner": {
         "zoom": {
-          "max": 1.875,
-          "min": 3
+          "max": 3,
+          "min": 1.875
         },
         "weapons": [
           "7.92mm MG34"
         ]
       },
       "Gunner": {
-        "zoom": {
-          "max": 2.5,
-          "min": 5
-        },
         "weapons": [
           "75 mm KwK42",
           "7.92mm MG34"
-        ]
+        ],
+        "smokes": false,
+        "zoom": {
+          "max": 5,
+          "min": 2.5
+        }
       }
     }
   },
@@ -7109,28 +7190,29 @@
     "turrets": {
       "Driver": {
         "zoom": {
-          "max": 1.875,
-          "min": 3
+          "max": 3,
+          "min": 1.875
         },
         "weapons": [
           "7.62mm RP-46"
         ]
       },
       "Gunner": {
-        "zoom": {
-          "max": 3.5714285714285716,
-          "min": 6.818181818181818
-        },
         "weapons": [
           "130mm S-70",
           "7.62mm RP-46",
           "14.5mm KPVT"
-        ]
+        ],
+        "smokes": false,
+        "zoom": {
+          "max": 6.818181818181818,
+          "min": 3.5714285714285716
+        }
       },
       "Commander": {
         "zoom": {
-          "max": 0.9375,
-          "min": 5
+          "max": 5,
+          "min": 0.9375
         },
         "weapons": [
           "14.5mm KPVT"
@@ -7163,8 +7245,8 @@
         ],
         "smokes": true,
         "zoom": {
-          "max": 5,
-          "min": 15
+          "max": 15,
+          "min": 5
         }
       }
     }
@@ -7187,14 +7269,15 @@
     "mass": 188,
     "turrets": {
       "Gunner": {
-        "zoom": {
-          "max": 10.714285714285714,
-          "min": 10.714285714285714
-        },
         "weapons": [
           "128 mm KwK44",
           "75 mm KwK44"
-        ]
+        ],
+        "smokes": false,
+        "zoom": {
+          "max": 10.714285714285714,
+          "min": 10.714285714285714
+        }
       }
     }
   },
@@ -7216,13 +7299,14 @@
     "mass": 7.81,
     "turrets": {
       "Gunner": {
-        "zoom": {
-          "max": 1.875,
-          "min": 3
-        },
         "weapons": [
           "7.92mm MG34"
-        ]
+        ],
+        "smokes": false,
+        "zoom": {
+          "max": 3,
+          "min": 1.875
+        }
       }
     }
   },
@@ -7245,26 +7329,27 @@
     "turrets": {
       "Loader": {
         "zoom": {
-          "max": 1.875,
-          "min": 3
+          "max": 3,
+          "min": 1.875
         },
         "weapons": [
           "Grenade Mortar"
         ]
       },
       "Gunner": {
+        "weapons": [
+          "88 mm KwK43"
+        ],
+        "smokes": false,
         "zoom": {
           "max": 5,
           "min": 5
-        },
-        "weapons": [
-          "88 mm KwK43"
-        ]
+        }
       },
       "Bow Gunner": {
         "zoom": {
-          "max": 1.875,
-          "min": 3
+          "max": 3,
+          "min": 1.875
         },
         "weapons": [
           "7.92mm MG34"
@@ -7291,22 +7376,23 @@
     "turrets": {
       "Loader": {
         "zoom": {
-          "max": 1.875,
-          "min": 3
+          "max": 3,
+          "min": 1.875
         },
         "weapons": [
           "12.7mm DSHK"
         ]
       },
       "Gunner": {
-        "zoom": {
-          "max": 3.5714285714285716,
-          "min": 6.818181818181818
-        },
         "weapons": [
           "115mm U-5TS",
           "7.62mm PKT"
-        ]
+        ],
+        "smokes": false,
+        "zoom": {
+          "max": 6.818181818181818,
+          "min": 3.5714285714285716
+        }
       },
       "Commander": {
         "zoom": {
@@ -7336,23 +7422,24 @@
     "turrets": {
       "Commander": {
         "zoom": {
-          "max": 1.9736842105263157,
-          "min": 8.333333333333334
+          "max": 8.333333333333334,
+          "min": 1.9736842105263157
         },
         "weapons": [
           "12.7mm M2"
         ]
       },
       "Gunner": {
-        "zoom": {
-          "max": 1.9736842105263157,
-          "min": 8.333333333333334
-        },
         "weapons": [
           "FIM-92K Stinger",
           "75mm XM274",
           "7.62mm M240"
-        ]
+        ],
+        "smokes": false,
+        "zoom": {
+          "max": 8.333333333333334,
+          "min": 1.9736842105263157
+        }
       }
     }
   },
@@ -7375,26 +7462,27 @@
     "turrets": {
       "Loader": {
         "zoom": {
-          "max": 1.875,
-          "min": 3
+          "max": 3,
+          "min": 1.875
         },
         "weapons": [
           "Grenade Mortar"
         ]
       },
       "Gunner": {
-        "zoom": {
-          "max": 1.875,
-          "min": 3.5714285714285716
-        },
         "weapons": [
           "380mm RW61"
-        ]
+        ],
+        "smokes": false,
+        "zoom": {
+          "max": 3.5714285714285716,
+          "min": 1.875
+        }
       },
       "Bow Gunner": {
         "zoom": {
-          "max": 1.875,
-          "min": 3
+          "max": 3,
+          "min": 1.875
         },
         "weapons": [
           "7.92mm MG34"
@@ -7421,21 +7509,22 @@
     "turrets": {
       "Commander": {
         "zoom": {
-          "max": 1.875,
-          "min": 3
+          "max": 3,
+          "min": 1.875
         },
         "weapons": [
           "12.7mm M2"
         ]
       },
       "Gunner": {
+        "weapons": [
+          "90mm M3"
+        ],
+        "smokes": false,
         "zoom": {
           "max": 5,
           "min": 5
-        },
-        "weapons": [
-          "90mm M3"
-        ]
+        }
       }
     }
   },
@@ -7457,20 +7546,21 @@
     "mass": 31.7,
     "turrets": {
       "Gunner": {
-        "zoom": {
-          "max": 1.875,
-          "min": 3.5714285714285716
-        },
         "weapons": [
           "105 mm M4",
           ".30 cal M1919",
           "H5 Flamethrower"
-        ]
+        ],
+        "smokes": false,
+        "zoom": {
+          "max": 3.5714285714285716,
+          "min": 1.875
+        }
       },
       "Commander": {
         "zoom": {
-          "max": 1.875,
-          "min": 3
+          "max": 3,
+          "min": 1.875
         },
         "weapons": [
           "12.7mm M2"
@@ -7478,8 +7568,8 @@
       },
       "Bow Gunner": {
         "zoom": {
-          "max": 1.875,
-          "min": 3
+          "max": 3,
+          "min": 1.875
         },
         "weapons": [
           ".30 cal M1919"
@@ -7506,8 +7596,8 @@
     "turrets": {
       "Bow Gunner": {
         "zoom": {
-          "max": 1.875,
-          "min": 3
+          "max": 3,
+          "min": 1.875
         },
         "weapons": [
           "7.92mm MG34"
@@ -7520,8 +7610,8 @@
         ],
         "smokes": true,
         "zoom": {
-          "max": 1.875,
-          "min": 3.5714285714285716
+          "max": 3.5714285714285716,
+          "min": 1.875
         }
       }
     }
@@ -7544,20 +7634,21 @@
     "mass": 32.5,
     "turrets": {
       "Gunner": {
-        "zoom": {
-          "max": 1.875,
-          "min": 3.5714285714285716
-        },
         "weapons": [
           "75mm M3",
           ".30 cal M1919",
           "M8 Rocket"
-        ]
+        ],
+        "smokes": false,
+        "zoom": {
+          "max": 3.5714285714285716,
+          "min": 1.875
+        }
       },
       "Bow Gunner": {
         "zoom": {
-          "max": 1.875,
-          "min": 3
+          "max": 3,
+          "min": 1.875
         },
         "weapons": [
           ".30 cal M1919"
@@ -7583,19 +7674,20 @@
     "mass": 32.5,
     "turrets": {
       "Gunner": {
-        "zoom": {
-          "max": 5,
-          "min": 5
-        },
         "weapons": [
           "75mm M3",
           ".30 cal M1919"
-        ]
+        ],
+        "smokes": false,
+        "zoom": {
+          "max": 5,
+          "min": 5
+        }
       },
       "Commander": {
         "zoom": {
-          "max": 1.875,
-          "min": 3
+          "max": 3,
+          "min": 1.875
         },
         "weapons": [
           "12.7mm M2"
@@ -7603,8 +7695,8 @@
       },
       "Bow Gunner": {
         "zoom": {
-          "max": 1.875,
-          "min": 3
+          "max": 3,
+          "min": 1.875
         },
         "weapons": [
           ".30 cal M1919"
@@ -7645,8 +7737,8 @@
         ],
         "smokes": true,
         "zoom": {
-          "max": 3.9473684210526314,
-          "min": 12.5
+          "max": 12.5,
+          "min": 3.9473684210526314
         }
       }
     }
@@ -7676,14 +7768,15 @@
         "weapons": []
       },
       "Gunner": {
-        "zoom": {
-          "max": 4.166666666666667,
-          "min": 8.333333333333334
-        },
         "weapons": [
           "3M7 Drakon",
           "7.62mm PKT"
-        ]
+        ],
+        "smokes": false,
+        "zoom": {
+          "max": 8.333333333333334,
+          "min": 4.166666666666667
+        }
       }
     }
   },
@@ -7724,21 +7817,22 @@
     "turrets": {
       "Commander": {
         "zoom": {
-          "max": 1.25,
-          "min": 1.875
+          "max": 1.875,
+          "min": 1.25
         },
         "weapons": [
           "12.7mm M2"
         ]
       },
       "Gunner": {
-        "zoom": {
-          "max": 1.875,
-          "min": 3.5714285714285716
-        },
         "weapons": [
           "76mm M1"
-        ]
+        ],
+        "smokes": false,
+        "zoom": {
+          "max": 3.5714285714285716,
+          "min": 1.875
+        }
       }
     }
   },
@@ -7760,18 +7854,19 @@
     "mass": 27.7,
     "turrets": {
       "Gunner": {
-        "zoom": {
-          "max": 1.875,
-          "min": 3.5714285714285716
-        },
         "weapons": [
           "75mm M2"
-        ]
+        ],
+        "smokes": false,
+        "zoom": {
+          "max": 3.5714285714285716,
+          "min": 1.875
+        }
       },
       "Commander": {
         "zoom": {
-          "max": 1.875,
-          "min": 3
+          "max": 3,
+          "min": 1.875
         },
         "weapons": [
           ".30 cal M1919"
@@ -7779,8 +7874,8 @@
       },
       "Bow Gunner": {
         "zoom": {
-          "max": 1.875,
-          "min": 3
+          "max": 3,
+          "min": 1.875
         },
         "weapons": [
           ".30 cal M1919"
@@ -7806,14 +7901,15 @@
     "mass": 5.8,
     "turrets": {
       "Gunner": {
-        "zoom": {
-          "max": 1.875,
-          "min": 3.5714285714285716
-        },
         "weapons": [
           "20mm TNSh",
           "7.62mm DT-28"
-        ]
+        ],
+        "smokes": false,
+        "zoom": {
+          "max": 3.5714285714285716,
+          "min": 1.875
+        }
       }
     }
   },
@@ -7875,8 +7971,8 @@
     "turrets": {
       "Loader": {
         "zoom": {
-          "max": 1.875,
-          "min": 3
+          "max": 3,
+          "min": 1.875
         },
         "weapons": [
           "30mm AGS-17"
@@ -7890,14 +7986,14 @@
         ],
         "smokes": true,
         "zoom": {
-          "max": 3.9473684210526314,
-          "min": 12.5
+          "max": 12.5,
+          "min": 3.9473684210526314
         }
       },
       "Commander": {
         "zoom": {
-          "max": 3.9473684210526314,
-          "min": 12.5
+          "max": 12.5,
+          "min": 3.9473684210526314
         },
         "weapons": []
       }
@@ -7921,14 +8017,15 @@
     "mass": 35.3,
     "turrets": {
       "Gunner": {
-        "zoom": {
-          "max": 3,
-          "min": 6.25
-        },
         "weapons": [
           "76mm QF 17-pounder",
           "7.62mm L3A1"
-        ]
+        ],
+        "smokes": false,
+        "zoom": {
+          "max": 6.25,
+          "min": 3
+        }
       }
     }
   },
@@ -7954,8 +8051,8 @@
     "turrets": {
       "Loader": {
         "zoom": {
-          "max": 1.875,
-          "min": 3
+          "max": 3,
+          "min": 1.875
         },
         "weapons": [
           "7.62mm A-A-F1N"
@@ -7975,8 +8072,8 @@
       },
       "Commander": {
         "zoom": {
-          "max": 1.9736842105263157,
-          "min": 8.333333333333334
+          "max": 8.333333333333334,
+          "min": 1.9736842105263157
         },
         "weapons": []
       }
@@ -8002,13 +8099,14 @@
     "mass": 31.6,
     "turrets": {
       "Gunner": {
+        "weapons": [
+          "100mm D-10S"
+        ],
+        "smokes": false,
         "zoom": {
           "max": 3.9473684210526314,
           "min": 3.9473684210526314
-        },
-        "weapons": [
-          "100mm D-10S"
-        ]
+        }
       }
     }
   },
@@ -8031,21 +8129,22 @@
     "turrets": {
       "Bow Gunner": {
         "zoom": {
-          "max": 1.875,
-          "min": 3
+          "max": 3,
+          "min": 1.875
         },
         "weapons": [
           "7.92mm MG34"
         ]
       },
       "Gunner": {
+        "weapons": [
+          "88 mm KwK43"
+        ],
+        "smokes": false,
         "zoom": {
           "max": 5,
           "min": 5
-        },
-        "weapons": [
-          "88 mm KwK43"
-        ]
+        }
       }
     }
   },
@@ -8076,14 +8175,15 @@
         ]
       },
       "Gunner": {
-        "zoom": {
-          "max": 3.9473684210526314,
-          "min": 12.5
-        },
         "weapons": [
           "7.62mm MG3",
           "L7A3 105mm"
-        ]
+        ],
+        "smokes": false,
+        "zoom": {
+          "max": 12.5,
+          "min": 3.9473684210526314
+        }
       }
     }
   },
@@ -8106,21 +8206,22 @@
     "turrets": {
       "Commander": {
         "zoom": {
-          "max": 1.875,
-          "min": 3
+          "max": 3,
+          "min": 1.875
         },
         "weapons": [
           "12.7mm M2"
         ]
       },
       "Gunner": {
-        "zoom": {
-          "max": 3.9473684210526314,
-          "min": 12.5
-        },
         "weapons": [
           "LOSAT/MGM-166"
-        ]
+        ],
+        "smokes": false,
+        "zoom": {
+          "max": 12.5,
+          "min": 3.9473684210526314
+        }
       }
     }
   },
@@ -8143,21 +8244,22 @@
     "turrets": {
       "Commander": {
         "zoom": {
-          "max": 1.875,
-          "min": 3
+          "max": 3,
+          "min": 1.875
         },
         "weapons": [
           "7.92mm MG34"
         ]
       },
       "Gunner": {
+        "weapons": [
+          "75 mm PaK39 L48"
+        ],
+        "smokes": false,
         "zoom": {
           "max": 5,
           "min": 5
-        },
-        "weapons": [
-          "75 mm PaK39 L48"
-        ]
+        }
       }
     }
   },
@@ -8179,19 +8281,20 @@
     "mass": 49.9,
     "turrets": {
       "Gunner": {
-        "zoom": {
-          "max": 5,
-          "min": 5
-        },
         "weapons": [
           "90mm T15E1",
           ".30 cal M1919"
-        ]
+        ],
+        "smokes": false,
+        "zoom": {
+          "max": 5,
+          "min": 5
+        }
       },
       "Commander": {
         "zoom": {
-          "max": 1.875,
-          "min": 3
+          "max": 3,
+          "min": 1.875
         },
         "weapons": [
           "12.7mm M2"
@@ -8199,8 +8302,8 @@
       },
       "Bow Gunner": {
         "zoom": {
-          "max": 1.875,
-          "min": 3
+          "max": 3,
+          "min": 1.875
         },
         "weapons": [
           ".30 cal M1919"
@@ -8239,8 +8342,8 @@
         ],
         "smokes": true,
         "zoom": {
-          "max": 3.9473684210526314,
-          "min": 12.5
+          "max": 12.5,
+          "min": 3.9473684210526314
         }
       }
     }
@@ -8269,8 +8372,8 @@
         ],
         "smokes": true,
         "zoom": {
-          "max": 1.875,
-          "min": 3.5714285714285716
+          "max": 3.5714285714285716,
+          "min": 1.875
         }
       }
     }
@@ -8294,8 +8397,8 @@
     "turrets": {
       "Commander": {
         "zoom": {
-          "max": 4.411764705882353,
-          "min": 18.75
+          "max": 18.75,
+          "min": 4.411764705882353
         },
         "weapons": [
           "12.7mm M2"
@@ -8309,8 +8412,8 @@
         ],
         "smokes": true,
         "zoom": {
-          "max": 4.411764705882353,
-          "min": 18.75
+          "max": 18.75,
+          "min": 4.411764705882353
         }
       }
     }
@@ -8334,8 +8437,8 @@
     "turrets": {
       "Commander": {
         "zoom": {
-          "max": 1.875,
-          "min": 3
+          "max": 3,
+          "min": 1.875
         },
         "weapons": [
           "7.62mm M240"
@@ -8348,8 +8451,8 @@
         ],
         "smokes": true,
         "zoom": {
-          "max": 3.9473684210526314,
-          "min": 12.5
+          "max": 12.5,
+          "min": 3.9473684210526314
         }
       }
     }
@@ -8372,13 +8475,14 @@
     "mass": 46,
     "turrets": {
       "Gunner": {
-        "zoom": {
-          "max": 1.875,
-          "min": 3.5714285714285716
-        },
         "weapons": [
           "152.4mm BL-8"
-        ]
+        ],
+        "smokes": false,
+        "zoom": {
+          "max": 3.5714285714285716,
+          "min": 1.875
+        }
       }
     }
   },
@@ -8409,14 +8513,15 @@
         ]
       },
       "Gunner": {
-        "zoom": {
-          "max": 6.25,
-          "min": 8.333333333333334
-        },
         "weapons": [
           "90mm M41",
           ".30 cal M1919"
-        ]
+        ],
+        "smokes": false,
+        "zoom": {
+          "max": 8.333333333333334,
+          "min": 6.25
+        }
       }
     }
   },
@@ -8439,8 +8544,8 @@
     "turrets": {
       "Passenger": {
         "zoom": {
-          "max": 1.875,
-          "min": 3
+          "max": 3,
+          "min": 1.875
         },
         "weapons": [
           "30mm AGS-17"
@@ -8454,14 +8559,14 @@
         ],
         "smokes": true,
         "zoom": {
-          "max": 3.9473684210526314,
-          "min": 12.5
+          "max": 12.5,
+          "min": 3.9473684210526314
         }
       },
       "Commander": {
         "zoom": {
-          "max": 3.9473684210526314,
-          "min": 12.5
+          "max": 12.5,
+          "min": 3.9473684210526314
         },
         "weapons": []
       }
@@ -8485,15 +8590,16 @@
     "mass": 2.7,
     "turrets": {
       "Gunner": {
-        "zoom": {
-          "max": 1.25,
-          "min": 1.875
-        },
         "weapons": [
           "12.7mm M2",
           "40mm MK-19",
           "BGM-71C I-TOW"
-        ]
+        ],
+        "smokes": false,
+        "zoom": {
+          "max": 1.875,
+          "min": 1.25
+        }
       }
     }
   },
@@ -8524,14 +8630,15 @@
         ]
       },
       "Gunner": {
-        "zoom": {
-          "max": 3.5714285714285716,
-          "min": 6.818181818181818
-        },
         "weapons": [
           "100mm SB-10S",
           "12.7mm DSHK"
-        ]
+        ],
+        "smokes": false,
+        "zoom": {
+          "max": 6.818181818181818,
+          "min": 3.5714285714285716
+        }
       }
     }
   },
@@ -8613,8 +8720,8 @@
         ],
         "smokes": true,
         "zoom": {
-          "max": 1.9736842105263157,
-          "min": 8.333333333333334
+          "max": 8.333333333333334,
+          "min": 1.9736842105263157
         }
       }
     }
@@ -8637,19 +8744,20 @@
     "mass": 62.4,
     "turrets": {
       "Gunner": {
-        "zoom": {
-          "max": 1.875,
-          "min": 3.5714285714285716
-        },
         "weapons": [
           "85mm F-30",
           "7.62mm DT-28"
-        ]
+        ],
+        "smokes": false,
+        "zoom": {
+          "max": 3.5714285714285716,
+          "min": 1.875
+        }
       },
       "Commander": {
         "zoom": {
-          "max": 1.875,
-          "min": 3
+          "max": 3,
+          "min": 1.875
         },
         "weapons": [
           "7.62mm DT-28"
@@ -8657,8 +8765,8 @@
       },
       "Bow Gunner": {
         "zoom": {
-          "max": 1.875,
-          "min": 3
+          "max": 3,
+          "min": 1.875
         },
         "weapons": [
           "7.62mm DT-28"
@@ -8684,13 +8792,14 @@
     "mass": 1.2,
     "turrets": {
       "Gunner": {
-        "zoom": {
-          "max": 1.25,
-          "min": 1.875
-        },
         "weapons": [
           "12.7mm M2"
-        ]
+        ],
+        "smokes": false,
+        "zoom": {
+          "max": 1.875,
+          "min": 1.25
+        }
       }
     }
   },
@@ -8713,8 +8822,8 @@
     "turrets": {
       "Driver": {
         "zoom": {
-          "max": 3,
-          "min": 7.5
+          "max": 7.5,
+          "min": 3
         },
         "weapons": [
           "30mm 2A72",
@@ -8742,8 +8851,8 @@
     "turrets": {
       "Commander": {
         "zoom": {
-          "max": 1.4705882352941178,
-          "min": 6.25
+          "max": 6.25,
+          "min": 1.4705882352941178
         },
         "weapons": []
       },
@@ -8753,8 +8862,8 @@
         ],
         "smokes": true,
         "zoom": {
-          "max": 1.4705882352941178,
-          "min": 6.25
+          "max": 6.25,
+          "min": 1.4705882352941178
         }
       }
     }
@@ -8778,21 +8887,22 @@
     "turrets": {
       "Commander": {
         "zoom": {
-          "max": 1.875,
-          "min": 3
+          "max": 3,
+          "min": 1.875
         },
         "weapons": [
           "12.7mm M2"
         ]
       },
       "Gunner": {
+        "weapons": [
+          "155mm M284"
+        ],
+        "smokes": false,
         "zoom": {
           "max": 3.9473684210526314,
           "min": 3.9473684210526314
-        },
-        "weapons": [
-          "155mm M284"
-        ]
+        }
       }
     }
   },
@@ -8829,8 +8939,8 @@
         ],
         "smokes": true,
         "zoom": {
-          "max": 3.75,
-          "min": 7.5
+          "max": 7.5,
+          "min": 3.75
         }
       }
     }
@@ -8859,8 +8969,8 @@
         ],
         "smokes": true,
         "zoom": {
-          "max": 3.75,
-          "min": 10.714285714285714
+          "max": 10.714285714285714,
+          "min": 3.75
         }
       }
     }
@@ -8893,19 +9003,20 @@
         "weapons": []
       },
       "Gunner": {
-        "zoom": {
-          "max": 8.333333333333334,
-          "min": 8.333333333333334
-        },
         "weapons": [
           "9M311",
           "30mm 2A38"
-        ]
+        ],
+        "smokes": false,
+        "zoom": {
+          "max": 8.333333333333334,
+          "min": 8.333333333333334
+        }
       },
       "Radar Operator": {
         "zoom": {
-          "max": 1.875,
-          "min": 3
+          "max": 3,
+          "min": 1.875
         },
         "weapons": []
       }
@@ -8936,8 +9047,8 @@
         ],
         "smokes": true,
         "zoom": {
-          "max": 2.7777777777777777,
-          "min": 10.714285714285714
+          "max": 10.714285714285714,
+          "min": 2.7777777777777777
         }
       }
     }
@@ -8961,8 +9072,8 @@
     "turrets": {
       "Driver": {
         "zoom": {
-          "max": 1.875,
-          "min": 3
+          "max": 3,
+          "min": 1.875
         },
         "weapons": [
           "7.62mm DT-28"
@@ -8970,27 +9081,28 @@
       },
       "Loader": {
         "zoom": {
-          "max": 1.875,
-          "min": 3
+          "max": 3,
+          "min": 1.875
         },
         "weapons": [
           "7.62mm DT-28"
         ]
       },
       "Gunner": {
-        "zoom": {
-          "max": 3.9473684210526314,
-          "min": 3.9473684210526314
-        },
         "weapons": [
           "122mm D-25T",
           "7.62mm DT-28"
-        ]
+        ],
+        "smokes": false,
+        "zoom": {
+          "max": 3.9473684210526314,
+          "min": 3.9473684210526314
+        }
       },
       "Commander": {
         "zoom": {
-          "max": 1.875,
-          "min": 3
+          "max": 3,
+          "min": 1.875
         },
         "weapons": [
           "12.7mm DSHK"
@@ -9016,13 +9128,14 @@
     "mass": 11,
     "turrets": {
       "Gunner": {
-        "zoom": {
-          "max": 1.875,
-          "min": 3.75
-        },
         "weapons": [
           "12.7mm M2"
-        ]
+        ],
+        "smokes": false,
+        "zoom": {
+          "max": 3.75,
+          "min": 1.875
+        }
       }
     }
   },
@@ -9045,23 +9158,24 @@
     "turrets": {
       "Commander": {
         "zoom": {
-          "max": 1.875,
-          "min": 3
+          "max": 3,
+          "min": 1.875
         },
         "weapons": [
           "12.7mm DSHK"
         ]
       },
       "Gunner": {
-        "zoom": {
-          "max": 3.9473684210526314,
-          "min": 3.9473684210526314
-        },
         "weapons": [
           "122mm D-25T",
           "7.62mm DT-28",
           "122mm D-25TM"
-        ]
+        ],
+        "smokes": false,
+        "zoom": {
+          "max": 3.9473684210526314,
+          "min": 3.9473684210526314
+        }
       }
     }
   },
@@ -9084,21 +9198,22 @@
     "turrets": {
       "Commander": {
         "zoom": {
-          "max": 1.25,
-          "min": 1.875
+          "max": 1.875,
+          "min": 1.25
         },
         "weapons": [
           "12.7mm M2"
         ]
       },
       "Gunner": {
+        "weapons": [
+          "90mm M3"
+        ],
+        "smokes": false,
         "zoom": {
           "max": 5,
           "min": 5
-        },
-        "weapons": [
-          "90mm M3"
-        ]
+        }
       }
     }
   },
@@ -9120,19 +9235,20 @@
     "mass": 37.8,
     "turrets": {
       "Gunner": {
-        "zoom": {
-          "max": 5,
-          "min": 5
-        },
         "weapons": [
           "76mm M1",
           ".30 cal M1919"
-        ]
+        ],
+        "smokes": false,
+        "zoom": {
+          "max": 5,
+          "min": 5
+        }
       },
       "Commander": {
         "zoom": {
-          "max": 1.875,
-          "min": 3
+          "max": 3,
+          "min": 1.875
         },
         "weapons": [
           "12.7mm M2"
@@ -9140,8 +9256,8 @@
       },
       "Bow Gunner": {
         "zoom": {
-          "max": 1.875,
-          "min": 3
+          "max": 3,
+          "min": 1.875
         },
         "weapons": [
           ".30 cal M1919"
@@ -9170,8 +9286,8 @@
         "weapons": [],
         "smokes": true,
         "zoom": {
-          "max": 1.875,
-          "min": 3
+          "max": 3,
+          "min": 1.875
         }
       },
       "Gunner": {
@@ -9182,14 +9298,14 @@
         ],
         "smokes": true,
         "zoom": {
-          "max": 3.9473684210526314,
-          "min": 12.5
+          "max": 12.5,
+          "min": 3.9473684210526314
         }
       },
       "Commander": {
         "zoom": {
-          "max": 3.9473684210526314,
-          "min": 12.5
+          "max": 12.5,
+          "min": 3.9473684210526314
         },
         "weapons": []
       }
@@ -9213,13 +9329,14 @@
     "mass": 28,
     "turrets": {
       "Gunner": {
-        "zoom": {
-          "max": 1.875,
-          "min": 3.5714285714285716
-        },
         "weapons": [
           "57mm S-68"
-        ]
+        ],
+        "smokes": false,
+        "zoom": {
+          "max": 3.5714285714285716,
+          "min": 1.875
+        }
       }
     }
   },
@@ -9242,8 +9359,8 @@
     "turrets": {
       "Commander": {
         "zoom": {
-          "max": 3,
-          "min": 12.5
+          "max": 12.5,
+          "min": 3
         },
         "weapons": []
       },
@@ -9255,8 +9372,8 @@
         ],
         "smokes": true,
         "zoom": {
-          "max": 3,
-          "min": 12.5
+          "max": 12.5,
+          "min": 3
         }
       }
     }
@@ -9318,14 +9435,15 @@
         "weapons": []
       },
       "Gunner": {
-        "zoom": {
-          "max": 8.333333333333334,
-          "min": 8.333333333333334
-        },
         "weapons": [
           "7.62mm PKT",
           "115mm D-68"
-        ]
+        ],
+        "smokes": false,
+        "zoom": {
+          "max": 8.333333333333334,
+          "min": 8.333333333333334
+        }
       }
     }
   },
@@ -9348,22 +9466,23 @@
     "turrets": {
       "Bow Gunner": {
         "zoom": {
-          "max": 1.875,
-          "min": 3
+          "max": 3,
+          "min": 1.875
         },
         "weapons": [
           "7.62mm DT-28"
         ]
       },
       "Gunner": {
-        "zoom": {
-          "max": 1.875,
-          "min": 3.5714285714285716
-        },
         "weapons": [
           "76mm F-34",
           "7.62mm DT-28"
-        ]
+        ],
+        "smokes": false,
+        "zoom": {
+          "max": 3.5714285714285716,
+          "min": 1.875
+        }
       }
     }
   },
@@ -9386,22 +9505,23 @@
     "turrets": {
       "Commander": {
         "zoom": {
-          "max": 3,
-          "min": 5
+          "max": 5,
+          "min": 3
         },
         "weapons": [
           "30mm 2A42"
         ]
       },
       "Gunner": {
-        "zoom": {
-          "max": 4.411764705882353,
-          "min": 9.375
-        },
         "weapons": [
           "7.62mm PKT",
           "125mm 2A47"
-        ]
+        ],
+        "smokes": false,
+        "zoom": {
+          "max": 9.375,
+          "min": 4.411764705882353
+        }
       }
     }
   },
@@ -9424,8 +9544,8 @@
     "turrets": {
       "Loader": {
         "zoom": {
-          "max": 1.875,
-          "min": 3
+          "max": 3,
+          "min": 1.875
         },
         "weapons": [
           "12.7mm DSHK"
@@ -9438,8 +9558,8 @@
         ],
         "smokes": true,
         "zoom": {
-          "max": 3.5714285714285716,
-          "min": 6.818181818181818
+          "max": 6.818181818181818,
+          "min": 3.5714285714285716
         }
       },
       "Commander": {
