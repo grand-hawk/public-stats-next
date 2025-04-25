@@ -13,8 +13,6 @@
       "horsepower": 600,
       "name": "VTA-903T"
     },
-    "name": "Air Defense Anti Tank System",
-    "mass": 25,
     "turrets": {
       "Driver": {
         "smokes": true,
@@ -56,7 +54,10 @@
           "min": 6.25
         }
       }
-    }
+    },
+    "name": "Air Defense Anti Tank System",
+    "amphibious": true,
+    "mass": 25
   },
   {
     "engine": {
@@ -72,8 +73,6 @@
       "horsepower": 1217,
       "name": "Perkins CV12"
     },
-    "name": "Black Night",
-    "mass": 65,
     "turrets": {
       "Loader": {
         "weapons": [
@@ -136,7 +135,10 @@
         },
         "stabilizer": true
       }
-    }
+    },
+    "name": "Black Night",
+    "amphibious": false,
+    "mass": 65
   },
   {
     "engine": {
@@ -152,8 +154,6 @@
       "horsepower": 240,
       "name": "YaMZ 238"
     },
-    "name": "Strela-MLRS",
-    "mass": 11.5,
     "turrets": {
       "Commander": {
         "weapons": [
@@ -196,7 +196,10 @@
           "min": 8.333333333333334
         }
       }
-    }
+    },
+    "name": "Strela-MLRS",
+    "amphibious": true,
+    "mass": 11.5
   },
   {
     "engine": {
@@ -212,8 +215,6 @@
       "horsepower": 500,
       "name": "Model V-2-34"
     },
-    "name": "OT-34-85",
-    "mass": 32.2,
     "turrets": {
       "Bow Gunner": {
         "weapons": [
@@ -257,7 +258,10 @@
           "min": 3.9473684210526314
         }
       }
-    }
+    },
+    "name": "OT-34-85",
+    "amphibious": false,
+    "mass": 32.2
   },
   {
     "engine": {
@@ -273,8 +277,6 @@
       "horsepower": 600,
       "name": "V-2K"
     },
-    "name": "KV-1E",
-    "mass": 49,
     "turrets": {
       "Loader": {
         "weapons": [
@@ -338,7 +340,10 @@
         },
         "stabilizer": true
       }
-    }
+    },
+    "name": "KV-1E",
+    "amphibious": false,
+    "mass": 49
   },
   {
     "engine": {
@@ -354,8 +359,6 @@
       "horsepower": 470,
       "name": "YaMZ-8424.10"
     },
-    "name": "2S43",
-    "mass": 42,
     "turrets": {
       "Driver": {
         "smokes": true,
@@ -397,7 +400,10 @@
           "min": 1.875
         }
       }
-    }
+    },
+    "name": "2S43",
+    "amphibious": false,
+    "mass": 42
   },
   {
     "engine": {
@@ -413,8 +419,6 @@
       "horsepower": 400,
       "name": "Continental R975-C4"
     },
-    "name": "M4A1 (76) Sherman",
-    "mass": 32,
     "turrets": {
       "Gunner": {
         "smokes": false,
@@ -478,7 +482,10 @@
         },
         "stabilizer": true
       }
-    }
+    },
+    "name": "M4A1 (76) Sherman",
+    "amphibious": false,
+    "mass": 32
   },
   {
     "engine": {
@@ -494,8 +501,6 @@
       "horsepower": 240,
       "name": "YaMZ 238"
     },
-    "name": "MT-LB",
-    "mass": 11.5,
     "turrets": {
       "Commander": {
         "weapons": [
@@ -517,7 +522,10 @@
         },
         "stabilizer": false
       }
-    }
+    },
+    "name": "MT-LB",
+    "amphibious": true,
+    "mass": 11.5
   },
   {
     "engine": {
@@ -533,8 +541,6 @@
       "horsepower": 300,
       "name": "UTD-20"
     },
-    "name": "BMP-1",
-    "mass": 13.4,
     "turrets": {
       "Commander": {
         "weapons": [],
@@ -578,7 +584,10 @@
           "min": 6.25
         }
       }
-    }
+    },
+    "name": "BMP-1",
+    "amphibious": true,
+    "mass": 13.4
   },
   {
     "engine": {
@@ -594,8 +603,6 @@
       "horsepower": 580,
       "name": "ChTZ V-55V"
     },
-    "name": "T-55",
-    "mass": 36,
     "turrets": {
       "Loader": {
         "weapons": [
@@ -677,7 +684,10 @@
         },
         "stabilizer": false
       }
-    }
+    },
+    "name": "T-55",
+    "amphibious": false,
+    "mass": 36
   },
   {
     "engine": {
@@ -693,8 +703,6 @@
       "horsepower": 1200,
       "name": "KMDB 6TD-2"
     },
-    "name": "T-84-120",
-    "mass": 46,
     "turrets": {
       "Commander": {
         "weapons": [
@@ -738,7 +746,10 @@
           "min": 2.6785714285714284
         }
       }
-    }
+    },
+    "name": "T-84-120",
+    "amphibious": false,
+    "mass": 46
   },
   {
     "engine": {
@@ -754,8 +765,6 @@
       "horsepower": 690,
       "name": "MB HL230 P30"
     },
-    "name": "Tiger II",
-    "mass": 69.8,
     "turrets": {
       "Loader": {
         "weapons": [
@@ -840,7 +849,10 @@
         },
         "stabilizer": true
       }
-    }
+    },
+    "name": "Tiger II",
+    "amphibious": false,
+    "mass": 69.8
   },
   {
     "engine": {
@@ -856,9 +868,10 @@
       "horsepower": 150,
       "name": "3VZ-E V6"
     },
+    "turrets": [],
     "name": "MiKi Truck Company Model 1",
-    "mass": 1.27,
-    "turrets": []
+    "amphibious": false,
+    "mass": 1.27
   },
   {
     "engine": {
@@ -874,8 +887,6 @@
       "horsepower": 1000,
       "name": "ChTZ V-92S2"
     },
-    "name": "T-90A",
-    "mass": 46.5,
     "turrets": {
       "Commander": {
         "weapons": [
@@ -919,7 +930,10 @@
           "min": 2.6785714285714284
         }
       }
-    }
+    },
+    "name": "T-90A",
+    "amphibious": false,
+    "mass": 46.5
   },
   {
     "engine": {
@@ -935,8 +949,6 @@
       "horsepower": 212,
       "name": "6V53"
     },
-    "name": "M163",
-    "mass": 14,
     "turrets": {
       "Gunner": {
         "smokes": false,
@@ -959,7 +971,10 @@
           "min": 6.25
         }
       }
-    }
+    },
+    "name": "M163",
+    "amphibious": true,
+    "mass": 14
   },
   {
     "engine": {
@@ -975,8 +990,6 @@
       "horsepower": 500,
       "name": "Model V-2-34"
     },
-    "name": "T-34-122",
-    "mass": 33,
     "turrets": {
       "Bow Gunner": {
         "weapons": [
@@ -1019,7 +1032,10 @@
           "min": 1.875
         }
       }
-    }
+    },
+    "name": "T-34-122",
+    "amphibious": false,
+    "mass": 33
   },
   {
     "engine": {
@@ -1035,8 +1051,6 @@
       "horsepower": 840,
       "name": "V-46-I"
     },
-    "name": "2S7 Pion",
-    "mass": 46.5,
     "turrets": {
       "Gunner": {
         "smokes": false,
@@ -1059,7 +1073,10 @@
           "min": 1.875
         }
       }
-    }
+    },
+    "name": "2S7 Pion",
+    "amphibious": false,
+    "mass": 46.5
   },
   {
     "engine": {
@@ -1075,8 +1092,6 @@
       "horsepower": 600,
       "name": "Rolls-Royce Meteor Mark III"
     },
-    "name": "Cromwell V",
-    "mass": 28,
     "turrets": {
       "Bow Gunner": {
         "weapons": [
@@ -1120,7 +1135,10 @@
           "min": 1.875
         }
       }
-    }
+    },
+    "name": "Cromwell V",
+    "amphibious": false,
+    "mass": 28
   },
   {
     "engine": {
@@ -1136,8 +1154,6 @@
       "horsepower": 570,
       "name": "MHI 4VA"
     },
-    "name": "Type 16 MCV",
-    "mass": 26,
     "turrets": {
       "Commander": {
         "weapons": [
@@ -1181,7 +1197,10 @@
           "min": 3.9473684210526314
         }
       }
-    }
+    },
+    "name": "Type 16 MCV",
+    "amphibious": false,
+    "mass": 26
   },
   {
     "engine": {
@@ -1197,8 +1216,6 @@
       "horsepower": 740,
       "name": "ChTZ V-46-6"
     },
-    "name": "T-72A",
-    "mass": 41,
     "turrets": {
       "Commander": {
         "weapons": [
@@ -1242,7 +1259,10 @@
           "min": 8.333333333333334
         }
       }
-    }
+    },
+    "name": "T-72A",
+    "amphibious": false,
+    "mass": 41
   },
   {
     "engine": {
@@ -1258,8 +1278,6 @@
       "horsepower": 400,
       "name": "UTD-23"
     },
-    "name": "BMP-2M",
-    "mass": 14.5,
     "turrets": {
       "Commander": {
         "weapons": [
@@ -1304,7 +1322,10 @@
           "min": 2.5
         }
       }
-    }
+    },
+    "name": "BMP-2M",
+    "amphibious": true,
+    "mass": 14.5
   },
   {
     "engine": {
@@ -1320,8 +1341,6 @@
       "horsepower": 670,
       "name": "Type 6V150"
     },
-    "name": "ZBD04",
-    "mass": 18.7,
     "turrets": {
       "Commander": {
         "weapons": [],
@@ -1364,7 +1383,10 @@
           "min": 6.25
         }
       }
-    }
+    },
+    "name": "ZBD04",
+    "amphibious": true,
+    "mass": 18.7
   },
   {
     "engine": {
@@ -1380,8 +1402,6 @@
       "horsepower": 450,
       "name": "Ford GAA V8"
     },
-    "name": "M4A3 (105)",
-    "mass": 31.7,
     "turrets": {
       "Gunner": {
         "smokes": false,
@@ -1445,7 +1465,10 @@
         },
         "stabilizer": true
       }
-    }
+    },
+    "name": "M4A3 (105)",
+    "amphibious": false,
+    "mass": 31.7
   },
   {
     "engine": {
@@ -1461,8 +1484,6 @@
       "horsepower": 212,
       "name": "6V53"
     },
-    "name": "M113 HVMS",
-    "mass": 15,
     "turrets": {
       "Gunner": {
         "smokes": false,
@@ -1486,7 +1507,10 @@
           "min": 8.333333333333334
         }
       }
-    }
+    },
+    "name": "M113 HVMS",
+    "amphibious": false,
+    "mass": 15
   },
   {
     "engine": {
@@ -1502,8 +1526,6 @@
       "horsepower": 240,
       "name": "YaMZ 238"
     },
-    "name": "MT-LeBrams",
-    "mass": 12.3,
     "turrets": {
       "Gunner": {
         "smokes": false,
@@ -1526,7 +1548,10 @@
           "min": 2.5
         }
       }
-    }
+    },
+    "name": "MT-LeBrams",
+    "amphibious": false,
+    "mass": 12.3
   },
   {
     "engine": {
@@ -1542,8 +1567,6 @@
       "horsepower": 800,
       "name": "MTU MT 892 Ka-501"
     },
-    "name": "PUMA auth version",
-    "mass": 43,
     "turrets": {
       "Commander": {
         "weapons": [],
@@ -1586,7 +1609,10 @@
           "min": 1.9736842105263157
         }
       }
-    }
+    },
+    "name": "PUMA auth version",
+    "amphibious": false,
+    "mass": 43
   },
   {
     "suspension": {
@@ -1648,8 +1674,9 @@
         }
       }
     },
+    "mass": 45,
     "name": "HIMAG",
-    "mass": 45
+    "amphibious": false
   },
   {
     "engine": {
@@ -1665,8 +1692,6 @@
       "horsepower": 840,
       "name": "ChTZ V-84-1"
     },
-    "name": "T-72B",
-    "mass": 44.5,
     "turrets": {
       "Commander": {
         "weapons": [
@@ -1710,7 +1735,10 @@
           "min": 8.333333333333334
         }
       }
-    }
+    },
+    "name": "T-72B",
+    "amphibious": false,
+    "mass": 44.5
   },
   {
     "suspension": {
@@ -1775,8 +1803,9 @@
         }
       }
     },
+    "mass": 25,
     "name": "Kurganets-25",
-    "mass": 25
+    "amphibious": true
   },
   {
     "engine": {
@@ -1792,8 +1821,6 @@
       "horsepower": 350,
       "name": "Caterpillar 3126"
     },
-    "name": "M1128 MGS",
-    "mass": 18.8,
     "turrets": {
       "Commander": {
         "weapons": [
@@ -1837,7 +1864,10 @@
           "min": 3.409090909090909
         }
       }
-    }
+    },
+    "name": "M1128 MGS",
+    "amphibious": false,
+    "mass": 18.8
   },
   {
     "engine": {
@@ -1853,8 +1883,6 @@
       "horsepower": 1500,
       "name": "XAP-1000"
     },
-    "name": "Abrams X",
-    "mass": 49,
     "turrets": {
       "Commander": {
         "weapons": [
@@ -1899,7 +1927,10 @@
           "min": 3
         }
       }
-    }
+    },
+    "name": "Abrams X",
+    "amphibious": false,
+    "mass": 49
   },
   {
     "engine": {
@@ -1915,8 +1946,6 @@
       "horsepower": 580,
       "name": "ChTZ V-55V"
     },
-    "name": "BTR-55",
-    "mass": 30,
     "turrets": {
       "Gunner": {
         "smokes": false,
@@ -1940,7 +1969,10 @@
           "min": 5
         }
       }
-    }
+    },
+    "name": "BTR-55",
+    "amphibious": false,
+    "mass": 30
   },
   {
     "engine": {
@@ -1956,8 +1988,6 @@
       "horsepower": 148,
       "name": "White 160AX"
     },
-    "name": "SU-57",
-    "mass": 8.6,
     "turrets": {
       "Gunner": {
         "smokes": false,
@@ -1980,7 +2010,10 @@
           "min": 1.875
         }
       }
-    }
+    },
+    "name": "SU-57",
+    "amphibious": false,
+    "mass": 8.6
   },
   {
     "engine": {
@@ -1996,8 +2029,6 @@
       "horsepower": 550,
       "name": "Scania DSI14"
     },
-    "name": "Strf 9040C",
-    "mass": 28.5,
     "turrets": {
       "Commander": {
         "weapons": [
@@ -2041,7 +2072,10 @@
           "min": 8.333333333333334
         }
       }
-    }
+    },
+    "name": "Strf 9040C",
+    "amphibious": false,
+    "mass": 28.5
   },
   {
     "engine": {
@@ -2057,8 +2091,6 @@
       "horsepower": 900,
       "name": "MB HL234"
     },
-    "name": "Pz IV Ausf. 1946",
-    "mass": 26,
     "turrets": {
       "Gunner": {
         "smokes": false,
@@ -2122,7 +2154,10 @@
         },
         "stabilizer": false
       }
-    }
+    },
+    "name": "Pz IV Ausf. 1946",
+    "amphibious": false,
+    "mass": 26
   },
   {
     "engine": {
@@ -2138,8 +2173,6 @@
       "horsepower": 350,
       "name": "Bedford 12-cylinder"
     },
-    "name": "Churchill VII",
-    "mass": 41,
     "turrets": {
       "Loader": {
         "weapons": [
@@ -2204,7 +2237,10 @@
         },
         "stabilizer": true
       }
-    }
+    },
+    "name": "Churchill VII",
+    "amphibious": false,
+    "mass": 41
   },
   {
     "engine": {
@@ -2220,8 +2256,6 @@
       "horsepower": 240,
       "name": "V-6"
     },
-    "name": "PT-76B",
-    "mass": 14,
     "turrets": {
       "Commander": {
         "weapons": [
@@ -2244,7 +2278,10 @@
         },
         "stabilizer": true
       }
-    }
+    },
+    "name": "PT-76B",
+    "amphibious": true,
+    "mass": 14
   },
   {
     "engine": {
@@ -2260,8 +2297,6 @@
       "horsepower": 850,
       "name": "HPZ 5TDFM"
     },
-    "name": "T-64BM \"Bulat\"",
-    "mass": 47,
     "turrets": {
       "Commander": {
         "weapons": [
@@ -2305,7 +2340,10 @@
           "min": 3.9473684210526314
         }
       }
-    }
+    },
+    "name": "T-64BM \"Bulat\"",
+    "amphibious": false,
+    "mass": 47
   },
   {
     "engine": {
@@ -2321,8 +2359,6 @@
       "horsepower": 400,
       "name": "Continental R975-C4"
     },
-    "name": "M4A1 Sherman",
-    "mass": 30.6,
     "turrets": {
       "Gunner": {
         "smokes": false,
@@ -2386,7 +2422,10 @@
         },
         "stabilizer": true
       }
-    }
+    },
+    "name": "M4A1 Sherman",
+    "amphibious": false,
+    "mass": 30.6
   },
   {
     "engine": {
@@ -2402,8 +2441,6 @@
       "horsepower": 1250,
       "name": "GTD-1250"
     },
-    "name": "T-80BVM",
-    "mass": 47,
     "turrets": {
       "Commander": {
         "weapons": [
@@ -2447,7 +2484,10 @@
           "min": 3.9473684210526314
         }
       }
-    }
+    },
+    "name": "T-80BVM",
+    "amphibious": false,
+    "mass": 47
   },
   {
     "engine": {
@@ -2463,8 +2503,6 @@
       "horsepower": 215,
       "name": "YaMZ-5347-10"
     },
-    "name": "GAZ Tigr",
-    "mass": 7.2,
     "turrets": {
       "Gunner": {
         "smokes": true,
@@ -2488,7 +2526,10 @@
           "min": 1.875
         }
       }
-    }
+    },
+    "name": "GAZ Tigr",
+    "amphibious": false,
+    "mass": 7.2
   },
   {
     "engine": {
@@ -2504,8 +2545,6 @@
       "horsepower": 1200,
       "name": "AVDS-1790-2"
     },
-    "name": "120S",
-    "mass": 56.3,
     "turrets": {
       "Loader": {
         "weapons": [
@@ -2569,7 +2608,10 @@
         },
         "stabilizer": true
       }
-    }
+    },
+    "name": "120S",
+    "amphibious": false,
+    "mass": 56.3
   },
   {
     "suspension": {
@@ -2613,8 +2655,9 @@
         }
       }
     },
+    "mass": 15,
     "name": "Kornet D BMD-4M",
-    "mass": 15
+    "amphibious": true
   },
   {
     "engine": {
@@ -2630,8 +2673,6 @@
       "horsepower": 73,
       "name": "5.55 L ZiS-5"
     },
-    "name": "RSZO-1",
-    "mass": 4.23,
     "turrets": {
       "Commander": {
         "weapons": [
@@ -2653,7 +2694,10 @@
         },
         "stabilizer": false
       }
-    }
+    },
+    "name": "RSZO-1",
+    "amphibious": false,
+    "mass": 4.23
   },
   {
     "engine": {
@@ -2669,8 +2713,6 @@
       "horsepower": 375,
       "name": "GM 6046"
     },
-    "name": "M4A2E8 Sherman",
-    "mass": 33,
     "turrets": {
       "Gunner": {
         "smokes": false,
@@ -2734,7 +2776,10 @@
         },
         "stabilizer": true
       }
-    }
+    },
+    "name": "M4A2E8 Sherman",
+    "amphibious": false,
+    "mass": 33
   },
   {
     "engine": {
@@ -2750,8 +2795,6 @@
       "horsepower": 296,
       "name": "MB HL120 TRM"
     },
-    "name": "Pz.III M",
-    "mass": 23,
     "turrets": {
       "Gunner": {
         "smokes": true,
@@ -2815,7 +2858,10 @@
         },
         "stabilizer": true
       }
-    }
+    },
+    "name": "Pz.III M",
+    "amphibious": false,
+    "mass": 23
   },
   {
     "engine": {
@@ -2831,8 +2877,6 @@
       "horsepower": 500,
       "name": "Model V-2-34"
     },
-    "name": "SU-85M",
-    "mass": 31.6,
     "turrets": {
       "Gunner": {
         "smokes": false,
@@ -2855,7 +2899,10 @@
           "min": 1.875
         }
       }
-    }
+    },
+    "name": "SU-85M",
+    "amphibious": false,
+    "mass": 31.6
   },
   {
     "engine": {
@@ -2871,8 +2918,6 @@
       "horsepower": 800,
       "name": "MTU MT 892 Ka-501"
     },
-    "name": "PUMA",
-    "mass": 43,
     "turrets": {
       "Commander": {
         "weapons": [],
@@ -2915,7 +2960,10 @@
           "min": 1.9736842105263157
         }
       }
-    }
+    },
+    "name": "PUMA",
+    "amphibious": false,
+    "mass": 43
   },
   {
     "engine": {
@@ -2931,8 +2979,6 @@
       "horsepower": 270,
       "name": "6CTA8.3 IMO 2"
     },
-    "name": "M1117 ASV",
-    "mass": 11,
     "turrets": {
       "Gunner": {
         "smokes": true,
@@ -2956,7 +3002,10 @@
           "min": 1.875
         }
       }
-    }
+    },
+    "name": "M1117 ASV",
+    "amphibious": true,
+    "mass": 11
   },
   {
     "engine": {
@@ -2972,8 +3021,6 @@
       "horsepower": 600,
       "name": "V-2K"
     },
-    "name": "KV-5",
-    "mass": 100,
     "turrets": {
       "Gunner": {
         "smokes": false,
@@ -3037,7 +3084,10 @@
         },
         "stabilizer": false
       }
-    }
+    },
+    "name": "KV-5",
+    "amphibious": false,
+    "mass": 100
   },
   {
     "engine": {
@@ -3053,8 +3103,6 @@
       "horsepower": 840,
       "name": "ChTZ V-84-1"
     },
-    "name": "Tutel",
-    "mass": 47,
     "turrets": {
       "Commander": {
         "weapons": [
@@ -3098,7 +3146,10 @@
           "min": 3.9473684210526314
         }
       }
-    }
+    },
+    "name": "Tutel",
+    "amphibious": false,
+    "mass": 47
   },
   {
     "engine": {
@@ -3114,8 +3165,6 @@
       "horsepower": 300,
       "name": "UTD-20"
     },
-    "name": "BMP-2",
-    "mass": 14.5,
     "turrets": {
       "Commander": {
         "weapons": [],
@@ -3159,7 +3208,10 @@
           "min": 6.25
         }
       }
-    }
+    },
+    "name": "BMP-2",
+    "amphibious": true,
+    "mass": 14.5
   },
   {
     "engine": {
@@ -3175,8 +3227,6 @@
       "horsepower": 830,
       "name": "MTU MB 838 CaM 500"
     },
-    "name": "Leopard 1A5",
-    "mass": 42.5,
     "turrets": {
       "Loader": {
         "weapons": [
@@ -3238,7 +3288,10 @@
         },
         "stabilizer": true
       }
-    }
+    },
+    "name": "Leopard 1A5",
+    "amphibious": false,
+    "mass": 42.5
   },
   {
     "engine": {
@@ -3254,8 +3307,6 @@
       "horsepower": 148,
       "name": "White 160AX"
     },
-    "name": "M3 GMC",
-    "mass": 9.1,
     "turrets": {
       "Gunner": {
         "smokes": false,
@@ -3278,7 +3329,10 @@
           "min": 1.875
         }
       }
-    }
+    },
+    "name": "M3 GMC",
+    "amphibious": false,
+    "mass": 9.1
   },
   {
     "engine": {
@@ -3294,8 +3348,6 @@
       "horsepower": 72,
       "name": "F4-134 Hurricane"
     },
-    "name": "M38",
-    "mass": 1.2,
     "turrets": {
       "Gunner": {
         "smokes": false,
@@ -3318,7 +3370,10 @@
           "min": 1.25
         }
       }
-    }
+    },
+    "name": "M38",
+    "amphibious": false,
+    "mass": 1.2
   },
   {
     "engine": {
@@ -3334,8 +3389,6 @@
       "horsepower": 600,
       "name": "MTU MB 833 Ea-500"
     },
-    "name": "Marder 1A3",
-    "mass": 33.5,
     "turrets": {
       "Commander": {
         "weapons": [
@@ -3380,7 +3433,10 @@
           "min": 1.9736842105263157
         }
       }
-    }
+    },
+    "name": "Marder 1A3",
+    "amphibious": false,
+    "mass": 33.5
   },
   {
     "suspension": {
@@ -3427,8 +3483,9 @@
         }
       }
     },
+    "mass": 11.5,
     "name": "BMD-2",
-    "mass": 11.5
+    "amphibious": true
   },
   {
     "engine": {
@@ -3444,8 +3501,6 @@
       "horsepower": 212,
       "name": "6V53"
     },
-    "name": "M901ITV",
-    "mass": 11.8,
     "turrets": {
       "Commander": {
         "smokes": true,
@@ -3469,7 +3524,10 @@
           "min": 3
         }
       }
-    }
+    },
+    "name": "M901ITV",
+    "amphibious": false,
+    "mass": 11.8
   },
   {
     "engine": {
@@ -3485,8 +3543,6 @@
       "horsepower": 760,
       "name": "Leyland L60"
     },
-    "name": "Chieftain Mk 5",
-    "mass": 55,
     "turrets": {
       "Commander": {
         "weapons": [
@@ -3531,7 +3587,10 @@
           "min": 6.818181818181818
         }
       }
-    }
+    },
+    "name": "Chieftain Mk 5",
+    "amphibious": false,
+    "mass": 55
   },
   {
     "engine": {
@@ -3547,8 +3606,6 @@
       "horsepower": 1200,
       "name": "AVDS-1790-2"
     },
-    "name": "M60A1 RISE Passive",
-    "mass": 53.2,
     "turrets": {
       "Commander": {
         "weapons": [
@@ -3592,7 +3649,10 @@
           "min": 8.333333333333334
         }
       }
-    }
+    },
+    "name": "M60A1 RISE Passive",
+    "amphibious": false,
+    "mass": 53.2
   },
   {
     "engine": {
@@ -3608,8 +3668,6 @@
       "horsepower": 140,
       "name": "GAZ-41"
     },
-    "name": "BRDM-2 Konkurs",
-    "mass": 7,
     "turrets": {
       "Scout Commander": {
         "weapons": [
@@ -3631,7 +3689,10 @@
         },
         "stabilizer": false
       }
-    }
+    },
+    "name": "BRDM-2 Konkurs",
+    "amphibious": true,
+    "mass": 7
   },
   {
     "engine": {
@@ -3647,8 +3708,6 @@
       "horsepower": 1500,
       "name": "12N360"
     },
-    "name": "T-14 Armata",
-    "mass": 55,
     "turrets": {
       "Commander": {
         "weapons": [
@@ -3694,7 +3753,10 @@
           "min": 3
         }
       }
-    }
+    },
+    "name": "T-14 Armata",
+    "amphibious": false,
+    "mass": 55
   },
   {
     "engine": {
@@ -3710,8 +3772,6 @@
       "horsepower": 148,
       "name": "White 160AX"
     },
-    "name": "M3 half-track",
-    "mass": 8,
     "turrets": {
       "Gunner": {
         "smokes": false,
@@ -3734,7 +3794,10 @@
           "min": 1.25
         }
       }
-    }
+    },
+    "name": "M3 half-track",
+    "amphibious": false,
+    "mass": 8
   },
   {
     "engine": {
@@ -3750,8 +3813,6 @@
       "horsepower": 865,
       "name": "12V150ZLD"
     },
-    "name": "ZTZ96A",
-    "mass": 42.8,
     "turrets": {
       "Commander": {
         "weapons": [
@@ -3795,7 +3856,10 @@
           "min": 6.25
         }
       }
-    }
+    },
+    "name": "ZTZ96A",
+    "amphibious": false,
+    "mass": 42.8
   },
   {
     "engine": {
@@ -3811,8 +3875,6 @@
       "horsepower": 612,
       "name": "2 x Porsche Type 101"
     },
-    "name": "Porsche Tiger",
-    "mass": 60,
     "turrets": {
       "Bow Gunner": {
         "weapons": [
@@ -3856,7 +3918,10 @@
           "min": 1.875
         }
       }
-    }
+    },
+    "name": "Porsche Tiger",
+    "amphibious": false,
+    "mass": 60
   },
   {
     "engine": {
@@ -3872,8 +3937,6 @@
       "horsepower": 140,
       "name": "GAZ-41"
     },
-    "name": "BRDM-2",
-    "mass": 7,
     "turrets": {
       "Scout Commander": {
         "weapons": [],
@@ -3915,7 +3978,10 @@
           "min": 5
         }
       }
-    }
+    },
+    "name": "BRDM-2",
+    "amphibious": true,
+    "mass": 7
   },
   {
     "engine": {
@@ -3931,8 +3997,6 @@
       "horsepower": 600,
       "name": "VTA-903T"
     },
-    "name": "M270 MLRS",
-    "mass": 24,
     "turrets": {
       "Gunner": {
         "smokes": false,
@@ -3955,7 +4019,10 @@
           "min": 1.875
         }
       }
-    }
+    },
+    "name": "M270 MLRS",
+    "amphibious": false,
+    "mass": 24
   },
   {
     "engine": {
@@ -3971,8 +4038,6 @@
       "horsepower": 690,
       "name": "MB HL230 P30"
     },
-    "name": "Jagdtiger",
-    "mass": 75.2,
     "turrets": {
       "Loader": {
         "weapons": [
@@ -4053,7 +4118,10 @@
         },
         "stabilizer": true
       }
-    }
+    },
+    "name": "Jagdtiger",
+    "amphibious": false,
+    "mass": 75.2
   },
   {
     "engine": {
@@ -4069,8 +4137,6 @@
       "horsepower": 212,
       "name": "6V53"
     },
-    "name": "M113",
-    "mass": 12.3,
     "turrets": {
       "Commander": {
         "weapons": [
@@ -4092,7 +4158,10 @@
         },
         "stabilizer": true
       }
-    }
+    },
+    "name": "M113",
+    "amphibious": true,
+    "mass": 12.3
   },
   {
     "engine": {
@@ -4108,8 +4177,6 @@
       "horsepower": 55,
       "name": "M-20"
     },
-    "name": "ASU-57",
-    "mass": 3.3,
     "turrets": {
       "Gunner": {
         "smokes": false,
@@ -4132,7 +4199,10 @@
           "min": 5.769230769230769
         }
       }
-    }
+    },
+    "name": "ASU-57",
+    "amphibious": false,
+    "mass": 3.3
   },
   {
     "engine": {
@@ -4148,8 +4218,6 @@
       "horsepower": 300,
       "name": "Detroit 6V53T"
     },
-    "name": "LAV-AT",
-    "mass": 12.9,
     "turrets": {
       "Commander": {
         "weapons": [
@@ -4193,7 +4261,10 @@
           "min": 3
         }
       }
-    }
+    },
+    "name": "LAV-AT",
+    "amphibious": true,
+    "mass": 12.9
   },
   {
     "suspension": {
@@ -4258,8 +4329,9 @@
         }
       }
     },
+    "mass": 18,
     "name": "Sprut-SDM1",
-    "mass": 18
+    "amphibious": true
   },
   {
     "engine": {
@@ -4275,8 +4347,6 @@
       "horsepower": 240,
       "name": "YaMZ 238"
     },
-    "name": "Strela-10",
-    "mass": 11.5,
     "turrets": {
       "Commander": {
         "weapons": [
@@ -4319,7 +4389,10 @@
           "min": 8.333333333333334
         }
       }
-    }
+    },
+    "name": "Strela-10",
+    "amphibious": true,
+    "mass": 11.5
   },
   {
     "engine": {
@@ -4335,8 +4408,6 @@
       "horsepower": 600,
       "name": "V-2K"
     },
-    "name": "KV-2",
-    "mass": 52.4,
     "turrets": {
       "Loader": {
         "weapons": [
@@ -4400,7 +4471,10 @@
         },
         "stabilizer": true
       }
-    }
+    },
+    "name": "KV-2",
+    "amphibious": false,
+    "mass": 52.4
   },
   {
     "engine": {
@@ -4416,8 +4490,6 @@
       "horsepower": 250,
       "name": "Continental W-670-9A"
     },
-    "name": "LVT-6 Gator",
-    "mass": 14.9,
     "turrets": {
       "Gunner": {
         "smokes": false,
@@ -4480,7 +4552,10 @@
         },
         "stabilizer": true
       }
-    }
+    },
+    "name": "LVT-6 Gator",
+    "amphibious": true,
+    "mass": 14.9
   },
   {
     "engine": {
@@ -4496,8 +4571,6 @@
       "horsepower": 1500,
       "name": "A-85-3A"
     },
-    "name": "Object 195",
-    "mass": 60,
     "turrets": {
       "Commander": {
         "weapons": [],
@@ -4539,7 +4612,10 @@
           "min": 3
         }
       }
-    }
+    },
+    "name": "Object 195",
+    "amphibious": false,
+    "mass": 60
   },
   {
     "engine": {
@@ -4555,8 +4631,6 @@
       "horsepower": 300,
       "name": "UTD-20"
     },
-    "name": "BMP-1AM",
-    "mass": 14.2,
     "turrets": {
       "Gunner": {
         "smokes": true,
@@ -4580,7 +4654,10 @@
           "min": 1.530612244897959
         }
       }
-    }
+    },
+    "name": "BMP-1AM",
+    "amphibious": true,
+    "mass": 14.2
   },
   {
     "engine": {
@@ -4596,8 +4673,6 @@
       "horsepower": 600,
       "name": "VTA-903T"
     },
-    "name": "M2A2 Bradley",
-    "mass": 22.3,
     "turrets": {
       "Commander": {
         "weapons": [],
@@ -4641,7 +4716,10 @@
           "min": 4.166666666666667
         }
       }
-    }
+    },
+    "name": "M2A2 Bradley",
+    "amphibious": false,
+    "mass": 22.3
   },
   {
     "suspension": {
@@ -4686,8 +4764,9 @@
         }
       }
     },
+    "mass": 43.5,
     "name": "VT1-2",
-    "mass": 43.5
+    "amphibious": false
   },
   {
     "engine": {
@@ -4703,8 +4782,6 @@
       "horsepower": 68,
       "name": "Opel 3.6L"
     },
-    "name": "Pz.W.42",
-    "mass": 9.1,
     "turrets": {
       "Commander": {
         "weapons": [
@@ -4747,7 +4824,10 @@
           "min": 1.875
         }
       }
-    }
+    },
+    "name": "Pz.W.42",
+    "amphibious": false,
+    "mass": 9.1
   },
   {
     "engine": {
@@ -4763,8 +4843,6 @@
       "horsepower": 1500,
       "name": "MTU MB 873 Ka-501"
     },
-    "name": "KF51 Panther",
-    "mass": 55.4,
     "turrets": {
       "Commander": {
         "weapons": [
@@ -4809,7 +4887,10 @@
           "min": 2.4038461538461537
         }
       }
-    }
+    },
+    "name": "KF51 Panther",
+    "amphibious": false,
+    "mass": 55.4
   },
   {
     "engine": {
@@ -4825,8 +4906,6 @@
       "horsepower": 1000,
       "name": "UTMZ 2DG-8M"
     },
-    "name": "Object 279",
-    "mass": 60.4,
     "turrets": {
       "Gunner": {
         "smokes": false,
@@ -4850,7 +4929,10 @@
           "min": 8.333333333333334
         }
       }
-    }
+    },
+    "name": "Object 279",
+    "amphibious": false,
+    "mass": 60.4
   },
   {
     "engine": {
@@ -4866,8 +4948,6 @@
       "horsepower": 270,
       "name": "SOFAM 8Gxb"
     },
-    "name": "AMX-13",
-    "mass": 14.5,
     "turrets": {
       "Gunner": {
         "smokes": true,
@@ -4892,7 +4972,10 @@
           "min": 7.5
         }
       }
-    }
+    },
+    "name": "AMX-13",
+    "amphibious": false,
+    "mass": 14.5
   },
   {
     "engine": {
@@ -4908,8 +4991,6 @@
       "horsepower": 296,
       "name": "MB HL120 TRM"
     },
-    "name": "Stug III G",
-    "mass": 23.9,
     "turrets": {
       "Loader": {
         "weapons": [
@@ -4952,7 +5033,10 @@
           "min": 5
         }
       }
-    }
+    },
+    "name": "Stug III G",
+    "amphibious": false,
+    "mass": 23.9
   },
   {
     "engine": {
@@ -4968,8 +5052,6 @@
       "horsepower": 1500,
       "name": "MTU 12V883"
     },
-    "name": "Merkava Mk.4M",
-    "mass": 65.5,
     "turrets": {
       "Loader": {
         "weapons": [
@@ -5034,7 +5116,10 @@
         },
         "stabilizer": true
       }
-    }
+    },
+    "name": "Merkava Mk.4M",
+    "amphibious": false,
+    "mass": 65.5
   },
   {
     "engine": {
@@ -5050,8 +5135,6 @@
       "horsepower": 405,
       "name": "8V71T"
     },
-    "name": "M109",
-    "mass": 24.1,
     "turrets": {
       "Commander": {
         "weapons": [
@@ -5094,7 +5177,10 @@
           "min": 3.9473684210526314
         }
       }
-    }
+    },
+    "name": "M109",
+    "amphibious": false,
+    "mass": 24.1
   },
   {
     "engine": {
@@ -5110,8 +5196,6 @@
       "horsepower": 770,
       "name": "GAC V12"
     },
-    "name": "T29E3",
-    "mass": 64.2,
     "turrets": {
       "Loader": {
         "weapons": [
@@ -5193,7 +5277,10 @@
         },
         "stabilizer": false
       }
-    }
+    },
+    "name": "T29E3",
+    "amphibious": false,
+    "mass": 64.2
   },
   {
     "engine": {
@@ -5209,8 +5296,6 @@
       "horsepower": 500,
       "name": "Model V-2-34"
     },
-    "name": "T-34-85",
-    "mass": 32.2,
     "turrets": {
       "Bow Gunner": {
         "weapons": [
@@ -5254,7 +5339,10 @@
           "min": 3.9473684210526314
         }
       }
-    }
+    },
+    "name": "T-34-85",
+    "amphibious": false,
+    "mass": 32.2
   },
   {
     "engine": {
@@ -5270,8 +5358,6 @@
       "horsepower": 1500,
       "name": "HP150"
     },
-    "name": "ZTZ99A",
-    "mass": 55,
     "turrets": {
       "Commander": {
         "weapons": [
@@ -5315,7 +5401,10 @@
           "min": 6.25
         }
       }
-    }
+    },
+    "name": "ZTZ99A",
+    "amphibious": false,
+    "mass": 55
   },
   {
     "suspension": {
@@ -5402,8 +5491,9 @@
         "stabilizer": false
       }
     },
+    "mass": 7.5,
     "name": "BMD-1",
-    "mass": 7.5
+    "amphibious": true
   },
   {
     "engine": {
@@ -5419,8 +5509,6 @@
       "horsepower": 520,
       "name": "V-2IS"
     },
-    "name": "ISU-152",
-    "mass": 46,
     "turrets": {
       "Commander": {
         "weapons": [
@@ -5464,7 +5552,10 @@
           "min": 1.875
         }
       }
-    }
+    },
+    "name": "ISU-152",
+    "amphibious": false,
+    "mass": 46
   },
   {
     "engine": {
@@ -5480,8 +5571,6 @@
       "horsepower": 450,
       "name": "Ford GAA V8"
     },
-    "name": "M36 Jackson",
-    "mass": 28.1,
     "turrets": {
       "Commander": {
         "weapons": [
@@ -5524,7 +5613,10 @@
           "min": 5
         }
       }
-    }
+    },
+    "name": "M36 Jackson",
+    "amphibious": false,
+    "mass": 28.1
   },
   {
     "engine": {
@@ -5540,8 +5632,6 @@
       "horsepower": 500,
       "name": "Model V-2-34"
     },
-    "name": "SU-122P",
-    "mass": 31.6,
     "turrets": {
       "Commander": {
         "weapons": [
@@ -5584,7 +5674,10 @@
           "min": 3.9473684210526314
         }
       }
-    }
+    },
+    "name": "SU-122P",
+    "amphibious": false,
+    "mass": 31.6
   },
   {
     "engine": {
@@ -5600,8 +5693,6 @@
       "horsepower": 600,
       "name": "V-2K"
     },
-    "name": "KV-2 (ZIS-6)",
-    "mass": 52.4,
     "turrets": {
       "Loader": {
         "weapons": [
@@ -5665,7 +5756,10 @@
         },
         "stabilizer": true
       }
-    }
+    },
+    "name": "KV-2 (ZIS-6)",
+    "amphibious": false,
+    "mass": 52.4
   },
   {
     "engine": {
@@ -5681,9 +5775,10 @@
       "horsepower": 75,
       "name": "2445cc UMZ"
     },
+    "turrets": [],
     "name": "UAZ-469",
-    "mass": 1.65,
-    "turrets": []
+    "amphibious": false,
+    "mass": 1.65
   },
   {
     "engine": {
@@ -5699,8 +5794,6 @@
       "horsepower": 650,
       "name": "Rolls-Royce Meteor 4B"
     },
-    "name": "FV4005",
-    "mass": 50,
     "turrets": {
       "Commander": {
         "weapons": [],
@@ -5742,7 +5835,10 @@
           "min": 5
         }
       }
-    }
+    },
+    "name": "FV4005",
+    "amphibious": false,
+    "mass": 50
   },
   {
     "engine": {
@@ -5758,8 +5854,6 @@
       "horsepower": 180,
       "name": "2xGAZ-49B"
     },
-    "name": "BTR-60PB",
-    "mass": 10.3,
     "turrets": {
       "Gunner": {
         "smokes": false,
@@ -5783,7 +5877,10 @@
           "min": 4.166666666666667
         }
       }
-    }
+    },
+    "name": "BTR-60PB",
+    "amphibious": true,
+    "mass": 10.3
   },
   {
     "engine": {
@@ -5799,8 +5896,6 @@
       "horsepower": 840,
       "name": "ChTZ V-84-1"
     },
-    "name": "TOS-1A BM-1",
-    "mass": 45.3,
     "turrets": {
       "Commander": {
         "weapons": [],
@@ -5841,7 +5936,10 @@
           "min": 1.875
         }
       }
-    }
+    },
+    "name": "TOS-1A BM-1",
+    "amphibious": false,
+    "mass": 45.3
   },
   {
     "suspension": {
@@ -5906,8 +6004,9 @@
         }
       }
     },
+    "mass": 50.2,
     "name": "Type 90",
-    "mass": 50.2
+    "amphibious": false
   },
   {
     "engine": {
@@ -5923,8 +6022,6 @@
       "horsepower": 650,
       "name": "CNGC 12150L"
     },
-    "name": "WZ-122",
-    "mass": 37.5,
     "turrets": {
       "Loader": {
         "weapons": [
@@ -5987,7 +6084,10 @@
         },
         "stabilizer": true
       }
-    }
+    },
+    "name": "WZ-122",
+    "amphibious": false,
+    "mass": 37.5
   },
   {
     "engine": {
@@ -6003,8 +6103,6 @@
       "horsepower": 700,
       "name": "HPZ 5TDF"
     },
-    "name": "T-64BV",
-    "mass": 41.2,
     "turrets": {
       "Commander": {
         "weapons": [
@@ -6048,7 +6146,10 @@
           "min": 3.9473684210526314
         }
       }
-    }
+    },
+    "name": "T-64BV",
+    "amphibious": false,
+    "mass": 41.2
   },
   {
     "engine": {
@@ -6064,8 +6165,6 @@
       "horsepower": 80,
       "name": "VAZ-3416"
     },
-    "name": "Plastun SN",
-    "mass": 3.8,
     "turrets": {
       "Gunner": {
         "smokes": false,
@@ -6088,7 +6187,10 @@
           "min": 1.875
         }
       }
-    }
+    },
+    "name": "Plastun SN",
+    "amphibious": false,
+    "mass": 3.8
   },
   {
     "engine": {
@@ -6104,8 +6206,6 @@
       "horsepower": 500,
       "name": "Model V-2-34"
     },
-    "name": "T-34-57",
-    "mass": 30,
     "turrets": {
       "Bow Gunner": {
         "weapons": [
@@ -6149,7 +6249,10 @@
           "min": 1.875
         }
       }
-    }
+    },
+    "name": "T-34-57",
+    "amphibious": false,
+    "mass": 30
   },
   {
     "engine": {
@@ -6165,8 +6268,6 @@
       "horsepower": 1500,
       "name": "V8X-1500"
     },
-    "name": "Leclerc S21",
-    "mass": 56.2,
     "turrets": {
       "Commander": {
         "weapons": [
@@ -6210,7 +6311,10 @@
           "min": 3.409090909090909
         }
       }
-    }
+    },
+    "name": "Leclerc S21",
+    "amphibious": false,
+    "mass": 56.2
   },
   {
     "engine": {
@@ -6226,8 +6330,6 @@
       "horsepower": 375,
       "name": "GM 6046"
     },
-    "name": "M10 Wolverine",
-    "mass": 30.4,
     "turrets": {
       "Commander": {
         "weapons": [
@@ -6270,7 +6372,10 @@
           "min": 1.875
         }
       }
-    }
+    },
+    "name": "M10 Wolverine",
+    "amphibious": false,
+    "mass": 30.4
   },
   {
     "engine": {
@@ -6286,8 +6391,6 @@
       "horsepower": 600,
       "name": "V-2K"
     },
-    "name": "ZIT-122",
-    "mass": 52.4,
     "turrets": {
       "Loader": {
         "weapons": [
@@ -6371,7 +6474,10 @@
         },
         "stabilizer": false
       }
-    }
+    },
+    "name": "ZIT-122",
+    "amphibious": false,
+    "mass": 52.4
   },
   {
     "engine": {
@@ -6387,8 +6493,6 @@
       "horsepower": 520,
       "name": "ChTZ V-44"
     },
-    "name": "T-44",
-    "mass": 31,
     "turrets": {
       "Commander": {
         "weapons": [
@@ -6452,7 +6556,10 @@
         },
         "stabilizer": false
       }
-    }
+    },
+    "name": "T-44",
+    "amphibious": false,
+    "mass": 31
   },
   {
     "engine": {
@@ -6468,8 +6575,6 @@
       "horsepower": 380,
       "name": "CA6DL2-35E3R"
     },
-    "name": "Type 625E",
-    "mass": 26,
     "turrets": {
       "Gunner": {
         "smokes": true,
@@ -6493,7 +6598,10 @@
           "min": 1.9736842105263157
         }
       }
-    }
+    },
+    "name": "Type 625E",
+    "amphibious": true,
+    "mass": 26
   },
   {
     "engine": {
@@ -6509,8 +6617,6 @@
       "horsepower": 1217,
       "name": "Perkins CV12"
     },
-    "name": "Challenger 2",
-    "mass": 64,
     "turrets": {
       "Loader": {
         "weapons": [
@@ -6572,7 +6678,10 @@
         },
         "stabilizer": true
       }
-    }
+    },
+    "name": "Challenger 2",
+    "amphibious": false,
+    "mass": 64
   },
   {
     "engine": {
@@ -6588,8 +6697,6 @@
       "horsepower": 600,
       "name": "Rolls-Royce Meteor Mark III"
     },
-    "name": "Comet Mk.1",
-    "mass": 33.5,
     "turrets": {
       "Loader": {
         "weapons": [
@@ -6671,7 +6778,10 @@
         },
         "stabilizer": false
       }
-    }
+    },
+    "name": "Comet Mk.1",
+    "amphibious": false,
+    "mass": 33.5
   },
   {
     "engine": {
@@ -6687,8 +6797,6 @@
       "horsepower": 1000,
       "name": "MTU MT881 Ka-500"
     },
-    "name": "PzH-2000",
-    "mass": 57,
     "turrets": {
       "Commander": {
         "weapons": [],
@@ -6729,7 +6837,10 @@
           "min": 7.5
         }
       }
-    }
+    },
+    "name": "PzH-2000",
+    "amphibious": false,
+    "mass": 57
   },
   {
     "suspension": {
@@ -6796,8 +6907,9 @@
         }
       }
     },
+    "mass": 18.7,
     "name": "BMP-3",
-    "mass": 18.7
+    "amphibious": true
   },
   {
     "engine": {
@@ -6813,8 +6925,6 @@
       "horsepower": 1250,
       "name": "GTD-1250"
     },
-    "name": "T-80U",
-    "mass": 46,
     "turrets": {
       "Commander": {
         "weapons": [
@@ -6858,7 +6968,10 @@
           "min": 2.6785714285714284
         }
       }
-    }
+    },
+    "name": "T-80U",
+    "amphibious": false,
+    "mass": 46
   },
   {
     "engine": {
@@ -6874,8 +6987,6 @@
       "horsepower": 450,
       "name": "Ford GAA V8"
     },
-    "name": "M4A3E2 (75) Jumbo",
-    "mass": 37.8,
     "turrets": {
       "Gunner": {
         "smokes": false,
@@ -6939,7 +7050,10 @@
         },
         "stabilizer": true
       }
-    }
+    },
+    "name": "M4A3E2 (75) Jumbo",
+    "amphibious": false,
+    "mass": 37.8
   },
   {
     "suspension": {
@@ -7022,8 +7136,9 @@
         "stabilizer": true
       }
     },
+    "mass": 51.7,
     "name": "KPz-70",
-    "mass": 51.7
+    "amphibious": false
   },
   {
     "engine": {
@@ -7039,8 +7154,6 @@
       "horsepower": 1500,
       "name": "MTU MB 873 Ka-501"
     },
-    "name": "Leopard 2A4",
-    "mass": 55.4,
     "turrets": {
       "Loader": {
         "weapons": [
@@ -7104,7 +7217,10 @@
         },
         "stabilizer": true
       }
-    }
+    },
+    "name": "Leopard 2A4",
+    "amphibious": false,
+    "mass": 55.4
   },
   {
     "engine": {
@@ -7120,8 +7236,6 @@
       "horsepower": 215,
       "name": "YaMZ-5347-10"
     },
-    "name": "Kornet D GAZ Tigr",
-    "mass": 7.2,
     "turrets": {
       "Gunner": {
         "smokes": true,
@@ -7144,7 +7258,10 @@
           "min": 3.9473684210526314
         }
       }
-    }
+    },
+    "name": "Kornet D GAZ Tigr",
+    "amphibious": false,
+    "mass": 7.2
   },
   {
     "engine": {
@@ -7160,8 +7277,6 @@
       "horsepower": 72,
       "name": "F4-134 Hurricane"
     },
-    "name": "M8 Greyhound",
-    "mass": 7.9,
     "turrets": {
       "Commander": {
         "weapons": [
@@ -7205,7 +7320,10 @@
           "min": 1.875
         }
       }
-    }
+    },
+    "name": "M8 Greyhound",
+    "amphibious": false,
+    "mass": 7.9
   },
   {
     "engine": {
@@ -7221,9 +7339,10 @@
       "horsepower": 240,
       "name": "6CTA8.3 IMO 1"
     },
+    "turrets": [],
     "name": "M939",
-    "mass": 11,
-    "turrets": []
+    "amphibious": false,
+    "mass": 11
   },
   {
     "engine": {
@@ -7239,8 +7358,6 @@
       "horsepower": 550,
       "name": "Perkins CV-8"
     },
-    "name": "FV510 Warrior",
-    "mass": 24.9,
     "turrets": {
       "Commander": {
         "weapons": [
@@ -7285,7 +7402,10 @@
           "min": 0.9375
         }
       }
-    }
+    },
+    "name": "FV510 Warrior",
+    "amphibious": false,
+    "mass": 24.9
   },
   {
     "engine": {
@@ -7301,8 +7421,6 @@
       "horsepower": 510,
       "name": "ChTZ 510"
     },
-    "name": "BTR-90",
-    "mass": 20.9,
     "turrets": {
       "Commander": {
         "weapons": [],
@@ -7346,7 +7464,10 @@
           "min": 6.25
         }
       }
-    }
+    },
+    "name": "BTR-90",
+    "amphibious": true,
+    "mass": 20.9
   },
   {
     "engine": {
@@ -7362,8 +7483,6 @@
       "horsepower": 650,
       "name": "CNGC 12150L"
     },
-    "name": "QN506",
-    "mass": 30,
     "turrets": {
       "Commander": {
         "weapons": [],
@@ -7407,7 +7526,10 @@
           "min": 4.166666666666667
         }
       }
-    }
+    },
+    "name": "QN506",
+    "amphibious": false,
+    "mass": 30
   },
   {
     "engine": {
@@ -7423,8 +7545,6 @@
       "horsepower": 520,
       "name": "ChTZ V-54"
     },
-    "name": "T-54 Obr. 1951",
-    "mass": 35.5,
     "turrets": {
       "Loader": {
         "weapons": [
@@ -7488,7 +7608,10 @@
         },
         "stabilizer": false
       }
-    }
+    },
+    "name": "T-54 Obr. 1951",
+    "amphibious": false,
+    "mass": 35.5
   },
   {
     "engine": {
@@ -7504,8 +7627,6 @@
       "horsepower": 580,
       "name": "Detroit 6V92TA"
     },
-    "name": "XM8",
-    "mass": 17.6,
     "turrets": {
       "Commander": {
         "weapons": [
@@ -7549,7 +7670,10 @@
           "min": 3
         }
       }
-    }
+    },
+    "name": "XM8",
+    "amphibious": false,
+    "mass": 17.6
   },
   {
     "engine": {
@@ -7565,8 +7689,6 @@
       "horsepower": 600,
       "name": "VTA-903T"
     },
-    "name": "XM1069",
-    "mass": 25,
     "turrets": {
       "Gunner": {
         "smokes": false,
@@ -7591,7 +7713,10 @@
           "min": 6.25
         }
       }
-    }
+    },
+    "name": "XM1069",
+    "amphibious": false,
+    "mass": 25
   },
   {
     "engine": {
@@ -7607,8 +7732,6 @@
       "horsepower": 1400,
       "name": "GTD-1400"
     },
-    "name": "Object 640 \"Black Eagle\"",
-    "mass": 48,
     "turrets": {
       "Commander": {
         "weapons": [],
@@ -7649,7 +7772,10 @@
           "min": 3.9473684210526314
         }
       }
-    }
+    },
+    "name": "Object 640 \"Black Eagle\"",
+    "amphibious": false,
+    "mass": 48
   },
   {
     "engine": {
@@ -7665,8 +7791,6 @@
       "horsepower": 690,
       "name": "MB HL230 P30"
     },
-    "name": "Panther G",
-    "mass": 44.3,
     "turrets": {
       "Gunner": {
         "smokes": false,
@@ -7730,7 +7854,10 @@
         },
         "stabilizer": true
       }
-    }
+    },
+    "name": "Panther G",
+    "amphibious": false,
+    "mass": 44.3
   },
   {
     "engine": {
@@ -7746,8 +7873,6 @@
       "horsepower": 1100,
       "name": "GTD-1000TF"
     },
-    "name": "T-80B",
-    "mass": 42,
     "turrets": {
       "Commander": {
         "weapons": [
@@ -7791,7 +7916,10 @@
           "min": 3.9473684210526314
         }
       }
-    }
+    },
+    "name": "T-80B",
+    "amphibious": false,
+    "mass": 42
   },
   {
     "engine": {
@@ -7807,8 +7935,6 @@
       "horsepower": 400,
       "name": "6.6 L Gale Banks Engineering 866T"
     },
-    "name": "Joint Light Tactical Vehicle",
-    "mass": 10.2,
     "turrets": {
       "Commander": {
         "weapons": [
@@ -7854,7 +7980,10 @@
           "min": 4.166666666666667
         }
       }
-    }
+    },
+    "name": "Joint Light Tactical Vehicle",
+    "amphibious": false,
+    "mass": 10.2
   },
   {
     "engine": {
@@ -7870,8 +7999,6 @@
       "horsepower": 650,
       "name": "Rolls-Royce Meteor 4B"
     },
-    "name": "Centurion Mk 10",
-    "mass": 51.8,
     "turrets": {
       "Gunner": {
         "smokes": true,
@@ -7895,7 +8022,10 @@
           "min": 6.25
         }
       }
-    }
+    },
+    "name": "Centurion Mk 10",
+    "amphibious": false,
+    "mass": 51.8
   },
   {
     "engine": {
@@ -7911,8 +8041,6 @@
       "horsepower": 507,
       "name": "VT903"
     },
-    "name": "M2A1 Bradley",
-    "mass": 22.3,
     "turrets": {
       "Gunner": {
         "smokes": true,
@@ -7938,7 +8066,10 @@
           "min": 4.166666666666667
         }
       }
-    }
+    },
+    "name": "M2A1 Bradley",
+    "amphibious": false,
+    "mass": 22.3
   },
   {
     "engine": {
@@ -7954,8 +8085,6 @@
       "horsepower": 600,
       "name": "Scania DC 13"
     },
-    "name": "Rosomak",
-    "mass": 22,
     "turrets": {
       "Gunner": {
         "smokes": true,
@@ -7980,7 +8109,10 @@
           "min": 1.9736842105263157
         }
       }
-    }
+    },
+    "name": "Rosomak",
+    "amphibious": true,
+    "mass": 22
   },
   {
     "engine": {
@@ -7996,8 +8128,6 @@
       "horsepower": 700,
       "name": "V-2-12"
     },
-    "name": "IS-6",
-    "mass": 51.1,
     "turrets": {
       "Loader": {
         "weapons": [
@@ -8041,7 +8171,10 @@
           "min": 1.875
         }
       }
-    }
+    },
+    "name": "IS-6",
+    "amphibious": false,
+    "mass": 51.1
   },
   {
     "engine": {
@@ -8057,8 +8190,6 @@
       "horsepower": 1519,
       "name": "Honeywell AGT1500"
     },
-    "name": "M1A2 SEP V3",
-    "mass": 66.8,
     "turrets": {
       "Loader": {
         "weapons": [
@@ -8123,7 +8254,10 @@
         },
         "stabilizer": true
       }
-    }
+    },
+    "name": "M1A2 SEP V3",
+    "amphibious": false,
+    "mass": 66.8
   },
   {
     "engine": {
@@ -8139,8 +8273,6 @@
       "horsepower": 520,
       "name": "ChTZ V-54"
     },
-    "name": "Abandoned Tank Hull",
-    "mass": 20,
     "turrets": {
       "Driver": {
         "weapons": [
@@ -8162,7 +8294,10 @@
         },
         "stabilizer": false
       }
-    }
+    },
+    "name": "Abandoned Tank Hull",
+    "amphibious": false,
+    "mass": 20
   },
   {
     "suspension": {
@@ -8226,8 +8361,9 @@
         }
       }
     },
+    "mass": 15,
     "name": "BMD-4M",
-    "mass": 15
+    "amphibious": true
   },
   {
     "engine": {
@@ -8243,8 +8379,6 @@
       "horsepower": 900,
       "name": "MB HL234"
     },
-    "name": "Panther II",
-    "mass": 53,
     "turrets": {
       "Bow Gunner": {
         "weapons": [
@@ -8344,7 +8478,10 @@
         },
         "stabilizer": false
       }
-    }
+    },
+    "name": "Panther II",
+    "amphibious": false,
+    "mass": 53
   },
   {
     "engine": {
@@ -8360,8 +8497,6 @@
       "horsepower": 600,
       "name": "MTU MB 833 Ea-500"
     },
-    "name": "Begleitpanzer 57",
-    "mass": 28.5,
     "turrets": {
       "Commander": {
         "weapons": [],
@@ -8405,7 +8540,10 @@
           "min": 5
         }
       }
-    }
+    },
+    "name": "Begleitpanzer 57",
+    "amphibious": false,
+    "mass": 28.5
   },
   {
     "engine": {
@@ -8421,8 +8559,6 @@
       "horsepower": 43,
       "name": "FIAT-SPA CV3"
     },
-    "name": "L3/35",
-    "mass": 3.2,
     "turrets": {
       "Gunner": {
         "smokes": false,
@@ -8446,7 +8582,10 @@
           "min": 5
         }
       }
-    }
+    },
+    "name": "L3/35",
+    "amphibious": false,
+    "mass": 3.2
   },
   {
     "engine": {
@@ -8462,9 +8601,10 @@
       "horsepower": 180,
       "name": "ZiL-375"
     },
+    "turrets": [],
     "name": "Ural-375D",
-    "mass": 18.2,
-    "turrets": []
+    "amphibious": false,
+    "mass": 18.2
   },
   {
     "engine": {
@@ -8480,8 +8620,6 @@
       "horsepower": 1500,
       "name": "MTU MB 873 Ka-501"
     },
-    "name": "Leopard 2A4 140MM",
-    "mass": 57,
     "turrets": {
       "Commander": {
         "weapons": [
@@ -8526,7 +8664,10 @@
           "min": 3.9473684210526314
         }
       }
-    }
+    },
+    "name": "Leopard 2A4 140MM",
+    "amphibious": false,
+    "mass": 57
   },
   {
     "suspension": {
@@ -8588,8 +8729,9 @@
         "stabilizer": true
       }
     },
+    "mass": 35.5,
     "name": "Object 775",
-    "mass": 35.5
+    "amphibious": false
   },
   {
     "suspension": {
@@ -8675,8 +8817,9 @@
         "stabilizer": true
       }
     },
+    "mass": 54.5,
     "name": "K1",
-    "mass": 54.5
+    "amphibious": false
   },
   {
     "engine": {
@@ -8692,8 +8835,6 @@
       "horsepower": 296,
       "name": "MB HL120 TRM"
     },
-    "name": "Hornisse",
-    "mass": 24.3,
     "turrets": {
       "Commander": {
         "weapons": [
@@ -8736,7 +8877,10 @@
           "min": 5
         }
       }
-    }
+    },
+    "name": "Hornisse",
+    "amphibious": false,
+    "mass": 24.3
   },
   {
     "engine": {
@@ -8752,8 +8896,6 @@
       "horsepower": 1500,
       "name": "XAP-1000"
     },
-    "name": "CATTB",
-    "mass": 57,
     "turrets": {
       "Commander": {
         "weapons": [],
@@ -8794,7 +8936,10 @@
           "min": 3
         }
       }
-    }
+    },
+    "name": "CATTB",
+    "amphibious": false,
+    "mass": 57
   },
   {
     "engine": {
@@ -8810,8 +8955,6 @@
       "horsepower": 1519,
       "name": "Honeywell AGT1500"
     },
-    "name": "M1IP",
-    "mass": 55.7,
     "turrets": {
       "Loader": {
         "weapons": [
@@ -8875,7 +9018,10 @@
         },
         "stabilizer": true
       }
-    }
+    },
+    "name": "M1IP",
+    "amphibious": false,
+    "mass": 55.7
   },
   {
     "engine": {
@@ -8891,8 +9037,6 @@
       "horsepower": 1519,
       "name": "Honeywell AGT1500"
     },
-    "name": "M1A1",
-    "mass": 57.2,
     "turrets": {
       "Loader": {
         "weapons": [
@@ -8957,7 +9101,10 @@
         },
         "stabilizer": true
       }
-    }
+    },
+    "name": "M1A1",
+    "amphibious": false,
+    "mass": 57.2
   },
   {
     "engine": {
@@ -8973,8 +9120,6 @@
       "horsepower": 1200,
       "name": "AVDS-1790-2"
     },
-    "name": "M60A2 Starship",
-    "mass": 51.9,
     "turrets": {
       "Commander": {
         "weapons": [
@@ -9018,7 +9163,10 @@
           "min": 8.333333333333334
         }
       }
-    }
+    },
+    "name": "M60A2 Starship",
+    "amphibious": false,
+    "mass": 51.9
   },
   {
     "engine": {
@@ -9034,8 +9182,6 @@
       "horsepower": 1200,
       "name": "AVDS-1790-2"
     },
-    "name": "M60A1 Add-On Stabilization",
-    "mass": 48,
     "turrets": {
       "Commander": {
         "weapons": [
@@ -9079,7 +9225,10 @@
           "min": 8.333333333333334
         }
       }
-    }
+    },
+    "name": "M60A1 Add-On Stabilization",
+    "amphibious": false,
+    "mass": 48
   },
   {
     "engine": {
@@ -9095,8 +9244,6 @@
       "horsepower": 1519,
       "name": "Honeywell AGT1500"
     },
-    "name": "M1 Abrams",
-    "mass": 55.7,
     "turrets": {
       "Loader": {
         "weapons": [
@@ -9160,7 +9307,10 @@
         },
         "stabilizer": true
       }
-    }
+    },
+    "name": "M1 Abrams",
+    "amphibious": false,
+    "mass": 55.7
   },
   {
     "engine": {
@@ -9176,8 +9326,6 @@
       "horsepower": 690,
       "name": "MB HL230 P30"
     },
-    "name": "T-V",
-    "mass": 44.3,
     "turrets": {
       "Bow Gunner": {
         "weapons": [
@@ -9221,7 +9369,10 @@
           "min": 2.5
         }
       }
-    }
+    },
+    "name": "T-V",
+    "amphibious": false,
+    "mass": 44.3
   },
   {
     "engine": {
@@ -9237,8 +9388,6 @@
       "horsepower": 600,
       "name": "MHI 6SY31WA"
     },
-    "name": "Type 89",
-    "mass": 26.5,
     "turrets": {
       "Commander": {
         "weapons": [],
@@ -9281,7 +9430,10 @@
           "min": 2.027027027027027
         }
       }
-    }
+    },
+    "name": "Type 89",
+    "amphibious": false,
+    "mass": 26.5
   },
   {
     "engine": {
@@ -9297,8 +9449,6 @@
       "horsepower": 1130,
       "name": "ChTZ V-92S2F"
     },
-    "name": "T-90M",
-    "mass": 50,
     "turrets": {
       "Commander": {
         "weapons": [
@@ -9342,7 +9492,10 @@
           "min": 3.9473684210526314
         }
       }
-    }
+    },
+    "name": "T-90M",
+    "amphibious": false,
+    "mass": 50
   },
   {
     "engine": {
@@ -9358,8 +9511,6 @@
       "horsepower": 840,
       "name": "ChTZ V-84-1"
     },
-    "name": "Burlak",
-    "mass": 47,
     "turrets": {
       "Commander": {
         "weapons": [
@@ -9403,7 +9554,10 @@
           "min": 3.9473684210526314
         }
       }
-    }
+    },
+    "name": "Burlak",
+    "amphibious": false,
+    "mass": 47
   },
   {
     "engine": {
@@ -9419,8 +9573,6 @@
       "horsepower": 300,
       "name": "6V53T-5301"
     },
-    "name": "M551 Sheridan",
-    "mass": 15.3,
     "turrets": {
       "Commander": {
         "weapons": [
@@ -9465,7 +9617,10 @@
           "min": 8.333333333333334
         }
       }
-    }
+    },
+    "name": "M551 Sheridan",
+    "amphibious": false,
+    "mass": 15.3
   },
   {
     "engine": {
@@ -9481,8 +9636,6 @@
       "horsepower": 500,
       "name": "Ford GAF"
     },
-    "name": "M26 Pershing",
-    "mass": 41.6,
     "turrets": {
       "Gunner": {
         "smokes": false,
@@ -9546,7 +9699,10 @@
         },
         "stabilizer": true
       }
-    }
+    },
+    "name": "M26 Pershing",
+    "amphibious": false,
+    "mass": 41.6
   },
   {
     "engine": {
@@ -9562,8 +9718,6 @@
       "horsepower": 1500,
       "name": "MTU MB 873 Ka-501"
     },
-    "name": "Leopard 2K",
-    "mass": 55.4,
     "turrets": {
       "Loader": {
         "weapons": [
@@ -9627,7 +9781,10 @@
         },
         "stabilizer": true
       }
-    }
+    },
+    "name": "Leopard 2K",
+    "amphibious": false,
+    "mass": 55.4
   },
   {
     "engine": {
@@ -9643,8 +9800,6 @@
       "horsepower": 900,
       "name": "MB HL234"
     },
-    "name": "Pz IV H",
-    "mass": 26,
     "turrets": {
       "Gunner": {
         "smokes": false,
@@ -9708,7 +9863,10 @@
         },
         "stabilizer": true
       }
-    }
+    },
+    "name": "Pz IV H",
+    "amphibious": false,
+    "mass": 26
   },
   {
     "suspension": {
@@ -9773,8 +9931,9 @@
         "stabilizer": false
       }
     },
+    "mass": 42.5,
     "name": "Strv 103C",
-    "mass": 42.5
+    "amphibious": false
   },
   {
     "engine": {
@@ -9790,8 +9949,6 @@
       "horsepower": 400,
       "name": "Continental R975-C4"
     },
-    "name": "M7 Priest",
-    "mass": 32,
     "turrets": {
       "Commander": {
         "weapons": [
@@ -9834,7 +9991,10 @@
           "min": 1.875
         }
       }
-    }
+    },
+    "name": "M7 Priest",
+    "amphibious": false,
+    "mass": 32
   },
   {
     "engine": {
@@ -9850,8 +10010,6 @@
       "horsepower": 1300,
       "name": "Fiat MTCA 12V"
     },
-    "name": "Ariete C1",
-    "mass": 54,
     "turrets": {
       "Loader": {
         "weapons": [
@@ -9915,7 +10073,10 @@
         },
         "stabilizer": true
       }
-    }
+    },
+    "name": "Ariete C1",
+    "amphibious": false,
+    "mass": 54
   },
   {
     "engine": {
@@ -9931,8 +10092,6 @@
       "horsepower": 1217,
       "name": "Perkins CV12"
     },
-    "name": "Challenger 1",
-    "mass": 62.5,
     "turrets": {
       "Commander": {
         "weapons": [
@@ -9976,7 +10135,10 @@
           "min": 3.9473684210526314
         }
       }
-    }
+    },
+    "name": "Challenger 1",
+    "amphibious": false,
+    "mass": 62.5
   },
   {
     "engine": {
@@ -9992,8 +10154,6 @@
       "horsepower": 500,
       "name": "Model V-2-34"
     },
-    "name": "T-34E",
-    "mass": 30.6,
     "turrets": {
       "Bow Gunner": {
         "weapons": [
@@ -10037,7 +10197,10 @@
           "min": 1.875
         }
       }
-    }
+    },
+    "name": "T-34E",
+    "amphibious": false,
+    "mass": 30.6
   },
   {
     "engine": {
@@ -10053,8 +10216,6 @@
       "horsepower": 650,
       "name": "Rolls-Royce Meteor 4B"
     },
-    "name": "Centurion Mk 5 AVRE",
-    "mass": 52.2,
     "turrets": {
       "Gunner": {
         "smokes": true,
@@ -10078,7 +10239,10 @@
           "min": 6.25
         }
       }
-    }
+    },
+    "name": "Centurion Mk 5 AVRE",
+    "amphibious": false,
+    "mass": 52.2
   },
   {
     "engine": {
@@ -10094,8 +10258,6 @@
       "horsepower": 1200,
       "name": "KMDB 6TD-2"
     },
-    "name": "T-84 Oplot-M",
-    "mass": 51,
     "turrets": {
       "Commander": {
         "weapons": [
@@ -10139,7 +10301,10 @@
           "min": 2.6785714285714284
         }
       }
-    }
+    },
+    "name": "T-84 Oplot-M",
+    "amphibious": false,
+    "mass": 51
   },
   {
     "engine": {
@@ -10155,8 +10320,6 @@
       "horsepower": 1500,
       "name": "MTU MB 873 Ka-501"
     },
-    "name": "Leopard 2A7V",
-    "mass": 64.1,
     "turrets": {
       "Loader": {
         "weapons": [
@@ -10218,7 +10381,10 @@
         },
         "stabilizer": true
       }
-    }
+    },
+    "name": "Leopard 2A7V",
+    "amphibious": false,
+    "mass": 64.1
   },
   {
     "engine": {
@@ -10234,8 +10400,6 @@
       "horsepower": 1500,
       "name": "MTU MB 873 Ka-501"
     },
-    "name": "Leopard 2A6",
-    "mass": 59.9,
     "turrets": {
       "Loader": {
         "weapons": [
@@ -10297,7 +10461,10 @@
         },
         "stabilizer": true
       }
-    }
+    },
+    "name": "Leopard 2A6",
+    "amphibious": false,
+    "mass": 59.9
   },
   {
     "engine": {
@@ -10313,8 +10480,6 @@
       "horsepower": 87,
       "name": "Audi 2.1 diesel"
     },
-    "name": "Wiesel 1A2",
-    "mass": 2.9,
     "turrets": {
       "Gunner": {
         "smokes": false,
@@ -10339,7 +10504,10 @@
           "min": 4.166666666666667
         }
       }
-    }
+    },
+    "name": "Wiesel 1A2",
+    "amphibious": false,
+    "mass": 2.9
   },
   {
     "engine": {
@@ -10355,8 +10523,6 @@
       "horsepower": 600,
       "name": "3TD-4"
     },
-    "name": "BTR-4",
-    "mass": 28,
     "turrets": {
       "Gunner": {
         "smokes": true,
@@ -10382,7 +10548,10 @@
           "min": 3.9473684210526314
         }
       }
-    }
+    },
+    "name": "BTR-4",
+    "amphibious": true,
+    "mass": 28
   },
   {
     "engine": {
@@ -10398,8 +10567,6 @@
       "horsepower": 520,
       "name": "V-2IS"
     },
-    "name": "IS-1",
-    "mass": 44,
     "turrets": {
       "Loader": {
         "weapons": [
@@ -10463,7 +10630,10 @@
         },
         "stabilizer": false
       }
-    }
+    },
+    "name": "IS-1",
+    "amphibious": false,
+    "mass": 44
   },
   {
     "engine": {
@@ -10479,8 +10649,6 @@
       "horsepower": 87,
       "name": "Audi 2.1 diesel"
     },
-    "name": "Wiesel 1A4",
-    "mass": 2.9,
     "turrets": {
       "Gunner": {
         "smokes": false,
@@ -10503,7 +10671,10 @@
           "min": 1.9736842105263157
         }
       }
-    }
+    },
+    "name": "Wiesel 1A4",
+    "amphibious": false,
+    "mass": 2.9
   },
   {
     "engine": {
@@ -10519,8 +10690,6 @@
       "horsepower": 600,
       "name": "MTU MB 833 Ea-500"
     },
-    "name": "Marder A1",
-    "mass": 29.1,
     "turrets": {
       "Passenger": {
         "weapons": [
@@ -10584,7 +10753,10 @@
         },
         "stabilizer": false
       }
-    }
+    },
+    "name": "Marder A1",
+    "amphibious": false,
+    "mass": 29.1
   },
   {
     "engine": {
@@ -10600,8 +10772,6 @@
       "horsepower": 1500,
       "name": "MTU MB 873 Ka-501"
     },
-    "name": "Leopard 2 Giraffe",
-    "mass": 52,
     "turrets": {
       "Gunner": {
         "smokes": false,
@@ -10624,7 +10794,10 @@
           "min": 6.25
         }
       }
-    }
+    },
+    "name": "Leopard 2 Giraffe",
+    "amphibious": false,
+    "mass": 52
   },
   {
     "engine": {
@@ -10640,8 +10813,6 @@
       "horsepower": 850,
       "name": "S12U"
     },
-    "name": "T-72M2",
-    "mass": 44.5,
     "turrets": {
       "Commander": {
         "weapons": [],
@@ -10684,7 +10855,10 @@
           "min": 8.333333333333334
         }
       }
-    }
+    },
+    "name": "T-72M2",
+    "amphibious": false,
+    "mass": 44.5
   },
   {
     "engine": {
@@ -10700,8 +10874,6 @@
       "horsepower": 1500,
       "name": "MTU MB 873 Ka-501"
     },
-    "name": "Panther EVO",
-    "mass": 55.4,
     "turrets": {
       "Commander": {
         "weapons": [
@@ -10745,7 +10917,10 @@
           "min": 2.4038461538461537
         }
       }
-    }
+    },
+    "name": "Panther EVO",
+    "amphibious": false,
+    "mass": 55.4
   },
   {
     "engine": {
@@ -10761,8 +10936,6 @@
       "horsepower": 240,
       "name": "YaMZ 238"
     },
-    "name": "MT-LB AA",
-    "mass": 12,
     "turrets": {
       "Commander": {
         "weapons": [
@@ -10805,7 +10978,10 @@
           "min": 1.875
         }
       }
-    }
+    },
+    "name": "MT-LB AA",
+    "amphibious": true,
+    "mass": 12
   },
   {
     "engine": {
@@ -10821,8 +10997,6 @@
       "horsepower": 550,
       "name": "MB HL157P"
     },
-    "name": "VK 16.02 Leopard",
-    "mass": 21.9,
     "turrets": {
       "Gunner": {
         "smokes": true,
@@ -10846,7 +11020,10 @@
           "min": 1.875
         }
       }
-    }
+    },
+    "name": "VK 16.02 Leopard",
+    "amphibious": false,
+    "mass": 21.9
   },
   {
     "engine": {
@@ -10862,9 +11039,10 @@
       "horsepower": 90,
       "name": "UMZ-417"
     },
+    "turrets": [],
     "name": "UAZ-3909",
-    "mass": 1.8,
-    "turrets": []
+    "amphibious": false,
+    "mass": 1.8
   },
   {
     "engine": {
@@ -10880,8 +11058,6 @@
       "horsepower": 211,
       "name": "Tatra 103"
     },
-    "name": "Sd.Kfz.234/4 Pak Puma",
-    "mass": 11.7,
     "turrets": {
       "Commander": {
         "weapons": [
@@ -10924,7 +11100,10 @@
           "min": 1.875
         }
       }
-    }
+    },
+    "name": "Sd.Kfz.234/4 Pak Puma",
+    "amphibious": false,
+    "mass": 11.7
   },
   {
     "engine": {
@@ -10940,8 +11119,6 @@
       "horsepower": 180,
       "name": "ZiL-375"
     },
-    "name": "BM-21 Grad",
-    "mass": 18.2,
     "turrets": {
       "Gunner": {
         "smokes": false,
@@ -10964,7 +11141,10 @@
           "min": 1.875
         }
       }
-    }
+    },
+    "name": "BM-21 Grad",
+    "amphibious": false,
+    "mass": 18.2
   },
   {
     "engine": {
@@ -10980,8 +11160,6 @@
       "horsepower": 580,
       "name": "ChTZ V-55V"
     },
-    "name": "Object 166",
-    "mass": 38,
     "turrets": {
       "Commander": {
         "weapons": [
@@ -11025,7 +11203,10 @@
           "min": 3.5714285714285716
         }
       }
-    }
+    },
+    "name": "Object 166",
+    "amphibious": false,
+    "mass": 38
   },
   {
     "engine": {
@@ -11041,8 +11222,6 @@
       "horsepower": 550,
       "name": "Perkins CV-8"
     },
-    "name": "Desert Warrior",
-    "mass": 29,
     "turrets": {
       "Commander": {
         "weapons": [],
@@ -11086,7 +11265,10 @@
           "min": 8.333333333333334
         }
       }
-    }
+    },
+    "name": "Desert Warrior",
+    "amphibious": false,
+    "mass": 29
   },
   {
     "engine": {
@@ -11102,8 +11284,6 @@
       "horsepower": 786,
       "name": "TH800 Engine"
     },
-    "name": "Class 3(P)",
-    "mass": 41,
     "turrets": {
       "Loader": {
         "weapons": [
@@ -11167,7 +11347,10 @@
         },
         "stabilizer": true
       }
-    }
+    },
+    "name": "Class 3(P)",
+    "amphibious": false,
+    "mass": 41
   },
   {
     "engine": {
@@ -11183,8 +11366,6 @@
       "horsepower": 690,
       "name": "MB HL230 P30"
     },
-    "name": "Ersatz M10",
-    "mass": 44.3,
     "turrets": {
       "Bow Gunner": {
         "weapons": [
@@ -11228,7 +11409,10 @@
           "min": 2.5
         }
       }
-    }
+    },
+    "name": "Ersatz M10",
+    "amphibious": false,
+    "mass": 44.3
   },
   {
     "engine": {
@@ -11244,8 +11428,6 @@
       "horsepower": 1050,
       "name": "M50T"
     },
-    "name": "IS-7",
-    "mass": 68,
     "turrets": {
       "Driver": {
         "weapons": [
@@ -11310,7 +11492,10 @@
         },
         "stabilizer": true
       }
-    }
+    },
+    "name": "IS-7",
+    "amphibious": false,
+    "mass": 68
   },
   {
     "engine": {
@@ -11326,8 +11511,6 @@
       "horsepower": 300,
       "name": "UTD-20"
     },
-    "name": "PT-76E",
-    "mass": 14,
     "turrets": {
       "Gunner": {
         "smokes": true,
@@ -11352,7 +11535,10 @@
           "min": 5
         }
       }
-    }
+    },
+    "name": "PT-76E",
+    "amphibious": true,
+    "mass": 14
   },
   {
     "engine": {
@@ -11368,8 +11554,6 @@
       "horsepower": 1200,
       "name": "MB 517"
     },
-    "name": "Maus",
-    "mass": 188,
     "turrets": {
       "Gunner": {
         "smokes": false,
@@ -11393,7 +11577,10 @@
           "min": 10.714285714285714
         }
       }
-    }
+    },
+    "name": "Maus",
+    "amphibious": false,
+    "mass": 188
   },
   {
     "engine": {
@@ -11409,8 +11596,6 @@
       "horsepower": 99,
       "name": "MB HL42"
     },
-    "name": "Sd Kfz 251",
-    "mass": 7.81,
     "turrets": {
       "Gunner": {
         "smokes": false,
@@ -11433,7 +11618,10 @@
           "min": 1.875
         }
       }
-    }
+    },
+    "name": "Sd Kfz 251",
+    "amphibious": false,
+    "mass": 7.81
   },
   {
     "engine": {
@@ -11449,8 +11637,6 @@
       "horsepower": 690,
       "name": "MB HL230 P30"
     },
-    "name": "Jagdpanther",
-    "mass": 46,
     "turrets": {
       "Loader": {
         "weapons": [
@@ -11513,7 +11699,10 @@
         },
         "stabilizer": true
       }
-    }
+    },
+    "name": "Jagdpanther",
+    "amphibious": false,
+    "mass": 46
   },
   {
     "engine": {
@@ -11529,8 +11718,6 @@
       "horsepower": 580,
       "name": "ChTZ V-55V"
     },
-    "name": "T-62",
-    "mass": 37,
     "turrets": {
       "Loader": {
         "weapons": [
@@ -11592,7 +11779,10 @@
         },
         "stabilizer": true
       }
-    }
+    },
+    "name": "T-62",
+    "amphibious": false,
+    "mass": 37
   },
   {
     "engine": {
@@ -11608,8 +11798,6 @@
       "horsepower": 650,
       "name": "Lycoming 650 gas turbine"
     },
-    "name": "HSTV-L",
-    "mass": 20,
     "turrets": {
       "Commander": {
         "weapons": [
@@ -11654,7 +11842,10 @@
           "min": 1.9736842105263157
         }
       }
-    }
+    },
+    "name": "HSTV-L",
+    "amphibious": false,
+    "mass": 20
   },
   {
     "engine": {
@@ -11670,8 +11861,6 @@
       "horsepower": 690,
       "name": "MB HL230 P45"
     },
-    "name": "Sturmtiger",
-    "mass": 65,
     "turrets": {
       "Loader": {
         "weapons": [
@@ -11734,7 +11923,10 @@
         },
         "stabilizer": true
       }
-    }
+    },
+    "name": "Sturmtiger",
+    "amphibious": false,
+    "mass": 65
   },
   {
     "engine": {
@@ -11750,8 +11942,6 @@
       "horsepower": 375,
       "name": "GM 6046"
     },
-    "name": "M36B2 Jackson",
-    "mass": 29.9,
     "turrets": {
       "Commander": {
         "weapons": [
@@ -11794,7 +11984,10 @@
           "min": 5
         }
       }
-    }
+    },
+    "name": "M36B2 Jackson",
+    "amphibious": false,
+    "mass": 29.9
   },
   {
     "engine": {
@@ -11810,8 +12003,6 @@
       "horsepower": 450,
       "name": "Ford GAA V8"
     },
-    "name": "M4A3 (105) Zippo",
-    "mass": 31.7,
     "turrets": {
       "Gunner": {
         "smokes": false,
@@ -11876,7 +12067,10 @@
         },
         "stabilizer": true
       }
-    }
+    },
+    "name": "M4A3 (105) Zippo",
+    "amphibious": false,
+    "mass": 31.7
   },
   {
     "engine": {
@@ -11892,8 +12086,6 @@
       "horsepower": 690,
       "name": "MB HL230 P45"
     },
-    "name": "Tiger I",
-    "mass": 57.3,
     "turrets": {
       "Bow Gunner": {
         "weapons": [
@@ -11937,7 +12129,10 @@
           "min": 1.875
         }
       }
-    }
+    },
+    "name": "Tiger I",
+    "amphibious": false,
+    "mass": 57.3
   },
   {
     "engine": {
@@ -11953,8 +12148,6 @@
       "horsepower": 375,
       "name": "GM 6046"
     },
-    "name": "T34 Calliope",
-    "mass": 32.5,
     "turrets": {
       "Gunner": {
         "smokes": false,
@@ -11999,7 +12192,10 @@
         },
         "stabilizer": true
       }
-    }
+    },
+    "name": "T34 Calliope",
+    "amphibious": false,
+    "mass": 32.5
   },
   {
     "engine": {
@@ -12015,8 +12211,6 @@
       "horsepower": 375,
       "name": "GM 6046"
     },
-    "name": "M4A2 Sherman",
-    "mass": 32.5,
     "turrets": {
       "Gunner": {
         "smokes": false,
@@ -12080,7 +12274,10 @@
         },
         "stabilizer": true
       }
-    }
+    },
+    "name": "M4A2 Sherman",
+    "amphibious": false,
+    "mass": 32.5
   },
   {
     "engine": {
@@ -12096,8 +12293,6 @@
       "horsepower": 840,
       "name": "ChTZ V-84-1"
     },
-    "name": "T-72B3",
-    "mass": 46,
     "turrets": {
       "Commander": {
         "weapons": [
@@ -12141,7 +12336,10 @@
           "min": 3.9473684210526314
         }
       }
-    }
+    },
+    "name": "T-72B3",
+    "amphibious": false,
+    "mass": 46
   },
   {
     "engine": {
@@ -12157,8 +12355,6 @@
       "horsepower": 580,
       "name": "ChTZ V-55V"
     },
-    "name": "IT-1",
-    "mass": 34.5,
     "turrets": {
       "Commander": {
         "weapons": [],
@@ -12200,7 +12396,10 @@
           "min": 4.166666666666667
         }
       }
-    }
+    },
+    "name": "IT-1",
+    "amphibious": false,
+    "mass": 34.5
   },
   {
     "engine": {
@@ -12216,9 +12415,10 @@
       "horsepower": 26,
       "name": "OHV"
     },
+    "turrets": [],
     "name": "Kettenkrad",
-    "mass": 1.56,
-    "turrets": []
+    "amphibious": false,
+    "mass": 1.56
   },
   {
     "engine": {
@@ -12234,8 +12434,6 @@
       "horsepower": 400,
       "name": "Continental R975-C4"
     },
-    "name": "M18 Hellcat",
-    "mass": 17.7,
     "turrets": {
       "Commander": {
         "weapons": [
@@ -12278,7 +12476,10 @@
           "min": 1.875
         }
       }
-    }
+    },
+    "name": "M18 Hellcat",
+    "amphibious": false,
+    "mass": 17.7
   },
   {
     "engine": {
@@ -12294,8 +12495,6 @@
       "horsepower": 400,
       "name": "Continental R975 EC2"
     },
-    "name": "M3 Lee",
-    "mass": 27.7,
     "turrets": {
       "Gunner": {
         "smokes": false,
@@ -12358,7 +12557,10 @@
         },
         "stabilizer": true
       }
-    }
+    },
+    "name": "M3 Lee",
+    "amphibious": false,
+    "mass": 27.7
   },
   {
     "engine": {
@@ -12374,8 +12576,6 @@
       "horsepower": 70,
       "name": "GAZ-202"
     },
-    "name": "T-60",
-    "mass": 5.8,
     "turrets": {
       "Gunner": {
         "smokes": false,
@@ -12399,7 +12599,10 @@
           "min": 1.875
         }
       }
-    }
+    },
+    "name": "T-60",
+    "amphibious": false,
+    "mass": 5.8
   },
   {
     "engine": {
@@ -12415,8 +12618,6 @@
       "horsepower": 700,
       "name": "HPZ 5TDF"
     },
-    "name": "T-64A",
-    "mass": 38,
     "turrets": {
       "Commander": {
         "weapons": [
@@ -12460,7 +12661,10 @@
           "min": 8.333333333333334
         }
       }
-    }
+    },
+    "name": "T-64A",
+    "amphibious": false,
+    "mass": 38
   },
   {
     "engine": {
@@ -12476,8 +12680,6 @@
       "horsepower": 1500,
       "name": "HP150"
     },
-    "name": "Cheonma-2",
-    "mass": 56,
     "turrets": {
       "Loader": {
         "weapons": [
@@ -12540,7 +12742,10 @@
         },
         "stabilizer": true
       }
-    }
+    },
+    "name": "Cheonma-2",
+    "amphibious": false,
+    "mass": 56
   },
   {
     "engine": {
@@ -12556,8 +12761,6 @@
       "horsepower": 425,
       "name": "Chrysler A57 multibank"
     },
-    "name": "Sherman Firefly",
-    "mass": 35.3,
     "turrets": {
       "Gunner": {
         "smokes": false,
@@ -12581,7 +12784,10 @@
           "min": 3
         }
       }
-    }
+    },
+    "name": "Sherman Firefly",
+    "amphibious": false,
+    "mass": 35.3
   },
   {
     "suspension": {
@@ -12665,8 +12871,9 @@
         "stabilizer": true
       }
     },
+    "mass": 16,
     "name": "AMX-10RC",
-    "mass": 16
+    "amphibious": true
   },
   {
     "engine": {
@@ -12682,8 +12889,6 @@
       "horsepower": 500,
       "name": "Model V-2-34"
     },
-    "name": "SU-100",
-    "mass": 31.6,
     "turrets": {
       "Gunner": {
         "smokes": false,
@@ -12706,7 +12911,10 @@
           "min": 3.9473684210526314
         }
       }
-    }
+    },
+    "name": "SU-100",
+    "amphibious": false,
+    "mass": 31.6
   },
   {
     "engine": {
@@ -12722,8 +12930,6 @@
       "horsepower": 592,
       "name": "2 x MB HL120 TRM"
     },
-    "name": "Elefant",
-    "mass": 65,
     "turrets": {
       "Bow Gunner": {
         "weapons": [
@@ -12766,7 +12972,10 @@
           "min": 5
         }
       }
-    }
+    },
+    "name": "Elefant",
+    "amphibious": false,
+    "mass": 65
   },
   {
     "engine": {
@@ -12782,8 +12991,6 @@
       "horsepower": 1000,
       "name": "MTU MB 837 Ka-501"
     },
-    "name": "M48 Super",
-    "mass": 53,
     "turrets": {
       "Commander": {
         "weapons": [
@@ -12827,7 +13034,10 @@
           "min": 3.9473684210526314
         }
       }
-    }
+    },
+    "name": "M48 Super",
+    "amphibious": false,
+    "mass": 53
   },
   {
     "engine": {
@@ -12843,8 +13053,6 @@
       "horsepower": 580,
       "name": "Detroit 6V92TA"
     },
-    "name": "LOSAT M8",
-    "mass": 19.5,
     "turrets": {
       "Commander": {
         "weapons": [
@@ -12887,7 +13095,10 @@
           "min": 3.9473684210526314
         }
       }
-    }
+    },
+    "name": "LOSAT M8",
+    "amphibious": false,
+    "mass": 19.5
   },
   {
     "engine": {
@@ -12903,8 +13114,6 @@
       "horsepower": 158,
       "name": "Praga EPA AC2800"
     },
-    "name": "Hetzer",
-    "mass": 24,
     "turrets": {
       "Commander": {
         "weapons": [
@@ -12947,7 +13156,10 @@
           "min": 5
         }
       }
-    }
+    },
+    "name": "Hetzer",
+    "amphibious": false,
+    "mass": 24
   },
   {
     "engine": {
@@ -12963,8 +13175,6 @@
       "horsepower": 500,
       "name": "Ford GAF"
     },
-    "name": "T26E4 Super Pershing",
-    "mass": 49.9,
     "turrets": {
       "Gunner": {
         "smokes": false,
@@ -13028,7 +13238,10 @@
         },
         "stabilizer": true
       }
-    }
+    },
+    "name": "T26E4 Super Pershing",
+    "amphibious": false,
+    "mass": 49.9
   },
   {
     "engine": {
@@ -13044,8 +13257,6 @@
       "horsepower": 300,
       "name": "KamAZ 740.14-300"
     },
-    "name": "BTR-82A",
-    "mass": 15,
     "turrets": {
       "Commander": {
         "weapons": [],
@@ -13087,7 +13298,10 @@
           "min": 3.9473684210526314
         }
       }
-    }
+    },
+    "name": "BTR-82A",
+    "amphibious": true,
+    "mass": 15
   },
   {
     "engine": {
@@ -13103,8 +13317,6 @@
       "horsepower": 211,
       "name": "Tatra 103"
     },
-    "name": "Sd.Kfz.234/2 Puma",
-    "mass": 11.7,
     "turrets": {
       "Gunner": {
         "smokes": true,
@@ -13128,7 +13340,10 @@
           "min": 1.875
         }
       }
-    }
+    },
+    "name": "Sd.Kfz.234/2 Puma",
+    "amphibious": false,
+    "mass": 11.7
   },
   {
     "engine": {
@@ -13144,8 +13359,6 @@
       "horsepower": 1140,
       "name": "Liebherr D976"
     },
-    "name": "KF41 Lynx",
-    "mass": 44,
     "turrets": {
       "Commander": {
         "weapons": [
@@ -13190,7 +13403,10 @@
           "min": 4.411764705882353
         }
       }
-    }
+    },
+    "name": "KF41 Lynx",
+    "amphibious": false,
+    "mass": 44
   },
   {
     "engine": {
@@ -13206,8 +13422,6 @@
       "horsepower": 300,
       "name": "Detroit 6V53T"
     },
-    "name": "LAV-25",
-    "mass": 12.9,
     "turrets": {
       "Commander": {
         "weapons": [
@@ -13251,7 +13465,10 @@
           "min": 3.9473684210526314
         }
       }
-    }
+    },
+    "name": "LAV-25",
+    "amphibious": true,
+    "mass": 12.9
   },
   {
     "engine": {
@@ -13267,8 +13484,6 @@
       "horsepower": 520,
       "name": "V-2IS"
     },
-    "name": "ISU-152BM",
-    "mass": 46,
     "turrets": {
       "Gunner": {
         "smokes": false,
@@ -13291,7 +13506,10 @@
           "min": 1.875
         }
       }
-    }
+    },
+    "name": "ISU-152BM",
+    "amphibious": false,
+    "mass": 46
   },
   {
     "engine": {
@@ -13307,8 +13525,6 @@
       "horsepower": 830,
       "name": "AV1790"
     },
-    "name": "M48A2 Patton",
-    "mass": 44.9,
     "turrets": {
       "Commander": {
         "weapons": [
@@ -13352,7 +13568,10 @@
           "min": 6.25
         }
       }
-    }
+    },
+    "name": "M48A2 Patton",
+    "amphibious": false,
+    "mass": 44.9
   },
   {
     "engine": {
@@ -13368,8 +13587,6 @@
       "horsepower": 1000,
       "name": "V-92S2"
     },
-    "name": "BMPT Terminator",
-    "mass": 48,
     "turrets": {
       "Passenger": {
         "weapons": [
@@ -13432,7 +13649,10 @@
         },
         "stabilizer": true
       }
-    }
+    },
+    "name": "BMPT Terminator",
+    "amphibious": false,
+    "mass": 48
   },
   {
     "engine": {
@@ -13448,8 +13668,6 @@
       "horsepower": 215,
       "name": "YaMZ-5347-10"
     },
-    "name": "Humvee",
-    "mass": 2.7,
     "turrets": {
       "Gunner": {
         "smokes": false,
@@ -13474,7 +13692,10 @@
           "min": 1.25
         }
       }
-    }
+    },
+    "name": "Humvee",
+    "amphibious": false,
+    "mass": 2.7
   },
   {
     "engine": {
@@ -13490,8 +13711,6 @@
       "horsepower": 580,
       "name": "ChTZ V-55V"
     },
-    "name": "OBT-2 Super",
-    "mass": 40,
     "turrets": {
       "Commander": {
         "weapons": [
@@ -13535,7 +13754,10 @@
           "min": 3.5714285714285716
         }
       }
-    }
+    },
+    "name": "OBT-2 Super",
+    "amphibious": false,
+    "mass": 40
   },
   {
     "engine": {
@@ -13551,9 +13773,10 @@
       "horsepower": 150,
       "name": "3VZ-E V6"
     },
+    "turrets": [],
     "name": "MiKi Truck Company Model 2",
-    "mass": 4,
-    "turrets": []
+    "amphibious": false,
+    "mass": 4
   },
   {
     "engine": {
@@ -13569,9 +13792,10 @@
       "horsepower": 300,
       "name": "UTD-20"
     },
+    "turrets": [],
     "name": "Abandoned IFV Hull",
-    "mass": 10,
-    "turrets": []
+    "amphibious": false,
+    "mass": 10
   },
   {
     "engine": {
@@ -13587,9 +13811,10 @@
       "horsepower": 150,
       "name": "3VZ-E V6"
     },
+    "turrets": [],
     "name": "MiKi Truck Company Model 1 ARMOURED",
-    "mass": 5.5,
-    "turrets": []
+    "amphibious": false,
+    "mass": 5.5
   },
   {
     "engine": {
@@ -13605,8 +13830,6 @@
       "horsepower": 300,
       "name": "6V53T-5301"
     },
-    "name": "RDF/LT",
-    "mass": 13.4,
     "turrets": {
       "Gunner": {
         "smokes": true,
@@ -13630,7 +13853,10 @@
           "min": 1.9736842105263157
         }
       }
-    }
+    },
+    "name": "RDF/LT",
+    "amphibious": false,
+    "mass": 13.4
   },
   {
     "engine": {
@@ -13646,8 +13872,6 @@
       "horsepower": 850,
       "name": "V-2SN"
     },
-    "name": "KV-220",
-    "mass": 62.4,
     "turrets": {
       "Gunner": {
         "smokes": false,
@@ -13711,7 +13935,10 @@
         },
         "stabilizer": true
       }
-    }
+    },
+    "name": "KV-220",
+    "amphibious": false,
+    "mass": 62.4
   },
   {
     "engine": {
@@ -13727,8 +13954,6 @@
       "horsepower": 60,
       "name": "L134"
     },
-    "name": "Willys MB",
-    "mass": 1.2,
     "turrets": {
       "Gunner": {
         "smokes": false,
@@ -13751,7 +13976,10 @@
           "min": 1.25
         }
       }
-    }
+    },
+    "name": "Willys MB",
+    "amphibious": false,
+    "mass": 1.2
   },
   {
     "engine": {
@@ -13767,8 +13995,6 @@
       "horsepower": 200,
       "name": "TK-53"
     },
-    "name": "LT-SE",
-    "mass": 9.5,
     "turrets": {
       "Driver": {
         "weapons": [
@@ -13791,7 +14017,10 @@
         },
         "stabilizer": true
       }
-    }
+    },
+    "name": "LT-SE",
+    "amphibious": false,
+    "mass": 9.5
   },
   {
     "engine": {
@@ -13807,8 +14036,6 @@
       "horsepower": 750,
       "name": "MHI 10ZF 22WT"
     },
-    "name": "Type 87",
-    "mass": 38,
     "turrets": {
       "Commander": {
         "weapons": [],
@@ -13849,7 +14076,10 @@
           "min": 1.4705882352941178
         }
       }
-    }
+    },
+    "name": "Type 87",
+    "amphibious": false,
+    "mass": 38
   },
   {
     "engine": {
@@ -13865,8 +14095,6 @@
       "horsepower": 405,
       "name": "8V71T"
     },
-    "name": "M109A6",
-    "mass": 26,
     "turrets": {
       "Commander": {
         "weapons": [
@@ -13909,7 +14137,10 @@
           "min": 3.9473684210526314
         }
       }
-    }
+    },
+    "name": "M109A6",
+    "amphibious": false,
+    "mass": 26
   },
   {
     "engine": {
@@ -13925,8 +14156,6 @@
       "horsepower": 840,
       "name": "ChTZ V-84-1"
     },
-    "name": "2S19 Msta-S",
-    "mass": 42,
     "turrets": {
       "Commander": {
         "weapons": [
@@ -13970,7 +14199,10 @@
           "min": 3.75
         }
       }
-    }
+    },
+    "name": "2S19 Msta-S",
+    "amphibious": false,
+    "mass": 42
   },
   {
     "engine": {
@@ -13986,8 +14218,6 @@
       "horsepower": 350,
       "name": "Caterpillar 3126"
     },
-    "name": "M1126",
-    "mass": 16.5,
     "turrets": {
       "Gunner": {
         "smokes": true,
@@ -14011,7 +14241,10 @@
           "min": 3.75
         }
       }
-    }
+    },
+    "name": "M1126",
+    "amphibious": false,
+    "mass": 16.5
   },
   {
     "suspension": {
@@ -14092,8 +14325,9 @@
         "stabilizer": false
       }
     },
+    "mass": 41,
     "name": "2S6 Tunguska",
-    "mass": 41
+    "amphibious": false
   },
   {
     "engine": {
@@ -14109,8 +14343,6 @@
       "horsepower": 670,
       "name": "Type 6V150"
     },
-    "name": "AFT-10",
-    "mass": 18.7,
     "turrets": {
       "Gunner": {
         "smokes": true,
@@ -14133,7 +14365,10 @@
           "min": 2.7777777777777777
         }
       }
-    }
+    },
+    "name": "AFT-10",
+    "amphibious": true,
+    "mass": 18.7
   },
   {
     "engine": {
@@ -14149,8 +14384,6 @@
       "horsepower": 520,
       "name": "V-2IS"
     },
-    "name": "IS-2 1944",
-    "mass": 46,
     "turrets": {
       "Driver": {
         "weapons": [
@@ -14234,7 +14467,10 @@
         },
         "stabilizer": true
       }
-    }
+    },
+    "name": "IS-2 1944",
+    "amphibious": false,
+    "mass": 46
   },
   {
     "engine": {
@@ -14250,8 +14486,6 @@
       "horsepower": 240,
       "name": "6CTA8.3 IMO 1"
     },
-    "name": "Supply Truck",
-    "mass": 11,
     "turrets": {
       "Gunner": {
         "smokes": false,
@@ -14274,7 +14508,10 @@
           "min": 1.875
         }
       }
-    }
+    },
+    "name": "Supply Truck",
+    "amphibious": false,
+    "mass": 11
   },
   {
     "engine": {
@@ -14290,8 +14527,6 @@
       "horsepower": 520,
       "name": "V-2IS"
     },
-    "name": "IS-3",
-    "mass": 48,
     "turrets": {
       "Commander": {
         "weapons": [
@@ -14336,7 +14571,10 @@
           "min": 3.9473684210526314
         }
       }
-    }
+    },
+    "name": "IS-3",
+    "amphibious": false,
+    "mass": 48
   },
   {
     "engine": {
@@ -14352,8 +14590,6 @@
       "horsepower": 400,
       "name": "Continental R975-C4"
     },
-    "name": "90mm GMC Super Hellcat",
-    "mass": 22,
     "turrets": {
       "Commander": {
         "weapons": [
@@ -14396,7 +14632,10 @@
           "min": 5
         }
       }
-    }
+    },
+    "name": "90mm GMC Super Hellcat",
+    "amphibious": false,
+    "mass": 22
   },
   {
     "engine": {
@@ -14412,8 +14651,6 @@
       "horsepower": 450,
       "name": "Ford GAA V8"
     },
-    "name": "M4A3E2 (76) Jumbo",
-    "mass": 37.8,
     "turrets": {
       "Gunner": {
         "smokes": false,
@@ -14477,7 +14714,10 @@
         },
         "stabilizer": true
       }
-    }
+    },
+    "name": "M4A3E2 (76) Jumbo",
+    "amphibious": false,
+    "mass": 37.8
   },
   {
     "engine": {
@@ -14493,8 +14733,6 @@
       "horsepower": 1500,
       "name": "12N360"
     },
-    "name": "T-15 Armata",
-    "mass": 41,
     "turrets": {
       "Driver": {
         "smokes": true,
@@ -14556,7 +14794,10 @@
         },
         "stabilizer": true
       }
-    }
+    },
+    "name": "T-15 Armata",
+    "amphibious": false,
+    "mass": 41
   },
   {
     "engine": {
@@ -14572,8 +14813,6 @@
       "horsepower": 520,
       "name": "V-54"
     },
-    "name": "ZSU-57-2",
-    "mass": 28,
     "turrets": {
       "Gunner": {
         "smokes": false,
@@ -14596,7 +14835,10 @@
           "min": 1.875
         }
       }
-    }
+    },
+    "name": "ZSU-57-2",
+    "amphibious": false,
+    "mass": 28
   },
   {
     "engine": {
@@ -14612,8 +14854,6 @@
       "horsepower": 1500,
       "name": "KMDB 6TD-A"
     },
-    "name": "Object 477",
-    "mass": 55,
     "turrets": {
       "Commander": {
         "weapons": [],
@@ -14656,7 +14896,10 @@
           "min": 3
         }
       }
-    }
+    },
+    "name": "Object 477",
+    "amphibious": false,
+    "mass": 55
   },
   {
     "engine": {
@@ -14672,8 +14915,6 @@
       "horsepower": 215,
       "name": "YaMZ-5347-10"
     },
-    "name": "Bumpee",
-    "mass": 6,
     "turrets": {
       "Gunner": {
         "smokes": true,
@@ -14699,7 +14940,10 @@
           "min": 6.25
         }
       }
-    }
+    },
+    "name": "Bumpee",
+    "amphibious": false,
+    "mass": 6
   },
   {
     "engine": {
@@ -14715,8 +14959,6 @@
       "horsepower": 700,
       "name": "HPZ 5TDF"
     },
-    "name": "T-64R",
-    "mass": 36.5,
     "turrets": {
       "Commander": {
         "weapons": [],
@@ -14758,7 +15000,10 @@
           "min": 8.333333333333334
         }
       }
-    }
+    },
+    "name": "T-64R",
+    "amphibious": false,
+    "mass": 36.5
   },
   {
     "engine": {
@@ -14774,8 +15019,6 @@
       "horsepower": 500,
       "name": "Model V-2-34"
     },
-    "name": "T-34",
-    "mass": 30,
     "turrets": {
       "Bow Gunner": {
         "weapons": [
@@ -14819,7 +15062,10 @@
           "min": 1.875
         }
       }
-    }
+    },
+    "name": "T-34",
+    "amphibious": false,
+    "mass": 30
   },
   {
     "engine": {
@@ -14835,8 +15081,6 @@
       "horsepower": 700,
       "name": "HPZ 5TDF"
     },
-    "name": "Object 450",
-    "mass": 38,
     "turrets": {
       "Commander": {
         "weapons": [
@@ -14880,7 +15124,10 @@
           "min": 4.411764705882353
         }
       }
-    }
+    },
+    "name": "Object 450",
+    "amphibious": false,
+    "mass": 38
   },
   {
     "engine": {
@@ -14896,8 +15143,6 @@
       "horsepower": 690,
       "name": "ChTZ V-46-5M"
     },
-    "name": "T-62M-1",
-    "mass": 42,
     "turrets": {
       "Loader": {
         "weapons": [
@@ -14959,6 +15204,9 @@
         },
         "stabilizer": true
       }
-    }
+    },
+    "name": "T-62M-1",
+    "amphibious": false,
+    "mass": 42
   }
 ]
