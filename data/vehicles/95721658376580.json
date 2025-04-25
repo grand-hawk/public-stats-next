@@ -490,9 +490,9 @@
   {
     "engine": {
       "transmission": {
-        "reverseGears": 2,
+        "reverseGears": 1,
         "neutralSteering": false,
-        "forwardGears": 11
+        "forwardGears": 6
       },
       "reverseSpeed": 10,
       "forwardSpeed": 62,
@@ -1515,9 +1515,9 @@
   {
     "engine": {
       "transmission": {
-        "reverseGears": 2,
+        "reverseGears": 1,
         "neutralSteering": false,
-        "forwardGears": 11
+        "forwardGears": 6
       },
       "reverseSpeed": 10,
       "forwardSpeed": 62,
@@ -1552,67 +1552,6 @@
     "name": "MT-LeBrams",
     "amphibious": false,
     "mass": 12.3
-  },
-  {
-    "engine": {
-      "transmission": {
-        "reverseGears": 4,
-        "neutralSteering": true,
-        "forwardGears": 4
-      },
-      "reverseSpeed": 90,
-      "forwardSpeed": 90,
-      "type": "Diesel",
-      "maxRPM": 3800,
-      "horsepower": 800,
-      "name": "MTU MT 892 Ka-501"
-    },
-    "turrets": {
-      "Commander": {
-        "weapons": [],
-        "traverse": {
-          "vertical": {
-            "max": 60,
-            "min": -10
-          },
-          "speed": {
-            "horizontal": 60,
-            "vertical": 60
-          }
-        },
-        "zoom": {
-          "max": 15,
-          "min": 1.9736842105263157
-        },
-        "stabilizer": true
-      },
-      "Gunner": {
-        "smokes": true,
-        "traverse": {
-          "vertical": {
-            "max": 45,
-            "min": -10
-          },
-          "speed": {
-            "horizontal": 90,
-            "vertical": 90
-          }
-        },
-        "weapons": [
-          "5.56mm MG4",
-          "30mm MK 30-2/ABMs",
-          "Spike-LR2MRs"
-        ],
-        "stabilizer": true,
-        "zoom": {
-          "max": 15,
-          "min": 1.9736842105263157
-        }
-      }
-    },
-    "name": "PUMA auth version",
-    "amphibious": false,
-    "mass": 43
   },
   {
     "suspension": {
@@ -4717,7 +4656,7 @@
         }
       }
     },
-    "name": "M2A2 Bradley",
+    "name": "M2A2 ODS-SA",
     "amphibious": false,
     "mass": 22.3
   },
@@ -10925,9 +10864,9 @@
   {
     "engine": {
       "transmission": {
-        "reverseGears": 2,
+        "reverseGears": 1,
         "neutralSteering": false,
-        "forwardGears": 11
+        "forwardGears": 6
       },
       "reverseSpeed": 10,
       "forwardSpeed": 62,
