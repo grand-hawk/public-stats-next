@@ -13,6 +13,7 @@ const placeData = new Map<number, PlaceData>();
 export interface Vehicle {
   name: string;
   mass: number;
+  amphibious: boolean;
 
   engine: {
     name: string;
@@ -26,6 +27,37 @@ export interface Vehicle {
       neutralSteering: boolean;
       forwardGears: number;
       reverseGears: number;
+    };
+  };
+
+  suspension:
+    | {
+        horizontal: boolean;
+        vertical: boolean;
+        height: boolean;
+      }
+    | undefined;
+
+  turrets: {
+    [seat: string]: {
+      zoom: {
+        min: number;
+        max: number;
+      };
+      traverse: {
+        speed: {
+          horizontal: number;
+          vertical: number;
+        };
+        vertical: {
+          min: number;
+          max: number;
+        };
+      };
+      // flares: boolean | undefined;
+      smokes: boolean | undefined;
+      stabilizer: boolean;
+      weapons: string[];
     };
   };
 }
