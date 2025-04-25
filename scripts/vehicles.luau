@@ -126,8 +126,8 @@ for name, tank in TankInfo do
 
 		vehicle.turrets[seatName] = {
 			zoom = {
-				min = BaseFOV / turretInfo.Zoom[1],
-				max = BaseFOV / turretInfo.Zoom[2],
+				min = BaseFOV / turretInfo.Zoom[2],
+				max = BaseFOV / turretInfo.Zoom[1],
 			},
 			weapons = {},
 		}
@@ -135,8 +135,8 @@ for name, tank in TankInfo do
 		-- if weaponsFolder:FindFirstChild("Flares") then
 		-- 	vehicle.turrets[seatName].flares = true
 		-- end
-		if weaponsFolder:FindFirstChild("Smoke Grenade") then
-			vehicle.turrets[seatName].smokes = true
+		if weaponsFolder:FindFirstChild("Smoke Grenade") or seatName == "Gunner" then
+			vehicle.turrets[seatName].smokes = not not weaponsFolder:FindFirstChild("Smoke Grenade")
 		end
 
 		for _, weapon: Folder in weaponsFolder:GetChildren() do
