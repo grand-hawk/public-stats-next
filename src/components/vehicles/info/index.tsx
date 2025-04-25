@@ -122,28 +122,6 @@ export default function VehicleInfo({
                               x
                             </Stat>
 
-                            {turret.smokes !== undefined && (
-                              <Stat label="Smoke launcher(s)">
-                                {turret.smokes ? 'Yes' : 'No'}
-                              </Stat>
-                            )}
-
-                            {turret.stabilizer && (
-                              <Stat label="Stabilizer">
-                                {turret.stabilizer ? 'Yes' : 'No'}
-                              </Stat>
-                            )}
-
-                            {turret.thermals !== undefined && (
-                              <Stat label="Thermals">{turret.thermals}</Stat>
-                            )}
-
-                            {turret.rangefinder !== undefined && (
-                              <Stat label="Rangefinder">
-                                {turret.rangefinder}
-                              </Stat>
-                            )}
-
                             <Stat
                               label={
                                 <>
@@ -193,6 +171,28 @@ export default function VehicleInfo({
                                 °
                               </>
                             </Stat>
+
+                            {turret.smokes !== undefined && (
+                              <Stat label="Smoke launcher(s)">
+                                {turret.smokes ? 'Yes' : 'No'}
+                              </Stat>
+                            )}
+
+                            {turret.stabilizer && (
+                              <Stat label="Stabilizer">
+                                {turret.stabilizer ? 'Yes' : 'No'}
+                              </Stat>
+                            )}
+
+                            {turret.thermals !== undefined && (
+                              <Stat label="Thermals">{turret.thermals}</Stat>
+                            )}
+
+                            {turret.rangefinder !== undefined && (
+                              <Stat label="Rangefinder">
+                                {turret.rangefinder}
+                              </Stat>
+                            )}
                           </StatStack>
                         </BasicCard>
 
