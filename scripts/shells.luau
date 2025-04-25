@@ -65,7 +65,7 @@ type ShellModule = {
 	maxPenetration: number,
 	penetrationTable: {
 		[number]: {
-			[number]: { number | nil },
+			[number]: { number? },
 		},
 	},
 
