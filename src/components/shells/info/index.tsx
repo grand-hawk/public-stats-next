@@ -102,7 +102,7 @@ export default function ShellInfo({
             <Stat label="Base damage">
               <FormatNumber value={data.damage} /> HP
             </Stat>
-            {typeof data.ricochetAngle !== 'undefined' && (
+            {data.ricochetAngle !== undefined && (
               <Stat label="Ricochet angle">
                 <FormatNumber
                   maximumFractionDigits={2}
@@ -111,12 +111,12 @@ export default function ShellInfo({
                 °
               </Stat>
             )}
-            {typeof data.shrapMultiplier !== 'undefined' && (
+            {data.shrapMultiplier !== undefined && (
               <Stat label="Shrapnel multiplier">
                 <FormatNumber value={data.shrapMultiplier} />
               </Stat>
             )}
-            {typeof data.eraTip !== 'undefined' && (
+            {data.eraTip !== undefined && (
               <Stat
                 label={
                   <>
@@ -128,7 +128,7 @@ export default function ShellInfo({
                 <FormatNumber value={data.eraTip} />
               </Stat>
             )}
-            {typeof data.diameter !== 'undefined' && (
+            {data.diameter !== undefined && (
               <Stat label="Penetrator diameter">
                 <FormatNumber value={data.diameter} /> mm
               </Stat>
@@ -151,7 +151,7 @@ export default function ShellInfo({
                 <Stat label="Explosive mass">
                   <FormatNumber value={data.explosive.mass} /> kg
                 </Stat>
-                {typeof data.explosive.explosiveRadius !== 'undefined' && (
+                {data.explosive.explosiveRadius !== undefined && (
                   <Stat
                     label={
                       <>
@@ -168,7 +168,7 @@ export default function ShellInfo({
                     m
                   </Stat>
                 )}
-                {typeof data.explosive.killRadius !== 'undefined' && (
+                {data.explosive.killRadius !== undefined && (
                   <Stat
                     label={
                       <>
@@ -195,26 +195,26 @@ export default function ShellInfo({
         <GridItem colSpan={1} rowSpan={1}>
           <BasicCard heading="Missile">
             <StatStack>
-              {typeof data.missile.boostTime !== 'undefined' && (
+              {data.missile.boostTime !== undefined && (
                 <Stat label="Boost time">
                   <FormatNumber value={data.missile.boostTime} /> seconds
                 </Stat>
               )}
-              {typeof data.missile.turnRate !== 'undefined' &&
-                typeof data.missile.limit === 'undefined' && (
+              {data.missile.turnRate !== undefined &&
+                data.missile.limit === undefined && (
                   <Stat label="Turn rate">
                     <FormatNumber value={data.missile.turnRate} /> °/s
                   </Stat>
                 )}
-              {typeof data.missile.limit !== 'undefined' && (
+              {data.missile.limit !== undefined && (
                 <Stat label="G limit">
                   <FormatNumber value={data.missile.limit} />G
                 </Stat>
               )}
-              {typeof data.missile.irccm !== 'undefined' && (
+              {data.missile.irccm !== undefined && (
                 <Stat label="IRCCM">{data.missile.irccm ? 'Yes' : 'No'}</Stat>
               )}
-              {typeof data.missile.unjammable !== 'undefined' && (
+              {data.missile.unjammable !== undefined && (
                 <Stat label="Jammable">
                   {data.missile.unjammable ? 'No' : 'Yes'}
                 </Stat>
