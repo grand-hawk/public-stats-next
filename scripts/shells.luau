@@ -61,6 +61,7 @@ type ShellModule = {
 	ricochetAngle: number?,
 	eraTip: number?,
 	diameter: number?,
+	laser: boolean?,
 
 	maxPenetration: number,
 	penetrationTable: {
@@ -121,6 +122,7 @@ for _, moduleScript in ShellModuleFolder:GetChildren() do
 				else ammo.RicochetAngle,
 			eraTip = ammo.ERAtip,
 			diameter = ammo.Diameter,
+			laser = if ammo.LWSLaser then true else nil,
 
 			maxPenetration = math.round(ammo.ShellMaxPen),
 			penetrationTable = {},

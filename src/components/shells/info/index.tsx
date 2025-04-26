@@ -133,6 +133,18 @@ export default function ShellInfo({
                 <FormatNumber value={data.diameter} /> mm
               </Stat>
             )}
+            {data.laser && (
+              <Stat
+                label={
+                  <>
+                    Laser guidance
+                    <InfoTooltip content="Ammunition guided by laser, triggers LWS" />
+                  </>
+                }
+              >
+                Yes
+              </Stat>
+            )}
 
             {data.explosive && (
               <>

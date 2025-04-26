@@ -21,6 +21,7 @@ export interface Shell {
   ricochetAngle: number | undefined;
   eraTip: number | undefined;
   diameter: number | undefined;
+  laser: boolean | undefined;
 
   maxPenetration: number;
   penetrationTable: {
