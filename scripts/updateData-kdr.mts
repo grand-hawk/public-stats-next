@@ -30,6 +30,7 @@ async function getVehicleVersions(
       _id: string;
       version: number;
       name: string;
+      displayName?: string;
       placeId: string;
       deaths: number;
       kills: number;
@@ -77,8 +78,10 @@ for (const [, placeId] of Object.entries(places)) {
         associatedVersions.reduce((acc, v) => acc + v.deaths, 0) /
         associatedVersions.length;
 
+      const properName = associatedVersions[0].displayName ?? name;
+
       return {
-        name,
+        name: properName,
         kd: Number((averageKills / (averageDeaths || 1)).toFixed(2)),
         kills: Math.round(averageKills),
         deaths: Math.round(averageDeaths),
