@@ -7,7 +7,7 @@ import type { AppRouter } from '@/server/api/trpc/router';
 import type { inferRouterInputs, inferRouterOutputs } from '@trpc/server';
 
 const getBaseUrl = () => {
-  if (typeof window !== undefined) return ''; // browser should use relative url
+  if (window !== undefined) return ''; // browser should use relative url
   if (process.env.COOLIFY_URL) {
     const url = process.env.COOLIFY_URL.split(',')[0];
     return url.startsWith('http://') || url.startsWith('https://')
