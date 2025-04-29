@@ -1,12 +1,32 @@
 [
     {
         "name": "Hawk Republic",
-        "data": [],
-        "matches": []
+        "data": [
+            [
+                1745798400000,
+                75
+            ]
+        ],
+        "matches": [
+            [
+                1745798400000,
+                12
+            ]
+        ]
     },
     {
         "name": "Eagle Federation",
-        "data": [],
-        "matches": []
+        "data": [
+            [
+                1745798400000,
+                25
+            ]
+        ],
+        "matches": [
+            [
+                1745798400000,
+                12
+            ]
+        ]
     }
 ]

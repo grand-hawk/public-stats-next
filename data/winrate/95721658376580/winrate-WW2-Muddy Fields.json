@@ -1,12 +1,47 @@
 [
     {
         "name": "Hawk Republic",
-        "data": [],
-        "matches": []
+        "data": [
+            [
+                1745798400000,
+                33.33333333333333
+            ]
+        ],
+        "matches": [
+            [
+                1745798400000,
+                3
+            ]
+        ]
     },
     {
         "name": "Eagle Federation",
-        "data": [],
-        "matches": []
+        "data": [
+            [
+                1745798400000,
+                100
+            ]
+        ],
+        "matches": [
+            [
+                1745798400000,
+                1
+            ]
+        ]
+    },
+    {
+        "name": "Schwalbenheim Kingdom",
+        "data": [
+            [
+                1745798400000,
+                50
+            ]
+        ],
+        "matches": [
+            [
+                1745798400000,
+                2
+            ]
+        ]
     }
 ]
