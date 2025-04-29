@@ -11074,6 +11074,66 @@
       "penetrationTable": {
         "0": {
           "0": [
+            45
+          ],
+          "500": [
+            45
+          ],
+          "1000": [
+            45
+          ],
+          "2000": [
+            45
+          ]
+        },
+        "30": {
+          "0": [
+            52
+          ],
+          "500": [
+            52
+          ],
+          "1000": [
+            52
+          ],
+          "2000": [
+            52
+          ]
+        },
+        "60": {
+          "0": [
+            91
+          ],
+          "500": [
+            91
+          ],
+          "1000": [
+            91
+          ],
+          "2000": [
+            91
+          ]
+        }
+      },
+      "name": "DTB12-125 VT",
+      "mass": 23.2,
+      "maxPenetration": 45,
+      "explosive": {
+        "killRadius": 14.34084968054905,
+        "mass": 5.3,
+        "explosiveRadius": 42.1896581338472
+      },
+      "damage": 681,
+      "relatedVehicles": [
+        "ZTZ99A"
+      ],
+      "velocity": 850,
+      "type": "TIME FUZE"
+    },
+    {
+      "penetrationTable": {
+        "0": {
+          "0": [
             850
           ],
           "500": [
@@ -11181,7 +11241,7 @@
           ]
         }
       },
-      "name": "DTB12-125",
+      "name": "DTB12-125 PD",
       "mass": 23.2,
       "maxPenetration": 45,
       "explosive": {
@@ -11194,7 +11254,7 @@
         "ZTZ99A"
       ],
       "velocity": 850,
-      "type": "TIME FUZE"
+      "type": "HE"
     }
   ],
   "20mm Rh203": [
