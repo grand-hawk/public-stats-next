@@ -1,5 +1,5 @@
 import { Center, Stack, Text } from '@chakra-ui/react';
-import Link from 'next/link';
+import NextLink from 'next/link';
 import React from 'react';
 import { MdOutlineSearch } from 'react-icons/md';
 
@@ -48,7 +48,7 @@ function Results({ placeId, query }: { placeId: number; query: string }) {
   return (
     <Stack gap={1} maxHeight="60vh" overflowY="auto">
       {results.map((result) => (
-        <Link
+        <NextLink
           key={`${result.weaponName}-${result.shell}-${result.type}`}
           href={`/shells/${encodeURIComponent(result.weaponName)}/${encodeURIComponent(result.shell)}`}
           passHref
@@ -66,7 +66,7 @@ function Results({ placeId, query }: { placeId: number; query: string }) {
               {result.weaponName}
             </Text>
           </Button>
-        </Link>
+        </NextLink>
       ))}
     </Stack>
   );
