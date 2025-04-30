@@ -1,5 +1,6 @@
-import { Code, FormatNumber, IconButton, Table } from '@chakra-ui/react';
+import { Code, FormatNumber, IconButton, Link, Table } from '@chakra-ui/react';
 import { Group, Spinner } from '@chakra-ui/react';
+import NextLink from 'next/link';
 import React from 'react';
 import { TiArrowSortedUp, TiArrowSortedDown } from 'react-icons/ti';
 
@@ -105,7 +106,14 @@ export default function VehicleTable({ placeId }: { placeId: number }) {
             })
             .map(({ name, kd, kills, deaths }) => (
               <Table.Row key={name}>
-                <Table.Cell>{name}</Table.Cell>
+                <Table.Cell>
+                  <NextLink
+                    href={`/vehicles/${encodeURIComponent(name)}`}
+                    passHref
+                  >
+                    <Link as="span">{name}</Link>
+                  </NextLink>
+                </Table.Cell>
                 <Table.Cell>
                   <Code color="white" size="md">
                     {kd}
