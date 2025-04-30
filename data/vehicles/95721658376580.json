@@ -8038,6 +8038,88 @@
     "engine": {
       "transmission": {
         "reverseGears": 1,
+        "neutralSteering": true,
+        "forwardGears": 7
+      },
+      "reverseSpeed": 3.5,
+      "forwardSpeed": 46,
+      "type": "Diesel",
+      "maxRPM": 3000,
+      "horsepower": 690,
+      "name": "MB HL230 P30"
+    },
+    "turrets": {
+      "Loader": {
+        "weapons": [
+          "Grenade Mortar"
+        ],
+        "traverse": {
+          "vertical": {
+            "max": 0,
+            "min": 0
+          },
+          "speed": {
+            "horizontal": 17.9,
+            "vertical": 17.9
+          }
+        },
+        "zoom": {
+          "max": 2.88,
+          "min": 1.8
+        },
+        "stabilizer": false
+      },
+      "Gunner": {
+        "smokes": false,
+        "traverse": {
+          "vertical": {
+            "max": 14,
+            "min": -7
+          },
+          "speed": {
+            "horizontal": 8,
+            "vertical": 6.2
+          }
+        },
+        "weapons": [
+          "88 mm KwK43"
+        ],
+        "rangefinder": "None",
+        "stabilizer": false,
+        "zoom": {
+          "max": 4.8,
+          "min": 4.8
+        }
+      },
+      "Bow Gunner": {
+        "weapons": [
+          "7.92mm MG34"
+        ],
+        "traverse": {
+          "vertical": {
+            "max": 10,
+            "min": -10
+          },
+          "speed": {
+            "horizontal": 60,
+            "vertical": 60
+          }
+        },
+        "zoom": {
+          "max": 2.88,
+          "min": 1.8
+        },
+        "stabilizer": true
+      }
+    },
+    "name": "Jagdpanther",
+    "amphibious": false,
+    "mass": 46
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 1,
         "neutralSteering": false,
         "forwardGears": 4
       },
@@ -8097,6 +8179,51 @@
     "name": "T-80B",
     "amphibious": false,
     "mass": 42
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 1,
+        "neutralSteering": false,
+        "forwardGears": 7
+      },
+      "reverseSpeed": 15,
+      "forwardSpeed": 100,
+      "type": "Diesel",
+      "maxRPM": 1800,
+      "horsepower": 600,
+      "name": "Scania DC 13"
+    },
+    "turrets": {
+      "Gunner": {
+        "thermals": "White (Gen 3)",
+        "traverse": {
+          "vertical": {
+            "max": 33,
+            "min": -9
+          },
+          "speed": {
+            "horizontal": 50,
+            "vertical": 50
+          }
+        },
+        "weapons": [
+          "30mm Treemaster",
+          "7.62mm PKT",
+          "Spike ATGM"
+        ],
+        "smokes": true,
+        "rangefinder": "Laser",
+        "stabilizer": true,
+        "zoom": {
+          "max": 14.4,
+          "min": 1.894736842105263
+        }
+      }
+    },
+    "name": "Rosomak",
+    "amphibious": true,
+    "mass": 22
   },
   {
     "engine": {
@@ -8256,51 +8383,6 @@
   {
     "engine": {
       "transmission": {
-        "reverseGears": 1,
-        "neutralSteering": false,
-        "forwardGears": 7
-      },
-      "reverseSpeed": 15,
-      "forwardSpeed": 100,
-      "type": "Diesel",
-      "maxRPM": 1800,
-      "horsepower": 600,
-      "name": "Scania DC 13"
-    },
-    "turrets": {
-      "Gunner": {
-        "thermals": "White (Gen 3)",
-        "traverse": {
-          "vertical": {
-            "max": 33,
-            "min": -9
-          },
-          "speed": {
-            "horizontal": 50,
-            "vertical": 50
-          }
-        },
-        "weapons": [
-          "30mm Treemaster",
-          "7.62mm PKT",
-          "Spike ATGM"
-        ],
-        "smokes": true,
-        "rangefinder": "Laser",
-        "stabilizer": true,
-        "zoom": {
-          "max": 14.4,
-          "min": 1.894736842105263
-        }
-      }
-    },
-    "name": "Rosomak",
-    "amphibious": true,
-    "mass": 22
-  },
-  {
-    "engine": {
-      "transmission": {
         "reverseGears": 2,
         "neutralSteering": false,
         "forwardGears": 8
@@ -8360,6 +8442,25 @@
     "name": "IS-6",
     "amphibious": false,
     "mass": 51.1
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 1,
+        "neutralSteering": false,
+        "forwardGears": 5
+      },
+      "reverseSpeed": 15,
+      "forwardSpeed": 100,
+      "type": "Diesel",
+      "maxRPM": 2100,
+      "horsepower": 180,
+      "name": "ZiL-375"
+    },
+    "turrets": [],
+    "name": "Ural-375D",
+    "amphibious": false,
+    "mass": 18.2
   },
   {
     "engine": {
@@ -8784,25 +8885,6 @@
     "name": "L3/35",
     "amphibious": false,
     "mass": 3.2
-  },
-  {
-    "engine": {
-      "transmission": {
-        "reverseGears": 1,
-        "neutralSteering": false,
-        "forwardGears": 5
-      },
-      "reverseSpeed": 15,
-      "forwardSpeed": 100,
-      "type": "Diesel",
-      "maxRPM": 2100,
-      "horsepower": 180,
-      "name": "ZiL-375"
-    },
-    "turrets": [],
-    "name": "Ural-375D",
-    "amphibious": false,
-    "mass": 18.2
   },
   {
     "engine": {
@@ -9598,6 +9680,69 @@
         }
       }
     },
+    "name": "Ersatz M10",
+    "amphibious": false,
+    "mass": 44.3
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 1,
+        "neutralSteering": true,
+        "forwardGears": 7
+      },
+      "reverseSpeed": 3.5,
+      "forwardSpeed": 46,
+      "type": "Diesel",
+      "maxRPM": 3000,
+      "horsepower": 690,
+      "name": "MB HL230 P30"
+    },
+    "turrets": {
+      "Bow Gunner": {
+        "weapons": [
+          "7.92mm MG34"
+        ],
+        "traverse": {
+          "vertical": {
+            "max": 10,
+            "min": -10
+          },
+          "speed": {
+            "horizontal": 60,
+            "vertical": 60
+          }
+        },
+        "zoom": {
+          "max": 2.88,
+          "min": 1.8
+        },
+        "stabilizer": true
+      },
+      "Gunner": {
+        "smokes": false,
+        "traverse": {
+          "vertical": {
+            "max": 20,
+            "min": -8
+          },
+          "speed": {
+            "horizontal": 18.8,
+            "vertical": 18.8
+          }
+        },
+        "weapons": [
+          "75 mm KwK42",
+          "7.92mm MG34"
+        ],
+        "rangefinder": "None",
+        "stabilizer": false,
+        "zoom": {
+          "max": 4.8,
+          "min": 2.4
+        }
+      }
+    },
     "name": "T-V",
     "amphibious": false,
     "mass": 44.3
@@ -9801,26 +9946,26 @@
   {
     "engine": {
       "transmission": {
-        "reverseGears": 2,
+        "reverseGears": 3,
         "neutralSteering": true,
         "forwardGears": 6
       },
-      "reverseSpeed": 15,
-      "forwardSpeed": 69,
+      "reverseSpeed": 31,
+      "forwardSpeed": 68,
       "type": "Diesel",
-      "maxRPM": 2800,
-      "horsepower": 300,
-      "name": "6V53T-5301"
+      "maxRPM": 2600,
+      "horsepower": 1500,
+      "name": "MTU MB 873 Ka-501"
     },
     "turrets": {
-      "Commander": {
+      "Loader": {
         "weapons": [
-          "12.7mm M2"
+          "7.62mm MG3"
         ],
         "traverse": {
           "vertical": {
-            "max": 40,
-            "min": -10
+            "max": 45,
+            "min": -15
           },
           "speed": {
             "horizontal": 60,
@@ -9837,30 +9982,49 @@
         "smokes": true,
         "traverse": {
           "vertical": {
-            "max": 19.5,
-            "min": -8
+            "max": 15,
+            "min": -10
           },
           "speed": {
-            "horizontal": 36,
-            "vertical": 36
+            "horizontal": 40,
+            "vertical": 35
           }
         },
         "weapons": [
-          "7.62mm M73",
-          "152mm M81E1",
-          "76mm M32"
+          "120mm Rh120 L/44",
+          "7.62mm MG3"
         ],
-        "rangefinder": "None",
+        "rangefinder": "Laser",
         "stabilizer": true,
         "zoom": {
-          "max": 12,
+          "max": 14.4,
           "min": 8
         }
+      },
+      "Commander": {
+        "weapons": [
+          "20mm Rh202"
+        ],
+        "traverse": {
+          "vertical": {
+            "max": 35,
+            "min": -8
+          },
+          "speed": {
+            "horizontal": 60,
+            "vertical": 60
+          }
+        },
+        "zoom": {
+          "max": 8,
+          "min": 1.894736842105263
+        },
+        "stabilizer": true
       }
     },
-    "name": "M551 Sheridan",
+    "name": "Leopard 2K",
     "amphibious": false,
-    "mass": 15.3
+    "mass": 55.4
   },
   {
     "engine": {
@@ -9944,89 +10108,6 @@
     "name": "M26 Pershing",
     "amphibious": false,
     "mass": 41.6
-  },
-  {
-    "engine": {
-      "transmission": {
-        "reverseGears": 3,
-        "neutralSteering": true,
-        "forwardGears": 6
-      },
-      "reverseSpeed": 31,
-      "forwardSpeed": 68,
-      "type": "Diesel",
-      "maxRPM": 2600,
-      "horsepower": 1500,
-      "name": "MTU MB 873 Ka-501"
-    },
-    "turrets": {
-      "Loader": {
-        "weapons": [
-          "7.62mm MG3"
-        ],
-        "traverse": {
-          "vertical": {
-            "max": 45,
-            "min": -15
-          },
-          "speed": {
-            "horizontal": 60,
-            "vertical": 60
-          }
-        },
-        "zoom": {
-          "max": 2.88,
-          "min": 1.8
-        },
-        "stabilizer": true
-      },
-      "Gunner": {
-        "smokes": true,
-        "traverse": {
-          "vertical": {
-            "max": 15,
-            "min": -10
-          },
-          "speed": {
-            "horizontal": 40,
-            "vertical": 35
-          }
-        },
-        "weapons": [
-          "120mm Rh120 L/44",
-          "7.62mm MG3"
-        ],
-        "rangefinder": "Laser",
-        "stabilizer": true,
-        "zoom": {
-          "max": 14.4,
-          "min": 8
-        }
-      },
-      "Commander": {
-        "weapons": [
-          "20mm Rh202"
-        ],
-        "traverse": {
-          "vertical": {
-            "max": 35,
-            "min": -8
-          },
-          "speed": {
-            "horizontal": 60,
-            "vertical": 60
-          }
-        },
-        "zoom": {
-          "max": 8,
-          "min": 1.894736842105263
-        },
-        "stabilizer": true
-      }
-    },
-    "name": "Leopard 2K",
-    "amphibious": false,
-    "mass": 55.4
   },
   {
     "engine": {
@@ -10243,6 +10324,70 @@
   {
     "engine": {
       "transmission": {
+        "reverseGears": 2,
+        "neutralSteering": true,
+        "forwardGears": 6
+      },
+      "reverseSpeed": 38,
+      "forwardSpeed": 56,
+      "type": "Diesel",
+      "maxRPM": 2300,
+      "horsepower": 1217,
+      "name": "Perkins CV12"
+    },
+    "turrets": {
+      "Commander": {
+        "rangefinder": "Laser",
+        "traverse": {
+          "vertical": {
+            "max": 45,
+            "min": -20
+          },
+          "speed": {
+            "horizontal": 60,
+            "vertical": 60
+          }
+        },
+        "weapons": [
+          "7.62mm L37A2"
+        ],
+        "stabilizer": true,
+        "zoom": {
+          "max": 2.88,
+          "min": 1.8
+        }
+      },
+      "Gunner": {
+        "smokes": true,
+        "traverse": {
+          "vertical": {
+            "max": 20,
+            "min": -10
+          },
+          "speed": {
+            "horizontal": 31,
+            "vertical": 22.5
+          }
+        },
+        "weapons": [
+          "7.62mm L8A2",
+          "120mm L11A5"
+        ],
+        "rangefinder": "Laser",
+        "stabilizer": true,
+        "zoom": {
+          "max": 12,
+          "min": 3.789473684210526
+        }
+      }
+    },
+    "name": "Challenger 1",
+    "amphibious": false,
+    "mass": 62.5
+  },
+  {
+    "engine": {
+      "transmission": {
         "reverseGears": 4,
         "neutralSteering": true,
         "forwardGears": 8
@@ -10330,20 +10475,65 @@
   {
     "engine": {
       "transmission": {
-        "reverseGears": 2,
+        "reverseGears": 3,
         "neutralSteering": true,
         "forwardGears": 6
       },
-      "reverseSpeed": 38,
-      "forwardSpeed": 56,
+      "reverseSpeed": 31,
+      "forwardSpeed": 68,
       "type": "Diesel",
-      "maxRPM": 2300,
-      "horsepower": 1217,
-      "name": "Perkins CV12"
+      "maxRPM": 2600,
+      "horsepower": 1500,
+      "name": "MTU MB 873 Ka-501"
     },
     "turrets": {
-      "Commander": {
+      "Loader": {
         "rangefinder": "Laser",
+        "traverse": {
+          "vertical": {
+            "max": 30,
+            "min": -10
+          },
+          "speed": {
+            "horizontal": 60,
+            "vertical": 60
+          }
+        },
+        "weapons": [
+          "7.62mm MG3"
+        ],
+        "stabilizer": true,
+        "zoom": {
+          "max": 2.88,
+          "min": 1.8
+        }
+      },
+      "Gunner": {
+        "thermals": "White (Gen 3)",
+        "traverse": {
+          "vertical": {
+            "max": 20,
+            "min": -9
+          },
+          "speed": {
+            "horizontal": 37,
+            "vertical": 37
+          }
+        },
+        "weapons": [
+          "120mm Rh120 L/55 A1",
+          "7.62mm MG3"
+        ],
+        "smokes": true,
+        "rangefinder": "Laser",
+        "stabilizer": true,
+        "zoom": {
+          "max": 12,
+          "min": 3.789473684210526
+        }
+      },
+      "Commander": {
+        "thermals": "White (Gen 3)",
         "traverse": {
           "vertical": {
             "max": 45,
@@ -10354,42 +10544,18 @@
             "vertical": 60
           }
         },
-        "weapons": [
-          "7.62mm L37A2"
-        ],
-        "stabilizer": true,
-        "zoom": {
-          "max": 2.88,
-          "min": 1.8
-        }
-      },
-      "Gunner": {
-        "smokes": true,
-        "traverse": {
-          "vertical": {
-            "max": 20,
-            "min": -10
-          },
-          "speed": {
-            "horizontal": 31,
-            "vertical": 22.5
-          }
-        },
-        "weapons": [
-          "7.62mm L8A2",
-          "120mm L11A5"
-        ],
+        "weapons": [],
         "rangefinder": "Laser",
         "stabilizer": true,
         "zoom": {
-          "max": 12,
-          "min": 3.789473684210526
+          "max": 8,
+          "min": 1.894736842105263
         }
       }
     },
-    "name": "Challenger 1",
+    "name": "Leopard 2A7V",
     "amphibious": false,
-    "mass": 62.5
+    "mass": 64.1
   },
   {
     "engine": {
@@ -10600,91 +10766,6 @@
         }
       },
       "Gunner": {
-        "thermals": "White (Gen 3)",
-        "traverse": {
-          "vertical": {
-            "max": 20,
-            "min": -9
-          },
-          "speed": {
-            "horizontal": 37,
-            "vertical": 37
-          }
-        },
-        "weapons": [
-          "120mm Rh120 L/55 A1",
-          "7.62mm MG3"
-        ],
-        "smokes": true,
-        "rangefinder": "Laser",
-        "stabilizer": true,
-        "zoom": {
-          "max": 12,
-          "min": 3.789473684210526
-        }
-      },
-      "Commander": {
-        "thermals": "White (Gen 3)",
-        "traverse": {
-          "vertical": {
-            "max": 45,
-            "min": -20
-          },
-          "speed": {
-            "horizontal": 60,
-            "vertical": 60
-          }
-        },
-        "weapons": [],
-        "rangefinder": "Laser",
-        "stabilizer": true,
-        "zoom": {
-          "max": 8,
-          "min": 1.894736842105263
-        }
-      }
-    },
-    "name": "Leopard 2A7V",
-    "amphibious": false,
-    "mass": 64.1
-  },
-  {
-    "engine": {
-      "transmission": {
-        "reverseGears": 3,
-        "neutralSteering": true,
-        "forwardGears": 6
-      },
-      "reverseSpeed": 31,
-      "forwardSpeed": 68,
-      "type": "Diesel",
-      "maxRPM": 2600,
-      "horsepower": 1500,
-      "name": "MTU MB 873 Ka-501"
-    },
-    "turrets": {
-      "Loader": {
-        "rangefinder": "Laser",
-        "traverse": {
-          "vertical": {
-            "max": 30,
-            "min": -10
-          },
-          "speed": {
-            "horizontal": 60,
-            "vertical": 60
-          }
-        },
-        "weapons": [
-          "7.62mm MG3"
-        ],
-        "stabilizer": true,
-        "zoom": {
-          "max": 2.88,
-          "min": 1.8
-        }
-      },
-      "Gunner": {
         "thermals": "Green (Gen 1)",
         "traverse": {
           "vertical": {
@@ -10781,48 +10862,45 @@
   {
     "engine": {
       "transmission": {
-        "reverseGears": 1,
-        "neutralSteering": false,
-        "forwardGears": 5
+        "reverseGears": 2,
+        "neutralSteering": true,
+        "forwardGears": 6
       },
-      "reverseSpeed": 15,
-      "forwardSpeed": 110,
+      "reverseSpeed": 25,
+      "forwardSpeed": 80,
       "type": "Diesel",
-      "maxRPM": 2600,
-      "horsepower": 600,
-      "name": "3TD-4"
+      "maxRPM": 4500,
+      "horsepower": 87,
+      "name": "Audi 2.1 diesel"
     },
     "turrets": {
       "Gunner": {
-        "thermals": "White (Gen 2)",
+        "thermals": "White (Gen 3)",
         "traverse": {
           "vertical": {
-            "max": 33,
-            "min": -9
+            "max": 45,
+            "min": -10
           },
           "speed": {
-            "horizontal": 50,
-            "vertical": 50
+            "horizontal": 56,
+            "vertical": 56
           }
         },
         "weapons": [
-          "30mm AGS-17",
-          "Stugna-P",
-          "7.62mm PKT",
-          "30mm ZTM-2"
+          "20mm Rh202"
         ],
-        "smokes": true,
+        "smokes": false,
         "rangefinder": "Laser",
         "stabilizer": true,
         "zoom": {
-          "max": 12,
-          "min": 3.789473684210526
+          "max": 6,
+          "min": 1.894736842105263
         }
       }
     },
-    "name": "BTR-4",
-    "amphibious": true,
-    "mass": 28
+    "name": "Wiesel 1A4",
+    "amphibious": false,
+    "mass": 2.9
   },
   {
     "engine": {
@@ -10906,49 +10984,6 @@
     "name": "IS-1",
     "amphibious": false,
     "mass": 44
-  },
-  {
-    "engine": {
-      "transmission": {
-        "reverseGears": 2,
-        "neutralSteering": true,
-        "forwardGears": 6
-      },
-      "reverseSpeed": 25,
-      "forwardSpeed": 80,
-      "type": "Diesel",
-      "maxRPM": 4500,
-      "horsepower": 87,
-      "name": "Audi 2.1 diesel"
-    },
-    "turrets": {
-      "Gunner": {
-        "thermals": "White (Gen 3)",
-        "traverse": {
-          "vertical": {
-            "max": 45,
-            "min": -10
-          },
-          "speed": {
-            "horizontal": 56,
-            "vertical": 56
-          }
-        },
-        "weapons": [
-          "20mm Rh202"
-        ],
-        "smokes": false,
-        "rangefinder": "Laser",
-        "stabilizer": true,
-        "zoom": {
-          "max": 6,
-          "min": 1.894736842105263
-        }
-      }
-    },
-    "name": "Wiesel 1A4",
-    "amphibious": false,
-    "mass": 2.9
   },
   {
     "engine": {
@@ -11081,71 +11116,6 @@
   {
     "engine": {
       "transmission": {
-        "reverseGears": 1,
-        "neutralSteering": false,
-        "forwardGears": 7
-      },
-      "reverseSpeed": 4,
-      "forwardSpeed": 60,
-      "type": "Diesel",
-      "maxRPM": 2000,
-      "horsepower": 850,
-      "name": "S12U"
-    },
-    "turrets": {
-      "Commander": {
-        "thermals": "White (Gen 2)",
-        "traverse": {
-          "vertical": {
-            "max": 45,
-            "min": -10
-          },
-          "speed": {
-            "horizontal": 60,
-            "vertical": 60
-          }
-        },
-        "weapons": [],
-        "rangefinder": "Laser",
-        "stabilizer": true,
-        "zoom": {
-          "max": 10.285714285714286,
-          "min": 2.4
-        }
-      },
-      "Gunner": {
-        "thermals": "White (Gen 2)",
-        "traverse": {
-          "vertical": {
-            "max": 13,
-            "min": -6
-          },
-          "speed": {
-            "horizontal": 18,
-            "vertical": 18
-          }
-        },
-        "weapons": [
-          "7.62mm PKT",
-          "125mm 2A46MS",
-          "20mm Oerlikon KAA"
-        ],
-        "smokes": true,
-        "rangefinder": "Laser",
-        "stabilizer": true,
-        "zoom": {
-          "max": 8,
-          "min": 8
-        }
-      }
-    },
-    "name": "T-72M2",
-    "amphibious": false,
-    "mass": 44.5
-  },
-  {
-    "engine": {
-      "transmission": {
         "reverseGears": 3,
         "neutralSteering": true,
         "forwardGears": 6
@@ -11214,6 +11184,114 @@
       "transmission": {
         "reverseGears": 1,
         "neutralSteering": false,
+        "forwardGears": 7
+      },
+      "reverseSpeed": 4,
+      "forwardSpeed": 60,
+      "type": "Diesel",
+      "maxRPM": 2000,
+      "horsepower": 850,
+      "name": "S12U"
+    },
+    "turrets": {
+      "Commander": {
+        "thermals": "White (Gen 2)",
+        "traverse": {
+          "vertical": {
+            "max": 45,
+            "min": -10
+          },
+          "speed": {
+            "horizontal": 60,
+            "vertical": 60
+          }
+        },
+        "weapons": [],
+        "rangefinder": "Laser",
+        "stabilizer": true,
+        "zoom": {
+          "max": 10.285714285714286,
+          "min": 2.4
+        }
+      },
+      "Gunner": {
+        "thermals": "White (Gen 2)",
+        "traverse": {
+          "vertical": {
+            "max": 13,
+            "min": -6
+          },
+          "speed": {
+            "horizontal": 18,
+            "vertical": 18
+          }
+        },
+        "weapons": [
+          "7.62mm PKT",
+          "125mm 2A46MS",
+          "20mm Oerlikon KAA"
+        ],
+        "smokes": true,
+        "rangefinder": "Laser",
+        "stabilizer": true,
+        "zoom": {
+          "max": 8,
+          "min": 8
+        }
+      }
+    },
+    "name": "T-72M2",
+    "amphibious": false,
+    "mass": 44.5
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 1,
+        "neutralSteering": false,
+        "forwardGears": 6
+      },
+      "reverseSpeed": 7.5,
+      "forwardSpeed": 45,
+      "type": "Diesel",
+      "maxRPM": 3000,
+      "horsepower": 550,
+      "name": "MB HL157P"
+    },
+    "turrets": {
+      "Gunner": {
+        "smokes": true,
+        "traverse": {
+          "vertical": {
+            "max": 20,
+            "min": -10
+          },
+          "speed": {
+            "horizontal": 16,
+            "vertical": 16
+          }
+        },
+        "weapons": [
+          "50 mm KwK39",
+          "7.92mm MG34"
+        ],
+        "rangefinder": "None",
+        "stabilizer": false,
+        "zoom": {
+          "max": 3.4285714285714284,
+          "min": 1.8
+        }
+      }
+    },
+    "name": "VK 16.02 Leopard",
+    "amphibious": false,
+    "mass": 21.9
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 1,
+        "neutralSteering": false,
         "forwardGears": 6
       },
       "reverseSpeed": 10,
@@ -11275,68 +11353,6 @@
   {
     "engine": {
       "transmission": {
-        "reverseGears": 1,
-        "neutralSteering": false,
-        "forwardGears": 6
-      },
-      "reverseSpeed": 7.5,
-      "forwardSpeed": 45,
-      "type": "Diesel",
-      "maxRPM": 3000,
-      "horsepower": 550,
-      "name": "MB HL157P"
-    },
-    "turrets": {
-      "Gunner": {
-        "smokes": true,
-        "traverse": {
-          "vertical": {
-            "max": 20,
-            "min": -10
-          },
-          "speed": {
-            "horizontal": 16,
-            "vertical": 16
-          }
-        },
-        "weapons": [
-          "50 mm KwK39",
-          "7.92mm MG34"
-        ],
-        "rangefinder": "None",
-        "stabilizer": false,
-        "zoom": {
-          "max": 3.4285714285714284,
-          "min": 1.8
-        }
-      }
-    },
-    "name": "VK 16.02 Leopard",
-    "amphibious": false,
-    "mass": 21.9
-  },
-  {
-    "engine": {
-      "transmission": {
-        "reverseGears": 1,
-        "neutralSteering": false,
-        "forwardGears": 5
-      },
-      "reverseSpeed": 25,
-      "forwardSpeed": 115,
-      "type": "Diesel",
-      "maxRPM": 4000,
-      "horsepower": 90,
-      "name": "UMZ-417"
-    },
-    "turrets": [],
-    "name": "UAZ-3909",
-    "amphibious": false,
-    "mass": 1.8
-  },
-  {
-    "engine": {
-      "transmission": {
         "reverseGears": 6,
         "neutralSteering": false,
         "forwardGears": 6
@@ -11394,6 +11410,90 @@
     "name": "Sd.Kfz.234/4 Pak Puma",
     "amphibious": false,
     "mass": 11.7
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 1,
+        "neutralSteering": false,
+        "forwardGears": 5
+      },
+      "reverseSpeed": 25,
+      "forwardSpeed": 115,
+      "type": "Diesel",
+      "maxRPM": 4000,
+      "horsepower": 90,
+      "name": "UMZ-417"
+    },
+    "turrets": [],
+    "name": "UAZ-3909",
+    "amphibious": false,
+    "mass": 1.8
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 4,
+        "neutralSteering": true,
+        "forwardGears": 7
+      },
+      "reverseSpeed": 75,
+      "forwardSpeed": 75,
+      "type": "Diesel",
+      "maxRPM": 2300,
+      "horsepower": 550,
+      "name": "Perkins CV-8"
+    },
+    "turrets": {
+      "Commander": {
+        "rangefinder": "Laser",
+        "traverse": {
+          "vertical": {
+            "max": 59,
+            "min": -9
+          },
+          "speed": {
+            "horizontal": 65,
+            "vertical": 60
+          }
+        },
+        "weapons": [],
+        "stabilizer": true,
+        "zoom": {
+          "max": 8,
+          "min": 1.894736842105263
+        }
+      },
+      "Gunner": {
+        "thermals": "Green (Gen 2)",
+        "traverse": {
+          "vertical": {
+            "max": 59,
+            "min": -9
+          },
+          "speed": {
+            "horizontal": 65,
+            "vertical": 60
+          }
+        },
+        "weapons": [
+          "25mm M242 Bushmaster",
+          "7.62mm M240",
+          "BGM-71C I-TOW",
+          "BGM-71F TOW 2A/B"
+        ],
+        "smokes": true,
+        "rangefinder": "Laser",
+        "stabilizer": true,
+        "zoom": {
+          "max": 8,
+          "min": 8
+        }
+      }
+    },
+    "name": "Desert Warrior",
+    "amphibious": false,
+    "mass": 29
   },
   {
     "engine": {
@@ -11505,29 +11605,32 @@
       "transmission": {
         "reverseGears": 4,
         "neutralSteering": true,
-        "forwardGears": 7
+        "forwardGears": 8
       },
-      "reverseSpeed": 75,
-      "forwardSpeed": 75,
-      "type": "Diesel",
-      "maxRPM": 2300,
-      "horsepower": 550,
-      "name": "Perkins CV-8"
+      "reverseSpeed": 24,
+      "forwardSpeed": 83,
+      "type": "Turbine",
+      "maxRPM": 3000,
+      "horsepower": 650,
+      "name": "Lycoming 650 gas turbine"
     },
     "turrets": {
       "Commander": {
-        "rangefinder": "Laser",
+        "thermals": "Green (Gen 1)",
         "traverse": {
           "vertical": {
-            "max": 59,
-            "min": -9
+            "max": 45,
+            "min": -15
           },
           "speed": {
-            "horizontal": 65,
+            "horizontal": 60,
             "vertical": 60
           }
         },
-        "weapons": [],
+        "weapons": [
+          "12.7mm M2"
+        ],
+        "rangefinder": "Laser",
         "stabilizer": true,
         "zoom": {
           "max": 8,
@@ -11535,35 +11638,34 @@
         }
       },
       "Gunner": {
-        "thermals": "Green (Gen 2)",
+        "thermals": "Green (Gen 1)",
         "traverse": {
           "vertical": {
-            "max": 59,
-            "min": -9
+            "max": 45,
+            "min": -16
           },
           "speed": {
-            "horizontal": 65,
-            "vertical": 60
+            "horizontal": 60,
+            "vertical": 50
           }
         },
         "weapons": [
-          "25mm M242 Bushmaster",
-          "7.62mm M240",
-          "BGM-71C I-TOW",
-          "BGM-71F TOW 2A/B"
+          "FIM-92K Stinger",
+          "75mm XM274",
+          "7.62mm M240"
         ],
-        "smokes": true,
+        "smokes": false,
         "rangefinder": "Laser",
         "stabilizer": true,
         "zoom": {
           "max": 8,
-          "min": 8
+          "min": 1.894736842105263
         }
       }
     },
-    "name": "Desert Warrior",
+    "name": "HSTV-L",
     "amphibious": false,
-    "mass": 29
+    "mass": 20
   },
   {
     "engine": {
@@ -11653,65 +11755,45 @@
   {
     "engine": {
       "transmission": {
-        "reverseGears": 1,
+        "reverseGears": 8,
         "neutralSteering": true,
-        "forwardGears": 7
+        "forwardGears": 8
       },
-      "reverseSpeed": 3.5,
-      "forwardSpeed": 46,
+      "reverseSpeed": 20.7,
+      "forwardSpeed": 20.7,
       "type": "Diesel",
       "maxRPM": 3000,
-      "horsepower": 690,
-      "name": "MB HL230 P30"
+      "horsepower": 1200,
+      "name": "MB 517"
     },
     "turrets": {
-      "Bow Gunner": {
-        "weapons": [
-          "7.92mm MG34"
-        ],
-        "traverse": {
-          "vertical": {
-            "max": 10,
-            "min": -10
-          },
-          "speed": {
-            "horizontal": 60,
-            "vertical": 60
-          }
-        },
-        "zoom": {
-          "max": 2.88,
-          "min": 1.8
-        },
-        "stabilizer": true
-      },
       "Gunner": {
         "smokes": false,
         "traverse": {
           "vertical": {
-            "max": 20,
-            "min": -8
+            "max": 23,
+            "min": -7
           },
           "speed": {
-            "horizontal": 18.8,
-            "vertical": 18.8
+            "horizontal": 7.5,
+            "vertical": 6
           }
         },
         "weapons": [
-          "75 mm KwK42",
-          "7.92mm MG34"
+          "128 mm KwK44",
+          "75 mm KwK44"
         ],
         "rangefinder": "None",
         "stabilizer": false,
         "zoom": {
-          "max": 4.8,
-          "min": 2.4
+          "max": 10.285714285714286,
+          "min": 10.285714285714286
         }
       }
     },
-    "name": "Ersatz M10",
+    "name": "Maus",
     "amphibious": false,
-    "mass": 44.3
+    "mass": 188
   },
   {
     "engine": {
@@ -11843,49 +11925,6 @@
   {
     "engine": {
       "transmission": {
-        "reverseGears": 8,
-        "neutralSteering": true,
-        "forwardGears": 8
-      },
-      "reverseSpeed": 20.7,
-      "forwardSpeed": 20.7,
-      "type": "Diesel",
-      "maxRPM": 3000,
-      "horsepower": 1200,
-      "name": "MB 517"
-    },
-    "turrets": {
-      "Gunner": {
-        "smokes": false,
-        "traverse": {
-          "vertical": {
-            "max": 23,
-            "min": -7
-          },
-          "speed": {
-            "horizontal": 7.5,
-            "vertical": 6
-          }
-        },
-        "weapons": [
-          "128 mm KwK44",
-          "75 mm KwK44"
-        ],
-        "rangefinder": "None",
-        "stabilizer": false,
-        "zoom": {
-          "max": 10.285714285714286,
-          "min": 10.285714285714286
-        }
-      }
-    },
-    "name": "Maus",
-    "amphibious": false,
-    "mass": 188
-  },
-  {
-    "engine": {
-      "transmission": {
         "reverseGears": 1,
         "neutralSteering": false,
         "forwardGears": 4
@@ -11927,84 +11966,67 @@
   {
     "engine": {
       "transmission": {
-        "reverseGears": 1,
+        "reverseGears": 4,
         "neutralSteering": true,
-        "forwardGears": 7
+        "forwardGears": 8
       },
-      "reverseSpeed": 3.5,
-      "forwardSpeed": 46,
+      "reverseSpeed": 24,
+      "forwardSpeed": 56,
       "type": "Diesel",
-      "maxRPM": 3000,
-      "horsepower": 690,
-      "name": "MB HL230 P30"
+      "maxRPM": 2300,
+      "horsepower": 1000,
+      "name": "MTU MB 837 Ka-501"
     },
     "turrets": {
-      "Loader": {
-        "weapons": [
-          "Grenade Mortar"
-        ],
+      "Commander": {
+        "rangefinder": "Laser",
         "traverse": {
           "vertical": {
-            "max": 0,
-            "min": 0
-          },
-          "speed": {
-            "horizontal": 17.9,
-            "vertical": 17.9
-          }
-        },
-        "zoom": {
-          "max": 2.88,
-          "min": 1.8
-        },
-        "stabilizer": false
-      },
-      "Gunner": {
-        "smokes": false,
-        "traverse": {
-          "vertical": {
-            "max": 14,
-            "min": -7
-          },
-          "speed": {
-            "horizontal": 8,
-            "vertical": 6.2
-          }
-        },
-        "weapons": [
-          "88 mm KwK43"
-        ],
-        "rangefinder": "None",
-        "stabilizer": false,
-        "zoom": {
-          "max": 4.8,
-          "min": 4.8
-        }
-      },
-      "Bow Gunner": {
-        "weapons": [
-          "7.92mm MG34"
-        ],
-        "traverse": {
-          "vertical": {
-            "max": 10,
-            "min": -10
+            "max": 58,
+            "min": -12
           },
           "speed": {
             "horizontal": 60,
             "vertical": 60
           }
         },
+        "weapons": [
+          "7.62mm MG3"
+        ],
+        "stabilizer": true,
         "zoom": {
-          "max": 2.88,
-          "min": 1.8
+          "max": 10.285714285714286,
+          "min": 10.285714285714286
+        }
+      },
+      "Gunner": {
+        "thermals": "Green (Gen 1)",
+        "traverse": {
+          "vertical": {
+            "max": 19,
+            "min": -9
+          },
+          "speed": {
+            "horizontal": 24,
+            "vertical": 24
+          }
         },
-        "stabilizer": true
+        "weapons": [
+          "7.62mm MG3",
+          "L7A3 105mm"
+        ],
+        "smokes": false,
+        "rangefinder": "Laser",
+        "stabilizer": true,
+        "zoom": {
+          "max": 12,
+          "min": 3.789473684210526
+        }
       }
     },
-    "name": "Jagdpanther",
+    "name": "M48 Super",
     "amphibious": false,
-    "mass": 46
+    "mass": 53
   },
   {
     "engine": {
@@ -12096,73 +12118,6 @@
         "neutralSteering": true,
         "forwardGears": 8
       },
-      "reverseSpeed": 24,
-      "forwardSpeed": 83,
-      "type": "Turbine",
-      "maxRPM": 3000,
-      "horsepower": 650,
-      "name": "Lycoming 650 gas turbine"
-    },
-    "turrets": {
-      "Commander": {
-        "thermals": "Green (Gen 1)",
-        "traverse": {
-          "vertical": {
-            "max": 45,
-            "min": -15
-          },
-          "speed": {
-            "horizontal": 60,
-            "vertical": 60
-          }
-        },
-        "weapons": [
-          "12.7mm M2"
-        ],
-        "rangefinder": "Laser",
-        "stabilizer": true,
-        "zoom": {
-          "max": 8,
-          "min": 1.894736842105263
-        }
-      },
-      "Gunner": {
-        "thermals": "Green (Gen 1)",
-        "traverse": {
-          "vertical": {
-            "max": 45,
-            "min": -16
-          },
-          "speed": {
-            "horizontal": 60,
-            "vertical": 50
-          }
-        },
-        "weapons": [
-          "FIM-92K Stinger",
-          "75mm XM274",
-          "7.62mm M240"
-        ],
-        "smokes": false,
-        "rangefinder": "Laser",
-        "stabilizer": true,
-        "zoom": {
-          "max": 8,
-          "min": 1.894736842105263
-        }
-      }
-    },
-    "name": "HSTV-L",
-    "amphibious": false,
-    "mass": 20
-  },
-  {
-    "engine": {
-      "transmission": {
-        "reverseGears": 4,
-        "neutralSteering": true,
-        "forwardGears": 8
-      },
       "reverseSpeed": 8.3,
       "forwardSpeed": 40,
       "type": "Diesel",
@@ -12238,6 +12193,70 @@
     "name": "Sturmtiger",
     "amphibious": false,
     "mass": 65
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 1,
+        "neutralSteering": false,
+        "forwardGears": 5
+      },
+      "reverseSpeed": 6.1,
+      "forwardSpeed": 47,
+      "type": "Diesel",
+      "maxRPM": 2100,
+      "horsepower": 375,
+      "name": "GM 6046"
+    },
+    "turrets": {
+      "Gunner": {
+        "smokes": false,
+        "traverse": {
+          "vertical": {
+            "max": 15,
+            "min": -10
+          },
+          "speed": {
+            "horizontal": 22.6,
+            "vertical": 22.6
+          }
+        },
+        "weapons": [
+          "75mm M3",
+          ".30 cal M1919",
+          "M8 Rocket"
+        ],
+        "rangefinder": "None",
+        "stabilizer": true,
+        "zoom": {
+          "max": 3.4285714285714284,
+          "min": 1.8
+        }
+      },
+      "Bow Gunner": {
+        "weapons": [
+          ".30 cal M1919"
+        ],
+        "traverse": {
+          "vertical": {
+            "max": 22,
+            "min": -10
+          },
+          "speed": {
+            "horizontal": 60,
+            "vertical": 60
+          }
+        },
+        "zoom": {
+          "max": 2.88,
+          "min": 1.8
+        },
+        "stabilizer": true
+      }
+    },
+    "name": "T34 Calliope",
+    "amphibious": false,
+    "mass": 32.5
   },
   {
     "engine": {
@@ -12477,70 +12496,6 @@
         },
         "weapons": [
           "75mm M3",
-          ".30 cal M1919",
-          "M8 Rocket"
-        ],
-        "rangefinder": "None",
-        "stabilizer": true,
-        "zoom": {
-          "max": 3.4285714285714284,
-          "min": 1.8
-        }
-      },
-      "Bow Gunner": {
-        "weapons": [
-          ".30 cal M1919"
-        ],
-        "traverse": {
-          "vertical": {
-            "max": 22,
-            "min": -10
-          },
-          "speed": {
-            "horizontal": 60,
-            "vertical": 60
-          }
-        },
-        "zoom": {
-          "max": 2.88,
-          "min": 1.8
-        },
-        "stabilizer": true
-      }
-    },
-    "name": "T34 Calliope",
-    "amphibious": false,
-    "mass": 32.5
-  },
-  {
-    "engine": {
-      "transmission": {
-        "reverseGears": 1,
-        "neutralSteering": false,
-        "forwardGears": 5
-      },
-      "reverseSpeed": 6.1,
-      "forwardSpeed": 47,
-      "type": "Diesel",
-      "maxRPM": 2100,
-      "horsepower": 375,
-      "name": "GM 6046"
-    },
-    "turrets": {
-      "Gunner": {
-        "smokes": false,
-        "traverse": {
-          "vertical": {
-            "max": 15,
-            "min": -10
-          },
-          "speed": {
-            "horizontal": 22.6,
-            "vertical": 22.6
-          }
-        },
-        "weapons": [
-          "75mm M3",
           ".30 cal M1919"
         ],
         "rangefinder": "None",
@@ -12594,6 +12549,25 @@
     "name": "M4A2 Sherman",
     "amphibious": false,
     "mass": 32.5
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 1,
+        "neutralSteering": true,
+        "forwardGears": 3
+      },
+      "reverseSpeed": 15,
+      "forwardSpeed": 70,
+      "type": "Diesel",
+      "maxRPM": 3400,
+      "horsepower": 26,
+      "name": "OHV"
+    },
+    "turrets": [],
+    "name": "Kettenkrad",
+    "amphibious": false,
+    "mass": 1.56
   },
   {
     "engine": {
@@ -12721,25 +12695,6 @@
     "name": "IT-1",
     "amphibious": false,
     "mass": 34.5
-  },
-  {
-    "engine": {
-      "transmission": {
-        "reverseGears": 1,
-        "neutralSteering": true,
-        "forwardGears": 3
-      },
-      "reverseSpeed": 15,
-      "forwardSpeed": 70,
-      "type": "Diesel",
-      "maxRPM": 3400,
-      "horsepower": 26,
-      "name": "OHV"
-    },
-    "turrets": [],
-    "name": "Kettenkrad",
-    "amphibious": false,
-    "mass": 1.56
   },
   {
     "engine": {
@@ -12884,6 +12839,49 @@
     "name": "M3 Lee",
     "amphibious": false,
     "mass": 27.7
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 1,
+        "neutralSteering": false,
+        "forwardGears": 5
+      },
+      "reverseSpeed": 5,
+      "forwardSpeed": 40,
+      "type": "Diesel",
+      "maxRPM": 2850,
+      "horsepower": 425,
+      "name": "Chrysler A57 multibank"
+    },
+    "turrets": {
+      "Gunner": {
+        "smokes": false,
+        "traverse": {
+          "vertical": {
+            "max": 15,
+            "min": -10
+          },
+          "speed": {
+            "horizontal": 22.6,
+            "vertical": 22.6
+          }
+        },
+        "weapons": [
+          "76mm QF 17-pounder",
+          "7.62mm L3A1"
+        ],
+        "rangefinder": "None",
+        "stabilizer": false,
+        "zoom": {
+          "max": 6,
+          "min": 2.88
+        }
+      }
+    },
+    "name": "Sherman Firefly",
+    "amphibious": false,
+    "mass": 35.3
   },
   {
     "engine": {
@@ -13085,41 +13083,44 @@
         "neutralSteering": false,
         "forwardGears": 5
       },
-      "reverseSpeed": 5,
-      "forwardSpeed": 40,
+      "reverseSpeed": 15,
+      "forwardSpeed": 110,
       "type": "Diesel",
-      "maxRPM": 2850,
-      "horsepower": 425,
-      "name": "Chrysler A57 multibank"
+      "maxRPM": 2600,
+      "horsepower": 600,
+      "name": "3TD-4"
     },
     "turrets": {
       "Gunner": {
-        "smokes": false,
+        "thermals": "White (Gen 2)",
         "traverse": {
           "vertical": {
-            "max": 15,
-            "min": -10
+            "max": 33,
+            "min": -9
           },
           "speed": {
-            "horizontal": 22.6,
-            "vertical": 22.6
+            "horizontal": 50,
+            "vertical": 50
           }
         },
         "weapons": [
-          "76mm QF 17-pounder",
-          "7.62mm L3A1"
+          "30mm AGS-17",
+          "Stugna-P",
+          "7.62mm PKT",
+          "30mm ZTM-2"
         ],
-        "rangefinder": "None",
-        "stabilizer": false,
+        "smokes": true,
+        "rangefinder": "Laser",
+        "stabilizer": true,
         "zoom": {
-          "max": 6,
-          "min": 2.88
+          "max": 12,
+          "min": 3.789473684210526
         }
       }
     },
-    "name": "Sherman Firefly",
-    "amphibious": false,
-    "mass": 35.3
+    "name": "BTR-4",
+    "amphibious": true,
+    "mass": 28
   },
   {
     "suspension": {
@@ -13317,71 +13318,6 @@
   {
     "engine": {
       "transmission": {
-        "reverseGears": 4,
-        "neutralSteering": true,
-        "forwardGears": 8
-      },
-      "reverseSpeed": 24,
-      "forwardSpeed": 56,
-      "type": "Diesel",
-      "maxRPM": 2300,
-      "horsepower": 1000,
-      "name": "MTU MB 837 Ka-501"
-    },
-    "turrets": {
-      "Commander": {
-        "rangefinder": "Laser",
-        "traverse": {
-          "vertical": {
-            "max": 58,
-            "min": -12
-          },
-          "speed": {
-            "horizontal": 60,
-            "vertical": 60
-          }
-        },
-        "weapons": [
-          "7.62mm MG3"
-        ],
-        "stabilizer": true,
-        "zoom": {
-          "max": 10.285714285714286,
-          "min": 10.285714285714286
-        }
-      },
-      "Gunner": {
-        "thermals": "Green (Gen 1)",
-        "traverse": {
-          "vertical": {
-            "max": 19,
-            "min": -9
-          },
-          "speed": {
-            "horizontal": 24,
-            "vertical": 24
-          }
-        },
-        "weapons": [
-          "7.62mm MG3",
-          "L7A3 105mm"
-        ],
-        "smokes": false,
-        "rangefinder": "Laser",
-        "stabilizer": true,
-        "zoom": {
-          "max": 12,
-          "min": 3.789473684210526
-        }
-      }
-    },
-    "name": "M48 Super",
-    "amphibious": false,
-    "mass": 53
-  },
-  {
-    "engine": {
-      "transmission": {
         "reverseGears": 2,
         "neutralSteering": true,
         "forwardGears": 6
@@ -13440,6 +13376,70 @@
     "name": "LOSAT M8",
     "amphibious": false,
     "mass": 19.5
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 2,
+        "neutralSteering": true,
+        "forwardGears": 6
+      },
+      "reverseSpeed": 15,
+      "forwardSpeed": 69,
+      "type": "Diesel",
+      "maxRPM": 2800,
+      "horsepower": 300,
+      "name": "6V53T-5301"
+    },
+    "turrets": {
+      "Commander": {
+        "weapons": [
+          "12.7mm M2"
+        ],
+        "traverse": {
+          "vertical": {
+            "max": 40,
+            "min": -10
+          },
+          "speed": {
+            "horizontal": 60,
+            "vertical": 60
+          }
+        },
+        "zoom": {
+          "max": 2.88,
+          "min": 1.8
+        },
+        "stabilizer": true
+      },
+      "Gunner": {
+        "smokes": true,
+        "traverse": {
+          "vertical": {
+            "max": 19.5,
+            "min": -8
+          },
+          "speed": {
+            "horizontal": 36,
+            "vertical": 36
+          }
+        },
+        "weapons": [
+          "7.62mm M73",
+          "152mm M81E1",
+          "76mm M32"
+        ],
+        "rangefinder": "None",
+        "stabilizer": true,
+        "zoom": {
+          "max": 12,
+          "min": 8
+        }
+      }
+    },
+    "name": "M551 Sheridan",
+    "amphibious": false,
+    "mass": 15.3
   },
   {
     "engine": {
