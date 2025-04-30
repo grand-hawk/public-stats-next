@@ -30,6 +30,7 @@ async function getVehicleVersions(
       _id: string;
       version: number;
       name: string;
+      displayName?: string;
       placeId: string;
       deaths: number;
       kills: number;
@@ -45,22 +46,27 @@ for (const [, placeId] of Object.entries(places)) {
     .sort((a, b) => b - a)
     .slice(0, kdrConfig.versions[String(placeId)] ?? 10);
 
+  const vehicleVersions = await getVehicleVersions(placeId, recentVersions);
+  const filteredVehicleVersions = vehicleVersions.filter(({ name }) =>
+    vehiclesInLoadout.includes(name),
+  );
+
   await fs.writeFile(
     `./data/kdr/${placeId}/metadata.json`,
     JSON.stringify(
       {
         date: new Date().toISOString(),
-        vehicles: distinct.name.filter((v) => vehiclesInLoadout.includes(v)),
+        vehicles: distinct.name
+          .filter((v) => vehiclesInLoadout.includes(v))
+          .map((name) => {
+            const vehicle = vehicleVersions.find((v) => v.name === name);
+            return vehicle?.displayName ?? name;
+          }),
         versions: recentVersions,
       },
       undefined,
       4,
     ),
-  );
-
-  const vehicleVersions = await getVehicleVersions(placeId, recentVersions);
-  const filteredVehicleVersions = vehicleVersions.filter(({ name }) =>
-    vehiclesInLoadout.includes(name),
   );
 
   const kdr = distinct.name
@@ -77,8 +83,10 @@ for (const [, placeId] of Object.entries(places)) {
         associatedVersions.reduce((acc, v) => acc + v.deaths, 0) /
         associatedVersions.length;
 
+      const properName = associatedVersions[0].displayName ?? name;
+
       return {
-        name,
+        name: properName,
         kd: Number((averageKills / (averageDeaths || 1)).toFixed(2)),
         kills: Math.round(averageKills),
         deaths: Math.round(averageDeaths),
