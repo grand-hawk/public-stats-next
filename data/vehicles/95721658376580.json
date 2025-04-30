@@ -3923,9 +3923,9 @@
   {
     "engine": {
       "transmission": {
-        "reverseGears": 1,
+        "reverseGears": 3,
         "neutralSteering": true,
-        "forwardGears": 1
+        "forwardGears": 3
       },
       "reverseSpeed": 31,
       "forwardSpeed": 31,
@@ -13256,9 +13256,9 @@
   {
     "engine": {
       "transmission": {
-        "reverseGears": 1,
+        "reverseGears": 3,
         "neutralSteering": true,
-        "forwardGears": 1
+        "forwardGears": 3
       },
       "reverseSpeed": 30,
       "forwardSpeed": 30,
