@@ -3579,9 +3579,9 @@
       "damage": 360,
       "relatedVehicles": [
         "Panther II",
+        "Jagdpanther",
         "Elefant",
-        "Tiger II",
-        "Jagdpanther"
+        "Tiger II"
       ],
       "velocity": 1130,
       "type": "APCR",
@@ -3643,9 +3643,9 @@
       "damage": 298,
       "relatedVehicles": [
         "Panther II",
+        "Jagdpanther",
         "Elefant",
-        "Tiger II",
-        "Jagdpanther"
+        "Tiger II"
       ],
       "velocity": 820,
       "type": "HE"
@@ -3706,9 +3706,9 @@
       "damage": 360,
       "relatedVehicles": [
         "Panther II",
+        "Jagdpanther",
         "Elefant",
-        "Tiger II",
-        "Jagdpanther"
+        "Tiger II"
       ],
       "velocity": 1000,
       "type": "APHE",
@@ -9158,11 +9158,11 @@
         "T-80U",
         "T-80B",
         "T-84 Oplot-M",
-        "T-64BM \"Bulat\"",
         "2S19 Msta-S",
         "T-64A",
         "Strela-MLRS",
-        "T-72B"
+        "T-72B",
+        "T-64BM \"Bulat\""
       ],
       "velocity": 820,
       "type": "MG",
@@ -13339,10 +13339,10 @@
         "Churchill VII",
         "Jagdtiger",
         "Panther II",
+        "Jagdpanther",
         "Comet Mk.1",
         "Tiger II",
         "Sturmtiger",
-        "Jagdpanther",
         "Class 3(P)"
       ],
       "velocity": 30,
@@ -13406,10 +13406,10 @@
         "Churchill VII",
         "Jagdtiger",
         "Panther II",
+        "Jagdpanther",
         "Comet Mk.1",
         "Tiger II",
         "Sturmtiger",
-        "Jagdpanther",
         "Class 3(P)"
       ],
       "velocity": 30,
@@ -14384,11 +14384,11 @@
         "M8 Greyhound",
         "M26 Pershing",
         "M4A3E2 (76) Jumbo",
-        "M4A2 Sherman",
         "M4A3 (105) Zippo",
         "M48A2 Patton",
         "T26E4 Super Pershing",
         "T34 Calliope",
+        "M4A2 Sherman",
         "Class 3(P)",
         "T29E3"
       ],
@@ -14524,8 +14524,8 @@
         "M4A1 Sherman",
         "M3 GMC",
         "M4A3E2 (75) Jumbo",
-        "M4A2 Sherman",
-        "T34 Calliope"
+        "T34 Calliope",
+        "M4A2 Sherman"
       ],
       "velocity": 618,
       "type": "APHE",
@@ -14589,8 +14589,8 @@
         "M4A1 Sherman",
         "M3 GMC",
         "M4A3E2 (75) Jumbo",
-        "M4A2 Sherman",
-        "T34 Calliope"
+        "T34 Calliope",
+        "M4A2 Sherman"
       ],
       "velocity": 463,
       "type": "HE"
@@ -19834,6 +19834,178 @@
       "type": "TANDEM ANTI-TANK GUIDED MISSILE"
     }
   ],
+  "40/35mm L117": [
+    {
+      "penetrationTable": {
+        "0": {
+          "0": [
+            120
+          ],
+          "500": [
+            89
+          ],
+          "1000": [
+            66
+          ],
+          "2000": [
+            36
+          ]
+        },
+        "30": {
+          "0": [
+            102
+          ],
+          "500": [
+            76
+          ],
+          "1000": [
+            56
+          ],
+          "2000": [
+            31
+          ]
+        },
+        "60": {
+          "0": [
+            56
+          ],
+          "500": [
+            42
+          ],
+          "1000": [
+            31
+          ],
+          "2000": [
+            17
+          ]
+        }
+      },
+      "name": "APHE-I",
+      "mass": 0.36,
+      "maxPenetration": 120,
+      "explosive": {
+        "killRadius": 0.24019075128053255,
+        "mass": 0.0306,
+        "explosiveRadius": 7.568698264564289
+      },
+      "damage": 110,
+      "relatedVehicles": [],
+      "velocity": 1200,
+      "type": "APHE",
+      "ricochetAngle": 65
+    },
+    {
+      "penetrationTable": {
+        "0": {
+          "0": [
+            310
+          ],
+          "500": [
+            243
+          ],
+          "1000": [
+            190
+          ],
+          "2000": [
+            116
+          ]
+        },
+        "30": {
+          "0": [
+            245
+          ],
+          "500": [
+            192
+          ],
+          "1000": [
+            150
+          ],
+          "2000": [
+            92
+          ]
+        },
+        "60": {
+          "0": [
+            100
+          ],
+          "500": [
+            78
+          ],
+          "1000": [
+            61
+          ],
+          "2000": [
+            37
+          ]
+        }
+      },
+      "name": "APFSDS",
+      "mass": 0.6,
+      "maxPenetration": 310,
+      "damage": 90,
+      "relatedVehicles": [],
+      "velocity": 1700,
+      "type": "DU APFSDS ANTI-ERA"
+    },
+    {
+      "penetrationTable": {
+        "0": {
+          "0": [
+            6
+          ],
+          "500": [
+            6
+          ],
+          "1000": [
+            6
+          ],
+          "2000": [
+            6
+          ]
+        },
+        "30": {
+          "0": [
+            7
+          ],
+          "500": [
+            7
+          ],
+          "1000": [
+            7
+          ],
+          "2000": [
+            7
+          ]
+        },
+        "60": {
+          "0": [
+            12
+          ],
+          "500": [
+            12
+          ],
+          "1000": [
+            12
+          ],
+          "2000": [
+            12
+          ]
+        }
+      },
+      "name": "HE-I-T",
+      "mass": 0.36,
+      "maxPenetration": 6,
+      "explosive": {
+        "killRadius": 0.5543632595516852,
+        "mass": 0.09,
+        "explosiveRadius": 10.844134268165348
+      },
+      "damage": 148,
+      "relatedVehicles": [],
+      "velocity": 1200,
+      "type": "HE"
+    }
+  ],
   "122mm D-25TM": [
     {
       "penetrationTable": {
@@ -21623,8 +21795,8 @@
         "T-80B",
         "OBT-3",
         "BMD-4M",
-        "Object 775",
         "Object 450",
+        "MBT-3E",
         "T-64R",
         "Bumpee",
         "T-90M",
@@ -21635,7 +21807,6 @@
         "T-84 Oplot-M",
         "BMP-3M",
         "BTR-4",
-        "T-64BM \"Bulat\"",
         "T-72M2",
         "Ariete PSO",
         "MT-LB AA",
@@ -21652,9 +21823,10 @@
         "BTR-82A",
         "BMP-1",
         "M23 Pickett",
+        "Object 775",
         "T-72B",
         "PT-76E",
-        "MBT-3E",
+        "T-64BM \"Bulat\"",
         "T-62M-1"
       ],
       "velocity": 800,
@@ -26647,8 +26819,8 @@
         "M1A1",
         "XM8",
         "M1A2 SEP V3",
-        "M1IP",
         "M60A1 RISE Passive",
+        "M1IP",
         "M1 Abrams",
         "RDF/LT",
         "M60A1 Add-On Stabilization",
@@ -30565,13 +30737,13 @@
         "Ba-40",
         "IS-6",
         "T-34",
-        "T-34E",
         "T-60",
         "Abandoned Tank Hull",
         "KV-1E",
         "T-44",
         "KV-220",
         "IS-2 1944",
+        "T-34E",
         "IS-1",
         "IS-3"
       ],
@@ -35068,14 +35240,14 @@
         "Panther II",
         "T-V",
         "Pz IV H",
+        "Jagdpanther",
         "Sd Kfz 251",
         "Hornisse",
         "Tiger I",
         "Elefant",
         "Tiger II",
-        "Sturmtiger",
-        "Jagdpanther",
-        "Ersatz M10"
+        "Ersatz M10",
+        "Sturmtiger"
       ],
       "velocity": 900,
       "type": "MG",
@@ -37884,17 +38056,18 @@
         "M1A1",
         "XM8",
         "M1A2 SEP V3",
+        "M60A1 RISE Passive",
         "M1IP",
-        "M551 Sheridan",
+        "MBT-3E",
         "M26 Pershing",
         "M4A3E2 (76) Jumbo",
         "90mm GMC Super Hellcat",
         "Supply Truck",
-        "M60A1 RISE Passive",
+        "M7 Priest",
         "Black Night",
         "IFV-30",
         "M109A6",
-        "M4A2 Sherman",
+        "M18 Hellcat",
         "M1 Abrams",
         "Willys MB",
         "M4A3 (105) Zippo",
@@ -37903,14 +38076,13 @@
         "M60A1 Add-On Stabilization",
         "T26E4 Super Pershing",
         "KF41 Lynx",
+        "M551 Sheridan",
         "K1",
-        "M18 Hellcat",
+        "M4A2 Sherman",
         "M36B2 Jackson",
         "M1126",
-        "M7 Priest",
         "M113",
-        "T29E3",
-        "MBT-3E"
+        "T29E3"
       ],
       "velocity": 929,
       "type": "MG",
@@ -40525,8 +40697,8 @@
       "damage": 335,
       "relatedVehicles": [
         "T-34",
-        "T-34E",
-        "KV-1E"
+        "KV-1E",
+        "T-34E"
       ],
       "velocity": 655,
       "type": "APHE",
@@ -40588,8 +40760,8 @@
       "damage": 247,
       "relatedVehicles": [
         "T-34",
-        "T-34E",
-        "KV-1E"
+        "KV-1E",
+        "T-34E"
       ],
       "velocity": 680,
       "type": "HE"
