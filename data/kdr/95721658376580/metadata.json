@@ -1,12 +1,12 @@
 {
-    "date": "2025-05-01T00:40:54.515Z",
+    "date": "2025-05-01T12:19:49.827Z",
     "vehicles": [
         "120S",
         "2S19 Msta-S",
         "2S43",
-        "2S6",
+        "2S6 Tunguska",
         "2S7",
-        "Air Defense Anti Tank System",
+        "ADATS",
         "AFT-10",
         "AH-64D",
         "AMX-10RC",
@@ -63,7 +63,7 @@
         "ISU-152",
         "ISU-152BM",
         "IT-1",
-        "Joint Light Tactical Vehicle",
+        "JLTV",
         "Jagdpanther",
         "Jagdtiger",
         "JgPz 38t",
@@ -77,7 +77,7 @@
         "KV-5",
         "Ka-52M",
         "Kettenkrad",
-        "Kornet D",
+        "Kornet D GAZ Tigr",
         "Kornet D-1",
         "Kurganets-25",
         "L3/35",
@@ -111,7 +111,7 @@
         "M1IP",
         "M26 Pershing",
         "M270",
-        "M2A1 Bradley",
+        "M2A1",
         "M2A2 ODS-SA",
         "M3 GMC",
         "M3 Lee",
@@ -189,7 +189,7 @@
         "Sturmtiger",
         "Supply Truck",
         "T-14 Armata",
-        "T-15",
+        "T-15 Armata",
         "T-34",
         "T-34-122",
         "T-34-57",
@@ -253,6 +253,6 @@
         "pickupTruck"
     ],
     "versions": [
-        110
+        111
     ]
 }
