@@ -8121,6 +8121,51 @@
       "transmission": {
         "reverseGears": 1,
         "neutralSteering": false,
+        "forwardGears": 7
+      },
+      "reverseSpeed": 15,
+      "forwardSpeed": 100,
+      "type": "Diesel",
+      "maxRPM": 1800,
+      "horsepower": 600,
+      "name": "Scania DC 13"
+    },
+    "turrets": {
+      "Gunner": {
+        "thermals": "White (Gen 3)",
+        "traverse": {
+          "vertical": {
+            "max": 33,
+            "min": -9
+          },
+          "speed": {
+            "horizontal": 50,
+            "vertical": 50
+          }
+        },
+        "weapons": [
+          "30mm Treemaster",
+          "7.62mm PKT",
+          "Spike ATGM"
+        ],
+        "smokes": true,
+        "rangefinder": "Laser",
+        "stabilizer": true,
+        "zoom": {
+          "max": 14.4,
+          "min": 1.894736842105263
+        }
+      }
+    },
+    "name": "Rosomak",
+    "amphibious": true,
+    "mass": 22
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 1,
+        "neutralSteering": false,
         "forwardGears": 4
       },
       "reverseSpeed": 11.1,
@@ -8179,51 +8224,6 @@
     "name": "T-80B",
     "amphibious": false,
     "mass": 42
-  },
-  {
-    "engine": {
-      "transmission": {
-        "reverseGears": 1,
-        "neutralSteering": false,
-        "forwardGears": 7
-      },
-      "reverseSpeed": 15,
-      "forwardSpeed": 100,
-      "type": "Diesel",
-      "maxRPM": 1800,
-      "horsepower": 600,
-      "name": "Scania DC 13"
-    },
-    "turrets": {
-      "Gunner": {
-        "thermals": "White (Gen 3)",
-        "traverse": {
-          "vertical": {
-            "max": 33,
-            "min": -9
-          },
-          "speed": {
-            "horizontal": 50,
-            "vertical": 50
-          }
-        },
-        "weapons": [
-          "30mm Treemaster",
-          "7.62mm PKT",
-          "Spike ATGM"
-        ],
-        "smokes": true,
-        "rangefinder": "Laser",
-        "stabilizer": true,
-        "zoom": {
-          "max": 14.4,
-          "min": 1.894736842105263
-        }
-      }
-    },
-    "name": "Rosomak",
-    "amphibious": true,
-    "mass": 22
   },
   {
     "engine": {
@@ -9687,6 +9687,89 @@
   {
     "engine": {
       "transmission": {
+        "reverseGears": 3,
+        "neutralSteering": true,
+        "forwardGears": 6
+      },
+      "reverseSpeed": 31,
+      "forwardSpeed": 68,
+      "type": "Diesel",
+      "maxRPM": 2600,
+      "horsepower": 1500,
+      "name": "MTU MB 873 Ka-501"
+    },
+    "turrets": {
+      "Loader": {
+        "weapons": [
+          "7.62mm MG3"
+        ],
+        "traverse": {
+          "vertical": {
+            "max": 45,
+            "min": -15
+          },
+          "speed": {
+            "horizontal": 60,
+            "vertical": 60
+          }
+        },
+        "zoom": {
+          "max": 2.88,
+          "min": 1.8
+        },
+        "stabilizer": true
+      },
+      "Gunner": {
+        "smokes": true,
+        "traverse": {
+          "vertical": {
+            "max": 15,
+            "min": -10
+          },
+          "speed": {
+            "horizontal": 40,
+            "vertical": 35
+          }
+        },
+        "weapons": [
+          "120mm Rh120 L/44",
+          "7.62mm MG3"
+        ],
+        "rangefinder": "Laser",
+        "stabilizer": true,
+        "zoom": {
+          "max": 14.4,
+          "min": 8
+        }
+      },
+      "Commander": {
+        "weapons": [
+          "20mm Rh202"
+        ],
+        "traverse": {
+          "vertical": {
+            "max": 35,
+            "min": -8
+          },
+          "speed": {
+            "horizontal": 60,
+            "vertical": 60
+          }
+        },
+        "zoom": {
+          "max": 8,
+          "min": 1.894736842105263
+        },
+        "stabilizer": true
+      }
+    },
+    "name": "Leopard 2K",
+    "amphibious": false,
+    "mass": 55.4
+  },
+  {
+    "engine": {
+      "transmission": {
         "reverseGears": 1,
         "neutralSteering": true,
         "forwardGears": 7
@@ -9942,89 +10025,6 @@
     "name": "Burlak",
     "amphibious": false,
     "mass": 47
-  },
-  {
-    "engine": {
-      "transmission": {
-        "reverseGears": 3,
-        "neutralSteering": true,
-        "forwardGears": 6
-      },
-      "reverseSpeed": 31,
-      "forwardSpeed": 68,
-      "type": "Diesel",
-      "maxRPM": 2600,
-      "horsepower": 1500,
-      "name": "MTU MB 873 Ka-501"
-    },
-    "turrets": {
-      "Loader": {
-        "weapons": [
-          "7.62mm MG3"
-        ],
-        "traverse": {
-          "vertical": {
-            "max": 45,
-            "min": -15
-          },
-          "speed": {
-            "horizontal": 60,
-            "vertical": 60
-          }
-        },
-        "zoom": {
-          "max": 2.88,
-          "min": 1.8
-        },
-        "stabilizer": true
-      },
-      "Gunner": {
-        "smokes": true,
-        "traverse": {
-          "vertical": {
-            "max": 15,
-            "min": -10
-          },
-          "speed": {
-            "horizontal": 40,
-            "vertical": 35
-          }
-        },
-        "weapons": [
-          "120mm Rh120 L/44",
-          "7.62mm MG3"
-        ],
-        "rangefinder": "Laser",
-        "stabilizer": true,
-        "zoom": {
-          "max": 14.4,
-          "min": 8
-        }
-      },
-      "Commander": {
-        "weapons": [
-          "20mm Rh202"
-        ],
-        "traverse": {
-          "vertical": {
-            "max": 35,
-            "min": -8
-          },
-          "speed": {
-            "horizontal": 60,
-            "vertical": 60
-          }
-        },
-        "zoom": {
-          "max": 8,
-          "min": 1.894736842105263
-        },
-        "stabilizer": true
-      }
-    },
-    "name": "Leopard 2K",
-    "amphibious": false,
-    "mass": 55.4
   },
   {
     "engine": {
@@ -10388,6 +10388,91 @@
   {
     "engine": {
       "transmission": {
+        "reverseGears": 3,
+        "neutralSteering": true,
+        "forwardGears": 6
+      },
+      "reverseSpeed": 31,
+      "forwardSpeed": 68,
+      "type": "Diesel",
+      "maxRPM": 2600,
+      "horsepower": 1500,
+      "name": "MTU MB 873 Ka-501"
+    },
+    "turrets": {
+      "Loader": {
+        "rangefinder": "Laser",
+        "traverse": {
+          "vertical": {
+            "max": 30,
+            "min": -10
+          },
+          "speed": {
+            "horizontal": 60,
+            "vertical": 60
+          }
+        },
+        "weapons": [
+          "7.62mm MG3"
+        ],
+        "stabilizer": true,
+        "zoom": {
+          "max": 2.88,
+          "min": 1.8
+        }
+      },
+      "Gunner": {
+        "thermals": "White (Gen 3)",
+        "traverse": {
+          "vertical": {
+            "max": 20,
+            "min": -9
+          },
+          "speed": {
+            "horizontal": 37,
+            "vertical": 37
+          }
+        },
+        "weapons": [
+          "120mm Rh120 L/55 A1",
+          "7.62mm MG3"
+        ],
+        "smokes": true,
+        "rangefinder": "Laser",
+        "stabilizer": true,
+        "zoom": {
+          "max": 12,
+          "min": 3.789473684210526
+        }
+      },
+      "Commander": {
+        "thermals": "White (Gen 3)",
+        "traverse": {
+          "vertical": {
+            "max": 45,
+            "min": -20
+          },
+          "speed": {
+            "horizontal": 60,
+            "vertical": 60
+          }
+        },
+        "weapons": [],
+        "rangefinder": "Laser",
+        "stabilizer": true,
+        "zoom": {
+          "max": 8,
+          "min": 1.894736842105263
+        }
+      }
+    },
+    "name": "Leopard 2A7V",
+    "amphibious": false,
+    "mass": 64.1
+  },
+  {
+    "engine": {
+      "transmission": {
         "reverseGears": 4,
         "neutralSteering": true,
         "forwardGears": 8
@@ -10509,7 +10594,7 @@
         }
       },
       "Gunner": {
-        "thermals": "White (Gen 3)",
+        "thermals": "Green (Gen 1)",
         "traverse": {
           "vertical": {
             "max": 20,
@@ -10521,7 +10606,7 @@
           }
         },
         "weapons": [
-          "120mm Rh120 L/55 A1",
+          "120mm Rh120 L/55",
           "7.62mm MG3"
         ],
         "smokes": true,
@@ -10533,7 +10618,7 @@
         }
       },
       "Commander": {
-        "thermals": "White (Gen 3)",
+        "thermals": "Green (Gen 2)",
         "traverse": {
           "vertical": {
             "max": 45,
@@ -10553,9 +10638,9 @@
         }
       }
     },
-    "name": "Leopard 2A7V",
+    "name": "Leopard 2A6",
     "amphibious": false,
-    "mass": 64.1
+    "mass": 59.9
   },
   {
     "engine": {
@@ -10732,23 +10817,68 @@
   {
     "engine": {
       "transmission": {
-        "reverseGears": 3,
-        "neutralSteering": true,
-        "forwardGears": 6
+        "reverseGears": 1,
+        "neutralSteering": false,
+        "forwardGears": 5
       },
-      "reverseSpeed": 31,
-      "forwardSpeed": 68,
+      "reverseSpeed": 6.1,
+      "forwardSpeed": 47,
       "type": "Diesel",
-      "maxRPM": 2600,
-      "horsepower": 1500,
-      "name": "MTU MB 873 Ka-501"
+      "maxRPM": 2100,
+      "horsepower": 375,
+      "name": "GM 6046"
     },
     "turrets": {
-      "Loader": {
-        "rangefinder": "Laser",
+      "Gunner": {
+        "smokes": false,
         "traverse": {
           "vertical": {
-            "max": 30,
+            "max": 15,
+            "min": -10
+          },
+          "speed": {
+            "horizontal": 22.6,
+            "vertical": 22.6
+          }
+        },
+        "weapons": [
+          "75mm M3",
+          ".30 cal M1919"
+        ],
+        "rangefinder": "None",
+        "stabilizer": true,
+        "zoom": {
+          "max": 4.8,
+          "min": 4.8
+        }
+      },
+      "Commander": {
+        "weapons": [
+          "12.7mm M2"
+        ],
+        "traverse": {
+          "vertical": {
+            "max": 45,
+            "min": -15
+          },
+          "speed": {
+            "horizontal": 60,
+            "vertical": 60
+          }
+        },
+        "zoom": {
+          "max": 2.88,
+          "min": 1.8
+        },
+        "stabilizer": true
+      },
+      "Bow Gunner": {
+        "weapons": [
+          ".30 cal M1919"
+        ],
+        "traverse": {
+          "vertical": {
+            "max": 22,
             "min": -10
           },
           "speed": {
@@ -10756,63 +10886,16 @@
             "vertical": 60
           }
         },
-        "weapons": [
-          "7.62mm MG3"
-        ],
-        "stabilizer": true,
         "zoom": {
           "max": 2.88,
           "min": 1.8
-        }
-      },
-      "Gunner": {
-        "thermals": "Green (Gen 1)",
-        "traverse": {
-          "vertical": {
-            "max": 20,
-            "min": -9
-          },
-          "speed": {
-            "horizontal": 37,
-            "vertical": 37
-          }
         },
-        "weapons": [
-          "120mm Rh120 L/55",
-          "7.62mm MG3"
-        ],
-        "smokes": true,
-        "rangefinder": "Laser",
-        "stabilizer": true,
-        "zoom": {
-          "max": 12,
-          "min": 3.789473684210526
-        }
-      },
-      "Commander": {
-        "thermals": "Green (Gen 2)",
-        "traverse": {
-          "vertical": {
-            "max": 45,
-            "min": -20
-          },
-          "speed": {
-            "horizontal": 60,
-            "vertical": 60
-          }
-        },
-        "weapons": [],
-        "rangefinder": "Laser",
-        "stabilizer": true,
-        "zoom": {
-          "max": 8,
-          "min": 1.894736842105263
-        }
+        "stabilizer": true
       }
     },
-    "name": "Leopard 2A6",
+    "name": "M4A2 Sherman",
     "amphibious": false,
-    "mass": 59.9
+    "mass": 32.5
   },
   {
     "engine": {
@@ -12466,89 +12549,6 @@
     "name": "Tiger I",
     "amphibious": false,
     "mass": 57.3
-  },
-  {
-    "engine": {
-      "transmission": {
-        "reverseGears": 1,
-        "neutralSteering": false,
-        "forwardGears": 5
-      },
-      "reverseSpeed": 6.1,
-      "forwardSpeed": 47,
-      "type": "Diesel",
-      "maxRPM": 2100,
-      "horsepower": 375,
-      "name": "GM 6046"
-    },
-    "turrets": {
-      "Gunner": {
-        "smokes": false,
-        "traverse": {
-          "vertical": {
-            "max": 15,
-            "min": -10
-          },
-          "speed": {
-            "horizontal": 22.6,
-            "vertical": 22.6
-          }
-        },
-        "weapons": [
-          "75mm M3",
-          ".30 cal M1919"
-        ],
-        "rangefinder": "None",
-        "stabilizer": true,
-        "zoom": {
-          "max": 4.8,
-          "min": 4.8
-        }
-      },
-      "Commander": {
-        "weapons": [
-          "12.7mm M2"
-        ],
-        "traverse": {
-          "vertical": {
-            "max": 45,
-            "min": -15
-          },
-          "speed": {
-            "horizontal": 60,
-            "vertical": 60
-          }
-        },
-        "zoom": {
-          "max": 2.88,
-          "min": 1.8
-        },
-        "stabilizer": true
-      },
-      "Bow Gunner": {
-        "weapons": [
-          ".30 cal M1919"
-        ],
-        "traverse": {
-          "vertical": {
-            "max": 22,
-            "min": -10
-          },
-          "speed": {
-            "horizontal": 60,
-            "vertical": 60
-          }
-        },
-        "zoom": {
-          "max": 2.88,
-          "min": 1.8
-        },
-        "stabilizer": true
-      }
-    },
-    "name": "M4A2 Sherman",
-    "amphibious": false,
-    "mass": 32.5
   },
   {
     "engine": {
