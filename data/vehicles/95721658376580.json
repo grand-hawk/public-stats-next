@@ -7575,9 +7575,9 @@
       "reverseSpeed": 12,
       "forwardSpeed": 100,
       "type": "Diesel",
-      "maxRPM": 2600,
-      "horsepower": 300,
-      "name": "KamAZ 740.14-300"
+      "maxRPM": 2000,
+      "horsepower": 510,
+      "name": "ChTZ 510"
     },
     "turrets": {
       "Commander": {
@@ -7841,7 +7841,7 @@
     },
     "name": "XM8",
     "amphibious": false,
-    "mass": 19.5
+    "mass": 23.6
   },
   {
     "engine": {
