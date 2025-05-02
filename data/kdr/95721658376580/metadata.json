@@ -1,5 +1,5 @@
 {
-    "date": "2025-05-02T00:36:29.988Z",
+    "date": "2025-05-02T12:19:51.023Z",
     "vehicles": [
         "120S",
         "2S19 Msta-S",
@@ -23,7 +23,7 @@
         "BMP-2",
         "BMP-2M",
         "BMP-3",
-        "Abandoned IFV Hull",
+        "BMP-30NT",
         "BMPT Terminator",
         "BRDM-2",
         "BRDM-2 Konkurs",
@@ -67,7 +67,7 @@
         "Joint Light Tactical Vehicle",
         "Jagdpanther",
         "Jagdtiger",
-        "JgPz 38t",
+        "Hetzer",
         "K1",
         "KF41 Lynx",
         "KPz-70",
@@ -159,7 +159,7 @@
         "PT-76B",
         "PT-76E",
         "PUMA",
-        "PaKWagen",
+        "Sd.Kfz.234/4 Pak Puma",
         "Panther EVO",
         "Panther G",
         "Panther II",
@@ -236,7 +236,7 @@
         "UAZ-469",
         "UH-60M",
         "Ural-375D",
-        "VK 16.02",
+        "VK 16.02 Leopard",
         "VT1-2",
         "WZ-122",
         "Wiesel 1A2",
@@ -249,11 +249,11 @@
         "ZSU-57-2",
         "ZTZ96A",
         "ZTZ99A",
-        "MiKi Truck Company Model 2",
+        "bigTruck",
         "MiKi Truck Company Model 1 ARMOURED",
         "MiKi Truck Company Model 1"
     ],
     "versions": [
-        118
+        119
     ]
 }
