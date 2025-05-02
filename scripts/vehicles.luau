@@ -42,8 +42,9 @@ type VehicleModule = {
 
 		transmission: {
 			neutralSteering: boolean,
-			forwardGears: number,
-			reverseGears: number,
+			forwardGears: number?,
+			reverseGears: number?,
+			automatic: boolean?,
 		},
 	},
 
@@ -121,6 +122,7 @@ for name, tank in TankInfo do
 				neutralSteering = module.neutralSteering or false,
 				forwardGears = module.MaxForwardGear,
 				reverseGears = module.MaxReverseGear,
+				automatic = module.autoGearbox,
 			},
 		},
 

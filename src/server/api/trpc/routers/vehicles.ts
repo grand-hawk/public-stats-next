@@ -25,8 +25,9 @@ export interface Vehicle {
 
     transmission: {
       neutralSteering: boolean;
-      forwardGears: number;
-      reverseGears: number;
+      forwardGears: number | undefined;
+      reverseGears: number | undefined;
+      automatic: boolean | undefined;
     };
   };
 

@@ -261,12 +261,21 @@ export default function VehicleInfo({
                   <Stat label="Neutral steering">
                     {data.engine.transmission.neutralSteering ? 'Yes' : 'No'}
                   </Stat>
-                  <Stat label="Reverse gears">
-                    {data.engine.transmission.reverseGears}
-                  </Stat>
-                  <Stat label="Forward gears">
-                    {data.engine.transmission.forwardGears}
-                  </Stat>
+                  {data.engine.transmission.reverseGears !== undefined && (
+                    <Stat label="Reverse gears">
+                      {data.engine.transmission.reverseGears}
+                    </Stat>
+                  )}
+                  {data.engine.transmission.forwardGears !== undefined && (
+                    <Stat label="Forward gears">
+                      {data.engine.transmission.forwardGears}
+                    </Stat>
+                  )}
+                  {data.engine.transmission.automatic !== undefined && (
+                    <Stat label="Automatic">
+                      {data.engine.transmission.automatic ? 'Yes' : 'No'}
+                    </Stat>
+                  )}
                 </StatStack>
               </BasicCard>
 
