@@ -5,7 +5,7 @@ export interface Tab {
 
 export const tabs: Record<string, Tab> = {
   kdr: {
-    label: 'K/D Ratio',
+    label: 'K/D',
     path: '/kdr',
   },
   winrate: {
