@@ -4,6 +4,7 @@
       "transmission": {
         "reverseGears": 2,
         "neutralSteering": true,
+        "automatic": true,
         "forwardGears": 6
       },
       "reverseSpeed": 14,
@@ -714,7 +715,8 @@
     "engine": {
       "transmission": {
         "reverseGears": 4,
-        "neutralSteering": false,
+        "neutralSteering": true,
+        "automatic": true,
         "forwardGears": 7
       },
       "reverseSpeed": 31,
@@ -969,6 +971,7 @@
       "transmission": {
         "reverseGears": 2,
         "neutralSteering": false,
+        "automatic": true,
         "forwardGears": 6
       },
       "reverseSpeed": 15,
@@ -1177,6 +1180,7 @@
       "transmission": {
         "reverseGears": 2,
         "neutralSteering": false,
+        "automatic": true,
         "forwardGears": 5
       },
       "reverseSpeed": 36,
@@ -1521,6 +1525,7 @@
       "transmission": {
         "reverseGears": 2,
         "neutralSteering": false,
+        "automatic": true,
         "forwardGears": 6
       },
       "reverseSpeed": 15,
@@ -1743,6 +1748,7 @@
       "transmission": {
         "reverseGears": 3,
         "neutralSteering": true,
+        "automatic": true,
         "forwardGears": 6
       },
       "reverseSpeed": 20,
@@ -1809,6 +1815,7 @@
       "transmission": {
         "reverseGears": 1,
         "neutralSteering": false,
+        "automatic": true,
         "forwardGears": 6
       },
       "reverseSpeed": 12.5,
@@ -1875,6 +1882,7 @@
       "transmission": {
         "reverseGears": 4,
         "neutralSteering": true,
+        "automatic": true,
         "forwardGears": 4
       },
       "reverseSpeed": 78,
@@ -2556,6 +2564,7 @@
       "transmission": {
         "reverseGears": 2,
         "neutralSteering": true,
+        "automatic": true,
         "forwardGears": 4
       },
       "reverseSpeed": 32,
@@ -2563,7 +2572,7 @@
       "type": "Diesel",
       "maxRPM": 2400,
       "horsepower": 1200,
-      "name": "AVDS-1790-2"
+      "name": "AVDS-1790-9"
     },
     "turrets": {
       "Loader": {
@@ -2938,6 +2947,7 @@
       "transmission": {
         "reverseGears": 6,
         "neutralSteering": true,
+        "automatic": true,
         "forwardGears": 6
       },
       "reverseSpeed": 70,
@@ -3003,6 +3013,7 @@
       "transmission": {
         "reverseGears": 1,
         "neutralSteering": false,
+        "automatic": true,
         "forwardGears": 5
       },
       "reverseSpeed": 15,
@@ -3425,6 +3436,7 @@
       "transmission": {
         "reverseGears": 8,
         "neutralSteering": true,
+        "automatic": true,
         "forwardGears": 8
       },
       "reverseSpeed": 75,
@@ -3647,13 +3659,14 @@
       "transmission": {
         "reverseGears": 1,
         "neutralSteering": true,
+        "automatic": true,
         "forwardGears": 2
       },
       "reverseSpeed": 11,
       "forwardSpeed": 48,
       "type": "Diesel",
       "maxRPM": 2400,
-      "horsepower": 1200,
+      "horsepower": 750,
       "name": "AVDS-1790-2"
     },
     "turrets": {
@@ -3751,6 +3764,7 @@
       "transmission": {
         "reverseGears": 8,
         "neutralSteering": true,
+        "automatic": true,
         "forwardGears": 8
       },
       "reverseSpeed": 80,
@@ -4193,6 +4207,7 @@
       "transmission": {
         "reverseGears": 2,
         "neutralSteering": false,
+        "automatic": true,
         "forwardGears": 6
       },
       "reverseSpeed": 15,
@@ -4275,6 +4290,7 @@
       "transmission": {
         "reverseGears": 1,
         "neutralSteering": false,
+        "automatic": true,
         "forwardGears": 5
       },
       "reverseSpeed": 17.6,
@@ -4637,7 +4653,8 @@
     "engine": {
       "transmission": {
         "reverseGears": 6,
-        "neutralSteering": false,
+        "neutralSteering": true,
+        "automatic": true,
         "forwardGears": 6
       },
       "reverseSpeed": 70,
@@ -4745,6 +4762,7 @@
       "transmission": {
         "reverseGears": 2,
         "neutralSteering": true,
+        "automatic": true,
         "forwardGears": 6
       },
       "reverseSpeed": 14,
@@ -4814,15 +4832,15 @@
     },
     "engine": {
       "transmission": {
-        "reverseGears": 7,
+        "reverseGears": 2,
         "neutralSteering": true,
-        "forwardGears": 8
+        "forwardGears": 4
       },
       "reverseSpeed": 40,
       "forwardSpeed": 70,
       "type": "Diesel",
       "maxRPM": 2600,
-      "horsepower": 2200,
+      "horsepower": 1500,
       "name": "MTU MB 803 Ra-500"
     },
     "turrets": {
@@ -4921,6 +4939,7 @@
       "transmission": {
         "reverseGears": 3,
         "neutralSteering": true,
+        "automatic": true,
         "forwardGears": 6
       },
       "reverseSpeed": 31,
@@ -5137,6 +5156,7 @@
       "transmission": {
         "reverseGears": 7,
         "neutralSteering": true,
+        "automatic": true,
         "forwardGears": 7
       },
       "reverseSpeed": 64,
@@ -5455,6 +5475,7 @@
       "transmission": {
         "reverseGears": 3,
         "neutralSteering": true,
+        "automatic": true,
         "forwardGears": 8
       },
       "reverseSpeed": 34,
@@ -6216,6 +6237,7 @@
       "transmission": {
         "reverseGears": 1,
         "neutralSteering": false,
+        "automatic": true,
         "forwardGears": 7
       },
       "reverseSpeed": 4.2,
@@ -6385,6 +6407,7 @@
       "transmission": {
         "reverseGears": 4,
         "neutralSteering": true,
+        "automatic": true,
         "forwardGears": 10
       },
       "reverseSpeed": 38,
@@ -6744,6 +6767,7 @@
       "transmission": {
         "reverseGears": 2,
         "neutralSteering": true,
+        "automatic": true,
         "forwardGears": 6
       },
       "reverseSpeed": 38,
@@ -6931,6 +6955,7 @@
       "transmission": {
         "reverseGears": 2,
         "neutralSteering": true,
+        "automatic": true,
         "forwardGears": 4
       },
       "reverseSpeed": 25,
@@ -7297,6 +7322,7 @@
       "transmission": {
         "reverseGears": 3,
         "neutralSteering": true,
+        "automatic": true,
         "forwardGears": 6
       },
       "reverseSpeed": 31,
@@ -7488,6 +7514,7 @@
       "transmission": {
         "reverseGears": 1,
         "neutralSteering": false,
+        "automatic": true,
         "forwardGears": 5
       },
       "reverseSpeed": 15,
@@ -7505,9 +7532,10 @@
   {
     "engine": {
       "transmission": {
-        "reverseGears": 4,
+        "reverseGears": 2,
         "neutralSteering": true,
-        "forwardGears": 9
+        "automatic": true,
+        "forwardGears": 4
       },
       "reverseSpeed": 80,
       "forwardSpeed": 80,
@@ -7570,6 +7598,7 @@
       "transmission": {
         "reverseGears": 1,
         "neutralSteering": false,
+        "automatic": true,
         "forwardGears": 5
       },
       "reverseSpeed": 12,
@@ -7785,6 +7814,7 @@
       "transmission": {
         "reverseGears": 2,
         "neutralSteering": true,
+        "automatic": true,
         "forwardGears": 6
       },
       "reverseSpeed": 15,
@@ -7848,6 +7878,7 @@
       "transmission": {
         "reverseGears": 2,
         "neutralSteering": true,
+        "automatic": true,
         "forwardGears": 6
       },
       "reverseSpeed": 14,
@@ -8121,6 +8152,7 @@
       "transmission": {
         "reverseGears": 1,
         "neutralSteering": false,
+        "automatic": true,
         "forwardGears": 7
       },
       "reverseSpeed": 15,
@@ -8230,6 +8262,7 @@
       "transmission": {
         "reverseGears": 1,
         "neutralSteering": false,
+        "automatic": true,
         "forwardGears": 6
       },
       "reverseSpeed": 13,
@@ -8339,6 +8372,7 @@
       "transmission": {
         "reverseGears": 2,
         "neutralSteering": true,
+        "automatic": true,
         "forwardGears": 6
       },
       "reverseSpeed": 14,
@@ -8467,6 +8501,7 @@
       "transmission": {
         "reverseGears": 2,
         "neutralSteering": true,
+        "automatic": true,
         "forwardGears": 4
       },
       "reverseSpeed": 38,
@@ -8891,6 +8926,7 @@
       "transmission": {
         "reverseGears": 3,
         "neutralSteering": true,
+        "automatic": true,
         "forwardGears": 6
       },
       "reverseSpeed": 31,
@@ -9028,6 +9064,7 @@
       "transmission": {
         "reverseGears": 2,
         "neutralSteering": true,
+        "automatic": true,
         "forwardGears": 4
       },
       "reverseSpeed": 32,
@@ -9238,6 +9275,7 @@
       "transmission": {
         "reverseGears": 2,
         "neutralSteering": true,
+        "automatic": true,
         "forwardGears": 4
       },
       "reverseSpeed": 38,
@@ -9324,6 +9362,7 @@
       "transmission": {
         "reverseGears": 2,
         "neutralSteering": true,
+        "automatic": true,
         "forwardGears": 4
       },
       "reverseSpeed": 38,
@@ -9412,13 +9451,14 @@
       "transmission": {
         "reverseGears": 1,
         "neutralSteering": true,
+        "automatic": true,
         "forwardGears": 2
       },
       "reverseSpeed": 11,
       "forwardSpeed": 48,
       "type": "Diesel",
       "maxRPM": 2400,
-      "horsepower": 1200,
+      "horsepower": 750,
       "name": "AVDS-1790-2"
     },
     "turrets": {
@@ -9476,13 +9516,14 @@
       "transmission": {
         "reverseGears": 1,
         "neutralSteering": true,
+        "automatic": true,
         "forwardGears": 2
       },
       "reverseSpeed": 11,
       "forwardSpeed": 48,
       "type": "Diesel",
       "maxRPM": 2400,
-      "horsepower": 1200,
+      "horsepower": 750,
       "name": "AVDS-1790-2"
     },
     "turrets": {
@@ -9540,6 +9581,7 @@
       "transmission": {
         "reverseGears": 2,
         "neutralSteering": true,
+        "automatic": true,
         "forwardGears": 4
       },
       "reverseSpeed": 38,
@@ -9689,6 +9731,7 @@
       "transmission": {
         "reverseGears": 3,
         "neutralSteering": true,
+        "automatic": true,
         "forwardGears": 6
       },
       "reverseSpeed": 31,
@@ -9835,6 +9878,7 @@
       "transmission": {
         "reverseGears": 2,
         "neutralSteering": true,
+        "automatic": true,
         "forwardGears": 4
       },
       "reverseSpeed": 43,
@@ -9899,6 +9943,7 @@
       "transmission": {
         "reverseGears": 1,
         "neutralSteering": false,
+        "automatic": true,
         "forwardGears": 7
       },
       "reverseSpeed": 4,
@@ -10031,6 +10076,7 @@
       "transmission": {
         "reverseGears": 1,
         "neutralSteering": false,
+        "automatic": true,
         "forwardGears": 3
       },
       "reverseSpeed": 15.5,
@@ -10200,9 +10246,10 @@
     },
     "engine": {
       "transmission": {
-        "reverseGears": 6,
+        "reverseGears": 2,
         "neutralSteering": true,
-        "forwardGears": 7
+        "automatic": true,
+        "forwardGears": 2
       },
       "reverseSpeed": 44,
       "forwardSpeed": 49,
@@ -10390,6 +10437,7 @@
       "transmission": {
         "reverseGears": 3,
         "neutralSteering": true,
+        "automatic": true,
         "forwardGears": 6
       },
       "reverseSpeed": 31,
@@ -10475,6 +10523,7 @@
       "transmission": {
         "reverseGears": 4,
         "neutralSteering": true,
+        "automatic": true,
         "forwardGears": 8
       },
       "reverseSpeed": 46,
@@ -10562,6 +10611,7 @@
       "transmission": {
         "reverseGears": 3,
         "neutralSteering": true,
+        "automatic": true,
         "forwardGears": 6
       },
       "reverseSpeed": 31,
@@ -10753,6 +10803,7 @@
       "transmission": {
         "reverseGears": 4,
         "neutralSteering": true,
+        "automatic": true,
         "forwardGears": 7
       },
       "reverseSpeed": 31,
@@ -10902,6 +10953,7 @@
       "transmission": {
         "reverseGears": 2,
         "neutralSteering": true,
+        "automatic": true,
         "forwardGears": 6
       },
       "reverseSpeed": 25,
@@ -10947,6 +10999,7 @@
       "transmission": {
         "reverseGears": 2,
         "neutralSteering": true,
+        "automatic": true,
         "forwardGears": 6
       },
       "reverseSpeed": 25,
@@ -11073,6 +11126,7 @@
       "transmission": {
         "reverseGears": 8,
         "neutralSteering": true,
+        "automatic": true,
         "forwardGears": 8
       },
       "reverseSpeed": 75,
@@ -11158,6 +11212,7 @@
       "transmission": {
         "reverseGears": 3,
         "neutralSteering": true,
+        "automatic": true,
         "forwardGears": 6
       },
       "reverseSpeed": 31,
@@ -11516,9 +11571,10 @@
   {
     "engine": {
       "transmission": {
-        "reverseGears": 4,
+        "reverseGears": 2,
         "neutralSteering": true,
-        "forwardGears": 7
+        "automatic": true,
+        "forwardGears": 4
       },
       "reverseSpeed": 75,
       "forwardSpeed": 75,
@@ -11753,16 +11809,16 @@
   {
     "engine": {
       "transmission": {
-        "reverseGears": 2,
+        "reverseGears": 1,
         "neutralSteering": false,
-        "forwardGears": 5
+        "forwardGears": 4
       },
       "reverseSpeed": 35,
       "forwardSpeed": 86,
       "type": "Diesel",
       "maxRPM": 2400,
       "horsepower": 786,
-      "name": "TH800 Engine"
+      "name": "MTU-V6-6396"
     },
     "turrets": {
       "Loader": {
@@ -12051,6 +12107,7 @@
       "transmission": {
         "reverseGears": 4,
         "neutralSteering": true,
+        "automatic": true,
         "forwardGears": 8
       },
       "reverseSpeed": 24,
@@ -13081,6 +13138,7 @@
       "transmission": {
         "reverseGears": 1,
         "neutralSteering": false,
+        "automatic": true,
         "forwardGears": 5
       },
       "reverseSpeed": 15,
@@ -13320,6 +13378,7 @@
       "transmission": {
         "reverseGears": 2,
         "neutralSteering": true,
+        "automatic": true,
         "forwardGears": 6
       },
       "reverseSpeed": 15,
@@ -13762,6 +13821,7 @@
       "transmission": {
         "reverseGears": 1,
         "neutralSteering": false,
+        "automatic": true,
         "forwardGears": 5
       },
       "reverseSpeed": 17.6,
@@ -13868,6 +13928,7 @@
       "transmission": {
         "reverseGears": 2,
         "neutralSteering": true,
+        "automatic": true,
         "forwardGears": 6
       },
       "reverseSpeed": 8,
@@ -14016,6 +14077,7 @@
       "transmission": {
         "reverseGears": 1,
         "neutralSteering": false,
+        "automatic": true,
         "forwardGears": 4
       },
       "reverseSpeed": 22,
@@ -14179,6 +14241,7 @@
       "transmission": {
         "reverseGears": 2,
         "neutralSteering": true,
+        "automatic": true,
         "forwardGears": 6
       },
       "reverseSpeed": 15,
@@ -14577,6 +14640,7 @@
       "transmission": {
         "reverseGears": 1,
         "neutralSteering": false,
+        "automatic": true,
         "forwardGears": 6
       },
       "reverseSpeed": 12.5,
@@ -15104,6 +15168,7 @@
       "transmission": {
         "reverseGears": 8,
         "neutralSteering": true,
+        "automatic": true,
         "forwardGears": 8
       },
       "reverseSpeed": 80,
@@ -15230,6 +15295,7 @@
       "transmission": {
         "reverseGears": 2,
         "neutralSteering": false,
+        "automatic": true,
         "forwardGears": 6
       },
       "reverseSpeed": 12,
@@ -15295,6 +15361,7 @@
       "transmission": {
         "reverseGears": 1,
         "neutralSteering": false,
+        "automatic": true,
         "forwardGears": 4
       },
       "reverseSpeed": 18,
