@@ -1,10 +1,10 @@
 {
-    "date": "2025-05-03T00:35:33.263Z",
+    "date": "2025-05-03T12:19:44.067Z",
     "vehicles": [
         "120S",
         "2S19 Msta-S",
         "2S43",
-        "2S6 Tunguska",
+        "2S6",
         "2S7 Pion",
         "ADATS",
         "AFT-10",
@@ -33,7 +33,7 @@
         "BTR-82A",
         "BTR-90",
         "Begleitpanzer 57",
-        "Black Night",
+        "Blacknight",
         "Bmpvee",
         "Burlak",
         "CATTB",
@@ -79,7 +79,7 @@
         "Ka-52M",
         "Kettenkrad",
         "Kornet D GAZ Tigr",
-        "Kornet D BMD-4M",
+        "Kornet D-1",
         "Kurganets-25",
         "L3/35",
         "LAV-25",
@@ -112,7 +112,7 @@
         "M1IP",
         "M26 Pershing",
         "M270 MLRS",
-        "M2A1 Bradley",
+        "M2A1",
         "M2A2 ODS-SA",
         "M3 GMC",
         "M3 Lee",
@@ -120,7 +120,7 @@
         "M36 Jackson",
         "M36B2 Jackson",
         "M38",
-        "M48A2 Patton",
+        "M48 Patton",
         "M48 Super",
         "M4A1 (76) Sherman",
         "M4A1 Sherman",
@@ -131,8 +131,8 @@
         "M4A3E2 (75) Jumbo",
         "M4A3E2 (76) Jumbo",
         "M551 Sheridan",
-        "M60A1 Add-On Stabilization",
-        "M60A1 RISE Passive",
+        "M60A1 AOS",
+        "M60A1 RISE P",
         "M60A2 Starship",
         "M7 Priest",
         "M8 Greyhound",
@@ -164,7 +164,7 @@
         "Panther G",
         "Panther II",
         "KF51 Panther",
-        "Plastun SN",
+        "PlastunSN",
         "Puma",
         "Pz IV Ausf. 1946",
         "Pz IV H",
@@ -197,7 +197,7 @@
         "T-34-85",
         "T-34E",
         "T-44",
-        "T-54 Obr. 1951",
+        "T-54",
         "T-55",
         "T-60",
         "T-62",
@@ -254,6 +254,6 @@
         "pickupTruck"
     ],
     "versions": [
-        120
+        121
     ]
 }
