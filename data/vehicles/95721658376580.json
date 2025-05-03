@@ -6237,7 +6237,6 @@
       "transmission": {
         "reverseGears": 1,
         "neutralSteering": false,
-        "automatic": true,
         "forwardGears": 7
       },
       "reverseSpeed": 4.2,
@@ -12758,6 +12757,7 @@
       "transmission": {
         "reverseGears": 1,
         "neutralSteering": false,
+        "automatic": true,
         "forwardGears": 3
       },
       "reverseSpeed": 25.9,
