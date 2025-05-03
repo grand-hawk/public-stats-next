@@ -6091,6 +6091,7 @@
       "transmission": {
         "reverseGears": 2,
         "neutralSteering": true,
+        "automatic": true,
         "forwardGears": 7
       },
       "reverseSpeed": 34,
@@ -9211,6 +9212,7 @@
       "transmission": {
         "reverseGears": 2,
         "neutralSteering": true,
+        "automatic": true,
         "forwardGears": 4
       },
       "reverseSpeed": 38,
@@ -14024,7 +14026,7 @@
         "stabilizer": false
       },
       "Gunner": {
-        "smokes": true,
+        "thermals": "White (Gen 3)",
         "traverse": {
           "vertical": {
             "max": 25,
@@ -14040,6 +14042,7 @@
           "30mm 2A42M (BMPT)",
           "9M120 Ataka"
         ],
+        "smokes": true,
         "rangefinder": "Laser",
         "stabilizer": true,
         "zoom": {
@@ -14048,7 +14051,7 @@
         }
       },
       "Commander": {
-        "thermals": "White (Gen 1)",
+        "thermals": "White (Gen 3)",
         "traverse": {
           "vertical": {
             "max": 60,
