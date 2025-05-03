@@ -1,12 +1,12 @@
 {
-    "date": "2025-05-02T12:19:51.023Z",
+    "date": "2025-05-03T00:35:33.263Z",
     "vehicles": [
         "120S",
         "2S19 Msta-S",
         "2S43",
         "2S6 Tunguska",
         "2S7 Pion",
-        "Air Defense Anti Tank System",
+        "ADATS",
         "AFT-10",
         "AH-64D",
         "AMX-10RC",
@@ -34,7 +34,7 @@
         "BTR-90",
         "Begleitpanzer 57",
         "Black Night",
-        "Bumpee",
+        "Bmpvee",
         "Burlak",
         "CATTB",
         "Centurion Mk 10",
@@ -67,7 +67,7 @@
         "Joint Light Tactical Vehicle",
         "Jagdpanther",
         "Jagdtiger",
-        "Hetzer",
+        "JgPz 38t",
         "K1",
         "KF41 Lynx",
         "KPz-70",
@@ -158,14 +158,14 @@
         "Object 775",
         "PT-76B",
         "PT-76E",
-        "PUMA",
-        "Sd.Kfz.234/4 Pak Puma",
+        "PUMA IFV",
+        "PaKWagen",
         "Panther EVO",
         "Panther G",
         "Panther II",
         "KF51 Panther",
         "Plastun SN",
-        "Sd.Kfz.234/2 Puma",
+        "Puma",
         "Pz IV Ausf. 1946",
         "Pz IV H",
         "Pz.III M",
@@ -209,7 +209,7 @@
         "T-72A",
         "T-72B",
         "T-72B3",
-        "Tutel",
+        "T-72B3E",
         "T-72M2",
         "T-80B",
         "T-80BVM",
@@ -236,7 +236,7 @@
         "UAZ-469",
         "UH-60M",
         "Ural-375D",
-        "VK 16.02 Leopard",
+        "VK 16.02",
         "VT1-2",
         "WZ-122",
         "Wiesel 1A2",
@@ -250,10 +250,10 @@
         "ZTZ96A",
         "ZTZ99A",
         "bigTruck",
-        "MiKi Truck Company Model 1 ARMOURED",
-        "MiKi Truck Company Model 1"
+        "pickupArmour",
+        "pickupTruck"
     ],
     "versions": [
-        119
+        120
     ]
 }
