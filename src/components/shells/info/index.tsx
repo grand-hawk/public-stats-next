@@ -1,12 +1,16 @@
 import {
+  Accordion,
+  Bleed,
   Center,
   FormatNumber,
   Grid,
   GridItem,
   Group,
+  Heading,
   Image,
   Spinner,
   Stack,
+  Text,
 } from '@chakra-ui/react';
 import NextImage from 'next/image';
 import NextLink from 'next/link';
@@ -241,6 +245,47 @@ export default function ShellInfo({
 
       <GridItem colSpan={1} rowSpan={1}>
         <PenetrationTable penetration={data.penetrationTable} />
+      </GridItem>
+
+      <GridItem>
+        <Bleed block={4} inline={4} marginY={2}>
+          <Accordion.Root collapsible variant="enclosed">
+            <Accordion.Item
+              value="vehicles"
+              _open={{ background: 'transparent' }}
+            >
+              <Accordion.ItemTrigger>
+                <Heading size="lg" paddingBottom={1} flex="1">
+                  Vehicles with this shell
+                </Heading>
+                <Accordion.ItemIndicator />
+              </Accordion.ItemTrigger>
+              <Accordion.ItemContent>
+                <Accordion.ItemBody>
+                  <Stack gap={1}>
+                    {data.relatedVehicles.map((vehicle) => (
+                      <NextLink
+                        key={vehicle}
+                        href={`/vehicles/${encodeURIComponent(vehicle)}`}
+                        passHref
+                      >
+                        <Button
+                          gap={2}
+                          justifyContent="left"
+                          minHeight="fit-content"
+                          variant="subtle"
+                          width="100%"
+                        >
+                          <Text>{vehicle}</Text>
+                        </Button>
+                      </NextLink>
+                    ))}
+                  </Stack>
+                </Accordion.ItemBody>
+              </Accordion.ItemContent>
+            </Accordion.Item>
+          </Accordion.Root>
+        </Bleed>
       </GridItem>
     </Grid>
   );
