@@ -49,7 +49,7 @@ function Results({ placeId, query }: { placeId: number; query: string }) {
     <Stack gap={1} maxHeight="60vh" overflowY="auto">
       {results.map((result) => (
         <NextLink
-          key={`${result.name}`}
+          key={result.name}
           href={`/vehicles/${encodeURIComponent(result.name)}`}
           passHref
         >
