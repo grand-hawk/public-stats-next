@@ -7602,7 +7602,7 @@
     "engine": {
       "transmission": {
         "reverseGears": 1,
-        "neutralSteering": false,
+        "neutralSteering": true,
         "automatic": true,
         "forwardGears": 5
       },
