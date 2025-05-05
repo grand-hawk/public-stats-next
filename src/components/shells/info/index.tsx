@@ -251,11 +251,11 @@ export default function ShellInfo({
         <Bleed block={4} inline={4} marginY={2}>
           <Accordion.Root collapsible variant="enclosed">
             <Accordion.Item
-              value="vehicles"
               _open={{ background: 'transparent' }}
+              value="vehicles"
             >
               <Accordion.ItemTrigger>
-                <Heading size="lg" paddingBottom={1} flex="1">
+                <Heading flex="1" paddingBottom={1} size="lg">
                   Vehicles with this shell
                 </Heading>
                 <Accordion.ItemIndicator />
