@@ -1812,6 +1812,11 @@
     "amphibious": true
   },
   {
+    "suspension": {
+      "vertical": true,
+      "horizontal": false,
+      "height": true
+    },
     "engine": {
       "transmission": {
         "reverseGears": 1,
@@ -1874,9 +1879,9 @@
         }
       }
     },
+    "mass": 18.8,
     "name": "M1128 MGS",
-    "amphibious": false,
-    "mass": 18.8
+    "amphibious": false
   },
   {
     "engine": {
