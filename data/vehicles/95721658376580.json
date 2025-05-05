@@ -1377,6 +1377,7 @@
       "transmission": {
         "reverseGears": 2,
         "neutralSteering": true,
+        "automatic": true,
         "forwardGears": 4
       },
       "reverseSpeed": 17.2,
@@ -2079,8 +2080,7 @@
           }
         },
         "weapons": [
-          "40mm Akan m/70B",
-          "40mm Akan m/70BM"
+          "40mm Akan m/70B"
         ],
         "smokes": true,
         "rangefinder": "Laser",
@@ -3147,7 +3147,7 @@
       "type": "Diesel",
       "maxRPM": 2000,
       "horsepower": 840,
-      "name": "ChTZ V-84-1"
+      "name": "ChTZ V-84-1z"
     },
     "turrets": {
       "Commander": {
@@ -7871,7 +7871,7 @@
     },
     "name": "XM8",
     "amphibious": false,
-    "mass": 23.6
+    "mass": 18.5
   },
   {
     "engine": {
@@ -10018,7 +10018,7 @@
       "type": "Diesel",
       "maxRPM": 2000,
       "horsepower": 840,
-      "name": "ChTZ V-84-1"
+      "name": "ChTZ V-84-1z"
     },
     "turrets": {
       "Commander": {
@@ -10865,89 +10865,6 @@
     "name": "T-84 Oplot-M",
     "amphibious": false,
     "mass": 51
-  },
-  {
-    "engine": {
-      "transmission": {
-        "reverseGears": 1,
-        "neutralSteering": false,
-        "forwardGears": 5
-      },
-      "reverseSpeed": 6.1,
-      "forwardSpeed": 47,
-      "type": "Diesel",
-      "maxRPM": 2100,
-      "horsepower": 375,
-      "name": "GM 6046"
-    },
-    "turrets": {
-      "Gunner": {
-        "smokes": false,
-        "traverse": {
-          "vertical": {
-            "max": 15,
-            "min": -10
-          },
-          "speed": {
-            "horizontal": 22.6,
-            "vertical": 22.6
-          }
-        },
-        "weapons": [
-          "75mm M3",
-          ".30 cal M1919"
-        ],
-        "rangefinder": "None",
-        "stabilizer": true,
-        "zoom": {
-          "max": 4.8,
-          "min": 4.8
-        }
-      },
-      "Commander": {
-        "weapons": [
-          "12.7mm M2"
-        ],
-        "traverse": {
-          "vertical": {
-            "max": 45,
-            "min": -15
-          },
-          "speed": {
-            "horizontal": 60,
-            "vertical": 60
-          }
-        },
-        "zoom": {
-          "max": 2.88,
-          "min": 1.8
-        },
-        "stabilizer": true
-      },
-      "Bow Gunner": {
-        "weapons": [
-          ".30 cal M1919"
-        ],
-        "traverse": {
-          "vertical": {
-            "max": 22,
-            "min": -10
-          },
-          "speed": {
-            "horizontal": 60,
-            "vertical": 60
-          }
-        },
-        "zoom": {
-          "max": 2.88,
-          "min": 1.8
-        },
-        "stabilizer": true
-      }
-    },
-    "name": "M4A2 Sherman",
-    "amphibious": false,
-    "mass": 32.5
   },
   {
     "engine": {
@@ -12612,6 +12529,89 @@
     "engine": {
       "transmission": {
         "reverseGears": 1,
+        "neutralSteering": false,
+        "forwardGears": 5
+      },
+      "reverseSpeed": 6.1,
+      "forwardSpeed": 47,
+      "type": "Diesel",
+      "maxRPM": 2100,
+      "horsepower": 375,
+      "name": "GM 6046"
+    },
+    "turrets": {
+      "Gunner": {
+        "smokes": false,
+        "traverse": {
+          "vertical": {
+            "max": 15,
+            "min": -10
+          },
+          "speed": {
+            "horizontal": 22.6,
+            "vertical": 22.6
+          }
+        },
+        "weapons": [
+          "75mm M3",
+          ".30 cal M1919"
+        ],
+        "rangefinder": "None",
+        "stabilizer": true,
+        "zoom": {
+          "max": 4.8,
+          "min": 4.8
+        }
+      },
+      "Commander": {
+        "weapons": [
+          "12.7mm M2"
+        ],
+        "traverse": {
+          "vertical": {
+            "max": 45,
+            "min": -15
+          },
+          "speed": {
+            "horizontal": 60,
+            "vertical": 60
+          }
+        },
+        "zoom": {
+          "max": 2.88,
+          "min": 1.8
+        },
+        "stabilizer": true
+      },
+      "Bow Gunner": {
+        "weapons": [
+          ".30 cal M1919"
+        ],
+        "traverse": {
+          "vertical": {
+            "max": 22,
+            "min": -10
+          },
+          "speed": {
+            "horizontal": 60,
+            "vertical": 60
+          }
+        },
+        "zoom": {
+          "max": 2.88,
+          "min": 1.8
+        },
+        "stabilizer": true
+      }
+    },
+    "name": "M4A2 Sherman",
+    "amphibious": false,
+    "mass": 32.5
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 1,
         "neutralSteering": true,
         "forwardGears": 3
       },
@@ -12639,7 +12639,7 @@
       "type": "Diesel",
       "maxRPM": 2000,
       "horsepower": 840,
-      "name": "ChTZ V-84-1"
+      "name": "ChTZ V-84-1z"
     },
     "turrets": {
       "Commander": {
@@ -14775,6 +14775,7 @@
       "transmission": {
         "reverseGears": 2,
         "neutralSteering": true,
+        "automatic": true,
         "forwardGears": 4
       },
       "reverseSpeed": 17.2,
