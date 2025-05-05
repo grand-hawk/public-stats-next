@@ -8,7 +8,7 @@
     "lint": "next lint",
     "eslint": "eslint .",
     "format": "prettier . -w",
-    "fix": "npm run eslint -- --fix && npm run format",
+    "fix": "pnpm run eslint --fix && pnpm run format",
     "updateKdrData": "pnpx dotenv-cli -- pnpx tsx scripts/updateData-kdr.mts",
     "updateWinrateData": "pnpx dotenv-cli -- pnpx tsx scripts/updateData-winrate.mts"
   },
