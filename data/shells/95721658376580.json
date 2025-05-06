@@ -9662,14 +9662,314 @@
         "T-80U",
         "T-80B",
         "T-84 Oplot-M",
-        "T-64BM \"Bulat\"",
         "2S19 Msta-S",
         "T-72B",
         "T-64A",
-        "Strela-MLRS"
+        "Strela-MLRS",
+        "T-64BM \"Bulat\""
       ],
       "velocity": 820,
       "type": "MG",
+      "ricochetAngle": 65
+    }
+  ],
+  "105mm KM68A1": [
+    {
+      "penetrationTable": {
+        "0": {
+          "0": [
+            395
+          ],
+          "500": [
+            389
+          ],
+          "1000": [
+            382
+          ],
+          "2000": [
+            370
+          ]
+        },
+        "30": {
+          "0": [
+            408
+          ],
+          "500": [
+            402
+          ],
+          "1000": [
+            395
+          ],
+          "2000": [
+            382
+          ]
+        },
+        "60": {
+          "0": [
+            461
+          ],
+          "500": [
+            454
+          ],
+          "1000": [
+            447
+          ],
+          "2000": [
+            432
+          ]
+        }
+      },
+      "name": "M833",
+      "mass": 3.59,
+      "shrapMultiplier": 3,
+      "maxPenetration": 395,
+      "damage": 420,
+      "relatedVehicles": [
+        "K1"
+      ],
+      "velocity": 1485,
+      "diameter": 24,
+      "type": "DU APFSDS",
+      "ricochetAngle": 80.84
+    },
+    {
+      "penetrationTable": {
+        "0": {
+          "0": [
+            400
+          ],
+          "500": [
+            400
+          ],
+          "1000": [
+            400
+          ],
+          "2000": [
+            400
+          ]
+        },
+        "30": {
+          "0": [
+            400
+          ],
+          "500": [
+            400
+          ],
+          "1000": [
+            400
+          ],
+          "2000": [
+            400
+          ]
+        },
+        "60": {
+          "0": [
+            400
+          ],
+          "500": [
+            400
+          ],
+          "1000": [
+            400
+          ],
+          "2000": [
+            400
+          ]
+        }
+      },
+      "name": "M456A2",
+      "mass": 13,
+      "maxPenetration": 400,
+      "explosive": {
+        "killRadius": 2.4348708020701566,
+        "mass": 0.9,
+        "explosiveRadius": 23.362979050698936
+      },
+      "damage": 420,
+      "relatedVehicles": [
+        "K1"
+      ],
+      "velocity": 1174,
+      "type": "HEAT-FS"
+    },
+    {
+      "penetrationTable": {
+        "0": {
+          "0": [
+            127
+          ],
+          "500": [
+            127
+          ],
+          "1000": [
+            127
+          ],
+          "2000": [
+            127
+          ]
+        },
+        "30": {
+          "0": [
+            147
+          ],
+          "500": [
+            147
+          ],
+          "1000": [
+            147
+          ],
+          "2000": [
+            147
+          ]
+        },
+        "60": {
+          "0": [
+            254
+          ],
+          "500": [
+            254
+          ],
+          "1000": [
+            254
+          ],
+          "2000": [
+            254
+          ]
+        }
+      },
+      "name": "M393A3",
+      "mass": 11.4,
+      "maxPenetration": 127,
+      "explosive": {
+        "killRadius": 7.842285487962148,
+        "mass": 3.15,
+        "explosiveRadius": 35.47188226775726
+      },
+      "damage": 514,
+      "relatedVehicles": [
+        "K1"
+      ],
+      "velocity": 720,
+      "type": "HESH"
+    }
+  ],
+  "30mm GSh-30-2K": [
+    {
+      "penetrationTable": {
+        "0": {
+          "0": [
+            5
+          ],
+          "500": [
+            5
+          ],
+          "1000": [
+            5
+          ],
+          "2000": [
+            5
+          ]
+        },
+        "30": {
+          "0": [
+            6
+          ],
+          "500": [
+            6
+          ],
+          "1000": [
+            6
+          ],
+          "2000": [
+            6
+          ]
+        },
+        "60": {
+          "0": [
+            11
+          ],
+          "500": [
+            11
+          ],
+          "1000": [
+            11
+          ],
+          "2000": [
+            11
+          ]
+        }
+      },
+      "name": "HEF-I ",
+      "mass": 0.39,
+      "maxPenetration": 5,
+      "explosive": {
+        "killRadius": 0.4788936880625824,
+        "mass": 0.075,
+        "explosiveRadius": 10.204721048366997
+      },
+      "damage": 143,
+      "relatedVehicles": [
+        "Mi-24V",
+        "Mi-24VM"
+      ],
+      "velocity": 845,
+      "type": "HE"
+    },
+    {
+      "penetrationTable": {
+        "0": {
+          "0": [
+            62
+          ],
+          "500": [
+            52
+          ],
+          "1000": [
+            43
+          ],
+          "2000": [
+            30
+          ]
+        },
+        "30": {
+          "0": [
+            59
+          ],
+          "500": [
+            49
+          ],
+          "1000": [
+            41
+          ],
+          "2000": [
+            28
+          ]
+        },
+        "60": {
+          "0": [
+            48
+          ],
+          "500": [
+            40
+          ],
+          "1000": [
+            33
+          ],
+          "2000": [
+            23
+          ]
+        }
+      },
+      "name": "AP-T ",
+      "mass": 0.4,
+      "maxPenetration": 62,
+      "damage": 90,
+      "relatedVehicles": [
+        "Mi-24V",
+        "Mi-24VM"
+      ],
+      "velocity": 845,
+      "type": "AP",
       "ricochetAngle": 65
     }
   ],
@@ -13901,10 +14201,10 @@
         "Jagdtiger",
         "Panther II",
         "Jagdpanther",
+        "Class 3(P)",
         "Tiger II",
         "Comet Mk.1",
-        "Sturmtiger",
-        "Class 3(P)"
+        "Sturmtiger"
       ],
       "velocity": 30,
       "type": "HE"
@@ -13968,10 +14268,10 @@
         "Jagdtiger",
         "Panther II",
         "Jagdpanther",
+        "Class 3(P)",
         "Tiger II",
         "Comet Mk.1",
-        "Sturmtiger",
-        "Class 3(P)"
+        "Sturmtiger"
       ],
       "velocity": 30,
       "type": "SMOKE"
@@ -14635,6 +14935,7 @@
         "M4A1 (76) Sherman",
         "M4A3 (105)",
         "M113 HVMS",
+        "M4A2 Sherman",
         "M4A1 Sherman",
         "M4A2E8 Sherman",
         "M3 Lee",
@@ -14642,12 +14943,11 @@
         "M8 Greyhound",
         "M26 Pershing",
         "M4A3E2 (76) Jumbo",
-        "M4A2 Sherman",
+        "Class 3(P)",
         "M4A3 (105) Zippo",
         "M48A2 Patton",
         "T26E4 Super Pershing",
         "T34 Calliope",
-        "Class 3(P)",
         "T29E3"
       ],
       "velocity": 900,
@@ -14779,10 +15079,10 @@
       },
       "damage": 330,
       "relatedVehicles": [
+        "M4A2 Sherman",
         "M4A1 Sherman",
         "M3 GMC",
         "M4A3E2 (75) Jumbo",
-        "M4A2 Sherman",
         "T34 Calliope"
       ],
       "velocity": 618,
@@ -14844,10 +15144,10 @@
       },
       "damage": 253,
       "relatedVehicles": [
+        "M4A2 Sherman",
         "M4A1 Sherman",
         "M3 GMC",
         "M4A3E2 (75) Jumbo",
-        "M4A2 Sherman",
         "T34 Calliope"
       ],
       "velocity": 463,
@@ -22542,7 +22842,6 @@
         "T-84 Oplot-M",
         "BMP-3M",
         "BTR-4",
-        "T-64BM \"Bulat\"",
         "T-72M2",
         "Ariete PSO",
         "MT-LB AA",
@@ -22562,6 +22861,7 @@
         "M23 Pickett",
         "Object 775",
         "PT-76E",
+        "T-64BM \"Bulat\"",
         "T-90M",
         "MBT-3E",
         "T-62M-1"
@@ -31672,9 +31972,9 @@
         "T-34",
         "T-60",
         "KV-1E",
-        "T-34E",
         "T-44",
         "KV-220",
+        "T-34E",
         "IS-2 1944",
         "IS-1",
         "IS-3"
@@ -35416,7 +35716,6 @@
       "damage": 16,
       "relatedVehicles": [
         "Porsche Tiger",
-        "Pz IV Ausf. 1946",
         "Pz.III M",
         "Sd.Kfz.234/2 Puma",
         "Toramaru",
@@ -35432,6 +35731,7 @@
         "Ersatz M10",
         "Pz IV H",
         "Jagdpanther",
+        "Pz IV Ausf. 1946",
         "Sd Kfz 251",
         "Hornisse",
         "Tiger I",
@@ -37790,6 +38090,7 @@
         "Type 16 MCV",
         "M4A3 (105)",
         "M1128 MGS",
+        "M4A2 Sherman",
         "M4A1 Sherman",
         "120S",
         "M4A2E8 Sherman",
@@ -37827,7 +38128,6 @@
         "Black Night",
         "IFV-30",
         "M109A6",
-        "M4A2 Sherman",
         "M1 Abrams",
         "Willys MB",
         "M4A3 (105) Zippo",
@@ -38458,7 +38758,6 @@
       },
       "damage": 400,
       "relatedVehicles": [
-        "M14 Jacob",
         "Black Night"
       ],
       "velocity": 325,
@@ -43517,6 +43816,74 @@
       "ricochetAngle": 80
     }
   ],
+  "Brimstone MK2": [
+    {
+      "penetrationTable": {
+        "0": {
+          "0": [
+            3000
+          ],
+          "500": [
+            3000
+          ],
+          "1000": [
+            3000
+          ],
+          "2000": [
+            3000
+          ]
+        },
+        "30": {
+          "0": [
+            3000
+          ],
+          "500": [
+            3000
+          ],
+          "1000": [
+            3000
+          ],
+          "2000": [
+            3000
+          ]
+        },
+        "60": {
+          "0": [
+            3000
+          ],
+          "500": [
+            3000
+          ],
+          "1000": [
+            3000
+          ],
+          "2000": [
+            3000
+          ]
+        }
+      },
+      "name": "Brimstone 2",
+      "mass": 45.13,
+      "missile": {
+        "unjammable": false,
+        "boostTime": 2,
+        "limit": 5,
+        "turnRate": 180
+      },
+      "maxPenetration": 3000,
+      "explosive": {
+        "killRadius": 26.309161947598295,
+        "mass": 25,
+        "explosiveRadius": 70.75558390488486
+      },
+      "damage": 400,
+      "relatedVehicles": [
+        "M14 Jacob"
+      ],
+      "velocity": 325,
+      "type": "TANDEM LASER GUIDED MISSILE"
+    }
+  ],
   "40mm Akan m/70B": [
     {
       "penetrationTable": {
@@ -45382,8 +45749,8 @@
       },
       "damage": 256,
       "relatedVehicles": [
-        "Pz IV Ausf. 1946",
-        "Pz IV H"
+        "Pz IV H",
+        "Pz IV Ausf. 1946"
       ],
       "velocity": 550,
       "type": "HE"
@@ -45443,8 +45810,8 @@
       },
       "damage": 330,
       "relatedVehicles": [
-        "Pz IV Ausf. 1946",
-        "Pz IV H"
+        "Pz IV H",
+        "Pz IV Ausf. 1946"
       ],
       "velocity": 770,
       "type": "APHE",
@@ -45507,306 +45874,6 @@
       ],
       "velocity": 820,
       "type": "MG",
-      "ricochetAngle": 65
-    }
-  ],
-  "105mm KM68A1": [
-    {
-      "penetrationTable": {
-        "0": {
-          "0": [
-            395
-          ],
-          "500": [
-            389
-          ],
-          "1000": [
-            382
-          ],
-          "2000": [
-            370
-          ]
-        },
-        "30": {
-          "0": [
-            408
-          ],
-          "500": [
-            402
-          ],
-          "1000": [
-            395
-          ],
-          "2000": [
-            382
-          ]
-        },
-        "60": {
-          "0": [
-            461
-          ],
-          "500": [
-            454
-          ],
-          "1000": [
-            447
-          ],
-          "2000": [
-            432
-          ]
-        }
-      },
-      "name": "M833",
-      "mass": 3.59,
-      "shrapMultiplier": 3,
-      "maxPenetration": 395,
-      "damage": 420,
-      "relatedVehicles": [
-        "K1"
-      ],
-      "velocity": 1485,
-      "diameter": 24,
-      "type": "DU APFSDS",
-      "ricochetAngle": 80.84
-    },
-    {
-      "penetrationTable": {
-        "0": {
-          "0": [
-            400
-          ],
-          "500": [
-            400
-          ],
-          "1000": [
-            400
-          ],
-          "2000": [
-            400
-          ]
-        },
-        "30": {
-          "0": [
-            400
-          ],
-          "500": [
-            400
-          ],
-          "1000": [
-            400
-          ],
-          "2000": [
-            400
-          ]
-        },
-        "60": {
-          "0": [
-            400
-          ],
-          "500": [
-            400
-          ],
-          "1000": [
-            400
-          ],
-          "2000": [
-            400
-          ]
-        }
-      },
-      "name": "M456A2",
-      "mass": 13,
-      "maxPenetration": 400,
-      "explosive": {
-        "killRadius": 2.4348708020701566,
-        "mass": 0.9,
-        "explosiveRadius": 23.362979050698936
-      },
-      "damage": 420,
-      "relatedVehicles": [
-        "K1"
-      ],
-      "velocity": 1174,
-      "type": "HEAT-FS"
-    },
-    {
-      "penetrationTable": {
-        "0": {
-          "0": [
-            127
-          ],
-          "500": [
-            127
-          ],
-          "1000": [
-            127
-          ],
-          "2000": [
-            127
-          ]
-        },
-        "30": {
-          "0": [
-            147
-          ],
-          "500": [
-            147
-          ],
-          "1000": [
-            147
-          ],
-          "2000": [
-            147
-          ]
-        },
-        "60": {
-          "0": [
-            254
-          ],
-          "500": [
-            254
-          ],
-          "1000": [
-            254
-          ],
-          "2000": [
-            254
-          ]
-        }
-      },
-      "name": "M393A3",
-      "mass": 11.4,
-      "maxPenetration": 127,
-      "explosive": {
-        "killRadius": 7.842285487962148,
-        "mass": 3.15,
-        "explosiveRadius": 35.47188226775726
-      },
-      "damage": 514,
-      "relatedVehicles": [
-        "K1"
-      ],
-      "velocity": 720,
-      "type": "HESH"
-    }
-  ],
-  "30mm GSh-30-2K": [
-    {
-      "penetrationTable": {
-        "0": {
-          "0": [
-            5
-          ],
-          "500": [
-            5
-          ],
-          "1000": [
-            5
-          ],
-          "2000": [
-            5
-          ]
-        },
-        "30": {
-          "0": [
-            6
-          ],
-          "500": [
-            6
-          ],
-          "1000": [
-            6
-          ],
-          "2000": [
-            6
-          ]
-        },
-        "60": {
-          "0": [
-            11
-          ],
-          "500": [
-            11
-          ],
-          "1000": [
-            11
-          ],
-          "2000": [
-            11
-          ]
-        }
-      },
-      "name": "HEF-I ",
-      "mass": 0.39,
-      "maxPenetration": 5,
-      "explosive": {
-        "killRadius": 0.4788936880625824,
-        "mass": 0.075,
-        "explosiveRadius": 10.204721048366997
-      },
-      "damage": 143,
-      "relatedVehicles": [
-        "Mi-24V",
-        "Mi-24VM"
-      ],
-      "velocity": 845,
-      "type": "HE"
-    },
-    {
-      "penetrationTable": {
-        "0": {
-          "0": [
-            62
-          ],
-          "500": [
-            52
-          ],
-          "1000": [
-            43
-          ],
-          "2000": [
-            30
-          ]
-        },
-        "30": {
-          "0": [
-            59
-          ],
-          "500": [
-            49
-          ],
-          "1000": [
-            41
-          ],
-          "2000": [
-            28
-          ]
-        },
-        "60": {
-          "0": [
-            48
-          ],
-          "500": [
-            40
-          ],
-          "1000": [
-            33
-          ],
-          "2000": [
-            23
-          ]
-        }
-      },
-      "name": "AP-T ",
-      "mass": 0.4,
-      "maxPenetration": 62,
-      "damage": 90,
-      "relatedVehicles": [
-        "Mi-24V",
-        "Mi-24VM"
-      ],
-      "velocity": 845,
-      "type": "AP",
       "ricochetAngle": 65
     }
   ],
