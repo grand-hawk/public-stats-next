@@ -7,6 +7,7 @@ import {
   GridItem,
   Group,
   Heading,
+  HStack,
   Image,
   Spinner,
   Stack,
@@ -247,46 +248,48 @@ export default function ShellInfo({
         <PenetrationTable penetration={data.penetrationTable} />
       </GridItem>
 
-      <GridItem>
-        <Bleed block={4} inline={4} marginY={2}>
-          <Accordion.Root collapsible variant="enclosed">
-            <Accordion.Item
-              _open={{ background: 'transparent' }}
-              value="vehicles"
-            >
-              <Accordion.ItemTrigger>
-                <Heading flex="1" paddingBottom={1} size="lg">
-                  Vehicles with this shell
-                </Heading>
-                <Accordion.ItemIndicator />
-              </Accordion.ItemTrigger>
-              <Accordion.ItemContent>
-                <Accordion.ItemBody>
-                  <Stack gap={1}>
-                    {data.relatedVehicles.map((vehicle) => (
-                      <NextLink
-                        key={vehicle}
-                        href={`/vehicles/${encodeURIComponent(vehicle)}`}
-                        passHref
-                      >
-                        <Button
-                          gap={2}
-                          justifyContent="left"
-                          minHeight="fit-content"
-                          variant="subtle"
-                          width="100%"
+      {data.relatedVehicles.length > 0 && (
+        <GridItem>
+          <Bleed block={4} inline={4} marginY={2}>
+            <Accordion.Root collapsible variant="enclosed">
+              <Accordion.Item
+                _open={{ background: 'transparent' }}
+                value="vehicles"
+              >
+                <Accordion.ItemTrigger>
+                  <HStack flex="1" gap={2}>
+                    <Heading size="lg">Vehicles with this shell</Heading>
+                  </HStack>
+                  <Accordion.ItemIndicator />
+                </Accordion.ItemTrigger>
+                <Accordion.ItemContent>
+                  <Accordion.ItemBody>
+                    <Stack gap={1}>
+                      {data.relatedVehicles.map((vehicle) => (
+                        <NextLink
+                          key={vehicle}
+                          href={`/vehicles/${encodeURIComponent(vehicle)}`}
+                          passHref
                         >
-                          <Text>{vehicle}</Text>
-                        </Button>
-                      </NextLink>
-                    ))}
-                  </Stack>
-                </Accordion.ItemBody>
-              </Accordion.ItemContent>
-            </Accordion.Item>
-          </Accordion.Root>
-        </Bleed>
-      </GridItem>
+                          <Button
+                            gap={2}
+                            justifyContent="left"
+                            minHeight="fit-content"
+                            variant="subtle"
+                            width="100%"
+                          >
+                            <Text>{vehicle}</Text>
+                          </Button>
+                        </NextLink>
+                      ))}
+                    </Stack>
+                  </Accordion.ItemBody>
+                </Accordion.ItemContent>
+              </Accordion.Item>
+            </Accordion.Root>
+          </Bleed>
+        </GridItem>
+      )}
     </Grid>
   );
 }
