@@ -13702,9 +13702,10 @@
   {
     "engine": {
       "transmission": {
-        "reverseGears": 4,
+        "reverseGears": 2,
         "neutralSteering": true,
-        "forwardGears": 8
+        "automatic": true,
+        "forwardGears": 4
       },
       "reverseSpeed": 24,
       "forwardSpeed": 83,
