@@ -7470,7 +7470,7 @@
       "missile": {
         "unjammable": false,
         "boostTime": 3,
-        "limit": 2,
+        "limit": 5,
         "turnRate": 180
       },
       "maxPenetration": 1200,
@@ -43884,67 +43884,67 @@
       "penetrationTable": {
         "0": {
           "0": [
-            1500
+            3000
           ],
           "500": [
-            1500
+            3000
           ],
           "1000": [
-            1500
+            3000
           ],
           "2000": [
-            1500
+            3000
           ]
         },
         "30": {
           "0": [
-            1500
+            3000
           ],
           "500": [
-            1500
+            3000
           ],
           "1000": [
-            1500
+            3000
           ],
           "2000": [
-            1500
+            3000
           ]
         },
         "60": {
           "0": [
-            1500
+            3000
           ],
           "500": [
-            1500
+            3000
           ],
           "1000": [
-            1500
+            3000
           ],
           "2000": [
-            1500
+            3000
           ]
         }
       },
-      "name": "Brimstone Mk.2",
+      "name": "Brimstone",
       "mass": 45.13,
       "missile": {
         "unjammable": false,
         "boostTime": 2,
-        "limit": 5,
+        "limit": 100,
         "turnRate": 180
       },
-      "maxPenetration": 1500,
+      "maxPenetration": 3000,
       "explosive": {
-        "killRadius": 39.14447258447216,
-        "mass": 50,
-        "explosiveRadius": 89.14644955936731
+        "killRadius": 42.27326479507979,
+        "mass": 70,
+        "explosiveRadius": 90
       },
       "damage": 400,
       "relatedVehicles": [
         "M14 Jacob",
         "AH-64Z"
       ],
-      "velocity": 325,
+      "velocity": 500,
       "type": "TANDEM LASER GUIDED MISSILE"
     }
   ],
