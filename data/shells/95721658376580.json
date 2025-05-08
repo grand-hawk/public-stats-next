@@ -22835,30 +22835,30 @@
         "Object 450",
         "T-64R",
         "Bumpee",
-        "Object 477",
         "T-90M",
         "Burlak",
+        "Object 477",
         "T-15 Armata",
         "OBT-2BV",
         "T-84 Oplot-M",
         "BMP-3M",
         "BTR-4",
-        "Ariete PSO",
         "T-72M2",
+        "Ariete PSO",
         "MT-LB AA",
-        "OBT-2B",
         "Object 166",
+        "OBT-2B",
         "Rosomak",
         "T-62",
         "T-72B",
         "T-72B3",
         "IT-1",
         "BMPT Terminator",
-        "BMP-1",
         "T-64A",
         "Cheonma-2",
         "BMD-4M",
         "OBT-2UM",
+        "BMP-1",
         "M23 Pickett",
         "BTR-82A",
         "PT-76E",
@@ -26703,8 +26703,7 @@
       },
       "damage": 90,
       "relatedVehicles": [
-        "AH-64D",
-        "AH-64Z"
+        "AH-64D"
       ],
       "velocity": 805,
       "type": "HEAT"
@@ -30798,8 +30797,7 @@
       "damage": 627,
       "relatedVehicles": [
         "Lilbirb",
-        "AH-64D",
-        "AH-64Z"
+        "AH-64D"
       ],
       "velocity": 1000,
       "type": "AIR-TO-AIR MISSILE"
@@ -32801,8 +32799,7 @@
         "Tiger EC665 UHT",
         "MH-6 Little Bird",
         "Tiger EC665 UHT S",
-        "AH-64D",
-        "AH-64Z"
+        "AH-64D"
       ],
       "velocity": 739,
       "type": "ROCKET"
@@ -43884,68 +43881,67 @@
       "penetrationTable": {
         "0": {
           "0": [
-            3000
+            132
           ],
           "500": [
-            3000
+            132
           ],
           "1000": [
-            3000
+            132
           ],
           "2000": [
-            3000
+            132
           ]
         },
         "30": {
           "0": [
-            3000
+            153
           ],
           "500": [
-            3000
+            153
           ],
           "1000": [
-            3000
+            153
           ],
           "2000": [
-            3000
+            153
           ]
         },
         "60": {
           "0": [
-            3000
+            265
           ],
           "500": [
-            3000
+            265
           ],
           "1000": [
-            3000
+            265
           ],
           "2000": [
-            3000
+            265
           ]
         }
       },
-      "name": "Brimstone",
-      "mass": 45.13,
+      "name": "Brimstone MK2",
+      "mass": 1,
       "missile": {
         "unjammable": false,
         "boostTime": 2,
-        "limit": 100,
+        "limit": 10,
         "turnRate": 180
       },
-      "maxPenetration": 3000,
+      "maxPenetration": 132,
       "explosive": {
-        "killRadius": 42.27326479507979,
-        "mass": 70,
-        "explosiveRadius": 90
+        "killRadius": 55.96847883322559,
+        "mass": 45,
+        "explosiveRadius": 86.06995072485036
       },
-      "damage": 400,
+      "damage": 2488,
       "relatedVehicles": [
-        "M14 Jacob",
-        "AH-64Z"
+        "M14 Jacob"
       ],
       "velocity": 500,
-      "type": "TANDEM LASER GUIDED MISSILE"
+      "type": "LASER GUIDED MISSILE"
     }
   ],
   "40mm Akan m/70B": [
