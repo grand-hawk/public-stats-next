@@ -11673,6 +11673,70 @@
       "penetrationTable": {
         "0": {
           "0": [
+            52
+          ],
+          "500": [
+            52
+          ],
+          "1000": [
+            52
+          ],
+          "2000": [
+            52
+          ]
+        },
+        "30": {
+          "0": [
+            60
+          ],
+          "500": [
+            60
+          ],
+          "1000": [
+            60
+          ],
+          "2000": [
+            60
+          ]
+        },
+        "60": {
+          "0": [
+            104
+          ],
+          "500": [
+            104
+          ],
+          "1000": [
+            104
+          ],
+          "2000": [
+            104
+          ]
+        }
+      },
+      "name": "9M120-1F",
+      "mass": 33,
+      "laser": true,
+      "maxPenetration": 52,
+      "explosive": {
+        "killRadius": 17.27530988278002,
+        "mass": 6.9,
+        "explosiveRadius": 46.0677583416336
+      },
+      "damage": 791,
+      "relatedVehicles": [
+        "BMP-3",
+        "T-15 Armata",
+        "BMPT Terminator",
+        "Mi-24VM"
+      ],
+      "velocity": 550,
+      "type": "ANTI-TANK GUIDED MISSILE"
+    },
+    {
+      "penetrationTable": {
+        "0": {
+          "0": [
             800
           ],
           "500": [
@@ -11720,7 +11784,7 @@
       "missile": {
         "unjammable": true,
         "boostTime": 5,
-        "turnRate": 25
+        "turnRate": 20
       },
       "maxPenetration": 800,
       "explosive": {
@@ -12822,9 +12886,9 @@
       "relatedVehicles": [
         "Maus-M",
         "M2A2 ODS-SA",
+        "LAV-25",
         "Desert Warrior",
-        "M2A1 Bradley",
-        "LAV-25"
+        "M2A1 Bradley"
       ],
       "velocity": 1345,
       "type": "APDS",
@@ -12883,9 +12947,9 @@
       "relatedVehicles": [
         "Maus-M",
         "M2A2 ODS-SA",
+        "LAV-25",
         "Desert Warrior",
-        "M2A1 Bradley",
-        "LAV-25"
+        "M2A1 Bradley"
       ],
       "velocity": 1385,
       "type": "DU APFSDS",
@@ -12948,9 +13012,9 @@
       "relatedVehicles": [
         "Maus-M",
         "M2A2 ODS-SA",
+        "LAV-25",
         "Desert Warrior",
-        "M2A1 Bradley",
-        "LAV-25"
+        "M2A1 Bradley"
       ],
       "velocity": 1100,
       "type": "HE"
@@ -22888,7 +22952,6 @@
         "BMD-1",
         "BTR-60PB",
         "T-64BV",
-        "GAZ Tigr",
         "ZIT-122",
         "BMP-3",
         "BMP-30",
@@ -22901,11 +22964,12 @@
         "Object 450",
         "T-64R",
         "Bumpee",
+        "Object 477",
         "T-90M",
         "Burlak",
-        "Object 477",
         "T-15 Armata",
         "OBT-2BV",
+        "GAZ Tigr M",
         "T-84 Oplot-M",
         "BMP-3M",
         "BTR-4",
@@ -28367,7 +28431,7 @@
         "M1A1",
         "XM8",
         "M1A2 SEP V3",
-        "M60A1 RISE Passive",
+        "LAV-25",
         "M1 Abrams",
         "RDF/LT",
         "M60A1 Add-On Stabilization",
@@ -28375,7 +28439,7 @@
         "M2A1 Bradley",
         "KF41 Lynx",
         "M1IP",
-        "LAV-25"
+        "M60A1 RISE Passive"
       ],
       "velocity": 640,
       "type": "MG",
@@ -33705,7 +33769,7 @@
       "missile": {
         "unjammable": true,
         "boostTime": 5,
-        "turnRate": 10
+        "turnRate": 20
       },
       "maxPenetration": 1200,
       "explosive": {
@@ -33778,7 +33842,7 @@
       "missile": {
         "unjammable": true,
         "boostTime": 5,
-        "turnRate": 5
+        "turnRate": 20
       },
       "maxPenetration": 60,
       "explosive": {
@@ -38250,7 +38314,6 @@
         "M4A3E2 (76) Jumbo",
         "90mm GMC Super Hellcat",
         "Supply Truck",
-        "M60A1 RISE Passive",
         "IFV-30",
         "M109A6",
         "M1 Abrams",
@@ -38267,6 +38330,7 @@
         "M36B2 Jackson",
         "M1126",
         "MBT-3E",
+        "M60A1 RISE Passive",
         "T29E3",
         "M113",
         "M7 Priest"
@@ -46126,8 +46190,8 @@
       "relatedVehicles": [
         "BMP-2M",
         "BMP-30M",
-        "GAZ Tigr",
         "BTR-90",
+        "GAZ Tigr M",
         "BTR-4",
         "BMPT Terminator",
         "Cheonma-2"
