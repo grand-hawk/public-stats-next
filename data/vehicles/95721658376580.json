@@ -65,9 +65,10 @@
   {
     "engine": {
       "transmission": {
-        "reverseGears": 3,
+        "reverseGears": 2,
         "neutralSteering": true,
-        "forwardGears": 4
+        "automatic": true,
+        "forwardGears": 6
       },
       "reverseSpeed": 38,
       "forwardSpeed": 56,
@@ -2636,6 +2637,7 @@
       "transmission": {
         "reverseGears": 1,
         "neutralSteering": false,
+        "automatic": true,
         "forwardGears": 5
       },
       "reverseSpeed": 25,
@@ -2669,7 +2671,7 @@
         }
       }
     },
-    "name": "GAZ Tigr",
+    "name": "GAZ Tigr M",
     "amphibious": false,
     "mass": 7.2
   },
@@ -7611,6 +7613,7 @@
       "transmission": {
         "reverseGears": 1,
         "neutralSteering": false,
+        "automatic": true,
         "forwardGears": 5
       },
       "reverseSpeed": 25,
@@ -14215,8 +14218,8 @@
         ],
         "traverse": {
           "vertical": {
-            "max": 30,
-            "min": -5
+            "max": 20,
+            "min": -5.5
           },
           "speed": {
             "horizontal": 60,
@@ -14224,16 +14227,16 @@
           }
         },
         "zoom": {
-          "max": 2.88,
-          "min": 1.8
+          "max": 8,
+          "min": 1
         },
         "stabilizer": false
       },
       "Gunner": {
-        "thermals": "White (Gen 3)",
+        "thermals": "White (Gen 2)",
         "traverse": {
           "vertical": {
-            "max": 25,
+            "max": 45,
             "min": -5
           },
           "speed": {
@@ -14255,7 +14258,7 @@
         }
       },
       "Commander": {
-        "thermals": "White (Gen 3)",
+        "thermals": "White (Gen 2)",
         "traverse": {
           "vertical": {
             "max": 60,
