@@ -16961,7 +16961,73 @@
           ]
         }
       },
-      "name": "HJ-10",
+      "name": "HJ-10 Manual Guide Mode",
+      "mass": 43,
+      "missile": {
+        "unjammable": false,
+        "boostTime": 3,
+        "limit": 5,
+        "turnRate": 160
+      },
+      "maxPenetration": 1400,
+      "explosive": {
+        "killRadius": 10.935729309708387,
+        "mass": 6.5,
+        "explosiveRadius": 45.159781844127046
+      },
+      "damage": 400,
+      "relatedVehicles": [
+        "AFT-10"
+      ],
+      "velocity": 150,
+      "type": "TANDEM LASER GUIDED MISSILE"
+    },
+    {
+      "penetrationTable": {
+        "0": {
+          "0": [
+            1400
+          ],
+          "500": [
+            1400
+          ],
+          "1000": [
+            1400
+          ],
+          "2000": [
+            1400
+          ]
+        },
+        "30": {
+          "0": [
+            1400
+          ],
+          "500": [
+            1400
+          ],
+          "1000": [
+            1400
+          ],
+          "2000": [
+            1400
+          ]
+        },
+        "60": {
+          "0": [
+            1400
+          ],
+          "500": [
+            1400
+          ],
+          "1000": [
+            1400
+          ],
+          "2000": [
+            1400
+          ]
+        }
+      },
+      "name": "HJ-10 Fire & Forget Mode",
       "mass": 43,
       "missile": {
         "unjammable": false,
@@ -38802,7 +38868,72 @@
           ]
         }
       },
-      "name": "Brimstone",
+      "name": "Brimstone Fire & Forget Mode",
+      "mass": 45.13,
+      "missile": {
+        "unjammable": false,
+        "boostTime": 2,
+        "turnRate": 180
+      },
+      "maxPenetration": 1500,
+      "explosive": {
+        "killRadius": 12.651348045538215,
+        "mass": 8.02,
+        "explosiveRadius": 48.43643518186176
+      },
+      "damage": 400,
+      "relatedVehicles": [
+        "Black Night"
+      ],
+      "velocity": 325,
+      "type": "TANDEM F&F MISSILE"
+    },
+    {
+      "penetrationTable": {
+        "0": {
+          "0": [
+            1500
+          ],
+          "500": [
+            1500
+          ],
+          "1000": [
+            1500
+          ],
+          "2000": [
+            1500
+          ]
+        },
+        "30": {
+          "0": [
+            1500
+          ],
+          "500": [
+            1500
+          ],
+          "1000": [
+            1500
+          ],
+          "2000": [
+            1500
+          ]
+        },
+        "60": {
+          "0": [
+            1500
+          ],
+          "500": [
+            1500
+          ],
+          "1000": [
+            1500
+          ],
+          "2000": [
+            1500
+          ]
+        }
+      },
+      "name": "Brimstone Manual Guide Mode",
       "mass": 45.13,
       "missile": {
         "unjammable": false,
