@@ -10,7 +10,7 @@ jobs:
       max-parallel: 1
       matrix:
         environment:
-          - name: RainyValley
+          - name: MulticrewTankCombat
             universe_id: '7414497778'
             place_id: '95721658376580'
             data_path: './data/shells/95721658376580.json'
@@ -81,7 +81,7 @@ jobs:
       max-parallel: 1
       matrix:
         environment:
-          - name: RainyValley
+          - name: MulticrewTankCombat
             universe_id: '7414497778'
             place_id: '95721658376580'
             data_path: './data/vehicles/95721658376580.json'
