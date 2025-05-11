@@ -1334,9 +1334,7 @@
             "vertical": 60
           }
         },
-        "weapons": [
-          "30mm AGS-17"
-        ],
+        "weapons": [],
         "stabilizer": true,
         "zoom": {
           "max": 18,
@@ -1358,7 +1356,8 @@
         "weapons": [
           "30mm 2A42M",
           "7.62mm PKT",
-          "9M133 Kornet"
+          "9M133 Kornet",
+          "30mm AG-30"
         ],
         "smokes": true,
         "rangefinder": "Laser",
@@ -10413,9 +10412,9 @@
       "reverseSpeed": 7.2,
       "forwardSpeed": 39,
       "type": "Diesel",
-      "maxRPM": 3000,
-      "horsepower": 900,
-      "name": "MB HL234"
+      "maxRPM": 2600,
+      "horsepower": 296,
+      "name": "MB HL120 TRM"
     },
     "turrets": {
       "Gunner": {
