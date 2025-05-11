@@ -233,7 +233,14 @@ export default function ShellInfo({
         <GridItem colSpan={1} rowSpan={1}>
           <BasicCard heading="Cluster">
             <Stack direction="row" gap={4}>
-              <Stat label="Submunitions">
+              <Stat
+                label={
+                  <>
+                    Submunitions
+                    <InfoTooltip content="Submunitions may be reduced to meet performance standards." />
+                  </>
+                }
+              >
                 <FormatNumber value={data.cluster.submunitions} />x
               </Stat>
               <Stat label="Dispersion">
