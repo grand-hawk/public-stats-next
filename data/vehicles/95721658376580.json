@@ -2820,9 +2820,9 @@
       "reverseSpeed": 10,
       "forwardSpeed": 50,
       "type": "Diesel",
-      "maxRPM": 4000,
-      "horsepower": 73,
-      "name": "5.55 L ZiS-5"
+      "maxRPM": 1800,
+      "horsepower": 240,
+      "name": "6CTA8.3 IMO 1"
     },
     "turrets": {
       "Commander": {
@@ -4903,7 +4903,7 @@
         },
         "weapons": [
           "30mm 2A72",
-          "152mm 2A73"
+          "152mm 2A83"
         ],
         "smokes": true,
         "rangefinder": "Laser",
@@ -13016,7 +13016,7 @@
       "type": "Diesel",
       "maxRPM": 2400,
       "horsepower": 400,
-      "name": "Continental R975-C4"
+      "name": "Continental R975-C4 (Hellcat)"
     },
     "turrets": {
       "Commander": {
@@ -15323,7 +15323,7 @@
       "type": "Diesel",
       "maxRPM": 2400,
       "horsepower": 400,
-      "name": "Continental R975-C4"
+      "name": "Continental R975-C4 (Hellcat)"
     },
     "turrets": {
       "Commander": {
