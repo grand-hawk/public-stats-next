@@ -9265,6 +9265,65 @@
       "type": "HE"
     }
   ],
+  "12.7mm RMG": [
+    {
+      "penetrationTable": {
+        "0": {
+          "0": [
+            29
+          ],
+          "500": [
+            19
+          ],
+          "1000": [
+            13
+          ],
+          "2000": [
+            6
+          ]
+        },
+        "30": {
+          "0": [
+            27
+          ],
+          "500": [
+            18
+          ],
+          "1000": [
+            12
+          ],
+          "2000": [
+            5
+          ]
+        },
+        "60": {
+          "0": [
+            21
+          ],
+          "500": [
+            14
+          ],
+          "1000": [
+            9
+          ],
+          "2000": [
+            4
+          ]
+        }
+      },
+      "name": "API-T",
+      "mass": 0.04,
+      "maxPenetration": 29,
+      "damage": 30,
+      "relatedVehicles": [
+        "KF51 Panther",
+        "Panther EVO"
+      ],
+      "velocity": 929,
+      "type": "MG",
+      "ricochetAngle": 65
+    }
+  ],
   "125mm 2A46MS": [
     {
       "penetrationTable": {
@@ -20189,6 +20248,68 @@
       "ricochetAngle": 72
     }
   ],
+  "30mm AG-30": [
+    {
+      "penetrationTable": {
+        "0": {
+          "0": [
+            5
+          ],
+          "500": [
+            5
+          ],
+          "1000": [
+            5
+          ],
+          "2000": [
+            5
+          ]
+        },
+        "30": {
+          "0": [
+            6
+          ],
+          "500": [
+            6
+          ],
+          "1000": [
+            6
+          ],
+          "2000": [
+            6
+          ]
+        },
+        "60": {
+          "0": [
+            10
+          ],
+          "500": [
+            10
+          ],
+          "1000": [
+            10
+          ],
+          "2000": [
+            10
+          ]
+        }
+      },
+      "name": "VOG-17M",
+      "mass": 0.28,
+      "maxPenetration": 5,
+      "explosive": {
+        "killRadius": 0.42743925747175665,
+        "mass": 0.065,
+        "explosiveRadius": 9.729380059925935
+      },
+      "damage": 140,
+      "relatedVehicles": [
+        "BMP-2M"
+      ],
+      "velocity": 185,
+      "type": "HE"
+    }
+  ],
   "152mm ML-20S": [
     {
       "penetrationTable": {
@@ -24399,65 +24520,6 @@
       ],
       "velocity": 650,
       "type": "ROCKET"
-    }
-  ],
-  "12.7mm RMG": [
-    {
-      "penetrationTable": {
-        "0": {
-          "0": [
-            29
-          ],
-          "500": [
-            19
-          ],
-          "1000": [
-            13
-          ],
-          "2000": [
-            6
-          ]
-        },
-        "30": {
-          "0": [
-            27
-          ],
-          "500": [
-            18
-          ],
-          "1000": [
-            12
-          ],
-          "2000": [
-            5
-          ]
-        },
-        "60": {
-          "0": [
-            21
-          ],
-          "500": [
-            14
-          ],
-          "1000": [
-            9
-          ],
-          "2000": [
-            4
-          ]
-        }
-      },
-      "name": "API-T",
-      "mass": 0.04,
-      "maxPenetration": 29,
-      "damage": 30,
-      "relatedVehicles": [
-        "KF51 Panther",
-        "Panther EVO"
-      ],
-      "velocity": 929,
-      "type": "MG",
-      "ricochetAngle": 65
     }
   ],
   "76mm QF 17-pounder": [
@@ -46901,7 +46963,6 @@
       },
       "damage": 140,
       "relatedVehicles": [
-        "BMP-2M",
         "BMP-30M",
         "BTR-90",
         "GAZ Tigr M",
