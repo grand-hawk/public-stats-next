@@ -17,7 +17,7 @@ export default function WinrateChart({ placeId }: { placeId: number }) {
 
   const { isFetching, error, data, refetch } = trpc.winrate.winrate.useQuery(
     { placeId, loadout, map },
-    { refetchOnWindowFocus: false },
+    { refetchOnWindowFocus: false, refetchOnMount: false },
   );
 
   const winrateData = React.useMemo(

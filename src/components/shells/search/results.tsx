@@ -18,7 +18,7 @@ function Results({ placeId, query }: { placeId: number; query: string }) {
     refetch,
   } = trpc.shells.search.useQuery(
     { placeId, query },
-    { refetchOnWindowFocus: false },
+    { refetchOnWindowFocus: false, refetchOnMount: false },
   );
 
   if (isLoading)

@@ -22,6 +22,7 @@ export default function PlaceSelect({
   const setPlaceId = useNavigationStore((s) => s.setPlaceId);
   const { isFetching, error, data } = trpc.config.places.useQuery(undefined, {
     refetchOnWindowFocus: false,
+    refetchOnMount: false,
   });
 
   const places = React.useMemo(
@@ -56,7 +57,7 @@ export default function PlaceSelect({
     <SelectRoot
       collection={places}
       size="md"
-      value={placeId !== undefined ? [String(placeId)] : undefined}
+      value={placeId !== undefined ? [String(placeId)] : []}
       width="100%"
       onValueChange={({ value }) => setPlaceId(Number(value[0]))}
       {...props}

@@ -37,7 +37,7 @@ export default function VehicleInfo({
 }) {
   const { data, isFetching, error, refetch } = trpc.vehicles.data.useQuery(
     { placeId, vehicle },
-    { refetchOnWindowFocus: false },
+    { refetchOnWindowFocus: false, refetchOnMount: false },
   );
 
   if (isFetching)

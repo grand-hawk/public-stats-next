@@ -23,7 +23,7 @@ export default function LoadoutFilter({
   const setLoadout = useFilterStore((s) => s.setLoadout);
   const { isFetching, error, data } = trpc.winrate.metadata.useQuery(
     { placeId },
-    { refetchOnWindowFocus: false },
+    { refetchOnWindowFocus: false, refetchOnMount: false },
   );
   const loadouts = data?.loadouts;
 
@@ -54,7 +54,7 @@ export default function LoadoutFilter({
       collection={collection}
       disabled={!placeId}
       size="md"
-      value={loadout ? [loadout] : undefined}
+      value={loadout ? [loadout] : []}
       width="100%"
       onValueChange={({ value }) => setLoadout(value[0])}
       {...props}

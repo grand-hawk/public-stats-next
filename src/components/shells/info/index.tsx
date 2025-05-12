@@ -40,7 +40,7 @@ export default function ShellInfo({
 }) {
   const { data, isFetching, error, refetch } = trpc.shells.data.useQuery(
     { placeId, weapon, shell },
-    { refetchOnWindowFocus: false },
+    { refetchOnWindowFocus: false, refetchOnMount: false },
   );
 
   if (isFetching)

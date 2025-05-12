@@ -10,7 +10,7 @@ export default function Metadata() {
   const placeId = useNavigationStore((s) => s.placeId);
   const { isFetching, error, data } = trpc.kdr.metadata.useQuery(
     { placeId },
-    { refetchOnWindowFocus: false },
+    { refetchOnWindowFocus: false, refetchOnMount: false },
   );
 
   return (

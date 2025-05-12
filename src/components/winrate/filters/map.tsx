@@ -23,7 +23,7 @@ export default function MapFilter({
   const setMap = useFilterStore((s) => s.setMap);
   const { isFetching, error, data } = trpc.winrate.metadata.useQuery(
     { placeId },
-    { refetchOnWindowFocus: false },
+    { refetchOnWindowFocus: false, refetchOnMount: false },
   );
   const maps = data?.maps;
 
@@ -54,7 +54,7 @@ export default function MapFilter({
       collection={collection}
       disabled={!placeId}
       size="md"
-      value={map ? [map] : undefined}
+      value={map ? [map] : []}
       width="100%"
       onValueChange={({ value }) => setMap(value[0])}
       {...props}
