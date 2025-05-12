@@ -1,76 +1,124 @@
 import fs from 'node:fs/promises';
 
 import places_json from '@config/places.json';
-import { request } from '@scripts/updateData.utils.mjs';
+import { controller } from '@scripts/updateData.utils.mjs';
 
 const places = places_json as Record<string, number>;
 
-async function getWinrate(
-  placeId: string | number,
-  loadout?: string,
-  map?: string,
-) {
-  return request(`match/data/winrate`, {
-    searchParams: new URLSearchParams({
-      placeId: String(placeId),
-      ...(loadout && { loadout }),
-      ...(map && { map }),
-    }),
-  }).json<
-    Record<
-      string,
-      Array<{
-        date: string;
-        winrate: number;
-        matches: number;
-      }>
-    >
-  >();
+interface Match {
+  matchId: number;
+  placeId: string;
+  loadout: string;
+  map: string;
+  teams: Array<{
+    matchTeamId: number;
+    teamName: string;
+    players: number;
+    points: number[];
+  }>;
+  date: string;
 }
 
-async function getDistinct(placeId: string | number) {
-  return request(`match/data/distinct/${placeId}`, {}).json<{
+async function getMatches(input: {
+  placeId: string;
+  maxAgeInSeconds: number;
+  loadouts?: string[];
+  maps?: string[];
+}): Promise<Match[]> {
+  return controller<Match[]>('matches.get', input);
+}
+
+async function getDistinct(placeId: string): Promise<{
+  placeId: string[];
+  loadout: string[];
+  map: string[];
+}> {
+  return controller<{
+    placeId: string[];
     loadout: string[];
     map: string[];
-  }>();
+  }>('matches.distinct', placeId);
 }
 
-function seriesFromWinrate(winrate: Awaited<ReturnType<typeof getWinrate>>) {
-  type Series = {
+function seriesFromWinrate(matches: Match[]): Array<{
+  name: string;
+  data: Array<[number, number]>; // [timestamp, winrate]
+  matches: Array<[number, number]>; // [timestamp, total matches]
+}> {
+  type TeamStats = {
+    wins: number;
+    totalMatches: number;
+  };
+
+  const teamData: Record<string, TeamStats> = {};
+  const series: Array<{
     name: string;
     data: Array<[number, number]>;
     matches: Array<[number, number]>;
-  };
-  const series: Array<Series> = [];
+  }> = [];
 
-  const currentDate = new Date();
-  currentDate.setHours(0, 0, 0, 0);
+  matches.sort(
+    (a, b) => new Date(a.date).getTime() - new Date(b.date).getTime(),
+  );
 
-  for (const [team, winrates] of Object.entries(winrate)) {
-    const teamSeries: Series = {
-      name: team,
-      data: [],
-      matches: [],
-    };
+  for (const match of matches) {
+    const matchDate = new Date(match.date);
+    matchDate.setHours(0, 0, 0, 0);
+    const timestamp = matchDate.getTime();
 
-    for (const winrateEntry of winrates) {
-      const date = new Date(winrateEntry.date);
-      date.setHours(0, 0, 0, 0);
+    let winningTeamName: string | null = null;
+    let highestScore = -Infinity;
 
-      if (date.getTime() === currentDate.getTime()) continue;
+    for (const team of match.teams) {
+      const currentScore = team.points[team.points.length - 1] || 0;
+      if (currentScore > highestScore) {
+        highestScore = currentScore;
+        winningTeamName = team.teamName;
+      }
 
-      const timestamp = date.getTime();
-      teamSeries.data.push([timestamp, winrateEntry.winrate]);
-      teamSeries.matches.push([timestamp, winrateEntry.matches]);
+      if (!teamData[team.teamName])
+        teamData[team.teamName] = { wins: 0, totalMatches: 0 };
     }
 
-    series.push(teamSeries);
+    for (const team of match.teams) {
+      teamData[team.teamName].totalMatches++;
+      if (team.teamName === winningTeamName && winningTeamName !== null) {
+        teamData[team.teamName].wins++;
+      }
+    }
+
+    for (const teamName in teamData) {
+      const winrate =
+        teamData[teamName].totalMatches > 0
+          ? (teamData[teamName].wins / teamData[teamName].totalMatches) * 100
+          : 0;
+
+      // Find or create the series entry for this team
+      let teamSeries = series.find((s) => s.name === teamName);
+      if (!teamSeries) {
+        teamSeries = { name: teamName, data: [], matches: [] };
+        series.push(teamSeries);
+      }
+
+      const lastDataPoint = teamSeries.data[teamSeries.data.length - 1];
+      if (!lastDataPoint || lastDataPoint[0] !== timestamp) {
+        teamSeries.data.push([timestamp, winrate]);
+        teamSeries.matches.push([timestamp, teamData[teamName].totalMatches]);
+      } else {
+        lastDataPoint[1] = winrate;
+        teamSeries.matches[teamSeries.matches.length - 1][1] =
+          teamData[teamName].totalMatches;
+      }
+    }
   }
 
-  return series;
+  return series.filter((s) => s.data.length > 0);
 }
 
-for (const [, placeId] of Object.entries(places)) {
+const maxAgeInSeconds = 60 * 60 * 24 * 31;
+
+for (const [, placeIdValue] of Object.entries(places)) {
+  const placeId = placeIdValue.toString();
   await fs.mkdir(`./data/winrate/${placeId}`, { recursive: true });
 
   const distinct = await getDistinct(placeId);
@@ -88,14 +136,21 @@ for (const [, placeId] of Object.entries(places)) {
     ),
   );
 
-  const winrate = await getWinrate(placeId);
+  const winrate = await getMatches({
+    placeId,
+    maxAgeInSeconds,
+  });
   await fs.writeFile(
     `./data/winrate/${placeId}/winrate.json`,
     JSON.stringify(seriesFromWinrate(winrate), undefined, 4),
   );
 
   for (const map of distinct.map) {
-    const mapWinrate = await getWinrate(placeId, undefined, map);
+    const mapWinrate = await getMatches({
+      placeId,
+      maxAgeInSeconds,
+      maps: [map],
+    });
     await fs.writeFile(
       `./data/winrate/${placeId}/winrate--${map}.json`,
       JSON.stringify(seriesFromWinrate(mapWinrate), undefined, 4),
@@ -103,14 +158,23 @@ for (const [, placeId] of Object.entries(places)) {
   }
 
   for (const loadout of distinct.loadout) {
-    const loadoutWinrate = await getWinrate(placeId, loadout);
+    const loadoutWinrate = await getMatches({
+      placeId,
+      maxAgeInSeconds,
+      loadouts: [loadout],
+    });
     await fs.writeFile(
       `./data/winrate/${placeId}/winrate-${loadout}.json`,
       JSON.stringify(seriesFromWinrate(loadoutWinrate), undefined, 4),
     );
 
     for (const map of distinct.map) {
-      const combinedWinrate = await getWinrate(placeId, loadout, map);
+      const combinedWinrate = await getMatches({
+        placeId,
+        maxAgeInSeconds,
+        loadouts: [loadout],
+        maps: [map],
+      });
       await fs.writeFile(
         `./data/winrate/${placeId}/winrate-${loadout}-${map}.json`,
         JSON.stringify(seriesFromWinrate(combinedWinrate), undefined, 4),

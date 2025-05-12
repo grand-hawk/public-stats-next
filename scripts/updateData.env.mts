@@ -3,8 +3,8 @@ import { z } from 'zod';
 
 export const env = createEnv({
   server: {
-    INSIGHTS_API_URL: z.string(),
-    INSIGHTS_API_AUTH: z.string(),
+    ANALYTICS_API_HOST: z.string(),
+    ANALYTICS_API_AUTH: z.string(),
   },
   runtimeEnv: process.env,
   emptyStringAsUndefined: true,
