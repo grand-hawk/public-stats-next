@@ -42,8 +42,8 @@ jobs:
       - name: Update winrate data
         run: pnpm tsx scripts/updateData-winrate.mts
         env:
-          INSIGHTS_API_URL: ${{ secrets.INSIGHTS_API_URL }}
-          INSIGHTS_API_AUTH: ${{ secrets.INSIGHTS_API_AUTH }}
+          ANALYTICS_API_HOST: ${{ secrets.ANALYTICS_API_HOST }}
+          ANALYTICS_API_AUTH: ${{ secrets.ANALYTICS_API_AUTH }}
 
       - name: Check for data changes
         id: check_changes
