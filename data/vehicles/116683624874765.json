@@ -1981,8 +1981,8 @@
           }
         },
         "weapons": [
-          "30mm M230LF",
-          "Loitering Drone"
+          "Loitering Drone",
+          "30mm M230LF"
         ],
         "rangefinder": "Laser",
         "stabilizer": true,
@@ -2004,8 +2004,8 @@
           }
         },
         "weapons": [
-          "120mm M256",
-          "7.62mm M240"
+          "7.62mm M240",
+          "120mm M256"
         ],
         "smokes": true,
         "rangefinder": "Laser",
