@@ -7862,12 +7862,12 @@
   {
     "engine": {
       "transmission": {
-        "reverseGears": 1,
+        "reverseGears": 5,
         "neutralSteering": true,
         "automatic": true,
         "forwardGears": 5
       },
-      "reverseSpeed": 12,
+      "reverseSpeed": 100,
       "forwardSpeed": 100,
       "type": "Diesel",
       "maxRPM": 2000,
