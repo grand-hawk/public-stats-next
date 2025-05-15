@@ -1,9 +1,5 @@
 {
-<<<<<<< HEAD
-    "date": "2025-05-15T12:19:56.773Z",
-=======
-    "date": "2025-05-15T19:01:36.500Z",
->>>>>>> d777b80 (rainy valley)
+    "date": "2025-05-15T19:11:29.593Z",
     "vehicles": [
         "BRDM-2",
         "BMP-3",
@@ -157,7 +153,7 @@
         "BM-21 Grad",
         "Rosomak",
         "KPz-70",
-        "Panther KF51",
+        "KF51 Panther",
         "T-84-120",
         "M1126",
         "SU-57",
@@ -201,7 +197,7 @@
         "Ersatz M10",
         "Kornet D-1",
         "M18 Hellcat",
-        "2S6",
+        "2S6 Tunguska",
         "T-72B3E",
         "Begleitpanzer 57",
         "ADATS",
@@ -255,14 +251,10 @@
         "IS-1",
         "Mi-8AMTSh",
         "AH-64D",
-        "Ka-52M",
+        "Ka-52M Alligator-M",
         "SU-122P"
     ],
     "versions": [
-<<<<<<< HEAD
-        218
-=======
         225
->>>>>>> d777b80 (rainy valley)
     ]
 }
