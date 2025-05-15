@@ -8465,25 +8465,6 @@
       "transmission": {
         "reverseGears": 1,
         "neutralSteering": false,
-        "forwardGears": 5
-      },
-      "reverseSpeed": 15,
-      "forwardSpeed": 100,
-      "type": "Diesel",
-      "maxRPM": 2100,
-      "horsepower": 180,
-      "name": "ZiL-375"
-    },
-    "turrets": [],
-    "name": "Ural-375D",
-    "amphibious": false,
-    "mass": 18.2
-  },
-  {
-    "engine": {
-      "transmission": {
-        "reverseGears": 1,
-        "neutralSteering": false,
         "forwardGears": 4
       },
       "reverseSpeed": 11.1,
@@ -8542,6 +8523,25 @@
     "name": "T-80B",
     "amphibious": false,
     "mass": 42
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 1,
+        "neutralSteering": false,
+        "forwardGears": 5
+      },
+      "reverseSpeed": 15,
+      "forwardSpeed": 100,
+      "type": "Diesel",
+      "maxRPM": 2100,
+      "horsepower": 180,
+      "name": "ZiL-375"
+    },
+    "turrets": [],
+    "name": "Ural-375D",
+    "amphibious": false,
+    "mass": 18.2
   },
   {
     "engine": {
@@ -9349,70 +9349,6 @@
         "automatic": true,
         "forwardGears": 4
       },
-      "reverseSpeed": 38,
-      "forwardSpeed": 68,
-      "type": "Diesel",
-      "maxRPM": 2600,
-      "horsepower": 1500,
-      "name": "XAP-1000"
-    },
-    "turrets": {
-      "Commander": {
-        "thermals": "Green (Gen 1)",
-        "traverse": {
-          "vertical": {
-            "max": 75,
-            "min": -15
-          },
-          "speed": {
-            "horizontal": 60,
-            "vertical": 60
-          }
-        },
-        "weapons": [],
-        "rangefinder": "Laser",
-        "stabilizer": true,
-        "zoom": {
-          "max": 12,
-          "min": 2.88
-        }
-      },
-      "Gunner": {
-        "thermals": "Green (Gen 2)",
-        "traverse": {
-          "vertical": {
-            "max": 18,
-            "min": -9
-          },
-          "speed": {
-            "horizontal": 35,
-            "vertical": 30
-          }
-        },
-        "weapons": [
-          "140mm XM291"
-        ],
-        "smokes": true,
-        "rangefinder": "Laser",
-        "stabilizer": true,
-        "zoom": {
-          "max": 12,
-          "min": 2.88
-        }
-      }
-    },
-    "name": "CATTB",
-    "amphibious": false,
-    "mass": 57
-  },
-  {
-    "engine": {
-      "transmission": {
-        "reverseGears": 2,
-        "neutralSteering": true,
-        "automatic": true,
-        "forwardGears": 4
-      },
       "reverseSpeed": 31,
       "forwardSpeed": 68,
       "type": "Diesel",
@@ -9537,6 +9473,70 @@
     "mass": 35.5,
     "name": "Object 775",
     "amphibious": false
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 2,
+        "neutralSteering": true,
+        "automatic": true,
+        "forwardGears": 4
+      },
+      "reverseSpeed": 38,
+      "forwardSpeed": 68,
+      "type": "Diesel",
+      "maxRPM": 2600,
+      "horsepower": 1500,
+      "name": "XAP-1000"
+    },
+    "turrets": {
+      "Commander": {
+        "thermals": "Green (Gen 1)",
+        "traverse": {
+          "vertical": {
+            "max": 75,
+            "min": -15
+          },
+          "speed": {
+            "horizontal": 60,
+            "vertical": 60
+          }
+        },
+        "weapons": [],
+        "rangefinder": "Laser",
+        "stabilizer": true,
+        "zoom": {
+          "max": 12,
+          "min": 2.88
+        }
+      },
+      "Gunner": {
+        "thermals": "Green (Gen 2)",
+        "traverse": {
+          "vertical": {
+            "max": 18,
+            "min": -9
+          },
+          "speed": {
+            "horizontal": 35,
+            "vertical": 30
+          }
+        },
+        "weapons": [
+          "140mm XM291"
+        ],
+        "smokes": true,
+        "rangefinder": "Laser",
+        "stabilizer": true,
+        "zoom": {
+          "max": 12,
+          "min": 2.88
+        }
+      }
+    },
+    "name": "CATTB",
+    "amphibious": false,
+    "mass": 57
   },
   {
     "engine": {
@@ -10078,75 +10078,6 @@
     "mass": 55.4
   },
   {
-    "suspension": {
-      "vertical": true,
-      "horizontal": false,
-      "height": false
-    },
-    "engine": {
-      "transmission": {
-        "reverseGears": 2,
-        "neutralSteering": true,
-        "automatic": true,
-        "forwardGears": 2
-      },
-      "reverseSpeed": 44,
-      "forwardSpeed": 49,
-      "type": "Turbine",
-      "maxRPM": 3960,
-      "horsepower": 600,
-      "name": "6V53T + Caterpillar 553"
-    },
-    "turrets": {
-      "Commander": {
-        "smokes": true,
-        "traverse": {
-          "vertical": {
-            "max": 35,
-            "min": -15
-          },
-          "speed": {
-            "horizontal": 60,
-            "vertical": 60
-          }
-        },
-        "weapons": [
-          "7.62mm ksp 58"
-        ],
-        "stabilizer": true,
-        "zoom": {
-          "max": 10.285714285714286,
-          "min": 10.285714285714286
-        }
-      },
-      "Driver": {
-        "rangefinder": "Laser",
-        "traverse": {
-          "vertical": {
-            "max": 0,
-            "min": 0
-          },
-          "speed": {
-            "horizontal": 15,
-            "vertical": 30
-          }
-        },
-        "weapons": [
-          "7.62mm ksp 58",
-          "105 mm L74"
-        ],
-        "stabilizer": false,
-        "zoom": {
-          "max": 18,
-          "min": 6
-        }
-      }
-    },
-    "mass": 42.5,
-    "name": "Strv 103C",
-    "amphibious": false
-  },
-  {
     "engine": {
       "transmission": {
         "reverseGears": 1,
@@ -10406,6 +10337,75 @@
     "name": "Burlak",
     "amphibious": false,
     "mass": 47
+  },
+  {
+    "suspension": {
+      "vertical": true,
+      "horizontal": false,
+      "height": false
+    },
+    "engine": {
+      "transmission": {
+        "reverseGears": 2,
+        "neutralSteering": true,
+        "automatic": true,
+        "forwardGears": 2
+      },
+      "reverseSpeed": 44,
+      "forwardSpeed": 49,
+      "type": "Turbine",
+      "maxRPM": 3960,
+      "horsepower": 600,
+      "name": "6V53T + Caterpillar 553"
+    },
+    "turrets": {
+      "Commander": {
+        "smokes": true,
+        "traverse": {
+          "vertical": {
+            "max": 35,
+            "min": -15
+          },
+          "speed": {
+            "horizontal": 60,
+            "vertical": 60
+          }
+        },
+        "weapons": [
+          "7.62mm ksp 58"
+        ],
+        "stabilizer": true,
+        "zoom": {
+          "max": 10.285714285714286,
+          "min": 10.285714285714286
+        }
+      },
+      "Driver": {
+        "rangefinder": "Laser",
+        "traverse": {
+          "vertical": {
+            "max": 0,
+            "min": 0
+          },
+          "speed": {
+            "horizontal": 15,
+            "vertical": 30
+          }
+        },
+        "weapons": [
+          "7.62mm ksp 58",
+          "105 mm L74"
+        ],
+        "stabilizer": false,
+        "zoom": {
+          "max": 18,
+          "min": 6
+        }
+      }
+    },
+    "mass": 42.5,
+    "name": "Strv 103C",
+    "amphibious": false
   },
   {
     "engine": {
@@ -10809,25 +10809,6 @@
     "name": "Leopard 2A6",
     "amphibious": false,
     "mass": 59.9
-  },
-  {
-    "engine": {
-      "transmission": {
-        "reverseGears": 1,
-        "neutralSteering": true,
-        "forwardGears": 3
-      },
-      "reverseSpeed": 15,
-      "forwardSpeed": 70,
-      "type": "Diesel",
-      "maxRPM": 3400,
-      "horsepower": 26,
-      "name": "OHV"
-    },
-    "turrets": [],
-    "name": "Kettenkrad",
-    "amphibious": false,
-    "mass": 1.56
   },
   {
     "engine": {
@@ -12910,6 +12891,25 @@
     "name": "Tiger I",
     "amphibious": false,
     "mass": 57.3
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 1,
+        "neutralSteering": true,
+        "forwardGears": 3
+      },
+      "reverseSpeed": 15,
+      "forwardSpeed": 70,
+      "type": "Diesel",
+      "maxRPM": 3400,
+      "horsepower": 26,
+      "name": "OHV"
+    },
+    "turrets": [],
+    "name": "Kettenkrad",
+    "amphibious": false,
+    "mass": 1.56
   },
   {
     "engine": {
