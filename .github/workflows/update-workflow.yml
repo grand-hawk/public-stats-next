@@ -14,6 +14,10 @@ jobs:
             universe_id: '7414497778'
             place_id: '95721658376580'
             data_path: './data/shells/95721658376580.json'
+          - name: RainyValley
+            universe_id: '7493638319'
+            place_id: '116683624874765'
+            data_path: './data/shells/116683624874765.json'
     steps:
       - uses: actions/checkout@v4
         with:

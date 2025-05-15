@@ -1,5 +1,6 @@
 [
     {
+<<<<<<< HEAD
         "name": "M1 Abrams",
         "kd": 16,
         "kills": 16,
@@ -28,6 +29,42 @@
         "kd": 7.5,
         "kills": 75,
         "deaths": 10
+=======
+        "name": "Challenger 2",
+        "kd": 9,
+        "kills": 9,
+        "deaths": 1
+    },
+    {
+        "name": "Leopard 2A4",
+        "kd": 7,
+        "kills": 14,
+        "deaths": 2
+    },
+    {
+        "name": "T-84 Oplot-M",
+        "kd": 6,
+        "kills": 6,
+        "deaths": 1
+    },
+    {
+        "name": "Leclerc S21",
+        "kd": 6,
+        "kills": 6,
+        "deaths": 1
+    },
+    {
+        "name": "120S",
+        "kd": 5,
+        "kills": 15,
+        "deaths": 3
+    },
+    {
+        "name": "M1128 MGS",
+        "kd": 5,
+        "kills": 5,
+        "deaths": 1
+>>>>>>> d777b80 (rainy valley)
     },
     {
         "name": "Object 640 \"Black Eagle\"",
@@ -62,6 +99,7 @@
     {
         "name": "T-15 Armata",
         "kd": 5,
+<<<<<<< HEAD
         "kills": 40,
         "deaths": 8
     },
@@ -163,11 +201,19 @@
     },
     {
         "name": "KV-5",
+=======
+        "kills": 5,
+        "deaths": 0
+    },
+    {
+        "name": "T-72M2",
+>>>>>>> d777b80 (rainy valley)
         "kd": 3,
         "kills": 3,
         "deaths": 1
     },
     {
+<<<<<<< HEAD
         "name": "M1IP",
         "kd": 3,
         "kills": 6,
@@ -277,11 +323,15 @@
     },
     {
         "name": "XM1069",
+=======
+        "name": "LAV-25",
+>>>>>>> d777b80 (rainy valley)
         "kd": 2,
         "kills": 2,
         "deaths": 1
     },
     {
+<<<<<<< HEAD
         "name": "Kurganets-25",
         "kd": 2,
         "kills": 18,
@@ -661,11 +711,45 @@
     },
     {
         "name": "Hornisse",
+=======
+        "name": "HSTV-L",
+        "kd": 2,
+        "kills": 2,
+        "deaths": 0
+    },
+    {
+        "name": "Object 477",
+        "kd": 2,
+        "kills": 2,
+        "deaths": 0
+    },
+    {
+        "name": "M1A2 SEP V3",
+        "kd": 2,
+        "kills": 2,
+        "deaths": 0
+    },
+    {
+        "name": "UH-60M Blackhawk",
+        "kd": 2,
+        "kills": 2,
+        "deaths": 1
+    },
+    {
+        "name": "M2A2 ODS-SA",
+        "kd": 1.33,
+        "kills": 4,
+        "deaths": 3
+    },
+    {
+        "name": "Desert Warrior",
+>>>>>>> d777b80 (rainy valley)
         "kd": 1,
         "kills": 1,
         "deaths": 1
     },
     {
+<<<<<<< HEAD
         "name": "SU-85M",
         "kd": 1,
         "kills": 5,
@@ -679,11 +763,15 @@
     },
     {
         "name": "Object 450",
+=======
+        "name": "BTR-4",
+>>>>>>> d777b80 (rainy valley)
         "kd": 1,
         "kills": 1,
         "deaths": 1
     },
     {
+<<<<<<< HEAD
         "name": "Ersatz M10",
         "kd": 1,
         "kills": 7,
@@ -709,11 +797,15 @@
     },
     {
         "name": "Pz IV Ausf. 1946",
+=======
+        "name": "Strf 9040C",
+>>>>>>> d777b80 (rainy valley)
         "kd": 1,
         "kills": 1,
         "deaths": 0
     },
     {
+<<<<<<< HEAD
         "name": "IS-1",
         "kd": 1,
         "kills": 1,
@@ -1312,11 +1404,90 @@
         "kd": 0,
         "kills": 0,
         "deaths": 1
+=======
+        "name": "Leopard 2A6",
+        "kd": 1,
+        "kills": 1,
+        "deaths": 0
+    },
+    {
+        "name": "T-84-120",
+        "kd": 1,
+        "kills": 1,
+        "deaths": 0
+    },
+    {
+        "name": "BTR-82A",
+        "kd": 0.5,
+        "kills": 1,
+        "deaths": 2
+    },
+    {
+        "name": "MH-6 Little Bird",
+        "kd": 0.5,
+        "kills": 1,
+        "deaths": 2
+    },
+    {
+        "name": "BMP-2",
+        "kd": 0.33,
+        "kills": 1,
+        "deaths": 3
+    },
+    {
+        "name": "T-72B3",
+        "kd": 0.29,
+        "kills": 2,
+        "deaths": 7
+    },
+    {
+        "name": "Mi-24VM",
+        "kd": 0.25,
+        "kills": 1,
+        "deaths": 4
+    },
+    {
+        "name": "T-80B",
+        "kd": 0.13,
+        "kills": 2,
+        "deaths": 16
+    },
+    {
+        "name": "T-72B",
+        "kd": 0.11,
+        "kills": 1,
+        "deaths": 9
+    },
+    {
+        "name": "BMP-3",
+        "kd": 0,
+        "kills": 0,
+        "deaths": 1
+    },
+    {
+        "name": "PT-76E",
+        "kd": 0,
+        "kills": 0,
+        "deaths": 4
+    },
+    {
+        "name": "BMPT Terminator",
+        "kd": 0,
+        "kills": 0,
+        "deaths": 1
+    },
+    {
+        "name": "Ariete C1",
+        "kd": 0,
+        "kills": 0,
+        "deaths": 1
+>>>>>>> d777b80 (rainy valley)
     },
     {
         "name": "LVT-6 Gator",
         "kd": 0,
         "kills": 0,
+<<<<<<< HEAD
         "deaths": 1
     },
     {
@@ -1330,17 +1501,37 @@
         "kd": 0,
         "kills": 0,
         "deaths": 14
+=======
+        "deaths": 2
+    },
+    {
+        "name": "GAZ Tigr M",
+        "kd": 0,
+        "kills": 0,
+        "deaths": 3
+    },
+    {
+        "name": "Wiesel 1A2",
+        "kd": 0,
+        "kills": 0,
+        "deaths": 1
+>>>>>>> d777b80 (rainy valley)
     },
     {
         "name": "UAZ-469",
         "kd": 0,
         "kills": 0,
+<<<<<<< HEAD
         "deaths": 238
+=======
+        "deaths": 5
+>>>>>>> d777b80 (rainy valley)
     },
     {
-        "name": "M939",
+        "name": "T-64BV",
         "kd": 0,
         "kills": 0,
+<<<<<<< HEAD
         "deaths": 45
     },
     {
@@ -1377,21 +1568,37 @@
         "name": "SU-57",
         "kd": 0,
         "kills": 0,
+=======
+>>>>>>> d777b80 (rainy valley)
         "deaths": 1
     },
     {
-        "name": "MiKi Truck Company Model 2",
+        "name": "2S19 Msta-S",
         "kd": 0,
         "kills": 0,
+<<<<<<< HEAD
         "deaths": 10
     },
     {
         "name": "T-V",
+=======
+        "deaths": 2
+    },
+    {
+        "name": "BMP-2M",
+        "kd": 0,
+        "kills": 0,
+        "deaths": 3
+    },
+    {
+        "name": "BMD-2",
+>>>>>>> d777b80 (rainy valley)
         "kd": 0,
         "kills": 0,
         "deaths": 1
     },
     {
+<<<<<<< HEAD
         "name": "M3 half-track",
         "kd": 0,
         "kills": 0,
@@ -1441,11 +1648,15 @@
     },
     {
         "name": "Sd Kfz 251",
+=======
+        "name": "ZTZ96A",
+>>>>>>> d777b80 (rainy valley)
         "kd": 0,
         "kills": 0,
         "deaths": 4
     },
     {
+<<<<<<< HEAD
         "name": "ZIT-122",
         "kd": 0,
         "kills": 0,
@@ -1456,5 +1667,47 @@
         "kd": 0,
         "kills": 0,
         "deaths": 2
+=======
+        "name": "T-90M",
+        "kd": 0,
+        "kills": 0,
+        "deaths": 1
+    },
+    {
+        "name": "M1A1",
+        "kd": 0,
+        "kills": 0,
+        "deaths": 2
+    },
+    {
+        "name": "Cheonma-2",
+        "kd": 0,
+        "kills": 0,
+        "deaths": 1
+    },
+    {
+        "name": "Joint Light Tactical Vehicle",
+        "kd": 0,
+        "kills": 0,
+        "deaths": 1
+    },
+    {
+        "name": "PUMA",
+        "kd": 0,
+        "kills": 0,
+        "deaths": 1
+    },
+    {
+        "name": "Mi-24V",
+        "kd": 0,
+        "kills": 0,
+        "deaths": 2
+    },
+    {
+        "name": "Mi-8AMTSh",
+        "kd": 0,
+        "kills": 0,
+        "deaths": 3
+>>>>>>> d777b80 (rainy valley)
     }
 ]
