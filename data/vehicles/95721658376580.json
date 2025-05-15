@@ -1686,10 +1686,11 @@
       "transmission": {
         "reverseGears": 2,
         "neutralSteering": true,
+        "automatic": true,
         "forwardGears": 6
       },
       "reverseSpeed": 40,
-      "forwardSpeed": 72,
+      "forwardSpeed": 88,
       "type": "Diesel",
       "maxRPM": 2600,
       "horsepower": 1500,
@@ -1981,8 +1982,8 @@
           }
         },
         "weapons": [
-          "30mm M230LF",
-          "Loitering Drone"
+          "Loitering Drone",
+          "30mm M230LF"
         ],
         "rangefinder": "Laser",
         "stabilizer": true,
@@ -2004,8 +2005,8 @@
           }
         },
         "weapons": [
-          "120mm M256",
-          "7.62mm M240"
+          "7.62mm M240",
+          "120mm M256"
         ],
         "smokes": true,
         "rangefinder": "Laser",
@@ -3070,7 +3071,7 @@
       "forwardSpeed": 70,
       "type": "Diesel",
       "maxRPM": 3800,
-      "horsepower": 800,
+      "horsepower": 1200,
       "name": "MTU MT 892 Ka-501"
     },
     "turrets": {
@@ -7591,7 +7592,7 @@
         "forwardGears": 4
       },
       "reverseSpeed": 31,
-      "forwardSpeed": 68,
+      "forwardSpeed": 72,
       "type": "Diesel",
       "maxRPM": 2600,
       "horsepower": 1500,
@@ -9350,7 +9351,7 @@
         "forwardGears": 4
       },
       "reverseSpeed": 31,
-      "forwardSpeed": 68,
+      "forwardSpeed": 72,
       "type": "Diesel",
       "maxRPM": 2600,
       "horsepower": 1500,
@@ -10002,7 +10003,7 @@
         "forwardGears": 4
       },
       "reverseSpeed": 31,
-      "forwardSpeed": 68,
+      "forwardSpeed": 72,
       "type": "Diesel",
       "maxRPM": 2600,
       "horsepower": 1500,
@@ -10647,7 +10648,7 @@
         "forwardGears": 4
       },
       "reverseSpeed": 31,
-      "forwardSpeed": 68,
+      "forwardSpeed": 63,
       "type": "Diesel",
       "maxRPM": 2600,
       "horsepower": 1500,
@@ -10733,7 +10734,7 @@
         "forwardGears": 4
       },
       "reverseSpeed": 31,
-      "forwardSpeed": 68,
+      "forwardSpeed": 72,
       "type": "Diesel",
       "maxRPM": 2600,
       "horsepower": 1500,
@@ -11296,7 +11297,7 @@
         "forwardGears": 4
       },
       "reverseSpeed": 31,
-      "forwardSpeed": 68,
+      "forwardSpeed": 72,
       "type": "Diesel",
       "maxRPM": 2600,
       "horsepower": 1500,
