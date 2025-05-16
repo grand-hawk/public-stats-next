@@ -1,5 +1,5 @@
 {
-    "date": "2025-05-16T00:37:36.069Z",
+    "date": "2025-05-16T12:20:02.661Z",
     "vehicles": [
         "BTR-90",
         "T-34-85",
@@ -93,6 +93,7 @@
         "Mi-24VM",
         "M109A6",
         "Type 87",
+        "KF51 Panther",
         "T-90M",
         "K1",
         "BMP-2M",
@@ -160,9 +161,10 @@
         "Kornet D BMD-4M",
         "Abrams X",
         "2S7 Pion",
+        "ZBD04",
         "TOS-1A BM-1",
         "Ka-52M Alligator-M",
-        "ZBD04",
+        "Leopard 2A4 140MM",
         "Marder A1",
         "M36B2 Jackson",
         "Chieftain Mk 5",
@@ -187,7 +189,6 @@
         "M60A1 RISE Passive",
         "KF41 Lynx",
         "T-62M-1",
-        "KF51 Panther",
         "M1IP",
         "BMD-4M",
         "VT1-2",
@@ -196,19 +197,22 @@
         "MiKi Truck Company Model 2",
         "BRDM-2 Konkurs",
         "FV510 Warrior",
-        "Kurganets-25",
         "T-15 Armata",
-        "Leopard 2A4 140MM",
+        "Kurganets-25",
         "Plastun SN",
         "XM8",
         "ZTZ99A",
         "M270 MLRS",
         "T-64R",
         "AFT-10",
+        "T-34-57",
+        "Cromwell V",
         "Cheonma-2",
-        "Object 640 \"Black Eagle\""
+        "Object 640 \"Black Eagle\"",
+        "ISU-152"
     ],
     "versions": [
+        52,
         46,
         45,
         44,
@@ -217,7 +221,6 @@
         40,
         39,
         38,
-        36,
-        35
+        36
     ]
 }
