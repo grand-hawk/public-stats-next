@@ -1,5 +1,5 @@
 {
-    "date": "2025-05-17T00:36:22.965Z",
+    "date": "2025-05-17T12:19:44.370Z",
     "vehicles": [
         "BTR-90",
         "T-34-85",
@@ -49,7 +49,7 @@
         "Hetzer",
         "T-64BV",
         "T-44",
-        "PaKWagen",
+        "Sd.Kfz.234/4 Pak Puma",
         "T-84-120",
         "MT-LB AA",
         "T-84 Oplot-M",
@@ -210,18 +210,24 @@
         "Cromwell V",
         "Object 640 \"Black Eagle\"",
         "ISU-152",
-        "BTR-55"
+        "BTR-55",
+        "Comet Mk.1",
+        "90mm GMC Super Hellcat",
+        "M4A3E2 (75) Jumbo",
+        "M3 half-track",
+        "T26E4 Super Pershing",
+        "Ersatz M10"
     ],
     "versions": [
+        59,
+        58,
+        57,
         52,
         46,
         45,
         44,
         43,
         41,
-        40,
-        39,
-        38,
-        36
+        40
     ]
 }
