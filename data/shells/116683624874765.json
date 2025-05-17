@@ -32819,112 +32819,56 @@
       "penetrationTable": {
         "0": {
           "0": [
-            85
+            6
           ],
           "500": [
-            79
+            6
           ],
           "1000": [
-            73
+            6
           ],
           "2000": [
-            63
+            6
           ]
         },
         "30": {
           "0": [
-            73
+            7
           ],
           "500": [
-            67
+            7
           ],
           "1000": [
-            62
+            7
           ],
           "2000": [
-            53
+            7
           ]
         },
         "60": {
           "0": [
-            40
+            13
           ],
           "500": [
-            37
+            13
           ],
           "1000": [
-            34
+            13
           ],
           "2000": [
-            29
-          ]
-        }
-      },
-      "name": "APDS",
-      "mass": 0.25,
-      "maxPenetration": 85,
-      "damage": 90,
-      "relatedVehicles": [
-        "Turm III"
-      ],
-      "velocity": 1330,
-      "type": "APDS",
-      "ricochetAngle": 81
-    },
-    {
-      "penetrationTable": {
-        "0": {
-          "0": [
-            3
-          ],
-          "500": [
-            3
-          ],
-          "1000": [
-            3
-          ],
-          "2000": [
-            3
-          ]
-        },
-        "30": {
-          "0": [
-            3
-          ],
-          "500": [
-            3
-          ],
-          "1000": [
-            3
-          ],
-          "2000": [
-            3
-          ]
-        },
-        "60": {
-          "0": [
-            5
-          ],
-          "500": [
-            5
-          ],
-          "1000": [
-            5
-          ],
-          "2000": [
-            5
+            13
           ]
         }
       },
       "name": "HE",
-      "mass": 0.4,
-      "maxPenetration": 3,
+      "mass": 0.36,
+      "maxPenetration": 6,
       "explosive": {
-        "killRadius": 0.15822175861723947,
-        "mass": 0.017,
-        "explosiveRadius": 6.222005015677508
+        "killRadius": 0.6134825314753489,
+        "mass": 0.102,
+        "explosiveRadius": 11.306133442692461
       },
-      "damage": 122,
+      "damage": 151,
       "relatedVehicles": [
         "Turm III"
       ],
@@ -32976,15 +32920,76 @@
           ]
         }
       },
-      "name": "AP",
-      "mass": 0.4,
+      "name": "APHE",
+      "mass": 0.36,
       "maxPenetration": 53,
+      "explosive": {
+        "killRadius": 0.24019075128053255,
+        "mass": 0.0306,
+        "explosiveRadius": 7.568698264564289
+      },
       "damage": 90,
       "relatedVehicles": [
         "Turm III"
       ],
       "velocity": 1080,
-      "type": "AP",
+      "type": "APHE",
+      "ricochetAngle": 80
+    },
+    {
+      "penetrationTable": {
+        "0": {
+          "0": [
+            110
+          ],
+          "500": [
+            87
+          ],
+          "1000": [
+            68
+          ],
+          "2000": [
+            42
+          ]
+        },
+        "30": {
+          "0": [
+            104
+          ],
+          "500": [
+            82
+          ],
+          "1000": [
+            65
+          ],
+          "2000": [
+            40
+          ]
+        },
+        "60": {
+          "0": [
+            84
+          ],
+          "500": [
+            66
+          ],
+          "1000": [
+            52
+          ],
+          "2000": [
+            32
+          ]
+        }
+      },
+      "name": "APDS",
+      "mass": 0.3,
+      "maxPenetration": 110,
+      "damage": 90,
+      "relatedVehicles": [
+        "Turm III"
+      ],
+      "velocity": 1175,
+      "type": "APDS",
       "ricochetAngle": 80
     }
   ],
@@ -36167,6 +36172,66 @@
       "penetrationTable": {
         "0": {
           "0": [
+            37
+          ],
+          "500": [
+            37
+          ],
+          "1000": [
+            37
+          ],
+          "2000": [
+            37
+          ]
+        },
+        "30": {
+          "0": [
+            43
+          ],
+          "500": [
+            43
+          ],
+          "1000": [
+            43
+          ],
+          "2000": [
+            43
+          ]
+        },
+        "60": {
+          "0": [
+            75
+          ],
+          "500": [
+            75
+          ],
+          "1000": [
+            75
+          ],
+          "2000": [
+            75
+          ]
+        }
+      },
+      "name": "3OF56 High Charge",
+      "mass": 21.8,
+      "maxPenetration": 37,
+      "explosive": {
+        "killRadius": 10.82564949197137,
+        "mass": 3.6,
+        "explosiveRadius": 37.086417522190494
+      },
+      "damage": 551,
+      "relatedVehicles": [
+        "T-34-122"
+      ],
+      "velocity": 690,
+      "type": "HE"
+    },
+    {
+      "penetrationTable": {
+        "0": {
+          "0": [
             400
           ],
           "500": [
@@ -36268,7 +36333,7 @@
           ]
         }
       },
-      "name": "3OF56",
+      "name": "3OF56 Medium Charge",
       "mass": 21.8,
       "maxPenetration": 37,
       "explosive": {
@@ -36280,7 +36345,7 @@
       "relatedVehicles": [
         "T-34-122"
       ],
-      "velocity": 690,
+      "velocity": 350,
       "type": "HE"
     },
     {
@@ -36340,7 +36405,7 @@
       "relatedVehicles": [
         "T-34-122"
       ],
-      "velocity": 200,
+      "velocity": 175,
       "type": "HE"
     }
   ],
