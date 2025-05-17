@@ -1686,10 +1686,11 @@
       "transmission": {
         "reverseGears": 2,
         "neutralSteering": true,
+        "automatic": true,
         "forwardGears": 6
       },
       "reverseSpeed": 40,
-      "forwardSpeed": 72,
+      "forwardSpeed": 88,
       "type": "Diesel",
       "maxRPM": 2600,
       "horsepower": 1500,
@@ -3070,7 +3071,7 @@
       "forwardSpeed": 70,
       "type": "Diesel",
       "maxRPM": 3800,
-      "horsepower": 800,
+      "horsepower": 1200,
       "name": "MTU MT 892 Ka-501"
     },
     "turrets": {
@@ -7591,7 +7592,7 @@
         "forwardGears": 4
       },
       "reverseSpeed": 31,
-      "forwardSpeed": 68,
+      "forwardSpeed": 72,
       "type": "Diesel",
       "maxRPM": 2600,
       "horsepower": 1500,
@@ -9350,7 +9351,7 @@
         "forwardGears": 4
       },
       "reverseSpeed": 31,
-      "forwardSpeed": 68,
+      "forwardSpeed": 72,
       "type": "Diesel",
       "maxRPM": 2600,
       "horsepower": 1500,
@@ -10002,7 +10003,7 @@
         "forwardGears": 4
       },
       "reverseSpeed": 31,
-      "forwardSpeed": 68,
+      "forwardSpeed": 72,
       "type": "Diesel",
       "maxRPM": 2600,
       "horsepower": 1500,
@@ -10647,7 +10648,7 @@
         "forwardGears": 4
       },
       "reverseSpeed": 31,
-      "forwardSpeed": 68,
+      "forwardSpeed": 63,
       "type": "Diesel",
       "maxRPM": 2600,
       "horsepower": 1500,
@@ -10733,7 +10734,7 @@
         "forwardGears": 4
       },
       "reverseSpeed": 31,
-      "forwardSpeed": 68,
+      "forwardSpeed": 72,
       "type": "Diesel",
       "maxRPM": 2600,
       "horsepower": 1500,
@@ -11296,7 +11297,7 @@
         "forwardGears": 4
       },
       "reverseSpeed": 31,
-      "forwardSpeed": 68,
+      "forwardSpeed": 72,
       "type": "Diesel",
       "maxRPM": 2600,
       "horsepower": 1500,
@@ -12313,8 +12314,8 @@
         "neutralSteering": false,
         "forwardGears": 5
       },
-      "reverseSpeed": 6,
-      "forwardSpeed": 44,
+      "reverseSpeed": 18,
+      "forwardSpeed": 60,
       "type": "Diesel",
       "maxRPM": 2600,
       "horsepower": 300,
@@ -13400,6 +13401,7 @@
       "transmission": {
         "reverseGears": 3,
         "neutralSteering": true,
+        "automatic": true,
         "forwardGears": 8
       },
       "reverseSpeed": 34,
