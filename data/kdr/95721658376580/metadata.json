@@ -1,5 +1,5 @@
 {
-    "date": "2025-05-18T00:40:14.929Z",
+    "date": "2025-05-18T12:19:41.618Z",
     "vehicles": [
         "BRDM-2",
         "BMP-3",
@@ -38,6 +38,7 @@
         "GAZ Tigr M",
         "AMX-10RC",
         "ZSU-57-2",
+        "Pz IV Ausf. 1946",
         "T29E3",
         "Churchill VII",
         "Marder 1A3",
@@ -54,7 +55,7 @@
         "BMP-1",
         "T-60",
         "Stug III G",
-        "Plastun SN",
+        "PlastunSN",
         "BMP-1AM",
         "MT-LB AA",
         "VT1-2",
@@ -112,13 +113,13 @@
         "L3/35",
         "T-54 Obr. 1951",
         "Marder A1",
-        "Kornet D GAZ Tigr",
+        "Kornet D",
         "Class 3(P)",
         "M4A3E2 (75) Jumbo",
         "Object 166",
         "Centurion Mk 5 AVRE",
         "FV4005",
-        "M60A1 RISE Passive",
+        "M60A1 RISE P",
         "T-34E",
         "CATTB",
         "Leopard 2 Giraffe",
@@ -222,9 +223,9 @@
         "Strela-10",
         "M2A1 Bradley",
         "T-34-57",
-        "PUMA",
+        "PUMA IFV",
         "M10 Wolverine",
-        "Black Night",
+        "Blacknight",
         "90mm GMC Super Hellcat",
         "Sturmtiger",
         "Jagdpanther",
@@ -241,7 +242,6 @@
         "M36 Jackson",
         "MH-6 Little Bird",
         "Mi-24V",
-        "Pz IV Ausf. 1946",
         "Mi-24VM",
         "M3 GMC",
         "T26E4 Super Pershing",
@@ -251,11 +251,11 @@
         "IS-1",
         "Mi-8AMTSh",
         "AH-64D",
-        "Ka-52M Alligator-M",
+        "Ka-52M",
         "SU-122P",
-        "T-54NT"
+        "Abandoned Tank Hull"
     ],
     "versions": [
-        233
+        245
     ]
 }
