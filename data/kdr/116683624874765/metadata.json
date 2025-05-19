@@ -1,5 +1,5 @@
 {
-    "date": "2025-05-18T12:19:41.941Z",
+    "date": "2025-05-19T00:39:32.175Z",
     "vehicles": [
         "BTR-90",
         "T-34-85",
@@ -162,17 +162,17 @@
         "Abrams X",
         "2S7 Pion",
         "M270 MLRS",
+        "IS-7",
         "ZBD04",
         "TOS-1A BM-1",
         "Cheonma-2",
         "XM8",
         "Ka-52M Alligator-M",
+        "Marder A1",
         "MiKi Truck Company Model 2",
         "Leopard 2A4 140MM",
-        "Marder A1",
         "M36B2 Jackson",
         "Chieftain Mk 5",
-        "IS-7",
         "PT-76B",
         "Class 3(P)",
         "AMX-13",
@@ -219,6 +219,7 @@
         "Ersatz M10"
     ],
     "versions": [
+        65,
         59,
         58,
         57,
@@ -227,7 +228,6 @@
         45,
         44,
         43,
-        41,
-        40
+        41
     ]
 }
