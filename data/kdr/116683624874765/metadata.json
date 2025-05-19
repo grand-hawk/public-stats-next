@@ -1,5 +1,5 @@
 {
-    "date": "2025-05-19T00:39:32.175Z",
+    "date": "2025-05-19T12:20:08.674Z",
     "vehicles": [
         "BTR-90",
         "T-34-85",
@@ -211,14 +211,22 @@
         "Object 640 \"Black Eagle\"",
         "ISU-152",
         "BTR-55",
+        "T-60",
         "Comet Mk.1",
         "90mm GMC Super Hellcat",
         "M4A3E2 (75) Jumbo",
         "M3 half-track",
         "T26E4 Super Pershing",
-        "Ersatz M10"
+        "Ersatz M10",
+        "KV-1E",
+        "VK 16.02 Leopard",
+        "SU-85M",
+        "IS-1",
+        "Abandoned Tank Hull"
     ],
     "versions": [
+        67,
+        66,
         65,
         59,
         58,
@@ -226,8 +234,6 @@
         52,
         46,
         45,
-        44,
-        43,
-        41
+        44
     ]
 }
