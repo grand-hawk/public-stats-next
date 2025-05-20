@@ -1,5 +1,5 @@
 {
-    "date": "2025-05-19T12:20:08.674Z",
+    "date": "2025-05-20T00:37:57.082Z",
     "vehicles": [
         "BTR-90",
         "T-34-85",
@@ -210,30 +210,38 @@
         "Cromwell V",
         "Object 640 \"Black Eagle\"",
         "ISU-152",
+        "M3 half-track",
         "BTR-55",
         "T-60",
+        "Sd Kfz 251",
+        "SU-85M",
         "Comet Mk.1",
         "90mm GMC Super Hellcat",
         "M4A3E2 (75) Jumbo",
-        "M3 half-track",
         "T26E4 Super Pershing",
         "Ersatz M10",
-        "KV-1E",
         "VK 16.02 Leopard",
-        "SU-85M",
-        "IS-1",
-        "Abandoned Tank Hull"
+        "Sturmtiger",
+        "KV-1E",
+        "M4A2 Sherman",
+        "Jagdtiger",
+        "SU-57",
+        "KV-2 (ZIS-6)",
+        "Abandoned Tank Hull",
+        "SU-100",
+        "Maus",
+        "IS-1"
     ],
     "versions": [
+        76,
+        70,
+        69,
+        68,
         67,
         66,
         65,
         59,
         58,
-        57,
-        52,
-        46,
-        45,
-        44
+        57
     ]
 }
