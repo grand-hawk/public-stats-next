@@ -93,7 +93,7 @@ for name, tank in TankInfo do
 	end
 
 	local moduleScript = VehicleDriveData:FindFirstChild(name)
-	if not moduleScript then
+	if not moduleScript or moduleScript:GetAttribute("Hidden") then
 		continue
 	end
 
