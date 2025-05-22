@@ -4406,30 +4406,6 @@
     "mass": 12.3
   },
   {
-    "suspension": {
-      "vertical": true,
-      "horizontal": true,
-      "height": true
-    },
-    "engine": {
-      "transmission": {
-        "reverseGears": 2,
-        "neutralSteering": false,
-        "forwardGears": 8
-      },
-      "reverseSpeed": 50,
-      "forwardSpeed": 200,
-      "type": "Diesel",
-      "maxRPM": 4000,
-      "horsepower": 75,
-      "name": "VAZ-2103"
-    },
-    "turrets": [],
-    "mass": 1.05,
-    "name": "Lada DEV",
-    "amphibious": false
-  },
-  {
     "engine": {
       "transmission": {
         "reverseGears": 1,
