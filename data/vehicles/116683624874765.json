@@ -9923,6 +9923,93 @@
   {
     "engine": {
       "transmission": {
+        "reverseGears": 2,
+        "neutralSteering": true,
+        "automatic": true,
+        "forwardGears": 4
+      },
+      "reverseSpeed": 38,
+      "forwardSpeed": 72,
+      "type": "Turbine",
+      "maxRPM": 3000,
+      "horsepower": 1519,
+      "name": "Honeywell AGT1500"
+    },
+    "turrets": {
+      "Loader": {
+        "rangefinder": "Laser",
+        "traverse": {
+          "vertical": {
+            "max": 45,
+            "min": -35
+          },
+          "speed": {
+            "horizontal": 60,
+            "vertical": 60
+          }
+        },
+        "weapons": [
+          "7.62mm M240"
+        ],
+        "stabilizer": true,
+        "zoom": {
+          "max": 2.88,
+          "min": 1.8
+        }
+      },
+      "Gunner": {
+        "thermals": "Green (Gen 1)",
+        "traverse": {
+          "vertical": {
+            "max": 20,
+            "min": -10
+          },
+          "speed": {
+            "horizontal": 35,
+            "vertical": 30
+          }
+        },
+        "weapons": [
+          "105mm M68A1",
+          "7.62mm M240"
+        ],
+        "smokes": true,
+        "rangefinder": "Laser",
+        "stabilizer": true,
+        "zoom": {
+          "max": 10.285714285714286,
+          "min": 2.88
+        }
+      },
+      "Commander": {
+        "rangefinder": "Laser",
+        "traverse": {
+          "vertical": {
+            "max": 75,
+            "min": -15
+          },
+          "speed": {
+            "horizontal": 60,
+            "vertical": 60
+          }
+        },
+        "weapons": [
+          "12.7mm M2"
+        ],
+        "stabilizer": true,
+        "zoom": {
+          "max": 2.88,
+          "min": 1.8
+        }
+      }
+    },
+    "name": "M1 Abrams",
+    "amphibious": false,
+    "mass": 55.7
+  },
+  {
+    "engine": {
+      "transmission": {
         "reverseGears": 4,
         "neutralSteering": true,
         "forwardGears": 8
