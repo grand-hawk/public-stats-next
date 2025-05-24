@@ -1,5 +1,5 @@
 {
-    "date": "2025-05-24T00:35:43.936Z",
+    "date": "2025-05-24T12:19:50.724Z",
     "vehicles": [
         "BTR-90",
         "T-34-85",
@@ -27,7 +27,7 @@
         "M109",
         "Wiesel 1A2",
         "Leopard 2A6",
-        "M2A1 Bradley",
+        "M2A1",
         "T-72B",
         "M901ITV",
         "MH-6 Little Bird",
@@ -189,7 +189,7 @@
         "Object 279",
         "Object 450",
         "Strv 103C",
-        "PUMA",
+        "PUMA IFV",
         "M60A1 RISE Passive",
         "KF41 Lynx",
         "T-62M-1",
@@ -217,7 +217,7 @@
         "Sd Kfz 251",
         "SU-85M",
         "Comet Mk.1",
-        "90mm GMC Super Hellcat",
+        "M18 Super Hellcat",
         "M4A3E2 (75) Jumbo",
         "T26E4 Super Pershing",
         "Ersatz M10",
@@ -230,9 +230,11 @@
         "KV-2 (ZIS-6)",
         "SU-100",
         "Maus",
-        "IS-1"
+        "IS-1",
+        "M4A3 (105)"
     ],
     "versions": [
+        82,
         81,
         80,
         76,
@@ -241,7 +243,6 @@
         68,
         67,
         66,
-        65,
-        59
+        65
     ]
 }
