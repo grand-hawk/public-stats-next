@@ -4275,7 +4275,7 @@
       "type": "Diesel",
       "maxRPM": 3000,
       "horsepower": 690,
-      "name": "MB HL230 P30"
+      "name": "MB HL230 P30 (Tiger II)"
     },
     "turrets": {
       "Loader": {
@@ -7874,12 +7874,12 @@
         "neutralSteering": false,
         "forwardGears": 4
       },
-      "reverseSpeed": 13,
+      "reverseSpeed": 6,
       "forwardSpeed": 90,
       "type": "Diesel",
-      "maxRPM": 4000,
-      "horsepower": 72,
-      "name": "F4-134 Hurricane"
+      "maxRPM": 3000,
+      "horsepower": 110,
+      "name": "Hercules JXD"
     },
     "turrets": {
       "Commander": {
@@ -8595,8 +8595,8 @@
         "thermals": "Green (Gen 1)",
         "traverse": {
           "vertical": {
-            "max": 18,
-            "min": -8
+            "max": 20,
+            "min": -6
           },
           "speed": {
             "horizontal": 35,
@@ -8633,8 +8633,8 @@
         ],
         "stabilizer": true,
         "zoom": {
-          "max": 2.88,
-          "min": 1.8
+          "max": 10.588235294117647,
+          "min": 3
         }
       }
     },
