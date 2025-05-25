@@ -1,5 +1,5 @@
 {
-    "date": "2025-05-25T00:41:18.980Z",
+    "date": "2025-05-25T12:19:44.877Z",
     "vehicles": [
         "BTR-90",
         "T-34-85",
@@ -49,7 +49,7 @@
         "Hetzer",
         "T-64BV",
         "T-44",
-        "Sd.Kfz.234/4 Pak Puma",
+        "PaKWagen",
         "T-84-120",
         "MT-LB AA",
         "T-84 Oplot-M",
@@ -189,7 +189,7 @@
         "Object 279",
         "Object 450",
         "Strv 103C",
-        "PUMA IFV",
+        "PUMA",
         "M60A1 RISE Passive",
         "KF41 Lynx",
         "T-62M-1",
@@ -231,9 +231,17 @@
         "SU-100",
         "Maus",
         "IS-1",
-        "M4A3 (105)"
+        "M4A3 (105)",
+        "M3 GMC",
+        "Jagdpanther",
+        "M3 Lee",
+        "M18 Hellcat",
+        "Panther II",
+        "M36 Jackson"
     ],
     "versions": [
+        86,
+        85,
         84,
         83,
         82,
@@ -241,8 +249,6 @@
         80,
         76,
         70,
-        69,
-        68,
-        67
+        69
     ]
 }
