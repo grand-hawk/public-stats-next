@@ -1,1520 +1,1520 @@
 [
     {
-        "name": "KF51 Panther",
-        "kd": 6.91,
-        "kills": 4384,
-        "deaths": 634
+        "name": "KV-5",
+        "kd": 12.67,
+        "kills": 38,
+        "deaths": 3
     },
     {
         "name": "M1IP",
-        "kd": 6.29,
-        "kills": 1976,
-        "deaths": 314
-    },
-    {
-        "name": "Leopard 2 Giraffe",
-        "kd": 6.18,
-        "kills": 204,
-        "deaths": 33
-    },
-    {
-        "name": "Abrams X",
-        "kd": 5.63,
-        "kills": 4060,
-        "deaths": 721
-    },
-    {
-        "name": "T-15 Armata",
-        "kd": 5.27,
-        "kills": 3268,
-        "deaths": 620
-    },
-    {
-        "name": "T-14 Armata",
-        "kd": 4.93,
-        "kills": 8060,
-        "deaths": 1636
-    },
-    {
-        "name": "IS-6",
-        "kd": 4.23,
-        "kills": 393,
-        "deaths": 93
-    },
-    {
-        "name": "M1 Abrams",
-        "kd": 4.2,
-        "kills": 4018,
-        "deaths": 957
-    },
-    {
-        "name": "Panther EVO",
-        "kd": 4.01,
-        "kills": 2369,
-        "deaths": 591
-    },
-    {
-        "name": "RDF/LT",
-        "kd": 3.95,
-        "kills": 1927,
-        "deaths": 488
-    },
-    {
-        "name": "Sturmtiger",
-        "kd": 3.89,
-        "kills": 2940,
-        "deaths": 755
-    },
-    {
-        "name": "Maus",
-        "kd": 3.48,
-        "kills": 2351,
-        "deaths": 676
-    },
-    {
-        "name": "PUMA",
-        "kd": 3.41,
-        "kills": 1813,
-        "deaths": 531
-    },
-    {
-        "name": "KV-5",
-        "kd": 3.12,
-        "kills": 1648,
-        "deaths": 528
-    },
-    {
-        "name": "Strv 103C",
-        "kd": 3.09,
-        "kills": 3799,
-        "deaths": 1229
-    },
-    {
-        "name": "Object 195",
-        "kd": 2.92,
-        "kills": 1886,
-        "deaths": 646
-    },
-    {
-        "name": "Object 450",
-        "kd": 2.9,
-        "kills": 1163,
-        "deaths": 401
-    },
-    {
-        "name": "KF41 Lynx",
-        "kd": 2.86,
-        "kills": 855,
-        "deaths": 299
-    },
-    {
-        "name": "HSTV-L",
-        "kd": 2.85,
-        "kills": 7257,
-        "deaths": 2546
-    },
-    {
-        "name": "Object 640 \"Black Eagle\"",
-        "kd": 2.77,
-        "kills": 3502,
-        "deaths": 1263
-    },
-    {
-        "name": "M270 MLRS",
-        "kd": 2.67,
-        "kills": 2788,
-        "deaths": 1044
-    },
-    {
-        "name": "T-84-120",
-        "kd": 2.64,
-        "kills": 4007,
-        "deaths": 1517
-    },
-    {
-        "name": "T-34E",
-        "kd": 2.63,
-        "kills": 1381,
-        "deaths": 526
-    },
-    {
-        "name": "KV-220",
-        "kd": 2.58,
-        "kills": 255,
-        "deaths": 99
-    },
-    {
-        "name": "Type 90",
-        "kd": 2.45,
-        "kills": 1159,
-        "deaths": 474
-    },
-    {
-        "name": "Kurganets-25",
-        "kd": 2.45,
-        "kills": 530,
-        "deaths": 216
-    },
-    {
-        "name": "Challenger 1",
-        "kd": 2.39,
-        "kills": 1020,
-        "deaths": 427
-    },
-    {
-        "name": "Leclerc S21",
-        "kd": 2.33,
-        "kills": 7343,
-        "deaths": 3154
-    },
-    {
-        "name": "KPz-70",
-        "kd": 2.25,
-        "kills": 2976,
-        "deaths": 1321
-    },
-    {
-        "name": "90mm GMC Super Hellcat",
-        "kd": 2.2,
-        "kills": 639,
-        "deaths": 291
-    },
-    {
-        "name": "T-64BV",
-        "kd": 2.18,
-        "kills": 5838,
-        "deaths": 2680
-    },
-    {
-        "name": "120S",
-        "kd": 2.17,
-        "kills": 4699,
-        "deaths": 2163
-    },
-    {
-        "name": "CATTB",
-        "kd": 2.15,
-        "kills": 2177,
-        "deaths": 1011
-    },
-    {
-        "name": "M4A3E2 (76) Jumbo",
-        "kd": 2.13,
-        "kills": 279,
-        "deaths": 131
-    },
-    {
-        "name": "M48 Super",
-        "kd": 2.04,
-        "kills": 440,
-        "deaths": 216
-    },
-    {
-        "name": "Merkava Mk.4M",
-        "kd": 2.03,
-        "kills": 2770,
-        "deaths": 1362
-    },
-    {
-        "name": "Black Night",
-        "kd": 2.02,
-        "kills": 1009,
-        "deaths": 500
-    },
-    {
-        "name": "Centurion Mk 5 AVRE",
-        "kd": 1.98,
-        "kills": 1836,
-        "deaths": 926
-    },
-    {
-        "name": "T26E4 Super Pershing",
-        "kd": 1.98,
-        "kills": 4355,
-        "deaths": 2197
-    },
-    {
-        "name": "Leopard 2A4 140MM",
-        "kd": 1.95,
-        "kills": 1987,
-        "deaths": 1018
-    },
-    {
-        "name": "Begleitpanzer 57",
-        "kd": 1.94,
-        "kills": 4497,
-        "deaths": 2322
-    },
-    {
-        "name": "WZ-122",
-        "kd": 1.91,
-        "kills": 128,
-        "deaths": 67
+        "kd": 10.5,
+        "kills": 21,
+        "deaths": 2
     },
     {
         "name": "SU-122P",
-        "kd": 1.88,
-        "kills": 90,
-        "deaths": 48
+        "kd": 8,
+        "kills": 8,
+        "deaths": 1
     },
     {
-        "name": "Centurion Mk 10",
-        "kd": 1.86,
-        "kills": 2816,
-        "deaths": 1511
+        "name": "Abrams X",
+        "kd": 7.54,
+        "kills": 279,
+        "deaths": 37
     },
     {
-        "name": "Object 477",
-        "kd": 1.85,
-        "kills": 5418,
-        "deaths": 2925
+        "name": "RDF/LT",
+        "kd": 7.11,
+        "kills": 128,
+        "deaths": 18
     },
     {
-        "name": "Panther II",
-        "kd": 1.85,
-        "kills": 1552,
-        "deaths": 841
+        "name": "Challenger 1",
+        "kd": 5.55,
+        "kills": 61,
+        "deaths": 11
     },
     {
-        "name": "T-84 Oplot-M",
-        "kd": 1.84,
-        "kills": 5000,
-        "deaths": 2714
+        "name": "KF51 Panther",
+        "kd": 5.19,
+        "kills": 140,
+        "deaths": 27
     },
     {
-        "name": "Type 625E",
-        "kd": 1.8,
-        "kills": 3125,
-        "deaths": 1732
+        "name": "T-14 Armata",
+        "kd": 5.03,
+        "kills": 362,
+        "deaths": 72
     },
     {
-        "name": "T-V",
-        "kd": 1.79,
-        "kills": 499,
-        "deaths": 279
+        "name": "T-15 Armata",
+        "kd": 4.75,
+        "kills": 114,
+        "deaths": 24
     },
     {
-        "name": "T-64R",
-        "kd": 1.78,
-        "kills": 1079,
-        "deaths": 607
+        "name": "Maus",
+        "kd": 4.75,
+        "kills": 19,
+        "deaths": 4
     },
     {
-        "name": "Object 775",
-        "kd": 1.76,
-        "kills": 2755,
-        "deaths": 1564
-    },
-    {
-        "name": "Leopard 2A7V",
-        "kd": 1.76,
-        "kills": 6235,
-        "deaths": 3541
-    },
-    {
-        "name": "BTR-4",
-        "kd": 1.75,
-        "kills": 3249,
-        "deaths": 1861
-    },
-    {
-        "name": "Porsche Tiger",
-        "kd": 1.74,
-        "kills": 305,
-        "deaths": 175
-    },
-    {
-        "name": "LT-SE",
-        "kd": 1.74,
-        "kills": 3966,
-        "deaths": 2280
-    },
-    {
-        "name": "Churchill VII",
-        "kd": 1.68,
-        "kills": 2023,
-        "deaths": 1201
-    },
-    {
-        "name": "Ersatz M10",
-        "kd": 1.67,
-        "kills": 1124,
-        "deaths": 675
-    },
-    {
-        "name": "IS-3",
-        "kd": 1.66,
-        "kills": 3892,
-        "deaths": 2345
-    },
-    {
-        "name": "T34 Calliope",
-        "kd": 1.66,
-        "kills": 664,
-        "deaths": 401
-    },
-    {
-        "name": "Ariete C1",
-        "kd": 1.65,
-        "kills": 3641,
-        "deaths": 2209
-    },
-    {
-        "name": "T-44",
-        "kd": 1.63,
-        "kills": 4917,
-        "deaths": 3011
-    },
-    {
-        "name": "IS-7",
-        "kd": 1.61,
-        "kills": 7454,
-        "deaths": 4630
-    },
-    {
-        "name": "Type 87",
-        "kd": 1.6,
-        "kills": 4663,
-        "deaths": 2921
-    },
-    {
-        "name": "M60A1 RISE Passive",
-        "kd": 1.6,
-        "kills": 1003,
-        "deaths": 626
-    },
-    {
-        "name": "Leopard 2K",
-        "kd": 1.57,
-        "kills": 6896,
-        "deaths": 4387
-    },
-    {
-        "name": "T-34-57",
-        "kd": 1.57,
-        "kills": 1878,
-        "deaths": 1196
-    },
-    {
-        "name": "AFT-10",
-        "kd": 1.56,
-        "kills": 1686,
-        "deaths": 1080
-    },
-    {
-        "name": "Tiger II",
-        "kd": 1.55,
-        "kills": 5447,
-        "deaths": 3522
-    },
-    {
-        "name": "M1A2 SEP V3",
-        "kd": 1.53,
-        "kills": 3874,
-        "deaths": 2538
+        "name": "Object 450",
+        "kd": 4.6,
+        "kills": 23,
+        "deaths": 5
     },
     {
         "name": "Pz IV Ausf. 1946",
-        "kd": 1.51,
-        "kills": 62,
-        "deaths": 41
+        "kd": 4.5,
+        "kills": 9,
+        "deaths": 2
     },
     {
-        "name": "Air Defense Anti Tank System",
-        "kd": 1.49,
-        "kills": 3816,
-        "deaths": 2564
+        "name": "M1 Abrams",
+        "kd": 3.85,
+        "kills": 77,
+        "deaths": 20
     },
     {
-        "name": "ZTZ99A",
-        "kd": 1.46,
-        "kills": 1573,
-        "deaths": 1076
+        "name": "Object 195",
+        "kd": 3.75,
+        "kills": 90,
+        "deaths": 24
     },
     {
-        "name": "ISU-152BM",
-        "kd": 1.45,
-        "kills": 405,
-        "deaths": 280
+        "name": "Panther EVO",
+        "kd": 3.5,
+        "kills": 84,
+        "deaths": 24
     },
     {
-        "name": "FV4005",
-        "kd": 1.42,
-        "kills": 884,
-        "deaths": 622
+        "name": "T-84-120",
+        "kd": 3.31,
+        "kills": 195,
+        "deaths": 59
+    },
+    {
+        "name": "BTR-55",
+        "kd": 3,
+        "kills": 3,
+        "deaths": 1
+    },
+    {
+        "name": "T-34-57",
+        "kd": 3,
+        "kills": 57,
+        "deaths": 19
+    },
+    {
+        "name": "IS-6",
+        "kd": 3,
+        "kills": 3,
+        "deaths": 1
+    },
+    {
+        "name": "PUMA",
+        "kd": 2.96,
+        "kills": 83,
+        "deaths": 28
+    },
+    {
+        "name": "T34 Calliope",
+        "kd": 2.95,
+        "kills": 59,
+        "deaths": 20
+    },
+    {
+        "name": "KF41 Lynx",
+        "kd": 2.84,
+        "kills": 54,
+        "deaths": 19
+    },
+    {
+        "name": "Object 640 \"Black Eagle\"",
+        "kd": 2.73,
+        "kills": 123,
+        "deaths": 45
+    },
+    {
+        "name": "HSTV-L",
+        "kd": 2.69,
+        "kills": 339,
+        "deaths": 126
+    },
+    {
+        "name": "IS-1",
+        "kd": 2.67,
+        "kills": 8,
+        "deaths": 3
+    },
+    {
+        "name": "M60A1 RISE Passive",
+        "kd": 2.62,
+        "kills": 34,
+        "deaths": 13
+    },
+    {
+        "name": "90mm GMC Super Hellcat",
+        "kd": 2.45,
+        "kills": 27,
+        "deaths": 11
+    },
+    {
+        "name": "IS-3",
+        "kd": 2.44,
+        "kills": 66,
+        "deaths": 27
+    },
+    {
+        "name": "Leopard 2 Giraffe",
+        "kd": 2.33,
+        "kills": 7,
+        "deaths": 3
+    },
+    {
+        "name": "CATTB",
+        "kd": 2.31,
+        "kills": 113,
+        "deaths": 49
+    },
+    {
+        "name": "T-34E",
+        "kd": 2.3,
+        "kills": 23,
+        "deaths": 10
+    },
+    {
+        "name": "AFT-10",
+        "kd": 2.3,
+        "kills": 99,
+        "deaths": 43
+    },
+    {
+        "name": "M270 MLRS",
+        "kd": 2.28,
+        "kills": 89,
+        "deaths": 39
+    },
+    {
+        "name": "Strv 103C",
+        "kd": 2.27,
+        "kills": 59,
+        "deaths": 26
+    },
+    {
+        "name": "KPz-70",
+        "kd": 2.26,
+        "kills": 52,
+        "deaths": 23
+    },
+    {
+        "name": "Merkava Mk.4M",
+        "kd": 2.26,
+        "kills": 122,
+        "deaths": 54
     },
     {
         "name": "Cheonma-2",
-        "kd": 1.42,
-        "kills": 1531,
-        "deaths": 1077
+        "kd": 2.23,
+        "kills": 69,
+        "deaths": 31
+    },
+    {
+        "name": "120S",
+        "kd": 2.2,
+        "kills": 253,
+        "deaths": 115
+    },
+    {
+        "name": "IS-7",
+        "kd": 2.15,
+        "kills": 249,
+        "deaths": 116
+    },
+    {
+        "name": "Object 477",
+        "kd": 2.12,
+        "kills": 295,
+        "deaths": 139
+    },
+    {
+        "name": "Churchill VII",
+        "kd": 2,
+        "kills": 28,
+        "deaths": 14
+    },
+    {
+        "name": "Object 775",
+        "kd": 2,
+        "kills": 52,
+        "deaths": 26
+    },
+    {
+        "name": "M4A1 (76) Sherman",
+        "kd": 2,
+        "kills": 12,
+        "deaths": 6
+    },
+    {
+        "name": "KV-1E",
+        "kd": 1.96,
+        "kills": 49,
+        "deaths": 25
+    },
+    {
+        "name": "Type 625E",
+        "kd": 1.93,
+        "kills": 118,
+        "deaths": 61
+    },
+    {
+        "name": "Leopard 2A7V",
+        "kd": 1.89,
+        "kills": 361,
+        "deaths": 191
+    },
+    {
+        "name": "Leclerc S21",
+        "kd": 1.86,
+        "kills": 260,
+        "deaths": 140
+    },
+    {
+        "name": "M48 Super",
+        "kd": 1.83,
+        "kills": 11,
+        "deaths": 6
+    },
+    {
+        "name": "Centurion Mk 5 AVRE",
+        "kd": 1.83,
+        "kills": 22,
+        "deaths": 12
+    },
+    {
+        "name": "ZTZ99A",
+        "kd": 1.82,
+        "kills": 93,
+        "deaths": 51
+    },
+    {
+        "name": "HIMAG",
+        "kd": 1.81,
+        "kills": 103,
+        "deaths": 57
+    },
+    {
+        "name": "T26E4 Super Pershing",
+        "kd": 1.81,
+        "kills": 78,
+        "deaths": 43
+    },
+    {
+        "name": "Black Night",
+        "kd": 1.79,
+        "kills": 52,
+        "deaths": 29
+    },
+    {
+        "name": "Sturmtiger",
+        "kd": 1.79,
+        "kills": 25,
+        "deaths": 14
+    },
+    {
+        "name": "M26 Pershing",
+        "kd": 1.73,
+        "kills": 57,
+        "deaths": 33
+    },
+    {
+        "name": "Kurganets-25",
+        "kd": 1.73,
+        "kills": 19,
+        "deaths": 11
+    },
+    {
+        "name": "BTR-90",
+        "kd": 1.72,
+        "kills": 127,
+        "deaths": 74
+    },
+    {
+        "name": "T-64BV",
+        "kd": 1.7,
+        "kills": 285,
+        "deaths": 168
+    },
+    {
+        "name": "Elefant",
+        "kd": 1.7,
+        "kills": 34,
+        "deaths": 20
+    },
+    {
+        "name": "ZBD04A",
+        "kd": 1.69,
+        "kills": 61,
+        "deaths": 36
+    },
+    {
+        "name": "WZ-122",
+        "kd": 1.67,
+        "kills": 5,
+        "deaths": 3
+    },
+    {
+        "name": "XM8",
+        "kd": 1.66,
+        "kills": 73,
+        "deaths": 44
+    },
+    {
+        "name": "VK 16.02 Leopard",
+        "kd": 1.65,
+        "kills": 43,
+        "deaths": 26
+    },
+    {
+        "name": "Type 90",
+        "kd": 1.64,
+        "kills": 36,
+        "deaths": 22
+    },
+    {
+        "name": "OT-34-85",
+        "kd": 1.63,
+        "kills": 13,
+        "deaths": 8
+    },
+    {
+        "name": "T-84 Oplot-M",
+        "kd": 1.63,
+        "kills": 171,
+        "deaths": 105
+    },
+    {
+        "name": "LT-SE",
+        "kd": 1.61,
+        "kills": 174,
+        "deaths": 108
+    },
+    {
+        "name": "Burlak",
+        "kd": 1.6,
+        "kills": 209,
+        "deaths": 131
     },
     {
         "name": "XM1069",
+        "kd": 1.56,
+        "kills": 14,
+        "deaths": 9
+    },
+    {
+        "name": "M1A1",
+        "kd": 1.54,
+        "kills": 365,
+        "deaths": 237
+    },
+    {
+        "name": "Centurion Mk 10",
+        "kd": 1.52,
+        "kills": 61,
+        "deaths": 40
+    },
+    {
+        "name": "T-44",
+        "kd": 1.51,
+        "kills": 77,
+        "deaths": 51
+    },
+    {
+        "name": "Type 87",
+        "kd": 1.5,
+        "kills": 210,
+        "deaths": 140
+    },
+    {
+        "name": "FV4005",
+        "kd": 1.5,
+        "kills": 24,
+        "deaths": 16
+    },
+    {
+        "name": "T-V",
+        "kd": 1.5,
+        "kills": 6,
+        "deaths": 4
+    },
+    {
+        "name": "T-80U",
+        "kd": 1.48,
+        "kills": 62,
+        "deaths": 42
+    },
+    {
+        "name": "BMPT Terminator",
+        "kd": 1.47,
+        "kills": 269,
+        "deaths": 183
+    },
+    {
+        "name": "Leopard 2K",
+        "kd": 1.46,
+        "kills": 131,
+        "deaths": 90
+    },
+    {
+        "name": "M1A2 SEP V3",
+        "kd": 1.43,
+        "kills": 229,
+        "deaths": 160
+    },
+    {
+        "name": "T-34",
         "kd": 1.41,
-        "kills": 758,
-        "deaths": 539
+        "kills": 148,
+        "deaths": 105
     },
     {
-        "name": "T-64BM \"Bulat\"",
-        "kd": 1.4,
-        "kills": 5271,
-        "deaths": 3763
-    },
-    {
-        "name": "Strf 9040C",
-        "kd": 1.38,
-        "kills": 3386,
-        "deaths": 2453
+        "name": "Comet Mk.1",
+        "kd": 1.41,
+        "kills": 24,
+        "deaths": 17
     },
     {
         "name": "Object 279",
         "kd": 1.38,
-        "kills": 4351,
-        "deaths": 3160
-    },
-    {
-        "name": "K1",
-        "kd": 1.37,
-        "kills": 2210,
-        "deaths": 1610
-    },
-    {
-        "name": "VK 16.02 Leopard",
-        "kd": 1.37,
-        "kills": 729,
-        "deaths": 533
-    },
-    {
-        "name": "M60A2 Starship",
-        "kd": 1.36,
-        "kills": 2959,
-        "deaths": 2177
-    },
-    {
-        "name": "Desert Warrior",
-        "kd": 1.34,
-        "kills": 3043,
-        "deaths": 2278
-    },
-    {
-        "name": "Elefant",
-        "kd": 1.34,
-        "kills": 1765,
-        "deaths": 1313
-    },
-    {
-        "name": "BTR-90",
-        "kd": 1.34,
-        "kills": 2292,
-        "deaths": 1714
-    },
-    {
-        "name": "HIMAG",
-        "kd": 1.33,
-        "kills": 1788,
-        "deaths": 1346
-    },
-    {
-        "name": "M1A1",
-        "kd": 1.32,
-        "kills": 5554,
-        "deaths": 4193
-    },
-    {
-        "name": "AH-64D",
-        "kd": 1.32,
-        "kills": 2181,
-        "deaths": 1652
-    },
-    {
-        "name": "XM8",
-        "kd": 1.31,
-        "kills": 1174,
-        "deaths": 897
-    },
-    {
-        "name": "T-64A",
-        "kd": 1.28,
-        "kills": 7921,
-        "deaths": 6197
-    },
-    {
-        "name": "T-72A",
-        "kd": 1.28,
-        "kills": 4196,
-        "deaths": 3289
-    },
-    {
-        "name": "T-90A",
-        "kd": 1.28,
-        "kills": 959,
-        "deaths": 752
+        "kills": 83,
+        "deaths": 60
     },
     {
         "name": "2S6 Tunguska",
-        "kd": 1.28,
-        "kills": 3127,
-        "deaths": 2442
+        "kd": 1.38,
+        "kills": 191,
+        "deaths": 138
     },
     {
-        "name": "BMPT Terminator",
-        "kd": 1.25,
-        "kills": 4528,
-        "deaths": 3615
-    },
-    {
-        "name": "Burlak",
-        "kd": 1.24,
-        "kills": 3559,
-        "deaths": 2868
-    },
-    {
-        "name": "ZBD04A",
-        "kd": 1.23,
-        "kills": 1023,
-        "deaths": 834
-    },
-    {
-        "name": "M113 HVMS",
-        "kd": 1.23,
-        "kills": 601,
-        "deaths": 489
-    },
-    {
-        "name": "M26 Pershing",
-        "kd": 1.21,
-        "kills": 1633,
-        "deaths": 1350
-    },
-    {
-        "name": "QN506",
-        "kd": 1.21,
-        "kills": 1519,
-        "deaths": 1255
+        "name": "BTR-4",
+        "kd": 1.35,
+        "kills": 113,
+        "deaths": 84
     },
     {
         "name": "T-80BVM",
-        "kd": 1.2,
-        "kills": 2447,
-        "deaths": 2033
+        "kd": 1.35,
+        "kills": 139,
+        "deaths": 103
     },
     {
-        "name": "T-80U",
-        "kd": 1.16,
-        "kills": 1521,
-        "deaths": 1313
+        "name": "Rosomak",
+        "kd": 1.35,
+        "kills": 50,
+        "deaths": 37
     },
     {
-        "name": "T-34",
-        "kd": 1.14,
-        "kills": 6965,
-        "deaths": 6086
+        "name": "Begleitpanzer 57",
+        "kd": 1.35,
+        "kills": 84,
+        "deaths": 62
     },
     {
-        "name": "T-90M",
-        "kd": 1.14,
-        "kills": 5263,
-        "deaths": 4611
+        "name": "Tiger II",
+        "kd": 1.32,
+        "kills": 87,
+        "deaths": 66
     },
     {
-        "name": "Jagdtiger",
-        "kd": 1.13,
-        "kills": 1372,
-        "deaths": 1219
+        "name": "K1",
+        "kd": 1.3,
+        "kills": 95,
+        "deaths": 73
     },
     {
-        "name": "Ka-52M Alligator-M",
-        "kd": 1.13,
-        "kills": 1323,
-        "deaths": 1166
+        "name": "T-64BM \"Bulat\"",
+        "kd": 1.28,
+        "kills": 179,
+        "deaths": 140
     },
     {
-        "name": "VT1-2",
-        "kd": 1.11,
-        "kills": 2405,
-        "deaths": 2162
+        "name": "Ariete C1",
+        "kd": 1.27,
+        "kills": 112,
+        "deaths": 88
     },
     {
-        "name": "MT-LB AA",
-        "kd": 1.09,
-        "kills": 456,
-        "deaths": 420
+        "name": "SU-100",
+        "kd": 1.27,
+        "kills": 14,
+        "deaths": 11
     },
     {
-        "name": "T-62M-1",
-        "kd": 1.09,
-        "kills": 4521,
-        "deaths": 4147
-    },
-    {
-        "name": "TOS-1A BM-1",
-        "kd": 1.09,
-        "kills": 2199,
-        "deaths": 2018
-    },
-    {
-        "name": "BRDM-2 Konkurs",
-        "kd": 1.09,
-        "kills": 1071,
-        "deaths": 982
-    },
-    {
-        "name": "BMD-4M",
-        "kd": 1.09,
-        "kills": 1321,
-        "deaths": 1217
-    },
-    {
-        "name": "Panther G",
-        "kd": 1.09,
-        "kills": 2906,
-        "deaths": 2655
-    },
-    {
-        "name": "T-72M2",
-        "kd": 1.08,
-        "kills": 2516,
-        "deaths": 2340
+        "name": "Leopard 2A4 140MM",
+        "kd": 1.26,
+        "kills": 78,
+        "deaths": 62
     },
     {
         "name": "Jagdpanther",
-        "kd": 1.08,
-        "kills": 546,
-        "deaths": 506
+        "kd": 1.25,
+        "kills": 15,
+        "deaths": 12
     },
     {
-        "name": "T-80B",
-        "kd": 1.06,
-        "kills": 15296,
-        "deaths": 14450
+        "name": "Type 89",
+        "kd": 1.24,
+        "kills": 78,
+        "deaths": 63
     },
     {
-        "name": "Chieftain Mk 5",
-        "kd": 1.06,
-        "kills": 4838,
-        "deaths": 4580
+        "name": "T-90A",
+        "kd": 1.22,
+        "kills": 44,
+        "deaths": 36
     },
     {
-        "name": "Class 3(P)",
-        "kd": 1.05,
-        "kills": 528,
-        "deaths": 502
+        "name": "T-72A",
+        "kd": 1.2,
+        "kills": 106,
+        "deaths": 88
+    },
+    {
+        "name": "QN506",
+        "kd": 1.19,
+        "kills": 69,
+        "deaths": 58
+    },
+    {
+        "name": "T-62M-1",
+        "kd": 1.19,
+        "kills": 133,
+        "deaths": 112
+    },
+    {
+        "name": "AH-64D",
+        "kd": 1.19,
+        "kills": 74,
+        "deaths": 62
+    },
+    {
+        "name": "Leopard 2A6",
+        "kd": 1.18,
+        "kills": 211,
+        "deaths": 179
+    },
+    {
+        "name": "T-90M",
+        "kd": 1.18,
+        "kills": 238,
+        "deaths": 201
+    },
+    {
+        "name": "ISU-152",
+        "kd": 1.18,
+        "kills": 13,
+        "deaths": 11
+    },
+    {
+        "name": "ISU-152BM",
+        "kd": 1.18,
+        "kills": 13,
+        "deaths": 11
+    },
+    {
+        "name": "Panther II",
+        "kd": 1.17,
+        "kills": 28,
+        "deaths": 24
+    },
+    {
+        "name": "Desert Warrior",
+        "kd": 1.14,
+        "kills": 121,
+        "deaths": 106
+    },
+    {
+        "name": "Air Defense Anti Tank System",
+        "kd": 1.13,
+        "kills": 114,
+        "deaths": 101
+    },
+    {
+        "name": "TOS-1A BM-1",
+        "kd": 1.11,
+        "kills": 89,
+        "deaths": 80
+    },
+    {
+        "name": "T-72B3",
+        "kd": 1.11,
+        "kills": 247,
+        "deaths": 223
     },
     {
         "name": "IS-2 1944",
+        "kd": 1.11,
+        "kills": 40,
+        "deaths": 36
+    },
+    {
+        "name": "Object 166",
+        "kd": 1.09,
+        "kills": 59,
+        "deaths": 54
+    },
+    {
+        "name": "T-34-85",
+        "kd": 1.09,
+        "kills": 49,
+        "deaths": 45
+    },
+    {
+        "name": "LAV-AT",
+        "kd": 1.09,
+        "kills": 61,
+        "deaths": 56
+    },
+    {
+        "name": "M18 Hellcat",
+        "kd": 1.09,
+        "kills": 62,
+        "deaths": 57
+    },
+    {
+        "name": "Panther G",
+        "kd": 1.08,
+        "kills": 80,
+        "deaths": 74
+    },
+    {
+        "name": "Strf 9040C",
+        "kd": 1.06,
+        "kills": 178,
+        "deaths": 168
+    },
+    {
+        "name": "M2A2 ODS-SA",
+        "kd": 1.06,
+        "kills": 725,
+        "deaths": 687
+    },
+    {
+        "name": "T-72M2",
         "kd": 1.05,
-        "kills": 2021,
-        "deaths": 1918
+        "kills": 99,
+        "deaths": 94
+    },
+    {
+        "name": "M113 HVMS",
+        "kd": 1.05,
+        "kills": 22,
+        "deaths": 21
+    },
+    {
+        "name": "MT-LB AA",
+        "kd": 1.04,
+        "kills": 27,
+        "deaths": 26
     },
     {
         "name": "BMP-2M",
         "kd": 1.04,
-        "kills": 1489,
-        "deaths": 1427
-    },
-    {
-        "name": "Type 89",
-        "kd": 1.02,
-        "kills": 1169,
-        "deaths": 1144
-    },
-    {
-        "name": "Stug III G",
-        "kd": 1.02,
-        "kills": 3134,
-        "deaths": 3077
-    },
-    {
-        "name": "BMP-3",
-        "kd": 1.01,
-        "kills": 6599,
-        "deaths": 6504
-    },
-    {
-        "name": "BMP-1AM",
-        "kd": 1.01,
-        "kills": 627,
-        "deaths": 622
-    },
-    {
-        "name": "Leopard 2A6",
-        "kd": 1.01,
-        "kills": 3414,
-        "deaths": 3374
-    },
-    {
-        "name": "Leopard 1A5",
-        "kd": 1.01,
-        "kills": 2471,
-        "deaths": 2453
-    },
-    {
-        "name": "IS-1",
-        "kd": 1.01,
-        "kills": 162,
-        "deaths": 161
-    },
-    {
-        "name": "Leopard 2A4",
-        "kd": 1,
-        "kills": 12670,
-        "deaths": 12630
-    },
-    {
-        "name": "KV-1E",
-        "kd": 1,
-        "kills": 1291,
-        "deaths": 1292
-    },
-    {
-        "name": "M2A2 ODS-SA",
-        "kd": 0.96,
-        "kills": 10441,
-        "deaths": 10867
-    },
-    {
-        "name": "M551 Sheridan",
-        "kd": 0.96,
-        "kills": 5720,
-        "deaths": 5960
-    },
-    {
-        "name": "Challenger 2",
-        "kd": 0.95,
-        "kills": 3007,
-        "deaths": 3174
-    },
-    {
-        "name": "M901ITV",
-        "kd": 0.94,
-        "kills": 2819,
-        "deaths": 3000
-    },
-    {
-        "name": "LAV-AT",
-        "kd": 0.93,
-        "kills": 710,
-        "deaths": 767
-    },
-    {
-        "name": "OT-34-85",
-        "kd": 0.9,
-        "kills": 183,
-        "deaths": 204
-    },
-    {
-        "name": "T-72B3",
-        "kd": 0.9,
-        "kills": 3854,
-        "deaths": 4293
-    },
-    {
-        "name": "T-34-85",
-        "kd": 0.9,
-        "kills": 1527,
-        "deaths": 1699
-    },
-    {
-        "name": "Rosomak",
-        "kd": 0.89,
-        "kills": 716,
-        "deaths": 808
-    },
-    {
-        "name": "Cromwell V",
-        "kd": 0.89,
-        "kills": 440,
-        "deaths": 496
-    },
-    {
-        "name": "Comet Mk.1",
-        "kd": 0.87,
-        "kills": 752,
-        "deaths": 869
-    },
-    {
-        "name": "M4A2E8 Sherman",
-        "kd": 0.87,
-        "kills": 1105,
-        "deaths": 1268
-    },
-    {
-        "name": "Sd.Kfz.234/2 Puma",
-        "kd": 0.86,
-        "kills": 4925,
-        "deaths": 5745
-    },
-    {
-        "name": "SU-100",
-        "kd": 0.86,
-        "kills": 785,
-        "deaths": 917
-    },
-    {
-        "name": "AMX-13",
-        "kd": 0.85,
-        "kills": 1202,
-        "deaths": 1418
-    },
-    {
-        "name": "M4A3E2 (75) Jumbo",
-        "kd": 0.85,
-        "kills": 404,
-        "deaths": 476
-    },
-    {
-        "name": "M48A2 Patton",
-        "kd": 0.84,
-        "kills": 3739,
-        "deaths": 4438
-    },
-    {
-        "name": "M36 Jackson",
-        "kd": 0.83,
-        "kills": 797,
-        "deaths": 956
-    },
-    {
-        "name": "KV-2 (ZIS-6)",
-        "kd": 0.82,
-        "kills": 225,
-        "deaths": 276
-    },
-    {
-        "name": "M60A1 Add-On Stabilization",
-        "kd": 0.81,
-        "kills": 4922,
-        "deaths": 6084
-    },
-    {
-        "name": "Sprut-SDM1",
-        "kd": 0.81,
-        "kills": 628,
-        "deaths": 774
-    },
-    {
-        "name": "Tutel",
-        "kd": 0.81,
-        "kills": 459,
-        "deaths": 569
-    },
-    {
-        "name": "T-72B",
-        "kd": 0.78,
-        "kills": 9519,
-        "deaths": 12207
-    },
-    {
-        "name": "Hornisse",
-        "kd": 0.78,
-        "kills": 495,
-        "deaths": 633
-    },
-    {
-        "name": "Kornet D GAZ Tigr",
-        "kd": 0.78,
-        "kills": 893,
-        "deaths": 1149
-    },
-    {
-        "name": "FV510 Warrior",
-        "kd": 0.77,
-        "kills": 285,
-        "deaths": 372
-    },
-    {
-        "name": "M18 Hellcat",
-        "kd": 0.77,
-        "kills": 1838,
-        "deaths": 2392
-    },
-    {
-        "name": "PT-76E",
-        "kd": 0.76,
-        "kills": 4063,
-        "deaths": 5358
-    },
-    {
-        "name": "M2A1 Bradley",
-        "kd": 0.76,
-        "kills": 931,
-        "deaths": 1232
-    },
-    {
-        "name": "IT-1",
-        "kd": 0.75,
-        "kills": 4208,
-        "deaths": 5594
+        "kills": 77,
+        "deaths": 74
     },
     {
         "name": "M1128 MGS",
-        "kd": 0.73,
-        "kills": 1243,
-        "deaths": 1700
+        "kd": 1.04,
+        "kills": 88,
+        "deaths": 85
     },
     {
-        "name": "Tiger I",
-        "kd": 0.73,
-        "kills": 2299,
-        "deaths": 3145
+        "name": "M3 Lee",
+        "kd": 1,
+        "kills": 5,
+        "deaths": 5
     },
     {
-        "name": "ZSU-57-2",
-        "kd": 0.71,
-        "kills": 2854,
-        "deaths": 4032
+        "name": "Leopard 1A5",
+        "kd": 1,
+        "kills": 43,
+        "deaths": 43
     },
     {
-        "name": "Sherman Firefly",
-        "kd": 0.7,
-        "kills": 505,
-        "deaths": 718
+        "name": "Kornet D GAZ Tigr",
+        "kd": 1,
+        "kills": 70,
+        "deaths": 70
     },
     {
-        "name": "Object 166",
-        "kd": 0.7,
-        "kills": 1938,
-        "deaths": 2756
-    },
-    {
-        "name": "BMP-2",
-        "kd": 0.69,
-        "kills": 6972,
-        "deaths": 10056
-    },
-    {
-        "name": "Type 16 MCV",
-        "kd": 0.69,
-        "kills": 2070,
-        "deaths": 3015
-    },
-    {
-        "name": "Hetzer",
-        "kd": 0.69,
-        "kills": 993,
-        "deaths": 1431
-    },
-    {
-        "name": "Mi-24VM",
-        "kd": 0.69,
-        "kills": 1632,
-        "deaths": 2379
-    },
-    {
-        "name": "2S19 Msta-S",
-        "kd": 0.68,
-        "kills": 2463,
-        "deaths": 3617
-    },
-    {
-        "name": "BMD-2",
-        "kd": 0.68,
-        "kills": 2020,
-        "deaths": 2973
-    },
-    {
-        "name": "ZTZ96A",
-        "kd": 0.68,
-        "kills": 3901,
-        "deaths": 5721
-    },
-    {
-        "name": "Kornet D BMD-4M",
-        "kd": 0.68,
-        "kills": 1183,
-        "deaths": 1752
-    },
-    {
-        "name": "M4A2 Sherman",
-        "kd": 0.67,
-        "kills": 403,
-        "deaths": 604
-    },
-    {
-        "name": "Marder 1A3",
-        "kd": 0.67,
-        "kills": 773,
-        "deaths": 1154
-    },
-    {
-        "name": "PzH-2000",
-        "kd": 0.66,
-        "kills": 1374,
-        "deaths": 2090
-    },
-    {
-        "name": "SU-85M",
-        "kd": 0.63,
-        "kills": 750,
-        "deaths": 1199
+        "name": "Jagdtiger",
+        "kd": 1,
+        "kills": 19,
+        "deaths": 19
     },
     {
         "name": "OBT-2 Super",
-        "kd": 0.63,
-        "kills": 393,
-        "deaths": 626
+        "kd": 1,
+        "kills": 34,
+        "deaths": 34
     },
     {
-        "name": "AMX-10RC",
-        "kd": 0.62,
-        "kills": 1439,
-        "deaths": 2315
+        "name": "T-80B",
+        "kd": 0.99,
+        "kills": 716,
+        "deaths": 722
     },
     {
-        "name": "T-54 Obr. 1951",
-        "kd": 0.62,
-        "kills": 5670,
-        "deaths": 9112
+        "name": "T-64A",
+        "kd": 0.99,
+        "kills": 122,
+        "deaths": 123
     },
     {
-        "name": "LOSAT M8",
-        "kd": 0.61,
-        "kills": 1083,
-        "deaths": 1763
+        "name": "Chieftain Mk 5",
+        "kd": 0.97,
+        "kills": 74,
+        "deaths": 76
     },
     {
-        "name": "ISU-152",
-        "kd": 0.61,
-        "kills": 416,
-        "deaths": 687
+        "name": "BMP-1AM",
+        "kd": 0.94,
+        "kills": 30,
+        "deaths": 32
     },
     {
-        "name": "Sd.Kfz.234/4 Pak Puma",
-        "kd": 0.6,
-        "kills": 1769,
-        "deaths": 2963
+        "name": "Cromwell V",
+        "kd": 0.94,
+        "kills": 17,
+        "deaths": 18
     },
     {
-        "name": "T-55",
-        "kd": 0.59,
-        "kills": 2579,
-        "deaths": 4363
+        "name": "M551 Sheridan",
+        "kd": 0.94,
+        "kills": 110,
+        "deaths": 117
     },
     {
-        "name": "Pz IV H",
-        "kd": 0.59,
-        "kills": 2094,
-        "deaths": 3539
+        "name": "BMD-2",
+        "kd": 0.92,
+        "kills": 205,
+        "deaths": 224
     },
     {
-        "name": "M4A1 Sherman",
-        "kd": 0.57,
-        "kills": 1419,
-        "deaths": 2477
+        "name": "M4A3E2 (75) Jumbo",
+        "kd": 0.92,
+        "kills": 12,
+        "deaths": 13
     },
     {
-        "name": "M4A3 (105) Zippo",
-        "kd": 0.56,
-        "kills": 126,
-        "deaths": 226
+        "name": "Challenger 2",
+        "kd": 0.92,
+        "kills": 154,
+        "deaths": 168
     },
     {
-        "name": "T-62",
-        "kd": 0.55,
-        "kills": 2312,
-        "deaths": 4212
+        "name": "M4A2E8 Sherman",
+        "kd": 0.91,
+        "kills": 29,
+        "deaths": 32
     },
     {
-        "name": "Wiesel 1A2",
-        "kd": 0.53,
-        "kills": 2309,
-        "deaths": 4332
+        "name": "M48A2 Patton",
+        "kd": 0.9,
+        "kills": 97,
+        "deaths": 108
     },
     {
-        "name": "LAV-25",
-        "kd": 0.53,
-        "kills": 4510,
-        "deaths": 8456
+        "name": "PzH-2000",
+        "kd": 0.9,
+        "kills": 95,
+        "deaths": 105
     },
     {
-        "name": "KV-2",
-        "kd": 0.53,
-        "kills": 1409,
-        "deaths": 2658
+        "name": "Leopard 2A4",
+        "kd": 0.89,
+        "kills": 620,
+        "deaths": 698
     },
     {
-        "name": "BMP-1",
-        "kd": 0.52,
-        "kills": 2497,
-        "deaths": 4794
+        "name": "Class 3(P)",
+        "kd": 0.89,
+        "kills": 8,
+        "deaths": 9
     },
     {
-        "name": "M109",
-        "kd": 0.52,
-        "kills": 520,
-        "deaths": 998
+        "name": "Mi-24VM",
+        "kd": 0.89,
+        "kills": 99,
+        "deaths": 111
+    },
+    {
+        "name": "SU-85M",
+        "kd": 0.88,
+        "kills": 14,
+        "deaths": 16
     },
     {
         "name": "M10 Wolverine",
-        "kd": 0.52,
-        "kills": 1450,
-        "deaths": 2772
+        "kd": 0.88,
+        "kills": 38,
+        "deaths": 43
     },
     {
-        "name": "M4A1 (76) Sherman",
-        "kd": 0.5,
-        "kills": 194,
-        "deaths": 390
+        "name": "M4A3E2 (76) Jumbo",
+        "kd": 0.88,
+        "kills": 7,
+        "deaths": 8
     },
     {
-        "name": "Pz.III M",
-        "kd": 0.47,
-        "kills": 2726,
-        "deaths": 5826
+        "name": "KV-2",
+        "kd": 0.86,
+        "kills": 38,
+        "deaths": 44
     },
     {
-        "name": "T29E3",
-        "kd": 0.47,
-        "kills": 2077,
-        "deaths": 4384
+        "name": "M60A2 Starship",
+        "kd": 0.85,
+        "kills": 40,
+        "deaths": 47
     },
     {
-        "name": "Strela-10",
-        "kd": 0.47,
-        "kills": 1217,
-        "deaths": 2595
+        "name": "T-54 Obr. 1951",
+        "kd": 0.84,
+        "kills": 144,
+        "deaths": 172
+    },
+    {
+        "name": "BMD-4M",
+        "kd": 0.84,
+        "kills": 37,
+        "deaths": 44
+    },
+    {
+        "name": "KV-2 (ZIS-6)",
+        "kd": 0.83,
+        "kills": 5,
+        "deaths": 6
+    },
+    {
+        "name": "M109",
+        "kd": 0.81,
+        "kills": 17,
+        "deaths": 21
+    },
+    {
+        "name": "T-64R",
+        "kd": 0.8,
+        "kills": 8,
+        "deaths": 10
+    },
+    {
+        "name": "IT-1",
+        "kd": 0.8,
+        "kills": 92,
+        "deaths": 115
+    },
+    {
+        "name": "M2A1 Bradley",
+        "kd": 0.8,
+        "kills": 24,
+        "deaths": 30
+    },
+    {
+        "name": "Sprut-SDM1",
+        "kd": 0.79,
+        "kills": 27,
+        "deaths": 34
+    },
+    {
+        "name": "Type 16 MCV",
+        "kd": 0.78,
+        "kills": 135,
+        "deaths": 173
+    },
+    {
+        "name": "FV510 Warrior",
+        "kd": 0.78,
+        "kills": 18,
+        "deaths": 23
+    },
+    {
+        "name": "BMP-3",
+        "kd": 0.77,
+        "kills": 206,
+        "deaths": 267
+    },
+    {
+        "name": "Sd.Kfz.234/4 Pak Puma",
+        "kd": 0.77,
+        "kills": 67,
+        "deaths": 87
+    },
+    {
+        "name": "Ersatz M10",
+        "kd": 0.77,
+        "kills": 17,
+        "deaths": 22
+    },
+    {
+        "name": "M901ITV",
+        "kd": 0.76,
+        "kills": 76,
+        "deaths": 100
+    },
+    {
+        "name": "PT-76E",
+        "kd": 0.75,
+        "kills": 204,
+        "deaths": 271
+    },
+    {
+        "name": "M60A1 Add-On Stabilization",
+        "kd": 0.74,
+        "kills": 157,
+        "deaths": 211
     },
     {
         "name": "M8 Greyhound",
-        "kd": 0.46,
-        "kills": 751,
-        "deaths": 1636
+        "kd": 0.74,
+        "kills": 25,
+        "deaths": 34
+    },
+    {
+        "name": "Sd.Kfz.234/2 Puma",
+        "kd": 0.73,
+        "kills": 172,
+        "deaths": 237
+    },
+    {
+        "name": "T-72B",
+        "kd": 0.73,
+        "kills": 380,
+        "deaths": 524
+    },
+    {
+        "name": "Ka-52M Alligator-M",
+        "kd": 0.73,
+        "kills": 41,
+        "deaths": 56
+    },
+    {
+        "name": "ZSU-57-2",
+        "kd": 0.72,
+        "kills": 93,
+        "deaths": 129
+    },
+    {
+        "name": "Marder 1A3",
+        "kd": 0.72,
+        "kills": 42,
+        "deaths": 58
+    },
+    {
+        "name": "ZTZ96A",
+        "kd": 0.72,
+        "kills": 224,
+        "deaths": 311
+    },
+    {
+        "name": "Hetzer",
+        "kd": 0.71,
+        "kills": 17,
+        "deaths": 24
+    },
+    {
+        "name": "M36 Jackson",
+        "kd": 0.71,
+        "kills": 5,
+        "deaths": 7
+    },
+    {
+        "name": "2S19 Msta-S",
+        "kd": 0.7,
+        "kills": 122,
+        "deaths": 174
+    },
+    {
+        "name": "Tiger I",
+        "kd": 0.7,
+        "kills": 46,
+        "deaths": 66
+    },
+    {
+        "name": "Hornisse",
+        "kd": 0.67,
+        "kills": 10,
+        "deaths": 15
+    },
+    {
+        "name": "M4A1 Sherman",
+        "kd": 0.67,
+        "kills": 35,
+        "deaths": 52
+    },
+    {
+        "name": "BRDM-2 Konkurs",
+        "kd": 0.67,
+        "kills": 20,
+        "deaths": 30
     },
     {
         "name": "Pz.W.42",
-        "kd": 0.45,
-        "kills": 142,
-        "deaths": 313
+        "kd": 0.67,
+        "kills": 4,
+        "deaths": 6
     },
     {
-        "name": "BTR-82A",
-        "kd": 0.44,
-        "kills": 2346,
-        "deaths": 5321
+        "name": "Tutel",
+        "kd": 0.66,
+        "kills": 23,
+        "deaths": 35
     },
     {
-        "name": "Strela-MLRS",
-        "kd": 0.42,
-        "kills": 575,
-        "deaths": 1370
+        "name": "M4A2 Sherman",
+        "kd": 0.63,
+        "kills": 5,
+        "deaths": 8
     },
     {
-        "name": "BM-21 Grad",
-        "kd": 0.42,
-        "kills": 3864,
-        "deaths": 9249
+        "name": "Kornet D BMD-4M",
+        "kd": 0.63,
+        "kills": 55,
+        "deaths": 87
+    },
+    {
+        "name": "AMX-13",
+        "kd": 0.61,
+        "kills": 27,
+        "deaths": 44
+    },
+    {
+        "name": "Strela-10",
+        "kd": 0.61,
+        "kills": 72,
+        "deaths": 119
+    },
+    {
+        "name": "BMP-2",
+        "kd": 0.6,
+        "kills": 315,
+        "deaths": 522
+    },
+    {
+        "name": "Stug III G",
+        "kd": 0.6,
+        "kills": 61,
+        "deaths": 101
+    },
+    {
+        "name": "M4A3 (105) Zippo",
+        "kd": 0.6,
+        "kills": 3,
+        "deaths": 5
+    },
+    {
+        "name": "LAV-25",
+        "kd": 0.58,
+        "kills": 320,
+        "deaths": 550
+    },
+    {
+        "name": "Pz IV H",
+        "kd": 0.58,
+        "kills": 48,
+        "deaths": 83
+    },
+    {
+        "name": "ASU-57",
+        "kd": 0.54,
+        "kills": 36,
+        "deaths": 67
+    },
+    {
+        "name": "LOSAT M8",
+        "kd": 0.52,
+        "kills": 49,
+        "deaths": 94
+    },
+    {
+        "name": "T-62",
+        "kd": 0.52,
+        "kills": 72,
+        "deaths": 139
     },
     {
         "name": "Joint Light Tactical Vehicle",
+        "kd": 0.52,
+        "kills": 120,
+        "deaths": 233
+    },
+    {
+        "name": "Pz.III M",
+        "kd": 0.5,
+        "kills": 72,
+        "deaths": 144
+    },
+    {
+        "name": "AMX-10RC",
+        "kd": 0.5,
+        "kills": 67,
+        "deaths": 135
+    },
+    {
+        "name": "Wiesel 1A2",
+        "kd": 0.49,
+        "kills": 103,
+        "deaths": 211
+    },
+    {
+        "name": "BM-21 Grad",
+        "kd": 0.49,
+        "kills": 170,
+        "deaths": 347
+    },
+    {
+        "name": "Wiesel 1A4",
+        "kd": 0.48,
+        "kills": 154,
+        "deaths": 318
+    },
+    {
+        "name": "Sherman Firefly",
+        "kd": 0.47,
+        "kills": 8,
+        "deaths": 17
+    },
+    {
+        "name": "M36B2 Jackson",
+        "kd": 0.45,
+        "kills": 35,
+        "deaths": 78
+    },
+    {
+        "name": "BMP-1",
+        "kd": 0.45,
+        "kills": 41,
+        "deaths": 91
+    },
+    {
+        "name": "T-55",
+        "kd": 0.43,
+        "kills": 57,
+        "deaths": 133
+    },
+    {
+        "name": "M1117 ASV",
         "kd": 0.42,
-        "kills": 1590,
-        "deaths": 3813
+        "kills": 23,
+        "deaths": 55
+    },
+    {
+        "name": "BMD-1",
+        "kd": 0.42,
+        "kills": 40,
+        "deaths": 95
     },
     {
         "name": "M109A6",
         "kd": 0.42,
-        "kills": 737,
-        "deaths": 1769
-    },
-    {
-        "name": "ZIT-122",
-        "kd": 0.42,
-        "kills": 504,
-        "deaths": 1201
-    },
-    {
-        "name": "Marder A1",
-        "kd": 0.41,
-        "kills": 1132,
-        "deaths": 2756
-    },
-    {
-        "name": "M3 Lee",
-        "kd": 0.4,
-        "kills": 139,
-        "deaths": 345
-    },
-    {
-        "name": "Wiesel 1A4",
-        "kd": 0.4,
-        "kills": 2498,
-        "deaths": 6235
-    },
-    {
-        "name": "Mi-24V",
-        "kd": 0.39,
-        "kills": 4303,
-        "deaths": 11152
-    },
-    {
-        "name": "M36B2 Jackson",
-        "kd": 0.38,
-        "kills": 1259,
-        "deaths": 3272
+        "kills": 42,
+        "deaths": 101
     },
     {
         "name": "SU-57",
-        "kd": 0.38,
-        "kills": 336,
-        "deaths": 891
+        "kd": 0.4,
+        "kills": 6,
+        "deaths": 15
+    },
+    {
+        "name": "BTR-82A",
+        "kd": 0.39,
+        "kills": 109,
+        "deaths": 279
+    },
+    {
+        "name": "Strela-MLRS",
+        "kd": 0.39,
+        "kills": 31,
+        "deaths": 80
     },
     {
         "name": "M4A3 (105)",
-        "kd": 0.36,
-        "kills": 545,
-        "deaths": 1519
+        "kd": 0.39,
+        "kills": 12,
+        "deaths": 31
     },
     {
-        "name": "ASU-57",
-        "kd": 0.34,
-        "kills": 1262,
-        "deaths": 3692
+        "name": "M1126",
+        "kd": 0.38,
+        "kills": 34,
+        "deaths": 89
     },
     {
-        "name": "BTR-55",
+        "name": "M163",
+        "kd": 0.37,
+        "kills": 22,
+        "deaths": 59
+    },
+    {
+        "name": "Mi-24V",
+        "kd": 0.35,
+        "kills": 191,
+        "deaths": 549
+    },
+    {
+        "name": "T29E3",
         "kd": 0.34,
         "kills": 25,
-        "deaths": 74
+        "deaths": 73
+    },
+    {
+        "name": "2S7 Pion",
+        "kd": 0.33,
+        "kills": 27,
+        "deaths": 82
+    },
+    {
+        "name": "ZIT-122",
+        "kd": 0.33,
+        "kills": 7,
+        "deaths": 21
     },
     {
         "name": "UH-60M Blackhawk",
         "kd": 0.33,
-        "kills": 4868,
-        "deaths": 14842
-    },
-    {
-        "name": "M1117 ASV",
-        "kd": 0.32,
-        "kills": 271,
-        "deaths": 853
-    },
-    {
-        "name": "M163",
-        "kd": 0.31,
-        "kills": 710,
-        "deaths": 2281
-    },
-    {
-        "name": "BMD-1",
-        "kd": 0.3,
-        "kills": 119,
-        "deaths": 402
-    },
-    {
-        "name": "M7 Priest",
-        "kd": 0.29,
-        "kills": 320,
-        "deaths": 1098
-    },
-    {
-        "name": "M3 GMC",
-        "kd": 0.29,
-        "kills": 281,
-        "deaths": 962
+        "kills": 277,
+        "deaths": 841
     },
     {
         "name": "M38",
-        "kd": 0.27,
-        "kills": 1946,
-        "deaths": 7132
-    },
-    {
-        "name": "M1126",
-        "kd": 0.27,
-        "kills": 488,
-        "deaths": 1808
-    },
-    {
-        "name": "2S7 Pion",
-        "kd": 0.26,
-        "kills": 517,
-        "deaths": 1984
+        "kd": 0.32,
+        "kills": 51,
+        "deaths": 161
     },
     {
         "name": "PT-76B",
-        "kd": 0.25,
-        "kills": 678,
-        "deaths": 2767
-    },
-    {
-        "name": "L3/35",
-        "kd": 0.24,
-        "kills": 263,
-        "deaths": 1119
-    },
-    {
-        "name": "2S43",
-        "kd": 0.23,
-        "kills": 314,
-        "deaths": 1391
-    },
-    {
-        "name": "MH-6 Little Bird",
-        "kd": 0.23,
-        "kills": 1790,
-        "deaths": 7623
+        "kd": 0.29,
+        "kills": 18,
+        "deaths": 63
     },
     {
         "name": "Willys MB",
+        "kd": 0.24,
+        "kills": 27,
+        "deaths": 114
+    },
+    {
+        "name": "MT-LeBrams",
+        "kd": 0.24,
+        "kills": 16,
+        "deaths": 66
+    },
+    {
+        "name": "MH-6 Little Bird",
+        "kd": 0.24,
+        "kills": 106,
+        "deaths": 436
+    },
+    {
+        "name": "VT1-2",
+        "kd": 0.23,
+        "kills": 11,
+        "deaths": 48
+    },
+    {
+        "name": "Marder A1",
+        "kd": 0.23,
+        "kills": 16,
+        "deaths": 70
+    },
+    {
+        "name": "Porsche Tiger",
         "kd": 0.22,
-        "kills": 1148,
-        "deaths": 5181
+        "kills": 2,
+        "deaths": 9
+    },
+    {
+        "name": "L3/35",
+        "kd": 0.22,
+        "kills": 11,
+        "deaths": 49
     },
     {
         "name": "Mi-8AMTSh",
-        "kd": 0.19,
-        "kills": 2224,
-        "deaths": 11740
+        "kd": 0.21,
+        "kills": 107,
+        "deaths": 521
     },
     {
-        "name": "Bumpee",
+        "name": "LVT-6 Gator",
+        "kd": 0.2,
+        "kills": 2,
+        "deaths": 10
+    },
+    {
+        "name": "Humvee",
+        "kd": 0.19,
+        "kills": 143,
+        "deaths": 737
+    },
+    {
+        "name": "T-60",
         "kd": 0.17,
-        "kills": 354,
-        "deaths": 2071
+        "kills": 5,
+        "deaths": 30
     },
     {
         "name": "BRDM-2",
         "kd": 0.16,
-        "kills": 811,
-        "deaths": 5193
-    },
-    {
-        "name": "T-60",
-        "kd": 0.15,
-        "kills": 230,
-        "deaths": 1500
-    },
-    {
-        "name": "MT-LeBrams",
-        "kd": 0.15,
-        "kills": 170,
-        "deaths": 1112
-    },
-    {
-        "name": "Humvee",
-        "kd": 0.14,
-        "kills": 1913,
-        "deaths": 13798
+        "kills": 19,
+        "deaths": 119
     },
     {
         "name": "Plastun SN",
-        "kd": 0.13,
-        "kills": 102,
-        "deaths": 764
+        "kd": 0.16,
+        "kills": 5,
+        "deaths": 31
     },
     {
-        "name": "M3 half-track",
-        "kd": 0.11,
-        "kills": 198,
-        "deaths": 1836
+        "name": "2S43",
+        "kd": 0.12,
+        "kills": 7,
+        "deaths": 57
     },
     {
-        "name": "T-34-122",
+        "name": "M7 Priest",
         "kd": 0.1,
-        "kills": 90,
-        "deaths": 879
+        "kills": 2,
+        "deaths": 21
+    },
+    {
+        "name": "Bumpee",
+        "kd": 0.09,
+        "kills": 14,
+        "deaths": 151
     },
     {
         "name": "BTR-60PB",
         "kd": 0.09,
-        "kills": 411,
-        "deaths": 4665
-    },
-    {
-        "name": "Supply Truck",
-        "kd": 0.09,
-        "kills": 575,
-        "deaths": 6758
-    },
-    {
-        "name": "Sd Kfz 251",
-        "kd": 0.08,
-        "kills": 135,
-        "deaths": 1652
+        "kills": 10,
+        "deaths": 106
     },
     {
         "name": "M113",
         "kd": 0.07,
-        "kills": 177,
-        "deaths": 2458
+        "kills": 8,
+        "deaths": 108
     },
     {
-        "name": "LVT-6 Gator",
-        "kd": 0.06,
-        "kills": 27,
-        "deaths": 474
+        "name": "M3 GMC",
+        "kd": 0.07,
+        "kills": 1,
+        "deaths": 14
     },
     {
-        "name": "UAZ-3909",
-        "kd": 0.06,
-        "kills": 361,
-        "deaths": 6286
+        "name": "Abandoned Tank Hull",
+        "kd": 0.07,
+        "kills": 1,
+        "deaths": 14
     },
     {
         "name": "MiKi Truck Company Model 1 ARMOURED",
         "kd": 0.06,
-        "kills": 597,
-        "deaths": 10661
+        "kills": 30,
+        "deaths": 493
+    },
+    {
+        "name": "Supply Truck",
+        "kd": 0.06,
+        "kills": 15,
+        "deaths": 241
     },
     {
         "name": "RSZO-1",
         "kd": 0.05,
-        "kills": 129,
-        "deaths": 2595
+        "kills": 4,
+        "deaths": 86
     },
     {
-        "name": "Ural-375D",
-        "kd": 0.04,
-        "kills": 408,
-        "deaths": 10828
+        "name": "UAZ-3909",
+        "kd": 0.05,
+        "kills": 17,
+        "deaths": 312
     },
     {
         "name": "MiKi Truck Company Model 1",
         "kd": 0.04,
-        "kills": 288,
-        "deaths": 7320
+        "kills": 16,
+        "deaths": 452
+    },
+    {
+        "name": "T-34-122",
+        "kd": 0.04,
+        "kills": 2,
+        "deaths": 53
     },
     {
         "name": "GAZ Tigr M",
         "kd": 0.04,
-        "kills": 290,
-        "deaths": 7317
+        "kills": 15,
+        "deaths": 375
+    },
+    {
+        "name": "Sd Kfz 251",
+        "kd": 0.04,
+        "kills": 2,
+        "deaths": 46
+    },
+    {
+        "name": "Ural-375D",
+        "kd": 0.03,
+        "kills": 7,
+        "deaths": 246
+    },
+    {
+        "name": "UAZ-469",
+        "kd": 0.03,
+        "kills": 21,
+        "deaths": 710
     },
     {
         "name": "MT-LB",
-        "kd": 0.04,
-        "kills": 102,
-        "deaths": 2617
+        "kd": 0.03,
+        "kills": 3,
+        "deaths": 91
     },
     {
         "name": "M939",
         "kd": 0.03,
-        "kills": 139,
-        "deaths": 4664
+        "kills": 6,
+        "deaths": 173
     },
     {
-        "name": "UAZ-469",
-        "kd": 0.02,
-        "kills": 281,
-        "deaths": 11276
-    },
-    {
-        "name": "MiKi Truck Company Model 2",
-        "kd": 0.02,
-        "kills": 17,
-        "deaths": 1008
+        "name": "M3 half-track",
+        "kd": 0.03,
+        "kills": 1,
+        "deaths": 33
     },
     {
         "name": "Abandoned IFV Hull",
-        "kd": 0.02,
-        "kills": 10,
-        "deaths": 653
+        "kd": 0.03,
+        "kills": 1,
+        "deaths": 30
     },
     {
-        "name": "Abandoned Tank Hull",
-        "kd": 0.02,
-        "kills": 3,
-        "deaths": 131
+        "name": "MiKi Truck Company Model 2",
+        "kd": 0,
+        "kills": 0,
+        "deaths": 43
+    },
+    {
+        "name": "KV-220",
+        "kd": 0,
+        "kills": 0,
+        "deaths": 1
     }
 ]
