@@ -1,5 +1,5 @@
 {
-    "date": "2025-05-26T12:19:55.343Z",
+    "date": "2025-05-27T00:36:52.191Z",
     "vehicles": [
         "BRDM-2",
         "BMP-3",
@@ -118,7 +118,7 @@
         "Object 166",
         "Centurion Mk 5 AVRE",
         "FV4005",
-        "M60A1 RISE P",
+        "M60A1 RISE Passive",
         "T-34E",
         "CATTB",
         "Leopard 2 Giraffe",
@@ -220,12 +220,12 @@
         "M109A6",
         "BTR-90",
         "Strela-10",
-        "M2A1",
+        "M2A1 Bradley",
         "T-34-57",
         "PUMA",
         "M10 Wolverine",
         "Black Night",
-        "M18 Super Hellcat",
+        "90mm GMC Super Hellcat",
         "Sturmtiger",
         "Jagdpanther",
         "Maus",
@@ -246,16 +246,16 @@
         "M3 GMC",
         "T26E4 Super Pershing",
         "M4A1 (76) Sherman",
-        "PzWf. 15",
+        "Pz.W.42",
+        "SU-122P",
         "M4A3 (105)",
         "IS-1",
         "Mi-8AMTSh",
         "AH-64D",
         "Ka-52M Alligator-M",
-        "SU-122P",
         "Abandoned Tank Hull"
     ],
     "versions": [
-        270
+        272
     ]
 }

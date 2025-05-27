@@ -1,11 +1,15 @@
 {
-    "date": "2025-05-26T12:19:55.744Z",
+    "date": "2025-05-27T00:36:52.574Z",
     "vehicles": [
+        "T-72B",
+        "BTR-55",
+        "BRDM-2",
         "BTR-90",
         "T-34-85",
         "BMP-1",
         "Wiesel 1A4",
         "MT-LeBrams",
+        "Abrams X",
         "T-62",
         "Humvee",
         "M939",
@@ -28,7 +32,6 @@
         "Wiesel 1A2",
         "Leopard 2A6",
         "M2A1 Bradley",
-        "T-72B",
         "M901ITV",
         "MH-6 Little Bird",
         "M551 Sheridan",
@@ -159,7 +162,6 @@
         "Panther EVO",
         "M1128 MGS",
         "Kornet D BMD-4M",
-        "Abrams X",
         "2S7 Pion",
         "M270 MLRS",
         "IS-7",
@@ -178,7 +180,6 @@
         "AMX-13",
         "Object 775",
         "M113 HVMS",
-        "BRDM-2",
         "Object 166",
         "Centurion Mk 5 AVRE",
         "Begleitpanzer 57",
@@ -212,7 +213,6 @@
         "ISU-152",
         "M3 half-track",
         "Abandoned Tank Hull",
-        "BTR-55",
         "T-60",
         "Sd Kfz 251",
         "SU-85M",
@@ -240,6 +240,8 @@
         "M36 Jackson"
     ],
     "versions": [
+        96,
+        95,
         93,
         92,
         87,
@@ -247,8 +249,6 @@
         85,
         84,
         83,
-        82,
-        81,
-        80
+        82
     ]
 }
