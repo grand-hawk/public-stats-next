@@ -26692,58 +26692,58 @@
       "penetrationTable": {
         "0": {
           "0": [
-            263
+            234
           ],
           "500": [
-            253
+            225
           ],
           "1000": [
-            244
+            217
           ],
           "2000": [
-            226
+            201
           ]
         },
         "30": {
           "0": [
-            270
+            243
           ],
           "500": [
-            260
+            234
           ],
           "1000": [
-            251
+            225
           ],
           "2000": [
-            232
+            209
           ]
         },
         "60": {
           "0": [
-            300
+            280
           ],
           "500": [
-            289
+            270
           ],
           "1000": [
-            278
+            260
           ],
           "2000": [
-            258
+            241
           ]
         }
       },
       "name": "Pfeilgeschoss 3/7,5",
       "mass": 2.72,
-      "maxPenetration": 263,
+      "maxPenetration": 234,
       "damage": 330,
       "relatedVehicles": [
         "Pz IV Ausf. 1946",
         "Pz IV H"
       ],
-      "velocity": 1600,
+      "velocity": 1400,
       "type": "APFSDS",
-      "ricochetAngle": 74.61
+      "ricochetAngle": 73.6
     }
   ],
   "12.7mm QJC88A": [
