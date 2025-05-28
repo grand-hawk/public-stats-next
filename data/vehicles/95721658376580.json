@@ -11548,7 +11548,7 @@
         "thermals": "White (Gen 2)",
         "traverse": {
           "vertical": {
-            "max": 45,
+            "max": 60,
             "min": -10
           },
           "speed": {
@@ -11562,8 +11562,8 @@
         "rangefinder": "Laser",
         "stabilizer": true,
         "zoom": {
-          "max": 8,
-          "min": 0.9
+          "max": 12,
+          "min": 1.2
         }
       },
       "Gunner": {
