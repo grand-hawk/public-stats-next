@@ -10347,6 +10347,7 @@
       },
       "damage": 791,
       "relatedVehicles": [
+        "Shturm-S",
         "BMP-3",
         "T-15 Armata",
         "BMPT Terminator",
@@ -10416,6 +10417,7 @@
       },
       "damage": 400,
       "relatedVehicles": [
+        "Shturm-S",
         "BMP-3",
         "T-15 Armata",
         "BMPT Terminator",
@@ -10477,6 +10479,7 @@
       "damage": 400,
       "relatedVehicles": [
         "T-54 Obr. 1951",
+        "IS-1",
         "T-44",
         "T-54M"
       ],
@@ -10536,6 +10539,7 @@
       "damage": 400,
       "relatedVehicles": [
         "T-54 Obr. 1951",
+        "IS-1",
         "T-44",
         "T-54M"
       ],
@@ -10600,6 +10604,7 @@
       "damage": 400,
       "relatedVehicles": [
         "T-54 Obr. 1951",
+        "IS-1",
         "T-44",
         "T-54M"
       ],
@@ -10662,6 +10667,7 @@
       "damage": 400,
       "relatedVehicles": [
         "T-54 Obr. 1951",
+        "IS-1",
         "T-44",
         "T-54M"
       ],
@@ -10725,6 +10731,7 @@
       "damage": 352,
       "relatedVehicles": [
         "T-54 Obr. 1951",
+        "IS-1",
         "T-44",
         "T-54M"
       ],
@@ -14162,6 +14169,7 @@
         "M4A1 (76) Sherman",
         "M4A3 (105)",
         "M113 HVMS",
+        "T29",
         "M4A1 Sherman",
         "M4A2E8 Sherman",
         "M3 Lee",
@@ -14427,6 +14435,7 @@
       "damage": 400,
       "relatedVehicles": [
         "Mi-24V",
+        "Shturm-S",
         "Mi-8AMTSh"
       ],
       "velocity": 550,
@@ -17133,8 +17142,8 @@
       "maxPenetration": 372,
       "damage": 420,
       "relatedVehicles": [
-        "Teledyne AGS",
-        "M1 Abrams"
+        "M1 Abrams",
+        "Teledyne AGS"
       ],
       "velocity": 1509,
       "diameter": 26,
@@ -17196,8 +17205,8 @@
       },
       "damage": 514,
       "relatedVehicles": [
-        "Teledyne AGS",
-        "M1 Abrams"
+        "M1 Abrams",
+        "Teledyne AGS"
       ],
       "velocity": 732,
       "type": "HESH"
@@ -17257,8 +17266,8 @@
       },
       "damage": 420,
       "relatedVehicles": [
-        "Teledyne AGS",
-        "M1 Abrams"
+        "M1 Abrams",
+        "Teledyne AGS"
       ],
       "velocity": 1174,
       "type": "HEAT-FS"
@@ -17314,8 +17323,8 @@
       "maxPenetration": 522,
       "damage": 420,
       "relatedVehicles": [
-        "Teledyne AGS",
-        "M1 Abrams"
+        "M1 Abrams",
+        "Teledyne AGS"
       ],
       "velocity": 1505,
       "diameter": 23,
@@ -17373,8 +17382,8 @@
       "maxPenetration": 395,
       "damage": 420,
       "relatedVehicles": [
-        "Teledyne AGS",
-        "M1 Abrams"
+        "M1 Abrams",
+        "Teledyne AGS"
       ],
       "velocity": 1485,
       "diameter": 24,
@@ -20722,9 +20731,9 @@
         "Jagdtiger",
         "Comet Mk.1",
         "Panther II",
+        "Sturmtiger",
         "Class 3(P)",
         "Tiger II",
-        "Sturmtiger",
         "Jagdpanther"
       ],
       "velocity": 30,
@@ -20789,9 +20798,9 @@
         "Jagdtiger",
         "Comet Mk.1",
         "Panther II",
+        "Sturmtiger",
         "Class 3(P)",
         "Tiger II",
-        "Sturmtiger",
         "Jagdpanther"
       ],
       "velocity": 30,
@@ -23267,7 +23276,6 @@
         "OBT-3",
         "BMD-4M",
         "Object 450",
-        "Object 775",
         "T-64R",
         "Bumpee",
         "Object 477",
@@ -23294,8 +23302,9 @@
         "OBT-2UM",
         "M23 Pickett",
         "BMP-1",
-        "T-72B",
         "PT-76E",
+        "Object 775",
+        "T-72B",
         "BTR-82A",
         "MBT-3E",
         "T-62M-1"
@@ -24812,6 +24821,7 @@
       },
       "damage": 420,
       "relatedVehicles": [
+        "T29",
         "T29E3"
       ],
       "velocity": 900,
@@ -24868,6 +24878,7 @@
       "maxPenetration": 292,
       "damage": 420,
       "relatedVehicles": [
+        "T29",
         "T29E3"
       ],
       "velocity": 1128,
@@ -24929,6 +24940,7 @@
       },
       "damage": 362,
       "relatedVehicles": [
+        "T29",
         "T29E3"
       ],
       "velocity": 945,
@@ -24984,6 +24996,7 @@
       "maxPenetration": 256,
       "damage": 420,
       "relatedVehicles": [
+        "T29",
         "T29E3"
       ],
       "velocity": 914,
@@ -31406,15 +31419,15 @@
         "M1A1",
         "XM8",
         "M1A2 SEP V3",
-        "M60A2 Starship",
         "M60A1 RISE Passive",
+        "M60A2 Starship",
         "LAV-25",
         "Desert Warrior",
         "RDF/LT",
+        "M1 Abrams",
         "Teledyne AGS",
         "M60A1 Add-On Stabilization",
         "KF41 Lynx",
-        "M1 Abrams",
         "LAV-AT",
         "M1IP"
       ],
@@ -34314,12 +34327,12 @@
         "T-34",
         "IS-1",
         "T-34E",
-        "Abandoned Tank Hull",
         "T-60",
         "T-44",
         "KV-220",
         "IS-2 1944",
         "KV-2",
+        "Abandoned Tank Hull",
         "IS-3"
       ],
       "velocity": 640,
@@ -34461,116 +34474,60 @@
       "penetrationTable": {
         "0": {
           "0": [
-            240
+            8
           ],
           "500": [
-            228
+            8
           ],
           "1000": [
-            216
+            8
           ],
           "2000": [
-            195
+            8
           ]
         },
         "30": {
           "0": [
-            248
+            10
           ],
           "500": [
-            235
+            10
           ],
           "1000": [
-            223
+            10
           ],
           "2000": [
-            201
+            10
           ]
         },
         "60": {
           "0": [
-            280
+            16
           ],
           "500": [
-            266
+            16
           ],
           "1000": [
-            253
+            16
           ],
           "2000": [
-            227
+            16
           ]
         }
       },
-      "name": "panssarilävistys heitto sabot neljäkymmentä millimetriä iso",
-      "mass": 1,
-      "maxPenetration": 240,
-      "damage": 150,
-      "relatedVehicles": [
-        "Strf 9040C"
-      ],
-      "velocity": 1750,
-      "type": "APFSDS",
-      "ricochetAngle": 93
-    },
-    {
-      "penetrationTable": {
-        "0": {
-          "0": [
-            15
-          ],
-          "500": [
-            15
-          ],
-          "1000": [
-            15
-          ],
-          "2000": [
-            15
-          ]
-        },
-        "30": {
-          "0": [
-            17
-          ],
-          "500": [
-            17
-          ],
-          "1000": [
-            17
-          ],
-          "2000": [
-            17
-          ]
-        },
-        "60": {
-          "0": [
-            29
-          ],
-          "500": [
-            29
-          ],
-          "1000": [
-            29
-          ],
-          "2000": [
-            29
-          ]
-        }
-      },
-      "name": "räjähtävä räjähdys jossa on neljäkymmentä millimetriä iso",
-      "mass": 1,
-      "maxPenetration": 15,
+      "name": "slsgr m/90",
+      "mass": 0.5,
+      "maxPenetration": 8,
       "explosive": {
-        "killRadius": 2.4905293812435145,
-        "mass": 0.556,
-        "explosiveRadius": 19.897826831627807
+        "killRadius": 0.9527452754318488,
+        "mass": 0.1744,
+        "explosiveRadius": 13.51956993275164
       },
-      "damage": 237,
+      "damage": 169,
       "relatedVehicles": [
         "Strf 9040C"
       ],
-      "velocity": 1576,
+      "velocity": 988,
       "type": "HE"
     },
     {
@@ -34618,7 +34575,7 @@
           ]
         }
       },
-      "name": "läheisyyssulake neljäkymmentä millimetriä iso",
+      "name": "kulsgr m/90",
       "mass": 0.5,
       "maxPenetration": 9,
       "explosive": {
@@ -34630,8 +34587,64 @@
       "relatedVehicles": [
         "Strf 9040C"
       ],
-      "velocity": 1576,
+      "velocity": 1015,
       "type": "PROXIMITY FUZE"
+    },
+    {
+      "penetrationTable": {
+        "0": {
+          "0": [
+            140
+          ],
+          "500": [
+            133
+          ],
+          "1000": [
+            126
+          ],
+          "2000": [
+            114
+          ]
+        },
+        "30": {
+          "0": [
+            145
+          ],
+          "500": [
+            137
+          ],
+          "1000": [
+            130
+          ],
+          "2000": [
+            117
+          ]
+        },
+        "60": {
+          "0": [
+            164
+          ],
+          "500": [
+            155
+          ],
+          "1000": [
+            147
+          ],
+          "2000": [
+            133
+          ]
+        }
+      },
+      "name": "slpprj m/90",
+      "mass": 0.5,
+      "maxPenetration": 140,
+      "damage": 150,
+      "relatedVehicles": [
+        "Strf 9040C"
+      ],
+      "velocity": 1465,
+      "type": "APFSDS",
+      "ricochetAngle": 81
     }
   ],
   "12.7mm DSHK": [
@@ -37707,11 +37720,11 @@
         "Hornisse",
         "T-V",
         "Pz IV H",
+        "Sturmtiger",
         "Sd Kfz 251",
         "Tiger I",
         "Elefant",
         "Tiger II",
-        "Sturmtiger",
         "Jagdpanther",
         "Ersatz M10"
       ],
@@ -39529,6 +39542,7 @@
         "Type 16 MCV",
         "M4A3 (105)",
         "M1128 MGS",
+        "T29",
         "M4A1 Sherman",
         "120S",
         "M4A2E8 Sherman",
@@ -39558,31 +39572,31 @@
         "M1A1",
         "XM8",
         "M1A2 SEP V3",
+        "M60A1 RISE Passive",
         "M60A2 Starship",
         "M4A3E2 (76) Jumbo",
         "90mm GMC Super Hellcat",
         "Supply Truck",
         "M26 Pershing",
-        "M60A1 RISE Passive",
+        "Black Night",
         "IFV-30",
         "Leopard 2A8DK",
-        "M36B2 Jackson",
         "M7 Priest",
         "Willys MB",
+        "M1 Abrams",
         "M109A6",
         "M48A2 Patton",
         "Humvee",
         "M4A3 (105) Zippo",
+        "M551 Sheridan",
         "M60A1 Add-On Stabilization",
         "T26E4 Super Pershing",
-        "M551 Sheridan",
         "KF41 Lynx",
         "M113",
         "M18 Hellcat",
         "M4A2 Sherman",
-        "M1 Abrams",
+        "M36B2 Jackson",
         "M1126",
-        "Black Night",
         "MBT-3E",
         "M1IP"
       ],
