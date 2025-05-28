@@ -1,9 +1,11 @@
 {
-    "date": "2025-05-27T12:20:04.826Z",
+    "date": "2025-05-28T00:37:26.128Z",
     "vehicles": [
         "T-72B",
         "BTR-55",
         "BRDM-2",
+        "GAZ Tigr M",
+        "BMD-1",
         "BTR-90",
         "T-34-85",
         "BMP-1",
@@ -31,7 +33,7 @@
         "M109",
         "Wiesel 1A2",
         "Leopard 2A6",
-        "M2A1 Bradley",
+        "M2A1",
         "M901ITV",
         "MH-6 Little Bird",
         "M551 Sheridan",
@@ -71,7 +73,6 @@
         "T-64BM \"Bulat\"",
         "Leopard 2 Giraffe",
         "LAV-25",
-        "BMD-1",
         "Leclerc S21",
         "ZSU-57-2",
         "L3/35",
@@ -105,7 +106,6 @@
         "Churchill VII",
         "Strela-10",
         "Merkava Mk.4M",
-        "GAZ Tigr M",
         "M1A2 SEP V3",
         "Tiger II",
         "M26 Pershing",
@@ -159,6 +159,7 @@
         "Type 89",
         "Ariete C1",
         "Black Night",
+        "TOS-1A BM-1",
         "Panther EVO",
         "M1128 MGS",
         "Kornet D BMD-4M",
@@ -166,7 +167,6 @@
         "M270 MLRS",
         "IS-7",
         "ZBD04A",
-        "TOS-1A BM-1",
         "Cheonma-2",
         "XM8",
         "Ka-52M Alligator-M",
@@ -240,6 +240,8 @@
         "M36 Jackson"
     ],
     "versions": [
+        99,
+        97,
         96,
         95,
         93,
@@ -247,8 +249,6 @@
         87,
         86,
         85,
-        84,
-        83,
-        82
+        84
     ]
 }
