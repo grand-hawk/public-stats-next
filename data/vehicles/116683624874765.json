@@ -2451,6 +2451,106 @@
   {
     "engine": {
       "transmission": {
+        "reverseGears": 2,
+        "neutralSteering": false,
+        "forwardGears": 8
+      },
+      "reverseSpeed": 14,
+      "forwardSpeed": 35,
+      "type": "Diesel",
+      "maxRPM": 2800,
+      "horsepower": 770,
+      "name": "GAC V12"
+    },
+    "turrets": {
+      "Loader": {
+        "weapons": [
+          "12.7mm M2"
+        ],
+        "traverse": {
+          "vertical": {
+            "max": 50,
+            "min": -10
+          },
+          "speed": {
+            "horizontal": 60,
+            "vertical": 60
+          }
+        },
+        "zoom": {
+          "max": 2.88,
+          "min": 1.8
+        },
+        "stabilizer": false
+      },
+      "Gunner": {
+        "smokes": false,
+        "traverse": {
+          "vertical": {
+            "max": 15,
+            "min": -10
+          },
+          "speed": {
+            "horizontal": 16.9,
+            "vertical": 16.9
+          }
+        },
+        "weapons": [
+          "12.7mm M2",
+          "105mm T5E1"
+        ],
+        "stabilizer": false,
+        "zoom": {
+          "max": 8,
+          "min": 3.789473684210526
+        }
+      },
+      "Commander": {
+        "weapons": [],
+        "traverse": {
+          "vertical": {
+            "max": 25,
+            "min": -25
+          },
+          "speed": {
+            "horizontal": 60,
+            "vertical": 60
+          }
+        },
+        "zoom": {
+          "max": 2.88,
+          "min": 1.8
+        },
+        "stabilizer": false
+      },
+      "BowGunner": {
+        "weapons": [
+          ".30 cal M1919"
+        ],
+        "traverse": {
+          "vertical": {
+            "max": 18,
+            "min": -18
+          },
+          "speed": {
+            "horizontal": 60,
+            "vertical": 60
+          }
+        },
+        "zoom": {
+          "max": 2.88,
+          "min": 1.8
+        },
+        "stabilizer": false
+      }
+    },
+    "name": "T29",
+    "amphibious": false,
+    "mass": 64.2
+  },
+  {
+    "engine": {
+      "transmission": {
         "reverseGears": 1,
         "neutralSteering": false,
         "forwardGears": 5
@@ -4289,6 +4389,48 @@
   {
     "engine": {
       "transmission": {
+        "reverseGears": 1,
+        "neutralSteering": false,
+        "forwardGears": 6
+      },
+      "reverseSpeed": 10,
+      "forwardSpeed": 62,
+      "type": "Diesel",
+      "maxRPM": 2100,
+      "horsepower": 240,
+      "name": "YaMZ 238"
+    },
+    "turrets": {
+      "Commander": {
+        "thermals": "White (Gen 2)",
+        "traverse": {
+          "vertical": {
+            "max": 15,
+            "min": -5
+          },
+          "speed": {
+            "horizontal": 25,
+            "vertical": 25
+          }
+        },
+        "weapons": [
+          "9M114 Shturm",
+          "9M120 Ataka"
+        ],
+        "stabilizer": false,
+        "zoom": {
+          "max": 8,
+          "min": 8
+        }
+      }
+    },
+    "name": "Shturm-S",
+    "amphibious": true,
+    "mass": 11.8
+  },
+  {
+    "engine": {
+      "transmission": {
         "reverseGears": 8,
         "neutralSteering": true,
         "automatic": true,
@@ -5768,8 +5910,8 @@
         "rangefinder": "None",
         "traverse": {
           "vertical": {
-            "max": 60,
-            "min": -27.5
+            "max": 50,
+            "min": -10
           },
           "speed": {
             "horizontal": 60,
@@ -11765,7 +11907,7 @@
         "thermals": "White (Gen 2)",
         "traverse": {
           "vertical": {
-            "max": 45,
+            "max": 60,
             "min": -10
           },
           "speed": {
@@ -11779,8 +11921,8 @@
         "rangefinder": "Laser",
         "stabilizer": true,
         "zoom": {
-          "max": 8,
-          "min": 0.9
+          "max": 12,
+          "min": 1.2
         }
       },
       "Gunner": {
@@ -12147,7 +12289,8 @@
         },
         "weapons": [
           "85mm D-5S",
-          "7.62mm DT-28"
+          "7.62mm DT-28",
+          "100mm D-10T"
         ],
         "rangefinder": "None",
         "stabilizer": false,
