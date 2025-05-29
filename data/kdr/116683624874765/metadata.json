@@ -1,5 +1,5 @@
 {
-    "date": "2025-05-29T00:37:20.604Z",
+    "date": "2025-05-29T12:20:01.201Z",
     "vehicles": [
         "T-72B",
         "BTR-55",
@@ -238,10 +238,12 @@
         "M18 Hellcat",
         "Panther II",
         "M36 Jackson",
+        "M48 Super",
         "M4A3E2 (76) Jumbo",
         "Sherman Firefly"
     ],
     "versions": [
+        102,
         101,
         99,
         97,
@@ -250,7 +252,6 @@
         93,
         92,
         87,
-        86,
-        85
+        86
     ]
 }
