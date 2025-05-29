@@ -8444,6 +8444,25 @@
       "transmission": {
         "reverseGears": 1,
         "neutralSteering": false,
+        "forwardGears": 4
+      },
+      "reverseSpeed": 22,
+      "forwardSpeed": 150,
+      "type": "Diesel",
+      "maxRPM": 4000,
+      "horsepower": 63,
+      "name": "VAZ-2105"
+    },
+    "turrets": [],
+    "name": "KSPD Patrol Car",
+    "amphibious": false,
+    "mass": 1.05
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 1,
+        "neutralSteering": false,
         "forwardGears": 5
       },
       "reverseSpeed": 7,
