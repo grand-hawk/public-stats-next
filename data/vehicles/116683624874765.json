@@ -8444,7 +8444,7 @@
       "transmission": {
         "reverseGears": 1,
         "neutralSteering": false,
-        "forwardGears": 4
+        "forwardGears": 5
       },
       "reverseSpeed": 22,
       "forwardSpeed": 150,
@@ -8454,9 +8454,9 @@
       "name": "VAZ-2105"
     },
     "turrets": [],
-    "name": "KSPD Patrol Car",
+    "name": "850 GLT POLISEN",
     "amphibious": false,
-    "mass": 1.05
+    "mass": 1.412
   },
   {
     "engine": {
