@@ -193,6 +193,17 @@ export default function VehicleInfo({
                                 {turret.rangefinder}
                               </Stat>
                             )}
+
+                            {(turret.lws || turret.maws) && (
+                              <Stat label="Warning system(s)">
+                                {[
+                                  turret.lws && 'Laser',
+                                  turret.maws && 'Missile',
+                                ]
+                                  .filter(Boolean)
+                                  .join(', ')}
+                              </Stat>
+                            )}
                           </StatStack>
                         </BasicCard>
 
