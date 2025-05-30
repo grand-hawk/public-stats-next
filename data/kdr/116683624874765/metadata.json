@@ -1,5 +1,5 @@
 {
-    "date": "2025-05-29T12:20:01.201Z",
+    "date": "2025-05-30T00:37:22.497Z",
     "vehicles": [
         "T-72B",
         "BTR-55",
@@ -221,7 +221,7 @@
         "M4A3E2 (75) Jumbo",
         "T26E4 Super Pershing",
         "Ersatz M10",
-        "VK 16.02 Leopard",
+        "VK 16.02",
         "Sturmtiger",
         "KV-1E",
         "M4A2 Sherman",
@@ -243,15 +243,15 @@
         "Sherman Firefly"
     ],
     "versions": [
+        108,
+        107,
+        106,
         102,
         101,
         99,
         97,
         96,
         95,
-        93,
-        92,
-        87,
-        86
+        93
     ]
 }
