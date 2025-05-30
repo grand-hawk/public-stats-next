@@ -60,6 +60,8 @@ export interface Vehicle {
       stabilizer: boolean;
       thermals: string | undefined;
       rangefinder: string | undefined;
+      lws: boolean | undefined;
+      maws: boolean | undefined;
       weapons: string[];
     };
   };

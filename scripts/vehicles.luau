@@ -75,6 +75,8 @@ type VehicleModule = {
 			stabilizer: boolean,
 			thermals: string?,
 			rangefinder: string?,
+			lws: boolean?,
+			maws: boolean?,
 			weapons: { string },
 		},
 	},
@@ -147,9 +149,10 @@ for name, tank in TankInfo do
 			continue
 		end
 
-		local seatName = controlValue.Value.Name
+		local seat = controlValue.Value
+		local seatName = seat.Name
 		if vehicle.turrets[seatName] then
-			warn(`{controlValue.Value:GetFullName()} has multiple turrets`)
+			warn(`{seat:GetFullName()} has multiple turrets`)
 			continue
 		end
 
@@ -194,6 +197,13 @@ for name, tank in TankInfo do
 					break
 				end
 			end
+		end
+
+		if seat:GetAttribute("LWR") then
+			vehicle.turrets[seatName].lws = true
+		end
+		if seat:GetAttribute("MAWS") then
+			vehicle.turrets[seatName].maws = true
 		end
 
 		for _, weapon: Folder in weaponsFolder:GetChildren() do
