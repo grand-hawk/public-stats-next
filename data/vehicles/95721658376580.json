@@ -8797,7 +8797,7 @@
         }
       },
       "Gunner": {
-        "smokes": true,
+        "thermals": "White (Gen 1)",
         "traverse": {
           "vertical": {
             "max": 15,
@@ -8809,9 +8809,10 @@
           }
         },
         "weapons": [
-          "7.62mm PKT",
-          "125mm 2A46M-1"
+          "125mm 2A46M-1",
+          "7.62mm PKT"
         ],
+        "smokes": true,
         "rangefinder": "Laser",
         "stabilizer": true,
         "zoom": {
