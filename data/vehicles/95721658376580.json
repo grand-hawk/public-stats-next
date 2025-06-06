@@ -12538,7 +12538,9 @@
     },
     "turrets": {
       "Commander": {
-        "rangefinder": "Laser",
+        "weapons": [
+          "12.7mm DSHK"
+        ],
         "traverse": {
           "vertical": {
             "max": 45,
@@ -12549,14 +12551,11 @@
             "vertical": 45
           }
         },
-        "weapons": [
-          "12.7mm DSHK"
-        ],
-        "stabilizer": true,
         "zoom": {
           "max": 4.8,
           "min": 4.8
-        }
+        },
+        "stabilizer": true
       },
       "Gunner": {
         "smokes": false,
