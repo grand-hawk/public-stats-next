@@ -1,5 +1,5 @@
 {
-    "date": "2025-06-05T12:20:05.918Z",
+    "date": "2025-06-06T00:37:30.024Z",
     "vehicles": [
         "T-72B",
         "BTR-55",
@@ -242,9 +242,12 @@
         "M4A3E2 (76) Jumbo",
         "Sherman Firefly",
         "Porsche Tiger",
-        "ISU-152BM"
+        "ISU-152BM",
+        "M4A1 (76) Sherman",
+        "LVT-6 Gator"
     ],
     "versions": [
+        117,
         116,
         115,
         114,
@@ -253,7 +256,6 @@
         111,
         110,
         108,
-        107,
-        106
+        107
     ]
 }
