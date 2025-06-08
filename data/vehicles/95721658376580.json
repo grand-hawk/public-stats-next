@@ -35,7 +35,7 @@
         }
       },
       "Gunner": {
-        "thermals": "White (Gen 1)",
+        "smokes": false,
         "traverse": {
           "vertical": {
             "max": 80,
@@ -49,8 +49,6 @@
         "weapons": [
           "MIM146 Launcher"
         ],
-        "smokes": false,
-        "rangefinder": "Laser",
         "stabilizer": true,
         "zoom": {
           "max": 12,
@@ -79,6 +77,7 @@
     },
     "turrets": {
       "Loader": {
+        "lws": true,
         "traverse": {
           "vertical": {
             "max": 45,
@@ -89,12 +88,10 @@
             "vertical": 60
           }
         },
-        "maws": true,
         "weapons": [
           "7.62mm L37A2"
         ],
-        "lws": true,
-        "rangefinder": "Laser",
+        "maws": true,
         "stabilizer": true,
         "zoom": {
           "max": 2.88,
@@ -102,7 +99,6 @@
         }
       },
       "Gunner": {
-        "thermals": "White (Gen 3)",
         "traverse": {
           "vertical": {
             "max": 20,
@@ -113,23 +109,22 @@
             "vertical": 37
           }
         },
+        "smokes": true,
+        "maws": true,
         "weapons": [
           "120mm L30A1",
           "7.62 mm L94A1",
           "Brimstone"
         ],
         "lws": true,
-        "maws": true,
-        "smokes": true,
         "stabilizer": true,
-        "rangefinder": "Laser",
         "zoom": {
           "max": 10.285714285714286,
           "min": 3.789473684210526
         }
       },
       "Commander": {
-        "thermals": "White (Gen 3)",
+        "lws": true,
         "traverse": {
           "vertical": {
             "max": 30,
@@ -141,14 +136,12 @@
           }
         },
         "weapons": [],
-        "lws": true,
-        "rangefinder": "Laser",
+        "maws": true,
         "stabilizer": true,
         "zoom": {
           "max": 8,
           "min": 8
-        },
-        "maws": true
+        }
       }
     },
     "name": "Black Night",
@@ -171,7 +164,9 @@
     },
     "turrets": {
       "Commander": {
-        "rangefinder": "None",
+        "weapons": [
+          "12.7mm NSVT"
+        ],
         "traverse": {
           "vertical": {
             "max": 45,
@@ -182,14 +177,11 @@
             "vertical": 60
           }
         },
-        "weapons": [
-          "12.7mm NSVT"
-        ],
-        "stabilizer": false,
         "zoom": {
           "max": 2.88,
           "min": 1.8
-        }
+        },
+        "stabilizer": false
       },
       "Gunner": {
         "smokes": false,
@@ -206,7 +198,6 @@
         "weapons": [
           "S-8KO"
         ],
-        "rangefinder": "None",
         "stabilizer": false,
         "zoom": {
           "max": 8,
@@ -269,7 +260,6 @@
           "85mm ZIS-S-53",
           "7.62mm DT-28"
         ],
-        "rangefinder": "None",
         "stabilizer": false,
         "zoom": {
           "max": 3.789473684210526,
@@ -332,7 +322,6 @@
           "76mm F-34",
           "7.62mm DT-28"
         ],
-        "rangefinder": "None",
         "stabilizer": false,
         "zoom": {
           "max": 3.4285714285714284,
@@ -392,7 +381,6 @@
           }
         },
         "weapons": [],
-        "rangefinder": "None",
         "stabilizer": false,
         "zoom": {
           "max": 0.72,
@@ -414,7 +402,6 @@
         "weapons": [
           "152mm 2A64M"
         ],
-        "rangefinder": "None",
         "stabilizer": false,
         "zoom": {
           "max": 3.6,
@@ -457,7 +444,6 @@
           "76mm M1",
           ".30 cal M1919"
         ],
-        "rangefinder": "None",
         "stabilizer": true,
         "zoom": {
           "max": 4.8,
@@ -525,7 +511,9 @@
     },
     "turrets": {
       "Commander": {
-        "rangefinder": "None",
+        "weapons": [
+          "7.62mm PKT"
+        ],
         "traverse": {
           "vertical": {
             "max": 45,
@@ -536,14 +524,11 @@
             "vertical": 60
           }
         },
-        "weapons": [
-          "7.62mm PKT"
-        ],
-        "stabilizer": false,
         "zoom": {
           "max": 2.88,
           "min": 1.8
-        }
+        },
+        "stabilizer": false
       }
     },
     "name": "MT-LB",
@@ -566,7 +551,7 @@
     },
     "turrets": {
       "Commander": {
-        "rangefinder": "None",
+        "weapons": [],
         "traverse": {
           "vertical": {
             "max": 30,
@@ -577,12 +562,11 @@
             "vertical": 40
           }
         },
-        "weapons": [],
-        "stabilizer": false,
         "zoom": {
           "max": 4.8,
           "min": 4.8
-        }
+        },
+        "stabilizer": false
       },
       "Gunner": {
         "smokes": true,
@@ -602,7 +586,6 @@
           "73mm 2A28",
           "7.62mm PKT"
         ],
-        "rangefinder": "None",
         "stabilizer": false,
         "zoom": {
           "max": 6,
@@ -630,7 +613,9 @@
     },
     "turrets": {
       "Loader": {
-        "rangefinder": "None",
+        "weapons": [
+          "12.7mm NSVT"
+        ],
         "traverse": {
           "vertical": {
             "max": 45,
@@ -641,14 +626,11 @@
             "vertical": 60
           }
         },
-        "weapons": [
-          "12.7mm NSVT"
-        ],
-        "stabilizer": true,
         "zoom": {
           "max": 2.88,
           "min": 1.8
-        }
+        },
+        "stabilizer": true
       },
       "Gunner": {
         "smokes": false,
@@ -666,7 +648,6 @@
           "100mm D-10TS2",
           "7.62mm PKT"
         ],
-        "rangefinder": "None",
         "stabilizer": true,
         "zoom": {
           "max": 6.545454545454546,
@@ -674,7 +655,7 @@
         }
       },
       "Commander": {
-        "rangefinder": "None",
+        "weapons": [],
         "traverse": {
           "vertical": {
             "max": 16,
@@ -685,15 +666,16 @@
             "vertical": 60
           }
         },
-        "weapons": [],
-        "stabilizer": true,
         "zoom": {
           "max": 4.8,
           "min": 4.8
-        }
+        },
+        "stabilizer": true
       },
       "Driver": {
-        "rangefinder": "None",
+        "weapons": [
+          "7.62mm PKT"
+        ],
         "traverse": {
           "vertical": {
             "max": 18,
@@ -704,14 +686,11 @@
             "vertical": 14.1
           }
         },
-        "weapons": [
-          "7.62mm PKT"
-        ],
-        "stabilizer": false,
         "zoom": {
           "max": 2.88,
           "min": 1.8
-        }
+        },
+        "stabilizer": false
       }
     },
     "name": "T-55",
@@ -735,6 +714,7 @@
     },
     "turrets": {
       "Commander": {
+        "lws": true,
         "traverse": {
           "vertical": {
             "max": 45,
@@ -748,8 +728,6 @@
         "weapons": [
           "12.7mm NSVT"
         ],
-        "lws": true,
-        "rangefinder": "Laser",
         "stabilizer": true,
         "zoom": {
           "max": 8,
@@ -757,7 +735,7 @@
         }
       },
       "Gunner": {
-        "thermals": "White (Gen 2)",
+        "smokes": true,
         "traverse": {
           "vertical": {
             "max": 15,
@@ -772,14 +750,12 @@
           "7.62mm PKT",
           "120mm KBM-2"
         ],
-        "smokes": true,
-        "rangefinder": "Laser",
+        "lws": true,
         "stabilizer": true,
         "zoom": {
           "max": 12,
           "min": 2.5714285714285716
-        },
-        "lws": true
+        }
       }
     },
     "name": "T-84-120",
@@ -802,7 +778,10 @@
     },
     "turrets": {
       "Loader": {
-        "rangefinder": "None",
+        "weapons": [
+          "Grenade Mortar",
+          "X7 Rotkäppchen"
+        ],
         "traverse": {
           "vertical": {
             "max": 0,
@@ -813,15 +792,11 @@
             "vertical": 17.9
           }
         },
-        "weapons": [
-          "Grenade Mortar",
-          "X7 Rotkäppchen"
-        ],
-        "stabilizer": false,
         "zoom": {
           "max": 2.88,
           "min": 1.8
-        }
+        },
+        "stabilizer": false
       },
       "Gunner": {
         "smokes": false,
@@ -839,7 +814,6 @@
           "88 mm KwK43",
           "7.92mm MG34"
         ],
-        "rangefinder": "None",
         "stabilizer": false,
         "zoom": {
           "max": 3.4285714285714284,
@@ -926,6 +900,7 @@
     },
     "turrets": {
       "Commander": {
+        "lws": true,
         "traverse": {
           "vertical": {
             "max": 45,
@@ -939,8 +914,6 @@
         "weapons": [
           "12.7mm KORD"
         ],
-        "lws": true,
-        "rangefinder": "Laser",
         "stabilizer": true,
         "zoom": {
           "max": 8,
@@ -948,7 +921,7 @@
         }
       },
       "Gunner": {
-        "thermals": "White (Gen 2)",
+        "smokes": true,
         "traverse": {
           "vertical": {
             "max": 14,
@@ -963,14 +936,12 @@
           "7.62mm PKT",
           "125mm 2A46M-5"
         ],
-        "smokes": true,
-        "rangefinder": "Laser",
+        "lws": true,
         "stabilizer": true,
         "zoom": {
           "max": 12,
           "min": 2.5714285714285716
-        },
-        "lws": true
+        }
       }
     },
     "name": "T-90A",
@@ -1069,7 +1040,6 @@
         "weapons": [
           "122mm D-30"
         ],
-        "rangefinder": "None",
         "stabilizer": false,
         "zoom": {
           "max": 3.4285714285714284,
@@ -1111,7 +1081,6 @@
         "weapons": [
           "203mm 2A44"
         ],
-        "rangefinder": "None",
         "stabilizer": false,
         "zoom": {
           "max": 3.6,
@@ -1175,7 +1144,6 @@
           "7.92 mm BESA",
           "RP-3 Rocket"
         ],
-        "rangefinder": "None",
         "stabilizer": false,
         "zoom": {
           "max": 3.4285714285714284,
@@ -1204,7 +1172,7 @@
     },
     "turrets": {
       "Commander": {
-        "thermals": "White (Gen 3)",
+        "lws": true,
         "traverse": {
           "vertical": {
             "max": 60,
@@ -1215,19 +1183,17 @@
             "vertical": 60
           }
         },
-        "stabilizer": true,
-        "rangefinder": "Laser",
         "weapons": [
           "12.7mm M2"
         ],
-        "lws": true,
+        "stabilizer": true,
         "zoom": {
           "max": 12,
           "min": 3.789473684210526
         }
       },
       "Gunner": {
-        "thermals": "White (Gen 3)",
+        "smokes": true,
         "traverse": {
           "vertical": {
             "max": 15,
@@ -1242,14 +1208,12 @@
           "105mm JSW",
           "7.62mm Type 74"
         ],
-        "smokes": true,
-        "rangefinder": "Laser",
+        "lws": true,
         "stabilizer": true,
         "zoom": {
           "max": 12,
           "min": 3.789473684210526
-        },
-        "lws": true
+        }
       }
     },
     "name": "Type 16 MCV",
@@ -1272,7 +1236,9 @@
     },
     "turrets": {
       "Commander": {
-        "rangefinder": "Laser",
+        "weapons": [
+          "12.7mm NSVT"
+        ],
         "traverse": {
           "vertical": {
             "max": 45,
@@ -1283,14 +1249,11 @@
             "vertical": 60
           }
         },
-        "weapons": [
-          "12.7mm NSVT"
-        ],
-        "stabilizer": true,
         "zoom": {
           "max": 4.8,
           "min": 4.8
-        }
+        },
+        "stabilizer": true
       },
       "Gunner": {
         "smokes": true,
@@ -1308,7 +1271,6 @@
           "7.62mm PKT",
           "125mm 2A46"
         ],
-        "rangefinder": "Laser",
         "stabilizer": true,
         "zoom": {
           "max": 8,
@@ -1336,7 +1298,7 @@
     },
     "turrets": {
       "Commander": {
-        "rangefinder": "Laser",
+        "weapons": [],
         "traverse": {
           "vertical": {
             "max": 80,
@@ -1347,15 +1309,14 @@
             "vertical": 60
           }
         },
-        "weapons": [],
-        "stabilizer": true,
         "zoom": {
           "max": 18,
           "min": 3.789473684210526
-        }
+        },
+        "stabilizer": true
       },
       "Gunner": {
-        "thermals": "White (Gen 2)",
+        "smokes": true,
         "traverse": {
           "vertical": {
             "max": 74,
@@ -1372,8 +1333,6 @@
           "9M133 Kornet",
           "30mm AG-30"
         ],
-        "smokes": true,
-        "rangefinder": "Laser",
         "stabilizer": true,
         "zoom": {
           "max": 12,
@@ -1402,7 +1361,7 @@
     },
     "turrets": {
       "Commander": {
-        "thermals": "White (Gen 2)",
+        "lws": true,
         "traverse": {
           "vertical": {
             "max": 40,
@@ -1413,17 +1372,15 @@
             "vertical": 60
           }
         },
-        "stabilizer": true,
-        "rangefinder": "Laser",
         "weapons": [],
-        "lws": true,
+        "stabilizer": true,
         "zoom": {
           "max": 4.8,
           "min": 0.9
         }
       },
       "Gunner": {
-        "thermals": "White (Gen 2)",
+        "smokes": true,
         "traverse": {
           "vertical": {
             "max": 60,
@@ -1439,14 +1396,12 @@
           "30mm ZPL02",
           "5.8mm QJT"
         ],
-        "smokes": true,
-        "rangefinder": "Laser",
+        "lws": true,
         "stabilizer": true,
         "zoom": {
           "max": 10.285714285714286,
           "min": 6
-        },
-        "lws": true
+        }
       }
     },
     "name": "ZBD04A",
@@ -1470,7 +1425,7 @@
     },
     "turrets": {
       "Driver": {
-        "thermals": "White (Gen 3)",
+        "lws": true,
         "traverse": {
           "vertical": {
             "max": 60,
@@ -1481,20 +1436,18 @@
             "vertical": 60
           }
         },
-        "stabilizer": true,
-        "rangefinder": "Laser",
         "weapons": [
           "15mm Automatisches IWS 2000",
           "APERS Grenade"
         ],
-        "lws": true,
+        "stabilizer": true,
         "zoom": {
           "max": 12,
           "min": 3.789473684210526
         }
       },
       "Gunner": {
-        "thermals": "White (Gen 3)",
+        "smokes": true,
         "traverse": {
           "vertical": {
             "max": 30,
@@ -1509,14 +1462,12 @@
           "130mm Electro-Thermal MPX",
           "23mm 2A14M5"
         ],
-        "smokes": true,
-        "rangefinder": "Laser",
+        "lws": true,
         "stabilizer": true,
         "zoom": {
           "max": 12,
           "min": 1.44
-        },
-        "lws": true
+        }
       }
     },
     "name": "Neovenator 'Besiege'",
@@ -1554,7 +1505,6 @@
           "105 mm M4",
           ".30 cal M1919"
         ],
-        "rangefinder": "None",
         "stabilizer": false,
         "zoom": {
           "max": 3.4285714285714284,
@@ -1638,7 +1588,6 @@
           "60mm IMI HVMS",
           ".30 cal M1919"
         ],
-        "rangefinder": "Laser",
         "stabilizer": false,
         "zoom": {
           "max": 8,
@@ -1680,7 +1629,6 @@
         "weapons": [
           "115mm U-5TS"
         ],
-        "rangefinder": "None",
         "stabilizer": false,
         "zoom": {
           "max": 2.88,
@@ -1714,7 +1662,7 @@
     },
     "turrets": {
       "Commander": {
-        "thermals": "White (Gen 1)",
+        "weapons": [],
         "traverse": {
           "vertical": {
             "max": 45,
@@ -1725,16 +1673,14 @@
             "vertical": 60
           }
         },
-        "weapons": [],
-        "rangefinder": "Laser",
-        "stabilizer": true,
         "zoom": {
           "max": 8,
           "min": 1.894736842105263
-        }
+        },
+        "stabilizer": true
       },
       "Gunner": {
-        "thermals": "White (Gen 2)",
+        "smokes": false,
         "traverse": {
           "vertical": {
             "max": 20,
@@ -1748,8 +1694,6 @@
         "weapons": [
           "75mm XM274"
         ],
-        "smokes": false,
-        "rangefinder": "Laser",
         "stabilizer": true,
         "zoom": {
           "max": 8,
@@ -1777,7 +1721,9 @@
     },
     "turrets": {
       "Commander": {
-        "rangefinder": "Laser",
+        "weapons": [
+          "12.7mm NSVT"
+        ],
         "traverse": {
           "vertical": {
             "max": 45,
@@ -1788,14 +1734,11 @@
             "vertical": 60
           }
         },
-        "weapons": [
-          "12.7mm NSVT"
-        ],
-        "stabilizer": true,
         "zoom": {
           "max": 4.8,
           "min": 4.8
-        }
+        },
+        "stabilizer": true
       },
       "Gunner": {
         "smokes": true,
@@ -1813,7 +1756,6 @@
           "7.62mm PKT",
           "125mm 2A46M"
         ],
-        "rangefinder": "Laser",
         "stabilizer": true,
         "zoom": {
           "max": 8,
@@ -1847,7 +1789,7 @@
     },
     "turrets": {
       "Commander": {
-        "thermals": "White (Gen 3)",
+        "lws": true,
         "traverse": {
           "vertical": {
             "max": 40,
@@ -1859,17 +1801,14 @@
           }
         },
         "weapons": [],
-        "lws": true,
-        "rangefinder": "Laser",
+        "maws": true,
         "stabilizer": true,
         "zoom": {
           "max": 12,
           "min": 3.789473684210526
-        },
-        "maws": true
+        }
       },
       "Gunner": {
-        "thermals": "White (Gen 3)",
         "traverse": {
           "vertical": {
             "max": 45,
@@ -1880,6 +1819,8 @@
             "vertical": 46
           }
         },
+        "smokes": true,
+        "maws": true,
         "weapons": [
           "9M134 Bulat",
           "9M133 Kornet",
@@ -1887,10 +1828,7 @@
           "7.62mm PKT"
         ],
         "lws": true,
-        "maws": true,
-        "smokes": true,
         "stabilizer": true,
-        "rangefinder": "Laser",
         "zoom": {
           "max": 12,
           "min": 3.789473684210526
@@ -1923,7 +1861,9 @@
     },
     "turrets": {
       "Commander": {
-        "thermals": "Green (Gen 3)",
+        "weapons": [
+          "12.7mm M2"
+        ],
         "traverse": {
           "vertical": {
             "max": 70,
@@ -1934,18 +1874,14 @@
             "vertical": 60
           }
         },
-        "weapons": [
-          "12.7mm M2"
-        ],
-        "rangefinder": "Laser",
-        "stabilizer": true,
         "zoom": {
           "max": 8,
           "min": 1.894736842105263
-        }
+        },
+        "stabilizer": true
       },
       "Gunner": {
-        "thermals": "Green (Gen 3)",
+        "smokes": true,
         "traverse": {
           "vertical": {
             "max": 15,
@@ -1960,8 +1896,6 @@
           "7.62mm M240",
           "105mm M68A1E4"
         ],
-        "smokes": true,
-        "rangefinder": "Laser",
         "stabilizer": true,
         "zoom": {
           "max": 10.285714285714286,
@@ -1990,7 +1924,7 @@
     },
     "turrets": {
       "Commander": {
-        "thermals": "White (Gen 3)",
+        "lws": true,
         "traverse": {
           "vertical": {
             "max": 75,
@@ -2005,17 +1939,14 @@
           "Loitering Drone",
           "30mm M230LF"
         ],
-        "lws": true,
-        "rangefinder": "Laser",
+        "maws": true,
         "stabilizer": true,
         "zoom": {
           "max": 12,
           "min": 2.88
-        },
-        "maws": true
+        }
       },
       "Gunner": {
-        "thermals": "White (Gen 3)",
         "traverse": {
           "vertical": {
             "max": 20,
@@ -2026,15 +1957,14 @@
             "vertical": 37.6
           }
         },
+        "smokes": true,
+        "maws": true,
         "weapons": [
           "7.62mm M240",
           "120mm M256"
         ],
         "lws": true,
-        "maws": true,
-        "smokes": true,
         "stabilizer": true,
-        "rangefinder": "Laser",
         "zoom": {
           "max": 12,
           "min": 2.88
@@ -2076,7 +2006,6 @@
           "14.5mm KPVT",
           "7.62mm PKT"
         ],
-        "rangefinder": "None",
         "stabilizer": false,
         "zoom": {
           "max": 4.8,
@@ -2104,7 +2033,9 @@
     },
     "turrets": {
       "Driver": {
-        "rangefinder": "None",
+        "weapons": [
+          "Mörser Karl 600mm"
+        ],
         "traverse": {
           "vertical": {
             "max": 70,
@@ -2115,14 +2046,11 @@
             "vertical": 7
           }
         },
-        "weapons": [
-          "Mörser Karl 600mm"
-        ],
-        "stabilizer": false,
         "zoom": {
           "max": 4.8,
           "min": 2.4
-        }
+        },
+        "stabilizer": false
       }
     },
     "name": "Karl-Gerät",
@@ -2159,7 +2087,6 @@
         "weapons": [
           "57mm M1"
         ],
-        "rangefinder": "None",
         "stabilizer": false,
         "zoom": {
           "max": 3.4285714285714284,
@@ -2187,7 +2114,9 @@
     },
     "turrets": {
       "Commander": {
-        "rangefinder": "Laser",
+        "weapons": [
+          "40mm MK-19"
+        ],
         "traverse": {
           "vertical": {
             "max": 15,
@@ -2198,17 +2127,14 @@
             "vertical": 60
           }
         },
-        "weapons": [
-          "40mm MK-19"
-        ],
-        "stabilizer": true,
         "zoom": {
           "max": 12,
           "min": 2.88
-        }
+        },
+        "stabilizer": true
       },
       "Gunner": {
-        "thermals": "Green (Gen 2)",
+        "smokes": true,
         "traverse": {
           "vertical": {
             "max": 20,
@@ -2222,8 +2148,6 @@
         "weapons": [
           "40mm Akan m/70B"
         ],
-        "smokes": true,
-        "rangefinder": "Laser",
         "stabilizer": true,
         "zoom": {
           "max": 8,
@@ -2266,7 +2190,6 @@
           "75 mm KwK40 L48",
           "7.92mm MG34"
         ],
-        "rangefinder": "None",
         "stabilizer": false,
         "zoom": {
           "max": 3.4285714285714284,
@@ -2370,7 +2293,6 @@
           "L9A1 165mm",
           "75mm OQF Mk.V"
         ],
-        "rangefinder": "None",
         "stabilizer": false,
         "zoom": {
           "max": 6,
@@ -2418,7 +2340,10 @@
     },
     "turrets": {
       "Commander": {
-        "rangefinder": "None",
+        "weapons": [
+          "7.62mm PKT",
+          "76.2 mm D-56TM"
+        ],
         "traverse": {
           "vertical": {
             "max": 30,
@@ -2429,15 +2354,11 @@
             "vertical": 18.8
           }
         },
-        "weapons": [
-          "7.62mm PKT",
-          "76.2 mm D-56TM"
-        ],
-        "stabilizer": true,
         "zoom": {
           "max": 3.789473684210526,
           "min": 3.789473684210526
-        }
+        },
+        "stabilizer": true
       }
     },
     "name": "PT-76B",
@@ -2460,7 +2381,9 @@
     },
     "turrets": {
       "Commander": {
-        "rangefinder": "Laser",
+        "weapons": [
+          "12.7mm NSVT"
+        ],
         "traverse": {
           "vertical": {
             "max": 70,
@@ -2471,17 +2394,14 @@
             "vertical": 60
           }
         },
-        "weapons": [
-          "12.7mm NSVT"
-        ],
-        "stabilizer": true,
         "zoom": {
           "max": 4.8,
           "min": 4.8
-        }
+        },
+        "stabilizer": true
       },
       "Gunner": {
-        "thermals": "White (Gen 2)",
+        "smokes": true,
         "traverse": {
           "vertical": {
             "max": 14,
@@ -2496,8 +2416,6 @@
           "7.62mm PKT",
           "125mm 2A46M-1"
         ],
-        "smokes": true,
-        "rangefinder": "Laser",
         "stabilizer": true,
         "zoom": {
           "max": 9,
@@ -2540,7 +2458,6 @@
           "75mm M3",
           ".30 cal M1919"
         ],
-        "rangefinder": "None",
         "stabilizer": true,
         "zoom": {
           "max": 4.8,
@@ -2608,7 +2525,9 @@
     },
     "turrets": {
       "Commander": {
-        "rangefinder": "Laser",
+        "weapons": [
+          "12.7mm NSVT"
+        ],
         "traverse": {
           "vertical": {
             "max": 45,
@@ -2619,17 +2538,14 @@
             "vertical": 60
           }
         },
-        "weapons": [
-          "12.7mm NSVT"
-        ],
-        "stabilizer": true,
         "zoom": {
           "max": 4.8,
           "min": 4.8
-        }
+        },
+        "stabilizer": true
       },
       "Gunner": {
-        "thermals": "White (Gen 2)",
+        "smokes": true,
         "traverse": {
           "vertical": {
             "max": 15,
@@ -2644,8 +2560,6 @@
           "7.62mm PKT",
           "125mm 2A46M-1"
         ],
-        "smokes": true,
-        "rangefinder": "Laser",
         "stabilizer": true,
         "zoom": {
           "max": 12,
@@ -2717,7 +2631,9 @@
     },
     "turrets": {
       "Loader": {
-        "rangefinder": "Laser",
+        "weapons": [
+          "7.62mm M240"
+        ],
         "traverse": {
           "vertical": {
             "max": 45,
@@ -2728,17 +2644,14 @@
             "vertical": 60
           }
         },
-        "weapons": [
-          "7.62mm M240"
-        ],
-        "stabilizer": true,
         "zoom": {
           "max": 2.88,
           "min": 1.8
-        }
+        },
+        "stabilizer": true
       },
       "Gunner": {
-        "thermals": "Green (Gen 2)",
+        "smokes": true,
         "traverse": {
           "vertical": {
             "max": 20,
@@ -2753,8 +2666,6 @@
           "7.62mm M240",
           "120mm M256"
         ],
-        "smokes": true,
-        "rangefinder": "Laser",
         "stabilizer": true,
         "zoom": {
           "max": 10.285714285714286,
@@ -2762,7 +2673,9 @@
         }
       },
       "Commander": {
-        "rangefinder": "Laser",
+        "weapons": [
+          "12.7mm M2"
+        ],
         "traverse": {
           "vertical": {
             "max": 75,
@@ -2773,14 +2686,11 @@
             "vertical": 60
           }
         },
-        "weapons": [
-          "12.7mm M2"
-        ],
-        "stabilizer": true,
         "zoom": {
           "max": 2.88,
           "min": 1.8
-        }
+        },
+        "stabilizer": true
       }
     },
     "name": "120S",
@@ -2808,7 +2718,7 @@
     },
     "turrets": {
       "Gunner": {
-        "thermals": "White (Gen 2)",
+        "smokes": true,
         "traverse": {
           "vertical": {
             "max": 45,
@@ -2822,8 +2732,6 @@
         "weapons": [
           "9M133 Kornet"
         ],
-        "smokes": true,
-        "rangefinder": "Laser",
         "stabilizer": true,
         "zoom": {
           "max": 12,
@@ -2906,7 +2814,6 @@
           "76mm M1",
           ".30 cal M1919"
         ],
-        "rangefinder": "None",
         "stabilizer": true,
         "zoom": {
           "max": 4.8,
@@ -2989,7 +2896,6 @@
           "50 mm KwK39",
           "7.92mm MG34"
         ],
-        "rangefinder": "None",
         "stabilizer": false,
         "zoom": {
           "max": 3.4285714285714284,
@@ -3071,7 +2977,6 @@
         "weapons": [
           "85mm D-5S"
         ],
-        "rangefinder": "None",
         "stabilizer": false,
         "zoom": {
           "max": 3.4285714285714284,
@@ -3100,7 +3005,7 @@
     },
     "turrets": {
       "Commander": {
-        "thermals": "White (Gen 3)",
+        "lws": true,
         "traverse": {
           "vertical": {
             "max": 60,
@@ -3112,17 +3017,14 @@
           }
         },
         "weapons": [],
-        "lws": true,
-        "rangefinder": "Laser",
+        "maws": true,
         "stabilizer": true,
         "zoom": {
           "max": 14.4,
           "min": 1.894736842105263
-        },
-        "maws": true
+        }
       },
       "Gunner": {
-        "thermals": "White (Gen 3)",
         "traverse": {
           "vertical": {
             "max": 45,
@@ -3133,16 +3035,15 @@
             "vertical": 50
           }
         },
+        "smokes": true,
+        "maws": true,
         "weapons": [
           "5.56mm MG4",
           "30mm MK 30-2/ABM",
           "Spike-LR2MR"
         ],
         "lws": true,
-        "maws": true,
-        "smokes": true,
         "stabilizer": true,
-        "rangefinder": "Laser",
         "zoom": {
           "max": 14.4,
           "min": 1.894736842105263
@@ -3185,7 +3086,6 @@
           "12.7mm M2",
           "40mm MK-19"
         ],
-        "rangefinder": "Laser",
         "stabilizer": false,
         "zoom": {
           "max": 3.4285714285714284,
@@ -3228,7 +3128,6 @@
           "100mm D-10S",
           "7.62mm PKT"
         ],
-        "rangefinder": "None",
         "stabilizer": false,
         "zoom": {
           "max": 3.4285714285714284,
@@ -3296,7 +3195,9 @@
     },
     "turrets": {
       "Commander": {
-        "rangefinder": "Laser",
+        "weapons": [
+          "12.7mm KORD"
+        ],
         "traverse": {
           "vertical": {
             "max": 45,
@@ -3307,17 +3208,14 @@
             "vertical": 60
           }
         },
-        "weapons": [
-          "12.7mm KORD"
-        ],
-        "stabilizer": true,
         "zoom": {
           "max": 4.8,
           "min": 4.8
-        }
+        },
+        "stabilizer": true
       },
       "Gunner": {
-        "thermals": "White (Gen 2)",
+        "smokes": true,
         "traverse": {
           "vertical": {
             "max": 13,
@@ -3332,8 +3230,6 @@
           "7.62mm PKT",
           "125mm 2A46M-5"
         ],
-        "smokes": true,
-        "rangefinder": "Laser",
         "stabilizer": true,
         "zoom": {
           "max": 12,
@@ -3361,7 +3257,7 @@
     },
     "turrets": {
       "Commander": {
-        "rangefinder": "None",
+        "weapons": [],
         "traverse": {
           "vertical": {
             "max": 40,
@@ -3372,12 +3268,11 @@
             "vertical": 60
           }
         },
-        "weapons": [],
-        "stabilizer": true,
         "zoom": {
           "max": 4.8,
           "min": 4.8
-        }
+        },
+        "stabilizer": true
       },
       "Gunner": {
         "smokes": true,
@@ -3397,7 +3292,6 @@
           "9M113M Konkurs",
           "9M113 Konkurs"
         ],
-        "rangefinder": "None",
         "stabilizer": true,
         "zoom": {
           "max": 6,
@@ -3425,6 +3319,7 @@
     },
     "turrets": {
       "Loader": {
+        "lws": true,
         "traverse": {
           "vertical": {
             "max": 45,
@@ -3438,8 +3333,6 @@
         "weapons": [
           "7.62mm MG3"
         ],
-        "lws": true,
-        "rangefinder": "Laser",
         "stabilizer": true,
         "zoom": {
           "max": 2.88,
@@ -3447,7 +3340,7 @@
         }
       },
       "Gunner": {
-        "thermals": "Green (Gen 1)",
+        "smokes": true,
         "traverse": {
           "vertical": {
             "max": 20,
@@ -3462,16 +3355,15 @@
           "L7A3 105mm",
           "7.62mm MG3"
         ],
-        "smokes": true,
-        "rangefinder": "Laser",
+        "lws": true,
         "stabilizer": true,
         "zoom": {
           "max": 12,
           "min": 3.789473684210526
-        },
-        "lws": true
+        }
       },
       "Commander": {
+        "lws": true,
         "traverse": {
           "vertical": {
             "max": 25,
@@ -3483,8 +3375,6 @@
           }
         },
         "weapons": [],
-        "lws": true,
-        "rangefinder": "Laser",
         "stabilizer": true,
         "zoom": {
           "max": 18,
@@ -3526,7 +3416,6 @@
         "weapons": [
           "75mm M3"
         ],
-        "rangefinder": "None",
         "stabilizer": false,
         "zoom": {
           "max": 3.4285714285714284,
@@ -3596,7 +3485,10 @@
     },
     "turrets": {
       "Commander": {
-        "rangefinder": "Laser",
+        "weapons": [
+          "Milan 2",
+          "Milan ER"
+        ],
         "traverse": {
           "vertical": {
             "max": 15,
@@ -3607,18 +3499,14 @@
             "vertical": 60
           }
         },
-        "weapons": [
-          "Milan 2",
-          "Milan ER"
-        ],
-        "stabilizer": true,
         "zoom": {
           "max": 6,
           "min": 1.894736842105263
-        }
+        },
+        "stabilizer": true
       },
       "Gunner": {
-        "thermals": "Green (Gen 1)",
+        "smokes": true,
         "traverse": {
           "vertical": {
             "max": 65,
@@ -3633,8 +3521,6 @@
           "20mm Rh202",
           "7.62mm MG3"
         ],
-        "smokes": true,
-        "rangefinder": "Laser",
         "stabilizer": false,
         "zoom": {
           "max": 6,
@@ -3711,7 +3597,7 @@
     },
     "turrets": {
       "Commander": {
-        "thermals": "Red (Gen 1)",
+        "smokes": true,
         "traverse": {
           "vertical": {
             "max": 35,
@@ -3726,7 +3612,6 @@
           "BGM-71A TOW",
           "BGM-71C I-TOW"
         ],
-        "smokes": true,
         "stabilizer": false,
         "zoom": {
           "max": 12,
@@ -3790,7 +3675,6 @@
           "7.62mm L8A1",
           "12.7 mm L21A1"
         ],
-        "rangefinder": "Optical",
         "stabilizer": true,
         "zoom": {
           "max": 8,
@@ -3819,7 +3703,9 @@
     },
     "turrets": {
       "Commander": {
-        "rangefinder": "None",
+        "weapons": [
+          "12.7mm M2"
+        ],
         "traverse": {
           "vertical": {
             "max": 60,
@@ -3830,14 +3716,11 @@
             "vertical": 60
           }
         },
-        "weapons": [
-          "12.7mm M2"
-        ],
-        "stabilizer": true,
         "zoom": {
           "max": 6.545454545454546,
           "min": 0.9
-        }
+        },
+        "stabilizer": true
       },
       "Gunner": {
         "smokes": true,
@@ -3882,7 +3765,9 @@
     },
     "turrets": {
       "Commander": {
-        "rangefinder": "None",
+        "weapons": [
+          "9M113 Konkurs"
+        ],
         "traverse": {
           "vertical": {
             "max": 23,
@@ -3893,14 +3778,11 @@
             "vertical": 35
           }
         },
-        "weapons": [
-          "9M113 Konkurs"
-        ],
-        "stabilizer": false,
         "zoom": {
           "max": 9,
           "min": 4.8
-        }
+        },
+        "stabilizer": false
       }
     },
     "name": "BRDM-2 Konkurs",
@@ -3924,7 +3806,7 @@
     },
     "turrets": {
       "Commander": {
-        "thermals": "White (Gen 3)",
+        "lws": true,
         "traverse": {
           "vertical": {
             "max": 60,
@@ -3939,17 +3821,14 @@
           "14.5mm KPVT",
           "12.7mm KORD"
         ],
-        "lws": true,
-        "rangefinder": "Laser",
+        "maws": true,
         "stabilizer": true,
         "zoom": {
           "max": 12,
           "min": 2.88
-        },
-        "maws": true
+        }
       },
       "Gunner": {
-        "thermals": "White (Gen 3)",
         "traverse": {
           "vertical": {
             "max": 15,
@@ -3960,16 +3839,15 @@
             "vertical": 50
           }
         },
+        "smokes": true,
+        "maws": true,
         "weapons": [
           "7.62mm PKT",
           "125mm 2A82-1M",
           "152mm 2A73"
         ],
         "lws": true,
-        "maws": true,
-        "smokes": true,
         "stabilizer": true,
-        "rangefinder": "Laser",
         "zoom": {
           "max": 12,
           "min": 2.88
@@ -4037,7 +3915,9 @@
     },
     "turrets": {
       "Commander": {
-        "rangefinder": "Laser",
+        "weapons": [
+          "12.7mm QJC88A"
+        ],
         "traverse": {
           "vertical": {
             "max": 45,
@@ -4048,17 +3928,14 @@
             "vertical": 60
           }
         },
-        "weapons": [
-          "12.7mm QJC88A"
-        ],
-        "stabilizer": true,
         "zoom": {
           "max": 4.8,
           "min": 0.9
-        }
+        },
+        "stabilizer": true
       },
       "Gunner": {
-        "thermals": "Green (Gen 2)",
+        "smokes": true,
         "traverse": {
           "vertical": {
             "max": 13,
@@ -4073,8 +3950,6 @@
           "7.62mm Type 86",
           "125mm Type 88C"
         ],
-        "smokes": true,
-        "rangefinder": "Laser",
         "stabilizer": true,
         "zoom": {
           "max": 10.285714285714286,
@@ -4137,7 +4012,6 @@
           "88 mm KwK36",
           "7.92mm MG34"
         ],
-        "rangefinder": "None",
         "stabilizer": false,
         "zoom": {
           "max": 3.4285714285714284,
@@ -4165,7 +4039,7 @@
     },
     "turrets": {
       "Commander": {
-        "rangefinder": "None",
+        "weapons": [],
         "traverse": {
           "vertical": {
             "max": 60,
@@ -4176,12 +4050,11 @@
             "vertical": 60
           }
         },
-        "weapons": [],
-        "stabilizer": false,
         "zoom": {
           "max": 2.88,
           "min": 1.8
-        }
+        },
+        "stabilizer": false
       },
       "Gunner": {
         "smokes": false,
@@ -4199,7 +4072,6 @@
           "14.5mm KPVT",
           "7.62mm PKT"
         ],
-        "rangefinder": "None",
         "stabilizer": false,
         "zoom": {
           "max": 4.8,
@@ -4228,7 +4100,7 @@
     },
     "turrets": {
       "Gunner": {
-        "thermals": "Blue (Gen 1)",
+        "smokes": false,
         "traverse": {
           "vertical": {
             "max": 23,
@@ -4243,8 +4115,6 @@
           "120mm Rh120 L/55",
           "25mm M242 Bushmaster"
         ],
-        "smokes": false,
-        "rangefinder": "Laser",
         "stabilizer": true,
         "zoom": {
           "max": null,
@@ -4286,7 +4156,6 @@
         "weapons": [
           "227mm M269"
         ],
-        "rangefinder": "None",
         "stabilizer": false,
         "zoom": {
           "max": 3.6,
@@ -4348,7 +4217,6 @@
         "weapons": [
           "128 mm PaK44"
         ],
-        "rangefinder": "None",
         "stabilizer": false,
         "zoom": {
           "max": 10.285714285714286,
@@ -4356,7 +4224,7 @@
         }
       },
       "Commander": {
-        "rangefinder": "None",
+        "weapons": [],
         "traverse": {
           "vertical": {
             "max": 35,
@@ -4367,12 +4235,11 @@
             "vertical": 60
           }
         },
-        "weapons": [],
-        "stabilizer": true,
         "zoom": {
           "max": 10.285714285714286,
           "min": 10.285714285714286
-        }
+        },
+        "stabilizer": true
       },
       "Bow Gunner": {
         "weapons": [
@@ -4470,7 +4337,6 @@
         "weapons": [
           "57mm Ch-51M"
         ],
-        "rangefinder": "None",
         "stabilizer": false,
         "zoom": {
           "max": 5.538461538461538,
@@ -4499,7 +4365,9 @@
     },
     "turrets": {
       "Commander": {
-        "rangefinder": "Laser",
+        "weapons": [
+          "7.62mm M240"
+        ],
         "traverse": {
           "vertical": {
             "max": 45,
@@ -4510,17 +4378,14 @@
             "vertical": 60
           }
         },
-        "weapons": [
-          "7.62mm M240"
-        ],
-        "stabilizer": true,
         "zoom": {
           "max": 2.88,
           "min": 1.8
-        }
+        },
+        "stabilizer": true
       },
       "Gunner": {
-        "thermals": "Red (Gen 1)",
+        "smokes": true,
         "traverse": {
           "vertical": {
             "max": 35,
@@ -4535,7 +4400,6 @@
           "BGM-71C I-TOW",
           "BGM-71F TOW 2A/B"
         ],
-        "smokes": true,
         "stabilizer": false,
         "zoom": {
           "max": 12,
@@ -4568,7 +4432,9 @@
     },
     "turrets": {
       "Commander": {
-        "thermals": "White (Gen 3)",
+        "weapons": [
+          "7.62mm PKT"
+        ],
         "traverse": {
           "vertical": {
             "max": 40,
@@ -4579,18 +4445,14 @@
             "vertical": 60
           }
         },
-        "weapons": [
-          "7.62mm PKT"
-        ],
-        "rangefinder": "Laser",
-        "stabilizer": true,
         "zoom": {
           "max": 12,
           "min": 3.789473684210526
-        }
+        },
+        "stabilizer": true
       },
       "Gunner": {
-        "thermals": "White (Gen 3)",
+        "smokes": true,
         "traverse": {
           "vertical": {
             "max": 15,
@@ -4605,8 +4467,6 @@
           "7.62mm PKT",
           "125mm 2A75"
         ],
-        "smokes": true,
-        "rangefinder": "Laser",
         "stabilizer": true,
         "zoom": {
           "max": 12,
@@ -4634,7 +4494,9 @@
     },
     "turrets": {
       "Commander": {
-        "rangefinder": "None",
+        "weapons": [
+          "12.7mm NSVT"
+        ],
         "traverse": {
           "vertical": {
             "max": 45,
@@ -4645,14 +4507,11 @@
             "vertical": 60
           }
         },
-        "weapons": [
-          "12.7mm NSVT"
-        ],
-        "stabilizer": false,
         "zoom": {
           "max": 2.88,
           "min": 1.8
-        }
+        },
+        "stabilizer": false
       },
       "Gunner": {
         "smokes": false,
@@ -4669,7 +4528,6 @@
         "weapons": [
           "9M37M"
         ],
-        "rangefinder": "None",
         "stabilizer": false,
         "zoom": {
           "max": 8,
@@ -4732,7 +4590,6 @@
           "152mm M-10T",
           "7.62mm DT-28"
         ],
-        "rangefinder": "None",
         "stabilizer": false,
         "zoom": {
           "max": 3.4285714285714284,
@@ -4781,7 +4638,7 @@
     },
     "turrets": {
       "Gunner": {
-        "thermals": "White (Gen 3)",
+        "smokes": false,
         "traverse": {
           "vertical": {
             "max": 59,
@@ -4795,7 +4652,6 @@
         "weapons": [
           "Brimstone MK2"
         ],
-        "smokes": false,
         "stabilizer": true,
         "zoom": {
           "max": 18,
@@ -4837,7 +4693,6 @@
         "weapons": [
           "M2 Howitzer"
         ],
-        "rangefinder": "None",
         "stabilizer": true,
         "zoom": {
           "max": 3.4285714285714284,
@@ -4906,7 +4761,7 @@
     },
     "turrets": {
       "Commander": {
-        "thermals": "White (Gen 3)",
+        "lws": true,
         "traverse": {
           "vertical": {
             "max": 60,
@@ -4918,17 +4773,14 @@
           }
         },
         "weapons": [],
-        "lws": true,
-        "rangefinder": "Laser",
+        "maws": true,
         "stabilizer": true,
         "zoom": {
           "max": 12,
           "min": 2.88
-        },
-        "maws": true
+        }
       },
       "Gunner": {
-        "thermals": "White (Gen 3)",
         "traverse": {
           "vertical": {
             "max": 13,
@@ -4939,15 +4791,14 @@
             "vertical": 37
           }
         },
+        "smokes": true,
+        "maws": true,
         "weapons": [
           "30mm 2A72",
           "152mm 2A83"
         ],
         "lws": true,
-        "maws": true,
-        "smokes": true,
         "stabilizer": true,
-        "rangefinder": "Laser",
         "zoom": {
           "max": 12,
           "min": 2.88
@@ -4989,7 +4840,6 @@
           "7.62mm PKT",
           "30mm 2A72"
         ],
-        "rangefinder": "Laser",
         "stabilizer": true,
         "zoom": {
           "max": 10.285714285714286,
@@ -5018,7 +4868,7 @@
     },
     "turrets": {
       "Commander": {
-        "thermals": "Green (Gen 2)",
+        "weapons": [],
         "traverse": {
           "vertical": {
             "max": 60,
@@ -5029,16 +4879,14 @@
             "vertical": 60
           }
         },
-        "weapons": [],
-        "rangefinder": "Laser",
-        "stabilizer": true,
         "zoom": {
           "max": 8,
           "min": 1.894736842105263
-        }
+        },
+        "stabilizer": true
       },
       "Gunner": {
-        "thermals": "Green (Gen 2)",
+        "smokes": true,
         "traverse": {
           "vertical": {
             "max": 59,
@@ -5055,8 +4903,6 @@
           "BGM-71F TOW 2A/B",
           "7.62mm M240"
         ],
-        "smokes": true,
-        "rangefinder": "Laser",
         "stabilizer": true,
         "zoom": {
           "max": 12,
@@ -5104,7 +4950,6 @@
           "120mm Rh120 L/44 Dupe",
           "120mm Rh120 L/44"
         ],
-        "rangefinder": "Laser",
         "stabilizer": true,
         "zoom": {
           "max": 14.4,
@@ -5166,7 +5011,6 @@
         "weapons": [
           "150 mm Wgr.41 Spr rocket"
         ],
-        "rangefinder": "None",
         "stabilizer": false,
         "zoom": {
           "max": 3.4285714285714284,
@@ -5195,7 +5039,7 @@
     },
     "turrets": {
       "Commander": {
-        "thermals": "White (Gen 3)",
+        "lws": true,
         "traverse": {
           "vertical": {
             "max": 85,
@@ -5206,20 +5050,18 @@
             "vertical": 60
           }
         },
-        "stabilizer": true,
-        "rangefinder": "Laser",
         "weapons": [
           "7.62mm NATTER",
           "HERO-120"
         ],
-        "lws": true,
+        "stabilizer": true,
         "zoom": {
           "max": 12.203389830508474,
           "min": 2.834645669291339
         }
       },
       "Gunner": {
-        "thermals": "White (Gen 3)",
+        "smokes": true,
         "traverse": {
           "vertical": {
             "max": 20,
@@ -5234,14 +5076,12 @@
           "12.7mm RMG",
           "130mm Rh130 L/51"
         ],
-        "smokes": true,
-        "rangefinder": "Laser",
+        "lws": true,
         "stabilizer": true,
         "zoom": {
           "max": 18,
           "min": 2.307692307692308
-        },
-        "lws": true
+        }
       }
     },
     "name": "KF51 Panther",
@@ -5279,7 +5119,6 @@
           "130mm M-65",
           "14.5mm KPVT"
         ],
-        "rangefinder": "Optical",
         "stabilizer": true,
         "zoom": {
           "max": 8,
@@ -5323,7 +5162,6 @@
           "7.5 mm MAC 31",
           "LFK SS.11"
         ],
-        "rangefinder": "None",
         "stabilizer": false,
         "zoom": {
           "max": 7.2,
@@ -5385,7 +5223,6 @@
         "weapons": [
           "7.5 cm KwK 40 L/48"
         ],
-        "rangefinder": "None",
         "stabilizer": false,
         "zoom": {
           "max": 4.8,
@@ -5414,6 +5251,7 @@
     },
     "turrets": {
       "Loader": {
+        "lws": true,
         "traverse": {
           "vertical": {
             "max": 25,
@@ -5424,12 +5262,10 @@
             "vertical": 40
           }
         },
-        "maws": true,
         "weapons": [
           "60 mm Soltam Mortar"
         ],
-        "lws": true,
-        "rangefinder": "None",
+        "maws": true,
         "stabilizer": false,
         "zoom": {
           "max": 2.88,
@@ -5437,7 +5273,6 @@
         }
       },
       "Gunner": {
-        "thermals": "Green (Gen 2)",
         "traverse": {
           "vertical": {
             "max": 20,
@@ -5448,23 +5283,22 @@
             "vertical": 32
           }
         },
+        "smokes": true,
+        "maws": true,
         "weapons": [
           "120mm IMI MG251",
           "7.62 mm FN MAG 60-40",
           "12.7mm M2"
         ],
         "lws": true,
-        "maws": true,
-        "smokes": true,
         "stabilizer": true,
-        "rangefinder": "Laser",
         "zoom": {
           "max": 12,
           "min": 3.789473684210526
         }
       },
       "Commander": {
-        "thermals": "Green (Gen 2)",
+        "lws": true,
         "traverse": {
           "vertical": {
             "max": 55,
@@ -5478,14 +5312,12 @@
         "weapons": [
           "7.62 mm FN MAG 60-40"
         ],
-        "lws": true,
-        "rangefinder": "Laser",
+        "maws": true,
         "stabilizer": true,
         "zoom": {
           "max": 14.4,
           "min": 3.789473684210526
-        },
-        "maws": true
+        }
       }
     },
     "name": "Merkava Mk.4M",
@@ -5508,7 +5340,9 @@
     },
     "turrets": {
       "Commander": {
-        "rangefinder": "None",
+        "weapons": [
+          "12.7mm M2"
+        ],
         "traverse": {
           "vertical": {
             "max": 60,
@@ -5519,14 +5353,11 @@
             "vertical": 60
           }
         },
-        "weapons": [
-          "12.7mm M2"
-        ],
-        "stabilizer": true,
         "zoom": {
           "max": 2.88,
           "min": 1.8
-        }
+        },
+        "stabilizer": true
       },
       "Gunner": {
         "smokes": false,
@@ -5543,7 +5374,6 @@
         "weapons": [
           "155mm M185"
         ],
-        "rangefinder": "None",
         "stabilizer": false,
         "zoom": {
           "max": 3.789473684210526,
@@ -5571,7 +5401,7 @@
     },
     "turrets": {
       "Commander": {
-        "thermals": "White (Gen 2)",
+        "smokes": true,
         "traverse": {
           "vertical": {
             "max": 70,
@@ -5585,8 +5415,6 @@
         "weapons": [
           "23mm GSh-23L"
         ],
-        "smokes": true,
-        "rangefinder": "Laser",
         "stabilizer": true,
         "zoom": {
           "max": 12,
@@ -5594,7 +5422,7 @@
         }
       },
       "Gunner": {
-        "thermals": "White (Gen 2)",
+        "smokes": true,
         "traverse": {
           "vertical": {
             "max": 14,
@@ -5610,8 +5438,6 @@
           "125mm 2A46M-1",
           "30mm AGS-17"
         ],
-        "smokes": true,
-        "rangefinder": "Laser",
         "stabilizer": true,
         "zoom": {
           "max": 9,
@@ -5639,7 +5465,9 @@
     },
     "turrets": {
       "Loader": {
-        "rangefinder": "None",
+        "weapons": [
+          "12.7mm M2"
+        ],
         "traverse": {
           "vertical": {
             "max": 60,
@@ -5650,14 +5478,11 @@
             "vertical": 60
           }
         },
-        "weapons": [
-          "12.7mm M2"
-        ],
-        "stabilizer": false,
         "zoom": {
           "max": 2.88,
           "min": 1.8
-        }
+        },
+        "stabilizer": false
       },
       "Gunner": {
         "smokes": false,
@@ -5675,7 +5500,6 @@
           "12.7mm M2",
           "105mm T5E1"
         ],
-        "rangefinder": "Optical",
         "stabilizer": false,
         "zoom": {
           "max": 8,
@@ -5683,7 +5507,7 @@
         }
       },
       "Commander": {
-        "rangefinder": "None",
+        "weapons": [],
         "traverse": {
           "vertical": {
             "max": 25,
@@ -5694,15 +5518,16 @@
             "vertical": 60
           }
         },
-        "weapons": [],
-        "stabilizer": false,
         "zoom": {
           "max": 2.88,
           "min": 1.8
-        }
+        },
+        "stabilizer": false
       },
       "BowGunner": {
-        "rangefinder": "None",
+        "weapons": [
+          ".30 cal M1919"
+        ],
         "traverse": {
           "vertical": {
             "max": 18,
@@ -5713,14 +5538,11 @@
             "vertical": 60
           }
         },
-        "weapons": [
-          ".30 cal M1919"
-        ],
-        "stabilizer": false,
         "zoom": {
           "max": 2.88,
           "min": 1.8
-        }
+        },
+        "stabilizer": false
       }
     },
     "name": "T29E3",
@@ -5778,7 +5600,6 @@
           "85mm ZIS-S-53",
           "7.62mm DT-28"
         ],
-        "rangefinder": "None",
         "stabilizer": false,
         "zoom": {
           "max": 3.789473684210526,
@@ -5807,7 +5628,7 @@
     },
     "turrets": {
       "Commander": {
-        "thermals": "White (Gen 3)",
+        "lws": true,
         "traverse": {
           "vertical": {
             "max": 45,
@@ -5821,17 +5642,14 @@
         "weapons": [
           "12.7mm QJC88A"
         ],
-        "lws": true,
-        "rangefinder": "Laser",
+        "maws": true,
         "stabilizer": true,
         "zoom": {
           "max": 10.285714285714286,
           "min": 2.88
-        },
-        "maws": true
+        }
       },
       "Gunner": {
-        "thermals": "White (Gen 3)",
         "traverse": {
           "vertical": {
             "max": 13,
@@ -5842,15 +5660,14 @@
             "vertical": 35.7
           }
         },
+        "smokes": true,
+        "maws": true,
         "weapons": [
           "5.8mm QJT",
           "125mm Type 99A"
         ],
         "lws": true,
-        "maws": true,
-        "smokes": true,
         "stabilizer": true,
-        "rangefinder": "Laser",
         "zoom": {
           "max": 10.285714285714286,
           "min": 6
@@ -5919,7 +5736,6 @@
           "9M14M",
           "9M113 Konkurs"
         ],
-        "rangefinder": "None",
         "stabilizer": false,
         "zoom": {
           "max": 6,
@@ -6002,7 +5818,6 @@
           "152mm ML-20S",
           "122mm A-19C"
         ],
-        "rangefinder": "None",
         "stabilizer": false,
         "zoom": {
           "max": 3.4285714285714284,
@@ -6064,7 +5879,6 @@
         "weapons": [
           "90mm M3"
         ],
-        "rangefinder": "None",
         "stabilizer": false,
         "zoom": {
           "max": 4.8,
@@ -6126,7 +5940,6 @@
         "weapons": [
           "122mm D-25T"
         ],
-        "rangefinder": "None",
         "stabilizer": false,
         "zoom": {
           "max": 3.789473684210526,
@@ -6189,7 +6002,6 @@
           "107mm ZIS-6",
           "7.62mm DT-28"
         ],
-        "rangefinder": "None",
         "stabilizer": false,
         "zoom": {
           "max": 3.4285714285714284,
@@ -6289,7 +6101,6 @@
           "183mm L4",
           "7.62mm L3A1"
         ],
-        "rangefinder": "None",
         "stabilizer": false,
         "zoom": {
           "max": 6,
@@ -6332,7 +6143,6 @@
           "14.5mm KPVT",
           "7.62mm PKT"
         ],
-        "rangefinder": "None",
         "stabilizer": false,
         "zoom": {
           "max": 4,
@@ -6360,7 +6170,7 @@
     },
     "turrets": {
       "Commander": {
-        "rangefinder": "Laser",
+        "weapons": [],
         "traverse": {
           "vertical": {
             "max": 45,
@@ -6371,12 +6181,11 @@
             "vertical": 60
           }
         },
-        "weapons": [],
-        "stabilizer": true,
         "zoom": {
           "max": 4.8,
           "min": 4.8
-        }
+        },
+        "stabilizer": true
       },
       "Gunner": {
         "smokes": true,
@@ -6393,7 +6202,6 @@
         "weapons": [
           "230mm TOS-1A"
         ],
-        "rangefinder": "Laser",
         "stabilizer": true,
         "zoom": {
           "max": 3.6,
@@ -6435,7 +6243,6 @@
         "weapons": [
           "SS-26"
         ],
-        "rangefinder": "None",
         "stabilizer": false,
         "zoom": {
           "max": 3.6,
@@ -6480,7 +6287,6 @@
           ".30 cal M1919",
           "M8 Rocket"
         ],
-        "rangefinder": "None",
         "stabilizer": false,
         "zoom": {
           "max": 4.8,
@@ -6554,6 +6360,7 @@
     },
     "turrets": {
       "Commander": {
+        "lws": true,
         "traverse": {
           "vertical": {
             "max": 20,
@@ -6567,8 +6374,6 @@
         "weapons": [
           "12.7mm M2"
         ],
-        "lws": true,
-        "rangefinder": "Laser",
         "stabilizer": true,
         "zoom": {
           "max": 10.285714285714286,
@@ -6576,7 +6381,7 @@
         }
       },
       "Gunner": {
-        "thermals": "Green (Gen 1)",
+        "smokes": true,
         "traverse": {
           "vertical": {
             "max": 20,
@@ -6591,14 +6396,12 @@
           "7.62mm Type 74",
           "120mm Type 90 L/44"
         ],
-        "smokes": true,
-        "rangefinder": "Laser",
+        "lws": true,
         "stabilizer": true,
         "zoom": {
           "max": 10.285714285714286,
           "min": 0.9
-        },
-        "lws": true
+        }
       }
     },
     "mass": 50.2,
@@ -6702,7 +6505,9 @@
     },
     "turrets": {
       "Commander": {
-        "rangefinder": "Laser",
+        "weapons": [
+          "12.7mm NSVT"
+        ],
         "traverse": {
           "vertical": {
             "max": 70,
@@ -6713,14 +6518,11 @@
             "vertical": 60
           }
         },
-        "weapons": [
-          "12.7mm NSVT"
-        ],
-        "stabilizer": true,
         "zoom": {
           "max": 4.8,
           "min": 4.8
-        }
+        },
+        "stabilizer": true
       },
       "Gunner": {
         "smokes": true,
@@ -6738,7 +6540,6 @@
           "7.62mm PKT",
           "125mm 2A46M-1"
         ],
-        "rangefinder": "Laser",
         "stabilizer": true,
         "zoom": {
           "max": 9,
@@ -6780,7 +6581,6 @@
         "weapons": [
           "12.7mm DSHK"
         ],
-        "rangefinder": "Laser",
         "stabilizer": true,
         "zoom": {
           "max": 2.88,
@@ -6843,7 +6643,6 @@
           "57mm ZiS-4",
           "7.62mm DT-28"
         ],
-        "rangefinder": "None",
         "stabilizer": false,
         "zoom": {
           "max": 3.4285714285714284,
@@ -6872,7 +6671,9 @@
     },
     "turrets": {
       "Commander": {
-        "thermals": "White (Gen 2)",
+        "weapons": [
+          "7.62mm A-A-F1N"
+        ],
         "traverse": {
           "vertical": {
             "max": 60,
@@ -6883,18 +6684,14 @@
             "vertical": 60
           }
         },
-        "weapons": [
-          "7.62mm A-A-F1N"
-        ],
-        "rangefinder": "Laser",
-        "stabilizer": true,
         "zoom": {
           "max": 10.285714285714286,
           "min": 2.4
-        }
+        },
+        "stabilizer": true
       },
       "Gunner": {
-        "thermals": "White (Gen 2)",
+        "smokes": true,
         "traverse": {
           "vertical": {
             "max": 20,
@@ -6909,8 +6706,6 @@
           "12.7mm CRC F1",
           "120mm GIAT CN120-26 F1"
         ],
-        "smokes": true,
-        "rangefinder": "Laser",
         "stabilizer": true,
         "zoom": {
           "max": 10.285714285714286,
@@ -6972,7 +6767,6 @@
         "weapons": [
           "76mm M7"
         ],
-        "rangefinder": "None",
         "stabilizer": false,
         "zoom": {
           "max": 3.4285714285714284,
@@ -7035,7 +6829,6 @@
           "122mm HW-T",
           "12.7mm DSHK"
         ],
-        "rangefinder": "None",
         "stabilizer": false,
         "zoom": {
           "max": 3.4285714285714284,
@@ -7138,7 +6931,6 @@
           "85mm ZIS-S-53",
           "7.62mm DT-28"
         ],
-        "rangefinder": "None",
         "stabilizer": false,
         "zoom": {
           "max": 3.789473684210526,
@@ -7146,7 +6938,9 @@
         }
       },
       "Driver": {
-        "rangefinder": "None",
+        "weapons": [
+          "7.62mm DT-28"
+        ],
         "traverse": {
           "vertical": {
             "max": 15,
@@ -7157,14 +6951,11 @@
             "vertical": 16
           }
         },
-        "weapons": [
-          "7.62mm DT-28"
-        ],
-        "stabilizer": false,
         "zoom": {
           "max": 2.88,
           "min": 1.8
-        }
+        },
+        "stabilizer": false
       }
     },
     "name": "T-44",
@@ -7187,7 +6978,7 @@
     },
     "turrets": {
       "Gunner": {
-        "thermals": "White (Gen 3)",
+        "smokes": true,
         "traverse": {
           "vertical": {
             "max": 85,
@@ -7202,14 +6993,12 @@
           "25mm Type 625",
           "FN-16"
         ],
-        "smokes": true,
-        "rangefinder": "Laser",
+        "lws": true,
         "stabilizer": true,
         "zoom": {
           "max": 14.4,
           "min": 1.894736842105263
-        },
-        "lws": true
+        }
       }
     },
     "name": "Type 625E",
@@ -7233,7 +7022,9 @@
     },
     "turrets": {
       "Loader": {
-        "thermals": "White (Gen 2)",
+        "weapons": [
+          "12.7mm M2"
+        ],
         "traverse": {
           "vertical": {
             "max": 45,
@@ -7244,18 +7035,14 @@
             "vertical": 60
           }
         },
-        "weapons": [
-          "12.7mm M2"
-        ],
-        "rangefinder": "Laser",
-        "stabilizer": true,
         "zoom": {
           "max": 12,
           "min": 2.88
-        }
+        },
+        "stabilizer": true
       },
       "Gunner": {
-        "thermals": "White (Gen 2)",
+        "smokes": true,
         "traverse": {
           "vertical": {
             "max": 20,
@@ -7270,8 +7057,6 @@
           "7.62 mm L94A1",
           "120mm L30A1"
         ],
-        "smokes": true,
-        "rangefinder": "Laser",
         "stabilizer": true,
         "zoom": {
           "max": 10.285714285714286,
@@ -7279,7 +7064,7 @@
         }
       },
       "Commander": {
-        "rangefinder": "Laser",
+        "weapons": [],
         "traverse": {
           "vertical": {
             "max": 30,
@@ -7290,12 +7075,11 @@
             "vertical": 60
           }
         },
-        "weapons": [],
-        "stabilizer": true,
         "zoom": {
           "max": 10.285714285714286,
           "min": 2.88
-        }
+        },
+        "stabilizer": true
       }
     },
     "name": "Challenger 2",
@@ -7318,7 +7102,9 @@
     },
     "turrets": {
       "Loader": {
-        "rangefinder": "None",
+        "weapons": [
+          "Grenade Mortar"
+        ],
         "traverse": {
           "vertical": {
             "max": 0,
@@ -7329,14 +7115,11 @@
             "vertical": 17.9
           }
         },
-        "weapons": [
-          "Grenade Mortar"
-        ],
-        "stabilizer": false,
         "zoom": {
           "max": 2.88,
           "min": 1.8
-        }
+        },
+        "stabilizer": false
       },
       "Gunner": {
         "smokes": false,
@@ -7354,7 +7137,6 @@
           "77mm OQF Mk.II",
           "7.92 mm BESA"
         ],
-        "rangefinder": "None",
         "stabilizer": false,
         "zoom": {
           "max": 6,
@@ -7421,7 +7203,7 @@
     },
     "turrets": {
       "Commander": {
-        "rangefinder": "Laser",
+        "weapons": [],
         "traverse": {
           "vertical": {
             "max": 45,
@@ -7432,12 +7214,11 @@
             "vertical": 60
           }
         },
-        "weapons": [],
-        "stabilizer": false,
         "zoom": {
           "max": 10.285714285714286,
           "min": 2.5714285714285716
-        }
+        },
+        "stabilizer": false
       },
       "Gunner": {
         "smokes": true,
@@ -7454,7 +7235,6 @@
         "weapons": [
           "155mm L62"
         ],
-        "rangefinder": "Laser",
         "stabilizer": false,
         "zoom": {
           "max": 7.2,
@@ -7487,7 +7267,9 @@
     },
     "turrets": {
       "Commander": {
-        "rangefinder": "Laser",
+        "weapons": [
+          "9M120 Ataka"
+        ],
         "traverse": {
           "vertical": {
             "max": 40,
@@ -7498,14 +7280,11 @@
             "vertical": 60
           }
         },
-        "weapons": [
-          "9M120 Ataka"
-        ],
-        "stabilizer": true,
         "zoom": {
           "max": 18,
           "min": 3.789473684210526
-        }
+        },
+        "stabilizer": true
       },
       "Gunner": {
         "smokes": true,
@@ -7525,7 +7304,6 @@
           "100mm 2A70M",
           "30mm 2A72"
         ],
-        "rangefinder": "Laser",
         "stabilizer": true,
         "zoom": {
           "max": 7.578947368421052,
@@ -7573,7 +7351,9 @@
     },
     "turrets": {
       "Commander": {
-        "rangefinder": "Laser",
+        "weapons": [
+          "12.7mm NSVT"
+        ],
         "traverse": {
           "vertical": {
             "max": 45,
@@ -7584,14 +7364,11 @@
             "vertical": 60
           }
         },
-        "weapons": [
-          "12.7mm NSVT"
-        ],
-        "stabilizer": true,
         "zoom": {
           "max": 8,
           "min": 0.9
-        }
+        },
+        "stabilizer": true
       },
       "Gunner": {
         "smokes": true,
@@ -7609,7 +7386,6 @@
           "7.62mm PKT",
           "125mm 2A46M-1"
         ],
-        "rangefinder": "Laser",
         "stabilizer": true,
         "zoom": {
           "max": 12,
@@ -7652,7 +7428,6 @@
           "75mm M3",
           ".30 cal M1919"
         ],
-        "rangefinder": "None",
         "stabilizer": true,
         "zoom": {
           "max": 4.8,
@@ -7743,7 +7518,7 @@
         "stabilizer": false
       },
       "Gunner": {
-        "thermals": "Green (Gen 1)",
+        "smokes": true,
         "traverse": {
           "vertical": {
             "max": 20,
@@ -7758,7 +7533,6 @@
           "152mm XM150E5",
           "7.62mm MG3"
         ],
-        "smokes": true,
         "stabilizer": true,
         "zoom": {
           "max": 14.4,
@@ -7827,7 +7601,7 @@
         "stabilizer": true
       },
       "Gunner": {
-        "thermals": "Green (Gen 1)",
+        "smokes": true,
         "traverse": {
           "vertical": {
             "max": 20,
@@ -7842,8 +7616,6 @@
           "7.62mm MG3",
           "120mm Rh120M L/44"
         ],
-        "smokes": true,
-        "rangefinder": "Laser",
         "stabilizer": true,
         "zoom": {
           "max": 12,
@@ -7851,7 +7623,9 @@
         }
       },
       "Commander": {
-        "thermals": "Green (Gen 2)",
+        "weapons": [
+          "7.62mm MG3"
+        ],
         "traverse": {
           "vertical": {
             "max": 30,
@@ -7862,15 +7636,11 @@
             "vertical": 60
           }
         },
-        "weapons": [
-          "7.62mm MG3"
-        ],
-        "rangefinder": "Laser",
-        "stabilizer": true,
         "zoom": {
           "max": 8,
           "min": 1.894736842105263
-        }
+        },
+        "stabilizer": true
       }
     },
     "name": "Leopard 2A4",
@@ -7894,7 +7664,7 @@
     },
     "turrets": {
       "Gunner": {
-        "thermals": "White (Gen 2)",
+        "smokes": true,
         "traverse": {
           "vertical": {
             "max": 45,
@@ -7908,8 +7678,6 @@
         "weapons": [
           "9M133 Kornet"
         ],
-        "smokes": true,
-        "rangefinder": "Laser",
         "stabilizer": true,
         "zoom": {
           "max": 12,
@@ -8084,7 +7852,7 @@
     },
     "turrets": {
       "Commander": {
-        "rangefinder": "None",
+        "weapons": [],
         "traverse": {
           "vertical": {
             "max": 40,
@@ -8095,12 +7863,11 @@
             "vertical": 60
           }
         },
-        "weapons": [],
-        "stabilizer": true,
         "zoom": {
           "max": 4.8,
           "min": 4.8
-        }
+        },
+        "stabilizer": true
       },
       "Gunner": {
         "smokes": true,
@@ -8120,7 +7887,6 @@
           "9M113 Konkurs",
           "9M113M Konkurs"
         ],
-        "rangefinder": "None",
         "stabilizer": true,
         "zoom": {
           "max": 6,
@@ -8149,7 +7915,7 @@
     },
     "turrets": {
       "Gunner": {
-        "thermals": "White (Gen 3)",
+        "smokes": true,
         "traverse": {
           "vertical": {
             "max": 33,
@@ -8165,14 +7931,12 @@
           "7.62mm PKT",
           "Spike ATGM"
         ],
-        "smokes": true,
-        "rangefinder": "Laser",
+        "lws": true,
         "stabilizer": true,
         "zoom": {
           "max": 14.4,
           "min": 1.894736842105263
-        },
-        "lws": true
+        }
       }
     },
     "name": "Rosomak",
@@ -8195,7 +7959,7 @@
     },
     "turrets": {
       "Commander": {
-        "thermals": "White (Gen 2)",
+        "weapons": [],
         "traverse": {
           "vertical": {
             "max": 55,
@@ -8206,16 +7970,14 @@
             "vertical": 60
           }
         },
-        "weapons": [],
-        "rangefinder": "Laser",
-        "stabilizer": true,
         "zoom": {
           "max": 10.285714285714286,
           "min": 2.88
-        }
+        },
+        "stabilizer": true
       },
       "Gunner": {
-        "thermals": "White (Gen 2)",
+        "smokes": true,
         "traverse": {
           "vertical": {
             "max": 52,
@@ -8232,8 +7994,6 @@
           "QN502CDD",
           "QN201DD"
         ],
-        "smokes": true,
-        "rangefinder": "Laser",
         "stabilizer": true,
         "zoom": {
           "max": 12,
@@ -8280,7 +8040,9 @@
     },
     "turrets": {
       "Loader": {
-        "rangefinder": "None",
+        "weapons": [
+          "12.7mm DSHK"
+        ],
         "traverse": {
           "vertical": {
             "max": 45,
@@ -8291,14 +8053,11 @@
             "vertical": 60
           }
         },
-        "weapons": [
-          "12.7mm DSHK"
-        ],
-        "stabilizer": true,
         "zoom": {
           "max": 2.88,
           "min": 1.8
-        }
+        },
+        "stabilizer": true
       },
       "Gunner": {
         "smokes": false,
@@ -8316,7 +8075,6 @@
           "100mm D-10T",
           "7.62mm SGMT"
         ],
-        "rangefinder": "None",
         "stabilizer": false,
         "zoom": {
           "max": 3.789473684210526,
@@ -8324,7 +8082,9 @@
         }
       },
       "Driver": {
-        "rangefinder": "None",
+        "weapons": [
+          "7.62mm DT-28"
+        ],
         "traverse": {
           "vertical": {
             "max": 15,
@@ -8335,14 +8095,11 @@
             "vertical": 16
           }
         },
-        "weapons": [
-          "7.62mm DT-28"
-        ],
-        "stabilizer": false,
         "zoom": {
           "max": 2.88,
           "min": 1.8
-        }
+        },
+        "stabilizer": false
       }
     },
     "name": "T-54 Obr. 1951",
@@ -8386,7 +8143,7 @@
         "stabilizer": true
       },
       "Gunner": {
-        "thermals": "Green (Gen 1)",
+        "smokes": true,
         "traverse": {
           "vertical": {
             "max": 20,
@@ -8401,7 +8158,6 @@
           "105mm XM35",
           "7.62mm M240"
         ],
-        "smokes": true,
         "stabilizer": true,
         "zoom": {
           "max": 10.285714285714286,
@@ -8430,7 +8186,7 @@
     },
     "turrets": {
       "Gunner": {
-        "thermals": "White (Gen 1)",
+        "smokes": false,
         "traverse": {
           "vertical": {
             "max": 80,
@@ -8446,8 +8202,6 @@
           "25mm M242AA Bushmaster",
           "12.7mm M3P"
         ],
-        "smokes": false,
-        "rangefinder": "Laser",
         "stabilizer": false,
         "zoom": {
           "max": 12,
@@ -8475,7 +8229,7 @@
     },
     "turrets": {
       "Commander": {
-        "thermals": "White (Gen 3)",
+        "lws": true,
         "traverse": {
           "vertical": {
             "max": 60,
@@ -8486,17 +8240,15 @@
             "vertical": 60
           }
         },
-        "stabilizer": true,
-        "rangefinder": "Laser",
         "weapons": [],
-        "lws": true,
+        "stabilizer": true,
         "zoom": {
           "max": 12,
           "min": 3.789473684210526
         }
       },
       "Gunner": {
-        "thermals": "White (Gen 3)",
+        "smokes": false,
         "traverse": {
           "vertical": {
             "max": 15,
@@ -8510,14 +8262,12 @@
         "weapons": [
           "125mm 2A46M-5"
         ],
-        "smokes": false,
-        "rangefinder": "Laser",
+        "lws": true,
         "stabilizer": true,
         "zoom": {
           "max": 12,
           "min": 3.789473684210526
-        },
-        "lws": true
+        }
       }
     },
     "name": "Object 640 \"Black Eagle\"",
@@ -8555,7 +8305,6 @@
           "75 mm KwK42",
           "7.92mm MG34"
         ],
-        "rangefinder": "None",
         "stabilizer": false,
         "zoom": {
           "max": 4.8,
@@ -8649,7 +8398,7 @@
         "stabilizer": true
       },
       "Gunner": {
-        "thermals": "Green (Gen 1)",
+        "smokes": true,
         "traverse": {
           "vertical": {
             "max": 20,
@@ -8665,8 +8414,6 @@
           "120mm KM256",
           "105mm KM68A1"
         ],
-        "smokes": true,
-        "rangefinder": "Laser",
         "stabilizer": true,
         "zoom": {
           "max": 10.285714285714286,
@@ -8674,7 +8421,9 @@
         }
       },
       "Commander": {
-        "rangefinder": "Laser",
+        "weapons": [
+          "12.7mm M2"
+        ],
         "traverse": {
           "vertical": {
             "max": 75,
@@ -8685,14 +8434,11 @@
             "vertical": 60
           }
         },
-        "weapons": [
-          "12.7mm M2"
-        ],
-        "stabilizer": true,
         "zoom": {
           "max": 10.588235294117647,
           "min": 3
-        }
+        },
+        "stabilizer": true
       }
     },
     "mass": 54.5,
@@ -8776,7 +8522,9 @@
     },
     "turrets": {
       "Commander": {
-        "rangefinder": "Laser",
+        "weapons": [
+          "12.7mm NSVT"
+        ],
         "traverse": {
           "vertical": {
             "max": 45,
@@ -8787,17 +8535,14 @@
             "vertical": 60
           }
         },
-        "weapons": [
-          "12.7mm NSVT"
-        ],
-        "stabilizer": true,
         "zoom": {
           "max": 4.8,
           "min": 4.8
-        }
+        },
+        "stabilizer": true
       },
       "Gunner": {
-        "thermals": "White (Gen 1)",
+        "smokes": true,
         "traverse": {
           "vertical": {
             "max": 15,
@@ -8812,8 +8557,6 @@
           "125mm 2A46M-1",
           "7.62mm PKT"
         ],
-        "smokes": true,
-        "rangefinder": "Laser",
         "stabilizer": true,
         "zoom": {
           "max": 9,
@@ -8842,7 +8585,12 @@
     },
     "turrets": {
       "Commander": {
-        "rangefinder": "Laser",
+        "weapons": [
+          "7.62mm M240",
+          "30mm M230LF",
+          "FGM-148",
+          "FIM-92K Stinger"
+        ],
         "traverse": {
           "vertical": {
             "max": 45,
@@ -8853,17 +8601,11 @@
             "vertical": 60
           }
         },
-        "weapons": [
-          "7.62mm M240",
-          "30mm M230LF",
-          "FGM-148",
-          "FIM-92K Stinger"
-        ],
-        "stabilizer": true,
         "zoom": {
           "max": 10.285714285714286,
           "min": 2.88
-        }
+        },
+        "stabilizer": true
       },
       "Gunner": {
         "smokes": false,
@@ -8880,7 +8622,6 @@
         "weapons": [
           "BGM-71F TOW 2A/B"
         ],
-        "rangefinder": "Laser",
         "stabilizer": true,
         "zoom": {
           "max": 10.285714285714286,
@@ -8923,7 +8664,6 @@
           "L7A1 105mm",
           "7.62mm L3A1"
         ],
-        "rangefinder": "None",
         "stabilizer": true,
         "zoom": {
           "max": 6,
@@ -8952,7 +8692,7 @@
     },
     "turrets": {
       "Gunner": {
-        "thermals": "Red (Gen 1)",
+        "smokes": true,
         "traverse": {
           "vertical": {
             "max": 59,
@@ -8969,8 +8709,6 @@
           "7.62mm M240",
           "BGM-71C I-TOW"
         ],
-        "smokes": true,
-        "rangefinder": "None",
         "stabilizer": true,
         "zoom": {
           "max": 12,
@@ -9004,7 +8742,7 @@
     },
     "turrets": {
       "Commander": {
-        "thermals": "Green (Gen 1)",
+        "weapons": [],
         "traverse": {
           "vertical": {
             "max": 75,
@@ -9015,16 +8753,14 @@
             "vertical": 60
           }
         },
-        "weapons": [],
-        "rangefinder": "Laser",
-        "stabilizer": true,
         "zoom": {
           "max": 12,
           "min": 2.88
-        }
+        },
+        "stabilizer": true
       },
       "Gunner": {
-        "thermals": "Green (Gen 2)",
+        "smokes": true,
         "traverse": {
           "vertical": {
             "max": 18,
@@ -9038,8 +8774,6 @@
         "weapons": [
           "140mm XM291"
         ],
-        "smokes": true,
-        "rangefinder": "Laser",
         "stabilizer": true,
         "zoom": {
           "max": 12,
@@ -9102,7 +8836,6 @@
           "122mm D-30T",
           "7.62mm DT-28"
         ],
-        "rangefinder": "None",
         "stabilizer": false,
         "zoom": {
           "max": 3.4285714285714284,
@@ -9131,7 +8864,9 @@
     },
     "turrets": {
       "Loader": {
-        "rangefinder": "Laser",
+        "weapons": [
+          "7.62mm M240"
+        ],
         "traverse": {
           "vertical": {
             "max": 45,
@@ -9142,17 +8877,14 @@
             "vertical": 60
           }
         },
-        "weapons": [
-          "7.62mm M240"
-        ],
-        "stabilizer": true,
         "zoom": {
           "max": 2.88,
           "min": 1.8
-        }
+        },
+        "stabilizer": true
       },
       "Gunner": {
-        "thermals": "Green (Gen 1)",
+        "smokes": true,
         "traverse": {
           "vertical": {
             "max": 20,
@@ -9167,8 +8899,6 @@
           "105mm M68A1E2",
           "7.62mm M240"
         ],
-        "smokes": true,
-        "rangefinder": "Laser",
         "stabilizer": true,
         "zoom": {
           "max": 10.285714285714286,
@@ -9176,7 +8906,9 @@
         }
       },
       "Commander": {
-        "rangefinder": "Laser",
+        "weapons": [
+          "12.7mm M2"
+        ],
         "traverse": {
           "vertical": {
             "max": 75,
@@ -9187,14 +8919,11 @@
             "vertical": 60
           }
         },
-        "weapons": [
-          "12.7mm M2"
-        ],
-        "stabilizer": true,
         "zoom": {
           "max": 2.88,
           "min": 1.8
-        }
+        },
+        "stabilizer": true
       }
     },
     "name": "M1IP",
@@ -9218,7 +8947,9 @@
     },
     "turrets": {
       "Loader": {
-        "rangefinder": "Laser",
+        "weapons": [
+          "7.62mm M240"
+        ],
         "traverse": {
           "vertical": {
             "max": 45,
@@ -9229,17 +8960,14 @@
             "vertical": 60
           }
         },
-        "weapons": [
-          "7.62mm M240"
-        ],
-        "stabilizer": true,
         "zoom": {
           "max": 2.88,
           "min": 1.8
-        }
+        },
+        "stabilizer": true
       },
       "Gunner": {
-        "thermals": "Green (Gen 2)",
+        "smokes": true,
         "traverse": {
           "vertical": {
             "max": 20,
@@ -9255,8 +8983,6 @@
           "120mm M256",
           "12.7mm M2"
         ],
-        "smokes": true,
-        "rangefinder": "Laser",
         "stabilizer": true,
         "zoom": {
           "max": 10.285714285714286,
@@ -9264,7 +8990,9 @@
         }
       },
       "Commander": {
-        "thermals": "Green (Gen 1)",
+        "weapons": [
+          "12.7mm M2"
+        ],
         "traverse": {
           "vertical": {
             "max": 75,
@@ -9275,15 +9003,11 @@
             "vertical": 60
           }
         },
-        "weapons": [
-          "12.7mm M2"
-        ],
-        "rangefinder": "Laser",
-        "stabilizer": true,
         "zoom": {
           "max": 10.285714285714286,
           "min": 3.6
-        }
+        },
+        "stabilizer": true
       }
     },
     "name": "M1A1",
@@ -9307,7 +9031,9 @@
     },
     "turrets": {
       "Loader": {
-        "rangefinder": "Laser",
+        "weapons": [
+          "7.62mm M240"
+        ],
         "traverse": {
           "vertical": {
             "max": 45,
@@ -9318,17 +9044,14 @@
             "vertical": 60
           }
         },
-        "weapons": [
-          "7.62mm M240"
-        ],
-        "stabilizer": true,
         "zoom": {
           "max": 2.88,
           "min": 1.8
-        }
+        },
+        "stabilizer": true
       },
       "Gunner": {
-        "thermals": "Green (Gen 2)",
+        "smokes": true,
         "traverse": {
           "vertical": {
             "max": 20,
@@ -9344,8 +9067,6 @@
           "120mm M256",
           "12.7mm M2"
         ],
-        "smokes": true,
-        "rangefinder": "Laser",
         "stabilizer": true,
         "zoom": {
           "max": 14.4,
@@ -9353,7 +9074,9 @@
         }
       },
       "Commander": {
-        "thermals": "Green (Gen 2)",
+        "weapons": [
+          "12.7mm M2"
+        ],
         "traverse": {
           "vertical": {
             "max": 75,
@@ -9364,15 +9087,11 @@
             "vertical": 60
           }
         },
-        "weapons": [
-          "12.7mm M2"
-        ],
-        "rangefinder": "Laser",
-        "stabilizer": true,
         "zoom": {
           "max": 12,
           "min": 2.88
-        }
+        },
+        "stabilizer": true
       }
     },
     "name": "M1A2 SEP V3",
@@ -9395,7 +9114,9 @@
     },
     "turrets": {
       "Driver": {
-        "rangefinder": "None",
+        "weapons": [
+          "7.62mm DT-28"
+        ],
         "traverse": {
           "vertical": {
             "max": 15,
@@ -9406,14 +9127,11 @@
             "vertical": 16
           }
         },
-        "weapons": [
-          "7.62mm DT-28"
-        ],
-        "stabilizer": false,
         "zoom": {
           "max": 2.88,
           "min": 1.8
-        }
+        },
+        "stabilizer": false
       }
     },
     "name": "Abandoned Tank Hull",
@@ -9441,7 +9159,7 @@
     },
     "turrets": {
       "Commander": {
-        "rangefinder": "Laser",
+        "weapons": [],
         "traverse": {
           "vertical": {
             "max": 40,
@@ -9452,15 +9170,14 @@
             "vertical": 60
           }
         },
-        "weapons": [],
-        "stabilizer": true,
         "zoom": {
           "max": 18,
           "min": 3.789473684210526
-        }
+        },
+        "stabilizer": true
       },
       "Gunner": {
-        "thermals": "White (Gen 2)",
+        "smokes": true,
         "traverse": {
           "vertical": {
             "max": 60,
@@ -9476,8 +9193,6 @@
           "100mm 2A70M BMD-4M",
           "30mm 2A72"
         ],
-        "smokes": true,
-        "rangefinder": "Laser",
         "stabilizer": true,
         "zoom": {
           "max": 12,
@@ -9525,7 +9240,7 @@
         "stabilizer": true
       },
       "Commander": {
-        "thermals": "Green (Gen 1)",
+        "weapons": [],
         "traverse": {
           "vertical": {
             "max": 3,
@@ -9536,12 +9251,11 @@
             "vertical": 60
           }
         },
-        "weapons": [],
-        "stabilizer": false,
         "zoom": {
           "max": 3.6,
           "min": 2.4
-        }
+        },
+        "stabilizer": false
       },
       "Loader": {
         "weapons": [
@@ -9586,7 +9300,7 @@
         }
       },
       "Driver": {
-        "thermals": "Green (Gen 1)",
+        "weapons": [],
         "traverse": {
           "vertical": {
             "max": 0,
@@ -9597,12 +9311,11 @@
             "vertical": 60
           }
         },
-        "weapons": [],
-        "stabilizer": false,
         "zoom": {
           "max": 2.88,
           "min": 1.8
-        }
+        },
+        "stabilizer": false
       }
     },
     "name": "Panther II",
@@ -9643,7 +9356,7 @@
         "stabilizer": true
       },
       "Gunner": {
-        "thermals": "Green (Gen 1)",
+        "smokes": false,
         "traverse": {
           "vertical": {
             "max": 90,
@@ -9660,7 +9373,6 @@
           "BGM-71A TOW",
           "BGM-71C I-TOW"
         ],
-        "smokes": false,
         "stabilizer": true,
         "zoom": {
           "max": 36,
@@ -9703,7 +9415,6 @@
           "8mm Breda M37",
           "20mm Solothurn S-18/1000"
         ],
-        "rangefinder": "None",
         "stabilizer": true,
         "zoom": {
           "max": 10.285714285714286,
@@ -9732,7 +9443,9 @@
     },
     "turrets": {
       "Commander": {
-        "rangefinder": "None",
+        "weapons": [
+          "12.7mm M2"
+        ],
         "traverse": {
           "vertical": {
             "max": 58,
@@ -9743,14 +9456,11 @@
             "vertical": 60
           }
         },
-        "weapons": [
-          "12.7mm M2"
-        ],
-        "stabilizer": true,
         "zoom": {
           "max": 8,
           "min": 8
-        }
+        },
+        "stabilizer": true
       },
       "Gunner": {
         "smokes": false,
@@ -9768,7 +9478,6 @@
           "152mm M162",
           "7.62mm M240"
         ],
-        "rangefinder": "Laser",
         "stabilizer": true,
         "zoom": {
           "max": 10.285714285714286,
@@ -9797,7 +9506,9 @@
     },
     "turrets": {
       "Commander": {
-        "thermals": "Green (Gen 2)",
+        "weapons": [
+          "7.62mm MG3"
+        ],
         "traverse": {
           "vertical": {
             "max": 30,
@@ -9808,18 +9519,14 @@
             "vertical": 60
           }
         },
-        "weapons": [
-          "7.62mm MG3"
-        ],
-        "rangefinder": "Laser",
-        "stabilizer": true,
         "zoom": {
           "max": 8,
           "min": 1.894736842105263
-        }
+        },
+        "stabilizer": true
       },
       "Gunner": {
-        "thermals": "Green (Gen 1)",
+        "smokes": true,
         "traverse": {
           "vertical": {
             "max": 20,
@@ -9835,8 +9542,6 @@
           "7.62mm MG3",
           "120mm ASCALON"
         ],
-        "smokes": true,
-        "rangefinder": "Laser",
         "stabilizer": true,
         "zoom": {
           "max": 12,
@@ -9887,7 +9592,10 @@
         "stabilizer": true
       },
       "Commander": {
-        "rangefinder": "None",
+        "weapons": [
+          "7.62mm PKT",
+          "125mm D-126"
+        ],
         "traverse": {
           "vertical": {
             "max": 18,
@@ -9898,15 +9606,11 @@
             "vertical": 20
           }
         },
-        "weapons": [
-          "7.62mm PKT",
-          "125mm D-126"
-        ],
-        "stabilizer": true,
         "zoom": {
           "max": 10.285714285714286,
           "min": 4
-        }
+        },
+        "stabilizer": true
       }
     },
     "mass": 35.5,
@@ -9930,7 +9634,9 @@
     },
     "turrets": {
       "Commander": {
-        "rangefinder": "None",
+        "weapons": [
+          "12.7mm M2"
+        ],
         "traverse": {
           "vertical": {
             "max": 60,
@@ -9941,14 +9647,11 @@
             "vertical": 60
           }
         },
-        "weapons": [
-          "12.7mm M2"
-        ],
-        "stabilizer": true,
         "zoom": {
           "max": 6.545454545454546,
           "min": 0.9
-        }
+        },
+        "stabilizer": true
       },
       "Gunner": {
         "smokes": false,
@@ -9966,7 +9669,6 @@
           "105mm M68",
           "7.62mm M240"
         ],
-        "rangefinder": "Optical",
         "stabilizer": true,
         "zoom": {
           "max": 8,
@@ -9995,7 +9697,9 @@
     },
     "turrets": {
       "Loader": {
-        "rangefinder": "Laser",
+        "weapons": [
+          "7.62mm M240"
+        ],
         "traverse": {
           "vertical": {
             "max": 45,
@@ -10006,17 +9710,14 @@
             "vertical": 60
           }
         },
-        "weapons": [
-          "7.62mm M240"
-        ],
-        "stabilizer": true,
         "zoom": {
           "max": 2.88,
           "min": 1.8
-        }
+        },
+        "stabilizer": true
       },
       "Gunner": {
-        "thermals": "Green (Gen 1)",
+        "smokes": true,
         "traverse": {
           "vertical": {
             "max": 20,
@@ -10031,8 +9732,6 @@
           "105mm M68A1",
           "7.62mm M240"
         ],
-        "smokes": true,
-        "rangefinder": "Laser",
         "stabilizer": true,
         "zoom": {
           "max": 10.285714285714286,
@@ -10040,7 +9739,9 @@
         }
       },
       "Commander": {
-        "rangefinder": "Laser",
+        "weapons": [
+          "12.7mm M2"
+        ],
         "traverse": {
           "vertical": {
             "max": 75,
@@ -10051,14 +9752,11 @@
             "vertical": 60
           }
         },
-        "weapons": [
-          "12.7mm M2"
-        ],
-        "stabilizer": true,
         "zoom": {
           "max": 2.88,
           "min": 1.8
-        }
+        },
+        "stabilizer": true
       }
     },
     "name": "M1 Abrams",
@@ -10081,7 +9779,9 @@
     },
     "turrets": {
       "Loader": {
-        "rangefinder": "None",
+        "weapons": [
+          "Grenade Mortar"
+        ],
         "traverse": {
           "vertical": {
             "max": 0,
@@ -10092,14 +9792,11 @@
             "vertical": 17.9
           }
         },
-        "weapons": [
-          "Grenade Mortar"
-        ],
-        "stabilizer": false,
         "zoom": {
           "max": 2.88,
           "min": 1.8
-        }
+        },
+        "stabilizer": false
       },
       "Gunner": {
         "smokes": false,
@@ -10116,7 +9813,6 @@
         "weapons": [
           "380mm RW61"
         ],
-        "rangefinder": "None",
         "stabilizer": false,
         "zoom": {
           "max": 3.4285714285714284,
@@ -10264,7 +9960,6 @@
           "120mm Rh120 L/44",
           "7.62mm MG3"
         ],
-        "rangefinder": "Laser",
         "stabilizer": true,
         "zoom": {
           "max": 14.4,
@@ -10339,7 +10034,10 @@
         }
       },
       "Driver": {
-        "rangefinder": "Laser",
+        "weapons": [
+          "7.62mm ksp 58",
+          "105 mm L74"
+        ],
         "traverse": {
           "vertical": {
             "max": 0,
@@ -10350,15 +10048,11 @@
             "vertical": 30
           }
         },
-        "weapons": [
-          "7.62mm ksp 58",
-          "105 mm L74"
-        ],
-        "stabilizer": false,
         "zoom": {
           "max": 18,
           "min": 6
-        }
+        },
+        "stabilizer": false
       }
     },
     "mass": 42.5,
@@ -10382,7 +10076,9 @@
     },
     "turrets": {
       "Loader": {
-        "rangefinder": "Laser",
+        "weapons": [
+          "7.62mm MG3"
+        ],
         "traverse": {
           "vertical": {
             "max": 30,
@@ -10393,17 +10089,14 @@
             "vertical": 60
           }
         },
-        "weapons": [
-          "7.62mm MG3"
-        ],
-        "stabilizer": true,
         "zoom": {
           "max": 2.88,
           "min": 1.8
-        }
+        },
+        "stabilizer": true
       },
       "Gunner": {
-        "thermals": "White (Gen 3)",
+        "smokes": true,
         "traverse": {
           "vertical": {
             "max": 20,
@@ -10418,8 +10111,6 @@
           "120mm Rh120 L/55 A1",
           "7.62mm MG3"
         ],
-        "smokes": true,
-        "rangefinder": "Laser",
         "stabilizer": true,
         "zoom": {
           "max": 14.4,
@@ -10427,7 +10118,9 @@
         }
       },
       "Commander": {
-        "thermals": "White (Gen 3)",
+        "weapons": [
+          "12.7mm M2"
+        ],
         "traverse": {
           "vertical": {
             "max": 45,
@@ -10438,15 +10131,11 @@
             "vertical": 60
           }
         },
-        "weapons": [
-          "12.7mm M2"
-        ],
-        "rangefinder": "Laser",
-        "stabilizer": true,
         "zoom": {
           "max": 14.4,
           "min": 1.894736842105263
-        }
+        },
+        "stabilizer": true
       }
     },
     "name": "Leopard 2A8DK",
@@ -10469,6 +10158,7 @@
     },
     "turrets": {
       "Commander": {
+        "lws": true,
         "traverse": {
           "vertical": {
             "max": 85,
@@ -10480,8 +10170,6 @@
           }
         },
         "weapons": [],
-        "lws": true,
-        "rangefinder": "Laser",
         "stabilizer": true,
         "zoom": {
           "max": 6,
@@ -10500,12 +10188,11 @@
             "vertical": 52.7
           }
         },
-        "stabilizer": true,
-        "rangefinder": "Laser",
         "weapons": [
           "35mm Oerlikon KDA"
         ],
         "lws": true,
+        "stabilizer": true,
         "zoom": {
           "max": 6,
           "min": 1.411764705882353
@@ -10532,7 +10219,9 @@
     },
     "turrets": {
       "Commander": {
-        "rangefinder": "Laser",
+        "weapons": [
+          "7.62mm L37A2"
+        ],
         "traverse": {
           "vertical": {
             "max": 45,
@@ -10543,14 +10232,11 @@
             "vertical": 60
           }
         },
-        "weapons": [
-          "7.62mm L37A2"
-        ],
-        "stabilizer": true,
         "zoom": {
           "max": 2.88,
           "min": 1.8
-        }
+        },
+        "stabilizer": true
       },
       "Gunner": {
         "smokes": true,
@@ -10568,7 +10254,6 @@
           "7.62mm L8A2",
           "120mm L11A5"
         ],
-        "rangefinder": "Laser",
         "stabilizer": true,
         "zoom": {
           "max": 12,
@@ -10631,7 +10316,6 @@
           "75 mm KwK42",
           "7.92mm MG34"
         ],
-        "rangefinder": "None",
         "stabilizer": false,
         "zoom": {
           "max": 4.8,
@@ -10660,6 +10344,7 @@
     },
     "turrets": {
       "Commander": {
+        "lws": true,
         "traverse": {
           "vertical": {
             "max": 60,
@@ -10671,8 +10356,6 @@
           }
         },
         "weapons": [],
-        "lws": true,
-        "rangefinder": "Laser",
         "stabilizer": true,
         "zoom": {
           "max": 8,
@@ -10680,7 +10363,7 @@
         }
       },
       "Gunner": {
-        "thermals": "Green (Gen 1)",
+        "smokes": true,
         "traverse": {
           "vertical": {
             "max": 35,
@@ -10696,14 +10379,12 @@
           "7.62mm Type 74",
           "Type 79 ATGM"
         ],
-        "smokes": true,
-        "rangefinder": "Laser",
+        "lws": true,
         "stabilizer": true,
         "zoom": {
           "max": 8,
           "min": 1.945945945945946
-        },
-        "lws": true
+        }
       }
     },
     "name": "Type 89",
@@ -10727,7 +10408,7 @@
     },
     "turrets": {
       "Commander": {
-        "thermals": "White (Gen 2)",
+        "lws": true,
         "traverse": {
           "vertical": {
             "max": 60,
@@ -10738,19 +10419,17 @@
             "vertical": 60
           }
         },
-        "stabilizer": true,
-        "rangefinder": "Laser",
         "weapons": [
           "12.7mm KORD"
         ],
-        "lws": true,
+        "stabilizer": true,
         "zoom": {
           "max": 12,
           "min": 3.789473684210526
         }
       },
       "Gunner": {
-        "thermals": "White (Gen 2)",
+        "smokes": true,
         "traverse": {
           "vertical": {
             "max": 13,
@@ -10765,14 +10444,12 @@
           "7.62mm PKT",
           "125mm 2A46M-5"
         ],
-        "smokes": true,
-        "rangefinder": "Laser",
+        "lws": true,
         "stabilizer": true,
         "zoom": {
           "max": 12,
           "min": 3.789473684210526
-        },
-        "lws": true
+        }
       }
     },
     "name": "T-90M",
@@ -10795,7 +10472,7 @@
     },
     "turrets": {
       "Commander": {
-        "thermals": "White (Gen 2)",
+        "lws": true,
         "traverse": {
           "vertical": {
             "max": 45,
@@ -10806,19 +10483,17 @@
             "vertical": 60
           }
         },
-        "stabilizer": true,
-        "rangefinder": "Laser",
         "weapons": [
           "14.5mm KPVT"
         ],
-        "lws": true,
+        "stabilizer": true,
         "zoom": {
           "max": 12,
           "min": 3.789473684210526
         }
       },
       "Gunner": {
-        "thermals": "White (Gen 2)",
+        "smokes": true,
         "traverse": {
           "vertical": {
             "max": 15,
@@ -10833,14 +10508,12 @@
           "125mm 2A46M-5",
           "7.62mm PKT"
         ],
-        "smokes": true,
-        "rangefinder": "Laser",
+        "lws": true,
         "stabilizer": true,
         "zoom": {
           "max": 12,
           "min": 3.789473684210526
-        },
-        "lws": true
+        }
       }
     },
     "name": "Burlak",
@@ -10864,7 +10537,9 @@
     },
     "turrets": {
       "Loader": {
-        "rangefinder": "Laser",
+        "weapons": [
+          "7.62mm MG3"
+        ],
         "traverse": {
           "vertical": {
             "max": 30,
@@ -10875,17 +10550,14 @@
             "vertical": 60
           }
         },
-        "weapons": [
-          "7.62mm MG3"
-        ],
-        "stabilizer": true,
         "zoom": {
           "max": 2.88,
           "min": 1.8
-        }
+        },
+        "stabilizer": true
       },
       "Gunner": {
-        "thermals": "White (Gen 3)",
+        "smokes": true,
         "traverse": {
           "vertical": {
             "max": 20,
@@ -10900,8 +10572,6 @@
           "120mm Rh120 L/55 A1",
           "7.62mm MG3"
         ],
-        "smokes": true,
-        "rangefinder": "Laser",
         "stabilizer": true,
         "zoom": {
           "max": 12,
@@ -10909,7 +10579,7 @@
         }
       },
       "Commander": {
-        "thermals": "White (Gen 3)",
+        "weapons": [],
         "traverse": {
           "vertical": {
             "max": 45,
@@ -10920,13 +10590,11 @@
             "vertical": 60
           }
         },
-        "weapons": [],
-        "rangefinder": "Laser",
-        "stabilizer": true,
         "zoom": {
           "max": 8,
           "min": 1.894736842105263
-        }
+        },
+        "stabilizer": true
       }
     },
     "name": "Leopard 2A7V",
@@ -10965,7 +10633,6 @@
           "90mm M3",
           ".30 cal M1919"
         ],
-        "rangefinder": "None",
         "stabilizer": false,
         "zoom": {
           "max": 4.8,
@@ -11048,7 +10715,6 @@
           "75 mm KwK40 L48",
           "7.92mm MG34"
         ],
-        "rangefinder": "None",
         "stabilizer": false,
         "zoom": {
           "max": 3.4285714285714284,
@@ -11117,7 +10783,9 @@
     },
     "turrets": {
       "Loader": {
-        "rangefinder": "Laser",
+        "weapons": [
+          "7.62mm MG3"
+        ],
         "traverse": {
           "vertical": {
             "max": 30,
@@ -11128,17 +10796,14 @@
             "vertical": 60
           }
         },
-        "weapons": [
-          "7.62mm MG3"
-        ],
-        "stabilizer": true,
         "zoom": {
           "max": 2.88,
           "min": 1.8
-        }
+        },
+        "stabilizer": true
       },
       "Gunner": {
-        "thermals": "Green (Gen 1)",
+        "smokes": true,
         "traverse": {
           "vertical": {
             "max": 20,
@@ -11153,8 +10818,6 @@
           "120mm Rh120 L/55",
           "7.62mm MG3"
         ],
-        "smokes": true,
-        "rangefinder": "Laser",
         "stabilizer": true,
         "zoom": {
           "max": 12,
@@ -11162,7 +10825,7 @@
         }
       },
       "Commander": {
-        "thermals": "Green (Gen 2)",
+        "weapons": [],
         "traverse": {
           "vertical": {
             "max": 45,
@@ -11173,13 +10836,11 @@
             "vertical": 60
           }
         },
-        "weapons": [],
-        "rangefinder": "Laser",
-        "stabilizer": true,
         "zoom": {
           "max": 8,
           "min": 1.894736842105263
-        }
+        },
+        "stabilizer": true
       }
     },
     "name": "Leopard 2A6",
@@ -11243,7 +10904,7 @@
     },
     "turrets": {
       "Gunner": {
-        "thermals": "White (Gen 1)",
+        "smokes": false,
         "traverse": {
           "vertical": {
             "max": 20,
@@ -11259,8 +10920,6 @@
           "BGM-71C I-TOW",
           "BGM-71A TOW"
         ],
-        "smokes": false,
-        "rangefinder": "Laser",
         "stabilizer": false,
         "zoom": {
           "max": 8,
@@ -11289,7 +10948,7 @@
     },
     "turrets": {
       "Gunner": {
-        "thermals": "White (Gen 3)",
+        "smokes": false,
         "traverse": {
           "vertical": {
             "max": 45,
@@ -11303,8 +10962,6 @@
         "weapons": [
           "20mm Rh202"
         ],
-        "smokes": false,
-        "rangefinder": "Laser",
         "stabilizer": true,
         "zoom": {
           "max": 6,
@@ -11333,6 +10990,7 @@
     },
     "turrets": {
       "Loader": {
+        "lws": true,
         "traverse": {
           "vertical": {
             "max": 50,
@@ -11346,8 +11004,6 @@
         "weapons": [
           "7.62 Beretta MG42/59"
         ],
-        "lws": true,
-        "rangefinder": "Laser",
         "stabilizer": true,
         "zoom": {
           "max": 2.88,
@@ -11355,7 +11011,7 @@
         }
       },
       "Gunner": {
-        "thermals": "Green (Gen 2)",
+        "smokes": true,
         "traverse": {
           "vertical": {
             "max": 20,
@@ -11370,17 +11026,15 @@
           "120mm OTO Breda 120/44",
           "7.62 Beretta MG42/59"
         ],
-        "smokes": true,
-        "rangefinder": "Laser",
+        "lws": true,
         "stabilizer": true,
         "zoom": {
           "max": 12,
           "min": 8
-        },
-        "lws": true
+        }
       },
       "Commander": {
-        "thermals": "Green (Gen 2)",
+        "lws": true,
         "traverse": {
           "vertical": {
             "max": 50,
@@ -11391,12 +11045,10 @@
             "vertical": 60
           }
         },
-        "stabilizer": true,
-        "rangefinder": "Laser",
         "weapons": [
           "7.62 Beretta MG42/59"
         ],
-        "lws": true,
+        "stabilizer": true,
         "zoom": {
           "max": 10.285714285714286,
           "min": 2.4
@@ -11424,7 +11076,9 @@
     },
     "turrets": {
       "Passenger": {
-        "rangefinder": "Laser",
+        "weapons": [
+          "7.62mm MG3"
+        ],
         "traverse": {
           "vertical": {
             "max": 55,
@@ -11435,14 +11089,11 @@
             "vertical": 60
           }
         },
-        "weapons": [
-          "7.62mm MG3"
-        ],
-        "stabilizer": false,
         "zoom": {
           "max": 2.88,
           "min": 1.8
-        }
+        },
+        "stabilizer": false
       },
       "Gunner": {
         "smokes": true,
@@ -11460,7 +11111,6 @@
           "20mm Rh202",
           "7.62mm MG3"
         ],
-        "rangefinder": "Laser",
         "stabilizer": false,
         "zoom": {
           "max": 6,
@@ -11468,7 +11118,9 @@
         }
       },
       "Commander": {
-        "rangefinder": "Laser",
+        "weapons": [
+          "Milan 2"
+        ],
         "traverse": {
           "vertical": {
             "max": 15,
@@ -11479,14 +11131,11 @@
             "vertical": 60
           }
         },
-        "weapons": [
-          "Milan 2"
-        ],
-        "stabilizer": false,
         "zoom": {
           "max": 6,
           "min": 1.894736842105263
-        }
+        },
+        "stabilizer": false
       }
     },
     "name": "Marder A1",
@@ -11544,7 +11193,6 @@
           "76mm F-34",
           "7.62mm DT-28"
         ],
-        "rangefinder": "None",
         "stabilizer": false,
         "zoom": {
           "max": 3.4285714285714284,
@@ -11587,7 +11235,6 @@
           "L9A1 165mm",
           "7.62mm L3A1"
         ],
-        "rangefinder": "None",
         "stabilizer": false,
         "zoom": {
           "max": 6,
@@ -11616,7 +11263,7 @@
     },
     "turrets": {
       "Commander": {
-        "thermals": "White (Gen 2)",
+        "lws": true,
         "traverse": {
           "vertical": {
             "max": 60,
@@ -11627,19 +11274,17 @@
             "vertical": 60
           }
         },
-        "stabilizer": true,
-        "rangefinder": "Laser",
         "weapons": [
           "12.7mm NSVT"
         ],
-        "lws": true,
+        "stabilizer": true,
         "zoom": {
           "max": 12,
           "min": 1.2
         }
       },
       "Gunner": {
-        "thermals": "White (Gen 2)",
+        "smokes": true,
         "traverse": {
           "vertical": {
             "max": 15,
@@ -11654,14 +11299,12 @@
           "7.62mm PKT",
           "125 mm KBA-3"
         ],
-        "smokes": true,
-        "rangefinder": "Laser",
+        "lws": true,
         "stabilizer": true,
         "zoom": {
           "max": 12,
           "min": 2.5714285714285716
-        },
-        "lws": true
+        }
       }
     },
     "name": "T-84 Oplot-M",
@@ -11685,7 +11328,7 @@
     },
     "turrets": {
       "Gunner": {
-        "thermals": "White (Gen 1)",
+        "smokes": false,
         "traverse": {
           "vertical": {
             "max": 80,
@@ -11699,8 +11342,6 @@
         "weapons": [
           "MIM146 Launcher"
         ],
-        "smokes": false,
-        "rangefinder": "Laser",
         "stabilizer": true,
         "zoom": {
           "max": 12,
@@ -11729,7 +11370,7 @@
     },
     "turrets": {
       "Commander": {
-        "thermals": "White (Gen 3)",
+        "lws": true,
         "traverse": {
           "vertical": {
             "max": 85,
@@ -11740,19 +11381,17 @@
             "vertical": 60
           }
         },
-        "stabilizer": true,
-        "rangefinder": "Laser",
         "weapons": [
           "7.62mm NATTER"
         ],
-        "lws": true,
+        "stabilizer": true,
         "zoom": {
           "max": 12.203389830508474,
           "min": 2.834645669291339
         }
       },
       "Gunner": {
-        "thermals": "White (Gen 3)",
+        "smokes": true,
         "traverse": {
           "vertical": {
             "max": 20,
@@ -11767,14 +11406,12 @@
           "12.7mm RMG",
           "130mm Rh130 L/51"
         ],
-        "smokes": true,
-        "rangefinder": "Laser",
+        "lws": true,
         "stabilizer": true,
         "zoom": {
           "max": 18,
           "min": 2.307692307692308
-        },
-        "lws": true
+        }
       }
     },
     "name": "Panther EVO",
@@ -11812,7 +11449,6 @@
           "50 mm KwK39",
           "7.92mm MG34"
         ],
-        "rangefinder": "None",
         "stabilizer": false,
         "zoom": {
           "max": 3.4285714285714284,
@@ -11902,7 +11538,7 @@
     },
     "turrets": {
       "Gunner": {
-        "thermals": "White (Gen 2)",
+        "smokes": true,
         "traverse": {
           "vertical": {
             "max": 33,
@@ -11919,8 +11555,6 @@
           "7.62mm PKT",
           "30mm ZTM-2"
         ],
-        "smokes": true,
-        "rangefinder": "Laser",
         "stabilizer": true,
         "zoom": {
           "max": 12,
@@ -11983,7 +11617,6 @@
           "85mm D-5S",
           "7.62mm DT-28"
         ],
-        "rangefinder": "None",
         "stabilizer": false,
         "zoom": {
           "max": 3.4285714285714284,
@@ -12052,7 +11685,7 @@
         "stabilizer": true
       },
       "Gunner": {
-        "thermals": "Green (Gen 1)",
+        "smokes": true,
         "traverse": {
           "vertical": {
             "max": 15,
@@ -12068,7 +11701,6 @@
           "7.62mm M240",
           "BGM-71C I-TOW"
         ],
-        "smokes": true,
         "stabilizer": true,
         "zoom": {
           "max": 8,
@@ -12131,7 +11763,6 @@
           "75 mm KwK42",
           "7.92mm MG34"
         ],
-        "rangefinder": "None",
         "stabilizer": false,
         "zoom": {
           "max": 4.8,
@@ -12159,7 +11790,7 @@
     },
     "turrets": {
       "Commander": {
-        "thermals": "White (Gen 2)",
+        "lws": true,
         "traverse": {
           "vertical": {
             "max": 45,
@@ -12170,17 +11801,15 @@
             "vertical": 60
           }
         },
-        "stabilizer": true,
-        "rangefinder": "Laser",
         "weapons": [],
-        "lws": true,
+        "stabilizer": true,
         "zoom": {
           "max": 10.285714285714286,
           "min": 2.4
         }
       },
       "Gunner": {
-        "thermals": "White (Gen 2)",
+        "smokes": true,
         "traverse": {
           "vertical": {
             "max": 13,
@@ -12196,14 +11825,12 @@
           "125mm 2A46MS",
           "20mm Oerlikon KAA"
         ],
-        "smokes": true,
-        "rangefinder": "Laser",
+        "lws": true,
         "stabilizer": true,
         "zoom": {
           "max": 8,
           "min": 8
-        },
-        "lws": true
+        }
       }
     },
     "name": "T-72M2",
@@ -12241,7 +11868,6 @@
           "128 mm KwK44",
           "75 mm KwK44"
         ],
-        "rangefinder": "None",
         "stabilizer": false,
         "zoom": {
           "max": 10.285714285714286,
@@ -12269,7 +11895,9 @@
     },
     "turrets": {
       "Commander": {
-        "rangefinder": "None",
+        "weapons": [
+          "7.62mm PKT"
+        ],
         "traverse": {
           "vertical": {
             "max": 45,
@@ -12280,14 +11908,11 @@
             "vertical": 60
           }
         },
-        "weapons": [
-          "7.62mm PKT"
-        ],
-        "stabilizer": false,
         "zoom": {
           "max": 2.88,
           "min": 1.8
-        }
+        },
+        "stabilizer": false
       },
       "Gunner": {
         "smokes": false,
@@ -12304,7 +11929,6 @@
         "weapons": [
           "25mm DBTSU"
         ],
-        "rangefinder": "None",
         "stabilizer": false,
         "zoom": {
           "max": 2.88,
@@ -12385,7 +12009,6 @@
         "weapons": [
           "88 mm KwK43"
         ],
-        "rangefinder": "None",
         "stabilizer": false,
         "zoom": {
           "max": 4.8,
@@ -12474,7 +12097,9 @@
     },
     "turrets": {
       "Commander": {
-        "rangefinder": "None",
+        "weapons": [
+          "9M14M"
+        ],
         "traverse": {
           "vertical": {
             "max": 20,
@@ -12485,14 +12110,11 @@
             "vertical": 60
           }
         },
-        "weapons": [
-          "9M14M"
-        ],
-        "stabilizer": true,
         "zoom": {
           "max": 4.8,
           "min": 4.8
-        }
+        },
+        "stabilizer": true
       },
       "Gunner": {
         "smokes": false,
@@ -12510,7 +12132,6 @@
           "115mm U-5TS",
           "7.62mm PKT"
         ],
-        "rangefinder": "None",
         "stabilizer": true,
         "zoom": {
           "max": 6.545454545454546,
@@ -12600,7 +12221,9 @@
     },
     "turrets": {
       "Loader": {
-        "rangefinder": "Laser",
+        "weapons": [
+          "Grenade Mortar"
+        ],
         "traverse": {
           "vertical": {
             "max": 60,
@@ -12611,14 +12234,11 @@
             "vertical": 30
           }
         },
-        "weapons": [
-          "Grenade Mortar"
-        ],
-        "stabilizer": true,
         "zoom": {
           "max": 2.88,
           "min": 1.8
-        }
+        },
+        "stabilizer": true
       },
       "Gunner": {
         "smokes": true,
@@ -12636,7 +12256,6 @@
           "GT-3B 105mm",
           ".30 cal M1919"
         ],
-        "rangefinder": "Laser",
         "stabilizer": true,
         "zoom": {
           "max": 14.4,
@@ -12644,7 +12263,9 @@
         }
       },
       "Commander": {
-        "rangefinder": "Laser",
+        "weapons": [
+          ".30 cal M1919"
+        ],
         "traverse": {
           "vertical": {
             "max": 45,
@@ -12655,14 +12276,11 @@
             "vertical": 60
           }
         },
-        "weapons": [
-          ".30 cal M1919"
-        ],
-        "stabilizer": true,
         "zoom": {
           "max": 18,
           "min": 3.789473684210526
-        }
+        },
+        "stabilizer": true
       }
     },
     "name": "Class 3(P)",
@@ -12720,7 +12338,6 @@
         "weapons": [
           "76mm M1"
         ],
-        "rangefinder": "None",
         "stabilizer": false,
         "zoom": {
           "max": 3.4285714285714284,
@@ -12784,7 +12401,6 @@
           "7.62mm RP-46",
           "14.5mm KPVT"
         ],
-        "rangefinder": "None",
         "stabilizer": false,
         "zoom": {
           "max": 6.545454545454546,
@@ -12909,7 +12525,6 @@
         "weapons": [
           "90mm M3"
         ],
-        "rangefinder": "None",
         "stabilizer": false,
         "zoom": {
           "max": 4.8,
@@ -12978,7 +12593,9 @@
     },
     "turrets": {
       "Loader": {
-        "rangefinder": "None",
+        "weapons": [
+          "12.7mm DSHK"
+        ],
         "traverse": {
           "vertical": {
             "max": 60,
@@ -12989,14 +12606,11 @@
             "vertical": 60
           }
         },
-        "weapons": [
-          "12.7mm DSHK"
-        ],
-        "stabilizer": true,
         "zoom": {
           "max": 2.88,
           "min": 1.8
-        }
+        },
+        "stabilizer": true
       },
       "Gunner": {
         "smokes": false,
@@ -13014,7 +12628,6 @@
           "115mm U-5TS",
           "7.62mm PKT"
         ],
-        "rangefinder": "None",
         "stabilizer": true,
         "zoom": {
           "max": 6.545454545454546,
@@ -13022,7 +12635,7 @@
         }
       },
       "Commander": {
-        "rangefinder": "None",
+        "weapons": [],
         "traverse": {
           "vertical": {
             "max": 20,
@@ -13033,12 +12646,11 @@
             "vertical": 60
           }
         },
-        "weapons": [],
-        "stabilizer": true,
         "zoom": {
           "max": 4.8,
           "min": 4.8
-        }
+        },
+        "stabilizer": true
       }
     },
     "name": "T-62",
@@ -13077,7 +12689,6 @@
           ".30 cal M1919",
           "M8 Rocket"
         ],
-        "rangefinder": "None",
         "stabilizer": true,
         "zoom": {
           "max": 3.4285714285714284,
@@ -13140,7 +12751,6 @@
           "75mm M3",
           ".30 cal M1919"
         ],
-        "rangefinder": "None",
         "stabilizer": true,
         "zoom": {
           "max": 4.8,
@@ -13243,7 +12853,6 @@
           ".30 cal M1919",
           "H5 Flamethrower"
         ],
-        "rangefinder": "None",
         "stabilizer": false,
         "zoom": {
           "max": 3.4285714285714284,
@@ -13346,7 +12955,6 @@
           "88 mm KwK36",
           "7.92mm MG34"
         ],
-        "rangefinder": "None",
         "stabilizer": false,
         "zoom": {
           "max": 3.4285714285714284,
@@ -13388,7 +12996,6 @@
         "weapons": [
           "75mm M2"
         ],
-        "rangefinder": "None",
         "stabilizer": true,
         "zoom": {
           "max": 3.4285714285714284,
@@ -13471,7 +13078,6 @@
           "76mm QF 17-pounder",
           "7.62mm L3A1"
         ],
-        "rangefinder": "None",
         "stabilizer": false,
         "zoom": {
           "max": 6,
@@ -13499,7 +13105,9 @@
     },
     "turrets": {
       "Commander": {
-        "rangefinder": "Laser",
+        "weapons": [
+          "12.7mm KORD"
+        ],
         "traverse": {
           "vertical": {
             "max": 75,
@@ -13510,17 +13118,14 @@
             "vertical": 60
           }
         },
-        "weapons": [
-          "12.7mm KORD"
-        ],
-        "stabilizer": true,
         "zoom": {
           "max": 4.8,
           "min": 4.8
-        }
+        },
+        "stabilizer": true
       },
       "Gunner": {
-        "thermals": "White (Gen 2)",
+        "smokes": true,
         "traverse": {
           "vertical": {
             "max": 13,
@@ -13535,8 +13140,6 @@
           "7.62mm PKT",
           "125mm 2A46M-5"
         ],
-        "smokes": true,
-        "rangefinder": "Laser",
         "stabilizer": true,
         "zoom": {
           "max": 12,
@@ -13564,7 +13167,7 @@
     },
     "turrets": {
       "Commander": {
-        "rangefinder": "None",
+        "weapons": [],
         "traverse": {
           "vertical": {
             "max": 20,
@@ -13575,12 +13178,11 @@
             "vertical": 60
           }
         },
-        "weapons": [],
-        "stabilizer": true,
         "zoom": {
           "max": 4.8,
           "min": 4.8
-        }
+        },
+        "stabilizer": true
       },
       "Gunner": {
         "smokes": false,
@@ -13598,7 +13200,6 @@
           "3M7 Drakon",
           "7.62mm PKT"
         ],
-        "rangefinder": "None",
         "stabilizer": true,
         "zoom": {
           "max": 8,
@@ -13627,7 +13228,9 @@
     },
     "turrets": {
       "Commander": {
-        "rangefinder": "Laser",
+        "weapons": [
+          "7.62mm M240"
+        ],
         "traverse": {
           "vertical": {
             "max": 45,
@@ -13638,14 +13241,11 @@
             "vertical": 60
           }
         },
-        "weapons": [
-          "7.62mm M240"
-        ],
-        "stabilizer": true,
         "zoom": {
           "max": 2.88,
           "min": 1.8
-        }
+        },
+        "stabilizer": true
       },
       "Gunner": {
         "smokes": true,
@@ -13663,7 +13263,6 @@
           "25mm M242 Bushmaster",
           "7.62mm M240"
         ],
-        "rangefinder": "Laser",
         "stabilizer": true,
         "zoom": {
           "max": 12,
@@ -13692,7 +13291,9 @@
     },
     "turrets": {
       "Commander": {
-        "rangefinder": "Laser",
+        "weapons": [
+          "7.62mm MG3"
+        ],
         "traverse": {
           "vertical": {
             "max": 58,
@@ -13703,17 +13304,14 @@
             "vertical": 60
           }
         },
-        "weapons": [
-          "7.62mm MG3"
-        ],
-        "stabilizer": true,
         "zoom": {
           "max": 10.285714285714286,
           "min": 10.285714285714286
-        }
+        },
+        "stabilizer": true
       },
       "Gunner": {
-        "thermals": "Green (Gen 1)",
+        "smokes": false,
         "traverse": {
           "vertical": {
             "max": 19,
@@ -13728,8 +13326,6 @@
           "7.62mm MG3",
           "L7A3 105mm"
         ],
-        "smokes": false,
-        "rangefinder": "Laser",
         "stabilizer": true,
         "zoom": {
           "max": 12,
@@ -13779,7 +13375,7 @@
         }
       },
       "Gunner": {
-        "thermals": "White (Gen 2)",
+        "smokes": false,
         "traverse": {
           "vertical": {
             "max": 45,
@@ -13790,7 +13386,6 @@
             "vertical": 28
           }
         },
-        "smokes": false,
         "weapons": [
           "LOSAT/MGM-166"
         ],
@@ -13837,7 +13432,6 @@
           "20mm TNSh",
           "7.62mm DT-28"
         ],
-        "rangefinder": "None",
         "stabilizer": false,
         "zoom": {
           "max": 3.4285714285714284,
@@ -13865,7 +13459,9 @@
     },
     "turrets": {
       "Commander": {
-        "rangefinder": "Optical",
+        "weapons": [
+          "12.7mm NSVT"
+        ],
         "traverse": {
           "vertical": {
             "max": 70,
@@ -13876,14 +13472,11 @@
             "vertical": 60
           }
         },
-        "weapons": [
-          "12.7mm NSVT"
-        ],
-        "stabilizer": true,
         "zoom": {
           "max": 4.8,
           "min": 4.8
-        }
+        },
+        "stabilizer": true
       },
       "Gunner": {
         "smokes": true,
@@ -13901,7 +13494,6 @@
           "7.62mm PKT",
           "125mm 2A46"
         ],
-        "rangefinder": "Optical",
         "stabilizer": true,
         "zoom": {
           "max": 8,
@@ -13930,6 +13522,7 @@
     },
     "turrets": {
       "Loader": {
+        "lws": true,
         "traverse": {
           "vertical": {
             "max": 30,
@@ -13943,8 +13536,6 @@
         "weapons": [
           "30mm AGS-17"
         ],
-        "lws": true,
-        "rangefinder": "Laser",
         "stabilizer": true,
         "zoom": {
           "max": 2.88,
@@ -13952,7 +13543,7 @@
         }
       },
       "Gunner": {
-        "thermals": "White (Gen 3)",
+        "smokes": true,
         "traverse": {
           "vertical": {
             "max": 20,
@@ -13968,17 +13559,15 @@
           "7.62mm PKT",
           "Bulsae-3"
         ],
-        "smokes": true,
-        "rangefinder": "Laser",
+        "lws": true,
         "stabilizer": true,
         "zoom": {
           "max": 12,
           "min": 3.789473684210526
-        },
-        "lws": true
+        }
       },
       "Commander": {
-        "thermals": "White (Gen 3)",
+        "lws": true,
         "traverse": {
           "vertical": {
             "max": 75,
@@ -13989,10 +13578,8 @@
             "vertical": 60
           }
         },
-        "stabilizer": true,
-        "rangefinder": "Laser",
         "weapons": [],
-        "lws": true,
+        "stabilizer": true,
         "zoom": {
           "max": 12,
           "min": 3.789473684210526
@@ -14055,7 +13642,6 @@
           "152mm M81E1",
           "76mm M32"
         ],
-        "rangefinder": "None",
         "stabilizer": true,
         "zoom": {
           "max": 12,
@@ -14109,7 +13695,7 @@
         "stabilizer": true
       },
       "Gunner": {
-        "thermals": "White (Gen 1)",
+        "smokes": true,
         "traverse": {
           "vertical": {
             "max": 20,
@@ -14125,8 +13711,6 @@
           "7.62mm A-A-F1N",
           "105mm Giat G2"
         ],
-        "smokes": true,
-        "rangefinder": "Laser",
         "stabilizer": false,
         "zoom": {
           "max": 10.285714285714286,
@@ -14134,7 +13718,7 @@
         }
       },
       "Commander": {
-        "rangefinder": "Laser",
+        "weapons": [],
         "traverse": {
           "vertical": {
             "max": 45,
@@ -14145,12 +13729,11 @@
             "vertical": 60
           }
         },
-        "weapons": [],
-        "stabilizer": true,
         "zoom": {
           "max": 8,
           "min": 1.894736842105263
-        }
+        },
+        "stabilizer": true
       }
     },
     "mass": 16,
@@ -14187,7 +13770,6 @@
         "weapons": [
           "100mm D-10S"
         ],
-        "rangefinder": "None",
         "stabilizer": false,
         "zoom": {
           "max": 3.789473684210526,
@@ -14249,7 +13831,6 @@
         "weapons": [
           "88 mm KwK43"
         ],
-        "rangefinder": "None",
         "stabilizer": false,
         "zoom": {
           "max": 4.8,
@@ -14277,7 +13858,7 @@
     },
     "turrets": {
       "Commander": {
-        "rangefinder": "Laser",
+        "weapons": [],
         "traverse": {
           "vertical": {
             "max": 45,
@@ -14288,12 +13869,11 @@
             "vertical": 60
           }
         },
-        "weapons": [],
-        "stabilizer": true,
         "zoom": {
           "max": 4.8,
           "min": 4.8
-        }
+        },
+        "stabilizer": true
       },
       "Gunner": {
         "smokes": true,
@@ -14311,7 +13891,6 @@
           "7.62mm PKT",
           "30mm 2A72"
         ],
-        "rangefinder": "Laser",
         "stabilizer": true,
         "zoom": {
           "max": 12,
@@ -14340,7 +13919,7 @@
     },
     "turrets": {
       "Commander": {
-        "rangefinder": "Laser",
+        "weapons": [],
         "traverse": {
           "vertical": {
             "max": 59,
@@ -14351,15 +13930,14 @@
             "vertical": 60
           }
         },
-        "weapons": [],
-        "stabilizer": true,
         "zoom": {
           "max": 8,
           "min": 1.894736842105263
-        }
+        },
+        "stabilizer": true
       },
       "Gunner": {
-        "thermals": "Green (Gen 2)",
+        "smokes": true,
         "traverse": {
           "vertical": {
             "max": 59,
@@ -14376,8 +13954,6 @@
           "BGM-71C I-TOW",
           "BGM-71F TOW 2A/B"
         ],
-        "smokes": true,
-        "rangefinder": "Laser",
         "stabilizer": true,
         "zoom": {
           "max": 8,
@@ -14439,7 +14015,6 @@
         "weapons": [
           "75 mm PaK39 L48"
         ],
-        "rangefinder": "None",
         "stabilizer": false,
         "zoom": {
           "max": 4.8,
@@ -14482,7 +14057,6 @@
           "90mm T15E1",
           ".30 cal M1919"
         ],
-        "rangefinder": "None",
         "stabilizer": false,
         "zoom": {
           "max": 4.8,
@@ -14592,7 +14166,7 @@
     },
     "turrets": {
       "Commander": {
-        "thermals": "White (Gen 3)",
+        "lws": true,
         "traverse": {
           "vertical": {
             "max": 30,
@@ -14603,19 +14177,17 @@
             "vertical": 60
           }
         },
-        "stabilizer": true,
-        "rangefinder": "Laser",
         "weapons": [
           "12.7mm M2"
         ],
-        "lws": true,
+        "stabilizer": true,
         "zoom": {
           "max": 18,
           "min": 4.235294117647059
         }
       },
       "Gunner": {
-        "thermals": "White (Gen 3)",
+        "smokes": true,
         "traverse": {
           "vertical": {
             "max": 45,
@@ -14631,14 +14203,12 @@
           "7.62mm M240",
           "Spike-LR2MR"
         ],
-        "smokes": true,
-        "rangefinder": "Laser",
+        "lws": true,
         "stabilizer": true,
         "zoom": {
           "max": 18,
           "min": 4.235294117647059
-        },
-        "lws": true
+        }
       }
     },
     "name": "KF41 Lynx",
@@ -14662,7 +14232,9 @@
     },
     "turrets": {
       "Commander": {
-        "thermals": "Green (Gen 1)",
+        "weapons": [
+          "12.7mm M2"
+        ],
         "traverse": {
           "vertical": {
             "max": 45,
@@ -14673,18 +14245,14 @@
             "vertical": 60
           }
         },
-        "weapons": [
-          "12.7mm M2"
-        ],
-        "rangefinder": "Laser",
-        "stabilizer": true,
         "zoom": {
           "max": 8,
           "min": 1.894736842105263
-        }
+        },
+        "stabilizer": true
       },
       "Gunner": {
-        "thermals": "Green (Gen 1)",
+        "smokes": false,
         "traverse": {
           "vertical": {
             "max": 45,
@@ -14700,8 +14268,6 @@
           "75mm XM274",
           "7.62mm M240"
         ],
-        "smokes": false,
-        "rangefinder": "Laser",
         "stabilizer": true,
         "zoom": {
           "max": 8,
@@ -14749,7 +14315,7 @@
         "stabilizer": false
       },
       "Gunner": {
-        "thermals": "White (Gen 2)",
+        "smokes": true,
         "traverse": {
           "vertical": {
             "max": 45,
@@ -14765,17 +14331,15 @@
           "30mm 2A42M (BMPT)",
           "9M120 Ataka"
         ],
-        "smokes": true,
-        "rangefinder": "Laser",
+        "lws": true,
         "stabilizer": true,
         "zoom": {
           "max": 12,
           "min": 3.789473684210526
-        },
-        "lws": true
+        }
       },
       "Commander": {
-        "thermals": "White (Gen 2)",
+        "lws": true,
         "traverse": {
           "vertical": {
             "max": 60,
@@ -14786,10 +14350,8 @@
             "vertical": 60
           }
         },
-        "stabilizer": true,
-        "rangefinder": "Laser",
         "weapons": [],
-        "lws": true,
+        "stabilizer": true,
         "zoom": {
           "max": 12,
           "min": 3.789473684210526
@@ -14830,7 +14392,6 @@
         "weapons": [
           "152.4mm BL-8"
         ],
-        "rangefinder": "None",
         "stabilizer": false,
         "zoom": {
           "max": 3.4285714285714284,
@@ -14903,7 +14464,9 @@
     },
     "turrets": {
       "Commander": {
-        "rangefinder": "None",
+        "weapons": [
+          "12.7mm M2"
+        ],
         "traverse": {
           "vertical": {
             "max": 58,
@@ -14914,14 +14477,11 @@
             "vertical": 60
           }
         },
-        "weapons": [
-          "12.7mm M2"
-        ],
-        "stabilizer": true,
         "zoom": {
           "max": 8,
           "min": 8
-        }
+        },
+        "stabilizer": true
       },
       "Gunner": {
         "smokes": false,
@@ -14939,7 +14499,6 @@
           "90mm M41",
           ".30 cal M1919"
         ],
-        "rangefinder": "Optical",
         "stabilizer": false,
         "zoom": {
           "max": 8,
@@ -15045,7 +14604,7 @@
     },
     "turrets": {
       "Gunner": {
-        "thermals": "Green (Gen 1)",
+        "smokes": true,
         "traverse": {
           "vertical": {
             "max": 40,
@@ -15060,8 +14619,6 @@
           "75mm XM274 66.7RPM",
           "7.62mm M240"
         ],
-        "smokes": true,
-        "rangefinder": "Laser",
         "stabilizer": true,
         "zoom": {
           "max": 8,
@@ -15145,7 +14702,6 @@
           "85mm F-30",
           "7.62mm DT-28"
         ],
-        "rangefinder": "None",
         "stabilizer": false,
         "zoom": {
           "max": 3.4285714285714284,
@@ -15315,7 +14871,10 @@
     },
     "turrets": {
       "Driver": {
-        "rangefinder": "Laser",
+        "weapons": [
+          "30mm 2A72",
+          "9M133 Kornet"
+        ],
         "traverse": {
           "vertical": {
             "max": 60,
@@ -15326,15 +14885,11 @@
             "vertical": 30
           }
         },
-        "weapons": [
-          "30mm 2A72",
-          "9M133 Kornet"
-        ],
-        "stabilizer": true,
         "zoom": {
           "max": 7.2,
           "min": 2.88
-        }
+        },
+        "stabilizer": true
       }
     },
     "name": "LT-SE",
@@ -15393,7 +14948,6 @@
           ".30 cal M1919",
           "7.2 in T37"
         ],
-        "rangefinder": "None",
         "stabilizer": true,
         "zoom": {
           "max": 4.8,
@@ -15440,7 +14994,9 @@
     },
     "turrets": {
       "Commander": {
-        "rangefinder": "None",
+        "weapons": [
+          "12.7mm M2"
+        ],
         "traverse": {
           "vertical": {
             "max": 60,
@@ -15451,14 +15007,11 @@
             "vertical": 60
           }
         },
-        "weapons": [
-          "12.7mm M2"
-        ],
-        "stabilizer": true,
         "zoom": {
           "max": 2.88,
           "min": 1.8
-        }
+        },
+        "stabilizer": true
       },
       "Gunner": {
         "smokes": false,
@@ -15502,7 +15055,9 @@
     },
     "turrets": {
       "Commander": {
-        "rangefinder": "Laser",
+        "weapons": [
+          "12.7mm NSVT"
+        ],
         "traverse": {
           "vertical": {
             "max": 45,
@@ -15513,14 +15068,11 @@
             "vertical": 60
           }
         },
-        "weapons": [
-          "12.7mm NSVT"
-        ],
-        "stabilizer": true,
         "zoom": {
           "max": 4.8,
           "min": 4.8
-        }
+        },
+        "stabilizer": true
       },
       "Gunner": {
         "smokes": true,
@@ -15538,7 +15090,6 @@
           "152mm 2A64",
           "152mm 2A64M"
         ],
-        "rangefinder": "Laser",
         "stabilizer": false,
         "zoom": {
           "max": 7.2,
@@ -15567,7 +15118,7 @@
     },
     "turrets": {
       "Gunner": {
-        "thermals": "White (Gen 1)",
+        "smokes": true,
         "traverse": {
           "vertical": {
             "max": 50,
@@ -15582,8 +15133,6 @@
           "12.7mm M2",
           "FGM-148"
         ],
-        "smokes": true,
-        "rangefinder": "Laser",
         "stabilizer": true,
         "zoom": {
           "max": 10.285714285714286,
@@ -15616,7 +15165,7 @@
     },
     "turrets": {
       "Commander": {
-        "rangefinder": "Laser",
+        "weapons": [],
         "traverse": {
           "vertical": {
             "max": 45,
@@ -15627,15 +15176,14 @@
             "vertical": 60
           }
         },
-        "weapons": [],
-        "stabilizer": false,
         "zoom": {
           "max": 4.8,
           "min": 4.8
-        }
+        },
+        "stabilizer": false
       },
       "Gunner": {
-        "thermals": "White (Gen 3)",
+        "smokes": false,
         "traverse": {
           "vertical": {
             "max": 85,
@@ -15650,17 +15198,15 @@
           "9M311",
           "30mm 2A38"
         ],
-        "smokes": false,
-        "rangefinder": "Laser",
+        "lws": true,
         "stabilizer": true,
         "zoom": {
           "max": 8,
           "min": 8
-        },
-        "lws": true
+        }
       },
       "Radar Operator": {
-        "rangefinder": "Laser",
+        "weapons": [],
         "traverse": {
           "vertical": {
             "max": 79.5,
@@ -15671,12 +15217,11 @@
             "vertical": 80
           }
         },
-        "weapons": [],
-        "stabilizer": false,
         "zoom": {
           "max": 2.88,
           "min": 1.8
-        }
+        },
+        "stabilizer": false
       }
     },
     "mass": 41,
@@ -15700,7 +15245,7 @@
     },
     "turrets": {
       "Gunner": {
-        "thermals": "White (Gen 2)",
+        "smokes": true,
         "traverse": {
           "vertical": {
             "max": 45,
@@ -15714,14 +15259,12 @@
         "weapons": [
           "HJ-10"
         ],
-        "smokes": true,
-        "rangefinder": "Laser",
+        "lws": true,
         "stabilizer": true,
         "zoom": {
           "max": 10.285714285714286,
           "min": 2.6666666666666665
-        },
-        "lws": true
+        }
       }
     },
     "name": "AFT-10",
@@ -15799,7 +15342,6 @@
           "122mm D-25T",
           "7.62mm DT-28"
         ],
-        "rangefinder": "None",
         "stabilizer": false,
         "zoom": {
           "max": 3.789473684210526,
@@ -15924,7 +15466,6 @@
           "7.62mm DT-28",
           "122mm D-25TM"
         ],
-        "rangefinder": "None",
         "stabilizer": false,
         "zoom": {
           "max": 3.789473684210526,
@@ -15986,7 +15527,6 @@
         "weapons": [
           "90mm M3"
         ],
-        "rangefinder": "None",
         "stabilizer": false,
         "zoom": {
           "max": 4.8,
@@ -16029,7 +15569,6 @@
           "76mm M1",
           ".30 cal M1919"
         ],
-        "rangefinder": "None",
         "stabilizer": true,
         "zoom": {
           "max": 4.8,
@@ -16119,7 +15658,6 @@
         }
       },
       "Gunner": {
-        "thermals": "White (Gen 3)",
         "traverse": {
           "vertical": {
             "max": 60,
@@ -16130,23 +15668,22 @@
             "vertical": 46
           }
         },
+        "smokes": true,
+        "maws": true,
         "weapons": [
           "7.62mm PKT",
           "30mm 2A42M",
           "9M133 Kornet"
         ],
         "lws": true,
-        "maws": true,
-        "smokes": true,
         "stabilizer": true,
-        "rangefinder": "Laser",
         "zoom": {
           "max": 12,
           "min": 3.789473684210526
         }
       },
       "Commander": {
-        "thermals": "White (Gen 3)",
+        "lws": true,
         "traverse": {
           "vertical": {
             "max": 40,
@@ -16158,14 +15695,12 @@
           }
         },
         "weapons": [],
-        "lws": true,
-        "rangefinder": "Laser",
+        "maws": true,
         "stabilizer": true,
         "zoom": {
           "max": 12,
           "min": 3.789473684210526
-        },
-        "maws": true
+        }
       }
     },
     "name": "T-15 Armata",
@@ -16202,7 +15737,6 @@
         "weapons": [
           "57mm S-68"
         ],
-        "rangefinder": "None",
         "stabilizer": false,
         "zoom": {
           "max": 3.4285714285714284,
@@ -16231,7 +15765,7 @@
     },
     "turrets": {
       "Commander": {
-        "thermals": "White (Gen 3)",
+        "lws": true,
         "traverse": {
           "vertical": {
             "max": 75,
@@ -16243,17 +15777,14 @@
           }
         },
         "weapons": [],
-        "lws": true,
-        "rangefinder": "Laser",
+        "maws": true,
         "stabilizer": true,
         "zoom": {
           "max": 12,
           "min": 2.88
-        },
-        "maws": true
+        }
       },
       "Gunner": {
-        "thermals": "White (Gen 3)",
         "traverse": {
           "vertical": {
             "max": 15,
@@ -16264,16 +15795,15 @@
             "vertical": 32
           }
         },
+        "smokes": true,
+        "maws": true,
         "weapons": [
           "30mm 2A42M",
           "152mm 2A73",
           "7.62mm PKT"
         ],
         "lws": true,
-        "maws": true,
-        "smokes": true,
         "stabilizer": true,
-        "rangefinder": "Laser",
         "zoom": {
           "max": 12,
           "min": 2.88
@@ -16318,7 +15848,6 @@
           "9M14M",
           "9M113 Konkurs"
         ],
-        "rangefinder": "None",
         "stabilizer": false,
         "zoom": {
           "max": 6,
@@ -16346,7 +15875,7 @@
     },
     "turrets": {
       "Commander": {
-        "rangefinder": "Optical",
+        "weapons": [],
         "traverse": {
           "vertical": {
             "max": 70,
@@ -16357,12 +15886,11 @@
             "vertical": 60
           }
         },
-        "weapons": [],
-        "stabilizer": true,
         "zoom": {
           "max": 4.8,
           "min": 4.8
-        }
+        },
+        "stabilizer": true
       },
       "Gunner": {
         "smokes": false,
@@ -16380,7 +15908,6 @@
           "7.62mm PKT",
           "115mm D-68"
         ],
-        "rangefinder": "Optical",
         "stabilizer": true,
         "zoom": {
           "max": 8,
@@ -16443,7 +15970,6 @@
           "76mm F-34",
           "7.62mm DT-28"
         ],
-        "rangefinder": "None",
         "stabilizer": false,
         "zoom": {
           "max": 3.4285714285714284,
@@ -16471,7 +15997,9 @@
     },
     "turrets": {
       "Commander": {
-        "rangefinder": "Laser",
+        "weapons": [
+          "30mm 2A42"
+        ],
         "traverse": {
           "vertical": {
             "max": 45,
@@ -16482,14 +16010,11 @@
             "vertical": 60
           }
         },
-        "weapons": [
-          "30mm 2A42"
-        ],
-        "stabilizer": false,
         "zoom": {
           "max": 4.8,
           "min": 2.88
-        }
+        },
+        "stabilizer": false
       },
       "Gunner": {
         "smokes": false,
@@ -16507,7 +16032,6 @@
           "7.62mm PKT",
           "125mm 2A47"
         ],
-        "rangefinder": "Laser",
         "stabilizer": true,
         "zoom": {
           "max": 9,
@@ -16535,7 +16059,9 @@
     },
     "turrets": {
       "Loader": {
-        "rangefinder": "None",
+        "weapons": [
+          "12.7mm DSHK"
+        ],
         "traverse": {
           "vertical": {
             "max": 45,
@@ -16546,14 +16072,11 @@
             "vertical": 60
           }
         },
-        "weapons": [
-          "12.7mm DSHK"
-        ],
-        "stabilizer": true,
         "zoom": {
           "max": 2.88,
           "min": 1.8
-        }
+        },
+        "stabilizer": true
       },
       "Gunner": {
         "smokes": true,
@@ -16571,7 +16094,6 @@
           "115mm U-5TS",
           "7.62mm PKT"
         ],
-        "rangefinder": "Laser",
         "stabilizer": true,
         "zoom": {
           "max": 6.545454545454546,
@@ -16579,7 +16101,7 @@
         }
       },
       "Commander": {
-        "rangefinder": "None",
+        "weapons": [],
         "traverse": {
           "vertical": {
             "max": 20,
@@ -16590,12 +16112,11 @@
             "vertical": 60
           }
         },
-        "weapons": [],
-        "stabilizer": true,
         "zoom": {
           "max": 4.8,
           "min": 4.8
-        }
+        },
+        "stabilizer": true
       }
     },
     "name": "T-62M-1",
