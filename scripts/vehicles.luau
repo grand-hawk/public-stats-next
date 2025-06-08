@@ -2,31 +2,31 @@ local ServerStorage = game:GetService("ServerStorage")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 
 local DriveData = ReplicatedStorage:WaitForChild("NewDriveData") :: Folder
-local TankModules = ReplicatedStorage:WaitForChild("TankModules") :: Folder
+-- local TankModules = ReplicatedStorage:WaitForChild("TankModules") :: Folder
 local VehicleDriveData = DriveData:WaitForChild("Vehicles") :: Folder
 local Modules = ServerStorage:WaitForChild("Modules") :: Folder
 
 local Engines = require(DriveData:WaitForChild("Engines") :: ModuleScript)
 local TankInfo = require(ReplicatedStorage:WaitForChild("TankInfo") :: ModuleScript)
 local GetVehicle = require(Modules:WaitForChild("GetVehicle") :: ModuleScript)
-local ThermalNames = require(TankModules:WaitForChild("ThermalNames") :: ModuleScript)
-local GeneralConfigs = require(TankModules:WaitForChild("Turrets"):WaitForChild("GeneralConfigs") :: ModuleScript)
+-- local ThermalNames = require(TankModules:WaitForChild("ThermalNames") :: ModuleScript)
+-- local GeneralConfigs = require(TankModules:WaitForChild("Turrets"):WaitForChild("GeneralConfigs") :: ModuleScript)
 
 local BaseFOV = 72
 
-function tableEquals(table1, table2)
-	for i, v in next, table1 do
-		if table2[i] ~= v then
-			return false
-		end
-	end
-	for i, v in next, table2 do
-		if table1[i] ~= v then
-			return false
-		end
-	end
-	return true
-end
+-- function tableEquals(table1, table2)
+-- 	for i, v in next, table1 do
+-- 		if table2[i] ~= v then
+-- 			return false
+-- 		end
+-- 	end
+-- 	for i, v in next, table2 do
+-- 		if table1[i] ~= v then
+-- 			return false
+-- 		end
+-- 	end
+-- 	return true
+-- end
 
 type VehicleModule = {
 	name: string,
@@ -56,10 +56,10 @@ type VehicleModule = {
 
 	turrets: {
 		[string]: {
-			zoom: {
-				min: number,
-				max: number,
-			},
+			-- zoom: {
+			-- 	min: number,
+			-- 	max: number,
+			-- },
 			traverse: {
 				speed: {
 					horizontal: number,
@@ -70,11 +70,10 @@ type VehicleModule = {
 					max: number,
 				},
 			},
-			-- flares: boolean?,
 			smokes: boolean?,
 			stabilizer: boolean,
-			thermals: string?,
-			rangefinder: string?,
+			-- thermals: string?,
+			-- rangefinder: string?,
 			lws: boolean?,
 			maws: boolean?,
 			weapons: { string },
@@ -179,25 +178,22 @@ for name, tank in TankInfo do
 			weapons = {},
 		}
 
-		-- if weaponsFolder:FindFirstChild("Flares") then
-		-- 	vehicle.turrets[seatName].flares = true
-		-- end
 		if weaponsFolder:FindFirstChild("Smoke Grenade") or seatName == "Gunner" then
 			vehicle.turrets[seatName].smokes = not not weaponsFolder:FindFirstChild("Smoke Grenade")
 		end
 
-		if turretInfo.Thermal then
-			vehicle.turrets[seatName].thermals = ThermalNames[turretInfo.Thermal.Type] or "Unknown"
-		end
+		-- if turretInfo.Thermal then
+		-- 	vehicle.turrets[seatName].thermals = ThermalNames[turretInfo.Thermal.Type] or "Unknown"
+		-- end
 
-		if turretInfo.rangeFinderAccuracy then
-			for name, referenceValues in GeneralConfigs.RangeFinder do
-				if tableEquals(turretInfo.rangeFinderAccuracy, referenceValues) then
-					vehicle.turrets[seatName].rangefinder = name
-					break
-				end
-			end
-		end
+		-- if turretInfo.rangeFinderAccuracy then
+		-- 	for name, referenceValues in GeneralConfigs.RangeFinder do
+		-- 		if tableEquals(turretInfo.rangeFinderAccuracy, referenceValues) then
+		-- 			vehicle.turrets[seatName].rangefinder = name
+		-- 			break
+		-- 		end
+		-- 	end
+		-- end
 
 		if seat:GetAttribute("LWR") then
 			vehicle.turrets[seatName].lws = true

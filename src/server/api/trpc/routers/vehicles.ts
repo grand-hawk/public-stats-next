@@ -41,10 +41,10 @@ export interface Vehicle {
 
   turrets: {
     [seat: string]: {
-      zoom: {
-        min: number;
-        max: number;
-      };
+      // zoom: {
+      //   min: number;
+      //   max: number;
+      // };
       traverse: {
         speed: {
           horizontal: number;
@@ -55,11 +55,10 @@ export interface Vehicle {
           max: number;
         };
       };
-      // flares: boolean | undefined;
       smokes: boolean | undefined;
       stabilizer: boolean;
-      thermals: string | undefined;
-      rangefinder: string | undefined;
+      // thermals: string | undefined;
+      // rangefinder: string | undefined;
       lws: boolean | undefined;
       maws: boolean | undefined;
       weapons: string[];

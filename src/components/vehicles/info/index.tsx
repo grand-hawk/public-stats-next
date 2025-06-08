@@ -92,8 +92,8 @@ export default function VehicleInfo({
               <Card.Body gap={4}>
                 {Object.entries(data.turrets)
                   .map(([name, turret]) => {
-                    const minZoom = roundToNearestHalf(turret.zoom.min);
-                    const maxZoom = roundToNearestHalf(turret.zoom.max);
+                    // const minZoom = roundToNearestHalf(turret.zoom.min);
+                    // const maxZoom = roundToNearestHalf(turret.zoom.max);
                     const traverseSpeedHorizontal = roundToNearestHalf(
                       turret.traverse.speed.horizontal,
                     );
@@ -105,7 +105,7 @@ export default function VehicleInfo({
                       <Stack key={name} gap={2}>
                         <BasicCard heading={name}>
                           <StatStack>
-                            <Stat label="Zoom">
+                            {/* <Stat label="Zoom">
                               {minZoom !== maxZoom && (
                                 <>
                                   <FormatNumber
@@ -120,7 +120,7 @@ export default function VehicleInfo({
                                 value={maxZoom}
                               />
                               x
-                            </Stat>
+                            </Stat> */}
 
                             <Stat
                               label={
@@ -184,7 +184,7 @@ export default function VehicleInfo({
                               </Stat>
                             )}
 
-                            {turret.thermals !== undefined && (
+                            {/* {turret.thermals !== undefined && (
                               <Stat label="Thermals">{turret.thermals}</Stat>
                             )}
 
@@ -192,7 +192,7 @@ export default function VehicleInfo({
                               <Stat label="Rangefinder">
                                 {turret.rangefinder}
                               </Stat>
-                            )}
+                            )} */}
 
                             {(turret.lws || turret.maws) && (
                               <Stat label="Warning system(s)">
