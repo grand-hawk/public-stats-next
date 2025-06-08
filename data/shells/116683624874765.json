@@ -13828,6 +13828,65 @@
       ],
       "velocity": 1130,
       "type": "HEAT-FS"
+    },
+    {
+      "penetrationTable": {
+        "0": {
+          "0": [
+            673
+          ],
+          "500": [
+            662
+          ],
+          "1000": [
+            650
+          ],
+          "2000": [
+            627
+          ]
+        },
+        "30": {
+          "0": [
+            695
+          ],
+          "500": [
+            683
+          ],
+          "1000": [
+            671
+          ],
+          "2000": [
+            647
+          ]
+        },
+        "60": {
+          "0": [
+            786
+          ],
+          "500": [
+            773
+          ],
+          "1000": [
+            759
+          ],
+          "2000": [
+            732
+          ]
+        }
+      },
+      "damage": 490,
+      "name": "K279",
+      "mass": 5.01,
+      "relatedVehicles": [
+        "K2"
+      ],
+      "shrapMultiplier": 3,
+      "maxPenetration": 673,
+      "eraTip": 0.4,
+      "velocity": 1720,
+      "diameter": 22.5,
+      "type": "APFSDS INCENDIARY ANTI-ERA",
+      "ricochetAngle": 82.02
     }
   ],
   "Bulsae-3": [
