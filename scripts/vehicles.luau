@@ -12,7 +12,7 @@ local GetVehicle = require(Modules:WaitForChild("GetVehicle") :: ModuleScript)
 -- local ThermalNames = require(TankModules:WaitForChild("ThermalNames") :: ModuleScript)
 -- local GeneralConfigs = require(TankModules:WaitForChild("Turrets"):WaitForChild("GeneralConfigs") :: ModuleScript)
 
-local BaseFOV = 72
+-- local BaseFOV = 72
 
 -- function tableEquals(table1, table2)
 -- 	for i, v in next, table1 do
