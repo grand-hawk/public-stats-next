@@ -160,10 +160,10 @@ for name, tank in TankInfo do
 		local turretInfo = require(turretInfoModule)
 
 		vehicle.turrets[seatName] = {
-			zoom = {
-				min = BaseFOV / turretInfo.Zoom[2],
-				max = BaseFOV / turretInfo.Zoom[1],
-			},
+			-- zoom = {
+			-- 	min = BaseFOV / turretInfo.Zoom[2],
+			-- 	max = BaseFOV / turretInfo.Zoom[1],
+			-- },
 			traverse = {
 				speed = {
 					horizontal = turretInfo.anglelimits.horizontal[3],
