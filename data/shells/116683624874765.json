@@ -2887,9 +2887,9 @@
       "damage": 360,
       "relatedVehicles": [
         "Panther II",
-        "Jagdpanther",
         "Elefant",
-        "Tiger II"
+        "Tiger II",
+        "Jagdpanther"
       ],
       "velocity": 1130,
       "type": "APCR",
@@ -2951,9 +2951,9 @@
       "damage": 298,
       "relatedVehicles": [
         "Panther II",
-        "Jagdpanther",
         "Elefant",
-        "Tiger II"
+        "Tiger II",
+        "Jagdpanther"
       ],
       "velocity": 820,
       "type": "HE"
@@ -3014,9 +3014,9 @@
       "damage": 360,
       "relatedVehicles": [
         "Panther II",
-        "Jagdpanther",
         "Elefant",
-        "Tiger II"
+        "Tiger II",
+        "Jagdpanther"
       ],
       "velocity": 1000,
       "type": "APHE",
@@ -3935,8 +3935,8 @@
       "damage": 360,
       "relatedVehicles": [
         "Porsche Tiger",
-        "Tiger I",
-        "Toramaru"
+        "Toramaru",
+        "Tiger I"
       ],
       "velocity": 773,
       "type": "APHE",
@@ -3998,8 +3998,8 @@
       "damage": 360,
       "relatedVehicles": [
         "Porsche Tiger",
-        "Tiger I",
-        "Toramaru"
+        "Toramaru",
+        "Tiger I"
       ],
       "velocity": 810,
       "type": "APHE",
@@ -4061,8 +4061,8 @@
       "damage": 258,
       "relatedVehicles": [
         "Porsche Tiger",
-        "Tiger I",
-        "Toramaru"
+        "Toramaru",
+        "Tiger I"
       ],
       "velocity": 820,
       "type": "HE"
@@ -9114,7 +9114,7 @@
       },
       "damage": 514,
       "relatedVehicles": [
-        "Centurion Mk 10"
+        "Centurion Mk.10"
       ],
       "velocity": 720,
       "type": "HESH"
@@ -9169,7 +9169,7 @@
       "maxPenetration": 350,
       "damage": 420,
       "relatedVehicles": [
-        "Centurion Mk 10"
+        "Centurion Mk.10"
       ],
       "velocity": 1478,
       "type": "APDS",
@@ -13307,20 +13307,20 @@
         "SAU-2",
         "OBT-2U",
         "ISU-152",
-        "SU-122P",
         "Plastun SN",
         "ZIT-122",
         "BMP-100",
         "OBT-3",
         "IS-6",
         "OBT-2BV",
-        "IFV-30",
+        "SU-122P",
         "OBT-2B",
-        "T-44",
+        "IFV-30",
+        "OBT-2AM",
         "OBT-2 Super",
         "T-62",
         "OBT-2UM",
-        "OBT-2AM",
+        "T-44",
         "Towvee S",
         "T-54M",
         "IS-2 1944",
@@ -17757,9 +17757,9 @@
         "M26 Pershing",
         "M17 Whizbang",
         "M48A2 Patton",
+        "M4A2 Sherman",
         "M4A3 (105) Zippo",
         "T26E4 Super Pershing",
-        "M4A2 Sherman",
         "Class 3(P)",
         "T34 Calliope"
       ],
@@ -21854,10 +21854,10 @@
         "Jagdtiger",
         "Comet Mk.1",
         "Panther II",
-        "Jagdpanther",
         "Tiger II",
+        "Class 3(P)",
         "Sturmtiger",
-        "Class 3(P)"
+        "Jagdpanther"
       ],
       "velocity": 30,
       "type": "HE"
@@ -21921,10 +21921,10 @@
         "Jagdtiger",
         "Comet Mk.1",
         "Panther II",
-        "Jagdpanther",
         "Tiger II",
+        "Class 3(P)",
         "Sturmtiger",
-        "Class 3(P)"
+        "Jagdpanther"
       ],
       "velocity": 30,
       "type": "SMOKE"
@@ -22395,7 +22395,7 @@
       "maxPenetration": 13,
       "damage": 16,
       "relatedVehicles": [
-        "Chieftain Mk 5"
+        "Chieftain Mk.5"
       ],
       "velocity": 800,
       "type": "MG",
@@ -24269,8 +24269,8 @@
         "T-80B",
         "OBT-3",
         "Object 450",
-        "BMPT Terminator",
         "Bumpee",
+        "BMPT Terminator",
         "Object 477",
         "OBT-2BV",
         "T-90M",
@@ -24280,28 +24280,28 @@
         "Ariete PSO",
         "GAZ Tigr M",
         "T-84 Oplot-M",
-        "BTR-4",
         "OBT-2B",
+        "BTR-4",
         "T-72M2",
         "MT-LB AA",
+        "OBT-2AM",
         "Object 166",
         "Rosomak",
         "T-64R",
         "T-62",
-        "BMD-4M",
-        "BMP-1",
         "T-80UM-1",
         "T-72B3",
         "IT-1",
-        "BTR-82A",
         "T-64A",
+        "BTR-82A",
         "Cheonma-2",
-        "Object 775",
+        "BMP-1",
         "OBT-2UM",
         "PT-76E",
-        "OBT-2AM",
         "T-72B",
+        "BMD-4M",
         "MBT-3E",
+        "Object 775",
         "T-62M-1"
       ],
       "velocity": 800,
@@ -25257,7 +25257,7 @@
       "maxPenetration": 298,
       "damage": 490,
       "relatedVehicles": [
-        "Chieftain Mk 5",
+        "Chieftain Mk.5",
         "Challenger 1"
       ],
       "velocity": 1372,
@@ -25319,7 +25319,7 @@
       },
       "damage": 145,
       "relatedVehicles": [
-        "Chieftain Mk 5",
+        "Chieftain Mk.5",
         "Challenger 1"
       ],
       "velocity": 670,
@@ -25375,7 +25375,7 @@
       "maxPenetration": 410,
       "damage": 490,
       "relatedVehicles": [
-        "Chieftain Mk 5",
+        "Chieftain Mk.5",
         "Challenger 1"
       ],
       "velocity": 1535,
@@ -25437,7 +25437,7 @@
       },
       "damage": 767,
       "relatedVehicles": [
-        "Chieftain Mk 5",
+        "Chieftain Mk.5",
         "Challenger 1"
       ],
       "velocity": 670,
@@ -26290,9 +26290,9 @@
       "maxPenetration": 13,
       "damage": 16,
       "relatedVehicles": [
+        "Centurion Mk.10",
         "FV4005",
-        "Centurion Mk 10",
-        "Centurion Mk 5 AVRE",
+        "Centurion Mk.5 AVRE",
         "Sherman Firefly"
       ],
       "velocity": 800,
@@ -28533,8 +28533,8 @@
       "relatedVehicles": [
         "OBT-2BV",
         "OBT-2B",
-        "OBT-2 Super",
-        "OBT-2AM"
+        "OBT-2AM",
+        "OBT-2 Super"
       ],
       "velocity": 887,
       "type": "APHE",
@@ -28597,8 +28597,8 @@
       "relatedVehicles": [
         "OBT-2BV",
         "OBT-2B",
-        "OBT-2 Super",
-        "OBT-2AM"
+        "OBT-2AM",
+        "OBT-2 Super"
       ],
       "velocity": 900,
       "type": "HE"
@@ -28665,8 +28665,8 @@
       "relatedVehicles": [
         "OBT-2BV",
         "OBT-2B",
-        "OBT-2 Super",
-        "OBT-2AM"
+        "OBT-2AM",
+        "OBT-2 Super"
       ],
       "velocity": 370,
       "type": "ANTI-TANK GUIDED MISSILE"
@@ -28966,7 +28966,7 @@
       "maxPenetration": 7,
       "damage": 30,
       "relatedVehicles": [
-        "Chieftain Mk 5"
+        "Chieftain Mk.5"
       ],
       "velocity": 929,
       "type": "MG",
@@ -31390,18 +31390,18 @@
         "M1A1",
         "XM8",
         "M1A2 SEP V3",
-        "M1IP",
         "HSTV-L",
         "M60A1 RISE Passive",
         "Desert Warrior",
         "RDF/LT",
-        "M1 Abrams",
         "LAV-25",
         "M60A1 Add-On Stabilization",
+        "M1 Abrams",
         "KF41 Lynx",
         "Teledyne AGS",
         "LAV-AT",
-        "M60A2 Starship"
+        "M60A2 Starship",
+        "M1IP"
       ],
       "velocity": 640,
       "type": "MG",
@@ -35855,14 +35855,14 @@
         "IS-6",
         "T-34",
         "T-34E",
-        "T-44",
-        "T-34-57",
+        "Abandoned Tank Hull",
         "T-60",
+        "T-34-57",
+        "T-44",
         "KV-220",
         "IS-1",
         "IS-2 1944",
         "KV-2",
-        "Abandoned Tank Hull",
         "IS-3"
       ],
       "velocity": 640,
@@ -39162,18 +39162,18 @@
         "Tiger 2A4",
         "VK 16.02 Leopard",
         "Panther G",
+        "Hornisse",
         "Panther II",
         "T-V",
+        "Toramaru",
         "Pz IV H",
         "Ersatz M10",
-        "Jagdpanther",
         "Sd Kfz 251",
-        "Tiger I",
         "Elefant",
+        "Tiger I",
         "Tiger II",
         "Sturmtiger",
-        "Toramaru",
-        "Hornisse"
+        "Jagdpanther"
       ],
       "velocity": 900,
       "type": "MG",
@@ -41610,11 +41610,9 @@
         "XM8",
         "M1A2 SEP V3",
         "Black Night",
-        "M1IP",
         "HSTV-L",
         "M4A3E2 (76) Jumbo",
         "90mm GMC Super Hellcat",
-        "M7 Priest",
         "Supply Truck",
         "M60A1 RISE Passive",
         "M26 Pershing",
@@ -41622,20 +41620,22 @@
         "Leopard 2A8DK",
         "Willys MB",
         "M48A2 Patton",
-        "M1 Abrams",
-        "M4A3 (105) Zippo",
-        "M551 Sheridan",
-        "M109A6",
-        "M60A1 Add-On Stabilization",
+        "M4A2 Sherman",
         "M18 Hellcat",
+        "M4A3 (105) Zippo",
+        "M109A6",
+        "M551 Sheridan",
+        "M60A1 Add-On Stabilization",
+        "M1 Abrams",
         "T26E4 Super Pershing",
         "KF41 Lynx",
-        "M4A2 Sherman",
         "M36B2 Jackson",
+        "MBT-3E",
         "M1126",
         "M113",
-        "MBT-3E",
-        "M60A2 Starship"
+        "M60A2 Starship",
+        "M1IP",
+        "M7 Priest"
       ],
       "velocity": 929,
       "type": "MG",
@@ -42736,7 +42736,7 @@
       "damage": 1949,
       "relatedVehicles": [
         "Churchill VII",
-        "Centurion Mk 5 AVRE"
+        "Centurion Mk.5 AVRE"
       ],
       "velocity": 259,
       "type": "HESH"
@@ -45962,14 +45962,14 @@
         "Leopard 1A5",
         "Marder 1A3",
         "KPz-70",
-        "Leopard 2A4",
+        "Turm III",
         "Begleitpanzer 57",
         "Leopard 2A4 140MM",
-        "Marder A1",
         "Leopard 2A6",
         "Leopard 2A8DK",
-        "Turm III",
-        "M48 Super"
+        "M48 Super",
+        "Leopard 2A4",
+        "Marder A1"
       ],
       "velocity": 900,
       "type": "MG",
@@ -46461,8 +46461,8 @@
         "BMP-3M",
         "LT-SE",
         "BTR-4",
-        "BMD-4M",
-        "BTR-82A"
+        "BTR-82A",
+        "BMD-4M"
       ],
       "velocity": 960,
       "type": "HE"
@@ -46528,8 +46528,8 @@
         "BMP-3M",
         "LT-SE",
         "BTR-4",
-        "BMD-4M",
-        "BTR-82A"
+        "BTR-82A",
+        "BMD-4M"
       ],
       "velocity": 1260,
       "type": "APFSDS",
@@ -46596,8 +46596,8 @@
         "BMP-3M",
         "LT-SE",
         "BTR-4",
-        "BMD-4M",
-        "BTR-82A"
+        "BTR-82A",
+        "BMD-4M"
       ],
       "velocity": 1120,
       "type": "APDS",
@@ -47285,7 +47285,7 @@
       "maxPenetration": 13,
       "damage": 16,
       "relatedVehicles": [
-        "Chieftain Mk 5"
+        "Chieftain Mk.5"
       ],
       "velocity": 800,
       "type": "MG",
