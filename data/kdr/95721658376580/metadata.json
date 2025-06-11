@@ -1,5 +1,5 @@
 {
-    "date": "2025-06-10T12:20:11.398Z",
+    "date": "2025-06-11T00:37:56.009Z",
     "vehicles": [
         "BRDM-2",
         "BMP-3",
@@ -16,7 +16,7 @@
         "LVT-6 Gator",
         "BTR-82A",
         "Type 89",
-        "Centurion Mk 10",
+        "Centurion Mk.10",
         "Bumpee",
         "BMPT Terminator",
         "Ural-375D",
@@ -116,7 +116,7 @@
         "Class 3(P)",
         "M4A3E2 (75) Jumbo",
         "Object 166",
-        "Centurion Mk 5 AVRE",
+        "Centurion Mk.5 AVRE",
         "FV4005",
         "M60A1 RISE Passive",
         "T-34E",
@@ -132,7 +132,7 @@
         "BRDM-2 Konkurs",
         "Burlak",
         "KV-2",
-        "Chieftain Mk 5",
+        "Chieftain Mk.5",
         "SU-85M",
         "M1128 MGS",
         "T-44",
@@ -252,8 +252,8 @@
         "Mi-8AMTSh",
         "AH-64D",
         "Ka-52M Alligator-M",
-        "T29",
         "SU-122P",
+        "T29",
         "Leopard 2A8DK",
         "Abandoned Tank Hull",
         "T-64E",
@@ -261,20 +261,20 @@
         "M26 T99",
         "M17 Whizbang",
         "BT-42",
+        "T-54M",
         "Lada",
         "Teledyne AGS",
-        "T-54M",
+        "Object 120",
         "Shturm-S",
         "BT-5",
         "2S14 Zhalo-S",
         "K2",
         "T-55AD",
-        "Object 120",
         "Object 704",
         "T-55AM-1",
         "RBT-5"
     ],
     "versions": [
-        309
+        311
     ]
 }

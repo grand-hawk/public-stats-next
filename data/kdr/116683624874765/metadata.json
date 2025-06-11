@@ -1,8 +1,10 @@
 {
-    "date": "2025-06-10T12:20:11.785Z",
+    "date": "2025-06-11T00:37:56.275Z",
     "vehicles": [
         "T-72B",
+        "BMP-2M",
         "BTR-55",
+        "T-84 Oplot-M",
         "BRDM-2",
         "BMD-1",
         "BMD-4M",
@@ -57,7 +59,6 @@
         "PaKWagen",
         "T-84-120",
         "MT-LB AA",
-        "T-84 Oplot-M",
         "BTR-4",
         "PT-76E",
         "Strf 9040C",
@@ -85,7 +86,7 @@
         "M60A2 Starship",
         "ASU-57",
         "BTR-60PB",
-        "M48 Patton",
+        "M48A2 Patton",
         "IT-1",
         "Leopard 1A5",
         "KPz-70",
@@ -100,8 +101,8 @@
         "KF51 Panther",
         "MT-LB",
         "T-90M",
+        "2S7 Pion",
         "K1",
-        "BMP-2M",
         "Marder 1A3",
         "Churchill VII",
         "Strela-10",
@@ -163,7 +164,6 @@
         "Panther EVO",
         "M1128 MGS",
         "Kornet D BMD-4M",
-        "2S7 Pion",
         "M270 MLRS",
         "IS-7",
         "ZBD04A",
@@ -268,6 +268,7 @@
         "T34 Calliope"
     ],
     "versions": [
+        145,
         144,
         141,
         138,
@@ -276,7 +277,6 @@
         128,
         126,
         125,
-        124,
-        123
+        124
     ]
 }
