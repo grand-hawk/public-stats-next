@@ -1,6 +1,7 @@
 {
-    "date": "2025-06-12T00:37:39.453Z",
+    "date": "2025-06-12T12:20:00.144Z",
     "vehicles": [
+        "Mi-24VM",
         "T-72B",
         "BMP-2M",
         "BTR-55",
@@ -47,7 +48,7 @@
         "KV-5",
         "Panther G",
         "T-34",
-        "Sd.Kfz.234/2 Puma",
+        "Puma",
         "IS-3",
         "Tiger I",
         "Leopard 2A4",
@@ -96,7 +97,6 @@
         "AMX-10RC",
         "Mi-8AMTSh",
         "M113",
-        "Mi-24VM",
         "M109A6",
         "Type 87",
         "KF51 Panther",
@@ -168,6 +168,7 @@
         "IS-7",
         "ZBD04A",
         "TOS-1A BM-1",
+        "Plastun SN",
         "Cheonma-2",
         "XM8",
         "Ka-52M Alligator-M",
@@ -177,7 +178,7 @@
         "Leopard 2A4 140MM",
         "Shturm-S",
         "M36B2 Jackson",
-        "Chieftain Mk 5",
+        "Chieftain Mk.5",
         "PT-76B",
         "Class 3(P)",
         "AMX-13",
@@ -205,7 +206,6 @@
         "FV510 Warrior",
         "T-15 Armata",
         "Kurganets-25",
-        "Plastun SN",
         "ZTZ99A",
         "T-64R",
         "AFT-10",
@@ -268,6 +268,8 @@
         "T34 Calliope"
     ],
     "versions": [
+        149,
+        147,
         146,
         145,
         144,
@@ -275,8 +277,6 @@
         138,
         137,
         129,
-        128,
-        126,
-        125
+        128
     ]
 }
