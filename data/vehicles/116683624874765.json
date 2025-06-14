@@ -3380,7 +3380,7 @@
         "smokes": false,
         "traverse": {
           "vertical": {
-            "max": 15,
+            "max": 18,
             "min": -5
           },
           "speed": {
@@ -10172,7 +10172,7 @@
         "traverse": {
           "vertical": {
             "max": 15,
-            "min": -5
+            "min": -3.5
           },
           "speed": {
             "horizontal": 40,
@@ -14708,8 +14708,8 @@
             "min": -5
           },
           "speed": {
-            "horizontal": 32,
-            "vertical": 32
+            "horizontal": 40,
+            "vertical": 40
           }
         },
         "weapons": [
