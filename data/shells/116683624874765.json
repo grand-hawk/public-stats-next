@@ -5646,58 +5646,58 @@
       "penetrationTable": {
         "0": {
           "0": [
-            434
+            400
           ],
           "500": [
-            420
+            385
           ],
           "1000": [
-            406
+            371
           ],
           "2000": [
-            380
+            344
           ]
         },
         "30": {
           "0": [
-            437
+            397
           ],
           "500": [
-            423
+            382
           ],
           "1000": [
-            409
+            368
           ],
           "2000": [
-            383
+            341
           ]
         },
         "60": {
           "0": [
-            450
+            384
           ],
           "500": [
-            436
+            370
           ],
           "1000": [
-            421
+            356
           ],
           "2000": [
-            394
+            330
           ]
         }
       },
       "name": "3BM16",
-      "mass": 5.89,
-      "maxPenetration": 434,
+      "mass": 8,
+      "maxPenetration": 400,
       "damage": 680,
       "relatedVehicles": [
         "Object 120"
       ],
-      "velocity": 1710,
+      "velocity": 1750,
       "diameter": 35,
       "type": "APFSDS",
-      "ricochetAngle": 81.66
+      "ricochetAngle": 81
     },
     {
       "penetrationTable": {
