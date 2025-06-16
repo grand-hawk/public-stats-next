@@ -1,5 +1,5 @@
 {
-    "date": "2025-06-15T12:19:55.642Z",
+    "date": "2025-06-16T00:39:59.802Z",
     "vehicles": [
         "T-72B",
         "BMP-2M",
@@ -51,13 +51,13 @@
         "KV-5",
         "Panther G",
         "T-34",
-        "Puma",
+        "Sd.Kfz.234/2 Puma",
         "IS-3",
         "Tiger I",
         "Leopard 2A4",
         "Pz IV H",
         "Hornisse",
-        "JgPz 38t",
+        "Hetzer",
         "T-64BV",
         "T-44",
         "PaKWagen",
@@ -268,6 +268,7 @@
         "T34 Calliope"
     ],
     "versions": [
+        154,
         152,
         149,
         147,
@@ -276,7 +277,6 @@
         144,
         141,
         138,
-        137,
-        129
+        137
     ]
 }
