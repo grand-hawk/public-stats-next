@@ -6825,7 +6825,7 @@
         "stabilizer": false
       },
       "Gunner": {
-        "lws": true,
+        "smokes": false,
         "traverse": {
           "vertical": {
             "max": 85,
@@ -6840,8 +6840,7 @@
           "9M311",
           "30mm 2A38"
         ],
-        "stabilizer": true,
-        "smokes": false
+        "stabilizer": true
       },
       "Radar Operator": {
         "traverse": {
