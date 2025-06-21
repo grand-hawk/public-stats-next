@@ -43,7 +43,6 @@ async function getDistinct(placeId: string): Promise<{
 function seriesFromWinrate(matches: Match[]): Array<{
   name: string;
   data: Array<[number, number]>; // [timestamp, winrate]
-  matches: Array<[number, number]>; // [timestamp, total matches]
 }> {
   type TeamStats = {
     wins: number;
@@ -54,7 +53,6 @@ function seriesFromWinrate(matches: Match[]): Array<{
   const series: Array<{
     name: string;
     data: Array<[number, number]>;
-    matches: Array<[number, number]>;
   }> = [];
 
   matches.sort(
@@ -93,22 +91,16 @@ function seriesFromWinrate(matches: Match[]): Array<{
           ? (teamData[teamName].wins / teamData[teamName].totalMatches) * 100
           : 0;
 
-      // Find or create the series entry for this team
       let teamSeries = series.find((s) => s.name === teamName);
       if (!teamSeries) {
-        teamSeries = { name: teamName, data: [], matches: [] };
+        teamSeries = { name: teamName, data: [] };
         series.push(teamSeries);
       }
 
       const lastDataPoint = teamSeries.data[teamSeries.data.length - 1];
-      if (!lastDataPoint || lastDataPoint[0] !== timestamp) {
+      if (!lastDataPoint || lastDataPoint[0] !== timestamp)
         teamSeries.data.push([timestamp, winrate]);
-        teamSeries.matches.push([timestamp, teamData[teamName].totalMatches]);
-      } else {
-        lastDataPoint[1] = winrate;
-        teamSeries.matches[teamSeries.matches.length - 1][1] =
-          teamData[teamName].totalMatches;
-      }
+      else lastDataPoint[1] = winrate;
     }
   }
 

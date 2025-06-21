@@ -15,7 +15,6 @@ export interface PlaceData {
     Array<{
       name: string;
       data: Array<[number, number]>;
-      matches: Array<[number, number]>;
     }>
   >;
   metadata: {

@@ -28,14 +28,6 @@ export default function WinrateChart({ placeId }: { placeId: number }) {
       }),
     [data],
   );
-  const matchesData = React.useMemo(
-    () =>
-      data &&
-      data.map((value) => {
-        return { name: value.name, data: value.matches };
-      }),
-    [data],
-  );
 
   if (isFetching) return <Spinner size="lg" />;
   if (error)
@@ -45,7 +37,7 @@ export default function WinrateChart({ placeId }: { placeId: number }) {
         onClick={() => !isFetching && refetch()}
       />
     );
-  if (!winrateData || !matchesData)
+  if (!winrateData)
     return <NoDataFoundState onClick={() => !isFetching && refetch()} />;
 
   const percentageFormatter = (value: number) =>
@@ -117,41 +109,23 @@ export default function WinrateChart({ placeId }: { placeId: number }) {
   return (
     <Stack gap={4} height="100%" width="100%">
       {isClient && (
-        <>
-          <ApexCharts
-            options={{
-              ...baseOptions,
-              yaxis: {
-                min: 0,
-                max: 100,
-                title: {
-                  text: 'Winrate',
-                },
-                labels: {
-                  formatter: percentageFormatter,
-                },
+        <ApexCharts
+          options={{
+            ...baseOptions,
+            yaxis: {
+              min: 0,
+              max: 100,
+              title: {
+                text: 'Winrate',
               },
-            }}
-            series={winrateData}
-            type="line"
-          />
-
-          <ApexCharts
-            options={{
-              ...baseOptions,
-              yaxis: {
-                title: {
-                  text: 'Matches played',
-                },
-                labels: {
-                  formatter: numberFormatter,
-                },
+              labels: {
+                formatter: percentageFormatter,
               },
-            }}
-            series={matchesData}
-            type="line"
-          />
-        </>
+            },
+          }}
+          series={winrateData}
+          type="line"
+        />
       )}
     </Stack>
   );
