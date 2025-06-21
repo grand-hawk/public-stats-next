@@ -45,11 +45,6 @@ export default function WinrateChart({ placeId }: { placeId: number }) {
       style: 'percent',
     }).format(value / 100);
 
-  const numberFormatter = (value: number) =>
-    new Intl.NumberFormat('en-US', {
-      style: 'decimal',
-    }).format(value);
-
   const colors = [
     '#ef4444',
     '#3b82f6',
