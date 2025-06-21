@@ -1,5 +1,5 @@
 {
-    "date": "2025-06-21T12:19:43.328Z",
+    "date": "2025-06-21T23:08:21.573Z",
     "vehicles": [
         "T-72B",
         "BMP-2M",
@@ -40,7 +40,7 @@
         "M109",
         "Wiesel 1A2",
         "Leopard 2A6",
-        "M2A1 Bradley",
+        "M2A1",
         "M901ITV",
         "MH-6 Little Bird",
         "BMP-2",
@@ -146,7 +146,7 @@
         "T-80BVM",
         "CATTB",
         "Abandoned IFV Hull",
-        "Centurion Mk.10",
+        "Centurion Mk 10",
         "M163",
         "M10 Wolverine",
         "M1117 ASV",
@@ -162,7 +162,7 @@
         "BMPT Terminator",
         "Type 89",
         "Ariete C1",
-        "Black Night",
+        "Blacknight",
         "Panther EVO",
         "M1128 MGS",
         "Kornet D BMD-4M",
@@ -268,15 +268,6 @@
         "T34 Calliope"
     ],
     "versions": [
-        154,
-        152,
-        149,
-        147,
-        146,
-        145,
-        144,
-        141,
-        138,
-        137
+        154
     ]
 }
