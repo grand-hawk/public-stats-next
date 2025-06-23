@@ -24,6 +24,24 @@ export default function VehicleTable({ placeId }: { placeId: number }) {
     { refetchOnWindowFocus: false, refetchOnMount: false },
   );
 
+  const sortedKdr = React.useMemo(
+    () =>
+      kdr &&
+      kdr.sort((a, b) => {
+        const alphabetical = sortKey === 'name';
+
+        switch (sortDirection) {
+          case 'asc':
+            if (alphabetical) return a.name.localeCompare(b.name);
+            return a[sortKey] - b[sortKey];
+          case 'desc':
+            if (alphabetical) return b.name.localeCompare(a.name);
+            return b[sortKey] - a[sortKey];
+        }
+      }),
+    [kdr, sortKey, sortDirection],
+  );
+
   if (isFetching) return <Spinner size="lg" />;
   if (error)
     return (
@@ -32,7 +50,7 @@ export default function VehicleTable({ placeId }: { placeId: number }) {
         onClick={() => !isFetching && refetch()}
       />
     );
-  if (!kdr)
+  if (!sortedKdr)
     return <NoDataFoundState onClick={() => !isFetching && refetch()} />;
 
   const SortButton = ({ name }: { name: typeof sortKey }) => {
@@ -94,46 +112,33 @@ export default function VehicleTable({ placeId }: { placeId: number }) {
         </Table.Header>
 
         <Table.Body>
-          {kdr
-            .sort((a, b) => {
-              const alphabetical = sortKey === 'name';
-
-              switch (sortDirection) {
-                case 'asc':
-                  if (alphabetical) return a.name.localeCompare(b.name);
-                  return a[sortKey] - b[sortKey];
-                case 'desc':
-                  if (alphabetical) return b.name.localeCompare(a.name);
-                  return b[sortKey] - a[sortKey];
-              }
-            })
-            .map(({ name, kd, kills, deaths }) => (
-              <Table.Row key={name}>
-                <Table.Cell>
-                  <NextLink
-                    href={`/vehicles/${encodeURIComponent(name)}`}
-                    passHref
-                  >
-                    <Link as="span">{name}</Link>
-                  </NextLink>
-                </Table.Cell>
-                <Table.Cell>
-                  <Code color="white" size="md">
-                    {kd}
-                  </Code>
-                </Table.Cell>
-                <Table.Cell>
-                  <Code color="white" size="md">
-                    <FormatNumber value={kills} />
-                  </Code>
-                </Table.Cell>
-                <Table.Cell>
-                  <Code color="white" size="md">
-                    <FormatNumber value={deaths} />
-                  </Code>
-                </Table.Cell>
-              </Table.Row>
-            ))}
+          {sortedKdr.map(({ name, kd, kills, deaths }) => (
+            <Table.Row key={name}>
+              <Table.Cell>
+                <NextLink
+                  href={`/vehicles/${encodeURIComponent(name)}`}
+                  passHref
+                >
+                  <Link as="span">{name}</Link>
+                </NextLink>
+              </Table.Cell>
+              <Table.Cell>
+                <Code color="white" size="md">
+                  {kd}
+                </Code>
+              </Table.Cell>
+              <Table.Cell>
+                <Code color="white" size="md">
+                  <FormatNumber value={kills} />
+                </Code>
+              </Table.Cell>
+              <Table.Cell>
+                <Code color="white" size="md">
+                  <FormatNumber value={deaths} />
+                </Code>
+              </Table.Cell>
+            </Table.Row>
+          ))}
         </Table.Body>
       </Table.Root>
     </Table.ScrollArea>
