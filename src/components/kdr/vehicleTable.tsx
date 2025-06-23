@@ -27,7 +27,7 @@ export default function VehicleTable({ placeId }: { placeId: number }) {
   const sortedKdr = React.useMemo(
     () =>
       kdr &&
-      kdr.sort((a, b) => {
+      [...kdr].sort((a, b) => {
         const alphabetical = sortKey === 'name';
 
         switch (sortDirection) {
