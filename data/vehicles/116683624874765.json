@@ -8233,8 +8233,8 @@
             "min": -9.5
           },
           "speed": {
-            "horizontal": 39.5,
-            "vertical": 39.5
+            "horizontal": 42,
+            "vertical": 11
           }
         },
         "weapons": [
@@ -13108,60 +13108,6 @@
       "transmission": {
         "reverseGears": 1,
         "neutralSteering": false,
-        "forwardGears": 7
-      },
-      "reverseSpeed": 4,
-      "forwardSpeed": 60,
-      "type": "Diesel",
-      "maxRPM": 2000,
-      "horsepower": 740,
-      "name": "ChTZ V-46-6"
-    },
-    "turrets": {
-      "Commander": {
-        "traverse": {
-          "vertical": {
-            "max": 75,
-            "min": -10
-          },
-          "speed": {
-            "horizontal": 60,
-            "vertical": 60
-          }
-        },
-        "weapons": [
-          "12.7mm NSVT"
-        ],
-        "stabilizer": true
-      },
-      "Gunner": {
-        "smokes": true,
-        "traverse": {
-          "vertical": {
-            "max": 13,
-            "min": -5
-          },
-          "speed": {
-            "horizontal": 20,
-            "vertical": 8.5
-          }
-        },
-        "weapons": [
-          "7.62mm PKT",
-          "125mm 2A46"
-        ],
-        "stabilizer": true
-      }
-    },
-    "name": "T-72A (test)",
-    "amphibious": false,
-    "mass": 41
-  },
-  {
-    "engine": {
-      "transmission": {
-        "reverseGears": 1,
-        "neutralSteering": false,
         "forwardGears": 5
       },
       "reverseSpeed": 7.6,
@@ -14898,8 +14844,8 @@
             "min": -4
           },
           "speed": {
-            "horizontal": 18.8,
-            "vertical": 18.8
+            "horizontal": 20,
+            "vertical": 6
           }
         },
         "weapons": [
