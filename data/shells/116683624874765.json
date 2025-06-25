@@ -925,7 +925,7 @@
       "missile": {
         "unjammable": false,
         "boostTime": 3,
-        "turnRate": 160
+        "turnRate": 300
       },
       "maxPenetration": 1100,
       "explosive": {
