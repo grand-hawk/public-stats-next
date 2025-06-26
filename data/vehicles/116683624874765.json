@@ -1494,6 +1494,76 @@
     "mass": 12.3
   },
   {
+    "engine": {
+      "transmission": {
+        "reverseGears": 1,
+        "neutralSteering": false,
+        "forwardGears": 6
+      },
+      "reverseSpeed": 5,
+      "forwardSpeed": 35,
+      "type": "Gasoline",
+      "maxRPM": 2300,
+      "horsepower": 900,
+      "name": "Wright R-1820-G-200"
+    },
+    "turrets": {
+      "Commander": {
+        "traverse": {
+          "vertical": {
+            "max": 30,
+            "min": -8
+          },
+          "speed": {
+            "horizontal": 60,
+            "vertical": 60
+          }
+        },
+        "weapons": [
+          "12.7mm M2"
+        ],
+        "stabilizer": true
+      },
+      "Gunner": {
+        "smokes": false,
+        "traverse": {
+          "vertical": {
+            "max": 23,
+            "min": -10
+          },
+          "speed": {
+            "horizontal": 7.5,
+            "vertical": 6
+          }
+        },
+        "weapons": [
+          "76mm M7",
+          "37mm M3"
+        ],
+        "stabilizer": true
+      },
+      "Driver": {
+        "traverse": {
+          "vertical": {
+            "max": 23,
+            "min": -7
+          },
+          "speed": {
+            "horizontal": 7.5,
+            "vertical": 6
+          }
+        },
+        "weapons": [
+          "12.7mm M2"
+        ],
+        "stabilizer": false
+      }
+    },
+    "name": "M6A2",
+    "amphibious": false,
+    "mass": 56.8
+  },
+  {
     "suspension": {
       "vertical": true,
       "horizontal": true,
@@ -3459,7 +3529,6 @@
       "transmission": {
         "reverseGears": 1,
         "neutralSteering": true,
-        "automatic": true,
         "forwardGears": 2
       },
       "reverseSpeed": 11,
@@ -7194,145 +7263,6 @@
   {
     "engine": {
       "transmission": {
-        "reverseGears": 1,
-        "neutralSteering": false,
-        "forwardGears": 6
-      },
-      "reverseSpeed": 5,
-      "forwardSpeed": 35,
-      "type": "Gasoline",
-      "maxRPM": 2300,
-      "horsepower": 900,
-      "name": "Wright R-1820-G-200"
-    },
-    "turrets": {
-      "Commander": {
-        "traverse": {
-          "vertical": {
-            "max": 30,
-            "min": -8
-          },
-          "speed": {
-            "horizontal": 60,
-            "vertical": 60
-          }
-        },
-        "weapons": [
-          "12.7mm M2"
-        ],
-        "stabilizer": true
-      },
-      "Gunner": {
-        "smokes": false,
-        "traverse": {
-          "vertical": {
-            "max": 23,
-            "min": -10
-          },
-          "speed": {
-            "horizontal": 7.5,
-            "vertical": 6
-          }
-        },
-        "weapons": [
-          "76mm M7",
-          "37mm M3"
-        ],
-        "stabilizer": false
-      },
-      "Driver": {
-        "traverse": {
-          "vertical": {
-            "max": 23,
-            "min": -7
-          },
-          "speed": {
-            "horizontal": 7.5,
-            "vertical": 6
-          }
-        },
-        "weapons": [
-          "12.7mm M2"
-        ],
-        "stabilizer": false
-      }
-    },
-    "name": "M6A1",
-    "amphibious": false,
-    "mass": 56.8
-  },
-  {
-    "engine": {
-      "transmission": {
-        "reverseGears": 1,
-        "neutralSteering": false,
-        "forwardGears": 5
-      },
-      "reverseSpeed": 5,
-      "forwardSpeed": 39,
-      "type": "Diesel",
-      "maxRPM": 2400,
-      "horsepower": 400,
-      "name": "Continental R975 EC2"
-    },
-    "turrets": {
-      "Gunner": {
-        "smokes": false,
-        "traverse": {
-          "vertical": {
-            "max": 20,
-            "min": -9
-          },
-          "speed": {
-            "horizontal": 11,
-            "vertical": 11
-          }
-        },
-        "weapons": [
-          "75mm M2"
-        ],
-        "stabilizer": true
-      },
-      "Commander": {
-        "traverse": {
-          "vertical": {
-            "max": 60,
-            "min": -10
-          },
-          "speed": {
-            "horizontal": 60,
-            "vertical": 60
-          }
-        },
-        "weapons": [
-          ".30 cal M1919"
-        ],
-        "stabilizer": true
-      },
-      "Bow Gunner": {
-        "traverse": {
-          "vertical": {
-            "max": 5,
-            "min": -5
-          },
-          "speed": {
-            "horizontal": 0,
-            "vertical": 0
-          }
-        },
-        "weapons": [
-          ".30 cal M1919"
-        ],
-        "stabilizer": true
-      }
-    },
-    "name": "M3 Lee",
-    "amphibious": false,
-    "mass": 27.7
-  },
-  {
-    "engine": {
-      "transmission": {
         "reverseGears": 2,
         "neutralSteering": true,
         "automatic": true,
@@ -7499,6 +7429,60 @@
         "reverseGears": 1,
         "neutralSteering": false,
         "automatic": true,
+        "forwardGears": 3
+      },
+      "reverseSpeed": 25.9,
+      "forwardSpeed": 80,
+      "type": "Diesel",
+      "maxRPM": 2400,
+      "horsepower": 400,
+      "name": "Continental R975-C4 (Hellcat)"
+    },
+    "turrets": {
+      "Commander": {
+        "traverse": {
+          "vertical": {
+            "max": 45,
+            "min": -15
+          },
+          "speed": {
+            "horizontal": 60,
+            "vertical": 60
+          }
+        },
+        "weapons": [
+          "12.7mm M2"
+        ],
+        "stabilizer": true
+      },
+      "Gunner": {
+        "smokes": false,
+        "traverse": {
+          "vertical": {
+            "max": 20,
+            "min": -10
+          },
+          "speed": {
+            "horizontal": 22.6,
+            "vertical": 22.6
+          }
+        },
+        "weapons": [
+          "76mm M1"
+        ],
+        "stabilizer": false
+      }
+    },
+    "name": "M18 Hellcat",
+    "amphibious": false,
+    "mass": 17.7
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 1,
+        "neutralSteering": false,
+        "automatic": true,
         "forwardGears": 7
       },
       "reverseSpeed": 15,
@@ -7576,59 +7560,6 @@
   {
     "engine": {
       "transmission": {
-        "reverseGears": 1,
-        "neutralSteering": false,
-        "forwardGears": 5
-      },
-      "reverseSpeed": 5,
-      "forwardSpeed": 39,
-      "type": "Diesel",
-      "maxRPM": 2400,
-      "horsepower": 400,
-      "name": "Continental R975-C4"
-    },
-    "turrets": {
-      "Commander": {
-        "traverse": {
-          "vertical": {
-            "max": 20,
-            "min": -10
-          },
-          "speed": {
-            "horizontal": 60,
-            "vertical": 60
-          }
-        },
-        "weapons": [
-          "12.7mm M2"
-        ],
-        "stabilizer": true
-      },
-      "Gunner": {
-        "smokes": false,
-        "traverse": {
-          "vertical": {
-            "max": 35,
-            "min": -5
-          },
-          "speed": {
-            "horizontal": 16.69,
-            "vertical": 30.36
-          }
-        },
-        "weapons": [
-          "105mm M2A1"
-        ],
-        "stabilizer": false
-      }
-    },
-    "name": "M7 Priest",
-    "amphibious": false,
-    "mass": 32
-  },
-  {
-    "engine": {
-      "transmission": {
         "reverseGears": 2,
         "neutralSteering": true,
         "automatic": true,
@@ -7685,6 +7616,59 @@
   {
     "engine": {
       "transmission": {
+        "reverseGears": 1,
+        "neutralSteering": false,
+        "forwardGears": 5
+      },
+      "reverseSpeed": 5,
+      "forwardSpeed": 39,
+      "type": "Diesel",
+      "maxRPM": 2400,
+      "horsepower": 400,
+      "name": "Continental R975-C4"
+    },
+    "turrets": {
+      "Commander": {
+        "traverse": {
+          "vertical": {
+            "max": 20,
+            "min": -10
+          },
+          "speed": {
+            "horizontal": 60,
+            "vertical": 60
+          }
+        },
+        "weapons": [
+          "12.7mm M2"
+        ],
+        "stabilizer": true
+      },
+      "Gunner": {
+        "smokes": false,
+        "traverse": {
+          "vertical": {
+            "max": 35,
+            "min": -5
+          },
+          "speed": {
+            "horizontal": 16.69,
+            "vertical": 30.36
+          }
+        },
+        "weapons": [
+          "105mm M2A1"
+        ],
+        "stabilizer": false
+      }
+    },
+    "name": "M7 Priest",
+    "amphibious": false,
+    "mass": 32
+  },
+  {
+    "engine": {
+      "transmission": {
         "reverseGears": 5,
         "neutralSteering": true,
         "automatic": true,
@@ -7736,6 +7720,62 @@
     "name": "BTR-90",
     "amphibious": true,
     "mass": 22
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 1,
+        "neutralSteering": false,
+        "forwardGears": 5
+      },
+      "reverseSpeed": 7,
+      "forwardSpeed": 50,
+      "type": "Diesel",
+      "maxRPM": 2000,
+      "horsepower": 650,
+      "name": "CNGC 12150L"
+    },
+    "turrets": {
+      "Commander": {
+        "lws": true,
+        "traverse": {
+          "vertical": {
+            "max": 55,
+            "min": -16
+          },
+          "speed": {
+            "horizontal": 60,
+            "vertical": 60
+          }
+        },
+        "weapons": [],
+        "stabilizer": true
+      },
+      "Gunner": {
+        "lws": true,
+        "traverse": {
+          "vertical": {
+            "max": 52,
+            "min": -5
+          },
+          "speed": {
+            "horizontal": 37.1,
+            "vertical": 32.5
+          }
+        },
+        "weapons": [
+          "7.62mm Type 86",
+          "30mm ZPZ02",
+          "QN502CDD",
+          "QN201DD"
+        ],
+        "stabilizer": true,
+        "smokes": true
+      }
+    },
+    "name": "QN506",
+    "amphibious": false,
+    "mass": 30
   },
   {
     "suspension": {
@@ -7813,62 +7853,6 @@
     "mass": 54.5,
     "name": "K1",
     "amphibious": false
-  },
-  {
-    "engine": {
-      "transmission": {
-        "reverseGears": 1,
-        "neutralSteering": false,
-        "forwardGears": 5
-      },
-      "reverseSpeed": 7,
-      "forwardSpeed": 50,
-      "type": "Diesel",
-      "maxRPM": 2000,
-      "horsepower": 650,
-      "name": "CNGC 12150L"
-    },
-    "turrets": {
-      "Commander": {
-        "lws": true,
-        "traverse": {
-          "vertical": {
-            "max": 55,
-            "min": -16
-          },
-          "speed": {
-            "horizontal": 60,
-            "vertical": 60
-          }
-        },
-        "weapons": [],
-        "stabilizer": true
-      },
-      "Gunner": {
-        "lws": true,
-        "traverse": {
-          "vertical": {
-            "max": 52,
-            "min": -5
-          },
-          "speed": {
-            "horizontal": 37.1,
-            "vertical": 32.5
-          }
-        },
-        "weapons": [
-          "7.62mm Type 86",
-          "30mm ZPZ02",
-          "QN502CDD",
-          "QN201DD"
-        ],
-        "stabilizer": true,
-        "smokes": true
-      }
-    },
-    "name": "QN506",
-    "amphibious": false,
-    "mass": 30
   },
   {
     "engine": {
@@ -7983,77 +7967,6 @@
   {
     "engine": {
       "transmission": {
-        "reverseGears": 2,
-        "neutralSteering": true,
-        "automatic": true,
-        "forwardGears": 4
-      },
-      "reverseSpeed": 38,
-      "forwardSpeed": 72,
-      "type": "Turbine",
-      "maxRPM": 3000,
-      "horsepower": 1519,
-      "name": "Honeywell AGT1500"
-    },
-    "turrets": {
-      "Loader": {
-        "traverse": {
-          "vertical": {
-            "max": 45,
-            "min": -35
-          },
-          "speed": {
-            "horizontal": 60,
-            "vertical": 60
-          }
-        },
-        "weapons": [
-          "7.62mm M240"
-        ],
-        "stabilizer": true
-      },
-      "Gunner": {
-        "smokes": true,
-        "traverse": {
-          "vertical": {
-            "max": 20,
-            "min": -10
-          },
-          "speed": {
-            "horizontal": 40,
-            "vertical": 24
-          }
-        },
-        "weapons": [
-          "105mm M68A1E2",
-          "7.62mm M240"
-        ],
-        "stabilizer": true
-      },
-      "Commander": {
-        "traverse": {
-          "vertical": {
-            "max": 75,
-            "min": -15
-          },
-          "speed": {
-            "horizontal": 60,
-            "vertical": 60
-          }
-        },
-        "weapons": [
-          "12.7mm M2"
-        ],
-        "stabilizer": true
-      }
-    },
-    "name": "M1IP",
-    "amphibious": false,
-    "mass": 55.7
-  },
-  {
-    "engine": {
-      "transmission": {
         "reverseGears": 1,
         "neutralSteering": false,
         "forwardGears": 5
@@ -8130,7 +8043,7 @@
         "forwardGears": 4
       },
       "reverseSpeed": 38,
-      "forwardSpeed": 68,
+      "forwardSpeed": 67,
       "type": "Turbine",
       "maxRPM": 3000,
       "horsepower": 1519,
@@ -8166,16 +8079,15 @@
           }
         },
         "weapons": [
-          "7.62mm M240",
-          "120mm M256",
-          "12.7mm M2"
+          "105mm M68A1E2",
+          "7.62mm M240"
         ],
         "stabilizer": true
       },
       "Commander": {
         "traverse": {
           "vertical": {
-            "max": 65,
+            "max": 75,
             "min": -15
           },
           "speed": {
@@ -8189,9 +8101,9 @@
         "stabilizer": true
       }
     },
-    "name": "M1A1",
+    "name": "M1IP",
     "amphibious": false,
-    "mass": 57.2
+    "mass": 55.7
   },
   {
     "engine": {
@@ -8421,18 +8333,89 @@
         "automatic": true,
         "forwardGears": 4
       },
-      "reverseSpeed": 31,
-      "forwardSpeed": 72,
-      "type": "Diesel",
-      "maxRPM": 2600,
-      "horsepower": 1500,
-      "name": "MTU MB 873 Ka-501"
+      "reverseSpeed": 38,
+      "forwardSpeed": 68,
+      "type": "Turbine",
+      "maxRPM": 3000,
+      "horsepower": 1519,
+      "name": "Honeywell AGT1500"
     },
     "turrets": {
       "Loader": {
         "traverse": {
           "vertical": {
             "max": 45,
+            "min": -35
+          },
+          "speed": {
+            "horizontal": 60,
+            "vertical": 60
+          }
+        },
+        "weapons": [
+          "7.62mm M240"
+        ],
+        "stabilizer": true
+      },
+      "Gunner": {
+        "smokes": true,
+        "traverse": {
+          "vertical": {
+            "max": 20,
+            "min": -10
+          },
+          "speed": {
+            "horizontal": 40,
+            "vertical": 24
+          }
+        },
+        "weapons": [
+          "7.62mm M240",
+          "120mm M256",
+          "12.7mm M2"
+        ],
+        "stabilizer": true
+      },
+      "Commander": {
+        "traverse": {
+          "vertical": {
+            "max": 65,
+            "min": -15
+          },
+          "speed": {
+            "horizontal": 60,
+            "vertical": 60
+          }
+        },
+        "weapons": [
+          "12.7mm M2"
+        ],
+        "stabilizer": true
+      }
+    },
+    "name": "M1A1",
+    "amphibious": false,
+    "mass": 57.2
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 4,
+        "neutralSteering": true,
+        "forwardGears": 8
+      },
+      "reverseSpeed": 25,
+      "forwardSpeed": 65,
+      "type": "Diesel",
+      "maxRPM": 2200,
+      "horsepower": 830,
+      "name": "MTU MB 838 CaM 500"
+    },
+    "turrets": {
+      "Commander": {
+        "traverse": {
+          "vertical": {
+            "max": 30,
             "min": -15
           },
           "speed": {
@@ -8449,95 +8432,24 @@
         "smokes": true,
         "traverse": {
           "vertical": {
-            "max": 15,
-            "min": -10
+            "max": 12,
+            "min": -12
           },
           "speed": {
-            "horizontal": 40,
-            "vertical": 20
+            "horizontal": 20.4,
+            "vertical": 20.4
           }
         },
         "weapons": [
-          "120mm Rh120 L/44",
-          "7.62mm MG3"
-        ],
-        "stabilizer": true
-      },
-      "Commander": {
-        "traverse": {
-          "vertical": {
-            "max": 35,
-            "min": -8
-          },
-          "speed": {
-            "horizontal": 60,
-            "vertical": 60
-          }
-        },
-        "weapons": [
-          "20mm Rh202"
+          "L7A3 105mm",
+          "30mm HSS 831L"
         ],
         "stabilizer": true
       }
     },
-    "name": "Leopard 2K",
+    "name": "Turm III",
     "amphibious": false,
-    "mass": 55.4
-  },
-  {
-    "engine": {
-      "transmission": {
-        "reverseGears": 1,
-        "neutralSteering": true,
-        "automatic": true,
-        "forwardGears": 2
-      },
-      "reverseSpeed": 11,
-      "forwardSpeed": 48,
-      "type": "Diesel",
-      "maxRPM": 2400,
-      "horsepower": 750,
-      "name": "AVDS-1790-2"
-    },
-    "turrets": {
-      "Commander": {
-        "traverse": {
-          "vertical": {
-            "max": 58,
-            "min": -15
-          },
-          "speed": {
-            "horizontal": 60,
-            "vertical": 60
-          }
-        },
-        "weapons": [
-          "12.7mm M2"
-        ],
-        "stabilizer": true
-      },
-      "Gunner": {
-        "smokes": false,
-        "traverse": {
-          "vertical": {
-            "max": 20,
-            "min": -10
-          },
-          "speed": {
-            "horizontal": 40,
-            "vertical": 10
-          }
-        },
-        "weapons": [
-          "152mm M162",
-          "7.62mm M240"
-        ],
-        "stabilizer": true
-      }
-    },
-    "name": "M60A2 Starship",
-    "amphibious": false,
-    "mass": 51.9
+    "mass": 42.5
   },
   {
     "engine": {
@@ -8598,7 +8510,6 @@
       "transmission": {
         "reverseGears": 1,
         "neutralSteering": true,
-        "automatic": true,
         "forwardGears": 2
       },
       "reverseSpeed": 11,
@@ -8612,8 +8523,8 @@
       "Commander": {
         "traverse": {
           "vertical": {
-            "max": 60,
-            "min": -9
+            "max": 58,
+            "min": -15
           },
           "speed": {
             "horizontal": 60,
@@ -8633,20 +8544,20 @@
             "min": -10
           },
           "speed": {
-            "horizontal": 22.5,
-            "vertical": 4
+            "horizontal": 40,
+            "vertical": 10
           }
         },
         "weapons": [
-          "105mm M68",
+          "152mm M162",
           "7.62mm M240"
         ],
         "stabilizer": true
       }
     },
-    "name": "M60A1 Add-On Stabilization",
+    "name": "M60A2 Starship",
     "amphibious": false,
-    "mass": 48
+    "mass": 51.9
   },
   {
     "engine": {
@@ -8787,6 +8698,114 @@
   {
     "engine": {
       "transmission": {
+        "reverseGears": 1,
+        "neutralSteering": true,
+        "forwardGears": 2
+      },
+      "reverseSpeed": 11,
+      "forwardSpeed": 48,
+      "type": "Diesel",
+      "maxRPM": 2400,
+      "horsepower": 750,
+      "name": "AVDS-1790-2"
+    },
+    "turrets": {
+      "Commander": {
+        "traverse": {
+          "vertical": {
+            "max": 60,
+            "min": -9
+          },
+          "speed": {
+            "horizontal": 60,
+            "vertical": 60
+          }
+        },
+        "weapons": [
+          "12.7mm M2"
+        ],
+        "stabilizer": true
+      },
+      "Gunner": {
+        "smokes": false,
+        "traverse": {
+          "vertical": {
+            "max": 20,
+            "min": -10
+          },
+          "speed": {
+            "horizontal": 22.5,
+            "vertical": 4
+          }
+        },
+        "weapons": [
+          "105mm M68",
+          "7.62mm M240"
+        ],
+        "stabilizer": true
+      }
+    },
+    "name": "M60A1 Add-On Stabilization",
+    "amphibious": false,
+    "mass": 48
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 2,
+        "neutralSteering": false,
+        "forwardGears": 8
+      },
+      "reverseSpeed": 17.1,
+      "forwardSpeed": 44,
+      "type": "Diesel",
+      "maxRPM": 2100,
+      "horsepower": 700,
+      "name": "V-2-12"
+    },
+    "turrets": {
+      "Loader": {
+        "traverse": {
+          "vertical": {
+            "max": 45,
+            "min": -15
+          },
+          "speed": {
+            "horizontal": 60,
+            "vertical": 60
+          }
+        },
+        "weapons": [
+          "12.7mm DSHK"
+        ],
+        "stabilizer": true
+      },
+      "Gunner": {
+        "smokes": false,
+        "traverse": {
+          "vertical": {
+            "max": 20,
+            "min": -3
+          },
+          "speed": {
+            "horizontal": 14,
+            "vertical": 6
+          }
+        },
+        "weapons": [
+          "122mm D-30T",
+          "7.62mm DT-28"
+        ],
+        "stabilizer": false
+      }
+    },
+    "name": "IS-6",
+    "amphibious": false,
+    "mass": 51.1
+  },
+  {
+    "engine": {
+      "transmission": {
         "reverseGears": 2,
         "neutralSteering": true,
         "automatic": true,
@@ -8858,60 +8877,6 @@
   {
     "engine": {
       "transmission": {
-        "reverseGears": 2,
-        "neutralSteering": false,
-        "forwardGears": 8
-      },
-      "reverseSpeed": 17.1,
-      "forwardSpeed": 44,
-      "type": "Diesel",
-      "maxRPM": 2100,
-      "horsepower": 700,
-      "name": "V-2-12"
-    },
-    "turrets": {
-      "Loader": {
-        "traverse": {
-          "vertical": {
-            "max": 45,
-            "min": -15
-          },
-          "speed": {
-            "horizontal": 60,
-            "vertical": 60
-          }
-        },
-        "weapons": [
-          "12.7mm DSHK"
-        ],
-        "stabilizer": true
-      },
-      "Gunner": {
-        "smokes": false,
-        "traverse": {
-          "vertical": {
-            "max": 20,
-            "min": -3
-          },
-          "speed": {
-            "horizontal": 14,
-            "vertical": 6
-          }
-        },
-        "weapons": [
-          "122mm D-30T",
-          "7.62mm DT-28"
-        ],
-        "stabilizer": false
-      }
-    },
-    "name": "IS-6",
-    "amphibious": false,
-    "mass": 51.1
-  },
-  {
-    "engine": {
-      "transmission": {
         "reverseGears": 1,
         "neutralSteering": false,
         "forwardGears": 5
@@ -8938,23 +8903,8 @@
         },
         "weapons": [
           "75mm M3",
-          ".30 cal M1919"
-        ],
-        "stabilizer": true
-      },
-      "Commander": {
-        "traverse": {
-          "vertical": {
-            "max": 25,
-            "min": -15
-          },
-          "speed": {
-            "horizontal": 60,
-            "vertical": 60
-          }
-        },
-        "weapons": [
-          "12.7mm M2"
+          ".30 cal M1919",
+          "M8 Rocket"
         ],
         "stabilizer": true
       },
@@ -8975,63 +8925,9 @@
         "stabilizer": true
       }
     },
-    "name": "M4A2 Sherman",
+    "name": "T34 Calliope",
     "amphibious": false,
     "mass": 32.5
-  },
-  {
-    "engine": {
-      "transmission": {
-        "reverseGears": 4,
-        "neutralSteering": true,
-        "forwardGears": 8
-      },
-      "reverseSpeed": 25,
-      "forwardSpeed": 65,
-      "type": "Diesel",
-      "maxRPM": 2200,
-      "horsepower": 830,
-      "name": "MTU MB 838 CaM 500"
-    },
-    "turrets": {
-      "Commander": {
-        "traverse": {
-          "vertical": {
-            "max": 30,
-            "min": -15
-          },
-          "speed": {
-            "horizontal": 60,
-            "vertical": 60
-          }
-        },
-        "weapons": [
-          "7.62mm MG3"
-        ],
-        "stabilizer": true
-      },
-      "Gunner": {
-        "smokes": true,
-        "traverse": {
-          "vertical": {
-            "max": 12,
-            "min": -12
-          },
-          "speed": {
-            "horizontal": 20.4,
-            "vertical": 20.4
-          }
-        },
-        "weapons": [
-          "L7A3 105mm",
-          "30mm HSS 831L"
-        ],
-        "stabilizer": true
-      }
-    },
-    "name": "Turm III",
-    "amphibious": false,
-    "mass": 42.5
   },
   {
     "engine": {
@@ -9354,6 +9250,77 @@
   {
     "engine": {
       "transmission": {
+        "reverseGears": 2,
+        "neutralSteering": true,
+        "automatic": true,
+        "forwardGears": 4
+      },
+      "reverseSpeed": 31,
+      "forwardSpeed": 72,
+      "type": "Diesel",
+      "maxRPM": 2600,
+      "horsepower": 1500,
+      "name": "MTU MB 873 Ka-501"
+    },
+    "turrets": {
+      "Loader": {
+        "traverse": {
+          "vertical": {
+            "max": 45,
+            "min": -15
+          },
+          "speed": {
+            "horizontal": 60,
+            "vertical": 60
+          }
+        },
+        "weapons": [
+          "7.62mm MG3"
+        ],
+        "stabilizer": true
+      },
+      "Gunner": {
+        "smokes": true,
+        "traverse": {
+          "vertical": {
+            "max": 15,
+            "min": -10
+          },
+          "speed": {
+            "horizontal": 40,
+            "vertical": 20
+          }
+        },
+        "weapons": [
+          "120mm Rh120 L/44",
+          "7.62mm MG3"
+        ],
+        "stabilizer": true
+      },
+      "Commander": {
+        "traverse": {
+          "vertical": {
+            "max": 35,
+            "min": -8
+          },
+          "speed": {
+            "horizontal": 60,
+            "vertical": 60
+          }
+        },
+        "weapons": [
+          "20mm Rh202"
+        ],
+        "stabilizer": true
+      }
+    },
+    "name": "Leopard 2K",
+    "amphibious": false,
+    "mass": 55.4
+  },
+  {
+    "engine": {
+      "transmission": {
         "reverseGears": 1,
         "neutralSteering": false,
         "forwardGears": 4
@@ -9564,73 +9531,40 @@
   {
     "engine": {
       "transmission": {
-        "reverseGears": 8,
+        "reverseGears": 1,
         "neutralSteering": true,
         "automatic": true,
-        "forwardGears": 8
+        "forwardGears": 3
       },
-      "reverseSpeed": 75,
-      "forwardSpeed": 75,
+      "reverseSpeed": 25,
+      "forwardSpeed": 80,
       "type": "Diesel",
-      "maxRPM": 2100,
-      "horsepower": 600,
-      "name": "MTU MB 833 Ea-500"
+      "maxRPM": 4500,
+      "horsepower": 87,
+      "name": "Audi 2.1 diesel"
     },
     "turrets": {
-      "Passenger": {
-        "traverse": {
-          "vertical": {
-            "max": 55,
-            "min": -15
-          },
-          "speed": {
-            "horizontal": 60,
-            "vertical": 60
-          }
-        },
-        "weapons": [
-          "7.62mm MG3"
-        ],
-        "stabilizer": false
-      },
       "Gunner": {
-        "smokes": true,
+        "smokes": false,
         "traverse": {
           "vertical": {
-            "max": 65,
-            "min": -17
+            "max": 45,
+            "min": -10
           },
           "speed": {
-            "horizontal": 51,
-            "vertical": 36
+            "horizontal": 56,
+            "vertical": 56
           }
         },
         "weapons": [
-          "20mm Rh202",
-          "7.62mm MG3"
+          "20mm Rh202"
         ],
-        "stabilizer": false
-      },
-      "Commander": {
-        "traverse": {
-          "vertical": {
-            "max": 15,
-            "min": -15
-          },
-          "speed": {
-            "horizontal": 60,
-            "vertical": 60
-          }
-        },
-        "weapons": [
-          "Milan 2"
-        ],
-        "stabilizer": false
+        "stabilizer": true
       }
     },
-    "name": "Marder A1",
+    "name": "Wiesel 1A4",
     "amphibious": false,
-    "mass": 29.1
+    "mass": 2.9
   },
   {
     "engine": {
@@ -10090,44 +10024,6 @@
       "transmission": {
         "reverseGears": 1,
         "neutralSteering": true,
-        "automatic": true,
-        "forwardGears": 3
-      },
-      "reverseSpeed": 25,
-      "forwardSpeed": 80,
-      "type": "Diesel",
-      "maxRPM": 4500,
-      "horsepower": 87,
-      "name": "Audi 2.1 diesel"
-    },
-    "turrets": {
-      "Gunner": {
-        "smokes": false,
-        "traverse": {
-          "vertical": {
-            "max": 45,
-            "min": -10
-          },
-          "speed": {
-            "horizontal": 56,
-            "vertical": 56
-          }
-        },
-        "weapons": [
-          "20mm Rh202"
-        ],
-        "stabilizer": true
-      }
-    },
-    "name": "Wiesel 1A4",
-    "amphibious": false,
-    "mass": 2.9
-  },
-  {
-    "engine": {
-      "transmission": {
-        "reverseGears": 1,
-        "neutralSteering": true,
         "forwardGears": 7
       },
       "reverseSpeed": 3.5,
@@ -10351,40 +10247,73 @@
   {
     "engine": {
       "transmission": {
-        "reverseGears": 2,
+        "reverseGears": 8,
         "neutralSteering": true,
         "automatic": true,
-        "forwardGears": 4
+        "forwardGears": 8
       },
-      "reverseSpeed": 31,
-      "forwardSpeed": 72,
+      "reverseSpeed": 75,
+      "forwardSpeed": 75,
       "type": "Diesel",
-      "maxRPM": 2600,
-      "horsepower": 1500,
-      "name": "MTU MB 873 Ka-501"
+      "maxRPM": 2100,
+      "horsepower": 600,
+      "name": "MTU MB 833 Ea-500"
     },
     "turrets": {
-      "Gunner": {
-        "smokes": false,
+      "Passenger": {
         "traverse": {
           "vertical": {
-            "max": 80,
-            "min": -40
+            "max": 55,
+            "min": -15
           },
           "speed": {
-            "horizontal": 70,
+            "horizontal": 60,
             "vertical": 60
           }
         },
         "weapons": [
-          "MIM146 Launcher"
+          "7.62mm MG3"
         ],
-        "stabilizer": true
+        "stabilizer": false
+      },
+      "Gunner": {
+        "smokes": true,
+        "traverse": {
+          "vertical": {
+            "max": 65,
+            "min": -17
+          },
+          "speed": {
+            "horizontal": 51,
+            "vertical": 36
+          }
+        },
+        "weapons": [
+          "20mm Rh202",
+          "7.62mm MG3"
+        ],
+        "stabilizer": false
+      },
+      "Commander": {
+        "traverse": {
+          "vertical": {
+            "max": 15,
+            "min": -15
+          },
+          "speed": {
+            "horizontal": 60,
+            "vertical": 60
+          }
+        },
+        "weapons": [
+          "Milan 2"
+        ],
+        "stabilizer": false
       }
     },
-    "name": "Leopard 2 Giraffe",
+    "name": "Marder A1",
     "amphibious": false,
-    "mass": 52
+    "mass": 29.1
   },
   {
     "engine": {
@@ -10536,6 +10465,44 @@
         "forwardGears": 4
       },
       "reverseSpeed": 31,
+      "forwardSpeed": 72,
+      "type": "Diesel",
+      "maxRPM": 2600,
+      "horsepower": 1500,
+      "name": "MTU MB 873 Ka-501"
+    },
+    "turrets": {
+      "Gunner": {
+        "smokes": false,
+        "traverse": {
+          "vertical": {
+            "max": 80,
+            "min": -40
+          },
+          "speed": {
+            "horizontal": 70,
+            "vertical": 60
+          }
+        },
+        "weapons": [
+          "MIM146 Launcher"
+        ],
+        "stabilizer": true
+      }
+    },
+    "name": "Leopard 2 Giraffe",
+    "amphibious": false,
+    "mass": 52
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 2,
+        "neutralSteering": true,
+        "automatic": true,
+        "forwardGears": 4
+      },
+      "reverseSpeed": 31,
       "forwardSpeed": 68,
       "type": "Diesel",
       "maxRPM": 2600,
@@ -10625,59 +10592,6 @@
   {
     "engine": {
       "transmission": {
-        "reverseGears": 6,
-        "neutralSteering": false,
-        "forwardGears": 6
-      },
-      "reverseSpeed": 90,
-      "forwardSpeed": 90,
-      "type": "Diesel",
-      "maxRPM": 2200,
-      "horsepower": 211,
-      "name": "Tatra 103"
-    },
-    "turrets": {
-      "Loader": {
-        "traverse": {
-          "vertical": {
-            "max": 20,
-            "min": -10
-          },
-          "speed": {
-            "horizontal": 45,
-            "vertical": 45
-          }
-        },
-        "weapons": [
-          "MG42"
-        ],
-        "stabilizer": false
-      },
-      "Gunner": {
-        "smokes": false,
-        "traverse": {
-          "vertical": {
-            "max": 20,
-            "min": -5
-          },
-          "speed": {
-            "horizontal": 13.2,
-            "vertical": 13.2
-          }
-        },
-        "weapons": [
-          "7.5 cm KwK 40 L/48"
-        ],
-        "stabilizer": false
-      }
-    },
-    "name": "Sd.Kfz.234/4 Pak Puma",
-    "amphibious": false,
-    "mass": 11.7
-  },
-  {
-    "engine": {
-      "transmission": {
         "reverseGears": 4,
         "neutralSteering": true,
         "automatic": true,
@@ -10752,23 +10666,23 @@
   {
     "engine": {
       "transmission": {
-        "reverseGears": 1,
+        "reverseGears": 6,
         "neutralSteering": false,
-        "forwardGears": 5
+        "forwardGears": 6
       },
-      "reverseSpeed": 7,
-      "forwardSpeed": 50,
+      "reverseSpeed": 90,
+      "forwardSpeed": 90,
       "type": "Diesel",
-      "maxRPM": 2000,
-      "horsepower": 580,
-      "name": "ChTZ V-55V"
+      "maxRPM": 2200,
+      "horsepower": 211,
+      "name": "Tatra 103"
     },
     "turrets": {
-      "Commander": {
+      "Loader": {
         "traverse": {
           "vertical": {
-            "max": 45,
-            "min": -15
+            "max": 20,
+            "min": -10
           },
           "speed": {
             "horizontal": 45,
@@ -10776,32 +10690,31 @@
           }
         },
         "weapons": [
-          "12.7mm DSHK"
+          "MG42"
         ],
-        "stabilizer": true
+        "stabilizer": false
       },
       "Gunner": {
         "smokes": false,
         "traverse": {
           "vertical": {
-            "max": 15,
+            "max": 20,
             "min": -5
           },
           "speed": {
-            "horizontal": 21,
-            "vertical": 16
+            "horizontal": 13.2,
+            "vertical": 13.2
           }
         },
         "weapons": [
-          "100mm SB-10S",
-          "12.7mm DSHK"
+          "7.5 cm KwK 40 L/48"
         ],
-        "stabilizer": true
+        "stabilizer": false
       }
     },
-    "name": "OBT-2 Super",
+    "name": "Sd.Kfz.234/4 Pak Puma",
     "amphibious": false,
-    "mass": 40
+    "mass": 11.7
   },
   {
     "engine": {
@@ -10951,6 +10864,60 @@
     "name": "T-84 Oplot-M",
     "amphibious": false,
     "mass": 51
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 1,
+        "neutralSteering": false,
+        "forwardGears": 5
+      },
+      "reverseSpeed": 7,
+      "forwardSpeed": 50,
+      "type": "Diesel",
+      "maxRPM": 2000,
+      "horsepower": 580,
+      "name": "ChTZ V-55V"
+    },
+    "turrets": {
+      "Commander": {
+        "traverse": {
+          "vertical": {
+            "max": 45,
+            "min": -15
+          },
+          "speed": {
+            "horizontal": 45,
+            "vertical": 45
+          }
+        },
+        "weapons": [
+          "12.7mm DSHK"
+        ],
+        "stabilizer": true
+      },
+      "Gunner": {
+        "smokes": false,
+        "traverse": {
+          "vertical": {
+            "max": 15,
+            "min": -5
+          },
+          "speed": {
+            "horizontal": 21,
+            "vertical": 16
+          }
+        },
+        "weapons": [
+          "100mm SB-10S",
+          "12.7mm DSHK"
+        ],
+        "stabilizer": true
+      }
+    },
+    "name": "OBT-2 Super",
+    "amphibious": false,
+    "mass": 40
   },
   {
     "engine": {
@@ -11341,6 +11308,61 @@
   {
     "engine": {
       "transmission": {
+        "reverseGears": 1,
+        "neutralSteering": false,
+        "forwardGears": 7
+      },
+      "reverseSpeed": 4,
+      "forwardSpeed": 60,
+      "type": "Diesel",
+      "maxRPM": 2000,
+      "horsepower": 850,
+      "name": "S12U"
+    },
+    "turrets": {
+      "Commander": {
+        "lws": true,
+        "traverse": {
+          "vertical": {
+            "max": 35,
+            "min": -10
+          },
+          "speed": {
+            "horizontal": 60,
+            "vertical": 60
+          }
+        },
+        "weapons": [],
+        "stabilizer": true
+      },
+      "Gunner": {
+        "lws": true,
+        "traverse": {
+          "vertical": {
+            "max": 13,
+            "min": -6
+          },
+          "speed": {
+            "horizontal": 20,
+            "vertical": 8.5
+          }
+        },
+        "weapons": [
+          "7.62mm PKT",
+          "125mm 2A46MS",
+          "20mm Oerlikon KAA"
+        ],
+        "stabilizer": true,
+        "smokes": true
+      }
+    },
+    "name": "T-72M2E",
+    "amphibious": false,
+    "mass": 44.5
+  },
+  {
+    "engine": {
+      "transmission": {
         "reverseGears": 4,
         "neutralSteering": true,
         "forwardGears": 8
@@ -11412,116 +11434,6 @@
       "transmission": {
         "reverseGears": 1,
         "neutralSteering": false,
-        "forwardGears": 7
-      },
-      "reverseSpeed": 4,
-      "forwardSpeed": 60,
-      "type": "Diesel",
-      "maxRPM": 2000,
-      "horsepower": 850,
-      "name": "S12U"
-    },
-    "turrets": {
-      "Commander": {
-        "lws": true,
-        "traverse": {
-          "vertical": {
-            "max": 35,
-            "min": -10
-          },
-          "speed": {
-            "horizontal": 60,
-            "vertical": 60
-          }
-        },
-        "weapons": [],
-        "stabilizer": true
-      },
-      "Gunner": {
-        "lws": true,
-        "traverse": {
-          "vertical": {
-            "max": 13,
-            "min": -6
-          },
-          "speed": {
-            "horizontal": 20,
-            "vertical": 8.5
-          }
-        },
-        "weapons": [
-          "7.62mm PKT",
-          "125mm 2A46MS",
-          "20mm Oerlikon KAA"
-        ],
-        "stabilizer": true,
-        "smokes": true
-      }
-    },
-    "name": "T-72M2E",
-    "amphibious": false,
-    "mass": 44.5
-  },
-  {
-    "engine": {
-      "transmission": {
-        "reverseGears": 2,
-        "neutralSteering": true,
-        "forwardGears": 4
-      },
-      "reverseSpeed": 15,
-      "forwardSpeed": 69,
-      "type": "Diesel",
-      "maxRPM": 2800,
-      "horsepower": 300,
-      "name": "6V53T-5301"
-    },
-    "turrets": {
-      "Commander": {
-        "traverse": {
-          "vertical": {
-            "max": 40,
-            "min": -10
-          },
-          "speed": {
-            "horizontal": 60,
-            "vertical": 60
-          }
-        },
-        "weapons": [
-          "12.7mm M2"
-        ],
-        "stabilizer": true
-      },
-      "Gunner": {
-        "smokes": true,
-        "traverse": {
-          "vertical": {
-            "max": 19.5,
-            "min": -8
-          },
-          "speed": {
-            "horizontal": 40,
-            "vertical": 4
-          }
-        },
-        "weapons": [
-          "7.62mm M73",
-          "152mm M81E1",
-          "76mm M32"
-        ],
-        "stabilizer": true
-      }
-    },
-    "name": "M551 Sheridan",
-    "amphibious": false,
-    "mass": 15.3
-  },
-  {
-    "engine": {
-      "transmission": {
-        "reverseGears": 1,
-        "neutralSteering": false,
         "forwardGears": 6
       },
       "reverseSpeed": 10,
@@ -11569,6 +11481,81 @@
     "name": "MT-LB AA",
     "amphibious": true,
     "mass": 12
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 1,
+        "neutralSteering": true,
+        "automatic": true,
+        "forwardGears": 3
+      },
+      "reverseSpeed": 15,
+      "forwardSpeed": 72,
+      "type": "Diesel",
+      "maxRPM": 2400,
+      "horsepower": 580,
+      "name": "Detroit 6V92TA"
+    },
+    "turrets": {
+      "Commander": {
+        "lws": true,
+        "traverse": {
+          "vertical": {
+            "max": 40,
+            "min": -10
+          },
+          "speed": {
+            "horizontal": 60,
+            "vertical": 60
+          }
+        },
+        "weapons": [
+          "12.7mm M2"
+        ],
+        "stabilizer": true
+      },
+      "Gunner": {
+        "lws": true,
+        "traverse": {
+          "vertical": {
+            "max": 45,
+            "min": -45
+          },
+          "speed": {
+            "horizontal": 28,
+            "vertical": 28
+          }
+        },
+        "weapons": [
+          "LOSAT/MGM-166"
+        ],
+        "stabilizer": false,
+        "smokes": false
+      }
+    },
+    "name": "LOSAT M8",
+    "amphibious": false,
+    "mass": 19.5
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 1,
+        "neutralSteering": false,
+        "forwardGears": 5
+      },
+      "reverseSpeed": 25,
+      "forwardSpeed": 115,
+      "type": "Diesel",
+      "maxRPM": 4000,
+      "horsepower": 90,
+      "name": "UMZ-417"
+    },
+    "turrets": [],
+    "name": "UAZ-3909",
+    "amphibious": false,
+    "mass": 1.8
   },
   {
     "engine": {
@@ -11622,78 +11609,6 @@
     "name": "M36B2 Jackson",
     "amphibious": false,
     "mass": 29.9
-  },
-  {
-    "engine": {
-      "transmission": {
-        "reverseGears": 1,
-        "neutralSteering": false,
-        "forwardGears": 5
-      },
-      "reverseSpeed": 25,
-      "forwardSpeed": 115,
-      "type": "Diesel",
-      "maxRPM": 4000,
-      "horsepower": 90,
-      "name": "UMZ-417"
-    },
-    "turrets": [],
-    "name": "UAZ-3909",
-    "amphibious": false,
-    "mass": 1.8
-  },
-  {
-    "engine": {
-      "transmission": {
-        "reverseGears": 2,
-        "neutralSteering": false,
-        "forwardGears": 4
-      },
-      "reverseSpeed": 12,
-      "forwardSpeed": 61,
-      "type": "Diesel",
-      "maxRPM": 2300,
-      "horsepower": 500,
-      "name": "8V71T 500"
-    },
-    "turrets": {
-      "Commander": {
-        "traverse": {
-          "vertical": {
-            "max": 60,
-            "min": -15
-          },
-          "speed": {
-            "horizontal": 60,
-            "vertical": 60
-          }
-        },
-        "weapons": [
-          "12.7mm M2"
-        ],
-        "stabilizer": true
-      },
-      "Gunner": {
-        "smokes": false,
-        "traverse": {
-          "vertical": {
-            "max": 75,
-            "min": -3
-          },
-          "speed": {
-            "horizontal": 14,
-            "vertical": 16
-          }
-        },
-        "weapons": [
-          "155mm M284"
-        ],
-        "stabilizer": false
-      }
-    },
-    "name": "M109A6",
-    "amphibious": false,
-    "mass": 26
   },
   {
     "engine": {
@@ -11788,42 +11703,23 @@
   {
     "engine": {
       "transmission": {
-        "reverseGears": 1,
+        "reverseGears": 2,
         "neutralSteering": false,
-        "forwardGears": 5
+        "forwardGears": 4
       },
-      "reverseSpeed": 6.1,
-      "forwardSpeed": 47,
+      "reverseSpeed": 12,
+      "forwardSpeed": 61,
       "type": "Diesel",
-      "maxRPM": 2100,
-      "horsepower": 375,
-      "name": "GM 6046"
+      "maxRPM": 2300,
+      "horsepower": 500,
+      "name": "8V71T 500"
     },
     "turrets": {
-      "Gunner": {
-        "smokes": false,
+      "Commander": {
         "traverse": {
           "vertical": {
-            "max": 15,
-            "min": -10
-          },
-          "speed": {
-            "horizontal": 22.6,
-            "vertical": 22.6
-          }
-        },
-        "weapons": [
-          "75mm M3",
-          ".30 cal M1919",
-          "M8 Rocket"
-        ],
-        "stabilizer": true
-      },
-      "Bow Gunner": {
-        "traverse": {
-          "vertical": {
-            "max": 22,
-            "min": -10
+            "max": 60,
+            "min": -15
           },
           "speed": {
             "horizontal": 60,
@@ -11831,14 +11727,31 @@
           }
         },
         "weapons": [
-          ".30 cal M1919"
+          "12.7mm M2"
         ],
         "stabilizer": true
+      },
+      "Gunner": {
+        "smokes": false,
+        "traverse": {
+          "vertical": {
+            "max": 75,
+            "min": -3
+          },
+          "speed": {
+            "horizontal": 14,
+            "vertical": 16
+          }
+        },
+        "weapons": [
+          "155mm M284"
+        ],
+        "stabilizer": false
       }
     },
-    "name": "T34 Calliope",
+    "name": "M109A6",
     "amphibious": false,
-    "mass": 32.5
+    "mass": 26
   },
   {
     "engine": {
@@ -11915,21 +11828,39 @@
       "transmission": {
         "reverseGears": 1,
         "neutralSteering": false,
-        "forwardGears": 7
+        "forwardGears": 5
       },
-      "reverseSpeed": 4,
-      "forwardSpeed": 60,
+      "reverseSpeed": 6.1,
+      "forwardSpeed": 47,
       "type": "Diesel",
-      "maxRPM": 2000,
-      "horsepower": 1000,
-      "name": "V-92S2"
+      "maxRPM": 2100,
+      "horsepower": 375,
+      "name": "GM 6046"
     },
     "turrets": {
-      "Passenger": {
+      "Gunner": {
+        "smokes": false,
         "traverse": {
           "vertical": {
-            "max": 20,
-            "min": -5.5
+            "max": 15,
+            "min": -10
+          },
+          "speed": {
+            "horizontal": 22.6,
+            "vertical": 22.6
+          }
+        },
+        "weapons": [
+          "75mm M3",
+          ".30 cal M1919"
+        ],
+        "stabilizer": true
+      },
+      "Commander": {
+        "traverse": {
+          "vertical": {
+            "max": 25,
+            "min": -15
           },
           "speed": {
             "horizontal": 60,
@@ -11937,35 +11868,14 @@
           }
         },
         "weapons": [
-          "30mm AGS-17"
+          "12.7mm M2"
         ],
-        "stabilizer": false
+        "stabilizer": true
       },
-      "Gunner": {
-        "lws": true,
+      "Bow Gunner": {
         "traverse": {
           "vertical": {
-            "max": 45,
-            "min": -5
-          },
-          "speed": {
-            "horizontal": 35,
-            "vertical": 35
-          }
-        },
-        "weapons": [
-          "7.62mm PKT",
-          "30mm 2A42M (BMPT)",
-          "9M120 Ataka"
-        ],
-        "stabilizer": true,
-        "smokes": true
-      },
-      "Commander": {
-        "lws": true,
-        "traverse": {
-          "vertical": {
-            "max": 60,
+            "max": 22,
             "min": -10
           },
           "speed": {
@@ -11973,13 +11883,15 @@
             "vertical": 60
           }
         },
-        "weapons": [],
+        "weapons": [
+          ".30 cal M1919"
+        ],
         "stabilizer": true
       }
     },
-    "name": "BMPT Terminator",
+    "name": "M4A2 Sherman",
     "amphibious": false,
-    "mass": 48
+    "mass": 32.5
   },
   {
     "engine": {
@@ -12096,22 +12008,21 @@
       "transmission": {
         "reverseGears": 1,
         "neutralSteering": false,
-        "automatic": true,
-        "forwardGears": 3
+        "forwardGears": 7
       },
-      "reverseSpeed": 25.9,
-      "forwardSpeed": 80,
+      "reverseSpeed": 4,
+      "forwardSpeed": 60,
       "type": "Diesel",
-      "maxRPM": 2400,
-      "horsepower": 400,
-      "name": "Continental R975-C4 (Hellcat)"
+      "maxRPM": 2000,
+      "horsepower": 1000,
+      "name": "V-92S2"
     },
     "turrets": {
-      "Commander": {
+      "Passenger": {
         "traverse": {
           "vertical": {
-            "max": 45,
-            "min": -15
+            "max": 20,
+            "min": -5.5
           },
           "speed": {
             "horizontal": 60,
@@ -12119,31 +12030,49 @@
           }
         },
         "weapons": [
-          "12.7mm M2"
+          "30mm AGS-17"
         ],
-        "stabilizer": true
+        "stabilizer": false
       },
       "Gunner": {
-        "smokes": false,
+        "lws": true,
         "traverse": {
           "vertical": {
-            "max": 20,
-            "min": -10
+            "max": 45,
+            "min": -5
           },
           "speed": {
-            "horizontal": 22.6,
-            "vertical": 22.6
+            "horizontal": 35,
+            "vertical": 35
           }
         },
         "weapons": [
-          "76mm M1"
+          "7.62mm PKT",
+          "30mm 2A42M (BMPT)",
+          "9M120 Ataka"
         ],
-        "stabilizer": false
+        "stabilizer": true,
+        "smokes": true
+      },
+      "Commander": {
+        "lws": true,
+        "traverse": {
+          "vertical": {
+            "max": 60,
+            "min": -10
+          },
+          "speed": {
+            "horizontal": 60,
+            "vertical": 60
+          }
+        },
+        "weapons": [],
+        "stabilizer": true
       }
     },
-    "name": "M18 Hellcat",
+    "name": "BMPT Terminator",
     "amphibious": false,
-    "mass": 17.7
+    "mass": 48
   },
   {
     "engine": {
@@ -12190,35 +12119,66 @@
         "forwardGears": 5
       },
       "reverseSpeed": 5,
-      "forwardSpeed": 40,
+      "forwardSpeed": 39,
       "type": "Diesel",
-      "maxRPM": 2850,
-      "horsepower": 425,
-      "name": "Chrysler A57 multibank"
+      "maxRPM": 2400,
+      "horsepower": 400,
+      "name": "Continental R975 EC2"
     },
     "turrets": {
       "Gunner": {
         "smokes": false,
         "traverse": {
           "vertical": {
-            "max": 15,
-            "min": -10
+            "max": 20,
+            "min": -9
           },
           "speed": {
-            "horizontal": 22.6,
-            "vertical": 22.6
+            "horizontal": 11,
+            "vertical": 11
           }
         },
         "weapons": [
-          "76mm QF 17-pounder",
-          "7.62mm L3A1"
+          "75mm M2"
         ],
-        "stabilizer": false
+        "stabilizer": true
+      },
+      "Commander": {
+        "traverse": {
+          "vertical": {
+            "max": 60,
+            "min": -10
+          },
+          "speed": {
+            "horizontal": 60,
+            "vertical": 60
+          }
+        },
+        "weapons": [
+          ".30 cal M1919"
+        ],
+        "stabilizer": true
+      },
+      "Bow Gunner": {
+        "traverse": {
+          "vertical": {
+            "max": 5,
+            "min": -5
+          },
+          "speed": {
+            "horizontal": 0,
+            "vertical": 0
+          }
+        },
+        "weapons": [
+          ".30 cal M1919"
+        ],
+        "stabilizer": true
       }
     },
-    "name": "Sherman Firefly",
+    "name": "M3 Lee",
     "amphibious": false,
-    "mass": 35.3
+    "mass": 27.7
   },
   {
     "engine": {
@@ -12287,6 +12247,44 @@
     "name": "T-62",
     "amphibious": false,
     "mass": 37
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 1,
+        "neutralSteering": false,
+        "forwardGears": 5
+      },
+      "reverseSpeed": 5,
+      "forwardSpeed": 40,
+      "type": "Diesel",
+      "maxRPM": 2850,
+      "horsepower": 425,
+      "name": "Chrysler A57 multibank"
+    },
+    "turrets": {
+      "Gunner": {
+        "smokes": false,
+        "traverse": {
+          "vertical": {
+            "max": 15,
+            "min": -10
+          },
+          "speed": {
+            "horizontal": 22.6,
+            "vertical": 22.6
+          }
+        },
+        "weapons": [
+          "76mm QF 17-pounder",
+          "7.62mm L3A1"
+        ],
+        "stabilizer": false
+      }
+    },
+    "name": "Sherman Firefly",
+    "amphibious": false,
+    "mass": 35.3
   },
   {
     "engine": {
@@ -12394,62 +12392,6 @@
     "name": "M48 Super",
     "amphibious": false,
     "mass": 53
-  },
-  {
-    "engine": {
-      "transmission": {
-        "reverseGears": 1,
-        "neutralSteering": true,
-        "automatic": true,
-        "forwardGears": 3
-      },
-      "reverseSpeed": 15,
-      "forwardSpeed": 72,
-      "type": "Diesel",
-      "maxRPM": 2400,
-      "horsepower": 580,
-      "name": "Detroit 6V92TA"
-    },
-    "turrets": {
-      "Commander": {
-        "lws": true,
-        "traverse": {
-          "vertical": {
-            "max": 40,
-            "min": -10
-          },
-          "speed": {
-            "horizontal": 60,
-            "vertical": 60
-          }
-        },
-        "weapons": [
-          "12.7mm M2"
-        ],
-        "stabilizer": true
-      },
-      "Gunner": {
-        "lws": true,
-        "traverse": {
-          "vertical": {
-            "max": 45,
-            "min": -45
-          },
-          "speed": {
-            "horizontal": 28,
-            "vertical": 28
-          }
-        },
-        "weapons": [
-          "LOSAT/MGM-166"
-        ],
-        "stabilizer": false,
-        "smokes": false
-      }
-    },
-    "name": "LOSAT M8",
-    "amphibious": false,
-    "mass": 19.5
   },
   {
     "engine": {
@@ -12579,53 +12521,57 @@
   {
     "engine": {
       "transmission": {
-        "reverseGears": 1,
-        "neutralSteering": false,
-        "forwardGears": 5
+        "reverseGears": 2,
+        "neutralSteering": true,
+        "forwardGears": 4
       },
-      "reverseSpeed": 12,
-      "forwardSpeed": 80,
+      "reverseSpeed": 15,
+      "forwardSpeed": 69,
       "type": "Diesel",
-      "maxRPM": 2600,
-      "horsepower": 240,
-      "name": "2xZMZ-4905"
+      "maxRPM": 2800,
+      "horsepower": 300,
+      "name": "6V53T-5301"
     },
     "turrets": {
       "Commander": {
         "traverse": {
           "vertical": {
-            "max": 45,
-            "min": -15
+            "max": 40,
+            "min": -10
           },
           "speed": {
             "horizontal": 60,
             "vertical": 60
           }
         },
-        "weapons": [],
-        "stabilizer": false
+        "weapons": [
+          "12.7mm M2"
+        ],
+        "stabilizer": true
       },
       "Gunner": {
-        "smokes": false,
+        "smokes": true,
         "traverse": {
           "vertical": {
-            "max": 20,
-            "min": -5
+            "max": 19.5,
+            "min": -8
           },
           "speed": {
-            "horizontal": 25,
-            "vertical": 20
+            "horizontal": 40,
+            "vertical": 4
           }
         },
         "weapons": [
-          "85mm 2A62"
+          "7.62mm M73",
+          "152mm M81E1",
+          "76mm M32"
         ],
-        "stabilizer": false
+        "stabilizer": true
       }
     },
-    "name": "2S14 Zhalo-S",
-    "amphibious": true,
-    "mass": 12.5
+    "name": "M551 Sheridan",
+    "amphibious": false,
+    "mass": 15.3
   },
   {
     "engine": {
@@ -12741,6 +12687,57 @@
         "forwardGears": 5
       },
       "reverseSpeed": 12,
+      "forwardSpeed": 80,
+      "type": "Diesel",
+      "maxRPM": 2600,
+      "horsepower": 240,
+      "name": "2xZMZ-4905"
+    },
+    "turrets": {
+      "Commander": {
+        "traverse": {
+          "vertical": {
+            "max": 45,
+            "min": -15
+          },
+          "speed": {
+            "horizontal": 60,
+            "vertical": 60
+          }
+        },
+        "weapons": [],
+        "stabilizer": false
+      },
+      "Gunner": {
+        "smokes": false,
+        "traverse": {
+          "vertical": {
+            "max": 20,
+            "min": -5
+          },
+          "speed": {
+            "horizontal": 25,
+            "vertical": 20
+          }
+        },
+        "weapons": [
+          "85mm 2A62"
+        ],
+        "stabilizer": false
+      }
+    },
+    "name": "2S14 Zhalo-S",
+    "amphibious": true,
+    "mass": 12.5
+  },
+  {
+    "engine": {
+      "transmission": {
+        "reverseGears": 1,
+        "neutralSteering": false,
+        "forwardGears": 5
+      },
+      "reverseSpeed": 12,
       "forwardSpeed": 90,
       "type": "Diesel",
       "maxRPM": 2600,
@@ -12803,81 +12800,6 @@
     "name": "Ural-375D",
     "amphibious": false,
     "mass": 18.2
-  },
-  {
-    "suspension": {
-      "vertical": true,
-      "horizontal": true,
-      "height": true
-    },
-    "engine": {
-      "transmission": {
-        "reverseGears": 2,
-        "neutralSteering": true,
-        "automatic": true,
-        "forwardGears": 4
-      },
-      "reverseSpeed": 65,
-      "forwardSpeed": 85,
-      "type": "Diesel",
-      "maxRPM": 2600,
-      "horsepower": 280,
-      "name": "6F11 SRX"
-    },
-    "turrets": {
-      "Loader": {
-        "traverse": {
-          "vertical": {
-            "max": 45,
-            "min": -15
-          },
-          "speed": {
-            "horizontal": 60,
-            "vertical": 60
-          }
-        },
-        "weapons": [
-          "7.62mm A-A-F1N"
-        ],
-        "stabilizer": true
-      },
-      "Gunner": {
-        "smokes": true,
-        "traverse": {
-          "vertical": {
-            "max": 20,
-            "min": -8
-          },
-          "speed": {
-            "horizontal": 30,
-            "vertical": 8
-          }
-        },
-        "weapons": [
-          "105mm Modele F2",
-          "7.62mm A-A-F1N",
-          "105mm Giat G2"
-        ],
-        "stabilizer": false
-      },
-      "Commander": {
-        "traverse": {
-          "vertical": {
-            "max": 45,
-            "min": -15
-          },
-          "speed": {
-            "horizontal": 60,
-            "vertical": 60
-          }
-        },
-        "weapons": [],
-        "stabilizer": true
-      }
-    },
-    "mass": 16,
-    "name": "AMX-10RC",
-    "amphibious": true
   },
   {
     "engine": {
@@ -13102,6 +13024,81 @@
     "name": "Teledyne AGS",
     "amphibious": false,
     "mass": 21
+  },
+  {
+    "suspension": {
+      "vertical": true,
+      "horizontal": true,
+      "height": true
+    },
+    "engine": {
+      "transmission": {
+        "reverseGears": 2,
+        "neutralSteering": true,
+        "automatic": true,
+        "forwardGears": 4
+      },
+      "reverseSpeed": 65,
+      "forwardSpeed": 85,
+      "type": "Diesel",
+      "maxRPM": 2600,
+      "horsepower": 280,
+      "name": "6F11 SRX"
+    },
+    "turrets": {
+      "Loader": {
+        "traverse": {
+          "vertical": {
+            "max": 45,
+            "min": -15
+          },
+          "speed": {
+            "horizontal": 60,
+            "vertical": 60
+          }
+        },
+        "weapons": [
+          "7.62mm A-A-F1N"
+        ],
+        "stabilizer": true
+      },
+      "Gunner": {
+        "smokes": true,
+        "traverse": {
+          "vertical": {
+            "max": 20,
+            "min": -8
+          },
+          "speed": {
+            "horizontal": 30,
+            "vertical": 8
+          }
+        },
+        "weapons": [
+          "105mm Modele F2",
+          "7.62mm A-A-F1N",
+          "105mm Giat G2"
+        ],
+        "stabilizer": false
+      },
+      "Commander": {
+        "traverse": {
+          "vertical": {
+            "max": 45,
+            "min": -15
+          },
+          "speed": {
+            "horizontal": 60,
+            "vertical": 60
+          }
+        },
+        "weapons": [],
+        "stabilizer": true
+      }
+    },
+    "mass": 16,
+    "name": "AMX-10RC",
+    "amphibious": true
   },
   {
     "engine": {
