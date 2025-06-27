@@ -1,27 +1,19 @@
 [
     {
-        "name": "Eagle Federation",
+        "name": "Hawk Republic",
         "data": [
             [
-                1748217600000,
-                0
-            ],
-            [
                 1748822400000,
-                0
+                100
             ]
         ]
     },
     {
-        "name": "Hawk Republic",
+        "name": "Eagle Federation",
         "data": [
             [
-                1748217600000,
-                100
-            ],
-            [
                 1748822400000,
-                100
+                0
             ]
         ]
     }
