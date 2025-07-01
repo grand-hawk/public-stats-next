@@ -1497,7 +1497,7 @@
     "engine": {
       "transmission": {
         "reverseGears": 1,
-        "neutralSteering": false,
+        "neutralSteering": true,
         "forwardGears": 6
       },
       "reverseSpeed": 5,
@@ -1508,22 +1508,6 @@
       "name": "Wright R-1820-G-200"
     },
     "turrets": {
-      "Commander": {
-        "traverse": {
-          "vertical": {
-            "max": 30,
-            "min": -8
-          },
-          "speed": {
-            "horizontal": 60,
-            "vertical": 60
-          }
-        },
-        "weapons": [
-          "12.7mm M2"
-        ],
-        "stabilizer": true
-      },
       "Gunner": {
         "smokes": false,
         "traverse": {
@@ -1542,7 +1526,23 @@
         ],
         "stabilizer": true
       },
-      "Driver": {
+      "Commander": {
+        "traverse": {
+          "vertical": {
+            "max": 30,
+            "min": -8
+          },
+          "speed": {
+            "horizontal": 60,
+            "vertical": 60
+          }
+        },
+        "weapons": [
+          "12.7mm M2"
+        ],
+        "stabilizer": true
+      },
+      "BowGunner": {
         "traverse": {
           "vertical": {
             "max": 23,
