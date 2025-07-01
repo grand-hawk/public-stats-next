@@ -17681,9 +17681,7 @@
       "mass": 0.3,
       "maxPenetration": 79,
       "damage": 130,
-      "relatedVehicles": [
-        "M6A2"
-      ],
+      "relatedVehicles": [],
       "velocity": 883,
       "type": "AP",
       "ricochetAngle": 65
@@ -27639,6 +27637,7 @@
       },
       "damage": 130,
       "relatedVehicles": [
+        "M6A2",
         "M8 Greyhound"
       ],
       "velocity": 792,
@@ -27695,6 +27694,7 @@
       "maxPenetration": 87,
       "damage": 130,
       "relatedVehicles": [
+        "M6A2",
         "M8 Greyhound"
       ],
       "velocity": 883,
