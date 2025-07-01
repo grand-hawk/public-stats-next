@@ -26616,6 +26616,66 @@
       "penetrationTable": {
         "0": {
           "0": [
+            5
+          ],
+          "500": [
+            5
+          ],
+          "1000": [
+            5
+          ],
+          "2000": [
+            5
+          ]
+        },
+        "30": {
+          "0": [
+            6
+          ],
+          "500": [
+            6
+          ],
+          "1000": [
+            6
+          ],
+          "2000": [
+            6
+          ]
+        },
+        "60": {
+          "0": [
+            11
+          ],
+          "500": [
+            11
+          ],
+          "1000": [
+            11
+          ],
+          "2000": [
+            11
+          ]
+        }
+      },
+      "name": "DTY02-30",
+      "mass": 0.39,
+      "maxPenetration": 5,
+      "explosive": {
+        "killRadius": 0.4809315180581155,
+        "mass": 0.0754,
+        "explosiveRadius": 10.222830617940229
+      },
+      "damage": 144,
+      "relatedVehicles": [
+        "ZBD04A"
+      ],
+      "velocity": 960,
+      "type": "HE"
+    },
+    {
+      "penetrationTable": {
+        "0": {
+          "0": [
             102
           ],
           "500": [
@@ -26657,7 +26717,7 @@
           ]
         }
       },
-      "name": "APFSDS",
+      "name": "DTC041A-30",
       "mass": 0.13,
       "maxPenetration": 102,
       "damage": 90,
@@ -26667,66 +26727,6 @@
       "velocity": 1190,
       "type": "APFSDS",
       "ricochetAngle": 81
-    },
-    {
-      "penetrationTable": {
-        "0": {
-          "0": [
-            5
-          ],
-          "500": [
-            5
-          ],
-          "1000": [
-            5
-          ],
-          "2000": [
-            5
-          ]
-        },
-        "30": {
-          "0": [
-            6
-          ],
-          "500": [
-            6
-          ],
-          "1000": [
-            6
-          ],
-          "2000": [
-            6
-          ]
-        },
-        "60": {
-          "0": [
-            11
-          ],
-          "500": [
-            11
-          ],
-          "1000": [
-            11
-          ],
-          "2000": [
-            11
-          ]
-        }
-      },
-      "name": "HE",
-      "mass": 0.39,
-      "maxPenetration": 5,
-      "explosive": {
-        "killRadius": 0.4809315180581155,
-        "mass": 0.0754,
-        "explosiveRadius": 10.222830617940229
-      },
-      "damage": 144,
-      "relatedVehicles": [
-        "ZBD04A"
-      ],
-      "velocity": 960,
-      "type": "HE"
     }
   ],
   "BGM-71C I-TOW": [
@@ -46984,78 +46984,6 @@
       "penetrationTable": {
         "0": {
           "0": [
-            3
-          ],
-          "500": [
-            3
-          ],
-          "1000": [
-            3
-          ],
-          "2000": [
-            3
-          ]
-        },
-        "30": {
-          "0": [
-            3
-          ],
-          "500": [
-            3
-          ],
-          "1000": [
-            3
-          ],
-          "2000": [
-            3
-          ]
-        },
-        "60": {
-          "0": [
-            5
-          ],
-          "500": [
-            5
-          ],
-          "1000": [
-            5
-          ],
-          "2000": [
-            5
-          ]
-        }
-      },
-      "name": "HE",
-      "mass": 0.4,
-      "maxPenetration": 3,
-      "explosive": {
-        "killRadius": 0.15822175861723947,
-        "mass": 0.017,
-        "explosiveRadius": 6.222005015677508
-      },
-      "damage": 122,
-      "relatedVehicles": [
-        "BTR-2A",
-        "Tiger EC665 UHT",
-        "Object 195",
-        "BMP-1AM",
-        "BMP-100",
-        "BMP-3",
-        "Tiger EC665 UHT S",
-        "BTR-90",
-        "BMD-4M",
-        "BMP-3M",
-        "LT-SE",
-        "BTR-4",
-        "BTR-82A"
-      ],
-      "velocity": 960,
-      "type": "HE"
-    },
-    {
-      "penetrationTable": {
-        "0": {
-          "0": [
             102
           ],
           "500": [
@@ -47097,7 +47025,7 @@
           ]
         }
       },
-      "name": "APFSDS",
+      "name": "3UBR11",
       "mass": 0.1,
       "maxPenetration": 102,
       "damage": 90,
@@ -47119,6 +47047,78 @@
       "velocity": 1260,
       "type": "APFSDS",
       "ricochetAngle": 81
+    },
+    {
+      "penetrationTable": {
+        "0": {
+          "0": [
+            3
+          ],
+          "500": [
+            3
+          ],
+          "1000": [
+            3
+          ],
+          "2000": [
+            3
+          ]
+        },
+        "30": {
+          "0": [
+            3
+          ],
+          "500": [
+            3
+          ],
+          "1000": [
+            3
+          ],
+          "2000": [
+            3
+          ]
+        },
+        "60": {
+          "0": [
+            5
+          ],
+          "500": [
+            5
+          ],
+          "1000": [
+            5
+          ],
+          "2000": [
+            5
+          ]
+        }
+      },
+      "name": "3UOF8",
+      "mass": 0.4,
+      "maxPenetration": 3,
+      "explosive": {
+        "killRadius": 0.15822175861723947,
+        "mass": 0.017,
+        "explosiveRadius": 6.222005015677508
+      },
+      "damage": 122,
+      "relatedVehicles": [
+        "BTR-2A",
+        "Tiger EC665 UHT",
+        "Object 195",
+        "BMP-1AM",
+        "BMP-100",
+        "BMP-3",
+        "Tiger EC665 UHT S",
+        "BTR-90",
+        "BMD-4M",
+        "BMP-3M",
+        "LT-SE",
+        "BTR-4",
+        "BTR-82A"
+      ],
+      "velocity": 960,
+      "type": "HE"
     },
     {
       "penetrationTable": {
@@ -47165,7 +47165,7 @@
           ]
         }
       },
-      "name": "APDS",
+      "name": "3UBR8",
       "mass": 0.3,
       "maxPenetration": 82,
       "damage": 90,
