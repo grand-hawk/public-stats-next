@@ -161,7 +161,7 @@ export default function ShellInfo({
                     label={
                       <>
                         Explosion radius
-                        <InfoTooltip content="This is the radius of the explosion, and not the kill zone. Drop-off applies in-game." />
+                        <InfoTooltip content="This is the radius of the explosion, and not the kill radius. Drop-off applies in-game." />
                       </>
                     }
                   >
