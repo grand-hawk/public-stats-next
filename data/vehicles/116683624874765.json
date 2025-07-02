@@ -1508,24 +1508,6 @@
       "name": "Wright R-1820-G-200"
     },
     "turrets": {
-      "Gunner": {
-        "smokes": false,
-        "traverse": {
-          "vertical": {
-            "max": 23,
-            "min": -10
-          },
-          "speed": {
-            "horizontal": 7.5,
-            "vertical": 6
-          }
-        },
-        "weapons": [
-          "76mm M7",
-          "37mm M6"
-        ],
-        "stabilizer": true
-      },
       "Commander": {
         "traverse": {
           "vertical": {
@@ -1542,7 +1524,25 @@
         ],
         "stabilizer": true
       },
-      "BowGunner": {
+      "Gunner": {
+        "smokes": false,
+        "traverse": {
+          "vertical": {
+            "max": 30,
+            "min": -10
+          },
+          "speed": {
+            "horizontal": 18,
+            "vertical": 6
+          }
+        },
+        "weapons": [
+          "76mm M7",
+          "37mm M6"
+        ],
+        "stabilizer": true
+      },
+      "Driver": {
         "traverse": {
           "vertical": {
             "max": 23,
@@ -1555,6 +1555,22 @@
         },
         "weapons": [
           "12.7mm M2"
+        ],
+        "stabilizer": false
+      },
+      "BowGunner": {
+        "traverse": {
+          "vertical": {
+            "max": 5,
+            "min": -5
+          },
+          "speed": {
+            "horizontal": 0,
+            "vertical": 0
+          }
+        },
+        "weapons": [
+          ".30 cal M1919"
         ],
         "stabilizer": false
       }
