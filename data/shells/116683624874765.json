@@ -3623,8 +3623,8 @@
       "maxPenetration": 13,
       "damage": 16,
       "relatedVehicles": [
-        "Panther EVO",
-        "KF51 Panther"
+        "KF51 Panther",
+        "Panther EVO"
       ],
       "velocity": 840,
       "type": "MG",
@@ -10237,8 +10237,8 @@
       "maxPenetration": 29,
       "damage": 30,
       "relatedVehicles": [
-        "Panther EVO",
-        "KF51 Panther"
+        "KF51 Panther",
+        "Panther EVO"
       ],
       "velocity": 929,
       "type": "MG",
@@ -17754,10 +17754,10 @@
         "M26 Pershing",
         "M17 Whizbang",
         "M48A2 Patton",
+        "Class 3(P)",
         "M4A2 Sherman",
         "M4A3 (105) Zippo",
         "T26E4 Super Pershing",
-        "Class 3(P)",
         "T34 Calliope"
       ],
       "velocity": 900,
@@ -18685,8 +18685,9 @@
       "maxPenetration": 372,
       "damage": 420,
       "relatedVehicles": [
-        "Teledyne AGS",
-        "M1 Abrams"
+        "M1 Abrams (test)",
+        "M1 Abrams",
+        "Teledyne AGS"
       ],
       "velocity": 1509,
       "diameter": 26,
@@ -18748,8 +18749,9 @@
       },
       "damage": 514,
       "relatedVehicles": [
-        "Teledyne AGS",
-        "M1 Abrams"
+        "M1 Abrams (test)",
+        "M1 Abrams",
+        "Teledyne AGS"
       ],
       "velocity": 732,
       "type": "HESH"
@@ -18809,8 +18811,9 @@
       },
       "damage": 420,
       "relatedVehicles": [
-        "Teledyne AGS",
-        "M1 Abrams"
+        "M1 Abrams (test)",
+        "M1 Abrams",
+        "Teledyne AGS"
       ],
       "velocity": 1174,
       "type": "HEAT-FS"
@@ -18866,8 +18869,9 @@
       "maxPenetration": 522,
       "damage": 420,
       "relatedVehicles": [
-        "Teledyne AGS",
-        "M1 Abrams"
+        "M1 Abrams (test)",
+        "M1 Abrams",
+        "Teledyne AGS"
       ],
       "velocity": 1505,
       "diameter": 23,
@@ -18925,8 +18929,9 @@
       "maxPenetration": 395,
       "damage": 420,
       "relatedVehicles": [
-        "Teledyne AGS",
-        "M1 Abrams"
+        "M1 Abrams (test)",
+        "M1 Abrams",
+        "Teledyne AGS"
       ],
       "velocity": 1485,
       "diameter": 24,
@@ -21851,8 +21856,8 @@
         "Jagdtiger",
         "Comet Mk.1",
         "Panther II",
-        "Tiger II",
         "Class 3(P)",
+        "Tiger II",
         "Sturmtiger",
         "Jagdpanther"
       ],
@@ -21918,8 +21923,8 @@
         "Jagdtiger",
         "Comet Mk.1",
         "Panther II",
-        "Tiger II",
         "Class 3(P)",
+        "Tiger II",
         "Sturmtiger",
         "Jagdpanther"
       ],
@@ -24271,7 +24276,9 @@
         "Object 450",
         "BTR-90",
         "Bumpee",
+        "BMD-4M",
         "Object 477",
+        "Object 775",
         "OBT-2BV",
         "T-14 Armata",
         "T-90M",
@@ -24279,7 +24286,6 @@
         "BMP-3M",
         "Burlak",
         "Ariete PSO",
-        "Object 775",
         "GAZ Tigr M",
         "T-84 Oplot-M",
         "OBT-2B",
@@ -24287,9 +24293,8 @@
         "T-72M2",
         "OBT-2AM",
         "MT-LB AA",
-        "PT-76E",
         "Object 166",
-        "BMPT Terminator",
+        "PT-76E",
         "Rosomak",
         "T-62",
         "T-64R",
@@ -24298,9 +24303,9 @@
         "IT-1",
         "BTR-82A",
         "Cheonma-2",
+        "BMPT Terminator",
         "OBT-2UM",
         "BMP-1",
-        "BMD-4M",
         "T-72B",
         "T-72M2E",
         "T-80UM-1",
@@ -26849,8 +26854,8 @@
       "name": "DM13",
       "mass": 5.01,
       "relatedVehicles": [
-        "Panther EVO",
-        "KF51 Panther"
+        "KF51 Panther",
+        "Panther EVO"
       ],
       "shrapMultiplier": 3,
       "maxPenetration": 715,
@@ -26915,8 +26920,8 @@
       },
       "damage": 540,
       "relatedVehicles": [
-        "Panther EVO",
-        "KF51 Panther"
+        "KF51 Panther",
+        "Panther EVO"
       ],
       "velocity": 1190,
       "type": "HEAT-FS"
@@ -26970,8 +26975,8 @@
       "name": "DM23",
       "mass": 9.86,
       "relatedVehicles": [
-        "Panther EVO",
-        "KF51 Panther"
+        "KF51 Panther",
+        "Panther EVO"
       ],
       "shrapMultiplier": 3,
       "maxPenetration": 808,
@@ -27036,8 +27041,8 @@
       },
       "damage": 667,
       "relatedVehicles": [
-        "Panther EVO",
-        "KF51 Panther"
+        "KF51 Panther",
+        "Panther EVO"
       ],
       "velocity": 1015,
       "type": "HE"
@@ -27109,8 +27114,8 @@
       },
       "damage": 540,
       "relatedVehicles": [
-        "Panther EVO",
-        "KF51 Panther"
+        "KF51 Panther",
+        "Panther EVO"
       ],
       "velocity": 1015,
       "type": "TIME FUZE",
@@ -27183,8 +27188,8 @@
       },
       "damage": 540,
       "relatedVehicles": [
-        "Panther EVO",
-        "KF51 Panther"
+        "KF51 Panther",
+        "Panther EVO"
       ],
       "velocity": 1015,
       "type": "SAPHE",
@@ -31390,6 +31395,7 @@
         "M60A1 test",
         "M2A1 Bradley",
         "K1",
+        "M1 Abrams (test)",
         "Joint Light Tactical Vehicle",
         "M2A2 ODS-SA",
         "M1A1",
@@ -31399,10 +31405,10 @@
         "M60A1 RISE Passive",
         "Desert Warrior",
         "RDF/LT",
+        "M1 Abrams",
         "LAV-AT",
         "Teledyne AGS",
         "M60A1 Add-On Stabilization",
-        "M1 Abrams",
         "KF41 Lynx",
         "LAV-25",
         "M60A2 Starship",
@@ -35863,8 +35869,8 @@
         "T-60",
         "T-44",
         "Abandoned Tank Hull",
-        "KV-220",
         "IS-1",
+        "KV-220",
         "IS-2 1944",
         "KV-2",
         "IS-3"
@@ -37661,8 +37667,8 @@
         "T-64E",
         "GAZ Tigr M",
         "BTR-4",
-        "BMPT Terminator",
-        "Cheonma-2"
+        "Cheonma-2",
+        "BMPT Terminator"
       ],
       "velocity": 185,
       "type": "HE"
@@ -39439,13 +39445,13 @@
         "Panther II",
         "T-V",
         "Pz IV H",
+        "Ersatz M10",
         "Elefant",
         "Sd Kfz 251",
         "Tiger I",
         "Tiger II",
         "Sturmtiger",
         "Jagdpanther",
-        "Ersatz M10",
         "Toramaru",
         "Hornisse"
       ],
@@ -41861,6 +41867,7 @@
         "M36 Jackson",
         "M26 T99",
         "Type 90",
+        "M1 Abrams (test)",
         "M10 Wolverine",
         "Challenger 2",
         "M4A3E2 (75) Jumbo",
@@ -41872,28 +41879,28 @@
         "XM8",
         "HSTV-L",
         "M1A2 SEP V3",
-        "Black Night",
         "M4A3E2 (76) Jumbo",
-        "M60A1 RISE Passive",
         "90mm GMC Super Hellcat",
         "Supply Truck",
+        "M60A1 RISE Passive",
+        "Black Night",
         "M26 Pershing",
         "Willys MB",
         "IFV-30",
         "Leopard 2A8DK",
         "M48A2 Patton",
-        "M4A2 Sherman",
         "Humvee",
+        "M4A2 Sherman",
+        "M1 Abrams",
         "M551 Sheridan",
         "M4A3 (105) Zippo",
         "M109A6",
         "M60A1 Add-On Stabilization",
-        "M1 Abrams",
         "T26E4 Super Pershing",
         "KF41 Lynx",
         "M36B2 Jackson",
-        "M1126",
         "MBT-3E",
+        "M1126",
         "M113",
         "M60A2 Starship",
         "M1IP",
@@ -47032,11 +47039,11 @@
         "BMP-3",
         "Tiger EC665 UHT S",
         "BTR-90",
+        "BMD-4M",
         "BMP-3M",
         "LT-SE",
         "BTR-4",
-        "BTR-82A",
-        "BMD-4M"
+        "BTR-82A"
       ],
       "velocity": 1260,
       "type": "APFSDS",
@@ -47105,11 +47112,11 @@
         "BMP-3",
         "Tiger EC665 UHT S",
         "BTR-90",
+        "BMD-4M",
         "BMP-3M",
         "LT-SE",
         "BTR-4",
-        "BTR-82A",
-        "BMD-4M"
+        "BTR-82A"
       ],
       "velocity": 960,
       "type": "HE"
@@ -47172,11 +47179,11 @@
         "BMP-3",
         "Tiger EC665 UHT S",
         "BTR-90",
+        "BMD-4M",
         "BMP-3M",
         "LT-SE",
         "BTR-4",
-        "BTR-82A",
-        "BMD-4M"
+        "BTR-82A"
       ],
       "velocity": 1120,
       "type": "APDS",
