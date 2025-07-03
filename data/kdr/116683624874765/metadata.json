@@ -1,5 +1,5 @@
 {
-    "date": "2025-07-02T12:20:02.500Z",
+    "date": "2025-07-03T00:38:37.760Z",
     "vehicles": [
         "T-72B",
         "BMP-2M",
@@ -41,8 +41,8 @@
         "Wiesel 1A2",
         "Leopard 2A6",
         "M2A1",
-        "M901",
-        "MH-6",
+        "M901ITV",
+        "MH-6 Little Bird",
         "BMP-2",
         "UH-60M Blackhawk",
         "BMP-3",
@@ -57,10 +57,10 @@
         "Leopard 2A4",
         "Pz IV H",
         "Hornisse",
-        "JgPz 38t",
+        "Hetzer",
         "T-64BV",
         "T-44",
-        "PaKWagen",
+        "Sd.Kfz.234/4 Pak Puma",
         "T-84-120",
         "MT-LB AA",
         "BTR-4",
@@ -103,7 +103,7 @@
         "Mi-24VM",
         "M109A6",
         "Type 87",
-        "KF51 Panther",
+        "Panther KF51",
         "MT-LB",
         "T-90M",
         "2S7",
@@ -115,7 +115,7 @@
         "Tiger II",
         "M26 Pershing",
         "T-72B3E",
-        "2S6",
+        "2S6 Tunguska",
         "ZTZ96A",
         "UAZ 3909",
         "BTR-82A",
@@ -153,8 +153,8 @@
         "OBT-2 Super",
         "ADATS",
         "Kornet D",
-        "Type 625E",
-        "LT-1Mod",
+        "CS/SA5",
+        "LT-SE",
         "Bmpvee",
         "Strela-MLRS",
         "HIMAG",
@@ -165,7 +165,7 @@
         "Blacknight",
         "Panther EVO",
         "M1128 MGS",
-        "Kornet D-1",
+        "Kornet D BMD-4M",
         "Chieftain Mk 5",
         "M270",
         "IS-7",
@@ -270,6 +270,6 @@
         "PzWf. 15"
     ],
     "versions": [
-        180
+        183
     ]
 }
