@@ -1,11 +1,10 @@
-local ReplicatedFirst = game:GetService("ReplicatedFirst")
 local ServerStorage = game:GetService("ServerStorage")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 
-local Shells = ReplicatedFirst:WaitForChild("Shells") :: Folder
-local ShellModuleFolder = Shells:WaitForChild("Modules") :: Folder
 local PHRST = ReplicatedStorage:WaitForChild("PHRST") :: Folder
 local Modules = ServerStorage:WaitForChild("Modules") :: Folder
+local Shells = PHRST:WaitForChild("Shells") :: Folder
+local ShellModuleFolder = Shells:WaitForChild("Modules") :: Folder
 
 local GlobalConstants = require(Shells:WaitForChild("GlobalConstants") :: ModuleScript)
 local ShellModules = require(PHRST:WaitForChild("ShellModules") :: ModuleScript)
