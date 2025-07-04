@@ -1,5 +1,5 @@
 {
-    "date": "2025-07-03T12:20:02.115Z",
+    "date": "2025-07-04T00:38:20.109Z",
     "vehicles": [
         "T-72B",
         "BMP-2M",
@@ -26,7 +26,7 @@
         "M38",
         "LOSAT M8",
         "T-62M-1",
-        "UAZ 469",
+        "UAZ-469",
         "T-V",
         "Object 195",
         "Pz.III M",
@@ -42,9 +42,9 @@
         "Leopard 2A6",
         "M2A1",
         "M901",
-        "MH-6 Little Bird",
+        "MH-6",
         "BMP-2",
-        "UH-60M Blackhawk",
+        "UH-60M",
         "BMP-3",
         "T-72B3",
         "T29E3",
@@ -67,7 +67,7 @@
         "PT-76E",
         "Strf 9040C",
         "M1A1",
-        "T-72M2E",
+        "T-72M2",
         "Mi-24V",
         "T-90A",
         "Type 16 MCV",
@@ -75,7 +75,7 @@
         "pickupTruck",
         "T-34-122",
         "RSZO-1",
-        "T-64BM \"Bulat\"",
+        "T-64BM",
         "Leopard 2 Giraffe",
         "LAV-25",
         "Leclerc S21",
@@ -111,7 +111,7 @@
         "Churchill VII",
         "Strela-10",
         "Merkava Mk.4M",
-        "GAZ Tigr M",
+        "Tigr",
         "Tiger II",
         "M26 Pershing",
         "T-72B3E",
@@ -151,7 +151,7 @@
         "M10 Wolverine",
         "M1117 ASV",
         "OBT-2 Super",
-        "Air Defense Anti Tank System",
+        "ADATS",
         "Kornet D",
         "Type 625E",
         "LT-1Mod",
@@ -270,6 +270,6 @@
         "PzWf. 15"
     ],
     "versions": [
-        185
+        195
     ]
 }
