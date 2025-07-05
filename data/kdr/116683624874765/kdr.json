@@ -12,6 +12,12 @@
         "deaths": 1
     },
     {
+        "name": "ZTZ96A",
+        "kd": 6,
+        "kills": 6,
+        "deaths": 1
+    },
+    {
         "name": "Tutel",
         "kd": 5,
         "kills": 5,
@@ -22,12 +28,6 @@
         "kd": 4,
         "kills": 4,
         "deaths": 0
-    },
-    {
-        "name": "M2A2 ODS-SA",
-        "kd": 4,
-        "kills": 4,
-        "deaths": 1
     },
     {
         "name": "M1A2 SEP V3",
@@ -42,16 +42,16 @@
         "deaths": 1
     },
     {
+        "name": "Object 477",
+        "kd": 3,
+        "kills": 3,
+        "deaths": 0
+    },
+    {
         "name": "M36 Jackson",
         "kd": 3,
         "kills": 3,
         "deaths": 1
-    },
-    {
-        "name": "Object 477",
-        "kd": 2,
-        "kills": 2,
-        "deaths": 0
     },
     {
         "name": "T-62M-1",
@@ -102,16 +102,16 @@
         "deaths": 1
     },
     {
+        "name": "M2A2 ODS-SA",
+        "kd": 1.6,
+        "kills": 8,
+        "deaths": 5
+    },
+    {
         "name": "T-80B",
         "kd": 1,
         "kills": 2,
         "deaths": 2
-    },
-    {
-        "name": "UH-60M Blackhawk",
-        "kd": 1,
-        "kills": 1,
-        "deaths": 1
     },
     {
         "name": "T-72B3",
@@ -138,12 +138,6 @@
         "deaths": 2
     },
     {
-        "name": "Mi-8AMTSh",
-        "kd": 1,
-        "kills": 1,
-        "deaths": 1
-    },
-    {
         "name": "2S7 Pion",
         "kd": 1,
         "kills": 1,
@@ -158,8 +152,8 @@
     {
         "name": "Shturm-S",
         "kd": 1,
-        "kills": 3,
-        "deaths": 3
+        "kills": 4,
+        "deaths": 4
     },
     {
         "name": "M4A3E2 (75) Jumbo",
@@ -198,6 +192,12 @@
         "deaths": 2
     },
     {
+        "name": "Mi-8AMTSh",
+        "kd": 0.5,
+        "kills": 1,
+        "deaths": 2
+    },
+    {
         "name": "T-90M",
         "kd": 0.5,
         "kills": 1,
@@ -217,6 +217,12 @@
     },
     {
         "name": "Wiesel 1A4",
+        "kd": 0.25,
+        "kills": 1,
+        "deaths": 4
+    },
+    {
+        "name": "UH-60M Blackhawk",
         "kd": 0.25,
         "kills": 1,
         "deaths": 4
@@ -280,6 +286,12 @@
         "kd": 0,
         "kills": 0,
         "deaths": 2
+    },
+    {
+        "name": "M901ITV",
+        "kd": 0,
+        "kills": 0,
+        "deaths": 1
     },
     {
         "name": "Strf 9040C",
@@ -357,7 +369,7 @@
         "name": "BMD-2",
         "kd": 0,
         "kills": 0,
-        "deaths": 1
+        "deaths": 2
     },
     {
         "name": "Willys MB",
@@ -406,6 +418,12 @@
         "kd": 0,
         "kills": 0,
         "deaths": 2
+    },
+    {
+        "name": "Type 89",
+        "kd": 0,
+        "kills": 0,
+        "deaths": 1
     },
     {
         "name": "M3 GMC",
