@@ -1,204 +1,78 @@
 [
     {
-        "name": "Leclerc S21",
-        "kd": 9,
-        "kills": 9,
-        "deaths": 1
-    },
-    {
-        "name": "Type 16 MCV",
+        "name": "Leopard 2A6",
         "kd": 5,
         "kills": 5,
-        "deaths": 1
+        "deaths": 0
     },
     {
         "name": "M2A2 ODS-SA",
-        "kd": 4,
+        "kd": 2,
         "kills": 4,
-        "deaths": 1
+        "deaths": 2
     },
     {
-        "name": "BTR-4",
-        "kd": 4,
-        "kills": 8,
-        "deaths": 2
+        "name": "Type 89",
+        "kd": 2,
+        "kills": 2,
+        "deaths": 0
+    },
+    {
+        "name": "Leopard 2A4",
+        "kd": 1.25,
+        "kills": 5,
+        "deaths": 4
     },
     {
         "name": "T-80B",
-        "kd": 3,
-        "kills": 6,
-        "deaths": 2
+        "kd": 1,
+        "kills": 4,
+        "deaths": 4
     },
     {
-        "name": "Leopard 2A7V",
-        "kd": 2,
-        "kills": 2,
-        "deaths": 1
-    },
-    {
-        "name": "Challenger 2",
-        "kd": 2,
-        "kills": 2,
-        "deaths": 1
-    },
-    {
-        "name": "T-64BM \"Bulat\"",
-        "kd": 2,
-        "kills": 2,
-        "deaths": 1
-    },
-    {
-        "name": "BMP-1AM",
-        "kd": 2,
-        "kills": 2,
+        "name": "120S",
+        "kd": 1,
+        "kills": 1,
         "deaths": 1
     },
     {
         "name": "Shturm-S",
-        "kd": 2,
-        "kills": 6,
-        "deaths": 3
-    },
-    {
-        "name": "Wiesel 1A2",
         "kd": 1,
         "kills": 1,
         "deaths": 1
-    },
-    {
-        "name": "PT-76E",
-        "kd": 1,
-        "kills": 1,
-        "deaths": 1
-    },
-    {
-        "name": "Strf 9040C",
-        "kd": 1,
-        "kills": 1,
-        "deaths": 1
-    },
-    {
-        "name": "Mi-8AMTSh",
-        "kd": 1,
-        "kills": 1,
-        "deaths": 1
-    },
-    {
-        "name": "ZTZ96A",
-        "kd": 1,
-        "kills": 1,
-        "deaths": 1
-    },
-    {
-        "name": "BMP-2",
-        "kd": 0.5,
-        "kills": 1,
-        "deaths": 2
-    },
-    {
-        "name": "Leopard 2A4",
-        "kd": 0.5,
-        "kills": 2,
-        "deaths": 4
-    },
-    {
-        "name": "T-80BVM",
-        "kd": 0.5,
-        "kills": 1,
-        "deaths": 2
     },
     {
         "name": "T-72B",
         "kd": 0,
         "kills": 0,
-        "deaths": 2
+        "deaths": 1
     },
     {
-        "name": "Humvee",
-        "kd": 0,
-        "kills": 0,
-        "deaths": 7
-    },
-    {
-        "name": "M939",
-        "kd": 0,
-        "kills": 0,
-        "deaths": 2
-    },
-    {
-        "name": "Object 477",
+        "name": "Leopard 2A7V",
         "kd": 0,
         "kills": 0,
         "deaths": 1
     },
     {
-        "name": "LOSAT M8",
+        "name": "BMP-3",
         "kd": 0,
         "kills": 0,
         "deaths": 1
     },
     {
-        "name": "T-64BV",
+        "name": "T-64BM \"Bulat\"",
         "kd": 0,
         "kills": 0,
         "deaths": 1
     },
     {
-        "name": "Mi-24V",
+        "name": "Mi-8AMTSh",
         "kd": 0,
         "kills": 0,
         "deaths": 1
     },
     {
-        "name": "M1A2 SEP V3",
-        "kd": 0,
-        "kills": 0,
-        "deaths": 1
-    },
-    {
-        "name": "T-90M",
-        "kd": 0,
-        "kills": 0,
-        "deaths": 1
-    },
-    {
-        "name": "GAZ Tigr M",
-        "kd": 0,
-        "kills": 0,
-        "deaths": 1
-    },
-    {
-        "name": "2S6 Tunguska",
-        "kd": 0,
-        "kills": 0,
-        "deaths": 1
-    },
-    {
-        "name": "BM-21 Grad",
-        "kd": 0,
-        "kills": 0,
-        "deaths": 1
-    },
-    {
-        "name": "CS/SA5",
-        "kd": 0,
-        "kills": 0,
-        "deaths": 2
-    },
-    {
-        "name": "BMPT Terminator",
-        "kd": 0,
-        "kills": 0,
-        "deaths": 2
-    },
-    {
-        "name": "M1128 MGS",
-        "kd": 0,
-        "kills": 0,
-        "deaths": 1
-    },
-    {
-        "name": "Lada",
+        "name": "BMD-2",
         "kd": 0,
         "kills": 0,
         "deaths": 1
