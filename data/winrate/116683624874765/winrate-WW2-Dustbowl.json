@@ -1,11 +1,16 @@
 [
     {
-        "name": "Eagle Federation",
+        "name": "Hawk Republic",
         "data": [
             [
-                1749254400000,
-                0
-            ],
+                1750636800000,
+                100
+            ]
+        ]
+    },
+    {
+        "name": "Eagle Federation",
+        "data": [
             [
                 1750636800000,
                 0
@@ -16,25 +21,8 @@
         "name": "Schwalbenheim Kingdom",
         "data": [
             [
-                1749254400000,
-                0
-            ],
-            [
                 1750636800000,
                 0
-            ]
-        ]
-    },
-    {
-        "name": "Hawk Republic",
-        "data": [
-            [
-                1749254400000,
-                100
-            ],
-            [
-                1750636800000,
-                100
             ]
         ]
     }
