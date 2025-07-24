@@ -1,5 +1,5 @@
 {
-    "date": "2025-07-24T00:40:34.322Z",
+    "date": "2025-07-24T12:20:17.881Z",
     "vehicles": [
         "T-72B",
         "BMP-2M",
@@ -26,7 +26,7 @@
         "M38",
         "LOSAT M8",
         "T-62M-1",
-        "UAZ 469",
+        "UAZ-469",
         "T-V",
         "Object 195",
         "Pz.III M",
@@ -41,7 +41,7 @@
         "Wiesel 1A2",
         "Leopard 2A6",
         "M2A1",
-        "M901ITV",
+        "M901",
         "MH-6 Little Bird",
         "BMP-2",
         "UH-60M Blackhawk",
@@ -67,7 +67,7 @@
         "PT-76E",
         "Strf 9040C",
         "M1A1",
-        "T-72M2",
+        "T-72M2E",
         "Mi-24V",
         "T-90A",
         "Type 16 MCV",
@@ -103,7 +103,7 @@
         "Mi-24VM",
         "M109A6",
         "Type 87",
-        "KF51 Panther",
+        "Panther KF51",
         "MT-LB",
         "T-90M",
         "2S7",
@@ -132,7 +132,7 @@
         "2S43",
         "2S19 Msta-S",
         "KV-2",
-        "JLTV",
+        "Joint Light Tactical Vehicle",
         "IS-2 1944",
         "120S",
         "M1126",
@@ -165,13 +165,13 @@
         "Blacknight",
         "Panther EVO",
         "M1128 MGS",
-        "Kornet D-1",
+        "Kornet D BMD-4M",
         "Chieftain Mk 5",
         "M270",
         "IS-7",
         "ZBD04A",
         "TOS-1A BM-1",
-        "PlastunSN",
+        "Plastun SN",
         "Cheonma-2",
         "XM8",
         "Ka-52M Alligator-M",
@@ -214,7 +214,7 @@
         "Turm III",
         "Cromwell V",
         "T-64E",
-        "Object 640",
+        "Object 640 \"Black Eagle\"",
         "ISU-152",
         "T-55AD",
         "M3 half-track",
@@ -272,6 +272,6 @@
         "OT-34-85"
     ],
     "versions": [
-        254
+        255
     ]
 }
