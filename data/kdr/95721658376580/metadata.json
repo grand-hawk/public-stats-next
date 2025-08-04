@@ -1,5 +1,5 @@
 {
-    "date": "2025-08-03T12:19:56.708Z",
+    "date": "2025-08-04T00:44:56.733Z",
     "vehicles": [
         "BRDM-2",
         "BMP-3",
@@ -253,6 +253,7 @@
         "AH-64D",
         "Ka-52M Alligator-M",
         "SU-122P",
+        "Lada",
         "T29",
         "Leopard 2A8DK",
         "Abandoned Tank Hull",
@@ -260,9 +261,10 @@
         "BT-42",
         "Turm III",
         "M26 T99",
-        "Lada",
         "M17 Whizbang",
         "Teledyne AGS",
+        "RBT-5",
+        "2S14 Zhalo-S",
         "Object 704",
         "Shturm-S",
         "T-54M",
@@ -270,9 +272,7 @@
         "Object 120",
         "T-55AD",
         "K2",
-        "2S14 Zhalo-S",
-        "T-55AM-1",
-        "RBT-5"
+        "T-55AM-1"
     ],
     "versions": [
         368,
