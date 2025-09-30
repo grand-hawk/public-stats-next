@@ -11,7 +11,7 @@ interface StatLabelProps extends ChakraStat.LabelProps {
 
 export const StatLabel = React.forwardRef<HTMLDivElement, StatLabelProps>(
   function StatLabel(props, ref) {
-    const { info, children, ...rest } = props;
+    const { children, info, ...rest } = props;
     return (
       <ChakraStat.Label {...rest} ref={ref}>
         {children}
@@ -30,7 +30,7 @@ export const StatValueText = React.forwardRef<
   HTMLDivElement,
   StatValueTextProps
 >(function StatValueText(props, ref) {
-  const { value, formatOptions, children, ...rest } = props;
+  const { children, formatOptions, value, ...rest } = props;
   return (
     <ChakraStat.ValueText {...rest} ref={ref}>
       {children ||

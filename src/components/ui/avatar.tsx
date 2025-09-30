@@ -18,7 +18,7 @@ export interface AvatarProps extends ChakraAvatar.RootProps {
 
 export const Avatar = React.forwardRef<HTMLDivElement, AvatarProps>(
   function Avatar(props, ref) {
-    const { name, src, srcSet, loading, icon, fallback, children, ...rest } =
+    const { children, fallback, icon, loading, name, src, srcSet, ...rest } =
       props;
     return (
       <ChakraAvatar.Root ref={ref} {...rest}>
@@ -39,7 +39,7 @@ interface AvatarFallbackProps extends ChakraAvatar.FallbackProps {
 
 const AvatarFallback = React.forwardRef<HTMLDivElement, AvatarFallbackProps>(
   function AvatarFallback(props, ref) {
-    const { name, icon, children, ...rest } = props;
+    const { children, icon, name, ...rest } = props;
     return (
       <ChakraAvatar.Fallback ref={ref} {...rest}>
         {children}
@@ -65,7 +65,7 @@ interface AvatarGroupProps extends GroupProps, SlotRecipeProps<'avatar'> {}
 
 export const AvatarGroup = React.forwardRef<HTMLDivElement, AvatarGroupProps>(
   function AvatarGroup(props, ref) {
-    const { size, variant, borderless, ...rest } = props;
+    const { borderless, size, variant, ...rest } = props;
     return (
       <ChakraAvatar.PropsProvider value={{ size, variant, borderless }}>
         <Group ref={ref} gap="0" spaceX="-3" {...rest} />

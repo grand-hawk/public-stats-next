@@ -16,13 +16,13 @@ export interface InputGroupProps extends BoxProps {
 export const InputGroup = React.forwardRef<HTMLDivElement, InputGroupProps>(
   function InputGroup(props, ref) {
     const {
-      startElement,
-      startElementProps,
+      children,
       endElement,
       endElementProps,
-      children,
-      startOffset = '6px',
       endOffset = '6px',
+      startElement,
+      startElementProps,
+      startOffset = '6px',
       ...rest
     } = props;
 

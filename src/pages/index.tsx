@@ -1,20 +1,25 @@
-import { Center, Spinner } from '@chakra-ui/react';
+import { Box } from '@chakra-ui/react';
 import { useRouter } from 'next/router';
 import React from 'react';
 
-import { tabs } from '@/components/navigation/tabData';
+import CenterSpinner from '@/components/centerSpinner';
+import config from '@generated/config';
 
-export default function Index() {
+export default function Root() {
   const router = useRouter();
 
-  React.useLayoutEffect(() => {
-    const firstTab = Object.values(tabs)?.[0];
-    if (firstTab) router.replace(firstTab.path);
+  React.useEffect(() => {
+    const preferredInitials = 'mtc';
+    const availableInitials = Object.values(config.data.placeNameInitials);
+
+    router.push(
+      `/${availableInitials.includes(preferredInitials) ? preferredInitials : availableInitials[0]}`,
+    );
   }, [router]);
 
   return (
-    <Center height="100%">
-      <Spinner size="xl" />
-    </Center>
+    <Box height="100svh">
+      <CenterSpinner />
+    </Box>
   );
 }

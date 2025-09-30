@@ -11,7 +11,8 @@
     "@typescript-eslint",
     "import",
     "prettier",
-    "react"
+    "react",
+    "sort-destructure-keys"
   ],
   "settings": {
     "import/resolver": {
@@ -69,6 +70,8 @@
           "caseInsensitive": true
         }
       }
-    ]
+    ],
+    "sort-destructure-keys/sort-destructure-keys": 2,
+    "react/prop-types": "off"
   }
 }

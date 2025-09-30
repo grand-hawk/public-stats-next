@@ -15,7 +15,7 @@ export const ProgressCircleRing = React.forwardRef<
   SVGSVGElement,
   ProgressCircleRingProps
 >(function ProgressCircleRing(props, ref) {
-  const { trackColor, cap, color, ...rest } = props;
+  const { cap, color, trackColor, ...rest } = props;
   return (
     <ChakraProgressCircle.Circle {...rest} ref={ref}>
       <ChakraProgressCircle.Track stroke={trackColor} />

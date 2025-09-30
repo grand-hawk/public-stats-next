@@ -16,9 +16,7 @@
     "incremental": true,
     "paths": {
       "@/*": ["./src/*"],
-      "@config/*": ["./config/*"],
-      "@data/*": ["./data/*"],
-      "@scripts/*": ["./scripts/*"]
+      "@generated/*": ["./generated/*"]
     },
     "plugins": [
       {
@@ -31,7 +29,8 @@
     "**/*.tsx",
     "next-env.d.ts",
     ".next/types/**/*.ts",
-    "scripts/**.mts"
+    "scripts/**.mts",
+    "generated/**.d.ts"
   ],
   "exclude": ["node_modules"]
 }

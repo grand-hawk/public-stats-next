@@ -2,7 +2,6 @@ import Head from 'next/head';
 import React from 'react';
 
 import { Provider } from '@/components/ui/provider';
-import Layout from '@/components/utils/layout';
 import Umami from '@/components/utils/umami';
 import { trpc } from '@/utils/trpc';
 
@@ -12,13 +11,12 @@ export function App({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <title>MTC Stats</title>
+        {/* TODO: Use upper case place initial */}
+        <title>{`${'MTC'.toUpperCase()} Stats`}</title>
       </Head>
 
       <Provider>
-        <Layout>
-          <Component {...pageProps} />
-        </Layout>
+        <Component {...pageProps} />
       </Provider>
 
       <Umami />

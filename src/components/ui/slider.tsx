@@ -9,7 +9,7 @@ export interface SliderProps extends ChakraSlider.RootProps {
 
 export const Slider = React.forwardRef<HTMLDivElement, SliderProps>(
   function Slider(props, ref) {
-    const { marks: marksProp, label, showValue, ...rest } = props;
+    const { label, marks: marksProp, showValue, ...rest } = props;
     const value = props.defaultValue ?? props.value;
 
     const marks = marksProp?.map((mark) => {

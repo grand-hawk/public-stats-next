@@ -53,7 +53,7 @@ export const SelectContent = React.forwardRef<
   HTMLDivElement,
   SelectContentProps
 >(function SelectContent(props, ref) {
-  const { portalled = true, portalRef, ...rest } = props;
+  const { portalRef, portalled = true, ...rest } = props;
   return (
     <Portal container={portalRef} disabled={!portalled}>
       <ChakraSelect.Positioner>
@@ -67,7 +67,7 @@ export const SelectItem = React.forwardRef<
   HTMLDivElement,
   ChakraSelect.ItemProps
 >(function SelectItem(props, ref) {
-  const { item, children, ...rest } = props;
+  const { children, item, ...rest } = props;
   return (
     <ChakraSelect.Item key={item.value} item={item} {...rest} ref={ref}>
       {children}

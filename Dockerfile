@@ -9,7 +9,8 @@ WORKDIR /build
 RUN --mount=type=cache,id=pnpm,target=/root/.local/share/pnpm/store pnpm fetch --frozen-lockfile
 RUN --mount=type=cache,id=pnpm,target=/root/.local/share/pnpm/store pnpm install --frozen-lockfile
 
-ENV NODE_ENV=production
+ARG NODE_ENV_VAR="production"
+ENV NODE_ENV=$NODE_ENV_VAR
 ENV NEXT_TELEMETRY_DISABLED=1
 ENV NEXT_OUTPUT=standalone
 
@@ -24,8 +25,7 @@ WORKDIR /server
 
 COPY --from=build /build/.next/standalone .
 COPY --from=build /build/.next/static .next/static
-COPY --from=build /build/config config
-COPY --from=build /build/data data
+COPY --from=build /build/generated generated
 COPY --from=build /build/public public
 
 EXPOSE 3000

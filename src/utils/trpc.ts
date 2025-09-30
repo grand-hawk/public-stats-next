@@ -35,6 +35,14 @@ export const trpc = createTRPCNext<AppRouter>({
           transformer: superjson,
         }),
       ],
+      queryClientConfig: {
+        defaultOptions: {
+          queries: {
+            refetchOnMount: false,
+            refetchOnWindowFocus: false,
+          },
+        },
+      },
     };
   },
   transformer: superjson,

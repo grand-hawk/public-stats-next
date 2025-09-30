@@ -12,7 +12,7 @@ export const BreadcrumbRoot = React.forwardRef<
   HTMLDivElement,
   BreadcrumbRootProps
 >(function BreadcrumbRoot(props, ref) {
-  const { separator, separatorGap, children, ...rest } = props;
+  const { children, separator, separatorGap, ...rest } = props;
 
   const validChildren = React.Children.toArray(children).filter(
     React.isValidElement,

@@ -1,15 +1,30 @@
 'use client';
 
-import { ChakraProvider, defaultSystem } from '@chakra-ui/react';
+import {
+  ChakraProvider,
+  createSystem,
+  defaultConfig,
+  defineConfig,
+} from '@chakra-ui/react';
 import React from 'react';
 
 import { ColorModeProvider } from '@/components/ui/color-mode';
 
 import type { ColorModeProviderProps } from '@/components/ui/color-mode';
 
+const config = defineConfig({
+  globalCss: {
+    '*': {
+      scrollBehavior: 'smooth',
+    },
+  },
+});
+
+export const system = createSystem(defaultConfig, config);
+
 export function Provider(props: ColorModeProviderProps) {
   return (
-    <ChakraProvider value={defaultSystem}>
+    <ChakraProvider value={system}>
       <ColorModeProvider forcedTheme="dark" {...props} />
     </ChakraProvider>
   );

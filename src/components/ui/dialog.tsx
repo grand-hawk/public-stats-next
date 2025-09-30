@@ -14,10 +14,10 @@ export const DialogContent = React.forwardRef<
   DialogContentProps
 >(function DialogContent(props, ref) {
   const {
-    children,
-    portalled = true,
-    portalRef,
     backdrop = true,
+    children,
+    portalRef,
+    portalled = true,
     ...rest
   } = props;
 
