@@ -6,10 +6,12 @@ import type { PropsWithChildren } from 'react';
 
 export default function TitledCard({
   children,
-  noPadding,
+  innerPadding = 6,
   title,
   ...props
-}: PropsWithChildren<BoxProps & { title: string; noPadding?: boolean }>) {
+}: PropsWithChildren<
+  BoxProps & { title: string; innerPadding?: BoxProps['padding'] }
+>) {
   return (
     <Box
       backgroundColor="bg.panel"
@@ -21,7 +23,7 @@ export default function TitledCard({
         {title}
       </Heading>
       <Separator />
-      <Box padding={noPadding ? undefined : 6}>{children}</Box>
+      <Box padding={innerPadding}>{children}</Box>
     </Box>
   );
 }
