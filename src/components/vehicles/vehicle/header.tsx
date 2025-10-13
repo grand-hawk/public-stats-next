@@ -62,6 +62,7 @@ export default function VehicleHeader({ vehicle }: { vehicle: NamedVehicle }) {
             }}
           >
             <NextImage
+              key={vehicle.info.slug}
               alt={`Image of the "${vehicle.info.name}" in Multicrew Tank Combat on Roblox`}
               blurDataURL="data:image/webp;base64,UklGRooAAABXRUJQVlA4WAoAAAAAAAAAHwAAHwAAVlA4IGwAAACwBACdASogACAAPok2lUglIyIhN+gAoBEJZwDIXHmzSajWQrznMxbR+dwOHsqOAPAZsP004crt8WSSX8AoxpEFm2bGOnGFvmyW0fypFOzSYuYnEYiece44qIIOawb6sV0s9LBRAZlOhQUJwAA="
               fill

@@ -7,6 +7,11 @@ import vehicles from '@generated/vehicles';
 import type { PlaceId } from '@generated/config';
 import type { LoadoutsPlaceDataLoadoutVehicle } from '@generated/loadouts';
 
+export type VehicleAvailability = Record<
+  string,
+  LoadoutsPlaceDataLoadoutVehicle
+>;
+
 export const loadoutsRouter = createTRPCRouter({
   vehicleAvailability: publicProcedure
     .input(
@@ -25,7 +30,7 @@ export const loadoutsRouter = createTRPCRouter({
       const vehicleName = vehiclesPlace.metadata.slugs[input.slug];
       if (!vehicleName) return null;
 
-      const availability: Record<string, LoadoutsPlaceDataLoadoutVehicle> = {};
+      const availability: VehicleAvailability = {};
 
       for (const [loadoutName, loadout] of Object.entries(loadoutsPlace.data)) {
         if (vehicleName in loadout.vehicles)

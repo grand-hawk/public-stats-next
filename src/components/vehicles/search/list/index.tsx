@@ -149,10 +149,6 @@ export default function VehicleSearchList() {
     getScrollElement: () => parentRef.current,
     estimateSize: () => 35,
     overscan: 5,
-    // initialRect: {
-    //   width: 0,
-    //   height: 20 * 35,
-    // },
   });
 
   // Scroll to the vehicle item on page load
@@ -195,10 +191,10 @@ export default function VehicleSearchList() {
           return (
             <VehicleSearchListVehicleItem
               key={virtualItem.index}
-              {...baseProps}
               active={vehicleSlug === listItem.vehicle.slug}
               placeInitials={place.initials}
               slug={listItem.vehicle.slug}
+              {...baseProps}
             >
               {listItem.vehicle.name}
             </VehicleSearchListVehicleItem>

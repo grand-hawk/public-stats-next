@@ -2,15 +2,17 @@ import { Box } from '@chakra-ui/react';
 import React from 'react';
 
 import Stat from '@/components/stat';
-import TitledCard from '@/components/titledCard';
+import TitledCard from '@/components/vehicles/titledCard';
 import { capitalizeFirst } from '@/utils/capitalizeFirst';
 
 import type { NamedVehicle } from '@/server/api/trpc/routers/vehicles';
 
 export default function VehicleGeneralInformation({
+  isAvailable,
   vehicle,
 }: {
   vehicle: NamedVehicle;
+  isAvailable: boolean;
 }) {
   return (
     <TitledCard as="section" title="General information">
@@ -26,13 +28,15 @@ export default function VehicleGeneralInformation({
         {vehicle.info.amphibious && <Stat label="Amphibious">Yes</Stat>}
 
         <Stat label="Obtainment">
-          {vehicle.info.premium === false
-            ? 'Free'
-            : vehicle.info.premium === true
-              ? 'Premium'
-              : vehicle.info.premium === 'shop'
-                ? 'Shop'
-                : 'Badge'}
+          {isAvailable
+            ? vehicle.info.premium === false
+              ? 'Free'
+              : vehicle.info.premium === true
+                ? 'Premium'
+                : vehicle.info.premium === 'shop'
+                  ? 'Shop'
+                  : 'Badge'
+            : 'Dev-spawner only'}
         </Stat>
 
         {vehicle.info.supportedClasses.length > 0 && (

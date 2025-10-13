@@ -15,8 +15,16 @@ export default function TitledCard({
   return (
     <Box
       backgroundColor="bg.panel"
+      borderLeftWidth={{
+        base: 0,
+        md: '1px',
+      }}
       borderRadius="none"
-      borderWidth="1px"
+      borderRightWidth={{
+        base: 0,
+        md: '1px',
+      }}
+      borderYWidth="1px"
       {...props}
     >
       <Heading fontWeight="medium" marginX={3} marginY={2} size="sm">

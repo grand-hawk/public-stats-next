@@ -17,13 +17,20 @@ import { trpc } from '@/utils/trpc';
 import type { WithContext, Vehicle } from 'schema-dts';
 
 export default function PlaceVehicle() {
-  const slug = useRouterQuery('vehicle')!.toLowerCase();
+  const vehicleSlug = useRouterQuery('vehicle')!.toLowerCase();
   const place = usePlace()!;
 
   const [vehicle] = trpc.vehicles.bySlug.useSuspenseQuery({
     placeId: place.placeId,
-    slug,
+    slug: vehicleSlug,
   });
+  const [vehicleAvailability] =
+    trpc.loadouts.vehicleAvailability.useSuspenseQuery({
+      placeId: place.placeId,
+      slug: vehicleSlug,
+    });
+  const vehicleIsAvailable =
+    !!vehicleAvailability && Object.keys(vehicleAvailability).length > 0;
 
   // https://nextjs.org/docs/app/guides/json-ld
   // https://schema.org/Vehicle
@@ -72,8 +79,14 @@ export default function PlaceVehicle() {
                 )}
 
                 <VehicleHeader vehicle={vehicle} />
-                <VehicleGeneralInformation vehicle={vehicle} />
-                <VehicleAvailability vehicle={vehicle} />
+                <VehicleGeneralInformation
+                  isAvailable={vehicleIsAvailable}
+                  vehicle={vehicle}
+                />
+                <VehicleAvailability
+                  availability={vehicleAvailability!}
+                  isAvailable={vehicleIsAvailable}
+                />
               </Stack>
             </Flex>
           ) : (

@@ -7,10 +7,13 @@ import VehicleSearchInput, {
   VEHICLE_SEARCH_INPUT_HEIGHT,
 } from '@/components/vehicles/search/input';
 import VehicleSearchList from '@/components/vehicles/search/list';
+import { useRouterQuery } from '@/hooks/useRouterQuery';
 import { useVehicleSidebarStore } from '@/stores/vehicles/sidebar';
 
 export default function VehicleSearch() {
+  const vehicleSlug = useRouterQuery('vehicle');
   const isOpen = useVehicleSidebarStore((s) => s.open);
+  const isSearching = !vehicleSlug;
 
   return (
     <Box
@@ -21,7 +24,7 @@ export default function VehicleSearch() {
       display="grid"
       gridTemplateRows="max-content 1fr"
       height={{
-        base: isOpen ? '100%' : VEHICLE_SEARCH_INPUT_HEIGHT,
+        base: isOpen || isSearching ? '100%' : VEHICLE_SEARCH_INPUT_HEIGHT,
         md: 'unset',
       }}
       left={0}
@@ -33,7 +36,7 @@ export default function VehicleSearch() {
       zIndex={{ base: 100, md: 'unset' }}
     >
       <div>
-        <VehicleSearchInput />
+        <VehicleSearchInput noButton={isSearching} />
         <VehicleSearchConfig />
       </div>
 

@@ -3,23 +3,18 @@ import NextLink from 'next/link';
 import React from 'react';
 import slug from 'slug';
 
-import TitledCard from '@/components/titledCard';
-import { usePlace } from '@/hooks/usePlace';
-import { trpc } from '@/utils/trpc';
+import TitledCard from '@/components/vehicles/titledCard';
+import { usePlaceInitials } from '@/hooks/usePlaceInitials';
 
-import type { NamedVehicle } from '@/server/api/trpc/routers/vehicles';
-
+import type { VehicleAvailability } from '@/server/api/trpc/routers/loadouts';
 export default function VehicleAvailability({
-  vehicle,
+  availability,
+  isAvailable,
 }: {
-  vehicle: NamedVehicle;
+  availability: VehicleAvailability;
+  isAvailable: boolean;
 }) {
-  const place = usePlace()!;
-  const [availability] = trpc.loadouts.vehicleAvailability.useSuspenseQuery({
-    placeId: place.placeId,
-    slug: vehicle.info.slug,
-  });
-  const isAvailable = availability && Object.keys(availability).length > 0;
+  const initials = usePlaceInitials()!;
 
   const teams = React.useMemo(() => {
     if (!availability) return [];
@@ -58,7 +53,7 @@ export default function VehicleAvailability({
             {teams.map((team) => (
               <Table.ColumnHeader key={team}>
                 <Link asChild>
-                  <NextLink href={`/${place.initials}/teams/${slug(team)}`}>
+                  <NextLink href={`/${initials}/teams/${slug(team)}`}>
                     {team}
                   </NextLink>
                 </Link>
@@ -80,9 +75,7 @@ export default function VehicleAvailability({
             >
               <Table.Cell>
                 <Link asChild>
-                  <NextLink
-                    href={`/${place.initials}/loadouts/${slug(loadoutName)}`}
-                  >
+                  <NextLink href={`/${initials}/loadouts/${slug(loadoutName)}`}>
                     {loadoutName}
                   </NextLink>
                 </Link>

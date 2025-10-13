@@ -1,4 +1,4 @@
-import { Group, IconButton, Input } from '@chakra-ui/react';
+import { Group, IconButton, Input, Presence } from '@chakra-ui/react';
 import React from 'react';
 import { MdExpandLess } from 'react-icons/md';
 import { MdOutlineExpandMore } from 'react-icons/md';
@@ -9,7 +9,11 @@ import { useVehicleSidebarStore } from '@/stores/vehicles/sidebar';
 
 export const VEHICLE_SEARCH_INPUT_HEIGHT = '48px';
 
-export default function VehicleSearchInput() {
+export default function VehicleSearchInput({
+  noButton,
+}: {
+  noButton?: boolean;
+}) {
   const vehicleSlug = useRouterQuery('vehicle');
   const query = useVehicleSearchStore((s) => s.query);
   const setQuery = useVehicleSearchStore((s) => s.setQuery);
@@ -37,16 +41,18 @@ export default function VehicleSearchInput() {
         }}
       />
 
-      <IconButton
-        borderRadius="none"
-        height={VEHICLE_SEARCH_INPUT_HEIGHT}
-        hideFrom="md"
-        variant="subtle"
-        width={VEHICLE_SEARCH_INPUT_HEIGHT}
-        onClick={() => setOpen(!isOpen)}
-      >
-        {isOpen ? <MdOutlineExpandMore /> : <MdExpandLess />}
-      </IconButton>
+      <Presence present={!noButton}>
+        <IconButton
+          borderRadius="none"
+          height={VEHICLE_SEARCH_INPUT_HEIGHT}
+          hideFrom="md"
+          variant="subtle"
+          width={VEHICLE_SEARCH_INPUT_HEIGHT}
+          onClick={() => setOpen(!isOpen)}
+        >
+          {isOpen ? <MdOutlineExpandMore /> : <MdExpandLess />}
+        </IconButton>
+      </Presence>
     </Group>
   );
 }

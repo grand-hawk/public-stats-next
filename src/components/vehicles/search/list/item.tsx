@@ -1,4 +1,4 @@
-import { Flex } from '@chakra-ui/react';
+import { Flex, Span } from '@chakra-ui/react';
 import NextLink from 'next/link';
 import React from 'react';
 
@@ -72,7 +72,11 @@ export const VehicleSearchListVehicleItem = React.memo(
         {...baseItemProps}
         {...props}
       >
-        <NextLink href={`/${initials}/vehicles/${slug}`}>{children}</NextLink>
+        {active ? (
+          <Span>{children}</Span>
+        ) : (
+          <NextLink href={`/${initials}/vehicles/${slug}`}>{children}</NextLink>
+        )}
       </Button>
     );
   },
