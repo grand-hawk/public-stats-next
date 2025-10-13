@@ -17,6 +17,15 @@ const config = defineConfig({
   globalCss: {
     '*': {
       scrollBehavior: 'smooth',
+      _scrollbar: {
+        width: '8px',
+      },
+      _scrollbarThumb: {
+        backgroundColor: 'fg.subtle',
+      },
+      _scrollbarTrack: {
+        backgroundColor: 'bg.subtle',
+      },
     },
   },
   theme: {

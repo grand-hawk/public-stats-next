@@ -55,7 +55,12 @@ await Promise.all(
     outputContent += '\n';
     outputContent += compiledTypes;
     outputContent += '\n';
-    outputContent += `const ${basename}: Default = await ky.get('${`${prefixUrl}/${dataFile}`}').json();\n`;
+    outputContent += `const ${basename}: Default = await ky.get('${prefixUrl}/${dataFile}').json();\n`;
+    outputContent += '\n';
+    outputContent += `console.log('Fetched ${dataFile}');\n`;
+    outputContent += '\n';
+    outputContent += `if ("$schema" in ${basename}) delete ${basename}.$schema;\n`;
+    outputContent += `if ("$version" in ${basename}) delete ${basename}.$version;\n`;
     outputContent += '\n';
     outputContent += `export default ${basename};\n`;
 

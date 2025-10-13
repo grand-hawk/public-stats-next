@@ -1,8 +1,12 @@
 import { createTRPCRouter } from './context';
-import { contentRouter } from '@/server/api/trpc/routers/content';
+import { configRouter } from '@/server/api/trpc/routers/config';
+import { loadoutsRouter } from '@/server/api/trpc/routers/loadouts';
+import { vehiclesRouter } from '@/server/api/trpc/routers/vehicles';
 
 export const appRouter = createTRPCRouter({
-  content: contentRouter,
+  config: configRouter,
+  loadouts: loadoutsRouter,
+  vehicles: vehiclesRouter,
 });
 
 export type AppRouter = typeof appRouter;

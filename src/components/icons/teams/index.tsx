@@ -1,4 +1,6 @@
+import { Icon } from '@chakra-ui/react';
 import React from 'react';
+import { BiBorderNone } from 'react-icons/bi';
 
 import EagleTeamIcon from '@/components/icons/teams/eagle';
 import FishTeamIcon from '@/components/icons/teams/fish';
@@ -14,9 +16,19 @@ export const teamIcons: Record<string, React.FunctionComponent<IconProps>> = {
   'Schwalbenheim Kingdom': SchwalbenheimKingdomTeamIcon,
 };
 
-export function renderTeamIcon(team: string) {
+export default function TeamIcon({ team }: { team: string }) {
   const TeamIcon = teamIcons[team];
-  if (!TeamIcon) return null;
 
-  return <TeamIcon size="md" />;
+  const iconProps: IconProps = {
+    height: 5,
+    width: 5,
+  };
+
+  return TeamIcon ? (
+    <TeamIcon {...iconProps} />
+  ) : (
+    <Icon {...iconProps}>
+      <BiBorderNone />
+    </Icon>
+  );
 }

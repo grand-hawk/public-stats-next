@@ -5,6 +5,8 @@ const nextConfig: NextConfig = {
 
   output: process.env.NEXT_OUTPUT as NextConfig['output'],
 
+  devIndicators: false,
+
   experimental: {
     optimizePackageImports: ['@chakra-ui/react'],
   },

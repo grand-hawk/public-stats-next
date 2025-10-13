@@ -4,7 +4,11 @@ import React from 'react';
 
 export default function Document() {
   return (
-    <Html className={GeistMono.className} lang="en">
+    <Html
+      className={GeistMono.className}
+      data-scroll-behavior="smooth"
+      lang="en"
+    >
       <Head />
       <body>
         <Main />
