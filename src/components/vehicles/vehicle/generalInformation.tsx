@@ -25,16 +25,15 @@ export default function VehicleGeneralInformation({
 
         {vehicle.info.amphibious && <Stat label="Amphibious">Yes</Stat>}
 
-        {vehicle.info.premium && (
-          <Stat label="Premium">
-            Yes
-            {vehicle.info.premium === true
-              ? ', coins'
+        <Stat label="Obtainment">
+          {vehicle.info.premium === false
+            ? 'Free'
+            : vehicle.info.premium === true
+              ? 'Premium'
               : vehicle.info.premium === 'shop'
-                ? ', shop'
-                : ', badge'}
-          </Stat>
-        )}
+                ? 'Shop'
+                : 'Badge'}
+        </Stat>
 
         {vehicle.info.supportedClasses.length > 0 && (
           <Stat label="Supported classes">
