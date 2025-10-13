@@ -3,6 +3,7 @@ import {
   Center,
   Heading,
   HStack,
+  Quote,
   Span,
   Stack,
   Text,
@@ -96,7 +97,7 @@ export default function VehicleHeader({ vehicle }: { vehicle: NamedVehicle }) {
         )}
       </Box>
 
-      <Stack backgroundColor="bg.subtle" padding={8}>
+      <Stack backgroundColor="bg.subtle" padding={6} gap={4}>
         <div>
           <HStack>
             <TeamIcon team={vehicle.info.team} />
@@ -111,6 +112,12 @@ export default function VehicleHeader({ vehicle }: { vehicle: NamedVehicle }) {
             {vehicle.info.role}
           </Span>
         </div>
+
+        {vehicle.info.description !== '' && (
+          <Quote aria-label="Description" fontSize="sm" fontWeight="light">
+            {vehicle.info.description}
+          </Quote>
+        )}
       </Stack>
     </Box>
   );

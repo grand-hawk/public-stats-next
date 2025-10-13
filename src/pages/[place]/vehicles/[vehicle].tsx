@@ -1,8 +1,9 @@
-import { Box, Flex } from '@chakra-ui/react';
+import { Flex, Stack } from '@chakra-ui/react';
 import Head from 'next/head';
 import React from 'react';
 import { GrDocumentMissing } from 'react-icons/gr';
 
+import TitledCard from '@/components/titledCard';
 import { EmptyState } from '@/components/ui/empty-state';
 import Layout from '@/components/utils/layout';
 import VehiclesLayout from '@/components/vehicles/layout';
@@ -13,6 +14,8 @@ import { formatTitle } from '@/utils/formatTitle';
 import { trpc } from '@/utils/trpc';
 
 import type { WithContext, Vehicle } from 'schema-dts';
+import VehicleGeneralInformation from '@/components/vehicles/vehicle/generalInformation';
+import VehicleAvailability from '@/components/vehicles/vehicle/availability';
 
 export default function PlaceVehicle() {
   const slug = useRouterQuery('vehicle')!.toLowerCase();
@@ -53,7 +56,13 @@ export default function PlaceVehicle() {
                 lg: 4,
               }}
             >
-              <Box as="article" height="100%" maxWidth="3xl" width="100%">
+              <Stack
+                as="article"
+                gap={4}
+                height="100%"
+                maxWidth="3xl"
+                width="100%"
+              >
                 {jsonLd && (
                   <script
                     dangerouslySetInnerHTML={{
@@ -64,7 +73,9 @@ export default function PlaceVehicle() {
                 )}
 
                 <VehicleHeader vehicle={vehicle} />
-              </Box>
+                {/* <VehicleGeneralInformation vehicle={vehicle} /> */}
+                <VehicleAvailability vehicle={vehicle} />
+              </Stack>
             </Flex>
           ) : (
             <Flex alignItems="center" height="100%">
