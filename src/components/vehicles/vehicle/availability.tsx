@@ -40,7 +40,7 @@ export default function VehicleAvailability({
 
   if (!isAvailable) return null;
   return (
-    <TitledCard title="Availability">
+    <TitledCard as="section" title="Availability">
       <Table.Root
         background="none"
         css={{

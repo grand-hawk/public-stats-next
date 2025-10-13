@@ -97,7 +97,7 @@ export default function VehicleHeader({ vehicle }: { vehicle: NamedVehicle }) {
         )}
       </Box>
 
-      <Stack backgroundColor="bg.subtle" gap={4} padding={6}>
+      <Stack as="section" backgroundColor="bg.subtle" gap={4} padding={6}>
         <div>
           <HStack>
             <TeamIcon team={vehicle.info.team} />

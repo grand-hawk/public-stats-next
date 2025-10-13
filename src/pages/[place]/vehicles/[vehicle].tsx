@@ -7,7 +7,7 @@ import { EmptyState } from '@/components/ui/empty-state';
 import Layout from '@/components/utils/layout';
 import VehiclesLayout from '@/components/vehicles/layout';
 import VehicleAvailability from '@/components/vehicles/vehicle/availability';
-// import VehicleGeneralInformation from '@/components/vehicles/vehicle/generalInformation';
+import VehicleGeneralInformation from '@/components/vehicles/vehicle/generalInformation';
 import VehicleHeader from '@/components/vehicles/vehicle/header';
 import { usePlace } from '@/hooks/usePlace';
 import { useRouterQuery } from '@/hooks/useRouterQuery';
@@ -72,7 +72,7 @@ export default function PlaceVehicle() {
                 )}
 
                 <VehicleHeader vehicle={vehicle} />
-                {/* <VehicleGeneralInformation vehicle={vehicle} /> */}
+                <VehicleGeneralInformation vehicle={vehicle} />
                 <VehicleAvailability vehicle={vehicle} />
               </Stack>
             </Flex>
