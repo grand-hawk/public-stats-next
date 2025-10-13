@@ -41,9 +41,7 @@ export default function VehicleGeneralInformation({
 
         {vehicle.info.supportedClasses.length > 0 && (
           <Stat label="Supported classes">
-            {capitalizeFirst(
-              vehicle.info.supportedClasses.join(', ').toLowerCase(),
-            )}
+            {vehicle.info.supportedClasses.join(', ')}
           </Stat>
         )}
       </Box>
