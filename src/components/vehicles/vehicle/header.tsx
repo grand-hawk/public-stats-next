@@ -20,6 +20,8 @@ import type { NamedVehicle } from '@/server/api/trpc/routers/vehicles';
 export default function VehicleHeader({ vehicle }: { vehicle: NamedVehicle }) {
   const [imageErrored, setImageErrored] = React.useState(false);
 
+  const vehicleDescription = vehicle.info.description.trim();
+
   React.useEffect(() => {
     setImageErrored(false);
   }, [vehicle.info.slug]);
@@ -114,9 +116,9 @@ export default function VehicleHeader({ vehicle }: { vehicle: NamedVehicle }) {
           </Span>
         </div>
 
-        {vehicle.info.description !== '' && (
+        {vehicleDescription !== '' && (
           <Quote aria-label="Description" fontSize="sm" fontWeight="light">
-            {vehicle.info.description}
+            {vehicleDescription}
           </Quote>
         )}
       </Stack>
