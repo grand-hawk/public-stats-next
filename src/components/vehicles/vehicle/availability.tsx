@@ -40,7 +40,7 @@ export default function VehicleAvailability({
 
   if (!isAvailable) return null;
   return (
-    <TitledCard as="section" title="Availability">
+    <TitledCard as="section" title="In-game availability">
       <Table.Root
         background="none"
         css={{
