@@ -3,7 +3,7 @@ import { Box } from '@chakra-ui/react';
 import React, { Suspense } from 'react';
 
 import CenterSpinner from '@/components/centerSpinner';
-import Head from '@/components/head';
+import Head from '@/components/utils/head';
 import { Provider } from '@/components/ui/provider';
 import Umami from '@/components/utils/umami';
 // import { usePersistStoreIsHydrated } from '@/hooks/usePersistStoreIsHydrated';
