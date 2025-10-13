@@ -3,10 +3,11 @@ import Head from 'next/head';
 import React from 'react';
 import { GrDocumentMissing } from 'react-icons/gr';
 
-import TitledCard from '@/components/titledCard';
 import { EmptyState } from '@/components/ui/empty-state';
 import Layout from '@/components/utils/layout';
 import VehiclesLayout from '@/components/vehicles/layout';
+import VehicleAvailability from '@/components/vehicles/vehicle/availability';
+// import VehicleGeneralInformation from '@/components/vehicles/vehicle/generalInformation';
 import VehicleHeader from '@/components/vehicles/vehicle/header';
 import { usePlace } from '@/hooks/usePlace';
 import { useRouterQuery } from '@/hooks/useRouterQuery';
@@ -14,8 +15,6 @@ import { formatTitle } from '@/utils/formatTitle';
 import { trpc } from '@/utils/trpc';
 
 import type { WithContext, Vehicle } from 'schema-dts';
-import VehicleGeneralInformation from '@/components/vehicles/vehicle/generalInformation';
-import VehicleAvailability from '@/components/vehicles/vehicle/availability';
 
 export default function PlaceVehicle() {
   const slug = useRouterQuery('vehicle')!.toLowerCase();

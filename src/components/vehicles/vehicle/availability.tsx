@@ -1,11 +1,13 @@
-import TitledCard from '@/components/titledCard';
-import { usePlace } from '@/hooks/usePlace';
-import { NamedVehicle } from '@/server/api/trpc/routers/vehicles';
-import { trpc } from '@/utils/trpc';
-import { Center, Link, Table } from '@chakra-ui/react';
+import { Link, Table } from '@chakra-ui/react';
 import NextLink from 'next/link';
 import React from 'react';
 import slug from 'slug';
+
+import TitledCard from '@/components/titledCard';
+import { usePlace } from '@/hooks/usePlace';
+import { trpc } from '@/utils/trpc';
+
+import type { NamedVehicle } from '@/server/api/trpc/routers/vehicles';
 
 export default function VehicleAvailability({
   vehicle,
@@ -40,14 +42,14 @@ export default function VehicleAvailability({
   return (
     <TitledCard title="Availability">
       <Table.Root
-        size="sm"
-        showColumnBorder
         background="none"
         css={{
           '& .chakra-table__row': {
             background: 'none',
           },
         }}
+        showColumnBorder
+        size="sm"
       >
         <Table.Header>
           <Table.Row>

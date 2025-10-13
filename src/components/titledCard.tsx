@@ -6,8 +6,8 @@ import type { PropsWithChildren } from 'react';
 
 export default function TitledCard({
   children,
-  title,
   noPadding,
+  title,
   ...props
 }: PropsWithChildren<BoxProps & { title: string; noPadding?: boolean }>) {
   return (
@@ -17,7 +17,7 @@ export default function TitledCard({
       borderWidth="1px"
       {...props}
     >
-      <Heading marginX={3} marginY={2} size="sm" fontWeight="medium">
+      <Heading fontWeight="medium" marginX={3} marginY={2} size="sm">
         {title}
       </Heading>
       <Separator />
