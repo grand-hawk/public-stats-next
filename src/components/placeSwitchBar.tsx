@@ -36,7 +36,7 @@ export default function PlaceSwitchBar() {
         base: 4,
         md: 2,
       }}
-      role="toolbar"
+      role="menubar"
     >
       <Span fontSize="sm" fontWeight="bold" hideBelow="md" lineHeight="short">
         {currentTab?.label}
