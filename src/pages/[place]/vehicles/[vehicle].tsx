@@ -54,8 +54,11 @@ export default function PlaceVehicle() {
         <VehiclesLayout>
           {vehicle ? (
             <Flex
-              height="100%"
               justifyContent="center"
+              marginBottom={{
+                base: 4,
+                md: 0,
+              }}
               padding={{
                 base: 0,
                 md: 2,
