@@ -10,6 +10,7 @@ import {
 } from '@chakra-ui/react';
 import NextImage from 'next/image';
 import React from 'react';
+import { MdOutlineOpenInFull } from 'react-icons/md';
 import { SiFandom } from 'react-icons/si';
 
 import IconLink from '@/components/buttonIconLink';
@@ -20,6 +21,7 @@ import type { NamedVehicle } from '@/server/api/trpc/routers/vehicles';
 export default function VehicleHeader({ vehicle }: { vehicle: NamedVehicle }) {
   const [imageErrored, setImageErrored] = React.useState(false);
 
+  const imageUrl = `/assets/vehicles/${vehicle.info.slug}.png`;
   const vehicleDescription = vehicle.info.description.trim();
 
   React.useEffect(() => {
@@ -59,33 +61,53 @@ export default function VehicleHeader({ vehicle }: { vehicle: NamedVehicle }) {
               placeholder="blur"
               priority
               sizes="(min-width: 80rem) 1000px, (min-width: 60rem) 800px, 600px"
-              src={`/assets/vehicles/${vehicle.info.slug}.png`}
+              src={imageUrl}
               onError={() => setImageErrored(true)}
               onLoad={() => setImageErrored(false)}
             />
           </Box>
         )}
 
-        {Object.keys(vehicle.info.externalLinks).length > 0 && (
-          <HStack bottom={2} position="absolute" right={2}>
-            {vehicle.info.externalLinks.Fandom && (
-              <IconLink
-                height={9}
-                href={vehicle.info.externalLinks.Fandom}
-                linkProps={{
-                  target: '_blank',
-                }}
-                rel="nofollow"
-                size="sm"
-                title="Fandom"
-                variant="surface"
-                width={9}
-              >
-                <SiFandom />
-              </IconLink>
-            )}
-          </HStack>
-        )}
+        <HStack
+          bottom={2}
+          css={{
+            '& > *': {
+              height: 9,
+              width: 9,
+            },
+          }}
+          flexDirection="row-reverse"
+          position="absolute"
+          right={2}
+        >
+          <IconLink
+            href={imageUrl}
+            linkProps={{
+              target: '_blank',
+            }}
+            rel="nofollow"
+            size="sm"
+            title="Open full image"
+            variant="surface"
+          >
+            <MdOutlineOpenInFull />
+          </IconLink>
+
+          {vehicle.info.externalLinks.Fandom && (
+            <IconLink
+              href={vehicle.info.externalLinks.Fandom}
+              linkProps={{
+                target: '_blank',
+              }}
+              rel="nofollow"
+              size="sm"
+              title="Fandom"
+              variant="surface"
+            >
+              <SiFandom />
+            </IconLink>
+          )}
+        </HStack>
       </Box>
 
       <Stack as="section" backgroundColor="bg.subtle" gap={4} padding={6}>
