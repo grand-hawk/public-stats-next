@@ -78,6 +78,7 @@ export default function PlaceSwitchBar() {
           >
             <Select.ValueText maxWidth="calc(100% - 20px)" />
           </Select.Trigger>
+
           <Select.IndicatorGroup paddingInline="unset">
             <Select.Indicator />
           </Select.IndicatorGroup>

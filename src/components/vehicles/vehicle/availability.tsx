@@ -25,7 +25,7 @@ export default function VehicleAvailability({
       for (const team of Object.keys(loadout.teams)) allTeams.add(team);
     }
 
-    return [...allTeams];
+    return Array.from(allTeams);
   }, [availability]);
 
   const availabilityEntries = React.useMemo(() => {

@@ -1,7 +1,10 @@
-import { Box, Heading, Link, Separator } from '@chakra-ui/react';
+import { Box, Heading, Icon, Link, Separator } from '@chakra-ui/react';
 import NextLink from 'next/link';
 import React from 'react';
+import { MdInfoOutline } from 'react-icons/md';
 import slug from 'slug';
+
+import { Tooltip } from '@/components/ui/tooltip';
 
 import type { BoxProps } from '@chakra-ui/react';
 import type { PropsWithChildren } from 'react';
@@ -10,16 +13,22 @@ export default function TitledCard({
   children,
   innerPadding = 6,
   title,
+  tooltip,
   withAnchor,
   ...props
 }: PropsWithChildren<
   BoxProps & {
     title: string;
     innerPadding?: BoxProps['padding'];
-    withAnchor?: boolean;
+    withAnchor?: boolean | string;
+    tooltip?: string;
   }
 >) {
-  const titleSlug = withAnchor ? slug(title) : undefined;
+  const titleSlug = withAnchor
+    ? typeof withAnchor === 'string'
+      ? slug(withAnchor)
+      : slug(title)
+    : undefined;
 
   return (
     <Box
@@ -51,6 +60,19 @@ export default function TitledCard({
           </Link>
         ) : (
           title
+        )}
+
+        {tooltip && (
+          <Tooltip
+            closeDelay={50}
+            content={tooltip}
+            openDelay={50}
+            positioning={{ placement: 'top' }}
+          >
+            <Icon marginLeft={2}>
+              <MdInfoOutline />
+            </Icon>
+          </Tooltip>
         )}
       </Heading>
       <Separator />

@@ -7,6 +7,7 @@ import { EmptyState } from '@/components/ui/empty-state';
 import Layout from '@/components/utils/layout';
 import VehiclesLayout from '@/components/vehicles/layout';
 import VehicleAvailability from '@/components/vehicles/vehicle/availability';
+import VehicleDynamicData from '@/components/vehicles/vehicle/dynamic';
 import VehicleGeneralInformation from '@/components/vehicles/vehicle/generalInformation';
 import VehicleHeader from '@/components/vehicles/vehicle/header';
 import { usePlace } from '@/hooks/usePlace';
@@ -65,13 +66,7 @@ export default function PlaceVehicle() {
                 lg: 4,
               }}
             >
-              <Stack
-                as="article"
-                gap={4}
-                height="100%"
-                maxWidth="3xl"
-                width="100%"
-              >
+              <Stack as="article" gap={4} maxWidth="4xl" width="100%">
                 {jsonLd && (
                   <script
                     dangerouslySetInnerHTML={{
@@ -90,6 +85,7 @@ export default function PlaceVehicle() {
                   availability={vehicleAvailability!}
                   isAvailable={vehicleIsAvailable}
                 />
+                <VehicleDynamicData key={vehicle.info.slug} vehicle={vehicle} />
               </Stack>
             </Flex>
           ) : (

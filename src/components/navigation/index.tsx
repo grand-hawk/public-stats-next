@@ -23,7 +23,7 @@ export default function Navigation() {
         base: '1px',
         md: '0px',
       }}
-      direction={{
+      flexDirection={{
         base: 'row',
         md: 'column',
       }}

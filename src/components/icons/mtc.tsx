@@ -16,4 +16,3 @@ export default function MTC({ ...props }: IconProps) {
     </Icon>
   );
 }
-

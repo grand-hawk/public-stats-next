@@ -1,3 +1,5 @@
+import { existsSync } from 'node:fs';
+
 import z from 'zod';
 
 import { createTRPCRouter, publicProcedure } from '@/server/api/trpc/context';
@@ -13,11 +15,14 @@ export interface ListVehicle {
   role: string;
 }
 
-export type NamedVehicle = VehiclesPlaceDataVehicle & {
+export type DetailedVehicle = VehiclesPlaceDataVehicle & {
   info: {
     name: string;
+    image: string | null;
   };
 };
+
+const imageCache = new Map<string, string | null>();
 
 export const vehiclesRouter = createTRPCRouter({
   list: publicProcedure
@@ -55,11 +60,25 @@ export const vehiclesRouter = createTRPCRouter({
       if (!vehicleName) return null;
 
       const vehicle = place.data[vehicleName];
-      const namedVehicle: NamedVehicle = {
+
+      let cachedImage = imageCache.get(vehicle.info.slug);
+      if (cachedImage === undefined) {
+        const imageUrl = `/assets/vehicles/${vehicle.info.slug}.png`;
+        const imageResult =
+          !imageUrl.startsWith('/') || existsSync(`./public${imageUrl}`)
+            ? imageUrl
+            : null;
+
+        imageCache.set(vehicle.info.slug, imageResult);
+        cachedImage = imageResult;
+      }
+
+      const namedVehicle: DetailedVehicle = {
         ...vehicle,
         info: {
           ...vehicle.info,
           name: vehicleName,
+          image: cachedImage,
         },
       };
 

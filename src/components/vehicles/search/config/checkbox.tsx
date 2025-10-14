@@ -31,8 +31,6 @@ export default function VehicleSearchConfigCheckbox({
       <Checkbox.HiddenInput />
       {isHydrated ? (
         <Checkbox.Control borderRadius="none">
-          {/* Chakra normally renders the icon regardless if checked,
-            conditionally rendering it is a simple workaround */}
           {value && <MdOutlineCheck />}
         </Checkbox.Control>
       ) : (

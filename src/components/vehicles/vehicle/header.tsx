@@ -16,18 +16,17 @@ import { SiFandom } from 'react-icons/si';
 import IconLink from '@/components/buttonIconLink';
 import TeamIcon from '@/components/icons/teams';
 
-import type { NamedVehicle } from '@/server/api/trpc/routers/vehicles';
+import type { DetailedVehicle } from '@/server/api/trpc/routers/vehicles';
 
-export default function VehicleHeader({ vehicle }: { vehicle: NamedVehicle }) {
-  const [imageLoaded, setImageLoaded] = React.useState(false);
-  const [imageErrored, setImageErrored] = React.useState(false);
-
-  const imageUrl = `/assets/vehicles/${vehicle.info.slug}.png`;
-  const vehicleDescription = vehicle.info.description.trim();
-
-  React.useEffect(() => {
-    setImageErrored(false);
-  }, [vehicle.info.slug]);
+export default function VehicleHeader({
+  vehicle,
+}: {
+  vehicle: DetailedVehicle;
+}) {
+  const vehicleDescription = React.useMemo(
+    () => vehicle.info.description.trim(),
+    [vehicle.info.description],
+  );
 
   return (
     <Box
@@ -44,13 +43,14 @@ export default function VehicleHeader({ vehicle }: { vehicle: NamedVehicle }) {
         base: 0,
         md: '1px',
       }}
-      divideY="1px"
       width="100%"
     >
       <Box backgroundColor="bg.panel" height="3xs" position="relative">
-        {imageErrored ? (
+        {!vehicle.info.image ? (
           <Center height="100%">
-            <Text fontWeight="medium">Resource not found</Text>
+            <Text fontWeight="medium" userSelect="none">
+              Resource not found
+            </Text>
           </Center>
         ) : (
           <Box asChild objectFit="cover">
@@ -62,12 +62,7 @@ export default function VehicleHeader({ vehicle }: { vehicle: NamedVehicle }) {
               placeholder="blur"
               priority
               sizes="(min-width: 80rem) 1000px, (min-width: 60rem) 800px, 600px"
-              src={imageUrl}
-              onError={() => setImageErrored(true)}
-              onLoad={() => {
-                setImageLoaded(true);
-                setImageErrored(false);
-              }}
+              src={vehicle.info.image}
             />
           </Box>
         )}
@@ -83,10 +78,11 @@ export default function VehicleHeader({ vehicle }: { vehicle: NamedVehicle }) {
           flexDirection="row-reverse"
           position="absolute"
           right={2}
+          role="toolbar"
         >
           <IconLink
-            disabled={!imageLoaded || imageErrored}
-            href={imageUrl}
+            disabled={!vehicle.info.image}
+            href={vehicle.info.image || ''}
             linkProps={{
               target: '_blank',
             }}

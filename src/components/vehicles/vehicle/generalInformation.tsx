@@ -5,13 +5,13 @@ import Stat from '@/components/stat';
 import TitledCard from '@/components/vehicles/titledCard';
 import { capitalizeFirst } from '@/utils/capitalizeFirst';
 
-import type { NamedVehicle } from '@/server/api/trpc/routers/vehicles';
+import type { DetailedVehicle } from '@/server/api/trpc/routers/vehicles';
 
 export default function VehicleGeneralInformation({
   isAvailable,
   vehicle,
 }: {
-  vehicle: NamedVehicle;
+  vehicle: DetailedVehicle;
   isAvailable: boolean;
 }) {
   return (

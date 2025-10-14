@@ -30,7 +30,7 @@ export const VehicleSearchListDividerItem = React.memo(
       <Flex
         alignItems="center"
         backgroundColor={isTeam ? 'bg.emphasized' : 'bg.muted'}
-        direction="row"
+        flexDirection="row"
         fontSize="sm"
         gap={2}
         lineHeight="short"
