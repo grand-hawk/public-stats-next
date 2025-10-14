@@ -19,6 +19,7 @@ import TeamIcon from '@/components/icons/teams';
 import type { NamedVehicle } from '@/server/api/trpc/routers/vehicles';
 
 export default function VehicleHeader({ vehicle }: { vehicle: NamedVehicle }) {
+  const [imageLoaded, setImageLoaded] = React.useState(false);
   const [imageErrored, setImageErrored] = React.useState(false);
 
   const imageUrl = `/assets/vehicles/${vehicle.info.slug}.png`;
@@ -63,7 +64,10 @@ export default function VehicleHeader({ vehicle }: { vehicle: NamedVehicle }) {
               sizes="(min-width: 80rem) 1000px, (min-width: 60rem) 800px, 600px"
               src={imageUrl}
               onError={() => setImageErrored(true)}
-              onLoad={() => setImageErrored(false)}
+              onLoad={() => {
+                setImageLoaded(true);
+                setImageErrored(false);
+              }}
             />
           </Box>
         )}
@@ -81,6 +85,7 @@ export default function VehicleHeader({ vehicle }: { vehicle: NamedVehicle }) {
           right={2}
         >
           <IconLink
+            disabled={!imageLoaded || imageErrored}
             href={imageUrl}
             linkProps={{
               target: '_blank',

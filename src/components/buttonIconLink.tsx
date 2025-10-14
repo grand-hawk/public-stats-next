@@ -8,6 +8,7 @@ import type { PropsWithChildren } from 'react';
 
 export default function IconLink({
   children,
+  disabled,
   href,
   linkProps = {},
   ...props
@@ -19,10 +20,21 @@ export default function IconLink({
   }
 >) {
   return (
-    <IconButton asChild borderRadius="none" height={10} width={10} {...props}>
-      <NextLink href={href} {...linkProps}>
-        {children}
-      </NextLink>
+    <IconButton
+      asChild
+      borderRadius="none"
+      disabled={disabled}
+      height={10}
+      width={10}
+      {...props}
+    >
+      {disabled ? (
+        <div>{children}</div>
+      ) : (
+        <NextLink href={href} {...linkProps}>
+          {children}
+        </NextLink>
+      )}
     </IconButton>
   );
 }
