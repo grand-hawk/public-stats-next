@@ -15,7 +15,7 @@ export default function VehicleGeneralInformation({
   isAvailable: boolean;
 }) {
   return (
-    <TitledCard as="section" title="General information">
+    <TitledCard as="section" title="General information" withAnchor>
       <Box
         display="grid"
         gap={2}
