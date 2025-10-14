@@ -20,8 +20,7 @@ function updateModulesFromAlterations(
       for (const add of alteration.changes.add) delete modules[add];
     }
     if (enabledAlterations[alterationName]) {
-      for (const remove of alteration.changes.remove)
-        delete sourceModules[remove];
+      for (const remove of alteration.changes.remove) delete modules[remove];
     }
   }
 
