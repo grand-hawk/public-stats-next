@@ -1,4 +1,4 @@
-import { Box } from '@chakra-ui/react';
+import { Box, FormatNumber } from '@chakra-ui/react';
 import React from 'react';
 
 import Stat from '@/components/stat';
@@ -38,6 +38,14 @@ export default function VehicleGeneralInformation({
                   : 'Badge'
             : 'Dev-spawner only'}
         </Stat>
+
+        {vehicle.info.premiumPrice !== undefined && (
+          <Stat label="Price">
+            <FormatNumber value={vehicle.info.premiumPrice} />{' '}
+            {/* premiumPrice will only be present for `true` and `shop` */}
+            {vehicle.info.premium === true ? 'coins' : 'money'}
+          </Stat>
+        )}
 
         {vehicle.info.supportedClasses.length > 0 && (
           <Stat label="Supported classes">
