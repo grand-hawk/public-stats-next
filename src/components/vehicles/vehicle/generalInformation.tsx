@@ -28,6 +28,14 @@ export default function VehicleGeneralInformation({
 
         {vehicle.info.amphibious && <Stat label="Amphibious">Yes</Stat>}
 
+        {vehicle.info.supportedClasses.length > 0 && (
+          <Stat label="Supported classes">
+            {capitalizeFirst(
+              vehicle.info.supportedClasses.join(', ').toLowerCase(),
+            )}
+          </Stat>
+        )}
+
         <Stat label="Obtainment">
           {isAvailable
             ? vehicle.info.premium === false
@@ -45,14 +53,6 @@ export default function VehicleGeneralInformation({
             <FormatNumber value={vehicle.info.premiumPrice} />{' '}
             {/* premiumPrice will only be present for `true` and `shop` */}
             {vehicle.info.premium === true ? 'coins' : 'money'}
-          </Stat>
-        )}
-
-        {vehicle.info.supportedClasses.length > 0 && (
-          <Stat label="Supported classes">
-            {capitalizeFirst(
-              vehicle.info.supportedClasses.join(', ').toLowerCase(),
-            )}
           </Stat>
         )}
       </Box>
