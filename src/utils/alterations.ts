@@ -1,4 +1,4 @@
-import type { DetailedVehicle } from '@/server/api/trpc/routers/vehicles';
+import type { VehicleModuleFromType } from '@/utils/vehicles';
 import type {
   VehiclesPlaceDataVehicle,
   VehiclesPlaceDataVehicleAlteration,
@@ -28,7 +28,7 @@ function updateModulesFromAlterations(
 }
 
 export function assembleModules(
-  vehicle: DetailedVehicle,
+  vehicle: VehiclesPlaceDataVehicle,
   enabledAlterations: Record<string, boolean>,
 ): VehiclesPlaceDataVehicleModule[] {
   const postLoadoutModules = updateModulesFromAlterations(
@@ -45,24 +45,30 @@ export function assembleModules(
   return Object.values(postAddonModules);
 }
 
-export function getAllModulesOfType(
-  type: VehiclesPlaceDataVehicleModule['type'],
-  vehicle: DetailedVehicle,
+export function getAllModulesOfType<
+  T extends VehiclesPlaceDataVehicleModule['type'],
+>(
+  type: T,
+  vehicle: VehiclesPlaceDataVehicle,
   enabledAlterations: Record<string, boolean>,
 ): VehiclesPlaceDataVehicleModule[] {
   const modules = assembleModules(vehicle, enabledAlterations);
   return modules
     .filter((module) => module.type === type)
-    .sort((a, b) => a.type.localeCompare(b.type));
+    .sort((a, b) => a.type.localeCompare(b.type)) as Array<
+    VehicleModuleFromType<T>
+  >;
 }
 
-export function getOneModuleOfType(
-  type: VehiclesPlaceDataVehicleModule['type'],
-  vehicle: DetailedVehicle,
+export function getOneModuleOfType<
+  T extends VehiclesPlaceDataVehicleModule['type'],
+>(
+  type: T,
+  vehicle: VehiclesPlaceDataVehicle,
   enabledAlterations: Record<string, boolean>,
-): VehiclesPlaceDataVehicleModule | null {
+): VehicleModuleFromType<T> | null {
   const [module] = getAllModulesOfType(type, vehicle, enabledAlterations);
-  return module || null;
+  return module as VehicleModuleFromType<T> | null;
 }
 
 export function alterationHasChanges(
