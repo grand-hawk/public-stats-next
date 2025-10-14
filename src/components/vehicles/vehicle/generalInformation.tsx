@@ -18,8 +18,9 @@ export default function VehicleGeneralInformation({
     <TitledCard as="section" title="General information" withAnchor>
       <Box
         display="grid"
-        gap={2}
-        gridTemplateColumns="repeat(auto-fit, minmax(var(--chakra-sizes-3xs), 1fr))"
+        gapX={6}
+        gapY={2}
+        gridTemplateColumns="repeat(auto-fit, minmax(12rem, 1fr))"
       >
         <Stat label="Locomotion">
           {capitalizeFirst(vehicle.info.locomotion)}
@@ -49,7 +50,9 @@ export default function VehicleGeneralInformation({
 
         {vehicle.info.supportedClasses.length > 0 && (
           <Stat label="Supported classes">
-            {vehicle.info.supportedClasses.join(', ')}
+            {capitalizeFirst(
+              vehicle.info.supportedClasses.join(', ').toLowerCase(),
+            )}
           </Stat>
         )}
       </Box>
