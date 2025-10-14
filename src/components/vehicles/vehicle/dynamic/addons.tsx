@@ -132,7 +132,7 @@ export default function VehicleDynamicAddons({
             const isDisabled = !isEnabled && isConflicting;
 
             const formattedAddonName = addonName
-              .replace(/\(Cosmetic\)$/, '')
+              .replace(/\(cosmetic\)$/i, '')
               .trim();
 
             return (
