@@ -53,29 +53,21 @@ export default function VehicleHeader({ vehicle }: { vehicle: NamedVehicle }) {
             <Text fontWeight="medium">Resource not found</Text>
           </Center>
         ) : (
-          <Box
-            asChild
-            objectFit={{
-              base: 'cover',
-              sm: 'contain',
-              md: 'cover',
-              lg: 'contain',
-              xl: 'cover',
+          <NextImage
+            key={vehicle.info.slug}
+            alt={`Image of the "${vehicle.info.name}" in Multicrew Tank Combat on Roblox`}
+            blurDataURL="data:image/webp;base64,UklGRooAAABXRUJQVlA4WAoAAAAAAAAAHwAAHwAAVlA4IGwAAACwBACdASogACAAPok2lUglIyIhN+gAoBEJZwDIXHmzSajWQrznMxbR+dwOHsqOAPAZsP004crt8WSSX8AoxpEFm2bGOnGFvmyW0fypFOzSYuYnEYiece44qIIOawb6sV0s9LBRAZlOhQUJwAA="
+            fill
+            placeholder="blur"
+            priority
+            sizes="(min-width: 80rem) 1000px, (min-width: 60rem) 800px, 600px"
+            src={`/assets/vehicles/${vehicle.info.slug}.png`}
+            style={{
+              objectFit: 'cover',
             }}
-          >
-            <NextImage
-              key={vehicle.info.slug}
-              alt={`Image of the "${vehicle.info.name}" in Multicrew Tank Combat on Roblox`}
-              blurDataURL="data:image/webp;base64,UklGRooAAABXRUJQVlA4WAoAAAAAAAAAHwAAHwAAVlA4IGwAAACwBACdASogACAAPok2lUglIyIhN+gAoBEJZwDIXHmzSajWQrznMxbR+dwOHsqOAPAZsP004crt8WSSX8AoxpEFm2bGOnGFvmyW0fypFOzSYuYnEYiece44qIIOawb6sV0s9LBRAZlOhQUJwAA="
-              fill
-              placeholder="blur"
-              priority
-              sizes="(min-width: 80rem) 1000px, (min-width: 60rem) 800px, 600px"
-              src={`/assets/vehicles/${vehicle.info.slug}.png`}
-              onError={() => setImageErrored(true)}
-              onLoad={() => setImageErrored(false)}
-            />
-          </Box>
+            onError={() => setImageErrored(true)}
+            onLoad={() => setImageErrored(false)}
+          />
         )}
 
         {Object.keys(vehicle.info.externalLinks).length > 0 && (
