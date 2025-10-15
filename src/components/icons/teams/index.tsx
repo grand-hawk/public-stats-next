@@ -22,6 +22,8 @@ export default function TeamIcon({ team }: { team: string }) {
   const iconProps: IconProps = {
     height: 5,
     width: 5,
+    'aria-hidden': true,
+    focusable: false,
   };
 
   return TeamIcon ? (

@@ -31,11 +31,56 @@ export default function PlaceVehicle() {
   const vehicleIsAvailable =
     !!vehicleAvailability && Object.keys(vehicleAvailability).length > 0;
 
+  const title = vehicle && formatTitle(vehicle.info.name, place.initials);
+
   return (
     <>
       {vehicle && (
         <Head>
-          <title>{formatTitle(vehicle.info.name, place.initials)}</title>
+          <title>{title!}</title>
+
+          <meta content="website" property="og:type" />
+          <meta content="index,follow" name="robots" />
+          <meta content="summary_large_image" name="twitter:card" />
+
+          <meta content={title!} property="og:site_name" />
+          <meta content={vehicle.info.name} property="og:title" />
+          <meta content={vehicle.info.name!} name="twitter:title" />
+
+          <meta
+            content={
+              `${vehicle.info.name} from Multicrew Tank Combat` +
+              (vehicle.info.description
+                ? `\n\n“${vehicle.info.description}”`
+                : '')
+            }
+            name="description"
+          />
+
+          {vehicle.info.image && (
+            <>
+              <meta content={vehicle.info.image} property="og:image" />
+              <meta content="1920" property="og:image:width" />
+              <meta content="1080" property="og:image:height" />
+              <meta
+                content={`image/${vehicle.info.image.split('.').pop()}`}
+                property="og:image:type"
+              />
+
+              <meta content={vehicle.info.image} name="twitter:image" />
+            </>
+          )}
+
+          {Object.entries(vehicle.linkedData).map(([key, linkedData]) => (
+            <script
+              key={key}
+              dangerouslySetInnerHTML={{
+                __html: JSON.stringify(linkedData).replace(/</g, '\\u003c'),
+              }}
+              data-linked-data={key}
+              type="application/ld+json"
+            />
+          ))}
         </Head>
       )}
 
@@ -54,21 +99,13 @@ export default function PlaceVehicle() {
                 lg: 4,
               }}
             >
-              <Stack as="article" gap={4} maxWidth="4xl" width="100%">
-                {Object.entries(vehicle.linkedData).map(([key, linkedData]) => (
-                  <script
-                    key={key}
-                    dangerouslySetInnerHTML={{
-                      __html: JSON.stringify(linkedData).replace(
-                        /</g,
-                        '\\u003c',
-                      ),
-                    }}
-                    data-linked-data={key}
-                    type="application/ld+json"
-                  />
-                ))}
-
+              <Stack
+                aria-labelledby="vehicle-page-title"
+                as="article"
+                gap={4}
+                maxWidth="4xl"
+                width="100%"
+              >
                 <VehicleHeader vehicle={vehicle} />
                 <VehicleGeneralInformation
                   isAvailable={vehicleIsAvailable}

@@ -28,6 +28,7 @@ export default function VehiclesLayout({ children }: PropsWithChildren) {
       <VehicleSearch />
 
       <Box
+        as="main"
         marginBottom={{ base: VEHICLE_SEARCH_INPUT_HEIGHT, md: 0 }}
         overflow="auto"
       >
