@@ -49,12 +49,7 @@ export default function PlaceVehicle() {
           <meta content={vehicle.info.name!} name="twitter:title" />
 
           <meta
-            content={
-              `${vehicle.info.name} from Multicrew Tank Combat` +
-              (vehicle.info.description
-                ? `\n\n“${vehicle.info.description}”`
-                : '')
-            }
+            content={`${vehicle.info.name} from Multicrew Tank Combat`}
             name="description"
           />
 
