@@ -55,15 +55,19 @@ export default function PlaceVehicle() {
               }}
             >
               <Stack as="article" gap={4} maxWidth="4xl" width="100%">
-                <script
-                  dangerouslySetInnerHTML={{
-                    __html: JSON.stringify(vehicle.linkedData).replace(
-                      /</g,
-                      '\\u003c',
-                    ),
-                  }}
-                  type="application/ld+json"
-                />
+                {Object.entries(vehicle.linkedData).map(([key, linkedData]) => (
+                  <script
+                    key={key}
+                    dangerouslySetInnerHTML={{
+                      __html: JSON.stringify(linkedData).replace(
+                        /</g,
+                        '\\u003c',
+                      ),
+                    }}
+                    data-linked-data={key}
+                    type="application/ld+json"
+                  />
+                ))}
 
                 <VehicleHeader vehicle={vehicle} />
                 <VehicleGeneralInformation

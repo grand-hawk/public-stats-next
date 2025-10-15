@@ -10,7 +10,7 @@ import vehicles_ld from '@generated/vehicles_ld';
 
 import type { PlaceId } from '@generated/config';
 import type { VehiclesPlaceDataVehicle } from '@generated/vehicles';
-import type { Vehicle, WithContext } from 'schema-dts';
+import type { BreadcrumbList, Vehicle, WithContext } from 'schema-dts';
 
 export interface ListVehicle {
   name: string;
@@ -24,7 +24,10 @@ export type DetailedVehicle = VehiclesPlaceDataVehicle & {
     name: string;
     image: string | null;
   };
-  linkedData: WithContext<Vehicle>;
+  linkedData: {
+    breadcrumbs: WithContext<BreadcrumbList>;
+    vehicle: WithContext<Vehicle>;
+  };
 };
 
 const imageCache = new Map<string, string | null>();
@@ -97,15 +100,34 @@ export const vehiclesRouter = createTRPCRouter({
         info: {
           ...vehicle.info,
           name: vehicleName,
-          image: getVehicleImage(input.slug),
+          image: relativeImageUrl,
         },
         linkedData: {
-          ...linkedData[vehicleName],
-          url: new URL(
-            `${initials}/vehicles/${input.slug}`,
-            baseUrl,
-          ).toString(),
-          image: publicImageUrl || undefined,
+          breadcrumbs: {
+            '@context': 'https://schema.org',
+            '@type': 'BreadcrumbList',
+            itemListElement: [
+              {
+                '@type': 'ListItem',
+                position: 1,
+                name: 'Vehicles',
+                item: new URL(`${initials}/vehicles`, baseUrl).toString(),
+              },
+              {
+                '@type': 'ListItem',
+                position: 2,
+                name: vehicleName,
+              },
+            ],
+          },
+          vehicle: {
+            ...linkedData[vehicleName],
+            url: new URL(
+              `${initials}/vehicles/${input.slug}`,
+              baseUrl,
+            ).toString(),
+            image: publicImageUrl || undefined,
+          },
         },
       };
 
