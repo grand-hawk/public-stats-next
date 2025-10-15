@@ -36,13 +36,13 @@ export default function PlaceSwitchBar() {
         base: 4,
         md: 2,
       }}
-      role="menubar"
     >
       <Span fontSize="sm" fontWeight="bold" hideBelow="md" lineHeight="short">
         {currentTab?.label}
       </Span>
 
       <Select.Root
+        aria-label="Select place"
         collection={placeCollection}
         lazyMount
         marginLeft="auto"

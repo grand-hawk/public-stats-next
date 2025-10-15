@@ -32,6 +32,8 @@ export default function Navigation() {
       padding={2}
     >
       <Box
+        aria-label="Homepage"
+        asChild
         marginX={{
           base: 2,
           md: 0,
@@ -69,6 +71,7 @@ export default function Navigation() {
             <NavigationButton
               key={tab.path}
               active={currentTab?.path === tab.path}
+              aria-label={tab.label}
               href={tab.path}
             >
               <Icon />
