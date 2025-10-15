@@ -14,6 +14,8 @@ export default function Head({ children }: PropsWithChildren) {
   return (
     <NextHead>
       <title>{formatTitle(currentTab?.label, initials)}</title>
+      <link href="/favicon.ico" rel="icon" type="image/x-icon" />
+
       {children}
     </NextHead>
   );
