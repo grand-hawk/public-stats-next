@@ -28,7 +28,7 @@ export default function Vehicle({ data }: { data: DynamicModuleProps }) {
     ? [
         [null],
         [
-          'Mass',
+          'Weight',
           <>
             <FormatNumber
               maximumFractionDigits={1}
