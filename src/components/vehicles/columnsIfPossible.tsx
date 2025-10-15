@@ -3,13 +3,19 @@ import React from 'react';
 
 import type { PropsWithChildren } from 'react';
 
-export default function ColumnIfPossible({ children }: PropsWithChildren) {
+export default function ColumnsIfPossible({ children }: PropsWithChildren) {
   return (
     <Box
-      alignItems="start"
+      alignItems="stretch"
       css={{
         '#with-alterations &': {
           gridTemplateColumns: '1fr',
+        },
+        '& > *:nth-child(1)': {
+          alignSelf: 'stretch',
+        },
+        '& > *:nth-child(2)': {
+          alignSelf: 'start',
         },
       }}
       display="grid"
