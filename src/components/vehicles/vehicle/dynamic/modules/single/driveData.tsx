@@ -111,11 +111,23 @@ export default function DriveData({ module }: SingleModuleProps<'DriveData'>) {
 
   return (
     <ColumnsIfPossible>
-      <TitledCard as="section" innerPadding={4} title="Mobility" withAnchor>
+      <TitledCard
+        as="section"
+        collapsible
+        innerPadding={4}
+        title="Mobility"
+        withAnchor
+      >
         <StatsTable tables={[speedTable, miscVehicleTable, suspensionTable]} />
       </TitledCard>
 
-      <TitledCard as="section" innerPadding={4} title="Powertrain" withAnchor>
+      <TitledCard
+        as="section"
+        collapsible
+        innerPadding={4}
+        title="Powertrain"
+        withAnchor
+      >
         <StatsTable tables={[engineTable, transmissionTable]} />
       </TitledCard>
     </ColumnsIfPossible>

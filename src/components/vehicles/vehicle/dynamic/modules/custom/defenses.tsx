@@ -32,7 +32,13 @@ export default function Defenses({ data }: { data: DynamicModuleProps }) {
   ];
 
   return (
-    <TitledCard as="section" innerPadding={4} title="Defenses" withAnchor>
+    <TitledCard
+      as="section"
+      collapsible
+      innerPadding={4}
+      title="Defenses"
+      withAnchor
+    >
       <StatsTable tables={[essTable, ewTable]} />
     </TitledCard>
   );
