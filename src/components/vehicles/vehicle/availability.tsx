@@ -7,6 +7,7 @@ import TitledCard from '@/components/vehicles/titledCard';
 import { usePlaceInitials } from '@/hooks/usePlaceInitials';
 
 import type { VehicleAvailability } from '@/server/api/trpc/routers/loadouts';
+
 export default function VehicleAvailability({
   availability,
   isAvailable,
