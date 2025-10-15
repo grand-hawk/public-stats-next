@@ -46,7 +46,7 @@ export default function PlaceVehicle() {
             property="og:site_name"
           />
           <meta content={vehicle.info.name} property="og:title" />
-          <meta content={vehicle.info.name!} name="twitter:title" />
+          <meta content={vehicle.info.name} name="twitter:title" />
           <meta
             content={[
               ...(
