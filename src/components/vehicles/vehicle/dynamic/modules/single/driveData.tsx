@@ -44,7 +44,14 @@ export default function DriveData({ module }: SingleModuleProps<'DriveData'>) {
       : undefined,
   ];
 
-  const powerTable: Table = [
+  const miscVehicleTable: Table = [
+    ['Vehicle', null],
+    [
+      'Weight',
+      <>
+        <FormatNumber value={module.data.mass} /> t
+      </>,
+    ],
     [
       'Power-to-weight ratio',
       <>
@@ -53,18 +60,6 @@ export default function DriveData({ module }: SingleModuleProps<'DriveData'>) {
           value={module.data.engine.horsepower / module.data.mass}
         />{' '}
         hp/t
-      </>,
-    ],
-    [
-      'Engine power',
-      <>
-        <FormatNumber value={module.data.engine.horsepower} /> hp
-      </>,
-    ],
-    [
-      'Weight',
-      <>
-        <FormatNumber value={module.data.mass} /> t
       </>,
     ],
   ];
@@ -84,9 +79,44 @@ export default function DriveData({ module }: SingleModuleProps<'DriveData'>) {
         ]
       : undefined;
 
+  const engineTable: Table = [
+    ['Engine', module.data.engine.name],
+    ['Type', module.data.engine.type],
+    [
+      'Horsepower',
+      <>
+        <FormatNumber value={module.data.engine.horsepower} /> hp
+      </>,
+    ],
+    [
+      'Max RPM',
+      <>
+        <FormatNumber value={module.data.engine.maxRPM} /> RPM
+      </>,
+    ],
+  ];
+
+  const transmissionTable: Table = [
+    ['Transmission', null],
+    ['Forward gears', module.data.transmission.forwardGears],
+    ['Reverse gears', module.data.transmission.reverseGears],
+    module.data.transmission.neutralSteering
+      ? ['Neutral steering', 'Yes']
+      : undefined,
+    module.data.transmission.automatic
+      ? ['Automatic gearbox', 'Yes']
+      : undefined,
+  ];
+
   return (
-    <TitledCard innerPadding={4} title="Mobility" withAnchor>
-      <StatsTable tables={[speedTable, powerTable, suspensionTable]} />
-    </TitledCard>
+    <>
+      <TitledCard as="section" innerPadding={4} title="Mobility" withAnchor>
+        <StatsTable tables={[speedTable, miscVehicleTable, suspensionTable]} />
+      </TitledCard>
+
+      <TitledCard as="section" innerPadding={4} title="Powertrain" withAnchor>
+        <StatsTable tables={[engineTable, transmissionTable]} />
+      </TitledCard>
+    </>
   );
 }

@@ -75,8 +75,12 @@ export default function TitledCard({
           </Tooltip>
         )}
       </Heading>
+
       <Separator />
-      <Box padding={innerPadding}>{children}</Box>
+
+      <Box aria-labelledby={titleSlug} padding={innerPadding}>
+        {children}
+      </Box>
     </Box>
   );
 }
