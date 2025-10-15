@@ -6,7 +6,7 @@ import superjson from 'superjson';
 import type { AppRouter } from '@/server/api/trpc/router';
 import type { inferRouterInputs, inferRouterOutputs } from '@trpc/server';
 
-const getBaseUrl = () => {
+export const getBaseUrl = () => {
   if (typeof window !== 'undefined') return ''; // browser should use relative url
 
   if (process.env.COOLIFY_URL) {

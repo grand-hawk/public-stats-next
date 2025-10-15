@@ -22,13 +22,11 @@ export const loadoutsRouter = createTRPCRouter({
     )
     .query(({ input }) => {
       const loadoutsPlace = loadouts.data[input.placeId as PlaceId];
-      if (!loadoutsPlace) return null;
+      if (!loadoutsPlace) return null; // This validates placeId
 
       const vehiclesPlace = vehicles.data[input.placeId as PlaceId];
-      if (!vehiclesPlace) return null;
-
       const vehicleName = vehiclesPlace.metadata.slugs[input.slug];
-      if (!vehicleName) return null;
+      if (!vehicleName) return null; // This validates slug
 
       const availability: VehicleAvailability = {};
 

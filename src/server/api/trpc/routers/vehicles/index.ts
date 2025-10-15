@@ -3,6 +3,8 @@ import { existsSync } from 'node:fs';
 import z from 'zod';
 
 import { createTRPCRouter, publicProcedure } from '@/server/api/trpc/context';
+import { getBaseUrl } from '@/utils/trpc';
+import config from '@generated/config';
 import vehicles from '@generated/vehicles';
 import vehicles_ld from '@generated/vehicles_ld';
 
@@ -26,6 +28,22 @@ export type DetailedVehicle = VehiclesPlaceDataVehicle & {
 
 const imageCache = new Map<string, string | null>();
 
+function getVehicleImage(slug: string) {
+  let cachedImage = imageCache.get(slug);
+  if (cachedImage === undefined) {
+    const imageUrl = `/assets/vehicles/${slug}.png`;
+    const imageResult =
+      !imageUrl.startsWith('/') || existsSync(`./public${imageUrl}`)
+        ? imageUrl
+        : null;
+
+    imageCache.set(slug, imageResult);
+    cachedImage = imageResult;
+  }
+
+  return cachedImage;
+}
+
 export const vehiclesRouter = createTRPCRouter({
   list: publicProcedure
     .input(
@@ -35,7 +53,7 @@ export const vehiclesRouter = createTRPCRouter({
     )
     .query(({ input }) => {
       const data = vehicles.data[input.placeId as PlaceId]?.data;
-      if (!data) return [];
+      if (!data) return []; // This validates placeId
 
       return Object.entries(data)
         .map(([name, data]) => ({
@@ -56,31 +74,19 @@ export const vehiclesRouter = createTRPCRouter({
     )
     .query(({ input }) => {
       const place = vehicles.data[input.placeId as PlaceId];
-      if (!place) return null;
+      if (!place) return null; // This validates placeId
 
       const vehicleName = place.metadata.slugs[input.slug];
-      if (!vehicleName) return null;
+      if (!vehicleName) return null; // This validates slug
 
       const vehicle = place.data[vehicleName];
-
-      let cachedImage = imageCache.get(vehicle.info.slug);
-      if (cachedImage === undefined) {
-        const imageUrl = `/assets/vehicles/${vehicle.info.slug}.png`;
-        const imageResult =
-          !imageUrl.startsWith('/') || existsSync(`./public${imageUrl}`)
-            ? imageUrl
-            : null;
-
-        imageCache.set(vehicle.info.slug, imageResult);
-        cachedImage = imageResult;
-      }
 
       const namedVehicle: DetailedVehicle = {
         ...vehicle,
         info: {
           ...vehicle.info,
           name: vehicleName,
-          image: cachedImage,
+          image: getVehicleImage(input.slug),
         },
       };
 
@@ -95,18 +101,26 @@ export const vehiclesRouter = createTRPCRouter({
       }),
     )
     .query(({ input }) => {
-      const vehiclesMetadata =
-        vehicles.data[input.placeId as PlaceId]?.metadata;
-      if (!vehiclesMetadata) return null;
-
-      const vehicleName = vehiclesMetadata.slugs[input.slug];
-      if (!vehicleName) return null;
-
-      const linkedData = vehicles_ld.data[input.placeId as PlaceId];
-      if (!linkedData) return null;
-
-      return (
-        (linkedData[vehicleName] as unknown as WithContext<Vehicle>) || null
+      const placeName = config.data.placeNames.find(
+        (name) => config.data.placeIds[name] === input.placeId,
       );
+      if (!placeName) return null; // This validates placeId
+
+      const vehiclesMetadata = vehicles.data[input.placeId as PlaceId].metadata;
+      const vehicleName = vehiclesMetadata.slugs[input.slug];
+      if (!vehicleName) return null; // This validates slug
+
+      const image = getVehicleImage(input.slug);
+      const baseUrl = getBaseUrl();
+      const initials = config.data.placeNameInitials[placeName];
+      const linkedData = vehicles_ld.data[
+        input.placeId as PlaceId
+      ] as unknown as Record<string, WithContext<Vehicle>>;
+
+      return {
+        ...linkedData[vehicleName],
+        url: new URL(`${initials}/vehicles/${input.slug}`, baseUrl),
+        image: image ? new URL(image, baseUrl) : undefined,
+      };
     }),
 });
