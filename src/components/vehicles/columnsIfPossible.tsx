@@ -4,6 +4,9 @@ import React from 'react';
 import type { PropsWithChildren } from 'react';
 
 export default function ColumnsIfPossible({ children }: PropsWithChildren) {
+  const childCount = React.Children.toArray(children).filter(Boolean).length;
+  const hasTwoChildren = childCount === 2;
+
   return (
     <Box
       alignItems="stretch"
@@ -12,12 +15,12 @@ export default function ColumnsIfPossible({ children }: PropsWithChildren) {
           gridTemplateColumns: '1fr',
           '--columns-if-possible-display-trigger': 'block',
         },
-        '& > *:nth-child(1)': {
-          alignSelf: 'stretch',
-        },
-        '& > *:nth-child(2)': {
-          alignSelf: 'start',
-        },
+        ...(hasTwoChildren
+          ? {
+              '& > *:nth-child(1)': { alignSelf: 'stretch' },
+              '& > *:nth-child(2)': { alignSelf: 'start' },
+            }
+          : {}),
         '--columns-if-possible-display-trigger': {
           base: 'block',
           xl: 'none',
@@ -25,7 +28,10 @@ export default function ColumnsIfPossible({ children }: PropsWithChildren) {
       }}
       display="grid"
       gap={4}
-      gridTemplateColumns={{ base: '1fr', xl: '1fr 1fr' }}
+      gridTemplateColumns={{
+        base: '1fr',
+        xl: hasTwoChildren ? '1fr 1fr' : '1fr',
+      }}
     >
       {children}
     </Box>
