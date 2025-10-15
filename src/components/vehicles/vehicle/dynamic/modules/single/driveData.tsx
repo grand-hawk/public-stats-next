@@ -2,6 +2,7 @@ import { FormatNumber } from '@chakra-ui/react';
 import React from 'react';
 
 import StatsTable from '@/components/statsTables';
+import ColumnIfPossible from '@/components/vehicles/columnIfPossible';
 import TitledCard from '@/components/vehicles/titledCard';
 
 import type { Table } from '@/components/statsTables';
@@ -109,7 +110,7 @@ export default function DriveData({ module }: SingleModuleProps<'DriveData'>) {
   ];
 
   return (
-    <>
+    <ColumnIfPossible>
       <TitledCard as="section" innerPadding={4} title="Mobility" withAnchor>
         <StatsTable tables={[speedTable, miscVehicleTable, suspensionTable]} />
       </TitledCard>
@@ -117,6 +118,6 @@ export default function DriveData({ module }: SingleModuleProps<'DriveData'>) {
       <TitledCard as="section" innerPadding={4} title="Powertrain" withAnchor>
         <StatsTable tables={[engineTable, transmissionTable]} />
       </TitledCard>
-    </>
+    </ColumnIfPossible>
   );
 }
