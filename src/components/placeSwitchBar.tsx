@@ -42,7 +42,6 @@ export default function PlaceSwitchBar() {
       </Span>
 
       <Select.Root
-        aria-label="Select place"
         collection={placeCollection}
         lazyMount
         marginLeft="auto"
@@ -71,6 +70,7 @@ export default function PlaceSwitchBar() {
 
         <Select.Control>
           <Select.Trigger
+            aria-label="Select place"
             border="none"
             borderRadius="none"
             minHeight="unset"

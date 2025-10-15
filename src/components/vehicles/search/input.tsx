@@ -43,6 +43,7 @@ export default function VehicleSearchInput({
 
       <Presence present={!noButton}>
         <IconButton
+          aria-label={isOpen ? 'Collapse search' : 'Expand search'}
           borderRadius="none"
           height={VEHICLE_SEARCH_INPUT_HEIGHT}
           hideFrom="md"
