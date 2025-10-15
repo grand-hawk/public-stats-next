@@ -4,9 +4,11 @@ import z from 'zod';
 
 import { createTRPCRouter, publicProcedure } from '@/server/api/trpc/context';
 import vehicles from '@generated/vehicles';
+import vehicles_ld from '@generated/vehicles_ld';
 
 import type { PlaceId } from '@generated/config';
 import type { VehiclesPlaceDataVehicle } from '@generated/vehicles';
+import type { Vehicle, WithContext } from 'schema-dts';
 
 export interface ListVehicle {
   name: string;
@@ -83,5 +85,28 @@ export const vehiclesRouter = createTRPCRouter({
       };
 
       return namedVehicle;
+    }),
+
+  linkedDataBySlug: publicProcedure
+    .input(
+      z.object({
+        placeId: z.string(),
+        slug: z.string(),
+      }),
+    )
+    .query(({ input }) => {
+      const vehiclesMetadata =
+        vehicles.data[input.placeId as PlaceId]?.metadata;
+      if (!vehiclesMetadata) return null;
+
+      const vehicleName = vehiclesMetadata.slugs[input.slug];
+      if (!vehicleName) return null;
+
+      const linkedData = vehicles_ld.data[input.placeId as PlaceId];
+      if (!linkedData) return null;
+
+      return (
+        (linkedData[vehicleName] as unknown as WithContext<Vehicle>) || null
+      );
     }),
 });

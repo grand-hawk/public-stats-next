@@ -22,8 +22,9 @@ const prettierConfig = await prettier.resolveConfig('.prettierrc');
 
 await Promise.all(
   files.map(async (dataFile) => {
-    const basename = path.basename(dataFile, '.json');
-    const schemaFile = `${basename}.schema.json`;
+    const fileBasename = path.basename(dataFile, '.json');
+    const schemaFile = `${fileBasename}.schema.json`;
+    const basename = fileBasename.replace(/[^a-zA-Z0-9]/g, '_');
 
     const dataResponse = await dataApi.head(dataFile);
     if (!dataResponse.ok) return;

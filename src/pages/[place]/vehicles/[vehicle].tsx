@@ -10,12 +10,11 @@ import VehicleAvailability from '@/components/vehicles/vehicle/availability';
 import VehicleDynamicData from '@/components/vehicles/vehicle/dynamic';
 import VehicleGeneralInformation from '@/components/vehicles/vehicle/generalInformation';
 import VehicleHeader from '@/components/vehicles/vehicle/header';
+import VehicleLinkedData from '@/components/vehicles/vehicle/linkedData';
 import { usePlace } from '@/hooks/usePlace';
 import { useRouterQuery } from '@/hooks/useRouterQuery';
 import { formatTitle } from '@/utils/formatTitle';
 import { trpc } from '@/utils/trpc';
-
-import type { WithContext, Vehicle } from 'schema-dts';
 
 export default function PlaceVehicle() {
   const vehicleSlug = useRouterQuery('vehicle')!.toLowerCase();
@@ -32,16 +31,6 @@ export default function PlaceVehicle() {
     });
   const vehicleIsAvailable =
     !!vehicleAvailability && Object.keys(vehicleAvailability).length > 0;
-
-  // https://nextjs.org/docs/app/guides/json-ld
-  // https://schema.org/Vehicle
-  const jsonLd: WithContext<Vehicle> | null = vehicle
-    ? {
-        '@context': 'https://schema.org',
-        '@type': 'Vehicle',
-        name: vehicle.info.name,
-      }
-    : null;
 
   return (
     <>
@@ -67,14 +56,7 @@ export default function PlaceVehicle() {
               }}
             >
               <Stack as="article" gap={4} maxWidth="4xl" width="100%">
-                {jsonLd && (
-                  <script
-                    dangerouslySetInnerHTML={{
-                      __html: JSON.stringify(jsonLd).replace(/</g, '\\u003c'),
-                    }}
-                    type="application/ld+json"
-                  />
-                )}
+                <VehicleLinkedData placeId={place.placeId} slug={vehicleSlug} />
 
                 <VehicleHeader vehicle={vehicle} />
                 <VehicleGeneralInformation

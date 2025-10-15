@@ -75,7 +75,7 @@ export default function VehicleDynamicAddons({
     vehicle.alterations.loadouts,
   ]);
 
-  // Scan for incompatible addons
+  // Scan and remove incompatible addons
   React.useEffect(() => {
     const conflicting: string[] = [];
 
@@ -93,8 +93,6 @@ export default function VehicleDynamicAddons({
       )
         conflicting.push(alterationName);
     }
-
-    console.log(conflicting);
 
     if (conflicting.length > 0)
       setAddonsEnabled(
