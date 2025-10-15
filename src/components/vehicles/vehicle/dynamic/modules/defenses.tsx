@@ -22,6 +22,7 @@ export default function Defenses({ data }: { data: DynamicModuleProps }) {
   if (!essModule && !ewModule) return null;
 
   const essTable: Table = [
+    [null],
     ['Engine smoke system', essModule?.data.present ? 'Yes' : 'No'],
   ];
 

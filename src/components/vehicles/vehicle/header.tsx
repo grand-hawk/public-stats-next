@@ -43,9 +43,16 @@ export default function VehicleHeader({
         base: 0,
         md: '1px',
       }}
+      divideY={!vehicle.info.image ? '1px' : undefined}
       width="100%"
     >
-      <Box backgroundColor="bg.panel" height="3xs" position="relative">
+      <Box
+        backgroundColor="bg.panel"
+        height={
+          !vehicle.info.image ? 'calc(var(--chakra-sizes-3xs) - 1px)' : '3xs'
+        }
+        position="relative"
+      >
         {!vehicle.info.image ? (
           <Center height="100%">
             <Text fontWeight="medium" userSelect="none">

@@ -4,6 +4,7 @@ import type {
   VehiclesPlaceDataVehicleAlteration,
   VehiclesPlaceDataVehicleAlterations,
   VehiclesPlaceDataVehicleModule,
+  VehiclesPlaceDataVehicleModuleReference,
 } from '@generated/vehicles';
 
 type ModulesDictionary = VehiclesPlaceDataVehicle['modules'];
@@ -30,7 +31,7 @@ function updateModulesFromAlterations(
 export function assembleModules(
   vehicle: VehiclesPlaceDataVehicle,
   enabledAlterations: Record<string, boolean>,
-): VehiclesPlaceDataVehicleModule[] {
+): ModulesDictionary {
   const postLoadoutModules = updateModulesFromAlterations(
     vehicle.modules,
     vehicle.alterations.loadouts,
@@ -42,7 +43,7 @@ export function assembleModules(
     enabledAlterations,
   );
 
-  return Object.values(postAddonModules);
+  return postAddonModules;
 }
 
 export function getAllModulesOfType<
@@ -51,8 +52,8 @@ export function getAllModulesOfType<
   type: T,
   vehicle: VehiclesPlaceDataVehicle,
   enabledAlterations: Record<string, boolean>,
-): VehiclesPlaceDataVehicleModule[] {
-  const modules = assembleModules(vehicle, enabledAlterations);
+) {
+  const modules = Object.values(assembleModules(vehicle, enabledAlterations));
   return modules
     .filter((module) => module.type === type)
     .sort((a, b) => a.type.localeCompare(b.type)) as Array<
@@ -68,7 +69,18 @@ export function getOneModuleOfType<
   enabledAlterations: Record<string, boolean>,
 ): VehicleModuleFromType<T> | null {
   const [module] = getAllModulesOfType(type, vehicle, enabledAlterations);
-  return module as VehicleModuleFromType<T> | null;
+  return (module as VehicleModuleFromType<T>) || null;
+}
+
+export function getModuleByReference<
+  T extends VehiclesPlaceDataVehicleModule['type'],
+>(
+  reference: VehiclesPlaceDataVehicleModuleReference,
+  vehicle: VehiclesPlaceDataVehicle,
+  enabledAlterations: Record<string, boolean>,
+): VehicleModuleFromType<T> | null {
+  const modules = assembleModules(vehicle, enabledAlterations);
+  return (modules[reference] as VehicleModuleFromType<T>) || null;
 }
 
 export function alterationHasChanges(

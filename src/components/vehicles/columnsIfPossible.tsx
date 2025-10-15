@@ -10,7 +10,7 @@ export default function ColumnsIfPossible({ children }: PropsWithChildren) {
       css={{
         '#with-alterations &': {
           gridTemplateColumns: '1fr',
-          '--columns-if-possible-display-trigger': 'none',
+          '--columns-if-possible-display-trigger': 'block',
         },
         '& > *:nth-child(1)': {
           alignSelf: 'stretch',

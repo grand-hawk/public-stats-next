@@ -1,15 +1,15 @@
 import React from 'react';
 
 import { EmptyState } from '@/components/ui/empty-state';
-import Defenses from '@/components/vehicles/vehicle/dynamic/modules/custom/defenses';
-import SingleModule from '@/components/vehicles/vehicle/dynamic/modules/single';
+import Defenses from '@/components/vehicles/vehicle/dynamic/modules/defenses';
+import Vehicle from '@/components/vehicles/vehicle/dynamic/modules/vehicle';
 
 import type { DetailedVehicle } from '@/server/api/trpc/routers/vehicles';
-import type { assembleModules } from '@/utils/alterations';
+import type { getAllModulesOfType } from '@/utils/alterations';
 
 export interface DynamicModuleProps {
   vehicle: DetailedVehicle;
-  modules: ReturnType<typeof assembleModules>;
+  modules: ReturnType<typeof getAllModulesOfType>;
   enabledAlterations: Record<string, boolean>;
 }
 
@@ -29,7 +29,7 @@ export default function VehicleDynamicModules({
 
   return (
     <>
-      <SingleModule data={data} moduleType="DriveData" />
+      <Vehicle data={data} />
       <Defenses data={data} />
     </>
   );
