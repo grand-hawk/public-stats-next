@@ -1,4 +1,4 @@
-import { Flex, Stack } from '@chakra-ui/react';
+import { Center, Flex, Link, Span, Stack } from '@chakra-ui/react';
 import Head from 'next/head';
 import React from 'react';
 import { GrDocumentMissing } from 'react-icons/gr';
@@ -132,6 +132,20 @@ export default function PlaceVehicle() {
                   isAvailable={vehicleIsAvailable}
                 />
                 <VehicleDynamicData key={vehicle.info.slug} vehicle={vehicle} />
+
+                <Center>
+                  <Span color="fg.subtle" fontSize="xs">
+                    Spotted inaccurate or incomplete data? Report this in our{' '}
+                    <Link
+                      color="fg.muted"
+                      href="https://discord.gg/multicrew"
+                      rel="nofollow noopener"
+                      target="_blank"
+                    >
+                      Discord
+                    </Link>
+                  </Span>
+                </Center>
               </Stack>
             </Flex>
           ) : (
