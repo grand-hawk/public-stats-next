@@ -47,6 +47,21 @@ export default function PlaceVehicle() {
           />
           <meta content={vehicle.info.name} property="og:title" />
           <meta content={vehicle.info.name!} name="twitter:title" />
+          <meta
+            content={[
+              ...(
+                (vehicle.linkedData.vehicle.keywords as string | undefined) ||
+                ''
+              ).split(','),
+              vehicle.info.name,
+              place.placeName,
+              place.initials.toUpperCase(),
+              'Statistics',
+              'Stats',
+              'Data',
+            ].join(',')}
+            name="keywords"
+          />
 
           <meta
             content={
