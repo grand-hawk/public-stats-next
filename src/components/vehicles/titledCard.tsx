@@ -44,6 +44,63 @@ export default function TitledCard({
     return typeof withAnchor === 'string' ? slug(withAnchor) : slug(title);
   }, [withAnchor, title]);
 
+  const header = (
+    <HStack justifyContent="space-between">
+      <Heading
+        fontWeight="medium"
+        id={titleSlug}
+        marginX={3}
+        marginY={2}
+        size="sm"
+      >
+        {withAnchor ? (
+          <Link asChild>
+            <NextLink href={`#${titleSlug}`} shallow>
+              {title}
+            </NextLink>
+          </Link>
+        ) : (
+          title
+        )}
+
+        {tooltip && (
+          <Tooltip
+            closeDelay={50}
+            content={tooltip}
+            openDelay={50}
+            positioning={{ placement: 'top' }}
+          >
+            <Icon marginLeft={2}>
+              <MdInfoOutline />
+            </Icon>
+          </Tooltip>
+        )}
+      </Heading>
+
+      {collapsible && (
+        <Collapsible.Trigger
+          display="var(--columns-if-possible-display-trigger)"
+          paddingLeft={1}
+          paddingY={1}
+        >
+          <Icon marginX={2}>
+            {isExpanded ? <MdExpandLess /> : <MdOutlineExpandMore />}
+          </Icon>
+        </Collapsible.Trigger>
+      )}
+    </HStack>
+  );
+
+  const content = (
+    <>
+      <Separator />
+
+      <Box aria-labelledby={titleSlug} padding={innerPadding}>
+        {children}
+      </Box>
+    </>
+  );
+
   return (
     <Box
       backgroundColor="bg.panel"
@@ -63,58 +120,13 @@ export default function TitledCard({
         open={isExpanded}
         onOpenChange={(details) => setIsExpanded(details.open)}
       >
-        <HStack justifyContent="space-between">
-          <Heading
-            fontWeight="medium"
-            id={titleSlug}
-            marginX={3}
-            marginY={2}
-            size="sm"
-          >
-            {withAnchor ? (
-              <Link asChild>
-                <NextLink href={`#${titleSlug}`} shallow>
-                  {title}
-                </NextLink>
-              </Link>
-            ) : (
-              title
-            )}
+        {header}
 
-            {tooltip && (
-              <Tooltip
-                closeDelay={50}
-                content={tooltip}
-                openDelay={50}
-                positioning={{ placement: 'top' }}
-              >
-                <Icon marginLeft={2}>
-                  <MdInfoOutline />
-                </Icon>
-              </Tooltip>
-            )}
-          </Heading>
-
-          {collapsible && (
-            <Collapsible.Trigger
-              display="var(--columns-if-possible-display-trigger)"
-              paddingLeft={1}
-              paddingY={1}
-            >
-              <Icon marginX={2}>
-                {isExpanded ? <MdExpandLess /> : <MdOutlineExpandMore />}
-              </Icon>
-            </Collapsible.Trigger>
-          )}
-        </HStack>
-
-        <Collapsible.Content>
-          <Separator />
-
-          <Box aria-labelledby={titleSlug} padding={innerPadding}>
-            {children}
-          </Box>
-        </Collapsible.Content>
+        {collapsible ? (
+          <Collapsible.Content>{content}</Collapsible.Content>
+        ) : (
+          content
+        )}
       </Collapsible.Root>
     </Box>
   );
