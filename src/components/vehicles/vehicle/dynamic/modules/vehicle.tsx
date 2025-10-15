@@ -40,19 +40,17 @@ export default function Vehicle({ data }: { data: DynamicModuleProps }) {
       ]
     : undefined;
 
+  const seatCount: Record<string, number> = {};
+  for (const seat of seats) {
+    const name = seat.data.name;
+
+    if (!seatCount[name]) seatCount[name] = 0;
+    seatCount[seat.data.name] += 1;
+  }
+
   const seatingCapacity: Table | undefined =
     seats.length > 0
-      ? [
-          ['Seating capacity', seats.length],
-          [
-            'Crew',
-            seats.filter((seat) => seat.data.name !== 'Passenger').length,
-          ],
-          [
-            'Passenger',
-            seats.filter((seat) => seat.data.name === 'Passenger').length,
-          ],
-        ]
+      ? [['Seating capacity', seats.length], ...Object.entries(seatCount)]
       : undefined;
 
   const speedTable: Table | undefined = driveData
