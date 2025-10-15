@@ -31,19 +31,20 @@ export default function PlaceVehicle() {
   const vehicleIsAvailable =
     !!vehicleAvailability && Object.keys(vehicleAvailability).length > 0;
 
-  const title = vehicle && formatTitle(vehicle.info.name, place.initials);
-
   return (
     <>
       {vehicle && (
         <Head>
-          <title>{title!}</title>
+          <title>{formatTitle(vehicle.info.name, place.initials)}</title>
 
           <meta content="website" property="og:type" />
           <meta content="index,follow" name="robots" />
           <meta content="summary_large_image" name="twitter:card" />
 
-          <meta content={title!} property="og:site_name" />
+          <meta
+            content={formatTitle(null, place.initials)}
+            property="og:site_name"
+          />
           <meta content={vehicle.info.name} property="og:title" />
           <meta content={vehicle.info.name!} name="twitter:title" />
 
