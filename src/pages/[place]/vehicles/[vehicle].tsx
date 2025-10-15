@@ -10,7 +10,6 @@ import VehicleAvailability from '@/components/vehicles/vehicle/availability';
 import VehicleDynamicData from '@/components/vehicles/vehicle/dynamic';
 import VehicleGeneralInformation from '@/components/vehicles/vehicle/generalInformation';
 import VehicleHeader from '@/components/vehicles/vehicle/header';
-import VehicleLinkedData from '@/components/vehicles/vehicle/linkedData';
 import { usePlace } from '@/hooks/usePlace';
 import { useRouterQuery } from '@/hooks/useRouterQuery';
 import { formatTitle } from '@/utils/formatTitle';
@@ -56,7 +55,15 @@ export default function PlaceVehicle() {
               }}
             >
               <Stack as="article" gap={4} maxWidth="4xl" width="100%">
-                <VehicleLinkedData placeId={place.placeId} slug={vehicleSlug} />
+                <script
+                  dangerouslySetInnerHTML={{
+                    __html: JSON.stringify(vehicle.linkedData).replace(
+                      /</g,
+                      '\\u003c',
+                    ),
+                  }}
+                  type="application/ld+json"
+                />
 
                 <VehicleHeader vehicle={vehicle} />
                 <VehicleGeneralInformation

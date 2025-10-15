@@ -24,6 +24,7 @@ export type DetailedVehicle = VehiclesPlaceDataVehicle & {
     name: string;
     image: string | null;
   };
+  linkedData: WithContext<Vehicle>;
 };
 
 const imageCache = new Map<string, string | null>();
@@ -79,7 +80,17 @@ export const vehiclesRouter = createTRPCRouter({
       const vehicleName = place.metadata.slugs[input.slug];
       if (!vehicleName) return null; // This validates slug
 
+      const linkedData = vehicles_ld.data[
+        input.placeId as PlaceId
+      ] as unknown as Record<string, WithContext<Vehicle>>;
+
       const vehicle = place.data[vehicleName];
+      const initials = config.data.placeNameInitials[place.metadata.placeName];
+      const relativeImageUrl = getVehicleImage(input.slug);
+      const baseUrl = getBaseUrl();
+      const publicImageUrl =
+        relativeImageUrl?.startsWith('/') &&
+        new URL(relativeImageUrl, baseUrl).toString();
 
       const namedVehicle: DetailedVehicle = {
         ...vehicle,
@@ -88,39 +99,16 @@ export const vehiclesRouter = createTRPCRouter({
           name: vehicleName,
           image: getVehicleImage(input.slug),
         },
+        linkedData: {
+          ...linkedData[vehicleName],
+          url: new URL(
+            `${initials}/vehicles/${input.slug}`,
+            baseUrl,
+          ).toString(),
+          image: publicImageUrl || undefined,
+        },
       };
 
       return namedVehicle;
-    }),
-
-  linkedDataBySlug: publicProcedure
-    .input(
-      z.object({
-        placeId: z.string(),
-        slug: z.string(),
-      }),
-    )
-    .query(({ input }) => {
-      const placeName = config.data.placeNames.find(
-        (name) => config.data.placeIds[name] === input.placeId,
-      );
-      if (!placeName) return null; // This validates placeId
-
-      const vehiclesMetadata = vehicles.data[input.placeId as PlaceId].metadata;
-      const vehicleName = vehiclesMetadata.slugs[input.slug];
-      if (!vehicleName) return null; // This validates slug
-
-      const image = getVehicleImage(input.slug);
-      const baseUrl = getBaseUrl();
-      const initials = config.data.placeNameInitials[placeName];
-      const linkedData = vehicles_ld.data[
-        input.placeId as PlaceId
-      ] as unknown as Record<string, WithContext<Vehicle>>;
-
-      return {
-        ...linkedData[vehicleName],
-        url: new URL(`${initials}/vehicles/${input.slug}`, baseUrl),
-        image: image ? new URL(image, baseUrl) : undefined,
-      };
     }),
 });
