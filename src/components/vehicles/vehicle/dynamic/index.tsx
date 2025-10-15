@@ -55,6 +55,7 @@ export default function VehicleDynamicData({
         base: '1fr',
         xl: '1fr var(--chakra-sizes-xs)',
       }}
+      id="with-alterations"
       width="100%"
     >
       <Stack
