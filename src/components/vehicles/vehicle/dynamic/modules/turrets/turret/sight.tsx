@@ -66,6 +66,7 @@ export default function Sight({
       closedByDefault={sightIndex >= 2}
       collapsible="force"
       innerPadding={4}
+      keepBorder
       title={`Sight ${sightIndex + 1}`}
       withAnchor={`${turretName}-sight-${sightIndex + 1}`}
     >

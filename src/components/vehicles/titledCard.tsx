@@ -26,6 +26,7 @@ export default function TitledCard({
   closedByDefault = false,
   collapsible = false,
   innerPadding = 6,
+  keepBorder,
   title,
   tooltip,
   withAnchor,
@@ -38,6 +39,7 @@ export default function TitledCard({
     tooltip?: string;
     collapsible?: boolean | 'force';
     closedByDefault?: boolean;
+    keepBorder?: boolean;
   }
 >) {
   const [isExpanded, setIsExpanded] = React.useState(!closedByDefault);
@@ -116,15 +118,23 @@ export default function TitledCard({
   return (
     <Box
       backgroundColor="bg.panel"
-      borderLeftWidth={{
-        base: 0,
-        md: '1px',
-      }}
+      borderLeftWidth={
+        keepBorder
+          ? '1px'
+          : {
+              base: 0,
+              md: '1px',
+            }
+      }
       borderRadius="none"
-      borderRightWidth={{
-        base: 0,
-        md: '1px',
-      }}
+      borderRightWidth={
+        keepBorder
+          ? '1px'
+          : {
+              base: 0,
+              md: '1px',
+            }
+      }
       borderYWidth="1px"
       {...props}
     >
