@@ -133,7 +133,7 @@ export default function PlaceVehicle() {
                 />
                 <VehicleDynamicData key={vehicle.info.slug} vehicle={vehicle} />
 
-                <Center>
+                <Center paddingX={4}>
                   <Span color="fg.subtle" fontSize="xs">
                     Spotted inaccurate or incomplete data? Report this in our{' '}
                     <Link
