@@ -23,6 +23,7 @@ export type DetailedVehicle = VehiclesPlaceDataVehicle & {
   info: {
     name: string;
     image: string | null;
+    lastRetrieved: string;
   };
   linkedData: {
     breadcrumbs: WithContext<BreadcrumbList>;
@@ -101,6 +102,7 @@ export const vehiclesRouter = createTRPCRouter({
           ...vehicle.info,
           name: vehicleName,
           image: relativeImageUrl,
+          lastRetrieved: vehicles.metadata.date,
         },
         linkedData: {
           breadcrumbs: {
