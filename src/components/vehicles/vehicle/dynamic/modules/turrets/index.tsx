@@ -1,0 +1,72 @@
+import React from 'react';
+
+import Turret from '@/components/vehicles/vehicle/dynamic/modules/turrets/turret';
+import {
+  getAllModulesOfType,
+  getOneModuleFromReferences,
+} from '@/utils/alterations';
+
+import type { DynamicModuleProps } from '@/components/vehicles/vehicle/dynamic/modules';
+import type { VehicleModuleFromType } from '@/utils/vehicles';
+
+export type TurretWithName = VehicleModuleFromType<'Turret'> & {
+  name: string;
+};
+
+export default function Turrets({ data }: { data: DynamicModuleProps }) {
+  const turrets = getAllModulesOfType(
+    'Turret',
+    data.vehicle,
+    data.enabledAlterations,
+  );
+
+  const turretsWithNames = React.useMemo(() => {
+    return turrets.map((turret) => {
+      let name = 'Turret';
+
+      const control = getOneModuleFromReferences<'Seat'>(
+        turret.data.control,
+        data.vehicle,
+        data.enabledAlterations,
+      );
+      if (control) name = `${control.data.name} turret`;
+
+      return {
+        name,
+        ...turret,
+      };
+    }) as TurretWithName[];
+  }, [turrets, data.vehicle, data.enabledAlterations]);
+
+  const deduplicatedTurretsWithNames = React.useMemo(() => {
+    const totalCounts: Record<string, number> = {};
+    for (const turret of turretsWithNames)
+      totalCounts[turret.name] = (totalCounts[turret.name] ?? 0) + 1;
+
+    const occurrenceIndex: Record<string, number> = {};
+    return turretsWithNames.map((turret) => {
+      const baseName = turret.name;
+      occurrenceIndex[baseName] = (occurrenceIndex[baseName] ?? 0) + 1;
+
+      const numberedName =
+        totalCounts[baseName] > 1
+          ? `${baseName} ${occurrenceIndex[baseName]}`
+          : baseName;
+
+      return {
+        ...turret,
+        name: numberedName,
+      };
+    });
+  }, [turretsWithNames]);
+
+  const sortedTurrets = React.useMemo(() => {
+    return deduplicatedTurretsWithNames.sort((a, b) =>
+      a.name.localeCompare(b.name),
+    );
+  }, [deduplicatedTurretsWithNames]);
+
+  return sortedTurrets.map((turret) => (
+    <Turret key={turret.name} turret={turret} />
+  ));
+}

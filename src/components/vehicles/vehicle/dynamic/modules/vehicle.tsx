@@ -45,12 +45,15 @@ export default function Vehicle({ data }: { data: DynamicModuleProps }) {
     const name = seat.data.name;
 
     if (!seatCount[name]) seatCount[name] = 0;
-    seatCount[seat.data.name] += 1;
+    seatCount[name] += 1;
   }
 
   const seatingCapacity: Table | undefined =
     seats.length > 0
-      ? [['Seating capacity', seats.length], ...Object.entries(seatCount)]
+      ? [
+          ['Seating capacity', String(seats.length)],
+          ...Object.entries(seatCount),
+        ]
       : undefined;
 
   const speedTable: Table | undefined = driveData

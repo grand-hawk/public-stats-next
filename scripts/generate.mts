@@ -2,7 +2,7 @@ import { existsSync } from 'node:fs';
 import { mkdir, rm, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 
-import * as changeCase from 'change-case';
+import { pascalCase } from 'change-case';
 import { compile } from 'json-schema-to-typescript';
 import ky from 'ky';
 import prettier from 'prettier';
@@ -34,15 +34,11 @@ await Promise.all(
 
     const schema = JSON.parse(await schemaResponse.text());
 
-    const compiledTypes = await compile(
-      schema,
-      changeCase.pascalCase(basename),
-      {
-        bannerComment: '',
-        format: false,
-        additionalProperties: false,
-      },
-    );
+    const compiledTypes = await compile(schema, pascalCase(basename), {
+      bannerComment: '',
+      format: false,
+      additionalProperties: false,
+    });
 
     let outputContent = '/* eslint-disable */\n';
     outputContent += '/**\n';

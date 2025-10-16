@@ -159,10 +159,16 @@ export default function VehicleDynamicAddons({
                       closeDelay={50}
                       content="This addon has no data changes"
                       disabled={isDisabled}
+                      lazyMount
                       openDelay={50}
                       positioning={{ placement: 'top' }}
                     >
-                      <Icon color="border.emphasized" height={5} width={5}>
+                      <Icon
+                        aria-label="Addon has no data changes"
+                        color="border.emphasized"
+                        height={5}
+                        width={5}
+                      >
                         <MdInfoOutline />
                       </Icon>
                     </Tooltip>

@@ -23,10 +23,9 @@ export default function VehicleHeader({
 }: {
   vehicle: DetailedVehicle;
 }) {
-  const vehicleDescription = React.useMemo(
-    () => vehicle.info.description.trim(),
-    [vehicle.info.description],
-  );
+  const vehicleDescription = React.useMemo(() => {
+    return vehicle.info.description.trim();
+  }, [vehicle.info.description]);
 
   return (
     <Box

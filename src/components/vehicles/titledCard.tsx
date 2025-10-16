@@ -1,8 +1,8 @@
 import {
   Box,
   Collapsible,
+  Flex,
   Heading,
-  HStack,
   Icon,
   Link,
   Separator,
@@ -23,6 +23,7 @@ import type { PropsWithChildren } from 'react';
 
 export default function TitledCard({
   children,
+  closedByDefault = false,
   collapsible = false,
   innerPadding = 6,
   title,
@@ -35,17 +36,22 @@ export default function TitledCard({
     innerPadding?: BoxProps['padding'];
     withAnchor?: boolean | string;
     tooltip?: string;
-    collapsible?: boolean;
+    collapsible?: boolean | 'force';
+    closedByDefault?: boolean;
   }
 >) {
-  const [isExpanded, setIsExpanded] = React.useState(true);
+  const [isExpanded, setIsExpanded] = React.useState(!closedByDefault);
 
   const titleSlug = React.useMemo(() => {
     return typeof withAnchor === 'string' ? slug(withAnchor) : slug(title);
   }, [withAnchor, title]);
 
   const header = (
-    <HStack justifyContent="space-between">
+    <Box
+      alignItems="center"
+      display="grid"
+      gridTemplateColumns="max-content 1fr"
+    >
       <Heading
         fontWeight="medium"
         id={titleSlug}
@@ -79,16 +85,22 @@ export default function TitledCard({
 
       {collapsible && (
         <Collapsible.Trigger
-          display="var(--columns-if-possible-display-trigger)"
+          display={
+            collapsible !== 'force'
+              ? 'var(--columns-if-possible-display-trigger)'
+              : undefined
+          }
+          height="100%"
           paddingLeft={1}
-          paddingY={1}
         >
-          <Icon marginX={2}>
-            {isExpanded ? <MdExpandLess /> : <MdOutlineExpandMore />}
-          </Icon>
+          <Flex justifyContent="flex-end">
+            <Icon marginX={2}>
+              {isExpanded ? <MdExpandLess /> : <MdOutlineExpandMore />}
+            </Icon>
+          </Flex>
         </Collapsible.Trigger>
       )}
-    </HStack>
+    </Box>
   );
 
   const content = (

@@ -62,6 +62,9 @@ export default function VehicleDynamicData({
         gap={4}
         gridColumn={{ base: 'unset', xl: '2' }}
         gridRow={{ base: 'unset', xl: '1' }}
+        maxHeight="max-content"
+        position={{ base: 'unset', xl: 'sticky' }}
+        top={4}
       >
         {Object.keys(vehicle.alterations.loadouts).length > 0 && (
           <VehicleDynamicLoadouts

@@ -83,6 +83,35 @@ export function getModuleByReference<
   return (modules[reference] as VehicleModuleFromType<T>) || null;
 }
 
+export function getModulesByReferences<
+  T extends VehiclesPlaceDataVehicleModule['type'],
+>(
+  references: VehiclesPlaceDataVehicleModuleReference[],
+  vehicle: VehiclesPlaceDataVehicle,
+  enabledAlterations: Record<string, boolean>,
+): VehicleModuleFromType<T>[] {
+  return references
+    .map((reference) =>
+      getModuleByReference(reference, vehicle, enabledAlterations),
+    )
+    .filter(Boolean) as VehicleModuleFromType<T>[];
+}
+
+export function getOneModuleFromReferences<
+  T extends VehiclesPlaceDataVehicleModule['type'],
+>(
+  references: VehiclesPlaceDataVehicleModuleReference[],
+  vehicle: VehiclesPlaceDataVehicle,
+  enabledAlterations: Record<string, boolean>,
+): VehicleModuleFromType<T> | null {
+  const modules = getModulesByReferences(
+    references,
+    vehicle,
+    enabledAlterations,
+  );
+  return (modules[0] as VehicleModuleFromType<T>) || null;
+}
+
 export function alterationHasChanges(
   alteration: VehiclesPlaceDataVehicleAlteration,
 ): boolean {

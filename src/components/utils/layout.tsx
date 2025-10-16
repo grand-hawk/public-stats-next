@@ -21,7 +21,6 @@ export default function Layout({
         as="main"
         display="grid"
         gridTemplateColumns={{
-          base: 'unset',
           md: 'max-content 1fr',
         }}
         gridTemplateRows={{
