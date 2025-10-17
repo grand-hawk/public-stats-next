@@ -14,14 +14,16 @@ type SightZoom =
 type SightZoomType = NonNullable<SightZoom[keyof SightZoom]>;
 
 function convertSightZoom(zoom: SightZoomType) {
+  const suffix = zoom.fov ? '°' : 'x';
+
   if ('steps' in zoom)
     return zoom.steps
       .sort((a, b) => a - b)
-      .map((step) => `${step}x`)
+      .map((step) => `${step}${suffix}`)
       .join(', ');
 
-  if (zoom.min === zoom.max) return `${zoom.min}x`;
-  return `${zoom.min}x–${zoom.max}x`;
+  if (zoom.min === zoom.max) return `${zoom.min}${suffix}`;
+  return `${zoom.min}${suffix}–${zoom.max}${suffix}`;
 }
 
 export default function Sight({
