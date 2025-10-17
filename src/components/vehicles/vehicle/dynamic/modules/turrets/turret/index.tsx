@@ -2,7 +2,6 @@ import { Flex, FormatNumber, Stack } from '@chakra-ui/react';
 import React from 'react';
 
 import StatsTable from '@/components/statsTables';
-import ColumnsIfPossible from '@/components/vehicles/columnsIfPossible';
 import TitledCard from '@/components/vehicles/titledCard';
 import Sight from '@/components/vehicles/vehicle/dynamic/modules/turrets/turret/sight';
 import VehicleFeature from '@/components/vehicles/vehicle/feature';
@@ -20,13 +19,6 @@ export default function Turret({ turret }: { turret: TurretWithName }) {
     ),
     data.stabilizer && <VehicleFeature key="stab" name="Stabilizer" />,
   ].filter(Boolean);
-
-  // const featuresTable: Table = [
-  //   [null],
-  //   data.lws ? ['Laser warning system', 'Yes'] : undefined,
-  //   data.maws ? ['Missile warning system', 'Yes'] : undefined,
-  //   data.stabilizer ? ['Stabilizer', 'Yes'] : undefined,
-  // ];
 
   const isFixed =
     data.traverse.speed.horizontal === 0 && data.traverse.speed.vertical === 0;
@@ -86,13 +78,9 @@ export default function Turret({ turret }: { turret: TurretWithName }) {
           </Flex>
         )}
 
-        {/* {featuresTable.filter(Boolean).length > 1 && (
-          <StatsTable tables={[featuresTable]} />
-        )} */}
-
         <StatsTable tables={[traversalTable]} />
 
-        <ColumnsIfPossible pretendTwoChildren>
+        <Stack gap={2}>
           {data.sights.map((sight, index) => (
             <Sight
               key={index}
@@ -101,7 +89,7 @@ export default function Turret({ turret }: { turret: TurretWithName }) {
               turretName={turret.name}
             />
           ))}
-        </ColumnsIfPossible>
+        </Stack>
       </Stack>
     </TitledCard>
   );

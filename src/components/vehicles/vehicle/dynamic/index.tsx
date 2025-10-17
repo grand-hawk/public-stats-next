@@ -1,4 +1,4 @@
-import { Box, Stack } from '@chakra-ui/react';
+import { Box, Center, ClientOnly, Span, Stack } from '@chakra-ui/react';
 import React from 'react';
 
 import VehicleDynamicAddons from '@/components/vehicles/vehicle/dynamic/addons';
@@ -47,15 +47,17 @@ export default function VehicleDynamicData({
     />
   );
 
-  return hasAlterations ? (
+  return (
     <Box
       display="grid"
-      gap={4}
+      gap={{
+        base: hasAlterations ? 4 : 0,
+        xl: 4,
+      }}
       gridTemplateColumns={{
         base: '1fr',
         xl: '1fr var(--chakra-sizes-xs)',
       }}
-      id="with-alterations"
       width="100%"
     >
       <Stack
@@ -82,11 +84,22 @@ export default function VehicleDynamicData({
             vehicle={vehicle}
           />
         )}
+
+        <Center hideBelow="xl" paddingX={4}>
+          <ClientOnly>
+            <Span
+              color="fg.subtle"
+              fontSize="xs"
+              title={new Date(vehicle.info.lastRetrieved).toLocaleString()}
+            >
+              Data as of{' '}
+              {new Date(vehicle.info.lastRetrieved).toLocaleDateString()}
+            </Span>
+          </ClientOnly>
+        </Center>
       </Stack>
 
       <Stack gap={4}>{vehicleDynamicModules}</Stack>
     </Box>
-  ) : (
-    vehicleDynamicModules
   );
 }

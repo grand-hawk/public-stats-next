@@ -65,7 +65,7 @@ export default function Sight({
   return (
     <TitledCard
       background="bg.muted"
-      closedByDefault={sightIndex >= 2}
+      closedByDefault={sightIndex !== 0}
       collapsible="force"
       innerPadding={4}
       keepBorder

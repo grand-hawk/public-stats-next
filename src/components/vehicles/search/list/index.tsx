@@ -6,7 +6,6 @@ import {
   VehicleSearchListDividerItem,
   VehicleSearchListVehicleItem,
 } from '@/components/vehicles/search/list/item';
-import { usePersistStoreIsHydrated } from '@/hooks/usePersistStoreIsHydrated';
 import { usePlace } from '@/hooks/usePlace';
 import { useRouterQuery } from '@/hooks/useRouterQuery';
 import { useVehicleSearchStore } from '@/stores/vehicles/search';
@@ -34,9 +33,6 @@ export default function VehicleSearchList() {
   const query = useVehicleSearchStore((s) => s.query);
   const groupByTeam = useVehicleSearchStore((s) => s.groupByTeam);
   const groupByRole = useVehicleSearchStore((s) => s.groupByRole);
-  const vehicleSearchStoreIsHydrated = usePersistStoreIsHydrated(
-    useVehicleSearchStore,
-  );
 
   const [vehicleList] = trpc.vehicles.list.useSuspenseQuery({
     placeId: place.placeId,
@@ -143,34 +139,37 @@ export default function VehicleSearchList() {
     return result;
   }, [groupByTeam, groupByRole, filteredVehicleList]);
 
+  const initialOffset = React.useMemo(() => {
+    if (!vehicleSlug) return 0;
+
+    const index = list.findIndex(
+      (item) => item.type === 'vehicle' && item.vehicle.slug === vehicleSlug,
+    );
+    if (index !== -1) return index * 35;
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   const parentRef = React.useRef<HTMLDivElement>(null);
   const rowVirtualizer = useVirtualizer({
     count: list.length,
     getScrollElement: () => parentRef.current,
     estimateSize: () => 35,
     overscan: 5,
+    initialRect: {
+      height: 25 * 35,
+      width: 0,
+    },
+    initialOffset,
   });
 
-  // Scroll to the vehicle item on page load
-  React.useEffect(() => {
-    if (!vehicleSlug || !vehicleSearchStoreIsHydrated) return;
-
-    const index = list.findIndex(
-      (item) => item.type === 'vehicle' && item.vehicle.slug === vehicleSlug,
-    );
-    if (index !== -1)
-      rowVirtualizer.scrollToOffset(index * 35 + 112, {
-        align: 'center',
-        // @ts-expect-error Valid value
-        behavior: 'instant',
-      });
-
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [vehicleSearchStoreIsHydrated]);
-
   return (
-    <Box ref={parentRef} height="100%" overflow="auto">
-      <Box height={`${rowVirtualizer.getTotalSize()}px`} position="relative">
+    <Box ref={parentRef} height="100%" overflow="auto" scrollBehavior="unset">
+      <Box
+        height={`${rowVirtualizer.getTotalSize()}px`}
+        position="relative"
+        scrollBehavior="revert"
+      >
         {rowVirtualizer.getVirtualItems().map((virtualItem) => {
           const listItem = list[virtualItem.index];
 

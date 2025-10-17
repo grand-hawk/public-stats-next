@@ -2,7 +2,6 @@ import { FormatNumber } from '@chakra-ui/react';
 import React from 'react';
 
 import StatsTable from '@/components/statsTables';
-import ColumnsIfPossible from '@/components/vehicles/columnsIfPossible';
 import TitledCard from '@/components/vehicles/titledCard';
 import { getAllModulesOfType, getOneModuleOfType } from '@/utils/alterations';
 
@@ -158,7 +157,7 @@ export default function Vehicle({ data }: { data: DynamicModuleProps }) {
     : undefined;
 
   return (
-    <ColumnsIfPossible>
+    <>
       <TitledCard
         as="section"
         collapsible
@@ -182,6 +181,6 @@ export default function Vehicle({ data }: { data: DynamicModuleProps }) {
           <StatsTable tables={[engineTable, transmissionTable]} />
         </TitledCard>
       )}
-    </ColumnsIfPossible>
+    </>
   );
 }
