@@ -24,7 +24,9 @@ function convertSightZoom(zoom: SightZoomType) {
       .join(', ');
 
   if (zoom.min === zoom.max) return `${zoom.min}${suffix}`;
-  return `${zoom.min}${suffix}–${zoom.max}${suffix}`;
+  return zoom.fov
+    ? `${zoom.max}${suffix}–${zoom.min}${suffix}`
+    : `${zoom.min}${suffix}–${zoom.max}${suffix}`;
 }
 
 export default function Sight({
