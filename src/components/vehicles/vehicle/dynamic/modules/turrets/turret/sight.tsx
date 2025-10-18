@@ -1,4 +1,5 @@
 import { Flex, Stack } from '@chakra-ui/react';
+import { sentenceCase } from 'change-case';
 import React from 'react';
 
 import StatsTable from '@/components/statsTables';
@@ -18,7 +19,7 @@ function convertSightZoom(zoom: SightZoomType) {
 
   if ('steps' in zoom)
     return zoom.steps
-      .sort((a, b) => a - b)
+      .sort((a, b) => (zoom.fov ? b - a : a - b))
       .map((step) => `${step}${suffix}`)
       .join(', ');
 
@@ -69,7 +70,7 @@ export default function Sight({
       collapsible="force"
       innerPadding={4}
       keepBorder
-      title={`Sight ${sightIndex + 1}`}
+      title={sight.name ? sentenceCase(sight.name) : `Sight ${sightIndex + 1}`}
       withAnchor={`${turretName}-sight-${sightIndex + 1}`}
     >
       <Stack gap={4}>
