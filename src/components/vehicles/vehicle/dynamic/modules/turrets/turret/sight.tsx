@@ -1,12 +1,12 @@
 import { Flex, Stack } from '@chakra-ui/react';
-import { sentenceCase } from 'change-case';
 import React from 'react';
 
 import StatsTable from '@/components/statsTables';
 import TitledCard from '@/components/vehicles/titledCard';
 import VehicleFeature from '@/components/vehicles/vehicle/feature';
+import { betterSentenceCase } from '@/utils/betterSentenceCase';
 
-import type { Table } from '@/components/statsTables';
+import type { Row, Table } from '@/components/statsTables';
 import type { TurretWithName } from '@/components/vehicles/vehicle/dynamic/modules/turrets';
 import type { VehicleModuleFromType } from '@/utils/vehicles';
 
@@ -50,6 +50,18 @@ export default function Sight({
     ? convertSightZoom(sight.zoom.thermal)
     : undefined;
 
+  const isSameZoom = baseZoom === thermalZoom;
+
+  const zoomRows: (Row | undefined)[] =
+    (isSameZoom && !sight.thermal?.forced) || (sight.thermal && !thermalZoom)
+      ? [['Day/thermal zoom', baseZoom]]
+      : sight.thermal?.forced && thermalZoom
+        ? [['Thermal zoom', thermalZoom]]
+        : [
+            baseZoom ? ['Zoom', baseZoom] : undefined,
+            thermalZoom ? ['Thermal zoom', thermalZoom] : undefined,
+          ];
+
   const sightTable: Table = [
     [null],
     ['Rangefinder', sight.rangefinder],
@@ -59,10 +71,7 @@ export default function Sight({
           `${sight.thermal.type}${sight.thermal.forced ? ' (forced)' : ''}`,
         ]
       : undefined,
-    baseZoom && !sight.thermal?.forced ? ['Zoom', baseZoom] : undefined,
-    thermalZoom && thermalZoom !== baseZoom
-      ? ['Thermal zoom', thermalZoom]
-      : undefined,
+    ...zoomRows,
   ];
 
   return (
@@ -72,7 +81,9 @@ export default function Sight({
       collapsible="force"
       innerPadding={4}
       keepBorder
-      title={sight.name ? sentenceCase(sight.name) : `Sight ${sightIndex + 1}`}
+      title={
+        sight.name ? betterSentenceCase(sight.name) : `Sight ${sightIndex + 1}`
+      }
       withAnchor={`${turretName}-sight-${sightIndex + 1}`}
     >
       <Stack gap={4}>

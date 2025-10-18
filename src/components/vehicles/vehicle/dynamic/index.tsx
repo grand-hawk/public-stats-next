@@ -1,4 +1,4 @@
-import { Box, Center, ClientOnly, Span, Stack } from '@chakra-ui/react';
+import { Box, Center, Span, Stack } from '@chakra-ui/react';
 import React from 'react';
 
 import VehicleDynamicAddons from '@/components/vehicles/vehicle/dynamic/addons';
@@ -86,16 +86,15 @@ export default function VehicleDynamicData({
         )}
 
         <Center hideBelow="xl" paddingX={4}>
-          <ClientOnly>
-            <Span
-              color="fg.subtle"
-              fontSize="xs"
-              title={new Date(vehicle.info.lastRetrieved).toLocaleString()}
-            >
-              Data as of{' '}
-              {new Date(vehicle.info.lastRetrieved).toLocaleDateString()}
-            </Span>
-          </ClientOnly>
+          <Span
+            color="fg.subtle"
+            fontSize="xs"
+            suppressHydrationWarning
+            title={new Date(vehicle.info.lastRetrieved).toLocaleString()}
+          >
+            Data as of{' '}
+            {new Date(vehicle.info.lastRetrieved).toLocaleDateString()}
+          </Span>
         </Center>
       </Stack>
 
