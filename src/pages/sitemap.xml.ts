@@ -62,7 +62,11 @@ export function getServerSideProps({
 
   const xml = doc.end();
 
-  res.setHeader('Content-Type', 'application/xml; charset=utf-8');
+  res.setHeader('content-type', 'application/xml; charset=utf-8');
+  res.setHeader(
+    'cache-control',
+    'public, max-age=604800, stale-while-revalidate=86400',
+  );
   res.write(xml);
   res.end();
 
