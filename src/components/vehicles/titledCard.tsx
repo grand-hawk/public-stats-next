@@ -87,6 +87,7 @@ export default function TitledCard({
 
       {collapsible && (
         <Collapsible.Trigger
+          aria-label={isExpanded ? 'Collapse card' : 'Expand card'}
           display={
             collapsible !== 'force'
               ? 'var(--columns-if-possible-display-trigger)'
