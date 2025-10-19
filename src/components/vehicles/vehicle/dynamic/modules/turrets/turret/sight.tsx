@@ -30,7 +30,6 @@ function convertSightZoom(zoom: SightZoomType) {
 }
 
 export default function Sight({
-  onlySight,
   sight,
   sightIndex,
   turretName,
@@ -38,7 +37,6 @@ export default function Sight({
   turretName: string;
   sight: TurretWithName['data']['sights'][number];
   sightIndex: number;
-  onlySight?: boolean;
 }) {
   const features = [
     sight.fcs && (
