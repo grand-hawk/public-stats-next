@@ -84,6 +84,7 @@ export default function Turret({ turret }: { turret: TurretWithName }) {
           {data.sights.map((sight, index) => (
             <Sight
               key={index}
+              onlySight={data.sights.length === 1}
               sight={sight}
               sightIndex={index}
               turretName={turret.name}

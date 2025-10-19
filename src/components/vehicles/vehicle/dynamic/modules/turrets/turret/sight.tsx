@@ -30,6 +30,7 @@ function convertSightZoom(zoom: SightZoomType) {
 }
 
 export default function Sight({
+  onlySight,
   sight,
   sightIndex,
   turretName,
@@ -37,6 +38,7 @@ export default function Sight({
   turretName: string;
   sight: TurretWithName['data']['sights'][number];
   sightIndex: number;
+  onlySight?: boolean;
 }) {
   const features = [
     sight.fcs && <VehicleFeature key="fcs" name="Fire control system" />,
@@ -82,7 +84,11 @@ export default function Sight({
       innerPadding={4}
       keepBorder
       title={
-        sight.name ? betterSentenceCase(sight.name) : `Sight ${sightIndex + 1}`
+        sight.name
+          ? betterSentenceCase(sight.name)
+          : onlySight
+            ? 'Sight'
+            : `Sight ${sightIndex + 1}`
       }
       withAnchor={`${turretName}-sight-${sightIndex + 1}`}
     >
