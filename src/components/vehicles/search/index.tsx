@@ -11,9 +11,10 @@ import { useRouterQuery } from '@/hooks/useRouterQuery';
 import { useVehicleSidebarStore } from '@/stores/vehicles/sidebar';
 
 export default function VehicleSearch() {
-  const vehicleSlug = useRouterQuery('vehicle');
+  const vehicleQuery = useRouterQuery('vehicle');
   const isOpen = useVehicleSidebarStore((s) => s.open);
-  const isSearching = !vehicleSlug;
+
+  const isSearching = !vehicleQuery;
 
   return (
     <Box

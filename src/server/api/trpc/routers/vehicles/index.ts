@@ -5,10 +5,12 @@ import z from 'zod';
 import { createTRPCRouter, publicProcedure } from '@/server/api/trpc/context';
 import { getBaseUrl } from '@/utils/trpc';
 import config from '@generated/config';
+import loadouts from '@generated/loadouts';
 import vehicles from '@generated/vehicles';
 import vehicles_ld from '@generated/vehicles_ld';
 
 import type { PlaceId } from '@generated/config';
+import type { LoadoutsPlaceDataLoadoutVehicle } from '@generated/loadouts';
 import type { VehiclesPlaceDataVehicle } from '@generated/vehicles';
 import type { BreadcrumbList, Vehicle, WithContext } from 'schema-dts';
 
@@ -19,11 +21,17 @@ export interface ListVehicle {
   role: string;
 }
 
+export type VehicleAvailability = Record<
+  string,
+  LoadoutsPlaceDataLoadoutVehicle
+>;
+
 export type DetailedVehicle = VehiclesPlaceDataVehicle & {
   info: {
     name: string;
     image: string | null;
     lastRetrieved: string;
+    availability: VehicleAvailability;
   };
   linkedData: {
     breadcrumbs: WithContext<BreadcrumbList>;
@@ -78,23 +86,31 @@ export const vehiclesRouter = createTRPCRouter({
       }),
     )
     .query(({ input }) => {
-      const place = vehicles.data[input.placeId as PlaceId];
-      if (!place) return null; // This validates placeId
+      const vehiclesPlace = vehicles.data[input.placeId as PlaceId];
+      if (!vehiclesPlace) return null; // This validates placeId
 
-      const vehicleName = place.metadata.slugs[input.slug];
+      const vehicleName = vehiclesPlace.metadata.slugs[input.slug];
       if (!vehicleName) return null; // This validates slug
 
+      const loadoutsPlace = loadouts.data[input.placeId as PlaceId];
       const linkedData = vehicles_ld.data[
         input.placeId as PlaceId
       ] as unknown as Record<string, WithContext<Vehicle>>;
 
-      const vehicle = place.data[vehicleName];
-      const initials = config.data.placeNameInitials[place.metadata.placeName];
+      const vehicle = vehiclesPlace.data[vehicleName];
+      const initials =
+        config.data.placeNameInitials[vehiclesPlace.metadata.placeName];
       const relativeImageUrl = getVehicleImage(input.slug);
       const baseUrl = getBaseUrl();
       const publicImageUrl =
         relativeImageUrl?.startsWith('/') &&
         new URL(relativeImageUrl, baseUrl).toString();
+
+      const availability: VehicleAvailability = {};
+      for (const [loadoutName, loadout] of Object.entries(loadoutsPlace.data)) {
+        if (vehicleName in loadout.vehicles)
+          availability[loadoutName] = loadout.vehicles[vehicleName];
+      }
 
       const namedVehicle: DetailedVehicle = {
         ...vehicle,
@@ -103,6 +119,7 @@ export const vehiclesRouter = createTRPCRouter({
           name: vehicleName,
           image: relativeImageUrl,
           lastRetrieved: vehicles.metadata.date,
+          availability,
         },
         linkedData: {
           breadcrumbs: {

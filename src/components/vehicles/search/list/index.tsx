@@ -1,6 +1,7 @@
 import { Box } from '@chakra-ui/react';
 import { useVirtualizer } from '@tanstack/react-virtual';
 import React from 'react';
+import slug from 'slug';
 
 import {
   VehicleSearchListDividerItem,
@@ -29,7 +30,8 @@ type ListItem = DividerListItem | VehicleListItem;
 
 export default function VehicleSearchList() {
   const place = usePlace()!;
-  const vehicleSlug = useRouterQuery('vehicle');
+  const vehicleQuery = useRouterQuery('vehicle');
+  const vehicleSlug = vehicleQuery ? slug(vehicleQuery) : null;
   const query = useVehicleSearchStore((s) => s.query);
   const groupByTeam = useVehicleSearchStore((s) => s.groupByTeam);
   const groupByRole = useVehicleSearchStore((s) => s.groupByRole);

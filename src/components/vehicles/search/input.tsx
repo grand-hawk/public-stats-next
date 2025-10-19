@@ -14,7 +14,7 @@ export default function VehicleSearchInput({
 }: {
   noButton?: boolean;
 }) {
-  const vehicleSlug = useRouterQuery('vehicle');
+  const vehicleQuery = useRouterQuery('vehicle');
   const query = useVehicleSearchStore((s) => s.query);
   const setQuery = useVehicleSearchStore((s) => s.setQuery);
   const isOpen = useVehicleSidebarStore((s) => s.open);
@@ -25,7 +25,7 @@ export default function VehicleSearchInput({
     if (isOpen) setOpen(false);
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [vehicleSlug]);
+  }, [vehicleQuery]);
 
   return (
     <Group gap={0} height={VEHICLE_SEARCH_INPUT_HEIGHT} width="100%">

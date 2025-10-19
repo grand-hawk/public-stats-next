@@ -1,7 +1,9 @@
 import { Center, Flex, Link, Span, Stack } from '@chakra-ui/react';
 import Head from 'next/head';
+import { useRouter } from 'next/router';
 import React from 'react';
 import { GrDocumentMissing } from 'react-icons/gr';
+import slug from 'slug';
 
 import { EmptyState } from '@/components/ui/empty-state';
 import Layout from '@/components/utils/layout';
@@ -16,20 +18,31 @@ import { formatTitle } from '@/utils/formatTitle';
 import { trpc } from '@/utils/trpc';
 
 export default function PlaceVehicle() {
-  const vehicleSlug = useRouterQuery('vehicle')!.toLowerCase();
+  const router = useRouter();
+  const vehicleQuery = useRouterQuery('vehicle')!;
+  const vehicleSlug = slug(vehicleQuery);
   const place = usePlace()!;
 
   const [vehicle] = trpc.vehicles.bySlug.useSuspenseQuery({
     placeId: place.placeId,
     slug: vehicleSlug,
   });
-  const [vehicleAvailability] =
-    trpc.loadouts.vehicleAvailability.useSuspenseQuery({
-      placeId: place.placeId,
-      slug: vehicleSlug,
-    });
   const vehicleIsAvailable =
-    !!vehicleAvailability && Object.keys(vehicleAvailability).length > 0;
+    !!vehicle?.info?.availability &&
+    Object.keys(vehicle.info.availability).length > 0;
+
+  React.useEffect(() => {
+    if (!vehicle) return;
+
+    if (vehicle.info.slug !== vehicleQuery)
+      router.replace({
+        pathname: router.pathname,
+        query: {
+          ...router.query,
+          vehicle: vehicle.info.slug,
+        },
+      });
+  }, [router, vehicleQuery, vehicle]);
 
   return (
     <>
@@ -128,7 +141,7 @@ export default function PlaceVehicle() {
                   vehicle={vehicle}
                 />
                 <VehicleAvailability
-                  availability={vehicleAvailability!}
+                  availability={vehicle.info.availability}
                   isAvailable={vehicleIsAvailable}
                 />
                 <VehicleDynamicData key={vehicle.info.slug} vehicle={vehicle} />

@@ -13,6 +13,16 @@ const nextConfig: NextConfig = {
   experimental: {
     optimizePackageImports: ['@chakra-ui/react'],
   },
+
+  async redirects() {
+    return [
+      {
+        source: '/vehicles/:slug',
+        destination: `/mtc/vehicles/:slug`,
+        permanent: true,
+      },
+    ];
+  },
 };
 
 const withBundleAnalyzer = bundleAnalyzer({
