@@ -2,7 +2,7 @@ import { Flex, Stack } from '@chakra-ui/react';
 import React from 'react';
 
 import StatsTable from '@/components/statsTables';
-import TitledCard from '@/components/vehicles/titledCard';
+import InlineCard from '@/components/vehicles/inlineCard';
 import VehicleFeature from '@/components/vehicles/vehicle/feature';
 import { betterSentenceCase } from '@/utils/betterSentenceCase';
 
@@ -79,12 +79,7 @@ export default function Sight({
   ];
 
   return (
-    <TitledCard
-      background="bg.muted"
-      closedByDefault={sightIndex !== 0}
-      collapsible="force"
-      innerPadding={4}
-      keepBorder
+    <InlineCard
       title={
         sight.name
           ? betterSentenceCase(sight.name)
@@ -103,6 +98,6 @@ export default function Sight({
 
         <StatsTable tables={[sightTable]} />
       </Stack>
-    </TitledCard>
+    </InlineCard>
   );
 }
