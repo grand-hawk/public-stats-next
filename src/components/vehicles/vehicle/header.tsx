@@ -23,10 +23,6 @@ export default function VehicleHeader({
 }: {
   vehicle: DetailedVehicle;
 }) {
-  const vehicleDescription = React.useMemo(() => {
-    return vehicle.info.description.trim();
-  }, [vehicle.info.description]);
-
   return (
     <Box
       borderBottomWidth="1px"
@@ -136,11 +132,14 @@ export default function VehicleHeader({
           </Span>
         </div>
 
-        {vehicleDescription !== '' && (
-          <Quote aria-label="Description" fontSize="sm" fontWeight="light">
-            {vehicleDescription}
-          </Quote>
-        )}
+        <Quote
+          aria-label="Description"
+          fontSize="sm"
+          fontWeight="light"
+          id="vehicle-page-description"
+        >
+          {vehicle.info.description}
+        </Quote>
       </Stack>
     </Box>
   );

@@ -129,6 +129,7 @@ export default function PlaceVehicle() {
               }}
             >
               <Stack
+                aria-describedby="vehicle-page-description"
                 aria-labelledby="vehicle-page-title"
                 as="article"
                 gap={4}
