@@ -17,7 +17,7 @@ export function getServerSideProps({
     `User-agent: *\n` +
       `Allow: /\n` +
       `\n` +
-      new URL('/sitemap.xml', baseUrl).toString(),
+      `Sitemap: ${new URL('/sitemap.xml', baseUrl).toString()}`,
   );
 
   res.end();
