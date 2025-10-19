@@ -13,9 +13,15 @@ export default function Turret({ turret }: { turret: TurretWithName }) {
   const data = turret.data;
 
   const features = [
-    data.lws && <VehicleFeature key="lws" name="Laser warning system" />,
+    data.lws && (
+      <VehicleFeature key="lws" description="Laser warning system" name="LWS" />
+    ),
     data.maws && (
-      <VehicleFeature key="maws" name="Missile approach warning system" />
+      <VehicleFeature
+        key="maws"
+        description="Missile approach warning system"
+        name="MAWS"
+      />
     ),
     data.stabilizer && <VehicleFeature key="stab" name="Stabilizer" />,
   ].filter(Boolean);

@@ -41,7 +41,9 @@ export default function Sight({
   onlySight?: boolean;
 }) {
   const features = [
-    sight.fcs && <VehicleFeature key="fcs" name="Fire control system" />,
+    sight.fcs && (
+      <VehicleFeature key="fcs" description="Fire control system" name="FCS" />
+    ),
     sight.lead && <VehicleFeature key="lead" name="Lead" />,
   ].filter(Boolean);
 
