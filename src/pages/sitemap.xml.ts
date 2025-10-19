@@ -67,7 +67,9 @@ export function getServerSideProps({
     'cache-control',
     'public, max-age=604800, stale-while-revalidate=86400',
   );
+
   res.write(xml);
+
   res.end();
 
   return { props: {} };
