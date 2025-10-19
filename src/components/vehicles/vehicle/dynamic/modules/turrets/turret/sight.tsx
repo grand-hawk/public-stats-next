@@ -81,11 +81,7 @@ export default function Sight({
   return (
     <InlineCard
       title={
-        sight.name
-          ? betterSentenceCase(sight.name)
-          : onlySight
-            ? 'Sight'
-            : `Sight ${sightIndex + 1}`
+        sight.name ? betterSentenceCase(sight.name) : `Sight ${sightIndex + 1}`
       }
       withAnchor={`${turretName}-sight-${sightIndex + 1}`}
     >
