@@ -70,7 +70,13 @@ export default function Turret({ turret }: { turret: TurretWithName }) {
   ];
 
   return (
-    <TitledCard collapsible innerPadding={4} title={turret.name} withAnchor>
+    <TitledCard
+      as="section"
+      collapsible
+      innerPadding={4}
+      title={turret.name}
+      withAnchor
+    >
       <Stack gap={4}>
         {features.length > 0 && (
           <Flex flexWrap="wrap" gap={2}>

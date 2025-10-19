@@ -107,8 +107,8 @@ export default function VehicleDynamicAddons({
   ]);
 
   return (
-    <TitledCard title="Addons" withAnchor="addon-config">
-      <Stack as="section" gap={4}>
+    <TitledCard as="section" title="Addons" withAnchor="addon-config">
+      <Stack gap={4}>
         {Object.entries(vehicle.alterations.addons)
           .sort((a, b) => {
             const aHasChanges = alterationHasChanges(a[1]);
