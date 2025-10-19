@@ -6,7 +6,7 @@ import slug from 'slug';
 import TitledCard from '@/components/vehicles/titledCard';
 import { usePlaceInitials } from '@/hooks/usePlaceInitials';
 
-import type { VehicleAvailability } from '@/server/api/trpc/routers/loadouts';
+import type { VehicleAvailability } from '@/server/api/trpc/routers/vehicles';
 
 export default function VehicleAvailability({
   availability,
