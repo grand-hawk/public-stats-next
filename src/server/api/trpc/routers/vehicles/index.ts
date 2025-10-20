@@ -65,10 +65,10 @@ export const vehiclesRouter = createTRPCRouter({
       }),
     )
     .query(({ input }) => {
-      const data = vehicles.data[input.placeId as PlaceId]?.data;
-      if (!data) return []; // This validates placeId
+      const vehiclesData = vehicles.data[input.placeId as PlaceId]?.data;
+      if (!vehiclesData) return []; // This validates placeId
 
-      return Object.entries(data)
+      return Object.entries(vehiclesData)
         .map(([name, data]) => ({
           name,
           slug: data.info.slug,

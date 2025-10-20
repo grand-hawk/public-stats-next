@@ -9,6 +9,9 @@ export default function StatsTable({
 }: {
   tables: Array<Table | undefined>;
 }) {
+  const filteredTables = tables.filter(Boolean) as Table[];
+
+  if (filteredTables.length === 0) return null;
   return (
     <Table.Root
       background="none"
@@ -27,7 +30,7 @@ export default function StatsTable({
       size="sm"
     >
       <Table.Body>
-        {(tables.filter(Boolean) as Table[]).map((table, tableIndex) =>
+        {filteredTables.map((table, tableIndex) =>
           (table.filter(Boolean) as Row[]).map((row, rowIndex) =>
             row[0] ? (
               <Table.Row key={`${tableIndex}-${row[0]}`}>

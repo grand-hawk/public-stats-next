@@ -3,34 +3,46 @@ import React from 'react';
 
 import StatsTable from '@/components/statsTables';
 import TitledCard from '@/components/vehicles/titledCard';
-import Sight from '@/components/vehicles/vehicle/dynamic/modules/turrets/turret/sight';
+import Sights from '@/components/vehicles/vehicle/dynamic/modules/turrets/turret/sights';
+import Weapons from '@/components/vehicles/vehicle/dynamic/modules/turrets/turret/weapons';
 import VehicleFeature from '@/components/vehicles/vehicle/feature';
+import { useDynamicData } from '@/hooks/contexts/dynamicData';
+import { getModulesByReferences } from '@/utils/alterations';
 
 import type { Row, Table } from '@/components/statsTables';
 import type { TurretWithName } from '@/components/vehicles/vehicle/dynamic/modules/turrets';
 
 export default function Turret({ turret }: { turret: TurretWithName }) {
-  const data = turret.data;
+  const { assembledModules } = useDynamicData();
+
+  const weapons = getModulesByReferences<'Weapon'>(
+    turret.data.weapons,
+    assembledModules,
+  );
 
   const features = [
-    data.lws && (
+    turret.data.lws && (
       <VehicleFeature key="lws" description="Laser warning system" name="LWS" />
     ),
-    data.maws && (
+    turret.data.maws && (
       <VehicleFeature
         key="maws"
         description="Missile approach warning system"
         name="MAWS"
       />
     ),
-    data.stabilizer && <VehicleFeature key="stab" name="Stabilizer" />,
+    turret.data.stabilizer && <VehicleFeature key="stab" name="Stabilizer" />,
+    weapons.some((weapon) => weapon.data.name === 'Smoke Grenade') && (
+      <VehicleFeature key="smoke" name="Smoke grenades" />
+    ),
   ].filter(Boolean);
 
   const isFixed =
-    data.traverse.speed.horizontal === 0 && data.traverse.speed.vertical === 0;
+    turret.data.traverse.speed.horizontal === 0 &&
+    turret.data.traverse.speed.vertical === 0;
   const traversalTable: Table = [
     ['Traversal', null],
-    data.traverse.mouseAim ? ['Mouse aim', 'Yes'] : undefined,
+    turret.data.traverse.mouseAim ? ['Mouse aim', 'Yes'] : undefined,
     ...((isFixed
       ? [['Fixed', 'Yes']]
       : [
@@ -40,7 +52,7 @@ export default function Turret({ turret }: { turret: TurretWithName }) {
               <FormatNumber
                 style="unit"
                 unit="degree-per-second"
-                value={data.traverse.speed.horizontal}
+                value={turret.data.traverse.speed.horizontal}
               />
             </>,
           ],
@@ -50,7 +62,7 @@ export default function Turret({ turret }: { turret: TurretWithName }) {
               <FormatNumber
                 style="unit"
                 unit="degree-per-second"
-                value={data.traverse.speed.vertical}
+                value={turret.data.traverse.speed.vertical}
               />
             </>,
           ],
@@ -62,14 +74,14 @@ export default function Turret({ turret }: { turret: TurretWithName }) {
           style="unit"
           unit="degree"
           unitDisplay="narrow"
-          value={data.traverse.vertical.min}
+          value={turret.data.traverse.vertical.min}
         />
         –
         <FormatNumber
           style="unit"
           unit="degree"
           unitDisplay="narrow"
-          value={data.traverse.vertical.max}
+          value={turret.data.traverse.vertical.max}
         />
       </>,
     ],
@@ -92,24 +104,14 @@ export default function Turret({ turret }: { turret: TurretWithName }) {
 
         <StatsTable tables={[traversalTable]} />
 
-        <TitledCard
-          backgroundColor="bg.muted"
-          collapsible
-          innerPadding={2}
-          title="Sights"
-          withAnchor={`${turret.name}-sights`}
-        >
-          <Stack gap={4}>
-            {data.sights.map((sight, index) => (
-              <Sight
-                key={index}
-                sight={sight}
-                sightIndex={index}
-                turretName={turret.name}
-              />
-            ))}
-          </Stack>
-        </TitledCard>
+        <Sights turret={turret} />
+
+        <Weapons
+          turret={turret}
+          weapons={weapons
+            .filter((weapon) => weapon.data.name !== 'Smoke Grenade')
+            .sort((a, b) => a.data.orderIndex - b.data.orderIndex)}
+        />
       </Stack>
     </TitledCard>
   );

@@ -6,25 +6,26 @@ import type { IconButtonProps } from '@chakra-ui/react';
 import type { LinkProps } from 'next/link';
 import type { PropsWithChildren } from 'react';
 
+export interface IconLinkProps extends PropsWithChildren<IconButtonProps> {
+  href: string;
+  linkProps?: Omit<LinkProps, 'href'> &
+    React.AnchorHTMLAttributes<HTMLAnchorElement>;
+}
+
 export default function IconLink({
   children,
   disabled,
   href,
   linkProps = {},
   ...props
-}: PropsWithChildren<
-  IconButtonProps & {
-    href: string;
-    linkProps?: Omit<LinkProps, 'href'> &
-      React.AnchorHTMLAttributes<HTMLAnchorElement>;
-  }
->) {
+}: IconLinkProps) {
   return (
     <IconButton
       asChild
       borderRadius="none"
       disabled={disabled}
       height={10}
+      minWidth="unset"
       width={10}
       {...props}
     >

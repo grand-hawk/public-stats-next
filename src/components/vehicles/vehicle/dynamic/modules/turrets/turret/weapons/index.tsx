@@ -1,0 +1,38 @@
+import { Stack } from '@chakra-ui/react';
+import React from 'react';
+
+import TitledCard from '@/components/vehicles/titledCard';
+import Weapon from '@/components/vehicles/vehicle/dynamic/modules/turrets/turret/weapons/weapon';
+
+import type { TurretWithName } from '@/components/vehicles/vehicle/dynamic/modules/turrets';
+import type { VehicleModuleFromType } from '@/utils/vehicles';
+
+export default function Weapons({
+  turret,
+  weapons,
+}: {
+  turret: TurretWithName;
+  weapons: VehicleModuleFromType<'Weapon'>[];
+}) {
+  if (weapons.length === 0) return null;
+  return (
+    <TitledCard
+      as="section"
+      backgroundColor="bg.muted"
+      collapsible
+      innerPadding={2}
+      title="Weapons"
+      withAnchor={`${turret.name}-weapons`}
+    >
+      <Stack gap={4}>
+        {weapons.map((weapon) => (
+          <Weapon
+            key={weapon.data.name}
+            turretName={turret.name}
+            weapon={weapon}
+          />
+        ))}
+      </Stack>
+    </TitledCard>
+  );
+}
