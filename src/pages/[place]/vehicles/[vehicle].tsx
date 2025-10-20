@@ -63,7 +63,7 @@ export default function PlaceVehicle() {
           <meta
             content={[
               ...(
-                (vehicle.linkedData.vehicle.keywords as string | undefined) ||
+                (vehicle.linkedData.vehicle?.keywords as string | undefined) ||
                 ''
               ).split(','),
               vehicle.info.name,
