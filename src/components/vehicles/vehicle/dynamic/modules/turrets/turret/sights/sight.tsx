@@ -1,4 +1,4 @@
-import { Flex, Stack } from '@chakra-ui/react';
+import { Flex, FormatNumber, Stack } from '@chakra-ui/react';
 import React from 'react';
 
 import InfoTooltip from '@/components/infoTooltip';
@@ -87,6 +87,46 @@ export default function Sight({
             thermalZoom ? ['Thermal zoom', thermalZoom] : undefined,
           ];
 
+  const baseAspectRatio = sight.zoom.base?.aspectRatio;
+  const thermalAspectRatio = sight.zoom.thermal?.aspectRatio;
+
+  const isSameAspectRatio = baseAspectRatio === thermalAspectRatio;
+
+  const aspectRatioRows: (Row | undefined)[] =
+    isSameAspectRatio && baseAspectRatio !== undefined
+      ? [
+          [
+            'Day/thermal aspect ratio',
+            <>
+              <FormatNumber maximumFractionDigits={3} value={baseAspectRatio} />
+            </>,
+          ],
+        ]
+      : [
+          baseAspectRatio !== undefined
+            ? [
+                'Aspect ratio',
+                <>
+                  <FormatNumber
+                    maximumFractionDigits={3}
+                    value={baseAspectRatio}
+                  />
+                </>,
+              ]
+            : undefined,
+          thermalAspectRatio !== undefined
+            ? [
+                'Thermal aspect ratio',
+                <>
+                  <FormatNumber
+                    maximumFractionDigits={3}
+                    value={thermalAspectRatio}
+                  />
+                </>,
+              ]
+            : undefined,
+        ];
+
   const sightTable: Table = [
     [null],
     ['Rangefinder', sight.rangefinder],
@@ -97,6 +137,7 @@ export default function Sight({
         ]
       : undefined,
     ...zoomRows,
+    ...aspectRatioRows,
   ];
 
   return (
