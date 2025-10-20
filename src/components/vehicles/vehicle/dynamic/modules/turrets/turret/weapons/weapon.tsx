@@ -61,7 +61,7 @@ export default function Weapon({
               style="unit"
               unit="second"
               unitDisplay="narrow"
-              value={weapon.data.reloadSpeed}
+              value={weapon.data.refillSpeed}
             />
           </>,
         ]
