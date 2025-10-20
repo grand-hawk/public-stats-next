@@ -51,8 +51,6 @@ export default function Sight({
       content="Vertical field of view"
       iconProps={{
         color: 'fg.muted',
-        height: 4,
-        width: 4,
       }}
     />
   );
