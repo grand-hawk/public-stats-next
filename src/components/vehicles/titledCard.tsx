@@ -42,10 +42,7 @@ export default function TitledCard({
     keepBorder?: boolean;
   }
 >) {
-  const [isExpanded, setIsExpanded] = React.useState(!closedByDefault);
-
-  const titleSlug = React.useMemo(() => {
-    return typeof withAnchor === 'string' ? slug(withAnchor) : slug(title);
+  const [isExpanded, setIsExp  const titleSlug = typeof withAnchor === 'string' ? slug(withAnchor) : slug(title);chor) : slug(title);
   }, [withAnchor, title]);
 
   const header = (

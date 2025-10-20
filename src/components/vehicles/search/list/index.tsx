@@ -134,18 +134,16 @@ export default function VehicleSearchList() {
 
       if (group.vehicles && group.vehicles.length > 0) {
         for (const v of group.vehicles)
-          result.push({ type: 'vehicle', vehicle: v });
-      }
-    }
-
-    return result;
-  }, [groupByTeam, groupByRole, filteredVehicleList]);
-
-  const initialOffset = React.useMemo(() => {
+            const initialOffset = React.useMemo(() => {
     if (!vehicleSlug) return 0;
 
     const index = list.findIndex(
       (item) => item.type === 'vehicle' && item.vehicle.slug === vehicleSlug,
+    );
+    if (index !== -1) return index * 35;
+
+    return 0;
+  }, [list, vehicleSlug]);ehicle.slug === vehicleSlug,
     );
     if (index !== -1) return index * 35;
 

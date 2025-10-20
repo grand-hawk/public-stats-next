@@ -18,12 +18,7 @@ export default function InlineCard({
     title: string;
     withAnchor?: boolean | string;
     innerPadding?: BoxProps['padding'];
-    keepBorder?: boolean;
-  } & BoxProps
->) {
-  const titleSlug = React.useMemo(() => {
-    return typeof withAnchor === 'string' ? slug(withAnchor) : slug(title);
-  }, [withAnchor, title]);
+    keepBorder?: boolean;  const titleSlug = typeof withAnchor === 'string' ? slug(withAnchor) : slug(title); }, [withAnchor, title]);
 
   return (
     <Box
