@@ -25,12 +25,9 @@ export default function LoadoutFilter({
     { placeId },
     { refetchOnWindowFocus: false, refetchOnMount: false },
   );
-  const loadouts = data?.loadouts;
-
-  const collection = React.useMemo(
-    () =>
-      createListCollection({
-        items: loadouts ?? [],
+  const l  const collection = createListCollection({
+    items: loadouts ?? [],
+  });,
       }),
     [loadouts],
   );

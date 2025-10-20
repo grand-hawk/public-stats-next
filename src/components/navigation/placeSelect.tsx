@@ -22,19 +22,15 @@ export default function PlaceSelect({
   const setPlaceId = useNavigationStore((s) => s.setPlaceId);
   const { isFetching, error, data } = trpc.config.places.useQuery(undefined, {
     refetchOnWindowFocus: false,
-    refetchOnMount: false,
-  });
-
-  const places = React.useMemo(
-    () =>
-      createListCollection({
-        items: data ? Object.entries(data) : [],
-        itemToString(item) {
-          return item[0];
-        },
-        itemToValue(item) {
-          return String(item[1]);
-        },
+    refetc  const places = createListCollection({
+    items: data ? Object.entries(data) : [],
+    itemToString(item) {
+      return item[0];
+    },
+    itemToValue(item) {
+      return String(item[1]);
+    },
+  });       },
       }),
     [data],
   );

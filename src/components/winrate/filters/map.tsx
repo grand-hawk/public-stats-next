@@ -25,12 +25,9 @@ export default function MapFilter({
     { placeId },
     { refetchOnWindowFocus: false, refetchOnMount: false },
   );
-  const maps = data?.maps;
-
-  const collection = React.useMemo(
-    () =>
-      createListCollection({
-        items: maps ?? [],
+   const collection = createListCollection({
+    items: maps ?? [],
+  });? [],
       }),
     [maps],
   );
