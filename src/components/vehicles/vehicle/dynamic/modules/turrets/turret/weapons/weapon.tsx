@@ -1,5 +1,4 @@
 import { FormatNumber } from '@chakra-ui/react';
-import { sentenceCase } from 'change-case';
 import React from 'react';
 import slug from 'slug';
 
@@ -10,6 +9,7 @@ import {
   getModulesByReferences,
   getOneModuleFromReferences,
 } from '@/utils/alterations';
+import { betterSentenceCase } from '@/utils/betterSentenceCase';
 
 import type { Row, Table } from '@/components/statsTables';
 import type { VehicleModuleFromType } from '@/utils/vehicles';
@@ -115,7 +115,7 @@ export default function Weapon({
           ...(ammoModels
             .sort((a, b) => b.data.size - a.data.size)
             .map((ammoModel) => [
-              sentenceCase(ammoModel.data.name),
+              betterSentenceCase(ammoModel.data.name),
               <>
                 <FormatNumber value={ammoModel.data.size} />
               </>,
