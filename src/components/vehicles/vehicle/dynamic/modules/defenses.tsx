@@ -3,17 +3,15 @@ import React from 'react';
 import StatsTable from '@/components/statsTables';
 import TitledCard from '@/components/vehicles/titledCard';
 import { useDynamicData } from '@/hooks/contexts/dynamicData';
-import { useVehicle } from '@/hooks/contexts/vehicle';
 import { getOneModuleOfType } from '@/utils/alterations';
 
 import type { Table } from '@/components/statsTables';
 
 export default function Defenses() {
-  const vehicle = useVehicle();
-  const { enabledAlterations } = useDynamicData();
+  const { assembledModules } = useDynamicData();
 
-  const essModule = getOneModuleOfType('ESS', vehicle, enabledAlterations);
-  const ewModule = getOneModuleOfType('EW', vehicle, enabledAlterations);
+  const essModule = getOneModuleOfType('ESS', assembledModules);
+  const ewModule = getOneModuleOfType('EW', assembledModules);
 
   if (!essModule && !ewModule) return null;
 

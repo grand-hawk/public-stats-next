@@ -4,21 +4,15 @@ import React from 'react';
 import StatsTable from '@/components/statsTables';
 import TitledCard from '@/components/vehicles/titledCard';
 import { useDynamicData } from '@/hooks/contexts/dynamicData';
-import { useVehicle } from '@/hooks/contexts/vehicle';
 import { getAllModulesOfType, getOneModuleOfType } from '@/utils/alterations';
 
 import type { Table } from '@/components/statsTables';
 
 export default function Vehicle() {
-  const vehicle = useVehicle();
-  const { enabledAlterations } = useDynamicData();
+  const { assembledModules } = useDynamicData();
 
-  const driveData = getOneModuleOfType(
-    'DriveData',
-    vehicle,
-    enabledAlterations,
-  );
-  const seats = getAllModulesOfType('Seat', vehicle, enabledAlterations);
+  const driveData = getOneModuleOfType('DriveData', assembledModules);
+  const seats = getAllModulesOfType('Seat', assembledModules);
 
   if (!driveData && seats.length === 0) return null;
 

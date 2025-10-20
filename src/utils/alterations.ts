@@ -48,12 +48,8 @@ export function assembleModules(
 
 export function getAllModulesOfType<
   T extends VehiclesPlaceDataVehicleModule['type'],
->(
-  type: T,
-  vehicle: VehiclesPlaceDataVehicle,
-  enabledAlterations: Record<string, boolean>,
-) {
-  const modules = Object.values(assembleModules(vehicle, enabledAlterations));
+>(type: T, assembledModules: ReturnType<typeof assembleModules>) {
+  const modules = Object.values(assembledModules);
   return modules
     .filter((module) => module.type === type)
     .sort((a, b) => a.type.localeCompare(b.type)) as Array<
@@ -65,10 +61,9 @@ export function getOneModuleOfType<
   T extends VehiclesPlaceDataVehicleModule['type'],
 >(
   type: T,
-  vehicle: VehiclesPlaceDataVehicle,
-  enabledAlterations: Record<string, boolean>,
+  assembledModules: ReturnType<typeof assembleModules>,
 ): VehicleModuleFromType<T> | null {
-  const [module] = getAllModulesOfType(type, vehicle, enabledAlterations);
+  const [module] = getAllModulesOfType(type, assembledModules);
   return (module as VehicleModuleFromType<T>) || null;
 }
 
@@ -76,24 +71,19 @@ export function getModuleByReference<
   T extends VehiclesPlaceDataVehicleModule['type'],
 >(
   reference: VehiclesPlaceDataVehicleModuleReference,
-  vehicle: VehiclesPlaceDataVehicle,
-  enabledAlterations: Record<string, boolean>,
+  assembledModules: ReturnType<typeof assembleModules>,
 ): VehicleModuleFromType<T> | null {
-  const modules = assembleModules(vehicle, enabledAlterations);
-  return (modules[reference] as VehicleModuleFromType<T>) || null;
+  return (assembledModules[reference] as VehicleModuleFromType<T>) || null;
 }
 
 export function getModulesByReferences<
   T extends VehiclesPlaceDataVehicleModule['type'],
 >(
   references: VehiclesPlaceDataVehicleModuleReference[],
-  vehicle: VehiclesPlaceDataVehicle,
-  enabledAlterations: Record<string, boolean>,
+  assembledModules: ReturnType<typeof assembleModules>,
 ): VehicleModuleFromType<T>[] {
   return references
-    .map((reference) =>
-      getModuleByReference(reference, vehicle, enabledAlterations),
-    )
+    .map((reference) => getModuleByReference(reference, assembledModules))
     .filter(Boolean) as VehicleModuleFromType<T>[];
 }
 
@@ -101,14 +91,9 @@ export function getOneModuleFromReferences<
   T extends VehiclesPlaceDataVehicleModule['type'],
 >(
   references: VehiclesPlaceDataVehicleModuleReference[],
-  vehicle: VehiclesPlaceDataVehicle,
-  enabledAlterations: Record<string, boolean>,
+  assembledModules: ReturnType<typeof assembleModules>,
 ): VehicleModuleFromType<T> | null {
-  const modules = getModulesByReferences(
-    references,
-    vehicle,
-    enabledAlterations,
-  );
+  const modules = getModulesByReferences(references, assembledModules);
   return (modules[0] as VehicleModuleFromType<T>) || null;
 }
 
