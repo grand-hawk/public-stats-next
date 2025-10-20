@@ -61,7 +61,6 @@ export default function Sight({
   let thermalZoom: React.ReactNode | undefined = sight.zoom.thermal
     ? convertSightZoom(sight.zoom.thermal)
     : undefined;
-
   const isSameZoom = baseZoom === thermalZoom;
 
   if (baseZoom && sight.zoom.base!.fov)
@@ -89,7 +88,6 @@ export default function Sight({
 
   const baseAspectRatio = sight.zoom.base?.aspectRatio;
   const thermalAspectRatio = sight.zoom.thermal?.aspectRatio;
-
   const isSameAspectRatio = baseAspectRatio === thermalAspectRatio;
 
   const aspectRatioRows: (Row | undefined)[] =
