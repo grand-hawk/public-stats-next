@@ -33,10 +33,10 @@ export type DetailedVehicle = VehiclesPlaceDataVehicle & {
     lastRetrieved: string;
     availability: VehicleAvailability;
   };
-  linkedData: {
+  linkedData: Partial<{
     breadcrumbs: WithContext<BreadcrumbList>;
     vehicle: WithContext<Vehicle>;
-  };
+  }>;
 };
 
 const imageCache = new Map<string, string | null>();
