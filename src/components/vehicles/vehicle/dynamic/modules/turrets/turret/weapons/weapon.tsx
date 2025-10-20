@@ -109,7 +109,7 @@ export default function Weapon({
     : undefined;
 
   const ammoModelsTable: Table | undefined =
-    ammoModels.length > 1
+    ammoModels.length > 0
       ? [
           ['Ammo models', null],
           ...(ammoModels
