@@ -11,26 +11,25 @@ import { MdInfoOutline, MdOutlineCheck } from 'react-icons/md';
 
 import { Tooltip } from '@/components/ui/tooltip';
 import TitledCard from '@/components/vehicles/titledCard';
+import { useDynamicData } from '@/hooks/contexts/dynamicData';
+import { useVehicle } from '@/hooks/contexts/vehicle';
 import {
   alterationHasChanges,
   alterationIsConflicting,
 } from '@/utils/alterations';
 
-import type { DetailedVehicle } from '@/server/api/trpc/routers/vehicles';
-
 export default function VehicleDynamicAddons({
-  enabledAlterations,
   selectedLoadout,
   setEnabledAddons,
-  vehicle,
 }: {
-  vehicle: DetailedVehicle;
   selectedLoadout: string | null;
-  enabledAlterations: Record<string, boolean>;
   setEnabledAddons: React.Dispatch<
     React.SetStateAction<Record<string, boolean>>
   >;
 }) {
+  const vehicle = useVehicle();
+  const { enabledAlterations } = useDynamicData();
+
   const setAddonsEnabled = React.useCallback(
     (addons: Array<[addonName: string, enabled: boolean]>) => {
       setEnabledAddons((prev) => {

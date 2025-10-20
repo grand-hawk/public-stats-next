@@ -12,6 +12,7 @@ import VehicleAvailability from '@/components/vehicles/vehicle/availability';
 import VehicleDynamicData from '@/components/vehicles/vehicle/dynamic';
 import VehicleGeneralInformation from '@/components/vehicles/vehicle/generalInformation';
 import VehicleHeader from '@/components/vehicles/vehicle/header';
+import { VehicleContext } from '@/hooks/contexts/vehicle';
 import { usePlace } from '@/hooks/usePlace';
 import { useRouterQuery } from '@/hooks/useRouterQuery';
 import { formatTitle } from '@/utils/formatTitle';
@@ -136,16 +137,15 @@ export default function PlaceVehicle() {
                 maxWidth="4xl"
                 width="100%"
               >
-                <VehicleHeader vehicle={vehicle} />
-                <VehicleGeneralInformation
-                  isAvailable={vehicleIsAvailable}
-                  vehicle={vehicle}
-                />
-                <VehicleAvailability
-                  availability={vehicle.info.availability}
-                  isAvailable={vehicleIsAvailable}
-                />
-                <VehicleDynamicData key={vehicle.info.slug} vehicle={vehicle} />
+                <VehicleContext.Provider value={vehicle}>
+                  <VehicleHeader />
+                  <VehicleGeneralInformation isAvailable={vehicleIsAvailable} />
+                  <VehicleAvailability
+                    availability={vehicle.info.availability}
+                    isAvailable={vehicleIsAvailable}
+                  />
+                  <VehicleDynamicData />
+                </VehicleContext.Provider>
 
                 <Center paddingX={4}>
                   <Span color="fg.subtle" fontSize="xs">

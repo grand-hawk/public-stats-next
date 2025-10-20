@@ -2,18 +2,17 @@ import { createListCollection, Portal, Select } from '@chakra-ui/react';
 import React from 'react';
 
 import TitledCard from '@/components/vehicles/titledCard';
-
-import type { DetailedVehicle } from '@/server/api/trpc/routers/vehicles';
+import { useVehicle } from '@/hooks/contexts/vehicle';
 
 export default function VehicleDynamicLoadouts({
   selectedLoadout,
   setSelectedLoadout,
-  vehicle,
 }: {
-  vehicle: DetailedVehicle;
   selectedLoadout: string | null;
   setSelectedLoadout: React.Dispatch<React.SetStateAction<string | null>>;
 }) {
+  const vehicle = useVehicle();
+
   const loadoutCollection = createListCollection({
     items: [
       {

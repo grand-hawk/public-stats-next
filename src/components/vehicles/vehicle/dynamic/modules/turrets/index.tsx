@@ -1,12 +1,13 @@
 import React from 'react';
 
 import Turret from '@/components/vehicles/vehicle/dynamic/modules/turrets/turret';
+import { useDynamicData } from '@/hooks/contexts/dynamicData';
+import { useVehicle } from '@/hooks/contexts/vehicle';
 import {
   getAllModulesOfType,
   getOneModuleFromReferences,
 } from '@/utils/alterations';
 
-import type { DynamicModuleProps } from '@/components/vehicles/vehicle/dynamic/modules';
 import type { VehicleModuleFromType } from '@/utils/vehicles';
 
 export type TurretWithName = VehicleModuleFromType<'Turret'> & {
@@ -20,12 +21,11 @@ const TURRET_PRORITIES = [
   'Driver turret',
 ] as const;
 
-export default function Turrets({ data }: { data: DynamicModuleProps }) {
-  const turrets = getAllModulesOfType(
-    'Turret',
-    data.vehicle,
-    data.enabledAlterations,
-  );
+export default function Turrets() {
+  const vehicle = useVehicle();
+  const { enabledAlterations } = useDynamicData();
+
+  const turrets = getAllModulesOfType('Turret', vehicle, enabledAlterations);
 
   const turretsWithNames = React.useMemo(() => {
     return turrets.map((turret) => {
@@ -33,8 +33,8 @@ export default function Turrets({ data }: { data: DynamicModuleProps }) {
 
       const control = getOneModuleFromReferences<'Seat'>(
         turret.data.control,
-        data.vehicle,
-        data.enabledAlterations,
+        vehicle,
+        enabledAlterations,
       );
       if (control) name = `${control.data.name} turret`;
 
@@ -43,7 +43,7 @@ export default function Turrets({ data }: { data: DynamicModuleProps }) {
         ...turret,
       };
     }) as TurretWithName[];
-  }, [turrets, data.vehicle, data.enabledAlterations]);
+  }, [turrets, vehicle, enabledAlterations]);
 
   const deduplicatedTurretsWithNames = React.useMemo(() => {
     const totalCounts: Record<string, number> = {};

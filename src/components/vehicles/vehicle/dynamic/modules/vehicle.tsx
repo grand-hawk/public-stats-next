@@ -3,22 +3,23 @@ import React from 'react';
 
 import StatsTable from '@/components/statsTables';
 import TitledCard from '@/components/vehicles/titledCard';
+import { useDynamicData } from '@/hooks/contexts/dynamicData';
+import { useVehicle } from '@/hooks/contexts/vehicle';
 import { getAllModulesOfType, getOneModuleOfType } from '@/utils/alterations';
 
 import type { Table } from '@/components/statsTables';
-import type { DynamicModuleProps } from '@/components/vehicles/vehicle/dynamic/modules';
 
-export default function Vehicle({ data }: { data: DynamicModuleProps }) {
+export default function Vehicle() {
+  const vehicle = useVehicle();
+  const { enabledAlterations } = useDynamicData();
+
   const driveData = getOneModuleOfType(
     'DriveData',
-    data.vehicle,
-    data.enabledAlterations,
+    vehicle,
+    enabledAlterations,
   );
-  const seats = getAllModulesOfType(
-    'Seat',
-    data.vehicle,
-    data.enabledAlterations,
-  );
+  const seats = getAllModulesOfType('Seat', vehicle, enabledAlterations);
+
   if (!driveData && seats.length === 0) return null;
 
   // Vehicle card

@@ -3,17 +3,16 @@ import React from 'react';
 
 import Stat from '@/components/stat';
 import TitledCard from '@/components/vehicles/titledCard';
+import { useVehicle } from '@/hooks/contexts/vehicle';
 import { capitalizeFirst } from '@/utils/capitalizeFirst';
-
-import type { DetailedVehicle } from '@/server/api/trpc/routers/vehicles';
 
 export default function VehicleGeneralInformation({
   isAvailable,
-  vehicle,
 }: {
-  vehicle: DetailedVehicle;
   isAvailable: boolean;
 }) {
+  const vehicle = useVehicle();
+
   return (
     <TitledCard as="section" title="General information" withAnchor>
       <Box

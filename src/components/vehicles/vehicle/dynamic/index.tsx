@@ -4,15 +4,13 @@ import React from 'react';
 import VehicleDynamicAddons from '@/components/vehicles/vehicle/dynamic/addons';
 import VehicleDynamicLoadouts from '@/components/vehicles/vehicle/dynamic/loadouts';
 import VehicleDynamicModules from '@/components/vehicles/vehicle/dynamic/modules';
+import { DynamicDataContext } from '@/hooks/contexts/dynamicData';
+import { useVehicle } from '@/hooks/contexts/vehicle';
 import { assembleModules } from '@/utils/alterations';
 
-import type { DetailedVehicle } from '@/server/api/trpc/routers/vehicles';
+export default function VehicleDynamicData() {
+  const vehicle = useVehicle();
 
-export default function VehicleDynamicData({
-  vehicle,
-}: {
-  vehicle: DetailedVehicle;
-}) {
   const [selectedLoadout, setSelectedLoadout] = React.useState<string | null>(
     null,
   );
@@ -39,14 +37,6 @@ export default function VehicleDynamicData({
     Object.keys(vehicle.alterations.addons).length > 0 ||
     Object.keys(vehicle.alterations.loadouts).length > 0;
 
-  const vehicleDynamicModules = (
-    <VehicleDynamicModules
-      enabledAlterations={enabledAlterations}
-      modules={assembledModules}
-      vehicle={vehicle}
-    />
-  );
-
   return (
     <Box
       display="grid"
@@ -60,45 +50,48 @@ export default function VehicleDynamicData({
       }}
       width="100%"
     >
-      <Stack
-        gap={4}
-        gridColumn={{ base: 'unset', xl: '2' }}
-        gridRow={{ base: 'unset', xl: '1' }}
-        maxHeight="max-content"
-        position={{ base: 'unset', xl: 'sticky' }}
-        top={4}
+      <DynamicDataContext.Provider
+        value={{ assembledModules, enabledAlterations }}
       >
-        {Object.keys(vehicle.alterations.loadouts).length > 0 && (
-          <VehicleDynamicLoadouts
-            selectedLoadout={selectedLoadout}
-            setSelectedLoadout={setSelectedLoadout}
-            vehicle={vehicle}
-          />
-        )}
+        <Stack
+          gap={4}
+          gridColumn={{ base: 'unset', xl: '2' }}
+          gridRow={{ base: 'unset', xl: '1' }}
+          maxHeight="max-content"
+          position={{ base: 'unset', xl: 'sticky' }}
+          top={4}
+        >
+          {Object.keys(vehicle.alterations.loadouts).length > 0 && (
+            <VehicleDynamicLoadouts
+              selectedLoadout={selectedLoadout}
+              setSelectedLoadout={setSelectedLoadout}
+            />
+          )}
 
-        {Object.keys(vehicle.alterations.addons).length > 0 && (
-          <VehicleDynamicAddons
-            enabledAlterations={enabledAlterations}
-            selectedLoadout={selectedLoadout}
-            setEnabledAddons={setEnabledAddons}
-            vehicle={vehicle}
-          />
-        )}
+          {Object.keys(vehicle.alterations.addons).length > 0 && (
+            <VehicleDynamicAddons
+              selectedLoadout={selectedLoadout}
+              setEnabledAddons={setEnabledAddons}
+            />
+          )}
 
-        <Center hideBelow="xl" paddingX={4}>
-          <Span
-            color="fg.subtle"
-            fontSize="xs"
-            suppressHydrationWarning
-            title={new Date(vehicle.info.lastRetrieved).toLocaleString()}
-          >
-            Data as of{' '}
-            {new Date(vehicle.info.lastRetrieved).toLocaleDateString()}
-          </Span>
-        </Center>
-      </Stack>
+          <Center hideBelow="xl" paddingX={4}>
+            <Span
+              color="fg.subtle"
+              fontSize="xs"
+              suppressHydrationWarning
+              title={new Date(vehicle.info.lastRetrieved).toLocaleString()}
+            >
+              Data as of{' '}
+              {new Date(vehicle.info.lastRetrieved).toLocaleDateString()}
+            </Span>
+          </Center>
+        </Stack>
 
-      <Stack gap={4}>{vehicleDynamicModules}</Stack>
+        <Stack gap={4}>
+          <VehicleDynamicModules />
+        </Stack>
+      </DynamicDataContext.Provider>
     </Box>
   );
 }

@@ -2,22 +2,18 @@ import React from 'react';
 
 import StatsTable from '@/components/statsTables';
 import TitledCard from '@/components/vehicles/titledCard';
+import { useDynamicData } from '@/hooks/contexts/dynamicData';
+import { useVehicle } from '@/hooks/contexts/vehicle';
 import { getOneModuleOfType } from '@/utils/alterations';
 
 import type { Table } from '@/components/statsTables';
-import type { DynamicModuleProps } from '@/components/vehicles/vehicle/dynamic/modules';
 
-export default function Defenses({ data }: { data: DynamicModuleProps }) {
-  const essModule = getOneModuleOfType(
-    'ESS',
-    data.vehicle,
-    data.enabledAlterations,
-  );
-  const ewModule = getOneModuleOfType(
-    'EW',
-    data.vehicle,
-    data.enabledAlterations,
-  );
+export default function Defenses() {
+  const vehicle = useVehicle();
+  const { enabledAlterations } = useDynamicData();
+
+  const essModule = getOneModuleOfType('ESS', vehicle, enabledAlterations);
+  const ewModule = getOneModuleOfType('EW', vehicle, enabledAlterations);
 
   if (!essModule && !ewModule) return null;
 

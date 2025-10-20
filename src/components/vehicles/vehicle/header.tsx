@@ -15,14 +15,11 @@ import { SiFandom } from 'react-icons/si';
 
 import IconLink from '@/components/buttonIconLink';
 import TeamIcon from '@/components/icons/teams';
+import { useVehicle } from '@/hooks/contexts/vehicle';
 
-import type { DetailedVehicle } from '@/server/api/trpc/routers/vehicles';
+export default function VehicleHeader() {
+  const vehicle = useVehicle();
 
-export default function VehicleHeader({
-  vehicle,
-}: {
-  vehicle: DetailedVehicle;
-}) {
   return (
     <Box
       borderBottomWidth="1px"
