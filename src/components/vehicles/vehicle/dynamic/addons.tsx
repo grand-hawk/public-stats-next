@@ -1,15 +1,8 @@
-import {
-  Checkbox,
-  FormatNumber,
-  HStack,
-  Icon,
-  Span,
-  Stack,
-} from '@chakra-ui/react';
+import { Checkbox, FormatNumber, HStack, Span, Stack } from '@chakra-ui/react';
 import React from 'react';
-import { MdInfoOutline, MdOutlineCheck } from 'react-icons/md';
+import { MdOutlineCheck } from 'react-icons/md';
 
-import { Tooltip } from '@/components/ui/tooltip';
+import InfoTooltip from '@/components/infoTooltip';
 import TitledCard from '@/components/vehicles/titledCard';
 import { useDynamicData } from '@/hooks/contexts/dynamicData';
 import { useVehicle } from '@/hooks/contexts/vehicle';
@@ -154,23 +147,10 @@ export default function VehicleDynamicAddons({
                   </Checkbox.Root>
                 ) : (
                   <HStack gap={2.5} opacity={isDisabled ? 0.5 : undefined}>
-                    <Tooltip
-                      closeDelay={50}
+                    <InfoTooltip
                       content="This addon has no data changes"
-                      disabled={isDisabled}
-                      lazyMount
-                      openDelay={50}
-                      positioning={{ placement: 'top' }}
-                    >
-                      <Icon
-                        aria-label="Addon has no data changes"
-                        color="border.emphasized"
-                        height={5}
-                        width={5}
-                      >
-                        <MdInfoOutline />
-                      </Icon>
-                    </Tooltip>
+                      iconProps={{ color: 'border.emphasized' }}
+                    />
 
                     <Span
                       fontSize="sm"

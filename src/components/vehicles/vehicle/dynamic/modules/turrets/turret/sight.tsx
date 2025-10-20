@@ -1,6 +1,7 @@
 import { Flex, Stack } from '@chakra-ui/react';
 import React from 'react';
 
+import InfoTooltip from '@/components/infoTooltip';
 import StatsTable from '@/components/statsTables';
 import InlineCard from '@/components/vehicles/inlineCard';
 import VehicleFeature from '@/components/vehicles/vehicle/feature';
@@ -45,14 +46,36 @@ export default function Sight({
     sight.lead && <VehicleFeature key="lead" name="Lead" />,
   ].filter(Boolean);
 
-  const baseZoom = sight.zoom.base
+  const fovTooltip = (
+    <InfoTooltip
+      content="Vertical field of view"
+      iconProps={{
+        color: 'fg.muted',
+      }}
+    />
+  );
+
+  let baseZoom: React.ReactNode | undefined = sight.zoom.base
     ? convertSightZoom(sight.zoom.base)
     : undefined;
-  const thermalZoom = sight.zoom.thermal
+  let thermalZoom: React.ReactNode | undefined = sight.zoom.thermal
     ? convertSightZoom(sight.zoom.thermal)
     : undefined;
 
   const isSameZoom = baseZoom === thermalZoom;
+
+  if (baseZoom && sight.zoom.base!.fov)
+    baseZoom = (
+      <>
+        {baseZoom} {fovTooltip}
+      </>
+    );
+  if (thermalZoom && sight.zoom.thermal!.fov)
+    thermalZoom = (
+      <>
+        {thermalZoom} {fovTooltip}
+      </>
+    );
 
   const zoomRows: (Row | undefined)[] =
     (isSameZoom && !sight.thermal?.forced) || (sight.thermal && !thermalZoom)
