@@ -7,6 +7,7 @@ import FelidTeamIcon from '@/components/icons/teams/felid';
 import FishTeamIcon from '@/components/icons/teams/fish';
 import HawkTeamIcon from '@/components/icons/teams/hawk';
 import NightingaleTeamIcon from '@/components/icons/teams/nightingale';
+import PigeonTeamIcon from '@/components/icons/teams/pigeon';
 import RedtailTeamIcon from '@/components/icons/teams/redtail';
 import SchwalbenheimKingdomTeamIcon from '@/components/icons/teams/schwalbenheim';
 import SchwalbenheimRepublicTeamIcon from '@/components/icons/teams/schwalbenheimRepublic';
@@ -23,6 +24,7 @@ export const teamIcons: Record<string, React.FunctionComponent<IconProps>> = {
   'Felid Empire': FelidTeamIcon,
   'Nightingale Unitary State': NightingaleTeamIcon,
   'Redtail PMC': RedtailTeamIcon,
+  'Pigeon Freedom Movement': PigeonTeamIcon,
 };
 
 export default function TeamIcon({ team }: { team: string }) {
