@@ -16,7 +16,7 @@ import type { IconProps } from '@chakra-ui/react';
 export const teamIcons: Record<string, React.FunctionComponent<IconProps>> = {
   'Eagle Federation': EagleTeamIcon,
   'Eagle Republic': EagleTeamIcon,
-  'Fish State': FishTeamIcon,
+  'FISH State': FishTeamIcon,
   'Hawk Republic': HawkTeamIcon,
   'Schwalbenheim Kingdom': SchwalbenheimKingdomTeamIcon,
   'Schwalbenheim Republic': SchwalbenheimRepublicTeamIcon,
