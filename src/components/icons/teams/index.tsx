@@ -9,6 +9,7 @@ import HawkTeamIcon from '@/components/icons/teams/hawk';
 import NightingaleTeamIcon from '@/components/icons/teams/nightingale';
 import RedtailTeamIcon from '@/components/icons/teams/redtail';
 import SchwalbenheimKingdomTeamIcon from '@/components/icons/teams/schwalbenheim';
+import SchwalbenheimRepublicTeamIcon from '@/components/icons/teams/schwalbenheimRepublic';
 
 import type { IconProps } from '@chakra-ui/react';
 
@@ -18,6 +19,7 @@ export const teamIcons: Record<string, React.FunctionComponent<IconProps>> = {
   'Fish State': FishTeamIcon,
   'Hawk Republic': HawkTeamIcon,
   'Schwalbenheim Kingdom': SchwalbenheimKingdomTeamIcon,
+  'Schwalbenheim Republic': SchwalbenheimRepublicTeamIcon,
   'Felid Empire': FelidTeamIcon,
   'Nightingale Unitary State': NightingaleTeamIcon,
   'Redtail PMC': RedtailTeamIcon,
