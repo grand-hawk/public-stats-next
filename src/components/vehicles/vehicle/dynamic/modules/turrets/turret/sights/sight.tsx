@@ -61,7 +61,6 @@ export default function Sight({
   let thermalZoom: React.ReactNode | undefined = sight.zoom.thermal
     ? convertSightZoom(sight.zoom.thermal)
     : undefined;
-  const isSameZoom = baseZoom === thermalZoom;
 
   if (baseZoom && sight.zoom.base!.fov)
     baseZoom = (
@@ -76,54 +75,35 @@ export default function Sight({
       </>
     );
 
-  const zoomRows: (Row | undefined)[] =
-    (isSameZoom && !sight.thermal?.forced) || (sight.thermal && !thermalZoom)
-      ? [['Day/thermal zoom', baseZoom]]
-      : sight.thermal?.forced && thermalZoom
-        ? [['Thermal zoom', thermalZoom]]
-        : [
-            baseZoom ? ['Zoom', baseZoom] : undefined,
-            thermalZoom ? ['Thermal zoom', thermalZoom] : undefined,
-          ];
+  const zoomRows: (Row | undefined)[] = [
+    baseZoom && !sight.thermal?.forced ? ['Zoom', baseZoom] : undefined,
+    thermalZoom ? ['Thermal zoom', thermalZoom] : undefined,
+  ];
 
   const baseAspectRatio = sight.zoom.base?.aspectRatio;
   const thermalAspectRatio = sight.zoom.thermal?.aspectRatio;
-  const isSameAspectRatio = baseAspectRatio === thermalAspectRatio;
 
-  const aspectRatioRows: (Row | undefined)[] =
-    isSameAspectRatio && baseAspectRatio !== undefined
+  const aspectRatioRows: (Row | undefined)[] = [
+    baseAspectRatio !== undefined && !sight.thermal?.forced
       ? [
-          [
-            'Day/thermal aspect ratio',
-            <>
-              <FormatNumber maximumFractionDigits={3} value={baseAspectRatio} />
-            </>,
-          ],
+          'Aspect ratio',
+          <>
+            <FormatNumber maximumFractionDigits={3} value={baseAspectRatio} />
+          </>,
         ]
-      : [
-          baseAspectRatio !== undefined
-            ? [
-                'Aspect ratio',
-                <>
-                  <FormatNumber
-                    maximumFractionDigits={3}
-                    value={baseAspectRatio}
-                  />
-                </>,
-              ]
-            : undefined,
-          thermalAspectRatio !== undefined
-            ? [
-                'Thermal aspect ratio',
-                <>
-                  <FormatNumber
-                    maximumFractionDigits={3}
-                    value={thermalAspectRatio}
-                  />
-                </>,
-              ]
-            : undefined,
-        ];
+      : undefined,
+    thermalAspectRatio !== undefined
+      ? [
+          'Thermal aspect ratio',
+          <>
+            <FormatNumber
+              maximumFractionDigits={3}
+              value={thermalAspectRatio}
+            />
+          </>,
+        ]
+      : undefined,
+  ];
 
   const sightTable: Table = [
     [null],
