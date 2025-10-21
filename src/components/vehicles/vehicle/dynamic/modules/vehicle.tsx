@@ -46,7 +46,7 @@ export default function Vehicle() {
     seats.length > 0
       ? [
           ['Seating capacity', String(seats.length)],
-          ...Object.entries(seatCount),
+          ...Object.entries(seatCount).sort((a, b) => a[0].localeCompare(b[0])),
         ]
       : undefined;
 
