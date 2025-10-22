@@ -113,7 +113,11 @@ export default function Weapon({
       ? [
           ['Ammo models', null],
           ...(ammoModels
-            .sort((a, b) => b.data.size - a.data.size)
+            .sort((a, b) => {
+              if (a.data.primary && !b.data.primary) return -1;
+              if (!a.data.primary && b.data.primary) return 1;
+              return b.data.size - a.data.size;
+            })
             .map((ammoModel) => [
               betterSentenceCase(ammoModel.data.name),
               <>
