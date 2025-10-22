@@ -1,7 +1,7 @@
 import { Stack } from '@chakra-ui/react';
 import React from 'react';
 
-import VehicleSearchConfigCheckbox from '@/components/vehicles/search/config/checkbox';
+import VehicleSearchConfigCheckbox from '@/components/vehicles/searchSidebar/config/checkbox';
 
 export default function VehicleSearchConfig() {
   return (

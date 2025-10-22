@@ -2,12 +2,14 @@ import { Box } from '@chakra-ui/react';
 import React, { Suspense } from 'react';
 
 import CenterSpinner from '@/components/centerSpinner';
-import VehicleSearch from '@/components/vehicles/search';
-import { VEHICLE_SEARCH_INPUT_HEIGHT } from '@/components/vehicles/search/input';
+import { SEARCH_INPUT_HEIGHT } from '@/components/searchLayout/searchSidebar/input';
 
 import type { PropsWithChildren } from 'react';
 
-export default function VehiclesLayout({ children }: PropsWithChildren) {
+export default function SearchLayout({
+  children,
+  sidebar,
+}: PropsWithChildren<{ sidebar: React.ReactNode }>) {
   return (
     <Box
       display="grid"
@@ -25,11 +27,11 @@ export default function VehiclesLayout({ children }: PropsWithChildren) {
       position="relative"
       width="100%"
     >
-      <VehicleSearch />
+      {sidebar}
 
       <Box
         as="main"
-        marginBottom={{ base: VEHICLE_SEARCH_INPUT_HEIGHT, md: 0 }}
+        marginBottom={{ base: SEARCH_INPUT_HEIGHT, md: 0 }}
         overflow="auto"
       >
         <Suspense fallback={<CenterSpinner />}>{children}</Suspense>

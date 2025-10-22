@@ -1,38 +1,28 @@
-import { Box } from '@chakra-ui/react';
-import { useVirtualizer } from '@tanstack/react-virtual';
 import React from 'react';
-import slug from 'slug';
 
-import {
-  VehicleSearchListDividerItem,
-  VehicleSearchListVehicleItem,
-} from '@/components/vehicles/search/list/item';
+import SearchSidebar from '@/components/searchLayout/searchSidebar';
+import SearchInput from '@/components/searchLayout/searchSidebar/input';
+import VehicleSearchConfig from '@/components/vehicles/searchSidebar/config';
 import { usePlace } from '@/hooks/usePlace';
 import { useRouterQuery } from '@/hooks/useRouterQuery';
 import { useVehicleSearchStore } from '@/stores/vehicles/search';
 import { simplifyString } from '@/utils/simplifyString';
 import { trpc } from '@/utils/trpc';
 
-import type { ListVehicle } from '@/server/api/trpc/routers/vehicles';
+import type { ListItem } from '@/components/searchLayout/searchSidebar/list';
 
-type DividerListItem = {
-  type: 'divider';
-  label: string;
-  isTeam?: boolean;
-};
+interface ListVehicle {
+  name: string;
+  slug: string;
+  team: string;
+  role: string;
+}
 
-type VehicleListItem = {
-  type: 'vehicle';
-  vehicle: ListVehicle;
-};
-
-type ListItem = DividerListItem | VehicleListItem;
-
-export default function VehicleSearchList() {
+export default function VehiclesSearchSidebar() {
   const place = usePlace()!;
   const vehicleQuery = useRouterQuery('vehicle');
-  const vehicleSlug = vehicleQuery ? slug(vehicleQuery) : null;
   const query = useVehicleSearchStore((s) => s.query);
+  const setQuery = useVehicleSearchStore((s) => s.setQuery);
   const groupByTeam = useVehicleSearchStore((s) => s.groupByTeam);
   const groupByRole = useVehicleSearchStore((s) => s.groupByRole);
 
@@ -55,9 +45,9 @@ export default function VehicleSearchList() {
     const groups: Group[] = [];
 
     if (!groupByTeam && !groupByRole)
-      return filteredVehicleList.map((vehicle) => ({
-        type: 'vehicle',
-        vehicle,
+      return filteredVehicleList.map((value) => ({
+        type: 'item',
+        value,
       }));
 
     if (!groupByTeam && groupByRole) {
@@ -133,75 +123,32 @@ export default function VehicleSearchList() {
       });
 
       if (group.vehicles && group.vehicles.length > 0) {
-        for (const v of group.vehicles)
-          result.push({ type: 'vehicle', vehicle: v });
+        for (const value of group.vehicles)
+          result.push({ type: 'item', value });
       }
     }
 
     return result;
   }, [groupByTeam, groupByRole, filteredVehicleList]);
 
-  const initialOffset = React.useMemo(() => {
-    if (!vehicleSlug) return 0;
-
-    const index = list.findIndex(
-      (item) => item.type === 'vehicle' && item.vehicle.slug === vehicleSlug,
-    );
-    if (index !== -1) return index * 35;
-
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
-  const parentRef = React.useRef<HTMLDivElement>(null);
-  const rowVirtualizer = useVirtualizer({
-    count: list.length,
-    getScrollElement: () => parentRef.current,
-    estimateSize: () => 35,
-    overscan: 5,
-    initialRect: {
-      height: 25 * 35,
-      width: 0,
-    },
-    initialOffset,
-  });
+  const isSearching = !vehicleQuery;
 
   return (
-    <Box ref={parentRef} height="100%" overflow="auto" scrollBehavior="unset">
-      <Box
-        height={`${rowVirtualizer.getTotalSize()}px`}
-        position="relative"
-        scrollBehavior="revert"
-      >
-        {rowVirtualizer.getVirtualItems().map((virtualItem) => {
-          const listItem = list[virtualItem.index];
-
-          const baseProps = {
-            height: `${virtualItem.size}px`,
-            transform: `translateY(${virtualItem.start}px)`,
-          } as const;
-
-          if (listItem.type === 'divider')
-            return (
-              <VehicleSearchListDividerItem
-                key={virtualItem.index}
-                isTeam={listItem.isTeam}
-                label={listItem.label}
-                {...baseProps}
-              />
-            );
-          return (
-            <VehicleSearchListVehicleItem
-              key={virtualItem.index}
-              active={vehicleSlug === listItem.vehicle.slug}
-              placeInitials={place.initials}
-              slug={listItem.vehicle.slug}
-              {...baseProps}
-            >
-              {listItem.vehicle.name}
-            </VehicleSearchListVehicleItem>
-          );
-        })}
-      </Box>
-    </Box>
+    <SearchSidebar
+      isSearching={isSearching}
+      searchListProps={{
+        queryKey: 'vehicle',
+        listItems: list,
+        queryKeyPlural: 'vehicles',
+      }}
+    >
+      <SearchInput
+        noButton={isSearching}
+        queryKey="vehicle"
+        value={query}
+        onChange={(details) => setQuery(details.target.value)}
+      />
+      <VehicleSearchConfig />
+    </SearchSidebar>
   );
 }

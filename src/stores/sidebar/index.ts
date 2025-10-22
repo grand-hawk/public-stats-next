@@ -1,13 +1,13 @@
 import { create } from 'zustand';
 import { immer } from 'zustand/middleware/immer';
 
-export interface VehicleSidebarStore {
+export interface SidebarStore {
   open: boolean;
   setOpen(open: boolean): void;
 }
 
-export const useVehicleSidebarStore = create(
-  immer<VehicleSidebarStore>((set) => ({
+export const useSidebarStore = create(
+  immer<SidebarStore>((set) => ({
     open: false,
     setOpen(open) {
       set((s) => {

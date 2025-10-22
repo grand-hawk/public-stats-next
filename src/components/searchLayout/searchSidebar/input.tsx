@@ -4,38 +4,42 @@ import { MdExpandLess } from 'react-icons/md';
 import { MdOutlineExpandMore } from 'react-icons/md';
 
 import { useRouterQuery } from '@/hooks/useRouterQuery';
-import { useVehicleSearchStore } from '@/stores/vehicles/search';
-import { useVehicleSidebarStore } from '@/stores/vehicles/sidebar';
+import { useSidebarStore } from '@/stores/sidebar';
 
-export const VEHICLE_SEARCH_INPUT_HEIGHT = '48px';
+import type { InputProps } from '@chakra-ui/react';
 
-export default function VehicleSearchInput({
+export const SEARCH_INPUT_HEIGHT = '48px';
+
+export default function SearchInput({
   noButton,
+  onChange,
+  queryKey,
+  value,
 }: {
+  value: InputProps['value'];
+  onChange: InputProps['onChange'];
+  queryKey: string;
   noButton?: boolean;
 }) {
-  const vehicleQuery = useRouterQuery('vehicle');
-  const query = useVehicleSearchStore((s) => s.query);
-  const setQuery = useVehicleSearchStore((s) => s.setQuery);
-  const isOpen = useVehicleSidebarStore((s) => s.open);
-  const setOpen = useVehicleSidebarStore((s) => s.setOpen);
+  const queryValue = useRouterQuery(queryKey);
+  const isOpen = useSidebarStore((s) => s.open);
+  const setOpen = useSidebarStore((s) => s.setOpen);
 
-  // Close the sidebar when a different vehicle was selected
   React.useEffect(() => {
     if (isOpen) setOpen(false);
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [vehicleQuery]);
+  }, [queryValue]);
 
   return (
-    <Group gap={0} height={VEHICLE_SEARCH_INPUT_HEIGHT} width="100%">
+    <Group gap={0} height={SEARCH_INPUT_HEIGHT} width="100%">
       <Input
         borderRadius="none"
         height="100%"
         placeholder="Search..."
-        value={query}
+        value={value}
         variant="subtle"
-        onChange={(e) => setQuery(e.target.value)}
+        onChange={onChange}
         onSelect={() => {
           if (!isOpen) setOpen(true);
         }}
@@ -45,10 +49,10 @@ export default function VehicleSearchInput({
         <IconButton
           aria-label={isOpen ? 'Collapse search' : 'Expand search'}
           borderRadius="none"
-          height={VEHICLE_SEARCH_INPUT_HEIGHT}
+          height={SEARCH_INPUT_HEIGHT}
           hideFrom="md"
           variant="subtle"
-          width={VEHICLE_SEARCH_INPUT_HEIGHT}
+          width={SEARCH_INPUT_HEIGHT}
           onClick={() => setOpen(!isOpen)}
         >
           {isOpen ? <MdOutlineExpandMore /> : <MdExpandLess />}

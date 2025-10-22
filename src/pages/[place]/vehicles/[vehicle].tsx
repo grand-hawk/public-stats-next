@@ -5,9 +5,10 @@ import React from 'react';
 import { GrDocumentMissing } from 'react-icons/gr';
 import slug from 'slug';
 
+import SearchLayout from '@/components/searchLayout/layout';
 import { EmptyState } from '@/components/ui/empty-state';
 import Layout from '@/components/utils/layout';
-import VehiclesLayout from '@/components/vehicles/layout';
+import VehiclesSearchSidebar from '@/components/vehicles/searchSidebar';
 import VehicleAvailability from '@/components/vehicles/vehicle/availability';
 import VehicleDynamicData from '@/components/vehicles/vehicle/dynamic';
 import VehicleGeneralInformation from '@/components/vehicles/vehicle/generalInformation';
@@ -115,7 +116,7 @@ export default function PlaceVehicle() {
       )}
 
       <Layout noPadding>
-        <VehiclesLayout>
+        <SearchLayout sidebar={<VehiclesSearchSidebar />}>
           {vehicle ? (
             <Flex
               justifyContent="center"
@@ -170,7 +171,7 @@ export default function PlaceVehicle() {
               />
             </Flex>
           )}
-        </VehiclesLayout>
+        </SearchLayout>
       </Layout>
     </>
   );
