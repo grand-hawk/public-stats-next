@@ -2,13 +2,13 @@ import { Flex, FormatNumber, Stack } from '@chakra-ui/react';
 import React from 'react';
 
 import InfoTooltip from '@/components/infoTooltip';
-import StatsTable from '@/components/statsTables';
-import InlineCard from '@/components/vehicles/inlineCard';
 import VehicleFeature from '@/components/vehicles/vehicle/feature';
+import InlineCard from '@/components/wikiComponents/inlineCard';
+import StatsTable from '@/components/wikiComponents/statsTables';
 import { betterSentenceCase } from '@/utils/betterSentenceCase';
 
-import type { Row, Table } from '@/components/statsTables';
 import type { TurretWithName } from '@/components/vehicles/vehicle/dynamic/modules/turrets';
+import type { Row, Table } from '@/components/wikiComponents/statsTables';
 import type { VehicleModuleFromType } from '@/utils/vehicles';
 
 type SightZoom =

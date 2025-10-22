@@ -1,8 +1,8 @@
 import { Stack } from '@chakra-ui/react';
 import React from 'react';
 
-import TitledCard from '@/components/vehicles/titledCard';
 import Weapon from '@/components/vehicles/vehicle/dynamic/modules/turrets/turret/weapons/weapon';
+import TitledCard from '@/components/wikiComponents/titledCard';
 
 import type { TurretWithName } from '@/components/vehicles/vehicle/dynamic/modules/turrets';
 import type { VehicleModuleFromType } from '@/utils/vehicles';

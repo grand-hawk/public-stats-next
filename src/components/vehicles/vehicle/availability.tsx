@@ -3,7 +3,7 @@ import NextLink from 'next/link';
 import React from 'react';
 import slug from 'slug';
 
-import TitledCard from '@/components/vehicles/titledCard';
+import TitledCard from '@/components/wikiComponents/titledCard';
 import { usePlaceInitials } from '@/hooks/usePlaceInitials';
 
 import type { VehicleAvailability } from '@/server/api/trpc/routers/vehicles';

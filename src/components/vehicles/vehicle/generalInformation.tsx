@@ -1,8 +1,8 @@
 import { Box, FormatNumber } from '@chakra-ui/react';
 import React from 'react';
 
-import Stat from '@/components/stat';
-import TitledCard from '@/components/vehicles/titledCard';
+import Stat from '@/components/wikiComponents/stat';
+import TitledCard from '@/components/wikiComponents/titledCard';
 import { useVehicle } from '@/hooks/contexts/vehicle';
 import { capitalizeFirst } from '@/utils/capitalizeFirst';
 

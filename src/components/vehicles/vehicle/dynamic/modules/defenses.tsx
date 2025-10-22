@@ -1,11 +1,11 @@
 import React from 'react';
 
-import StatsTable from '@/components/statsTables';
-import TitledCard from '@/components/vehicles/titledCard';
+import StatsTable from '@/components/wikiComponents/statsTables';
+import TitledCard from '@/components/wikiComponents/titledCard';
 import { useDynamicData } from '@/hooks/contexts/dynamicData';
 import { getOneModuleOfType } from '@/utils/alterations';
 
-import type { Table } from '@/components/statsTables';
+import type { Table } from '@/components/wikiComponents/statsTables';
 
 export default function Defenses() {
   const { assembledModules } = useDynamicData();

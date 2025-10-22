@@ -1,7 +1,7 @@
 import { createListCollection, Portal, Select } from '@chakra-ui/react';
 import React from 'react';
 
-import TitledCard from '@/components/vehicles/titledCard';
+import TitledCard from '@/components/wikiComponents/titledCard';
 import { useVehicle } from '@/hooks/contexts/vehicle';
 
 export default function VehicleDynamicLoadouts({

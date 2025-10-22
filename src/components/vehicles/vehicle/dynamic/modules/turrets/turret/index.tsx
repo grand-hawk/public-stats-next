@@ -1,16 +1,16 @@
 import { Flex, FormatNumber, Stack } from '@chakra-ui/react';
 import React from 'react';
 
-import StatsTable from '@/components/statsTables';
-import TitledCard from '@/components/vehicles/titledCard';
 import Sights from '@/components/vehicles/vehicle/dynamic/modules/turrets/turret/sights';
 import Weapons from '@/components/vehicles/vehicle/dynamic/modules/turrets/turret/weapons';
 import VehicleFeature from '@/components/vehicles/vehicle/feature';
+import StatsTable from '@/components/wikiComponents/statsTables';
+import TitledCard from '@/components/wikiComponents/titledCard';
 import { useDynamicData } from '@/hooks/contexts/dynamicData';
 import { getModulesByReferences } from '@/utils/alterations';
 
-import type { Row, Table } from '@/components/statsTables';
 import type { TurretWithName } from '@/components/vehicles/vehicle/dynamic/modules/turrets';
+import type { Row, Table } from '@/components/wikiComponents/statsTables';
 
 export default function Turret({ turret }: { turret: TurretWithName }) {
   const { assembledModules } = useDynamicData();

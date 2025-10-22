@@ -2,8 +2,8 @@ import { FormatNumber } from '@chakra-ui/react';
 import React from 'react';
 import slug from 'slug';
 
-import StatsTable from '@/components/statsTables';
-import InlineCard from '@/components/vehicles/inlineCard';
+import InlineCard from '@/components/wikiComponents/inlineCard';
+import StatsTable from '@/components/wikiComponents/statsTables';
 import { useDynamicData } from '@/hooks/contexts/dynamicData';
 import {
   getModulesByReferences,
@@ -11,7 +11,7 @@ import {
 } from '@/utils/alterations';
 import { betterSentenceCase } from '@/utils/betterSentenceCase';
 
-import type { Row, Table } from '@/components/statsTables';
+import type { Row, Table } from '@/components/wikiComponents/statsTables';
 import type { VehicleModuleFromType } from '@/utils/vehicles';
 
 export default function Weapon({
