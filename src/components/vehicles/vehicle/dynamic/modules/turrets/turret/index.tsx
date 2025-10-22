@@ -107,8 +107,6 @@ export default function Turret({ turret }: { turret: TurretWithName }) {
 
         <StatsTable tables={[traversalTable]} />
 
-        <Sights turret={turret} />
-
         <Weapons
           turret={turret}
           weapons={weapons
@@ -119,6 +117,8 @@ export default function Turret({ turret }: { turret: TurretWithName }) {
             )
             .sort((a, b) => a.data.orderIndex - b.data.orderIndex)}
         />
+
+        <Sights turret={turret} />
       </Stack>
     </TitledCard>
   );
