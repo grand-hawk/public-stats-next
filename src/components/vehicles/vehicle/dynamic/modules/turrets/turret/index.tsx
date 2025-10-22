@@ -35,6 +35,9 @@ export default function Turret({ turret }: { turret: TurretWithName }) {
     weapons.some((weapon) => weapon.data.name === 'Smoke Grenade') && (
       <VehicleFeature key="smoke" name="Smoke grenades" />
     ),
+    weapons.some((weapon) => weapon.data.name === 'Flares') && (
+      <VehicleFeature key="flares" name="Flares" />
+    ),
   ].filter(Boolean);
 
   const isFixed =
@@ -109,7 +112,11 @@ export default function Turret({ turret }: { turret: TurretWithName }) {
         <Weapons
           turret={turret}
           weapons={weapons
-            .filter((weapon) => weapon.data.name !== 'Smoke Grenade')
+            .filter(
+              (weapon) =>
+                weapon.data.name !== 'Smoke Grenade' &&
+                weapon.data.name !== 'Flares',
+            )
             .sort((a, b) => a.data.orderIndex - b.data.orderIndex)}
         />
       </Stack>
