@@ -114,6 +114,26 @@ export default function Sight({
           `${sight.thermal.type}${sight.thermal.forced ? ' (forced)' : ''}`,
         ]
       : undefined,
+    sight.traverse
+      ? [
+          'Vertical limits',
+          <>
+            <FormatNumber
+              style="unit"
+              unit="degree"
+              unitDisplay="narrow"
+              value={sight.traverse.vertical.min}
+            />
+            –
+            <FormatNumber
+              style="unit"
+              unit="degree"
+              unitDisplay="narrow"
+              value={sight.traverse.vertical.max}
+            />
+          </>,
+        ]
+      : undefined,
     ...zoomRows,
     ...aspectRatioRows,
   ];
