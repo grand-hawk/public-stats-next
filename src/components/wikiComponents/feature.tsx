@@ -3,7 +3,7 @@ import React from 'react';
 
 import { Tooltip } from '@/components/ui/tooltip';
 
-export default function VehicleFeature({
+export default function Feature({
   description,
   icon,
   name,

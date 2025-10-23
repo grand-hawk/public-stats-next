@@ -3,7 +3,7 @@ import React from 'react';
 
 import Sights from '@/components/vehicles/vehicle/dynamic/modules/turrets/turret/sights';
 import Weapons from '@/components/vehicles/vehicle/dynamic/modules/turrets/turret/weapons';
-import VehicleFeature from '@/components/vehicles/vehicle/feature';
+import Feature from '@/components/wikiComponents/feature';
 import StatsTable from '@/components/wikiComponents/statsTables';
 import TitledCard from '@/components/wikiComponents/titledCard';
 import { useDynamicData } from '@/hooks/contexts/dynamicData';
@@ -22,21 +22,21 @@ export default function Turret({ turret }: { turret: TurretWithName }) {
 
   const features = [
     turret.data.lws && (
-      <VehicleFeature key="lws" description="Laser warning system" name="LWS" />
+      <Feature key="lws" description="Laser warning system" name="LWS" />
     ),
     turret.data.maws && (
-      <VehicleFeature
+      <Feature
         key="maws"
         description="Missile approach warning system"
         name="MAWS"
       />
     ),
-    turret.data.stabilizer && <VehicleFeature key="stab" name="Stabilizer" />,
+    turret.data.stabilizer && <Feature key="stab" name="Stabilizer" />,
     weapons.some((weapon) => weapon.data.name === 'Smoke Grenade') && (
-      <VehicleFeature key="smoke" name="Smoke grenades" />
+      <Feature key="smoke" name="Smoke grenades" />
     ),
     weapons.some((weapon) => weapon.data.name === 'Flares') && (
-      <VehicleFeature key="flares" name="Flares" />
+      <Feature key="flares" name="Flares" />
     ),
   ].filter(Boolean);
 

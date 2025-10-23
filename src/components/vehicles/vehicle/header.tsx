@@ -120,7 +120,7 @@ export default function VehicleHeader() {
             </Span>
           </HStack>
 
-          <Heading as="h1" id="vehicle-page-title">
+          <Heading aria-label="Vehicle name" as="h1" id="vehicle-page-title">
             {vehicle.info.name}
           </Heading>
 

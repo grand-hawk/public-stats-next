@@ -14,6 +14,7 @@ export type DividerListItem = {
   type: 'divider';
   label: string;
   isTeam?: boolean;
+  emphasized?: boolean;
 };
 
 export type LinkListItem = {
@@ -84,6 +85,7 @@ export default function SearchList({
             return (
               <SearchListDividerItem
                 key={virtualItem.index}
+                emphasized={listItem.emphasized}
                 isTeam={listItem.isTeam}
                 label={listItem.label}
                 {...baseProps}

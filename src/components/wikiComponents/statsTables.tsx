@@ -2,7 +2,7 @@ import { Table } from '@chakra-ui/react';
 import React from 'react';
 
 export type Table = Array<Row | undefined>;
-export type Row = [string, ...React.ReactNode[]] | [null];
+export type Row = [string | React.ReactNode, ...React.ReactNode[]] | [null];
 
 export default function StatsTable({
   tables,

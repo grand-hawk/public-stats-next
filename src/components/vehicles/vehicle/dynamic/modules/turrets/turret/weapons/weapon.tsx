@@ -1,10 +1,12 @@
-import { FormatNumber } from '@chakra-ui/react';
+import { FormatNumber, Link } from '@chakra-ui/react';
+import NextLink from 'next/link';
 import React from 'react';
 import slug from 'slug';
 
 import InlineCard from '@/components/wikiComponents/inlineCard';
 import StatsTable from '@/components/wikiComponents/statsTables';
 import { useDynamicData } from '@/hooks/contexts/dynamicData';
+import { usePlaceInitials } from '@/hooks/usePlaceInitials';
 import {
   getModulesByReferences,
   getOneModuleFromReferences,
@@ -21,6 +23,7 @@ export default function Weapon({
   weapon: VehicleModuleFromType<'Weapon'>;
   turretName: string;
 }) {
+  const initials = usePlaceInitials();
   const { assembledModules } = useDynamicData();
 
   const nameSlug = slug(weapon.data.name);
@@ -28,13 +31,10 @@ export default function Weapon({
     weapon.data.ammoModels,
     assembledModules,
   );
-  const ammoSelection =
-    weapon.data.ammoSelection !== 'all'
-      ? getOneModuleFromReferences<'Ammo'>(
-          weapon.data.ammoSelection,
-          assembledModules,
-        )
-      : null;
+  const ammoSelection = getOneModuleFromReferences<'AmmoSelection'>(
+    weapon.data.ammoSelection,
+    assembledModules,
+  );
   const magazine = getOneModuleFromReferences<'Magazine'>(
     weapon.data.magazine,
     assembledModules,
@@ -96,7 +96,15 @@ export default function Weapon({
         ...(Object.entries(ammoSelection.data)
           .filter(([_, count]) => count !== false)
           .map(([ammo, count]) => [
-            ammo,
+            <>
+              <Link asChild>
+                <NextLink
+                  href={`/${initials}/shells/${nameSlug}-${slug(ammo)}`}
+                >
+                  {ammo}
+                </NextLink>
+              </Link>
+            </>,
             count === true ? (
               '*'
             ) : (

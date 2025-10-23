@@ -2,7 +2,7 @@ import { Flex, FormatNumber, Stack } from '@chakra-ui/react';
 import React from 'react';
 
 import InfoTooltip from '@/components/infoTooltip';
-import VehicleFeature from '@/components/vehicles/vehicle/feature';
+import Feature from '@/components/wikiComponents/feature';
 import InlineCard from '@/components/wikiComponents/inlineCard';
 import StatsTable from '@/components/wikiComponents/statsTables';
 import { betterSentenceCase } from '@/utils/betterSentenceCase';
@@ -41,9 +41,9 @@ export default function Sight({
 }) {
   const features = [
     sight.fcs && (
-      <VehicleFeature key="fcs" description="Fire control system" name="FCS" />
+      <Feature key="fcs" description="Fire control system" name="FCS" />
     ),
-    sight.lead && <VehicleFeature key="lead" name="Lead" />,
+    sight.lead && <Feature key="lead" name="Lead" />,
   ].filter(Boolean);
 
   const fovTooltip = (

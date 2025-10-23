@@ -1,4 +1,4 @@
-import { Center, Flex, Link, Span, Stack } from '@chakra-ui/react';
+import { Flex, Stack } from '@chakra-ui/react';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import React from 'react';
@@ -7,12 +7,14 @@ import slug from 'slug';
 
 import SearchLayout from '@/components/searchLayout/layout';
 import { EmptyState } from '@/components/ui/empty-state';
+import { getKeywords } from '@/components/utils/head';
 import Layout from '@/components/utils/layout';
 import VehiclesSearchSidebar from '@/components/vehicles/searchSidebar';
 import VehicleAvailability from '@/components/vehicles/vehicle/availability';
 import VehicleDynamicData from '@/components/vehicles/vehicle/dynamic';
 import VehicleGeneralInformation from '@/components/vehicles/vehicle/generalInformation';
 import VehicleHeader from '@/components/vehicles/vehicle/header';
+import InaccurateDataFooter from '@/components/wikiComponents/inaccurateDataFooter';
 import { VehicleContext } from '@/hooks/contexts/vehicle';
 import { usePlace } from '@/hooks/usePlace';
 import { useRouterQuery } from '@/hooks/useRouterQuery';
@@ -48,18 +50,11 @@ export default function PlaceVehicle() {
 
   return (
     <>
-      {vehicle && (
+      {vehicle ? (
         <Head>
           <title>{formatTitle(vehicle.info.name, place.initials)}</title>
 
-          <meta content="website" property="og:type" />
-          <meta content="index,follow" name="robots" />
           <meta content="summary_large_image" name="twitter:card" />
-
-          <meta
-            content={formatTitle(null, place.initials)}
-            property="og:site_name"
-          />
           <meta content={vehicle.info.name} property="og:title" />
           <meta content={vehicle.info.name} name="twitter:title" />
           <meta
@@ -69,11 +64,7 @@ export default function PlaceVehicle() {
                 ''
               ).split(','),
               vehicle.info.name,
-              place.placeName,
-              place.initials.toUpperCase(),
-              'Statistics',
-              'Stats',
-              'Data',
+              ...getKeywords(place),
             ].join(',')}
             name="keywords"
           />
@@ -113,6 +104,10 @@ export default function PlaceVehicle() {
             />
           ))}
         </Head>
+      ) : (
+        <Head>
+          <title>{formatTitle('Vehicle not found', place.initials)}</title>
+        </Head>
       )}
 
       <Layout noPadding>
@@ -148,19 +143,7 @@ export default function PlaceVehicle() {
                   <VehicleDynamicData />
                 </VehicleContext.Provider>
 
-                <Center paddingX={4}>
-                  <Span color="fg.subtle" fontSize="xs">
-                    Spotted inaccurate or incomplete data? Report this in our{' '}
-                    <Link
-                      color="fg.muted"
-                      href="https://discord.gg/multicrew"
-                      rel="nofollow noopener"
-                      target="_blank"
-                    >
-                      Discord
-                    </Link>
-                  </Span>
-                </Center>
+                <InaccurateDataFooter />
               </Stack>
             </Flex>
           ) : (

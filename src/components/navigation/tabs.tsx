@@ -1,6 +1,6 @@
 import { Icon } from '@chakra-ui/react';
 import React from 'react';
-// import { GiArtilleryShell } from 'react-icons/gi';
+import { GiArtilleryShell } from 'react-icons/gi';
 import { TbTank } from 'react-icons/tb';
 
 import type { ReactNode } from 'react';
@@ -22,13 +22,13 @@ export const tabs: Record<string, Tab> = {
       </Icon>
     ),
   },
-  // shells: {
-  //   label: 'Shells',
-  //   path: '/shells',
-  //   icon: () => (
-  //     <Icon height={5} width={5}>
-  //       <GiArtilleryShell />
-  //     </Icon>
-  //   ),
-  // },
+  shells: {
+    label: 'Shells',
+    path: '/shells',
+    icon: () => (
+      <Icon height={5} width={5}>
+        <GiArtilleryShell />
+      </Icon>
+    ),
+  },
 };
