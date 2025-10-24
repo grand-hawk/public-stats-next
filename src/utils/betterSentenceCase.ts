@@ -1,16 +1,19 @@
-import { split } from 'change-case';
-
 export function betterSentenceCase(str: string): string {
-  const words = split(str);
+  const tokens = str.match(/[A-Za-z]+|[^A-Za-z]+/g);
+  if (!tokens) return str;
 
   let wordIndex = 0;
 
-  const transformed = words.map((token) => {
-    const lettersOnly = token.replace(/[^A-Za-z]+/g, '');
-    const hasLetters = lettersOnly.length > 0;
-    const isAllCaps = hasLetters && lettersOnly === lettersOnly.toUpperCase();
+  const transformed = tokens.map((token) => {
+    const hasLetters = /[A-Za-z]/.test(token);
+    if (!hasLetters) return token;
 
-    if (isAllCaps) {
+    const lettersOnly = token.replace(/[^A-Za-z]+/g, '');
+    const isAllCaps = lettersOnly === lettersOnly.toUpperCase();
+    const isPluralizedAcronym =
+      lettersOnly.length > 0 && /^[A-Z]{2,}(?:['’]?[sS])$/.test(lettersOnly);
+
+    if (isAllCaps || isPluralizedAcronym) {
       wordIndex += 1;
       return token;
     }
@@ -36,5 +39,5 @@ export function betterSentenceCase(str: string): string {
     return token.toLowerCase();
   });
 
-  return transformed.join(' ');
+  return transformed.join('');
 }
