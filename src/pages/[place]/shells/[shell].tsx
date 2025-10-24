@@ -10,6 +10,7 @@ import ShellsSearchSidebar from '@/components/shells/searchSidebar';
 import ShellDamage from '@/components/shells/shell/damage';
 import ShellHeader from '@/components/shells/shell/header';
 import ShellMissile from '@/components/shells/shell/missile';
+import ShellPenetrationTable from '@/components/shells/shell/penetrationTable';
 import ShellProjectile from '@/components/shells/shell/projectile';
 import { EmptyState } from '@/components/ui/empty-state';
 import { getKeywords } from '@/components/utils/head';
@@ -20,7 +21,6 @@ import { usePlace } from '@/hooks/usePlace';
 import { useRouterQuery } from '@/hooks/useRouterQuery';
 import { formatTitle } from '@/utils/formatTitle';
 import { trpc } from '@/utils/trpc';
-import ShellPenetrationTable from '@/components/shells/shell/penetrationTable';
 
 export default function PlaceShell() {
   const router = useRouter();

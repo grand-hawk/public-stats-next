@@ -1,16 +1,13 @@
-import { Box, FormatNumber, HStack, Span } from '@chakra-ui/react';
+import { FormatNumber, HStack } from '@chakra-ui/react';
 import React from 'react';
 
-import InfoTooltip from '@/components/infoTooltip';
-import Stat from '@/components/wikiComponents/stat';
+import { Switch } from '@/components/ui/switch';
+import StatsTable from '@/components/wikiComponents/statsTables';
 import TitledCard from '@/components/wikiComponents/titledCard';
 import { useShell } from '@/hooks/contexts/shell';
-import StatsTable, {
-  Row,
-  Table,
-} from '@/components/wikiComponents/statsTables';
-import { Switch } from '@/components/ui/switch';
 import { relPenetration } from '@/utils/penetration';
+
+import type { Row, Table } from '@/components/wikiComponents/statsTables';
 
 export default function ShellPenetrationTable() {
   const shell = useShell();
@@ -28,10 +25,10 @@ export default function ShellPenetrationTable() {
     ...angles.map((angle) => (
       <FormatNumber
         key={angle}
-        value={angle}
+        style="unit"
         unit="degree"
         unitDisplay="narrow"
-        style="unit"
+        value={angle}
       />
     )),
   ];
@@ -39,10 +36,10 @@ export default function ShellPenetrationTable() {
   const rows: Row[] = distances.map((distance) => [
     <FormatNumber
       key={distance}
-      value={distance}
       style="unit"
       unit="meter"
       unitDisplay="narrow"
+      value={distance}
     />,
 
     ...angles.map((angle) => {
@@ -56,11 +53,11 @@ export default function ShellPenetrationTable() {
       return anglePens.map((penetration) =>
         penetration ? (
           <FormatNumber
-            value={penetration}
             key={`${distance}-${angle}-${penetration}`}
             style="unit"
             unit="millimeter"
             unitDisplay="narrow"
+            value={penetration}
           />
         ) : (
           '?mm'
@@ -74,15 +71,12 @@ export default function ShellPenetrationTable() {
   return (
     <TitledCard
       as="section"
-      title="Penetration"
-      withAnchor
-      innerPadding={4}
       endAddon={
         <HStack>
           LOS
           <Switch
-            size="sm"
             checked={mode === 'rel'}
+            size="sm"
             onCheckedChange={(details) =>
               setMode(details.checked ? 'rel' : 'los')
             }
@@ -90,8 +84,11 @@ export default function ShellPenetrationTable() {
           REL
         </HStack>
       }
+      innerPadding={4}
+      title="Penetration"
+      withAnchor
     >
-      <StatsTable tables={[table]} noInlinePadding />
+      <StatsTable noInlinePadding tables={[table]} />
     </TitledCard>
   );
 }

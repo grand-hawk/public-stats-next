@@ -5,8 +5,8 @@ export type Table = Array<Row | undefined>;
 export type Row = [string | React.ReactNode, ...React.ReactNode[]] | [null];
 
 export default function StatsTable({
+  noInlinePadding,
   tables,
-  noInlinePadding = false,
 }: {
   tables: Array<Table | undefined>;
   noInlinePadding?: boolean;

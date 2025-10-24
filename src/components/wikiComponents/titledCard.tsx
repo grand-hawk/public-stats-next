@@ -25,12 +25,12 @@ export default function TitledCard({
   children,
   closedByDefault = false,
   collapsible = false,
+  endAddon,
   innerPadding = 6,
   keepBorder,
   title,
   tooltip,
   withAnchor,
-  endAddon,
   ...props
 }: PropsWithChildren<
   BoxProps & {
