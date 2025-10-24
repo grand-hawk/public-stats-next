@@ -5,6 +5,7 @@ import StatsTable from '@/components/wikiComponents/statsTables';
 import TitledCard from '@/components/wikiComponents/titledCard';
 import { useDynamicData } from '@/hooks/contexts/dynamicData';
 import { getAllModulesOfType, getOneModuleOfType } from '@/utils/alterations';
+import { betterSentenceCase } from '@/utils/betterSentenceCase';
 
 import type { Table } from '@/components/wikiComponents/statsTables';
 
@@ -36,7 +37,7 @@ export default function Vehicle() {
 
   const seatCount: Record<string, number> = {};
   for (const seat of seats) {
-    const name = seat.data.name;
+    const name = betterSentenceCase(seat.data.name);
 
     if (!seatCount[name]) seatCount[name] = 0;
     seatCount[name] += 1;
