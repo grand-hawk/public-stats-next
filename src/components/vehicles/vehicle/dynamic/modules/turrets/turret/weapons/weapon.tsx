@@ -5,7 +5,7 @@ import slug from 'slug';
 
 import InlineCard from '@/components/wikiComponents/inlineCard';
 import StatsTable from '@/components/wikiComponents/statsTables';
-import { useDynamicData } from '@/hooks/contexts/dynamicData';
+import { useDynamicData } from '@/hooks/providers/dynamicData';
 import { usePlaceInitials } from '@/hooks/usePlaceInitials';
 import {
   getModulesByReferences,

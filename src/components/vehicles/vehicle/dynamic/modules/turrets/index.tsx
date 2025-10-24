@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Turret from '@/components/vehicles/vehicle/dynamic/modules/turrets/turret';
-import { useDynamicData } from '@/hooks/contexts/dynamicData';
+import { useDynamicData } from '@/hooks/providers/dynamicData';
 import {
   getAllModulesOfType,
   getOneModuleFromReferences,

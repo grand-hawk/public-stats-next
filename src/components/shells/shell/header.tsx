@@ -4,7 +4,7 @@ import React from 'react';
 
 import { getShellTypeIcon } from '@/components/icons/shells';
 import Stat from '@/components/wikiComponents/stat';
-import { useShell } from '@/hooks/contexts/shell';
+import { useShell } from '@/hooks/providers/shell';
 
 export default function ShellHeader() {
   const shell = useShell();

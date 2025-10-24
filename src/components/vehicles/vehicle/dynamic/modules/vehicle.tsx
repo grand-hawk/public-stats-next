@@ -3,7 +3,7 @@ import React from 'react';
 
 import StatsTable from '@/components/wikiComponents/statsTables';
 import TitledCard from '@/components/wikiComponents/titledCard';
-import { useDynamicData } from '@/hooks/contexts/dynamicData';
+import { useDynamicData } from '@/hooks/providers/dynamicData';
 import { getAllModulesOfType, getOneModuleOfType } from '@/utils/alterations';
 import { betterSentenceCase } from '@/utils/betterSentenceCase';
 

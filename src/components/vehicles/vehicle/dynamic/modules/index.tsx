@@ -4,7 +4,7 @@ import { EmptyState } from '@/components/ui/empty-state';
 import Defenses from '@/components/vehicles/vehicle/dynamic/modules/defenses';
 import Turrets from '@/components/vehicles/vehicle/dynamic/modules/turrets';
 import Vehicle from '@/components/vehicles/vehicle/dynamic/modules/vehicle';
-import { useDynamicData } from '@/hooks/contexts/dynamicData';
+import { useDynamicData } from '@/hooks/providers/dynamicData';
 
 export default function VehicleDynamicModules() {
   const { assembledModules } = useDynamicData();

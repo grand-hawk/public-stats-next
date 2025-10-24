@@ -2,7 +2,7 @@ import React from 'react';
 
 import StatsTable from '@/components/wikiComponents/statsTables';
 import TitledCard from '@/components/wikiComponents/titledCard';
-import { useDynamicData } from '@/hooks/contexts/dynamicData';
+import { useDynamicData } from '@/hooks/providers/dynamicData';
 import { getOneModuleOfType } from '@/utils/alterations';
 
 import type { Table } from '@/components/wikiComponents/statsTables';

@@ -15,7 +15,7 @@ import { SiFandom } from 'react-icons/si';
 
 import IconLink from '@/components/buttonIconLink';
 import TeamIcon from '@/components/icons/teams';
-import { useVehicle } from '@/hooks/contexts/vehicle';
+import { useVehicle } from '@/hooks/providers/vehicle';
 
 export default function VehicleHeader() {
   const vehicle = useVehicle();

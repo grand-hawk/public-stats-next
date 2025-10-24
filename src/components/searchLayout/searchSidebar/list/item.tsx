@@ -7,6 +7,7 @@ import { Button } from '@/components/ui/button';
 
 import type { ButtonProps } from '@/components/ui/button';
 import type { FlexProps } from '@chakra-ui/react';
+import type { LinkProps as NextLinkProps } from 'next/link';
 import type { PropsWithChildren } from 'react';
 
 const baseItemProps = {
@@ -52,7 +53,7 @@ export const SearchLinkListItem = React.memo(function SearchLinkListItem({
 }: PropsWithChildren<
   ButtonProps & {
     active?: boolean;
-    href: string;
+    href: NextLinkProps['href'];
   }
 >) {
   return (
@@ -71,7 +72,9 @@ export const SearchLinkListItem = React.memo(function SearchLinkListItem({
       {active ? (
         <Span>{children}</Span>
       ) : (
-        <NextLink href={href}>{children}</NextLink>
+        <NextLink href={href} shallow>
+          {children}
+        </NextLink>
       )}
     </Button>
   );

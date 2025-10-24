@@ -16,7 +16,7 @@ import { EmptyState } from '@/components/ui/empty-state';
 import { getKeywords } from '@/components/utils/head';
 import Layout from '@/components/utils/layout';
 import InaccurateDataFooter from '@/components/wikiComponents/inaccurateDataFooter';
-import { ShellContext } from '@/hooks/contexts/shell';
+import { ShellContext } from '@/hooks/providers/shell';
 import { usePlace } from '@/hooks/usePlace';
 import { useRouterQuery } from '@/hooks/useRouterQuery';
 import { formatTitle } from '@/utils/formatTitle';

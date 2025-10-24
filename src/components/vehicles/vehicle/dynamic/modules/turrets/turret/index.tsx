@@ -6,7 +6,7 @@ import Weapons from '@/components/vehicles/vehicle/dynamic/modules/turrets/turre
 import Feature from '@/components/wikiComponents/feature';
 import StatsTable from '@/components/wikiComponents/statsTables';
 import TitledCard from '@/components/wikiComponents/titledCard';
-import { useDynamicData } from '@/hooks/contexts/dynamicData';
+import { useDynamicData } from '@/hooks/providers/dynamicData';
 import { getModulesByReferences } from '@/utils/alterations';
 
 import type { TurretWithName } from '@/components/vehicles/vehicle/dynamic/modules/turrets';

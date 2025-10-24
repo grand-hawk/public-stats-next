@@ -3,7 +3,7 @@ import React from 'react';
 
 import Stat from '@/components/wikiComponents/stat';
 import TitledCard from '@/components/wikiComponents/titledCard';
-import { useVehicle } from '@/hooks/contexts/vehicle';
+import { useVehicle } from '@/hooks/providers/vehicle';
 import { capitalizeFirst } from '@/utils/capitalizeFirst';
 
 export default function VehicleGeneralInformation({

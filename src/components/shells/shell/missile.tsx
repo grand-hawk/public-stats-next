@@ -4,7 +4,7 @@ import React from 'react';
 import InfoTooltip from '@/components/infoTooltip';
 import Stat from '@/components/wikiComponents/stat';
 import TitledCard from '@/components/wikiComponents/titledCard';
-import { useShell } from '@/hooks/contexts/shell';
+import { useShell } from '@/hooks/providers/shell';
 
 export default function ShellMissile() {
   const shell = useShell();

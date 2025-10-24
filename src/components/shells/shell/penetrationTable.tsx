@@ -4,7 +4,7 @@ import React from 'react';
 import { Switch } from '@/components/ui/switch';
 import StatsTable from '@/components/wikiComponents/statsTables';
 import TitledCard from '@/components/wikiComponents/titledCard';
-import { useShell } from '@/hooks/contexts/shell';
+import { useShell } from '@/hooks/providers/shell';
 import { relPenetration } from '@/utils/penetration';
 
 import type { Row, Table } from '@/components/wikiComponents/statsTables';

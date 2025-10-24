@@ -3,7 +3,7 @@ import React from 'react';
 
 import Stat from '@/components/wikiComponents/stat';
 import TitledCard from '@/components/wikiComponents/titledCard';
-import { useShell } from '@/hooks/contexts/shell';
+import { useShell } from '@/hooks/providers/shell';
 
 export default function ShellProjectile() {
   const shell = useShell();

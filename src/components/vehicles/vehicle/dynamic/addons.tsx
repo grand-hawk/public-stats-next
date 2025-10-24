@@ -4,8 +4,8 @@ import { MdOutlineCheck } from 'react-icons/md';
 
 import InfoTooltip from '@/components/infoTooltip';
 import TitledCard from '@/components/wikiComponents/titledCard';
-import { useDynamicData } from '@/hooks/contexts/dynamicData';
-import { useVehicle } from '@/hooks/contexts/vehicle';
+import { useDynamicData } from '@/hooks/providers/dynamicData';
+import { useVehicle } from '@/hooks/providers/vehicle';
 import {
   alterationHasChanges,
   alterationIsConflicting,
