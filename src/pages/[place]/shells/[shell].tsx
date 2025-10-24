@@ -20,6 +20,7 @@ import { usePlace } from '@/hooks/usePlace';
 import { useRouterQuery } from '@/hooks/useRouterQuery';
 import { formatTitle } from '@/utils/formatTitle';
 import { trpc } from '@/utils/trpc';
+import ShellPenetrationTable from '@/components/shells/shell/penetrationTable';
 
 export default function PlaceShell() {
   const router = useRouter();
@@ -109,6 +110,7 @@ export default function PlaceShell() {
                   <ShellProjectile />
                   <ShellDamage />
                   <ShellMissile />
+                  <ShellPenetrationTable />
                 </ShellContext.Provider>
 
                 <InaccurateDataFooter />

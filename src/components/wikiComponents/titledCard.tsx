@@ -30,6 +30,7 @@ export default function TitledCard({
   title,
   tooltip,
   withAnchor,
+  endAddon,
   ...props
 }: PropsWithChildren<
   BoxProps & {
@@ -40,6 +41,7 @@ export default function TitledCard({
     collapsible?: boolean | 'force';
     closedByDefault?: boolean;
     keepBorder?: boolean;
+    endAddon?: React.ReactNode;
   }
 >) {
   const [isExpanded, setIsExpanded] = React.useState(!closedByDefault);
@@ -101,6 +103,12 @@ export default function TitledCard({
             </Icon>
           </Flex>
         </Collapsible.Trigger>
+      )}
+
+      {endAddon && (
+        <Box marginLeft="auto" marginRight={3}>
+          {endAddon}
+        </Box>
       )}
     </Box>
   );

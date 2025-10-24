@@ -6,8 +6,10 @@ export type Row = [string | React.ReactNode, ...React.ReactNode[]] | [null];
 
 export default function StatsTable({
   tables,
+  noInlinePadding = false,
 }: {
   tables: Array<Table | undefined>;
+  noInlinePadding?: boolean;
 }) {
   const filteredTables = tables.filter(Boolean) as Table[];
 
@@ -32,7 +34,7 @@ export default function StatsTable({
       <Table.Body>
         {filteredTables.map((table, tableIndex) =>
           (table.filter(Boolean) as Row[]).map((row, rowIndex) =>
-            row[0] ? (
+            row[0] || row.length > 1 ? (
               <Table.Row key={`${tableIndex}-${row[0]}`}>
                 {row.map((value, columnIndex) => {
                   const isFirst = columnIndex === 0 && rowIndex === 0;
@@ -45,7 +47,8 @@ export default function StatsTable({
                       paddingInlineStart={
                         columnIndex === 0 &&
                         rowIndex !== 0 &&
-                        table[0]![0] !== null
+                        table[0]![0] !== null &&
+                        !noInlinePadding
                           ? 6
                           : undefined
                       }
