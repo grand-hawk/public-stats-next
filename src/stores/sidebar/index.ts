@@ -22,6 +22,4 @@ export const useSidebarStore = create(
       version: 1,
     },
   ),
-);   },
-  })),
 );

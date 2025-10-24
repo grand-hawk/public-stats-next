@@ -5,11 +5,13 @@ import { MdOutlineExpandMore } from 'react-icons/md';
 
 import { useRouterQuery } from '@/hooks/useRouterQuery';
 import { usePersistStoreIsHydrated } from '@/hooks/usePersistStoreIsHydrated';
-import { useSidebarStore } from '@/stores/sidebar';ebar';
+import { useSidebarStore } from '@/stores/sidebar';
 
 import type { InputProps } from '@chakra-ui/react';
 
-export const SEARCH_INPUT_HEIGHT = '48pxexport default function SearchInput({
+export const SEARCH_INPUT_HEIGHT = '48px';
+
+export default function SearchInput({
   noButton,
   onChange,
   queryKey,
@@ -33,8 +35,7 @@ export const SEARCH_INPUT_HEIGHT = '48pxexport default function SearchInput({
     }
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [queryValue, isHydrated]);deps
-  }, [queryValue]);
+  }, [queryValue, isHydrated]);
 
   return (
     <Group gap={0} height={SEARCH_INPUT_HEIGHT} width="100%">
