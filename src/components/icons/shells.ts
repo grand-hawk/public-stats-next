@@ -45,7 +45,7 @@ export const shells: Record<string, RegExp[]> = {
   '/assets/icons/shells/SMOKE.png': [/^SMOKE$/],
 };
 
-export function getIcon(type: string) {
+export function getShellTypeIcon(type: string) {
   let lastMatch: string | undefined;
 
   for (const [icon, patterns] of Object.entries(shells))

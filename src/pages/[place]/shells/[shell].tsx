@@ -7,7 +7,10 @@ import slug from 'slug';
 
 import SearchLayout from '@/components/searchLayout/layout';
 import ShellsSearchSidebar from '@/components/shells/searchSidebar';
+import ShellDamage from '@/components/shells/shell/damage';
 import ShellHeader from '@/components/shells/shell/header';
+import ShellMissile from '@/components/shells/shell/missile';
+import ShellProjectile from '@/components/shells/shell/projectile';
 import { EmptyState } from '@/components/ui/empty-state';
 import { getKeywords } from '@/components/utils/head';
 import Layout from '@/components/utils/layout';
@@ -95,11 +98,17 @@ export default function PlaceShell() {
                 aria-labelledby="shell-page-title"
                 as="article"
                 gap={4}
-                maxWidth="4xl"
+                maxWidth={{
+                  md: '4xl',
+                  lg: '2xl',
+                }}
                 width="100%"
               >
                 <ShellContext.Provider value={shell}>
                   <ShellHeader />
+                  <ShellProjectile />
+                  <ShellDamage />
+                  <ShellMissile />
                 </ShellContext.Provider>
 
                 <InaccurateDataFooter />

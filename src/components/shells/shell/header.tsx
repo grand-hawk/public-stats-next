@@ -2,7 +2,7 @@ import { Box, Heading, Image, Span, Stack } from '@chakra-ui/react';
 import NextImage from 'next/image';
 import React from 'react';
 
-import { getIcon } from '@/components/icons/shells';
+import { getShellTypeIcon } from '@/components/icons/shells';
 import Stat from '@/components/wikiComponents/stat';
 import { useShell } from '@/hooks/contexts/shell';
 
@@ -10,7 +10,7 @@ export default function ShellHeader() {
   const shell = useShell();
 
   const shellIcon = React.useMemo(() => {
-    return getIcon(shell.type);
+    return getShellTypeIcon(shell.type);
   }, [shell.type]);
 
   return (
@@ -46,7 +46,7 @@ export default function ShellHeader() {
 
           {shellIcon && (
             // eslint-disable-next-line jsx-a11y/alt-text
-            <Image asChild marginLeft={2}>
+            <Image asChild marginLeft={1}>
               <NextImage
                 alt={shell.type}
                 height={32}

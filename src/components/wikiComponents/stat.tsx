@@ -7,7 +7,7 @@ export default function Stat({
   children,
   label,
 }: PropsWithChildren<{
-  label: string;
+  label: React.ReactNode;
 }>) {
   return (
     <ChakraStat.Root>
