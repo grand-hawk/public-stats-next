@@ -77,8 +77,10 @@ export default function SearchList({
           const listItem = listItems[virtualItem.index];
 
           const baseProps = {
-            height: `${virtualItem.size}px`,
-            transform: `translateY(${virtualItem.start}px)`,
+            style: {
+              height: `${virtualItem.size}px`,
+              transform: `translateY(${virtualItem.start}px)`,
+            },
           } as const;
 
           if (listItem.type === 'divider')
