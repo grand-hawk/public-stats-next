@@ -1,43 +1,72 @@
 export function betterSentenceCase(str: string): string {
-  const tokens = str.match(/[A-Za-z]+|[^A-Za-z]+/g);
-  if (!tokens) return str;
+  const segments = str.match(/[A-Za-z]+|[^A-Za-z]+/g);
+  if (!segments) return str;
 
   let wordIndex = 0;
+  const result: string[] = [];
 
-  const transformed = tokens.map((token) => {
-    const hasLetters = /[A-Za-z]/.test(token);
-    if (!hasLetters) return token;
-
-    const lettersOnly = token.replace(/[^A-Za-z]+/g, '');
-    const isAllCaps = lettersOnly === lettersOnly.toUpperCase();
-    const isPluralizedAcronym =
-      lettersOnly.length > 0 && /^[A-Z]{2,}(?:['’]?[sS])$/.test(lettersOnly);
-
-    if (isAllCaps || isPluralizedAcronym) {
-      wordIndex += 1;
-      return token;
+  for (const segment of segments) {
+    if (!/[A-Za-z]/.test(segment)) {
+      result.push(segment);
+      continue;
     }
 
-    if (wordIndex === 0) {
-      const lower = token.toLowerCase();
-      const firstLetterMatch = lower.match(/[a-z]/);
+    const parts = splitAlphabeticSegment(segment);
+    const lastIndex = parts.length - 1;
 
-      if (!firstLetterMatch) {
-        wordIndex += 1;
-        return lower;
+    for (const [index, part] of parts.entries()) {
+      const lettersOnly = part.replace(/[^A-Za-z]+/g, '');
+      const hasLetters = lettersOnly.length > 0;
+
+      if (!hasLetters) {
+        result.push(part);
+        continue;
       }
 
-      const i = firstLetterMatch.index!;
-      const result =
-        lower.slice(0, i) + lower.charAt(i).toUpperCase() + lower.slice(i + 1);
+      const isAllCaps = lettersOnly === lettersOnly.toUpperCase();
+      const isPluralizedAcronym = /^[A-Z]{2,}(?:['’]?[sS])$/.test(lettersOnly);
+      const isMixedCaseAcronym = /^[A-Z](?:[a-z]+[A-Z])+$/u.test(lettersOnly);
 
-      wordIndex += 1;
-      return result;
+      if (isAllCaps || isPluralizedAcronym || isMixedCaseAcronym) {
+        wordIndex += 1;
+        result.push(part);
+      } else if (wordIndex === 0) {
+        const lower = part.toLowerCase();
+        const firstLetterMatch = lower.match(/[a-z]/);
+
+        if (!firstLetterMatch) {
+          wordIndex += 1;
+          result.push(lower);
+        } else {
+          const i = firstLetterMatch.index!;
+          const transformed =
+            lower.slice(0, i) +
+            lower.charAt(i).toUpperCase() +
+            lower.slice(i + 1);
+
+          wordIndex += 1;
+          result.push(transformed);
+        }
+      } else {
+        wordIndex += 1;
+        result.push(part.toLowerCase());
+      }
+
+      if (parts.length > 1 && index < lastIndex) result.push(' ');
     }
+  }
 
-    wordIndex += 1;
-    return token.toLowerCase();
-  });
+  return result.join('');
+}
 
-  return transformed.join('');
+function splitAlphabeticSegment(segment: string): string[] {
+  if (/^[A-Z]{2,}$/.test(segment) || /^[A-Z]{2,}(?:['’]?[sS])$/.test(segment))
+    return [segment];
+  if (/^[A-Z](?:[a-z]+[A-Z])+$/u.test(segment)) return [segment];
+
+  return (
+    segment.match(
+      /[A-Z]{2,}(?=[A-Z][a-z])|[A-Z]{2,}(?=[a-z])|[A-Z]?[a-z]+|[A-Z]+|[a-z]+/g,
+    ) ?? [segment]
+  );
 }
