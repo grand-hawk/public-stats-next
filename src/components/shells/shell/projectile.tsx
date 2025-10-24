@@ -1,7 +1,6 @@
 import { Box, FormatNumber } from '@chakra-ui/react';
 import React from 'react';
 
-import InfoTooltip from '@/components/infoTooltip';
 import Stat from '@/components/wikiComponents/stat';
 import TitledCard from '@/components/wikiComponents/titledCard';
 import { useShell } from '@/hooks/contexts/shell';
@@ -55,19 +54,6 @@ export default function ShellProjectile() {
               unitDisplay="narrow"
               value={shell.ricochetAngle}
             />
-          </Stat>
-        )}
-
-        {shell.laser && (
-          <Stat
-            label={
-              <>
-                Laser guidance
-                <InfoTooltip content="Ammunition guided by laser, triggers LWS" />
-              </>
-            }
-          >
-            Yes
           </Stat>
         )}
       </Box>

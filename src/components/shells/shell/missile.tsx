@@ -41,6 +41,38 @@ export default function ShellMissile() {
             Yes
           </Stat>
         )}
+
+        {shell.missile.limit !== undefined && (
+          <Stat label="G limit">
+            <FormatNumber value={shell.missile.limit} />G
+          </Stat>
+        )}
+
+        {shell.missile.turnRate !== undefined && (
+          <Stat label="Turn rate">
+            <FormatNumber
+              style="unit"
+              unit="degree-per-second"
+              unitDisplay="narrow"
+              value={shell.missile.turnRate}
+            />
+          </Stat>
+        )}
+
+        {shell.missile.unjammable && <Stat label="Unjammable">Yes</Stat>}
+
+        {shell.laser && (
+          <Stat
+            label={
+              <>
+                Laser guidance
+                <InfoTooltip content="Ammunition guided by laser, triggers LWS" />
+              </>
+            }
+          >
+            Yes
+          </Stat>
+        )}
       </Box>
     </TitledCard>
   );
