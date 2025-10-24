@@ -45,7 +45,7 @@ export default function PlaceShell() {
       });
   }, [router, shellQuery, shell]);
 
-  const title = shell ? `${shell.name} - ${shell.weapon}` : null;
+  const title = shell ? `${shell.weapon} - ${shell.name}` : null;
 
   return (
     <>
