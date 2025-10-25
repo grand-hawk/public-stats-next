@@ -4,11 +4,14 @@ import React from 'react';
 import InfoTooltip from '@/components/infoTooltip';
 import Feature from '@/components/wikiComponents/feature';
 import InlineCard from '@/components/wikiComponents/inlineCard';
-import StatsTable from '@/components/wikiComponents/statsTables';
+import {
+  StatsCell,
+  StatsRoot,
+  StatsRow,
+} from '@/components/wikiComponents/stats';
 import { betterSentenceCase } from '@/utils/betterSentenceCase';
 
 import type { TurretWithName } from '@/components/vehicles/vehicle/dynamic/modules/turrets';
-import type { Row, Table } from '@/components/wikiComponents/statsTables';
 import type { VehicleModuleFromType } from '@/utils/vehicles';
 
 type SightZoom =
@@ -75,68 +78,8 @@ export default function Sight({
       </>
     );
 
-  const zoomRows: (Row | undefined)[] = [
-    baseZoom && !sight.thermal?.forced ? ['Zoom', baseZoom] : undefined,
-    thermalZoom ? ['Thermal zoom', thermalZoom] : undefined,
-  ];
-
   const baseAspectRatio = sight.zoom.base?.aspectRatio;
   const thermalAspectRatio = sight.zoom.thermal?.aspectRatio;
-
-  const aspectRatioRows: (Row | undefined)[] = [
-    baseAspectRatio !== undefined && !sight.thermal?.forced
-      ? [
-          'Aspect ratio',
-          <>
-            <FormatNumber maximumFractionDigits={3} value={baseAspectRatio} />
-          </>,
-        ]
-      : undefined,
-    thermalAspectRatio !== undefined
-      ? [
-          'Thermal aspect ratio',
-          <>
-            <FormatNumber
-              maximumFractionDigits={3}
-              value={thermalAspectRatio}
-            />
-          </>,
-        ]
-      : undefined,
-  ];
-
-  const sightTable: Table = [
-    [null],
-    ['Rangefinder', sight.rangefinder],
-    sight.thermal
-      ? [
-          'Thermals',
-          `${sight.thermal.type}${sight.thermal.forced ? ' (forced)' : ''}`,
-        ]
-      : undefined,
-    sight.traverse
-      ? [
-          'Vertical limits',
-          <>
-            <FormatNumber
-              style="unit"
-              unit="degree"
-              unitDisplay="narrow"
-              value={sight.traverse.vertical.min}
-            />
-            –
-            <FormatNumber
-              style="unit"
-              unit="degree"
-              unitDisplay="narrow"
-              value={sight.traverse.vertical.max}
-            />
-          </>,
-        ]
-      : undefined,
-    ...zoomRows,
-    ...aspectRatioRows,
-  ];
 
   return (
     <InlineCard
@@ -152,7 +95,75 @@ export default function Sight({
           </Flex>
         )}
 
-        <StatsTable tables={[sightTable]} />
+        <StatsRoot>
+          <StatsRow>
+            <StatsCell>Rangefinder</StatsCell>
+            <StatsCell>{sight.rangefinder}</StatsCell>
+          </StatsRow>
+          {sight.thermal && (
+            <StatsRow>
+              <StatsCell>Thermals</StatsCell>
+              <StatsCell>
+                {sight.thermal.type}
+                {sight.thermal.forced ? ' (forced)' : ''}
+              </StatsCell>
+            </StatsRow>
+          )}
+          {sight.traverse && (
+            <StatsRow>
+              <StatsCell>Vertical limits</StatsCell>
+              <StatsCell>
+                <FormatNumber
+                  style="unit"
+                  unit="degree"
+                  unitDisplay="narrow"
+                  value={sight.traverse.vertical.min}
+                />
+                –
+                <FormatNumber
+                  style="unit"
+                  unit="degree"
+                  unitDisplay="narrow"
+                  value={sight.traverse.vertical.max}
+                />
+              </StatsCell>
+            </StatsRow>
+          )}
+          {baseZoom && !sight.thermal?.forced && (
+            <StatsRow>
+              <StatsCell>Zoom</StatsCell>
+              <StatsCell>{baseZoom}</StatsCell>
+            </StatsRow>
+          )}
+          {thermalZoom && (
+            <StatsRow>
+              <StatsCell>Thermal zoom</StatsCell>
+              <StatsCell>{thermalZoom}</StatsCell>
+            </StatsRow>
+          )}
+          {baseAspectRatio !== undefined && !sight.thermal?.forced && (
+            <StatsRow>
+              <StatsCell>Aspect ratio</StatsCell>
+              <StatsCell>
+                <FormatNumber
+                  maximumFractionDigits={3}
+                  value={baseAspectRatio}
+                />
+              </StatsCell>
+            </StatsRow>
+          )}
+          {thermalAspectRatio !== undefined && (
+            <StatsRow>
+              <StatsCell>Thermal aspect ratio</StatsCell>
+              <StatsCell>
+                <FormatNumber
+                  maximumFractionDigits={3}
+                  value={thermalAspectRatio}
+                />
+              </StatsCell>
+            </StatsRow>
+          )}
+        </StatsRoot>
       </Stack>
     </InlineCard>
   );

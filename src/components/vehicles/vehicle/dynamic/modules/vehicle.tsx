@@ -1,13 +1,15 @@
 import { FormatNumber } from '@chakra-ui/react';
 import React from 'react';
 
-import StatsTable from '@/components/wikiComponents/statsTables';
+import {
+  StatsCell,
+  StatsRoot,
+  StatsRow,
+} from '@/components/wikiComponents/stats';
 import TitledCard from '@/components/wikiComponents/titledCard';
 import { useDynamicData } from '@/hooks/providers/dynamicData';
 import { getAllModulesOfType, getOneModuleOfType } from '@/utils/alterations';
 import { betterSentenceCase } from '@/utils/betterSentenceCase';
-
-import type { Table } from '@/components/wikiComponents/statsTables';
 
 export default function Vehicle() {
   const { assembledModules } = useDynamicData();
@@ -17,24 +19,6 @@ export default function Vehicle() {
 
   if (!driveData && seats.length === 0) return null;
 
-  // Vehicle card
-
-  const rootTable: Table | undefined = driveData
-    ? [
-        [null],
-        [
-          'Weight',
-          <>
-            <FormatNumber
-              maximumFractionDigits={1}
-              value={driveData.data.mass}
-            />{' '}
-            t
-          </>,
-        ],
-      ]
-    : undefined;
-
   const seatCount: Record<string, number> = {};
   for (const seat of seats) {
     const name = betterSentenceCase(seat.data.name);
@@ -42,115 +26,6 @@ export default function Vehicle() {
     if (!seatCount[name]) seatCount[name] = 0;
     seatCount[name] += 1;
   }
-
-  const seatingCapacity: Table | undefined =
-    seats.length > 0
-      ? [
-          ['Seating capacity', String(seats.length)],
-          ...Object.entries(seatCount).sort((a, b) => a[0].localeCompare(b[0])),
-        ]
-      : undefined;
-
-  const speedTable: Table | undefined = driveData
-    ? [
-        ['Max speed', null],
-        [
-          'Forward',
-          <>
-            <FormatNumber
-              style="unit"
-              unit="kilometer-per-hour"
-              value={driveData.data.engine.forwardSpeed}
-            />
-          </>,
-        ],
-        [
-          'Backward',
-          <>
-            <FormatNumber
-              style="unit"
-              unit="kilometer-per-hour"
-              value={driveData.data.engine.reverseSpeed}
-            />
-          </>,
-        ],
-        driveData.data.engine.amphibiousSpeed
-          ? [
-              'Amphibious',
-              <>
-                <FormatNumber
-                  style="unit"
-                  unit="kilometer-per-hour"
-                  value={driveData.data.engine.amphibiousSpeed}
-                />
-              </>,
-            ]
-          : undefined,
-      ]
-    : undefined;
-
-  const suspensionTable: Table | undefined =
-    driveData?.data.suspensionControl.height ||
-    driveData?.data.suspensionControl.horizontal ||
-    driveData?.data.suspensionControl.vertical
-      ? [
-          ['Active suspension', null],
-          [
-            'Ride height',
-            driveData.data.suspensionControl.height ? 'Yes' : 'No',
-          ],
-          [
-            'Lateral roll',
-            driveData.data.suspensionControl.horizontal ? 'Yes' : 'No',
-          ],
-          ['Pitch', driveData.data.suspensionControl.vertical ? 'Yes' : 'No'],
-        ]
-      : undefined;
-
-  // Powertrain card
-
-  const engineTable: Table | undefined = driveData
-    ? [
-        ['Engine', driveData.data.engine.name],
-        ['Type', driveData.data.engine.type],
-        [
-          'Max RPM',
-          <>
-            <FormatNumber value={driveData.data.engine.maxRPM} /> RPM
-          </>,
-        ],
-        [
-          'Horsepower',
-          <>
-            <FormatNumber value={driveData.data.engine.horsepower} /> hp
-          </>,
-        ],
-        [
-          'Power-to-weight ratio',
-          <>
-            <FormatNumber
-              maximumFractionDigits={1}
-              value={driveData.data.engine.horsepower / driveData.data.mass}
-            />{' '}
-            hp/t
-          </>,
-        ],
-      ]
-    : undefined;
-
-  const transmissionTable: Table | undefined = driveData
-    ? [
-        ['Transmission', null],
-        ['Forward gears', driveData.data.transmission.forwardGears],
-        ['Reverse gears', driveData.data.transmission.reverseGears],
-        driveData.data.transmission.neutralSteering
-          ? ['Neutral steering', 'Yes']
-          : undefined,
-        driveData.data.transmission.automatic
-          ? ['Automatic gearbox', 'Yes']
-          : undefined,
-      ]
-    : undefined;
 
   return (
     <>
@@ -161,12 +36,112 @@ export default function Vehicle() {
         title="Vehicle"
         withAnchor
       >
-        <StatsTable
-          tables={[rootTable, seatingCapacity, speedTable, suspensionTable]}
-        />
+        <StatsRoot>
+          {driveData && (
+            <StatsRow>
+              <StatsCell>Weight</StatsCell>
+              <StatsCell>
+                <FormatNumber
+                  maximumFractionDigits={1}
+                  value={driveData.data.mass}
+                />{' '}
+                t
+              </StatsCell>
+            </StatsRow>
+          )}
+
+          {seats.length > 0 && (
+            <>
+              <StatsRow withPaddingTop>
+                <StatsCell asTitle>Seating capacity</StatsCell>
+                <StatsCell>
+                  <FormatNumber value={seats.length} />
+                </StatsCell>
+              </StatsRow>
+              {Object.entries(seatCount)
+                .sort((a, b) => a[0].localeCompare(b[0]))
+                .map(([name, count]) => (
+                  <StatsRow key={name} withPaddingLeft>
+                    <StatsCell>{name}</StatsCell>
+                    <StatsCell>
+                      <FormatNumber value={count} />
+                    </StatsCell>
+                  </StatsRow>
+                ))}
+            </>
+          )}
+
+          {driveData && (
+            <>
+              <StatsRow withPaddingTop>
+                <StatsCell asTitle>Max speed</StatsCell>
+              </StatsRow>
+              <StatsRow withPaddingLeft>
+                <StatsCell>Forward</StatsCell>
+                <StatsCell>
+                  <FormatNumber
+                    style="unit"
+                    unit="kilometer-per-hour"
+                    value={driveData.data.engine.forwardSpeed}
+                  />
+                </StatsCell>
+              </StatsRow>
+              <StatsRow withPaddingLeft>
+                <StatsCell>Backward</StatsCell>
+                <StatsCell>
+                  <FormatNumber
+                    style="unit"
+                    unit="kilometer-per-hour"
+                    value={driveData.data.engine.reverseSpeed}
+                  />
+                </StatsCell>
+              </StatsRow>
+              {driveData.data.engine.amphibiousSpeed && (
+                <StatsRow withPaddingLeft>
+                  <StatsCell>Amphibious</StatsCell>
+                  <StatsCell>
+                    <FormatNumber
+                      style="unit"
+                      unit="kilometer-per-hour"
+                      value={driveData.data.engine.amphibiousSpeed}
+                    />
+                  </StatsCell>
+                </StatsRow>
+              )}
+            </>
+          )}
+
+          {(driveData?.data.suspensionControl.height ||
+            driveData?.data.suspensionControl.horizontal ||
+            driveData?.data.suspensionControl.vertical) && (
+            <>
+              <StatsRow withPaddingTop>
+                <StatsCell asTitle>Active suspension</StatsCell>
+              </StatsRow>
+              <StatsRow withPaddingLeft>
+                <StatsCell>Ride height</StatsCell>
+                <StatsCell>
+                  {driveData.data.suspensionControl.height ? 'Yes' : 'No'}
+                </StatsCell>
+              </StatsRow>
+              <StatsRow withPaddingLeft>
+                <StatsCell>Lateral roll</StatsCell>
+                <StatsCell>
+                  {driveData.data.suspensionControl.horizontal ? 'Yes' : 'No'}
+                </StatsCell>
+              </StatsRow>
+              <StatsRow withPaddingLeft>
+                <StatsCell>Pitch</StatsCell>
+                <StatsCell>
+                  {driveData.data.suspensionControl.vertical ? 'Yes' : 'No'}
+                </StatsCell>
+              </StatsRow>
+            </>
+          )}
+        </StatsRoot>
       </TitledCard>
 
-      {(engineTable || transmissionTable) && (
+      {driveData && (
         <TitledCard
           as="section"
           collapsible
@@ -174,7 +149,62 @@ export default function Vehicle() {
           title="Powertrain"
           withAnchor
         >
-          <StatsTable tables={[engineTable, transmissionTable]} />
+          <StatsRoot>
+            <StatsRow>
+              <StatsCell asTitle>Engine</StatsCell>
+              <StatsCell>{driveData.data.engine.name}</StatsCell>
+            </StatsRow>
+            <StatsRow withPaddingLeft>
+              <StatsCell>Type</StatsCell>
+              <StatsCell>{driveData.data.engine.type}</StatsCell>
+            </StatsRow>
+            <StatsRow withPaddingLeft>
+              <StatsCell>Max RPM</StatsCell>
+              <StatsCell>
+                <FormatNumber value={driveData.data.engine.maxRPM} /> RPM
+              </StatsCell>
+            </StatsRow>
+            <StatsRow withPaddingLeft>
+              <StatsCell>Horsepower</StatsCell>
+              <StatsCell>
+                <FormatNumber value={driveData.data.engine.horsepower} /> hp
+              </StatsCell>
+            </StatsRow>
+            <StatsRow withPaddingLeft>
+              <StatsCell>Power-to-weight ratio</StatsCell>
+              <StatsCell>
+                <FormatNumber
+                  maximumFractionDigits={1}
+                  value={driveData.data.engine.horsepower / driveData.data.mass}
+                />{' '}
+                hp/t
+              </StatsCell>
+            </StatsRow>
+
+            <StatsRow withPaddingTop>
+              <StatsCell asTitle>Transmission</StatsCell>
+            </StatsRow>
+            <StatsRow withPaddingLeft>
+              <StatsCell>Forward gears</StatsCell>
+              <StatsCell>{driveData.data.transmission.forwardGears}</StatsCell>
+            </StatsRow>
+            <StatsRow withPaddingLeft>
+              <StatsCell>Reverse gears</StatsCell>
+              <StatsCell>{driveData.data.transmission.reverseGears}</StatsCell>
+            </StatsRow>
+            {driveData.data.transmission.neutralSteering && (
+              <StatsRow withPaddingLeft>
+                <StatsCell>Neutral steering</StatsCell>
+                <StatsCell>Yes</StatsCell>
+              </StatsRow>
+            )}
+            {driveData.data.transmission.automatic && (
+              <StatsRow withPaddingLeft>
+                <StatsCell>Automatic gearbox</StatsCell>
+                <StatsCell>Yes</StatsCell>
+              </StatsRow>
+            )}
+          </StatsRoot>
         </TitledCard>
       )}
     </>

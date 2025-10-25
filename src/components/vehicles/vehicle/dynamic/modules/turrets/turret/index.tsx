@@ -4,13 +4,16 @@ import React from 'react';
 import Sights from '@/components/vehicles/vehicle/dynamic/modules/turrets/turret/sights';
 import Weapons from '@/components/vehicles/vehicle/dynamic/modules/turrets/turret/weapons';
 import Feature from '@/components/wikiComponents/feature';
-import StatsTable from '@/components/wikiComponents/statsTables';
+import {
+  StatsCell,
+  StatsRoot,
+  StatsRow,
+} from '@/components/wikiComponents/stats';
 import TitledCard from '@/components/wikiComponents/titledCard';
 import { useDynamicData } from '@/hooks/providers/dynamicData';
 import { getModulesByReferences } from '@/utils/alterations';
 
 import type { TurretWithName } from '@/components/vehicles/vehicle/dynamic/modules/turrets';
-import type { Row, Table } from '@/components/wikiComponents/statsTables';
 
 export default function Turret({ turret }: { turret: TurretWithName }) {
   const { assembledModules } = useDynamicData();
@@ -43,52 +46,6 @@ export default function Turret({ turret }: { turret: TurretWithName }) {
   const isFixed =
     turret.data.traverse.speed.horizontal === 0 &&
     turret.data.traverse.speed.vertical === 0;
-  const traversalTable: Table = [
-    ['Traversal', null],
-    turret.data.traverse.mouseAim ? ['Mouse aim', 'Yes'] : undefined,
-    ...((isFixed
-      ? [['Fixed', 'Yes']]
-      : [
-          [
-            'Horizontal speed',
-            <>
-              <FormatNumber
-                style="unit"
-                unit="degree-per-second"
-                value={turret.data.traverse.speed.horizontal}
-              />
-            </>,
-          ],
-          [
-            'Vertical speed',
-            <>
-              <FormatNumber
-                style="unit"
-                unit="degree-per-second"
-                value={turret.data.traverse.speed.vertical}
-              />
-            </>,
-          ],
-        ]) as Row[]),
-    [
-      'Vertical limits',
-      <>
-        <FormatNumber
-          style="unit"
-          unit="degree"
-          unitDisplay="narrow"
-          value={turret.data.traverse.vertical.min}
-        />
-        –
-        <FormatNumber
-          style="unit"
-          unit="degree"
-          unitDisplay="narrow"
-          value={turret.data.traverse.vertical.max}
-        />
-      </>,
-    ],
-  ];
 
   return (
     <TitledCard
@@ -105,7 +62,64 @@ export default function Turret({ turret }: { turret: TurretWithName }) {
           </Flex>
         )}
 
-        <StatsTable tables={[traversalTable]} />
+        <StatsRoot>
+          <StatsRow>
+            <StatsCell asTitle>Traversal</StatsCell>
+          </StatsRow>
+          {turret.data.traverse.mouseAim && (
+            <StatsRow withPaddingLeft>
+              <StatsCell>Mouse aim</StatsCell>
+              <StatsCell>Yes</StatsCell>
+            </StatsRow>
+          )}
+          {isFixed ? (
+            <StatsRow withPaddingLeft>
+              <StatsCell>Fixed</StatsCell>
+              <StatsCell>Yes</StatsCell>
+            </StatsRow>
+          ) : (
+            <>
+              <StatsRow withPaddingLeft>
+                <StatsCell>Horizontal speed</StatsCell>
+                <StatsCell>
+                  <FormatNumber
+                    style="unit"
+                    unit="degree-per-second"
+                    value={turret.data.traverse.speed.horizontal}
+                  />
+                </StatsCell>
+              </StatsRow>
+              <StatsRow withPaddingLeft>
+                <StatsCell>Vertical speed</StatsCell>
+                <StatsCell>
+                  <FormatNumber
+                    style="unit"
+                    unit="degree-per-second"
+                    value={turret.data.traverse.speed.vertical}
+                  />
+                </StatsCell>
+              </StatsRow>
+            </>
+          )}
+          <StatsRow withPaddingLeft>
+            <StatsCell>Vertical limits</StatsCell>
+            <StatsCell>
+              <FormatNumber
+                style="unit"
+                unit="degree"
+                unitDisplay="narrow"
+                value={turret.data.traverse.vertical.min}
+              />
+              –
+              <FormatNumber
+                style="unit"
+                unit="degree"
+                unitDisplay="narrow"
+                value={turret.data.traverse.vertical.max}
+              />
+            </StatsCell>
+          </StatsRow>
+        </StatsRoot>
 
         <Weapons
           turret={turret}

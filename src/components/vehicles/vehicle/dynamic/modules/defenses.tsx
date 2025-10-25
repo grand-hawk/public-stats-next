@@ -1,11 +1,13 @@
 import React from 'react';
 
-import StatsTable from '@/components/wikiComponents/statsTables';
+import {
+  StatsCell,
+  StatsRoot,
+  StatsRow,
+} from '@/components/wikiComponents/stats';
 import TitledCard from '@/components/wikiComponents/titledCard';
 import { useDynamicData } from '@/hooks/providers/dynamicData';
 import { getOneModuleOfType } from '@/utils/alterations';
-
-import type { Table } from '@/components/wikiComponents/statsTables';
 
 export default function Defenses() {
   const { assembledModules } = useDynamicData();
@@ -14,18 +16,6 @@ export default function Defenses() {
   const ewModule = getOneModuleOfType('EW', assembledModules);
 
   if (!essModule && !ewModule) return null;
-
-  const essTable: Table = [
-    [null],
-    ['Engine smoke system', essModule?.data.present ? 'Yes' : 'No'],
-  ];
-
-  const ewTable: Table = [
-    ['Electronic warfare', null],
-    ['IED jammer', ewModule?.data.ied ? 'Yes' : 'No'],
-    ['Drone jammer', ewModule?.data.drone ? 'Yes' : 'No'],
-  ];
-
   return (
     <TitledCard
       as="section"
@@ -34,7 +24,24 @@ export default function Defenses() {
       title="Defenses"
       withAnchor
     >
-      <StatsTable tables={[essTable, ewTable]} />
+      <StatsRoot>
+        <StatsRow>
+          <StatsCell>Engine smoke system</StatsCell>
+          <StatsCell>{essModule?.data.present ? 'Yes' : 'No'}</StatsCell>
+        </StatsRow>
+
+        <StatsRow withPaddingTop>
+          <StatsCell asTitle>Electronic warfare</StatsCell>
+        </StatsRow>
+        <StatsRow withPaddingLeft>
+          <StatsCell>IED jammer</StatsCell>
+          <StatsCell>{ewModule?.data.ied ? 'Yes' : 'No'}</StatsCell>
+        </StatsRow>
+        <StatsRow withPaddingLeft>
+          <StatsCell>Drone jammer</StatsCell>
+          <StatsCell>{ewModule?.data.drone ? 'Yes' : 'No'}</StatsCell>
+        </StatsRow>
+      </StatsRoot>
     </TitledCard>
   );
 }
