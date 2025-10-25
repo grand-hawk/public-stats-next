@@ -1,5 +1,5 @@
 import { Flex } from '@chakra-ui/react';
-import Link from 'next/link';
+import NextLink from 'next/link';
 import React from 'react';
 import slug from 'slug';
 
@@ -26,9 +26,9 @@ export default function ShellVehicles() {
 
           return (
             <Button key={vehicle} asChild borderRadius="none" variant="solid">
-              <Link href={`/${initials}/vehicles/${vehicleSlug}`}>
+              <NextLink href={`/${initials}/vehicles/${vehicleSlug}`}>
                 {vehicle}
-              </Link>
+              </NextLink>
             </Button>
           );
         })}
