@@ -12,6 +12,7 @@ import ShellHeader from '@/components/shells/shell/header';
 import ShellMissile from '@/components/shells/shell/missile';
 import ShellPenetrationTable from '@/components/shells/shell/penetrationTable';
 import ShellProjectile from '@/components/shells/shell/projectile';
+import ShellVehicles from '@/components/shells/shell/vehicles';
 import { EmptyState } from '@/components/ui/empty-state';
 import { getKeywords } from '@/components/utils/head';
 import Layout from '@/components/utils/layout';
@@ -111,6 +112,7 @@ export default function PlaceShell() {
                   <ShellDamage />
                   <ShellMissile />
                   <ShellPenetrationTable />
+                  <ShellVehicles />
                 </ShellContext.Provider>
 
                 <InaccurateDataFooter />

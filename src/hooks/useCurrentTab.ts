@@ -9,6 +9,8 @@ export function useCurrentTab() {
   const initials = usePlaceInitials();
 
   const currentTab = React.useMemo(() => {
+    if (!initials) return;
+
     for (const tab of Object.values(tabs)) {
       if (router.asPath.startsWith(`/${initials}${tab.path}`)) return tab;
     }

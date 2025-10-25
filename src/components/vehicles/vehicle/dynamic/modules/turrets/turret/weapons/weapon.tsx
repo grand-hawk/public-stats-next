@@ -23,7 +23,7 @@ export default function Weapon({
   weapon: VehicleModuleFromType<'Weapon'>;
   turretName: string;
 }) {
-  const initials = usePlaceInitials();
+  const initials = usePlaceInitials()!;
   const { assembledModules } = useDynamicData();
 
   const nameSlug = slug(weapon.data.name);

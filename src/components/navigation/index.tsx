@@ -43,7 +43,7 @@ export default function Navigation() {
           md: 2,
         }}
       >
-        <NextLink href={`/${initials}`}>
+        <NextLink href={`/${initials || 'mtc'}`}>
           <MTC height={10} width={10} />
         </NextLink>
       </Box>

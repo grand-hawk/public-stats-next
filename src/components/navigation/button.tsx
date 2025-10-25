@@ -12,7 +12,7 @@ export default function NavigationButton({
   href,
   ...props
 }: PropsWithChildren<IconButtonProps & { href: string; active?: boolean }>) {
-  const initials = usePlaceInitials();
+  const initials = usePlaceInitials()!;
 
   return (
     <IconLink
