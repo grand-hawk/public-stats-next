@@ -97,7 +97,7 @@ export default function Weapon({
           .filter(([_, count]) => count !== false)
           .map(([ammo, count]) => [
             <>
-              <Link asChild>
+              <Link asChild variant="underline">
                 <NextLink
                   href={`/${initials}/shells/${nameSlug}-${slug(ammo)}`}
                 >

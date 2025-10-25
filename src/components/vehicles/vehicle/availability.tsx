@@ -59,7 +59,7 @@ export default function VehicleAvailability({
 
             {teams.map((team) => (
               <Table.ColumnHeader key={team}>
-                <Link asChild>
+                <Link asChild variant="underline">
                   <NextLink href={`/${initials}/teams/${slug(team)}`}>
                     {team}
                   </NextLink>
@@ -81,7 +81,7 @@ export default function VehicleAvailability({
               }}
             >
               <Table.Cell>
-                <Link asChild>
+                <Link asChild variant="underline">
                   <NextLink href={`/${initials}/loadouts/${slug(loadoutName)}`}>
                     {loadoutName}
                   </NextLink>
