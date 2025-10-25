@@ -25,7 +25,7 @@ export default function ShellVehicles() {
           const vehicleSlug = slug(vehicle);
 
           return (
-            <Button key={vehicle} asChild borderRadius="none" variant="solid">
+            <Button key={vehicle} asChild borderRadius="none" variant="surface">
               <NextLink href={`/${initials}/vehicles/${vehicleSlug}`}>
                 {vehicle}
               </NextLink>
