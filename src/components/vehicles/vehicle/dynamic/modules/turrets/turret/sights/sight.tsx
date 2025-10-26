@@ -2,13 +2,9 @@ import { Flex, FormatNumber, Stack } from '@chakra-ui/react';
 import React from 'react';
 
 import InfoTooltip from '@/components/infoTooltip';
-import Feature from '@/components/wikiComponents/feature';
-import InlineCard from '@/components/wikiComponents/inlineCard';
-import {
-  StatsCell,
-  StatsRoot,
-  StatsRow,
-} from '@/components/wikiComponents/stats';
+import Feature from '@/components/wiki/feature';
+import InlineCard from '@/components/wiki/inlineCard';
+import { StatsCell, StatsRoot, StatsRow } from '@/components/wiki/stats';
 import { betterSentenceCase } from '@/utils/betterSentenceCase';
 
 import type { TurretWithName } from '@/components/vehicles/vehicle/dynamic/modules/turrets';

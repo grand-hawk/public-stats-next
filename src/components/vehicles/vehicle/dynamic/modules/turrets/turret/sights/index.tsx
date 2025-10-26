@@ -2,7 +2,7 @@ import { Stack } from '@chakra-ui/react';
 import React from 'react';
 
 import Sight from '@/components/vehicles/vehicle/dynamic/modules/turrets/turret/sights/sight';
-import TitledCard from '@/components/wikiComponents/titledCard';
+import TitledCard from '@/components/wiki/titledCard';
 
 import type { TurretWithName } from '@/components/vehicles/vehicle/dynamic/modules/turrets';
 

@@ -3,7 +3,7 @@ import React from 'react';
 import { MdOutlineCheck } from 'react-icons/md';
 
 import InfoTooltip from '@/components/infoTooltip';
-import TitledCard from '@/components/wikiComponents/titledCard';
+import TitledCard from '@/components/wiki/titledCard';
 import { useDynamicData } from '@/hooks/providers/dynamicData';
 import { useVehicle } from '@/hooks/providers/vehicle';
 import {

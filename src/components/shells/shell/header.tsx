@@ -3,7 +3,7 @@ import NextImage from 'next/image';
 import React from 'react';
 
 import { getShellTypeIcon } from '@/components/icons/shells';
-import Stat from '@/components/wikiComponents/stat';
+import Stat from '@/components/wiki/stat';
 import { useShell } from '@/hooks/providers/shell';
 
 export default function ShellHeader() {

@@ -1,11 +1,7 @@
 import React from 'react';
 
-import {
-  StatsCell,
-  StatsRoot,
-  StatsRow,
-} from '@/components/wikiComponents/stats';
-import TitledCard from '@/components/wikiComponents/titledCard';
+import { StatsCell, StatsRoot, StatsRow } from '@/components/wiki/stats';
+import TitledCard from '@/components/wiki/titledCard';
 import { useDynamicData } from '@/hooks/providers/dynamicData';
 import { getOneModuleOfType } from '@/utils/alterations';
 

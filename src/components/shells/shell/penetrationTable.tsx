@@ -2,12 +2,8 @@ import { FormatNumber, HStack, Stack } from '@chakra-ui/react';
 import React from 'react';
 
 import { Switch } from '@/components/ui/switch';
-import {
-  StatsCell,
-  StatsRoot,
-  StatsRow,
-} from '@/components/wikiComponents/stats';
-import TitledCard from '@/components/wikiComponents/titledCard';
+import { StatsCell, StatsRoot, StatsRow } from '@/components/wiki/stats';
+import TitledCard from '@/components/wiki/titledCard';
 import { useShell } from '@/hooks/providers/shell';
 import { relPenetration } from '@/utils/penetration';
 

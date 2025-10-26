@@ -3,12 +3,8 @@ import NextLink from 'next/link';
 import React from 'react';
 import slug from 'slug';
 
-import InlineCard from '@/components/wikiComponents/inlineCard';
-import {
-  StatsCell,
-  StatsRoot,
-  StatsRow,
-} from '@/components/wikiComponents/stats';
+import InlineCard from '@/components/wiki/inlineCard';
+import { StatsCell, StatsRoot, StatsRow } from '@/components/wiki/stats';
 import { useDynamicData } from '@/hooks/providers/dynamicData';
 import { usePlaceInitials } from '@/hooks/usePlaceInitials';
 import {

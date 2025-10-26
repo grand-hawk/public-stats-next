@@ -1,12 +1,8 @@
 import { FormatNumber } from '@chakra-ui/react';
 import React from 'react';
 
-import {
-  StatsCell,
-  StatsRoot,
-  StatsRow,
-} from '@/components/wikiComponents/stats';
-import TitledCard from '@/components/wikiComponents/titledCard';
+import { StatsCell, StatsRoot, StatsRow } from '@/components/wiki/stats';
+import TitledCard from '@/components/wiki/titledCard';
 import { useDynamicData } from '@/hooks/providers/dynamicData';
 import { getAllModulesOfType, getOneModuleOfType } from '@/utils/alterations';
 import { betterSentenceCase } from '@/utils/betterSentenceCase';

@@ -1,8 +1,8 @@
 import { Box, FormatNumber } from '@chakra-ui/react';
 import React from 'react';
 
-import Stat from '@/components/wikiComponents/stat';
-import TitledCard from '@/components/wikiComponents/titledCard';
+import Stat from '@/components/wiki/stat';
+import TitledCard from '@/components/wiki/titledCard';
 import { useShell } from '@/hooks/providers/shell';
 
 export default function ShellProjectile() {

@@ -14,7 +14,7 @@ import VehicleAvailability from '@/components/vehicles/vehicle/availability';
 import VehicleDynamicData from '@/components/vehicles/vehicle/dynamic';
 import VehicleGeneralInformation from '@/components/vehicles/vehicle/generalInformation';
 import VehicleHeader from '@/components/vehicles/vehicle/header';
-import InaccurateDataFooter from '@/components/wikiComponents/inaccurateDataFooter';
+import InaccurateDataFooter from '@/components/wiki/inaccurateDataFooter';
 import { VehicleContext } from '@/hooks/providers/vehicle';
 import { usePlace } from '@/hooks/usePlace';
 import { useRouterQuery } from '@/hooks/useRouterQuery';

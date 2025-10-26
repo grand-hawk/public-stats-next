@@ -3,13 +3,9 @@ import React from 'react';
 
 import Sights from '@/components/vehicles/vehicle/dynamic/modules/turrets/turret/sights';
 import Weapons from '@/components/vehicles/vehicle/dynamic/modules/turrets/turret/weapons';
-import Feature from '@/components/wikiComponents/feature';
-import {
-  StatsCell,
-  StatsRoot,
-  StatsRow,
-} from '@/components/wikiComponents/stats';
-import TitledCard from '@/components/wikiComponents/titledCard';
+import Feature from '@/components/wiki/feature';
+import { StatsCell, StatsRoot, StatsRow } from '@/components/wiki/stats';
+import TitledCard from '@/components/wiki/titledCard';
 import { useDynamicData } from '@/hooks/providers/dynamicData';
 import { getModulesByReferences } from '@/utils/alterations';
 

@@ -4,7 +4,7 @@ import React from 'react';
 import slug from 'slug';
 
 import { Button } from '@/components/ui/button';
-import TitledCard from '@/components/wikiComponents/titledCard';
+import TitledCard from '@/components/wiki/titledCard';
 import { useShell } from '@/hooks/providers/shell';
 import { usePlaceInitials } from '@/hooks/usePlaceInitials';
 
