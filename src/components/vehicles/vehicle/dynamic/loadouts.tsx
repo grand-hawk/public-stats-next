@@ -36,7 +36,6 @@ export default function VehicleDynamicLoadouts({
       withAnchor="loadout-config"
     >
       <Select.Root
-        borderWidth="1px"
         collection={loadoutCollection}
         lazyMount
         size="sm"
@@ -50,13 +49,8 @@ export default function VehicleDynamicLoadouts({
       >
         <Select.HiddenSelect />
 
-        <Select.Control padding={2}>
-          <Select.Trigger
-            border="none"
-            borderRadius="none"
-            minHeight="unset"
-            paddingInline="unset"
-          >
+        <Select.Control>
+          <Select.Trigger>
             <Select.ValueText />
           </Select.Trigger>
           <Select.IndicatorGroup paddingInline={2}>
@@ -66,9 +60,9 @@ export default function VehicleDynamicLoadouts({
 
         <Portal>
           <Select.Positioner>
-            <Select.Content borderRadius="none">
+            <Select.Content>
               {loadoutCollection.items.map((item) => (
-                <Select.Item key={item.label} borderRadius="none" item={item}>
+                <Select.Item key={item.label} item={item}>
                   {item.label}
                 </Select.Item>
               ))}

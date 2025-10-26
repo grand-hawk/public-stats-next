@@ -9,6 +9,7 @@ import {
 import { GeistMono } from 'geist/font/mono';
 import React from 'react';
 
+import { recipes, slotRecipes } from './recipes';
 import { ColorModeProvider } from '@/components/ui/color-mode';
 
 import type { ColorModeProviderProps } from '@/components/ui/color-mode';
@@ -43,6 +44,8 @@ const config = defineConfig({
         },
       },
     },
+    recipes,
+    slotRecipes,
   },
 });
 
