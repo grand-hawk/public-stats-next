@@ -10,6 +10,8 @@ import {
 import { usePlace } from '@/hooks/usePlace';
 import { useRouterQuery } from '@/hooks/useRouterQuery';
 
+const ITEM_HEIGHT = 35;
+
 export type DividerListItem = {
   type: 'divider';
   label: string;
@@ -48,7 +50,7 @@ export default function SearchList({
     const index = listItems.findIndex(
       (item) => item.type === 'item' && item.value.slug === querySlug,
     );
-    if (index !== -1) return index * 35;
+    if (index !== -1) return index * ITEM_HEIGHT;
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -57,10 +59,10 @@ export default function SearchList({
   const rowVirtualizer = useVirtualizer({
     count: listItems.length,
     getScrollElement: () => parentRef.current,
-    estimateSize: () => 35,
+    estimateSize: () => ITEM_HEIGHT,
     overscan: 5,
     initialRect: {
-      height: 25 * 35,
+      height: 25 * ITEM_HEIGHT,
       width: 0,
     },
     initialOffset,
