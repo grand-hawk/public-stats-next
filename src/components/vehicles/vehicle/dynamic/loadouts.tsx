@@ -59,7 +59,7 @@ export default function VehicleDynamicLoadouts({
           >
             <Select.ValueText />
           </Select.Trigger>
-          <Select.IndicatorGroup paddingInline={4}>
+          <Select.IndicatorGroup paddingInline={2}>
             <Select.Indicator />
           </Select.IndicatorGroup>
         </Select.Control>

@@ -2,7 +2,7 @@ import { Box } from '@chakra-ui/react';
 import React, { Suspense } from 'react';
 
 import CenterSpinner from '@/components/centerSpinner';
-import { Provider } from '@/components/ui/provider';
+import { ChakraProvider } from '@/components/utils/chakra';
 import Head from '@/components/utils/head';
 import Umami from '@/components/utils/umami';
 import { trpc } from '@/utils/trpc';
@@ -14,7 +14,7 @@ export function App({ Component, pageProps }: AppProps) {
     <>
       <Head />
 
-      <Provider>
+      <ChakraProvider>
         <Suspense
           fallback={
             <Box height="100svh">
@@ -24,7 +24,7 @@ export function App({ Component, pageProps }: AppProps) {
         >
           <Component {...pageProps} />
         </Suspense>
-      </Provider>
+      </ChakraProvider>
 
       <Umami />
     </>
