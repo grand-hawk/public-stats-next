@@ -4,6 +4,8 @@ import React from 'react';
 import TitledCard from '@/components/wiki/titledCard';
 import { useVehicle } from '@/hooks/providers/vehicle';
 
+const NO_VALUE = '<none>';
+
 export default function VehicleDynamicLoadouts({
   selectedLoadout,
   setSelectedLoadout,
@@ -16,7 +18,7 @@ export default function VehicleDynamicLoadouts({
   const loadoutCollection = createListCollection({
     items: [
       {
-        value: '<none>',
+        value: NO_VALUE,
         label: 'None',
       },
       ...Object.keys(vehicle.alterations.loadouts).map((loadout) => ({
@@ -38,11 +40,11 @@ export default function VehicleDynamicLoadouts({
         collection={loadoutCollection}
         lazyMount
         size="sm"
-        value={selectedLoadout === null ? ['<none>'] : [selectedLoadout]}
+        value={selectedLoadout === null ? [NO_VALUE] : [selectedLoadout]}
         width="100%"
         onValueChange={(details) =>
           setSelectedLoadout(
-            details.value[0] === '<none>' ? null : details.value[0],
+            details.value[0] === NO_VALUE ? null : details.value[0],
           )
         }
       >
