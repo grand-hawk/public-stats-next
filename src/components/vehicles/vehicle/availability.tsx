@@ -44,7 +44,6 @@ export default function VehicleAvailability({
     >
       <Table.Root
         aria-label="Vehicle in-game availability across loadouts and teams"
-        background="none"
         css={{
           '& .chakra-table__row': {
             background: 'none',
