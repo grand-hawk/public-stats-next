@@ -63,7 +63,6 @@ export const SearchLinkListItem = React.memo(function SearchLinkListItem({
       }}
       asChild
       backgroundColor={active ? 'colorPalette.100' : undefined}
-      borderRadius="none"
       justifyContent="flex-start"
       variant={active ? 'solid' : 'ghost'}
       {...baseItemProps}
