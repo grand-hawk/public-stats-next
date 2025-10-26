@@ -29,8 +29,10 @@ export default function VehicleDynamicData() {
 
   // Reset states when vehicle changes
   React.useEffect(() => {
-    setSelectedLoadout(null);
-    setEnabledAddons({});
+    if (selectedLoadout !== null) setSelectedLoadout(null);
+    if (Object.keys(enabledAddons).length > 0) setEnabledAddons({});
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [vehicle.info.slug]);
 
   const hasAlterations =
