@@ -5,11 +5,13 @@ import z from 'zod';
 import { createTRPCRouter, publicProcedure } from '@/server/api/trpc/context';
 import { getBaseUrl } from '@/utils/trpc';
 import config from '@generated/config';
+import kdr from '@generated/kdr';
 import loadouts from '@generated/loadouts';
 import vehicles from '@generated/vehicles';
 import vehicles_ld from '@generated/vehicles_ld';
 
 import type { PlaceId } from '@generated/config';
+import type { KdrPlaceDataItem } from '@generated/kdr';
 import type { LoadoutsPlaceDataLoadoutVehicle } from '@generated/loadouts';
 import type { VehiclesPlaceDataVehicle } from '@generated/vehicles';
 import type { BreadcrumbList, Vehicle, WithContext } from 'schema-dts';
@@ -32,6 +34,7 @@ export type DetailedVehicle = VehiclesPlaceDataVehicle & {
     image: string | null;
     lastRetrieved: string;
     availability: VehicleAvailability;
+    kdr: KdrPlaceDataItem;
   };
   linkedData: Partial<{
     breadcrumbs: WithContext<BreadcrumbList>;
@@ -93,6 +96,7 @@ export const vehiclesRouter = createTRPCRouter({
       if (!vehicleName) return null; // This validates slug
 
       const loadoutsPlace = loadouts.data[input.placeId as PlaceId];
+      const kdrPlace = kdr.data[input.placeId as PlaceId];
       const linkedData = vehicles_ld.data[
         input.placeId as PlaceId
       ] as unknown as Record<string, WithContext<Vehicle>>;
@@ -120,6 +124,7 @@ export const vehiclesRouter = createTRPCRouter({
           image: relativeImageUrl,
           lastRetrieved: vehicles.metadata.date,
           availability,
+          kdr: kdrPlace.data[vehicleName],
         },
         linkedData: {
           breadcrumbs: {
