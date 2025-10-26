@@ -40,7 +40,7 @@ export default function InlineCard({
         color="fg"
         fontWeight="medium"
         id={titleSlug}
-        insetStart={2}
+        insetInlineStart={2}
         paddingX={2}
         position="absolute"
         size="sm"
