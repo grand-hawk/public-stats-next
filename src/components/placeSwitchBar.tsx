@@ -42,6 +42,7 @@ export default function PlaceSwitchBar() {
       </Span>
 
       <Select.Root
+        borderWidth={0}
         collection={placeCollection}
         lazyMount
         marginLeft="auto"
@@ -68,14 +69,8 @@ export default function PlaceSwitchBar() {
       >
         <Select.HiddenSelect />
 
-        <Select.Control>
-          <Select.Trigger
-            aria-label="Select place"
-            border="none"
-            borderRadius="none"
-            minHeight="unset"
-            paddingInline="unset"
-          >
+        <Select.Control padding={0}>
+          <Select.Trigger aria-label="Select place">
             <Select.ValueText maxWidth="calc(100% - 20px)" />
           </Select.Trigger>
 
@@ -86,9 +81,9 @@ export default function PlaceSwitchBar() {
 
         <Portal>
           <Select.Positioner>
-            <Select.Content borderRadius="none">
+            <Select.Content>
               {placeCollection.items.map((place) => (
-                <Select.Item key={place.value} borderRadius="none" item={place}>
+                <Select.Item key={place.value} item={place}>
                   {place.label}
                 </Select.Item>
               ))}
