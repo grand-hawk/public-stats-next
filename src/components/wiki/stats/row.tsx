@@ -21,7 +21,7 @@ export function StatsRow({
       {...props}
       className={withPaddingTop ? 'with-padding-top' : undefined}
       css={{
-        '& .chakra-table__cell:nth-child(1)': {
+        '& .chakra-table__cell:nth-of-type(1)': {
           paddingInlineStart: withPaddingLeft ? 6 : undefined,
         },
         ...css,

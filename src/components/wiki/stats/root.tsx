@@ -24,7 +24,7 @@ export function StatsRoot({
         '& .chakra-table__cell, .chakra-table__columnHeader': {
           borderBottomWidth: 0,
         },
-        '& .chakra-table__row:not(:nth-child(1)).with-padding-top .chakra-table__cell':
+        '& .chakra-table__row:not(:nth-of-type(1)).with-padding-top .chakra-table__cell':
           {
             paddingTop: 6,
           },
