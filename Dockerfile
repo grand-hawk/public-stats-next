@@ -1,7 +1,7 @@
 # Build layer
 FROM node:22 AS build
 
-RUN corepack enable && corepack prepare pnpm@9.8.0 --activate
+RUN corepack enable && corepack prepare pnpm@10 --activate
 
 COPY . /build
 WORKDIR /build
