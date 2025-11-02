@@ -62,4 +62,3 @@ export function Provider(props: ColorModeProviderProps) {
     </ChakraProvider>
   );
 }
-

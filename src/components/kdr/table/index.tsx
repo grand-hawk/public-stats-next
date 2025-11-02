@@ -190,4 +190,3 @@ export default function KdrTable({ range }: { range: keyof KdrPlaceData }) {
     <EmptyState icon={<GrDocumentMissing />} title="No K/D data available" />
   );
 }
-

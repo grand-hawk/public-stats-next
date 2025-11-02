@@ -2,7 +2,7 @@ import { Icon } from '@chakra-ui/react';
 import React from 'react';
 import { GiArtilleryShell } from 'react-icons/gi';
 import { ImTable } from 'react-icons/im';
-import { MdOutlineSsidChart } from "react-icons/md";
+import { MdOutlineSsidChart } from 'react-icons/md';
 import { TbTank } from 'react-icons/tb';
 
 import type { ReactNode } from 'react';

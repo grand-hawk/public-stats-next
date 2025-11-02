@@ -1,9 +1,4 @@
-import {
-  createListCollection,
-  Field,
-  Portal,
-  Select,
-} from '@chakra-ui/react';
+import { createListCollection, Field, Portal, Select } from '@chakra-ui/react';
 
 import type { SelectRootProps } from '@chakra-ui/react';
 import type React from 'react';
