@@ -34,7 +34,7 @@ export type DetailedVehicle = VehiclesPlaceDataVehicle & {
     image: string | null;
     lastRetrieved: string;
     availability: VehicleAvailability;
-    kdr: KdrPlaceDataItem[];
+    kdr: KdrPlaceDataItem;
   };
   linkedData: Partial<{
     breadcrumbs: WithContext<BreadcrumbList>;
