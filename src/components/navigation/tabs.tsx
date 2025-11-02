@@ -33,7 +33,7 @@ export const tabs: Record<string, Tab> = {
     ),
   },
   kdr: {
-    label: 'KDR table',
+    label: 'K/D table',
     path: '/kdr',
     icon: () => (
       <Icon height={5} width={5}>

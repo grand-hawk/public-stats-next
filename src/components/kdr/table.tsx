@@ -54,7 +54,7 @@ export default function KdrTable() {
         },
       }),
       columnHelper.accessor('kdr', {
-        header: () => 'KDR',
+        header: () => 'K/D',
         cell: (info) => (
           <FormatNumber
             maximumFractionDigits={2}
@@ -101,7 +101,7 @@ export default function KdrTable() {
     >
       <Table.Header>
         {table.getHeaderGroups().map((headerGroup) => (
-          <Table.Row key={headerGroup.id}>
+          <Table.Row key={headerGroup.id} data-id={headerGroup.id}>
             {headerGroup.headers.map((header) => {
               const isSorted = header.column.getIsSorted();
               const canSort = header.column.getCanSort();
@@ -116,6 +116,7 @@ export default function KdrTable() {
                         ? 'descending'
                         : 'none'
                   }
+                  data-id={header.id}
                   userSelect="none"
                 >
                   {canSort ? (
@@ -178,7 +179,7 @@ export default function KdrTable() {
         {table.getRowModel().rows.map((row) => (
           <Table.Row key={row.id} data-id={row.id}>
             {row.getVisibleCells().map((cell) => (
-              <Table.Cell key={cell.id}>
+              <Table.Cell key={cell.id} data-id={cell.id}>
                 {flexRender(cell.column.columnDef.cell, cell.getContext())}
               </Table.Cell>
             ))}
@@ -187,7 +188,7 @@ export default function KdrTable() {
       </Table.Body>
     </Table.Root>
   ) : (
-    <EmptyState icon={<GrDocumentMissing />} title="No KDR data available" />
+    <EmptyState icon={<GrDocumentMissing />} title="No K/D data available" />
   );
 }
 
