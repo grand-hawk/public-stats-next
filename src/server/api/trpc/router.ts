@@ -1,10 +1,12 @@
 import { createTRPCRouter } from './context';
 import { configRouter } from '@/server/api/trpc/routers/config';
+import { kdrRouter } from '@/server/api/trpc/routers/kdr';
 import { shellsRouter } from '@/server/api/trpc/routers/shells';
 import { vehiclesRouter } from '@/server/api/trpc/routers/vehicles';
 
 export const appRouter = createTRPCRouter({
   config: configRouter,
+  kdr: kdrRouter,
   shells: shellsRouter,
   vehicles: vehiclesRouter,
 });

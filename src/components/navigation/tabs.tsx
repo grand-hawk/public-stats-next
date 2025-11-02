@@ -1,6 +1,7 @@
 import { Icon } from '@chakra-ui/react';
 import React from 'react';
 import { GiArtilleryShell } from 'react-icons/gi';
+import { ImTable } from 'react-icons/im';
 import { TbTank } from 'react-icons/tb';
 
 import type { ReactNode } from 'react';
@@ -28,6 +29,15 @@ export const tabs: Record<string, Tab> = {
     icon: () => (
       <Icon height={5} width={5}>
         <GiArtilleryShell />
+      </Icon>
+    ),
+  },
+  kdr: {
+    label: 'KDR table',
+    path: '/kdr',
+    icon: () => (
+      <Icon height={5} width={5}>
+        <ImTable />
       </Icon>
     ),
   },

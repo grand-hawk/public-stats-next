@@ -71,9 +71,11 @@ export default function SearchList({
   return (
     <Box ref={parentRef} height="100%" overflow="auto" scrollBehavior="unset">
       <Box
-        height={`${rowVirtualizer.getTotalSize()}px`}
         position="relative"
         scrollBehavior="revert"
+        style={{
+          height: `${rowVirtualizer.getTotalSize()}px`,
+        }}
       >
         {rowVirtualizer.getVirtualItems().map((virtualItem) => {
           const listItem = listItems[virtualItem.index];
