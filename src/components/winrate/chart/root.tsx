@@ -2,6 +2,7 @@ import { Center, Spinner } from '@chakra-ui/react';
 import { useIsClient } from '@uidotdev/usehooks';
 import React from 'react';
 
+import { EmptyState } from '@/components/ui/empty-state';
 import WinrateChart from '@/components/winrate/chart/chart';
 import { usePlace } from '@/hooks/usePlace';
 import { useWinrateFiltersStore } from '@/stores/winrate/filters';
@@ -25,5 +26,7 @@ export default function WinrateChartRoot() {
         <Spinner />
       </Center>
     );
-  return <WinrateChart data={data || { data: [], series: [] }} />;
+  if (!data || data.series.length === 0)
+    return <EmptyState title="No data found" />;
+  return <WinrateChart data={data} />;
 }
