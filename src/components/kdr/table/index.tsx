@@ -20,18 +20,20 @@ import { usePlaceInitials } from '@/hooks/usePlaceInitials';
 import { trpc } from '@/utils/trpc';
 
 import type { DetailedKdrItem } from '@/server/api/trpc/routers/kdr';
+import type { KdrPlaceData } from '@generated/kdr';
 import type { SortingState } from '@tanstack/react-table';
 
 const columnHelper = createColumnHelper<DetailedKdrItem>();
 
-export default function KdrTable() {
+export default function KdrTable({ range }: { range: keyof KdrPlaceData }) {
   const place = usePlace()!;
   const initials = usePlaceInitials()!;
   const [sorting, setSorting] = React.useState<SortingState>([
     { id: 'kdr', desc: true },
   ]);
 
-  const [kdr] = trpc.kdr.table.useSuspenseQuery({ placeId: place.placeId });
+  const [kdrData] = trpc.kdr.table.useSuspenseQuery({ placeId: place.placeId });
+  const kdr = kdrData[range];
 
   const columns = React.useMemo(
     () => [
@@ -175,7 +177,12 @@ export default function KdrTable() {
 
       <Table.Body>
         {table.getRowModel().rows.map((row) => (
-          <KdrTableRow key={row.id} initials={initials} row={row} />
+          <KdrTableRow
+            key={row.id}
+            initials={initials}
+            range={range}
+            row={row}
+          />
         ))}
       </Table.Body>
     </Table.Root>

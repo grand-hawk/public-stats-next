@@ -10,9 +10,14 @@ import type { Row } from '@tanstack/react-table';
 export default React.memo(
   function KdrTableRow({
     initials,
+    range,
     row,
     ...props
-  }: { row: Row<DetailedKdrItem>; initials: string } & TableRowProps) {
+  }: {
+    row: Row<DetailedKdrItem>;
+    initials: string;
+    range: string;
+  } & TableRowProps) {
     return (
       <Table.Row {...props}>
         {row.getVisibleCells().map((cell) => (
@@ -21,6 +26,7 @@ export default React.memo(
             cell={cell}
             data-id={cell.id}
             initials={initials}
+            range={range}
           />
         ))}
       </Table.Row>
@@ -28,5 +34,6 @@ export default React.memo(
   },
   (prevProps, nextProps) =>
     prevProps.row.id === nextProps.row.id &&
-    prevProps.initials === nextProps.initials,
+    prevProps.initials === nextProps.initials &&
+    prevProps.range === nextProps.range,
 );

@@ -1,4 +1,5 @@
 import { buttonRecipe } from './button';
+import { segmentGroupRecipe } from './segmentGroup';
 import { selectRecipe } from './select';
 
 export const recipes = {
@@ -7,4 +8,5 @@ export const recipes = {
 
 export const slotRecipes = {
   select: selectRecipe,
+  segmentGroup: segmentGroupRecipe,
 };

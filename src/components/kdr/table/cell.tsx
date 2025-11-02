@@ -13,6 +13,7 @@ export default React.memo(
   }: {
     cell: Cell<DetailedKdrItem, unknown>;
     initials: string;
+    range: string;
   } & TableCellProps) {
     return (
       <Table.Cell {...props}>
@@ -22,5 +23,6 @@ export default React.memo(
   },
   (prevProps, nextProps) =>
     prevProps.cell.id === nextProps.cell.id &&
-    prevProps.initials === nextProps.initials,
+    prevProps.initials === nextProps.initials &&
+    prevProps.range === nextProps.range,
 );

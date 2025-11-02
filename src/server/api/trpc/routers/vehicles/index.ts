@@ -11,7 +11,7 @@ import vehicles from '@generated/vehicles';
 import vehicles_ld from '@generated/vehicles_ld';
 
 import type { PlaceId } from '@generated/config';
-import type { KdrPlaceDataItem } from '@generated/kdr';
+import type { KdrPlaceDataVehicle } from '@generated/kdr';
 import type { LoadoutsPlaceDataLoadoutVehicle } from '@generated/loadouts';
 import type { VehiclesPlaceDataVehicle } from '@generated/vehicles';
 import type { BreadcrumbList, Vehicle, WithContext } from 'schema-dts';
@@ -34,7 +34,7 @@ export type DetailedVehicle = VehiclesPlaceDataVehicle & {
     image: string | null;
     lastRetrieved: string;
     availability: VehicleAvailability;
-    kdr: KdrPlaceDataItem;
+    kdr: KdrPlaceDataVehicle;
   };
   linkedData: Partial<{
     breadcrumbs: WithContext<BreadcrumbList>;
@@ -124,7 +124,7 @@ export const vehiclesRouter = createTRPCRouter({
           image: relativeImageUrl,
           lastRetrieved: vehicles.metadata.date,
           availability,
-          kdr: kdrPlace.data[vehicleName],
+          kdr: kdrPlace.data.all_time[vehicleName],
         },
         linkedData: {
           breadcrumbs: {
