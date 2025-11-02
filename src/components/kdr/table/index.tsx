@@ -13,6 +13,7 @@ import { TiArrowSortedDown, TiArrowSortedUp } from 'react-icons/ti';
 import slug from 'slug';
 
 import TeamIcon from '@/components/icons/teams';
+import KdrTableRow from '@/components/kdr/table/row';
 import { EmptyState } from '@/components/ui/empty-state';
 import { usePlace } from '@/hooks/usePlace';
 import { usePlaceInitials } from '@/hooks/usePlaceInitials';
@@ -124,10 +125,7 @@ export default function KdrTable() {
                       alignItems="center"
                       as="button"
                       cursor="pointer"
-                      display="inline-flex"
                       gap={1}
-                      justifyContent="flex-start"
-                      padding={0}
                       userSelect="none"
                       onClick={header.column.getToggleSortingHandler()}
                     >
@@ -177,13 +175,7 @@ export default function KdrTable() {
 
       <Table.Body>
         {table.getRowModel().rows.map((row) => (
-          <Table.Row key={row.id} data-id={row.id}>
-            {row.getVisibleCells().map((cell) => (
-              <Table.Cell key={cell.id} data-id={cell.id}>
-                {flexRender(cell.column.columnDef.cell, cell.getContext())}
-              </Table.Cell>
-            ))}
-          </Table.Row>
+          <KdrTableRow key={row.id} initials={initials} row={row} />
         ))}
       </Table.Body>
     </Table.Root>
