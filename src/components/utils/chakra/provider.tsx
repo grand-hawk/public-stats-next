@@ -28,6 +28,9 @@ const config = defineConfig({
         backgroundColor: 'bg.subtle',
       },
     },
+    '*::selection': {
+      backgroundColor: 'blue.600/60',
+    },
   },
   theme: {
     tokens: {
