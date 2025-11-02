@@ -2,6 +2,7 @@ import { Icon } from '@chakra-ui/react';
 import React from 'react';
 import { GiArtilleryShell } from 'react-icons/gi';
 import { ImTable } from 'react-icons/im';
+import { MdOutlineSsidChart } from "react-icons/md";
 import { TbTank } from 'react-icons/tb';
 
 import type { ReactNode } from 'react';
@@ -38,6 +39,15 @@ export const tabs: Record<string, Tab> = {
     icon: () => (
       <Icon height={5} width={5}>
         <ImTable />
+      </Icon>
+    ),
+  },
+  winrate: {
+    label: 'Winrate',
+    path: '/winrate',
+    icon: () => (
+      <Icon height={5} width={5}>
+        <MdOutlineSsidChart />
       </Icon>
     ),
   },

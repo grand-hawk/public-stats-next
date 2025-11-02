@@ -25,6 +25,7 @@ export default function Weapon({
 }) {
   const place = usePlace()!;
   const { assembledModules } = useDynamicData();
+
   const [reloadMultipliers] =
     trpc.shells.reloadMultipliersBySlug.useSuspenseQuery({
       placeId: place.placeId,
