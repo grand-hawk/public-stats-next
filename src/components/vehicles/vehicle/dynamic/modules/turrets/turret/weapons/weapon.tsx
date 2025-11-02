@@ -6,12 +6,13 @@ import slug from 'slug';
 import InlineCard from '@/components/wiki/inlineCard';
 import { StatsCell, StatsRoot, StatsRow } from '@/components/wiki/stats';
 import { useDynamicData } from '@/hooks/providers/dynamicData';
-import { usePlaceInitials } from '@/hooks/usePlaceInitials';
+import { usePlace } from '@/hooks/usePlace';
 import {
   getModulesByReferences,
   getOneModuleFromReferences,
 } from '@/utils/alterations';
 import { betterSentenceCase } from '@/utils/betterSentenceCase';
+import { trpc } from '@/utils/trpc';
 
 import type { VehicleModuleFromType } from '@/utils/vehicles';
 
@@ -22,8 +23,13 @@ export default function Weapon({
   weapon: VehicleModuleFromType<'Weapon'>;
   turretName: string;
 }) {
-  const initials = usePlaceInitials()!;
+  const place = usePlace()!;
   const { assembledModules } = useDynamicData();
+  const [reloadMultipliers] =
+    trpc.shells.reloadMultipliersBySlug.useSuspenseQuery({
+      placeId: place.placeId,
+      weapon: weapon.data.name,
+    });
 
   const nameSlug = slug(weapon.data.name);
   const ammoModels = getModulesByReferences<'AmmoModel'>(
@@ -96,6 +102,10 @@ export default function Weapon({
           <>
             <StatsRow withPaddingTop>
               <StatsCell asTitle>Ammo</StatsCell>
+              <StatsCell>Max</StatsCell>
+              {Object.keys(reloadMultipliers).length > 0 && (
+                <StatsCell>Reload</StatsCell>
+              )}
             </StatsRow>
             {Object.entries(ammoSelection.data)
               .filter(([_, count]) => count !== false)
@@ -104,7 +114,7 @@ export default function Weapon({
                   <StatsCell>
                     <Link asChild color="inherit" variant="underline">
                       <NextLink
-                        href={`/${initials}/shells/${nameSlug}-${slug(ammo)}`}
+                        href={`/${place.initials}/shells/${nameSlug}-${slug(ammo)}`}
                       >
                         {ammo}
                       </NextLink>
@@ -117,6 +127,18 @@ export default function Weapon({
                       <FormatNumber value={count as number} />
                     )}
                   </StatsCell>
+                  {reloadMultipliers[ammo] && (
+                    <StatsCell>
+                      <FormatNumber
+                        style="unit"
+                        unit="second"
+                        unitDisplay="narrow"
+                        value={
+                          weapon.data.reloadSpeed * reloadMultipliers[ammo]
+                        }
+                      />
+                    </StatsCell>
+                  )}
                 </StatsRow>
               ))}
           </>
