@@ -56,6 +56,12 @@ export default function ShellProjectile() {
             />
           </Stat>
         )}
+
+        {shell.reloadMultiplier && (
+          <Stat label="Reload multiplier">
+            <FormatNumber value={shell.reloadMultiplier} />x
+          </Stat>
+        )}
       </Box>
     </TitledCard>
   );
