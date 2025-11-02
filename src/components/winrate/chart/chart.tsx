@@ -68,6 +68,7 @@ export default function WinrateChart({
             isAnimationActive={false}
             stroke={chart.color(item.color)}
             strokeWidth={2}
+            connectNulls
           />
         ))}
       </LineChart>
