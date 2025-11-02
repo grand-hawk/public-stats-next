@@ -48,7 +48,6 @@ export default function WinrateChart({
           animationDuration={100}
           content={
             <Chart.Tooltip
-              // eslint-disable-next-line no-irregular-whitespace
               formatter={(value: number, name: string) => [` ${value}%`, name]}
               labelFormatter={(label: string) => {
                 if (label === 'value') return 'value';

@@ -45,7 +45,6 @@ export default function ShellHeader() {
           {shell.type}
 
           {shellIcon && (
-            // eslint-disable-next-line jsx-a11y/alt-text
             <Image asChild marginLeft={1}>
               <NextImage
                 alt={shell.type}

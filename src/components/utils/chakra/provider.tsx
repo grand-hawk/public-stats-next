@@ -9,8 +9,9 @@ import {
 import { GeistMono } from 'geist/font/mono';
 import React from 'react';
 
-import { recipes, slotRecipes } from './recipes';
 import { ColorModeProvider } from '@/components/ui/color-mode';
+
+import { recipes, slotRecipes } from './recipes';
 
 import type { ColorModeProviderProps } from '@/components/ui/color-mode';
 
@@ -61,3 +62,4 @@ export function Provider(props: ColorModeProviderProps) {
     </ChakraProvider>
   );
 }
+
