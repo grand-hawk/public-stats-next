@@ -9,7 +9,6 @@ import type { PropsWithChildren } from 'react';
 export default function InlineCard({
   children,
   innerPadding = 4,
-  keepBorder,
   title,
   withAnchor,
   ...props
@@ -18,7 +17,6 @@ export default function InlineCard({
     title: string;
     withAnchor?: boolean | string;
     innerPadding?: BoxProps['padding'];
-    keepBorder?: boolean;
   } & BoxProps
 >) {
   const titleSlug =

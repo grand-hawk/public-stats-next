@@ -144,7 +144,15 @@ export default function TitledCard({
             }
       }
       borderYWidth="1px"
+      className="mtc-titled-card"
       {...props}
+      css={{
+        ...props.css,
+        '& .mtc-titled-card': {
+          borderLeftWidth: '1px',
+          borderRightWidth: '1px',
+        },
+      }}
     >
       <Collapsible.Root
         open={isExpanded}
