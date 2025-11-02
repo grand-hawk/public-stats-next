@@ -47,6 +47,7 @@ export const trpc = createTRPCNext<AppRouter>({
           },
         },
       },
+      abortOnUnmount: true,
     };
   },
   transformer: superjson,
