@@ -1,4 +1,4 @@
-import { Code, Flex, Span, Stack, Text } from '@chakra-ui/react';
+import { Code, Flex, Span, Stack } from '@chakra-ui/react';
 import React from 'react';
 
 import { Alert } from '@/components/ui/alert';
@@ -17,15 +17,14 @@ export default function PlaceWinrate() {
             borderStartWidth={4}
             colorPalette="gray"
             startElement
+            title="Calculation"
           >
-            <Text>
-              Daily team winrate (not cumulative). For each day, the winner is
-              the team with the highest final score (ties pick the first).{' '}
-              <Span whiteSpace="nowrap">
-                Winrate = <Code>wins / games x 100</Code>
-              </Span>{' '}
-              for that day.
-            </Text>
+            Daily team winrate (not cumulative). For each day, the winner is the
+            team with the highest final score (ties pick the first).{' '}
+            <Span whiteSpace="nowrap">
+              Winrate = <Code>wins / games x 100</Code>
+            </Span>{' '}
+            for that day.
           </Alert>
 
           <WinrateFilters />
