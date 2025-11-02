@@ -23,62 +23,65 @@ import type { SortingState } from '@tanstack/react-table';
 
 const columnHelper = createColumnHelper<DetailedKdrItem>();
 
-const columns = [
-  columnHelper.accessor('vehicle', {
-    header: () => 'Vehicle',
-    cell: (info) => {
-      // eslint-disable-next-line react-hooks/rules-of-hooks
-      const initials = usePlaceInitials()!;
-      const vehicle = info.getValue();
-      const vehicleSlug = slug(vehicle);
-
-      return (
-        <Flex alignItems="center" gap={2}>
-          <TeamIcon team={info.row.original.team} />
-
-          <Link asChild>
-            <NextLink href={`/${initials}/vehicles/${vehicleSlug}`}>
-              {vehicle}
-            </NextLink>
-          </Link>
-        </Flex>
-      );
-    },
-  }),
-  columnHelper.accessor('kdr', {
-    header: () => 'KDR',
-    cell: (info) => (
-      <FormatNumber
-        maximumFractionDigits={2}
-        minimumFractionDigits={2}
-        value={info.getValue()}
-      />
-    ),
-    sortDescFirst: true,
-  }),
-  columnHelper.accessor('kills', {
-    header: () => 'Kills',
-    cell: (info) => <FormatNumber value={info.getValue()} />,
-  }),
-  columnHelper.accessor('deaths', {
-    header: () => 'Deaths',
-    cell: (info) => <FormatNumber value={info.getValue()} />,
-  }),
-];
-
 export default function KdrTable() {
   const place = usePlace()!;
+  const initials = usePlaceInitials()!;
   const [sorting, setSorting] = React.useState<SortingState>([
     { id: 'kdr', desc: true },
   ]);
 
   const [kdr] = trpc.kdr.table.useSuspenseQuery({ placeId: place.placeId });
 
+  const columns = React.useMemo(
+    () => [
+      columnHelper.accessor('vehicle', {
+        header: () => 'Vehicle',
+        cell: (info) => {
+          const vehicle = info.getValue();
+          const vehicleSlug = slug(vehicle);
+
+          return (
+            <Flex alignItems="center" gap={2}>
+              <TeamIcon team={info.row.original.team} />
+
+              <Link asChild>
+                <NextLink href={`/${initials}/vehicles/${vehicleSlug}`}>
+                  {vehicle}
+                </NextLink>
+              </Link>
+            </Flex>
+          );
+        },
+      }),
+      columnHelper.accessor('kdr', {
+        header: () => 'KDR',
+        cell: (info) => (
+          <FormatNumber
+            maximumFractionDigits={2}
+            minimumFractionDigits={2}
+            value={info.getValue()}
+          />
+        ),
+        sortDescFirst: true,
+      }),
+      columnHelper.accessor('kills', {
+        header: () => 'Kills',
+        cell: (info) => <FormatNumber value={info.getValue()} />,
+      }),
+      columnHelper.accessor('deaths', {
+        header: () => 'Deaths',
+        cell: (info) => <FormatNumber value={info.getValue()} />,
+      }),
+    ],
+    [initials],
+  );
+
   const table = useReactTable({
     data: kdr,
     columns,
     getCoreRowModel: getCoreRowModel(),
     getSortedRowModel: getSortedRowModel(),
+    getRowId: (row) => row.vehicle,
     onSortingChange: setSorting,
     state: {
       sorting,
@@ -173,7 +176,7 @@ export default function KdrTable() {
 
       <Table.Body>
         {table.getRowModel().rows.map((row) => (
-          <Table.Row key={row.id}>
+          <Table.Row key={row.id} data-id={row.id}>
             {row.getVisibleCells().map((cell) => (
               <Table.Cell key={cell.id}>
                 {flexRender(cell.column.columnDef.cell, cell.getContext())}
