@@ -1,6 +1,6 @@
 import { Center, Spinner } from '@chakra-ui/react';
 import { useIsClient } from '@uidotdev/usehooks';
-import React from 'react';
+import React, { Suspense } from 'react';
 
 import { EmptyState } from '@/components/ui/empty-state';
 import WinrateChart from '@/components/winrate/chart/chart';
@@ -20,13 +20,18 @@ export default function WinrateChartRoot() {
     map: map || '*',
   });
 
-  if (!isClient || isPending)
-    return (
-      <Center minHeight="xs">
-        <Spinner />
-      </Center>
-    );
+  const spinner = (
+    <Center minHeight="xs">
+      <Spinner />
+    </Center>
+  );
+
+  if (!isClient || isPending) return spinner;
   if (!data || data.series.length === 0)
     return <EmptyState title="No data found" />;
-  return <WinrateChart data={data} />;
+  return (
+    <Suspense fallback={spinner}>
+      <WinrateChart data={data} />
+    </Suspense>
+  );
 }
