@@ -3,9 +3,9 @@ import { createListCollection, Field, Portal, Select } from '@chakra-ui/react';
 import type { SelectRootProps } from '@chakra-ui/react';
 import type React from 'react';
 
-const NO_VALUE = '<none>';
+export const NO_VALUE = '<none>';
 
-export default function WinrateFiltersSelect({
+export default function SimpleSelect({
   items,
   label,
   onValueChange,

@@ -1,12 +1,35 @@
-import { Code, Flex, Span, Stack } from '@chakra-ui/react';
+import { Code, Flex, Grid, Span, Stack } from '@chakra-ui/react';
+import { useQueryState } from 'nuqs';
 import React from 'react';
+import slug from 'slug';
 
+import SimpleSelect from '@/components/simpleSelect';
 import { Alert } from '@/components/ui/alert';
 import Layout from '@/components/utils/layout';
 import WinrateChartRoot from '@/components/winrate/chart/root';
-import WinrateFilters from '@/components/winrate/filters';
+import { usePlace } from '@/hooks/usePlace';
+import { slugifyArray } from '@/utils/slugifyArray';
+import { trpc } from '@/utils/trpc';
 
 export default function PlaceWinrate() {
+  const place = usePlace()!;
+  const [loadout, setLoadout] = useQueryState('loadout', {});
+  const [map, setMap] = useQueryState('map');
+
+  const [winrateMetadata] = trpc.winrate.metadata.useSuspenseQuery({
+    placeId: place.placeId,
+  });
+
+  const { loadoutSlugs, mapSlugs } = React.useMemo(() => {
+    return {
+      loadoutSlugs: slugifyArray(winrateMetadata?.loadout ?? []),
+      mapSlugs: slugifyArray(winrateMetadata?.map ?? []),
+    };
+  }, [winrateMetadata]);
+
+  const actualLoadout = loadout && loadoutSlugs[loadout];
+  const actualMap = map && mapSlugs[map];
+
   return (
     <Layout>
       <Flex justifyContent="center">
@@ -27,8 +50,22 @@ export default function PlaceWinrate() {
             for that day.
           </Alert>
 
-          <WinrateFilters />
-          <WinrateChartRoot />
+          <Grid gap={2} templateColumns="repeat(2, 1fr)">
+            <SimpleSelect
+              items={winrateMetadata?.loadout ?? []}
+              label="Loadout"
+              value={actualLoadout}
+              onValueChange={(value) => setLoadout(value ? slug(value) : null)}
+            />
+            <SimpleSelect
+              items={winrateMetadata?.map ?? []}
+              label="Map"
+              value={actualMap}
+              onValueChange={(value) => setMap(value ? slug(value) : null)}
+            />
+          </Grid>
+
+          <WinrateChartRoot loadout={actualLoadout} map={actualMap} />
         </Stack>
       </Flex>
     </Layout>

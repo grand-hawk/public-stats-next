@@ -4,7 +4,6 @@ import React from 'react';
 import { XSSpinner } from '@/components/spinners';
 import { EmptyState } from '@/components/ui/empty-state';
 import { usePlace } from '@/hooks/usePlace';
-import { useWinrateFiltersStore } from '@/stores/winrate/filters';
 import { trpc } from '@/utils/trpc';
 
 const WinrateChart = dynamic(() => import('@/components/winrate/chart/chart'), {
@@ -12,10 +11,14 @@ const WinrateChart = dynamic(() => import('@/components/winrate/chart/chart'), {
   loading: () => <XSSpinner />,
 });
 
-export default function WinrateChartRoot() {
+export default function WinrateChartRoot({
+  loadout,
+  map,
+}: {
+  loadout: string | null;
+  map: string | null;
+}) {
   const place = usePlace()!;
-  const loadout = useWinrateFiltersStore((s) => s.loadout);
-  const map = useWinrateFiltersStore((s) => s.map);
 
   const { data, isPending } = trpc.winrate.chart.useQuery({
     placeId: place.placeId,
