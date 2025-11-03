@@ -13,18 +13,18 @@ import { trpc } from '@/utils/trpc';
 
 export default function PlaceWinrate() {
   const place = usePlace()!;
-  const [loadout, setLoadout] = useQueryState('loadout', {});
+  const [loadout, setLoadout] = useQueryState('loadout');
   const [map, setMap] = useQueryState('map');
 
   const [winrateMetadata] = trpc.winrate.metadata.useSuspenseQuery({
     placeId: place.placeId,
   });
 
-  const { loadoutSlugs, mapSlugs } = React.useMemo(() => {
-    return {
-      loadoutSlugs: slugifyArray(winrateMetadata?.loadout ?? []),
-      mapSlugs: slugifyArray(winrateMetadata?.map ?? []),
-    };
+  const [loadoutSlugs, mapSlugs] = React.useMemo(() => {
+    return [
+      slugifyArray(winrateMetadata?.loadout ?? []),
+      slugifyArray(winrateMetadata?.map ?? []),
+    ];
   }, [winrateMetadata]);
 
   const actualLoadout = loadout && loadoutSlugs[loadout];
@@ -34,22 +34,6 @@ export default function PlaceWinrate() {
     <Layout>
       <Flex justifyContent="center">
         <Stack as="main" gap={4} maxWidth="2xl" width="100%">
-          <Alert
-            background="bg.subtle"
-            borderStartColor="blue.600"
-            borderStartWidth={4}
-            colorPalette="gray"
-            startElement
-            title="Calculation"
-          >
-            Daily team winrate (not cumulative). For each day, the winner is the
-            team with the highest final score (ties pick the first).{' '}
-            <Span whiteSpace="nowrap">
-              Winrate = <Code>wins / games x 100</Code>
-            </Span>{' '}
-            for that day.
-          </Alert>
-
           <Grid gap={2} templateColumns="repeat(2, 1fr)">
             <SimpleSelect
               items={winrateMetadata?.loadout ?? []}
@@ -66,6 +50,23 @@ export default function PlaceWinrate() {
           </Grid>
 
           <WinrateChartRoot loadout={actualLoadout} map={actualMap} />
+
+          <Alert
+            background="bg.subtle"
+            borderStartColor="blue.600"
+            borderStartWidth={4}
+            colorPalette="gray"
+            startElement
+            title="Calculation"
+            marginTop={4}
+          >
+            Daily team winrate (not cumulative). For each day, the winner is the
+            team with the highest final score (ties pick the first).{' '}
+            <Span whiteSpace="nowrap">
+              Winrate = <Code>wins / games x 100</Code>
+            </Span>{' '}
+            for that day.
+          </Alert>
         </Stack>
       </Flex>
     </Layout>
