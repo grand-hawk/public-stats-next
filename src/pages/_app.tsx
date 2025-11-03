@@ -1,7 +1,7 @@
 import { Box } from '@chakra-ui/react';
 import React, { Suspense } from 'react';
 
-import {CenterSpinner} from '@/components/spinners';
+import { CenterSpinner } from '@/components/spinners';
 import { ChakraProvider } from '@/components/utils/chakra';
 import Head from '@/components/utils/head';
 import Umami from '@/components/utils/umami';

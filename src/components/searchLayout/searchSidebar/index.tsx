@@ -1,9 +1,9 @@
 import { Box } from '@chakra-ui/react';
 import React, { Suspense } from 'react';
 
-import {CenterSpinner} from '@/components/spinners';
 import { SEARCH_INPUT_HEIGHT } from '@/components/searchLayout/searchSidebar/input';
 import SearchList from '@/components/searchLayout/searchSidebar/list';
+import { CenterSpinner } from '@/components/spinners';
 import { useSidebarStore } from '@/stores/sidebar';
 
 import type { SearchListProps } from '@/components/searchLayout/searchSidebar/list';
