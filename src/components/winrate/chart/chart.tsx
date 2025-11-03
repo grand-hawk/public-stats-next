@@ -5,6 +5,7 @@ import {
   Legend,
   Line,
   LineChart,
+  ReferenceLine,
   Tooltip,
   XAxis,
   YAxis,
@@ -25,7 +26,7 @@ export default function WinrateChart({
     );
 
   return (
-    <Chart.Root chart={chart} maxHeight="sm">
+    <Chart.Root chart={chart} maxHeight="sm" marginTop="calc(16px * 2)">
       <LineChart data={chart.data}>
         <CartesianGrid stroke={chart.color('border')} vertical={false} />
 
@@ -57,6 +58,22 @@ export default function WinrateChart({
           }
           cursor={false}
         />
+
+        {data.markers &&
+          data.markers.map((marker) => (
+            <ReferenceLine
+              key={marker.x}
+              data-test={marker.label}
+              x={marker.x}
+              stroke={chart.color('border.emphasized')}
+              label={{
+                value: marker.label,
+                fill: chart.color('fg.muted'),
+                position: 'top',
+                offset: 16,
+              }}
+            />
+          ))}
 
         <Legend content={<Chart.Legend />} />
 
