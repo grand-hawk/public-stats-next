@@ -8,12 +8,14 @@ export const NO_VALUE = '<none>';
 export default function SimpleSelect({
   items,
   label,
+  noValueLabel = 'None',
   onValueChange,
   value,
   ...props
 }: {
   items: string[];
   label: string;
+  noValueLabel?: string;
   value: string | null;
   onValueChange: (value: string | null) => void;
 } & Omit<SelectRootProps, 'collection' | 'value' | 'onValueChange'>) {
@@ -21,7 +23,7 @@ export default function SimpleSelect({
     items: [
       {
         value: NO_VALUE,
-        label: 'None',
+        label: noValueLabel,
       },
       ...items.map((item) => ({
         value: item,

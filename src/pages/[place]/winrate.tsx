@@ -38,12 +38,14 @@ export default function PlaceWinrate() {
             <SimpleSelect
               items={winrateMetadata?.loadout ?? []}
               label="Loadout"
+              noValueLabel="All"
               value={actualLoadout}
               onValueChange={(value) => setLoadout(value ? slug(value) : null)}
             />
             <SimpleSelect
               items={winrateMetadata?.map ?? []}
               label="Map"
+              noValueLabel="All"
               value={actualMap}
               onValueChange={(value) => setMap(value ? slug(value) : null)}
             />
