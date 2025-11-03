@@ -38,15 +38,15 @@ export default function PlaceVehicle() {
   React.useEffect(() => {
     if (!vehicle) return;
 
-    if (vehicle.info.slug !== vehicleQuery)
+    if (vehicleQuery !== vehicleSlug)
       router.replace({
         pathname: router.pathname,
         query: {
           ...router.query,
-          vehicle: vehicle.info.slug,
+          vehicle: vehicleSlug,
         },
       });
-  }, [router, vehicleQuery, vehicle]);
+  }, [router, vehicle, vehicleQuery, vehicleSlug]);
 
   return (
     <>
