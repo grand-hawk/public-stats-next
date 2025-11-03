@@ -13,8 +13,11 @@ export const LAYOUT_SHIFT_MEDIA = 'md';
 export default function Layout({
   children,
   noPadding,
+  overwriteTabLabel,
   ...props
-}: PropsWithChildren<BoxProps & { noPadding?: boolean }>) {
+}: PropsWithChildren<
+  BoxProps & { noPadding?: boolean; overwriteTabLabel?: string }
+>) {
   return (
     <Flex justifyContent="center">
       <Box
@@ -38,7 +41,7 @@ export default function Layout({
           gridTemplateRows="max-content 1fr"
           overflow="hidden"
         >
-          <PlaceSwitchBar />
+          <PlaceSwitchBar overwriteTabLabel={overwriteTabLabel} />
 
           <Box
             overflow="auto"

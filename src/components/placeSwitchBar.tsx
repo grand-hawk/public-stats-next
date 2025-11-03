@@ -12,7 +12,11 @@ import { useCurrentTab } from '@/hooks/useCurrentTab';
 import { usePlaceInitials } from '@/hooks/usePlaceInitials';
 import { useSuspenseConfig } from '@/hooks/useSuspenseConfig';
 
-export default function PlaceSwitchBar() {
+export default function PlaceSwitchBar({
+  overwriteTabLabel,
+}: {
+  overwriteTabLabel?: string;
+}) {
   const router = useRouter();
   const config = useSuspenseConfig();
   const currentInitials = usePlaceInitials();
@@ -38,7 +42,7 @@ export default function PlaceSwitchBar() {
       }}
     >
       <Span fontSize="sm" fontWeight="bold" hideBelow="md" lineHeight="short">
-        {currentTab?.label}
+        {overwriteTabLabel || currentTab?.label}
       </Span>
 
       <Select.Root
