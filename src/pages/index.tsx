@@ -2,7 +2,7 @@ import { Box } from '@chakra-ui/react';
 import { useRouter } from 'next/router';
 import React from 'react';
 
-import CenterSpinner from '@/components/centerSpinner';
+import {CenterSpinner} from '@/components/spinners';
 
 export default function Root() {
   const router = useRouter();

@@ -1,16 +1,19 @@
-import { Center, Spinner } from '@chakra-ui/react';
-import { useIsClient } from '@uidotdev/usehooks';
-import React, { Suspense } from 'react';
+import dynamic from 'next/dynamic';
+import React from 'react';
 
+import { XSSpinner } from '@/components/spinners';
 import { EmptyState } from '@/components/ui/empty-state';
-import WinrateChart from '@/components/winrate/chart/chart';
 import { usePlace } from '@/hooks/usePlace';
 import { useWinrateFiltersStore } from '@/stores/winrate/filters';
 import { trpc } from '@/utils/trpc';
 
+const WinrateChart = dynamic(() => import('@/components/winrate/chart/chart'), {
+  ssr: false,
+  loading: () => <XSSpinner />,
+});
+
 export default function WinrateChartRoot() {
   const place = usePlace()!;
-  const isClient = useIsClient();
   const loadout = useWinrateFiltersStore((s) => s.loadout);
   const map = useWinrateFiltersStore((s) => s.map);
 
@@ -20,18 +23,8 @@ export default function WinrateChartRoot() {
     map: map || '*',
   });
 
-  const spinner = (
-    <Center minHeight="xs">
-      <Spinner />
-    </Center>
-  );
-
-  if (!isClient || isPending) return spinner;
+  if (isPending) return <XSSpinner />;
   if (!data || data.series.length === 0)
     return <EmptyState title="No data found" />;
-  return (
-    <Suspense fallback={spinner}>
-      <WinrateChart data={data} />
-    </Suspense>
-  );
+  return <WinrateChart data={data} />;
 }

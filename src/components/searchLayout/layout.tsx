@@ -1,7 +1,7 @@
 import { Box } from '@chakra-ui/react';
 import React, { Suspense } from 'react';
 
-import CenterSpinner from '@/components/centerSpinner';
+import {CenterSpinner} from '@/components/spinners';
 import { SEARCH_INPUT_HEIGHT } from '@/components/searchLayout/searchSidebar/input';
 
 import type { PropsWithChildren } from 'react';

@@ -1,7 +1,7 @@
 import { Box, Flex } from '@chakra-ui/react';
 import React, { Suspense } from 'react';
 
-import CenterSpinner from '@/components/centerSpinner';
+import {CenterSpinner} from '@/components/spinners';
 import Navigation from '@/components/navigation';
 import PlaceSwitchBar from '@/components/placeSwitchBar';
 
