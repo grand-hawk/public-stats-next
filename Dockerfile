@@ -1,5 +1,5 @@
 # Build layer
-FROM node:22 AS build
+FROM node:24 AS build
 
 RUN corepack enable && corepack prepare pnpm@10 --activate
 
@@ -17,7 +17,7 @@ ENV NEXT_OUTPUT=standalone
 RUN pnpm run build
 
 # Package layer
-FROM node:22-alpine AS package
+FROM node:24-alpine AS package
 
 RUN apk --no-cache add curl
 
