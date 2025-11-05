@@ -71,24 +71,25 @@ export default function ShellPenetrationTable() {
                     anglePen && Math.round(relPenetration(anglePen, angle)),
                 );
 
-              const anglePenCells = anglePens.map((penetration) =>
-                penetration ? (
-                  <FormatNumber
-                    key={`${distance}-${angle}-${penetration}`}
-                    style="unit"
-                    unit="millimeter"
-                    unitDisplay="narrow"
-                    value={penetration}
-                  />
-                ) : (
-                  '?mm'
-                ),
-              );
+              const anglePenCells = anglePens.map((penetration) => (
+                <span key={`${distance}-${angle}-${penetration}`}>
+                  {penetration ? (
+                    <FormatNumber
+                      style="unit"
+                      unit="millimeter"
+                      unitDisplay="narrow"
+                      value={penetration}
+                    />
+                  ) : (
+                    '?mm'
+                  )}
+                </span>
+              ));
 
               return (
                 <StatsCell key={`${distance}-${angle}`}>
                   {anglePenCells.length > 1 ? (
-                    <Stack>{anglePenCells}</Stack>
+                    <Stack gap={0}>{anglePenCells}</Stack>
                   ) : (
                     anglePenCells[0]
                   )}
