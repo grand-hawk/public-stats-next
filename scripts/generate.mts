@@ -25,6 +25,7 @@ await Promise.all(
     const fileBasename = path.basename(dataFile, '.json');
     const schemaFile = `${fileBasename}.schema.json`;
     const basename = fileBasename.replace(/[^a-zA-Z0-9]/g, '_');
+    const pascalBasename = pascalCase(basename);
 
     const dataResponse = await dataApi.head(dataFile);
     if (!dataResponse.ok) return;
@@ -34,7 +35,7 @@ await Promise.all(
 
     const schema = JSON.parse(await schemaResponse.text());
 
-    const compiledTypes = await compile(schema, pascalCase(basename), {
+    const compiledTypes = await compile(schema, pascalBasename, {
       bannerComment: '',
       format: false,
       additionalProperties: false,
@@ -59,7 +60,7 @@ await Promise.all(
     outputContent += `if ("$schema" in ${basename}) delete ${basename}.$schema;\n`;
     outputContent += `if ("$version" in ${basename}) delete ${basename}.$version;\n`;
     outputContent += '\n';
-    outputContent += `export default ${basename};\n`;
+    outputContent += `export const get${pascalBasename} = () => ${basename};\n`;
 
     const formattedContent = await prettier.format(outputContent, {
       ...prettierConfig!,

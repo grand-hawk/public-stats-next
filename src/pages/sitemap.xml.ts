@@ -1,12 +1,15 @@
 import { create } from 'xmlbuilder2';
 
 import { getBaseUrl } from '@/utils/trpc';
-import config from '@generated/config';
-import vehicles from '@generated/vehicles';
+import { getConfig } from '@generated/config';
+import { getVehicles } from '@generated/vehicles';
 
 import type { GetServerSidePropsContext, GetServerSidePropsResult } from 'next';
 
 function getPaths() {
+  const config = getConfig();
+  const vehicles = getVehicles();
+
   const paths: Array<{ path: string; changefreq: string; priority: string }> =
     [];
   const placeNames = config.data.placeNames;

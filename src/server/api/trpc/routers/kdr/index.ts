@@ -1,8 +1,8 @@
 import z from 'zod';
 
 import { createTRPCRouter, publicProcedure } from '@/server/api/trpc/context';
-import kdr from '@generated/kdr';
-import vehicles from '@generated/vehicles';
+import { getKdr } from '@generated/kdr';
+import { getVehicles } from '@generated/vehicles';
 
 import type { PlaceId } from '@generated/config';
 import type {
@@ -24,6 +24,9 @@ export const kdrRouter = createTRPCRouter({
       }),
     )
     .query(({ input }) => {
+      const kdr = getKdr();
+      const vehicles = getVehicles();
+
       const kdrData = kdr.data[input.placeId as PlaceId]?.data;
       if (!kdrData) return { all_time: [], recent: [] }; // This validates placeId
 

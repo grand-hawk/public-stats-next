@@ -1,6 +1,6 @@
 import { publicProcedure } from '@/server/api/trpc/context';
-import config from '@generated/config';
+import { getConfig } from '@generated/config';
 
 export const configRouter = publicProcedure.query(() => {
-  return config;
+  return getConfig();
 });

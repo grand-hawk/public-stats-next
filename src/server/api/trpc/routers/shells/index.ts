@@ -2,8 +2,8 @@ import z from 'zod';
 
 import { createTRPCRouter, publicProcedure } from '@/server/api/trpc/context';
 import { getBaseUrl } from '@/utils/trpc';
-import config from '@generated/config';
-import shells from '@generated/shells';
+import { getConfig } from '@generated/config';
+import { getShells } from '@generated/shells';
 
 import type { PlaceId } from '@generated/config';
 import type { ShellsPlaceDataShell } from '@generated/shells';
@@ -24,6 +24,8 @@ export const shellsRouter = createTRPCRouter({
       }),
     )
     .query(({ input }) => {
+      const shells = getShells();
+
       const shellsData = shells.data[input.placeId as PlaceId]?.data;
       if (!shellsData) return {}; // This validates placeId
 
@@ -49,6 +51,9 @@ export const shellsRouter = createTRPCRouter({
       }),
     )
     .query(({ input }) => {
+      const shells = getShells();
+      const config = getConfig();
+
       const shellsPlace = shells.data[input.placeId as PlaceId];
       if (!shellsPlace) return null; // This validates placeId
 
@@ -103,6 +108,8 @@ export const shellsRouter = createTRPCRouter({
       }),
     )
     .query(({ input }) => {
+      const shells = getShells();
+
       const shellsPlace = shells.data[input.placeId as PlaceId];
       if (!shellsPlace) return null; // This validates placeId
 

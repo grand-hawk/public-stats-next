@@ -2,8 +2,8 @@ import slug from 'slug';
 import { z } from 'zod';
 
 import { createTRPCRouter, publicProcedure } from '@/server/api/trpc/context';
-import loadouts from '@generated/loadouts';
-import vehicles from '@generated/vehicles';
+import { getLoadouts } from '@generated/loadouts';
+import { getVehicles } from '@generated/vehicles';
 
 import type { PlaceId } from '@generated/config';
 import type { LoadoutsPlaceDataLoadoutVehicleTeam } from '@generated/loadouts';
@@ -29,6 +29,9 @@ export const teamsRouter = createTRPCRouter({
       }),
     )
     .query(({ input }) => {
+      const loadouts = getLoadouts();
+      const vehicles = getVehicles();
+
       const loadoutsPlace = loadouts.data[input.placeId as PlaceId];
       if (!loadoutsPlace) return null; // This validates placeId
 

@@ -103,6 +103,7 @@ export default defineConfig([
       'sort-destructure-keys': sortDestructureKeysPlugin,
     },
     rules: {
+      'import/consistent-type-specifier-style': ['error', 'prefer-top-level'],
       'import/order': [
         'error',
         {

@@ -1,7 +1,7 @@
 import z from 'zod';
 
 import { createTRPCRouter, publicProcedure } from '@/server/api/trpc/context';
-import winrate from '@generated/winrate';
+import { getWinrate } from '@generated/winrate';
 
 import type { PlaceId } from '@generated/config';
 
@@ -13,6 +13,8 @@ export const winrateRouter = createTRPCRouter({
       }),
     )
     .query(({ input }) => {
+      const winrate = getWinrate();
+
       const winrateMetadata = winrate.data[input.placeId as PlaceId]?.metadata;
       if (!winrateMetadata) return null; // This validates placeId
 
@@ -31,6 +33,8 @@ export const winrateRouter = createTRPCRouter({
       }),
     )
     .query(({ input }) => {
+      const winrate = getWinrate();
+
       const winrateData = winrate.data[input.placeId as PlaceId]?.data;
       if (!winrateData) return null; // This validates placeId
 

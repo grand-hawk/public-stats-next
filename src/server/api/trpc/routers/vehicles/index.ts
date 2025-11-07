@@ -4,11 +4,11 @@ import z from 'zod';
 
 import { createTRPCRouter, publicProcedure } from '@/server/api/trpc/context';
 import { getBaseUrl } from '@/utils/trpc';
-import config from '@generated/config';
-import kdr from '@generated/kdr';
-import loadouts from '@generated/loadouts';
-import vehicles from '@generated/vehicles';
-import vehicles_ld from '@generated/vehicles_ld';
+import { getConfig } from '@generated/config';
+import { getKdr } from '@generated/kdr';
+import { getLoadouts } from '@generated/loadouts';
+import { getVehicles } from '@generated/vehicles';
+import { getVehiclesLd } from '@generated/vehicles_ld';
 
 import type { PlaceId } from '@generated/config';
 import type { KdrPlaceDataVehicle } from '@generated/kdr';
@@ -68,7 +68,7 @@ export const vehiclesRouter = createTRPCRouter({
       }),
     )
     .query(({ input }) => {
-      const vehiclesData = vehicles.data[input.placeId as PlaceId]?.data;
+      const vehiclesData = getVehicles().data[input.placeId as PlaceId]?.data;
       if (!vehiclesData) return []; // This validates placeId
 
       return Object.entries(vehiclesData)
@@ -89,6 +89,12 @@ export const vehiclesRouter = createTRPCRouter({
       }),
     )
     .query(({ input }) => {
+      const vehicles = getVehicles();
+      const loadouts = getLoadouts();
+      const kdr = getKdr();
+      const vehiclesLd = getVehiclesLd();
+      const config = getConfig();
+
       const vehiclesPlace = vehicles.data[input.placeId as PlaceId];
       if (!vehiclesPlace) return null; // This validates placeId
 
@@ -97,7 +103,7 @@ export const vehiclesRouter = createTRPCRouter({
 
       const loadoutsPlace = loadouts.data[input.placeId as PlaceId];
       const kdrPlace = kdr.data[input.placeId as PlaceId];
-      const linkedData = vehicles_ld.data[
+      const linkedData = vehiclesLd.data[
         input.placeId as PlaceId
       ] as unknown as Record<string, WithContext<Vehicle>>;
 
