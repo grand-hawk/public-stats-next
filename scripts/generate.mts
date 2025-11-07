@@ -50,6 +50,7 @@ await Promise.all(
     outputContent += '\n';
 
     outputContent += `import ky from 'ky';\n`;
+    outputContent += `import { setIntervalAsync } from 'set-interval-async';\n`;
     outputContent += '\n';
     outputContent += compiledTypes;
     outputContent += '\n';
@@ -64,7 +65,10 @@ await Promise.all(
     outputContent += `  return data;\n`;
     outputContent += `}\n`;
     outputContent += '\n';
-    outputContent += `const ${basename} = await fetch${pascalBasename}();\n`;
+    outputContent += `let ${basename} = await fetch${pascalBasename}();\n`;
+    outputContent += `setIntervalAsync(async () => {\n`;
+    outputContent += `  ${basename} = await fetch${pascalBasename}();\n`;
+    outputContent += `}, 30 * 60 * 1_000);\n`;
     outputContent += '\n';
     outputContent += `export const get${pascalBasename} = () => ${basename};\n`;
 
