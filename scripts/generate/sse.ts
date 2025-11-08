@@ -5,14 +5,12 @@ const version: string = '{{version}}';
 
 export const sse = new EventEmitter();
 
-let eventSource: EventSource | null;
-export function startSSE() {
-  if (eventSource) return;
-  if (environment === 'development') return;
-
-  eventSource = new EventSource(
+if (typeof EdgeRuntime !== 'string' && environment !== 'development') {
+  const eventSource = new EventSource(
     `https://${environment}.public-stats-data-sse.railway.astrid.ovh/events`,
   );
+
+  eventSource.onopen = () => console.log('SSE connection opened');
 
   eventSource.addEventListener(version, (event) => {
     const data: string[] = JSON.parse(event.data);
