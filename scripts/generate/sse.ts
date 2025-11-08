@@ -13,6 +13,8 @@ if (process.env.NEXT_RUNTIME !== 'edge' && environment !== 'development') {
   );
 
   eventSource.onopen = () => console.log('SSE connection opened');
+  eventSource.onerror = (event) =>
+    console.error('SSE connection error:', event);
 
   eventSource.addEventListener(version, (event) => {
     const data: string[] = JSON.parse(JSON.parse(event.data));
