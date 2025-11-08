@@ -38,6 +38,6 @@ export const winrateRouter = createTRPCRouter({
       const winrateData = winrate.data[input.placeId as PlaceId]?.data;
       if (!winrateData) return null; // This validates placeId
 
-      return winrateData[input.loadout][input.map];
+      return winrateData[input.loadout]?.[input.map] || null;
     }),
 });
