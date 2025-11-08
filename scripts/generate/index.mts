@@ -1,7 +1,8 @@
 import { existsSync } from 'node:fs';
-import { mkdir, rm, writeFile } from 'node:fs/promises';
+import { mkdir, readFile, rm, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 
+import formatString from '@robertsspaceindustries/sub';
 import { pascalCase } from 'change-case';
 import { compile } from 'json-schema-to-typescript';
 import ky from 'ky';
@@ -10,15 +11,22 @@ import prettier from 'prettier';
 if (existsSync('generated')) await rm('generated', { recursive: true });
 await mkdir('generated');
 
+const environment = process.env.NODE_ENV;
 const version = process.argv[2];
-const prefixUrl = `https://public-stats-data.multicrew.dev/${process.env.NODE_ENV}/${version}`;
+const prefixUrl = `https://public-stats-data.multicrew.dev/${environment}/${version}`;
 const dataApi = ky.create({ prefixUrl });
+
+console.log(`Environment: ${environment}  Version: ${version}`);
 
 export const { files } = await dataApi
   .get('index.json')
   .json<{ files: string[] }>();
 
 const prettierConfig = await prettier.resolveConfig('.prettierrc');
+
+let sseSource = await readFile('scripts/generate/sse.ts', 'utf-8');
+sseSource = formatString(sseSource, { environment, version });
+await writeFile('generated/sse.ts', sseSource, 'utf-8');
 
 await Promise.all(
   files.map(async (dataFile) => {
@@ -50,7 +58,8 @@ await Promise.all(
     outputContent += '\n';
 
     outputContent += `import ky from 'ky';\n`;
-    outputContent += `import { setIntervalAsync } from 'set-interval-async';\n`;
+    outputContent += '\n';
+    outputContent += `import { sse } from './sse';\n`;
     outputContent += '\n';
     outputContent += compiledTypes;
     outputContent += '\n';
@@ -66,9 +75,9 @@ await Promise.all(
     outputContent += `}\n`;
     outputContent += '\n';
     outputContent += `let ${basename} = await fetch${pascalBasename}();\n`;
-    outputContent += `setIntervalAsync(async () => {\n`;
+    outputContent += `sse.on('${dataFile}', async () => {\n`;
     outputContent += `  ${basename} = await fetch${pascalBasename}();\n`;
-    outputContent += `}, 30 * 60 * 1_000);\n`;
+    outputContent += `});\n`;
     outputContent += '\n';
     outputContent += `export const get${pascalBasename} = () => ${basename};\n`;
 

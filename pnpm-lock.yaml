@@ -17,6 +17,9 @@ importers:
       '@emotion/react':
         specifier: ^11.14.0
         version: 11.14.0(@types/react@19.2.2)(react@19.2.0)
+      '@robertsspaceindustries/sub':
+        specifier: ^1.0.9
+        version: 1.0.9
       '@t3-oss/env-nextjs':
         specifier: ^0.12.0
         version: 0.12.0(typescript@5.9.3)(zod@3.25.76)
@@ -868,6 +871,9 @@ packages:
         optional: true
       react-redux:
         optional: true
+
+  '@robertsspaceindustries/sub@1.0.9':
+    resolution: {integrity: sha512-+6G3kFVudTPMx+2QtOHINv4TsgywRhQs4XwWy4Q6sY3+m8iTW6se0zjI3zRUcvO88nqdWJPvMUciAKx+gexkFg==}
 
   '@rtsao/scc@1.1.0':
     resolution: {integrity: sha512-zt6OdqaDoOnJ1ZYsCYGt9YmWzDXl4vQdKTyJev62gFhRGKdx7mcT54V9KIjg+d2wi9EXsPvAPKe7i7WjfVWB8g==}
@@ -3918,6 +3924,8 @@ snapshots:
     optionalDependencies:
       react: 19.2.0
       react-redux: 9.2.0(@types/react@19.2.2)(react@19.2.0)(redux@5.0.1)
+
+  '@robertsspaceindustries/sub@1.0.9': {}
 
   '@rtsao/scc@1.1.0': {}
 
