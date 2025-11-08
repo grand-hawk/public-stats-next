@@ -7,7 +7,7 @@ const version: string = '{{version}}';
 
 export const sse = new EventEmitter();
 
-if (typeof EdgeRuntime !== 'string' && environment !== 'development') {
+if (process.env.NEXT_RUNTIME !== 'edge' && environment !== 'development') {
   const eventSource = new EventSource(
     `https://${environment}.public-stats-data-sse.railway.astrid.ovh/events`,
   );
