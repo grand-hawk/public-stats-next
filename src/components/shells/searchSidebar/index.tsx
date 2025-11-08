@@ -1,5 +1,8 @@
+import { HStack, Image } from '@chakra-ui/react';
+import NextImage from 'next/image';
 import React from 'react';
 
+import { getShellTypeIcon } from '@/components/icons/shells';
 import SearchSidebar from '@/components/searchLayout/searchSidebar';
 import SearchInput from '@/components/searchLayout/searchSidebar/input';
 import { usePlace } from '@/hooks/usePlace';
@@ -69,14 +72,33 @@ export default function ShellsSearchSidebar() {
         emphasized: true,
       });
 
-      for (const shell of shells)
+      for (const shell of shells) {
+        const shellIcon = getShellTypeIcon(shell.type);
+
         result.push({
           type: 'item',
           value: {
-            name: shell.name,
+            name: shellIcon ? (
+              <HStack justifyContent="space-between" width="100%">
+                {shell.name}
+
+                <Image asChild>
+                  <NextImage
+                    alt={shell.type}
+                    height={24}
+                    quality={75}
+                    src={shellIcon}
+                    width={24}
+                  />
+                </Image>
+              </HStack>
+            ) : (
+              shell.name
+            ),
             slug: shell.slug,
           },
         });
+      }
     }
 
     return result;

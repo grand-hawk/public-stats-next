@@ -38,6 +38,7 @@ export const shellsRouter = createTRPCRouter({
               name: shell.name,
               slug: shell.slug,
               vehicles: shell.vehicles,
+              type: shell.type,
             })),
           ]),
       );

@@ -22,8 +22,8 @@ export type DividerListItem = {
 export type LinkListItem = {
   type: 'item';
   value: {
+    name: React.ReactNode;
     slug: string;
-    name: string;
   };
 };
 

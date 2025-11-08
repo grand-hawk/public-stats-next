@@ -45,11 +45,18 @@ export const shells: Record<string, RegExp[]> = {
   '/assets/icons/shells/SMOKE.png': [/^SMOKE$/],
 };
 
+const shellTypeCache = new Map<string, string | undefined>();
+
 export function getShellTypeIcon(type: string) {
+  const cached = shellTypeCache.get(type);
+  if (cached) return cached;
+
   let lastMatch: string | undefined;
 
   for (const [icon, patterns] of Object.entries(shells))
     if (patterns.some((pattern) => pattern.test(type))) lastMatch = icon;
+
+  shellTypeCache.set(type, lastMatch);
 
   return lastMatch;
 }
