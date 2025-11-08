@@ -6,6 +6,9 @@ RUN corepack enable && corepack prepare pnpm@10 --activate
 COPY . /build
 WORKDIR /build
 
+ARG DATA_ENV_VAR="production"
+ENV DATA_ENV=$DATA_ENV_VAR
+
 RUN --mount=type=cache,id=pnpm,target=/root/.local/share/pnpm/store pnpm fetch --frozen-lockfile
 RUN --mount=type=cache,id=pnpm,target=/root/.local/share/pnpm/store pnpm install --frozen-lockfile
 

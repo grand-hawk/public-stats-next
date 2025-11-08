@@ -11,7 +11,7 @@ import prettier from 'prettier';
 if (existsSync('generated')) await rm('generated', { recursive: true });
 await mkdir('generated');
 
-const environment = process.env.NODE_ENV;
+const environment = process.env.DATA_ENV || process.env.NODE_ENV;
 const version = process.argv[2];
 const prefixUrl = `https://public-stats-data.multicrew.dev/${environment}/${version}`;
 const dataApi = ky.create({ prefixUrl });
