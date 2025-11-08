@@ -6,14 +6,14 @@ RUN corepack enable && corepack prepare pnpm@10 --activate
 COPY . /build
 WORKDIR /build
 
-ARG DATA_ENV_VAR="production"
-ENV DATA_ENV=$DATA_ENV_VAR
+ARG DATA_ENV="production"
+ENV DATA_ENV=$DATA_ENV
 
 RUN --mount=type=cache,id=pnpm,target=/root/.local/share/pnpm/store pnpm fetch --frozen-lockfile
 RUN --mount=type=cache,id=pnpm,target=/root/.local/share/pnpm/store pnpm install --frozen-lockfile
 
-ARG NODE_ENV_VAR="production"
-ENV NODE_ENV=$NODE_ENV_VAR
+ARG NODE_ENV="production"
+ENV NODE_ENV=$NODE_ENV
 ENV NEXT_TELEMETRY_DISABLED=1
 ENV NEXT_OUTPUT=standalone
 
