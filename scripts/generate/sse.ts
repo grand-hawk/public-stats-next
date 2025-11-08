@@ -1,5 +1,7 @@
 import EventEmitter from 'node:events';
 
+import { EventSource } from 'eventsource';
+
 const environment: string = '{{environment}}';
 const version: string = '{{version}}';
 
