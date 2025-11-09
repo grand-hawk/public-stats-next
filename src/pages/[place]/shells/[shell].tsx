@@ -47,39 +47,38 @@ export default function PlaceShell() {
       });
   }, [router, shell, shellQuery, shellSlug]);
 
-  const title = shell ? `${shell.weapon} - ${shell.name}` : null;
+  const title = shell ? `${shell.weapon} - ${shell.name}` : 'Shell not found';
 
   return (
     <>
-      {shell && title ? (
-        <Head>
-          <title>{formatTitle(title, place.initials)}</title>
+      <Head>
+        <title>{formatTitle(title, place.initials)}</title>
 
-          <meta content={title} property="og:title" />
-          <meta content={title} name="twitter:title" />
-          <meta
-            content={[shell.weapon, shell.name, ...getKeywords(place)].join(
-              ',',
-            )}
-            name="keywords"
-          />
+        <meta content={title} property="og:title" />
+        <meta content={title} name="twitter:title" />
 
-          {Object.entries(shell.linkedData).map(([key, linkedData]) => (
-            <script
-              key={key}
-              dangerouslySetInnerHTML={{
-                __html: JSON.stringify(linkedData).replace(/</g, '\\u003c'),
-              }}
-              data-linked-data={key}
-              type="application/ld+json"
+        {shell && (
+          <>
+            <meta
+              content={[shell.weapon, shell.name, ...getKeywords(place)].join(
+                ',',
+              )}
+              name="keywords"
             />
-          ))}
-        </Head>
-      ) : (
-        <Head>
-          <title>{formatTitle('Shell not found', place.initials)}</title>
-        </Head>
-      )}
+
+            {Object.entries(shell.linkedData).map(([key, linkedData]) => (
+              <script
+                key={key}
+                dangerouslySetInnerHTML={{
+                  __html: JSON.stringify(linkedData).replace(/</g, '\\u003c'),
+                }}
+                data-linked-data={key}
+                type="application/ld+json"
+              />
+            ))}
+          </>
+        )}
+      </Head>
 
       <Layout noPadding>
         <SearchLayout sidebar={<ShellsSearchSidebar />}>

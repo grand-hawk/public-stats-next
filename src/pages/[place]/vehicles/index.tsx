@@ -13,10 +13,15 @@ import { formatTitle } from '@/utils/formatTitle';
 export default function PlaceVehicles() {
   const initials = usePlaceInitials()!;
 
+  const title = 'Vehicles';
+
   return (
     <>
       <Head>
-        <title>{formatTitle('Vehicles', initials)}</title>
+        <title>{formatTitle(title, initials)}</title>
+
+        <meta content={title} property="og:title" />
+        <meta content={title} name="twitter:title" />
       </Head>
 
       <Layout noPadding>

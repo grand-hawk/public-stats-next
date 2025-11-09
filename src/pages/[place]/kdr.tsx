@@ -1,14 +1,18 @@
 import { Flex, Stack } from '@chakra-ui/react';
+import Head from 'next/head';
 import { useQueryState } from 'nuqs';
 import React from 'react';
 
 import KdrRangeSelect, { KDR_RANGE_ITEMS } from '@/components/kdr/rangeSelect';
 import KdrTable from '@/components/kdr/table';
 import Layout from '@/components/utils/layout';
+import { usePlaceInitials } from '@/hooks/usePlaceInitials';
+import { formatTitle } from '@/utils/formatTitle';
 
 import type { KdrPlaceData } from '@generated/kdr';
 
 export default function PlaceKdr() {
+  const initials = usePlaceInitials();
   const [range, setRange] = useQueryState('range');
 
   const normalizedRange = React.useMemo(() => {
@@ -20,14 +24,25 @@ export default function PlaceKdr() {
       : fallback;
   }, [range]) as keyof KdrPlaceData;
 
+  const title = 'K/D table';
+
   return (
-    <Layout>
-      <Flex justifyContent="center">
-        <Stack as="main" gap={4} maxWidth="2xl" width="100%">
-          <KdrRangeSelect range={normalizedRange} setRange={setRange} />
-          <KdrTable range={normalizedRange} />
-        </Stack>
-      </Flex>
-    </Layout>
+    <>
+      <Head>
+        <title>{formatTitle(title, initials)}</title>
+
+        <meta content={title} property="og:title" />
+        <meta content={title} name="twitter:title" />
+      </Head>
+
+      <Layout>
+        <Flex justifyContent="center">
+          <Stack as="main" gap={4} maxWidth="2xl" width="100%">
+            <KdrRangeSelect range={normalizedRange} setRange={setRange} />
+            <KdrTable range={normalizedRange} />
+          </Stack>
+        </Flex>
+      </Layout>
+    </>
   );
 }

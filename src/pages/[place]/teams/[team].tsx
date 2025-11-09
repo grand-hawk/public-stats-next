@@ -33,17 +33,16 @@ export default function PlaceTeam() {
       });
   }, [router, teamQuery, team, teamSlug]);
 
+  const title = team ? team.name : 'Team not found';
+
   return (
     <>
-      {team ? (
-        <Head>
-          <title>{formatTitle(team.name, place.initials)}</title>
-        </Head>
-      ) : (
-        <Head>
-          <title>{formatTitle('Team not found', place.initials)}</title>
-        </Head>
-      )}
+      <Head>
+        <title>{formatTitle(title, place.initials)}</title>
+
+        <meta content={title} property="og:title" />
+        <meta content={title} name="twitter:title" />
+      </Head>
 
       <Layout overwriteTabLabel={team?.name}>Placeholder</Layout>
     </>

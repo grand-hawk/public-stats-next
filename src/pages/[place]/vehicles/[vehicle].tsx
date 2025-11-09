@@ -48,67 +48,69 @@ export default function PlaceVehicle() {
       });
   }, [router, vehicle, vehicleQuery, vehicleSlug]);
 
+  const title = vehicle ? vehicle.info.name : 'Vehicle not found';
+
   return (
     <>
-      {vehicle ? (
-        <Head>
-          <title>{formatTitle(vehicle.info.name, place.initials)}</title>
+      <Head>
+        <title>{formatTitle(title, place.initials)}</title>
 
-          <meta content="summary_large_image" name="twitter:card" />
-          <meta content={vehicle.info.name} property="og:title" />
-          <meta content={vehicle.info.name} name="twitter:title" />
-          <meta
-            content={[
-              ...(
-                (vehicle.linkedData.vehicle?.keywords as string | undefined) ||
-                ''
-              ).split(','),
-              vehicle.info.name,
-              ...getKeywords(place),
-            ].join(',')}
-            name="keywords"
-          />
+        <meta content={title} property="og:title" />
+        <meta content={title} name="twitter:title" />
 
-          <meta
-            content={
-              `${vehicle.info.name} from Multicrew Tank Combat` +
-              (vehicle.info.description
-                ? `\n\n“${vehicle.info.description}”`
-                : '')
-            }
-            name="description"
-          />
-
-          {vehicle.info.image && (
-            <>
-              <meta content={vehicle.info.image} property="og:image" />
-              <meta content="1920" property="og:image:width" />
-              <meta content="1080" property="og:image:height" />
-              <meta
-                content={`image/${vehicle.info.image.split('.').pop()}`}
-                property="og:image:type"
-              />
-
-              <meta content={vehicle.info.image} name="twitter:image" />
-            </>
-          )}
-
-          {Object.entries(vehicle.linkedData).map(([key, linkedData]) => (
-            <script
-              key={key}
-              dangerouslySetInnerHTML={{
-                __html: JSON.stringify(linkedData).replace(/</g, '\\u003c'),
-              }}
-              data-linked-data={key}
-              type="application/ld+json"
+        {vehicle && (
+          <>
+            <meta content="summary_large_image" name="twitter:card" />
+            <meta
+              content={[
+                ...(
+                  (vehicle.linkedData.vehicle?.keywords as
+                    | string
+                    | undefined) || ''
+                ).split(','),
+                vehicle.info.name,
+                ...getKeywords(place),
+              ].join(',')}
+              name="keywords"
             />
-          ))}
-        </Head>
-      ) : (
-        <Head>
-          <title>{formatTitle('Vehicle not found', place.initials)}</title>
-        </Head>
-      )}
+
+            <meta
+              content={
+                `${vehicle.info.name} from Multicrew Tank Combat` +
+                (vehicle.info.description
+                  ? `\n\n“${vehicle.info.description}”`
+                  : '')
+              }
+              name="description"
+            />
+
+            {vehicle.info.image && (
+              <>
+                <meta content={vehicle.info.image} property="og:image" />
+                <meta content="1920" property="og:image:width" />
+                <meta content="1080" property="og:image:height" />
+                <meta
+                  content={`image/${vehicle.info.image.split('.').pop()}`}
+                  property="og:image:type"
+                />
+
+                <meta content={vehicle.info.image} name="twitter:image" />
+              </>
+            )}
+
+            {Object.entries(vehicle.linkedData).map(([key, linkedData]) => (
+              <script
+                key={key}
+                dangerouslySetInnerHTML={{
+                  __html: JSON.stringify(linkedData).replace(/</g, '\\u003c'),
+                }}
+                data-linked-data={key}
+                type="application/ld+json"
+              />
+            ))}
+          </>
+        )}
+      </Head>
 
       <Layout noPadding>
         <SearchLayout sidebar={<VehiclesSearchSidebar />}>
