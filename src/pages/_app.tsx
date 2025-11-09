@@ -3,9 +3,11 @@ import { NuqsAdapter } from 'nuqs/adapters/next/pages';
 import React, { Suspense } from 'react';
 
 import { CenterSpinner } from '@/components/spinners';
+import { Toaster } from '@/components/ui/toaster';
 import { ChakraProvider } from '@/components/utils/chakra';
 import Head from '@/components/utils/head';
 import Umami from '@/components/utils/umami';
+import UpdateListener from '@/components/utils/updateListener';
 import { trpc } from '@/utils/trpc';
 
 import type { AppProps } from 'next/app';
@@ -15,8 +17,8 @@ export function App({ Component, pageProps }: AppProps) {
     <>
       <Head />
 
-      <NuqsAdapter>
-        <ChakraProvider>
+      <ChakraProvider>
+        <NuqsAdapter>
           <Suspense
             fallback={
               <Box height="100svh">
@@ -26,8 +28,11 @@ export function App({ Component, pageProps }: AppProps) {
           >
             <Component {...pageProps} />
           </Suspense>
-        </ChakraProvider>
-      </NuqsAdapter>
+        </NuqsAdapter>
+
+        <Toaster />
+        <UpdateListener />
+      </ChakraProvider>
 
       <Umami />
     </>
