@@ -100,27 +100,4 @@ export const shellsRouter = createTRPCRouter({
         },
       } as DetailedShell;
     }),
-
-  reloadMultipliersBySlug: publicProcedure
-    .input(
-      z.object({
-        placeId: z.string(),
-        weapon: z.string(),
-      }),
-    )
-    .query(({ input }) => {
-      const shells = getShells();
-
-      const shellsPlace = shells.data[input.placeId as PlaceId];
-      if (!shellsPlace) return null; // This validates placeId
-
-      const weapon = shellsPlace.data[input.weapon];
-      if (!weapon) return null; // This validates weapon
-
-      return Object.fromEntries(
-        weapon
-          .map((shell) => [shell.name, shell.reloadMultiplier ?? null])
-          .filter(([_, reloadMultiplier]) => reloadMultiplier !== null),
-      );
-    }),
 });
