@@ -13,6 +13,8 @@ import { formatTitle } from '@/utils/formatTitle';
 import { slugifyArray } from '@/utils/slugifyArray';
 import { trpc } from '@/utils/trpc';
 
+const EMPTY_ARRAY: string[] = [];
+
 export default function PlaceWinrate() {
   const place = usePlace()!;
   const [loadout, setLoadout] = useQueryState('loadout');
@@ -22,15 +24,30 @@ export default function PlaceWinrate() {
     placeId: place.placeId,
   });
 
-  const [loadoutSlugs, mapSlugs] = React.useMemo(() => {
-    return [
-      slugifyArray(winrateMetadata?.loadout ?? []),
-      slugifyArray(winrateMetadata?.map ?? []),
-    ];
-  }, [winrateMetadata]);
+  const loadoutOptions = winrateMetadata?.loadout ?? EMPTY_ARRAY;
+  const mapOptions = winrateMetadata?.map ?? EMPTY_ARRAY;
 
-  const actualLoadout = loadout && loadoutSlugs[loadout];
+  const [loadoutSlugs, mapSlugs] = React.useMemo(() => {
+    return [slugifyArray(loadoutOptions), slugifyArray(mapOptions)];
+  }, [loadoutOptions, mapOptions]);
+
+  const firstLoadout = loadoutOptions[0] ?? null;
+  const firstLoadoutSlug = React.useMemo(
+    () => (firstLoadout ? slug(firstLoadout) : null),
+    [firstLoadout],
+  );
+
+  React.useEffect(() => {
+    if (!firstLoadoutSlug) return;
+
+    if (!loadout || !loadoutSlugs[loadout]) setLoadout(firstLoadoutSlug);
+  }, [firstLoadoutSlug, loadout, loadoutSlugs, setLoadout]);
+
+  const actualLoadout =
+    loadout && loadoutSlugs[loadout] ? loadoutSlugs[loadout] : null;
   const actualMap = map && mapSlugs[map];
+
+  const resolvedLoadout = actualLoadout ?? firstLoadout ?? null;
 
   const title = 'Winrate';
 
@@ -48,16 +65,16 @@ export default function PlaceWinrate() {
           <Stack as="main" gap={4} maxWidth="2xl" width="100%">
             <Grid gap={2} templateColumns="repeat(2, 1fr)">
               <SimpleSelect
-                items={winrateMetadata?.loadout ?? []}
+                items={loadoutOptions}
                 label="Loadout"
-                noValueLabel="All"
-                value={actualLoadout}
+                allowEmpty={false}
+                value={resolvedLoadout}
                 onValueChange={(value) =>
                   setLoadout(value ? slug(value) : null)
                 }
               />
               <SimpleSelect
-                items={winrateMetadata?.map ?? []}
+                items={mapOptions}
                 label="Map"
                 noValueLabel="All"
                 value={actualMap}
@@ -65,7 +82,7 @@ export default function PlaceWinrate() {
               />
             </Grid>
 
-            <WinrateChartRoot loadout={actualLoadout} map={actualMap} />
+            <WinrateChartRoot loadout={resolvedLoadout} map={actualMap} />
 
             <Alert
               background="bg.subtle"

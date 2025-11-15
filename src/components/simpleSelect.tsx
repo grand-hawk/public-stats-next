@@ -6,31 +6,44 @@ import type React from 'react';
 export const NO_VALUE = '<none>';
 
 export default function SimpleSelect({
+  allowEmpty = true,
   items,
   label,
   noValueLabel = 'None',
-  onValueChange,
+  onValueChange: onValueChangeProp,
   value,
   ...props
 }: {
+  allowEmpty?: boolean;
   items: string[];
   label: string;
   noValueLabel?: string;
   value: string | null;
   onValueChange: (value: string | null) => void;
 } & Omit<SelectRootProps, 'collection' | 'value' | 'onValueChange'>) {
+  const optionItems = items.map((item) => ({
+    value: item,
+    label: item,
+  }));
+
   const collection = createListCollection({
-    items: [
-      {
-        value: NO_VALUE,
-        label: noValueLabel,
-      },
-      ...items.map((item) => ({
-        value: item,
-        label: item,
-      })),
-    ],
+    items: allowEmpty
+      ? [
+          {
+            value: NO_VALUE,
+            label: noValueLabel,
+          },
+          ...optionItems,
+        ]
+      : optionItems,
   });
+
+  const selectedValue = (() => {
+    if (allowEmpty) return value === null ? [NO_VALUE] : [value];
+    if (value !== null) return [value];
+    if (items.length > 0) return [items[0]];
+    return [];
+  })();
 
   return (
     <Field.Root>
@@ -41,10 +54,17 @@ export default function SimpleSelect({
         lazyMount
         size="sm"
         {...props}
-        value={value === null ? [NO_VALUE] : [value]}
-        onValueChange={(details) =>
-          onValueChange(details.value[0] === NO_VALUE ? null : details.value[0])
-        }
+        value={selectedValue}
+        onValueChange={(details) => {
+          const nextValue = details.value[0] ?? null;
+
+          if (allowEmpty && nextValue === NO_VALUE) {
+            onValueChangeProp(null);
+            return;
+          }
+
+          onValueChangeProp(nextValue);
+        }}
       >
         <Select.HiddenSelect />
 
