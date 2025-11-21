@@ -63,12 +63,13 @@ await Promise.all(
     outputContent += compiledTypes;
     outputContent += '\n';
     outputContent += `async function fetch${pascalBasename}() {\n`;
-    outputContent += `  const data = ky.get('${prefixUrl}/${dataFile}').json<Default>();\n`;
+    outputContent += `  const response = await ky.get('${prefixUrl}/${dataFile}');\n`;
+    outputContent += `  const data = await response.json<Default>();\n`;
     outputContent += `  \n`;
     outputContent += `  if ("$schema" in data) delete data.$schema;\n`;
     outputContent += `  if ("$version" in data) delete data.$version;\n`;
     outputContent += `  \n`;
-    outputContent += `  console.log('Fetched ${dataFile}');\n`;
+    outputContent += `  console.log('Fetched ${dataFile}', response.headers.get('etag'));\n`;
     outputContent += `  \n`;
     outputContent += `  return data;\n`;
     outputContent += `}\n`;
