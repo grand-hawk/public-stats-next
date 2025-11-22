@@ -2,6 +2,8 @@ import EventEmitter from 'node:events';
 
 import { EventSource } from 'eventsource';
 
+declare const EdgeRuntime: string | undefined;
+
 const environment: string = '{{environment}}';
 const version: string = '{{version}}';
 
