@@ -19,11 +19,10 @@ if (process.env.NEXT_RUNTIME !== 'edge' && environment !== 'development') {
 
     console.log('SSE updates:', data.join(', '));
 
-    const listeners = sse.listeners(version);
-    const callbackPromises = listeners.map((callback) =>
-      Promise.resolve(callback()),
-    );
-    await Promise.allSettled(callbackPromises);
+    for (const file of data)
+      await Promise.allSettled(
+        sse.listeners(file).map((callback) => Promise.resolve(callback())),
+      );
 
     sse.emit('_settled');
   });
