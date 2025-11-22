@@ -21,11 +21,11 @@ if (
   eventSource.onopen = () => console.log('SSE connection opened');
 
   eventSource.addEventListener(version, async (event) => {
-    const data: string[] = JSON.parse(JSON.parse(event.data));
+    const files: string[] = JSON.parse(JSON.parse(event.data));
 
-    console.log('SSE updates:', data.join(', '));
+    console.log('SSE updates:', files.join(', '));
 
-    for (const file of data)
+    for (const file of files)
       await Promise.allSettled(
         sse.listeners(file).map((callback) => Promise.resolve(callback())),
       );
