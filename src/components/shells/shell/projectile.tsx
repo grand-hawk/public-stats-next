@@ -36,12 +36,22 @@ export default function ShellProjectile() {
           />
         </Stat>
 
-        {shell.diameter && (
+        {shell.projectileDiameter && (
+          <Stat label="Projectile diameter">
+            <FormatNumber
+              style="unit"
+              unit="millimeter"
+              value={shell.projectileDiameter}
+            />
+          </Stat>
+        )}
+
+        {shell.penetratorDiameter && (
           <Stat label="Penetrator diameter">
             <FormatNumber
               style="unit"
               unit="millimeter"
-              value={shell.diameter}
+              value={shell.penetratorDiameter}
             />
           </Stat>
         )}
