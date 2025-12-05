@@ -55,12 +55,7 @@ export default function ShellPenetrationTable() {
         {distances.map((distance) => (
           <StatsRow key={distance}>
             <StatsCell>
-              <FormatNumber
-                style="unit"
-                unit="meter"
-                unitDisplay="narrow"
-                value={distance}
-              />
+              <FormatNumber style="unit" unit="meter" value={distance} />
             </StatsCell>
             {angles.map((angle) => {
               let anglePens = shell.penetrationTable[angle][distance];
@@ -77,7 +72,6 @@ export default function ShellPenetrationTable() {
                     <FormatNumber
                       style="unit"
                       unit="millimeter"
-                      unitDisplay="narrow"
                       value={penetration}
                     />
                   ) : (
