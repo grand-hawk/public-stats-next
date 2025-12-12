@@ -1,4 +1,4 @@
-import NextHead from 'next/head';
+import Head from 'next/head';
 import React from 'react';
 
 import { useCurrentTab } from '@/hooks/useCurrentTab';
@@ -18,12 +18,12 @@ export const getKeywords = (
   'Data',
 ];
 
-export default function Head({ children }: PropsWithChildren) {
+export default function InternalHead({ children }: PropsWithChildren) {
   const initials = usePlaceInitials();
   const currentTab = useCurrentTab();
 
   return (
-    <NextHead>
+    <Head>
       <title>{formatTitle(currentTab?.label, initials)}</title>
       <link href="/favicon.ico" rel="icon" type="image/x-icon" />
 
@@ -32,6 +32,6 @@ export default function Head({ children }: PropsWithChildren) {
       <meta content={formatTitle(null, initials)} property="og:site_name" />
 
       {children}
-    </NextHead>
+    </Head>
   );
 }
