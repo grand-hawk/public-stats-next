@@ -23,6 +23,7 @@ export default function Weapons({
       innerPadding={2}
       title="Weapons"
       withAnchor={`${turret.name}-weapons`}
+      headingAs="h3"
     >
       <Stack gap={4}>
         {weapons.map((weapon) => (

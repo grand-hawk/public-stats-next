@@ -6,18 +6,12 @@ import { GrDocumentMissing } from 'react-icons/gr';
 import slug from 'slug';
 
 import SearchLayout from '@/components/searchLayout/layout';
+import Shell from '@/components/shells';
 import ShellsSearchSidebar from '@/components/shells/searchSidebar';
-import ShellDamage from '@/components/shells/shell/damage';
-import ShellHeader from '@/components/shells/shell/header';
-import ShellMissile from '@/components/shells/shell/missile';
-import ShellPenetrationTable from '@/components/shells/shell/penetrationTable';
-import ShellProjectile from '@/components/shells/shell/projectile';
-import ShellVehicles from '@/components/shells/shell/vehicles';
 import { EmptyState } from '@/components/ui/empty-state';
 import { getKeywords } from '@/components/utils/head';
 import Layout from '@/components/utils/layout';
 import InaccurateDataFooter from '@/components/wiki/inaccurateDataFooter';
-import { ShellContext } from '@/hooks/providers/shell';
 import { usePlace } from '@/hooks/usePlace';
 import { useRouterQuery } from '@/hooks/useRouterQuery';
 import { formatTitle } from '@/utils/formatTitle';
@@ -104,15 +98,9 @@ export default function PlaceShell() {
                   lg: '2xl',
                 }}
                 width="100%"
+                data-md-target
               >
-                <ShellContext.Provider value={shell}>
-                  <ShellHeader />
-                  <ShellProjectile />
-                  <ShellDamage />
-                  <ShellMissile />
-                  <ShellPenetrationTable />
-                  <ShellVehicles />
-                </ShellContext.Provider>
+                <Shell shell={shell} />
 
                 <InaccurateDataFooter />
               </Stack>

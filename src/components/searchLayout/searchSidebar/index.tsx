@@ -9,14 +9,16 @@ import { useSidebarStore } from '@/stores/sidebar';
 import type { SearchListProps } from '@/components/searchLayout/searchSidebar/list';
 import type { PropsWithChildren } from 'react';
 
+export interface SearchSidebarProps {
+  isSearching: boolean;
+  searchListProps: SearchListProps;
+}
+
 export default function SearchSidebar({
   children,
   isSearching,
   searchListProps,
-}: PropsWithChildren<{
-  isSearching: boolean;
-  searchListProps: SearchListProps;
-}>) {
+}: PropsWithChildren<SearchSidebarProps>) {
   const isOpen = useSidebarStore((s) => s.open);
 
   return (

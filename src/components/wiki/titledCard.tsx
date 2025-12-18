@@ -18,7 +18,7 @@ import slug from 'slug';
 
 import { Tooltip } from '@/components/ui/tooltip';
 
-import type { BoxProps } from '@chakra-ui/react';
+import type { BoxProps, HeadingProps } from '@chakra-ui/react';
 import type { PropsWithChildren } from 'react';
 
 export default function TitledCard({
@@ -26,6 +26,7 @@ export default function TitledCard({
   closedByDefault = false,
   collapsible = false,
   endAddon,
+  headingAs,
   innerPadding = 6,
   keepBorder,
   title,
@@ -42,6 +43,7 @@ export default function TitledCard({
     closedByDefault?: boolean;
     keepBorder?: boolean;
     endAddon?: React.ReactNode;
+    headingAs?: HeadingProps['as'];
   }
 >) {
   const [isExpanded, setIsExpanded] = React.useState(!closedByDefault);
@@ -61,6 +63,7 @@ export default function TitledCard({
         marginX={3}
         marginY={2}
         size="sm"
+        as={headingAs}
       >
         {withAnchor ? (
           <Link asChild>

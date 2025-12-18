@@ -14,6 +14,7 @@ export default function Sights({ turret }: { turret: TurretWithName }) {
       innerPadding={2}
       title="Sights"
       withAnchor={`${turret.name}-sights`}
+      headingAs="h3"
     >
       <Stack gap={4}>
         {turret.data.sights.map((sight, index) => (

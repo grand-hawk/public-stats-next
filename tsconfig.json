@@ -30,7 +30,9 @@
     "next-env.d.ts",
     ".next/types/**/*.ts",
     "scripts/**.mts",
-    "generated/**.d.ts"
-, "scripts/generate/index.mts", "scripts/generate/sse.ts"  ],
+    "generated/**.d.ts",
+    "scripts/generate/index.mts",
+    "scripts/generate/sse.ts"
+  ],
   "exclude": ["node_modules"]
 }

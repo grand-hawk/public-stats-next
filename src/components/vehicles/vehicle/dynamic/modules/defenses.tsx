@@ -28,6 +28,7 @@ export default function Defenses() {
 
         <StatsRow withPaddingTop>
           <StatsCell asTitle>Electronic warfare</StatsCell>
+          <StatsCell />
         </StatsRow>
         <StatsRow withPaddingLeft>
           <StatsCell>IED jammer</StatsCell>

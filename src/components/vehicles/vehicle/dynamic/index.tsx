@@ -77,7 +77,7 @@ export default function VehicleDynamicData() {
             />
           )}
 
-          <Center hideBelow="xl" paddingX={4}>
+          <Center hideBelow="xl" paddingX={4} data-md-ignore>
             <Span
               color="fg.subtle"
               fontSize="xs"

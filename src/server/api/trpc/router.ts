@@ -1,3 +1,6 @@
+import { createServerSideHelpers } from '@trpc/react-query/server';
+import superjson from 'superjson';
+
 import { configRouter } from '@/server/api/trpc/routers/config';
 import { kdrRouter } from '@/server/api/trpc/routers/kdr';
 import { shellsRouter } from '@/server/api/trpc/routers/shells';
@@ -17,5 +20,12 @@ export const appRouter = createTRPCRouter({
   vehicles: vehiclesRouter,
   winrate: winrateRouter,
 });
+
+export const createHelpers = () =>
+  createServerSideHelpers({
+    router: appRouter,
+    ctx: {},
+    transformer: superjson,
+  });
 
 export type AppRouter = typeof appRouter;

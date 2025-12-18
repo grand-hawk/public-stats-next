@@ -79,6 +79,7 @@ export default function Sight({
 
   return (
     <InlineCard
+      headingAs="h4"
       title={
         sight.name ? betterSentenceCase(sight.name) : `Sight ${sightIndex + 1}`
       }

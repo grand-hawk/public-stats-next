@@ -71,6 +71,7 @@ export default function Vehicle() {
             <>
               <StatsRow withPaddingTop>
                 <StatsCell asTitle>Max speed</StatsCell>
+                <StatsCell />
               </StatsRow>
               <StatsRow withPaddingLeft>
                 <StatsCell>Forward</StatsCell>
@@ -113,6 +114,7 @@ export default function Vehicle() {
             <>
               <StatsRow withPaddingTop>
                 <StatsCell asTitle>Active suspension</StatsCell>
+                <StatsCell />
               </StatsRow>
               <StatsRow withPaddingLeft>
                 <StatsCell>Ride height</StatsCell>
@@ -179,6 +181,7 @@ export default function Vehicle() {
 
             <StatsRow withPaddingTop>
               <StatsCell asTitle>Transmission</StatsCell>
+              <StatsCell />
             </StatsRow>
             <StatsRow withPaddingLeft>
               <StatsCell>Forward gears</StatsCell>

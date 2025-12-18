@@ -61,6 +61,7 @@ export default function Turret({ turret }: { turret: TurretWithName }) {
         <StatsRoot>
           <StatsRow>
             <StatsCell asTitle>Traversal</StatsCell>
+            <StatsCell />
           </StatsRow>
           {turret.data.traverse.mouseAim && (
             <StatsRow withPaddingLeft>

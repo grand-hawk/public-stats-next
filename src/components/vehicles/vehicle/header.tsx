@@ -3,21 +3,26 @@ import {
   Center,
   Heading,
   HStack,
+  Icon,
   Quote,
   Span,
   Stack,
   Text,
 } from '@chakra-ui/react';
 import NextImage from 'next/image';
+import { useRouter } from 'next/router';
 import React from 'react';
 import { MdOutlineOpenInFull } from 'react-icons/md';
 import { SiFandom } from 'react-icons/si';
+import { VscMarkdown } from 'react-icons/vsc';
 
 import IconLink from '@/components/buttonIconLink';
 import TeamIcon from '@/components/icons/teams';
 import { useVehicle } from '@/hooks/providers/vehicle';
+import { setExtension } from '@/utils/extensions';
 
 export default function VehicleHeader() {
+  const router = useRouter();
   const vehicle = useVehicle();
 
   return (
@@ -46,7 +51,7 @@ export default function VehicleHeader() {
         position="relative"
       >
         {!vehicle.info.image ? (
-          <Center height="100%">
+          <Center height="100%" data-md-ignore>
             <Text fontWeight="medium" userSelect="none">
               Resource not found
             </Text>
@@ -94,6 +99,21 @@ export default function VehicleHeader() {
             <MdOutlineOpenInFull />
           </IconLink>
 
+          <IconLink
+            linkProps={{
+              target: '_blank',
+            }}
+            href={setExtension(`/md${router.asPath}`, 'md')}
+            rel="nofollow"
+            size="sm"
+            title="View as markdown"
+            variant="surface"
+          >
+            <Icon size="md">
+              <VscMarkdown />
+            </Icon>
+          </IconLink>
+
           {vehicle.info.externalLinks.Fandom && (
             <IconLink
               href={vehicle.info.externalLinks.Fandom}
@@ -113,7 +133,7 @@ export default function VehicleHeader() {
 
       <Stack as="section" backgroundColor="bg.subtle" gap={4} padding={6}>
         <div>
-          <HStack>
+          <HStack data-md-ignore>
             <TeamIcon team={vehicle.info.team} />
             <Span aria-label="Team" fontSize="sm" lineHeight="short">
               {vehicle.info.team}

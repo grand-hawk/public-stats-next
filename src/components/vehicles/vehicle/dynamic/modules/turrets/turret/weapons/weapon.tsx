@@ -43,6 +43,7 @@ export default function Weapon({
     <InlineCard
       title={weapon.data.name}
       withAnchor={`${turretName}-weapon-${nameSlug}`}
+      headingAs="h4"
     >
       <StatsRoot>
         <StatsRow>
@@ -127,6 +128,7 @@ export default function Weapon({
           <>
             <StatsRow withPaddingTop>
               <StatsCell asTitle>Ammo models</StatsCell>
+              <StatsCell />
             </StatsRow>
             {ammoModels
               .sort((a, b) => {

@@ -9,13 +9,9 @@ import SearchLayout from '@/components/searchLayout/layout';
 import { EmptyState } from '@/components/ui/empty-state';
 import { getKeywords } from '@/components/utils/head';
 import Layout from '@/components/utils/layout';
+import Vehicle from '@/components/vehicles';
 import VehiclesSearchSidebar from '@/components/vehicles/searchSidebar';
-import VehicleAvailability from '@/components/vehicles/vehicle/availability';
-import VehicleDynamicData from '@/components/vehicles/vehicle/dynamic';
-import VehicleGeneralInformation from '@/components/vehicles/vehicle/generalInformation';
-import VehicleHeader from '@/components/vehicles/vehicle/header';
 import InaccurateDataFooter from '@/components/wiki/inaccurateDataFooter';
-import { VehicleContext } from '@/hooks/providers/vehicle';
 import { usePlace } from '@/hooks/usePlace';
 import { useRouterQuery } from '@/hooks/useRouterQuery';
 import { formatTitle } from '@/utils/formatTitle';
@@ -31,9 +27,6 @@ export default function PlaceVehicle() {
     placeId: place.placeId,
     slug: vehicleSlug,
   });
-  const vehicleIsAvailable =
-    !!vehicle?.info?.availability &&
-    Object.keys(vehicle.info.availability).length > 0;
 
   React.useEffect(() => {
     if (!vehicle) return;
@@ -134,16 +127,9 @@ export default function PlaceVehicle() {
                 gap={4}
                 maxWidth="4xl"
                 width="100%"
+                data-md-target
               >
-                <VehicleContext.Provider value={vehicle}>
-                  <VehicleHeader />
-                  <VehicleGeneralInformation isAvailable={vehicleIsAvailable} />
-                  <VehicleAvailability
-                    availability={vehicle.info.availability}
-                    isAvailable={vehicleIsAvailable}
-                  />
-                  <VehicleDynamicData />
-                </VehicleContext.Provider>
+                <Vehicle vehicle={vehicle} />
 
                 <InaccurateDataFooter />
               </Stack>

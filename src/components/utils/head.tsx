@@ -5,12 +5,10 @@ import { useCurrentTab } from '@/hooks/useCurrentTab';
 import { usePlaceInitials } from '@/hooks/usePlaceInitials';
 import { formatTitle } from '@/utils/formatTitle';
 
-import type { usePlace } from '@/hooks/usePlace';
+import type { Place } from '@/utils/placeUtils';
 import type { PropsWithChildren } from 'react';
 
-export const getKeywords = (
-  place: NonNullable<ReturnType<typeof usePlace>>,
-) => [
+export const getKeywords = (place: Place) => [
   place.placeName,
   place.initials.toUpperCase(),
   'Statistics',

@@ -3,11 +3,12 @@ import NextLink from 'next/link';
 import React from 'react';
 import slug from 'slug';
 
-import type { BoxProps } from '@chakra-ui/react';
+import type { BoxProps, HeadingProps } from '@chakra-ui/react';
 import type { PropsWithChildren } from 'react';
 
 export default function InlineCard({
   children,
+  headingAs,
   innerPadding = 4,
   title,
   withAnchor,
@@ -17,6 +18,7 @@ export default function InlineCard({
     title: string;
     withAnchor?: boolean | string;
     innerPadding?: BoxProps['padding'];
+    headingAs?: HeadingProps['as'];
   } & BoxProps
 >) {
   const titleSlug =
@@ -34,6 +36,7 @@ export default function InlineCard({
       {...props}
     >
       <Heading
+        as={headingAs}
         backgroundColor="currentBg"
         color="fg"
         fontWeight="medium"

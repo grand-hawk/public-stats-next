@@ -22,7 +22,7 @@ export default function ShellPenetrationTable() {
     <TitledCard
       as="section"
       endAddon={
-        <HStack>
+        <HStack data-md-ignore>
           LOS
           <Switch
             checked={mode === 'rel'}

@@ -1,23 +1,14 @@
 import { usePlaceInitials } from '@/hooks/usePlaceInitials';
 import { useSuspenseConfig } from '@/hooks/useSuspenseConfig';
-
-import type { PlaceName } from '@generated/config';
+import { getNameFromInitials, getPlaceFromName } from '@/utils/placeUtils';
 
 export function usePlace() {
-  const initials = usePlaceInitials();
   const data = useSuspenseConfig();
-
+  const initials = usePlaceInitials();
   if (!initials) return null;
 
-  const name = Object.entries(data.placeNameInitials).find(
-    ([_, value]) => value === initials,
-  )?.[0] as PlaceName | undefined;
+  const name = getNameFromInitials(data, initials);
   if (!name) return null;
 
-  return {
-    initials,
-    placeName: name,
-    placeId: data.placeIds[name],
-    universeId: data.universeIds[name],
-  };
+  return getPlaceFromName(data, name);
 }

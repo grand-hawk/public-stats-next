@@ -20,16 +20,18 @@ export default function ShellVehicles() {
       title="Vehicles with this shell"
       withAnchor="vehicles"
     >
-      <Flex flexWrap="wrap" gap={2}>
+      <Flex flexWrap="wrap" gap={2} as="ul">
         {shell.vehicles.map((vehicle) => {
           const vehicleSlug = slug(vehicle);
 
           return (
-            <Button key={vehicle} asChild variant="surface">
-              <NextLink href={`/${initials}/vehicles/${vehicleSlug}`}>
-                {vehicle}
-              </NextLink>
-            </Button>
+            <li key={vehicle}>
+              <Button asChild variant="surface">
+                <NextLink href={`/${initials}/vehicles/${vehicleSlug}`}>
+                  {vehicle}
+                </NextLink>
+              </Button>
+            </li>
           );
         })}
       </Flex>
