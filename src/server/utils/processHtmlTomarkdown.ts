@@ -2,6 +2,7 @@ import { convert } from 'html-to-markdown-node';
 import parse from 'node-html-parser';
 
 import { formatMarkdown } from '@/server/utils/formatMarkdown';
+import { setExtension } from '@/utils/extensions';
 
 export async function processHtmlToMarkdown(html: string) {
   const root = parse(html);
@@ -11,6 +12,8 @@ export async function processHtmlToMarkdown(html: string) {
   for (const node of target.querySelectorAll('[data-md-ignore]')) node.remove();
 
   for (const img of target.querySelectorAll('img, svg')) img.remove();
+  for (const link of target.querySelectorAll('a'))
+    link.setAttribute('href', setExtension(`/md${link.attributes.href}`, 'md'));
 
   const markdown = await formatMarkdown(
     convert(target.children.map((child) => child.toString()).join('\n'), {
