@@ -17,7 +17,7 @@ async function revalidate(placeName: PlaceName) {
   if (!shellsData) return null;
 
   const markdown = await formatMarkdown(
-    `# ${place.placeName}\n\n${['shells.md', 'vehicles.md'].map((file) => `- [${file}](/md/${place.initials}/${file}`).join('\n')})`,
+    `# ${place.placeName}\n\n${['shells.md', 'vehicles.md'].map((file) => `- [${file}](/md/${place.initials}/${file})`).join('\n')}`,
   );
 
   return markdown;
