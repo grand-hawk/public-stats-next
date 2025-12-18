@@ -7,7 +7,6 @@ import {
   formatMarkdown,
 } from '@/server/utils/formatMarkdown';
 import { getNameFromInitials, getPlaceFromName } from '@/utils/placeUtils';
-import { getBaseUrl } from '@/utils/trpc';
 import { getConfig } from '@generated/config';
 import { getVehicles } from '@generated/vehicles';
 
@@ -22,10 +21,9 @@ async function revalidate(placeName: PlaceName) {
   const vehiclesData = getVehicles().data[place.placeId]?.data;
   if (!vehiclesData) return null;
 
-  const baseUrl = getBaseUrl();
   const entries = Object.entries(vehiclesData)
     .map(([name, data]) => ({
-      name: `[${escapeMarkdownLink(name)}](${new URL(`/md/${place.initials}/vehicles/${data.info.slug}.md`, baseUrl).toString()})`,
+      name: `[${escapeMarkdownLink(name)}](/md/${place.initials}/vehicles/${data.info.slug}.md)`,
       team: data.info.team,
       role: data.info.role,
     }))

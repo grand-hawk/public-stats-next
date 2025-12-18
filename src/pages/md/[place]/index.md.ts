@@ -3,7 +3,6 @@ import Cache from 'stale-lru-cache';
 import { env } from '@/env';
 import { formatMarkdown } from '@/server/utils/formatMarkdown';
 import { getNameFromInitials, getPlaceFromName } from '@/utils/placeUtils';
-import { getBaseUrl } from '@/utils/trpc';
 import { getConfig } from '@generated/config';
 import { getShells } from '@generated/shells';
 
@@ -17,11 +16,8 @@ async function revalidate(placeName: PlaceName) {
   const shellsData = getShells().data[place.placeId]?.data;
   if (!shellsData) return null;
 
-  const baseUrl = getBaseUrl();
-  const files = ['shells.md', 'vehicles.md'];
-
   const markdown = await formatMarkdown(
-    `# ${place.placeName}\n\n${files.map((file) => `- [${file}](${new URL(`/md/${place.initials}/${file}`, baseUrl).toString()})`).join('\n')}`,
+    `# ${place.placeName}\n\n${['shells.md', 'vehicles.md'].map((file) => `- [${file}](/md/${place.initials}/${file}`).join('\n')}`,
   );
 
   return markdown;

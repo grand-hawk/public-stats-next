@@ -7,7 +7,6 @@ import {
   formatMarkdown,
 } from '@/server/utils/formatMarkdown';
 import { getNameFromInitials, getPlaceFromName } from '@/utils/placeUtils';
-import { getBaseUrl } from '@/utils/trpc';
 import { getConfig } from '@generated/config';
 import { getShells } from '@generated/shells';
 
@@ -21,12 +20,11 @@ async function revalidate(placeName: PlaceName) {
   const shellsData = getShells().data[place.placeId]?.data;
   if (!shellsData) return null;
 
-  const baseUrl = getBaseUrl();
   const weaponTables = Object.entries(shellsData).map(([weapon, shells]) => {
     return `## ${weapon}\n\n${markdownTable([
       ['Shell name', 'Type'],
       ...shells.map((shell) => [
-        `[${escapeMarkdownLink(shell.name)}](${new URL(`/md/${place.initials}/shells/${shell.slug}.md`, baseUrl).toString()})`,
+        `[${escapeMarkdownLink(shell.name)}](/md/${place.initials}/shells/${shell.slug}.md)`,
         shell.type,
       ]),
     ])}`;
