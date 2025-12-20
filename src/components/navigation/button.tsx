@@ -9,16 +9,24 @@ import type { PropsWithChildren } from 'react';
 export default function NavigationButton({
   active,
   children,
+  color,
   href,
   ...props
-}: PropsWithChildren<IconButtonProps & { href: string; active?: boolean }>) {
+}: PropsWithChildren<
+  IconButtonProps & { href: string; active?: boolean; color?: string }
+>) {
   const initials = usePlaceInitials()!;
 
   return (
     <IconLink
-      _hover={{
-        backgroundColor: active ? 'colorPalette.100' : undefined,
-      }}
+      _hover={
+        !active
+          ? {
+              color,
+              backgroundColor: 'transparent',
+            }
+          : undefined
+      }
       backgroundColor={active ? 'colorPalette.100' : undefined}
       height={10}
       href={`/${initials}${href}`}

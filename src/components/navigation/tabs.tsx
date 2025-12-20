@@ -5,21 +5,27 @@ import { ImTable } from 'react-icons/im';
 import { MdOutlineSsidChart } from 'react-icons/md';
 import { TbTank } from 'react-icons/tb';
 
+import type { IconProps } from '@chakra-ui/react';
 import type { ReactNode } from 'react';
 import type { IconType } from 'react-icons/lib';
 
 export interface Tab {
   label: string;
   path: string;
-  icon: IconType | (() => ReactNode);
+  icon: IconType | ((props: IconProps) => ReactNode);
+  color: string;
+  description: string;
 }
 
 export const tabs: Record<string, Tab> = {
   vehicles: {
     label: 'Vehicles',
     path: '/vehicles',
-    icon: () => (
-      <Icon height={5} width={5}>
+    color: 'blue.500',
+    description:
+      'Explore the detailed characteristics and loadouts of all vehicles in the game.',
+    icon: (props: IconProps) => (
+      <Icon height={5} width={5} {...props}>
         <TbTank />
       </Icon>
     ),
@@ -27,8 +33,11 @@ export const tabs: Record<string, Tab> = {
   shells: {
     label: 'Shells',
     path: '/shells',
-    icon: () => (
-      <Icon height={5} width={5}>
+    color: 'orange.500',
+    description:
+      'Analyze shell performance, penetration values, and damage characteristics.',
+    icon: (props: IconProps) => (
+      <Icon height={5} width={5} {...props}>
         <GiArtilleryShell />
       </Icon>
     ),
@@ -36,8 +45,11 @@ export const tabs: Record<string, Tab> = {
   kdr: {
     label: 'K/D table',
     path: '/kdr',
-    icon: () => (
-      <Icon height={5} width={5}>
+    color: 'green.500',
+    description:
+      'View the kill-to-death ratios for all vehicles and shells in the game.',
+    icon: (props: IconProps) => (
+      <Icon height={5} width={5} {...props}>
         <ImTable />
       </Icon>
     ),
@@ -45,8 +57,11 @@ export const tabs: Record<string, Tab> = {
   winrate: {
     label: 'Winrate',
     path: '/winrate',
-    icon: () => (
-      <Icon height={5} width={5}>
+    color: 'purple.500',
+    description:
+      'Track team performance across different maps and loadouts over time.',
+    icon: (props: IconProps) => (
+      <Icon height={5} width={5} {...props}>
         <MdOutlineSsidChart />
       </Icon>
     ),

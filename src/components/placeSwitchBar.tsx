@@ -42,7 +42,9 @@ export default function PlaceSwitchBar({
       }}
     >
       <Span fontSize="sm" fontWeight="bold" hideBelow="md" lineHeight="short">
-        {overwriteTabLabel || currentTab?.label}
+        {overwriteTabLabel !== undefined
+          ? overwriteTabLabel
+          : currentTab?.label}
       </Span>
 
       <Select.Root

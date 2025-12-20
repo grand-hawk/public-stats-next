@@ -72,6 +72,7 @@ export default function Navigation() {
               key={tab.path}
               active={currentTab?.path === tab.path}
               aria-label={tab.label}
+              color={tab.color}
               href={tab.path}
             >
               <Icon />
