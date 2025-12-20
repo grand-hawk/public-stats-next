@@ -44,7 +44,7 @@ export type DetailedVehicle = VehiclesPlaceDataVehicle & {
 
 const imageCache = new Map<string, string | null>();
 
-function getVehicleImage(slug: string) {
+export function getVehicleImage(slug: string) {
   let cachedImage = imageCache.get(slug);
   if (cachedImage === undefined) {
     const imageUrl = `/assets/vehicles/${slug}.png`;

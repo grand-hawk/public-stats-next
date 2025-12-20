@@ -1,15 +1,12 @@
 import {
   Box,
-  Center,
   Heading,
   HStack,
   Icon,
   Quote,
   Span,
   Stack,
-  Text,
 } from '@chakra-ui/react';
-import NextImage from 'next/image';
 import { useRouter } from 'next/router';
 import React from 'react';
 import { MdOutlineOpenInFull } from 'react-icons/md';
@@ -18,6 +15,7 @@ import { VscMarkdown } from 'react-icons/vsc';
 
 import IconLink from '@/components/buttonIconLink';
 import TeamIcon from '@/components/icons/teams';
+import VehicleImage from '@/components/vehicles/vehicleImage';
 import { useVehicle } from '@/hooks/providers/vehicle';
 import { setExtension } from '@/utils/extensions';
 
@@ -50,27 +48,18 @@ export default function VehicleHeader() {
         }
         position="relative"
       >
-        {!vehicle.info.image ? (
-          <Center height="100%" data-md-ignore>
-            <Text fontWeight="medium" userSelect="none">
-              Resource not found
-            </Text>
-          </Center>
-        ) : (
-          <Box asChild objectFit="cover">
-            <NextImage
-              key={vehicle.info.slug}
-              alt={`Image of the "${vehicle.info.name}" in Multicrew Tank Combat on Roblox`}
-              blurDataURL="data:image/webp;base64,UklGRooAAABXRUJQVlA4WAoAAAAAAAAAHwAAHwAAVlA4IGwAAACwBACdASogACAAPok2lUglIyIhN+gAoBEJZwDIXHmzSajWQrznMxbR+dwOHsqOAPAZsP004crt8WSSX8AoxpEFm2bGOnGFvmyW0fypFOzSYuYnEYiece44qIIOawb6sV0s9LBRAZlOhQUJwAA="
-              fetchPriority="high"
-              fill
-              placeholder="blur"
-              priority
-              sizes="(min-width: 80rem) 1000px, (min-width: 60rem) 800px, 600px"
-              src={vehicle.info.image}
-            />
-          </Box>
-        )}
+        <VehicleImage
+          image={vehicle.info.image}
+          name={vehicle.info.name}
+          slug={vehicle.info.slug}
+          fallbackText="Resource not found"
+          blurDataURL="data:image/webp;base64,UklGRooAAABXRUJQVlA4WAoAAAAAAAAAHwAAHwAAVlA4IGwAAACwBACdASogACAAPok2lUglIyIhN+gAoBEJZwDIXHmzSajWQrznMxbR+dwOHsqOAPAZsP004crt8WSSX8AoxpEFm2bGOnGFvmyW0fypFOzSYuYnEYiece44qIIOawb6sV0s9LBRAZlOhQUJwAA="
+          fetchPriority="high"
+          fill
+          placeholder="blur"
+          preload
+          sizes="(min-width: 80rem) 1000px, (min-width: 60rem) 800px, 600px"
+        />
 
         <HStack
           bottom={2}
