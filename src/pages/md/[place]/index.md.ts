@@ -1,6 +1,4 @@
-import Cache from 'stale-lru-cache';
-
-import { env } from '@/env';
+import { createCache } from '@/server/utils/createCache';
 import { formatMarkdown } from '@/server/utils/formatMarkdown';
 import { getNameFromInitials, getPlaceFromName } from '@/utils/placeUtils';
 import { getConfig } from '@generated/config';
@@ -28,11 +26,7 @@ async function revalidate(placeName: PlaceName) {
   return markdown;
 }
 
-const cache = new Cache({
-  maxAge: env.NODE_ENV === 'development' ? 0 : 3600,
-  staleWhileRevalidate: env.NODE_ENV === 'development' ? 0 : 86400,
-  revalidate,
-});
+const cache = createCache(revalidate);
 
 export async function getServerSideProps({
   params,
