@@ -1,5 +1,6 @@
 import { markdownTable } from 'markdown-table';
 
+import { KDR_RANGE_ITEMS } from '@/components/kdr/rangeSelect';
 import { createCache } from '@/server/utils/createCache';
 import {
   escapeMarkdownLink,
@@ -43,27 +44,29 @@ async function revalidate(placeName: PlaceName) {
     });
   }
 
-  const table = markdownTable([
-    [
-      'Vehicle',
-      'All time K/D',
-      'All time kills',
-      'All time deaths',
-      'Recent K/D',
-      'Recent kills',
-      'Recent deaths',
-    ],
-    ...aggregatedVehicles.map((vehicle) => [
-      `[${escapeMarkdownLink(vehicle.name)}](/md/${place.initials}/vehicles/${vehicle.slug}.md)`,
-      vehicle.all_time?.kdr.toString() || '',
-      vehicle.all_time?.kills.toString() || '',
-      vehicle.all_time?.deaths.toString() || '',
-      vehicle.recent?.kdr.toString() || '',
-      vehicle.recent?.kills.toString() || '',
-      vehicle.recent?.deaths.toString() || '',
+  const headers = [
+    'Vehicle',
+    ...KDR_RANGE_ITEMS.flatMap((range) => [
+      `${range.label} K/D`,
+      `${range.label} kills`,
+      `${range.label} deaths`,
     ]),
+  ];
+
+  const dataRows = aggregatedVehicles.map((vehicle) => [
+    `[${escapeMarkdownLink(vehicle.name)}](/md/${place.initials}/vehicles/${vehicle.slug}.md)`,
+    ...KDR_RANGE_ITEMS.flatMap((range) => {
+      const rangeKey = range.value as keyof KdrPlaceData;
+      const vehicleData = vehicle[rangeKey];
+      return [
+        vehicleData?.kdr.toString() || '',
+        vehicleData?.kills.toString() || '',
+        vehicleData?.deaths.toString() || '',
+      ];
+    }),
   ]);
 
+  const table = markdownTable([headers, ...dataRows]);
   const markdown = await formatMarkdown(`# K/D table\n\n${table}`);
 
   return markdown;
