@@ -10,4 +10,3 @@ export const createCache = <K, V>(
     staleWhileRevalidate: env.NODE_ENV === 'development' ? 0 : 86400,
     revalidate,
   });
-

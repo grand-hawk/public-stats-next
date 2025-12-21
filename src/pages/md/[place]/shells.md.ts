@@ -13,10 +13,11 @@ import type { PlaceName } from '@generated/config';
 import type { GetServerSidePropsContext } from 'next';
 
 async function revalidate(placeName: PlaceName) {
-  const { data } = getConfig();
-  const place = getPlaceFromName(data, placeName);
+  const shells = getShells();
+  const { data: config } = getConfig();
+  const place = getPlaceFromName(config, placeName);
 
-  const shellsData = getShells().data[place.placeId]?.data;
+  const shellsData = shells.data[place.placeId]?.data;
   if (!shellsData) return null;
 
   const weaponTables = Object.entries(shellsData).map(([weapon, shells]) => {
@@ -45,8 +46,8 @@ export async function getServerSideProps({
   const { place: initials } = params || {};
   if (!initials || typeof initials !== 'string') return { notFound: true };
 
-  const { data } = getConfig();
-  const placeName = getNameFromInitials(data, initials);
+  const { data: config } = getConfig();
+  const placeName = getNameFromInitials(config, initials);
   if (!placeName) return { notFound: true };
 
   let markdown = await cache.get(placeName);

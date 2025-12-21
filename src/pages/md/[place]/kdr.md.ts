@@ -15,13 +15,15 @@ import type { KdrPlaceData, KdrPlaceDataVehicle } from '@generated/kdr';
 import type { GetServerSidePropsContext } from 'next';
 
 async function revalidate(placeName: PlaceName) {
-  const { data } = getConfig();
-  const place = getPlaceFromName(data, placeName);
+  const kdr = getKdr();
+  const vehicles = getVehicles();
+  const { data: config } = getConfig();
+  const place = getPlaceFromName(config, placeName);
 
-  const kdrData = getKdr().data[place.placeId]?.data;
+  const kdrData = kdr.data[place.placeId]?.data;
   if (!kdrData) return null;
 
-  const vehiclesData = getVehicles().data[place.placeId]?.data;
+  const vehiclesData = vehicles.data[place.placeId]?.data;
 
   const aggregatedVehicles: Array<
     { name: string; slug: string } & Partial<
@@ -76,8 +78,8 @@ export async function getServerSideProps({
   const { place: initials } = params || {};
   if (!initials || typeof initials !== 'string') return { notFound: true };
 
-  const { data } = getConfig();
-  const placeName = getNameFromInitials(data, initials);
+  const { data: config } = getConfig();
+  const placeName = getNameFromInitials(config, initials);
   if (!placeName) return { notFound: true };
 
   let markdown = await cache.get(placeName);

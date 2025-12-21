@@ -68,7 +68,9 @@ export const vehiclesRouter = createTRPCRouter({
       }),
     )
     .query(({ input }) => {
-      const vehiclesData = getVehicles().data[input.placeId as PlaceId]?.data;
+      const vehicles = getVehicles();
+
+      const vehiclesData = vehicles.data[input.placeId as PlaceId]?.data;
       if (!vehiclesData) return []; // This validates placeId
 
       return Object.entries(vehiclesData)
@@ -93,7 +95,7 @@ export const vehiclesRouter = createTRPCRouter({
       const loadouts = getLoadouts();
       const kdr = getKdr();
       const vehiclesLd = getVehiclesLd();
-      const config = getConfig();
+      const { data: config } = getConfig();
 
       const vehiclesPlace = vehicles.data[input.placeId as PlaceId];
       if (!vehiclesPlace) return null; // This validates placeId
@@ -109,7 +111,7 @@ export const vehiclesRouter = createTRPCRouter({
 
       const vehicle = vehiclesPlace.data[vehicleName];
       const initials =
-        config.data.placeNameInitials[vehiclesPlace.metadata.placeName];
+        config.placeNameInitials[vehiclesPlace.metadata.placeName];
       const relativeImageUrl = getVehicleImage(input.slug);
       const baseUrl = getBaseUrl();
       const publicImageUrl =
