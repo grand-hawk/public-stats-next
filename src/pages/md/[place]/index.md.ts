@@ -7,6 +7,12 @@ import { getShells } from '@generated/shells';
 import type { PlaceName } from '@generated/config';
 import type { GetServerSidePropsContext } from 'next';
 
+const LINKS = [
+  { file: 'kdr.md', label: 'K/D table' },
+  { file: 'shells.md', label: 'Shells' },
+  { file: 'vehicles.md', label: 'Vehicles' },
+];
+
 async function revalidate(placeName: PlaceName) {
   const shells = getShells();
   const { data: config } = getConfig();
@@ -15,13 +21,9 @@ async function revalidate(placeName: PlaceName) {
   const shellsData = shells.data[place.placeId]?.data;
   if (!shellsData) return null;
 
-  const links = [
-    { file: 'kdr.md', label: 'K/D table' },
-    { file: 'shells.md', label: 'Shells' },
-    { file: 'vehicles.md', label: 'Vehicles' },
-  ]
-    .map(({ file, label }) => `- [${label}](/md/${place.initials}/${file})`)
-    .join('\n');
+  const links = LINKS.map(
+    ({ file, label }) => `- [${label}](/md/${place.initials}/${file})`,
+  ).join('\n');
 
   const markdown = await formatMarkdown(`# ${place.placeName}\n\n${links}`);
 
