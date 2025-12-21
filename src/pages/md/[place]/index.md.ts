@@ -16,6 +16,7 @@ async function revalidate(placeName: PlaceName) {
   if (!shellsData) return null;
 
   const links = [
+    { file: 'kdr.md', label: 'K/D table' },
     { file: 'shells.md', label: 'Shells' },
     { file: 'vehicles.md', label: 'Vehicles' },
   ]
