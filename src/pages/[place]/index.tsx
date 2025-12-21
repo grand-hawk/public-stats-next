@@ -41,7 +41,7 @@ export default function Place() {
           <VStack alignItems="start" gap={1}>
             <Heading size="xl">Welcome to {place.placeName} statistics</Heading>
             <Text color="fg.muted" fontSize="md">
-              The official wiki for vehicle analysis, shell performance, and
+              The official site for vehicle analysis, shell performance, and
               historical game metrics.
             </Text>
           </VStack>
