@@ -16,9 +16,14 @@ async function revalidate(placeName: PlaceName) {
   const shellsData = getShells().data[place.placeId]?.data;
   if (!shellsData) return null;
 
-  const markdown = await formatMarkdown(
-    `# ${place.placeName}\n\n${['shells.md', 'vehicles.md'].map((file) => `- [${file}](/md/${place.initials}/${file})`).join('\n')}`,
-  );
+  const links = [
+    { file: 'shells.md', label: 'Shells' },
+    { file: 'vehicles.md', label: 'Vehicles' },
+  ]
+    .map(({ file, label }) => `- [${label}](/md/${place.initials}/${file})`)
+    .join('\n');
+
+  const markdown = await formatMarkdown(`# ${place.placeName}\n\n${links}`);
 
   return markdown;
 }
