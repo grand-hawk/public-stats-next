@@ -1,26 +1,15 @@
-import {
-  Box,
-  Heading,
-  HStack,
-  Icon,
-  Quote,
-  Span,
-  Stack,
-} from '@chakra-ui/react';
-import { useRouter } from 'next/router';
+import { Box, Heading, HStack, Quote, Span, Stack } from '@chakra-ui/react';
 import React from 'react';
 import { MdOutlineOpenInFull } from 'react-icons/md';
 import { SiFandom } from 'react-icons/si';
-import { VscMarkdown } from 'react-icons/vsc';
 
 import IconLink from '@/components/buttonIconLink';
+import ButtonMarkdownLink from '@/components/buttonMarkdownLink';
 import TeamIcon from '@/components/icons/teams';
 import VehicleImage from '@/components/vehicles/vehicleImage';
 import { useVehicle } from '@/hooks/providers/vehicle';
-import { setExtension } from '@/utils/extensions';
 
 export default function VehicleHeader() {
-  const router = useRouter();
   const vehicle = useVehicle();
 
   return (
@@ -88,20 +77,7 @@ export default function VehicleHeader() {
             <MdOutlineOpenInFull />
           </IconLink>
 
-          <IconLink
-            linkProps={{
-              target: '_blank',
-            }}
-            href={setExtension(`/md${router.asPath}`, 'md')}
-            rel="nofollow"
-            size="sm"
-            title="View as markdown"
-            variant="surface"
-          >
-            <Icon size="md">
-              <VscMarkdown />
-            </Icon>
-          </IconLink>
+          <ButtonMarkdownLink />
 
           {vehicle.info.externalLinks.Fandom && (
             <IconLink

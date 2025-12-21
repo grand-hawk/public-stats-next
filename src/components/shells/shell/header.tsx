@@ -1,7 +1,8 @@
-import { Box, Heading, Image, Span, Stack } from '@chakra-ui/react';
+import { Box, Heading, HStack, Image, Span, Stack } from '@chakra-ui/react';
 import NextImage from 'next/image';
 import React from 'react';
 
+import ButtonMarkdownLink from '@/components/buttonMarkdownLink';
 import { getShellTypeIcon } from '@/components/icons/shells';
 import Stat from '@/components/wiki/stat';
 import { useShell } from '@/hooks/providers/shell';
@@ -30,7 +31,17 @@ export default function ShellHeader() {
       }}
       width="100%"
     >
-      <Stack as="section" backgroundColor="bg.subtle" gap={4} padding={6}>
+      <Stack
+        as="section"
+        backgroundColor="bg.subtle"
+        gap={4}
+        padding={6}
+        position="relative"
+      >
+        <HStack position="absolute" right={2} role="toolbar" top={2}>
+          <ButtonMarkdownLink />
+        </HStack>
+
         <div>
           <Span aria-label="Weapon name" color="gray.100">
             {shell.weapon}
