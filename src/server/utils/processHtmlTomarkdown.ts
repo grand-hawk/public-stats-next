@@ -11,20 +11,24 @@ export async function processHtmlToMarkdown(html: string) {
 
   for (const node of target.querySelectorAll('[data-md-ignore]')) node.remove();
 
+  for (const style of target.querySelectorAll('style')) style.remove();
   for (const img of target.querySelectorAll('img, svg')) img.remove();
   for (const link of target.querySelectorAll('a'))
     link.setAttribute('href', setExtension(`/md${link.attributes.href}`, 'md'));
 
-  const markdown = await formatMarkdown(
-    convert(target.children.map((child) => child.toString()).join('\n'), {
+  const markdown = convert(
+    target.children.map((child) => child.toString()).join(''),
+    {
       encoding: 'utf-8',
       preprocessing: {
         enabled: true,
         removeNavigation: true,
         removeForms: true,
       },
-    }),
+    },
   );
 
-  return markdown;
+  const formattedMarkdown = await formatMarkdown(markdown);
+
+  return formattedMarkdown;
 }
