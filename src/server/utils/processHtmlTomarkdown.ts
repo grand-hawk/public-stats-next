@@ -10,6 +10,11 @@ export async function processHtmlToMarkdown(html: string) {
   if (!target) return null;
 
   for (const node of target.querySelectorAll('[data-md-ignore]')) node.remove();
+  for (const node of target.querySelectorAll('[data-md-show]')) {
+    node.removeAttribute('style');
+    node.removeAttribute('display');
+    node.removeAttribute('hidden');
+  }
 
   for (const style of target.querySelectorAll('style')) style.remove();
   for (const img of target.querySelectorAll('img, svg')) img.remove();
@@ -22,8 +27,6 @@ export async function processHtmlToMarkdown(html: string) {
       encoding: 'utf-8',
       preprocessing: {
         enabled: true,
-        removeNavigation: true,
-        removeForms: true,
       },
     },
   );

@@ -98,88 +98,115 @@ export default function VehicleDynamicAddons({
     setAddonsEnabled,
   ]);
 
+  const sortedAddons = React.useMemo(() => {
+    return Object.entries(vehicle.alterations.addons).sort((a, b) => {
+      const aHasChanges = alterationHasChanges(a[1]);
+      const bHasChanges = alterationHasChanges(b[1]);
+
+      if (aHasChanges && !bHasChanges) return -1;
+      if (!aHasChanges && bHasChanges) return 1;
+      return a[0].localeCompare(b[0]);
+    });
+  }, [vehicle.alterations.addons]);
+
   return (
     <TitledCard as="section" title="Addons" withAnchor="addon-config">
-      <Stack gap={4}>
-        {Object.entries(vehicle.alterations.addons)
-          .sort((a, b) => {
-            const aHasChanges = alterationHasChanges(a[1]);
-            const bHasChanges = alterationHasChanges(b[1]);
+      <Stack gap={4} data-md-ignore>
+        {sortedAddons.map(([addonName, addon]) => {
+          const hasChanges = alterationHasChanges(addon);
+          const isEnabled = !!enabledAlterations[addonName];
+          const isConflicting = alterationIsConflicting(
+            addon,
+            vehicle.alterations.addons,
+            enabledAlterations,
+            selectedLoadout,
+          );
+          const isDisabled = !isEnabled && isConflicting;
 
-            if (aHasChanges && !bHasChanges) return -1;
-            if (!aHasChanges && bHasChanges) return 1;
-            return a[0].localeCompare(b[0]);
-          })
-          .map(([addonName, addon]) => {
-            const hasChanges = alterationHasChanges(addon);
-            const isEnabled = !!enabledAlterations[addonName];
-            const isConflicting = alterationIsConflicting(
-              addon,
-              vehicle.alterations.addons,
-              enabledAlterations,
-              selectedLoadout,
-            );
-            const isDisabled = !isEnabled && isConflicting;
+          const formattedAddonName = addonName
+            .replace(/\(cosmetic\)$/i, '')
+            .trim();
 
-            const formattedAddonName = addonName
-              .replace(/\(cosmetic\)$/i, '')
-              .trim();
-
-            return (
-              <Stack key={addonName}>
-                {hasChanges ? (
-                  <Checkbox.Root
-                    checked={isEnabled}
-                    disabled={isDisabled}
-                    onCheckedChange={(details) =>
-                      setAddonsEnabled([[addonName, !!details.checked]])
-                    }
-                  >
-                    <Checkbox.HiddenInput />
-
-                    <Checkbox.Control borderRadius="none">
-                      {isEnabled && <MdOutlineCheck />}
-                    </Checkbox.Control>
-
-                    <Checkbox.Label overflowWrap="anywhere" userSelect="unset">
-                      {formattedAddonName}
-                    </Checkbox.Label>
-                  </Checkbox.Root>
-                ) : (
-                  <HStack gap={2.5} opacity={isDisabled ? 0.5 : undefined}>
-                    <InfoTooltip
-                      content="This addon has no data changes"
-                      iconProps={{ color: 'border.emphasized' }}
-                    />
-
-                    <Span
-                      fontSize="sm"
-                      fontWeight="medium"
-                      lineHeight="1.25rem"
-                      overflowWrap="anywhere"
-                    >
-                      {formattedAddonName}
-                    </Span>
-                  </HStack>
-                )}
-
-                <Span
-                  color={isDisabled ? 'fg.muted' : undefined}
-                  fontSize="sm"
-                  lineHeight="1.25rem"
+          return (
+            <Stack key={addonName}>
+              {hasChanges ? (
+                <Checkbox.Root
+                  checked={isEnabled}
+                  disabled={isDisabled}
+                  onCheckedChange={(details) =>
+                    setAddonsEnabled([[addonName, !!details.checked]])
+                  }
                 >
-                  {addon.cost !== undefined ? (
-                    <>
-                      <FormatNumber value={addon.cost} /> points
-                    </>
-                  ) : (
-                    'Free'
-                  )}
-                </Span>
-              </Stack>
-            );
-          })}
+                  <Checkbox.HiddenInput />
+
+                  <Checkbox.Control borderRadius="none">
+                    {isEnabled && <MdOutlineCheck />}
+                  </Checkbox.Control>
+
+                  <Checkbox.Label overflowWrap="anywhere" userSelect="unset">
+                    {formattedAddonName}
+                  </Checkbox.Label>
+                </Checkbox.Root>
+              ) : (
+                <HStack gap={2.5} opacity={isDisabled ? 0.5 : undefined}>
+                  <InfoTooltip
+                    content="This addon has no data changes"
+                    iconProps={{ color: 'border.emphasized' }}
+                  />
+
+                  <Span
+                    fontSize="sm"
+                    fontWeight="medium"
+                    lineHeight="1.25rem"
+                    overflowWrap="anywhere"
+                  >
+                    {formattedAddonName}
+                  </Span>
+                </HStack>
+              )}
+
+              <Span
+                color={isDisabled ? 'fg.muted' : undefined}
+                fontSize="sm"
+                lineHeight="1.25rem"
+              >
+                {addon.cost !== undefined ? (
+                  <>
+                    <FormatNumber value={addon.cost} /> points
+                  </>
+                ) : (
+                  'Free'
+                )}
+              </Span>
+            </Stack>
+          );
+        })}
       </Stack>
+
+      <table data-md-show style={{ display: 'none' }}>
+        <thead>
+          <tr>
+            <th>Addon</th>
+            <th>Cost</th>
+          </tr>
+        </thead>
+        <tbody>
+          {sortedAddons.map(([addonName, addon]) => (
+            <tr key={addonName}>
+              <td>{addonName.trim()}</td>
+              <td>
+                {addon.cost !== undefined ? (
+                  <>
+                    <FormatNumber value={addon.cost} /> points
+                  </>
+                ) : (
+                  'Free'
+                )}
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </TitledCard>
   );
 }
