@@ -55,8 +55,15 @@ export default function DevelopmentOverlay() {
       const deltaX = e.clientX - info.startX;
       const deltaY = e.clientY - info.startY;
 
-      const newLeft = info.initialLeft + deltaX;
-      const newTop = info.initialTop + deltaY;
+      const rect = containerRef.current.getBoundingClientRect();
+      const newLeft = Math.max(
+        0,
+        Math.min(info.initialLeft + deltaX, window.innerWidth - rect.width),
+      );
+      const newTop = Math.max(
+        0,
+        Math.min(info.initialTop + deltaY, window.innerHeight - rect.height),
+      );
 
       containerRef.current.style.left = `${newLeft}px`;
       containerRef.current.style.top = `${newTop}px`;
@@ -114,6 +121,47 @@ export default function DevelopmentOverlay() {
     return () => observer.disconnect();
   }, [setSize]);
 
+  React.useEffect(() => {
+    if (!containerRef.current || !isOverlayOpen) return;
+
+    const clamp = () => {
+      if (!containerRef.current) return;
+      const rect = containerRef.current.getBoundingClientRect();
+
+      let newWidth = rect.width;
+      let newHeight = rect.height;
+      let shouldUpdateSize = false;
+
+      if (newWidth > window.innerWidth) {
+        newWidth = window.innerWidth;
+        shouldUpdateSize = true;
+      }
+      if (newHeight > window.innerHeight) {
+        newHeight = window.innerHeight;
+        shouldUpdateSize = true;
+      }
+
+      const newLeft = Math.max(
+        0,
+        Math.min(rect.left, window.innerWidth - newWidth),
+      );
+      const newTop = Math.max(
+        0,
+        Math.min(rect.top, window.innerHeight - newHeight),
+      );
+
+      if (newLeft !== rect.left || newTop !== rect.top)
+        setPosition({ x: newLeft, y: newTop });
+
+      if (shouldUpdateSize) setSize({ width: newWidth, height: newHeight });
+    };
+
+    window.addEventListener('resize', clamp);
+    clamp();
+
+    return () => window.removeEventListener('resize', clamp);
+  }, [isOverlayOpen, setPosition, setSize]);
+
   if (!isOverlayOpen) return null;
 
   return (
@@ -124,8 +172,8 @@ export default function DevelopmentOverlay() {
       boxSizing="border-box"
       height={`${initialSize.height}px`}
       left={`${initialPosition.x}px`}
-      maxHeight="80vh"
-      maxWidth="80vw"
+      maxHeight="100vh"
+      maxWidth="100vw"
       minHeight="100px"
       minWidth="200px"
       overflow="hidden"
