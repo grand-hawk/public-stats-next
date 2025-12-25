@@ -8,7 +8,7 @@ interface ContextCapturerProps {
 }
 
 export function ContextCapturer({ contextKey, data }: ContextCapturerProps) {
-  const setDebugData = useDevelopmentStore((state) => state.setDebugData);
+  const setDebugData = useDevelopmentStore((s) => s.setDebugData);
 
   React.useEffect(() => {
     if (process.env.NODE_ENV !== 'development') return;

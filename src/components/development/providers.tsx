@@ -29,7 +29,7 @@ export default React.memo(function ProvidersDebug() {
   const scrollRef = React.useRef<HTMLPreElement>(null);
   const items = React.useMemo(() => ['DynamicData', 'Shell', 'Vehicle'], []);
 
-  const debugData = useDevelopmentStore((state) => state.debugData);
+  const debugData = useDevelopmentStore((s) => s.debugData);
   const highlightedModule = useDevelopmentStore(
     (state) => state.highlightedModule,
   );

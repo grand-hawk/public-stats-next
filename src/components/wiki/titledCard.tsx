@@ -16,6 +16,7 @@ import {
 } from 'react-icons/md';
 import slug from 'slug';
 
+import ModuleIdSelect from '@/components/development/moduleIdSelect';
 import { Tooltip } from '@/components/ui/tooltip';
 
 import type { BoxProps, HeadingProps } from '@chakra-ui/react';
@@ -29,6 +30,7 @@ export default function TitledCard({
   headingAs,
   innerPadding = 6,
   keepBorder,
+  moduleId,
   title,
   tooltip,
   withAnchor,
@@ -38,6 +40,7 @@ export default function TitledCard({
     title: string;
     innerPadding?: BoxProps['padding'];
     withAnchor?: boolean | string;
+    moduleId?: string;
     tooltip?: string;
     collapsible?: boolean | 'force';
     closedByDefault?: boolean;
@@ -87,6 +90,8 @@ export default function TitledCard({
             </Icon>
           </Tooltip>
         )}
+
+        <ModuleIdSelect moduleId={moduleId} />
       </Heading>
 
       {collapsible && (

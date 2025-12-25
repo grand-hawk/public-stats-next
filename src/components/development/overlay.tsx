@@ -6,12 +6,12 @@ import ProvidersDebug from '@/components/development/providers';
 import { useDevelopmentStore } from '@/stores/development';
 
 export default function DevelopmentOverlay() {
-  const isOverlayOpen = useDevelopmentStore((state) => state.isOverlayOpen);
-  const initialPosition = useDevelopmentStore((state) => state.position);
-  const initialSize = useDevelopmentStore((state) => state.size);
-  const setPosition = useDevelopmentStore((state) => state.setPosition);
-  const setSize = useDevelopmentStore((state) => state.setSize);
-  const toggleOverlay = useDevelopmentStore((state) => state.toggleOverlay);
+  const isOverlayOpen = useDevelopmentStore((s) => s.isOverlayOpen);
+  const initialPosition = useDevelopmentStore((s) => s.position);
+  const initialSize = useDevelopmentStore((s) => s.size);
+  const setPosition = useDevelopmentStore((s) => s.setPosition);
+  const setSize = useDevelopmentStore((s) => s.setSize);
+  const toggleOverlay = useDevelopmentStore((s) => s.toggleOverlay);
 
   const [isDraggingState, setIsDraggingState] = React.useState(false);
   const containerRef = React.useRef<HTMLDivElement>(null);
