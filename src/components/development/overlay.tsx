@@ -162,7 +162,7 @@ export default function DevelopmentOverlay() {
         </IconButton>
       </Flex>
 
-      <Box height="calc(100% - 32px)" overflow="auto" padding={2}>
+      <Box height="calc(100% - 32px)" overflow="hidden">
         <ProvidersDebug />
       </Box>
     </Box>
