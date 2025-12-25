@@ -7,10 +7,12 @@ import VehicleDynamicLoadouts from '@/components/vehicles/vehicle/dynamic/loadou
 import VehicleDynamicModules from '@/components/vehicles/vehicle/dynamic/modules';
 import { DynamicDataContext } from '@/hooks/providers/dynamicData';
 import { useVehicle } from '@/hooks/providers/vehicle';
+import { useDebugEnabled } from '@/hooks/useDebugEnv';
 import { assembleModules } from '@/utils/alterations';
 
 export default function VehicleDynamicData() {
   const vehicle = useVehicle();
+  const debug = useDebugEnabled();
 
   const [selectedLoadout, setSelectedLoadout] = React.useState<string | null>(
     null,
@@ -25,8 +27,8 @@ export default function VehicleDynamicData() {
   }, [selectedLoadout, enabledAddons]);
 
   const assembledModules = React.useMemo(() => {
-    return assembleModules(vehicle, enabledAlterations);
-  }, [vehicle, enabledAlterations]);
+    return assembleModules(vehicle, enabledAlterations, debug);
+  }, [vehicle, enabledAlterations, debug]);
 
   // Reset states when vehicle changes
   React.useEffect(() => {

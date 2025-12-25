@@ -7,21 +7,83 @@ import type {
   VehiclesPlaceDataVehicleModuleReference,
 } from '@generated/vehicles';
 
-type ModulesDictionary = VehiclesPlaceDataVehicle['modules'];
+type ModulesDictionary = VehiclesPlaceDataVehicle['modules'] & {
+  $debug?: {
+    added: Record<string, string[]>;
+    removed: Record<string, string[]>;
+  };
+};
 
 function updateModulesFromAlterations(
   sourceModules: ModulesDictionary,
   alterations: VehiclesPlaceDataVehicleAlterations,
   enabledAlterations: Record<string, boolean>,
+  debug?: boolean,
 ): ModulesDictionary {
   const modules: ModulesDictionary = JSON.parse(JSON.stringify(sourceModules));
 
+  if (debug) modules.$debug ||= { added: {}, removed: {} };
+
   for (const [alterationName, alteration] of Object.entries(alterations)) {
-    if (!enabledAlterations[alterationName]) {
-      for (const add of alteration.changes.add) delete modules[add];
+    const isEnabled = !!enabledAlterations[alterationName];
+
+    if (!isEnabled) {
+      for (const add of alteration.changes.add) {
+        if (debug && modules[add]) {
+          modules.$debug!.removed[add] ||= [];
+          modules.$debug!.removed[add].push(
+            `Removed because '${alterationName}' is disabled`,
+          );
+        }
+
+        delete modules[add];
+      }
+
+      if (debug)
+        for (const remove of alteration.changes.remove) {
+          const targetModule = modules[remove] as
+            | (VehiclesPlaceDataVehicleModule & {
+                $debug?: string[];
+              })
+            | undefined;
+          if (targetModule) {
+            targetModule.$debug ||= [];
+            targetModule.$debug.push(
+              `Kept because '${alterationName}' is disabled`,
+            );
+          }
+        }
     }
-    if (enabledAlterations[alterationName]) {
-      for (const remove of alteration.changes.remove) delete modules[remove];
+
+    if (isEnabled) {
+      for (const remove of alteration.changes.remove) {
+        if (debug && modules[remove]) {
+          modules.$debug!.removed[remove] ||= [];
+          modules.$debug!.removed[remove].push(
+            `Removed by '${alterationName}'`,
+          );
+        }
+
+        delete modules[remove];
+      }
+
+      if (debug)
+        for (const add of alteration.changes.add) {
+          const targetModule = modules[add] as
+            | (VehiclesPlaceDataVehicleModule & {
+                $debug?: string[];
+              })
+            | undefined;
+          if (targetModule) {
+            const reason = `Added by '${alterationName}'`;
+
+            targetModule.$debug ||= [];
+            targetModule.$debug.push(reason);
+
+            modules.$debug!.added[add] ||= [];
+            modules.$debug!.added[add].push(reason);
+          }
+        }
     }
   }
 
@@ -31,16 +93,19 @@ function updateModulesFromAlterations(
 export function assembleModules(
   vehicle: VehiclesPlaceDataVehicle,
   enabledAlterations: Record<string, boolean>,
+  debug?: boolean,
 ): ModulesDictionary {
   const postLoadoutModules = updateModulesFromAlterations(
     vehicle.modules,
     vehicle.alterations.loadouts,
     enabledAlterations,
+    debug,
   );
   const postAddonModules = updateModulesFromAlterations(
     postLoadoutModules,
     vehicle.alterations.addons,
     enabledAlterations,
+    debug,
   );
 
   return postAddonModules;
@@ -50,8 +115,12 @@ export function getAllModulesOfType<
   T extends VehiclesPlaceDataVehicleModule['type'],
 >(type: T, assembledModules: ReturnType<typeof assembleModules>) {
   return (
-    Object.entries(assembledModules)
-      .filter(([_, module]) => module.type === type)
+    (
+      Object.entries(assembledModules) as Array<
+        [string, VehiclesPlaceDataVehicleModule]
+      >
+    )
+      .filter(([id, module]) => id !== '$debug' && module.type === type)
       .map(([id, module]) => ({ ...module, id }))
       .sort((a, b) => a.type.localeCompare(b.type)) as Array<
       VehicleModuleWithId<T>
@@ -135,3 +204,4 @@ export function alterationIsConflicting(
 
   return false;
 }
+
