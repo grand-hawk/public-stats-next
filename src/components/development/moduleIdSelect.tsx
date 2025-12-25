@@ -28,6 +28,7 @@ export default function ModuleIdSelect({
       _hover={{
         backgroundColor: 'unset',
       }}
+      data-module-id={moduleId}
       {...props}
       onClick={() => setHighlightedModule(moduleId)}
     >
