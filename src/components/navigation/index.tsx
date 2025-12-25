@@ -7,10 +7,12 @@ import MTC from '@/components/icons/mtc';
 import NavigationButton from '@/components/navigation/button';
 import { tabs } from '@/components/navigation/tabs';
 import { useCurrentTab } from '@/hooks/useCurrentTab';
+import { useDebugEnabled } from '@/hooks/useDebugEnv';
 import { usePlaceInitials } from '@/hooks/usePlaceInitials';
 import { useDevelopmentStore } from '@/stores/development';
 
 export default function Navigation() {
+  const debugEnabled = useDebugEnabled();
   const initials = usePlaceInitials();
   const currentTab = useCurrentTab();
   const { isOverlayOpen, toggleOverlay } = useDevelopmentStore();
@@ -93,7 +95,7 @@ export default function Navigation() {
           md: 'inherit',
         }}
       >
-        {process.env.NODE_ENV === 'development' && (
+        {debugEnabled && (
           <IconButton
             aria-label="Toggle Development Overlay"
             onClick={() => toggleOverlay()}

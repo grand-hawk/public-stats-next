@@ -9,11 +9,14 @@ import { ChakraProvider } from '@/components/utils/chakra';
 import InternalHead from '@/components/utils/head';
 import Umami from '@/components/utils/umami';
 import UpdateListener from '@/components/utils/updateListener';
+import { useDebugEnabled } from '@/hooks/useDebugEnv';
 import { trpc } from '@/utils/trpc';
 
 import type { AppProps } from 'next/app';
 
 export function App({ Component, pageProps }: AppProps) {
+  const debugEnabled = useDebugEnabled();
+
   return (
     <>
       <InternalHead />
@@ -34,7 +37,7 @@ export function App({ Component, pageProps }: AppProps) {
         <Toaster />
         <UpdateListener />
 
-        {process.env.NODE_ENV === 'development' && <DevelopmentOverlay />}
+        {debugEnabled && <DevelopmentOverlay />}
       </ChakraProvider>
 
       <Umami />
