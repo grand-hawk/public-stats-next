@@ -4,15 +4,20 @@ import { immer } from 'zustand/middleware/immer';
 
 interface DevelopmentStore {
   isOverlayOpen: boolean;
-  position: { x: number; y: number };
-  size: { width: number; height: number };
-  debugData: Record<string, unknown>;
-  highlightedModule: string | null;
   setOverlayOpen(open: boolean): void;
+
+  position: { x: number; y: number };
   setPosition(position: { x: number; y: number }): void;
+
+  size: { width: number; height: number };
   setSize(size: { width: number; height: number }): void;
+
+  debugData: Record<string, unknown>;
   setDebugData(key: string, data: unknown): void;
+
+  highlightedModule: string | null;
   setHighlightedModule(id: string | null): void;
+
   toggleOverlay(): void;
 }
 
