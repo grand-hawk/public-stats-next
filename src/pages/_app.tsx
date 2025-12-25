@@ -2,6 +2,7 @@ import { Box } from '@chakra-ui/react';
 import { NuqsAdapter } from 'nuqs/adapters/next/pages';
 import React, { Suspense } from 'react';
 
+import DevelopmentOverlay from '@/components/development/overlay';
 import { CenterSpinner } from '@/components/spinners';
 import { Toaster } from '@/components/ui/toaster';
 import { ChakraProvider } from '@/components/utils/chakra';
@@ -32,6 +33,8 @@ export function App({ Component, pageProps }: AppProps) {
 
         <Toaster />
         <UpdateListener />
+
+        {process.env.NODE_ENV === 'development' && <DevelopmentOverlay />}
       </ChakraProvider>
 
       <Umami />

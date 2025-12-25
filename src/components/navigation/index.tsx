@@ -1,16 +1,19 @@
-import { Box, Flex } from '@chakra-ui/react';
+import { Box, Flex, IconButton } from '@chakra-ui/react';
 import NextLink from 'next/link';
 import React from 'react';
+import { LuBug } from 'react-icons/lu';
 
 import MTC from '@/components/icons/mtc';
 import NavigationButton from '@/components/navigation/button';
 import { tabs } from '@/components/navigation/tabs';
 import { useCurrentTab } from '@/hooks/useCurrentTab';
 import { usePlaceInitials } from '@/hooks/usePlaceInitials';
+import { useDevelopmentStore } from '@/stores/development';
 
 export default function Navigation() {
   const initials = usePlaceInitials();
   const currentTab = useCurrentTab();
+  const { isOverlayOpen, toggleOverlay } = useDevelopmentStore();
 
   return (
     <Flex
@@ -81,7 +84,25 @@ export default function Navigation() {
         })}
       </Flex>
 
-      <div />
+      <Flex
+        flexDirection="inherit"
+        gap={2}
+        marginTop="auto"
+        display={{
+          base: 'none',
+          md: 'inherit',
+        }}
+      >
+        {process.env.NODE_ENV === 'development' && (
+          <IconButton
+            aria-label="Toggle Development Overlay"
+            onClick={() => toggleOverlay()}
+            variant={isOverlayOpen ? 'solid' : 'outline'}
+          >
+            <LuBug />
+          </IconButton>
+        )}
+      </Flex>
     </Flex>
   );
 }
