@@ -1,9 +1,7 @@
 import { CodeBlock, createShikiAdapter, Tabs, useTabs } from '@chakra-ui/react';
 import React from 'react';
 
-import { DynamicDataContext } from '@/hooks/providers/dynamicData';
-import { ShellContext } from '@/hooks/providers/shell';
-import { VehicleContext } from '@/hooks/providers/vehicle';
+import { useDevelopmentStore } from '@/stores/development';
 
 import type { BundledLanguage, BundledTheme, HighlighterGeneric } from 'shiki';
 
@@ -23,9 +21,9 @@ const shikiAdapter = createShikiAdapter<
 export default function ProvidersDebug() {
   const items = React.useMemo(
     () => [
-      { context: DynamicDataContext, name: 'DynamicData' },
-      { context: ShellContext, name: 'Shell' },
-      { context: VehicleContext, name: 'Vehicle' },
+      { name: 'DynamicData' },
+      { name: 'Shell' },
+      { name: 'Vehicle' },
     ],
     [],
   );
@@ -36,7 +34,8 @@ export default function ProvidersDebug() {
 
   const activeItem = items.find((item) => item.name === tabs.value) ?? items[0];
 
-  const data = React.useContext(activeItem.context as React.Context<unknown>);
+  const debugData = useDevelopmentStore((state) => state.debugData);
+  const data = debugData[activeItem.name] ?? {};
   const code = JSON.stringify(data, null, 2);
 
   return (

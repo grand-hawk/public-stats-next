@@ -1,6 +1,7 @@
 import { Box, Center, Span, Stack } from '@chakra-ui/react';
 import React from 'react';
 
+import { ContextCapturer } from '@/components/development/contextCapturer';
 import VehicleDynamicAddons from '@/components/vehicles/vehicle/dynamic/addons';
 import VehicleDynamicLoadouts from '@/components/vehicles/vehicle/dynamic/loadouts';
 import VehicleDynamicModules from '@/components/vehicles/vehicle/dynamic/modules';
@@ -39,6 +40,11 @@ export default function VehicleDynamicData() {
     Object.keys(vehicle.alterations.addons).length > 0 ||
     Object.keys(vehicle.alterations.loadouts).length > 0;
 
+  const contextValue = React.useMemo(
+    () => ({ assembledModules, enabledAlterations }),
+    [assembledModules, enabledAlterations],
+  );
+
   return (
     <Box
       display="grid"
@@ -52,9 +58,8 @@ export default function VehicleDynamicData() {
       }}
       width="100%"
     >
-      <DynamicDataContext.Provider
-        value={{ assembledModules, enabledAlterations }}
-      >
+      <DynamicDataContext.Provider value={contextValue}>
+        <ContextCapturer contextKey="DynamicData" data={contextValue} />
         <Stack
           gap={4}
           gridColumn={{ base: 'unset', xl: '2' }}

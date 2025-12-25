@@ -1,5 +1,6 @@
 import React from 'react';
 
+import { ContextCapturer } from '@/components/development/contextCapturer';
 import VehicleAvailability from '@/components/vehicles/vehicle/availability';
 import VehicleDynamicData from '@/components/vehicles/vehicle/dynamic';
 import VehicleGeneralInformation from '@/components/vehicles/vehicle/generalInformation';
@@ -15,6 +16,7 @@ export default function Vehicle({ vehicle }: { vehicle: DetailedVehicle }) {
 
   return (
     <VehicleContext.Provider value={vehicle}>
+      <ContextCapturer contextKey="Vehicle" data={vehicle} />
       <VehicleHeader />
       <VehicleGeneralInformation isAvailable={vehicleIsAvailable} />
       <VehicleAvailability
