@@ -200,17 +200,8 @@ export default React.memo(function ProvidersDebug() {
               if (
                 text?.startsWith('#/module/') ||
                 text?.startsWith('#/modules/')
-              ) {
-                const isNew = text !== highlightedModule;
-                setHighlightedModule(isNew ? text : null);
-
-                if (isNew) {
-                  const declIndex = lines.findIndex((line) =>
-                    line.trim().startsWith(`"${text}": {`),
-                  );
-                  if (declIndex !== -1) scrollToLine(declIndex + 1);
-                }
-              }
+              )
+                setHighlightedModule(text === highlightedModule ? null : text);
             }}
             position="relative"
             ref={containerRef}
