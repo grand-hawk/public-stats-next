@@ -18,7 +18,7 @@ function convertSightZoom(zoom: SightZoomType) {
   const suffix = zoom.fov ? '°' : 'x';
 
   if ('steps' in zoom)
-    return zoom.steps
+    return [...zoom.steps]
       .sort((a, b) => (zoom.fov ? b - a : a - b))
       .map((step) => `${step}${suffix}`)
       .join(', ');
