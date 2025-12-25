@@ -4,7 +4,12 @@ import { LuBug } from 'react-icons/lu';
 
 import { useDevelopmentStore } from '@/stores/development';
 
-export default function ModuleIdSelect({ moduleId }: { moduleId?: string }) {
+import type { IconButtonProps } from '@chakra-ui/react';
+
+export default function ModuleIdSelect({
+  moduleId,
+  ...props
+}: { moduleId?: string } & IconButtonProps) {
   const isOverlayOpen = useDevelopmentStore((s) => s.isOverlayOpen);
   const setHighlightedModule = useDevelopmentStore(
     (s) => s.setHighlightedModule,
@@ -15,7 +20,14 @@ export default function ModuleIdSelect({ moduleId }: { moduleId?: string }) {
   if (!moduleId) return null;
 
   return (
-    <IconButton onClick={() => setHighlightedModule(moduleId)} size="xs">
+    <IconButton
+      size="2xs"
+      marginLeft={2}
+      variant="ghost"
+      height="4"
+      {...props}
+      onClick={() => setHighlightedModule(moduleId)}
+    >
       <LuBug />
     </IconButton>
   );

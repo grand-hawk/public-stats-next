@@ -13,13 +13,13 @@ import {
 } from '@/utils/alterations';
 import { betterSentenceCase } from '@/utils/betterSentenceCase';
 
-import type { VehicleModuleFromType } from '@/utils/vehicles';
+import type { VehicleModuleWithId } from '@/utils/vehicles';
 
 export default function Weapon({
   turretName,
   weapon,
 }: {
-  weapon: VehicleModuleFromType<'Weapon'>;
+  weapon: VehicleModuleWithId<'Weapon'>;
   turretName: string;
 }) {
   const place = usePlace()!;
@@ -41,6 +41,7 @@ export default function Weapon({
 
   return (
     <InlineCard
+      moduleId={weapon.id}
       title={weapon.data.name}
       withAnchor={`${turretName}-weapon-${nameSlug}`}
       headingAs="h4"

@@ -48,6 +48,7 @@ export default function Turret({ turret }: { turret: TurretWithName }) {
       as="section"
       collapsible
       innerPadding={4}
+      moduleId={turret.id}
       title={turret.name}
       withAnchor
     >

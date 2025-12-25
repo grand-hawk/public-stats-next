@@ -17,6 +17,7 @@ export default function Defenses() {
       as="section"
       collapsible
       innerPadding={4}
+      moduleId={essModule?.id || ewModule?.id}
       title="Defenses"
       withAnchor
     >

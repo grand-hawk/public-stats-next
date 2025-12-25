@@ -8,9 +8,9 @@ import {
 } from '@/utils/alterations';
 import { betterSentenceCase } from '@/utils/betterSentenceCase';
 
-import type { VehicleModuleFromType } from '@/utils/vehicles';
+import type { VehicleModuleWithId } from '@/utils/vehicles';
 
-export type TurretWithName = VehicleModuleFromType<'Turret'> & {
+export type TurretWithName = VehicleModuleWithId<'Turret'> & {
   name: string;
 };
 

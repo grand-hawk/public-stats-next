@@ -29,6 +29,7 @@ export default function Vehicle() {
         as="section"
         collapsible
         innerPadding={4}
+        moduleId={driveData?.id}
         title="Vehicle"
         withAnchor
       >
@@ -144,6 +145,7 @@ export default function Vehicle() {
           as="section"
           collapsible
           innerPadding={4}
+          moduleId={driveData.id}
           title="Powertrain"
           withAnchor
         >

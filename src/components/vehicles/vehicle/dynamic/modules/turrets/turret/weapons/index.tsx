@@ -5,14 +5,14 @@ import Weapon from '@/components/vehicles/vehicle/dynamic/modules/turrets/turret
 import TitledCard from '@/components/wiki/titledCard';
 
 import type { TurretWithName } from '@/components/vehicles/vehicle/dynamic/modules/turrets';
-import type { VehicleModuleFromType } from '@/utils/vehicles';
+import type { VehicleModuleWithId } from '@/utils/vehicles';
 
 export default function Weapons({
   turret,
   weapons,
 }: {
   turret: TurretWithName;
-  weapons: VehicleModuleFromType<'Weapon'>[];
+  weapons: VehicleModuleWithId<'Weapon'>[];
 }) {
   if (weapons.length === 0) return null;
   return (
