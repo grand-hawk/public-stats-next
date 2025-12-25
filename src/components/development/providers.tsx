@@ -219,6 +219,7 @@ export default React.memo(function ProvidersDebug() {
               '--code-block-highlight-border': 'colors.blue.500',
               '& [data-line][data-highlight]:after': {
                 background: 'blue.400/10',
+                pointerEvents: 'none',
               },
             }}
           >
