@@ -3,6 +3,7 @@ import React from 'react';
 
 import Sights from '@/components/vehicles/vehicle/dynamic/modules/turrets/turret/sights';
 import Weapons from '@/components/vehicles/vehicle/dynamic/modules/turrets/turret/weapons';
+import ModuleIdSelect from '@/components/development/moduleIdSelect';
 import Feature from '@/components/wiki/feature';
 import { StatsCell, StatsRoot, StatsRow } from '@/components/wiki/stats';
 import TitledCard from '@/components/wiki/titledCard';
@@ -70,6 +71,18 @@ export default function Turret({ turret }: { turret: TurretWithName }) {
               <StatsCell>Yes</StatsCell>
             </StatsRow>
           )}
+
+          {turret.data.control.length > 0 && (
+            <StatsRow withPaddingLeft>
+              <StatsCell>Control</StatsCell>
+              <StatsCell>
+                {turret.data.control.map((ref) => (
+                  <ModuleIdSelect key={ref} moduleId={ref} />
+                ))}
+              </StatsCell>
+            </StatsRow>
+          )}
+
           {isFixed ? (
             <StatsRow withPaddingLeft>
               <StatsCell>Fixed</StatsCell>

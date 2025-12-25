@@ -18,6 +18,9 @@ interface DevelopmentStore {
   highlightedModule: string | null;
   setHighlightedModule(id: string | null): void;
 
+  scrollToModule: string | null;
+  setScrollToModule(id: string | null): void;
+
   toggleOverlay(): void;
 }
 
@@ -29,6 +32,7 @@ export const useDevelopmentStore = create<DevelopmentStore>()(
       size: { width: 800, height: 600 },
       debugData: {},
       highlightedModule: null,
+      scrollToModule: null,
 
       setOverlayOpen(open) {
         set((s) => {
@@ -57,6 +61,12 @@ export const useDevelopmentStore = create<DevelopmentStore>()(
       setHighlightedModule(id) {
         set((s) => {
           s.highlightedModule = id;
+        });
+      },
+
+      setScrollToModule(id) {
+        set((s) => {
+          s.scrollToModule = id;
         });
       },
 

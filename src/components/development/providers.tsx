@@ -2,10 +2,12 @@ import {
   Box,
   CodeBlock,
   createShikiAdapter,
+  IconButton,
   Tabs,
   useTabs,
 } from '@chakra-ui/react';
 import React from 'react';
+import { LuArrowUpRight } from 'react-icons/lu';
 
 import { useDevelopmentStore } from '@/stores/development';
 
@@ -36,6 +38,10 @@ export default React.memo(function ProvidersDebug() {
   const setHighlightedModule = useDevelopmentStore(
     (state) => state.setHighlightedModule,
   );
+  const scrollToModule = useDevelopmentStore((state) => state.scrollToModule);
+  const setScrollToModule = useDevelopmentStore(
+    (state) => state.setScrollToModule,
+  );
 
   const tabs = useTabs({
     defaultValue: items[0],
@@ -46,6 +52,41 @@ export default React.memo(function ProvidersDebug() {
   const code = JSON.stringify(data, null, 2);
   const lines = React.useMemo(() => code.split('\n'), [code]);
   const lineCount = lines.length;
+
+  const scrollToLine = React.useCallback(
+    (line: number) => {
+      if (!scrollRef.current) return;
+
+      const totalHeight = scrollRef.current.scrollHeight;
+      const scrollPos = ((line - 1) / lineCount) * totalHeight;
+
+      scrollRef.current.scrollTo({
+        top: scrollPos,
+        behavior: 'smooth',
+      });
+    },
+    [lineCount],
+  );
+
+  const declarationLine = React.useMemo(() => {
+    if (!highlightedModule) return null;
+    const index = lines.findIndex((l) =>
+      l.trim().startsWith(`"${highlightedModule}": {`),
+    );
+    return index !== -1 ? index + 1 : null;
+  }, [lines, highlightedModule]);
+
+  React.useEffect(() => {
+    if (!scrollToModule) return;
+
+    const index = lines.findIndex((l) =>
+      l.trim().startsWith(`"${scrollToModule}": {`),
+    );
+    if (index !== -1) {
+      scrollToLine(index + 1);
+      setScrollToModule(null);
+    }
+  }, [scrollToModule, lines, setScrollToModule, scrollToLine]);
 
   const highlightedLines = React.useMemo(() => {
     if (!highlightedModule) return [];
@@ -86,17 +127,6 @@ export default React.memo(function ProvidersDebug() {
     return Array.from(result).sort((a, b) => a - b);
   }, [lines, highlightedModule]);
 
-  const scrollToLine = (line: number) => {
-    if (!scrollRef.current) return;
-
-    const totalHeight = scrollRef.current.scrollHeight;
-    const scrollPos = (line / lineCount) * totalHeight;
-    scrollRef.current.scrollTo({
-      top: scrollPos - scrollRef.current.clientHeight / 2,
-      behavior: 'smooth',
-    });
-  };
-
   return (
     <Box
       display="flex"
@@ -119,8 +149,11 @@ export default React.memo(function ProvidersDebug() {
             height="36px"
             minHeight="36px"
             paddingX={1}
+            display="flex"
+            alignItems="center"
+            justifyContent="space-between"
           >
-            <Tabs.List border="0" marginStart="-1" width="full">
+            <Tabs.List border="0" marginStart="-1" flex="1">
               {items.map((item) => (
                 <Tabs.Trigger
                   colorPalette="teal"
@@ -132,6 +165,18 @@ export default React.memo(function ProvidersDebug() {
                 </Tabs.Trigger>
               ))}
             </Tabs.List>
+
+            {declarationLine && (
+              <IconButton
+                size="2xs"
+                variant="ghost"
+                onClick={() => scrollToLine(declarationLine)}
+                title="Scroll to declaration"
+                aria-label="Scroll to declaration"
+              >
+                <LuArrowUpRight />
+              </IconButton>
+            )}
           </Box>
 
           <CodeBlock.Root
@@ -155,8 +200,17 @@ export default React.memo(function ProvidersDebug() {
               if (
                 text?.startsWith('#/module/') ||
                 text?.startsWith('#/modules/')
-              )
-                setHighlightedModule(text === highlightedModule ? null : text);
+              ) {
+                const isNew = text !== highlightedModule;
+                setHighlightedModule(isNew ? text : null);
+
+                if (isNew) {
+                  const declIndex = lines.findIndex((line) =>
+                    line.trim().startsWith(`"${text}": {`),
+                  );
+                  if (declIndex !== -1) scrollToLine(declIndex + 1);
+                }
+              }
             }}
             position="relative"
             ref={containerRef}
@@ -206,12 +260,15 @@ export default React.memo(function ProvidersDebug() {
               >
                 {highlightedLines.map((line) => (
                   <Box
-                    backgroundColor="blue.500"
-                    height="2px"
+                    backgroundColor={
+                      line === declarationLine ? 'teal.500' : 'blue.500'
+                    }
+                    height={line === declarationLine ? '4px' : '2px'}
                     key={line}
                     position="absolute"
                     top={`${(line / lineCount) * 100}%`}
                     width="100%"
+                    zIndex={line === declarationLine ? '3' : '2'}
                   />
                 ))}
               </Box>

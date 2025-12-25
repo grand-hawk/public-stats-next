@@ -3,6 +3,7 @@ import NextLink from 'next/link';
 import React from 'react';
 import slug from 'slug';
 
+import ModuleIdSelect from '@/components/development/moduleIdSelect';
 import InlineCard from '@/components/wiki/inlineCard';
 import { StatsCell, StatsRoot, StatsRow } from '@/components/wiki/stats';
 import { useDynamicData } from '@/hooks/providers/dynamicData';
@@ -87,7 +88,10 @@ export default function Weapon({
         )}
         {magazine && (
           <StatsRow>
-            <StatsCell>Magazine size</StatsCell>
+            <StatsCell>
+              Magazine size
+              <ModuleIdSelect moduleId={weapon.data.magazine[0]} />
+            </StatsCell>
             <StatsCell>
               <FormatNumber value={magazine.data.size} />
             </StatsCell>
@@ -97,7 +101,10 @@ export default function Weapon({
         {ammoSelection && (
           <>
             <StatsRow withPaddingTop>
-              <StatsCell asTitle>Ammo</StatsCell>
+              <StatsCell asTitle>
+                Ammo
+                <ModuleIdSelect moduleId={weapon.data.ammoSelection[0]} />
+              </StatsCell>
               <StatsCell>Max</StatsCell>
             </StatsRow>
             {Object.entries(ammoSelection.data)
@@ -128,7 +135,12 @@ export default function Weapon({
         {ammoModels.length > 0 && (
           <>
             <StatsRow withPaddingTop>
-              <StatsCell asTitle>Ammo models</StatsCell>
+              <StatsCell asTitle>
+                Ammo models
+                {weapon.data.ammoModels.map((ref) => (
+                  <ModuleIdSelect key={ref} moduleId={ref} />
+                ))}
+              </StatsCell>
               <StatsCell />
             </StatsRow>
             {ammoModels

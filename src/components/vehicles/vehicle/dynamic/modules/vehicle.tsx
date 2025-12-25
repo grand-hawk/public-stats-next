@@ -1,6 +1,7 @@
 import { FormatNumber } from '@chakra-ui/react';
 import React from 'react';
 
+import ModuleIdSelect from '@/components/development/moduleIdSelect';
 import { StatsCell, StatsRoot, StatsRow } from '@/components/wiki/stats';
 import TitledCard from '@/components/wiki/titledCard';
 import { useDynamicData } from '@/hooks/providers/dynamicData';
@@ -15,12 +16,13 @@ export default function Vehicle() {
 
   if (!driveData && seats.length === 0) return null;
 
-  const seatCount: Record<string, number> = {};
+  const seatCount: Record<string, { count: number; ids: string[] }> = {};
   for (const seat of seats) {
     const name = betterSentenceCase(seat.data.name);
 
-    if (!seatCount[name]) seatCount[name] = 0;
-    seatCount[name] += 1;
+    if (!seatCount[name]) seatCount[name] = { count: 0, ids: [] };
+    seatCount[name].count += 1;
+    seatCount[name].ids.push(seat.id);
   }
 
   return (
@@ -57,9 +59,14 @@ export default function Vehicle() {
               </StatsRow>
               {Object.entries(seatCount)
                 .sort((a, b) => a[0].localeCompare(b[0]))
-                .map(([name, count]) => (
+                .map(([name, { count, ids }]) => (
                   <StatsRow key={name} withPaddingLeft>
-                    <StatsCell>{name}</StatsCell>
+                    <StatsCell>
+                      {name}
+                      {ids.map((id) => (
+                        <ModuleIdSelect key={id} moduleId={id} />
+                      ))}
+                    </StatsCell>
                     <StatsCell>
                       <FormatNumber value={count} />
                     </StatsCell>

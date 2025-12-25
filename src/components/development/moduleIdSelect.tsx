@@ -16,6 +16,7 @@ export default function ModuleIdSelect({
   const setHighlightedModule = useDevelopmentStore(
     (s) => s.setHighlightedModule,
   );
+  const setScrollToModule = useDevelopmentStore((s) => s.setScrollToModule);
 
   if (!debugEnabled || !isOverlayOpen || !moduleId) return null;
 
@@ -28,9 +29,14 @@ export default function ModuleIdSelect({
       _hover={{
         backgroundColor: 'unset',
       }}
+      title="Highlight and scroll to module"
+      aria-label="Highlight and scroll to module"
       data-module-id={moduleId}
       {...props}
-      onClick={() => setHighlightedModule(moduleId)}
+      onClick={() => {
+        setHighlightedModule(moduleId);
+        setScrollToModule(moduleId);
+      }}
     >
       <LuBug />
     </IconButton>
