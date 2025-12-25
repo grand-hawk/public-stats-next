@@ -25,6 +25,9 @@ export default function ModuleIdSelect({
       marginLeft={2}
       variant="ghost"
       height="4"
+      _hover={{
+        backgroundColor: 'unset',
+      }}
       {...props}
       onClick={() => setHighlightedModule(moduleId)}
     >
