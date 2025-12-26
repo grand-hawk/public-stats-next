@@ -57,13 +57,33 @@ export default React.memo(function ProvidersDebug() {
     (line: number) => {
       if (!scrollRef.current) return;
 
-      const totalHeight = scrollRef.current.scrollHeight;
-      const scrollPos = ((line - 1) / lineCount) * totalHeight;
+      const container = scrollRef.current;
+      const lineElement = container.querySelector(
+        `[data-line="${line}"]`,
+      ) as HTMLElement | null;
 
-      scrollRef.current.scrollTo({
-        top: scrollPos,
-        behavior: 'smooth',
-      });
+      if (lineElement) {
+        const containerRect = container.getBoundingClientRect();
+        const lineRect = lineElement.getBoundingClientRect();
+
+        // Calculate position relative to container
+        const relativeTop =
+          lineRect.top - containerRect.top + container.scrollTop;
+
+        container.scrollTo({
+          top: relativeTop,
+          behavior: 'smooth',
+        });
+      } else {
+        // Fallback to average height calculation if element not found
+        const totalHeight = container.scrollHeight;
+        const scrollPos = ((line - 1) / lineCount) * totalHeight;
+
+        container.scrollTo({
+          top: scrollPos,
+          behavior: 'smooth',
+        });
+      }
     },
     [lineCount],
   );
