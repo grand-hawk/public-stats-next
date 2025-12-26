@@ -7,8 +7,8 @@ import { useDevelopmentStore } from '@/stores/development';
 
 export default function DevelopmentOverlay() {
   const isOverlayOpen = useDevelopmentStore((s) => s.isOverlayOpen);
-  const initialPosition = useDevelopmentStore((s) => s.position);
-  const initialSize = useDevelopmentStore((s) => s.size);
+  const position = useDevelopmentStore((s) => s.position);
+  const size = useDevelopmentStore((s) => s.size);
   const setPosition = useDevelopmentStore((s) => s.setPosition);
   const setSize = useDevelopmentStore((s) => s.setSize);
   const toggleOverlay = useDevelopmentStore((s) => s.toggleOverlay);
@@ -122,45 +122,28 @@ export default function DevelopmentOverlay() {
   }, [setSize]);
 
   React.useEffect(() => {
-    if (!containerRef.current || !isOverlayOpen) return;
+    if (!isOverlayOpen || isDraggingState) return;
 
     const clamp = () => {
-      if (!containerRef.current) return;
-      const rect = containerRef.current.getBoundingClientRect();
+      const { x, y } = useDevelopmentStore.getState().position;
+      const { height, width } = useDevelopmentStore.getState().size;
 
-      let newWidth = rect.width;
-      let newHeight = rect.height;
-      let shouldUpdateSize = false;
+      const newWidth = Math.min(width, window.innerWidth);
+      const newHeight = Math.min(height, window.innerHeight);
 
-      if (newWidth > window.innerWidth) {
-        newWidth = window.innerWidth;
-        shouldUpdateSize = true;
-      }
-      if (newHeight > window.innerHeight) {
-        newHeight = window.innerHeight;
-        shouldUpdateSize = true;
-      }
+      const newLeft = Math.max(0, Math.min(x, window.innerWidth - newWidth));
+      const newTop = Math.max(0, Math.min(y, window.innerHeight - newHeight));
 
-      const newLeft = Math.max(
-        0,
-        Math.min(rect.left, window.innerWidth - newWidth),
-      );
-      const newTop = Math.max(
-        0,
-        Math.min(rect.top, window.innerHeight - newHeight),
-      );
-
-      if (newLeft !== rect.left || newTop !== rect.top)
-        setPosition({ x: newLeft, y: newTop });
-
-      if (shouldUpdateSize) setSize({ width: newWidth, height: newHeight });
+      if (newLeft !== x || newTop !== y) setPosition({ x: newLeft, y: newTop });
+      if (newWidth !== width || newHeight !== height)
+        setSize({ width: newWidth, height: newHeight });
     };
 
     window.addEventListener('resize', clamp);
     clamp();
 
     return () => window.removeEventListener('resize', clamp);
-  }, [isOverlayOpen, setPosition, setSize]);
+  }, [isOverlayOpen, isDraggingState, setPosition, setSize]);
 
   if (!isOverlayOpen) return null;
 
@@ -170,8 +153,8 @@ export default function DevelopmentOverlay() {
       borderWidth="1px"
       boxShadow="lg"
       boxSizing="border-box"
-      height={`${initialSize.height}px`}
-      left={`${initialPosition.x}px`}
+      height={`${size.height}px`}
+      left={`${position.x}px`}
       maxHeight="100vh"
       maxWidth="100vw"
       minHeight="100px"
@@ -180,8 +163,8 @@ export default function DevelopmentOverlay() {
       position="fixed"
       ref={containerRef}
       resize="both"
-      top={`${initialPosition.y}px`}
-      width={`${initialSize.width}px`}
+      top={`${position.y}px`}
+      width={`${size.width}px`}
       zIndex="popover"
       transition="none"
     >
@@ -216,3 +199,4 @@ export default function DevelopmentOverlay() {
     </Box>
   );
 }
+
