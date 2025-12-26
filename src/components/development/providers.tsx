@@ -19,7 +19,7 @@ const shikiAdapter = createShikiAdapter<
   async load() {
     const { createHighlighter } = await import('shiki');
     return createHighlighter({
-      langs: ['json'],
+      langs: ['jsonc'],
       themes: ['dark-plus'],
     });
   },
@@ -48,9 +48,53 @@ export default React.memo(function ProvidersDebug() {
   });
   const activeItem = items.find((item) => item === tabs.value) ?? items[0];
 
-  const data = debugData[activeItem] ?? {};
-  const code = JSON.stringify(data, null, 2);
-  const lines = React.useMemo(() => code.split('\n'), [code]);
+  const data = React.useMemo(
+    () => debugData[activeItem] ?? {},
+    [debugData, activeItem],
+  );
+
+  const rawCode = JSON.stringify(data, null, 2);
+  const lines = React.useMemo(() => {
+    const rawLines = rawCode.split('\n');
+
+    const idToType: Record<string, string> = {};
+    const modules =
+      (data as { assembledModules?: Record<string, unknown> })
+        .assembledModules ||
+      (data as { modules?: Record<string, unknown> }).modules ||
+      data;
+
+    if (typeof modules === 'object' && modules !== null)
+      for (const [id, module] of Object.entries(modules)) {
+        if (
+          module &&
+          typeof module === 'object' &&
+          'type' in (module as Record<string, unknown>)
+        ) {
+          const type = (module as Record<string, string>).type;
+          const normalizedId = id.replace(/^#\/module\//, '#/modules/');
+
+          idToType[normalizedId] = type;
+          idToType[normalizedId.replace('#/modules/', '')] = type;
+        }
+      }
+
+    return rawLines.map((line) => {
+      const strings = line.match(/"([^"]+)"/g);
+      if (!strings) return line;
+
+      for (const quotedId of strings) {
+        const id = quotedId.slice(1, -1);
+        const normalizedId = id.replace(/^#\/module\//, '#/modules/');
+        const type = idToType[normalizedId] || idToType[id];
+
+        if (type && !line.trim().startsWith(`"${id}": {`))
+          return `${line} // ${type}`;
+      }
+      return line;
+    });
+  }, [rawCode, data]);
+  const code = React.useMemo(() => lines.join('\n'), [lines]);
   const lineCount = lines.length;
 
   const scrollToLine = React.useCallback(
@@ -208,19 +252,19 @@ export default React.memo(function ProvidersDebug() {
             height="100%"
             maxHeight="100%"
             border="none"
-            language="json"
+            language="jsonc"
             meta={{ highlightLines: highlightedLines }}
             onClick={(event: React.MouseEvent) => {
               const target = event.target as HTMLElement;
               const span = target.closest('span');
               if (!span || span.classList.contains('line')) return;
 
-              const text = span.textContent?.trim().replace(/^"|"$/g, '');
+              const text = span.textContent
+                ?.trim()
+                .replace(/^"|"$/g, '')
+                .replace(/^#\/module\//, '#/modules/');
 
-              if (
-                text?.startsWith('#/module/') ||
-                text?.startsWith('#/modules/')
-              )
+              if (text?.startsWith('#/modules/'))
                 setHighlightedModule(text === highlightedModule ? null : text);
             }}
             position="relative"
