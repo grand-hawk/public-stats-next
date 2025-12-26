@@ -30,10 +30,12 @@ function convertSightZoom(zoom: SightZoomType) {
 }
 
 export default function Sight({
+  moduleId,
   sight,
   sightIndex,
   turretName,
 }: {
+  moduleId?: string;
   turretName: string;
   sight: TurretWithName['data']['sights'][number];
   sightIndex: number;
@@ -80,6 +82,7 @@ export default function Sight({
   return (
     <InlineCard
       headingAs="h4"
+      moduleId={moduleId}
       title={
         sight.name ? betterSentenceCase(sight.name) : `Sight ${sightIndex + 1}`
       }

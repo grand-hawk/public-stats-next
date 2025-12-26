@@ -21,6 +21,7 @@ export default function Weapons({
       backgroundColor="bg.muted"
       collapsible
       innerPadding={2}
+      moduleId={turret.id}
       title="Weapons"
       withAnchor={`${turret.name}-weapons`}
       headingAs="h3"

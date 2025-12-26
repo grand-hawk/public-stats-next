@@ -12,6 +12,7 @@ export default function Sights({ turret }: { turret: TurretWithName }) {
       backgroundColor="bg.muted"
       collapsible
       innerPadding={2}
+      moduleId={turret.id}
       title="Sights"
       withAnchor={`${turret.name}-sights`}
       headingAs="h3"
@@ -20,6 +21,7 @@ export default function Sights({ turret }: { turret: TurretWithName }) {
         {turret.data.sights.map((sight, index) => (
           <Sight
             key={index}
+            moduleId={turret.id}
             sight={sight}
             sightIndex={index}
             turretName={turret.name}
