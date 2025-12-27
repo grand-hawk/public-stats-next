@@ -32,7 +32,7 @@ export default function VehicleDynamicLoadouts({
     <TitledCard
       innerPadding={4}
       title="Loadout"
-      tooltip="Select version of the vehicle in a certain gamemode"
+      tooltip="Select version of the vehicle in a certain loadout"
       withAnchor="loadout-config"
     >
       <Select.Root

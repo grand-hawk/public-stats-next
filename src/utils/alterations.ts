@@ -19,20 +19,38 @@ function updateModulesFromAlterations(
   alterations: VehiclesPlaceDataVehicleAlterations,
   enabledAlterations: Record<string, boolean>,
   debug?: boolean,
+  selectedLoadout?: string | null,
 ): ModulesDictionary {
   const modules: ModulesDictionary = JSON.parse(JSON.stringify(sourceModules));
 
   if (debug) modules.$debug ||= { added: {}, removed: {} };
 
   for (const [alterationName, alteration] of Object.entries(alterations)) {
-    const isEnabled = !!enabledAlterations[alterationName];
+    const isActuallyEnabled = !!enabledAlterations[alterationName];
+    const isCompatible =
+      !selectedLoadout ||
+      !alteration.loadout ||
+      alteration.loadout === selectedLoadout;
+
+    const isEnabled = isActuallyEnabled && isCompatible;
+
+    const blameName =
+      !isCompatible && alteration.loadout ? alteration.loadout : alterationName;
+    const reasonSuffix = `is disabled`;
 
     if (!isEnabled) {
+      if (debug && !isCompatible && alteration.loadout) {
+        modules.$debug!.removed[alterationName] ||= [];
+        modules.$debug!.removed[alterationName].push(
+          `Removed because '${alteration.loadout}' ${reasonSuffix}`,
+        );
+      }
+
       for (const add of alteration.changes.add) {
         if (debug && modules[add]) {
           modules.$debug!.removed[add] ||= [];
           modules.$debug!.removed[add].push(
-            `Removed because '${alterationName}' is disabled`,
+            `Removed because '${blameName}' ${reasonSuffix}`,
           );
         }
 
@@ -47,10 +65,13 @@ function updateModulesFromAlterations(
               })
             | undefined;
           if (targetModule) {
+            const reason = `Kept because '${blameName}' ${reasonSuffix}`;
+
             targetModule.$debug ||= [];
-            targetModule.$debug.push(
-              `Kept because '${alterationName}' is disabled`,
-            );
+            targetModule.$debug.push(reason);
+
+            modules.$debug!.added[remove] ||= [];
+            modules.$debug!.added[remove].push(reason);
           }
         }
     }
@@ -95,17 +116,29 @@ export function assembleModules(
   enabledAlterations: Record<string, boolean>,
   debug?: boolean,
 ): ModulesDictionary {
-  const postLoadoutModules = updateModulesFromAlterations(
-    vehicle.modules,
-    vehicle.alterations.loadouts,
-    enabledAlterations,
-    debug,
-  );
+  const loadoutNames = Object.keys(vehicle.alterations.loadouts);
+  const selectedLoadoutName =
+    loadoutNames.find((name) => enabledAlterations[name]) || null;
+
+  const postLoadoutModules = selectedLoadoutName
+    ? updateModulesFromAlterations(
+        vehicle.modules,
+        {
+          [selectedLoadoutName]:
+            vehicle.alterations.loadouts[selectedLoadoutName],
+        },
+        { [selectedLoadoutName]: true },
+        debug,
+        selectedLoadoutName,
+      )
+    : vehicle.modules;
+
   const postAddonModules = updateModulesFromAlterations(
     postLoadoutModules,
     vehicle.alterations.addons,
     enabledAlterations,
     debug,
+    selectedLoadoutName,
   );
 
   return postAddonModules;
