@@ -67,6 +67,13 @@ export default function ShellProjectile() {
           </Stat>
         )}
 
+        {shell.rpm && (
+          <Stat label="Rounds per minute">
+            <FormatNumber value={shell.rpm} />
+            /min
+          </Stat>
+        )}
+
         {shell.reloadMultiplier && (
           <Stat label="Reload multiplier">
             <FormatNumber value={shell.reloadMultiplier} />x
