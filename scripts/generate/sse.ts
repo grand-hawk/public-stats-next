@@ -14,22 +14,43 @@ if (
   typeof EdgeRuntime !== 'string' &&
   environment !== 'development'
 ) {
-  const eventSource = new EventSource(
-    `https://${environment}.public-stats-data-sse.railway.astrid.ovh/events`,
-  );
+  const sseUrl = `https://${environment}.public-stats-data-sse.railway.astrid.ovh/events`;
+  const baseDelay = 4_000;
+  const maxDelay = 32_000;
 
-  eventSource.onopen = () => console.log('SSE connection opened');
+  let retryCount = 0;
 
-  eventSource.addEventListener(version, async (event) => {
-    const files: string[] = JSON.parse(JSON.parse(event.data));
+  function createEventSource() {
+    const eventSource = new EventSource(sseUrl);
 
-    console.log('SSE updates:', files.join(', '));
+    eventSource.onopen = () => {
+      console.log('SSE connection opened');
+      retryCount = 0; // Reset retry count on successful connection
+    };
 
-    for (const file of files)
-      await Promise.allSettled(
-        sse.listeners(file).map((callback) => Promise.resolve(callback())),
-      );
+    eventSource.onerror = (error) => {
+      console.error('SSE connection error:', error);
+      eventSource.close();
 
-    sse.emit('_settled');
-  });
+      const delay = Math.min(baseDelay * Math.pow(2, retryCount), maxDelay); // Exponential backoff capped at 32s
+      retryCount++;
+      console.log(`SSE retry ${retryCount} in ${delay / 1000}s`);
+      setTimeout(createEventSource, delay);
+    };
+
+    eventSource.addEventListener(version, async (event) => {
+      const files: string[] = JSON.parse(JSON.parse(event.data));
+
+      console.log('SSE updates:', files.join(', '));
+
+      for (const file of files)
+        await Promise.allSettled(
+          sse.listeners(file).map((callback) => Promise.resolve(callback())),
+        );
+
+      sse.emit('_settled');
+    });
+  }
+
+  createEventSource();
 }
