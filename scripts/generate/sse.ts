@@ -25,16 +25,16 @@ if (
 
     eventSource.onopen = () => {
       console.log('SSE connection opened');
-      retryCount = 0; // Reset retry count on successful connection
+      retryCount = 0;
     };
 
     eventSource.onerror = (error) => {
       console.error('SSE connection error:', error);
       eventSource.close();
 
-      const delay = Math.min(baseDelay * Math.pow(2, retryCount), maxDelay); // Exponential backoff capped at 32s
-      retryCount++;
-      console.log(`SSE retry ${retryCount} in ${delay / 1000}s`);
+      const delay = Math.min(baseDelay * Math.pow(2, retryCount), maxDelay);
+      retryCount += 1;
+      console.log(`SSE retry ${retryCount} in ${delay / 1_000}s`);
       setTimeout(createEventSource, delay);
     };
 
