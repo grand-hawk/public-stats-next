@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { EmptyState } from '@/components/ui/empty-state';
+import APS from '@/components/vehicles/vehicle/dynamic/modules/aps';
 import Defenses from '@/components/vehicles/vehicle/dynamic/modules/defenses';
 import Turrets from '@/components/vehicles/vehicle/dynamic/modules/turrets';
 import Vehicle from '@/components/vehicles/vehicle/dynamic/modules/vehicle';
@@ -16,6 +17,7 @@ export default function VehicleDynamicModules() {
     <>
       <Vehicle />
       <Defenses />
+      <APS />
       <Turrets />
     </>
   );
