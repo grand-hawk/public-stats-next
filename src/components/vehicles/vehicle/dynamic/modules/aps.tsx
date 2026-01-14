@@ -38,8 +38,8 @@ export default function APS() {
                     unit="degree"
                     unitDisplay="narrow"
                     value={aps.data.traverse.horizontal.min}
-                  />
-                  –
+                  />{' '}
+                  /{' '}
                   <FormatNumber
                     style="unit"
                     unit="degree"
@@ -57,8 +57,8 @@ export default function APS() {
                     unit="degree"
                     unitDisplay="narrow"
                     value={aps.data.traverse.vertical.min}
-                  />
-                  –
+                  />{' '}
+                  /{' '}
                   <FormatNumber
                     style="unit"
                     unit="degree"

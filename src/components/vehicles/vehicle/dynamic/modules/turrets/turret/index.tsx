@@ -108,8 +108,8 @@ export default function Turret({ turret }: { turret: TurretWithName }) {
                 unit="degree"
                 unitDisplay="narrow"
                 value={turret.data.traverse.vertical.min}
-              />
-              –
+              />{' '}
+              /{' '}
               <FormatNumber
                 style="unit"
                 unit="degree"
