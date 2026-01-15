@@ -5,6 +5,8 @@ import InfoTooltip from '@/components/infoTooltip';
 import Feature from '@/components/wiki/feature';
 import InlineCard from '@/components/wiki/inlineCard';
 import { StatsCell, StatsRoot, StatsRow } from '@/components/wiki/stats';
+import { useDynamicData } from '@/hooks/providers/dynamicData';
+import { getModulesByReferences } from '@/utils/alterations';
 import { betterSentenceCase } from '@/utils/betterSentenceCase';
 
 import type { TurretWithName } from '@/components/vehicles/vehicle/dynamic/modules/turrets';
@@ -40,11 +42,21 @@ export default function Sight({
   sight: TurretWithName['data']['sights'][number];
   sightIndex: number;
 }) {
+  const { assembledModules } = useDynamicData();
+
+  const sightAddons = getModulesByReferences<'TurretSightAddon'>(
+    sight.addons,
+    assembledModules,
+  );
+
   const features = [
     sight.fcs && (
       <Feature key="fcs" description="Fire control system" name="FCS" />
     ),
     sight.lead && <Feature key="lead" name="Lead" />,
+    ...sightAddons.map((addon) => (
+      <Feature key={addon.id} name={addon.data.name} />
+    )),
   ].filter(Boolean);
 
   const fovTooltip = (
