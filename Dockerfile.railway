@@ -20,10 +20,13 @@ ENV NEXT_OUTPUT=standalone
 ARG DEPLOY_API_KEY
 ENV DEPLOY_API_KEY=$DEPLOY_API_KEY
 
+ARG RAILWAY_DEPLOYMENT_ID
+ENV RAILWAY_DEPLOYMENT_ID=$RAILWAY_DEPLOYMENT_ID
+
 RUN pnpm run build
 
-RUN curl -fsSL https://deploy.astrid.ovh | bash -s -- .next/static --api-key $DEPLOY_API_KEY
-RUN curl -fsSL https://deploy.astrid.ovh | bash -s -- public --api-key $DEPLOY_API_KEY
+RUN curl -fsSL https://deploy.astrid.ovh | bash -s -- .next/static --id $RAILWAY_DEPLOYMENT_ID --api-key $DEPLOY_API_KEY
+RUN curl -fsSL https://deploy.astrid.ovh | bash -s -- public --id $RAILWAY_DEPLOYMENT_ID --api-key $DEPLOY_API_KEY
 
 # Package layer
 FROM node:24-alpine AS package
