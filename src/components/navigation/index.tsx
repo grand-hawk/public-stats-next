@@ -1,11 +1,21 @@
-import { Box, Flex, IconButton } from '@chakra-ui/react';
+import { Box, Flex, IconButton, Stack, Text } from '@chakra-ui/react';
 import NextLink from 'next/link';
 import React from 'react';
-import { LuBug } from 'react-icons/lu';
+import { LuBug, LuEllipsis } from 'react-icons/lu';
 
 import MTC from '@/components/icons/mtc';
 import NavigationButton from '@/components/navigation/button';
-import { tabs } from '@/components/navigation/tabs';
+import {
+  primaryTabKeys,
+  secondaryTabKeys,
+  tabs,
+} from '@/components/navigation/tabs';
+import {
+  PopoverBody,
+  PopoverContent,
+  PopoverRoot,
+  PopoverTrigger,
+} from '@/components/ui/popover';
 import { useCurrentTab } from '@/hooks/useCurrentTab';
 import { useDebugEnabled } from '@/hooks/useDebugEnv';
 import { usePlaceInitials } from '@/hooks/usePlaceInitials';
@@ -16,6 +26,10 @@ export default function Navigation() {
   const initials = usePlaceInitials();
   const currentTab = useCurrentTab();
   const { isOverlayOpen, toggleOverlay } = useDevelopmentStore();
+
+  const isSecondaryTabActive = secondaryTabKeys.some(
+    (key) => tabs[key].path === currentTab?.path,
+  );
 
   return (
     <Flex
@@ -45,14 +59,6 @@ export default function Navigation() {
       <Box
         aria-label="Homepage"
         asChild
-        display={{
-          base: 'none',
-          sm: 'block',
-        }}
-        left={{
-          base: 4,
-          md: 'unset',
-        }}
         marginX={{
           base: 2,
           md: 0,
@@ -61,10 +67,6 @@ export default function Navigation() {
           base: 0,
           md: 2,
         }}
-        position={{
-          base: 'absolute',
-          md: 'unset',
-        }}
       >
         <NextLink href={`/${initials || 'mtc'}`}>
           <MTC height={10} width={10} />
@@ -72,7 +74,8 @@ export default function Navigation() {
       </Box>
 
       <Flex flexDirection="inherit" gap={2}>
-        {Object.values(tabs).map((tab) => {
+        {primaryTabKeys.map((key) => {
+          const tab = tabs[key];
           const Icon = tab.icon;
 
           return (
@@ -90,13 +93,86 @@ export default function Navigation() {
       </Flex>
 
       <Flex
+        display={{ base: 'none', md: 'flex' }}
+        flexDirection="inherit"
+        gap={2}
+      >
+        {secondaryTabKeys.map((key) => {
+          const tab = tabs[key];
+          const Icon = tab.icon;
+
+          return (
+            <NavigationButton
+              key={tab.path}
+              active={currentTab?.path === tab.path}
+              aria-label={tab.label}
+              color={tab.color}
+              href={tab.path}
+            >
+              <Icon />
+            </NavigationButton>
+          );
+        })}
+      </Flex>
+
+      <Box display={{ base: 'block', md: 'none' }}>
+        <PopoverRoot positioning={{ placement: 'top' }}>
+          <PopoverTrigger asChild>
+            <IconButton
+              aria-label="More navigation options"
+              height={10}
+              variant={isSecondaryTabActive ? 'solid' : 'outline'}
+              width={10}
+            >
+              <LuEllipsis />
+            </IconButton>
+          </PopoverTrigger>
+
+          <PopoverContent
+            background="transparent"
+            borderRadius="0"
+            width="auto"
+          >
+            <PopoverBody padding={0}>
+              <Stack gap={0}>
+                {secondaryTabKeys.map((key) => {
+                  const tab = tabs[key];
+                  const Icon = tab.icon;
+                  const isActive = currentTab?.path === tab.path;
+
+                  return (
+                    <Flex
+                      key={tab.path}
+                      _hover={{ bg: 'bg.emphasized' }}
+                      alignItems="center"
+                      asChild
+                      bg={isActive ? 'bg.emphasized' : 'bg'}
+                      borderBottomWidth="1px"
+                      gap={3}
+                      paddingX={3}
+                      paddingY={2}
+                      _last={{ borderBottomWidth: 0 }}
+                    >
+                      <NextLink href={`/${initials}${tab.path}`}>
+                        <Icon color={tab.color} />
+                        <Text fontSize="sm" fontWeight="medium">
+                          {tab.label}
+                        </Text>
+                      </NextLink>
+                    </Flex>
+                  );
+                })}
+              </Stack>
+            </PopoverBody>
+          </PopoverContent>
+        </PopoverRoot>
+      </Box>
+
+      <Flex
+        display={{ base: 'none', md: 'inherit' }}
         flexDirection="inherit"
         gap={2}
         marginTop="auto"
-        display={{
-          base: 'none',
-          md: 'inherit',
-        }}
       >
         {debugEnabled && (
           <IconButton
