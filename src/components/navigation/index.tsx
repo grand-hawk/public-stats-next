@@ -6,7 +6,6 @@ import { LuBug, LuEllipsis } from 'react-icons/lu';
 import MTC from '@/components/icons/mtc';
 import NavigationButton from '@/components/navigation/button';
 import {
-  primaryTabKeys,
   secondaryTabKeys,
   tabs,
 } from '@/components/navigation/tabs';
@@ -74,99 +73,82 @@ export default function Navigation() {
       </Box>
 
       <Flex flexDirection="inherit" gap={2}>
-        {primaryTabKeys.map((key) => {
-          const tab = tabs[key];
+        {Object.entries(tabs).map(([key, tab]) => {
           const Icon = tab.icon;
+          const isSecondary = (secondaryTabKeys as readonly string[]).includes(
+            key,
+          );
 
           return (
-            <NavigationButton
+            <Box
               key={tab.path}
-              active={currentTab?.path === tab.path}
-              aria-label={tab.label}
-              color={tab.color}
-              href={tab.path}
+              display={isSecondary ? { base: 'none', md: 'block' } : 'block'}
             >
-              <Icon />
-            </NavigationButton>
+              <NavigationButton
+                active={currentTab?.path === tab.path}
+                aria-label={tab.label}
+                color={tab.color}
+                href={tab.path}
+              >
+                <Icon />
+              </NavigationButton>
+            </Box>
           );
         })}
-      </Flex>
 
-      <Flex
-        display={{ base: 'none', md: 'flex' }}
-        flexDirection="inherit"
-        gap={2}
-      >
-        {secondaryTabKeys.map((key) => {
-          const tab = tabs[key];
-          const Icon = tab.icon;
+        <Box display={{ base: 'block', md: 'none' }}>
+          <PopoverRoot positioning={{ placement: 'top' }}>
+            <PopoverTrigger asChild>
+              <IconButton
+                aria-label="More navigation options"
+                height={10}
+                variant={isSecondaryTabActive ? 'solid' : 'outline'}
+                width={10}
+              >
+                <LuEllipsis />
+              </IconButton>
+            </PopoverTrigger>
 
-          return (
-            <NavigationButton
-              key={tab.path}
-              active={currentTab?.path === tab.path}
-              aria-label={tab.label}
-              color={tab.color}
-              href={tab.path}
+            <PopoverContent
+              background="transparent"
+              borderRadius="0"
+              width="auto"
             >
-              <Icon />
-            </NavigationButton>
-          );
-        })}
+              <PopoverBody padding={0}>
+                <Stack gap={0}>
+                  {secondaryTabKeys.map((key) => {
+                    const tab = tabs[key];
+                    const Icon = tab.icon;
+                    const isActive = currentTab?.path === tab.path;
+
+                    return (
+                      <Flex
+                        key={tab.path}
+                        _hover={{ bg: 'bg.emphasized' }}
+                        alignItems="center"
+                        asChild
+                        bg={isActive ? 'bg.emphasized' : 'bg'}
+                        borderBottomWidth="1px"
+                        gap={3}
+                        paddingX={3}
+                        paddingY={2}
+                        _last={{ borderBottomWidth: 0 }}
+                      >
+                        <NextLink href={`/${initials}${tab.path}`}>
+                          <Icon color={tab.color} />
+                          <Text fontSize="sm" fontWeight="medium">
+                            {tab.label}
+                          </Text>
+                        </NextLink>
+                      </Flex>
+                    );
+                  })}
+                </Stack>
+              </PopoverBody>
+            </PopoverContent>
+          </PopoverRoot>
+        </Box>
       </Flex>
-
-      <Box display={{ base: 'block', md: 'none' }}>
-        <PopoverRoot positioning={{ placement: 'top' }}>
-          <PopoverTrigger asChild>
-            <IconButton
-              aria-label="More navigation options"
-              height={10}
-              variant={isSecondaryTabActive ? 'solid' : 'outline'}
-              width={10}
-            >
-              <LuEllipsis />
-            </IconButton>
-          </PopoverTrigger>
-
-          <PopoverContent
-            background="transparent"
-            borderRadius="0"
-            width="auto"
-          >
-            <PopoverBody padding={0}>
-              <Stack gap={0}>
-                {secondaryTabKeys.map((key) => {
-                  const tab = tabs[key];
-                  const Icon = tab.icon;
-                  const isActive = currentTab?.path === tab.path;
-
-                  return (
-                    <Flex
-                      key={tab.path}
-                      _hover={{ bg: 'bg.emphasized' }}
-                      alignItems="center"
-                      asChild
-                      bg={isActive ? 'bg.emphasized' : 'bg'}
-                      borderBottomWidth="1px"
-                      gap={3}
-                      paddingX={3}
-                      paddingY={2}
-                      _last={{ borderBottomWidth: 0 }}
-                    >
-                      <NextLink href={`/${initials}${tab.path}`}>
-                        <Icon color={tab.color} />
-                        <Text fontSize="sm" fontWeight="medium">
-                          {tab.label}
-                        </Text>
-                      </NextLink>
-                    </Flex>
-                  );
-                })}
-              </Stack>
-            </PopoverBody>
-          </PopoverContent>
-        </PopoverRoot>
-      </Box>
 
       <Flex
         display={{ base: 'none', md: 'inherit' }}
