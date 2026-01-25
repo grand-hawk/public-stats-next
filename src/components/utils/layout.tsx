@@ -28,10 +28,11 @@ export default function Layout({
         }}
         gridTemplateRows={{
           base: '1fr max-content',
-          md: 'unset',
+          md: '1fr',
         }}
         height="100svh"
         maxWidth="1920px"
+        overflow="clip"
         width="100%"
       >
         <Navigation />
@@ -39,12 +40,14 @@ export default function Layout({
         <Box
           display="grid"
           gridTemplateRows="max-content 1fr"
-          overflow="hidden"
+          minHeight="0"
+          overflow="clip"
         >
           <PlaceSwitchBar overwriteTabLabel={overwriteTabLabel} />
 
           <Box
-            overflow="auto"
+            minHeight="0"
+            overflow={noPadding ? 'visible' : 'auto'}
             padding={
               noPadding
                 ? undefined

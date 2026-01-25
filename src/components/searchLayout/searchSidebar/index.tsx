@@ -34,7 +34,8 @@ export default function SearchSidebar({
         md: 'unset',
       }}
       left={0}
-      overflow="hidden"
+      minHeight="0"
+      overflow="clip"
       position={{ base: 'absolute', md: 'unset' }}
       role="search"
       transition="height 0.3s ease-in-out"

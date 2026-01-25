@@ -23,7 +23,8 @@ export default function SearchLayout({
         md: '1fr',
       }}
       height="100%"
-      overflow="hidden"
+      minHeight="0"
+      overflow="clip"
       position="relative"
       width="100%"
     >
@@ -32,6 +33,7 @@ export default function SearchLayout({
       <Box
         as="main"
         marginBottom={{ base: SEARCH_INPUT_HEIGHT, md: 0 }}
+        minHeight="0"
         overflow="auto"
       >
         <Suspense fallback={<CenterSpinner />}>{children}</Suspense>
