@@ -26,7 +26,10 @@ ENV NEXT_PUBLIC_MEDIA_PREFIX="${ASSET_PREFIX}"
 RUN pnpm run build
 
 RUN curl -fsSL https://deploy.astrid.ovh | bash -s -- .next/static --id $RAILWAY_GIT_COMMIT_SHA --api-key $DEPLOY_API_KEY
+RUN rm -rf .next/static
+
 RUN curl -fsSL https://deploy.astrid.ovh | bash -s -- public --id $RAILWAY_GIT_COMMIT_SHA --api-key $DEPLOY_API_KEY
+RUN rm -rf public
 
 # Package layer
 FROM node:24-alpine AS package
