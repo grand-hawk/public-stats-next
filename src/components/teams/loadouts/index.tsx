@@ -1,11 +1,14 @@
-import { Box, Tabs, useTabs } from '@chakra-ui/react';
+import { Box, Tabs } from '@chakra-ui/react';
 import NextLink from 'next/link';
+import { useQueryState } from 'nuqs';
 import React from 'react';
 import { GrDocumentMissing } from 'react-icons/gr';
+import slug from 'slug';
 
 import LoadoutVehiclesGrid from '@/components/teams/loadouts/grid';
 import { EmptyState } from '@/components/ui/empty-state';
 import TitledCard from '@/components/wiki/titledCard';
+import { slugifyArray } from '@/utils/slugifyArray';
 
 import type { Team } from '@/server/api/trpc/routers/teams';
 
@@ -20,9 +23,17 @@ export default function TeamLoadouts({ initials, team }: TeamLoadoutsProps) {
     [team.loadouts],
   );
 
-  const tabs = useTabs({
-    defaultValue: loadoutNames[0],
-  });
+  const loadoutSlugs = React.useMemo(
+    () => slugifyArray(loadoutNames),
+    [loadoutNames],
+  );
+
+  const [loadoutQuery, setLoadoutQuery] = useQueryState('loadout');
+
+  const selectedLoadout =
+    loadoutQuery && loadoutSlugs[loadoutQuery]
+      ? loadoutSlugs[loadoutQuery]
+      : loadoutNames[0];
 
   if (loadoutNames.length === 0) {
     return (
@@ -43,7 +54,11 @@ export default function TeamLoadouts({ initials, team }: TeamLoadoutsProps) {
       withAnchor
     >
       <Box data-md-ignore>
-        <Tabs.RootProvider lazyMount value={tabs}>
+        <Tabs.Root
+          lazyMount
+          onValueChange={(e) => setLoadoutQuery(slug(e.value))}
+          value={selectedLoadout}
+        >
           <Box
             _scrollbar={{ height: '2px' }}
             borderBottomWidth="1px"
@@ -74,7 +89,7 @@ export default function TeamLoadouts({ initials, team }: TeamLoadoutsProps) {
               />
             </Tabs.Content>
           ))}
-        </Tabs.RootProvider>
+        </Tabs.Root>
       </Box>
 
       <div data-md-show style={{ display: 'none' }}>

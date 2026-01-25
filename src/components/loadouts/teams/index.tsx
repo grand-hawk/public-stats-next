@@ -1,12 +1,15 @@
-import { Box, HStack, Tabs, useTabs } from '@chakra-ui/react';
+import { Box, HStack, Tabs } from '@chakra-ui/react';
 import NextLink from 'next/link';
+import { useQueryState } from 'nuqs';
 import React from 'react';
 import { GrDocumentMissing } from 'react-icons/gr';
+import slug from 'slug';
 
 import TeamIcon from '@/components/icons/teams';
 import LoadoutVehiclesGrid from '@/components/teams/loadouts/grid';
 import { EmptyState } from '@/components/ui/empty-state';
 import TitledCard from '@/components/wiki/titledCard';
+import { slugifyArray } from '@/utils/slugifyArray';
 
 import type { Loadout } from '@/server/api/trpc/routers/loadouts';
 
@@ -21,9 +24,12 @@ export default function LoadoutTeams({ initials, loadout }: LoadoutTeamsProps) {
     [loadout.teams],
   );
 
-  const tabs = useTabs({
-    defaultValue: teamNames[0],
-  });
+  const teamSlugs = React.useMemo(() => slugifyArray(teamNames), [teamNames]);
+
+  const [teamQuery, setTeamQuery] = useQueryState('team');
+
+  const selectedTeam =
+    teamQuery && teamSlugs[teamQuery] ? teamSlugs[teamQuery] : teamNames[0];
 
   if (teamNames.length === 0) {
     return (
@@ -39,7 +45,11 @@ export default function LoadoutTeams({ initials, loadout }: LoadoutTeamsProps) {
   return (
     <TitledCard as="section" innerPadding={0} title="Teams" withAnchor>
       <Box data-md-ignore>
-        <Tabs.RootProvider lazyMount value={tabs}>
+        <Tabs.Root
+          lazyMount
+          onValueChange={(e) => setTeamQuery(slug(e.value))}
+          value={selectedTeam}
+        >
           <Box
             _scrollbar={{ height: '2px' }}
             borderBottomWidth="1px"
@@ -73,7 +83,7 @@ export default function LoadoutTeams({ initials, loadout }: LoadoutTeamsProps) {
               />
             </Tabs.Content>
           ))}
-        </Tabs.RootProvider>
+        </Tabs.Root>
       </Box>
 
       <div data-md-show style={{ display: 'none' }}>
