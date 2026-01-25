@@ -5,10 +5,7 @@ import { LuBug, LuEllipsis } from 'react-icons/lu';
 
 import MTC from '@/components/icons/mtc';
 import NavigationButton from '@/components/navigation/button';
-import {
-  secondaryTabKeys,
-  tabs,
-} from '@/components/navigation/tabs';
+import { secondaryTabKeys, tabs } from '@/components/navigation/tabs';
 import {
   PopoverBody,
   PopoverContent,

@@ -40,11 +40,18 @@ export default function LoadoutTeams({ initials, loadout }: LoadoutTeamsProps) {
     <TitledCard as="section" innerPadding={0} title="Teams" withAnchor>
       <Box data-md-ignore>
         <Tabs.RootProvider lazyMount value={tabs}>
-          <Box borderBottomWidth="1px" paddingX={3}>
+          <Box
+            _scrollbar={{ height: '2px' }}
+            borderBottomWidth="1px"
+            overflowX="auto"
+            overflowY="hidden"
+            paddingX={3}
+          >
             <Tabs.List border="0">
               {teamNames.map((team) => (
                 <Tabs.Trigger
                   colorPalette="teal"
+                  flexShrink={0}
                   key={team}
                   textStyle="sm"
                   value={team}

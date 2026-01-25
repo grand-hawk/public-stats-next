@@ -44,11 +44,18 @@ export default function TeamLoadouts({ initials, team }: TeamLoadoutsProps) {
     >
       <Box data-md-ignore>
         <Tabs.RootProvider lazyMount value={tabs}>
-          <Box borderBottomWidth="1px" paddingX={3}>
+          <Box
+            _scrollbar={{ height: '2px' }}
+            borderBottomWidth="1px"
+            overflowX="auto"
+            overflowY="hidden"
+            paddingX={3}
+          >
             <Tabs.List border="0">
               {loadoutNames.map((loadout) => (
                 <Tabs.Trigger
                   colorPalette="teal"
+                  flexShrink={0}
                   key={loadout}
                   textStyle="sm"
                   value={loadout}
