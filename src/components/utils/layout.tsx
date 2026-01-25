@@ -47,7 +47,7 @@ export default function Layout({
 
           <Box
             minHeight="0"
-            overflow={noPadding ? 'visible' : 'auto'}
+            overflow="auto"
             padding={
               noPadding
                 ? undefined
