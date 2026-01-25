@@ -43,4 +43,4 @@ EXPOSE 3000
 ENV PORT=3000
 ENV HOSTNAME="0.0.0.0"
 
-CMD ["sh", "-c", "export NEXT_PUBLIC_ASSET_PREFIX=$(cat ASSET_PREFIX) && node server.js"]
+CMD ["/bin/sh", "-c", "export NEXT_PUBLIC_ASSET_PREFIX=$(cat ASSET_PREFIX) && node server.js"]
