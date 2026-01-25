@@ -5,8 +5,8 @@ import React from 'react';
 import { GrDocumentMissing } from 'react-icons/gr';
 import slugify from 'slug';
 
-import TeamHeader from '@/components/teams/header';
-import TeamLoadouts from '@/components/teams/loadouts';
+import LoadoutHeader from '@/components/loadouts/header';
+import LoadoutTeams from '@/components/loadouts/teams';
 import { EmptyState } from '@/components/ui/empty-state';
 import Layout from '@/components/utils/layout';
 import { usePlace } from '@/hooks/usePlace';
@@ -14,31 +14,31 @@ import { useRouterQuery } from '@/hooks/useRouterQuery';
 import { formatTitle } from '@/utils/formatTitle';
 import { trpc } from '@/utils/trpc';
 
-export default function PlaceTeam() {
+export default function PlaceLoadout() {
   const router = useRouter();
-  const teamQuery = useRouterQuery('team')!;
-  const teamSlug = slugify(teamQuery);
+  const loadoutQuery = useRouterQuery('loadout')!;
+  const loadoutSlug = slugify(loadoutQuery);
   const place = usePlace()!;
 
-  const [team] = trpc.teams.bySlug.useSuspenseQuery({
+  const [loadout] = trpc.loadouts.bySlug.useSuspenseQuery({
     placeId: place.placeId,
-    slug: teamSlug,
+    slug: loadoutSlug,
   });
 
   React.useEffect(() => {
-    if (!team) return;
+    if (!loadout) return;
 
-    if (teamQuery !== teamSlug)
+    if (loadoutQuery !== loadoutSlug)
       router.replace({
         pathname: router.pathname,
         query: {
           ...router.query,
-          team: teamSlug,
+          loadout: loadoutSlug,
         },
       });
-  }, [router, teamQuery, team, teamSlug]);
+  }, [router, loadoutQuery, loadout, loadoutSlug]);
 
-  const title = team ? team.name : 'Team not found';
+  const title = loadout ? loadout.name : 'Loadout not found';
 
   return (
     <>
@@ -49,28 +49,30 @@ export default function PlaceTeam() {
         <meta content={title} name="twitter:title" />
       </Head>
 
-      <Layout noPadding>
-        {team ? (
+      <Layout noPadding overwriteTabLabel={loadout?.name}>
+        {loadout ? (
           <Flex
             justifyContent="center"
             marginBottom={{ base: 4, md: 0 }}
             padding={{ base: 0, md: 2, lg: 4 }}
           >
             <Stack
-              aria-labelledby="team-page-title"
               as="article"
               data-md-target
               gap={4}
               maxWidth="5xl"
               width="100%"
             >
-              <TeamHeader initials={place.initials} name={team.name} />
-              <TeamLoadouts initials={place.initials} team={team} />
+              <LoadoutHeader initials={place.initials} name={loadout.name} />
+              <LoadoutTeams initials={place.initials} loadout={loadout} />
             </Stack>
           </Flex>
         ) : (
           <Flex alignItems="center" height="100%">
-            <EmptyState icon={<GrDocumentMissing />} title="Team not found" />
+            <EmptyState
+              icon={<GrDocumentMissing />}
+              title="Loadout not found"
+            />
           </Flex>
         )}
       </Layout>

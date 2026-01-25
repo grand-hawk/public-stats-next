@@ -1,33 +1,41 @@
+import { markdownTable } from 'markdown-table';
+
 import { createCache } from '@/server/utils/createCache';
-import { formatMarkdown } from '@/server/utils/formatMarkdown';
+import {
+  escapeMarkdownLink,
+  formatMarkdown,
+} from '@/server/utils/formatMarkdown';
 import { getNameFromInitials, getPlaceFromName } from '@/utils/placeUtils';
 import { getConfig } from '@generated/config';
-import { getShells } from '@generated/shells';
+import { getLoadouts } from '@generated/loadouts';
 
 import type { PlaceName } from '@generated/config';
 import type { GetServerSidePropsContext } from 'next';
 
-const LINKS = [
-  { file: 'kdr.md', label: 'K/D table' },
-  { file: 'loadouts.md', label: 'Loadouts' },
-  { file: 'shells.md', label: 'Shells' },
-  { file: 'teams.md', label: 'Teams' },
-  { file: 'vehicles.md', label: 'Vehicles' },
-];
-
 async function revalidate(placeName: PlaceName) {
-  const shells = getShells();
+  const loadouts = getLoadouts();
   const { data: config } = getConfig();
   const place = getPlaceFromName(config, placeName);
 
-  const shellsData = shells.data[place.placeId]?.data;
-  if (!shellsData) return null;
+  const loadoutsData = loadouts.data[place.placeId];
+  if (!loadoutsData) return null;
 
-  const links = LINKS.map(
-    ({ file, label }) => `- [${label}](/md/${place.initials}/${file})`,
-  ).join('\n');
+  const loadoutNames = loadoutsData.metadata.loadouts;
 
-  const markdown = await formatMarkdown(`# ${place.placeName}\n\n${links}`);
+  const table = markdownTable([
+    ['Loadout name', 'Teams', 'Description'],
+    ...loadoutNames.map((loadoutName) => {
+      const loadout = loadoutsData.data[loadoutName];
+
+      return [
+        `[${escapeMarkdownLink(loadoutName)}](/md/${place.initials}/loadouts/${encodeURIComponent(loadoutName)}.md)`,
+        loadout?.teams.join(', ') ?? '',
+        loadout?.description ?? '',
+      ];
+    }),
+  ]);
+
+  const markdown = await formatMarkdown(`# Loadouts\n\n${table}`);
 
   return markdown;
 }
@@ -66,6 +74,6 @@ export async function getServerSideProps({
   return { props: {} };
 }
 
-export default function Index() {
+export default function Loadouts() {
   return null;
 }

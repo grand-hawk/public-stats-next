@@ -2,7 +2,7 @@ import { Icon } from '@chakra-ui/react';
 import React from 'react';
 import { GiArtilleryShell } from 'react-icons/gi';
 import { ImTable } from 'react-icons/im';
-import { MdOutlineSsidChart } from 'react-icons/md';
+import { MdFlag, MdOutlineSsidChart, MdViewList } from 'react-icons/md';
 import { TbTank } from 'react-icons/tb';
 
 import type { IconProps } from '@chakra-ui/react';
@@ -39,6 +39,28 @@ export const tabs: Record<string, Tab> = {
     icon: (props: IconProps) => (
       <Icon height={5} width={5} {...props}>
         <GiArtilleryShell />
+      </Icon>
+    ),
+  },
+  teams: {
+    label: 'Teams',
+    path: '/teams',
+    color: 'red.500',
+    description: 'Browse faction vehicle selections and compositions by team.',
+    icon: (props: IconProps) => (
+      <Icon height={5} width={5} {...props}>
+        <MdFlag />
+      </Icon>
+    ),
+  },
+  loadouts: {
+    label: 'Loadouts',
+    path: '/loadouts',
+    color: 'cyan.500',
+    description: 'Explore era-based loadouts and compare team compositions.',
+    icon: (props: IconProps) => (
+      <Icon height={5} width={5} {...props}>
+        <MdViewList />
       </Icon>
     ),
   },

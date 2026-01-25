@@ -1,33 +1,42 @@
+import { markdownTable } from 'markdown-table';
+
 import { createCache } from '@/server/utils/createCache';
-import { formatMarkdown } from '@/server/utils/formatMarkdown';
+import {
+  escapeMarkdownLink,
+  formatMarkdown,
+} from '@/server/utils/formatMarkdown';
 import { getNameFromInitials, getPlaceFromName } from '@/utils/placeUtils';
 import { getConfig } from '@generated/config';
-import { getShells } from '@generated/shells';
+import { getLoadouts } from '@generated/loadouts';
 
 import type { PlaceName } from '@generated/config';
 import type { GetServerSidePropsContext } from 'next';
 
-const LINKS = [
-  { file: 'kdr.md', label: 'K/D table' },
-  { file: 'loadouts.md', label: 'Loadouts' },
-  { file: 'shells.md', label: 'Shells' },
-  { file: 'teams.md', label: 'Teams' },
-  { file: 'vehicles.md', label: 'Vehicles' },
-];
-
 async function revalidate(placeName: PlaceName) {
-  const shells = getShells();
+  const loadouts = getLoadouts();
   const { data: config } = getConfig();
   const place = getPlaceFromName(config, placeName);
 
-  const shellsData = shells.data[place.placeId]?.data;
-  if (!shellsData) return null;
+  const loadoutsData = loadouts.data[place.placeId];
+  if (!loadoutsData) return null;
 
-  const links = LINKS.map(
-    ({ file, label }) => `- [${label}](/md/${place.initials}/${file})`,
-  ).join('\n');
+  const teams = loadoutsData.metadata.teams;
 
-  const markdown = await formatMarkdown(`# ${place.placeName}\n\n${links}`);
+  const table = markdownTable([
+    ['Team name', 'Loadouts'],
+    ...teams.map((team) => {
+      const teamLoadouts = Object.entries(loadoutsData.data)
+        .filter(([, loadout]) => loadout.teams.includes(team))
+        .map(([name]) => name);
+
+      return [
+        `[${escapeMarkdownLink(team)}](/md/${place.initials}/teams/${encodeURIComponent(team)}.md)`,
+        teamLoadouts.join(', '),
+      ];
+    }),
+  ]);
+
+  const markdown = await formatMarkdown(`# Teams\n\n${table}`);
 
   return markdown;
 }
@@ -66,6 +75,6 @@ export async function getServerSideProps({
   return { props: {} };
 }
 
-export default function Index() {
+export default function Teams() {
   return null;
 }

@@ -1,0 +1,108 @@
+import { Box, HStack, Tabs, useTabs } from '@chakra-ui/react';
+import NextLink from 'next/link';
+import React from 'react';
+import { GrDocumentMissing } from 'react-icons/gr';
+
+import TeamIcon from '@/components/icons/teams';
+import LoadoutVehiclesGrid from '@/components/teams/loadouts/grid';
+import { EmptyState } from '@/components/ui/empty-state';
+import TitledCard from '@/components/wiki/titledCard';
+
+import type { Loadout } from '@/server/api/trpc/routers/loadouts';
+
+interface LoadoutTeamsProps {
+  initials: string;
+  loadout: Loadout;
+}
+
+export default function LoadoutTeams({ initials, loadout }: LoadoutTeamsProps) {
+  const teamNames = React.useMemo(
+    () => Object.keys(loadout.teams),
+    [loadout.teams],
+  );
+
+  const tabs = useTabs({
+    defaultValue: teamNames[0],
+  });
+
+  if (teamNames.length === 0) {
+    return (
+      <TitledCard as="section" title="Teams" withAnchor>
+        <EmptyState
+          icon={<GrDocumentMissing />}
+          title="This loadout has no teams"
+        />
+      </TitledCard>
+    );
+  }
+
+  return (
+    <TitledCard as="section" innerPadding={0} title="Teams" withAnchor>
+      <Box data-md-ignore>
+        <Tabs.RootProvider lazyMount value={tabs}>
+          <Box borderBottomWidth="1px" paddingX={3}>
+            <Tabs.List border="0">
+              {teamNames.map((team) => (
+                <Tabs.Trigger
+                  colorPalette="teal"
+                  key={team}
+                  textStyle="sm"
+                  value={team}
+                >
+                  <HStack gap={1.5}>
+                    <TeamIcon team={team} />
+                    <span>{team}</span>
+                  </HStack>
+                </Tabs.Trigger>
+              ))}
+            </Tabs.List>
+          </Box>
+
+          {teamNames.map((team) => (
+            <Tabs.Content key={team} padding={0} value={team}>
+              <LoadoutVehiclesGrid
+                initials={initials}
+                vehicles={loadout.teams[team]}
+              />
+            </Tabs.Content>
+          ))}
+        </Tabs.RootProvider>
+      </Box>
+
+      <div data-md-show style={{ display: 'none' }}>
+        {teamNames.map((teamName) => {
+          const vehicles = Object.entries(loadout.teams[teamName]);
+          return (
+            <React.Fragment key={teamName}>
+              <h3>{teamName}</h3>
+              <table>
+                <thead>
+                  <tr>
+                    <th>Vehicle</th>
+                    <th>Role</th>
+                    <th>Tier</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {vehicles.map(([name, vehicle]) => (
+                    <tr key={name}>
+                      <td>
+                        <NextLink
+                          href={`/${initials}/vehicles/${vehicle.slug}`}
+                        >
+                          {name}
+                        </NextLink>
+                      </td>
+                      <td>{vehicle.role}</td>
+                      <td>{vehicle.tier}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </React.Fragment>
+          );
+        })}
+      </div>
+    </TitledCard>
+  );
+}
