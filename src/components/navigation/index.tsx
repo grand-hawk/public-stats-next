@@ -19,6 +19,7 @@ export default function Navigation() {
 
   return (
     <Flex
+      alignItems="center"
       as="nav"
       borderRightWidth={{
         base: '0px',
@@ -34,11 +35,24 @@ export default function Navigation() {
       }}
       gap={2}
       gridRow={{ base: '2', md: 'unset' }}
+      justifyContent={{
+        base: 'center',
+        md: 'unset',
+      }}
       padding={2}
+      position="relative"
     >
       <Box
         aria-label="Homepage"
         asChild
+        display={{
+          base: 'none',
+          sm: 'block',
+        }}
+        left={{
+          base: 4,
+          md: 'unset',
+        }}
         marginX={{
           base: 2,
           md: 0,
@@ -47,28 +61,17 @@ export default function Navigation() {
           base: 0,
           md: 2,
         }}
+        position={{
+          base: 'absolute',
+          md: 'unset',
+        }}
       >
         <NextLink href={`/${initials || 'mtc'}`}>
           <MTC height={10} width={10} />
         </NextLink>
       </Box>
 
-      <Flex
-        flexDirection="inherit"
-        gap={2}
-        left={{
-          base: '50%',
-          md: 'unset',
-        }}
-        position={{
-          base: 'absolute',
-          md: 'unset',
-        }}
-        transform={{
-          base: 'translateX(-50%)',
-          md: 'unset',
-        }}
-      >
+      <Flex flexDirection="inherit" gap={2}>
         {Object.values(tabs).map((tab) => {
           const Icon = tab.icon;
 
