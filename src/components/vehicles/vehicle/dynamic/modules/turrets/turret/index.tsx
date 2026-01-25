@@ -100,24 +100,26 @@ export default function Turret({ turret }: { turret: TurretWithName }) {
               </StatsRow>
             </>
           )}
-          <StatsRow withPaddingLeft>
-            <StatsCell>Vertical limits</StatsCell>
-            <StatsCell>
-              <FormatNumber
-                style="unit"
-                unit="degree"
-                unitDisplay="narrow"
-                value={turret.data.traverse.vertical.min}
-              />{' '}
-              /{' '}
-              <FormatNumber
-                style="unit"
-                unit="degree"
-                unitDisplay="narrow"
-                value={turret.data.traverse.vertical.max}
-              />
-            </StatsCell>
-          </StatsRow>
+          {turret.data.traverse.vertical && (
+            <StatsRow withPaddingLeft>
+              <StatsCell>Vertical limits</StatsCell>
+              <StatsCell>
+                <FormatNumber
+                  style="unit"
+                  unit="degree"
+                  unitDisplay="narrow"
+                  value={turret.data.traverse.vertical.min}
+                />{' '}
+                /{' '}
+                <FormatNumber
+                  style="unit"
+                  unit="degree"
+                  unitDisplay="narrow"
+                  value={turret.data.traverse.vertical.max}
+                />
+              </StatsCell>
+            </StatsRow>
+          )}
         </StatsRoot>
 
         <Weapons
