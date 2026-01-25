@@ -21,6 +21,11 @@ const nextConfig: NextConfig = {
         destination: `/mtc/vehicles/:slug`,
         permanent: true,
       },
+      {
+        source: '/:path((?!md/).*\\.md)',
+        destination: '/md/:path',
+        permanent: true,
+      },
     ];
   },
 };
