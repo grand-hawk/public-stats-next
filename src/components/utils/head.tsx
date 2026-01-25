@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import React from 'react';
 
+import { MEDIA_PREFIX } from '@/env';
 import { useCurrentTab } from '@/hooks/useCurrentTab';
 import { usePlaceInitials } from '@/hooks/usePlaceInitials';
 import { formatTitle } from '@/utils/formatTitle';
@@ -23,7 +24,11 @@ export default function InternalHead({ children }: PropsWithChildren) {
   return (
     <Head>
       <title>{formatTitle(currentTab?.label, initials)}</title>
-      <link href="/favicon.ico" rel="icon" type="image/x-icon" />
+      <link
+        href={`${MEDIA_PREFIX}/favicon.ico`}
+        rel="icon"
+        type="image/x-icon"
+      />
 
       <meta content="website" property="og:type" />
       <meta content="index,follow" name="robots" />
