@@ -28,6 +28,8 @@ const nextConfig: NextConfig = {
       },
     ];
   },
+
+  assetPrefix: process.env.ASSET_PREFIX ?? '',
 };
 
 const withBundleAnalyzer = bundleAnalyzer({

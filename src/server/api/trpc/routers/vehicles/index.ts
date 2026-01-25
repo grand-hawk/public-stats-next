@@ -2,6 +2,7 @@ import { existsSync } from 'node:fs';
 
 import z from 'zod';
 
+import { MEDIA_PREFIX } from '@/env';
 import { createTRPCRouter, publicProcedure } from '@/server/api/trpc/context';
 import { getBaseUrl } from '@/utils/trpc';
 import { getConfig } from '@generated/config';
@@ -47,7 +48,7 @@ const imageCache = new Map<string, string | null>();
 export function getVehicleImage(slug: string) {
   let cachedImage = imageCache.get(slug);
   if (cachedImage === undefined) {
-    const imageUrl = `/assets/vehicles/${slug}.png`;
+    const imageUrl = `${MEDIA_PREFIX}/assets/vehicles/${slug}.png`;
     const imageResult =
       !imageUrl.startsWith('/') || existsSync(`./public${imageUrl}`)
         ? imageUrl

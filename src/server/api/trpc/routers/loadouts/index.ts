@@ -1,6 +1,7 @@
 import slug from 'slug';
 import { z } from 'zod';
 
+import { MEDIA_PREFIX } from '@/env';
 import { createTRPCRouter, publicProcedure } from '@/server/api/trpc/context';
 import { getVehicleImage } from '@/server/api/trpc/routers/vehicles';
 import { getLoadouts } from '@generated/loadouts';
@@ -40,7 +41,7 @@ export const loadoutsRouter = createTRPCRouter({
           description: loadoutData?.description ?? '',
           name: loadoutName,
           slug: loadoutSlug,
-          thumbnail: `/assets/loadouts/thumbnails/${loadoutSlug}.png`,
+          thumbnail: `${MEDIA_PREFIX}/assets/loadouts/thumbnails/${loadoutSlug}.png`,
         };
       });
     }),

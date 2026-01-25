@@ -20,6 +20,7 @@ export const env = createEnv({
   client: {
     NEXT_PUBLIC_ANALYTICS_DOMAIN: z.string().url().optional(),
     NEXT_PUBLIC_ANALYTICS_ID: z.string().uuid().optional(),
+    NEXT_PUBLIC_MEDIA_PREFIX: z.string().url().optional(),
   },
 
   /**
@@ -31,6 +32,8 @@ export const env = createEnv({
 
     NEXT_PUBLIC_ANALYTICS_DOMAIN: process.env.NEXT_PUBLIC_ANALYTICS_DOMAIN,
     NEXT_PUBLIC_ANALYTICS_ID: process.env.NEXT_PUBLIC_ANALYTICS_ID,
+
+    NEXT_PUBLIC_MEDIA_PREFIX: process.env.NEXT_PUBLIC_MEDIA_PREFIX,
   },
   /**
    * Run `build` or `dev` with `SKIP_ENV_VALIDATION` to skip env validation. This is especially
@@ -43,3 +46,5 @@ export const env = createEnv({
    */
   emptyStringAsUndefined: true,
 });
+
+export const MEDIA_PREFIX = env.NEXT_PUBLIC_MEDIA_PREFIX ?? '';
