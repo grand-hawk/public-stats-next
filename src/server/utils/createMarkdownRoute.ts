@@ -28,10 +28,12 @@ export function createMarkdownRoute() {
     res,
     resolvedUrl,
   }: GetServerSidePropsContext): Promise<GetServerSidePropsResult<{}>> {
-    if (getExtension(resolvedUrl) !== '.md') return { notFound: true };
+    const [path] = resolvedUrl.split('?');
+
+    if (getExtension(path) !== '.md') return { notFound: true };
 
     const htmlUrl = new URL(
-      resolvedUrl.replace(/^\/md\//, '').replace(/\.md$/, ''),
+      path.replace(/^\/md\//, '').replace(/\.md$/, ''),
       getBaseUrl(),
     );
     htmlUrl.hash = '';

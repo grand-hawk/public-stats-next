@@ -9,12 +9,14 @@ import { setExtension } from '@/utils/extensions';
 export default function ButtonMarkdownLink() {
   const router = useRouter();
 
+  const [asPath] = router.asPath.split('?');
+
   return (
     <IconLink
       linkProps={{
         target: '_blank',
       }}
-      href={setExtension(`/md${router.asPath}`, 'md')}
+      href={setExtension(`/md${asPath}`, 'md')}
       rel="nofollow"
       size="sm"
       title="View as markdown"
