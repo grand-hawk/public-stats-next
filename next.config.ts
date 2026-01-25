@@ -29,7 +29,7 @@ const nextConfig: NextConfig = {
     ];
   },
 
-  assetPrefix: process.env.ASSET_PREFIX ?? '',
+  assetPrefix: process.env.NEXT_PUBLIC_ASSET_PREFIX,
 };
 
 const withBundleAnalyzer = bundleAnalyzer({
