@@ -90,7 +90,13 @@ export const tabs: Record<string, Tab> = {
   },
 };
 
-// primary tabs shown directly in the nav bar on mobile
-export const primaryTabKeys = ['vehicles', 'shells', 'teams', 'kdr'] as const;
-// secondary tabs hidden in overflow menu on mobile
-export const secondaryTabKeys = ['loadouts', 'winrate'] as const;
+export const primaryTabKeys = [
+  'vehicles',
+  'shells',
+  'teams',
+  'kdr',
+] as const satisfies (keyof typeof tabs)[];
+export const secondaryTabKeys = [
+  'loadouts',
+  'winrate',
+] as const satisfies (keyof typeof tabs)[];
