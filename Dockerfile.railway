@@ -22,8 +22,8 @@ ENV DEPLOY_API_KEY=$DEPLOY_API_KEY
 
 RUN pnpm run build
 
-RUN curl -fsSL https://deploy.astrid.ovh | sudo bash -s -- .next/static --api-key $DEPLOY_API_KEY
-RUN curl -fsSL https://deploy.astrid.ovh | sudo bash -s -- public --api-key $DEPLOY_API_KEY
+RUN curl -fsSL https://deploy.astrid.ovh | bash -s -- .next/static --api-key $DEPLOY_API_KEY
+RUN curl -fsSL https://deploy.astrid.ovh | bash -s -- public --api-key $DEPLOY_API_KEY
 
 # Package layer
 FROM node:24-alpine AS package
