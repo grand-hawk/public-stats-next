@@ -19,10 +19,13 @@ ENV NEXT_OUTPUT=standalone
 
 ARG DEPLOY_API_KEY
 ARG RAILWAY_GIT_COMMIT_SHA
+ARG CDN_BASE
+ENV ASSET_PREFIX="${CDN_BASE}/${RAILWAY_GIT_COMMIT_SHA}"
+ENV NEXT_PUBLIC_MEDIA_PREFIX="${ASSET_PREFIX}"
 
 RUN pnpm run build
 
-RUN curl -fsSL https://deploy.astrid.ovh | bash -s -- .next/static --id $RAILWAY_GIT_COMMIT_SHA --api-key $DEPLOY_API_KEY > ASSET_PREFIX
+RUN curl -fsSL https://deploy.astrid.ovh | bash -s -- .next/static --id $RAILWAY_GIT_COMMIT_SHA --api-key $DEPLOY_API_KEY
 RUN curl -fsSL https://deploy.astrid.ovh | bash -s -- public --id $RAILWAY_GIT_COMMIT_SHA --api-key $DEPLOY_API_KEY
 
 # Package layer
@@ -36,11 +39,10 @@ COPY --from=build /build/.next/standalone .
 COPY --from=build /build/.next/static .next/static
 COPY --from=build /build/generated generated
 COPY --from=build /build/public public
-COPY --from=build /build/ASSET_PREFIX ASSET_PREFIX
 
 EXPOSE 3000
 
 ENV PORT=3000
 ENV HOSTNAME="0.0.0.0"
 
-CMD ["/bin/sh", "-c", "export NEXT_PUBLIC_ASSET_PREFIX=$(cat ASSET_PREFIX) && node server.js"]
+CMD ["node", "server.js"]
