@@ -5,7 +5,9 @@ export default function UpdateListener() {
   const utils = trpc.useUtils();
 
   trpc.update.onUpdate.useSubscription(undefined, {
-    onData: () => {
+    onData: (data) => {
+      if (!data) return; // heartbeat sends false
+
       const id = toaster.create({
         id: 'update',
         title: 'Update available',
