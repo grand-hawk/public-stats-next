@@ -15,7 +15,9 @@ if (
   typeof EdgeRuntime !== 'string' &&
   environment !== 'development'
 ) {
-  const sseUrl = `https://${environment}.public-stats-data-sse.railway.astrid.ovh/events`;
+  const sseUrl =
+    process.env.SSE_URL ??
+    `https://${environment}.public-stats-data-sse.railway.astrid.ovh/events`;
   const baseDelay = 4_000;
   const maxDelay = 32_000;
 
