@@ -34,7 +34,7 @@ const nextConfig: NextConfig = {
   images: {
     loader: process.env.NEXT_PUBLIC_IMAGE_LOADER ? 'custom' : 'default',
     loaderFile: process.env.NEXT_PUBLIC_IMAGE_LOADER
-      ? './src/images.ts'
+      ? './src/images.js'
       : undefined,
   },
 };

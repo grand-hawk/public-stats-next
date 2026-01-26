@@ -32,7 +32,8 @@
     "scripts/**.mts",
     "generated/**.d.ts",
     "scripts/generate/index.mts",
-    "scripts/generate/sse.ts"
+    "scripts/generate/sse.ts",
+    "src/images.js"
   ],
   "exclude": ["node_modules"]
 }
