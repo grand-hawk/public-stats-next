@@ -67,6 +67,11 @@ export const SearchLinkListItem = React.memo(function SearchLinkListItem({
       variant={active ? 'solid' : 'ghost'}
       {...baseItemProps}
       {...props}
+      css={{
+        '& img': {
+          filter: active ? 'brightness(0)' : undefined,
+        },
+      }}
     >
       {active ? (
         <Span>{children}</Span>
