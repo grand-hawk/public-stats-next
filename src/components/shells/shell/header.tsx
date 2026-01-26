@@ -3,7 +3,7 @@ import NextImage from 'next/image';
 import React from 'react';
 
 import ButtonMarkdownLink from '@/components/buttonMarkdownLink';
-import { getShellTypeIcon } from '@/components/icons/shells';
+import { getShellIcon } from '@/components/icons/shells';
 import Stat from '@/components/wiki/stat';
 import { useShell } from '@/hooks/providers/shell';
 
@@ -11,8 +11,8 @@ export default function ShellHeader() {
   const shell = useShell();
 
   const shellIcon = React.useMemo(() => {
-    return getShellTypeIcon(shell.type);
-  }, [shell.type]);
+    return getShellIcon(shell.displayType);
+  }, [shell.displayType]);
 
   return (
     <Box

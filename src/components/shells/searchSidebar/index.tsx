@@ -2,7 +2,7 @@ import { HStack, Image } from '@chakra-ui/react';
 import NextImage from 'next/image';
 import React from 'react';
 
-import { getShellTypeIcon } from '@/components/icons/shells';
+import { getShellIcon } from '@/components/icons/shells';
 import SearchSidebar from '@/components/searchLayout/searchSidebar';
 import SearchInput from '@/components/searchLayout/searchSidebar/input';
 import { usePlace } from '@/hooks/usePlace';
@@ -73,7 +73,7 @@ export default function ShellsSearchSidebar() {
       });
 
       for (const shell of shells) {
-        const shellIcon = getShellTypeIcon(shell.type);
+        const shellIcon = getShellIcon(shell.displayType);
 
         result.push({
           type: 'item',

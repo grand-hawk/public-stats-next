@@ -1,56 +1,54 @@
 import { MEDIA_PREFIX } from '@/env';
 
-const shells: Record<string, RegExp[]> = {
-  '/shells/AP.png': [/^AP$/],
-  '/shells/APHE.png': [/^APHE$/],
-  '/shells/APCR.png': [/^APCR$/, /^APDS$/],
-  '/shells/APFSDS.png': [/^APFSDS$/, /^APFSDS ANTI-ERA$/, /^CANISTER APFSDS$/],
-  '/shells/DU_APFSDS.png': [
-    /^DU APFSDS$/,
-    /^DU APFSDS ANTI-ERA$/,
-    /^APFSDS INCENDIARY ANTI-ERA$/,
-  ],
-  '/shells/MG.png': [/^MG$/],
-
-  '/shells/HE.png': [/^HE$/],
-  '/shells/HESH.png': [/^HESH$/],
-  '/shells/HEAT.png': [/^HEAT$/],
-  '/shells/HEAT-FS.png': [/^HEAT-FS$/],
-  '/shells/SAPHE.png': [/^SAPHE$/],
-  '/shells/PROXIMITY_FUZE.png': [/^PROXIMITY FUZE$/],
-  '/shells/TIME_FUZE.png': [/^TIME FUZE$/],
-
-  '/shells/ATGM.png': [/MISSILE$/],
-  '/shells/ATGM_HE.png': [],
-  '/shells/ATGM_TANDEM.png': [/^TANDEM .* MISSILE$/],
-  '/shells/ATGM_OTA.png': [/^OTA .* MISSILE$/],
-  '/shells/ATGM_PROXIMITY_FUZE.png': [/^PROXIMITY .* MISSILE$/],
-  '/shells/ATGM_FNF.png': [/^F&F MISSILE$/, /^TANDEM F&F MISSILE$/],
-
-  '/shells/AA.png': [/AIR-TO-AIR/],
-  '/shells/AA_PROXIMITY_FUZE.png': [/^PROXIMITY AIR-TO-AIR MISSILE$/],
-
-  '/shells/ROCKET.png': [/^ROCKET$/],
-  '/shells/CANISTER.png': [/^CANISTER$/],
-  '/shells/CLUSTER.png': [/^CLUSTER$/],
-  '/shells/CLUSTER_INCENDIARY.png': [/^INCENDIARY ROCKET$/],
-  '/shells/THERMOBARIC.png': [/^THERMOBARIC$/],
-  '/shells/SMOKE.png': [/^SMOKE$/],
+const newShells: Record<string, string> = {
+  HESH: 'hesh',
+  'PROXIMITY FUZE': 'proximity-fuze',
+  CLUSTER: 'cluster',
+  'OTA ATGM': 'ota-atgm',
+  APDS: 'apds',
+  'TIME FUZE': 'time-fuze',
+  APBC: 'apbc',
+  MG: 'mg',
+  HE: 'he',
+  APHEBC: 'aphebc',
+  THERMOBARIC: 'thermobaric',
+  APHEC: 'aphec',
+  ATGM: 'atgm',
+  'CANISTER SHOT': 'canister-shot',
+  SAPHE: 'saphe',
+  'Top Attack Shell': 'top-attack-shell',
+  HEAT: 'heat',
+  'ATGM TANDEM': 'atgm-tandem',
+  'DU APFSDS': 'du-apfsds',
+  APHE: 'aphe',
+  AAM: 'aam',
+  HVAP: 'hvap',
+  APCBC: 'apcbc',
+  'APFSDS ANTI-ERA': 'apfsds-anti-era',
+  'CANISTER APFSDS': 'canister-apfsds',
+  'APDS (E)': 'apds-e',
+  'KINETIC ATGM': 'kinetic-atgm',
+  APC: 'apc',
+  'F&F Top Attack ATGM': 'ff-top-attack-atgm',
+  'APDS (C)': 'apds-c',
+  'DU APFSDS ANTI-ERA': 'du-apfsds-anti-era',
+  APHECBC: 'aphecbc',
+  APCR: 'apcr',
+  'APFSDS INCENDIARY ANTI-ERA': 'apfsds-incendiary-anti-era',
+  APFSDS: 'apfsds',
+  ROCKET: 'rocket',
+  'ATGM HE': 'atgm-he',
+  'HEAT-FS': 'heat-fs',
+  SMOKE: 'smoke',
+  'ATGM-VT': 'atgm-vt',
+  'AAM-VT': 'aam-vt',
+  INCENDIARY: 'incendiary',
+  'SMOKE SHELL': 'smoke-shell',
+  AP: 'ap',
 };
 
-const shellTypeCache = new Map<string, string | undefined>();
+export function getShellIcon(displayType: string) {
+  if (!newShells[displayType]) return null;
 
-export function getShellTypeIcon(type: string) {
-  const cached = shellTypeCache.get(type);
-  if (cached) return cached;
-
-  let lastMatch: string | undefined;
-
-  for (const [icon, patterns] of Object.entries(shells))
-    if (patterns.some((pattern) => pattern.test(type)))
-      lastMatch = `${MEDIA_PREFIX}/assets/icons${icon}`;
-
-  shellTypeCache.set(type, lastMatch);
-
-  return lastMatch;
+  return `${MEDIA_PREFIX}/assets/icons/shells/${newShells[displayType]}.png`;
 }
