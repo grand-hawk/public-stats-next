@@ -43,9 +43,11 @@ export default function ShellHeader() {
         </HStack>
 
         <div>
-          <Span aria-label="Weapon name" color="gray.100">
-            {shell.weapon}
-          </Span>
+          {shell.weapon !== shell.name && (
+            <Span aria-label="Weapon name" color="gray.100">
+              {shell.weapon}
+            </Span>
+          )}
 
           <Heading aria-label="Shell name" as="h1" id="shell-page-title">
             {shell.name}
