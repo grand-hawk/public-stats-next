@@ -8,4 +8,3 @@
 | ------- | ---------------------------------------------------------------------------- |
 | prod    | [stats.multicrew.dev](https://stats.multicrew.dev)                           |
 | staging | [stats-staging.multicrew.dev](https://stats-staging.multicrew.dev)           |
-| next    | [public-stats-next.up.railway.app](https://public-stats-next.up.railway.app) |
