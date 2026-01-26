@@ -8,6 +8,7 @@ const environment: string = '{{environment}}';
 const version: string = '{{version}}';
 
 export const sse = new EventEmitter();
+sse.setMaxListeners(0);
 
 if (
   process.env.NEXT_RUNTIME !== 'edge' &&
