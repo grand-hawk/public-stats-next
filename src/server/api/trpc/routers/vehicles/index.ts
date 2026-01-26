@@ -48,11 +48,10 @@ const imageCache = new Map<string, string | null>();
 export function getVehicleImage(slug: string) {
   let cachedImage = imageCache.get(slug);
   if (cachedImage === undefined) {
-    const imageUrl = `${MEDIA_PREFIX}/assets/vehicles/${slug}.png`;
-    const imageResult =
-      !imageUrl.startsWith('/') || existsSync(`./public${imageUrl}`)
-        ? imageUrl
-        : null;
+    const path = `/assets/vehicles/${slug}.png`;
+    const imageResult = existsSync(`./public${path}`)
+      ? `${MEDIA_PREFIX}${path}`
+      : null;
 
     imageCache.set(slug, imageResult);
     cachedImage = imageResult;
