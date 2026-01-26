@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import React from 'react';
 
-import { MEDIA_PREFIX } from '@/env';
+import { env, MEDIA_PREFIX } from '@/env';
 import { useCurrentTab } from '@/hooks/useCurrentTab';
 import { usePlaceInitials } from '@/hooks/usePlaceInitials';
 import { formatTitle } from '@/utils/formatTitle';
@@ -33,6 +33,13 @@ export default function InternalHead({ children }: PropsWithChildren) {
       <meta content="website" property="og:type" />
       <meta content="index,follow" name="robots" />
       <meta content={formatTitle(null, initials)} property="og:site_name" />
+
+      {env.NEXT_PUBLIC_IMAGE_LOADER && (
+        <link rel="preconnect" href={env.NEXT_PUBLIC_IMAGE_LOADER} />
+      )}
+      {env.NEXT_PUBLIC_MEDIA_PREFIX && (
+        <link rel="preconnect" href={env.NEXT_PUBLIC_MEDIA_PREFIX} />
+      )}
 
       {children}
     </Head>
