@@ -22,6 +22,10 @@ export default function VehicleImage({
 }: VehicleImageProps) {
   const [hasError, setHasError] = React.useState(false);
 
+  React.useEffect(() => {
+    setHasError(false);
+  }, [image, slug]);
+
   if (!image || hasError)
     return (
       <Center
