@@ -48,6 +48,7 @@ export default function VehicleCell({
               fill
               image={vehicle.image}
               name={name}
+              sizes="200px"
               slug={vehicle.slug}
             />
           ) : (

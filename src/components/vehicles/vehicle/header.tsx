@@ -42,10 +42,8 @@ export default function VehicleHeader() {
           name={vehicle.info.name}
           slug={vehicle.info.slug}
           fallbackText="Resource not found"
-          blurDataURL="data:image/webp;base64,UklGRooAAABXRUJQVlA4WAoAAAAAAAAAHwAAHwAAVlA4IGwAAACwBACdASogACAAPok2lUglIyIhN+gAoBEJZwDIXHmzSajWQrznMxbR+dwOHsqOAPAZsP004crt8WSSX8AoxpEFm2bGOnGFvmyW0fypFOzSYuYnEYiece44qIIOawb6sV0s9LBRAZlOhQUJwAA="
           fetchPriority="high"
           fill
-          placeholder="blur"
           preload
           sizes="(min-width: 80rem) 1000px, (min-width: 60rem) 800px, 600px"
         />

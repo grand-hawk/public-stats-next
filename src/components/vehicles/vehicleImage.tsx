@@ -44,7 +44,9 @@ export default function VehicleImage({
     <Box asChild objectFit="cover" width="100%" height="100%" userSelect="none">
       <NextImage
         key={slug}
-        alt={`Image of the "${name}" in Multicrew Tank Combat on Roblox`}
+        blurDataURL="data:image/webp;base64,UklGRooAAABXRUJQVlA4WAoAAAAAAAAAHwAAHwAAVlA4IGwAAACwBACdASogACAAPok2lUglIyIhN+gAoBEJZwDIXHmzSajWQrznMxbR+dwOHsqOAPAZsP004crt8WSSX8AoxpEFm2bGOnGFvmyW0fypFOzSYuYnEYiece44qIIOawb6sV0s9LBRAZlOhQUJwAA="
+        placeholder="blur"
+        alt={`Image of the "${name}" in Multicrew Tank Combat`}
         src={image}
         style={{
           objectFit: 'cover',

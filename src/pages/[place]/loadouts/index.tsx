@@ -55,6 +55,7 @@ export default function PlaceLoadouts() {
                       <Image
                         alt={`${loadout.name} loadout thumbnail`}
                         fill
+                        sizes="(max-width: 768px) 100vw, 300px"
                         src={loadout.thumbnail}
                         style={{ objectFit: 'cover' }}
                       />
