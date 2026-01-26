@@ -30,6 +30,13 @@ const nextConfig: NextConfig = {
   },
 
   assetPrefix: process.env.ASSET_PREFIX,
+
+  images: {
+    loader: process.env.NEXT_PUBLIC_IMAGE_LOADER ? 'custom' : 'default',
+    loaderFile: process.env.NEXT_PUBLIC_IMAGE_LOADER
+      ? './src/images.ts'
+      : undefined,
+  },
 };
 
 const withBundleAnalyzer = bundleAnalyzer({

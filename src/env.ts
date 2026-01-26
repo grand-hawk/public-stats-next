@@ -21,6 +21,7 @@ export const env = createEnv({
     NEXT_PUBLIC_ANALYTICS_DOMAIN: z.string().url().optional(),
     NEXT_PUBLIC_ANALYTICS_ID: z.string().uuid().optional(),
     NEXT_PUBLIC_MEDIA_PREFIX: z.string().url().optional(),
+    NEXT_PUBLIC_IMAGE_LOADER: z.string().url().optional(),
   },
 
   /**
@@ -33,6 +34,7 @@ export const env = createEnv({
     NEXT_PUBLIC_ANALYTICS_DOMAIN: process.env.NEXT_PUBLIC_ANALYTICS_DOMAIN,
     NEXT_PUBLIC_ANALYTICS_ID: process.env.NEXT_PUBLIC_ANALYTICS_ID,
 
+    NEXT_PUBLIC_IMAGE_LOADER: process.env.NEXT_PUBLIC_IMAGE_LOADER,
     NEXT_PUBLIC_MEDIA_PREFIX: process.env.NEXT_PUBLIC_MEDIA_PREFIX,
   },
   /**
