@@ -1,4 +1,5 @@
 import { Icon } from '@chakra-ui/react';
+import NextImage from 'next/image';
 import React from 'react';
 import { BiBorderNone } from 'react-icons/bi';
 
@@ -11,10 +12,14 @@ import PigeonTeamIcon from '@/components/icons/teams/pigeon';
 import RedtailTeamIcon from '@/components/icons/teams/redtail';
 import SchwalbenheimKingdomTeamIcon from '@/components/icons/teams/schwalbenheim';
 import SchwalbenheimRepublicTeamIcon from '@/components/icons/teams/schwalbenheimRepublic';
+import { MEDIA_PREFIX } from '@/env';
 
 import type { IconProps } from '@chakra-ui/react';
 
-export const teamIcons: Record<string, React.FunctionComponent<IconProps>> = {
+export const teamIcons: Record<
+  string,
+  React.FunctionComponent<IconProps> | string
+> = {
   'Eagle Federation': EagleTeamIcon,
   'Eagle Republic': EagleTeamIcon,
   'FISH State': FishTeamIcon,
@@ -25,6 +30,14 @@ export const teamIcons: Record<string, React.FunctionComponent<IconProps>> = {
   'Nightingale Unitary State': NightingaleTeamIcon,
   'Redtail PMC': RedtailTeamIcon,
   'Pigeon Freedom Movement': PigeonTeamIcon,
+  'Celestial Dragon Dynasty': 'celestial-dragon-dynasty.png',
+  "Chollima People's Republic": 'chollima-peoples-republic.png',
+  'Close Alliance State Union': 'close-alliance-state-union.png',
+  'Great Britain': 'great-britain.png',
+  'Koltrasten Kingdom': 'koltrasten-kingdom.png',
+  'Republic of Chantecler': 'republic-of-chantecler.png',
+  'Talitiainen Republic': 'talitiainen-republic.png',
+  'The Leonic Commonwealth': 'the-leonic-commonwealth.png',
 };
 
 export default function TeamIcon({ team }: { team: string }) {
@@ -37,11 +50,24 @@ export default function TeamIcon({ team }: { team: string }) {
     focusable: false,
   };
 
-  return TeamIcon ? (
-    <TeamIcon {...iconProps} />
-  ) : (
-    <Icon {...iconProps}>
-      <BiBorderNone />
-    </Icon>
-  );
+  if (!TeamIcon)
+    return (
+      <Icon {...iconProps}>
+        <BiBorderNone />
+      </Icon>
+    );
+
+  if (typeof TeamIcon === 'string')
+    return (
+      <Icon {...iconProps}>
+        <NextImage
+          src={`${MEDIA_PREFIX}/assets/icons/teams/${TeamIcon}`}
+          height={64}
+          width={64}
+          alt=""
+        />
+      </Icon>
+    );
+
+  return <TeamIcon {...iconProps} />;
 }
