@@ -52,7 +52,10 @@ export function betterSentenceCase(str: string): string {
         result.push(part.toLowerCase());
       }
 
-      if (parts.length > 1 && index < lastIndex) result.push(' ');
+      if (parts.length > 1 && index < lastIndex) {
+        const isCoPrefix = lettersOnly.toLowerCase() === 'co';
+        result.push(isCoPrefix ? '-' : ' ');
+      }
     }
   }
 
