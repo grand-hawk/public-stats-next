@@ -21,8 +21,9 @@ export const getBaseUrl = () => {
       : `https://${url}`;
   } // SSR should use coolify url
 
-  if (process.env.NEXT_PUBLIC_VERCEL_URL)
-    return `https://${process.env.NEXT_PUBLIC_VERCEL_URL}`; // SSR should use vercel url
+  const publicUrl =
+    process.env.NEXT_PUBLIC_VERCEL_URL ?? process.env.RAILWAY_PUBLIC_DOMAIN;
+  if (publicUrl) return `https://${publicUrl}`; // SSR should use public url
 
   return `http://localhost:${process.env.PORT ?? 3000}`; // dev SSR should use localhost
 };
