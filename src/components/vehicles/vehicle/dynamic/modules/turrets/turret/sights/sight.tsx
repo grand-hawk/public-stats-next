@@ -7,7 +7,6 @@ import InlineCard from '@/components/wiki/inlineCard';
 import { StatsCell, StatsRoot, StatsRow } from '@/components/wiki/stats';
 import { useDynamicData } from '@/hooks/providers/dynamicData';
 import { getModulesByReferences } from '@/utils/alterations';
-import { betterSentenceCase } from '@/utils/betterSentenceCase';
 
 import type { TurretWithName } from '@/components/vehicles/vehicle/dynamic/modules/turrets';
 import type { VehicleModuleFromType } from '@/utils/vehicles';
@@ -95,9 +94,7 @@ export default function Sight({
     <InlineCard
       headingAs="h4"
       moduleId={moduleId}
-      title={
-        sight.name ? betterSentenceCase(sight.name) : `Sight ${sightIndex + 1}`
-      }
+      title={sight.name}
       withAnchor={`${turretName}-sight-${sightIndex + 1}`}
     >
       <Stack gap={4}>

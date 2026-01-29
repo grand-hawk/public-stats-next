@@ -6,7 +6,6 @@ import { StatsCell, StatsRoot, StatsRow } from '@/components/wiki/stats';
 import TitledCard from '@/components/wiki/titledCard';
 import { useDynamicData } from '@/hooks/providers/dynamicData';
 import { getAllModulesOfType, getOneModuleOfType } from '@/utils/alterations';
-import { betterSentenceCase } from '@/utils/betterSentenceCase';
 
 const SEAT_PRIORITIES = ['Driver', 'Pilot', 'Co-pilot', 'Gunner'] as const;
 
@@ -19,7 +18,7 @@ export default function Vehicle() {
   const sortedSeats = React.useMemo(() => {
     const seatCount: Record<string, { count: number; ids: string[] }> = {};
     for (const seat of seats) {
-      const name = betterSentenceCase(seat.data.name);
+      const name = seat.data.name;
 
       if (!seatCount[name]) seatCount[name] = { count: 0, ids: [] };
       seatCount[name].count += 1;

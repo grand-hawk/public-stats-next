@@ -6,7 +6,6 @@ import {
   getAllModulesOfType,
   getOneModuleFromReferences,
 } from '@/utils/alterations';
-import { betterSentenceCase } from '@/utils/betterSentenceCase';
 
 import type { VehicleModuleWithId } from '@/utils/vehicles';
 
@@ -50,13 +49,12 @@ export default function Turrets() {
 
     const occurrenceIndex: Record<string, number> = {};
     return turretsWithNames.map((turret) => {
-      const baseName = betterSentenceCase(turret.name);
-      occurrenceIndex[baseName] = (occurrenceIndex[baseName] ?? 0) + 1;
+      occurrenceIndex[turret.name] = (occurrenceIndex[turret.name] ?? 0) + 1;
 
       const numberedName =
-        totalCounts[baseName] > 1
-          ? `${baseName} ${occurrenceIndex[baseName]}`
-          : baseName;
+        totalCounts[turret.name] > 1
+          ? `${turret.name} ${occurrenceIndex[turret.name]}`
+          : turret.name;
 
       return {
         ...turret,

@@ -12,7 +12,6 @@ import {
   getModulesByReferences,
   getOneModuleFromReferences,
 } from '@/utils/alterations';
-import { betterSentenceCase } from '@/utils/betterSentenceCase';
 
 import type { VehicleModuleWithId } from '@/utils/vehicles';
 
@@ -151,9 +150,7 @@ export default function Weapon({
               })
               .map((ammoModel) => (
                 <StatsRow key={ammoModel.data.name} withPaddingLeft>
-                  <StatsCell>
-                    {betterSentenceCase(ammoModel.data.name)}
-                  </StatsCell>
+                  <StatsCell>{ammoModel.data.name}</StatsCell>
                   <StatsCell>
                     <FormatNumber value={ammoModel.data.size} />
                   </StatsCell>
