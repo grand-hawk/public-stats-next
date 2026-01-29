@@ -1,3 +1,15 @@
+function splitAlphabeticSegment(segment: string): string[] {
+  if (/^[A-Z]{2,}$/.test(segment) || /^[A-Z]{2,}(?:['’]?[sS])$/.test(segment))
+    return [segment];
+  if (/^[A-Z](?:[a-z]+[A-Z])+$/u.test(segment)) return [segment];
+
+  return (
+    segment.match(
+      /[A-Z]{2,}(?=[A-Z][a-z])|[A-Z]{2,}(?=[a-z])|[A-Z]?[a-z]+|[A-Z]+|[a-z]+/g,
+    ) ?? [segment]
+  );
+}
+
 export function betterSentenceCase(str: string): string {
   const segments = str.match(/[A-Za-z]+|[^A-Za-z]+/g);
   if (!segments) return str;
@@ -60,16 +72,4 @@ export function betterSentenceCase(str: string): string {
   }
 
   return result.join('');
-}
-
-function splitAlphabeticSegment(segment: string): string[] {
-  if (/^[A-Z]{2,}$/.test(segment) || /^[A-Z]{2,}(?:['’]?[sS])$/.test(segment))
-    return [segment];
-  if (/^[A-Z](?:[a-z]+[A-Z])+$/u.test(segment)) return [segment];
-
-  return (
-    segment.match(
-      /[A-Z]{2,}(?=[A-Z][a-z])|[A-Z]{2,}(?=[a-z])|[A-Z]?[a-z]+|[A-Z]+|[a-z]+/g,
-    ) ?? [segment]
-  );
 }
