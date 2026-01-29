@@ -41,7 +41,7 @@ export default function VehicleHeader() {
           image={vehicle.info.image}
           name={vehicle.info.name}
           slug={vehicle.info.slug}
-          fallbackText="Coming soon"
+          fallbackText="COMING SOON"
           fetchPriority="high"
           fill
           preload
