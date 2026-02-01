@@ -12,6 +12,7 @@ import Layout from '@/components/utils/layout';
 import Vehicle from '@/components/vehicles';
 import VehiclesSearchSidebar from '@/components/vehicles/searchSidebar';
 import InaccurateDataFooter from '@/components/wiki/inaccurateDataFooter';
+import { SectionMarkersProvider } from '@/hooks/providers/sectionMarkers';
 import { usePlace } from '@/hooks/usePlace';
 import { useRouterQuery } from '@/hooks/useRouterQuery';
 import { formatTitle } from '@/utils/formatTitle';
@@ -101,45 +102,47 @@ export default function PlaceVehicle() {
         )}
       </Head>
 
-      <Layout noPadding>
-        <SearchLayout sidebar={<VehiclesSearchSidebar />}>
-          {vehicle ? (
-            <Flex
-              justifyContent="center"
-              marginBottom={{
-                base: 4,
-                md: 0,
-              }}
-              padding={{
-                base: 0,
-                md: 2,
-                lg: 4,
-              }}
-            >
-              <Stack
-                aria-describedby="vehicle-page-description"
-                aria-labelledby="vehicle-page-title"
-                as="article"
-                gap={4}
-                maxWidth="4xl"
-                width="100%"
-                data-md-target
+      <SectionMarkersProvider>
+        <Layout noPadding>
+          <SearchLayout sidebar={<VehiclesSearchSidebar />}>
+            {vehicle ? (
+              <Flex
+                justifyContent="center"
+                marginBottom={{
+                  base: 4,
+                  md: 0,
+                }}
+                padding={{
+                  base: 0,
+                  md: 2,
+                  lg: 4,
+                }}
               >
-                <Vehicle vehicle={vehicle} />
+                <Stack
+                  aria-describedby="vehicle-page-description"
+                  aria-labelledby="vehicle-page-title"
+                  as="article"
+                  gap={4}
+                  maxWidth="960px"
+                  width="100%"
+                  data-md-target
+                >
+                  <Vehicle vehicle={vehicle} />
 
-                <InaccurateDataFooter />
-              </Stack>
-            </Flex>
-          ) : (
-            <Flex alignItems="center" height="100%">
-              <EmptyState
-                icon={<GrDocumentMissing />}
-                title="Vehicle not found"
-              />
-            </Flex>
-          )}
-        </SearchLayout>
-      </Layout>
+                  <InaccurateDataFooter />
+                </Stack>
+              </Flex>
+            ) : (
+              <Flex alignItems="center" height="100%">
+                <EmptyState
+                  icon={<GrDocumentMissing />}
+                  title="Vehicle not found"
+                />
+              </Flex>
+            )}
+          </SearchLayout>
+        </Layout>
+      </SectionMarkersProvider>
     </>
   );
 }

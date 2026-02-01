@@ -3,6 +3,7 @@ import NextLink from 'next/link';
 import React from 'react';
 import slug from 'slug';
 
+import SectionMarker from '@/components/wiki/sectionMarker';
 import TitledCard from '@/components/wiki/titledCard';
 import { usePlaceInitials } from '@/hooks/usePlaceInitials';
 
@@ -36,68 +37,74 @@ export default function VehicleAvailability({
 
   if (!isAvailable) return null;
   return (
-    <TitledCard
-      as="section"
-      innerPadding={4}
-      title="In-game availability"
-      withAnchor
-    >
-      <Table.Root
-        aria-label="Vehicle in-game availability across loadouts and teams"
-        css={{
-          '& .chakra-table__row': {
-            background: 'none',
-          },
-        }}
-        showColumnBorder
-        size="sm"
+    <>
+      <SectionMarker name="In-game availability" />
+
+      <TitledCard
+        as="section"
+        innerPadding={4}
+        title="In-game availability"
+        withAnchor
       >
-        <Table.Header>
-          <Table.Row>
-            <Table.ColumnHeader>Loadout/Team</Table.ColumnHeader>
-
-            {teams.map((team) => (
-              <Table.ColumnHeader key={team}>
-                <Link asChild variant="underline">
-                  <NextLink href={`/${initials}/teams/${slug(team)}`}>
-                    {team}
-                  </NextLink>
-                </Link>
-              </Table.ColumnHeader>
-            ))}
-          </Table.Row>
-        </Table.Header>
-
-        <Table.Body>
-          {availabilityEntries.map(([loadoutName, loadout], index) => (
-            <Table.Row
-              key={loadoutName}
-              css={{
-                '& .chakra-table__cell': {
-                  borderBottomWidth:
-                    index === availabilityEntries.length - 1 ? 0 : undefined,
-                },
-              }}
-            >
-              <Table.Cell>
-                <Link asChild variant="underline">
-                  <NextLink href={`/${initials}/loadouts/${slug(loadoutName)}`}>
-                    {loadoutName}
-                  </NextLink>
-                </Link>
-              </Table.Cell>
+        <Table.Root
+          aria-label="Vehicle in-game availability across loadouts and teams"
+          css={{
+            '& .chakra-table__row': {
+              background: 'none',
+            },
+          }}
+          showColumnBorder
+          size="sm"
+        >
+          <Table.Header>
+            <Table.Row>
+              <Table.ColumnHeader>Loadout/Team</Table.ColumnHeader>
 
               {teams.map((team) => (
-                <Table.Cell key={team}>
-                  {loadout.teams[team]?.tier !== undefined
-                    ? `Tier ${loadout.teams[team].tier}`
-                    : '✗'}
-                </Table.Cell>
+                <Table.ColumnHeader key={team}>
+                  <Link asChild variant="underline">
+                    <NextLink href={`/${initials}/teams/${slug(team)}`}>
+                      {team}
+                    </NextLink>
+                  </Link>
+                </Table.ColumnHeader>
               ))}
             </Table.Row>
-          ))}
-        </Table.Body>
-      </Table.Root>
-    </TitledCard>
+          </Table.Header>
+
+          <Table.Body>
+            {availabilityEntries.map(([loadoutName, loadout], index) => (
+              <Table.Row
+                key={loadoutName}
+                css={{
+                  '& .chakra-table__cell': {
+                    borderBottomWidth:
+                      index === availabilityEntries.length - 1 ? 0 : undefined,
+                  },
+                }}
+              >
+                <Table.Cell>
+                  <Link asChild variant="underline">
+                    <NextLink
+                      href={`/${initials}/loadouts/${slug(loadoutName)}`}
+                    >
+                      {loadoutName}
+                    </NextLink>
+                  </Link>
+                </Table.Cell>
+
+                {teams.map((team) => (
+                  <Table.Cell key={team}>
+                    {loadout.teams[team]?.tier !== undefined
+                      ? `Tier ${loadout.teams[team].tier}`
+                      : '✗'}
+                  </Table.Cell>
+                ))}
+              </Table.Row>
+            ))}
+          </Table.Body>
+        </Table.Root>
+      </TitledCard>
+    </>
   );
 }

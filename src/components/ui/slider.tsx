@@ -62,8 +62,8 @@ interface SliderMarksProps {
 const SliderMarks = React.forwardRef<HTMLDivElement, SliderMarksProps>(
   function SliderMarks(props, ref) {
     const { marks } = props;
-    if (!marks?.length) return null;
 
+    if (!marks?.length) return null;
     return (
       <ChakraSlider.MarkerGroup ref={ref}>
         {marks.map((mark, index) => {

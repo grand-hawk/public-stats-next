@@ -5,6 +5,7 @@ import { ContextCapturer } from '@/components/development/contextCapturer';
 import VehicleDynamicAddons from '@/components/vehicles/vehicle/dynamic/addons';
 import VehicleDynamicLoadouts from '@/components/vehicles/vehicle/dynamic/loadouts';
 import VehicleDynamicModules from '@/components/vehicles/vehicle/dynamic/modules';
+import SectionNavigation from '@/components/vehicles/vehicle/dynamic/sectionNavigation';
 import { DynamicDataContext } from '@/hooks/providers/dynamicData';
 import { useVehicle } from '@/hooks/providers/vehicle';
 import { useDebugEnabled } from '@/hooks/useDebugEnv';
@@ -70,6 +71,8 @@ export default function VehicleDynamicData() {
           position={{ base: 'unset', xl: 'sticky' }}
           top={4}
         >
+          <SectionNavigation />
+
           {Object.keys(vehicle.alterations.loadouts).length > 0 && (
             <VehicleDynamicLoadouts
               selectedLoadout={selectedLoadout}

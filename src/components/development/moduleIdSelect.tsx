@@ -19,7 +19,6 @@ export default function ModuleIdSelect({
   const setScrollToModule = useDevelopmentStore((s) => s.setScrollToModule);
 
   if (!debugEnabled || !isOverlayOpen || !moduleId) return null;
-
   return (
     <IconButton
       size="2xs"

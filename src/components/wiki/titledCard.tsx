@@ -20,7 +20,20 @@ import ModuleIdSelect from '@/components/development/moduleIdSelect';
 import { Tooltip } from '@/components/ui/tooltip';
 
 import type { BoxProps, HeadingProps } from '@chakra-ui/react';
-import type { PropsWithChildren } from 'react';
+
+export interface TitledCardProps extends BoxProps {
+  title: string;
+  innerPadding?: BoxProps['padding'];
+  withAnchor?: boolean | string;
+  moduleId?: string;
+  tooltip?: string;
+  collapsible?: boolean | 'force';
+  closedByDefault?: boolean;
+  keepBorder?: boolean;
+  endAddon?: React.ReactNode;
+  headingAs?: HeadingProps['as'];
+  children?: React.ReactNode;
+}
 
 export default function TitledCard({
   children,
@@ -35,20 +48,7 @@ export default function TitledCard({
   tooltip,
   withAnchor,
   ...props
-}: PropsWithChildren<
-  BoxProps & {
-    title: string;
-    innerPadding?: BoxProps['padding'];
-    withAnchor?: boolean | string;
-    moduleId?: string;
-    tooltip?: string;
-    collapsible?: boolean | 'force';
-    closedByDefault?: boolean;
-    keepBorder?: boolean;
-    endAddon?: React.ReactNode;
-    headingAs?: HeadingProps['as'];
-  }
->) {
+}: TitledCardProps) {
   const [isExpanded, setIsExpanded] = React.useState(!closedByDefault);
 
   const titleSlug =
@@ -65,6 +65,7 @@ export default function TitledCard({
         id={titleSlug}
         marginX={3}
         marginY={2}
+        scrollMarginTop={4}
         size="sm"
         as={headingAs}
       >

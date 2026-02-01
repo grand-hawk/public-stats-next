@@ -2,6 +2,7 @@ import { FormatNumber } from '@chakra-ui/react';
 import React from 'react';
 
 import ModuleIdSelect from '@/components/development/moduleIdSelect';
+import SectionMarker from '@/components/wiki/sectionMarker';
 import { StatsCell, StatsRoot, StatsRow } from '@/components/wiki/stats';
 import TitledCard from '@/components/wiki/titledCard';
 import { useDynamicData } from '@/hooks/providers/dynamicData';
@@ -42,9 +43,10 @@ export default function Vehicle() {
   }, [seats]);
 
   if (!driveData && seats.length === 0) return null;
-
   return (
     <>
+      <SectionMarker name="Vehicle" />
+
       <TitledCard
         as="section"
         collapsible
@@ -164,72 +166,81 @@ export default function Vehicle() {
       </TitledCard>
 
       {driveData && (
-        <TitledCard
-          as="section"
-          collapsible
-          innerPadding={4}
-          moduleId={driveData.id}
-          title="Powertrain"
-          withAnchor
-        >
-          <StatsRoot>
-            <StatsRow>
-              <StatsCell asTitle>Engine</StatsCell>
-              <StatsCell>{driveData.data.engine.name}</StatsCell>
-            </StatsRow>
-            <StatsRow withPaddingLeft>
-              <StatsCell>Type</StatsCell>
-              <StatsCell>{driveData.data.engine.type}</StatsCell>
-            </StatsRow>
-            <StatsRow withPaddingLeft>
-              <StatsCell>Max RPM</StatsCell>
-              <StatsCell>
-                <FormatNumber value={driveData.data.engine.maxRPM} /> RPM
-              </StatsCell>
-            </StatsRow>
-            <StatsRow withPaddingLeft>
-              <StatsCell>Horsepower</StatsCell>
-              <StatsCell>
-                <FormatNumber value={driveData.data.engine.horsepower} /> hp
-              </StatsCell>
-            </StatsRow>
-            <StatsRow withPaddingLeft>
-              <StatsCell>Power-to-weight ratio</StatsCell>
-              <StatsCell>
-                <FormatNumber
-                  maximumFractionDigits={1}
-                  value={driveData.data.engine.horsepower / driveData.data.mass}
-                />{' '}
-                hp/t
-              </StatsCell>
-            </StatsRow>
+        <>
+          <SectionMarker name="Powertrain" />
+          <TitledCard
+            as="section"
+            collapsible
+            innerPadding={4}
+            moduleId={driveData.id}
+            title="Powertrain"
+            withAnchor
+          >
+            <StatsRoot>
+              <StatsRow>
+                <StatsCell asTitle>Engine</StatsCell>
+                <StatsCell>{driveData.data.engine.name}</StatsCell>
+              </StatsRow>
+              <StatsRow withPaddingLeft>
+                <StatsCell>Type</StatsCell>
+                <StatsCell>{driveData.data.engine.type}</StatsCell>
+              </StatsRow>
+              <StatsRow withPaddingLeft>
+                <StatsCell>Max RPM</StatsCell>
+                <StatsCell>
+                  <FormatNumber value={driveData.data.engine.maxRPM} /> RPM
+                </StatsCell>
+              </StatsRow>
+              <StatsRow withPaddingLeft>
+                <StatsCell>Horsepower</StatsCell>
+                <StatsCell>
+                  <FormatNumber value={driveData.data.engine.horsepower} /> hp
+                </StatsCell>
+              </StatsRow>
+              <StatsRow withPaddingLeft>
+                <StatsCell>Power-to-weight ratio</StatsCell>
+                <StatsCell>
+                  <FormatNumber
+                    maximumFractionDigits={1}
+                    value={
+                      driveData.data.engine.horsepower / driveData.data.mass
+                    }
+                  />{' '}
+                  hp/t
+                </StatsCell>
+              </StatsRow>
 
-            <StatsRow withPaddingTop>
-              <StatsCell asTitle>Transmission</StatsCell>
-              <StatsCell />
-            </StatsRow>
-            <StatsRow withPaddingLeft>
-              <StatsCell>Forward gears</StatsCell>
-              <StatsCell>{driveData.data.transmission.forwardGears}</StatsCell>
-            </StatsRow>
-            <StatsRow withPaddingLeft>
-              <StatsCell>Reverse gears</StatsCell>
-              <StatsCell>{driveData.data.transmission.reverseGears}</StatsCell>
-            </StatsRow>
-            {driveData.data.transmission.neutralSteering && (
-              <StatsRow withPaddingLeft>
-                <StatsCell>Neutral steering</StatsCell>
-                <StatsCell>Yes</StatsCell>
+              <StatsRow withPaddingTop>
+                <StatsCell asTitle>Transmission</StatsCell>
+                <StatsCell />
               </StatsRow>
-            )}
-            {driveData.data.transmission.automatic && (
               <StatsRow withPaddingLeft>
-                <StatsCell>Automatic gearbox</StatsCell>
-                <StatsCell>Yes</StatsCell>
+                <StatsCell>Forward gears</StatsCell>
+                <StatsCell>
+                  {driveData.data.transmission.forwardGears}
+                </StatsCell>
               </StatsRow>
-            )}
-          </StatsRoot>
-        </TitledCard>
+              <StatsRow withPaddingLeft>
+                <StatsCell>Reverse gears</StatsCell>
+                <StatsCell>
+                  {driveData.data.transmission.reverseGears}
+                </StatsCell>
+              </StatsRow>
+              {driveData.data.transmission.neutralSteering && (
+                <StatsRow withPaddingLeft>
+                  <StatsCell>Neutral steering</StatsCell>
+                  <StatsCell>Yes</StatsCell>
+                </StatsRow>
+              )}
+              {driveData.data.transmission.automatic && (
+                <StatsRow withPaddingLeft>
+                  <StatsCell>Automatic gearbox</StatsCell>
+                  <StatsCell>Yes</StatsCell>
+                </StatsRow>
+              )}
+            </StatsRoot>
+          </TitledCard>
+        </>
       )}
     </>
   );

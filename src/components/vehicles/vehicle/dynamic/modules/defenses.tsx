@@ -1,5 +1,6 @@
 import React from 'react';
 
+import SectionMarker from '@/components/wiki/sectionMarker';
 import { StatsCell, StatsRoot, StatsRow } from '@/components/wiki/stats';
 import TitledCard from '@/components/wiki/titledCard';
 import { useDynamicData } from '@/hooks/providers/dynamicData';
@@ -13,33 +14,37 @@ export default function Defenses() {
 
   if (!essModule && !ewModule) return null;
   return (
-    <TitledCard
-      as="section"
-      collapsible
-      innerPadding={4}
-      moduleId={essModule?.id || ewModule?.id}
-      title="Defenses"
-      withAnchor
-    >
-      <StatsRoot>
-        <StatsRow>
-          <StatsCell>Engine smoke system</StatsCell>
-          <StatsCell>{essModule?.data.present ? 'Yes' : 'No'}</StatsCell>
-        </StatsRow>
+    <>
+      <SectionMarker name="Defenses" />
 
-        <StatsRow withPaddingTop>
-          <StatsCell asTitle>Electronic warfare</StatsCell>
-          <StatsCell />
-        </StatsRow>
-        <StatsRow withPaddingLeft>
-          <StatsCell>IED jammer</StatsCell>
-          <StatsCell>{ewModule?.data.ied ? 'Yes' : 'No'}</StatsCell>
-        </StatsRow>
-        <StatsRow withPaddingLeft>
-          <StatsCell>Drone jammer</StatsCell>
-          <StatsCell>{ewModule?.data.drone ? 'Yes' : 'No'}</StatsCell>
-        </StatsRow>
-      </StatsRoot>
-    </TitledCard>
+      <TitledCard
+        as="section"
+        collapsible
+        innerPadding={4}
+        moduleId={essModule?.id || ewModule?.id}
+        title="Defenses"
+        withAnchor
+      >
+        <StatsRoot>
+          <StatsRow>
+            <StatsCell>Engine smoke system</StatsCell>
+            <StatsCell>{essModule?.data.present ? 'Yes' : 'No'}</StatsCell>
+          </StatsRow>
+
+          <StatsRow withPaddingTop>
+            <StatsCell asTitle>Electronic warfare</StatsCell>
+            <StatsCell />
+          </StatsRow>
+          <StatsRow withPaddingLeft>
+            <StatsCell>IED jammer</StatsCell>
+            <StatsCell>{ewModule?.data.ied ? 'Yes' : 'No'}</StatsCell>
+          </StatsRow>
+          <StatsRow withPaddingLeft>
+            <StatsCell>Drone jammer</StatsCell>
+            <StatsCell>{ewModule?.data.drone ? 'Yes' : 'No'}</StatsCell>
+          </StatsRow>
+        </StatsRoot>
+      </TitledCard>
+    </>
   );
 }

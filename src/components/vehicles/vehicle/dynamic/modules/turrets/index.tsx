@@ -1,6 +1,7 @@
 import React from 'react';
 
 import Turret from '@/components/vehicles/vehicle/dynamic/modules/turrets/turret';
+import SectionMarker from '@/components/wiki/sectionMarker';
 import { useDynamicData } from '@/hooks/providers/dynamicData';
 import {
   getAllModulesOfType,
@@ -80,7 +81,14 @@ export default function Turrets() {
     });
   }, [deduplicatedTurretsWithNames]);
 
-  return sortedTurrets.map((turret) => (
-    <Turret key={turret.name} turret={turret} />
-  ));
+  if (sortedTurrets.length === 0) return null;
+  return (
+    <>
+      <SectionMarker name="Turrets" anchor={sortedTurrets[0].name} />
+
+      {sortedTurrets.map((turret) => (
+        <Turret key={turret.name} turret={turret} />
+      ))}
+    </>
+  );
 }

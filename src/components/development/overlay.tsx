@@ -157,7 +157,6 @@ export default function DevelopmentOverlay() {
   }, [isOverlayOpen, isDraggingState, setPosition, setSize]);
 
   if (!isOverlayOpen) return null;
-
   return (
     <Box
       backgroundColor="bg.panel"

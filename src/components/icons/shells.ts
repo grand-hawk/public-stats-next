@@ -49,6 +49,5 @@ const newShells: Record<string, string> = {
 
 export function getShellIcon(displayType: string) {
   if (!newShells[displayType]) return null;
-
   return `${MEDIA_PREFIX}/assets/icons/shells/${newShells[displayType]}.png`;
 }
