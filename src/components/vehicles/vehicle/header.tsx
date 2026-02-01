@@ -101,7 +101,12 @@ export default function VehicleHeader() {
           </FakeDescription>
         </HStack>
 
-        <Heading aria-label="Vehicle name" as="h1" id="vehicle-page-title">
+        <Heading
+          size="2xl"
+          aria-label="Vehicle name"
+          as="h1"
+          id="vehicle-page-title"
+        >
           {vehicle.info.name}
         </Heading>
 
