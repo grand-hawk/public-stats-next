@@ -49,7 +49,12 @@ export default function ShellHeader() {
             </Span>
           )}
 
-          <Heading aria-label="Shell name" as="h1" id="shell-page-title">
+          <Heading
+            size="2xl"
+            aria-label="Shell name"
+            as="h1"
+            id="shell-page-title"
+          >
             {shell.name}
           </Heading>
         </div>
