@@ -1,10 +1,10 @@
-import { HStack, Image } from '@chakra-ui/react';
-import NextImage from 'next/image';
+import { HStack } from '@chakra-ui/react';
 import React from 'react';
 
 import { getShellIcon } from '@/components/icons/shells';
 import SearchSidebar from '@/components/searchLayout/searchSidebar';
 import SearchInput from '@/components/searchLayout/searchSidebar/input';
+import ShellIcon from '@/components/shells/shellIcon';
 import { usePlace } from '@/hooks/usePlace';
 import { useRouterQuery } from '@/hooks/useRouterQuery';
 import { useShellsSearchStore } from '@/stores/shells/search';
@@ -82,15 +82,7 @@ export default function ShellsSearchSidebar() {
               <HStack justifyContent="space-between" width="100%">
                 {shell.name}
 
-                <Image asChild>
-                  <NextImage
-                    alt={shell.type}
-                    height={24}
-                    quality={75}
-                    src={shellIcon}
-                    width={24}
-                  />
-                </Image>
+                <ShellIcon alt={shell.type} src={shellIcon} />
               </HStack>
             ) : (
               shell.name

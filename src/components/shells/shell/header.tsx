@@ -1,9 +1,9 @@
-import { Box, Heading, HStack, Image, Span, Stack } from '@chakra-ui/react';
-import NextImage from 'next/image';
+import { Box, Heading, HStack, Span, Stack } from '@chakra-ui/react';
 import React from 'react';
 
 import ButtonMarkdownLink from '@/components/buttonMarkdownLink';
 import { getShellIcon } from '@/components/icons/shells';
+import ShellIcon from '@/components/shells/shellIcon';
 import Stat from '@/components/wiki/stat';
 import { useShell } from '@/hooks/providers/shell';
 
@@ -63,15 +63,7 @@ export default function ShellHeader() {
           {shell.type}
 
           {shellIcon && (
-            <Image asChild marginLeft={1}>
-              <NextImage
-                alt={shell.type}
-                height={32}
-                quality={75}
-                src={shellIcon}
-                width={32}
-              />
-            </Image>
+            <ShellIcon alt={shell.type} marginLeft={1} size={32} src={shellIcon} />
           )}
         </Stat>
       </Stack>
