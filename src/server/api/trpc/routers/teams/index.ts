@@ -2,7 +2,6 @@ import slug from 'slug';
 import { z } from 'zod';
 
 import { createTRPCRouter, publicProcedure } from '@/server/api/trpc/context';
-import { getVehicleImage } from '@/server/api/trpc/routers/vehicles';
 import { getLoadouts } from '@generated/loadouts';
 import { getVehicles } from '@generated/vehicles';
 
@@ -10,12 +9,8 @@ import type { PlaceId } from '@generated/config';
 import type { LoadoutsPlaceDataLoadoutVehicleTeam } from '@generated/loadouts';
 import type { VehiclesPlaceDataVehicleInfo } from '@generated/vehicles';
 
-export interface TeamVehicle
-  extends
-    LoadoutsPlaceDataLoadoutVehicleTeam,
-    Pick<VehiclesPlaceDataVehicleInfo, 'premium' | 'role' | 'slug'> {
-  image: string | null;
-}
+export type TeamVehicle = LoadoutsPlaceDataLoadoutVehicleTeam &
+  Pick<VehiclesPlaceDataVehicleInfo, 'premium' | 'role' | 'slug'>;
 
 export interface Team {
   name: string;
@@ -88,7 +83,6 @@ export const teamsRouter = createTRPCRouter({
                     vehicleName,
                     {
                       ...vehicle,
-                      image: getVehicleImage(vehicleSlug),
                       premium: vehicleData.info.premium,
                       role: vehicleData.info.role,
                       slug: vehicleSlug,

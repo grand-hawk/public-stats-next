@@ -1,7 +1,6 @@
-import { Box, Center, Flex, Icon, Span, Stack } from '@chakra-ui/react';
+import { Box, Flex, Icon, Span, Stack } from '@chakra-ui/react';
 import NextLink from 'next/link';
 import React from 'react';
-import { GrDocumentMissing } from 'react-icons/gr';
 import { IoMdGift } from 'react-icons/io';
 import { MdOutlineAttachMoney, MdWorkspacePremium } from 'react-icons/md';
 
@@ -42,22 +41,7 @@ export default function VehicleCell({
         width="100%"
       >
         <Box height="80px" position="relative" width="100%">
-          {vehicle.image ? (
-            <VehicleImage
-              fallbackText=""
-              fill
-              image={vehicle.image}
-              name={name}
-              sizes="200px"
-              slug={vehicle.slug}
-            />
-          ) : (
-            <Center height="100%" width="100%">
-              <Icon color="fg.muted" size="lg">
-                <GrDocumentMissing />
-              </Icon>
-            </Center>
-          )}
+          <VehicleImage fill name={name} sizes="200px" slug={vehicle.slug} />
         </Box>
 
         <Flex alignItems="center" padding={1.5} width="100%">

@@ -15,6 +15,7 @@ import InaccurateDataFooter from '@/components/wiki/inaccurateDataFooter';
 import { usePlace } from '@/hooks/usePlace';
 import { useRouterQuery } from '@/hooks/useRouterQuery';
 import { formatTitle } from '@/utils/formatTitle';
+import { getVehicleImage } from '@/utils/getVehicleImage';
 import { trpc } from '@/utils/trpc';
 
 export default function PlaceVehicle() {
@@ -42,6 +43,7 @@ export default function PlaceVehicle() {
   }, [router, vehicle, vehicleQuery, vehicleSlug]);
 
   const title = vehicle ? vehicle.info.name : 'Vehicle not found';
+  const image = vehicle ? getVehicleImage(vehicle.info.slug) : null;
 
   return (
     <>
@@ -51,7 +53,8 @@ export default function PlaceVehicle() {
         <meta content={title} property="og:title" />
         <meta content={title} name="twitter:title" />
 
-        {vehicle && (
+        {/* Image is just here for type safety */}
+        {vehicle && image && (
           <>
             <meta content="summary_large_image" name="twitter:card" />
             <meta
@@ -77,19 +80,12 @@ export default function PlaceVehicle() {
               name="description"
             />
 
-            {vehicle.info.image && (
-              <>
-                <meta content={vehicle.info.image} property="og:image" />
-                <meta content="1920" property="og:image:width" />
-                <meta content="1080" property="og:image:height" />
-                <meta
-                  content={`image/${vehicle.info.image.split('.').pop()}`}
-                  property="og:image:type"
-                />
-
-                <meta content={vehicle.info.image} name="twitter:image" />
-              </>
-            )}
+            <meta content={image} property="og:image" />
+            <meta
+              content={`image/${image.split('.').pop()}`}
+              property="og:image:type"
+            />
+            <meta content={image} name="twitter:image" />
 
             {Object.entries(vehicle.linkedData).map(([key, linkedData]) => (
               <script

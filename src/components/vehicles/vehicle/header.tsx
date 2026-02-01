@@ -1,13 +1,15 @@
-import { Box, Heading, HStack, Quote, Span, Stack } from '@chakra-ui/react';
+import { Box, Heading, HStack, Span } from '@chakra-ui/react';
 import React from 'react';
 import { MdOutlineOpenInFull } from 'react-icons/md';
 import { SiFandom } from 'react-icons/si';
 
 import IconLink from '@/components/buttonIconLink';
 import ButtonMarkdownLink from '@/components/buttonMarkdownLink';
+import FakeDescription from '@/components/fakeDescription';
 import TeamIcon from '@/components/icons/teams';
 import VehicleImage from '@/components/vehicles/vehicleImage';
 import { useVehicle } from '@/hooks/providers/vehicle';
+import { getVehicleImage } from '@/utils/getVehicleImage';
 
 export default function VehicleHeader() {
   const vehicle = useVehicle();
@@ -27,21 +29,13 @@ export default function VehicleHeader() {
         base: 0,
         md: '1px',
       }}
-      divideY={!vehicle.info.image ? '1px' : undefined}
       width="100%"
     >
-      <Box
-        backgroundColor="bg.panel"
-        height={
-          !vehicle.info.image ? 'calc(var(--chakra-sizes-3xs) - 1px)' : '3xs'
-        }
-        position="relative"
-      >
+      <Box aspectRatio="3/1" backgroundColor="bg.panel" position="relative">
         <VehicleImage
-          image={vehicle.info.image}
           name={vehicle.info.name}
           slug={vehicle.info.slug}
-          fallbackText="COMING SOON"
+          type="perspective_banner"
           fetchPriority="high"
           fill
           preload
@@ -62,8 +56,11 @@ export default function VehicleHeader() {
           role="toolbar"
         >
           <IconLink
-            disabled={!vehicle.info.image}
-            href={vehicle.info.image || ''}
+            href={getVehicleImage(
+              vehicle.info.slug,
+              'perspective_banner',
+              false,
+            )}
             linkProps={{
               target: '_blank',
             }}
@@ -94,33 +91,24 @@ export default function VehicleHeader() {
         </HStack>
       </Box>
 
-      <Stack as="section" backgroundColor="bg.subtle" gap={4} padding={6}>
-        <div>
-          <HStack data-md-ignore>
-            <TeamIcon team={vehicle.info.team} />
-            <Span aria-label="Team" fontSize="sm" lineHeight="short">
+      <Box as="section" backgroundColor="bg.subtle" padding={6}>
+        <HStack>
+          <TeamIcon team={vehicle.info.team} />
+          <FakeDescription name="Team">
+            <Span fontSize="sm" lineHeight="short">
               {vehicle.info.team}
             </Span>
-          </HStack>
+          </FakeDescription>
+        </HStack>
 
-          <Heading aria-label="Vehicle name" as="h1" id="vehicle-page-title">
-            {vehicle.info.name}
-          </Heading>
+        <Heading aria-label="Vehicle name" as="h1" id="vehicle-page-title">
+          {vehicle.info.name}
+        </Heading>
 
-          <Span aria-label="Role" color="gray.100">
-            {vehicle.info.role}
-          </Span>
-        </div>
-
-        <Quote
-          aria-label="Description"
-          fontSize="sm"
-          fontWeight="light"
-          id="vehicle-page-description"
-        >
-          {vehicle.info.description}
-        </Quote>
-      </Stack>
+        <FakeDescription name="Role">
+          <Span color="gray.100">{vehicle.info.role}</Span>
+        </FakeDescription>
+      </Box>
     </Box>
   );
 }

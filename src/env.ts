@@ -20,6 +20,7 @@ export const env = createEnv({
   client: {
     NEXT_PUBLIC_ANALYTICS_DOMAIN: z.string().url().optional(),
     NEXT_PUBLIC_ANALYTICS_ID: z.string().uuid().optional(),
+
     NEXT_PUBLIC_IMAGE_LOADER: z.string().url().optional(),
     NEXT_PUBLIC_MEDIA_PREFIX: z.string().url().optional(),
   },

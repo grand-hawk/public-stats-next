@@ -1,9 +1,7 @@
-import { existsSync } from 'node:fs';
-
 import z from 'zod';
 
-import { MEDIA_PREFIX } from '@/env';
 import { createTRPCRouter, publicProcedure } from '@/server/api/trpc/context';
+import { getVehicleImage } from '@/utils/getVehicleImage';
 import { getBaseUrl } from '@/utils/trpc';
 import { getConfig } from '@generated/config';
 import { getKdr } from '@generated/kdr';
@@ -32,7 +30,6 @@ export type VehicleAvailability = Record<
 export type DetailedVehicle = VehiclesPlaceDataVehicle & {
   info: {
     name: string;
-    image: string | null;
     lastRetrieved: string;
     availability: VehicleAvailability;
     kdr: KdrPlaceDataVehicle;
@@ -42,23 +39,6 @@ export type DetailedVehicle = VehiclesPlaceDataVehicle & {
     vehicle: WithContext<Vehicle>;
   }>;
 };
-
-const imageCache = new Map<string, string | null>();
-
-export function getVehicleImage(slug: string) {
-  let cachedImage = imageCache.get(slug);
-  if (cachedImage === undefined) {
-    const path = `/assets/vehicles/${slug}.png`;
-    const imageResult = existsSync(`./public${path}`)
-      ? `${MEDIA_PREFIX}${path}`
-      : null;
-
-    imageCache.set(slug, imageResult);
-    cachedImage = imageResult;
-  }
-
-  return cachedImage;
-}
 
 export const vehiclesRouter = createTRPCRouter({
   list: publicProcedure
@@ -112,11 +92,7 @@ export const vehiclesRouter = createTRPCRouter({
       const vehicle = vehiclesPlace.data[vehicleName];
       const initials =
         config.placeNameInitials[vehiclesPlace.metadata.placeName];
-      const relativeImageUrl = getVehicleImage(input.slug);
       const baseUrl = getBaseUrl();
-      const publicImageUrl =
-        relativeImageUrl?.startsWith('/') &&
-        new URL(relativeImageUrl, baseUrl).toString();
 
       const availability: VehicleAvailability = {};
       for (const [loadoutName, loadout] of Object.entries(loadoutsPlace.data)) {
@@ -129,7 +105,6 @@ export const vehiclesRouter = createTRPCRouter({
         info: {
           ...vehicle.info,
           name: vehicleName,
-          image: relativeImageUrl,
           lastRetrieved: vehicles.metadata.date,
           availability,
           kdr: kdrPlace.data.all_time[vehicleName],
@@ -158,7 +133,7 @@ export const vehiclesRouter = createTRPCRouter({
               `${initials}/vehicles/${input.slug}`,
               baseUrl,
             ).toString(),
-            image: publicImageUrl || undefined,
+            image: getVehicleImage(input.slug),
           },
         },
       };

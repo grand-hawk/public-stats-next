@@ -36,6 +36,12 @@ const nextConfig: NextConfig = {
     loaderFile: process.env.NEXT_PUBLIC_IMAGE_LOADER
       ? './src/images.js'
       : undefined,
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: '*.astrid.ovh',
+      },
+    ],
   },
 };
 
