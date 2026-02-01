@@ -6,7 +6,15 @@ import slug from 'slug';
 import ModuleIdSelect from '@/components/development/moduleIdSelect';
 
 import type { BoxProps, HeadingProps } from '@chakra-ui/react';
-import type { PropsWithChildren } from 'react';
+
+export interface InlineCardProps extends BoxProps {
+  children?: React.ReactNode;
+  headingAs?: HeadingProps['as'];
+  innerPadding?: BoxProps['padding'];
+  moduleId?: string;
+  title: string;
+  withAnchor?: boolean | string;
+}
 
 export default function InlineCard({
   children,
@@ -16,15 +24,7 @@ export default function InlineCard({
   title,
   withAnchor,
   ...props
-}: PropsWithChildren<
-  {
-    title: string;
-    withAnchor?: boolean | string;
-    innerPadding?: BoxProps['padding'];
-    headingAs?: HeadingProps['as'];
-    moduleId?: string;
-  } & BoxProps
->) {
+}: InlineCardProps) {
   const titleSlug =
     typeof withAnchor === 'string' ? slug(withAnchor) : slug(title);
 

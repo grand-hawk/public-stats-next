@@ -4,12 +4,15 @@ import React, { Suspense } from 'react';
 import { SEARCH_INPUT_HEIGHT } from '@/components/searchLayout/searchSidebar/input';
 import { CenterSpinner } from '@/components/spinners';
 
-import type { PropsWithChildren } from 'react';
+export interface SearchLayoutProps {
+  children?: React.ReactNode;
+  sidebar: React.ReactNode;
+}
 
 export default function SearchLayout({
   children,
   sidebar,
-}: PropsWithChildren<{ sidebar: React.ReactNode }>) {
+}: SearchLayoutProps) {
   return (
     <Box
       display="grid"

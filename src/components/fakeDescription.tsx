@@ -1,11 +1,14 @@
 import React from 'react';
 
-import type { PropsWithChildren } from 'react';
+export interface FakeDescriptionProps {
+  children: React.ReactNode;
+  name: string;
+}
 
 export default function FakeDescription({
   children,
   name,
-}: PropsWithChildren<{ name: string }>) {
+}: FakeDescriptionProps) {
   return (
     <dl>
       <dt style={{ display: 'none' }}>{name}</dt>

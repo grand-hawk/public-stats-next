@@ -2,17 +2,13 @@ import { Table } from '@chakra-ui/react';
 import React from 'react';
 
 import type { TableCellProps } from '@chakra-ui/react';
-import type { PropsWithChildren } from 'react';
 
-export function StatsCell({
-  asTitle,
-  children,
-  ...props
-}: PropsWithChildren<
-  TableCellProps & {
-    asTitle?: boolean;
-  }
->) {
+export interface StatsCellProps extends TableCellProps {
+  asTitle?: boolean;
+  children?: React.ReactNode;
+}
+
+export function StatsCell({ asTitle, children, ...props }: StatsCellProps) {
   return (
     <Table.Cell
       color={asTitle ? 'fg' : undefined}

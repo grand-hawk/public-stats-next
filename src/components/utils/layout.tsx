@@ -6,18 +6,21 @@ import PlaceSwitchBar from '@/components/placeSwitchBar';
 import { CenterSpinner } from '@/components/spinners';
 
 import type { BoxProps } from '@chakra-ui/react';
-import type { PropsWithChildren } from 'react';
 
 export const LAYOUT_SHIFT_MEDIA = 'md';
+
+export interface LayoutProps extends BoxProps {
+  children?: React.ReactNode;
+  noPadding?: boolean;
+  overwriteTabLabel?: string;
+}
 
 export default function Layout({
   children,
   noPadding,
   overwriteTabLabel,
   ...props
-}: PropsWithChildren<
-  BoxProps & { noPadding?: boolean; overwriteTabLabel?: string }
->) {
+}: LayoutProps) {
   return (
     <Flex justifyContent="center">
       <Box

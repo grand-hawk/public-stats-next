@@ -2,7 +2,12 @@ import { Table } from '@chakra-ui/react';
 import React from 'react';
 
 import type { TableRowProps } from '@chakra-ui/react';
-import type { PropsWithChildren } from 'react';
+
+export interface StatsRowProps extends TableRowProps {
+  children?: React.ReactNode;
+  withPaddingLeft?: boolean;
+  withPaddingTop?: boolean;
+}
 
 export function StatsRow({
   children,
@@ -10,12 +15,7 @@ export function StatsRow({
   withPaddingLeft,
   withPaddingTop,
   ...props
-}: PropsWithChildren<
-  TableRowProps & {
-    withPaddingTop?: boolean;
-    withPaddingLeft?: boolean;
-  }
->) {
+}: StatsRowProps) {
   return (
     <Table.Row
       {...props}

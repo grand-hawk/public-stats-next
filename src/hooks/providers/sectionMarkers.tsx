@@ -1,7 +1,5 @@
 import React from 'react';
 
-import type { PropsWithChildren } from 'react';
-
 export interface SectionMarker {
   name: string;
   slug: string;
@@ -23,7 +21,11 @@ const SectionMarkersContext = React.createContext<SectionMarkersContext>({
   unregister: () => {},
 });
 
-export function SectionMarkersProvider({ children }: PropsWithChildren) {
+export function SectionMarkersProvider({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   const [markers, setMarkers] = React.useState<SectionMarker[]>([]);
   const [activeSlug, setActiveSlug] = React.useState<string | null>(null);
 

@@ -2,13 +2,12 @@ import { Table } from '@chakra-ui/react';
 import React from 'react';
 
 import type { TableRootProps } from '@chakra-ui/react';
-import type { PropsWithChildren } from 'react';
 
 export function StatsRoot({
   children,
   css,
   ...props
-}: PropsWithChildren<TableRootProps>) {
+}: TableRootProps & { children?: React.ReactNode }) {
   return (
     <Table.Root
       background="none"

@@ -4,9 +4,9 @@ import React from 'react';
 
 import type { IconButtonProps } from '@chakra-ui/react';
 import type { LinkProps } from 'next/link';
-import type { PropsWithChildren } from 'react';
 
-export interface IconLinkProps extends PropsWithChildren<IconButtonProps> {
+export interface IconLinkProps extends IconButtonProps {
+  children: React.ReactNode;
   href: string;
   linkProps?: Omit<LinkProps, 'href'> &
     React.AnchorHTMLAttributes<HTMLAnchorElement>;

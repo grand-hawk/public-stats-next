@@ -8,7 +8,6 @@ import { Button } from '@/components/ui/button';
 import type { ButtonProps } from '@/components/ui/button';
 import type { FlexProps } from '@chakra-ui/react';
 import type { LinkProps as NextLinkProps } from 'next/link';
-import type { PropsWithChildren } from 'react';
 
 const baseItemProps = {
   left: 0,
@@ -45,17 +44,18 @@ export const SearchListDividerItem = React.memo(function SearchListDividerItem({
   );
 });
 
+export interface SearchLinkListItemProps extends ButtonProps {
+  active?: boolean;
+  children: React.ReactNode;
+  href: NextLinkProps['href'];
+}
+
 export const SearchLinkListItem = React.memo(function SearchLinkListItem({
   active,
   children,
   href,
   ...props
-}: PropsWithChildren<
-  ButtonProps & {
-    active?: boolean;
-    href: NextLinkProps['href'];
-  }
->) {
+}: SearchLinkListItemProps) {
   return (
     <Button
       _hover={{

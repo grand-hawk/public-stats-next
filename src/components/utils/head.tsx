@@ -7,7 +7,6 @@ import { usePlaceInitials } from '@/hooks/usePlaceInitials';
 import { formatTitle } from '@/utils/formatTitle';
 
 import type { Place } from '@/utils/placeUtils';
-import type { PropsWithChildren } from 'react';
 
 export const getKeywords = (place: Place) => [
   place.placeName,
@@ -17,7 +16,11 @@ export const getKeywords = (place: Place) => [
   'Data',
 ];
 
-export default function InternalHead({ children }: PropsWithChildren) {
+export default function InternalHead({
+  children,
+}: {
+  children?: React.ReactNode;
+}) {
   const initials = usePlaceInitials();
   const currentTab = useCurrentTab();
 

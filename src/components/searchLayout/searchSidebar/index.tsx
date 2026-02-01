@@ -7,9 +7,9 @@ import { CenterSpinner } from '@/components/spinners';
 import { useSidebarStore } from '@/stores/sidebar';
 
 import type { SearchListProps } from '@/components/searchLayout/searchSidebar/list';
-import type { PropsWithChildren } from 'react';
 
 export interface SearchSidebarProps {
+  children?: React.ReactNode;
   isSearching: boolean;
   searchListProps: SearchListProps;
 }
@@ -18,7 +18,7 @@ export default function SearchSidebar({
   children,
   isSearching,
   searchListProps,
-}: PropsWithChildren<SearchSidebarProps>) {
+}: SearchSidebarProps) {
   const isOpen = useSidebarStore((s) => s.open);
 
   return (

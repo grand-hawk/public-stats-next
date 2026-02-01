@@ -4,7 +4,13 @@ import IconLink from '@/components/buttonIconLink';
 import { usePlaceInitials } from '@/hooks/usePlaceInitials';
 
 import type { IconButtonProps } from '@chakra-ui/react';
-import type { PropsWithChildren } from 'react';
+
+export interface NavigationButtonProps extends IconButtonProps {
+  active?: boolean;
+  children: React.ReactNode;
+  color?: string;
+  href: string;
+}
 
 export default function NavigationButton({
   active,
@@ -12,9 +18,7 @@ export default function NavigationButton({
   color,
   href,
   ...props
-}: PropsWithChildren<
-  IconButtonProps & { href: string; active?: boolean; color?: string }
->) {
+}: NavigationButtonProps) {
   const initials = usePlaceInitials()!;
 
   return (

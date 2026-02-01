@@ -1,14 +1,12 @@
 import { Stat as ChakraStat } from '@chakra-ui/react';
 import React from 'react';
 
-import type { PropsWithChildren } from 'react';
-
-export default function Stat({
-  children,
-  label,
-}: PropsWithChildren<{
+export interface StatProps {
+  children: React.ReactNode;
   label: React.ReactNode;
-}>) {
+}
+
+export default function Stat({ children, label }: StatProps) {
   return (
     <ChakraStat.Root>
       <ChakraStat.Label>{label}</ChakraStat.Label>
