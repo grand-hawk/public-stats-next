@@ -21,12 +21,16 @@ export default function DevelopmentOverlay() {
     startY: number;
     initialLeft: number;
     initialTop: number;
+    initialWidth: number;
+    initialHeight: number;
   }>({
     isDragging: false,
     startX: 0,
     startY: 0,
     initialLeft: 0,
     initialTop: 0,
+    initialWidth: 0,
+    initialHeight: 0,
   });
   const lastSyncedSize = React.useRef({ width: 0, height: 0 });
 
@@ -42,6 +46,8 @@ export default function DevelopmentOverlay() {
       startY: e.clientY,
       initialLeft: rect.left,
       initialTop: rect.top,
+      initialWidth: rect.width,
+      initialHeight: rect.height,
     };
 
     setIsDraggingState(true);
@@ -55,14 +61,19 @@ export default function DevelopmentOverlay() {
       const deltaX = e.clientX - info.startX;
       const deltaY = e.clientY - info.startY;
 
-      const rect = containerRef.current.getBoundingClientRect();
       const newLeft = Math.max(
         0,
-        Math.min(info.initialLeft + deltaX, window.innerWidth - rect.width),
+        Math.min(
+          info.initialLeft + deltaX,
+          window.innerWidth - info.initialWidth,
+        ),
       );
       const newTop = Math.max(
         0,
-        Math.min(info.initialTop + deltaY, window.innerHeight - rect.height),
+        Math.min(
+          info.initialTop + deltaY,
+          window.innerHeight - info.initialHeight,
+        ),
       );
 
       containerRef.current.style.left = `${newLeft}px`;

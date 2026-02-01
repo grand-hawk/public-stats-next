@@ -110,7 +110,6 @@ export default React.memo(function ProvidersDebug() {
         const containerRect = container.getBoundingClientRect();
         const lineRect = lineElement.getBoundingClientRect();
 
-        // Calculate position relative to container
         const relativeTop =
           lineRect.top - containerRect.top + container.scrollTop;
 
@@ -119,7 +118,6 @@ export default React.memo(function ProvidersDebug() {
           behavior: 'smooth',
         });
       } else {
-        // Fallback to average height calculation if element not found
         const totalHeight = container.scrollHeight;
         const scrollPos = ((line - 1) / lineCount) * totalHeight;
 
@@ -171,10 +169,8 @@ export default React.memo(function ProvidersDebug() {
       if (isReference) {
         result.add(lineNumber);
 
-        // Check if this line is the start of a declaration
         if (line.trim().startsWith(`"${highlightedModule}": {`)) {
           const indent = line.match(/^\s*/)?.[0] || '';
-          // Find the matching closing brace
           for (let i = index + 1; i < lines.length; i += 1)
             if (lines[i]!.startsWith(`${indent}}`)) {
               declarationRange = { start: lineNumber, end: i + 1 };
