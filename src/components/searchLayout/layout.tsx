@@ -9,10 +9,7 @@ export interface SearchLayoutProps {
   sidebar: React.ReactNode;
 }
 
-export default function SearchLayout({
-  children,
-  sidebar,
-}: SearchLayoutProps) {
+export default function SearchLayout({ children, sidebar }: SearchLayoutProps) {
   return (
     <Box
       display="grid"

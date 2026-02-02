@@ -63,7 +63,12 @@ export default function ShellHeader() {
           {shell.type}
 
           {shellIcon && (
-            <ShellIcon alt={shell.type} marginLeft={1} size={32} src={shellIcon} />
+            <ShellIcon
+              alt={shell.type}
+              marginLeft={1}
+              size={32}
+              src={shellIcon}
+            />
           )}
         </Stat>
       </Stack>
