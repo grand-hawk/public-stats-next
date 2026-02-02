@@ -103,7 +103,12 @@ export default function VehicleDynamicAddons() {
   }, [vehicle.alterations.addons]);
 
   return (
-    <TitledCard as="section" title="Addons" withAnchor="addon-config">
+    <TitledCard
+      as="section"
+      title="Addons"
+      withAnchor="addon-config"
+      innerPadding={4}
+    >
       <Stack gap={4} data-md-ignore>
         {sortedAddons.map(([addonName, addon]) => {
           const hasChanges = alterationHasChanges(addon);
@@ -121,7 +126,7 @@ export default function VehicleDynamicAddons() {
             .trim();
 
           return (
-            <Stack key={addonName}>
+            <Stack key={addonName} gap={1.5}>
               {hasChanges ? (
                 <Checkbox.Root
                   checked={isEnabled}
