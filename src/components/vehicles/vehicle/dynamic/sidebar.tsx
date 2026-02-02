@@ -1,4 +1,3 @@
-import { Center, Span } from '@chakra-ui/react';
 import React from 'react';
 
 import VehicleDynamicAddons from '@/components/vehicles/vehicle/dynamic/addons';
@@ -7,8 +6,6 @@ import { useVehicle } from '@/hooks/providers/vehicle';
 
 export default function VehicleDynamicSidebar() {
   const vehicle = useVehicle();
-
-  const lastRetrievedDate = new Date(vehicle.info.lastRetrieved);
 
   return (
     <>
@@ -19,17 +16,6 @@ export default function VehicleDynamicSidebar() {
       {Object.keys(vehicle.alterations.addons).length > 0 && (
         <VehicleDynamicAddons />
       )}
-
-      <Center hideBelow="xl" paddingX={4} data-md-ignore>
-        <Span
-          color="fg.subtle"
-          fontSize="xs"
-          suppressHydrationWarning
-          title={lastRetrievedDate.toLocaleString()}
-        >
-          Data as of {lastRetrievedDate.toLocaleDateString()}
-        </Span>
-      </Center>
     </>
   );
 }

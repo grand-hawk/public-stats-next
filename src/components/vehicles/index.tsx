@@ -3,6 +3,7 @@ import React from 'react';
 
 import { ContextCapturer } from '@/components/development/contextCapturer';
 import VehicleAvailability from '@/components/vehicles/vehicle/availability';
+import VehicleDataInfo from '@/components/vehicles/vehicle/dataInfo';
 import VehicleDynamicData from '@/components/vehicles/vehicle/dynamic';
 import SectionNavigation from '@/components/vehicles/vehicle/dynamic/sectionNavigation';
 import VehicleDynamicSidebar from '@/components/vehicles/vehicle/dynamic/sidebar';
@@ -50,6 +51,7 @@ export default function Vehicle({ vehicle }: { vehicle: DetailedVehicle }) {
           >
             <SectionNavigation />
             <VehicleDynamicSidebar />
+            <VehicleDataInfo />
           </Stack>
 
           <Stack gap={4}>
@@ -64,6 +66,9 @@ export default function Vehicle({ vehicle }: { vehicle: DetailedVehicle }) {
               </Stack>
             )}
             <VehicleDynamicData />
+            <Box hideFrom="xl">
+              <VehicleDataInfo compact />
+            </Box>
           </Stack>
         </Box>
       </DynamicDataProvider>

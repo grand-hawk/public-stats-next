@@ -143,7 +143,6 @@ export default function TitledCard({
               md: '1px',
             }
       }
-      borderRadius="none"
       borderRightWidth={
         keepBorder
           ? '1px'
