@@ -12,7 +12,7 @@ export default function VehicleDataInfo({ compact }: { compact?: boolean }) {
 
   return (
     <Stack
-      backgroundColor={compact ? undefined : 'bg.subtle'}
+      backgroundColor={compact ? undefined : 'bg.subtle/75'}
       borderLeftWidth={
         compact
           ? undefined
@@ -32,6 +32,7 @@ export default function VehicleDataInfo({ compact }: { compact?: boolean }) {
       borderYWidth={compact ? undefined : '1px'}
       padding={compact ? undefined : 2}
       fontSize="xs"
+      borderColor="border/75"
       color="fg.muted"
       css={{
         '& span': {
