@@ -2,18 +2,14 @@ import { createListCollection, Portal, Select } from '@chakra-ui/react';
 import React from 'react';
 
 import TitledCard from '@/components/wiki/titledCard';
+import { useDynamicData } from '@/hooks/providers/dynamicData';
 import { useVehicle } from '@/hooks/providers/vehicle';
 
 const NO_VALUE = '<none>';
 
-export default function VehicleDynamicLoadouts({
-  selectedLoadout,
-  setSelectedLoadout,
-}: {
-  selectedLoadout: string | null;
-  setSelectedLoadout: React.Dispatch<React.SetStateAction<string | null>>;
-}) {
+export default function VehicleDynamicLoadouts() {
   const vehicle = useVehicle();
+  const { selectedLoadout, setSelectedLoadout } = useDynamicData();
 
   const loadoutCollection = createListCollection({
     items: [

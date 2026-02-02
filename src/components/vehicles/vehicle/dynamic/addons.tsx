@@ -11,17 +11,10 @@ import {
   alterationIsConflicting,
 } from '@/utils/alterations';
 
-export default function VehicleDynamicAddons({
-  selectedLoadout,
-  setEnabledAddons,
-}: {
-  selectedLoadout: string | null;
-  setEnabledAddons: React.Dispatch<
-    React.SetStateAction<Record<string, boolean>>
-  >;
-}) {
+export default function VehicleDynamicAddons() {
   const vehicle = useVehicle();
-  const { enabledAlterations } = useDynamicData();
+  const { enabledAlterations, selectedLoadout, setEnabledAddons } =
+    useDynamicData();
 
   const setAddonsEnabled = React.useCallback(
     (addons: Array<[addonName: string, enabled: boolean]>) => {

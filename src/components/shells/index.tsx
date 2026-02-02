@@ -15,6 +15,7 @@ export default function Shell({ shell }: { shell: DetailedShell }) {
   return (
     <ShellContext.Provider value={shell}>
       <ContextCapturer contextKey="Shell" data={shell} />
+
       <ShellHeader />
       <ShellProjectile />
       <ShellDamage />
