@@ -14,12 +14,19 @@ export type TurretWithName = VehicleModuleWithId<'Turret'> & {
   name: string;
 };
 
-const TURRET_PRORITIES = [
+export const TURRET_PRIORITIES = [
   'Gunner turret',
   'Commander turret',
   'Loader turret',
   'Driver turret',
 ] as const;
+
+export function getTurretPriorityIndex(name: string) {
+  const index = TURRET_PRIORITIES.findIndex((priorityName) =>
+    name.startsWith(priorityName),
+  );
+  return index === -1 ? Number.MAX_SAFE_INTEGER : index;
+}
 
 export default function Turrets() {
   const { assembledModules } = useDynamicData();
@@ -65,16 +72,9 @@ export default function Turrets() {
   }, [turretsWithNames]);
 
   const sortedTurrets = React.useMemo(() => {
-    const getPriorityIndex = (name: string) => {
-      const index = TURRET_PRORITIES.findIndex((priorityName) =>
-        name.startsWith(priorityName),
-      );
-      return index === -1 ? Number.MAX_SAFE_INTEGER : index;
-    };
-
     return deduplicatedTurretsWithNames.sort((a, b) => {
-      const aPriority = getPriorityIndex(a.name);
-      const bPriority = getPriorityIndex(b.name);
+      const aPriority = getTurretPriorityIndex(a.name);
+      const bPriority = getTurretPriorityIndex(b.name);
 
       if (aPriority !== bPriority) return aPriority - bPriority;
       return a.name.localeCompare(b.name);

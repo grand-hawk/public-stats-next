@@ -18,6 +18,10 @@ export default function Vehicle({ vehicle }: { vehicle: DetailedVehicle }) {
     !!vehicle.info.availability &&
     Object.keys(vehicle.info.availability).length > 0;
 
+  const hasSidebarContent =
+    Object.keys(vehicle.alterations.loadouts).length > 0 ||
+    Object.keys(vehicle.alterations.addons).length > 0;
+
   return (
     <VehicleContext.Provider value={vehicle}>
       <ContextCapturer contextKey="Vehicle" data={vehicle} />
@@ -37,10 +41,11 @@ export default function Vehicle({ vehicle }: { vehicle: DetailedVehicle }) {
           <Stack
             as="aside"
             gap={4}
-            gridColumn={{ base: 'unset', xl: '2' }}
-            gridRow={{ base: 'unset', xl: '1' }}
+            gridColumn="2"
+            gridRow="1"
+            hideBelow="xl"
             maxHeight="max-content"
-            position={{ base: 'unset', xl: 'sticky' }}
+            position="sticky"
             top={4}
           >
             <SectionNavigation />
@@ -53,6 +58,11 @@ export default function Vehicle({ vehicle }: { vehicle: DetailedVehicle }) {
               availability={vehicle.info.availability}
               isAvailable={vehicleIsAvailable}
             />
+            {hasSidebarContent && (
+              <Stack hideFrom="xl" gap={4}>
+                <VehicleDynamicSidebar />
+              </Stack>
+            )}
             <VehicleDynamicData />
           </Stack>
         </Box>

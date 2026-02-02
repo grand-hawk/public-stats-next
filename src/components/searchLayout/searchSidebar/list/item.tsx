@@ -68,6 +68,7 @@ export const SearchLinkListItem = React.memo(function SearchLinkListItem({
       {...baseItemProps}
       {...props}
       css={{
+        ...props.css,
         '& img': {
           filter: active ? 'brightness(0)' : undefined,
         },

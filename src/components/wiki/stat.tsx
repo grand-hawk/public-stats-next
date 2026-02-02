@@ -4,13 +4,24 @@ import React from 'react';
 export interface StatProps {
   children: React.ReactNode;
   label: React.ReactNode;
+  rootProps?: ChakraStat.RootProps;
+  labelProps?: ChakraStat.LabelProps;
+  valueProps?: ChakraStat.ValueTextProps;
 }
 
-export default function Stat({ children, label }: StatProps) {
+export default function Stat({
+  children,
+  label,
+  labelProps,
+  rootProps,
+  valueProps,
+}: StatProps) {
   return (
-    <ChakraStat.Root>
-      <ChakraStat.Label>{label}</ChakraStat.Label>
-      <ChakraStat.ValueText fontSize="xl">{children}</ChakraStat.ValueText>
+    <ChakraStat.Root {...rootProps}>
+      <ChakraStat.Label {...labelProps}>{label}</ChakraStat.Label>
+      <ChakraStat.ValueText fontSize="xl" {...valueProps}>
+        {children}
+      </ChakraStat.ValueText>
     </ChakraStat.Root>
   );
 }

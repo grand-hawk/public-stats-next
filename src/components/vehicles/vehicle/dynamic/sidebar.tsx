@@ -8,9 +8,7 @@ import { useVehicle } from '@/hooks/providers/vehicle';
 export default function VehicleDynamicSidebar() {
   const vehicle = useVehicle();
 
-  const lastRetrievedDate = new Date(
-    vehicle.info.lastRetrieved,
-  ).toLocaleDateString();
+  const lastRetrievedDate = new Date(vehicle.info.lastRetrieved);
 
   return (
     <>
@@ -27,9 +25,9 @@ export default function VehicleDynamicSidebar() {
           color="fg.subtle"
           fontSize="xs"
           suppressHydrationWarning
-          title={lastRetrievedDate}
+          title={lastRetrievedDate.toLocaleString()}
         >
-          Data as of {lastRetrievedDate}
+          Data as of {lastRetrievedDate.toLocaleDateString()}
         </Span>
       </Center>
     </>
