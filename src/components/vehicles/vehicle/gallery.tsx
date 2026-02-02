@@ -193,7 +193,7 @@ export default function VehicleGallery() {
           <thead>
             <tr>
               <th>Type</th>
-              <th>URK</th>
+              <th>URL</th>
             </tr>
           </thead>
           <tbody>
