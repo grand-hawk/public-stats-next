@@ -68,6 +68,9 @@ function computeMarkers(
     markers.push({ name: 'Turrets', slug: slug(sortedTurrets[0].name) });
   }
 
+  // Gallery
+  markers.push({ name: 'Gallery', slug: 'gallery' });
+
   return markers;
 }
 

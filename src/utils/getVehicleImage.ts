@@ -1,4 +1,4 @@
-type BaseVehicleImageType =
+export type BaseVehicleImageType =
   | 'perspective'
   | 'perspective_banner'
   | 'left'

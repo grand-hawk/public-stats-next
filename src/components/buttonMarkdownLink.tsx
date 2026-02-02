@@ -9,7 +9,7 @@ import { setExtension } from '@/utils/extensions';
 export default function ButtonMarkdownLink() {
   const router = useRouter();
 
-  const [asPath] = router.asPath.split('?');
+  const [asPath] = router.asPath.split(/[?#]/);
 
   return (
     <IconLink
