@@ -40,7 +40,7 @@ const config = defineConfig({
       colors: {
         bg: {
           muted: {
-            value: '#1c1c1c',
+            value: '#1a1a1a',
           },
         },
       },
