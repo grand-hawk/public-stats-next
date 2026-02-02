@@ -30,9 +30,9 @@ export default function VehicleAvailability({
     return Array.from(allTeams);
   }, [availability]);
 
-  const availabilityEntries = React.useMemo(() => {
+  const loadouts = React.useMemo(() => {
     if (!availability) return [];
-    return Object.entries(availability);
+    return Object.keys(availability);
   }, [availability]);
 
   if (!isAvailable) return null;
@@ -58,13 +58,13 @@ export default function VehicleAvailability({
         >
           <Table.Header>
             <Table.Row>
-              <Table.ColumnHeader>Loadout/Team</Table.ColumnHeader>
+              <Table.ColumnHeader>Team/Loadout</Table.ColumnHeader>
 
-              {teams.map((team) => (
-                <Table.ColumnHeader key={team}>
+              {loadouts.map((loadout) => (
+                <Table.ColumnHeader key={loadout}>
                   <Link asChild variant="underline">
-                    <NextLink href={`/${initials}/teams/${slug(team)}`}>
-                      {team}
+                    <NextLink href={`/${initials}/loadouts/${slug(loadout)}`}>
+                      {loadout}
                     </NextLink>
                   </Link>
                 </Table.ColumnHeader>
@@ -73,30 +73,28 @@ export default function VehicleAvailability({
           </Table.Header>
 
           <Table.Body>
-            {availabilityEntries.map(([loadoutName, loadout], index) => (
+            {teams.map((team, index) => (
               <Table.Row
-                key={loadoutName}
+                key={team}
                 css={{
                   '& .chakra-table__cell': {
                     borderBottomWidth:
-                      index === availabilityEntries.length - 1 ? 0 : undefined,
+                      index === teams.length - 1 ? 0 : undefined,
                   },
                 }}
               >
                 <Table.Cell>
                   <Link asChild variant="underline">
-                    <NextLink
-                      href={`/${initials}/loadouts/${slug(loadoutName)}`}
-                    >
-                      {loadoutName}
+                    <NextLink href={`/${initials}/teams/${slug(team)}`}>
+                      {team}
                     </NextLink>
                   </Link>
                 </Table.Cell>
 
-                {teams.map((team) => (
-                  <Table.Cell key={team}>
-                    {loadout.teams[team]?.tier !== undefined
-                      ? `Tier ${loadout.teams[team].tier}`
+                {loadouts.map((loadout) => (
+                  <Table.Cell key={loadout}>
+                    {availability[loadout]?.teams[team]?.tier !== undefined
+                      ? `Tier ${availability[loadout].teams[team].tier}`
                       : '✗'}
                   </Table.Cell>
                 ))}
