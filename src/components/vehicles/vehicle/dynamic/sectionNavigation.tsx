@@ -88,6 +88,15 @@ export default function SectionNavigation() {
   React.useEffect(() => {
     if (markers.length === 0) return;
 
+    const hash = window.location.hash.slice(1);
+    const matchingMarker = markers.find((m) => m.slug === hash);
+
+    setActiveSlug(matchingMarker ? hash : markers[0].slug);
+  }, [markers]);
+
+  React.useEffect(() => {
+    if (markers.length === 0) return;
+
     const elements = markers
       .map((marker) => document.getElementById(marker.slug))
       .filter(Boolean) as HTMLElement[];
