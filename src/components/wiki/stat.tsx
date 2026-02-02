@@ -17,7 +17,7 @@ export default function Stat({
   valueProps,
 }: StatProps) {
   return (
-    <ChakraStat.Root {...rootProps}>
+    <ChakraStat.Root flexShrink={0} whiteSpace="nowrap" {...rootProps}>
       <ChakraStat.Label {...labelProps}>{label}</ChakraStat.Label>
       <ChakraStat.ValueText fontSize="xl" {...valueProps}>
         {children}
