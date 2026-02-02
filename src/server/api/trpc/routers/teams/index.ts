@@ -9,8 +9,12 @@ import type { PlaceId } from '@generated/config';
 import type { LoadoutsPlaceDataLoadoutVehicleTeam } from '@generated/loadouts';
 import type { VehiclesPlaceDataVehicleInfo } from '@generated/vehicles';
 
-export type TeamVehicle = LoadoutsPlaceDataLoadoutVehicleTeam &
-  Pick<VehiclesPlaceDataVehicleInfo, 'premium' | 'role' | 'slug'>;
+export interface TeamVehicle
+  extends
+    LoadoutsPlaceDataLoadoutVehicleTeam,
+    Pick<VehiclesPlaceDataVehicleInfo, 'role' | 'slug'> {
+  premiumType?: NonNullable<VehiclesPlaceDataVehicleInfo['premium']>['type'];
+}
 
 export interface Team {
   name: string;
@@ -83,7 +87,7 @@ export const teamsRouter = createTRPCRouter({
                     vehicleName,
                     {
                       ...vehicle,
-                      premium: vehicleData.info.premium,
+                      premiumType: vehicleData.info.premium?.type,
                       role: vehicleData.info.role,
                       slug: vehicleSlug,
                     } satisfies TeamVehicle,

@@ -80,21 +80,20 @@ export default function VehicleGeneralInformation({
 
             <Stat label="Obtainment">
               {isAvailable
-                ? vehicle.info.premium === false
+                ? !vehicle.info.premium
                   ? 'Free'
-                  : vehicle.info.premium === true
+                  : vehicle.info.premium.type === 'coins'
                     ? 'Premium'
-                    : vehicle.info.premium === 'shop'
+                    : vehicle.info.premium.type === 'money'
                       ? 'Shop'
                       : 'Badge'
                 : 'Dev-spawner only'}
             </Stat>
 
-            {vehicle.info.premiumPrice !== undefined && (
+            {vehicle.info.premium?.cost !== undefined && (
               <Stat label="Price">
-                <FormatNumber value={vehicle.info.premiumPrice} />{' '}
-                {/* premiumPrice will only be present for `true` and `shop` */}
-                {vehicle.info.premium === true ? 'coins' : 'money'}
+                <FormatNumber value={vehicle.info.premium.cost} />{' '}
+                {vehicle.info.premium.type === 'coins' ? 'coins' : 'money'}
               </Stat>
             )}
           </Box>

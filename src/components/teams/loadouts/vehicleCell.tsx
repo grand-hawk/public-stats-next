@@ -14,9 +14,12 @@ interface VehicleCellProps {
   vehicle: TeamVehicle;
 }
 
-const premiumConfig = {
-  true: { color: 'yellow.400', icon: MdWorkspacePremium },
-  shop: { color: 'green.400', icon: MdOutlineAttachMoney },
+const premiumConfig: Record<
+  NonNullable<TeamVehicle['premiumType']>,
+  { color: string; icon: React.ComponentType }
+> = {
+  coins: { color: 'yellow.400', icon: MdWorkspacePremium },
+  money: { color: 'green.400', icon: MdOutlineAttachMoney },
   badge: { color: 'purple.400', icon: IoMdGift },
 };
 
@@ -25,10 +28,9 @@ export default function VehicleCell({
   name,
   vehicle,
 }: VehicleCellProps) {
-  const config =
-    vehicle.premium !== false
-      ? premiumConfig[vehicle.premium === true ? 'true' : vehicle.premium]
-      : null;
+  const config = vehicle.premiumType
+    ? premiumConfig[vehicle.premiumType]
+    : null;
 
   return (
     <NextLink href={`/${initials}/vehicles/${vehicle.slug}`}>

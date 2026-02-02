@@ -18,7 +18,7 @@ interface LoadoutVehiclesGridProps {
 
 interface OrganizedVehicle {
   name: string;
-  premium: boolean | 'shop' | 'badge';
+  premiumType?: NonNullable<TeamVehicle['premiumType']>;
   slug: string;
   vehicle: TeamVehicle;
 }
@@ -62,7 +62,7 @@ export default React.memo(function LoadoutVehiclesGrid({
         const classification = getClassification(vehicle.role);
         byTierAndClassification[vehicle.tier][classification].push({
           name: vehicleName,
-          premium: vehicle.premium,
+          premiumType: vehicle.premiumType,
           slug: vehicle.slug,
           vehicle,
         });
