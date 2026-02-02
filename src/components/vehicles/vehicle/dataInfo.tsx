@@ -42,11 +42,15 @@ export default function VehicleDataInfo({ compact }: { compact?: boolean }) {
           flex: compact ? 1 : undefined,
         },
       }}
-      flexDirection={compact ? 'row' : 'column'}
+      flexDirection={compact ? { base: 'column', sm: 'row' } : 'column'}
       justifyContent={compact ? 'center' : undefined}
-      gap={compact ? 4 : 2}
+      gap={compact ? { base: 1, sm: 4 } : 2}
     >
-      <HStack justifyContent={compact ? 'flex-end' : undefined}>
+      <HStack
+        justifyContent={
+          compact ? { base: 'center', sm: 'flex-end' } : undefined
+        }
+      >
         <Icon as={BsDatabaseFillCheck} />
         <span>
           Last updated:{' '}
@@ -61,7 +65,11 @@ export default function VehicleDataInfo({ compact }: { compact?: boolean }) {
 
       {compact && <Separator orientation="vertical" />}
 
-      <HStack justifyContent={compact ? 'flex-start' : undefined}>
+      <HStack
+        justifyContent={
+          compact ? { base: 'center', sm: 'flex-start' } : undefined
+        }
+      >
         <Icon as={MdCode} />
         <span title="The internal ID of the vehicle, useful for the loadout editor">
           ID: &quot;{vehicle.info.gameId}&quot;

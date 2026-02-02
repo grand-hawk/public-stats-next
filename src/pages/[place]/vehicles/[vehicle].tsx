@@ -123,10 +123,7 @@ export default function PlaceVehicle() {
                   aria-labelledby="vehicle-page-title"
                   as="article"
                   gap={4}
-                  maxWidth={{
-                    base: '2xl',
-                    xl: '960px',
-                  }}
+                  maxWidth={'6xl'}
                   width="100%"
                   data-md-target
                 >

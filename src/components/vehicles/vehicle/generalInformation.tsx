@@ -43,13 +43,7 @@ export default function VehicleGeneralInformation({
             </Quote>
           </Stat>
 
-          <Box
-            display="grid"
-            gapX={4}
-            gapY={2}
-            gridTemplateColumns="repeat(auto-fill, minmax(10rem, 1fr))"
-            maxWidth="xl"
-          >
+          <Box display="flex" flexWrap="wrap" gap={6}>
             <Stat label="Locomotion">
               {capitalizeFirst(vehicle.info.locomotion)}
             </Stat>
