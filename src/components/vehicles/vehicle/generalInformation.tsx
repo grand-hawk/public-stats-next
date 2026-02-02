@@ -38,6 +38,7 @@ export default function VehicleGeneralInformation({
               fontSize="sm"
               fontWeight="light"
               id="vehicle-page-description"
+              whiteSpace="pre-wrap"
             >
               {vehicle.info.description}
             </Quote>
