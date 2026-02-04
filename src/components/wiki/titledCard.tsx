@@ -18,8 +18,13 @@ import slug from 'slug';
 
 import ModuleIdSelect from '@/components/development/moduleIdSelect';
 import { ToggleTip } from '@/components/ui/toggle-tip';
+import { useDynamicData } from '@/hooks/providers/dynamicData';
 
 import type { BoxProps, HeadingProps } from '@chakra-ui/react';
+
+export const ParentHighlightedContext = React.createContext(false);
+export const useParentHighlighted = () =>
+  React.useContext(ParentHighlightedContext);
 
 export interface TitledCardProps extends BoxProps {
   title: string;
@@ -50,6 +55,19 @@ export default function TitledCard({
   ...props
 }: TitledCardProps) {
   const [isExpanded, setIsExpanded] = React.useState(!closedByDefault);
+
+  const dynamicData = useDynamicData();
+  const addedModuleIds = dynamicData?.addedModuleIds;
+  const hasRemovedChildrenIds = dynamicData?.hasRemovedChildrenIds;
+
+  const isAdded = moduleId && addedModuleIds?.has(moduleId);
+  const hasRemovedChildren = moduleId && hasRemovedChildrenIds?.has(moduleId);
+  const highlightColor = isAdded
+    ? 'blue.muted'
+    : hasRemovedChildren
+      ? 'red.muted'
+      : undefined;
+  const isHighlighted = !!highlightColor;
 
   const titleSlug =
     typeof withAnchor === 'string' ? slug(withAnchor) : slug(title);
@@ -127,7 +145,13 @@ export default function TitledCard({
       <Separator />
 
       <Box aria-labelledby={titleSlug} padding={innerPadding}>
-        {children}
+        {isHighlighted ? (
+          <ParentHighlightedContext.Provider value={true}>
+            {children}
+          </ParentHighlightedContext.Provider>
+        ) : (
+          children
+        )}
       </Box>
     </>
   );
@@ -153,6 +177,10 @@ export default function TitledCard({
       }
       borderYWidth="1px"
       className="mtc-titled-card"
+      data-module-highlighted={isHighlighted || undefined}
+      outline={isHighlighted ? '2px solid' : undefined}
+      outlineColor={highlightColor}
+      outlineOffset={isHighlighted ? '-1px' : undefined}
       {...props}
       css={{
         ...props.css,
@@ -160,6 +188,7 @@ export default function TitledCard({
           borderLeftWidth: '1px',
           borderRightWidth: '1px',
         },
+        transition: 'outline 0.3s ease-in-out',
       }}
     >
       <Collapsible.Root
