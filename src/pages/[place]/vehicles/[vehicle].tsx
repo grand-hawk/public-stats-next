@@ -11,7 +11,6 @@ import { getKeywords } from '@/components/layout/head';
 import Layout from '@/components/layout/layout';
 import SearchLayout from '@/components/layout/searchLayout/layout';
 import { EmptyState } from '@/components/ui/empty-state';
-import InaccurateDataFooter from '@/components/wiki/inaccurateDataFooter';
 import { SectionMarkersProvider } from '@/hooks/providers/sectionMarkers';
 import { usePlace } from '@/hooks/usePlace';
 import { useRouterQuery } from '@/hooks/useRouterQuery';
@@ -128,8 +127,6 @@ export default function PlaceVehicle() {
                   data-md-target
                 >
                   <Vehicle vehicle={vehicle} />
-
-                  <InaccurateDataFooter />
                 </Stack>
               </Flex>
             ) : (

@@ -3,7 +3,7 @@ import React, { Suspense } from 'react';
 
 import PlaceSwitchBar from '@/components/common/placeSwitchBar';
 import { CenterSpinner } from '@/components/common/spinners';
-import Navigation from '@/components/layout/navigation';
+import Sidebar from '@/components/layout/sidebar';
 
 import type { BoxProps } from '@chakra-ui/react';
 
@@ -38,7 +38,7 @@ export default function Layout({
         overflow="clip"
         width="100%"
       >
-        <Navigation />
+        <Sidebar />
 
         <Box
           display="grid"

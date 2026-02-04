@@ -10,6 +10,7 @@ import VehicleDynamicSidebar from '@/components/features/vehicles/vehicle/dynami
 import VehicleGallery from '@/components/features/vehicles/vehicle/gallery';
 import VehicleGeneralInformation from '@/components/features/vehicles/vehicle/generalInformation';
 import VehicleHeader from '@/components/features/vehicles/vehicle/header';
+import InaccurateDataFooter from '@/components/wiki/inaccurateDataFooter';
 import { DynamicDataProvider } from '@/hooks/providers/dynamicData';
 import { VehicleContext } from '@/hooks/providers/vehicle';
 
@@ -36,7 +37,7 @@ export default function Vehicle({ vehicle }: { vehicle: DetailedVehicle }) {
           gap={4}
           gridTemplateColumns={{
             base: 'minmax(0, 1fr)',
-            xl: 'minmax(0, 1fr) var(--chakra-sizes-xs)',
+            '2xl': 'minmax(0, 1fr) var(--chakra-sizes-xs)',
           }}
           width="100%"
         >
@@ -45,7 +46,7 @@ export default function Vehicle({ vehicle }: { vehicle: DetailedVehicle }) {
             gap={4}
             gridColumn="2"
             gridRow="1"
-            hideBelow="xl"
+            hideBelow="2xl"
             maxHeight="max-content"
             position="sticky"
             top={4}
@@ -62,15 +63,16 @@ export default function Vehicle({ vehicle }: { vehicle: DetailedVehicle }) {
               isAvailable={vehicleIsAvailable}
             />
             {hasSidebarContent && (
-              <Stack hideFrom="xl" gap={4} minW="0">
+              <Stack hideFrom="2xl" gap={4} minW="0">
                 <VehicleDynamicSidebar />
               </Stack>
             )}
             <VehicleDynamicData />
             <VehicleGallery />
-            <Box hideFrom="xl">
+            <Box hideFrom="2xl">
               <VehicleDataInfo compact />
             </Box>
+            <InaccurateDataFooter />
           </Stack>
         </Box>
       </DynamicDataProvider>
