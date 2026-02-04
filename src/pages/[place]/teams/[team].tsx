@@ -5,10 +5,10 @@ import React from 'react';
 import { GrDocumentMissing } from 'react-icons/gr';
 import slugify from 'slug';
 
-import TeamHeader from '@/components/teams/header';
-import TeamLoadouts from '@/components/teams/loadouts';
+import TeamHeader from '@/components/features/teams/header';
+import TeamLoadouts from '@/components/features/teams/loadouts';
+import Layout from '@/components/layout/layout';
 import { EmptyState } from '@/components/ui/empty-state';
-import Layout from '@/components/utils/layout';
 import { usePlace } from '@/hooks/usePlace';
 import { useRouterQuery } from '@/hooks/useRouterQuery';
 import { formatTitle } from '@/utils/formatTitle';

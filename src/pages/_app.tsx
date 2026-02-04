@@ -2,13 +2,13 @@ import { Box } from '@chakra-ui/react';
 import { NuqsAdapter } from 'nuqs/adapters/next/pages';
 import React, { Suspense } from 'react';
 
+import { CenterSpinner } from '@/components/common/spinners';
 import DevelopmentOverlay from '@/components/development/overlay';
-import { CenterSpinner } from '@/components/spinners';
+import InternalHead from '@/components/layout/head';
+import { ChakraProvider } from '@/components/providers/chakra';
+import Umami from '@/components/providers/umami';
+import UpdateListener from '@/components/providers/updateListener';
 import { Toaster } from '@/components/ui/toaster';
-import { ChakraProvider } from '@/components/utils/chakra';
-import InternalHead from '@/components/utils/head';
-import Umami from '@/components/utils/umami';
-import UpdateListener from '@/components/utils/updateListener';
 import { useDebugEnabled } from '@/hooks/useDebugEnv';
 import { trpc } from '@/utils/trpc';
 

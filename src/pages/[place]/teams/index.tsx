@@ -4,7 +4,7 @@ import NextLink from 'next/link';
 import React from 'react';
 
 import TeamIcon from '@/components/icons/teams';
-import Layout from '@/components/utils/layout';
+import Layout from '@/components/layout/layout';
 import { usePlace } from '@/hooks/usePlace';
 import { formatTitle } from '@/utils/formatTitle';
 import { trpc } from '@/utils/trpc';

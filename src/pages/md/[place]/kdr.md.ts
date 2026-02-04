@@ -1,6 +1,6 @@
 import { markdownTable } from 'markdown-table';
 
-import { KDR_RANGE_ITEMS } from '@/components/kdr/rangeSelect';
+import { KDR_RANGE_ITEMS } from '@/components/features/kdr/rangeSelect';
 import { createCache } from '@/server/utils/createCache';
 import {
   escapeMarkdownLink,

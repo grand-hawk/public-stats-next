@@ -3,10 +3,10 @@ import Head from 'next/head';
 import React from 'react';
 import { GrDocumentMissing } from 'react-icons/gr';
 
-import SearchLayout from '@/components/searchLayout/layout';
-import ShellsSearchSidebar from '@/components/shells/searchSidebar';
+import ShellsSearchSidebar from '@/components/features/shells/searchSidebar';
+import Layout from '@/components/layout/layout';
+import SearchLayout from '@/components/layout/searchLayout/layout';
 import { EmptyState } from '@/components/ui/empty-state';
-import Layout from '@/components/utils/layout';
 import { usePlaceInitials } from '@/hooks/usePlaceInitials';
 import { formatTitle } from '@/utils/formatTitle';
 

@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router';
 import React from 'react';
 
-import { tabs } from '@/components/navigation/tabs';
+import { tabs } from '@/components/layout/navigation/tabs';
 import { usePlaceInitials } from '@/hooks/usePlaceInitials';
 
 export function useCurrentTab() {

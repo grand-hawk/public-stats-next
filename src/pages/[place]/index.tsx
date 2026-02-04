@@ -12,8 +12,8 @@ import { useRouter } from 'next/router';
 import React from 'react';
 import { TbChevronRight } from 'react-icons/tb';
 
-import { tabs } from '@/components/navigation/tabs';
-import Layout from '@/components/utils/layout';
+import Layout from '@/components/layout/layout';
+import { tabs } from '@/components/layout/navigation/tabs';
 import TitledCard from '@/components/wiki/titledCard';
 import { usePlace } from '@/hooks/usePlace';
 import { formatTitle } from '@/utils/formatTitle';

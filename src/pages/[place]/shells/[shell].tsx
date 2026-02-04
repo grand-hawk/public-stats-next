@@ -5,12 +5,12 @@ import React from 'react';
 import { GrDocumentMissing } from 'react-icons/gr';
 import slug from 'slug';
 
-import SearchLayout from '@/components/searchLayout/layout';
-import Shell from '@/components/shells';
-import ShellsSearchSidebar from '@/components/shells/searchSidebar';
+import Shell from '@/components/features/shells';
+import ShellsSearchSidebar from '@/components/features/shells/searchSidebar';
+import { getKeywords } from '@/components/layout/head';
+import Layout from '@/components/layout/layout';
+import SearchLayout from '@/components/layout/searchLayout/layout';
 import { EmptyState } from '@/components/ui/empty-state';
-import { getKeywords } from '@/components/utils/head';
-import Layout from '@/components/utils/layout';
 import InaccurateDataFooter from '@/components/wiki/inaccurateDataFooter';
 import { usePlace } from '@/hooks/usePlace';
 import { useRouterQuery } from '@/hooks/useRouterQuery';

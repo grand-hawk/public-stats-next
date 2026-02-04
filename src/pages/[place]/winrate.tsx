@@ -4,10 +4,10 @@ import { useQueryState } from 'nuqs';
 import React from 'react';
 import slug from 'slug';
 
-import SimpleSelect from '@/components/simpleSelect';
+import SimpleSelect from '@/components/common/simpleSelect';
+import WinrateChartRoot from '@/components/features/winrate/chart/root';
+import Layout from '@/components/layout/layout';
 import { Alert } from '@/components/ui/alert';
-import Layout from '@/components/utils/layout';
-import WinrateChartRoot from '@/components/winrate/chart/root';
 import { usePlace } from '@/hooks/usePlace';
 import { formatTitle } from '@/utils/formatTitle';
 import { slugifyArray } from '@/utils/slugifyArray';

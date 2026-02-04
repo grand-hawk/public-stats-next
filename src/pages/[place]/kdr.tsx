@@ -3,9 +3,11 @@ import Head from 'next/head';
 import { useQueryState } from 'nuqs';
 import React from 'react';
 
-import KdrRangeSelect, { KDR_RANGE_ITEMS } from '@/components/kdr/rangeSelect';
-import KdrTable from '@/components/kdr/table';
-import Layout from '@/components/utils/layout';
+import KdrRangeSelect, {
+  KDR_RANGE_ITEMS,
+} from '@/components/features/kdr/rangeSelect';
+import KdrTable from '@/components/features/kdr/table';
+import Layout from '@/components/layout/layout';
 import { usePlaceInitials } from '@/hooks/usePlaceInitials';
 import { formatTitle } from '@/utils/formatTitle';
 
