@@ -148,7 +148,7 @@ export default function VehicleDynamicAddons() {
               ) : (
                 <HStack gap={2.5} opacity={isDisabled ? 0.5 : undefined}>
                   <InfoTooltip
-                    content="This addon has no data changes"
+                    content="This addon does not change any of the data visible on this page"
                     iconProps={{ color: 'border.emphasized' }}
                   />
 
