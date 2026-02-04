@@ -8,7 +8,12 @@ export interface SidebarLicenseProps extends BoxProps {}
 export default function SidebarLicense(props: SidebarLicenseProps) {
   return (
     <Box paddingX={3} paddingY={2} {...props}>
-      <Text fontSize="xs" color="fg.subtle" lineHeight="tall">
+      <Text
+        fontSize="xs"
+        color="fg.subtle"
+        lineHeight="tall"
+        whiteSpace="nowrap"
+      >
         <Link
           href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed"
           target="_blank"
