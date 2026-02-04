@@ -103,12 +103,7 @@ export default function VehicleDynamicAddons() {
   }, [vehicle.alterations.addons]);
 
   return (
-    <TitledCard
-      as="section"
-      title="Addons"
-      withAnchor="addon-config"
-      innerPadding={4}
-    >
+    <TitledCard as="section" title="Addons" innerPadding={4}>
       <Stack gap={4} data-md-ignore>
         {sortedAddons.map(([addonName, addon]) => {
           const hasChanges = alterationHasChanges(addon);
