@@ -50,7 +50,7 @@ export default function WinrateChart({
           content={
             <Chart.Tooltip
               formatter={(value: number, name: string) => [` ${value}%`, name]}
-              labelFormatter={(label: string) => {
+              labelFormatter={(label) => {
                 if (label === 'value') return 'value';
                 return dateFormatter(label);
               }}
