@@ -4,7 +4,7 @@ import React from 'react';
 import CrewmanIcon from '@/components/icons/classes/crewman';
 import EngineerIcon from '@/components/icons/classes/engineer';
 import InfantryIcon from '@/components/icons/classes/infantry';
-import { Tooltip } from '@/components/ui/tooltip';
+import { ToggleTip } from '@/components/ui/toggle-tip';
 import SectionMarker from '@/components/wiki/sectionMarker';
 import Stat from '@/components/wiki/stat';
 import TitledCard from '@/components/wiki/titledCard';
@@ -58,15 +58,14 @@ export default function VehicleGeneralInformation({
                     const Icon = classIcons[className];
                     if (Icon)
                       return (
-                        <Tooltip
+                        <ToggleTip
+                          closeDelay={50}
                           content={className}
                           key={className}
-                          lazyMount
                           openDelay={50}
-                          closeDelay={50}
                         >
                           <Icon boxSize="1em" />
-                        </Tooltip>
+                        </ToggleTip>
                       );
                   })}
                 </HStack>

@@ -1,7 +1,7 @@
 import { HStack, Span, VisuallyHidden } from '@chakra-ui/react';
 import React from 'react';
 
-import { Tooltip } from '@/components/ui/tooltip';
+import { ToggleTip } from '@/components/ui/toggle-tip';
 
 export default function Feature({
   description,
@@ -23,9 +23,9 @@ export default function Feature({
   );
 
   return description ? (
-    <Tooltip closeDelay={50} content={description} openDelay={50}>
+    <ToggleTip closeDelay={50} content={description} openDelay={50}>
       {content}
-    </Tooltip>
+    </ToggleTip>
   ) : (
     content
   );

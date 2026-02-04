@@ -17,7 +17,7 @@ import {
 import slug from 'slug';
 
 import ModuleIdSelect from '@/components/development/moduleIdSelect';
-import { Tooltip } from '@/components/ui/tooltip';
+import { ToggleTip } from '@/components/ui/toggle-tip';
 
 import type { BoxProps, HeadingProps } from '@chakra-ui/react';
 
@@ -80,7 +80,7 @@ export default function TitledCard({
         )}
 
         {tooltip && (
-          <Tooltip
+          <ToggleTip
             closeDelay={50}
             content={tooltip}
             openDelay={50}
@@ -89,7 +89,7 @@ export default function TitledCard({
             <Icon marginLeft={2}>
               <MdInfoOutline />
             </Icon>
-          </Tooltip>
+          </ToggleTip>
         )}
 
         <ModuleIdSelect moduleId={moduleId} />
