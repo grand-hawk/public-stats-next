@@ -91,10 +91,16 @@ export default function SectionNavigation() {
   React.useEffect(() => {
     if (markers.length === 0) return;
 
+    const isCurrentSlugValid =
+      activeSlug && markers.some((m) => m.slug === activeSlug);
+    if (isCurrentSlugValid) return;
+
     const hash = window.location.hash.slice(1);
     const matchingMarker = markers.find((m) => m.slug === hash);
 
     setActiveSlug(matchingMarker ? hash : markers[0].slug);
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [markers]);
 
   React.useEffect(() => {
