@@ -1,6 +1,8 @@
+import { HStack } from '@chakra-ui/react';
 import React from 'react';
 
 import VehicleSearchConfig from '@/components/features/vehicles/searchSidebar/config';
+import VehicleIcon from '@/components/features/vehicles/vehicleIcon';
 import SearchSidebar from '@/components/layout/searchLayout/searchSidebar';
 import SearchInput from '@/components/layout/searchLayout/searchSidebar/input';
 import { usePlace } from '@/hooks/usePlace';
@@ -17,6 +19,21 @@ interface ListVehicle {
   team: string;
   role: string;
 }
+
+const VehicleListName = React.memo(function VehicleListName({
+  name,
+  slug,
+}: {
+  name: string;
+  slug: string;
+}) {
+  return (
+    <HStack justifyContent="space-between" width="100%">
+      {name}
+      <VehicleIcon slug={slug} />
+    </HStack>
+  );
+});
 
 export default function VehiclesSearchSidebar() {
   const place = usePlace()!;
@@ -45,9 +62,12 @@ export default function VehiclesSearchSidebar() {
     const groups: Group[] = [];
 
     if (!groupByTeam && !groupByRole)
-      return filteredVehicleList.map((value) => ({
+      return filteredVehicleList.map((vehicle) => ({
         type: 'item',
-        value,
+        value: {
+          ...vehicle,
+          name: <VehicleListName name={vehicle.name} slug={vehicle.slug} />,
+        },
       }));
 
     if (!groupByTeam && groupByRole) {
@@ -123,8 +143,14 @@ export default function VehiclesSearchSidebar() {
       });
 
       if (group.vehicles && group.vehicles.length > 0) {
-        for (const value of group.vehicles)
-          result.push({ type: 'item', value });
+        for (const vehicle of group.vehicles)
+          result.push({
+            type: 'item',
+            value: {
+              ...vehicle,
+              name: <VehicleListName name={vehicle.name} slug={vehicle.slug} />,
+            },
+          });
       }
     }
 

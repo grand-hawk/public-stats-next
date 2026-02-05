@@ -13,6 +13,27 @@ import { trpc } from '@/utils/trpc';
 
 import type { ListItem } from '@/components/layout/searchLayout/searchSidebar/list';
 
+const ShellListName = React.memo(function ShellListName({
+  name,
+  displayType,
+  type,
+}: {
+  name: string;
+  displayType: string;
+  type: string;
+}) {
+  const shellIcon = getShellIcon(displayType);
+
+  if (!shellIcon) return name;
+
+  return (
+    <HStack justifyContent="space-between" width="100%">
+      {name}
+      <ShellIcon alt={type} src={shellIcon} />
+    </HStack>
+  );
+});
+
 export default function ShellsSearchSidebar() {
   const place = usePlace()!;
   const shellQuery = useRouterQuery('shell');
@@ -73,19 +94,15 @@ export default function ShellsSearchSidebar() {
       });
 
       for (const shell of shells) {
-        const shellIcon = getShellIcon(shell.displayType);
-
         result.push({
           type: 'item',
           value: {
-            name: shellIcon ? (
-              <HStack justifyContent="space-between" width="100%">
-                {shell.name}
-
-                <ShellIcon alt={shell.type} src={shellIcon} />
-              </HStack>
-            ) : (
-              shell.name
+            name: (
+              <ShellListName
+                name={shell.name}
+                displayType={shell.displayType}
+                type={shell.type}
+              />
             ),
             slug: shell.slug,
           },

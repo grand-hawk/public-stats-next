@@ -8,7 +8,8 @@ export type BaseVehicleImageType =
   | 'top';
 export type VehicleImageType =
   | BaseVehicleImageType
-  | `${BaseVehicleImageType}_transparent`;
+  | `${BaseVehicleImageType}_transparent`
+  | 'icon';
 
 export function getVehicleImage(
   slug: string,

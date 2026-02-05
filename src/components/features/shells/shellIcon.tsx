@@ -10,7 +10,7 @@ interface ShellIconProps extends Omit<ImageProps, 'alt' | 'src'> {
   size?: number;
 }
 
-export default function ShellIcon({
+export default React.memo(function ShellIcon({
   alt,
   size = 24,
   src,
@@ -21,4 +21,4 @@ export default function ShellIcon({
       <NextImage alt={alt} height={size} src={src} width={size} />
     </Image>
   );
-}
+});
