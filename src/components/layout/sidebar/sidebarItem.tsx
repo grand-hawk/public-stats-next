@@ -74,7 +74,6 @@ export default function SidebarItem({
           }
           transition="all 0.15s"
           color={active ? color : 'fg.muted'}
-          css={{ '& > *': { display: 'block' } }}
         >
           <IconComponent />
         </Flex>

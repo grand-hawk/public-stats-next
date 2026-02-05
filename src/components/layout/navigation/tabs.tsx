@@ -25,9 +25,7 @@ export const tabs: Record<string, Tab> = {
     description:
       'Explore the detailed characteristics and loadouts of all vehicles in the game.',
     icon: (props: IconProps) => (
-      <Icon height={5} width={5} {...props}>
-        <TbTank />
-      </Icon>
+      <Icon as={TbTank} height={5} width={5} {...props} />
     ),
   },
   shells: {
@@ -37,9 +35,7 @@ export const tabs: Record<string, Tab> = {
     description:
       'Analyze shell performance, penetration values, and damage characteristics.',
     icon: (props: IconProps) => (
-      <Icon height={5} width={5} {...props}>
-        <GiArtilleryShell />
-      </Icon>
+      <Icon as={GiArtilleryShell} height={5} width={5} {...props} />
     ),
   },
   teams: {
@@ -48,9 +44,7 @@ export const tabs: Record<string, Tab> = {
     color: 'red.500',
     description: 'Browse faction vehicle selections and compositions by team.',
     icon: (props: IconProps) => (
-      <Icon height={5} width={5} {...props}>
-        <MdFlag />
-      </Icon>
+      <Icon as={MdFlag} height={5} width={5} {...props} />
     ),
   },
   loadouts: {
@@ -59,9 +53,7 @@ export const tabs: Record<string, Tab> = {
     color: 'cyan.500',
     description: 'Explore era-based loadouts and compare team compositions.',
     icon: (props: IconProps) => (
-      <Icon height={5} width={5} {...props}>
-        <MdViewList />
-      </Icon>
+      <Icon as={MdViewList} height={5} width={5} {...props} />
     ),
   },
   kdr: {
@@ -71,9 +63,7 @@ export const tabs: Record<string, Tab> = {
     description:
       'View the kill-to-death ratios for all vehicles and shells in the game.',
     icon: (props: IconProps) => (
-      <Icon height={5} width={5} {...props}>
-        <ImTable />
-      </Icon>
+      <Icon as={ImTable} height={5} width={5} {...props} />
     ),
   },
   winrate: {
@@ -83,9 +73,7 @@ export const tabs: Record<string, Tab> = {
     description:
       'Track team performance across different maps and loadouts over time.',
     icon: (props: IconProps) => (
-      <Icon height={5} width={5} {...props}>
-        <MdOutlineSsidChart />
-      </Icon>
+      <Icon as={MdOutlineSsidChart} height={5} width={5} {...props} />
     ),
   },
 };
