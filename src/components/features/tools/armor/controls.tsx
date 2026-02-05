@@ -18,6 +18,8 @@ interface VehicleOption {
 
 const ANGLES: { label: string; value: ArmorAngle }[] = [
   { label: 'Front', value: 'front' },
+  { label: 'Front -30', value: 'front_-30' },
+  { label: 'Front 30', value: 'front_30' },
   { label: 'Left', value: 'left' },
   { label: 'Right', value: 'right' },
   { label: 'Back', value: 'back' },
@@ -304,7 +306,15 @@ export default function ArmorControls({
               <Text color="fg.muted" fontSize="xs" marginBottom={1}>
                 Angle
               </Text>
-              <Flex gap={0} width="100%">
+              <Box
+                borderColor="border.muted"
+                borderRightWidth="1px"
+                borderBottomWidth="1px"
+                display="grid"
+                gap={0}
+                gridTemplateColumns="repeat(3, 1fr)"
+                width="100%"
+              >
                 {ANGLES.map((a) => (
                   <Box
                     key={a.value}
@@ -312,25 +322,25 @@ export default function ArmorControls({
                     background={
                       angle === a.value ? 'whiteAlpha.200' : 'transparent'
                     }
-                    borderWidth="1px"
+                    borderColor="border.muted"
+                    borderLeftWidth="1px"
+                    borderTopWidth="1px"
                     color={angle === a.value ? 'fg' : 'fg.muted'}
                     cursor="pointer"
                     flex={1}
                     fontSize="xs"
                     fontWeight={angle === a.value ? 'medium' : 'normal'}
-                    marginLeft="-1px"
                     paddingX={2}
                     paddingY={1.5}
                     textAlign="center"
                     transition="all 0.1s"
-                    _first={{ marginLeft: 0 }}
                     _hover={{ background: 'whiteAlpha.100', color: 'fg' }}
                     onClick={() => onAngleChange(a.value)}
                   >
                     {a.label}
                   </Box>
                 ))}
-              </Flex>
+              </Box>
             </Box>
 
             {/* range */}
@@ -451,8 +461,8 @@ export default function ArmorControls({
               <Text color="fg.subtle" fontSize="2xs" lineHeight="1.4">
                 The provided visualization may not be used for bug reports, use
                 the armor tools in-game instead. Data is estimated and may not
-                be accurate. If data differs significantly from in-game, you may
-                report this as a bug in the{' '}
+                be accurate. If thickness differs significantly from in-game,
+                you may report this as a wiki bug in the{' '}
                 <Link
                   color="fg.muted"
                   href="https://discord.gg/multicrew"
