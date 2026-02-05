@@ -47,7 +47,6 @@ export default function Sidebar() {
   const [mobileOpen, setMobileOpen] = React.useState(false);
   const isDesktop = useBreakpointValue({ base: false, md: true });
 
-  // close mobile drawer when resizing to desktop
   React.useEffect(() => {
     if (isDesktop) setMobileOpen(false);
   }, [isDesktop]);
@@ -92,7 +91,6 @@ export default function Sidebar() {
     </Flex>
   );
 
-  // mobile bottom bar + drawer
   const mobileNav = (
     <Flex
       display={{ base: 'flex', md: 'none' }}
@@ -165,7 +163,6 @@ export default function Sidebar() {
         </DrawerContent>
       </DrawerRoot>
 
-      {/* quick access icons for primary tabs */}
       <Flex gap={1}>
         {primaryTabKeys.slice(0, 4).map((key) => {
           const tab = tabs[key];
@@ -190,7 +187,6 @@ export default function Sidebar() {
     </Flex>
   );
 
-  // desktop sidebar
   const desktopSidebar = (
     <Flex
       as="nav"
@@ -201,11 +197,7 @@ export default function Sidebar() {
       transition="width 0.2s"
       overflow="hidden"
     >
-      {/* header - height matches PlaceSwitchBar */}
-      <NextLink
-        href={`/${initials || 'mtc'}`}
-        style={{ textDecoration: 'none' }}
-      >
+      <NextLink href={`/${initials}`} style={{ textDecoration: 'none' }}>
         <Flex
           alignItems="center"
           gap={2}
@@ -222,7 +214,6 @@ export default function Sidebar() {
         </Flex>
       </NextLink>
 
-      {/* nav items */}
       <Box
         flex={1}
         overflowY={isCollapsed ? 'hidden' : 'auto'}
@@ -234,7 +225,6 @@ export default function Sidebar() {
 
       {!isCollapsed && <SidebarLicense />}
 
-      {/* footer actions */}
       <Flex direction="column" gap={0} borderTopWidth="1px" paddingY={1}>
         {debugEnabled && (
           <Flex

@@ -56,7 +56,7 @@ export default function PlaceSwitchBar({
           base: 'md',
           sm: 'sm',
         }}
-        value={[currentInitials || 'MTC']}
+        value={[currentInitials]}
         width={{
           base: '100%',
           md: 'min(100%, var(--chakra-sizes-xs))',

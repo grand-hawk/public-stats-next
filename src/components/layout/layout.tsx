@@ -13,10 +13,12 @@ export interface LayoutProps extends BoxProps {
   children?: React.ReactNode;
   noPadding?: boolean;
   overwriteTabLabel?: string;
+  hidePlaceSelector?: boolean;
 }
 
 export default function Layout({
   children,
+  hidePlaceSelector,
   noPadding,
   overwriteTabLabel,
   ...props
@@ -46,7 +48,9 @@ export default function Layout({
           minHeight="0"
           overflow="clip"
         >
-          <PlaceSwitchBar overwriteTabLabel={overwriteTabLabel} />
+          {!hidePlaceSelector && (
+            <PlaceSwitchBar overwriteTabLabel={overwriteTabLabel} />
+          )}
 
           <Box
             minHeight="0"
