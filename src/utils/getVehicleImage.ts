@@ -6,9 +6,12 @@ export type BaseVehicleImageType =
   | 'front'
   | 'back'
   | 'top';
+export type ArmorAngle = 'left' | 'right' | 'front' | 'back';
+export type ArmorImageType = `${ArmorAngle}_armor`;
 export type VehicleImageType =
   | BaseVehicleImageType
   | `${BaseVehicleImageType}_transparent`
+  | ArmorImageType
   | 'icon';
 
 export function getVehicleImage(

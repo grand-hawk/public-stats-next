@@ -19,6 +19,7 @@ import {
   primaryTabKeys,
   secondaryTabKeys,
   tabs,
+  toolsTabKeys,
 } from '@/components/layout/navigation/tabs';
 import SidebarGroup from '@/components/layout/sidebar/sidebarGroup';
 import SidebarItem from '@/components/layout/sidebar/sidebarItem';
@@ -88,6 +89,24 @@ export default function Sidebar() {
           );
         })}
       </SidebarGroup>
+
+      <SidebarGroup label="Tools" collapsed={isCollapsed}>
+        {toolsTabKeys.map((key) => {
+          const tab = tabs[key];
+          return (
+            <SidebarItem
+              key={key}
+              label={tab.label}
+              href={`/${initials}${tab.path}`}
+              icon={tab.icon}
+              color={tab.color}
+              active={currentTab?.path === tab.path}
+              collapsed={isCollapsed}
+              onClick={() => setMobileOpen(false)}
+            />
+          );
+        })}
+      </SidebarGroup>
     </Flex>
   );
 
@@ -142,6 +161,23 @@ export default function Sidebar() {
 
               <SidebarGroup label="Analytics">
                 {secondaryTabKeys.map((key) => {
+                  const tab = tabs[key];
+                  return (
+                    <SidebarItem
+                      key={key}
+                      label={tab.label}
+                      href={`/${initials}${tab.path}`}
+                      icon={tab.icon}
+                      color={tab.color}
+                      active={currentTab?.path === tab.path}
+                      onClick={() => setMobileOpen(false)}
+                    />
+                  );
+                })}
+              </SidebarGroup>
+
+              <SidebarGroup label="Tools">
+                {toolsTabKeys.map((key) => {
                   const tab = tabs[key];
                   return (
                     <SidebarItem

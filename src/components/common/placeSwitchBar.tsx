@@ -13,8 +13,10 @@ import { usePlaceInitials } from '@/hooks/usePlaceInitials';
 import { useSuspenseConfig } from '@/hooks/useSuspenseConfig';
 
 export default function PlaceSwitchBar({
+  hideDropdown,
   overwriteTabLabel,
 }: {
+  hideDropdown?: boolean;
   overwriteTabLabel?: string;
 }) {
   const router = useRouter();
@@ -35,6 +37,7 @@ export default function PlaceSwitchBar({
   return (
     <Flex
       borderBottomWidth="1px"
+      display={hideDropdown ? { base: 'none', md: 'flex' } : undefined}
       justifyContent="space-between"
       padding={{
         base: 4,
@@ -47,56 +50,58 @@ export default function PlaceSwitchBar({
           : currentTab?.label}
       </Span>
 
-      <Select.Root
-        borderWidth={0}
-        collection={placeCollection}
-        lazyMount
-        marginLeft="auto"
-        size={{
-          base: 'md',
-          sm: 'sm',
-        }}
-        value={[currentInitials]}
-        width={{
-          base: '100%',
-          md: 'min(100%, var(--chakra-sizes-xs))',
-        }}
-        onValueChange={(details) => {
-          const selectedInitials = details.value[0];
-          if (selectedInitials !== currentInitials)
-            router.push({
-              pathname: router.pathname,
-              query: {
-                ...router.query,
-                place: selectedInitials,
-              },
-            });
-        }}
-      >
-        <Select.HiddenSelect />
+      {!hideDropdown && (
+        <Select.Root
+          borderWidth={0}
+          collection={placeCollection}
+          lazyMount
+          marginLeft="auto"
+          size={{
+            base: 'md',
+            sm: 'sm',
+          }}
+          value={[currentInitials]}
+          width={{
+            base: '100%',
+            md: 'min(100%, var(--chakra-sizes-xs))',
+          }}
+          onValueChange={(details) => {
+            const selectedInitials = details.value[0];
+            if (selectedInitials !== currentInitials)
+              router.push({
+                pathname: router.pathname,
+                query: {
+                  ...router.query,
+                  place: selectedInitials,
+                },
+              });
+          }}
+        >
+          <Select.HiddenSelect />
 
-        <Select.Control padding={0}>
-          <Select.Trigger aria-label="Select place">
-            <Select.ValueText maxWidth="calc(100% - 20px)" />
-          </Select.Trigger>
+          <Select.Control padding={0}>
+            <Select.Trigger aria-label="Select place">
+              <Select.ValueText maxWidth="calc(100% - 20px)" />
+            </Select.Trigger>
 
-          <Select.IndicatorGroup paddingInline="unset">
-            <Select.Indicator />
-          </Select.IndicatorGroup>
-        </Select.Control>
+            <Select.IndicatorGroup paddingInline="unset">
+              <Select.Indicator />
+            </Select.IndicatorGroup>
+          </Select.Control>
 
-        <Portal>
-          <Select.Positioner>
-            <Select.Content>
-              {placeCollection.items.map((place) => (
-                <Select.Item key={place.value} item={place}>
-                  {place.label}
-                </Select.Item>
-              ))}
-            </Select.Content>
-          </Select.Positioner>
-        </Portal>
-      </Select.Root>
+          <Portal>
+            <Select.Positioner>
+              <Select.Content>
+                {placeCollection.items.map((place) => (
+                  <Select.Item key={place.value} item={place}>
+                    {place.label}
+                  </Select.Item>
+                ))}
+              </Select.Content>
+            </Select.Positioner>
+          </Portal>
+        </Select.Root>
+      )}
     </Flex>
   );
 }

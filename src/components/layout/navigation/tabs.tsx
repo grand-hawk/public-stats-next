@@ -2,6 +2,7 @@ import { Icon } from '@chakra-ui/react';
 import React from 'react';
 import { GiArtilleryShell } from 'react-icons/gi';
 import { ImTable } from 'react-icons/im';
+import { LuShield } from 'react-icons/lu';
 import { MdFlag, MdOutlineSsidChart, MdViewList } from 'react-icons/md';
 import { TbTank } from 'react-icons/tb';
 
@@ -76,6 +77,16 @@ export const tabs: Record<string, Tab> = {
       <Icon as={MdOutlineSsidChart} height={5} width={5} {...props} />
     ),
   },
+  armor: {
+    label: 'Armor visualizer',
+    path: '/armor',
+    color: 'teal.500',
+    description:
+      'Visualize vehicle armor thickness with customizable color maps.',
+    icon: (props: IconProps) => (
+      <Icon as={LuShield} height={5} width={5} {...props} />
+    ),
+  },
 };
 
 export const primaryTabKeys = [
@@ -88,3 +99,4 @@ export const secondaryTabKeys = [
   'kdr',
   'winrate',
 ] as const satisfies (keyof typeof tabs)[];
+export const toolsTabKeys = ['armor'] as const satisfies (keyof typeof tabs)[];

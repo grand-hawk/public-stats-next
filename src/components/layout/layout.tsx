@@ -11,13 +11,15 @@ export const LAYOUT_SHIFT_MEDIA = 'md';
 
 export interface LayoutProps extends BoxProps {
   children?: React.ReactNode;
+  hidePlaceDropdown?: boolean;
+  hidePlaceSelector?: boolean;
   noPadding?: boolean;
   overwriteTabLabel?: string;
-  hidePlaceSelector?: boolean;
 }
 
 export default function Layout({
   children,
+  hidePlaceDropdown,
   hidePlaceSelector,
   noPadding,
   overwriteTabLabel,
@@ -49,10 +51,14 @@ export default function Layout({
           overflow="clip"
         >
           {!hidePlaceSelector && (
-            <PlaceSwitchBar overwriteTabLabel={overwriteTabLabel} />
+            <PlaceSwitchBar
+              hideDropdown={hidePlaceDropdown}
+              overwriteTabLabel={overwriteTabLabel}
+            />
           )}
 
           <Box
+            gridRow="2"
             minHeight="0"
             overflow="auto"
             padding={

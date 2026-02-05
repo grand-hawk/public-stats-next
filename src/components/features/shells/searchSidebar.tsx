@@ -14,8 +14,8 @@ import { trpc } from '@/utils/trpc';
 import type { ListItem } from '@/components/layout/searchLayout/searchSidebar/list';
 
 const ShellListName = React.memo(function ShellListName({
-  name,
   displayType,
+  name,
   type,
 }: {
   name: string;
