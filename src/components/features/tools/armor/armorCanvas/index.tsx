@@ -501,7 +501,7 @@ export default function ArmorCanvas({
           </Flex>
         </Flex>
 
-        {isZoomed && (
+        <Box minHeight="24px">
           <Flex
             _hover={{ color: 'fg', background: 'whiteAlpha.100' }}
             alignItems="center"
@@ -509,17 +509,20 @@ export default function ArmorCanvas({
             borderColor="border.muted"
             borderWidth="1px"
             color="fg.muted"
-            cursor="pointer"
+            cursor={isZoomed ? 'pointer' : 'default'}
             fontSize="2xs"
             gap={1}
+            opacity={isZoomed ? 1 : 0}
             paddingX={2}
             paddingY={1}
+            pointerEvents={isZoomed ? 'auto' : 'none'}
+            visibility={isZoomed ? 'visible' : 'hidden'}
             onClick={resetView}
           >
             <LuRotateCcw size={12} />
             Reset view
           </Flex>
-        )}
+        </Box>
       </Flex>
 
       <Box
