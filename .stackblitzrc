@@ -1,3 +1,7 @@
 {
-  "startCommand": "next dev --webpack"
+  "startCommand": "next dev --webpack",
+  "env": {
+    "NODE_ENV": "development",
+    "DATA_ENV": "production"
+  }
 }
