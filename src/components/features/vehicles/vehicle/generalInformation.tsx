@@ -1,9 +1,18 @@
-import { Box, FormatNumber, HStack, Quote, Stack } from '@chakra-ui/react';
+import {
+  Box,
+  FormatNumber,
+  HStack,
+  Link,
+  Quote,
+  Stack,
+} from '@chakra-ui/react';
 import React from 'react';
+import Markdown from 'react-markdown';
 
 import CrewmanIcon from '@/components/icons/classes/crewman';
 import EngineerIcon from '@/components/icons/classes/engineer';
 import InfantryIcon from '@/components/icons/classes/infantry';
+import { inWhere, Prose } from '@/components/ui/prose';
 import { ToggleTip } from '@/components/ui/toggle-tip';
 import SectionMarker from '@/components/wiki/sectionMarker';
 import Stat from '@/components/wiki/stat';
@@ -11,12 +20,22 @@ import TitledCard from '@/components/wiki/titledCard';
 import { useVehicle } from '@/hooks/providers/vehicle';
 import { capitalizeFirst } from '@/utils/capitalizeFirst';
 
-import type { IconProps } from '@chakra-ui/react';
+import type { BoxProps, IconProps } from '@chakra-ui/react';
+
+const COLLAPSED_MAX_HEIGHT = 200;
 
 const classIcons: Record<string, (props: IconProps) => React.ReactNode> = {
   Engineer: EngineerIcon,
   Infantry: InfantryIcon,
   Crewman: CrewmanIcon,
+};
+
+const baseContentProps: BoxProps = {
+  fontSize: 'sm',
+  fontWeight: 'light',
+  id: 'vehicle-page-description',
+  whiteSpace: 'pre-wrap',
+  'aria-label': 'Description',
 };
 
 export default function VehicleGeneralInformation({
@@ -26,25 +45,98 @@ export default function VehicleGeneralInformation({
 }) {
   const vehicle = useVehicle();
 
+  const customDescription = vehicle.content?.Description;
+
+  const contentRef = React.useRef<HTMLDivElement>(null);
+  const [isExpanded, setIsExpanded] = React.useState(false);
+  const [needsExpand, setNeedsExpand] = React.useState(false);
+  const [contentHeight, setContentHeight] = React.useState(0);
+
+  React.useEffect(() => {
+    if (!contentRef.current) return;
+    const height = contentRef.current.scrollHeight;
+    setContentHeight(height);
+    setNeedsExpand(height > COLLAPSED_MAX_HEIGHT);
+  }, [customDescription]);
+
   return (
     <>
       <SectionMarker name="General information" />
 
       <TitledCard as="section" title="General information" withAnchor>
         <Stack gap={4}>
-          <Stat label="In-game description">
-            <Quote
-              aria-label="Description"
-              fontSize="sm"
-              fontWeight="light"
-              id="vehicle-page-description"
-              whiteSpace="pre-wrap"
-            >
-              {vehicle.info.description}
-            </Quote>
+          <Stat
+            label={customDescription ? 'Description' : 'In-game description'}
+          >
+            {customDescription ? (
+              <Box {...baseContentProps}>
+                <Box
+                  ref={contentRef}
+                  overflow="hidden"
+                  position="relative"
+                  css={{
+                    maxHeight: isExpanded
+                      ? `${contentHeight}px`
+                      : `${COLLAPSED_MAX_HEIGHT}px`,
+                    transition: 'max-height 0.3s ease',
+                  }}
+                >
+                  <Stack gap={0} asChild>
+                    <Prose
+                      color="fg"
+                      size="md"
+                      css={{
+                        [inWhere('& h3, h4')]: {
+                          marginTop: '0.4em',
+                          marginBottom: 0,
+                        },
+                        [inWhere('& p')]: {
+                          marginTop: '0.35em',
+                          marginBottom: '0.35em',
+                        },
+                      }}
+                    >
+                      <Markdown>{customDescription}</Markdown>
+                    </Prose>
+                  </Stack>
+
+                  {needsExpand && !isExpanded && (
+                    <Box
+                      position="absolute"
+                      bottom={0}
+                      left={0}
+                      right={0}
+                      height="80px"
+                      bgGradient="to-t"
+                      gradientFrom="bg.panel"
+                      gradientTo="transparent"
+                      pointerEvents="none"
+                    />
+                  )}
+                </Box>
+
+                {needsExpand && (
+                  <Link
+                    as="button"
+                    variant="underline"
+                    fontSize="xs"
+                    color="fg.muted"
+                    onClick={() => setIsExpanded((prev) => !prev)}
+                    marginTop={1}
+                    alignSelf="start"
+                  >
+                    {isExpanded ? 'Show less' : 'Read more'}
+                  </Link>
+                )}
+              </Box>
+            ) : (
+              <Box asChild {...baseContentProps}>
+                <Quote>{vehicle.info.description}</Quote>
+              </Box>
+            )}
           </Stat>
 
-          <Box display="flex" flexWrap="wrap" gap={6}>
+          <Box display="flex" flexWrap="wrap" gap={4}>
             <Stat label="Locomotion">
               {capitalizeFirst(vehicle.info.locomotion)}
             </Stat>

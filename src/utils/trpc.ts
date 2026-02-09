@@ -52,7 +52,7 @@ export const trpc = createTRPCNext<AppRouter>({
         defaultOptions: {
           queries: {
             refetchOnMount: false,
-            refetchOnWindowFocus: false,
+            refetchOnWindowFocus: process.env.NODE_ENV === 'development',
             refetchOnReconnect: false,
           },
         },

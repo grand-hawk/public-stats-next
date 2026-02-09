@@ -1,6 +1,8 @@
+import slug from 'slug';
 import z from 'zod';
 
 import { createTRPCRouter, publicProcedure } from '@/server/api/trpc/context';
+import { getVehicleContent } from '@/server/utils/vehicleContent';
 import { getVehicleImage } from '@/utils/getVehicleImage';
 import { getBaseUrl } from '@/utils/trpc';
 import { getConfig } from '@generated/config';
@@ -9,6 +11,7 @@ import { getLoadouts } from '@generated/loadouts';
 import { getVehicles } from '@generated/vehicles';
 import { getVehiclesLd } from '@generated/vehicles_ld';
 
+import type { VehicleContent } from '@/server/utils/vehicleContent';
 import type { PlaceId } from '@generated/config';
 import type { KdrPlaceDataVehicle } from '@generated/kdr';
 import type { LoadoutsPlaceDataLoadoutVehicle } from '@generated/loadouts';
@@ -35,6 +38,7 @@ export type DetailedVehicle = VehiclesPlaceDataVehicle & {
     availability: VehicleAvailability;
     kdr: KdrPlaceDataVehicle;
   };
+  content?: VehicleContent;
   linkedData: Partial<{
     breadcrumbs: WithContext<BreadcrumbList>;
     vehicle: WithContext<Vehicle>;
@@ -119,6 +123,7 @@ export const vehiclesRouter = createTRPCRouter({
           availability,
           kdr: kdrPlace.data.all_time[vehicleName],
         },
+        content: getVehicleContent(slug(vehicle.info.gameId)) || undefined,
         linkedData: {
           breadcrumbs: {
             '@context': 'https://schema.org',

@@ -12,8 +12,10 @@
     "lint": "pnpm run typecheck && pnpm run eslint",
     "format": "prettier . -w",
     "fix": "pnpm run eslint --fix && pnpm run format",
+    "content:generate": "tsx scripts/generate-content.mts",
+    "content:validate": "node scripts/validate-content.mjs",
     "generate": "rimraf generated && cross-env NODE_ENV=development tsx scripts/generate/index.mts 1.0.0",
-    "postinstall": "node scripts/run-if-missing.mjs generated \"pnpm run generate\""
+    "postinstall": "node scripts/run-if-missing.mjs generated \"pnpm run generate\" && pnpm run content:generate"
   },
   "dependencies": {
     "@chakra-ui/charts": "^3.32.0",
@@ -45,6 +47,7 @@
     "react": "19.2.4",
     "react-dom": "19.2.4",
     "react-icons": "^5.5.0",
+    "react-markdown": "^10.1.0",
     "recharts": "^3.7.0",
     "set-interval-async": "^3.0.3",
     "shiki": "^3.22.0",
@@ -53,6 +56,7 @@
     "superjson": "^2.2.6",
     "three": "^0.182.0",
     "xmlbuilder2": "^4.0.3",
+    "yaml": "^2.8.2",
     "zod": "^4.3.6",
     "zustand": "^5.0.11"
   },
@@ -71,6 +75,7 @@
     "@typescript-eslint/eslint-plugin": "^8.54.0",
     "@typescript-eslint/parser": "^8.54.0",
     "change-case": "^5.4.4",
+    "consola": "^3.4.2",
     "cross-env": "^10.1.0",
     "eslint": "^9.39.2",
     "eslint-config-next": "16.1.6",

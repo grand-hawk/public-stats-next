@@ -1,0 +1,5 @@
+sections:
+  - name: Description
+
+  - name: Armor
+    lineRule: '^[^:]+: \d+$'

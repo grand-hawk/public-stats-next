@@ -1,0 +1,44 @@
+name: Validate Content
+
+on:
+  pull_request:
+    paths:
+      - 'content/**/*.md'
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout PR
+        uses: actions/checkout@v4
+
+      - name: Get changed content files
+        id: changed
+        run: |
+          FILES=$(gh pr diff ${{ github.event.pull_request.number }} --name-only | grep '^content/.*\.md$' || true)
+          echo "files<<EOF" >> "$GITHUB_OUTPUT"
+          echo "$FILES" >> "$GITHUB_OUTPUT"
+          echo "EOF" >> "$GITHUB_OUTPUT"
+        env:
+          GH_TOKEN: ${{ github.token }}
+
+      - name: Validate structure
+        if: steps.changed.outputs.files != ''
+        run: node scripts/validate-content.mjs ${{ steps.changed.outputs.files }}
+
+      - name: Check for title changes
+        if: steps.changed.outputs.files != ''
+        run: |
+          ERRORS=""
+          while IFS= read -r file; do
+            [ -z "$file" ] && continue
+            DIFF=$(git diff origin/${{ github.base_ref }}...HEAD -- "$file" | grep "^-# " || true)
+            if [ -n "$DIFF" ]; then
+              ERRORS="${ERRORS}\n  - ${file}: title was changed"
+            fi
+          done <<< "${{ steps.changed.outputs.files }}"
+
+          if [ -n "$ERRORS" ]; then
+            echo -e "\nTitle changes are not allowed:${ERRORS}"
+            exit 1
+          fi
