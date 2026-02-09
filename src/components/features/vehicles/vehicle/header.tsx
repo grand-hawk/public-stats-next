@@ -1,7 +1,9 @@
 import { Box, Heading, HStack, Span } from '@chakra-ui/react';
 import React from 'react';
 import { MdOutlineOpenInFull } from 'react-icons/md';
+import { MdEdit } from 'react-icons/md';
 import { SiFandom } from 'react-icons/si';
+import slug from 'slug';
 
 import IconLink from '@/components/common/buttonIconLink';
 import ButtonMarkdownLink from '@/components/common/buttonMarkdownLink';
@@ -73,6 +75,21 @@ export default function VehicleHeader() {
           </IconLink>
 
           <ButtonMarkdownLink />
+
+          {vehicle.content && (
+            <IconLink
+              href={`https://pr.new/grand-hawk/public-stats-next/edit/next/content/vehicles/${slug(vehicle.info.gameId)}.md`}
+              linkProps={{
+                target: '_blank',
+              }}
+              rel="nofollow"
+              size="sm"
+              title="Edit"
+              variant="surface"
+            >
+              <MdEdit />
+            </IconLink>
+          )}
 
           {vehicle.info.externalLinks.Fandom && (
             <IconLink
