@@ -19,6 +19,25 @@ const FIELD_ORDER = [
   'Hull side',
 ];
 
+interface ArmorValue {
+  value: number;
+  approximate: boolean;
+}
+
+function parseArmorValue(raw: string): ArmorValue {
+  const approximate = raw.startsWith('~');
+  return { value: Number(raw.replace('~', '')), approximate };
+}
+
+function ArmorNumber({ armor }: { armor: ArmorValue }) {
+  return (
+    <>
+      {armor.approximate && '~'}
+      <FormatNumber style="unit" unit="millimeter" value={armor.value} />
+    </>
+  );
+}
+
 export default function VehicleArmor() {
   const vehicle = useVehicle();
   const initials = usePlaceInitials()!;
@@ -28,13 +47,13 @@ export default function VehicleArmor() {
   const fields = React.useMemo(() => {
     if (!armor) return;
 
-    const parsed: Record<string, number | [number, number]> = {};
+    const parsed: Record<string, ArmorValue | [ArmorValue, ArmorValue]> = {};
 
     for (const line of armor.split('\n')) {
       const [key, value] = line.split(': ');
       parsed[key] = value.includes('-')
-        ? (value.split('-').map(Number) as [number, number])
-        : Number(value);
+        ? (value.split('-').map(parseArmorValue) as [ArmorValue, ArmorValue])
+        : parseArmorValue(value);
     }
 
     return FIELD_ORDER.filter((key) => key in parsed).map(
@@ -56,12 +75,12 @@ export default function VehicleArmor() {
                 <StatsCell>
                   {Array.isArray(value) ? (
                     <>
-                      <FormatNumber style="unit" unit="millimeter" value={value[0]} />
-                      {' - '}
-                      <FormatNumber style="unit" unit="millimeter" value={value[1]} />
+                      <ArmorNumber armor={value[0]} />
+                      –
+                      <ArmorNumber armor={value[1]} />
                     </>
                   ) : (
-                    <FormatNumber style="unit" unit="millimeter" value={value} />
+                    <ArmorNumber armor={value} />
                   )}
                 </StatsCell>
               </StatsRow>
