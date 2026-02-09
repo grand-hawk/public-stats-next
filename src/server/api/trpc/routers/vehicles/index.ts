@@ -66,7 +66,7 @@ export const vehiclesRouter = createTRPCRouter({
               role: data.info.role,
               new: data.info.addedDate
                 ? dateNow - new Date(data.info.addedDate).getTime() <
-                  1_000 * 60 * 60 * 24 * 14
+                  1_000 * 60 * 60 * 24 * 31
                 : undefined,
             }) satisfies ListVehicle,
         )
