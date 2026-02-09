@@ -2,6 +2,4 @@
 
 ## Description
 
-Test
-
 ## Armor

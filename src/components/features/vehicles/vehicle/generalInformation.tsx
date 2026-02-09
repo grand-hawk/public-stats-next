@@ -4,7 +4,9 @@ import {
   HStack,
   Link,
   Quote,
+  Span,
   Stack,
+  Text,
 } from '@chakra-ui/react';
 import React from 'react';
 import Markdown from 'react-markdown';
@@ -69,7 +71,7 @@ export default function VehicleGeneralInformation({
             label={customDescription ? 'Description' : 'In-game description'}
           >
             {customDescription ? (
-              <Box {...baseContentProps}>
+              <div>
                 <Box
                   ref={contentRef}
                   overflow="hidden"
@@ -81,24 +83,27 @@ export default function VehicleGeneralInformation({
                     transition: 'max-height 0.3s ease',
                   }}
                 >
-                  <Stack gap={0} asChild>
-                    <Prose
-                      color="fg"
-                      size="md"
-                      css={{
-                        [inWhere('& h3, h4')]: {
-                          marginTop: '0.4em',
-                          marginBottom: 0,
-                        },
-                        [inWhere('& p')]: {
-                          marginTop: '0.35em',
-                          marginBottom: '0.35em',
-                        },
-                      }}
-                    >
-                      <Markdown>{customDescription}</Markdown>
-                    </Prose>
-                  </Stack>
+                  <Box asChild {...baseContentProps}>
+                    <Quote asChild>
+                      <Prose
+                        color="fg"
+                        data-prose
+                        size="md"
+                        css={{
+                          [inWhere('& h3, h4')]: {
+                            marginTop: '0.4em',
+                            marginBottom: 0,
+                          },
+                        }}
+                      >
+                        <Markdown
+                          components={{ p: (props) => <Span {...props} /> }}
+                        >
+                          {customDescription}
+                        </Markdown>
+                      </Prose>
+                    </Quote>
+                  </Box>
 
                   {needsExpand && !isExpanded && (
                     <Box
@@ -128,7 +133,7 @@ export default function VehicleGeneralInformation({
                     {isExpanded ? 'Show less' : 'Read more'}
                   </Link>
                 )}
-              </Box>
+              </div>
             ) : (
               <Box asChild {...baseContentProps}>
                 <Quote>{vehicle.info.description}</Quote>
