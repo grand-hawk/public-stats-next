@@ -70,7 +70,7 @@ export default function Vehicle({ vehicle }: { vehicle: DetailedVehicle }) {
             <VehicleDynamicData />
             <VehicleGallery />
             <Box hideFrom="2xl">
-              <VehicleDataInfo compact />
+              <VehicleDataInfo />
             </Box>
             <InaccurateDataFooter />
           </Stack>

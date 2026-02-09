@@ -1,36 +1,30 @@
-import { HStack, Icon, Separator, Stack } from '@chakra-ui/react';
+import { HStack, Icon, Stack } from '@chakra-ui/react';
 import React from 'react';
 import { BsDatabaseFillCheck } from 'react-icons/bs';
+import { IoMdAdd } from 'react-icons/io';
 import { MdCode } from 'react-icons/md';
 
 import { useVehicle } from '@/hooks/providers/vehicle';
 
-export default function VehicleDataInfo({ compact }: { compact?: boolean }) {
+export default function VehicleDataInfo() {
   const vehicle = useVehicle();
 
   const lastRetrievedDate = new Date(vehicle.info.lastRetrieved);
+  const addedDate = vehicle.info.addedDate && new Date(vehicle.info.addedDate);
 
   return (
     <Stack
-      backgroundColor={compact ? undefined : 'bg.subtle/75'}
-      borderLeftWidth={
-        compact
-          ? undefined
-          : {
-              base: 0,
-              md: '1px',
-            }
-      }
-      borderRightWidth={
-        compact
-          ? undefined
-          : {
-              base: 0,
-              md: '1px',
-            }
-      }
-      borderYWidth={compact ? undefined : '1px'}
-      padding={compact ? undefined : 2}
+      backgroundColor="bg.subtle/75"
+      borderLeftWidth={{
+        base: 0,
+        md: '1px',
+      }}
+      borderRightWidth={{
+        base: 0,
+        md: '1px',
+      }}
+      borderYWidth="1px"
+      padding={2}
       fontSize="xs"
       borderColor="border/75"
       color="fg.muted"
@@ -38,22 +32,25 @@ export default function VehicleDataInfo({ compact }: { compact?: boolean }) {
         '& span': {
           lineHeight: 'shorter',
         },
-        '& .chakra-stack': {
-          flex: compact ? 1 : undefined,
-        },
       }}
-      flexDirection={compact ? { base: 'column', sm: 'row' } : 'column'}
-      justifyContent={compact ? 'center' : undefined}
-      gap={compact ? { base: 1, sm: 4 } : 2}
+      gap={2}
     >
-      <HStack
-        justifyContent={
-          compact ? { base: 'center', sm: 'flex-end' } : undefined
-        }
-      >
+      {addedDate && (
+        <HStack>
+          <Icon as={IoMdAdd} />
+          <span>
+            Added on:{' '}
+            <span title={addedDate.toLocaleString()} suppressHydrationWarning>
+              {addedDate.toLocaleDateString()}
+            </span>
+          </span>
+        </HStack>
+      )}
+
+      <HStack>
         <Icon as={BsDatabaseFillCheck} />
         <span>
-          Last updated:{' '}
+          Data as of:{' '}
           <span
             title={lastRetrievedDate.toLocaleString()}
             suppressHydrationWarning
@@ -63,13 +60,7 @@ export default function VehicleDataInfo({ compact }: { compact?: boolean }) {
         </span>
       </HStack>
 
-      {compact && <Separator orientation="vertical" />}
-
-      <HStack
-        justifyContent={
-          compact ? { base: 'center', sm: 'flex-start' } : undefined
-        }
-      >
+      <HStack>
         <Icon as={MdCode} />
         <span title="The internal ID of the vehicle, useful for the loadout editor">
           ID: &quot;{vehicle.info.gameId}&quot;
