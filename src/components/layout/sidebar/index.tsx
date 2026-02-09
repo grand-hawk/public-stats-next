@@ -13,6 +13,7 @@ import {
   LuPanelLeftClose,
   LuPanelLeftOpen,
 } from 'react-icons/lu';
+import { MdRefresh } from 'react-icons/md';
 
 import MTC from '@/components/icons/mtc';
 import {
@@ -21,6 +22,7 @@ import {
   tabs,
   toolsTabKeys,
 } from '@/components/layout/navigation/tabs';
+import SidebarButton from '@/components/layout/sidebar/sidebarButton';
 import SidebarGroup from '@/components/layout/sidebar/sidebarGroup';
 import SidebarItem from '@/components/layout/sidebar/sidebarItem';
 import SidebarLicense from '@/components/layout/sidebar/sidebarLicense';
@@ -38,11 +40,13 @@ import { useDebugEnabled } from '@/hooks/useDebugEnv';
 import { usePlaceInitials } from '@/hooks/usePlaceInitials';
 import { useDevelopmentStore } from '@/stores/development';
 import { useSidebarStore } from '@/stores/sidebar';
+import { trpc } from '@/utils/trpc';
 
 export default function Sidebar() {
   const debugEnabled = useDebugEnabled();
   const initials = usePlaceInitials();
   const currentTab = useCurrentTab();
+  const utils = trpc.useUtils();
   const { isOverlayOpen, toggleOverlay } = useDevelopmentStore();
   const { isCollapsed, toggleCollapsed } = useSidebarStore();
   const [mobileOpen, setMobileOpen] = React.useState(false);
@@ -262,76 +266,38 @@ export default function Sidebar() {
       {!isCollapsed && <SidebarLicense />}
 
       <Flex direction="column" gap={0} borderTopWidth="1px" paddingY={1}>
-        {debugEnabled && (
-          <Flex
-            as="button"
-            alignItems="center"
-            gap={3}
-            paddingX={3}
-            paddingY={2}
-            cursor="pointer"
-            transition="all 0.15s"
-            background={isOverlayOpen ? 'whiteAlpha.100' : 'transparent'}
-            color="fg.muted"
-            _hover={{ background: 'whiteAlpha.100', color: 'fg' }}
-            onClick={() => toggleOverlay()}
-            aria-label="Toggle Development Overlay"
-          >
-            <Flex
-              alignItems="center"
-              justifyContent="center"
-              width={8}
-              height={8}
-              flexShrink={0}
-              borderWidth="1px"
-              borderColor="whiteAlpha.100"
-              transition="all 0.15s"
-            >
-              <LuBug size={20} />
-            </Flex>
-            {!isCollapsed && (
-              <Text fontSize="sm" whiteSpace="nowrap">
-                Debug
-              </Text>
-            )}
-          </Flex>
+        {process.env.NEXT_PUBLIC_STACKBLITZ && (
+          <SidebarButton
+            icon={<MdRefresh size={20} />}
+            label="Refresh"
+            onClick={() => utils.invalidate()}
+            active={isOverlayOpen}
+            collapsed={isCollapsed}
+          />
         )}
 
-        <Flex
-          as="button"
-          alignItems="center"
-          gap={3}
-          paddingX={3}
-          paddingY={2}
-          cursor="pointer"
-          transition="all 0.15s"
-          color="fg.muted"
-          _hover={{ background: 'whiteAlpha.100', color: 'fg' }}
-          onClick={toggleCollapsed}
-          aria-label={isCollapsed ? 'Expand sidebar' : 'Collapse sidebar'}
-        >
-          <Flex
-            alignItems="center"
-            justifyContent="center"
-            width={8}
-            height={8}
-            flexShrink={0}
-            borderWidth="1px"
-            borderColor="whiteAlpha.100"
-            transition="all 0.15s"
-          >
-            {isCollapsed ? (
+        {debugEnabled && (
+          <SidebarButton
+            icon={<LuBug size={20} />}
+            label="Debug"
+            onClick={() => toggleOverlay()}
+            active={isOverlayOpen}
+            collapsed={isCollapsed}
+          />
+        )}
+
+        <SidebarButton
+          icon={
+            isCollapsed ? (
               <LuPanelLeftOpen size={20} />
             ) : (
               <LuPanelLeftClose size={20} />
-            )}
-          </Flex>
-          {!isCollapsed && (
-            <Text fontSize="sm" whiteSpace="nowrap">
-              Collapse
-            </Text>
-          )}
-        </Flex>
+            )
+          }
+          label="Collapse"
+          onClick={toggleCollapsed}
+          collapsed={isCollapsed}
+        />
       </Flex>
     </Flex>
   );

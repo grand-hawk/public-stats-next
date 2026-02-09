@@ -3,6 +3,7 @@
   "env": {
     "NODE_ENV": "development",
     "DATA_ENV": "production",
-    "FORCE_CACHE": "true"
+    "FORCE_CACHE": "true",
+    "NEXT_PUBLIC_STACKBLITZ": "true"
   }
 }
