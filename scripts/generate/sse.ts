@@ -13,7 +13,8 @@ sse.setMaxListeners(0);
 if (
   process.env.NEXT_RUNTIME !== 'edge' &&
   typeof EdgeRuntime !== 'string' &&
-  environment !== 'development'
+  environment !== 'development' &&
+  process.env.NEXT_PUBLIC_STACKBLITZ !== 'true'
 ) {
   const sseUrl =
     process.env.SSE_URL ??
