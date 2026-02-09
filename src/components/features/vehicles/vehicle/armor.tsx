@@ -32,8 +32,8 @@ export default function VehicleArmor() {
 
     for (const line of armor.split('\n')) {
       const [key, value] = line.split(': ');
-      parsed[key] = value.includes(' - ')
-        ? (value.split(' - ').map(Number) as [number, number])
+      parsed[key] = value.includes('-')
+        ? (value.split('-').map(Number) as [number, number])
         : Number(value);
     }
 
