@@ -1,5 +1,6 @@
 import React from 'react';
 
+import VehicleArmor from '@/components/features/vehicles/vehicle/armor';
 import APS from '@/components/features/vehicles/vehicle/dynamic/modules/aps';
 import Defenses from '@/components/features/vehicles/vehicle/dynamic/modules/defenses';
 import Turrets from '@/components/features/vehicles/vehicle/dynamic/modules/turrets';
@@ -16,6 +17,7 @@ export default function VehicleDynamicModules() {
   return (
     <>
       <Vehicle />
+      <VehicleArmor />
       <Defenses />
       <APS />
       <Turrets />

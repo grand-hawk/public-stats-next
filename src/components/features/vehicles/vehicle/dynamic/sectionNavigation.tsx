@@ -15,8 +15,10 @@ import { getTurretPriorityIndex } from './modules/turrets';
 
 import type { DynamicDataContext } from '@/hooks/providers/dynamicData';
 import type { SectionMarker } from '@/hooks/providers/sectionMarkers';
+import type { DetailedVehicle } from '@/server/api/trpc/routers/vehicles';
 
 function computeMarkers(
+  vehicle: DetailedVehicle,
   assembledModules: DynamicDataContext['assembledModules'],
   isAvailable: boolean,
 ): SectionMarker[] {
@@ -38,6 +40,9 @@ function computeMarkers(
 
   // Powertrain section
   if (driveData) markers.push({ name: 'Powertrain', slug: 'powertrain' });
+
+  // Armor section
+  if (vehicle.content?.Armor) markers.push({ name: 'Armor', slug: 'armor' });
 
   // Defenses section
   const essModule = getOneModuleOfType('ESS', assembledModules);
@@ -84,8 +89,8 @@ export default function SectionNavigation() {
     Object.keys(vehicle.info.availability).length > 0;
 
   const markers = React.useMemo(
-    () => computeMarkers(assembledModules, isAvailable),
-    [assembledModules, isAvailable],
+    () => computeMarkers(vehicle, assembledModules, isAvailable),
+    [vehicle, assembledModules, isAvailable],
   );
 
   React.useEffect(() => {
