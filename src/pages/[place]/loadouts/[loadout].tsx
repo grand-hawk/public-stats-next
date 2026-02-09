@@ -39,6 +39,9 @@ export default function PlaceLoadout() {
   }, [router, loadoutQuery, loadout, loadoutSlug]);
 
   const title = loadout ? loadout.name : 'Loadout not found';
+  const description = loadout
+    ? `${loadout.name} loadout statistics and team compositions for ${place.placeName}`
+    : undefined;
 
   return (
     <>
@@ -47,6 +50,14 @@ export default function PlaceLoadout() {
 
         <meta content={title} property="og:title" />
         <meta content={title} name="twitter:title" />
+
+        {description && (
+          <>
+            <meta content={description} name="description" />
+            <meta content={description} property="og:description" />
+            <meta content={description} name="twitter:description" />
+          </>
+        )}
       </Head>
 
       <Layout noPadding overwriteTabLabel={loadout?.name}>

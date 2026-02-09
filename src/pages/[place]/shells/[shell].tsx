@@ -42,6 +42,9 @@ export default function PlaceShell() {
   }, [router, shell, shellQuery, shellSlug]);
 
   const title = shell ? `${shell.weapon} - ${shell.name}` : 'Shell not found';
+  const description = shell
+    ? `${shell.weapon} - ${shell.name} shell statistics for ${place.placeName}`
+    : undefined;
 
   return (
     <>
@@ -53,6 +56,10 @@ export default function PlaceShell() {
 
         {shell && (
           <>
+            <meta content={description} name="description" />
+            <meta content={description} property="og:description" />
+            <meta content={description} name="twitter:description" />
+
             <meta
               content={[shell.weapon, shell.name, ...getKeywords(place)].join(
                 ',',

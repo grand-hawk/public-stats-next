@@ -24,7 +24,7 @@ export const tabs: Record<string, Tab> = {
     path: '/vehicles',
     color: 'blue.500',
     description:
-      'Explore the detailed characteristics and loadouts of all vehicles in the game.',
+      'Explore the detailed characteristics of all vehicles in the game.',
     icon: (props: IconProps) => (
       <Icon as={TbTank} height={5} width={5} {...props} />
     ),
@@ -34,7 +34,7 @@ export const tabs: Record<string, Tab> = {
     path: '/shells',
     color: 'orange.500',
     description:
-      'Analyze shell performance, penetration values, and damage characteristics.',
+      'View shell performance, penetration values, and damage characteristics.',
     icon: (props: IconProps) => (
       <Icon as={GiArtilleryShell} height={5} width={5} {...props} />
     ),
