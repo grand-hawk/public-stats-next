@@ -1,4 +1,4 @@
-import { HStack } from '@chakra-ui/react';
+import { Badge, HStack } from '@chakra-ui/react';
 import React from 'react';
 
 import VehicleSearchConfig from '@/components/features/vehicles/searchSidebar/config';
@@ -12,24 +12,26 @@ import { simplifyString } from '@/utils/simplifyString';
 import { trpc } from '@/utils/trpc';
 
 import type { ListItem } from '@/components/layout/searchLayout/searchSidebar/list';
-
-interface ListVehicle {
-  name: string;
-  slug: string;
-  team: string;
-  role: string;
-}
+import type { ListVehicle } from '@/server/api/trpc/routers/vehicles';
 
 const VehicleListName = React.memo(function VehicleListName({
+  isNew,
   name,
   slug,
 }: {
   name: string;
   slug: string;
+  isNew?: boolean;
 }) {
   return (
     <HStack justifyContent="space-between" width="100%">
-      {name}
+      {isNew ? (
+        <HStack>
+          {name} <Badge colorPalette="blue">NEW</Badge>
+        </HStack>
+      ) : (
+        name
+      )}
       <VehicleIcon slug={slug} />
     </HStack>
   );
@@ -39,6 +41,7 @@ export default function VehiclesSearchSidebar() {
   const place = usePlace()!;
   const vehicleQuery = useRouterQuery('vehicle');
   const query = useVehicleSearchStore((s) => s.query);
+  const deferredQuery = React.useDeferredValue(query);
   const setQuery = useVehicleSearchStore((s) => s.setQuery);
   const groupByTeam = useVehicleSearchStore((s) => s.groupByTeam);
   const groupByRole = useVehicleSearchStore((s) => s.groupByRole);
@@ -47,15 +50,23 @@ export default function VehiclesSearchSidebar() {
     placeId: place.placeId,
   });
 
-  const filteredVehicleList = React.useMemo(() => {
-    if (query === '') return vehicleList;
+  const simplifiedNames = React.useMemo(() => {
+    const map = new Map<string, string>();
+    for (const vehicle of vehicleList) {
+      map.set(vehicle.slug, simplifyString(vehicle.name));
+    }
+    return map;
+  }, [vehicleList]);
 
-    const simplifiedQuery = simplifyString(query);
+  const filteredVehicleList = React.useMemo(() => {
+    if (deferredQuery === '') return vehicleList;
+
+    const simplifiedQuery = simplifyString(deferredQuery);
 
     return vehicleList.filter((vehicle) =>
-      simplifyString(vehicle.name).includes(simplifiedQuery),
+      simplifiedNames.get(vehicle.slug)!.includes(simplifiedQuery),
     );
-  }, [vehicleList, query]);
+  }, [vehicleList, deferredQuery, simplifiedNames]);
 
   const list: ListItem[] = React.useMemo(() => {
     type Group = { label: string; isTeam?: boolean; vehicles?: ListVehicle[] };
@@ -66,7 +77,13 @@ export default function VehiclesSearchSidebar() {
         type: 'item',
         value: {
           ...vehicle,
-          name: <VehicleListName name={vehicle.name} slug={vehicle.slug} />,
+          name: (
+            <VehicleListName
+              name={vehicle.name}
+              slug={vehicle.slug}
+              isNew={vehicle.new}
+            />
+          ),
         },
       }));
 
@@ -148,7 +165,13 @@ export default function VehiclesSearchSidebar() {
             type: 'item',
             value: {
               ...vehicle,
-              name: <VehicleListName name={vehicle.name} slug={vehicle.slug} />,
+              name: (
+                <VehicleListName
+                  name={vehicle.name}
+                  slug={vehicle.slug}
+                  isNew={vehicle.new}
+                />
+              ),
             },
           });
       }

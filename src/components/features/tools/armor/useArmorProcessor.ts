@@ -1,8 +1,6 @@
 import React from 'react';
 
-import { getVehicleImage } from '@/utils/getVehicleImage';
-
-import { RICOCHET_COLOR, samplePalette } from './palettes';
+import { samplePalette } from './palettes';
 
 import type { Palette } from './palettes';
 import type { ArmorAngle } from '@/utils/getVehicleImage';
@@ -10,41 +8,145 @@ import type { ArmorAngle } from '@/utils/getVehicleImage';
 export interface ArmorProcessorOptions {
   angle: ArmorAngle;
   autoRange: boolean;
+  maxDepth: number;
   maxMm: number;
+  minDepth: number;
   minMm: number;
   palette: Palette;
+  ricochetAngle: number;
   slug: string | null;
 }
 
 export interface ArmorProcessorResult {
   canvas: HTMLCanvasElement | null;
   detectedMax: number;
+  detectedMaxDepth: number;
   detectedMin: number;
   error: string | null;
   loading: boolean;
   thicknessAt: (x: number, y: number) => number | 'ricochet' | null;
 }
 
-interface RawImageData {
-  data: Uint8ClampedArray;
-  height: number;
-  width: number;
+interface Layer {
+  depth: number;
+  thickness: number;
+}
+
+interface PixelData {
+  angle: number;
+  layers: Layer[];
+}
+
+interface RawArmorData {
+  cols: number;
+  pixels: (PixelData | null)[];
+  rows: number;
+}
+
+function decodeAngle(encoded: number): number {
+  if (encoded === 0) return 0;
+  return 75 + (encoded - 1) * 0.0625;
+}
+
+const STRIPE_SPACING = 6;
+const STRIPE_WIDTH = 2;
+export const RICOCHET_LIGHT = { b: 150, g: 150, r: 150 };
+export const RICOCHET_DARK = { b: 60, g: 60, r: 60 };
+
+export function getViewAngleRad(angle: ArmorAngle): number {
+  switch (angle) {
+    case 'front_-30':
+      return (30 * Math.PI) / 180;
+    case 'front_30':
+      return (-30 * Math.PI) / 180;
+    case 'left':
+      return (-90 * Math.PI) / 180;
+    case 'right':
+      return (90 * Math.PI) / 180;
+    case 'back':
+      return Math.PI;
+    default:
+      return 0;
+  }
+}
+
+function isRicochetStripe(x: number, y: number): boolean {
+  return (x + y) % STRIPE_SPACING < STRIPE_WIDTH;
+}
+
+async function fetchAndParseMtca(url: string): Promise<RawArmorData> {
+  const response = await fetch(url);
+  if (!response.ok)
+    throw new Error(`Failed to fetch armor data (${response.status})`);
+  const buffer = await response.arrayBuffer();
+
+  const view = new DataView(buffer);
+  const magic = String.fromCharCode(
+    view.getUint8(0),
+    view.getUint8(1),
+    view.getUint8(2),
+    view.getUint8(3),
+  );
+  if (magic !== 'MTCA') throw new Error('Invalid armor data format');
+
+  const rows = view.getUint16(5);
+  const cols = view.getUint16(7);
+
+  let offset = 9;
+  const pixels: (PixelData | null)[] = new Array(rows * cols);
+
+  for (let i = 0; i < rows * cols; i += 1) {
+    const angleByte = view.getUint8(offset);
+    offset += 1;
+    const count = view.getUint8(offset);
+    offset += 1;
+
+    if (angleByte === 0 && count === 0) {
+      pixels[i] = null;
+      continue;
+    }
+
+    const angle = decodeAngle(angleByte);
+    const layers: Layer[] = [];
+
+    for (let j = 0; j < count; j += 1) {
+      const thickness = view.getUint16(offset);
+      offset += 2;
+      const depth = view.getFloat64(offset);
+      offset += 8;
+      layers.push({ depth, thickness });
+    }
+
+    pixels[i] = { angle, layers };
+  }
+
+  return { cols, pixels, rows };
 }
 
 export function useArmorProcessor(
   options: ArmorProcessorOptions,
 ): ArmorProcessorResult {
-  const { angle, autoRange, maxMm, minMm, palette, slug } = options;
+  const {
+    angle,
+    autoRange,
+    maxDepth,
+    maxMm,
+    minDepth,
+    minMm,
+    palette,
+    ricochetAngle,
+    slug,
+  } = options;
 
   const [loading, setLoading] = React.useState(false);
   const [error, setError] = React.useState<string | null>(null);
-  const [rawData, setRawData] = React.useState<RawImageData | null>(null);
+  const [rawData, setRawData] = React.useState<RawArmorData | null>(null);
   const [detectedMin, setDetectedMin] = React.useState(0);
   const [detectedMax, setDetectedMax] = React.useState(1000);
+  const [detectedMaxDepth, setDetectedMaxDepth] = React.useState(100);
   const [outputCanvas, setOutputCanvas] =
     React.useState<HTMLCanvasElement | null>(null);
-
-  const rawDataRef = React.useRef<RawImageData | null>(null);
+  const rawDataRef = React.useRef<RawArmorData | null>(null);
 
   React.useEffect(() => {
     if (!slug) {
@@ -57,64 +159,68 @@ export function useArmorProcessor(
     setLoading(true);
     setError(null);
 
-    const img = new Image();
-    img.crossOrigin = 'anonymous';
-    img.src = getVehicleImage(slug, `${angle}_armor`, false);
+    fetchAndParseMtca(
+      `https://cdn.astrid.ovh/public-stats-images/${slug}/${angle}_armor.mtca`,
+    )
+      .then((data) => {
+        if (cancelled) return;
 
-    img.onload = () => {
-      if (cancelled) return;
+        let maxD = 0;
+        for (const pixel of data.pixels) {
+          if (!pixel) continue;
+          for (const layer of pixel.layers) {
+            if (layer.depth > maxD) maxD = layer.depth;
+          }
+        }
 
-      const canvas = document.createElement('canvas');
-      canvas.width = img.width;
-      canvas.height = img.height;
-      const ctx = canvas.getContext('2d')!;
-      ctx.drawImage(img, 0, 0);
-      const imageData = ctx.getImageData(0, 0, img.width, img.height);
-
-      let min = Infinity;
-      let max = -Infinity;
-      const d = imageData.data;
-      for (let i = 0; i < d.length; i += 4) {
-        const a = d[i + 3];
-        if (a === 0) continue;
-
-        const r = d[i];
-        const g = d[i + 1];
-        if (r === 255 && g === 255) continue;
-
-        const thickness = r * 256 + g;
-        if (thickness < min) min = thickness;
-        if (thickness > max) max = thickness;
-      }
-
-      if (min === Infinity) {
-        min = 0;
-        max = 1000;
-      }
-
-      const raw: RawImageData = {
-        data: imageData.data,
-        height: img.height,
-        width: img.width,
-      };
-
-      rawDataRef.current = raw;
-      setRawData(raw);
-      setDetectedMin(min);
-      setDetectedMax(max);
-      setLoading(false);
-    };
-
-    img.onerror = () => {
-      if (cancelled) return;
-      setError('Failed to load armor image');
-      setLoading(false);
-    };
+        rawDataRef.current = data;
+        setRawData(data);
+        setDetectedMaxDepth(Math.ceil(maxD));
+        setLoading(false);
+      })
+      .catch((err) => {
+        if (cancelled) return;
+        setError(
+          err instanceof Error ? err.message : 'Failed to load armor data',
+        );
+        setLoading(false);
+      });
 
     return () => {
       cancelled = true;
     };
   }, [slug, angle]);
+
+  React.useEffect(() => {
+    if (!rawData) return;
+
+    let min = Infinity;
+    let max = -Infinity;
+
+    for (const pixel of rawData.pixels) {
+      if (!pixel) continue;
+      if (pixel.angle > 0 && pixel.angle >= ricochetAngle) continue;
+
+      let sum = 0;
+      for (const layer of pixel.layers) {
+        if (layer.depth >= minDepth && layer.depth <= maxDepth)
+          sum += layer.thickness;
+      }
+
+      if (sum > 0 || pixel.layers.length > 0) {
+        if (sum < min) min = sum;
+        if (sum > max) max = sum;
+      }
+    }
+
+    if (min === Infinity) {
+      min = 0;
+      max = 1000;
+    }
+
+    setDetectedMin(min);
+    setDetectedMax(max);
+  }, [rawData, ricochetAngle, minDepth, maxDepth]);
 
   React.useEffect(() => {
     if (!rawData) {
@@ -127,46 +233,67 @@ export function useArmorProcessor(
     const range = effectiveMax - effectiveMin;
 
     const canvas = document.createElement('canvas');
-    canvas.width = rawData.width;
-    canvas.height = rawData.height;
+    canvas.width = rawData.cols;
+    canvas.height = rawData.rows;
     const ctx = canvas.getContext('2d')!;
-    const output = ctx.createImageData(rawData.width, rawData.height);
-    const src = rawData.data;
+    const output = ctx.createImageData(rawData.cols, rawData.rows);
     const dst = output.data;
 
-    for (let i = 0; i < src.length; i += 4) {
-      const a = src[i + 3];
-      if (a === 0) {
-        dst[i] = 0;
-        dst[i + 1] = 0;
-        dst[i + 2] = 0;
-        dst[i + 3] = 0;
-        continue;
+    for (let row = 0; row < rawData.rows; row += 1) {
+      for (let col = 0; col < rawData.cols; col += 1) {
+        const idx = row * rawData.cols + col;
+        const pixel = rawData.pixels[idx];
+        const di = idx * 4;
+
+        if (!pixel) {
+          dst[di] = 0;
+          dst[di + 1] = 0;
+          dst[di + 2] = 0;
+          dst[di + 3] = 0;
+          continue;
+        }
+
+        if (pixel.angle > 0 && pixel.angle >= ricochetAngle) {
+          const c = isRicochetStripe(col, row) ? RICOCHET_LIGHT : RICOCHET_DARK;
+          dst[di] = c.r;
+          dst[di + 1] = c.g;
+          dst[di + 2] = c.b;
+          dst[di + 3] = 255;
+          continue;
+        }
+
+        let total = 0;
+        let hasInRange = false;
+        for (const layer of pixel.layers) {
+          if (layer.depth >= minDepth && layer.depth <= maxDepth) {
+            total += layer.thickness;
+            hasInRange = true;
+          }
+        }
+
+        const t = range > 0 ? (total - effectiveMin) / range : 0;
+        const color = samplePalette(palette, t);
+        dst[di] = color.r;
+        dst[di + 1] = color.g;
+        dst[di + 2] = color.b;
+        dst[di + 3] = pixel.layers.length > 0 && !hasInRange ? 60 : 255;
       }
-
-      const r = src[i];
-      const g = src[i + 1];
-
-      if (r === 255 && g === 255) {
-        dst[i] = RICOCHET_COLOR.r;
-        dst[i + 1] = RICOCHET_COLOR.g;
-        dst[i + 2] = RICOCHET_COLOR.b;
-        dst[i + 3] = 255;
-        continue;
-      }
-
-      const thickness = r * 256 + g;
-      const t = range > 0 ? (thickness - effectiveMin) / range : 0;
-      const color = samplePalette(palette, t);
-      dst[i] = color.r;
-      dst[i + 1] = color.g;
-      dst[i + 2] = color.b;
-      dst[i + 3] = 255;
     }
 
     ctx.putImageData(output, 0, 0);
     setOutputCanvas(canvas);
-  }, [rawData, minMm, maxMm, palette, autoRange, detectedMin, detectedMax]);
+  }, [
+    rawData,
+    minMm,
+    maxMm,
+    palette,
+    autoRange,
+    detectedMin,
+    detectedMax,
+    ricochetAngle,
+    minDepth,
+    maxDepth,
+  ]);
 
   const thicknessAt = React.useCallback(
     (x: number, y: number): number | 'ricochet' | null => {
@@ -175,24 +302,29 @@ export function useArmorProcessor(
 
       const px = Math.floor(x);
       const py = Math.floor(y);
-      if (px < 0 || py < 0 || px >= raw.width || py >= raw.height) return null;
+      if (px < 0 || py < 0 || px >= raw.cols || py >= raw.rows) return null;
 
-      const i = (py * raw.width + px) * 4;
-      const a = raw.data[i + 3];
-      if (a === 0) return null;
+      const idx = py * raw.cols + px;
+      const pixel = raw.pixels[idx];
+      if (!pixel) return null;
 
-      const r = raw.data[i];
-      const g = raw.data[i + 1];
-      if (r === 255 && g === 255) return 'ricochet';
+      if (pixel.angle > 0 && pixel.angle >= ricochetAngle) return 'ricochet';
 
-      return r * 256 + g;
+      let total = 0;
+      for (const layer of pixel.layers) {
+        if (layer.depth >= minDepth && layer.depth <= maxDepth)
+          total += layer.thickness;
+      }
+
+      return total;
     },
-    [],
+    [ricochetAngle, minDepth, maxDepth],
   );
 
   return {
     canvas: outputCanvas,
     detectedMax,
+    detectedMaxDepth,
     detectedMin,
     error,
     loading,

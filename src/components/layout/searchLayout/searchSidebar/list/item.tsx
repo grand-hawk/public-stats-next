@@ -72,6 +72,9 @@ export const SearchLinkListItem = React.memo(function SearchLinkListItem({
         '& img': {
           filter: active ? 'brightness(0)' : undefined,
         },
+        '& .chakra-badge': {
+          colorPalette: active ? 'gray' : undefined,
+        },
       }}
     >
       {active ? (

@@ -28,18 +28,47 @@ export default function ArmorVisualizer() {
   const [maxMm, setMaxMm] = React.useState(1000);
   const [autoRange, setAutoRange] = React.useState(true);
   const [palette, setPalette] = React.useState(palettes[0]);
+  const [ricochetAngle, setRicochetAngle] = React.useState(82.5);
+  const [minDepth, setMinDepth] = React.useState(0);
+  const [maxDepth, setMaxDepth] = React.useState(Infinity);
 
   const saveRef = React.useRef<(() => void) | null>(null);
 
-  const { canvas, detectedMax, detectedMin, error, loading, thicknessAt } =
-    useArmorProcessor({
-      angle,
-      autoRange,
-      maxMm,
-      minMm,
-      palette,
-      slug: vehicleSlug,
-    });
+  const {
+    canvas,
+    detectedMax,
+    detectedMaxDepth,
+    detectedMin,
+    error,
+    loading,
+    thicknessAt,
+  } = useArmorProcessor({
+    angle,
+    autoRange,
+    maxDepth,
+    maxMm,
+    minDepth,
+    minMm,
+    palette,
+    ricochetAngle,
+    slug: vehicleSlug,
+  });
+
+  // when data loads or angle changes, reset depth range
+  React.useEffect(() => {
+    setMinDepth(0);
+    if (!detectedMaxDepth) {
+      setMaxDepth(Infinity);
+      return;
+    }
+    const fraction =
+      angle === 'front'
+        ? 0.5
+        : angle === 'front_30' || angle === 'front_-30'
+          ? 0.75
+          : 1;
+    setMaxDepth(detectedMaxDepth * fraction);
+  }, [detectedMaxDepth, angle]);
 
   const effectiveMin = autoRange ? detectedMin : minMm;
   const effectiveMax = autoRange ? detectedMax : maxMm;
@@ -72,17 +101,24 @@ export default function ArmorVisualizer() {
         angle={angle}
         autoRange={autoRange}
         detectedMax={detectedMax}
+        detectedMaxDepth={detectedMaxDepth}
         detectedMin={detectedMin}
+        maxDepth={maxDepth}
         maxMm={maxMm}
+        minDepth={minDepth}
         minMm={minMm}
         onAngleChange={setAngle}
         onAutoRangeChange={setAutoRange}
         onMaxChange={setMaxMm}
+        onMaxDepthChange={setMaxDepth}
         onMinChange={setMinMm}
+        onMinDepthChange={setMinDepth}
         onPaletteChange={setPalette}
+        onRicochetAngleChange={setRicochetAngle}
         onSave={handleSave}
         onSelectVehicle={handleSelectVehicle}
         palette={palette}
+        ricochetAngle={ricochetAngle}
         selectedSlug={vehicleSlug}
         vehicles={vehicleList}
       />
@@ -93,13 +129,19 @@ export default function ArmorVisualizer() {
         overflow="hidden"
       >
         <ArmorCanvas
+          angle={angle}
           canvas={canvas}
+          detectedMaxDepth={detectedMaxDepth}
           error={error}
           loading={loading}
+          maxDepth={maxDepth}
           maxMm={effectiveMax}
+          minDepth={minDepth}
           minMm={effectiveMin}
           onSaveRef={saveRef}
           palette={palette}
+          ricochetAngle={ricochetAngle}
+          slug={vehicleSlug}
           thicknessAt={thicknessAt}
         />
       </Box>

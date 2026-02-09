@@ -31,17 +31,24 @@ export interface ArmorControlsProps {
   angle: ArmorAngle;
   autoRange: boolean;
   detectedMax: number;
+  detectedMaxDepth: number;
   detectedMin: number;
+  maxDepth: number;
   maxMm: number;
+  minDepth: number;
   minMm: number;
   onAngleChange: (angle: ArmorAngle) => void;
   onAutoRangeChange: (v: boolean) => void;
   onMaxChange: (v: number) => void;
+  onMaxDepthChange: (v: number) => void;
   onMinChange: (v: number) => void;
+  onMinDepthChange: (v: number) => void;
   onPaletteChange: (p: Palette) => void;
+  onRicochetAngleChange: (v: number) => void;
   onSave: () => void;
   onSelectVehicle: (slug: string) => void;
   palette: Palette;
+  ricochetAngle: number;
   selectedSlug: string | null;
   vehicles: VehicleOption[];
 }
@@ -50,13 +57,11 @@ const VehicleListItem = React.memo(function VehicleListItem({
   isSelected,
   name,
   onClick,
-  slug,
   style,
 }: {
   isSelected: boolean;
   name: string;
   onClick: () => void;
-  slug: string;
   style: React.CSSProperties;
 }) {
   return (
@@ -66,37 +71,97 @@ const VehicleListItem = React.memo(function VehicleListItem({
       background={isSelected ? 'whiteAlpha.100' : 'transparent'}
       cursor="pointer"
       fontSize="sm"
-      gap={2}
       left={0}
+      overflow="hidden"
       paddingX={3}
       paddingY={1.5}
       position="absolute"
       right={0}
       style={style}
       top={0}
+      whiteSpace="nowrap"
       onClick={onClick}
     >
-      <VehicleIcon size={18} slug={slug} />
-      {name}
+      <Text overflow="hidden" textOverflow="ellipsis">
+        {name}
+      </Text>
     </Flex>
   );
 });
+
+// CSS for range inputs (brutalist, no border radius)
+const SLIDER_CSS = `
+  input[type="range"].armor-slider {
+    -webkit-appearance: none;
+    appearance: none;
+    background: transparent;
+    cursor: pointer;
+    width: 100%;
+    height: 20px;
+    margin: 0;
+  }
+  input[type="range"].armor-slider::-webkit-slider-runnable-track {
+    height: 4px;
+    background: var(--chakra-colors-border-muted, #333);
+    border: none;
+    border-radius: 0;
+  }
+  input[type="range"].armor-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 14px;
+    width: 8px;
+    background: var(--chakra-colors-fg-muted, #aaa);
+    border: 1px solid var(--chakra-colors-border-muted, #555);
+    border-radius: 0;
+    margin-top: -5px;
+    cursor: grab;
+  }
+  input[type="range"].armor-slider::-webkit-slider-thumb:active {
+    cursor: grabbing;
+    background: var(--chakra-colors-fg, #fff);
+  }
+  input[type="range"].armor-slider::-moz-range-track {
+    height: 4px;
+    background: var(--chakra-colors-border-muted, #333);
+    border: none;
+    border-radius: 0;
+  }
+  input[type="range"].armor-slider::-moz-range-thumb {
+    height: 14px;
+    width: 8px;
+    background: var(--chakra-colors-fg-muted, #aaa);
+    border: 1px solid var(--chakra-colors-border-muted, #555);
+    border-radius: 0;
+    cursor: grab;
+  }
+  input[type="range"].armor-slider::-moz-range-thumb:active {
+    cursor: grabbing;
+    background: var(--chakra-colors-fg, #fff);
+  }
+`;
 
 export default function ArmorControls({
   angle,
   autoRange,
   detectedMax,
+  detectedMaxDepth,
   detectedMin,
+  maxDepth,
   maxMm,
+  minDepth,
   minMm,
   onAngleChange,
   onAutoRangeChange,
   onMaxChange,
+  onMaxDepthChange,
   onMinChange,
+  onMinDepthChange,
   onPaletteChange,
+  onRicochetAngleChange,
   onSave,
   onSelectVehicle,
   palette,
+  ricochetAngle,
   selectedSlug,
   vehicles,
 }: ArmorControlsProps) {
@@ -148,6 +213,8 @@ export default function ArmorControls({
     [onSelectVehicle],
   );
 
+  const effectiveMaxDepth = detectedMaxDepth || 100;
+
   return (
     <Flex
       as="aside"
@@ -158,6 +225,8 @@ export default function ArmorControls({
       height={{ base: 'auto', md: '100%' }}
       minHeight="0"
     >
+      <style dangerouslySetInnerHTML={{ __html: SLIDER_CSS }} />
+
       <Flex
         _hover={{ background: 'whiteAlpha.50' }}
         alignItems="center"
@@ -222,7 +291,7 @@ export default function ArmorControls({
                 fontSize="sm"
                 height="32px"
                 paddingLeft="8px"
-                paddingRight="36px"
+                paddingRight="8px"
                 placeholder="Search vehicles..."
                 size="sm"
                 value={isOpen ? query : selectedName}
@@ -236,19 +305,6 @@ export default function ArmorControls({
                   setQuery('');
                 }}
               />
-              {selectedSlug && (
-                <Flex
-                  alignItems="center"
-                  height="100%"
-                  pointerEvents="none"
-                  position="absolute"
-                  right="8px"
-                  top={0}
-                >
-                  <VehicleIcon slug={selectedSlug} />
-                </Flex>
-              )}
-
               {isOpen && (
                 <Box
                   ref={listRef}
@@ -285,7 +341,6 @@ export default function ArmorControls({
                               transform: `translateY(${virtualItem.start}px)`,
                             }}
                             onClick={() => handleItemClick(v.slug)}
-                            slug={v.slug}
                           />
                         );
                       })}
@@ -343,99 +398,190 @@ export default function ArmorControls({
               </Box>
             </Box>
 
-            {/* range */}
-            <Box borderBottomWidth="1px" padding={3}>
-              <Flex alignItems="center" marginBottom={1}>
-                <Text color="fg.muted" fontSize="xs">
-                  Range (mm)
-                </Text>
-                <Box
-                  as="button"
-                  background={autoRange ? 'teal.500/15' : 'whiteAlpha.50'}
-                  borderColor={autoRange ? 'teal.500/40' : 'border.muted'}
-                  borderWidth="1px"
-                  color={autoRange ? 'teal.300' : 'fg.muted'}
-                  cursor="pointer"
-                  fontSize="2xs"
-                  lineHeight="1"
-                  marginLeft="auto"
-                  paddingX={1.5}
-                  paddingY={0.5}
-                  transition="all 0.1s"
-                  _hover={{
-                    background: autoRange ? 'teal.500/25' : 'whiteAlpha.100',
-                  }}
-                  onClick={() => onAutoRangeChange(!autoRange)}
-                >
-                  {autoRange ? 'AUTO' : 'MANUAL'}
-                </Box>
-              </Flex>
+            {/* ricochet angle + depth */}
+            <Box
+              borderBottomWidth="1px"
+              display="flex"
+              flexDirection="column"
+              gap={3}
+              padding={3}
+            >
+              <Box>
+                <Flex alignItems="center" marginBottom={2}>
+                  <Text color="fg.muted" fontSize="xs">
+                    Ricochet angle
+                  </Text>
+                  <Text color="fg" fontSize="xs" marginLeft="auto">
+                    {ricochetAngle.toFixed(1)}°
+                  </Text>
+                </Flex>
+                <input
+                  className="armor-slider"
+                  max={90}
+                  min={75}
+                  step={0.5}
+                  type="range"
+                  value={ricochetAngle}
+                  onChange={(e) =>
+                    onRicochetAngleChange(Number(e.target.value))
+                  }
+                />
+              </Box>
 
-              <Flex alignItems="center" gap={2}>
-                <NumberInput.Root
-                  borderRadius="0"
-                  disabled={autoRange}
-                  min={0}
-                  size="sm"
-                  value={String(autoRange ? detectedMin : minMm)}
-                  width="100%"
-                  onValueChange={(d) => onMinChange(Number(d.value))}
-                >
-                  <NumberInput.Input borderRadius="0" />
-                </NumberInput.Root>
-                <Text color="fg.muted" fontSize="sm" flexShrink={0}>
-                  —
+              <Box>
+                <Text color="fg.muted" fontSize="xs" marginBottom={2}>
+                  Depth
                 </Text>
-                <NumberInput.Root
-                  borderRadius="0"
-                  disabled={autoRange}
-                  min={0}
-                  size="sm"
-                  value={String(autoRange ? detectedMax : maxMm)}
-                  width="100%"
-                  onValueChange={(d) => onMaxChange(Number(d.value))}
-                >
-                  <NumberInput.Input borderRadius="0" />
-                </NumberInput.Root>
-              </Flex>
+                <Flex direction="column" gap={1}>
+                  <Flex alignItems="center" gap={2}>
+                    <Text
+                      color="fg.subtle"
+                      fontSize="2xs"
+                      flexShrink={0}
+                      width="28px"
+                    >
+                      Min
+                    </Text>
+                    <input
+                      className="armor-slider"
+                      max={effectiveMaxDepth}
+                      min={0}
+                      step={effectiveMaxDepth / 200}
+                      type="range"
+                      value={minDepth}
+                      onChange={(e) => {
+                        const v = Number(e.target.value);
+                        onMinDepthChange(Math.min(v, maxDepth));
+                      }}
+                    />
+                  </Flex>
+                  <Flex alignItems="center" gap={2}>
+                    <Text
+                      color="fg.subtle"
+                      fontSize="2xs"
+                      flexShrink={0}
+                      width="28px"
+                    >
+                      Max
+                    </Text>
+                    <input
+                      className="armor-slider"
+                      max={effectiveMaxDepth}
+                      min={0}
+                      step={effectiveMaxDepth / 200}
+                      type="range"
+                      value={Math.min(maxDepth, effectiveMaxDepth)}
+                      onChange={(e) => {
+                        const v = Number(e.target.value);
+                        onMaxDepthChange(Math.max(v, minDepth));
+                      }}
+                    />
+                  </Flex>
+                </Flex>
+              </Box>
+            </Box>
+
+            {/* range + palette */}
+            <Box
+              borderBottomWidth="1px"
+              display="flex"
+              flexDirection="column"
+              gap={3}
+              padding={3}
+            >
+              <Box>
+                <Flex alignItems="center" marginBottom={1}>
+                  <Text color="fg.muted" fontSize="xs">
+                    Range (mm)
+                  </Text>
+                  <Box
+                    as="button"
+                    background={autoRange ? 'teal.500/15' : 'whiteAlpha.50'}
+                    borderColor={autoRange ? 'teal.500/40' : 'border.muted'}
+                    borderWidth="1px"
+                    color={autoRange ? 'teal.300' : 'fg.muted'}
+                    cursor="pointer"
+                    fontSize="2xs"
+                    lineHeight="1"
+                    marginLeft="auto"
+                    paddingX={1.5}
+                    paddingY={0.5}
+                    transition="all 0.1s"
+                    _hover={{
+                      background: autoRange ? 'teal.500/25' : 'whiteAlpha.100',
+                    }}
+                    onClick={() => onAutoRangeChange(!autoRange)}
+                  >
+                    {autoRange ? 'AUTO' : 'MANUAL'}
+                  </Box>
+                </Flex>
+
+                <Flex alignItems="center" gap={2}>
+                  <NumberInput.Root
+                    borderRadius="0"
+                    disabled={autoRange}
+                    min={0}
+                    size="sm"
+                    value={String(autoRange ? detectedMin : minMm)}
+                    width="100%"
+                    onValueChange={(d) => onMinChange(Number(d.value))}
+                  >
+                    <NumberInput.Input borderRadius="0" />
+                  </NumberInput.Root>
+                  <Text color="fg.muted" fontSize="sm" flexShrink={0}>
+                    —
+                  </Text>
+                  <NumberInput.Root
+                    borderRadius="0"
+                    disabled={autoRange}
+                    min={0}
+                    size="sm"
+                    value={String(autoRange ? detectedMax : maxMm)}
+                    width="100%"
+                    onValueChange={(d) => onMaxChange(Number(d.value))}
+                  >
+                    <NumberInput.Input borderRadius="0" />
+                  </NumberInput.Root>
+                </Flex>
+              </Box>
+
+              <Box>
+                <Text color="fg.muted" fontSize="xs" marginBottom={2}>
+                  Palette
+                </Text>
+                <Flex direction="column" gap={1}>
+                  {palettes.map((p) => (
+                    <Flex
+                      key={p.name}
+                      _hover={{ background: 'whiteAlpha.100' }}
+                      alignItems="center"
+                      borderColor={
+                        palette.name === p.name ? 'teal.500' : 'transparent'
+                      }
+                      borderWidth="2px"
+                      cursor="pointer"
+                      gap={3}
+                      padding={1.5}
+                      onClick={() => onPaletteChange(p)}
+                    >
+                      <Box
+                        css={{
+                          background: `linear-gradient(to right, ${p.stops.map((s, i) => `rgb(${s.r},${s.g},${s.b}) ${(i / (p.stops.length - 1)) * 100}%`).join(', ')})`,
+                        }}
+                        flexShrink={0}
+                        height="16px"
+                        width="48px"
+                      />
+                      <Text color="fg.muted" fontSize="xs">
+                        {p.name}
+                      </Text>
+                    </Flex>
+                  ))}
+                </Flex>
+              </Box>
             </Box>
 
             <Box padding={3}>
-              <Text color="fg.muted" fontSize="xs" marginBottom={2}>
-                Palette
-              </Text>
-              <Flex direction="column" gap={1}>
-                {palettes.map((p) => (
-                  <Flex
-                    key={p.name}
-                    _hover={{ background: 'whiteAlpha.100' }}
-                    alignItems="center"
-                    borderColor={
-                      palette.name === p.name ? 'teal.500' : 'transparent'
-                    }
-                    borderWidth="2px"
-                    cursor="pointer"
-                    gap={3}
-                    padding={1.5}
-                    onClick={() => onPaletteChange(p)}
-                  >
-                    <Box
-                      css={{
-                        background: `linear-gradient(to right, ${p.stops.map((s, i) => `rgb(${s.r},${s.g},${s.b}) ${(i / (p.stops.length - 1)) * 100}%`).join(', ')})`,
-                      }}
-                      flexShrink={0}
-                      height="16px"
-                      width="48px"
-                    />
-                    <Text color="fg.muted" fontSize="xs">
-                      {p.name}
-                    </Text>
-                  </Flex>
-                ))}
-              </Flex>
-            </Box>
-
-            <Box borderTopWidth="1px" padding={3}>
               <Flex
                 _hover={{ color: 'fg', background: 'whiteAlpha.100' }}
                 alignItems="center"

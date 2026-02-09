@@ -66,6 +66,7 @@ await Promise.all(
     outputContent += '\n';
     outputContent += `const cacheDir = '.cache';\n`;
     outputContent += `const cacheFile = \`\${cacheDir}/${basename}.json\`;\n`;
+    outputContent += `const isDev = process.env.NODE_ENV === 'development';\n`;
     outputContent += '\n';
     outputContent += `interface CacheEntry {\n`;
     outputContent += `  etag: string;\n`;
@@ -73,10 +74,10 @@ await Promise.all(
     outputContent += `}\n`;
     outputContent += '\n';
     outputContent += `async function fetch${pascalBasename}() {\n`;
-    outputContent += `  if (!existsSync(cacheDir)) await mkdir(cacheDir, { recursive: true });\n`;
+    outputContent += `  if (!isDev && !existsSync(cacheDir)) await mkdir(cacheDir, { recursive: true });\n`;
     outputContent += `  \n`;
     outputContent += `  let cached: CacheEntry | null = null;\n`;
-    outputContent += `  if (existsSync(cacheFile)) {\n`;
+    outputContent += `  if (!isDev && existsSync(cacheFile)) {\n`;
     outputContent += `    try {\n`;
     outputContent += `      cached = JSON.parse(await readFile(cacheFile, 'utf-8'));\n`;
     outputContent += `    } catch {}\n`;
@@ -93,7 +94,9 @@ await Promise.all(
     outputContent += `    if ("$schema" in data) delete data.$schema;\n`;
     outputContent += `    if ("$version" in data) delete data.$version;\n`;
     outputContent += `    \n`;
-    outputContent += `    await writeFile(cacheFile, JSON.stringify({ etag, data }), 'utf-8');\n`;
+    outputContent += `    if (!isDev)\n`;
+    outputContent += `      await writeFile(cacheFile, JSON.stringify({ etag, data }), 'utf-8');\n`;
+    outputContent += `    \n`;
     outputContent += `    console.log('Fetched ${dataFile}', etag);\n`;
     outputContent += `    \n`;
     outputContent += `    return data;\n`;

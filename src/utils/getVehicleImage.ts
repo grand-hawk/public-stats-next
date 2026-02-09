@@ -12,7 +12,8 @@ export type ArmorAngle =
   | 'front'
   | 'front_30'
   | 'front_-30'
-  | 'back';
+  | 'back'
+  | 'top';
 export type ArmorImageType = `${ArmorAngle}_armor`;
 export type VehicleImageType =
   | BaseVehicleImageType

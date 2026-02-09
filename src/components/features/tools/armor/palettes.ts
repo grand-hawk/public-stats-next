@@ -32,9 +32,6 @@ export function samplePalette(palette: Palette, t: number): ColorStop {
     b: Math.round(lerp(a.b, b.b, frac)),
   };
 }
-
-export const RICOCHET_COLOR: ColorStop = { r: 140, g: 140, b: 140 };
-
 export const palettes: Palette[] = [
   {
     name: 'Green to Red',

@@ -2,37 +2,69 @@ import { Box, Flex, Spinner, Text } from '@chakra-ui/react';
 import React from 'react';
 import { LuRotateCcw } from 'react-icons/lu';
 
-import { RICOCHET_COLOR, samplePalette } from '../palettes';
+import { samplePalette } from '../palettes';
+import { RICOCHET_DARK, RICOCHET_LIGHT } from '../useArmorProcessor';
+import DepthMinimap from './depthMinimap';
 import HorizontalLegend from './horizontalLegend';
 
 import type { Palette } from '../palettes';
+import type { ArmorAngle } from '@/utils/getVehicleImage';
 
 interface ArmorCanvasProps {
+  angle: ArmorAngle;
   canvas: HTMLCanvasElement | null;
+  detectedMaxDepth: number;
   error: string | null;
   loading: boolean;
+  maxDepth: number;
   maxMm: number;
+  minDepth: number;
   minMm: number;
   onSaveRef: React.MutableRefObject<(() => void) | null>;
   palette: Palette;
+  ricochetAngle: number;
+  slug: string | null;
   thicknessAt: (x: number, y: number) => number | 'ricochet' | null;
 }
 
 const BASE_SCALE_FACTOR = 0.85;
 const TOUCH_DRAG_THRESHOLD = 8;
 
+function drawRicochetSwatch(canvas: HTMLCanvasElement, w: number, h: number) {
+  canvas.width = w;
+  canvas.height = h;
+
+  const ctx = canvas.getContext('2d')!;
+
+  for (let y = 0; y < h; y += 1)
+    for (let x = 0; x < w; x += 1) {
+      const stripe = (x + y) % 6 < 2;
+      const c = stripe ? RICOCHET_LIGHT : RICOCHET_DARK;
+      ctx.fillStyle = `rgb(${c.r},${c.g},${c.b})`;
+      ctx.fillRect(x, y, 1, 1);
+    }
+}
+
 export default function ArmorCanvas({
+  angle,
   canvas,
+  detectedMaxDepth,
   error,
   loading,
+  maxDepth,
   maxMm,
+  minDepth,
   minMm,
   onSaveRef,
   palette,
+  ricochetAngle,
+  slug,
   thicknessAt,
 }: ArmorCanvasProps) {
   const displayRef = React.useRef<HTMLCanvasElement>(null);
+  const minimapRef = React.useRef<HTMLCanvasElement>(null);
   const viewportRef = React.useRef<HTMLDivElement>(null);
+  const ricochetSwatchRef = React.useRef<HTMLCanvasElement>(null);
 
   const [zoom, setZoom] = React.useState(1);
   const [pan, setPan] = React.useState({ x: 0, y: 0 });
@@ -45,6 +77,11 @@ export default function ArmorCanvas({
 
   const tooltipRef = React.useRef<HTMLDivElement>(null);
   const isDraggingRef = React.useRef(false);
+
+  React.useEffect(() => {
+    const element = ricochetSwatchRef.current;
+    if (element) drawRicochetSwatch(element, 12, 12);
+  }, []);
 
   const drawCanvas = React.useCallback(() => {
     const display = displayRef.current;
@@ -78,10 +115,17 @@ export default function ArmorCanvas({
     return () => observer.disconnect();
   }, [canvas, drawCanvas]);
 
+  const canvasDims = canvas ? `${canvas.width}x${canvas.height}` : '';
+  const prevDimsRef = React.useRef(canvasDims);
+
   React.useEffect(() => {
+    if (canvasDims === prevDimsRef.current) return;
+
     setZoom(1);
     setPan({ x: 0, y: 0 });
-  }, [canvas]);
+
+    prevDimsRef.current = canvasDims;
+  }, [canvasDims]);
 
   const getCenterOffset = React.useCallback(() => {
     const display = displayRef.current;
@@ -369,12 +413,19 @@ export default function ArmorCanvas({
   const handleSave = React.useCallback(() => {
     if (!canvas) return;
 
-    const legendHeight = 24;
-    const labelHeight = 28;
+    const pad = 8;
+    const titleHeight = 20;
+    const legendBarHeight = 12;
+    const legendLabelsHeight = 14;
+    const textHeaderHeight =
+      titleHeight + 4 + legendBarHeight + legendLabelsHeight;
+    const mc = minimapRef.current;
+    const hasMinimap = mc && mc.width > 0 && mc.height > 0;
+    const headerHeight =
+      pad + Math.max(textHeaderHeight, hasMinimap ? mc.height : 0) + pad;
     const disclaimerHeight = 20;
     const totalWidth = canvas.width;
-    const totalHeight =
-      canvas.height + labelHeight + legendHeight + disclaimerHeight;
+    const totalHeight = headerHeight + canvas.height + disclaimerHeight;
 
     const exportCanvas = document.createElement('canvas');
     exportCanvas.width = totalWidth;
@@ -384,40 +435,70 @@ export default function ArmorCanvas({
     ctx.fillStyle = '#111';
     ctx.fillRect(0, 0, totalWidth, totalHeight);
 
+    if (hasMinimap) ctx.drawImage(mc, totalWidth - mc.width - pad, pad);
+
+    // title
+    let y = pad;
     ctx.fillStyle = '#ccc';
     ctx.font = 'bold 14px monospace';
-    ctx.fillText('KE effective thickness at LOS', 4, 18);
+    ctx.fillText('KE effective thickness at LOS', pad, y + 14);
+    y += titleHeight + 4;
 
-    ctx.drawImage(canvas, 0, labelHeight);
-
-    const legendY = labelHeight + canvas.height + 4;
-    const legendBarWidth = Math.min(totalWidth - 120, 300);
-    for (let x = 0; x < legendBarWidth; x++) {
+    // legend bar
+    const legendBarWidth = Math.min(totalWidth - 120 - pad * 2, 300);
+    for (let x = 0; x < legendBarWidth; x += 1) {
       const t = x / (legendBarWidth - 1);
       const c = samplePalette(palette, t);
       ctx.fillStyle = `rgb(${c.r},${c.g},${c.b})`;
-      ctx.fillRect(x, legendY, 1, 10);
+      ctx.fillRect(pad + x, y, 1, legendBarHeight);
     }
+
+    // ricochet swatch
+    const swatchX = pad + legendBarWidth + 10;
+    for (let sy = 0; sy < legendBarHeight; sy += 1)
+      for (let sx = 0; sx < 10; sx += 1) {
+        const stripe = (sx + sy) % 6 < 2;
+        const c = stripe ? RICOCHET_LIGHT : RICOCHET_DARK;
+        ctx.fillStyle = `rgb(${c.r},${c.g},${c.b})`;
+        ctx.fillRect(swatchX + sx, y + sy, 1, 1);
+      }
 
     ctx.fillStyle = '#aaa';
     ctx.font = '10px monospace';
-    ctx.fillText(`${minMm}`, 0, legendY + 20);
-    ctx.fillText(`${maxMm}`, legendBarWidth - 10, legendY + 20);
+    ctx.fillText(
+      `Ricochet (≥${ricochetAngle}°)`,
+      swatchX + 14,
+      y + legendBarHeight - 1,
+    );
 
-    ctx.fillStyle = `rgb(${RICOCHET_COLOR.r},${RICOCHET_COLOR.g},${RICOCHET_COLOR.b})`;
-    ctx.fillRect(legendBarWidth + 10, legendY, 8, 10);
+    // legend labels
+    y += legendBarHeight;
     ctx.fillStyle = '#aaa';
-    ctx.fillText('Ricochet', legendBarWidth + 22, legendY + 10);
+    ctx.font = '10px monospace';
+    ctx.fillText(`${minMm}`, pad, y + 11);
+    const maxLabel = `${maxMm}`;
+    ctx.fillText(
+      maxLabel,
+      pad + legendBarWidth - ctx.measureText(maxLabel).width,
+      y + 11,
+    );
 
+    // main canvas
+    ctx.drawImage(canvas, 0, headerHeight);
+
+    // disclaimer
     ctx.fillStyle = '#666';
     ctx.font = '9px monospace';
-    ctx.fillText('Estimated data — not for bug reports', 4, totalHeight - 4);
+    ctx.fillText('Estimated data — not for bug reports', pad, totalHeight - 6);
 
+    const filename = slug
+      ? `armor-${slug}-${angle}.png`
+      : 'armor-visualization.png';
     const link = document.createElement('a');
-    link.download = 'armor-visualization.png';
+    link.download = filename;
     link.href = exportCanvas.toDataURL('image/png');
     link.click();
-  }, [canvas, palette, minMm, maxMm]);
+  }, [canvas, palette, minMm, maxMm, ricochetAngle, slug, angle]);
 
   React.useEffect(() => {
     onSaveRef.current = handleSave;
@@ -490,16 +571,31 @@ export default function ArmorCanvas({
           <HorizontalLegend maxMm={maxMm} minMm={minMm} palette={palette} />
 
           <Flex alignItems="center" flexShrink={0} gap={1}>
-            <Box
-              background={`rgb(${RICOCHET_COLOR.r},${RICOCHET_COLOR.g},${RICOCHET_COLOR.b})`}
-              height="10px"
-              width="10px"
+            <canvas
+              ref={ricochetSwatchRef}
+              style={{
+                width: '10px',
+                height: '10px',
+                imageRendering: 'pixelated',
+                display: 'block',
+              }}
             />
-            <Text color="fg.muted" fontSize="2xs">
-              Ricochet
+            <Text color="fg.muted" fontSize="2xs" whiteSpace="nowrap">
+              Ricochet (≥{ricochetAngle}°)
             </Text>
           </Flex>
         </Flex>
+
+        {slug && canvas && (
+          <DepthMinimap
+            ref={minimapRef}
+            angle={angle}
+            detectedMaxDepth={detectedMaxDepth}
+            maxDepth={maxDepth}
+            minDepth={minDepth}
+            slug={slug}
+          />
+        )}
 
         <Box minHeight="24px">
           <Flex

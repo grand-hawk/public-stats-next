@@ -20,6 +20,7 @@ export interface ListVehicle {
   slug: string;
   team: string;
   role: string;
+  new?: boolean;
 }
 
 export type VehicleAvailability = Record<
@@ -53,13 +54,22 @@ export const vehiclesRouter = createTRPCRouter({
       const vehiclesData = vehicles.data[input.placeId as PlaceId]?.data;
       if (!vehiclesData) return []; // This validates placeId
 
+      const dateNow = Date.now();
+
       return Object.entries(vehiclesData)
-        .map(([name, data]) => ({
-          name,
-          slug: data.info.slug,
-          team: data.info.team,
-          role: data.info.role,
-        }))
+        .map(
+          ([name, data]) =>
+            ({
+              name,
+              slug: data.info.slug,
+              team: data.info.team,
+              role: data.info.role,
+              new: data.info.addedDate
+                ? dateNow - new Date(data.info.addedDate).getTime() <
+                  1_000 * 60 * 60 * 24 * 14
+                : undefined,
+            }) satisfies ListVehicle,
+        )
         .sort((a, b) => a.name.localeCompare(b.name)) as ListVehicle[];
     }),
 

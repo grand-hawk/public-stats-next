@@ -31,7 +31,7 @@ export default function HorizontalLegend({
 
     const ctx = canvas.getContext('2d')!;
 
-    for (let x = 0; x < LEGEND_WIDTH; x++) {
+    for (let x = 0; x < LEGEND_WIDTH; x += 1) {
       const t = x / (LEGEND_WIDTH - 1);
       const c = samplePalette(palette, t);
       ctx.fillStyle = `rgb(${c.r},${c.g},${c.b})`;

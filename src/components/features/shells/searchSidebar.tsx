@@ -38,41 +38,44 @@ export default function ShellsSearchSidebar() {
   const place = usePlace()!;
   const shellQuery = useRouterQuery('shell');
   const query = useShellsSearchStore((s) => s.query);
+  const deferredQuery = React.useDeferredValue(query);
   const setQuery = useShellsSearchStore((s) => s.setQuery);
 
   const [shellsList] = trpc.shells.list.useSuspenseQuery({
     placeId: place.placeId,
   });
 
-  const filteredShellsList = React.useMemo(() => {
-    if (query === '') return shellsList;
+  const simplifiedStrings = React.useMemo(() => {
+    const map = new Map<string, string>();
+    for (const [weapon, shells] of Object.entries(shellsList)) {
+      map.set(weapon, simplifyString(weapon));
+      for (const shell of shells) {
+        if (!map.has(shell.name))
+          map.set(shell.name, simplifyString(shell.name));
+        for (const vehicle of shell.vehicles) {
+          if (!map.has(vehicle)) map.set(vehicle, simplifyString(vehicle));
+        }
+      }
+    }
+    return map;
+  }, [shellsList]);
 
-    const simplifiedQuery = simplifyString(query);
+  const filteredShellsList = React.useMemo(() => {
+    if (deferredQuery === '') return shellsList;
+
+    const simplifiedQuery = simplifyString(deferredQuery);
     const filtered: typeof shellsList = {};
 
-    const vehicleCache = new Map<string, string>();
-    const simplifyVehicle = (vehicle: string) => {
-      const cached = vehicleCache.get(vehicle);
-      if (cached) return cached;
-
-      const simplified = simplifyString(vehicle);
-      vehicleCache.set(vehicle, simplified);
-
-      return simplified;
-    };
-
     for (const [weapon, shells] of Object.entries(shellsList)) {
-      const simplifiedWeapon = simplifyString(weapon);
-
-      if (simplifiedWeapon.includes(simplifiedQuery)) filtered[weapon] = shells;
+      if (simplifiedStrings.get(weapon)!.includes(simplifiedQuery))
+        filtered[weapon] = shells;
       else {
         const matchingShells = shells.filter((shell) => {
-          const simplifiedShellName = simplifyString(shell.name);
-
-          if (simplifiedShellName.includes(simplifiedQuery)) return true;
+          if (simplifiedStrings.get(shell.name)!.includes(simplifiedQuery))
+            return true;
 
           return shell.vehicles.some((vehicle) =>
-            simplifyVehicle(vehicle).includes(simplifiedQuery),
+            simplifiedStrings.get(vehicle)!.includes(simplifiedQuery),
           );
         });
 
@@ -81,7 +84,7 @@ export default function ShellsSearchSidebar() {
     }
 
     return filtered;
-  }, [shellsList, query]);
+  }, [shellsList, deferredQuery, simplifiedStrings]);
 
   const list: ListItem[] = React.useMemo(() => {
     const result: ListItem[] = [];

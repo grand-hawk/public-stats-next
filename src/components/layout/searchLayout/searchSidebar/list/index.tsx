@@ -66,6 +66,11 @@ export default function SearchList({
       width: 0,
     },
     initialOffset,
+    getItemKey: (index) => {
+      const item = listItems[index];
+      if (item.type === 'divider') return `divider:${item.label}`;
+      return item.value.slug;
+    },
   });
 
   return (
@@ -90,7 +95,7 @@ export default function SearchList({
           if (listItem.type === 'divider')
             return (
               <SearchListDividerItem
-                key={virtualItem.index}
+                key={virtualItem.key}
                 emphasized={listItem.emphasized}
                 isTeam={listItem.isTeam}
                 label={listItem.label}
@@ -99,7 +104,7 @@ export default function SearchList({
             );
           return (
             <SearchLinkListItem
-              key={virtualItem.index}
+              key={virtualItem.key}
               active={querySlug === listItem.value.slug}
               href={`/${place.initials}/${queryKeyPlural}/${listItem.value.slug}`}
               {...baseProps}

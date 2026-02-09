@@ -78,7 +78,7 @@ export const tabs: Record<string, Tab> = {
     ),
   },
   armor: {
-    label: 'Armor visualizer',
+    label: 'Armor',
     path: '/armor',
     color: 'teal.500',
     description:
