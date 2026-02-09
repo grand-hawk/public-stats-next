@@ -1,9 +1,4 @@
 {
-  "startCommand": "next dev --webpack",
-  "env": {
-    "NODE_ENV": "development",
-    "DATA_ENV": "production",
-    "FORCE_CACHE": "true",
-    "NEXT_PUBLIC_STACKBLITZ": "true"
-  }
+  "installDependencies": false,
+  "startCommand": "pnpm install --no-lockfile --ignore-scripts && DATA_ENV=production pnpm generate && pnpm content:generate && NODE_ENV=development FORCE_CACHE=true NEXT_PUBLIC_STACKBLITZ=true next dev --webpack"
 }
