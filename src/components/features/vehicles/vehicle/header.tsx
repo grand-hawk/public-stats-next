@@ -1,13 +1,13 @@
 import { Box, Heading, HStack, Span } from '@chakra-ui/react';
 import React from 'react';
 import { MdOutlineOpenInFull } from 'react-icons/md';
-import { MdEdit } from 'react-icons/md';
 import { SiFandom } from 'react-icons/si';
 import slug from 'slug';
 
 import IconLink from '@/components/common/buttonIconLink';
 import ButtonMarkdownLink from '@/components/common/buttonMarkdownLink';
 import FakeDescription from '@/components/common/fakeDescription';
+import EditPagePopover from '@/components/features/vehicles/vehicle/editPagePopover';
 import VehicleImage from '@/components/features/vehicles/vehicleImage';
 import TeamIcon from '@/components/icons/teams';
 import { env } from '@/env';
@@ -78,18 +78,9 @@ export default function VehicleHeader() {
           <ButtonMarkdownLink />
 
           {vehicle.content && !env.NEXT_PUBLIC_STACKBLITZ && (
-            <IconLink
-              href={`https://pr.new/grand-hawk/public-stats-next/edit/next/content/vehicles/${slug(vehicle.info.gameId)}.md`}
-              linkProps={{
-                target: '_blank',
-              }}
-              rel="nofollow"
-              size="sm"
-              title="Edit"
-              variant="surface"
-            >
-              <MdEdit />
-            </IconLink>
+            <EditPagePopover
+              filePath={`content/vehicles/${slug(vehicle.info.gameId)}.md`}
+            />
           )}
 
           {vehicle.info.externalLinks.Fandom && (

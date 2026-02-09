@@ -3,13 +3,12 @@ import { useRouter } from 'next/router';
 import React from 'react';
 
 import { CenterSpinner } from '@/components/common/spinners';
-import { env } from '@/env';
 
 export default function Root() {
   const router = useRouter();
 
   React.useEffect(() => {
-    router.replace(env.NEXT_PUBLIC_STACKBLITZ ? '/mtc' : '/mtc/vehicles');
+    router.replace('/mtc');
   }, [router]);
 
   return (
