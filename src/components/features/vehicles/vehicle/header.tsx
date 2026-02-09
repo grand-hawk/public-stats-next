@@ -6,8 +6,8 @@ import slug from 'slug';
 
 import IconLink from '@/components/common/buttonIconLink';
 import ButtonMarkdownLink from '@/components/common/buttonMarkdownLink';
+import EditPagePopover from '@/components/common/editPagePopover';
 import FakeDescription from '@/components/common/fakeDescription';
-import EditPagePopover from '@/components/features/vehicles/vehicle/editPagePopover';
 import VehicleImage from '@/components/features/vehicles/vehicleImage';
 import TeamIcon from '@/components/icons/teams';
 import { env } from '@/env';

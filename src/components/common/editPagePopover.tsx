@@ -12,10 +12,7 @@ import React from 'react';
 import { GoCodespaces } from 'react-icons/go';
 import { MdEdit } from 'react-icons/md';
 import { SiStackblitz } from 'react-icons/si';
-
-interface EditPagePopoverProps {
-  filePath: string;
-}
+import { VscGithubInverted } from 'react-icons/vsc';
 
 const options = [
   {
@@ -29,9 +26,21 @@ const options = [
     icon: GoCodespaces,
     label: 'GitHub Codespaces',
     description: 'Cloud environment, faster but more complex.',
-    href: () => `https://codespaces.new/grand-hawk/public-stats-next?quickstart=1`,
+    href: () =>
+      `https://codespaces.new/grand-hawk/public-stats-next?quickstart=1`,
+  },
+  {
+    icon: VscGithubInverted,
+    label: 'GitHub',
+    description: 'Regular GitHub, no preview.',
+    href: (filePath: string) =>
+      `https://github.com/grand-hawk/public-stats-next/edit/next/${filePath}`,
   },
 ];
+
+export interface EditPagePopoverProps {
+  filePath: string;
+}
 
 export default function EditPagePopover({ filePath }: EditPagePopoverProps) {
   return (
@@ -94,9 +103,6 @@ export default function EditPagePopover({ filePath }: EditPagePopoverProps) {
                   </Box>
                 ))}
               </VStack>
-              <Text color="fg.muted" mt={3} textStyle="xs">
-                Both options require a GitHub account.
-              </Text>
             </Popover.Body>
           </Popover.Content>
         </Popover.Positioner>
