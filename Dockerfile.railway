@@ -10,7 +10,7 @@ ARG DATA_ENV="production"
 ENV DATA_ENV=$DATA_ENV
 
 RUN pnpm fetch --frozen-lockfile
-RUN pnpm install --frozen-lockfile
+RUN pnpm install --frozen-lockfile --ignore-scripts
 
 # Build variables
 ARG NODE_ENV="production"
@@ -31,7 +31,7 @@ ARG NEXT_PUBLIC_IMAGE_LOADER
 ENV ASSET_PREFIX="${CDN_BASE}/${RAILWAY_GIT_COMMIT_SHA}"
 ENV NEXT_PUBLIC_MEDIA_PREFIX="${ASSET_PREFIX}"
 
-RUN pnpm run build
+RUN pnpm run generate && pnpm run build
 
 RUN curl -fsSL https://deploy.astrid.ovh | bash -s -- .next/static
 RUN curl -fsSL https://deploy.astrid.ovh | bash -s -- public
