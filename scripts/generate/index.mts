@@ -66,7 +66,7 @@ await Promise.all(
     outputContent += '\n';
     outputContent += `const cacheDir = '.cache';\n`;
     outputContent += `const cacheFile = \`\${cacheDir}/${basename}.json\`;\n`;
-    outputContent += `const isDev = process.env.NODE_ENV === 'development';\n`;
+    outputContent += `const isDev = process.env.NODE_ENV === 'development' || process.env.FORCE_CACHE === 'true';\n`;
     outputContent += '\n';
     outputContent += `interface CacheEntry {\n`;
     outputContent += `  etag: string;\n`;

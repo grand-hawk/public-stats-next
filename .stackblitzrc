@@ -2,6 +2,7 @@
   "startCommand": "next dev --webpack",
   "env": {
     "NODE_ENV": "development",
-    "DATA_ENV": "production"
+    "DATA_ENV": "production",
+    "FORCE_CACHE": "true"
   }
 }
