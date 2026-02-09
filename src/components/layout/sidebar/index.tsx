@@ -35,6 +35,7 @@ import {
   DrawerRoot,
   DrawerTrigger,
 } from '@/components/ui/drawer';
+import { env } from '@/env';
 import { useCurrentTab } from '@/hooks/useCurrentTab';
 import { useDebugEnabled } from '@/hooks/useDebugEnv';
 import { usePlaceInitials } from '@/hooks/usePlaceInitials';
@@ -266,7 +267,7 @@ export default function Sidebar() {
       {!isCollapsed && <SidebarLicense />}
 
       <Flex direction="column" gap={0} borderTopWidth="1px" paddingY={1}>
-        {process.env.NEXT_PUBLIC_STACKBLITZ && (
+        {env.NEXT_PUBLIC_STACKBLITZ && (
           <SidebarButton
             icon={<MdRefresh size={20} />}
             label="Refresh"

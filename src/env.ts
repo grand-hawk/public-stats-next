@@ -23,6 +23,8 @@ export const env = createEnv({
 
     NEXT_PUBLIC_IMAGE_LOADER: z.string().url().optional(),
     NEXT_PUBLIC_MEDIA_PREFIX: z.string().url().optional(),
+
+    NEXT_PUBLIC_STACKBLITZ: z.string().optional(),
   },
 
   /**
@@ -37,6 +39,8 @@ export const env = createEnv({
 
     NEXT_PUBLIC_IMAGE_LOADER: process.env.NEXT_PUBLIC_IMAGE_LOADER,
     NEXT_PUBLIC_MEDIA_PREFIX: process.env.NEXT_PUBLIC_MEDIA_PREFIX,
+
+    NEXT_PUBLIC_STACKBLITZ: process.env.NEXT_PUBLIC_STACKBLITZ,
   },
   /**
    * Run `build` or `dev` with `SKIP_ENV_VALIDATION` to skip env validation. This is especially
