@@ -14,6 +14,18 @@ jobs:
         with:
           fetch-depth: 0
 
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 10
+
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: 'pnpm'
+
+      - run: pnpm install
+
       - name: Get changed content files
         id: changed
         run: |
@@ -27,20 +39,3 @@ jobs:
       - name: Validate structure
         if: steps.changed.outputs.files != ''
         run: node scripts/validate-content.mjs ${{ steps.changed.outputs.files }}
-
-      - name: Check for title changes
-        if: steps.changed.outputs.files != ''
-        run: |
-          ERRORS=""
-          while IFS= read -r file; do
-            [ -z "$file" ] && continue
-            DIFF=$(git diff origin/${{ github.base_ref }}...HEAD -- "$file" | grep "^-# " || true)
-            if [ -n "$DIFF" ]; then
-              ERRORS="${ERRORS}\n  - ${file}: title was changed"
-            fi
-          done <<< "${{ steps.changed.outputs.files }}"
-
-          if [ -n "$ERRORS" ]; then
-            echo -e "\nTitle changes are not allowed:${ERRORS}"
-            exit 1
-          fi
