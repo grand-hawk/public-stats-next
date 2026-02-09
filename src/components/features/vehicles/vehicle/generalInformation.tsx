@@ -96,7 +96,9 @@ export default function VehicleGeneralInformation({
                         }}
                       >
                         <Markdown
-                          components={{ p: (props) => <Span {...props} /> }}
+                          components={{
+                            p: ({ children }) => <Span>{children}</Span>,
+                          }}
                         >
                           {customDescription}
                         </Markdown>
