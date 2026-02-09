@@ -8,6 +8,7 @@ import {
   primaryTabKeys,
   secondaryTabKeys,
   tabs,
+  toolsTabKeys,
 } from '@/components/layout/navigation/tabs';
 import NavCard from '@/components/wiki/navCard';
 import SectionDivider from '@/components/wiki/sectionDivider';
@@ -128,6 +129,28 @@ export default function Place() {
               gap={5}
             >
               {secondaryTabKeys.map((key) => {
+                const item = tabs[key];
+                return (
+                  <NavCard
+                    key={key}
+                    item={item}
+                    onClick={() =>
+                      router.push(`/${place.initials}${item.path}`)
+                    }
+                  />
+                );
+              })}
+            </Grid>
+          </div>
+
+          <div>
+            <SectionDivider label="Tools" />
+
+            <Grid
+              templateColumns={{ base: '1fr', md: 'repeat(2, 1fr)' }}
+              gap={5}
+            >
+              {toolsTabKeys.map((key) => {
                 const item = tabs[key];
                 return (
                   <NavCard
