@@ -30,6 +30,7 @@ COPY --from=build /build/.next/standalone .
 COPY --from=build /build/.next/static .next/static
 COPY --from=build /build/generated generated
 COPY --from=build /build/public public
+COPY --from=build /build/content content
 COPY --from=build /build/src/images.js src/images.js
 
 EXPOSE 3000
