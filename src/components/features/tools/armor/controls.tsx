@@ -406,7 +406,7 @@ export default function ArmorControls({
               gap={3}
               padding={3}
             >
-              <Box>
+              <div>
                 <Flex alignItems="center" marginBottom={2}>
                   <Text color="fg.muted" fontSize="xs">
                     Ricochet angle
@@ -426,9 +426,9 @@ export default function ArmorControls({
                     onRicochetAngleChange(Number(e.target.value))
                   }
                 />
-              </Box>
+              </div>
 
-              <Box>
+              <div>
                 <Text color="fg.muted" fontSize="xs" marginBottom={2}>
                   Depth
                 </Text>
@@ -478,7 +478,7 @@ export default function ArmorControls({
                     />
                   </Flex>
                 </Flex>
-              </Box>
+              </div>
             </Box>
 
             {/* range + palette */}
@@ -489,7 +489,7 @@ export default function ArmorControls({
               gap={3}
               padding={3}
             >
-              <Box>
+              <div>
                 <Flex alignItems="center" marginBottom={1}>
                   <Text color="fg.muted" fontSize="xs">
                     Range (mm)
@@ -543,9 +543,9 @@ export default function ArmorControls({
                     <NumberInput.Input borderRadius="0" />
                   </NumberInput.Root>
                 </Flex>
-              </Box>
+              </div>
 
-              <Box>
+              <div>
                 <Text color="fg.muted" fontSize="xs" marginBottom={2}>
                   Palette
                 </Text>
@@ -578,7 +578,7 @@ export default function ArmorControls({
                     </Flex>
                   ))}
                 </Flex>
-              </Box>
+              </div>
             </Box>
 
             <Box padding={3}>

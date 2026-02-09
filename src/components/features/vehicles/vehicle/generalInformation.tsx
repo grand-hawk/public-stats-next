@@ -6,7 +6,6 @@ import {
   Quote,
   Span,
   Stack,
-  Text,
 } from '@chakra-ui/react';
 import React from 'react';
 import Markdown from 'react-markdown';
