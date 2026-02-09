@@ -10,6 +10,7 @@ import ButtonMarkdownLink from '@/components/common/buttonMarkdownLink';
 import FakeDescription from '@/components/common/fakeDescription';
 import VehicleImage from '@/components/features/vehicles/vehicleImage';
 import TeamIcon from '@/components/icons/teams';
+import { env } from '@/env';
 import { useVehicle } from '@/hooks/providers/vehicle';
 import { getVehicleImage } from '@/utils/getVehicleImage';
 
@@ -76,7 +77,7 @@ export default function VehicleHeader() {
 
           <ButtonMarkdownLink />
 
-          {vehicle.content && (
+          {vehicle.content && !env.NEXT_PUBLIC_STACKBLITZ && (
             <IconLink
               href={`https://pr.new/grand-hawk/public-stats-next/edit/next/content/vehicles/${slug(vehicle.info.gameId)}.md`}
               linkProps={{
