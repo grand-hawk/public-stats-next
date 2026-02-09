@@ -28,11 +28,13 @@ export default function VehicleArmor() {
   const fields = React.useMemo(() => {
     if (!armor) return;
 
-    const parsed: Record<string, number> = {};
+    const parsed: Record<string, number | [number, number]> = {};
 
     for (const line of armor.split('\n')) {
       const [key, value] = line.split(': ');
-      parsed[key] = Number(value);
+      parsed[key] = value.includes(' - ')
+        ? (value.split(' - ').map(Number) as [number, number])
+        : Number(value);
     }
 
     return FIELD_ORDER.filter((key) => key in parsed).map(
@@ -52,7 +54,15 @@ export default function VehicleArmor() {
               <StatsRow key={key}>
                 <StatsCell asTitle>{key}</StatsCell>
                 <StatsCell>
-                  <FormatNumber style="unit" unit="millimeter" value={value} />
+                  {Array.isArray(value) ? (
+                    <>
+                      <FormatNumber style="unit" unit="millimeter" value={value[0]} />
+                      {' - '}
+                      <FormatNumber style="unit" unit="millimeter" value={value[1]} />
+                    </>
+                  ) : (
+                    <FormatNumber style="unit" unit="millimeter" value={value} />
+                  )}
                 </StatsCell>
               </StatsRow>
             ))}
