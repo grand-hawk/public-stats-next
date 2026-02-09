@@ -7,7 +7,7 @@
     "NEXT_PUBLIC_STACKBLITZ": "true",
     "NODE_ENV": "development"
   },
-  "postCreateCommand": "corepack enable && corepack prepare pnpm@10 --activate && pnpm install --no-lockfile --ignore-scripts && pnpm generate && pnpm content:generate",
+  "postCreateCommand": "sudo corepack enable && sudo corepack prepare pnpm@10 --activate && pnpm install --no-lockfile --ignore-scripts && pnpm generate && pnpm content:generate",
   "postStartCommand": "pnpm dev",
   "remoteUser": "node"
 }
