@@ -10,6 +10,7 @@ import type { ReactNode } from 'react';
 
 export interface PageMetaValues {
   title?: string;
+  exactTitle?: string;
   description?: string;
   ogDescription?: string;
   twitterCard?: 'summary' | 'summary_large_image';
@@ -20,6 +21,7 @@ const PageMetaContext = createContext<PageMetaValues>({});
 export default function PageMeta({
   children,
   description,
+  exactTitle,
   ogDescription,
   title,
   twitterCard,
@@ -28,6 +30,7 @@ export default function PageMeta({
 
   const value: PageMetaValues = {
     title: title ?? parent.title,
+    exactTitle: exactTitle ?? parent.exactTitle,
     description: description ?? parent.description,
     ogDescription: ogDescription ?? parent.ogDescription,
     twitterCard: twitterCard ?? parent.twitterCard,
@@ -45,14 +48,18 @@ export function PageMetaHead() {
   const currentTab = useCurrentTab();
   const initials = usePlaceInitials();
 
-  const title = pageMeta.title ?? currentTab?.label;
+  const title = pageMeta.exactTitle ?? pageMeta.title ?? currentTab?.label;
   const description = pageMeta.description ?? currentTab?.description;
   const ogDescription = pageMeta.ogDescription ?? description;
   const twitterCard = pageMeta.twitterCard ?? 'summary';
 
   return (
     <Head>
-      {pageMeta.title && <title>{formatTitle(pageMeta.title, initials)}</title>}
+      {pageMeta.exactTitle ? (
+        <title>{pageMeta.exactTitle}</title>
+      ) : (
+        pageMeta.title && <title>{formatTitle(pageMeta.title, initials)}</title>
+      )}
 
       {title && <meta content={title} property="og:title" />}
       {title && <meta content={title} name="twitter:title" />}
