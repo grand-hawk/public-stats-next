@@ -1,8 +1,8 @@
-# Sturmtiger
+# Leopard 1A5
 
 ## Description
 
-The **Sturmtiger** is an Assault Gun based on the Tiger I chassis, built by Germany in 1944 in small numbers to mount the **380mm RW61** naval-derived rocket launcher for demolishing fortified positions. Only around 18 were converted; they saw limited use on the Western Front. The 65-tonne tracked vehicle is crewed by five — driver, gunner, bow gunner, commander, and loader — and powered by a **MB HL230 P45** engine producing 690 horsepower for 10.6 hp/t and 40 km/h, with neutral steering.\
-The main weapon fires massive **38 cm R Spgr.4581** rocket projectiles with a 42.4-second reload from a limited hull stash of 12 rounds. The loader also has a grenade mortar for frag and smoke. A bow **7.92mm MG34** provides close defense. The Sturmtiger has no stabilizer or rangefinder; the gunner uses a 3x telescope. Its extreme caliber and weight make it a short-range siege asset rather than a frontline tank.
+The **Leopard 1A5** is a Main Battle Tank and one of the final upgrades to the West German **Leopard 1** series, which entered Bundeswehr service in 1965 as one of the first post-war European MBTs. The A5 variant introduced a modernized fire control system with a thermal imaging sight and laser rangefinder, significantly improving the platform's combat effectiveness in the 1980s. The Leopard 1 family was produced by Krauss-Maffei and saw widespread export to over a dozen nations.\
+The vehicle retains the **105mm L7A3** rifled gun as its main armament, supplemented by a coaxial and roof-mounted machine gun. The improved fire control system with computerized ballistics and thermal optics gives the A5 a marked advantage over earlier Leopard 1 variants in target acquisition and engagement at range, particularly in low-visibility conditions.
 
 ## Armor

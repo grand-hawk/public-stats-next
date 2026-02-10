@@ -1,8 +1,8 @@
-# SU-57
+# Leopard 2-T
 
 ## Description
 
-The **SU-57** is a Tank Destroyer based on the American T48 57 mm Gun Motor Carriage — a **57mm M1** anti-tank gun on a modified M3 half-track chassis; the Soviet designation was applied to vehicles received under Lend-Lease. In-game it is a lightly armored tracked vehicle weighing 8.6 tonnes with a crew of four plus one passenger — driver, gunner, commander, loader, and one infantry seat. The **White 160AX** diesel produces 148 hp for 17.2 hp/t and 76 km/h.\
-The **57mm M1** is the sole weapon, with a 1x telescope sight and no stabilizer or machine guns. High mobility and a potent gun for its tier define the vehicle, at the cost of minimal protection.
+The **Leopard 2-T** is a Self-Propelled Anti-Aircraft vehicle built on the Leopard 2 chassis, combining the heavy tracked platform with the **Giraffe** radar-directed air defense turret. The concept pairs the mobility and protection of the Leopard 2 hull with dedicated anti-aircraft firepower, intended to provide frontline air defense that can keep pace with armored formations.\
+The vehicle is armed with rapid-firing autocannons for engaging low-flying aircraft and helicopters, and benefits from the Leopard 2's powerful engine and wide tracks for high cross-country mobility. The radar and fire control suite allow autonomous target detection and tracking.
 
 ## Armor
