@@ -2,8 +2,6 @@
 
 ## Description
 
-Fops :3
-
 ## Armor
 
 Left cheek: 21-190
