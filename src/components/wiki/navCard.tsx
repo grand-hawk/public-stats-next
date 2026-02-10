@@ -16,6 +16,7 @@ export default function NavCard({
   onClick,
 }: NavCardProps) {
   const IconComponent = item.icon;
+  const displayLabel = item.longLabel ?? item.label;
   const palette = item.color.split('.')[0];
 
   return (
@@ -115,7 +116,7 @@ export default function NavCard({
               fontWeight="medium"
               letterSpacing="tight"
             >
-              {item.label}
+              {displayLabel}
             </Heading>
           </Flex>
 
@@ -136,7 +137,7 @@ export default function NavCard({
               textTransform="uppercase"
               letterSpacing="wider"
             >
-              View {item.label}
+              View {displayLabel}
             </Text>
             <Icon
               className="nav-card-chevron"

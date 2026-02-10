@@ -12,6 +12,7 @@ import type { IconType } from 'react-icons/lib';
 
 export interface Tab {
   label: string;
+  longLabel?: string;
   path: string;
   icon: IconType | ((props: IconProps) => ReactNode);
   color: string;
@@ -79,6 +80,7 @@ export const tabs: Record<string, Tab> = {
   },
   armor: {
     label: 'Armor',
+    longLabel: 'Armor visualizer',
     path: '/armor',
     color: 'teal.500',
     description:
