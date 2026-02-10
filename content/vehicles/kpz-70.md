@@ -6,3 +6,10 @@ The **KPz-70** is a Main Battle Tank, the German designation for the joint **MBT
 The main armament is the **152mm XM150E5** with APFSDS, **MGM-51C** ATGMs, and HE; a coaxial **7.62mm MG3** and a commander’s **20mm Rh202** provide secondary fire. The turret is stabilized and has smoke grenades, a laser rangefinder, and FCS with lead; active suspension adjusts ride height, roll, and pitch.
 
 ## Armor
+
+Left cheek: 150-900
+Right cheek: 165-1077
+Lower front plate: 182-212
+Upper front plate: 174-204
+Hull side: 35-75
+Mantlet: 70-202

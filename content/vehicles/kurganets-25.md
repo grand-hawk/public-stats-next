@@ -6,3 +6,10 @@ The **Kurganets-25** is an Infantry Fighting Vehicle developed in Russia as part
 The turret mounts a **30mm 2A42M** autocannon, **7.62mm PKT**, and **9M133 Kornet** ATGMs; the gunner has a laser rangefinder, FCS with lead and tracking, and Gen 3 white thermals at 4x–12x. The vehicle has an APS (20 launchers, 70–2,000 m/s interception), LWS, MAWS, engine smoke, and smoke grenades.
 
 ## Armor
+
+Left cheek: 30-29
+Right cheek: 21-28
+Lower front plate: 68-111
+Upper front plate: 176-255
+Hull side: 86
+Mantlet: 24-30

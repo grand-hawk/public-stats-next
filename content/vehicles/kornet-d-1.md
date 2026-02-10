@@ -6,3 +6,7 @@ The **Kornet D-1** is an Anti Tank Missile Carrier based on the **BMD-4M** chass
 The Kornet launcher has eight ready ATGMs and 16 reloads (9M133 and 9M133F-1) with 4 s reload and 7 s refill. The gunner has dual sights with laser rangefinder, FCS with lead and tracking, and Gen 2 white thermals at 6x–19x. The turret is stabilised and has smoke grenades; the vehicle has an engine smoke system.
 
 ## Armor
+
+Lower front plate: 31-48
+Upper front plate: 39-44
+Hull side: 10

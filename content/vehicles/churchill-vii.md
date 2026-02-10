@@ -6,3 +6,10 @@ The **Churchill VII** is a Heavy Tank and the final major production variant of 
 Main armament is the **75 mm OQF Mk.V** with M48, M89, and M61 ammunition; secondary weapons are **7.92 mm BESA** machine guns in coaxial and bow mounts, and the loader has a grenade mortar for smoke and fragmentation. The tank is fitted with an engine smoke system. Sights are a 3x telescope for the main gun and 1x for the bow and loader stations; the bow gunner position is stabilized.
 
 ## Armor
+
+Left cheek: 137-516
+Right cheek: 139-618
+Lower front plate: 152-297
+Upper front plate: 152-294
+Hull side: 57-95
+Mantlet: 152-306

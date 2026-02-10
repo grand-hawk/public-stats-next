@@ -6,3 +6,9 @@ The **BMP-1M Kliver** is an Infantry Fighting Vehicle that modernizes the **BMP-
 The turret provides a stabilizer, missile approach warning system, laser rangefinder, FCS with lead and tracking, and Gen 2 thermals; armament includes the 30 mm gun, **7.62mm PKT**, and Kornet rounds. Smoke is provided by an engine smoke system. The combination of ATGM and modern optics makes the BMP-1M Kliver a capable upgrade for the ageing BMP-1 fleet.
 
 ## Armor
+
+Left cheek: 23-52
+Lower front plate: 34-45
+Upper front plate: 18-73
+Hull side: 16-36
+Mantlet: 20-40

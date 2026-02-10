@@ -6,3 +6,10 @@ The **BTR-60PB** is an Armoured Personnel Carrier and the first Soviet eight-whe
 The gunner turret mounts a **14.5 mm KPVT** and a coaxial **7.62 mm PKT** with mouse-aim traversal; the commander has a separate 5x sight. The main sight offers 2.6x magnification with no rangefinder. Light armor and high mobility suit it to ferrying infantry rather than direct combat.
 
 ## Armor
+
+Left cheek: 11-70
+Right cheek: 11-70
+Lower front plate: 11-16
+Upper front plate: 12-17
+Hull side: 9-16
+Mantlet: 17-27

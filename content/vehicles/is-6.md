@@ -6,3 +6,10 @@ The **IS-6** is a Heavy Tank, a Soviet prototype design from 1944 that sought to
 Primary armament is the **122mm D-30T** cannon, with a coaxial **7.62mm DT-28** and a loader-operated **12.7mm DSHK** on a stabilized cupola for anti-aircraft and close defense. The gunner has a 4x telescope sight with no rangefinder or fire control system.
 
 ## Armor
+
+Left cheek: 224-624
+Right cheek: 126-629
+Lower front plate: 192-215
+Upper front plate: 236-242
+Hull side: 40-145
+Mantlet: 160-210

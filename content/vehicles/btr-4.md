@@ -6,3 +6,10 @@ The **BTR-4** is an Armoured Personnel Carrier developed by Ukraine in the 2000s
 The **30mm 2A72** and **7.62mm PKT** are in a stabilized turret with smoke grenades; the Stugna-P is a separate ATGM station. The gunner has a laser rangefinder, Gen 2 thermals, 4x–12x zoom, and FCS with lead.
 
 ## Armor
+
+Left cheek: 18-37
+Right cheek: 5-13
+Lower front plate: 21-30
+Upper front plate: 55-86
+Hull side: 8-21
+Mantlet: 12-77

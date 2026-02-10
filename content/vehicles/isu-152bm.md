@@ -6,3 +6,10 @@ The **ISU-152BM** is an Assault Gun, a Soviet prototype that paired the ISU-152 
 The main armament is the 152.4 mm BL-8 with OF-540 and BR-540B and a 23-second reload. The gunner uses a 2x telescope with no rangefinder; there is no secondary machine gun in the data.
 
 ## Armor
+
+Left cheek: 106-304
+Right cheek: 106-274
+Lower front plate: 92-122
+Upper front plate: 168-265
+Hull side: 79-90
+Mantlet: 88-248

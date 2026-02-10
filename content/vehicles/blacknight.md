@@ -6,3 +6,10 @@ The **Blacknight** is a Main Battle Tank and an advanced Challenger 2-derived va
 Main armament is the **120mm L30A1** with L27A1, L31A7, and L34A2, plus a coaxial **7.62 mm L94A1** and a loader **7.62mm L37A2**. The vehicle has an APS (2 launchers, 2 charges each), stabilizer, and smoke grenades. The gunner has a laser rangefinder, 3x–10x day and Gen 3 thermal sights with FCS and lead; the commander CITV has Gen 3 thermals and tracking. An engine smoke system is fitted.
 
 ## Armor
+
+Left cheek: 448-1133
+Right cheek: 449-1105
+Lower front plate: 84-400
+Upper front plate: 400-514
+Hull side: 78-102
+Mantlet: 80-413

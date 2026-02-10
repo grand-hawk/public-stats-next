@@ -6,3 +6,8 @@ The **HIMAG** (High Mobility Agility) is a Light Tank and American test bed from
 The **75mm ADMAG** automatic cannon is stabilized and fed by an autoloader; the gunner has a laser rangefinder, fire control with lead, and Gen 2 white-hot thermals at 2x and 8x zoom. The commander has a stabilized CITV with laser and thermals (2x–8x).
 
 ## Armor
+
+Lower front plate: 15-31
+Upper front plate: 10-49
+Hull side: 4
+Mantlet: 6

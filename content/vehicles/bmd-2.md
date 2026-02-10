@@ -6,3 +6,10 @@ The **BMD-2** is an Infantry Fighting Vehicle that updated the **BMD-1** with a 
 The turret has a two-plane stabilizer and elevation to 75° for engaging helicopters; the gunner has a 6× sight and the commander a 5× cupola sight, but no laser rangefinder or thermals. Engine smoke system is standard.
 
 ## Armor
+
+Left cheek: 14-39
+Right cheek: 14-39
+Lower front plate: 16-17
+Upper front plate: 30-33
+Hull side: 10-11
+Mantlet: 12-27

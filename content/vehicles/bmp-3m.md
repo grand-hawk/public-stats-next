@@ -6,3 +6,10 @@ The **BMP-3M** is an Infantry Fighting Vehicle and a modernized variant of the S
 Main armament is the **100mm 2A70M** (ATGM and HE) and **30mm 2A72** autocannon plus **7.62mm PKT**, with stabilizer, laser rangefinder, FCS with lead and tracking, Gen 2 thermals, and a missile approach warning system. Arena APS provides 34 launchers for intercepting incoming projectiles (70–1,000 m/s); the vehicle also has smoke grenades and an engine smoke system.
 
 ## Armor
+
+Left cheek: 51-90
+Right cheek: 51-90
+Lower front plate: 73-96
+Upper front plate: 48-73
+Hull side: 18-27
+Mantlet: 40-67

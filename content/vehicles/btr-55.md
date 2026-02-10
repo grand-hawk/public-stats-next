@@ -6,3 +6,10 @@ The **BTR-55** is an Infantry Fighting Vehicle that combines a **BTR**-style rol
 The gunner operates the **14.5 mm KPVT** with mouse-aim and 45 deg/s traverse in a turret with -7° to 45° elevation. No stabilizer, rangefinder, or smoke systems are listed in the data; the vehicle emphasizes firepower and mobility in a compact, two-man layout.
 
 ## Armor
+
+Left cheek: 25-51
+Right cheek: 25-51
+Lower front plate: 144-278
+Upper front plate: 132-328
+Hull side: 160-320
+Mantlet: 20-67

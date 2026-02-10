@@ -6,3 +6,10 @@ The **LAV-AD** is a Self Propelled Anti Aircraft vehicle based on the LAV chassi
 The GAU-12U has 385-round magazines (HEI and HVAP) with overheat after 150 rounds in 20 s; the Stinger has eight rounds with 4 s reload. The gunner has a laser rangefinder, FCS with lead and tracking, and Gen 2 white thermals. The turret is stabilised and carries smoke grenades.
 
 ## Armor
+
+Left cheek: 21-42
+Right cheek: 22-47
+Lower front plate: 26
+Upper front plate: 23-48
+Hull side: 11
+Mantlet: 11-13

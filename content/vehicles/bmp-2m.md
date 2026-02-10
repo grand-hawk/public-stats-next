@@ -6,3 +6,10 @@ The **BMP-2M** is an Infantry Fighting Vehicle and a modernized **BMP-2** that r
 The turret mounts a **30mm 2A42M** autocannon, **30mm AG-30** grenade launcher, **7.62mm PKT**, and **9M133 Kornet** ATGMs, with a two-plane stabilizer, laser rangefinder, FCS with lead and tracking, and Gen 2 thermals. The commander has a CITV with laser; defensive equipment includes smoke grenades and an engine smoke system.
 
 ## Armor
+
+Left cheek: 29-57
+Right cheek: 24-70
+Lower front plate: 34-45
+Upper front plate: 22-65
+Hull side: 16-32
+Mantlet: 25-40

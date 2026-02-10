@@ -6,3 +6,10 @@ The **BTR-82A** is an Armoured Personnel Carrier and a modernized variant of the
 The **30mm 2A72** and **7.62mm PKT** are in a stabilized turret with smoke grenades. The gunner has a laser rangefinder and FCS with 6x–19x zoom; the commander has a stabilized sight with 15x laser. Light armor and mobility are balanced for the APC role.
 
 ## Armor
+
+Left cheek: 37-119
+Right cheek: 35-66
+Lower front plate: 21-28
+Upper front plate: 28-83
+Hull side: 11-32
+Mantlet: 8-42

@@ -6,3 +6,10 @@ The **Elefant** is an Assault Gun, the later designation for the German Ferdinan
 The bow gunner has a stabilized **7.92mm MG34**; the main gun has a 5x telescope sight and no rangefinder. The fixed superstructure limits traverse.
 
 ## Armor
+
+Left cheek: 211
+Right cheek: 211
+Lower front plate: 113-173
+Upper front plate: 209-292
+Hull side: 60-80
+Mantlet: 307-402

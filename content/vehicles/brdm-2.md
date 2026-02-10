@@ -6,3 +6,10 @@ The **BRDM-2** is an Armoured Personnel Carrier and a Soviet 4×4 amphibious rec
 Armament consists of a turret-mounted **14.5mm KPVT** heavy machine gun paired with a **7.62mm PKT** coaxial machine gun; the gunner and commander each have optical sights (2.6× and 5× zoom respectively) but no laser rangefinder or stabilizer. The vehicle is fully amphibious and relies on its small silhouette and mobility for survival rather than heavy armour.
 
 ## Armor
+
+Left cheek: 10-24
+Right cheek: 10-24
+Lower front plate: 15-35
+Upper front plate: 10-24
+Hull side: 5-17
+Mantlet: 7-31

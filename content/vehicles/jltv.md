@@ -6,3 +6,8 @@ The **JLTV** (Joint Light Tactical Vehicle) is a Transport Vehicle and the plann
 The commander turret is stabilized and mounts a **30mm M230LF**, a **7.62mm M240**, and **FIM-92K Stinger** MANPADS. Add-ons include a BGM-71F turret, XM914 FGM-148 swap, and B-Kit armour for increased protection.
 
 ## Armor
+
+Lower front plate: 9-23
+Upper front plate: 26-56
+Hull side: 8-25
+Mantlet: 15-40

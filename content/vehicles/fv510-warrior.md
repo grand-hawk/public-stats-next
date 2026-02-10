@@ -6,3 +6,10 @@ The **FV510 Warrior** is an Infantry Fighting Vehicle developed for the British 
 The gunner turret mounts a stabilized **30 mm L21A1** cannon with APDS-L14, APSE-L5, and HE-L13 ammunition and a coaxial **7.62 mm L94A1** chain gun, and is fitted with smoke grenades and a fire control system. The main sight offers 1x and 8x zoom without a rangefinder; the commander has a separate 1x/8x sight. Optional addons include Milan ATGMs and composite armor.
 
 ## Armor
+
+Left cheek: 28-50
+Right cheek: 28-50
+Lower front plate: 35-65
+Upper front plate: 57-63
+Hull side: 44-46
+Mantlet: 51-103

@@ -6,3 +6,10 @@ The **Ersatz M10** is a Medium Tank consisting of a German **Panther** (Panzer V
 Main armament is the **75 mm KwK 42** with Sprgr. 42, PzGr 39/42, and PzGr 40/42, plus coaxial and bow **7.92 mm MG 34** machine guns; the bow gunner position is stabilized. The gunner has a 2.5x/5x telescope sight and no rangefinder.
 
 ## Armor
+
+Left cheek: 108-629
+Right cheek: 108-629
+Lower front plate: 92-132
+Upper front plate: 146-166
+Hull side: 40-56
+Mantlet: 105-256

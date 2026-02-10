@@ -6,3 +6,10 @@ The **JgPz 38t** is an Assault Gun better known as the **Hetzer**, a German tank
 The main armament is the **7.5 cm PaK 39 L/48** cannon with PzGr 39, Hl.Gr 38B, and Sprgr. 34 rounds; the commander has a stabilized **7.92 mm MG 34** for close defense. The gunner uses a 5x telescope sight with no rangefinder or stabilizer on the main gun.
 
 ## Armor
+
+Left cheek: 211-324
+Right cheek: 211-324
+Lower front plate: 141-212
+Upper front plate: 245-460
+Hull side: 80-89
+Mantlet: 279-315

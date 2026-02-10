@@ -6,3 +6,10 @@ The **IS-3** is a Heavy Tank developed by the Soviet Union in the closing phase 
 Main armament is the **122mm D-25T** gun, supported by a coaxial **7.62mm DT-28** and a commander's **12.7mm DSHK** on a stabilized cupola. The gunner uses a 4x telescope sight with no rangefinder.
 
 ## Armor
+
+Left cheek: 299-821
+Right cheek: 299-821
+Lower front plate: 207
+Upper front plate: 219-242
+Hull side: 90-177
+Mantlet: 179-445

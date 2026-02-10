@@ -6,3 +6,10 @@ The **BMPT Terminator** is a Fire Support Vehicle developed by Russia to accompa
 The gunner turret mounts twin **30mm 2A42M** autocannons (AP and HE), a **7.62mm PKT** machine gun, and **9M120 Ataka** anti-tank guided missiles, with a stabilizer, laser rangefinder, fire control system with lead and tracking, and Gen 2 thermals; the commander has a separate CITV with laser and thermals. Two roof-mounted **30mm AGS-17** grenade launchers provide additional suppressive fire. Defensive equipment includes a laser warning system, smoke grenades, and an engine smoke system.
 
 ## Armor
+
+Left cheek: 20-90
+Right cheek: 20-90
+Lower front plate: 373-872
+Upper front plate: 115-875
+Hull side: 90-239
+Mantlet: 60-166

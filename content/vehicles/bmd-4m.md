@@ -6,3 +6,10 @@ The **BMD-4M** is an Infantry Fighting Vehicle and a modernized **BMD-4** (BMD-3
 Main armament is the **100mm 2A70M** (9M117M1 ATGM and HE) and **30mm 2A72** plus **7.62mm PKT**, with stabilizer, laser rangefinder, FCS with lead and tracking, Gen 2 thermals, and a commander CITV. Smoke grenades and an engine smoke system are fitted; optional add-ons include extra armour and airdrop kit.
 
 ## Armor
+
+Left cheek: 34-36
+Right cheek: 34-36
+Lower front plate: 24-26
+Upper front plate: 33-41
+Hull side: 10-26
+Mantlet: 30-43

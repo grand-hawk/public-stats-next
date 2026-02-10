@@ -6,3 +6,10 @@ The **BMP-3** is an Infantry Fighting Vehicle that entered Soviet service in the
 The turret mounts a **100mm 2A70** (or 2A70M) gun/launcher firing **9M117** (or 9M117M1) ATGMs and HE, a **30mm 2A72** autocannon, and a **7.62mm PKT**; two passenger **7.62mm PKT** positions are also fitted. Fire control includes a stabilizer, laser rangefinder, and FCS; one loadout adds Gen 2 thermals and lead computation. Smoke grenades and an engine smoke system are standard.
 
 ## Armor
+
+Left cheek: 51-93
+Right cheek: 51-93
+Lower front plate: 73-96
+Upper front plate: 48-73
+Hull side: 18-27
+Mantlet: 40-67

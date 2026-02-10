@@ -6,3 +6,10 @@ The **IS-1** is a Heavy Tank and the first of the Soviet Iosif Stalin series, de
 Main armament is the **85mm D-5S** cannon with a coaxial **7.62mm DT-28**; the commander has a stabilized **7.62mm DT-28** cupola and the driver a hull **7.62mm DT-28**. Sights are 2.5x telescope and periscope with no rangefinder.
 
 ## Armor
+
+Left cheek: 200-687
+Right cheek: 190-611
+Lower front plate: 114-144
+Upper front plate: 131-217
+Hull side: 90-110
+Mantlet: 100-142

@@ -6,3 +6,10 @@ The **LAV-25** is an Armoured Personnel Carrier and the primary infantry variant
 The Bushmaster has 210-round magazines (M792 and M791); a coaxial and commander’s **7.62mm M240** provide backup. The gunner has an 8x sight only; the commander’s turret is stabilised with 1x. Smoke grenades are fitted.
 
 ## Armor
+
+Left cheek: 13-25
+Right cheek: 13-25
+Lower front plate: 26
+Upper front plate: 23-48
+Hull side: 11
+Mantlet: 27-44

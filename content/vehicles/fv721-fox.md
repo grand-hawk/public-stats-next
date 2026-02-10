@@ -6,3 +6,10 @@ The **FV721 Fox** is a Reconnaissance Vehicle, a British wheeled armored car tha
 The gunner has a **30mm L21A1** and coaxial **7.62mm L37A2**, with smoke grenades and a fire control system; the main sight offers 10x magnification with no rangefinder. Light armor and wheeled layout suit it to hit-and-run and reconnaissance rather than sustained combat.
 
 ## Armor
+
+Left cheek: 21-190
+Right cheek: 42-214
+Lower front plate: 10-55
+Upper front plate: 29-52
+Hull side: 21-36
+Mantlet: 21-68

@@ -6,3 +6,10 @@ The **Jagdtiger** is a Tank Destroyer, the heaviest armoured fighting vehicle of
 The main armament is the 128 mm PaK 44 with PzGr 43 and Sprgr. L/5 and a 19.29-second reload; the loader has a grenade mortar for smoke and the bow gunner a **7.92mm MG34**. The commander turret is stabilized. The gunner uses a 10x telescope with no rangefinder.
 
 ## Armor
+
+Left cheek: 259-342
+Right cheek: 259-342
+Lower front plate: 149-179
+Upper front plate: 225-257
+Hull side: 172-190
+Mantlet: 333-600

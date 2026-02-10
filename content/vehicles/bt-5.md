@@ -6,3 +6,10 @@ The **BT-5** is a Light Tank and an early production variant of the Soviet BT (B
 Main armament is the **45mm 20-K** with BR-240SP and BR-240, with a 3.77 s reload; a coaxial **7.62mm DT-28** is fitted. The gunner has 2.5x telescope and periscope sights and no stabilizer or rangefinder. The BT-5 was fast and mobile but lightly armored and later replaced by the T-34.
 
 ## Armor
+
+Left cheek: 19-100
+Right cheek: 19-100
+Lower front plate: 34-60
+Upper front plate: 14-64
+Hull side: 30-34
+Mantlet: 21-56

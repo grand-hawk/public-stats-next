@@ -6,3 +6,10 @@ The **Leopard 1A5** is a Main Battle Tank and one of the final upgrades to the W
 The vehicle retains the **105mm L7A3** rifled gun as its main armament, supplemented by a coaxial and roof-mounted machine gun. The improved fire control system with computerized ballistics and thermal optics gives the A5 a marked advantage over earlier Leopard 1 variants in target acquisition and engagement at range, particularly in low-visibility conditions.
 
 ## Armor
+
+Left cheek: 112-553
+Right cheek: 112-553
+Lower front plate: 78
+Upper front plate: 14-180
+Hull side: 35
+Mantlet: 79-222

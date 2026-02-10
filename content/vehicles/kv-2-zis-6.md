@@ -6,3 +6,10 @@ The **KV-2 (ZIS-6)** is an Assault Gun and a variant of the Soviet **KV-2** heav
 The main armament is the **107mm ZIS-6** with OF-420 and B-420 ammunition and a 16-second reload; secondary armament consists of **7.62mm DT-28** machine guns in the turret and bow, with the loader and bow gunner positions offering stabilized mouse-aim. Sights are limited to a 2.5x telescope and periscope with no rangefinder.
 
 ## Armor
+
+Left cheek: 75-326
+Right cheek: 75-326
+Lower front plate: 119-219
+Upper front plate: 123-292
+Hull side: 107-137
+Mantlet: 73-142

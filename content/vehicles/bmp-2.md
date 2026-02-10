@@ -6,3 +6,10 @@ The **BMP-2** is an Infantry Fighting Vehicle that succeeded the **BMP-1** in So
 Armament includes the 30 mm cannon and **7.62mm PKT**, with optional **9M113 Konkurs** (or 9M113M) ATGMs; the gunner has a 6× sight and the commander a 5× cupola sight, with stabilizers but no laser rangefinder or thermals. An engine smoke system is fitted for defensive screening.
 
 ## Armor
+
+Left cheek: 29-57
+Right cheek: 24-70
+Lower front plate: 34-45
+Upper front plate: 22-65
+Hull side: 16-32
+Mantlet: 25-40

@@ -6,3 +6,8 @@ The **LAV-AT** is an Anti Tank Missile Carrier based on the LAV-25 wheeled chass
 The I-TOW launcher has two ready tubes and eight reloads with 4 s reload and 7 s refill; the gunner has Gen 1 red thermals at 3x and 13x. The commander has a **7.62mm M240** and a stabilised 1x sight. Smoke grenades are fitted; there is no laser rangefinder or FCS.
 
 ## Armor
+
+Lower front plate: 26
+Upper front plate: 23-48
+Hull side: 11
+Mantlet: 10

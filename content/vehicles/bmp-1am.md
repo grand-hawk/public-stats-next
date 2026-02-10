@@ -6,3 +6,10 @@ The **BMP-1AM** is an Infantry Fighting Vehicle and a modernization of the **BMP
 The new turret adds a two-plane stabilizer, smoke grenades, laser rangefinder, and FCS with 4×–12× zoom; armament is the 30 mm cannon and **7.62mm PKT** only, with no ATGM. The BMP-1AM has been offered for export and used by several operators as a low-cost IFV upgrade.
 
 ## Armor
+
+Left cheek: 37-56
+Right cheek: 35-66
+Lower front plate: 34-45
+Upper front plate: 18-73
+Hull side: 16-36
+Mantlet: 8-41

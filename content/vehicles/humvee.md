@@ -6,3 +6,8 @@ The **Humvee** (High Mobility Multipurpose Wheeled Vehicle) is a Transport Vehic
 The gunner operates a stabilized **12.7mm M2** machine gun in an open ring mount with 1x sight. As a wheeled transport it prioritizes speed and payload over protection.
 
 ## Armor
+
+Lower front plate: 1-5
+Upper front plate: 4-7
+Hull side: 1-4
+Mantlet: 5

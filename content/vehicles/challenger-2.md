@@ -6,3 +6,10 @@ The **Challenger 2** is a Main Battle Tank that succeeded the Challenger 1 in Br
 Main armament is the stabilized **120mm L30A1** with L27A1, L31A7, and L34A2 ammunition; a coaxial **7.62 mm L94A1** and a loader **7.62mm L37A2** are fitted. The gunner has a laser rangefinder, 3x–10x day sight, and Gen 2 thermal sight with FCS and lead; the commander has a laser sight. Smoke grenades and an engine smoke system are standard.
 
 ## Armor
+
+Left cheek: 409-1117
+Right cheek: 443-1123
+Lower front plate: 115-445
+Upper front plate: 205-515
+Hull side: 80-105
+Mantlet: 20-413

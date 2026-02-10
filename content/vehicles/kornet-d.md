@@ -6,3 +6,7 @@ The **Kornet D** is an Anti Tank Missile Carrier built on the **GAZ Tigr** 4×4 
 The main armament is the 9M133 Kornet launcher with a 4-second reload, carrying thermobaric and tandem HEAT rounds; the turret is stabilized and has smoke grenades. The gunner is served by a fire control system with lead and tracking, a laser rangefinder, and second-generation white-hot thermals with 6x–19x zoom on both left and right sights.
 
 ## Armor
+
+Lower front plate: 2-28
+Upper front plate: 2-17
+Hull side: 2-6

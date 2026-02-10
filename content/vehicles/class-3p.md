@@ -6,3 +6,10 @@ The **Class 3(P)** is a Tank Destroyer, a wheeled design mounting a **GT-3B 105m
 The main gun is stabilized and paired with a **.30 cal M1919** coaxial; the gunner has smoke grenades, a fire control system with lead, and a laser rangefinder at 12x zoom. The commander has a stabilized **.30 cal M1919** and 4x–20x sight. The combination of wheeled mobility and a 105 mm gun makes it a fast, hard-hitting platform with limited armor.
 
 ## Armor
+
+Left cheek: 70-309
+Right cheek: 70-305
+Lower front plate: 10-35
+Upper front plate: 154
+Hull side: 20-90
+Mantlet: 160-320

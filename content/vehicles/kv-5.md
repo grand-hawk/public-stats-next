@@ -6,3 +6,10 @@ The **KV-5** is a Super Heavy Tank, a Soviet design study from 1941 that propose
 The main armament is the **107mm ZIS-6** cannon with OF-420 and B-420 ammunition and a 16-second reload; secondary armament consists of three **7.62mm DT-28** machine guns in the main turret, commander’s cupola, and bow position. The vehicle has no stabilizer or rangefinder and uses 2.5x telescope and periscope sights.
 
 ## Armor
+
+Left cheek: 137-176
+Right cheek: 137-176
+Lower front plate: 250-280
+Upper front plate: 250-280
+Hull side: 200-230
+Mantlet: 150-332

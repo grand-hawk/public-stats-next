@@ -6,3 +6,8 @@ The **BRDM-2 Konkurs** is an Anti-Tank Missile Carrier based on the Soviet **BRD
 The sole armament is the **9M113 Konkurs** ATGM with a 4-second reload and 7-second refill; five ready rounds and ten in reserve are carried. The commander uses a 9.5x sight with no rangefinder. Light armor and high speed make it a shoot-and-scoot asset rather than a frontline fighter.
 
 ## Armor
+
+Lower front plate: 15-35
+Upper front plate: 10-24
+Hull side: 5-17
+Mantlet: 5-14

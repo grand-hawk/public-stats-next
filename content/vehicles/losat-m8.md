@@ -6,3 +6,10 @@ The **LOSAT M8** is an Anti Tank Missile Carrier mounting the **LOSAT/MGM-166** 
 The **LOSAT/MGM-166** launcher carries 12 rounds with a 6 s reload; the gunner has Gen 2 white thermals at 4.46x–13.38x but no laser rangefinder. The commander has a **12.7mm M2** and a stabilised 1x sight. The vehicle has a laser warning system.
 
 ## Armor
+
+Left cheek: 18-65
+Right cheek: 18-65
+Lower front plate: 14-30
+Upper front plate: 32-42
+Hull side: 8
+Mantlet: 5

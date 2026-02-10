@@ -6,3 +6,10 @@ The **CATTB** (Component Advanced Technology Test Bed) is a Prototype Main Battl
 Main armament is the **140mm XM291** with a 5 s autoloader cycle and XM964 and XM965 ammunition. The gunner has a laser rangefinder, Gen 2 thermals, 3x and 10x zoom, and FCS with lead; LWS and MAWS are fitted. Stabilizer, smoke grenades, and engine smoke are standard.
 
 ## Armor
+
+Left cheek: 712-2180
+Right cheek: 712-2180
+Lower front plate: 215-460
+Upper front plate: 306-432
+Hull side: 62-193
+Mantlet: 145-445

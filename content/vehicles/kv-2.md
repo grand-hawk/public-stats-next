@@ -6,3 +6,10 @@ The **KV-2** is an Assault Gun based on the Soviet **KV-1** heavy tank chassis, 
 The main gun fires PB-35 and OF-530 with a 33-second reload; a coaxial **7.62mm DT-28** and DT-28s in the loader and bow positions provide close-in defense. The loader and bow gunner turrets are stabilized. Sights are 2.5x telescope and periscope with no rangefinder.
 
 ## Armor
+
+Left cheek: 75-326
+Right cheek: 75-326
+Lower front plate: 119-219
+Upper front plate: 123-292
+Hull side: 107-137
+Mantlet: 75-149

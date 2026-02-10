@@ -6,3 +6,10 @@ The **Chieftain Mk 12** is a Main Battle Tank and a late upgrade of the British 
 Main armament is the **120mm L11A5** with a stabilizer, fed with L31A7, L23A1, and L34A2 ammunition; a coaxial **7.62mm L8A1** and a commander **7.62mm L37A1** round out the armament. The gunner has a laser rangefinder, 10x main and thermal (Gen 2) sights, and a 7x backup sight, with a full fire control system and lead computation. Smoke grenades provide defensive screening.
 
 ## Armor
+
+Left cheek: 393-812
+Right cheek: 307-964
+Lower front plate: 94-109
+Upper front plate: 259-503
+Hull side: 45-48
+Mantlet: 140-351

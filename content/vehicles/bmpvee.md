@@ -6,3 +6,10 @@ The **Bmpvee** is a Hybrid Combat Vehicle that mounts an IFV-style turret with a
 The **73mm 2A28** fires OG-9 and PG-9; a coaxial **7.62mm PKT** and a **9M14M** MCLOS ATGM are fitted. The gunner has a 6x sight without rangefinder or stabilizer. The vehicle has no smoke system and relies on speed and small size for survival.
 
 ## Armor
+
+Left cheek: 37-118
+Right cheek: 37-118
+Lower front plate: 1-6
+Upper front plate: 1
+Hull side: 2-14
+Mantlet: 97-156

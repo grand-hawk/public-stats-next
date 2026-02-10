@@ -6,3 +6,10 @@ The **Challenger 2 Medusa** is a Main Battle Tank variant of the British Challen
 Main armament is the **120mm L30A1** rifled gun with L31A7, L26A1, and L34A2 ammunition, plus a coaxial **7.62 mm L94A1**. The gunner has a laser rangefinder, 3x–10x day sight, Gen 2 thermal sight, and 10x backup sight; LWS and MAWS are fitted. Stabilizer and smoke grenades are standard, along with an engine smoke system.
 
 ## Armor
+
+Left cheek: 409-1117
+Right cheek: 443-1123
+Lower front plate: 115-445
+Upper front plate: 205-515
+Hull side: 80-105
+Mantlet: 20-413

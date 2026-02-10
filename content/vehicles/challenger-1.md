@@ -6,3 +6,10 @@ The **Challenger 1** is a Main Battle Tank that entered British Army service in 
 Main armament is the stabilized **120mm L11A5** with laser rangefinder and FCS (10x day, lead); secondary weapons are the coaxial **7.62mm L8A2** and commander **7.62mm L37A2**. Smoke grenades and an engine smoke system provide defensive screening.
 
 ## Armor
+
+Left cheek: 112-1914
+Right cheek: 114-1914
+Lower front plate: 96-174
+Upper front plate: 198-372
+Hull side: 44-73
+Mantlet: 250-320

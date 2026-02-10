@@ -6,3 +6,10 @@ The **Chieftain Mk 5** is a Main Battle Tank, the definitive production variant 
 The main gun is stabilized and supported by a **12.7 mm L21A1** ranging machine gun and coaxial **7.62mm L8A1**; the turret has smoke grenades and a fire control system with 8x main and 7x backup sights. The commander has a stabilized **7.62mm L37A1** and 1x–10x sight.
 
 ## Armor
+
+Left cheek: 200-742
+Right cheek: 238-672
+Lower front plate: 94-109
+Upper front plate: 259-503
+Hull side: 39-48
+Mantlet: 140-351

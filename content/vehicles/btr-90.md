@@ -6,3 +6,10 @@ The **BTR-90** is an Armoured Personnel Carrier developed in Russia in the 1990s
 The **30mm 2A42** and **7.62mm PKT** are in a stabilized turret with smoke grenades; a **9M113 Konkurs** ATGM is also fitted. Sights are 6x for the main gun and 9.5x for the ATGM, without laser rangefinder or thermals. The commander has a stabilized cupola with 5x sight.
 
 ## Armor
+
+Left cheek: 29-276
+Right cheek: 24-276
+Lower front plate: 26-45
+Upper front plate: 61-93
+Hull side: 11-70
+Mantlet: 25-54

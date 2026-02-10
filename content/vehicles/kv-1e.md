@@ -6,3 +6,10 @@ The **KV-1E** is a Heavy Tank, an up-armoured **KV-1** variant; the “E” (Ekr
 The main armament is the **76mm F-34** with OF-350M and BR-350B and a 7-second reload; **7.62mm DT-28** machine guns are mounted coaxially and in the loader and bow positions. The loader and bow gunner turrets are stabilized. Sights are 2.5x telescope and periscope with no rangefinder.
 
 ## Armor
+
+Left cheek: 120-653
+Right cheek: 120-653
+Lower front plate: 84-142
+Upper front plate: 115-145
+Hull side: 75-105
+Mantlet: 92-224

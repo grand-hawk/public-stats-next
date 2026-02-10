@@ -6,3 +6,10 @@ The **Challenger Falcon** is a Main Battle Tank built on the Challenger 2 hull b
 The **120mm RUAG L50** is fed by an autoloader (11 rounds ready, 27 in the hull) and is paired with a coaxial **7.62mm L8A2**. The turret has a stabilizer, laser warning system, and smoke grenades. Optics include a gunner main sight with Gen 3 thermals, laser rangefinder, FCS with lead and tracking, and a commander CITV with Gen 3 thermals; an engine smoke system is fitted for defense.
 
 ## Armor
+
+Left cheek: 22-47
+Right cheek: 17-32
+Lower front plate: 96-174
+Upper front plate: 198-372
+Hull side: 44-73
+Mantlet: 303-717

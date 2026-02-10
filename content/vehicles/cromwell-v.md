@@ -6,3 +6,10 @@ The **Cromwell V** is a Medium Tank, the main production variant of the British 
 Main armament is the **75mm OQF Mk.V** with a coaxial **7.92 mm BESA**; the gunner has no stabilizer or rangefinder. An RP-3 rocket addon is available for indirect fire support.
 
 ## Armor
+
+Left cheek: 64-295
+Right cheek: 64-295
+Lower front plate: 65-84
+Upper front plate: 64-94
+Hull side: 46-50
+Mantlet: 88-128

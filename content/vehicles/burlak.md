@@ -6,3 +6,10 @@ The **Burlak** is a Main Battle Tank combining a modern unmanned-style turret an
 Main armament is the **125mm 2A82** with autoloader (6.8 s reload), 3BM69, 3BK18M, 9M119M1, and 3OF26; a coaxial **7.62mm PKT** and a commander **14.5mm KPVT** are fitted. The vehicle has an APS (14 launchers), LWS, MAWS, stabilizer, smoke grenades, and engine smoke. Optics include gunner 2.7x–12x and thermals (Gen 2), and commander CITV with Gen 2 thermals and laser, all with FCS and lead.
 
 ## Armor
+
+Left cheek: 250-1083
+Right cheek: 250-1259
+Lower front plate: 185-492
+Upper front plate: 194-711
+Hull side: 21-266
+Mantlet: 266-457
