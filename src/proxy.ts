@@ -1,4 +1,4 @@
-// Disabled until https://github.com/vercel/next.js/issues/89768 is fixed
+// https://github.com/vercel/next.js/issues/89768
 
 import { NextResponse } from 'next/server';
 import slug from 'slug';

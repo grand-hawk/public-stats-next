@@ -5,3 +5,6 @@ onlyBuiltDependencies:
   - esbuild
   - sharp
   - unrs-resolver
+
+patchedDependencies:
+  next: patches/next.patch
