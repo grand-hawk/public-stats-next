@@ -39,14 +39,29 @@ export default function PlaceTeam() {
   }, [router, teamQuery, team, teamSlug]);
 
   const title = team ? team.name : 'Team not found';
+  const description = team
+    ? `${team.name} team statistics and vehicle compositions for ${place.placeName}`
+    : undefined;
 
   return (
     <>
       <Head>
         <title>{formatTitle(title, place.initials)}</title>
 
-        <meta content={title} property="og:title" />
-        <meta content={title} name="twitter:title" />
+        <meta key="og:title" content={title} property="og:title" />
+        <meta key="twitter:title" content={title} name="twitter:title" />
+
+        {description && (
+          <>
+            <meta key="description" content={description} name="description" />
+            <meta
+              key="og:description"
+              content={description}
+              property="og:description"
+            />
+            <meta content={description} name="twitter:description" />
+          </>
+        )}
       </Head>
 
       <Layout noPadding>
