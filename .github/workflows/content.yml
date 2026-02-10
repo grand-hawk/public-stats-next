@@ -38,4 +38,6 @@ jobs:
 
       - name: Validate structure
         if: steps.changed.outputs.files != ''
-        run: node scripts/validate-content.mjs ${{ steps.changed.outputs.files }}
+        run: echo "$FILES" | tr '\n' ' ' | xargs node scripts/validate-content.mjs
+        env:
+          FILES: ${{ steps.changed.outputs.files }}
