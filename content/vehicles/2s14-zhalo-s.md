@@ -2,8 +2,6 @@
 
 ## Description
 
-
-
 ## Armor
 
 Left cheek: 37-74
