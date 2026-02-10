@@ -1,3 +1,4 @@
+import { TRPCError } from '@trpc/server';
 import z from 'zod';
 
 import { createTRPCRouter, publicProcedure } from '@/server/api/trpc/context';
@@ -28,7 +29,7 @@ export const kdrRouter = createTRPCRouter({
       const vehicles = getVehicles();
 
       const kdrData = kdr.data[input.placeId as PlaceId]?.data;
-      if (!kdrData) return { all_time: [], recent: [] }; // This validates placeId
+      if (!kdrData) throw new TRPCError({ code: 'NOT_FOUND' });
 
       const vehiclesData = vehicles.data[input.placeId as PlaceId]?.data;
 
