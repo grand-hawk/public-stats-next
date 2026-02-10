@@ -1,6 +1,5 @@
 import { Flex, Stack } from '@chakra-ui/react';
 import Head from 'next/head';
-import { useRouter } from 'next/router';
 import React from 'react';
 import { GrDocumentMissing } from 'react-icons/gr';
 import slug from 'slug';
@@ -19,7 +18,6 @@ import { getVehicleImage } from '@/utils/getVehicleImage';
 import { trpc } from '@/utils/trpc';
 
 export default function PlaceVehicle() {
-  const router = useRouter();
   const vehicleQuery = useRouterQuery('vehicle')!;
   const vehicleSlug = slug(vehicleQuery);
   const place = usePlace()!;
@@ -28,19 +26,6 @@ export default function PlaceVehicle() {
     placeId: place.placeId,
     slug: vehicleSlug,
   });
-
-  React.useEffect(() => {
-    if (!vehicle) return;
-
-    if (vehicleQuery !== vehicleSlug)
-      router.replace({
-        pathname: router.pathname,
-        query: {
-          ...router.query,
-          vehicle: vehicleSlug,
-        },
-      });
-  }, [router, vehicle, vehicleQuery, vehicleSlug]);
 
   const title = vehicle ? vehicle.info.name : 'Vehicle not found';
   const image = vehicle ? getVehicleImage(vehicle.info.slug) : null;
