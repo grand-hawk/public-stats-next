@@ -60,6 +60,10 @@ export default function VehicleGeneralInformation({
     setNeedsExpand(height > COLLAPSED_MAX_HEIGHT);
   }, [customDescription]);
 
+  React.useEffect(() => {
+    setIsExpanded(false);
+  }, [vehicle.info.slug]);
+
   return (
     <>
       <SectionMarker name="General information" />
