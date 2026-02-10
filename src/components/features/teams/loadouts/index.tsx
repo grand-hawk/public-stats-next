@@ -111,6 +111,7 @@ export default function TeamLoadouts({ initials, team }: TeamLoadoutsProps) {
                       <td>
                         <NextLink
                           href={`/${initials}/vehicles/${vehicle.slug}`}
+                          prefetch={false}
                         >
                           {name}
                         </NextLink>

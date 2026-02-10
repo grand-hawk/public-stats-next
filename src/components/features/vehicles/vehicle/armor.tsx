@@ -88,7 +88,10 @@ export default function VehicleArmor() {
           </StatsRoot>
 
           <Button asChild variant="surface" alignSelf="start" data-md-ignore>
-            <NextLink href={`/${initials}/armor?vehicle=${vehicle.info.slug}`}>
+            <NextLink
+              href={`/${initials}/armor?vehicle=${vehicle.info.slug}`}
+              prefetch={false}
+            >
               Open armor visualizer
               <TbChevronRight />
             </NextLink>
