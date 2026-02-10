@@ -23,7 +23,7 @@ import { capitalizeFirst } from '@/utils/capitalizeFirst';
 
 import type { BoxProps, IconProps } from '@chakra-ui/react';
 
-const COLLAPSED_MAX_HEIGHT = 200;
+const COLLAPSED_MAX_HEIGHT = 150;
 
 const classIcons: Record<string, (props: IconProps) => React.ReactNode> = {
   Engineer: EngineerIcon,
@@ -33,7 +33,7 @@ const classIcons: Record<string, (props: IconProps) => React.ReactNode> = {
 
 const baseContentProps: BoxProps = {
   fontSize: 'sm',
-  fontWeight: 'light',
+  fontWeight: 'normal',
   id: 'vehicle-page-description',
   whiteSpace: 'pre-wrap',
   'aria-label': 'Description',
@@ -85,7 +85,7 @@ export default function VehicleGeneralInformation({
                   <Box asChild {...baseContentProps}>
                     <Quote asChild>
                       <Prose
-                        color="fg"
+                        color="fg/90"
                         data-prose
                         size="md"
                         css={{
@@ -130,8 +130,9 @@ export default function VehicleGeneralInformation({
                     onClick={() => setIsExpanded((prev) => !prev)}
                     marginTop={1}
                     alignSelf="start"
+                    focusRing="none"
                   >
-                    {isExpanded ? 'Show less' : 'Read more'}
+                    {isExpanded ? 'Collapse...' : 'Expand...'}
                   </Link>
                 )}
               </div>
