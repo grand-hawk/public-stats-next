@@ -52,6 +52,7 @@ export default function VehicleGeneralInformation({
   const [isExpanded, setIsExpanded] = React.useState(false);
   const [needsExpand, setNeedsExpand] = React.useState(false);
   const [contentHeight, setContentHeight] = React.useState(0);
+  const [skipTransition, setSkipTransition] = React.useState(false);
 
   React.useEffect(() => {
     if (!contentRef.current) return;
@@ -62,6 +63,11 @@ export default function VehicleGeneralInformation({
 
   React.useEffect(() => {
     setIsExpanded(false);
+    setSkipTransition(true);
+    const id = requestAnimationFrame(() => {
+      requestAnimationFrame(() => setSkipTransition(false));
+    });
+    return () => cancelAnimationFrame(id);
   }, [vehicle.info.slug]);
 
   return (
@@ -83,7 +89,7 @@ export default function VehicleGeneralInformation({
                     maxHeight: isExpanded
                       ? `${contentHeight}px`
                       : `${COLLAPSED_MAX_HEIGHT}px`,
-                    transition: 'max-height 0.3s ease',
+                    transition: skipTransition ? 'none' : 'max-height 0.3s ease',
                   }}
                 >
                   <Box asChild {...baseContentProps}>
