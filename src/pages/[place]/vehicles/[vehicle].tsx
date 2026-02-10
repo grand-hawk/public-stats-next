@@ -44,6 +44,12 @@ export default function PlaceVehicle() {
 
   const title = vehicle ? vehicle.info.name : 'Vehicle not found';
   const image = vehicle ? getVehicleImage(vehicle.info.slug) : null;
+  const description = vehicle
+    ? `${vehicle.info.name} from Multicrew Tank Combat` +
+      (vehicle.info.description
+        ? `\n\n"${vehicle.content?.Description || vehicle.info.description}"`
+        : '')
+    : undefined;
 
   return (
     <>
@@ -70,15 +76,9 @@ export default function PlaceVehicle() {
               name="keywords"
             />
 
-            <meta
-              content={
-                `${vehicle.info.name} from Multicrew Tank Combat` +
-                (vehicle.info.description
-                  ? `\n\n“${vehicle.info.description}”`
-                  : '')
-              }
-              name="description"
-            />
+            <meta content={description} name="description" />
+            <meta content={description} property="og:description" />
+            <meta content={description} name="twitter:description" />
 
             <meta content={image} property="og:image" />
             <meta

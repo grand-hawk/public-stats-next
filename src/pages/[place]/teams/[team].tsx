@@ -39,6 +39,9 @@ export default function PlaceTeam() {
   }, [router, teamQuery, team, teamSlug]);
 
   const title = team ? team.name : 'Team not found';
+  const description = team
+    ? `${team.name} team statistics and vehicle compositions for ${place.placeName}`
+    : undefined;
 
   return (
     <>
@@ -47,6 +50,14 @@ export default function PlaceTeam() {
 
         <meta content={title} property="og:title" />
         <meta content={title} name="twitter:title" />
+
+        {description && (
+          <>
+            <meta content={description} name="description" />
+            <meta content={description} property="og:description" />
+            <meta content={description} name="twitter:description" />
+          </>
+        )}
       </Head>
 
       <Layout noPadding>
