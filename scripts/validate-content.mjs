@@ -72,12 +72,16 @@ for (const filepath of files) {
 
   // check ## sections (the only restricted heading level)
   const h2s = headings.filter(({ line }) => /^## [^#]/.test(line));
+  const seenSections = new Map();
   for (const { line, num } of h2s) {
     const sectionName = line.replace(/^## /, '').trim();
     if (!allowedNames.includes(sectionName))
       errors.push(
         `Line ${num}: unknown section "## ${sectionName}" (allowed: ${allowedNames.join(', ')})`,
       );
+    if (seenSections.has(sectionName))
+      errors.push(`Line ${num}: duplicate section "## ${sectionName}" (first at line ${seenSections.get(sectionName)})`);
+    else seenSections.set(sectionName, num);
   }
 
   // validate line rules within each section
