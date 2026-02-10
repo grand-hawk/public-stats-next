@@ -44,7 +44,7 @@ export default function TeamHeader({ initials, name }: TeamHeaderProps) {
 
         <HStack>
           <TeamIcon team={name} />
-          <Heading as="h1" size="2xl">
+          <Heading as="h1" id="team-page-title" size="2xl">
             {name}
           </Heading>
         </HStack>

@@ -52,6 +52,7 @@ export default function PlaceLoadout() {
             padding={{ base: 0, md: 2, lg: 4 }}
           >
             <Stack
+              aria-labelledby="loadout-page-title"
               as="article"
               data-md-target
               gap={4}

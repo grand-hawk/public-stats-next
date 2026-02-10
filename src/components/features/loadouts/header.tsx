@@ -41,7 +41,7 @@ export default function LoadoutHeader({ initials, name }: LoadoutHeaderProps) {
           <BreadcrumbCurrentLink>{name}</BreadcrumbCurrentLink>
         </BreadcrumbRoot>
 
-        <Heading as="h1" size="2xl">
+        <Heading as="h1" id="loadout-page-title" size="2xl">
           {name}
         </Heading>
       </Stack>
