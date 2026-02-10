@@ -61,7 +61,7 @@ const extraFiles = existingFiles
 
 if (extraFiles.length > 0) {
   console.warn(
-    `Warning: ${extraFiles.length} file(s) in ${CONTENT_DIR} have no matching vehicle in the API:`
+    `Warning: ${extraFiles.length} file(s) in ${CONTENT_DIR} have no matching vehicle in the API:`,
   );
   for (const f of extraFiles.sort()) {
     console.warn(`  - ${f}.md`);

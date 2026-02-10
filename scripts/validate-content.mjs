@@ -80,7 +80,9 @@ for (const filepath of files) {
         `Line ${num}: unknown section "## ${sectionName}" (allowed: ${allowedNames.join(', ')})`,
       );
     if (seenSections.has(sectionName))
-      errors.push(`Line ${num}: duplicate section "## ${sectionName}" (first at line ${seenSections.get(sectionName)})`);
+      errors.push(
+        `Line ${num}: duplicate section "## ${sectionName}" (first at line ${seenSections.get(sectionName)})`,
+      );
     else seenSections.set(sectionName, num);
   }
 
