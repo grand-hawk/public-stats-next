@@ -14,7 +14,15 @@ await mkdir('generated');
 const environment = process.env.DATA_ENV || process.env.NODE_ENV;
 const version = process.argv[2];
 const prefixUrl = `https://public-stats-data.multicrew.dev/${environment}/${version}`;
-const dataApi = ky.create({ prefixUrl });
+const dataApi = ky.create({
+  prefixUrl,
+  timeout: 30000,
+  retry: {
+    limit: 4,
+    retryOnTimeout: true,
+    jitter: true,
+  },
+});
 
 console.log(`Environment: ${environment}  Version: ${version}`);
 
