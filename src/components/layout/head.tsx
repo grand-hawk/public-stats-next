@@ -18,11 +18,7 @@ export const getKeywords = (place: Place) => [
   'Data',
 ];
 
-export default function InternalHead({
-  children,
-}: {
-  children?: React.ReactNode;
-}) {
+export default function InternalHead() {
   const initials = usePlaceInitials();
   const currentTab = useCurrentTab();
   const router = useRouter();
@@ -41,24 +37,8 @@ export default function InternalHead({
       <meta content="index,follow" name="robots" />
       <meta content={formatTitle(null, initials)} property="og:site_name" />
       <meta content="en_US" property="og:locale" />
-      <meta key="twitter:card" content="summary" name="twitter:card" />
       <link rel="canonical" href={canonicalUrl} />
       <meta content={canonicalUrl} property="og:url" />
-
-      {currentTab?.description && (
-        <>
-          <meta
-            key="description"
-            content={currentTab.description}
-            name="description"
-          />
-          <meta
-            key="og:description"
-            content={currentTab.description}
-            property="og:description"
-          />
-        </>
-      )}
 
       {env.NEXT_PUBLIC_IMAGE_LOADER && (
         <link rel="preconnect" href={env.NEXT_PUBLIC_IMAGE_LOADER} />
@@ -66,8 +46,6 @@ export default function InternalHead({
       {env.NEXT_PUBLIC_MEDIA_PREFIX && (
         <link rel="preconnect" href={env.NEXT_PUBLIC_MEDIA_PREFIX} />
       )}
-
-      {children}
     </Head>
   );
 }

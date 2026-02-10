@@ -9,12 +9,12 @@ import Shell from '@/components/features/shells';
 import ShellsSearchSidebar from '@/components/features/shells/searchSidebar';
 import { getKeywords } from '@/components/layout/head';
 import Layout from '@/components/layout/layout';
+import PageMeta from '@/components/layout/pageMeta';
 import SearchLayout from '@/components/layout/searchLayout/layout';
 import { EmptyState } from '@/components/ui/empty-state';
 import InaccurateDataFooter from '@/components/wiki/inaccurateDataFooter';
 import { usePlace } from '@/hooks/usePlace';
 import { useRouterQuery } from '@/hooks/useRouterQuery';
-import { formatTitle } from '@/utils/formatTitle';
 import { trpc } from '@/utils/trpc';
 
 export default function PlaceShell() {
@@ -47,43 +47,28 @@ export default function PlaceShell() {
     : undefined;
 
   return (
-    <>
-      <Head>
-        <title>{formatTitle(title, place.initials)}</title>
+    <PageMeta title={title} description={description}>
+      {shell && (
+        <Head>
+          <meta
+            content={[shell.weapon, shell.name, ...getKeywords(place)].join(
+              ',',
+            )}
+            name="keywords"
+          />
 
-        <meta key="og:title" content={title} property="og:title" />
-        <meta key="twitter:title" content={title} name="twitter:title" />
-
-        {shell && (
-          <>
-            <meta key="description" content={description} name="description" />
-            <meta
-              key="og:description"
-              content={description}
-              property="og:description"
+          {Object.entries(shell.linkedData).map(([key, linkedData]) => (
+            <script
+              key={key}
+              dangerouslySetInnerHTML={{
+                __html: JSON.stringify(linkedData).replace(/</g, '\\u003c'),
+              }}
+              data-linked-data={key}
+              type="application/ld+json"
             />
-            <meta content={description} name="twitter:description" />
-
-            <meta
-              content={[shell.weapon, shell.name, ...getKeywords(place)].join(
-                ',',
-              )}
-              name="keywords"
-            />
-
-            {Object.entries(shell.linkedData).map(([key, linkedData]) => (
-              <script
-                key={key}
-                dangerouslySetInnerHTML={{
-                  __html: JSON.stringify(linkedData).replace(/</g, '\\u003c'),
-                }}
-                data-linked-data={key}
-                type="application/ld+json"
-              />
-            ))}
-          </>
-        )}
-      </Head>
+          ))}
+        </Head>
+      )}
 
       <Layout noPadding>
         <SearchLayout sidebar={<ShellsSearchSidebar />}>
@@ -126,6 +111,6 @@ export default function PlaceShell() {
           )}
         </SearchLayout>
       </Layout>
-    </>
+    </PageMeta>
   );
 }

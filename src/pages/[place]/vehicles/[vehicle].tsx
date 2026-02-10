@@ -9,12 +9,12 @@ import Vehicle from '@/components/features/vehicles';
 import VehiclesSearchSidebar from '@/components/features/vehicles/searchSidebar';
 import { getKeywords } from '@/components/layout/head';
 import Layout from '@/components/layout/layout';
+import PageMeta from '@/components/layout/pageMeta';
 import SearchLayout from '@/components/layout/searchLayout/layout';
 import { EmptyState } from '@/components/ui/empty-state';
 import { SectionMarkersProvider } from '@/hooks/providers/sectionMarkers';
 import { usePlace } from '@/hooks/usePlace';
 import { useRouterQuery } from '@/hooks/useRouterQuery';
-import { formatTitle } from '@/utils/formatTitle';
 import { getVehicleImage } from '@/utils/getVehicleImage';
 import { trpc } from '@/utils/trpc';
 
@@ -50,72 +50,50 @@ export default function PlaceVehicle() {
     `"${vehicle.content?.Description || vehicle.info.description}"`;
 
   return (
-    <>
-      <Head>
-        <title>{formatTitle(title, place.initials)}</title>
+    <PageMeta
+      title={title}
+      description={
+        vehicle
+          ? `${vehicle.info.name} from Multicrew Tank Combat` +
+            (descriptionQuote ? `\n\n${descriptionQuote}` : '')
+          : undefined
+      }
+      ogDescription={descriptionQuote || undefined}
+      twitterCard={vehicle && image ? 'summary_large_image' : undefined}
+    >
+      {vehicle && image && (
+        <Head>
+          <meta
+            content={[
+              ...(
+                (vehicle.linkedData.vehicle?.keywords as string | undefined) ||
+                ''
+              ).split(','),
+              vehicle.info.name,
+              ...getKeywords(place),
+            ].join(',')}
+            name="keywords"
+          />
 
-        <meta key="og:title" content={title} property="og:title" />
-        <meta key="twitter:title" content={title} name="twitter:title" />
+          <meta content={image} property="og:image" />
+          <meta
+            content={`image/${image.split('.').pop()}`}
+            property="og:image:type"
+          />
+          <meta content={image} name="twitter:image" />
 
-        {vehicle && image && (
-          <>
-            <meta
-              key="twitter:card"
-              content="summary_large_image"
-              name="twitter:card"
+          {Object.entries(vehicle.linkedData).map(([key, linkedData]) => (
+            <script
+              key={key}
+              dangerouslySetInnerHTML={{
+                __html: JSON.stringify(linkedData).replace(/</g, '\\u003c'),
+              }}
+              data-linked-data={key}
+              type="application/ld+json"
             />
-            <meta
-              content={[
-                ...(
-                  (vehicle.linkedData.vehicle?.keywords as
-                    | string
-                    | undefined) || ''
-                ).split(','),
-                vehicle.info.name,
-                ...getKeywords(place),
-              ].join(',')}
-              name="keywords"
-            />
-
-            <meta
-              key="description"
-              content={
-                `${vehicle.info.name} from Multicrew Tank Combat` +
-                (descriptionQuote ? `\n\n${descriptionQuote}` : '')
-              }
-              name="description"
-            />
-            {descriptionQuote && (
-              <>
-                <meta
-                  key="og:description"
-                  content={descriptionQuote}
-                  property="og:description"
-                />
-                <meta content={descriptionQuote} name="twitter:description" />
-              </>
-            )}
-
-            <meta content={image} property="og:image" />
-            <meta
-              content={`image/${image.split('.').pop()}`}
-              property="og:image:type"
-            />
-            <meta content={image} name="twitter:image" />
-
-            {Object.entries(vehicle.linkedData).map(([key, linkedData]) => (
-              <script
-                key={key}
-                dangerouslySetInnerHTML={{
-                  __html: JSON.stringify(linkedData).replace(/</g, '\\u003c'),
-                }}
-                data-linked-data={key}
-                type="application/ld+json"
-              />
-            ))}
-          </>
-        )}
-      </Head>
+          ))}
+        </Head>
+      )}
 
       <SectionMarkersProvider>
         <Layout noPadding>
@@ -156,6 +134,6 @@ export default function PlaceVehicle() {
           </SearchLayout>
         </Layout>
       </SectionMarkersProvider>
-    </>
+    </PageMeta>
   );
 }

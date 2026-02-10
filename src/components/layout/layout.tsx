@@ -3,6 +3,7 @@ import React, { Suspense } from 'react';
 
 import PlaceSwitchBar from '@/components/common/placeSwitchBar';
 import { CenterSpinner } from '@/components/common/spinners';
+import { PageMetaHead } from '@/components/layout/pageMeta';
 import Sidebar from '@/components/layout/sidebar';
 
 import type { BoxProps } from '@chakra-ui/react';
@@ -26,56 +27,60 @@ export default function Layout({
   ...props
 }: LayoutProps) {
   return (
-    <Flex justifyContent="center">
-      <Box
-        as="main"
-        display="grid"
-        gridTemplateColumns={{
-          md: 'max-content 1fr',
-        }}
-        gridTemplateRows={{
-          base: '1fr max-content',
-          md: '1fr',
-        }}
-        height="100svh"
-        maxWidth="1920px"
-        overflow="clip"
-        width="100%"
-      >
-        <Sidebar />
+    <>
+      <PageMetaHead />
 
+      <Flex justifyContent="center">
         <Box
+          as="main"
           display="grid"
-          gridTemplateRows="max-content 1fr"
-          minHeight="0"
+          gridTemplateColumns={{
+            md: 'max-content 1fr',
+          }}
+          gridTemplateRows={{
+            base: '1fr max-content',
+            md: '1fr',
+          }}
+          height="100svh"
+          maxWidth="1920px"
           overflow="clip"
+          width="100%"
         >
-          {!hidePlaceSelector && (
-            <PlaceSwitchBar
-              hideDropdown={hidePlaceDropdown}
-              overwriteTabLabel={overwriteTabLabel}
-            />
-          )}
+          <Sidebar />
 
           <Box
-            gridRow="2"
+            display="grid"
+            gridTemplateRows="max-content 1fr"
             minHeight="0"
-            overflow="auto"
-            padding={
-              noPadding
-                ? undefined
-                : {
-                    base: 2,
-                    md: 4,
-                  }
-            }
-            paddingTop={noPadding ? undefined : 4}
-            {...props}
+            overflow="clip"
           >
-            <Suspense fallback={<CenterSpinner />}>{children}</Suspense>
+            {!hidePlaceSelector && (
+              <PlaceSwitchBar
+                hideDropdown={hidePlaceDropdown}
+                overwriteTabLabel={overwriteTabLabel}
+              />
+            )}
+
+            <Box
+              gridRow="2"
+              minHeight="0"
+              overflow="auto"
+              padding={
+                noPadding
+                  ? undefined
+                  : {
+                      base: 2,
+                      md: 4,
+                    }
+              }
+              paddingTop={noPadding ? undefined : 4}
+              {...props}
+            >
+              <Suspense fallback={<CenterSpinner />}>{children}</Suspense>
+            </Box>
           </Box>
         </Box>
-      </Box>
-    </Flex>
+      </Flex>
+    </>
   );
 }
