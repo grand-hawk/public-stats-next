@@ -6,7 +6,6 @@ import { kdrRouter } from '@/server/api/trpc/routers/kdr';
 import { loadoutsRouter } from '@/server/api/trpc/routers/loadouts';
 import { shellsRouter } from '@/server/api/trpc/routers/shells';
 import { teamsRouter } from '@/server/api/trpc/routers/teams';
-import { updateRouter } from '@/server/api/trpc/routers/update';
 import { vehiclesRouter } from '@/server/api/trpc/routers/vehicles';
 import { winrateRouter } from '@/server/api/trpc/routers/winrate';
 
@@ -18,7 +17,6 @@ export const appRouter = createTRPCRouter({
   loadouts: loadoutsRouter,
   shells: shellsRouter,
   teams: teamsRouter,
-  update: updateRouter,
   vehicles: vehiclesRouter,
   winrate: winrateRouter,
 });
