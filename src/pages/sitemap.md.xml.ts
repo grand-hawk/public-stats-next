@@ -15,88 +15,75 @@ function getMdPaths() {
   const loadouts = getLoadouts();
   const shells = getShells();
 
-  const paths: Array<{ path: string; changefreq: string; priority: string }> =
-    [];
+  const paths: Array<{ path: string; changefreq: string }> = [];
   const placeNames = config.data.placeNames;
 
   for (const placeName of placeNames) {
     const initials = config.data.placeNameInitials[placeName];
     const placeId = config.data.placeIds[placeName];
-    const isFirstPlace = placeNames.indexOf(placeName) === 0;
 
-    const vehicleSlugs = vehicles.data[placeId].metadata.slugs;
+    const vehiclesPlace = vehicles.data[placeId];
+    const vehicleSlugs = Object.values(vehiclesPlace.data).map(
+      (v) => v.info.slug,
+    );
     const loadoutsPlace = loadouts.data[placeId];
     const shellsPlace = shells.data[placeId];
 
     // main place md page
     paths.push({
-      path: `md/${initials}`,
+      path: `md/${initials}/index.md`,
       changefreq: 'weekly',
-      priority: isFirstPlace ? '1' : '0.9',
     });
 
     // kdr page
     paths.push({
       path: `md/${initials}/kdr.md`,
       changefreq: 'weekly',
-      priority: isFirstPlace ? '0.8' : '0.7',
     });
 
     // vehicles
     paths.push({
       path: `md/${initials}/vehicles.md`,
       changefreq: 'weekly',
-      priority: isFirstPlace ? '0.9' : '0.8',
     });
-    for (const vehicleSlug of Object.keys(vehicleSlugs))
+    for (const vehicleSlug of vehicleSlugs)
       paths.push({
         path: `md/${initials}/vehicles/${vehicleSlug}.md`,
         changefreq: 'monthly',
-        priority: isFirstPlace ? '0.6' : '0.4',
       });
 
     // teams
-    if (loadoutsPlace) {
+    paths.push({
+      path: `md/${initials}/teams.md`,
+      changefreq: 'weekly',
+    });
+    for (const team of loadoutsPlace.metadata.teams)
       paths.push({
-        path: `md/${initials}/teams.md`,
-        changefreq: 'weekly',
-        priority: isFirstPlace ? '0.8' : '0.7',
+        path: `md/${initials}/teams/${slug(team)}.md`,
+        changefreq: 'monthly',
       });
-      for (const team of loadoutsPlace.metadata.teams)
-        paths.push({
-          path: `md/${initials}/teams/${slug(team)}.md`,
-          changefreq: 'monthly',
-          priority: isFirstPlace ? '0.6' : '0.4',
-        });
 
-      // loadouts
+    // loadouts
+    paths.push({
+      path: `md/${initials}/loadouts.md`,
+      changefreq: 'weekly',
+    });
+    for (const loadoutName of loadoutsPlace.metadata.loadouts)
       paths.push({
-        path: `md/${initials}/loadouts.md`,
-        changefreq: 'weekly',
-        priority: isFirstPlace ? '0.8' : '0.7',
+        path: `md/${initials}/loadouts/${slug(loadoutName)}.md`,
+        changefreq: 'monthly',
       });
-      for (const loadoutName of loadoutsPlace.metadata.loadouts)
-        paths.push({
-          path: `md/${initials}/loadouts/${slug(loadoutName)}.md`,
-          changefreq: 'monthly',
-          priority: isFirstPlace ? '0.6' : '0.4',
-        });
-    }
 
     // shells
-    if (shellsPlace) {
+    paths.push({
+      path: `md/${initials}/shells.md`,
+      changefreq: 'weekly',
+    });
+    for (const shellSlug of Object.keys(shellsPlace.metadata.slugs))
       paths.push({
-        path: `md/${initials}/shells.md`,
-        changefreq: 'weekly',
-        priority: isFirstPlace ? '0.8' : '0.7',
+        path: `md/${initials}/shells/${shellSlug}.md`,
+        changefreq: 'monthly',
       });
-      for (const shellSlug of Object.keys(shellsPlace.metadata.slugs))
-        paths.push({
-          path: `md/${initials}/shells/${shellSlug}.md`,
-          changefreq: 'monthly',
-          priority: isFirstPlace ? '0.5' : '0.3',
-        });
-    }
   }
 
   return paths;
@@ -116,11 +103,10 @@ export function getServerSideProps({
   const baseUrl = getBaseUrl();
   const paths = getMdPaths();
 
-  for (const { changefreq, path, priority } of paths) {
+  for (const { changefreq, path } of paths) {
     const url = doc.ele('url');
     url.ele('loc').txt(new URL(path, baseUrl).toString()).up();
     url.ele('changefreq').txt(changefreq).up();
-    url.ele('priority').txt(priority).up();
     url.up();
   }
 
