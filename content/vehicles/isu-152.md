@@ -3,3 +3,10 @@
 ## Description
 
 ## Armor
+
+Left cheek: 106-304
+Right cheek: 106-274
+Lower front plate: 92-122
+Upper front plate: 168-265
+Hull side: 79-90
+Mantlet: 88-248
