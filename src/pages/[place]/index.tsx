@@ -28,9 +28,13 @@ export default function Place() {
       <Head>
         <title>{formatTitle(null, place.initials)}</title>
 
-        <meta content={place.placeName} property="og:title" />
-        <meta content={description} name="description" />
-        <meta content={description} property="og:description" />
+        <meta key="og:title" content={place.placeName} property="og:title" />
+        <meta key="description" content={description} name="description" />
+        <meta
+          key="og:description"
+          content={description}
+          property="og:description"
+        />
       </Head>
 
       <Layout overwriteTabLabel="">

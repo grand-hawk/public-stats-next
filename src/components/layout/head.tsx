@@ -41,14 +41,22 @@ export default function InternalHead({
       <meta content="index,follow" name="robots" />
       <meta content={formatTitle(null, initials)} property="og:site_name" />
       <meta content="en_US" property="og:locale" />
-      <meta content="summary" name="twitter:card" />
+      <meta key="twitter:card" content="summary" name="twitter:card" />
       <link rel="canonical" href={canonicalUrl} />
       <meta content={canonicalUrl} property="og:url" />
 
       {currentTab?.description && (
         <>
-          <meta content={currentTab.description} name="description" />
-          <meta content={currentTab.description} property="og:description" />
+          <meta
+            key="description"
+            content={currentTab.description}
+            name="description"
+          />
+          <meta
+            key="og:description"
+            content={currentTab.description}
+            property="og:description"
+          />
         </>
       )}
 
