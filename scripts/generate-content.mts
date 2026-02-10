@@ -11,7 +11,7 @@ const CONTENT_DIR = 'content/vehicles';
 const CONFIG_PATH = 'content/config.yml';
 
 const config = parse(await readFile(CONFIG_PATH, 'utf-8'));
-const sections: { name: string }[] = config.sections;
+const sections: { name: string }[] = config.vehicles.sections;
 const body = sections.map((s) => `## ${s.name}\n`).join('\n');
 const template = (name: string) => `# ${name}\n\n${body}`;
 

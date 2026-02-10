@@ -10,7 +10,7 @@ const CONFIG_PATH = 'content/config.yml';
 const consola = createConsola({ formatOptions: { date: false } });
 
 const config = parse(await readFile(CONFIG_PATH, 'utf-8'));
-const sections = config.sections;
+const sections = config.vehicles.sections;
 const allowedNames = sections.map((s) => s.name);
 const rulesByName = Object.fromEntries(
   sections
