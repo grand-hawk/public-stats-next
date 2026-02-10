@@ -44,12 +44,10 @@ export default function PlaceVehicle() {
 
   const title = vehicle ? vehicle.info.name : 'Vehicle not found';
   const image = vehicle ? getVehicleImage(vehicle.info.slug) : null;
-  const description = vehicle
-    ? `${vehicle.info.name} from Multicrew Tank Combat` +
-      (vehicle.info.description
-        ? `\n\n"${vehicle.content?.Description || vehicle.info.description}"`
-        : '')
-    : undefined;
+  const descriptionQuote =
+    vehicle &&
+    vehicle.info.description &&
+    `"${vehicle.content?.Description || vehicle.info.description}"`;
 
   return (
     <>
@@ -59,7 +57,6 @@ export default function PlaceVehicle() {
         <meta key="og:title" content={title} property="og:title" />
         <meta key="twitter:title" content={title} name="twitter:title" />
 
-        {/* Image is just here for type safety */}
         {vehicle && image && (
           <>
             <meta
@@ -80,13 +77,24 @@ export default function PlaceVehicle() {
               name="keywords"
             />
 
-            <meta key="description" content={description} name="description" />
             <meta
-              key="og:description"
-              content={description}
-              property="og:description"
+              key="description"
+              content={
+                `${vehicle.info.name} from Multicrew Tank Combat` +
+                (descriptionQuote ? `\n\n${descriptionQuote}` : '')
+              }
+              name="description"
             />
-            <meta content={description} name="twitter:description" />
+            {descriptionQuote && (
+              <>
+                <meta
+                  key="og:description"
+                  content={descriptionQuote}
+                  property="og:description"
+                />
+                <meta content={descriptionQuote} name="twitter:description" />
+              </>
+            )}
 
             <meta content={image} property="og:image" />
             <meta
