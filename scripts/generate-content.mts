@@ -21,10 +21,16 @@ const prefixUrl = `https://public-stats-data.multicrew.dev/${environment}/1.0.0`
 
 const vehicles = await ky.get(`${prefixUrl}/vehicles.json`).json<Vehicles>();
 const gameIds = new Set<string>();
+const gameIdToName = new Map<string, string>();
 
 for (const place of Object.values(vehicles.data)) {
-  for (const vehicle of Object.values(place.data) as VehiclesPlaceDataVehicle[])
+  for (const [name, vehicle] of Object.entries(place.data) as [
+    string,
+    VehiclesPlaceDataVehicle,
+  ][]) {
     gameIds.add(vehicle.info.gameId);
+    gameIdToName.set(vehicle.info.gameId, name);
+  }
 }
 
 if (!existsSync(CONTENT_DIR)) await mkdir(CONTENT_DIR, { recursive: true });
@@ -41,7 +47,8 @@ for (const gameId of [...gameIds].sort()) {
     continue;
   }
 
-  await writeFile(filepath, template(gameId), 'utf-8');
+  const displayName = gameIdToName.get(gameId) ?? gameId;
+  await writeFile(filepath, template(displayName), 'utf-8');
   created += 1;
 }
 

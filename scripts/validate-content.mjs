@@ -90,8 +90,9 @@ for (const filepath of files) {
       errors.push(`Missing required section "## ${name}"`);
   }
 
-  // validate line rules within each section
+  // validate line rules and collect Description content
   let currentSection = null;
+  const sectionContent = new Map();
   for (let i = 0; i < lines.length; i += 1) {
     const line = lines[i];
     const h2Match = line.match(/^## ([^#].*)$/);
@@ -117,6 +118,22 @@ for (const filepath of files) {
       errors.push(
         `Line ${i + 1}: content in "${currentSection}" doesn't match required format — got "${line.trim()}"`,
       );
+
+    if (!sectionContent.has(currentSection))
+      sectionContent.set(currentSection, []);
+    sectionContent.get(currentSection).push(line.trim());
+  }
+
+  const vehicleName = lines[0]?.replace(/^# /, '').trim() ?? '';
+  const descriptionText = sectionContent.get('Description')?.join(' ') ?? '';
+  if (
+    vehicleName &&
+    descriptionText.trim() &&
+    !descriptionText.toLowerCase().includes(vehicleName.toLowerCase())
+  ) {
+    errors.push(
+      `Description must mention the vehicle name "${vehicleName}" when not empty`,
+    );
   }
 
   report(filepath, errors);
