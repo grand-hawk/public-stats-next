@@ -4,7 +4,7 @@
 
 ## Armor
 
-Lower front plate: 20-43
-Upper front plate: 48-270
-Hull side: 37
+Lower front plate: 80-280
+Upper front plate: 210-400
+Hull side: 36-59
 Mantlet: 33-71
