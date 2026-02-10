@@ -1,7 +1,8 @@
-# Leopard 2-T
+# SU-57
 
 ## Description
 
-The **Leopard 2-T** is a Heavy Infantry Fighting Vehicle based on the **Leopard 2** chassis, repurposing the hull and powertrain of the German main battle tank to carry infantry under protection. The Leopard 2 family, developed by Krauss-Maffei (now KMW) from the 1970s, became one of NATO’s primary MBTs; this IFV variant trades the main gun turret for a lighter crew compartment and weapon stations. The vehicle weighs 55.4 tonnes and is crewed by a driver and commander plus four passengers, all on a tracked chassis. An **MTU MB 873 Ka-501** diesel engine delivers 1,500 horsepower for a 27.1 hp/t power-to-weight ratio, enabling a top speed of 72 km/h forward and 31 km/h in reverse with neutral steering and an automatic gearbox. The commander operates a stabilized **7.62mm MG3** in a traversable turret, while the driver has a separate station with a **CITV** sight featuring a laser rangefinder and Gen 2 green thermals at 2x and 8x magnification for observation and target handoff.
+The **SU-57** is a Tank Destroyer based on the American T48 57 mm Gun Motor Carriage — a **57mm M1** anti-tank gun on a modified M3 half-track chassis; the Soviet designation was applied to vehicles received under Lend-Lease. In-game it is a lightly armored tracked vehicle weighing 8.6 tonnes with a crew of four plus one passenger — driver, gunner, commander, loader, and one infantry seat. The **White 160AX** diesel produces 148 hp for 17.2 hp/t and 76 km/h.\
+The **57mm M1** is the sole weapon, with a 1x telescope sight and no stabilizer or machine guns. High mobility and a potent gun for its tier define the vehicle, at the cost of minimal protection.
 
 ## Armor

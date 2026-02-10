@@ -1,7 +1,8 @@
-# Leopard 1A5
+# Sturmtiger
 
 ## Description
 
-The **Leopard 1A5** is a Main Battle Tank and a modernised version of the West German Leopard 1, upgraded in the 1980s with a new fire control system, thermal imager, and improved ammunition to extend its relevance into the late Cold War. The Leopard 1 had been designed for mobility over heavy armour; the 1A5 improved hit probability and night fighting. In-game it weighs 42.5 tonnes with a crew of four and is tracked. The **MTU MB 838 CaM 500** diesel produces 830 hp for 19.5 hp/t and 65 km/h. Main armament is the **L7A3 105mm** with DM23, DM512, and DM12; a coaxial **7.62mm MG3** and a loader’s MG3 provide backup. The gunner has a laser rangefinder, FCS with lead, and Gen 1 green thermals at 12x. The vehicle has a laser warning system, stabiliser, and smoke grenades.
+The **Sturmtiger** is an Assault Gun based on the Tiger I chassis, built by Germany in 1944 in small numbers to mount the **380mm RW61** naval-derived rocket launcher for demolishing fortified positions. Only around 18 were converted; they saw limited use on the Western Front. The 65-tonne tracked vehicle is crewed by five — driver, gunner, bow gunner, commander, and loader — and powered by a **MB HL230 P45** engine producing 690 horsepower for 10.6 hp/t and 40 km/h, with neutral steering.\
+The main weapon fires massive **38 cm R Spgr.4581** rocket projectiles with a 42.4-second reload from a limited hull stash of 12 rounds. The loader also has a grenade mortar for frag and smoke. A bow **7.92mm MG34** provides close defense. The Sturmtiger has no stabilizer or rangefinder; the gunner uses a 3x telescope. Its extreme caliber and weight make it a short-range siege asset rather than a frontline tank.
 
 ## Armor
