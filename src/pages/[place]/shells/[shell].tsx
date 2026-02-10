@@ -51,13 +51,17 @@ export default function PlaceShell() {
       <Head>
         <title>{formatTitle(title, place.initials)}</title>
 
-        <meta content={title} property="og:title" />
-        <meta content={title} name="twitter:title" />
+        <meta key="og:title" content={title} property="og:title" />
+        <meta key="twitter:title" content={title} name="twitter:title" />
 
         {shell && (
           <>
-            <meta content={description} name="description" />
-            <meta content={description} property="og:description" />
+            <meta key="description" content={description} name="description" />
+            <meta
+              key="og:description"
+              content={description}
+              property="og:description"
+            />
             <meta content={description} name="twitter:description" />
 
             <meta
