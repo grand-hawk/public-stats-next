@@ -6,5 +6,5 @@
 
 | Branch  | Public Domain                                            |
 | ------- | -------------------------------------------------------- |
-| prod    | [stats.multicrew.dev](https://stats.multicrew.dev)       |
+| prod    | [multicrew.wiki](https://multicrew.wiki)                 |
 | staging | [staging.multicrew.wiki](https://staging.multicrew.wiki) |
