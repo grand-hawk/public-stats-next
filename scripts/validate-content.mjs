@@ -84,6 +84,12 @@ for (const filepath of files) {
     else seenSections.set(sectionName, num);
   }
 
+  // check all required sections are present
+  for (const name of allowedNames) {
+    if (!seenSections.has(name))
+      errors.push(`Missing required section "## ${name}"`);
+  }
+
   // validate line rules within each section
   let currentSection = null;
   for (let i = 0; i < lines.length; i += 1) {
@@ -95,9 +101,16 @@ for (const filepath of files) {
       continue;
     }
 
-    // skip non-section content (above first ##), headings, and blank lines
-    if (!currentSection || /^#{1,6} /.test(line) || line.trim() === '')
+    // skip headings and blank lines
+    if (/^#{1,6} /.test(line) || line.trim() === '') continue;
+
+    // content outside of any ## section
+    if (!currentSection) {
+      errors.push(
+        `Line ${i + 1}: content outside of a section — should be under a ## heading`,
+      );
       continue;
+    }
 
     const rule = rulesByName[currentSection];
     if (rule && !rule.test(line.trim()))
