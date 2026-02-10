@@ -1,3 +1,4 @@
+import { TRPCError } from '@trpc/server';
 import slug from 'slug';
 import { z } from 'zod';
 
@@ -28,8 +29,9 @@ export const teamsRouter = createTRPCRouter({
     .input(z.object({ placeId: z.string() }))
     .query(({ input }) => {
       const loadouts = getLoadouts();
+
       const loadoutsPlace = loadouts.data[input.placeId as PlaceId];
-      if (!loadoutsPlace) return [];
+      if (!loadoutsPlace) throw new TRPCError({ code: 'NOT_FOUND' });
 
       return loadoutsPlace.metadata.teams.map((team) => ({
         name: team,
@@ -49,12 +51,12 @@ export const teamsRouter = createTRPCRouter({
       const vehicles = getVehicles();
 
       const loadoutsPlace = loadouts.data[input.placeId as PlaceId];
-      if (!loadoutsPlace) return null; // This validates placeId
+      if (!loadoutsPlace) throw new TRPCError({ code: 'NOT_FOUND' });
 
       const teamName = loadoutsPlace.metadata.teams.find(
         (team) => slug(team) === input.slug,
       );
-      if (!teamName) return null; // This validates slug
+      if (!teamName) return null;
 
       const vehiclesPlace = vehicles.data[input.placeId as PlaceId];
 

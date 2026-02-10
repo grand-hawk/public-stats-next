@@ -27,7 +27,10 @@ export default function ShellVehicles() {
           return (
             <li key={vehicle}>
               <Button asChild variant="surface">
-                <NextLink href={`/${initials}/vehicles/${vehicleSlug}`}>
+                <NextLink
+                  href={`/${initials}/vehicles/${vehicleSlug}`}
+                  prefetch={false}
+                >
                   {vehicle}
                 </NextLink>
               </Button>

@@ -1,3 +1,4 @@
+import { TRPCError } from '@trpc/server';
 import slug from 'slug';
 import z from 'zod';
 
@@ -56,7 +57,7 @@ export const vehiclesRouter = createTRPCRouter({
       const vehicles = getVehicles();
 
       const vehiclesData = vehicles.data[input.placeId as PlaceId]?.data;
-      if (!vehiclesData) return []; // This validates placeId
+      if (!vehiclesData) throw new TRPCError({ code: 'NOT_FOUND' });
 
       const dateNow = Date.now();
 
@@ -92,10 +93,10 @@ export const vehiclesRouter = createTRPCRouter({
       const { data: config } = getConfig();
 
       const vehiclesPlace = vehicles.data[input.placeId as PlaceId];
-      if (!vehiclesPlace) return null; // This validates placeId
+      if (!vehiclesPlace) throw new TRPCError({ code: 'NOT_FOUND' });
 
       const vehicleName = vehiclesPlace.metadata.slugs[input.slug];
-      if (!vehicleName) return null; // This validates slug
+      if (!vehicleName) return null;
 
       const loadoutsPlace = loadouts.data[input.placeId as PlaceId];
       const kdrPlace = kdr.data[input.placeId as PlaceId];

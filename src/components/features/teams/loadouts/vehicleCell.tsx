@@ -33,7 +33,7 @@ export default function VehicleCell({
     : null;
 
   return (
-    <NextLink href={`/${initials}/vehicles/${vehicle.slug}`}>
+    <NextLink href={`/${initials}/vehicles/${vehicle.slug}`} prefetch={false}>
       <Stack
         _hover={{ backgroundColor: 'bg.emphasized' }}
         backgroundColor="bg.muted"

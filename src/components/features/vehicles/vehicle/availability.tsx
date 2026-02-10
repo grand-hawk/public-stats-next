@@ -63,7 +63,10 @@ export default function VehicleAvailability({
               {loadouts.map((loadout) => (
                 <Table.ColumnHeader key={loadout}>
                   <Link asChild variant="underline">
-                    <NextLink href={`/${initials}/loadouts/${slug(loadout)}`}>
+                    <NextLink
+                      href={`/${initials}/loadouts/${slug(loadout)}`}
+                      prefetch={false}
+                    >
                       {loadout}
                     </NextLink>
                   </Link>
@@ -85,7 +88,10 @@ export default function VehicleAvailability({
               >
                 <Table.Cell>
                   <Link asChild variant="underline">
-                    <NextLink href={`/${initials}/teams/${slug(team)}`}>
+                    <NextLink
+                      href={`/${initials}/teams/${slug(team)}`}
+                      prefetch={false}
+                    >
                       {team}
                     </NextLink>
                   </Link>

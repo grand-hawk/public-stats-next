@@ -55,6 +55,8 @@ export function createMarkdownRoute() {
 
     if (markdown === null) return { notFound: true };
 
+    res.setHeader('Link', `<${htmlUrlString}>; rel="canonical"`);
+    res.setHeader('X-Robots-Tag', 'noindex');
     res.setHeader('content-type', 'text/markdown; charset=utf-8');
     res.setHeader(
       'cache-control',

@@ -80,7 +80,7 @@ export const SearchLinkListItem = React.memo(function SearchLinkListItem({
       {active ? (
         <Span>{children}</Span>
       ) : (
-        <NextLink href={href} shallow>
+        <NextLink href={href} prefetch={false} shallow>
           {children}
         </NextLink>
       )}

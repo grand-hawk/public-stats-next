@@ -1,5 +1,4 @@
 import { Code, Flex, Grid, Span, Stack } from '@chakra-ui/react';
-import Head from 'next/head';
 import { useQueryState } from 'nuqs';
 import React from 'react';
 import slug from 'slug';
@@ -9,7 +8,6 @@ import WinrateChartRoot from '@/components/features/winrate/chart/root';
 import Layout from '@/components/layout/layout';
 import { Alert } from '@/components/ui/alert';
 import { usePlace } from '@/hooks/usePlace';
-import { formatTitle } from '@/utils/formatTitle';
 import { slugifyArray } from '@/utils/slugifyArray';
 import { trpc } from '@/utils/trpc';
 
@@ -49,60 +47,47 @@ export default function PlaceWinrate() {
 
   const resolvedLoadout = actualLoadout ?? firstLoadout ?? null;
 
-  const title = 'Winrate';
-
   return (
-    <>
-      <Head>
-        <title>{formatTitle(title, place.initials)}</title>
+    <Layout>
+      <Flex justifyContent="center">
+        <Stack as="main" gap={4} maxWidth="2xl" width="100%">
+          <Grid gap={2} templateColumns="repeat(2, 1fr)">
+            <SimpleSelect
+              items={loadoutOptions}
+              label="Loadout"
+              allowEmpty={false}
+              value={resolvedLoadout}
+              onValueChange={(value) => setLoadout(value ? slug(value) : null)}
+            />
+            <SimpleSelect
+              items={mapOptions}
+              label="Map"
+              noValueLabel="All"
+              value={actualMap}
+              onValueChange={(value) => setMap(value ? slug(value) : null)}
+            />
+          </Grid>
 
-        <meta content={title} property="og:title" />
-        <meta content={title} name="twitter:title" />
-      </Head>
+          <WinrateChartRoot loadout={resolvedLoadout} map={actualMap} />
 
-      <Layout>
-        <Flex justifyContent="center">
-          <Stack as="main" gap={4} maxWidth="2xl" width="100%">
-            <Grid gap={2} templateColumns="repeat(2, 1fr)">
-              <SimpleSelect
-                items={loadoutOptions}
-                label="Loadout"
-                allowEmpty={false}
-                value={resolvedLoadout}
-                onValueChange={(value) =>
-                  setLoadout(value ? slug(value) : null)
-                }
-              />
-              <SimpleSelect
-                items={mapOptions}
-                label="Map"
-                noValueLabel="All"
-                value={actualMap}
-                onValueChange={(value) => setMap(value ? slug(value) : null)}
-              />
-            </Grid>
-
-            <WinrateChartRoot loadout={resolvedLoadout} map={actualMap} />
-
-            <Alert
-              background="bg.subtle"
-              borderStartColor="blue.600"
-              borderStartWidth={4}
-              colorPalette="gray"
-              startElement
-              title="Calculation"
-              marginTop={4}
-            >
-              Daily team winrate (not cumulative). For each day, the winner is
-              the team with the highest final score (ties pick the first).{' '}
-              <Span whiteSpace="nowrap">
-                Winrate = <Code>wins / games x 100</Code>
-              </Span>{' '}
-              for that day.
-            </Alert>
-          </Stack>
-        </Flex>
-      </Layout>
-    </>
+          <Alert
+            background="bg.subtle"
+            borderStartColor="blue.600"
+            borderStartWidth={4}
+            colorPalette="gray"
+            startElement
+            title="Calculation"
+            marginTop={4}
+          >
+            Daily team winrate (not cumulative). For each day, the winner is the
+            team with the highest final score (ties pick the first).{' '}
+            <Span whiteSpace="nowrap">
+              Winrate = <Code>wins / games x 100</Code>
+            </Span>{' '}
+            for that day.
+          </Alert>
+        </Stack>
+      </Flex>
+    </Layout>
   );
 }

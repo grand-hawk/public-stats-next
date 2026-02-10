@@ -6,6 +6,7 @@ import {
   formatMarkdown,
 } from '@/server/utils/formatMarkdown';
 import { getNameFromInitials, getPlaceFromName } from '@/utils/placeUtils';
+import { getBaseUrl } from '@/utils/trpc';
 import { getConfig } from '@generated/config';
 import { getShells } from '@generated/shells';
 
@@ -58,6 +59,11 @@ export async function getServerSideProps({
 
   if (markdown === null) return { notFound: true };
 
+  const baseUrl = getBaseUrl();
+  const canonicalUrl = new URL(`${initials}/shells`, baseUrl).toString();
+
+  res.setHeader('Link', `<${canonicalUrl}>; rel="canonical"`);
+  res.setHeader('X-Robots-Tag', 'noindex');
   res.setHeader('content-type', 'text/markdown; charset=utf-8');
   res.setHeader(
     'cache-control',

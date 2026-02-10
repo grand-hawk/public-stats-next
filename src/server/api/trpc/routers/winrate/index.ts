@@ -1,3 +1,4 @@
+import { TRPCError } from '@trpc/server';
 import z from 'zod';
 
 import { createTRPCRouter, publicProcedure } from '@/server/api/trpc/context';
@@ -16,7 +17,7 @@ export const winrateRouter = createTRPCRouter({
       const winrate = getWinrate();
 
       const winrateMetadata = winrate.data[input.placeId as PlaceId]?.metadata;
-      if (!winrateMetadata) return null; // This validates placeId
+      if (!winrateMetadata) throw new TRPCError({ code: 'NOT_FOUND' });
 
       return {
         loadout: winrateMetadata.loadout,
@@ -36,7 +37,7 @@ export const winrateRouter = createTRPCRouter({
       const winrate = getWinrate();
 
       const winrateData = winrate.data[input.placeId as PlaceId]?.data;
-      if (!winrateData) return null; // This validates placeId
+      if (!winrateData) throw new TRPCError({ code: 'NOT_FOUND' });
 
       return winrateData[input.loadout]?.[input.map] || null;
     }),

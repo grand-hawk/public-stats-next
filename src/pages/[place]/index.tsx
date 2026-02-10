@@ -1,5 +1,4 @@
 import { Box, Flex, Grid, Heading, Text } from '@chakra-ui/react';
-import Head from 'next/head';
 import { useRouter } from 'next/router';
 import React from 'react';
 
@@ -10,10 +9,10 @@ import {
   tabs,
   toolsTabKeys,
 } from '@/components/layout/navigation/tabs';
+import PageMeta from '@/components/layout/pageMeta';
 import NavCard from '@/components/wiki/navCard';
 import SectionDivider from '@/components/wiki/sectionDivider';
 import { usePlace } from '@/hooks/usePlace';
-import { formatTitle } from '@/utils/formatTitle';
 
 export default function Place() {
   const place = usePlace();
@@ -24,19 +23,7 @@ export default function Place() {
   const description = `Vehicle stats, shell performance, team compositions, and more for ${place.placeName}.`;
 
   return (
-    <>
-      <Head>
-        <title>{formatTitle(null, place.initials)}</title>
-
-        <meta key="og:title" content={place.placeName} property="og:title" />
-        <meta key="description" content={description} name="description" />
-        <meta
-          key="og:description"
-          content={description}
-          property="og:description"
-        />
-      </Head>
-
+    <PageMeta exactTitle={`${place.placeName} Stats`} description={description}>
       <Layout overwriteTabLabel="">
         <Flex
           flexDirection="column"
@@ -176,6 +163,6 @@ export default function Place() {
           </div>
         </Flex>
       </Layout>
-    </>
+    </PageMeta>
   );
 }

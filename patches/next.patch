@@ -1,0 +1,32 @@
+diff --git a/dist/esm/shared/lib/router/router.js b/dist/esm/shared/lib/router/router.js
+index 851c3a3285948267dcf43ab7c6b5f5dc70edd050..cda538a1a90dadafacf1986ebe8404e9d5da4e10 100644
+--- a/dist/esm/shared/lib/router/router.js
++++ b/dist/esm/shared/lib/router/router.js
+@@ -1608,7 +1608,10 @@ export default class Router {
+                 url = formatWithValidation(parsed);
+             }
+         }
+-        const data = process.env.__NEXT_MIDDLEWARE_PREFETCH === 'strict' ? null : await withMiddlewareEffects({
++        const prefetchRoute = removeTrailingSlash(pathname);
++        const isKnownPage = pages.includes(prefetchRoute);
++        const isSsgRoute = await this.pageLoader._isSsg(prefetchRoute);
++        const data = process.env.__NEXT_MIDDLEWARE_PREFETCH === 'strict' || isKnownPage && !isSsgRoute ? null : await withMiddlewareEffects({
+             fetchData: ()=>fetchNextData({
+                     dataHref: this.pageLoader.getDataHref({
+                         href: formatWithValidation({
+diff --git a/dist/shared/lib/router/router.js b/dist/shared/lib/router/router.js
+index 816dd06095f9c10094dc64c2e8cf324a06312e49..bd2491bcb0c4f7feed5f618994689f146ff91e39 100644
+--- a/dist/shared/lib/router/router.js
++++ b/dist/shared/lib/router/router.js
+@@ -1636,7 +1636,10 @@ class Router {
+                 url = (0, _formaturl.formatWithValidation)(parsed);
+             }
+         }
+-        const data = process.env.__NEXT_MIDDLEWARE_PREFETCH === 'strict' ? null : await withMiddlewareEffects({
++        const prefetchRoute = (0, _removetrailingslash.removeTrailingSlash)(pathname);
++        const isKnownPage = pages.includes(prefetchRoute);
++        const isSsgRoute = await this.pageLoader._isSsg(prefetchRoute);
++        const data = process.env.__NEXT_MIDDLEWARE_PREFETCH === 'strict' || isKnownPage && !isSsgRoute ? null : await withMiddlewareEffects({
+             fetchData: ()=>fetchNextData({
+                     dataHref: this.pageLoader.getDataHref({
+                         href: (0, _formaturl.formatWithValidation)({

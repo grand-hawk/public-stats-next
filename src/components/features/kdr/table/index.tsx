@@ -48,7 +48,10 @@ export default function KdrTable({ range }: { range: keyof KdrPlaceData }) {
               <TeamIcon team={info.row.original.team} />
 
               <Link asChild>
-                <NextLink href={`/${initials}/vehicles/${vehicleSlug}`}>
+                <NextLink
+                  href={`/${initials}/vehicles/${vehicleSlug}`}
+                  prefetch={false}
+                >
                   {vehicle}
                 </NextLink>
               </Link>

@@ -1,5 +1,4 @@
 import { Flex, Stack } from '@chakra-ui/react';
-import Head from 'next/head';
 import { useRouter } from 'next/router';
 import React from 'react';
 import { GrDocumentMissing } from 'react-icons/gr';
@@ -8,10 +7,10 @@ import slugify from 'slug';
 import TeamHeader from '@/components/features/teams/header';
 import TeamLoadouts from '@/components/features/teams/loadouts';
 import Layout from '@/components/layout/layout';
+import PageMeta from '@/components/layout/pageMeta';
 import { EmptyState } from '@/components/ui/empty-state';
 import { usePlace } from '@/hooks/usePlace';
 import { useRouterQuery } from '@/hooks/useRouterQuery';
-import { formatTitle } from '@/utils/formatTitle';
 import { trpc } from '@/utils/trpc';
 
 export default function PlaceTeam() {
@@ -44,26 +43,7 @@ export default function PlaceTeam() {
     : undefined;
 
   return (
-    <>
-      <Head>
-        <title>{formatTitle(title, place.initials)}</title>
-
-        <meta key="og:title" content={title} property="og:title" />
-        <meta key="twitter:title" content={title} name="twitter:title" />
-
-        {description && (
-          <>
-            <meta key="description" content={description} name="description" />
-            <meta
-              key="og:description"
-              content={description}
-              property="og:description"
-            />
-            <meta content={description} name="twitter:description" />
-          </>
-        )}
-      </Head>
-
+    <PageMeta title={title} description={description}>
       <Layout noPadding>
         {team ? (
           <Flex
@@ -89,6 +69,6 @@ export default function PlaceTeam() {
           </Flex>
         )}
       </Layout>
-    </>
+    </PageMeta>
   );
 }

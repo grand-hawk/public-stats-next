@@ -68,7 +68,7 @@ export default function SearchList({
     initialOffset,
     getItemKey: (index) => {
       const item = listItems[index];
-      if (item.type === 'divider') return `divider:${item.label}`;
+      if (item.type === 'divider') return `divider:${index}:${item.label}`;
       return item.value.slug;
     },
   });

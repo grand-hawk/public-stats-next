@@ -7,7 +7,6 @@ import DevelopmentOverlay from '@/components/development/overlay';
 import InternalHead from '@/components/layout/head';
 import { ChakraProvider } from '@/components/providers/chakra';
 import Umami from '@/components/providers/umami';
-import UpdateListener from '@/components/providers/updateListener';
 import { Toaster } from '@/components/ui/toaster';
 import { useDebugEnabled } from '@/hooks/useDebugEnv';
 import { trpc } from '@/utils/trpc';
@@ -35,7 +34,6 @@ export function App({ Component, pageProps }: AppProps) {
         </NuqsAdapter>
 
         <Toaster />
-        <UpdateListener />
 
         {debugEnabled && <DevelopmentOverlay />}
       </ChakraProvider>

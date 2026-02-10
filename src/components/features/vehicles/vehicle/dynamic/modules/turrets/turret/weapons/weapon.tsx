@@ -114,6 +114,7 @@ export default function Weapon({
                     <Link asChild color="inherit" variant="underline">
                       <NextLink
                         href={`/${place.initials}/shells/${nameSlug}-${slug(ammo)}`}
+                        prefetch={false}
                       >
                         {ammo}
                       </NextLink>

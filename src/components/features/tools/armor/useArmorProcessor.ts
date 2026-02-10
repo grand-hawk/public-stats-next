@@ -195,7 +195,7 @@ export function useArmorProcessor(
     if (!rawData) return;
 
     let min = Infinity;
-    let max = -Infinity;
+    const thicknesses: number[] = [];
 
     for (const pixel of rawData.pixels) {
       if (!pixel) continue;
@@ -209,17 +209,23 @@ export function useArmorProcessor(
 
       if (sum > 0 || pixel.layers.length > 0) {
         if (sum < min) min = sum;
-        if (sum > max) max = sum;
+        thicknesses.push(sum);
       }
     }
 
-    if (min === Infinity) {
-      min = 0;
-      max = 1000;
+    if (min === Infinity || thicknesses.length === 0) {
+      setDetectedMin(0);
+      setDetectedMax(1000);
+      return;
     }
 
+    thicknesses.sort((a, b) => a - b);
+    const percentileIndex = Math.floor(thicknesses.length * 0.95);
+    const percentile95 =
+      thicknesses[percentileIndex] ?? thicknesses[thicknesses.length - 1];
+
     setDetectedMin(min);
-    setDetectedMax(max);
+    setDetectedMax(percentile95);
   }, [rawData, ricochetAngle, minDepth, maxDepth]);
 
   React.useEffect(() => {

@@ -1,3 +1,4 @@
+import { TRPCError } from '@trpc/server';
 import z from 'zod';
 
 import { createTRPCRouter, publicProcedure } from '@/server/api/trpc/context';
@@ -27,7 +28,7 @@ export const shellsRouter = createTRPCRouter({
       const shells = getShells();
 
       const shellsData = shells.data[input.placeId as PlaceId]?.data;
-      if (!shellsData) return {}; // This validates placeId
+      if (!shellsData) throw new TRPCError({ code: 'NOT_FOUND' });
 
       return Object.fromEntries(
         Object.entries(shellsData)
@@ -57,13 +58,13 @@ export const shellsRouter = createTRPCRouter({
       const config = getConfig();
 
       const shellsPlace = shells.data[input.placeId as PlaceId];
-      if (!shellsPlace) return null; // This validates placeId
+      if (!shellsPlace) throw new TRPCError({ code: 'NOT_FOUND' });
 
       const [weapon, shellName] = shellsPlace.metadata.slugs[input.slug] || [
         null,
         null,
       ];
-      if (!weapon || !shellName) return null; //  This validates slug
+      if (!weapon || !shellName) return null;
 
       const shell = shellsPlace.data[weapon].find(
         (shell) => shell.name === shellName,

@@ -32,7 +32,7 @@ export default function IconLink({
       {disabled ? (
         <div aria-hidden>{children}</div>
       ) : (
-        <NextLink href={href} {...linkProps}>
+        <NextLink href={href} prefetch={false} {...linkProps}>
           {children}
         </NextLink>
       )}

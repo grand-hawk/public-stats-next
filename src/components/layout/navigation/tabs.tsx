@@ -12,6 +12,7 @@ import type { IconType } from 'react-icons/lib';
 
 export interface Tab {
   label: string;
+  longLabel?: string;
   path: string;
   icon: IconType | ((props: IconProps) => ReactNode);
   color: string;
@@ -61,8 +62,7 @@ export const tabs: Record<string, Tab> = {
     label: 'K/D table',
     path: '/kdr',
     color: 'green.500',
-    description:
-      'View the kill-to-death ratios for all vehicles and shells in the game.',
+    description: 'View the kill-to-death ratios for all vehicles in the game.',
     icon: (props: IconProps) => (
       <Icon as={ImTable} height={5} width={5} {...props} />
     ),
@@ -79,6 +79,7 @@ export const tabs: Record<string, Tab> = {
   },
   armor: {
     label: 'Armor',
+    longLabel: 'Armor visualizer',
     path: '/armor',
     color: 'teal.500',
     description:

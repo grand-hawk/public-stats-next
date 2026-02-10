@@ -16,16 +16,10 @@ import {
 import { MdRefresh } from 'react-icons/md';
 
 import MTC from '@/components/icons/mtc';
-import {
-  primaryTabKeys,
-  secondaryTabKeys,
-  tabs,
-  toolsTabKeys,
-} from '@/components/layout/navigation/tabs';
+import { primaryTabKeys, tabs } from '@/components/layout/navigation/tabs';
 import SidebarButton from '@/components/layout/sidebar/sidebarButton';
-import SidebarGroup from '@/components/layout/sidebar/sidebarGroup';
-import SidebarItem from '@/components/layout/sidebar/sidebarItem';
 import SidebarLicense from '@/components/layout/sidebar/sidebarLicense';
+import SidebarNav from '@/components/layout/sidebar/sidebarNav';
 import {
   DrawerBackdrop,
   DrawerBody,
@@ -59,59 +53,10 @@ export default function Sidebar() {
 
   const navContent = (
     <Flex direction="column" gap={1} flex={1}>
-      <SidebarGroup collapsed={isCollapsed}>
-        {primaryTabKeys.map((key) => {
-          const tab = tabs[key];
-          return (
-            <SidebarItem
-              key={key}
-              label={tab.label}
-              href={`/${initials}${tab.path}`}
-              icon={tab.icon}
-              color={tab.color}
-              active={currentTab?.path === tab.path}
-              collapsed={isCollapsed}
-              onClick={() => setMobileOpen(false)}
-            />
-          );
-        })}
-      </SidebarGroup>
-
-      <SidebarGroup label="Analytics" collapsed={isCollapsed}>
-        {secondaryTabKeys.map((key) => {
-          const tab = tabs[key];
-          return (
-            <SidebarItem
-              key={key}
-              label={tab.label}
-              href={`/${initials}${tab.path}`}
-              icon={tab.icon}
-              color={tab.color}
-              active={currentTab?.path === tab.path}
-              collapsed={isCollapsed}
-              onClick={() => setMobileOpen(false)}
-            />
-          );
-        })}
-      </SidebarGroup>
-
-      <SidebarGroup label="Tools" collapsed={isCollapsed}>
-        {toolsTabKeys.map((key) => {
-          const tab = tabs[key];
-          return (
-            <SidebarItem
-              key={key}
-              label={tab.label}
-              href={`/${initials}${tab.path}`}
-              icon={tab.icon}
-              color={tab.color}
-              active={currentTab?.path === tab.path}
-              collapsed={isCollapsed}
-              onClick={() => setMobileOpen(false)}
-            />
-          );
-        })}
-      </SidebarGroup>
+      <SidebarNav
+        collapsed={isCollapsed}
+        onNavigate={() => setMobileOpen(false)}
+      />
     </Flex>
   );
 
@@ -147,56 +92,7 @@ export default function Sidebar() {
 
           <DrawerBody padding={0} paddingY={2}>
             <Flex direction="column" gap={1} height="100%">
-              <SidebarGroup>
-                {primaryTabKeys.map((key) => {
-                  const tab = tabs[key];
-                  return (
-                    <SidebarItem
-                      key={key}
-                      label={tab.label}
-                      href={`/${initials}${tab.path}`}
-                      icon={tab.icon}
-                      color={tab.color}
-                      active={currentTab?.path === tab.path}
-                      onClick={() => setMobileOpen(false)}
-                    />
-                  );
-                })}
-              </SidebarGroup>
-
-              <SidebarGroup label="Analytics">
-                {secondaryTabKeys.map((key) => {
-                  const tab = tabs[key];
-                  return (
-                    <SidebarItem
-                      key={key}
-                      label={tab.label}
-                      href={`/${initials}${tab.path}`}
-                      icon={tab.icon}
-                      color={tab.color}
-                      active={currentTab?.path === tab.path}
-                      onClick={() => setMobileOpen(false)}
-                    />
-                  );
-                })}
-              </SidebarGroup>
-
-              <SidebarGroup label="Tools">
-                {toolsTabKeys.map((key) => {
-                  const tab = tabs[key];
-                  return (
-                    <SidebarItem
-                      key={key}
-                      label={tab.label}
-                      href={`/${initials}${tab.path}`}
-                      icon={tab.icon}
-                      color={tab.color}
-                      active={currentTab?.path === tab.path}
-                      onClick={() => setMobileOpen(false)}
-                    />
-                  );
-                })}
-              </SidebarGroup>
+              <SidebarNav onNavigate={() => setMobileOpen(false)} />
 
               <SidebarLicense marginTop="auto" borderTopWidth="1px" />
             </Flex>
