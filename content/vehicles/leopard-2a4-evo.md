@@ -6,3 +6,10 @@ The **Leopard 2A4 Evo** is a Main Battle Tank and an upgrade package applied to 
 Main armament is the **120mm Rh120 L/44** with DM53A1 and DM12, backed by a coaxial and loader’s **7.62mm MG3**. The gunner has a laser rangefinder, FCS with lead, and Gen 1 green thermals (12x); the commander has a laser CITV at 2x and 8x. The turret is stabilised and fitted with smoke grenades.
 
 ## Armor
+
+Left cheek: 700-1700
+Right cheek: 600-1600
+Lower front plate: 65-700
+Upper front plate: 350-600
+Hull side: 36-245
+Mantlet: 111-800

@@ -6,3 +6,10 @@ The **Leopard 2A4 140MM** is a Main Battle Tank based on the Leopard 2A4 chassis
 The 140 mm gun fires APFSDS, HEAT-MP, and VT rounds with a 7 s reload from a 15-round bustle. Fire control includes laser rangefinder, FCS with lead, and Gen 1 green thermals at 12x. A coaxial **7.62mm MG3** and smoke grenades round out the fit; the turret is stabilised.
 
 ## Armor
+
+Left cheek: 525-1400
+Right cheek: 464-1400
+Lower front plate: 80-520
+Upper front plate: 210-400
+Hull side: 59-89
+Mantlet: 410-524

@@ -6,3 +6,10 @@ The **Leopard 2A4** is a Main Battle Tank and the most numerous production varia
 Main armament is the **120mm Rh120 L/44** with DM12 and DM33, plus a coaxial and loader’s **7.62mm MG3**. The gunner has a laser rangefinder, FCS with lead, and Gen 1 green thermals at 12x; the commander has a laser CITV at 2x and 8x. The turret is stabilised and carries smoke grenades.
 
 ## Armor
+
+Left cheek: 525-1200
+Right cheek: 464-1200
+Lower front plate: 80-280
+Upper front plate: 210-400
+Hull side: 36-59
+Mantlet: 369-484
