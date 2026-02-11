@@ -8,3 +8,4 @@
 | ------- | -------------------------------------------------------- |
 | prod    | [multicrew.wiki](https://multicrew.wiki)                 |
 | staging | [staging.multicrew.wiki](https://staging.multicrew.wiki) |
+| next    | [next.multicrew.wiki](https://next.multicrew.wiki)       |

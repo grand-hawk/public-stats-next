@@ -23,7 +23,7 @@ import { capitalizeFirst } from '@/utils/capitalizeFirst';
 
 import type { BoxProps, IconProps } from '@chakra-ui/react';
 
-const COLLAPSED_MAX_HEIGHT = 200;
+const COLLAPSED_MAX_HEIGHT = 150;
 
 const classIcons: Record<string, (props: IconProps) => React.ReactNode> = {
   Engineer: EngineerIcon,
@@ -33,7 +33,7 @@ const classIcons: Record<string, (props: IconProps) => React.ReactNode> = {
 
 const baseContentProps: BoxProps = {
   fontSize: 'sm',
-  fontWeight: 'light',
+  fontWeight: 'normal',
   id: 'vehicle-page-description',
   whiteSpace: 'pre-wrap',
   'aria-label': 'Description',
@@ -52,6 +52,7 @@ export default function VehicleGeneralInformation({
   const [isExpanded, setIsExpanded] = React.useState(false);
   const [needsExpand, setNeedsExpand] = React.useState(false);
   const [contentHeight, setContentHeight] = React.useState(0);
+  const [skipTransition, setSkipTransition] = React.useState(false);
 
   React.useEffect(() => {
     if (!contentRef.current) return;
@@ -59,6 +60,15 @@ export default function VehicleGeneralInformation({
     setContentHeight(height);
     setNeedsExpand(height > COLLAPSED_MAX_HEIGHT);
   }, [customDescription]);
+
+  React.useEffect(() => {
+    setIsExpanded(false);
+    setSkipTransition(true);
+    const id = requestAnimationFrame(() => {
+      requestAnimationFrame(() => setSkipTransition(false));
+    });
+    return () => cancelAnimationFrame(id);
+  }, [vehicle.info.slug]);
 
   return (
     <>
@@ -79,13 +89,13 @@ export default function VehicleGeneralInformation({
                     maxHeight: isExpanded
                       ? `${contentHeight}px`
                       : `${COLLAPSED_MAX_HEIGHT}px`,
-                    transition: 'max-height 0.3s ease',
+                    transition: skipTransition ? 'none' : 'max-height 0.3s ease',
                   }}
                 >
                   <Box asChild {...baseContentProps}>
                     <Quote asChild>
                       <Prose
-                        color="fg"
+                        color="fg/90"
                         data-prose
                         size="md"
                         css={{
@@ -130,8 +140,9 @@ export default function VehicleGeneralInformation({
                     onClick={() => setIsExpanded((prev) => !prev)}
                     marginTop={1}
                     alignSelf="start"
+                    focusRing="none"
                   >
-                    {isExpanded ? 'Show less' : 'Read more'}
+                    {isExpanded ? 'Collapse...' : 'Expand...'}
                   </Link>
                 )}
               </div>

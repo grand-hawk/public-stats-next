@@ -43,6 +43,12 @@ export default function VehicleGallery() {
     return () => clearTimeout(timeout);
   }, [selectedView]);
 
+  React.useEffect(() => {
+    setSelectedView('perspective');
+    setIsTransparent(false);
+    setShowOverlay(false);
+  }, [vehicle.info.slug]);
+
   const transparentSwitch = (
     <HStack gap={2}>
       <Box fontSize="xs" color="fg.muted">

@@ -155,13 +155,10 @@ export function DynamicDataProvider({
     prevAddedIdsRef.current = addedModuleIds;
   }, [addedModuleIds]);
 
-  // Reset states when vehicle changes
-  React.useEffect(() => {
-    if (selectedLoadout !== null) setSelectedLoadout(null);
-    if (Object.keys(enabledAddons).length > 0) setEnabledAddons({});
+  React.useLayoutEffect(() => {
+    setSelectedLoadout(null);
+    setEnabledAddons({});
     prevAddedIdsRef.current = new Set();
-
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [vehicle.info.slug]);
 
   const contextValue = React.useMemo(

@@ -10,7 +10,7 @@ const CONFIG_PATH = 'content/config.yml';
 const consola = createConsola({ formatOptions: { date: false } });
 
 const config = parse(await readFile(CONFIG_PATH, 'utf-8'));
-const sections = config.sections;
+const sections = config.vehicles.sections;
 const allowedNames = sections.map((s) => s.name);
 const rulesByName = Object.fromEntries(
   sections
@@ -80,12 +80,21 @@ for (const filepath of files) {
         `Line ${num}: unknown section "## ${sectionName}" (allowed: ${allowedNames.join(', ')})`,
       );
     if (seenSections.has(sectionName))
-      errors.push(`Line ${num}: duplicate section "## ${sectionName}" (first at line ${seenSections.get(sectionName)})`);
+      errors.push(
+        `Line ${num}: duplicate section "## ${sectionName}" (first at line ${seenSections.get(sectionName)})`,
+      );
     else seenSections.set(sectionName, num);
   }
 
-  // validate line rules within each section
+  // check all required sections are present
+  for (const name of allowedNames) {
+    if (!seenSections.has(name))
+      errors.push(`Missing required section "## ${name}"`);
+  }
+
+  // validate line rules and collect Description content
   let currentSection = null;
+  const sectionContent = new Map();
   for (let i = 0; i < lines.length; i += 1) {
     const line = lines[i];
     const h2Match = line.match(/^## ([^#].*)$/);
@@ -95,15 +104,38 @@ for (const filepath of files) {
       continue;
     }
 
-    // skip non-section content (above first ##), headings, and blank lines
-    if (!currentSection || /^#{1,6} /.test(line) || line.trim() === '')
+    // skip headings and blank lines
+    if (/^#{1,6} /.test(line) || line.trim() === '') continue;
+
+    // content outside of any ## section
+    if (!currentSection) {
+      errors.push(
+        `Line ${i + 1}: content outside of a section — should be under a ## heading`,
+      );
       continue;
+    }
 
     const rule = rulesByName[currentSection];
     if (rule && !rule.test(line.trim()))
       errors.push(
         `Line ${i + 1}: content in "${currentSection}" doesn't match required format — got "${line.trim()}"`,
       );
+
+    if (!sectionContent.has(currentSection))
+      sectionContent.set(currentSection, []);
+    sectionContent.get(currentSection).push(line.trim());
+  }
+
+  const vehicleName = lines[0]?.replace(/^# /, '').trim() ?? '';
+  const descriptionText = sectionContent.get('Description')?.join(' ') ?? '';
+  if (
+    vehicleName &&
+    descriptionText.trim() &&
+    !descriptionText.toLowerCase().includes(vehicleName.toLowerCase())
+  ) {
+    errors.push(
+      `Description must mention the vehicle name "${vehicleName}" when not empty`,
+    );
   }
 
   report(filepath, errors);

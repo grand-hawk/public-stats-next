@@ -2,4 +2,7 @@
 
 ## Description
 
+The **Object 195** is a Prototype Main Battle Tank stemming from Russian next-generation tank development, sharing design philosophy with the T-14 Armata — unmanned turret, crew in the hull, and heavy main armament. The program aimed to field a 152 mm gun and improved protection; the Object 195 in-game reflects this as a 60 t, three-crew (driver, gunner, commander) vehicle with an **A-85-3A** diesel producing 1,500 hp for 25 hp/t and a symmetrical 70 km/h forward and reverse.\
+The **152 mm 2A83** is fed by an autoloader (7.1 s cycle) with Grifel-2 and Grifel-3 ammunition, and a **30 mm 2A42M** is mounted coaxially. It is one of the few vehicles with an active protection system: 10 launchers with 0.15 s reaction time and 40% KE reduction. The gunner has a laser rangefinder, Gen 3 thermals, FCS with lead and tracking, plus LWS and MAWS; the commander has a thermals-equipped CITV and stabilizer.
+
 ## Armor

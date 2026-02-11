@@ -1,5 +1,0 @@
-# Karl-Gerät
-
-## Description
-
-## Armor
