@@ -14,8 +14,8 @@ importers:
   .:
     dependencies:
       '@chakra-ui/charts':
-        specifier: ^3.32.0
-        version: 3.32.0(@chakra-ui/react@3.32.0(@emotion/react@11.14.0(@types/react@19.2.4)(react@19.2.4))(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(recharts@3.7.0(@types/react@19.2.4)(react-dom@19.2.4(react@19.2.4))(react-is@18.3.1)(react@19.2.4)(redux@5.0.1))
+        specifier: ^3.33.0
+        version: 3.33.0(@chakra-ui/react@3.32.0(@emotion/react@11.14.0(@types/react@19.2.4)(react@19.2.4))(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(recharts@3.7.0(@types/react@19.2.4)(react-dom@19.2.4(react@19.2.4))(react-is@18.3.1)(react@19.2.4)(redux@5.0.1))
       '@chakra-ui/react':
         specifier: ^3.32.0
         version: 3.32.0(@emotion/react@11.14.0(@types/react@19.2.4)(react@19.2.4))(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
@@ -302,8 +302,8 @@ packages:
     resolution: {integrity: sha512-qQ5m48eI/MFLQ5PxQj4PFaprjyCTLI37ElWMmNs0K8Lk3dVeOdNpB3ks8jc7yM5CDmVC73eMVk/trk3fgmrUpA==}
     engines: {node: '>=6.9.0'}
 
-  '@chakra-ui/charts@3.32.0':
-    resolution: {integrity: sha512-yH0uIpWRs8vlgRUD3J2CCWlFQve/zMcutM1glSvDyNqMiY048CjHMb/l9TdrRQpgperWi8clt7w0PKgy1LChuw==}
+  '@chakra-ui/charts@3.33.0':
+    resolution: {integrity: sha512-Ns/hZRdHx2xLr7B9wAESDFv4lloTRr69CFgfpAPf9YUd1ECg8551zAFPRplUBLDfAdNIrZyjTHEli7oIrYxODA==}
     peerDependencies:
       '@chakra-ui/react': '>=3'
       react: '>=18'
@@ -3815,7 +3815,7 @@ snapshots:
       '@babel/helper-string-parser': 7.27.1
       '@babel/helper-validator-identifier': 7.28.5
 
-  '@chakra-ui/charts@3.32.0(@chakra-ui/react@3.32.0(@emotion/react@11.14.0(@types/react@19.2.4)(react@19.2.4))(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(recharts@3.7.0(@types/react@19.2.4)(react-dom@19.2.4(react@19.2.4))(react-is@18.3.1)(react@19.2.4)(redux@5.0.1))':
+  '@chakra-ui/charts@3.33.0(@chakra-ui/react@3.32.0(@emotion/react@11.14.0(@types/react@19.2.4)(react@19.2.4))(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(recharts@3.7.0(@types/react@19.2.4)(react-dom@19.2.4(react@19.2.4))(react-is@18.3.1)(react@19.2.4)(redux@5.0.1))':
     dependencies:
       '@chakra-ui/react': 3.32.0(@emotion/react@11.14.0(@types/react@19.2.4)(react@19.2.4))(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       react: 19.2.4
