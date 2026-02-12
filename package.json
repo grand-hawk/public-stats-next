@@ -23,6 +23,7 @@
     "@emotion/react": "^11.14.0",
     "@robertsspaceindustries/sub": "^1.0.9",
     "@t3-oss/env-nextjs": "^0.13.10",
+    "@tanstack/react-query": "^5.90.21",
     "@tanstack/react-table": "^8.21.3",
     "@tanstack/react-virtual": "^3.13.18",
     "@trpc/client": "11.8.0",

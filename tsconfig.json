@@ -1,7 +1,11 @@
 {
   "compilerOptions": {
     "target": "esnext",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -15,8 +19,12 @@
     "allowImportingTsExtensions": true,
     "incremental": true,
     "paths": {
-      "@/*": ["./src/*"],
-      "@generated/*": ["./generated/*"]
+      "@/*": [
+        "./src/*"
+      ],
+      "@generated/*": [
+        "./generated/*"
+      ]
     },
     "plugins": [
       {
@@ -33,7 +41,10 @@
     "generated/**.d.ts",
     "scripts/generate/index.mts",
     "scripts/generate/sse.ts",
-    "src/images.js"
+    "src/images.js",
+    ".next/dev/types/**/*.ts"
   ],
-  "exclude": ["node_modules"]
+  "exclude": [
+    "node_modules"
+  ]
 }

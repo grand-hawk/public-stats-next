@@ -1,14 +1,13 @@
 import { markdownTable } from 'markdown-table';
 import { NextResponse } from 'next/server';
-import slug from 'slug';
 
 import { KDR_RANGE_ITEMS } from '@/components/features/kdr/rangeSelect';
 import { createCache } from '@/server/utils/createCache';
+import { createMarkdownRouteHandler } from '@/server/utils/createMarkdownRoute';
 import {
   escapeMarkdownLink,
   formatMarkdown,
 } from '@/server/utils/formatMarkdown';
-import { createMarkdownRouteHandler } from '@/server/utils/createMarkdownRoute';
 import { getNameFromInitials, getPlaceFromName } from '@/utils/placeUtils';
 import { getBaseUrl } from '@/utils/trpc';
 import { getConfig } from '@generated/config';
@@ -17,10 +16,11 @@ import { getLoadouts } from '@generated/loadouts';
 import { getShells } from '@generated/shells';
 import { getVehicles } from '@generated/vehicles';
 
+import type { ListVehicle } from '@/server/api/trpc/routers/vehicles';
 import type { PlaceName } from '@generated/config';
 import type { KdrPlaceData, KdrPlaceDataVehicle } from '@generated/kdr';
-import type { ListVehicle } from '@/server/api/trpc/routers/vehicles';
 import type { NextRequest } from 'next/server';
+import type Cache from 'stale-lru-cache';
 
 // --- Cache factories for each md route type ---
 
@@ -187,12 +187,12 @@ async function revalidateLoadouts(placeName: PlaceName) {
 }
 
 // Caches for each route type
-const indexCache = createCache(revalidateIndex);
-const kdrCache = createCache(revalidateKdr);
-const vehiclesCache = createCache(revalidateVehicles);
-const shellsCache = createCache(revalidateShells);
-const teamsCache = createCache(revalidateTeams);
-const loadoutsCache = createCache(revalidateLoadouts);
+const indexCache = createCache<PlaceName, string | null>(revalidateIndex);
+const kdrCache = createCache<PlaceName, string | null>(revalidateKdr);
+const vehiclesCache = createCache<PlaceName, string | null>(revalidateVehicles);
+const shellsCache = createCache<PlaceName, string | null>(revalidateShells);
+const teamsCache = createCache<PlaceName, string | null>(revalidateTeams);
+const loadoutsCache = createCache<PlaceName, string | null>(revalidateLoadouts);
 
 function mdResponse(markdown: string, canonicalUrl: string) {
   return new Response(markdown, {
@@ -206,7 +206,7 @@ function mdResponse(markdown: string, canonicalUrl: string) {
 }
 
 async function getCachedMarkdown(
-  cache: ReturnType<typeof createCache<PlaceName, string | null>>,
+  cache: Cache<PlaceName, string | null>,
   revalidateFn: (placeName: PlaceName) => Promise<string | null>,
   placeName: PlaceName,
 ) {

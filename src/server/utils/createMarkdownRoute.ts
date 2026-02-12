@@ -18,7 +18,7 @@ export function createMarkdownRouteHandler() {
     return processHtmlToMarkdown(html);
   }
 
-  const cache = new Cache({
+  const cache = new Cache<string, string | null>({
     maxAge: env.NODE_ENV === 'development' ? 0 : 3600,
     staleWhileRevalidate: env.NODE_ENV === 'development' ? 0 : 86400,
     revalidate,
@@ -51,13 +51,13 @@ export function createMarkdownRouteHandler() {
       return new Response(null, { status: 404 });
     }
 
-    let markdown = await cache.get(htmlUrlString);
+    let markdown: string | null | undefined = await cache.get(htmlUrlString);
     if (!markdown) {
       markdown = await revalidate(htmlUrlString);
       cache.set(htmlUrlString, markdown);
     }
 
-    if (markdown === null) {
+    if (!markdown) {
       return new Response(null, { status: 404 });
     }
 

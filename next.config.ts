@@ -11,6 +11,8 @@ const nextConfig: NextConfig = {
   devIndicators: false,
   poweredByHeader: false,
 
+  serverExternalPackages: ['html-to-markdown-node'],
+
   experimental: {
     optimizePackageImports: ['@chakra-ui/react'],
   },
