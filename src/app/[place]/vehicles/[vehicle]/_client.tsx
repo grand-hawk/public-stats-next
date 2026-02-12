@@ -8,11 +8,8 @@ import stripMarkdown from 'remove-markdown';
 import slug from 'slug';
 
 import Vehicle from '@/components/features/vehicles';
-import VehiclesSearchSidebar from '@/components/features/vehicles/searchSidebar';
 import { getKeywords } from '@/components/layout/head';
-import Layout from '@/components/layout/layout';
 import PageMeta from '@/components/layout/pageMeta';
-import SearchLayout from '@/components/layout/searchLayout/layout';
 import { EmptyState } from '@/components/ui/empty-state';
 import { SectionMarkersProvider } from '@/hooks/providers/sectionMarkers';
 import { usePlace } from '@/hooks/usePlace';
@@ -84,43 +81,39 @@ export default function PlaceVehicle() {
       )}
 
       <SectionMarkersProvider>
-        <Layout noPadding>
-          <SearchLayout sidebar={<VehiclesSearchSidebar />}>
-            {vehicle ? (
-              <Flex
-                justifyContent="center"
-                marginBottom={{
-                  base: 4,
-                  md: 0,
-                }}
-                padding={{
-                  base: 0,
-                  md: 2,
-                  lg: 4,
-                }}
-              >
-                <Stack
-                  aria-describedby="vehicle-page-description"
-                  aria-labelledby="vehicle-page-title"
-                  as="article"
-                  gap={4}
-                  maxWidth="4xl"
-                  width="100%"
-                  data-md-target
-                >
-                  <Vehicle vehicle={vehicle} />
-                </Stack>
-              </Flex>
-            ) : (
-              <Flex alignItems="center" height="100%">
-                <EmptyState
-                  icon={<GrDocumentMissing />}
-                  title="Vehicle not found"
-                />
-              </Flex>
-            )}
-          </SearchLayout>
-        </Layout>
+        {vehicle ? (
+          <Flex
+            justifyContent="center"
+            marginBottom={{
+              base: 4,
+              md: 0,
+            }}
+            padding={{
+              base: 0,
+              md: 2,
+              lg: 4,
+            }}
+          >
+            <Stack
+              aria-describedby="vehicle-page-description"
+              aria-labelledby="vehicle-page-title"
+              as="article"
+              gap={4}
+              maxWidth="4xl"
+              width="100%"
+              data-md-target
+            >
+              <Vehicle vehicle={vehicle} />
+            </Stack>
+          </Flex>
+        ) : (
+          <Flex alignItems="center" height="100%">
+            <EmptyState
+              icon={<GrDocumentMissing />}
+              title="Vehicle not found"
+            />
+          </Flex>
+        )}
       </SectionMarkersProvider>
     </PageMeta>
   );
