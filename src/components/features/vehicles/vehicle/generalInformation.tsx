@@ -89,7 +89,9 @@ export default function VehicleGeneralInformation({
                     maxHeight: isExpanded
                       ? `${contentHeight}px`
                       : `${COLLAPSED_MAX_HEIGHT}px`,
-                    transition: skipTransition ? 'none' : 'max-height 0.3s ease',
+                    transition: skipTransition
+                      ? 'none'
+                      : 'max-height 0.3s ease',
                   }}
                 >
                   <Box asChild {...baseContentProps}>
