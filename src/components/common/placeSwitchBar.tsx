@@ -67,14 +67,17 @@ export default function PlaceSwitchBar({
           }}
           onValueChange={(details) => {
             const selectedInitials = details.value[0];
-            if (selectedInitials !== currentInitials)
-              router.push({
-                pathname: router.pathname,
-                query: {
-                  ...router.query,
-                  place: selectedInitials,
-                },
-              });
+            if (selectedInitials !== currentInitials) {
+              if (router.pathname === '/') router.push(`/${selectedInitials}`);
+              else
+                router.push({
+                  pathname: router.pathname,
+                  query: {
+                    ...router.query,
+                    place: selectedInitials,
+                  },
+                });
+            }
           }}
         >
           <Select.HiddenSelect />
