@@ -145,11 +145,10 @@ for (const filepath of files) {
     vehicleName &&
     descriptionText.trim() &&
     !descriptionText.toLowerCase().includes(vehicleName.toLowerCase())
-  ) {
+  )
     errors.push(
       `Description must mention the vehicle name "${vehicleName}" when not empty`,
     );
-  }
 
   report(filepath, errors);
 }
