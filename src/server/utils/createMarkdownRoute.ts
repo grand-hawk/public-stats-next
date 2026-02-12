@@ -6,8 +6,6 @@ import { processHtmlToMarkdown } from '@/server/utils/processHtmlTomarkdown';
 import { getExtension } from '@/utils/extensions';
 import { getBaseUrl } from '@/utils/trpc';
 
-import type { NextRequest } from 'next/server';
-
 export function createMarkdownRouteHandler() {
   async function revalidate(htmlUrl: string) {
     const htmlResponse = await ky.get(htmlUrl, { throwHttpErrors: false });
@@ -25,7 +23,7 @@ export function createMarkdownRouteHandler() {
   });
 
   return async function handler(
-    _request: NextRequest,
+    _request: Request,
     resolvedUrl: string,
   ): Promise<Response> {
     const [urlPath] = resolvedUrl.split('?');
