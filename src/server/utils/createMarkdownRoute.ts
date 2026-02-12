@@ -30,9 +30,8 @@ export function createMarkdownRouteHandler() {
   ): Promise<Response> {
     const [urlPath] = resolvedUrl.split('?');
 
-    if (getExtension(urlPath) !== '.md') {
+    if (getExtension(urlPath) !== '.md')
       return new Response(null, { status: 404 });
-    }
 
     const htmlUrl = new URL(
       urlPath.replace(/^\/md\//, '').replace(/\.md$/, ''),
@@ -47,9 +46,7 @@ export function createMarkdownRouteHandler() {
       .head(htmlUrlString)
       .then((response) => response.ok)
       .catch(() => false);
-    if (!headSuccess) {
-      return new Response(null, { status: 404 });
-    }
+    if (!headSuccess) return new Response(null, { status: 404 });
 
     let markdown: string | null | undefined = await cache.get(htmlUrlString);
     if (!markdown) {
@@ -57,9 +54,7 @@ export function createMarkdownRouteHandler() {
       cache.set(htmlUrlString, markdown);
     }
 
-    if (!markdown) {
-      return new Response(null, { status: 404 });
-    }
+    if (!markdown) return new Response(null, { status: 404 });
 
     return new Response(markdown, {
       headers: {

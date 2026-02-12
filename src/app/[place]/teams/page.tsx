@@ -13,9 +13,8 @@ export default async function PlaceTeamsPage({
   const { place: initials } = await params;
   const { helpers, place } = await prefetchPlace(initials);
 
-  if (place) {
+  if (place)
     await helpers.teams.list.prefetch({ placeId: place.placeId });
-  }
 
   return (
     <HydrationBoundary state={dehydrate(helpers.queryClient)}>
