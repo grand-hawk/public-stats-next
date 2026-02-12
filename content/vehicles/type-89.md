@@ -6,3 +6,10 @@ The **Type 89** is an Infantry Fighting Vehicle developed for the Japan Ground S
 The stabilized turret mounts a **35mm Oerlikon KDE** autocannon, a coaxial **7.62mm Type 74** machine gun, and a **Type 79** ATGM launcher; the gunner has a laser rangefinder, fire control system with lead, Gen 1 green thermals, and 2x–8x zoom. A laser warning system and smoke grenades are fitted for defense.
 
 ## Armor
+
+Left cheek: 42-66
+Right cheek: 42-67
+Lower front plate: 38-122
+Upper front plate: 90-119
+Hull side: 15-25
+Mantlet: 51-65

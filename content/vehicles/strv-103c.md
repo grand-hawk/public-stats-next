@@ -6,3 +6,10 @@ The **Strv 103C** is a Main Battle Tank and the final production variant of the 
 The fixed **105 mm L74** gun is fired from the driver’s position and is fed from a 50-round ready supply; a coaxial **7.62mm ksp 58** and a second ksp 58 in the commander’s cupola provide close defence. The vehicle has a stabilizer and smoke grenades; the driver’s sight offers 6x, 10x, and 18x magnification with a laser rangefinder.
 
 ## Armor
+
+Left cheek: 62-224
+Right cheek: 62-224
+Lower front plate: 129-188
+Upper front plate: 129-220
+Hull side: 60-80
+Mantlet: 230

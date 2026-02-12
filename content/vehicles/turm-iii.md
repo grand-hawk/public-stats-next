@@ -6,3 +6,10 @@ The **Turm III** is a Main Battle Tank based on the German experimental _Versuch
 Main armament is the **L7A3 105mm** rifled gun with a 5-second reload; a **30mm HSS 831L** autocannon is mounted coaxially for light armor and soft targets, and the commander has a **7.62mm MG3**. The turret is stabilized but the gunner’s sight is an 8x optical telescope without a laser rangefinder or thermals.
 
 ## Armor
+
+Left cheek: 24-203
+Right cheek: 24-217
+Lower front plate: 39-47
+Upper front plate: 61-95
+Hull side: 20-22
+Mantlet: 140-263

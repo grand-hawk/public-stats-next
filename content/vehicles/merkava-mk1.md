@@ -6,3 +6,10 @@ The **Merkava Mk.1** is a Main Battle Tank and the first production model of the
 The main armament is the **105mm Sharir** (license-built L7-type) with a 6.7-second reload and M156, M111, M416, and M152 ammunition, plus a coaxial **7.62mm FN MAG 60-40**; the commander has a roof **60mm Soltam** mortar and a second MAG. The gun has a two-plane stabilizer and a laser warning system; the gunner uses a laser rangefinder, fire control system, and Gen 1 green thermals at 8×, and the commander has a 4×–20× periscope with laser. An engine smoke system is fitted.
 
 ## Armor
+
+Left cheek: 164-566
+Right cheek: 102-844
+Lower front plate: 97-266
+Upper front plate: 207-544
+Hull side: 51-136
+Mantlet: 288-435

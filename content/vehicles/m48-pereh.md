@@ -6,3 +6,9 @@ The **M48 Pereh** (Hebrew: “ferret”) is an Anti-Tank Missile Carrier based o
 Primary armament is the **Spike ATGM** in manual and fire-and-forget modes; a **7.62 mm FN MAG 60-40** is mounted in the gunner and commander positions. The gunner has Gen 1 white thermals and a tracking capability for the ATGM; smoke grenades are fitted for defensive screening.
 
 ## Armor
+
+Left cheek: 17-117
+Right cheek: 17-117
+Lower front plate: 10-808
+Upper front plate: 160-477
+Hull side: 62-118

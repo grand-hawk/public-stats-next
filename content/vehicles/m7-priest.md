@@ -6,3 +6,10 @@ The **M7 Priest** is a Self Propelled Howitzer developed by the United States du
 The **105mm M2A1** howitzer fires HE (M1) and anti-tank (M67) rounds with a 7.5-second reload and 35 rounds stowed; the commander's cupola has a stabilized **12.7mm M2** machine gun. Sights are a 4x telescope for the howitzer with no rangefinder or stabilizer on the main gun.
 
 ## Armor
+
+Left cheek: 15-33
+Right cheek: 16-96
+Lower front plate: 30-103
+Upper front plate: 74-104
+Hull side: 26-76
+Mantlet: 29-128

@@ -6,3 +6,10 @@ The **Tiger II** is a Heavy Tank, designated Panzerkampfwagen VI Tiger Ausf. B o
 Main armament is the **8.8 cm KwK43 L/71** with a 7.95-second reload; secondary weapons include three **7.92mm MG34** machine guns (coaxial, commander, bow) and a loader-operated grenade mortar. The commander and bow positions are stabilized; the gunner has 2.5x and 5x telescope sights but no rangefinder.
 
 ## Armor
+
+Left cheek: 188-471
+Right cheek: 188-434
+Lower front plate: 149-179
+Upper front plate: 226-258
+Hull side: 160-172
+Mantlet: 308-367

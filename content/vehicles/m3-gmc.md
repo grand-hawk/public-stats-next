@@ -6,3 +6,9 @@ The **M3 GMC** (Gun Motor Carriage) is a Tank Destroyer consisting of the **75 m
 The only primary weapon is the **75 mm M1897A4** with HE and AP; there is no coaxial or anti-aircraft machine gun. The gun has limited traverse (6 deg/s horizontal) and a 1x telescope with no rangefinder. Light armor and an open fighting compartment keep weight down but expose the crew.
 
 ## Armor
+
+Left cheek: 16-38
+Right cheek: 16-38
+Lower front plate: 6-35
+Upper front plate: 7-56
+Hull side: 7-22

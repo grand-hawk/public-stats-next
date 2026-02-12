@@ -6,3 +6,10 @@ The **XM8** is a Light Tank developed in the United States as part of the Armore
 Main armament is the stabilized **105mm XM35** cannon fed by an autoloader, with a coaxial **7.62mm M240** and a commander **12.7mm M2**; the gunner sight has a laser rangefinder, fire control system, and Gen 1 green thermals at 3.3x and 10x zoom. Smoke grenades round out the defensive fit.
 
 ## Armor
+
+Left cheek: 37-91
+Right cheek: 20-77
+Lower front plate: 14-41
+Upper front plate: 16-59
+Hull side: 8-14
+Mantlet: 25-36

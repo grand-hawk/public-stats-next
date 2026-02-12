@@ -6,3 +6,10 @@ The **Object 704** is a Tank Destroyer, a Soviet heavy assault gun also known as
 The main armament is the **152mm ML-20S**, fed with OF-540 and BR-540B ammunition and a reload of 18 seconds; a **12.7mm DSHK** is mounted for the gunner and a second DSHK in the loader’s turret, the latter with a stabilizer for anti-air use. The gunner uses a 4× telescope sight with no rangefinder. Hull storage holds 17 rounds for the main gun.
 
 ## Armor
+
+Left cheek: 183-309
+Right cheek: 183-309
+Lower front plate: 203-305
+Upper front plate: 182
+Hull side: 220-329
+Mantlet: 135-440

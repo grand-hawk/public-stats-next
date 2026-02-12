@@ -6,3 +6,10 @@ The **M4A3 (105) Zippo** is a Flamethrower Tank, an **M4A3 Sherman** fitted with
 The gunner turret mounts the **105 mm M4** howitzer (HE and M67 shot), a coaxial **.30 cal M1919**, and the **H5 Flamethrower** with napalm; the commander and bow gunner have **12.7mm M2** and **.30 cal M1919** respectively. The main gun has a 10-second reload and 1x/6x periscope sight with no stabilizer on the howitzer. The flamethrower provided devastating short-range effect against fortifications and infantry.
 
 ## Armor
+
+Left cheek: 69-250
+Right cheek: 87-252
+Lower front plate: 142-246
+Upper front plate: 94-536
+Hull side: 38
+Mantlet: 89-422

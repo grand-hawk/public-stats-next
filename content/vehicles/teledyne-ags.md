@@ -6,3 +6,10 @@ The **Teledyne AGS** is a tracked Tank Destroyer derived from the U.S. Army’s 
 Main armament is the **105mm M68A1** rifled gun fed by an autoloader with an 8-round ready magazine and a 6-second cycle, plus a coaxial **7.62mm M240** and a commander’s **7.62mm M60D**. The gunner has a laser rangefinder, fire control system, and first-generation green thermals with 8x optical zoom. The turret is stabilized and the vehicle is fitted with smoke grenades; optional TOW launchers add anti-tank missile capability.
 
 ## Armor
+
+Left cheek: 13
+Right cheek: 23
+Lower front plate: 22-81
+Upper front plate: 39-112
+Hull side: 43-59
+Mantlet: 13-53

@@ -6,3 +6,10 @@ The **SU-85M** is a Tank Destroyer, a Soviet assault gun that combined the impro
 Armament is the **85mm D-5S** only — no machine guns — with a simple 2.5x telescope sight and no stabilizer or FCS. The vehicle trades anti-infantry capability for a lower profile and respectable anti-armor performance.
 
 ## Armor
+
+Left cheek: 167-206
+Right cheek: 167-206
+Lower front plate: 111-141
+Upper front plate: 122-152
+Hull side: 90-98
+Mantlet: 120-377

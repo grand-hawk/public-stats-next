@@ -6,3 +6,10 @@ The **Tiger I** is a Heavy Tank, formally the Panzerkampfwagen VI Tiger Ausf. E,
 Primary armament is the **88 mm KwK36** cannon, with two **7.92mm MG34** machine guns (coaxial and bow). The turret has smoke grenades but no stabilizer or modern fire control; the gunner uses a 2.5x telescope sight.
 
 ## Armor
+
+Left cheek: 254-490
+Right cheek: 253-473
+Lower front plate: 121-221
+Upper front plate: 101-309
+Hull side: 60-80
+Mantlet: 140-263

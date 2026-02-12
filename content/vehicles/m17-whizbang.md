@@ -6,3 +6,10 @@ The **M17 Whizbang** is a Medium Tank based on the **M4 Sherman** chassis, armed
 The **75 mm M3** fires M61 and M48; the **7.2 in T37** carries 20 rockets. A coaxial and bow **.30 cal M1919** complete the armament. The gunner has a stabilizer and 3x telescope plus 1x/6x periscope with no rangefinder or FCS; commander and bow positions are stabilized.
 
 ## Armor
+
+Left cheek: 74-267
+Right cheek: 73-268
+Lower front plate: 59-81
+Upper front plate: 54-118
+Hull side: 76-80
+Mantlet: 122-294

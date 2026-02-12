@@ -6,3 +6,10 @@ The **Sprut-SDM1** is a Light Tank — the Russian 2S25M Sprut-SDM1, an airborne
 The **125mm 2A75** is fed by an autoloader (APFSDS, **9M119M1** ATGM, HEAT, HE) with a coaxial **7.62mm PKT**; commander has a second PKT. Both gunner and commander have laser rangefinder, FCS with lead and tracking, and Gen 3 white thermals. Smoke grenades and engine smoke are fitted.
 
 ## Armor
+
+Left cheek: 23-28
+Right cheek: 23-28
+Lower front plate: 24-46
+Upper front plate: 26-35
+Hull side: 8-9
+Mantlet: 28-46

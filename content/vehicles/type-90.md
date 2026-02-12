@@ -6,3 +6,10 @@ The **Type 90** is a Main Battle Tank (Japanese designation Type 90 Kyū-maru), 
 Main armament is the stabilized **120mm Type 90 L/44** cannon with an autoloader, plus a coaxial **7.62mm Type 74** and a commander’s **12.7mm M2** machine gun. The turret is fitted with a laser rangefinder, fire control system with lead and tracking, Gen 1 green thermals, 1x/10x zoom, laser warning system, and smoke grenades.
 
 ## Armor
+
+Left cheek: 507-880
+Right cheek: 506-879
+Lower front plate: 27-232
+Upper front plate: 118-560
+Hull side: 25-55
+Mantlet: 287-507

@@ -6,3 +6,10 @@ The **Object 450** is a Main Battle Tank built around an unconventional oscillat
 The main armament is the **125mm 2A47** cannon with a 6.5-second reload and access to 3BM22, 3BK12M, and 3OF26 ammunition, plus a coaxial **7.62mm PKT**; the commander’s turret mounts a **30mm 2A42** with a 6× sight. The main gun has a two-plane stabilizer and a fire control system with lead computation and a laser rangefinder (3.9×–9×). An engine smoke system is fitted for defensive screening.
 
 ## Armor
+
+Left cheek: 39-131
+Right cheek: 39-131
+Lower front plate: 22-1260
+Upper front plate: 455-579
+Hull side: 20-105
+Mantlet: 150-404

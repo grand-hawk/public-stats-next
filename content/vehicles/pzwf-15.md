@@ -6,3 +6,8 @@ The **PzWf. 15** is a tracked Rocket Artillery vehicle, based on a half-track ch
 The gunner operates the **150 mm Wgr.41 Spr** rocket system with a 6-second reload and 10 rounds; the commander has a stabilized cupola mounting a **7.92mm MG34** for close defence. Sights are limited to 1x with no rangefinder, suited to area suppression rather than precision fire.
 
 ## Armor
+
+Lower front plate: 12-32
+Upper front plate: 10-97
+Hull side: 8-22
+Mantlet: 8

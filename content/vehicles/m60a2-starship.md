@@ -6,3 +6,10 @@ The **M60A2 Starship** is a Main Battle Tank variant of the **M60** series, fiel
 The M162 can fire HEAT (M409A1), HE (M657A2, M625A1), and Shillelagh; a **7.62 mm M240** is coaxial and a **12.7 mm M85** is commander-mounted. The gunner has a laser rangefinder and FCS with 1x/8x magnification but no thermals; stabilizer and smoke grenades are fitted, and an engine smoke system is available.
 
 ## Armor
+
+Left cheek: 85-644
+Right cheek: 144-640
+Lower front plate: 174-555
+Upper front plate: 253-451
+Hull side: 33-83
+Mantlet: 30-663

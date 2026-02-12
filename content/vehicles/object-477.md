@@ -6,3 +6,10 @@ The **Object 477** is a Prototype Main Battle Tank developed in the Soviet Union
 The **152 mm 2A73** is fed by an autoloader with a 4.5 s cycle and fires APFSDS and Grifel-3 rounds; a **30 mm 2A42M** and **7.62 mm PKT** provide secondary fire. The vehicle has a laser rangefinder, fire control system with lead and tracking on thermals (Gen 2), laser warning, stabilizer, smoke grenades, and engine smoke. No APS is fitted.
 
 ## Armor
+
+Left cheek: 35-2265
+Right cheek: 20-2300
+Lower front plate: 228-935
+Upper front plate: 315-1218
+Hull side: 93-246
+Mantlet: 56-358

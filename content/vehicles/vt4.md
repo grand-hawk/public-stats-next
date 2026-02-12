@@ -6,3 +6,10 @@ The **VT4** is a Main Battle Tank designed by China North Industries (Norinco) f
 Main armament is the stabilized **125mm Type 99A** cannon with an autoloader, plus a coaxial **7.62mm Type 86** and a commander’s **12.7mm QJC88A** machine gun. The turret is fitted with a laser rangefinder, fire control system with lead and tracking, Gen 2 white thermals, 6x/10x zoom, laser warning system, missile approach warning system, smoke grenades, and an engine smoke system.
 
 ## Armor
+
+Left cheek: 160-1359
+Right cheek: 160-1361
+Lower front plate: 176-521
+Upper front plate: 251-936
+Hull side: 110
+Mantlet: 152-252

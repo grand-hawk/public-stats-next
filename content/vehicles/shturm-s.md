@@ -6,3 +6,8 @@ The **Shturm-S** is an Anti-Tank Missile Carrier, the Soviet 9P149 mounting the 
 The commander operates a stabilised launcher with 12 **9M114** missiles, with an 8x optical sight and a Gen 2 white-hot thermal sight, both linked to an FCS. An engine smoke system is fitted for defensive screening.
 
 ## Armor
+
+Lower front plate: 18-38
+Upper front plate: 12-42
+Hull side: 7-17
+Mantlet: 5-13

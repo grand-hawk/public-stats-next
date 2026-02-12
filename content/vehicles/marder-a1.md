@@ -6,3 +6,9 @@ The **Marder A1** is an Infantry Fighting Vehicle and the first major upgrade of
 The gunner operates a **20mm Rh202** cannon and a coaxial **7.62mm MG3**; the main gun has no stabilizer (as noted in-game) and the gunner uses 2× and 6× magnification without a laser rangefinder. A passenger can operate a second MG3 from a roof mount. Optional addons include **MILAN** ATGMs and a **Wärmeortungsempfänger** thermal imager. Smoke grenades and a 75 km/h reverse speed aid in disengagement.
 
 ## Armor
+
+Left cheek: 11-32
+Lower front plate: 34-78
+Upper front plate: 46-143
+Hull side: 18-35
+Mantlet: 49-100

@@ -6,3 +6,10 @@ The **ZTZ99A** (Type 99A) is a Main Battle Tank and the most capable variant of 
 The main armament is a stabilized **125mm Type 99A** smoothbore fed by an autoloader (22 rounds ready, 17 in the hull), with a coaxial **5.8mm QJT** and a commander’s **12.7mm QJC88A** machine gun. The gunner has a laser rangefinder, fire control system with lead and tracking, and Gen 3 white thermals; the commander has a separate sight with laser and thermals. The vehicle is fitted with a laser warning system, missile approach warning system, smoke grenades, and an engine smoke system.
 
 ## Armor
+
+Left cheek: 413-1929
+Right cheek: 412-1928
+Lower front plate: 126-240
+Upper front plate: 104-1118
+Hull side: 40-160
+Mantlet: 88-319

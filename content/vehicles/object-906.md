@@ -6,3 +6,10 @@ The **Object 906** is a Light Tank, a Soviet experimental amphibious design from
 Main armament is the **85mm D-58** with HE, AP, and HEAT (3BK7), fed by a mechanized rack; a coaxial **7.62mm SGMT** is fitted. The gunner has a stabilizer and 3.5x/7x sight without rangefinder; the commander has a stabilized cupola with 5x sight. An engine smoke system is fitted. The Object 906 combines amphibious capability with strong firepower for its class.
 
 ## Armor
+
+Left cheek: 16-96
+Right cheek: 27-85
+Lower front plate: 21-44
+Upper front plate: 40-76
+Hull side: 10-12
+Mantlet: 15-84

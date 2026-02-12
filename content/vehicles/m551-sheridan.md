@@ -6,3 +6,10 @@ The **M551 Sheridan** is a Light Tank and airborne-capable armoured vehicle deve
 The stabilized **152mm M81E1** fires HEAT (M409A1), Shillelagh, smoke (M625A1), and HE (M657A2) with a 12-second reload; a coaxial **7.62mm M73** and commander's **12.7mm M2** are fitted. The vehicle has smoke grenades and 8x/12x sights but no laser rangefinder or thermals. An optional 76 mm M32 gun addon and vismod are available.
 
 ## Armor
+
+Left cheek: 26-339
+Right cheek: 34-353
+Lower front plate: 38-52
+Upper front plate: 68-108
+Hull side: 25-60
+Mantlet: 35-145

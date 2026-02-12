@@ -6,3 +6,10 @@ The **T-64BV** is a Main Battle Tank, an upgraded Soviet T-64B with add-on explo
 Main armament is the **125mm 2A46M-1** with autoloader (APFSDS, HEAT, HE, and **9M112** ATGM), plus coaxial **7.62mm PKT** and commander **12.7mm NSVT**. The gun is stabilized; sights include laser rangefinder, FCS with lead, and Gen 3 white thermals. Smoke grenades and engine smoke complete the defenses.
 
 ## Armor
+
+Left cheek: 255-1800
+Right cheek: 265-1800
+Lower front plate: 197-480
+Upper front plate: 175-866
+Hull side: 170-238
+Mantlet: 80-263

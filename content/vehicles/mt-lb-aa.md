@@ -6,3 +6,8 @@ The **MT-LB AA** is a Self Propelled Anti Aircraft vehicle based on the Soviet *
 The primary armament is a **25mm DBTSU** cannon in the gunner turret, with a commander turret mounting a **7.62mm PKT** machine gun; both turrets offer high traverse rates (70 and 60 deg/s respectively) for engaging fast targets. The vehicle has an engine smoke system for defensive screening but no rangefinder or fire control system on the main sight.
 
 ## Armor
+
+Lower front plate: 18-38
+Upper front plate: 12-42
+Hull side: 51-136
+Mantlet: 7-8

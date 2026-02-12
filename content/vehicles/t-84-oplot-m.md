@@ -6,3 +6,10 @@ The **T-84 Oplot-M** is a Main Battle Tank and an evolution of the Ukrainian T-8
 Main armament is the **125 mm KBA-3** smoothbore with a 6-second autoloader cycle, firing APFSDS, HEAT, HE-Frag, and **KOMBAT** ATGMs; a coaxial **7.62mm PKT** and commander’s **12.7mm NSVT** are fitted. The vehicle has a laser warning system, stabilizer, smoke grenades, and engine smoke. The gunner has a laser rangefinder, FCS with lead, and second-generation thermals; the commander has a CITV with thermals and FCS. Optional Zaslon APS adds hard-kill protection against incoming projectiles.
 
 ## Armor
+
+Left cheek: 182-1407
+Right cheek: 186-1423
+Lower front plate: 176-417
+Upper front plate: 1498-1814
+Hull side: 477-1966
+Mantlet: 160-495

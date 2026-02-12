@@ -6,3 +6,10 @@ The **MT-LeBrams** is a Main Battle Tank built on the MT-LB chassis, a light tra
 Main armament is the **115mm U-5TS** smoothbore gun with a manual 8-second reload, carrying 12 ready and 18 hull rounds of APFSDS, HEAT, and HE. The gunner has a 3.5x and 7x sight with no rangefinder or stabilizer. An engine smoke system is fitted for defensive screening. The MT-LeBrams trades armour and conventional tank layout for low weight and a small crew footprint.
 
 ## Armor
+
+Left cheek: 6-100
+Right cheek: 6-100
+Lower front plate: 30-66
+Upper front plate: 58-120
+Hull side: 7-28
+Mantlet: 6-106

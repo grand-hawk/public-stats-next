@@ -6,3 +6,10 @@ The **M4A2E8 Sherman**, nicknamed “Easy Eight,” is a late-war Medium Tank co
 Main armament is the **76 mm M1** cannon with AP, APCR, and HE rounds; secondary weapons are a coaxial **.30 cal M1919**, cupola **12.7 mm M2**, and bow **.30 cal M1919**. Stabilizers are fitted to the gunner, commander, and bow positions; the gunner has a 4x/8x telescope and a 1x/6x periscope.
 
 ## Armor
+
+Left cheek: 74-578
+Right cheek: 73-578
+Lower front plate: 85-182
+Upper front plate: 76-205
+Hull side: 38-41
+Mantlet: 122-312

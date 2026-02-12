@@ -6,3 +6,10 @@ The **Object 279** is a Prototype Main Battle Tank, a Soviet heavy tank design f
 The main armament is the **130mm M-65** gun with a 10-second reload and OF-482M and BR-482B ammunition in a mechanized and hull rack; a **14.5mm KPVT** is mounted for anti-air and anti-personnel use. The main gun has a two-plane stabilizer and is served by an optical rangefinder and an 8× fire control sight; the commander has a stabilizer and a 5× sight. An engine smoke system is fitted for defensive screening.
 
 ## Armor
+
+Left cheek: 170-1319
+Right cheek: 272-1377
+Lower front plate: 107-941
+Upper front plate: 297-847
+Hull side: 55-280
+Mantlet: 176-885

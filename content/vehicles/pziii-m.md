@@ -6,3 +6,10 @@ The **Pz.III M** is a Medium Tank and a late-production variant of the German Pa
 Main armament is the **50 mm KwK39** with PzGr 39 and Sprgr. 38 ammunition, paired with coaxial and bow **7.92mm MG34** machine guns; the turret has smoke grenades. The gunner uses a 2.5x telescope sight without rangefinder, while commander and bow positions have stabilized **7.92mm MG34** mounts for anti-infantry and local defence.
 
 ## Armor
+
+Left cheek: 52-335
+Right cheek: 52-335
+Lower front plate: 59-83
+Upper front plate: 139
+Hull side: 30
+Mantlet: 52-106

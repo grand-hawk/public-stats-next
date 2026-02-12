@@ -6,3 +6,8 @@ The **Strela-10** is a Self-Propelled Anti-Aircraft vehicle, the Soviet 9K35 sys
 The gunner launcher carries four 9M37M missiles with two reload packs; the commander has a **12.7mm NSVT** for self-defence. The vehicle has an engine smoke system and a simple 1.8x optical sight for the missile station.
 
 ## Armor
+
+Lower front plate: 18-38
+Upper front plate: 12-42
+Hull side: 7-17
+Mantlet: 15-76

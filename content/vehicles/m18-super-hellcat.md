@@ -6,3 +6,10 @@ The **M18 Super Hellcat** is a Tank Destroyer and an upgunned variant of the **M
 The **90mm M3** is served by 4x and 8x telescope sights without a rangefinder; the commander has a stabilized **12.7mm M2** for anti-aircraft use. The Super Hellcat combines the Hellcat’s mobility with heavy-tank-level firepower in a light, fast package.
 
 ## Armor
+
+Left cheek: 33-130
+Right cheek: 33-130
+Lower front plate: 15-35
+Upper front plate: 18-40
+Hull side: 14-26
+Mantlet: 76-199

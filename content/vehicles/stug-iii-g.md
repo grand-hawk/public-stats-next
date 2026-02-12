@@ -6,3 +6,10 @@ The **StuG III G** is an Assault Gun and the most produced variant of the German
 Main armament is the **7.5 cm StuK 40 L/48** with PzGr 39, PzGr 40, and Sprgr. 34 ammunition and a 6.25-second reload; the gunner has a 5x telescope and no stabilizer or rangefinder. The loader operates a **7.92mm MG34** for anti-aircraft and local defense. The low silhouette and potent gun made the StuG III G a cost-effective tank destroyer and infantry support vehicle.
 
 ## Armor
+
+Left cheek: 80-119
+Right cheek: 50-119
+Lower front plate: 34-144
+Upper front plate: 118-162
+Hull side: 35
+Mantlet: 51-101

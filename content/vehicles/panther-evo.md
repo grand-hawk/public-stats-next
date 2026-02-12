@@ -6,3 +6,10 @@ The **Panther EVO** is a Main Battle Tank — a fictional modern evolution of th
 Main armament is the **130mm Rh130 L/51** with a 4-second autoloader and **12.7mm RMG**; an APS provides hard-kill protection, and the vehicle has laser warning, stabilizer, and smoke grenades. The gunner has a laser rangefinder, Gen 3 thermals, and FCS with lead and tracking; the commander has a thermals-equipped CITV and CROWS with FCS. The oversized turret and modern firepower make the Panther EVO a high-tier MBT with strong survivability and fire control.
 
 ## Armor
+
+Left cheek: 632-2652
+Right cheek: 612-3305
+Lower front plate: 67-377
+Upper front plate: 290-426
+Hull side: 36-59
+Mantlet: 374-1133

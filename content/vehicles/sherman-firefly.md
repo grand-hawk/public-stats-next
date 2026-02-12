@@ -6,3 +6,10 @@ The **Sherman Firefly** is a Medium Tank, a British conversion of the American M
 The 17-pounder is paired with a coaxial **.30 cal M1919**; the commander’s cupola has a **12.7mm M2** with a stabilizer. Fire control is limited to a 3x telescope and a 1.44x periscope with no stabilizer on the main gun.
 
 ## Armor
+
+Left cheek: 91-206
+Right cheek: 91-206
+Lower front plate: 53-161
+Upper front plate: 53-184
+Hull side: 38
+Mantlet: 98-226

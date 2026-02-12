@@ -6,3 +6,10 @@ The **Panther F** is a Medium Tank representing the planned Ausf. F variant, whi
 Main armament is the **7.5cm KwK44/1 L/70** with HE and AP, plus coaxial **7.92mm MG34**; the loader operates a grenade mortar for smoke and frag, and the bow gunner has a **7.92mm MG34**. The gunner benefits from a stabilizer, FCS, 3x/6x periscope, and 15x optical rangefinder — a significant step up from earlier Panthers and ideal for snap shots and ranged engagements.
 
 ## Armor
+
+Left cheek: 127-326
+Right cheek: 127-342
+Lower front plate: 96-126
+Upper front plate: 140-236
+Hull side: 40-56
+Mantlet: 224-368
