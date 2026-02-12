@@ -2,7 +2,7 @@
 
 ## Description
 
-The **Bmpvee** is a Hybrid Combat Vehicle that mounts an IFV-style turret with a **73mm 2A28** gun and **9M14M** ATGM on a light wheeled chassis, offering mobile firepower at minimal weight. The combination is unconventional and reflects a low-cost, high-mobility concept. The 6 t wheeled vehicle carries a driver, gunner, and three passengers and reaches 84 km/h forward. The **YaMZ-5347-10** diesel produces 215 hp for a 35.8 hp/t power-to-weight ratio.\
+The **Bumpee** is a Hybrid Combat Vehicle that mounts an IFV-style turret with a **73mm 2A28** gun and **9M14M** ATGM on a light wheeled chassis, offering mobile firepower at minimal weight. The combination is unconventional and reflects a low-cost, high-mobility concept. The 6 t wheeled vehicle carries a driver, gunner, and three passengers and reaches 84 km/h forward. The **YaMZ-5347-10** diesel produces 215 hp for a 35.8 hp/t power-to-weight ratio.\
 The **73mm 2A28** fires OG-9 and PG-9; a coaxial **7.62mm PKT** and a **9M14M** MCLOS ATGM are fitted. The gunner has a 6x sight without rangefinder or stabilizer. The vehicle has no smoke system and relies on speed and small size for survival.
 
 ## Armor

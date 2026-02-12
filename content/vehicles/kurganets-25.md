@@ -7,7 +7,7 @@ The turret mounts a **30mm 2A42M** autocannon, **7.62mm PKT**, and **9M133 Korne
 
 ## Armor
 
-Left cheek: 30-29
+Left cheek: 29-30
 Right cheek: 21-28
 Lower front plate: 68-111
 Upper front plate: 176-255
