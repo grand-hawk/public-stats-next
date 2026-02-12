@@ -15,7 +15,7 @@
     "content:generate": "tsx scripts/generate-content.mts",
     "content:validate": "node scripts/validate-content.mjs",
     "generate": "rimraf generated && cross-env NODE_ENV=development tsx scripts/generate/index.mts 1.0.0",
-    "postinstall": "node scripts/run-if-missing.mjs generated \"pnpm run generate\" && pnpm run content:generate"
+    "postinstall": "node scripts/run-if-missing.mjs generated \"pnpm run generate\""
   },
   "dependencies": {
     "@chakra-ui/charts": "^3.32.0",
