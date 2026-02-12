@@ -6,3 +6,10 @@ The **M4A3E2 (75) Jumbo** is a Medium Tank and the original **M4A3E2 Jumbo**, an
 The stabilized **75mm M3** is the main armament with coaxial **.30 cal M1919**; the commander has a **12.7mm M2** and the bow gunner a **.30 cal M1919**. The gunner has a 3x telescope and 1x/6x periscope with no rangefinder. The Jumbo's added armour made it significantly more resistant to anti-tank fire than the standard Sherman.
 
 ## Armor
+
+Left cheek: 69-468
+Right cheek: 87-468
+Lower front plate: 142-218
+Upper front plate: 94-303
+Hull side: 38-76
+Mantlet: 200-426

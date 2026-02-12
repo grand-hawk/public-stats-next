@@ -6,3 +6,8 @@ The **Wiesel 1A2** is a Tank Destroyer built on the same Wiesel 1 chassis as the
 The gunner has Gen 1 white thermals and 3x/13x zoom but no laser rangefinder or stabilizer; the vehicle carries eight TOW rounds and relies on standoff range and mobility rather than armor or smoke.
 
 ## Armor
+
+Lower front plate: 17-27
+Upper front plate: 16-30
+Hull side: 16-28
+Mantlet: 5-18

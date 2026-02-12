@@ -6,3 +6,10 @@ The **Strf 9040C** is an Infantry Fighting Vehicle — the Swedish designation f
 Main armament is the stabilized **40mm Akan m/70B** (24-round magazine) and a **7.62mm ksp 39 C** machine gun. The gunner has a laser rangefinder, FCS with lead, and Gen 2 green thermals; smoke grenades are fitted.
 
 ## Armor
+
+Left cheek: 124-286
+Right cheek: 70-334
+Lower front plate: 34-42
+Upper front plate: 82-105
+Hull side: 11-48
+Mantlet: 35-137

@@ -6,3 +6,10 @@ The **M3 Lee** is a Medium Tank of early Second World War design, with a 75 mm g
 Main armament is the **75 mm M2** in the sponson (HE and AP) and the **37 mm M5** in the turret; three **.30 cal M1919** machine guns are fitted in the turret, bow, and commander’s positions. All weapon stations have stabilizers; sights are 1x with no rangefinder.
 
 ## Armor
+
+Left cheek: 60-114
+Right cheek: 59-114
+Lower front plate: 51-295
+Upper front plate: 65-92
+Hull side: 76
+Mantlet: 61-195

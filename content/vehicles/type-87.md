@@ -6,3 +6,10 @@ The **Type 87** is a Self Propelled Anti Aircraft vehicle — the Japanese SPAAG
 The turret mounts a **35mm Oerlikon KDA** with a large magazine; the gunner has a laser rangefinder, fire control system with lead and tracking, and 1.5x–6x zoom. A laser warning system, stabilizer, and smoke grenades are fitted; the vehicle has no thermals in the main sight.
 
 ## Armor
+
+Left cheek: 12-139
+Right cheek: 12-147
+Lower front plate: 32-65
+Upper front plate: 30-153
+Hull side: 20-30
+Mantlet: 7-108

@@ -6,3 +6,10 @@ The **M1A2 SEP V3** is a Main Battle Tank and a late evolution of the American *
 Main armament is the stabilized **120mm M256** cannon with a laser rangefinder, fire control system with lead computation, and Gen 2 thermals (3x and 10x zoom); secondary weapons include a coaxial **7.62mm M240**, a commander **12.7mm M2** in a remote weapon station with FCS and tracking, and a loader **7.62mm M240**. The vehicle is fitted with smoke grenades and an engine smoke system; an optional Trophy APS and TUSK package adds hard-kill protection and urban survivability.
 
 ## Armor
+
+Left cheek: 840-1700
+Right cheek: 690-1800
+Lower front plate: 269-629
+Upper front plate: 250-643
+Hull side: 30-138
+Mantlet: 360-470

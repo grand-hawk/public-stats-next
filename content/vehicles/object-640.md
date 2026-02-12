@@ -6,3 +6,10 @@ The **Object 640** is a Main Battle Tank and refers to the Russian **Object 640 
 The main armament is the **125mm 2A46M-5** cannon with a 4-second autoloader cycle and ammunition including 3BM59 APFSDS, 3BK18M HEAT, 3OF26 HE, and the **9M119M1** ATGM; the gun is fully stabilized and served by a fire control system with lead and tracking, laser rangefinder, and third-generation white-hot thermals at 4× and 12×. The commander has a stabilizer and a CITV with laser and thermals. Defensive equipment includes a laser warning system, missile approach warning system, and an active protection system with 14 launchers capable of intercepting projectiles between 70 and 700 m/s, plus an engine smoke system.
 
 ## Armor
+
+Left cheek: 111-2700
+Right cheek: 110-2800
+Lower front plate: 39-301
+Upper front plate: 409-741
+Hull side: 202-340
+Mantlet: 56-378

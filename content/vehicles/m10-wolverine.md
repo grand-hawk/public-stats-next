@@ -6,3 +6,10 @@ The **M10 Wolverine** is a Tank Destroyer built by the United States during the 
 Main armament is the **76mm M7** cannon with a 3x telescope sight and no rangefinder; the open-topped turret traverses slowly at 6 deg/s. The commander has a stabilized **12.7mm M2** for anti-aircraft and local defense. The M10 traded armor for mobility and firepower, relying on ambush and displacement rather than slugging it out with enemy tanks.
 
 ## Armor
+
+Left cheek: 47-179
+Right cheek: 47-179
+Lower front plate: 10-155
+Upper front plate: 51-274
+Hull side: 25-49
+Mantlet: 106-170

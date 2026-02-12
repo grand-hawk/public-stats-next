@@ -6,3 +6,10 @@ The **T-55AD** is a Main Battle Tank and a modernized variant of the Soviet T-55
 The main armament is a stabilized **100mm D-10TS2** cannon equipped with a laser rangefinder and fire control system, supplemented by a coaxial **7.62mm PKT** and a roof-mounted **12.7mm DSHK** machine gun. The Drozd APS provides frontal protection with four dual-charge launchers capable of intercepting incoming projectiles traveling between 70 and 700 m/s. The vehicle also features an engine smoke system and smoke grenades for additional screening when withdrawing from engagements.
 
 ## Armor
+
+Left cheek: 210-998
+Right cheek: 210-998
+Lower front plate: 108-210
+Upper front plate: 196-226
+Hull side: 168-198
+Mantlet: 190-482

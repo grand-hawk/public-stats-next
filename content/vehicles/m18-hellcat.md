@@ -6,3 +6,10 @@ The **M18 Hellcat** is a Tank Destroyer built by the United States during the Se
 Main armament is the **76mm M1** cannon with 4x and 8x telescope sights and no rangefinder; the commander’s position is stabilized and mounts a **12.7mm M2** machine gun for anti-aircraft and local defense. The main gun has no stabilizer, and the vehicle relies on speed and agility to survive on the battlefield.
 
 ## Armor
+
+Left cheek: 14-99
+Right cheek: 14-99
+Lower front plate: 15-35
+Upper front plate: 18-40
+Hull side: 14-26
+Mantlet: 20-69

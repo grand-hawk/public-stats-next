@@ -6,3 +6,8 @@ The **TOS-1A BM-1** is a Rocket Artillery vehicle based on the Russian TOS-1A â€
 The main armament is the **230mm TOS-1A** rocket launcher with 24 rounds, firing thermobaric, incendiary, and blast-fragmentation rockets with a 6-second reload between salvos. The launcher is stabilized and has smoke grenades; the gunner is provided with a laser rangefinder, fire control system, and 2xâ€“8x zoom. Commander and gunner turrets are both stabilized for improved laying and observation.
 
 ## Armor
+
+Lower front plate: 108-320
+Upper front plate: 181-982
+Hull side: 60-80
+Mantlet: 22-54

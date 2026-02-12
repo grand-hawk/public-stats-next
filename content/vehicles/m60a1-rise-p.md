@@ -6,3 +6,10 @@ The **M60A1 RISE P** is a Main Battle Tank, an **M60A1** upgraded under the Reli
 Main armament is the stabilized **105mm M68E1** with an optical rangefinder and FCS; ammunition includes M456A2 HEAT, M735 APFSDS, M393A2 HEP, and M416 smoke. A coaxial **7.62mm M240** and commander's **12.7mm M85** are fitted, along with smoke grenades and engine smoke.
 
 ## Armor
+
+Left cheek: 64-884
+Right cheek: 69-954
+Lower front plate: 174-555
+Upper front plate: 253-451
+Hull side: 33-83
+Mantlet: 43-323

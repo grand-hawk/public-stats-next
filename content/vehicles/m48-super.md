@@ -6,3 +6,10 @@ The **M48 Super** is a Medium Tank representing a modernized **M48 Patton** with
 Main armament is the **L7A3 105 mm** rifled gun with APFSDS and HEAT; a coaxial and a commander’s **7.62 mm MG3** provide secondary fire. The turret has a stabilizer, a fire control system with lead computation, a laser rangefinder, and Gen 1 green thermals (12x day and 7.12°/2.37° thermal fields of view).
 
 ## Armor
+
+Left cheek: 106-416
+Right cheek: 106-420
+Lower front plate: 10-808
+Upper front plate: 160-477
+Hull side: 58-226
+Mantlet: 201-518

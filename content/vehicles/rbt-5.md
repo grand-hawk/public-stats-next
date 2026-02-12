@@ -6,3 +6,10 @@ The **RBT-5** is a Light Tank, a Soviet interwar experiment that fitted the BT-5
 The gunner has the **45mm 20-K** cannon, a **7.62mm DT-28** machine gun, and two TT-250 rockets; the 2.5x telescope and periscope offer no rangefinder or stabilizer. The TT-250s provide a single heavy punch before the vehicle relies on the 45 mm and MG.
 
 ## Armor
+
+Left cheek: 19-124
+Right cheek: 19-124
+Lower front plate: 34-60
+Upper front plate: 21-28
+Hull side: 30-34
+Mantlet: 21-55

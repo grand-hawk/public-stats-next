@@ -6,3 +6,10 @@ The **T26E4 Super Pershing** is a Heavy Tank and upgunned variant of the T26 Per
 Main armament is the 90 mm T15E1 with a 15-second reload and T41, T42, and T44 ammunition; secondary weapons include a coaxial **.30 cal M1919**, a commander’s **12.7mm M2**, and a bow **.30 cal M1919**. The commander and bow positions are stabilized; the gunner has a 5x telescope and a 1x/6x periscope but no rangefinder. The Super Pershing traded mobility and rate of fire for superior penetration against thick armor.
 
 ## Armor
+
+Left cheek: 199-404
+Right cheek: 167-444
+Lower front plate: 61-340
+Upper front plate: 209-252
+Hull side: 152
+Mantlet: 224-502

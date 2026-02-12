@@ -6,3 +6,10 @@ The **M50 Ontos** is a Tankette and lightweight tank destroyer developed by the 
 The six rifles can fire **M344A1** HEAT and **M361A1** rounds, with a 6 s reload and ammunition in ready and hull racks; a **12.7 mm M8C** spotting rifle and **.30 cal M1919** provide secondary armament. There is no stabilizer, FCS, or rangefinder — only a 6x telescope — and the vehicle relies on mobility and burst fire rather than protection.
 
 ## Armor
+
+Left cheek: 16-79
+Right cheek: 16-79
+Lower front plate: 18-34
+Upper front plate: 38-52
+Hull side: 26-34
+Mantlet: 13

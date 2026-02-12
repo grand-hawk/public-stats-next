@@ -6,3 +6,10 @@ The **M1 Abrams** is a Main Battle Tank that entered U.S. service in 1980 and be
 Main armament is the stabilized **105mm M68A1** with a laser rangefinder, fire control system, and Gen 1 thermals (3x and 9.8x); a coaxial **7.62mm M240**, a commander **12.7mm M2**, and a loader **7.62mm M240** complete the armament. Smoke grenades and an engine smoke system are fitted for defensive screening.
 
 ## Armor
+
+Left cheek: 300-1350
+Right cheek: 320-1450
+Lower front plate: 269-400
+Upper front plate: 250-643
+Hull side: 30-138
+Mantlet: 199-347

@@ -6,3 +6,10 @@ The **M4A3E2 (76) Jumbo** is a Heavy Tank variant of the **M4 Sherman**, combini
 The **76 mm M1** fires AP and HE with a 5.5 s reload; a coaxial **.30 cal M1919**, bow **.30 cal M1919**, and commander's **12.7 mm M2** provide secondary fire. The gunner has a stabilizer and 4x/8x telescope and 1x/6x periscope with no rangefinder; commander and bow positions are stabilized.
 
 ## Armor
+
+Left cheek: 69-468
+Right cheek: 87-468
+Lower front plate: 142-218
+Upper front plate: 94-303
+Hull side: 38-76
+Mantlet: 200-426

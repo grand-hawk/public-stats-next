@@ -6,3 +6,8 @@ The **Strela-MLRS** is a Rocket Artillery vehicle, a multiple rocket launcher on
 The main armament is the **UB-32** pod firing **S-5K1** rockets (68 rounds), with an FCS for the gunner; the commander has a **12.7mm NSVT**. Engine smoke is available. With light armor and exposed crew, it is intended for stand-off bombardment rather than direct combat.
 
 ## Armor
+
+Lower front plate: 18-38
+Upper front plate: 12-42
+Hull side: 7-17
+Mantlet: 15-76

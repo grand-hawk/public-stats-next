@@ -6,3 +6,7 @@ The **Tigr** is a wheeled Transport Vehicle based on the Russian **GAZ Tigr** (T
 Armament is a single **7.62mm PKT** machine gun in a stabilized turret with smoke grenades; the sight is a simple 1x optic with no rangefinder or thermals. The Tigr prioritizes speed and payload over armor, typical of light tactical vehicles in the transport role.
 
 ## Armor
+
+Lower front plate: 2-8
+Upper front plate: 2-17
+Hull side: 2-11

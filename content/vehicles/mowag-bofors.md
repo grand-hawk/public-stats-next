@@ -6,3 +6,10 @@ The **MOWAG-Bofors** is a Self Propelled Anti Aircraft vehicle combining a **MOW
 The **40mm Bofors L/70** is the main armament, fed by 100-round magazines and firing programmable 3P ammunition as well as AP-T; the turret is stabilized and has a laser rangefinder, Gen 1 white thermals, and a full fire control system with lead and tracking. An engine smoke system is not listed in defenses.
 
 ## Armor
+
+Left cheek: 10-79
+Right cheek: 10-79
+Lower front plate: 46-75
+Upper front plate: 32-72
+Hull side: 25-31
+Mantlet: 6-14

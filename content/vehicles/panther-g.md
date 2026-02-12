@@ -6,3 +6,10 @@ The **Panther G** is a Medium Tank and the final major production variant of the
 Main armament is the long-barreled **75 mm KwK42** firing AP and HE, supported by three **7.92 mm MG34** machine guns (coaxial, bow, and commander's cupola). The gunner has a 2.5x/5x telescope sight with no rangefinder or stabilizer; the commander and bow positions have stabilizers, and smoke grenades are fitted for defensive screening.
 
 ## Armor
+
+Left cheek: 115-683
+Right cheek: 115-683
+Lower front plate: 87-127
+Upper front plate: 140-320
+Hull side: 40-56
+Mantlet: 102-320

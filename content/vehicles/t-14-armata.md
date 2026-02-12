@@ -6,3 +6,10 @@ The **T-14 Armata** is a Main Battle Tank and the flagship of Russia's next-gene
 The **125mm 2A82-1M** smoothbore is in a remote turret with an autoloader, fed from bustle and turret stowage; it fires APFSDS, HEAT, and HE (3BM69, 3BK18M, 3OF26) and is paired with a coaxial **7.62mm PKT**. The gunner has a laser rangefinder, FCS with lead and tracking, and Gen 3 thermals at multiple zoom levels. An APS with 10 launchers (70–2,000 m/s interception), laser and missile warning, smoke grenades, and engine smoke round out the defenses.
 
 ## Armor
+
+Left cheek: 11-1128
+Right cheek: 11-1128
+Lower front plate: 52-1380
+Upper front plate: 282-2773
+Hull side: 126-424
+Mantlet: 248-584

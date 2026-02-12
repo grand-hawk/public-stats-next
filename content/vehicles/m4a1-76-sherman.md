@@ -6,3 +6,10 @@ The **M4A1 (76) Sherman** is a Medium Tank combining the cast-hull M4A1 with the
 Main armament is the **76 mm M1** cannon with HE, AP, APCR, and HVAP ammunition; secondaries are a coaxial **.30 cal M1919**, cupola **12.7 mm M2**, and bow **.30 cal M1919**. The gunner, commander, and bow positions have stabilizers; the gunner uses a 4x/8x telescope and a 1x/6x periscope without a rangefinder.
 
 ## Armor
+
+Left cheek: 74-470
+Right cheek: 73-470
+Lower front plate: 59-69
+Upper front plate: 54-118
+Hull side: 76-80
+Mantlet: 122-294

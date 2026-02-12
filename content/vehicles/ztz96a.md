@@ -6,3 +6,10 @@ The **ZTZ96A** (Type 96A) is a Main Battle Tank and an upgraded variant of China
 The main armament is a stabilized **125mm Type 88C** smoothbore with an autoloader (22 rounds ready, 17 in the hull), a coaxial **7.62mm Type 86**, and a commander’s **12.7mm QJC88A** machine gun. The gunner has a laser rangefinder, fire control system with lead and tracking, and Gen 2 green thermals. The vehicle has smoke grenades and an engine smoke system but no laser or missile approach warning systems, reflecting its earlier generation compared to the ZTZ99A.
 
 ## Armor
+
+Left cheek: 160-963
+Right cheek: 160-964
+Lower front plate: 99-139
+Upper front plate: 337-1105
+Hull side: 54-84
+Mantlet: 99-240

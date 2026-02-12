@@ -6,3 +6,10 @@ The **Maus** is a Super Heavy Tank and the heaviest fully enclosed armored fight
 The main armament is the **128mm KwK44** with a 19.3-second reload and PzGr 43 and Sprgr. L/5 ammunition; a coaxial **75mm KwK44** provides secondary fire with Sprgr. 34 and Hl.Gr 38C. The turret has no stabilizer; the gunner uses a 3× telescope sight with no rangefinder. The Maus relied on extreme armor thickness for survival, at the cost of mobility and strategic deployability.
 
 ## Armor
+
+Left cheek: 234-464
+Right cheek: 248-464
+Lower front plate: 81-280
+Upper front plate: 347-449
+Hull side: 180-220
+Mantlet: 273-640

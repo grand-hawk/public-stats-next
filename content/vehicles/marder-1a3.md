@@ -6,3 +6,8 @@ The **Marder 1A3** is an Infantry Fighting Vehicle and a 1980s upgrade of the We
 The gunner operates a **20mm Rh202** and a **7.62mm MG3** with smoke grenades; the main sight has a laser rangefinder and Gen 1 green thermals at 2× and 6×. The commander has a **Milan 2** ATGM with a 7× sight. An optional **Milan ER** addon is available. The 1A3 remained in German service into the 2000s before being succeeded by the Puma.
 
 ## Armor
+
+Lower front plate: 58-121
+Upper front plate: 21-184
+Hull side: 15-30
+Mantlet: 12-72

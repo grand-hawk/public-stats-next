@@ -6,3 +6,10 @@ The **T-64BM** is a Main Battle Tank and a Ukrainian modernization of the T-64BV
 Main armament is a stabilized **125mm 2A46M-1** with autoloader, capable of firing the **KOMBAT** ATGM in addition to 3BM42 APFSDS, 3BK18M HEAT, and 3OF26 HE; the gunner has a laser rangefinder, fire control system with lead, and 2.7x–12x magnification. A coaxial **7.62mm PKT** and a commander's **12.7mm NSVT** provide secondary fire; smoke grenades and engine smoke are fitted.
 
 ## Armor
+
+Left cheek: 250-1900
+Right cheek: 250-2000
+Lower front plate: 150-400
+Upper front plate: 175-803
+Hull side: 170-308
+Mantlet: 211-305

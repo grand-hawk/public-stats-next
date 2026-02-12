@@ -6,3 +6,10 @@ The **Pz IV H** is a Medium Tank and the main production variant of the Panzer I
 Primary armament is the **75 mm KwK40 L48** with HE, PzGr 40, and PzGr 39, plus a coaxial **7.92mm MG34**; commander and bow gunners have stabilized **7.92mm MG34** mounts. The gunner’s telescope is 2.5x with no rangefinder or stabilizer; the vehicle relies on hull-down tactics and supporting infantry to offset its modest mobility and armour.
 
 ## Armor
+
+Left cheek: 51-341
+Right cheek: 51-341
+Lower front plate: 70-82
+Upper front plate: 81-89
+Hull side: 30
+Mantlet: 50-134

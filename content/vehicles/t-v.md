@@ -6,3 +6,10 @@ The **T-V** is a Medium Tank representing a captured German **Panther** (Soviet 
 Main armament is the **75 mm KwK42** L/70 with a 7.84-second reload and HE, PzGr 39/42, and PzGr 40/42 ammunition; secondary weapons are coaxial and bow **7.92mm MG34** machine guns. The bow position is stabilized; the main gun has no stabilizer. The gunner uses a 2.5x and 5x telescope with no rangefinder. The T-V offers Panther-level firepower and mobility from the opposite side of the matchup.
 
 ## Armor
+
+Left cheek: 104-618
+Right cheek: 104-617
+Lower front plate: 105-145
+Upper front plate: 139-179
+Hull side: 40-50
+Mantlet: 109-352

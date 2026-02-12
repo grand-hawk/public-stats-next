@@ -6,3 +6,7 @@ The **T-54NT** is represented in-game as an abandoned or stripped T-54 hull pres
 The only armament is a **7.62mm DT-28** machine gun in the driver's position. With minimal crew and no heavy weapons or armor package, the vehicle functions as a fast, low-signature transport or utility platform rather than a combat tank.
 
 ## Armor
+
+Lower front plate: 187-245
+Upper front plate: 204-265
+Hull side: 165-179

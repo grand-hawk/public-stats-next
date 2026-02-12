@@ -6,3 +6,10 @@ The **T-62 Berezhok** is a Fire Support Vehicle based on the T-62 chassis, with 
 The turret carries a stabilized **30mm 2A42M** autocannon, a **30mm AG-30** grenade launcher, a coaxial **7.62mm PKT**, and a **9M133 Kornet** launcher (9M133 and 9M133F-1 rounds); the gunner has a laser rangefinder, FCS with lead and tracking, Gen 2 thermals, and 2.5x/12x zoom. The commander has a CITV; smoke grenades and engine smoke are fitted.
 
 ## Armor
+
+Left cheek: 23-36
+Right cheek: 23-36
+Lower front plate: 172-202
+Upper front plate: 202-232
+Hull side: 80-84
+Mantlet: 25-65

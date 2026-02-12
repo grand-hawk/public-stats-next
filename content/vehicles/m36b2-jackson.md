@@ -6,3 +6,10 @@ The **M36B2 Jackson** is a Tank Destroyer that mounts the same 90 mm M3 gun and 
 Main armament is the **90 mm M3** with AP, APCR, and HEAT (M348); a cupola **12.7 mm M2** provides anti-aircraft and local defense. The commander’s station has a stabilizer; the gunner uses a 4x/8x telescope with no rangefinder.
 
 ## Armor
+
+Left cheek: 46-184
+Right cheek: 46-184
+Lower front plate: 52-100
+Upper front plate: 62-191
+Hull side: 25-49
+Mantlet: 78-199

@@ -6,3 +6,10 @@ The **Soleiman-402** is a Main Battle Tank, an Iranian-developed design that com
 The main armament is the **105mm ZPL94** with a mix of APFSDS, HEAT, and HE; a coaxial **7.62mm M240** and a commander’s **12.7mm M2** in a stabilised RWS provide secondary fire. The vehicle has a laser warning system, stabilizer, and smoke grenades; the gunner’s sight offers a laser rangefinder, FCS with lead and tracking, and Gen 2 white-hot thermals at 4x and 12x.
 
 ## Armor
+
+Left cheek: 64-664
+Right cheek: 69-631
+Lower front plate: 174-334
+Upper front plate: 115-421
+Hull side: 33-88
+Mantlet: 48-330

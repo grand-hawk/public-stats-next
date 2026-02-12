@@ -6,3 +6,10 @@ The **Pz IV Ausf. 1946** is a Medium Tank representing a hypothetical late-war e
 Main armament is the **75 mm KwK42** with HE and PzGr 39/42, plus coaxial **7.92mm MG34**; commander and bow gunners have **7.92mm MG34** mounts. The gunner has a 2.5x and 5x telescope; there is no main-gun stabilizer or rangefinder, but the combination of gun and improved layout makes it a strong period medium.
 
 ## Armor
+
+Left cheek: 124-585
+Right cheek: 124-585
+Lower front plate: 88-92
+Upper front plate: 139
+Hull side: 76-100
+Mantlet: 298-413

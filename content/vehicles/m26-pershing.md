@@ -6,3 +6,10 @@ The **M26 Pershing** is a Heavy Tank developed by the United States during the S
 Main armament is the **90mm M3** cannon, with telescope sights at 4x and 8x magnification and no rangefinder; the commander and bow gunner positions are stabilized and mount **.30 cal M1919** machine guns, and the commander also has a cupola **12.7mm M2** for anti-aircraft use. The gunner’s turret lacks a stabilizer, so firing on the move is limited to the commander and bow machine guns.
 
 ## Armor
+
+Left cheek: 138-341
+Right cheek: 167-354
+Lower front plate: 138-279
+Upper front plate: 138-189
+Hull side: 50-152
+Mantlet: 142-404

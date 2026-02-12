@@ -6,3 +6,10 @@ The **Sturmtiger** is an Assault Gun based on the Tiger I chassis, built by Germ
 The main weapon fires massive **38 cm R Spgr.4581** rocket projectiles with a 42.4-second reload from a limited hull stash of 12 rounds. The loader also has a grenade mortar for frag and smoke. A bow **7.92mm MG34** provides close defense. The Sturmtiger has no stabilizer or rangefinder; the gunner uses a 3x telescope. Its extreme caliber and weight make it a short-range siege asset rather than a frontline tank.
 
 ## Armor
+
+Left cheek: 211-323
+Right cheek: 211-323
+Lower front plate: 111-245
+Upper front plate: 460
+Hull side: 80-88
+Mantlet: 270-290

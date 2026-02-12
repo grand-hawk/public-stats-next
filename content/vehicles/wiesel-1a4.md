@@ -6,3 +6,10 @@ The **Wiesel 1A4** is a Tankette, the most modern of the German Wiesel 1 family 
 Armament is the **20mm Rh202** autocannon; the 1A4 is distinguished by a laser rangefinder and Gen 3 white thermals with 4x/8x zoom. The vehicle has no stabilizer, smoke, or heavy armor and depends on mobility and concealment.
 
 ## Armor
+
+Left cheek: 7-30
+Right cheek: 16
+Lower front plate: 17-27
+Upper front plate: 16-30
+Hull side: 16-28
+Mantlet: 11-28

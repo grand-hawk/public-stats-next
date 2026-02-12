@@ -6,3 +6,10 @@ The **Panther KF51** is a Main Battle Tank, the Rheinmetall KF51 Panther — a n
 Main armament is the **130mm Rh130 L/51** with an autoloader and a 4-second cycle, plus a **12.7mm RMG**; the vehicle has two APS layers (frontal and full coverage), laser and missile warning, stabilizer, and smoke grenades. The gunner has a laser rangefinder, Gen 3 thermals, and FCS with lead and tracking; the commander has a thermals-equipped CITV and CROWS with FCS, making the KF51 one of the most capable MBTs in the roster.
 
 ## Armor
+
+Left cheek: 632-2652
+Right cheek: 612-3305
+Lower front plate: 140-550
+Upper front plate: 275-1105
+Hull side: 27-226
+Mantlet: 374-1133

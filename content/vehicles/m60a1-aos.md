@@ -6,3 +6,10 @@ The **M60A1 AOS** is a Main Battle Tank, an **M60A1 Patton** fitted with Add-On 
 The stabilized **105mm M68** is the main armament, with an optical rangefinder and fire control system but no thermals; ammunition includes HEAT (M456), APFSDS (M728), HEP (M393A2), and smoke (M416). A coaxial **7.62mm M240** and commander's **12.7mm M85** are fitted. Smoke grenades are available as an addon; the vehicle has an engine smoke system.
 
 ## Armor
+
+Left cheek: 64-884
+Right cheek: 69-954
+Lower front plate: 174-555
+Upper front plate: 253-451
+Hull side: 33-83
+Mantlet: 43-323

@@ -6,3 +6,10 @@ The **Panther D** is a Medium Tank and the first production variant of the Germa
 Main armament is the **75 mm KwK42** with HE and AP (PzGr 39/42, PzGr 40/42), plus coaxial **7.92mm MG34**; the turret has smoke grenades. The gunner has only a 2.5x telescope and no rangefinder or stabilizer, and turret traverse is a slow 6 deg/s — the Panther D rewards careful positioning and first-shot accuracy rather than dynamic engagements.
 
 ## Armor
+
+Left cheek: 104-618
+Right cheek: 104-617
+Lower front plate: 105-145
+Upper front plate: 139-179
+Hull side: 40-50
+Mantlet: 109-352

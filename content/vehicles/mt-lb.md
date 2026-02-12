@@ -6,3 +6,10 @@ The **MT-LB** is an Armoured Personnel Carrier, formally Malotiagovoraya Broniro
 Armament is limited to a commander-operated **7.62mm PKT** machine gun in a small turret with 2.6x sight and no rangefinder. The vehicle has an engine smoke system and benefits from neutral steering for manoeuvrability.
 
 ## Armor
+
+Left cheek: 8-18
+Right cheek: 8-18
+Lower front plate: 18-38
+Upper front plate: 12-42
+Hull side: 51-136
+Mantlet: 9-7
