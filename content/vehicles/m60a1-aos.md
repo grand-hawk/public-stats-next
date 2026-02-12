@@ -1,4 +1,4 @@
-# M60A1 AOS
+# M60A1 Add-On Stabilization
 
 ## Description
 

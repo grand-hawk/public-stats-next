@@ -1,4 +1,4 @@
-# bigTruck
+# MiKi Truck Company Model 2
 
 ## Description
 

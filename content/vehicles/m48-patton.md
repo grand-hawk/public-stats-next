@@ -1,4 +1,4 @@
-# M48 Patton
+# M48A3 Patton
 
 ## Description
 

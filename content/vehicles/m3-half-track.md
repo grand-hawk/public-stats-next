@@ -1,4 +1,4 @@
-# M3 half-track
+# M3A1
 
 ## Description
 

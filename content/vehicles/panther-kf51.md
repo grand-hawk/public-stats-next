@@ -1,4 +1,4 @@
-# Panther KF51
+# KF51 Panther
 
 ## Description
 

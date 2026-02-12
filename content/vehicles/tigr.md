@@ -1,4 +1,4 @@
-# Tigr
+# GAZ Tigr M
 
 ## Description
 

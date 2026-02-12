@@ -1,4 +1,4 @@
-# JgPz 38t
+# Hetzer
 
 ## Description
 

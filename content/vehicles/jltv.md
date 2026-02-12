@@ -1,4 +1,4 @@
-# JLTV
+# Joint Light Tactical Vehicle
 
 ## Description
 
