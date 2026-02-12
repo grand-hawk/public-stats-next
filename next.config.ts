@@ -15,6 +15,12 @@ const nextConfig: NextConfig = {
 
   experimental: {
     optimizePackageImports: ['@chakra-ui/react'],
+    staleTimes: {
+      // cache RSC payloads client-side so navigations don't
+      // round-trip to the server after the initial load
+      dynamic: 180,
+      static: 180,
+    },
   },
 
   async redirects() {
