@@ -8,6 +8,7 @@ import { getShells } from '@generated/shells';
 import { getVehicles } from '@generated/vehicles';
 
 export const dynamic = 'force-dynamic';
+export const revalidate = 86400; // 24 hours
 
 function getMdPaths() {
   const config = getConfig();
