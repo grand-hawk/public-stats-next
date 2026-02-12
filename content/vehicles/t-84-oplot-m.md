@@ -10,6 +10,6 @@ Main armament is the **125 mm KBA-3** smoothbore with a 6-second autoloader cycl
 Left cheek: 182-1407
 Right cheek: 186-1423
 Lower front plate: 176-417
-Upper front plate: 2814-1494
-Hull side: 1966-477
+Upper front plate: 1498-1814
+Hull side: 477-1966
 Mantlet: 160-495

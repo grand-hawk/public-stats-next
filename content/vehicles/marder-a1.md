@@ -7,6 +7,7 @@ The gunner operates a **20mm Rh202** cannon and a coaxial **7.62mm MG3**; the ma
 
 ## Armor
 
+Left cheek: 11-32
 Lower front plate: 34-78
 Upper front plate: 46-143
 Hull side: 18-35

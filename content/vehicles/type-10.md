@@ -6,3 +6,10 @@ The **Type 10** is a Main Battle Tank developed by Japan and entering JGSDF serv
 Main armament is the **120mm TKG** smoothbore fed by an autoloader with a 3.4-second cycle, plus a coaxial **7.62mm Type 74** and a commander’s **12.7mm M2**. The Type 10 has a laser and missile approach warning system, stabilizer, smoke grenades, and a fire control system with laser rangefinder, lead and tracking, and third-generation thermals on both gunner and commander sights.
 
 ## Armor
+
+Left cheek: 18-657
+Right cheek: 18-657
+Lower front plate: 34-97
+Upper front plate: 66-619
+Hull side: 98-128
+Mantlet: 265-706

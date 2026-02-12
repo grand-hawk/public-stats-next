@@ -7,6 +7,7 @@ The gunner operates a **20mm Rh202** and a **7.62mm MG3** with smoke grenades; t
 
 ## Armor
 
+Left cheek: 11-32
 Lower front plate: 58-121
 Upper front plate: 21-184
 Hull side: 15-30

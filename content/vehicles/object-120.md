@@ -12,4 +12,4 @@ Right cheek: 33-879
 Lower front plate: 35-91
 Upper front plate: 35-163
 Hull side: 15-20
-Mantlet: 962-170
+Mantlet: 170-962
