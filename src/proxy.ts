@@ -12,7 +12,8 @@ export function proxy(request: NextRequest) {
   const vehicle = request.nextUrl.pathname.split('/')[3];
   if (vehicle) {
     const vehicleSlug = slug(decodeURIComponent(vehicle));
-    if (vehicle !== vehicleSlug) {
+    const differsBeyondCase = vehicle !== vehicleSlug && vehicle.toLowerCase() !== vehicleSlug;
+    if (differsBeyondCase) {
       const url = request.nextUrl.clone();
       url.pathname = url.pathname.replace(vehicle, vehicleSlug);
       return NextResponse.redirect(url, 308);
