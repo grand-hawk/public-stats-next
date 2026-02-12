@@ -19,6 +19,12 @@ function getPaths() {
     [];
   const placeNames = config.data.placeNames;
 
+  paths.push({
+    path: '',
+    changefreq: 'weekly',
+    priority: '1',
+  });
+
   for (const placeName of placeNames) {
     const initials = config.data.placeNameInitials[placeName];
     const placeId = config.data.placeIds[placeName];
