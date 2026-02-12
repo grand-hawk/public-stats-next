@@ -1,75 +1,30 @@
-'use client';
-
-import { Flex, Stack } from '@chakra-ui/react';
-import { useParams, useRouter } from 'next/navigation';
+import { dehydrate, HydrationBoundary } from '@tanstack/react-query';
 import React from 'react';
-import { GrDocumentMissing } from 'react-icons/gr';
 import slugify from 'slug';
 
-import LoadoutHeader from '@/components/features/loadouts/header';
-import LoadoutTeams from '@/components/features/loadouts/teams';
-import Layout from '@/components/layout/layout';
-import PageMeta from '@/components/layout/pageMeta';
-import { EmptyState } from '@/components/ui/empty-state';
-import { usePlace } from '@/hooks/usePlace';
-import { trpc } from '@/utils/trpc';
+import { prefetchPlace } from '@/trpc/server';
 
-export default function PlaceLoadout() {
-  const router = useRouter();
-  const params = useParams();
-  const loadoutQuery = params.loadout as string;
-  const loadoutSlug = slugify(loadoutQuery);
-  const place = usePlace()!;
+import PlaceLoadoutClient from './_client';
 
-  const [loadout] = trpc.loadouts.bySlug.useSuspenseQuery({
-    placeId: place.placeId,
-    slug: loadoutSlug,
-  });
+export default async function PlaceLoadoutPage({
+  params,
+}: {
+  params: Promise<{ place: string; loadout: string }>;
+}) {
+  const { loadout, place: initials } = await params;
+  const { helpers, place } = await prefetchPlace(initials);
 
-  React.useEffect(() => {
-    if (!loadout) return;
-
-    if (loadoutQuery !== loadoutSlug) {
-      const newPath = `/${place.initials}/loadouts/${loadoutSlug}`;
-      router.replace(newPath);
-    }
-  }, [router, loadoutQuery, loadout, loadoutSlug, place.initials]);
-
-  const title = loadout ? loadout.name : 'Loadout not found';
-  const description = loadout
-    ? `${loadout.name} loadout statistics and team compositions for ${place.placeName}`
-    : undefined;
+  if (place) {
+    const loadoutSlug = slugify(loadout);
+    await helpers.loadouts.bySlug.prefetch({
+      placeId: place.placeId,
+      slug: loadoutSlug,
+    });
+  }
 
   return (
-    <PageMeta title={title} description={description}>
-      <Layout noPadding overwriteTabLabel={loadout?.name}>
-        {loadout ? (
-          <Flex
-            justifyContent="center"
-            marginBottom={{ base: 4, md: 0 }}
-            padding={{ base: 0, md: 2, lg: 4 }}
-          >
-            <Stack
-              aria-labelledby="loadout-page-title"
-              as="article"
-              data-md-target
-              gap={4}
-              maxWidth="5xl"
-              width="100%"
-            >
-              <LoadoutHeader initials={place.initials} name={loadout.name} />
-              <LoadoutTeams initials={place.initials} loadout={loadout} />
-            </Stack>
-          </Flex>
-        ) : (
-          <Flex alignItems="center" height="100%">
-            <EmptyState
-              icon={<GrDocumentMissing />}
-              title="Loadout not found"
-            />
-          </Flex>
-        )}
-      </Layout>
-    </PageMeta>
+    <HydrationBoundary state={dehydrate(helpers.queryClient)}>
+      <PlaceLoadoutClient />
+    </HydrationBoundary>
   );
 }

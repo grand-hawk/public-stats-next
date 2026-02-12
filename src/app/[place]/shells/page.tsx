@@ -1,22 +1,25 @@
-'use client';
-
-import { Flex } from '@chakra-ui/react';
+import { dehydrate, HydrationBoundary } from '@tanstack/react-query';
 import React from 'react';
-import { GrDocumentMissing } from 'react-icons/gr';
 
-import ShellsSearchSidebar from '@/components/features/shells/searchSidebar';
-import Layout from '@/components/layout/layout';
-import SearchLayout from '@/components/layout/searchLayout/layout';
-import { EmptyState } from '@/components/ui/empty-state';
+import { prefetchPlace } from '@/trpc/server';
 
-export default function PlaceShells() {
+import PlaceShellsClient from './_client';
+
+export default async function PlaceShellsPage({
+  params,
+}: {
+  params: Promise<{ place: string }>;
+}) {
+  const { place: initials } = await params;
+  const { helpers, place } = await prefetchPlace(initials);
+
+  if (place) {
+    await helpers.shells.list.prefetch({ placeId: place.placeId });
+  }
+
   return (
-    <Layout noPadding>
-      <SearchLayout sidebar={<ShellsSearchSidebar />}>
-        <Flex alignItems="center" height="100%">
-          <EmptyState icon={<GrDocumentMissing />} title="No shell selected" />
-        </Flex>
-      </SearchLayout>
-    </Layout>
+    <HydrationBoundary state={dehydrate(helpers.queryClient)}>
+      <PlaceShellsClient />
+    </HydrationBoundary>
   );
 }

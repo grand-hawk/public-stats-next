@@ -1,68 +1,25 @@
-'use client';
-
-import { Box, Flex, Heading, SimpleGrid, Stack, Text } from '@chakra-ui/react';
-import Image from 'next/image';
-import NextLink from 'next/link';
+import { dehydrate, HydrationBoundary } from '@tanstack/react-query';
 import React from 'react';
 
-import Layout from '@/components/layout/layout';
-import { usePlace } from '@/hooks/usePlace';
-import { trpc } from '@/utils/trpc';
+import { prefetchPlace } from '@/trpc/server';
 
-export default function PlaceLoadouts() {
-  const place = usePlace()!;
-  const [loadouts] = trpc.loadouts.list.useSuspenseQuery({
-    placeId: place.placeId,
-  });
+import PlaceLoadoutsClient from './_client';
+
+export default async function PlaceLoadoutsPage({
+  params,
+}: {
+  params: Promise<{ place: string }>;
+}) {
+  const { place: initials } = await params;
+  const { helpers, place } = await prefetchPlace(initials);
+
+  if (place) {
+    await helpers.loadouts.list.prefetch({ placeId: place.placeId });
+  }
 
   return (
-    <Layout>
-      <Flex justifyContent="center">
-        <Stack gap={6} maxWidth="3xl" width="100%">
-          <Stack gap={2}>
-            <Heading as="h1" size="2xl">
-              Loadouts
-            </Heading>
-            <Text color="fg.muted">
-              Explore era-based loadouts and compare team compositions.
-            </Text>
-          </Stack>
-
-          <SimpleGrid columns={{ base: 1, sm: 2, md: 3 }} gap={4}>
-            {loadouts.map((loadout) => (
-              <NextLink
-                href={`/${place.initials}/loadouts/${loadout.slug}`}
-                key={loadout.slug}
-              >
-                <Stack
-                  _hover={{ backgroundColor: 'bg.emphasized' }}
-                  backgroundColor="bg.muted"
-                  gap={0}
-                  overflow="hidden"
-                  transition="background-color 0.15s"
-                >
-                  <Box height="120px" position="relative" width="100%">
-                    <Image
-                      alt={`${loadout.name} loadout thumbnail`}
-                      fill
-                      priority
-                      sizes="(max-width: 768px) 100vw, 300px"
-                      src={loadout.thumbnail}
-                      style={{ objectFit: 'cover' }}
-                    />
-                  </Box>
-                  <Stack gap={1} padding={3}>
-                    <Text fontWeight="semibold">{loadout.name}</Text>
-                    <Text color="fg.muted" fontSize="sm">
-                      {loadout.description}
-                    </Text>
-                  </Stack>
-                </Stack>
-              </NextLink>
-            ))}
-          </SimpleGrid>
-        </Stack>
-      </Flex>
-    </Layout>
+    <HydrationBoundary state={dehydrate(helpers.queryClient)}>
+      <PlaceLoadoutsClient />
+    </HydrationBoundary>
   );
 }

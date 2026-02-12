@@ -1,37 +1,25 @@
-'use client';
-
-import { Flex, Stack } from '@chakra-ui/react';
-import { useQueryState } from 'nuqs';
+import { dehydrate, HydrationBoundary } from '@tanstack/react-query';
 import React from 'react';
 
-import KdrRangeSelect, {
-  KDR_RANGE_ITEMS,
-} from '@/components/features/kdr/rangeSelect';
-import KdrTable from '@/components/features/kdr/table';
-import Layout from '@/components/layout/layout';
+import { prefetchPlace } from '@/trpc/server';
 
-import type { KdrPlaceData } from '@generated/kdr';
+import PlaceKdrClient from './_client';
 
-export default function PlaceKdr() {
-  const [range, setRange] = useQueryState('range');
+export default async function PlaceKdrPage({
+  params,
+}: {
+  params: Promise<{ place: string }>;
+}) {
+  const { place: initials } = await params;
+  const { helpers, place } = await prefetchPlace(initials);
 
-  const normalizedRange = React.useMemo(() => {
-    const fallback = 'all_time';
-    if (!range) return fallback;
-
-    return KDR_RANGE_ITEMS.some((item) => item.value === range)
-      ? range
-      : fallback;
-  }, [range]) as keyof KdrPlaceData;
+  if (place) {
+    await helpers.kdr.table.prefetch({ placeId: place.placeId });
+  }
 
   return (
-    <Layout>
-      <Flex justifyContent="center">
-        <Stack as="main" gap={4} maxWidth="2xl" width="100%">
-          <KdrRangeSelect range={normalizedRange} setRange={setRange} />
-          <KdrTable range={normalizedRange} />
-        </Stack>
-      </Flex>
-    </Layout>
+    <HydrationBoundary state={dehydrate(helpers.queryClient)}>
+      <PlaceKdrClient />
+    </HydrationBoundary>
   );
 }

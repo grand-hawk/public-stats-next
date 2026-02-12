@@ -1,53 +1,25 @@
-'use client';
-
-import { Box, Flex, Heading, SimpleGrid, Stack, Text } from '@chakra-ui/react';
-import NextLink from 'next/link';
+import { dehydrate, HydrationBoundary } from '@tanstack/react-query';
 import React from 'react';
 
-import TeamIcon from '@/components/icons/teams';
-import Layout from '@/components/layout/layout';
-import { usePlace } from '@/hooks/usePlace';
-import { trpc } from '@/utils/trpc';
+import { prefetchPlace } from '@/trpc/server';
 
-export default function PlaceTeams() {
-  const place = usePlace()!;
-  const [teams] = trpc.teams.list.useSuspenseQuery({ placeId: place.placeId });
+import PlaceTeamsClient from './_client';
+
+export default async function PlaceTeamsPage({
+  params,
+}: {
+  params: Promise<{ place: string }>;
+}) {
+  const { place: initials } = await params;
+  const { helpers, place } = await prefetchPlace(initials);
+
+  if (place) {
+    await helpers.teams.list.prefetch({ placeId: place.placeId });
+  }
 
   return (
-    <Layout>
-      <Flex justifyContent="center">
-        <Stack gap={6} maxWidth="3xl" width="100%">
-          <Stack gap={2}>
-            <Heading as="h1" size="2xl">
-              Teams
-            </Heading>
-            <Text color="fg.muted">
-              Browse faction vehicle selections and compositions.
-            </Text>
-          </Stack>
-
-          <SimpleGrid columns={{ base: 1, sm: 2 }} gap={4}>
-            {teams.map((team) => (
-              <NextLink
-                href={`/${place.initials}/teams/${team.slug}`}
-                key={team.slug}
-              >
-                <Box
-                  _hover={{ backgroundColor: 'bg.emphasized' }}
-                  backgroundColor="bg.muted"
-                  padding={4}
-                  transition="background-color 0.15s"
-                >
-                  <Flex alignItems="center" gap={3}>
-                    <TeamIcon team={team.name} />
-                    <Text fontWeight="semibold">{team.name}</Text>
-                  </Flex>
-                </Box>
-              </NextLink>
-            ))}
-          </SimpleGrid>
-        </Stack>
-      </Flex>
-    </Layout>
+    <HydrationBoundary state={dehydrate(helpers.queryClient)}>
+      <PlaceTeamsClient />
+    </HydrationBoundary>
   );
 }
