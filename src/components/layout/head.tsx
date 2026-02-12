@@ -1,6 +1,7 @@
-import Head from 'next/head';
-import { useRouter } from 'next/router';
+'use client';
+
 import React from 'react';
+import { usePathname } from 'next/navigation';
 
 import { env, MEDIA_PREFIX } from '@/env';
 import { useCurrentTab } from '@/hooks/useCurrentTab';
@@ -21,11 +22,11 @@ export const getKeywords = (place: Place) => [
 export default function InternalHead() {
   const initials = usePlaceInitials();
   const currentTab = useCurrentTab();
-  const router = useRouter();
-  const canonicalUrl = `${getBaseUrl()}${router.asPath.split('?')[0]}`;
+  const pathname = usePathname();
+  const canonicalUrl = `${getBaseUrl()}${pathname}`;
 
   return (
-    <Head>
+    <>
       <title>{formatTitle(currentTab?.label, initials)}</title>
       <link
         href={`${MEDIA_PREFIX}/favicon.ico`}
@@ -46,6 +47,6 @@ export default function InternalHead() {
       {env.NEXT_PUBLIC_MEDIA_PREFIX && (
         <link rel="preconnect" href={env.NEXT_PUBLIC_MEDIA_PREFIX} />
       )}
-    </Head>
+    </>
   );
 }

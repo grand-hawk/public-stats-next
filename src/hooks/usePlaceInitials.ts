@@ -1,5 +1,6 @@
-import { useRouterQuery } from '@/hooks/useRouterQuery';
+import { useParams } from 'next/navigation';
 
 export function usePlaceInitials() {
-  return useRouterQuery('place') ?? 'mtc';
+  const params = useParams();
+  return (params?.place as string) ?? 'mtc';
 }

@@ -1,12 +1,4 @@
-import {
-  httpLink,
-  httpSubscriptionLink,
-  loggerLink,
-  splitLink,
-} from '@trpc/client';
-import { createTRPCNext } from '@trpc/next';
-import { ssrPrepass } from '@trpc/next/ssrPrepass';
-import superjson from 'superjson';
+import { createTRPCReact } from '@trpc/react-query';
 
 import type { AppRouter } from '@/server/api/trpc/router';
 import type { inferRouterInputs, inferRouterOutputs } from '@trpc/server';
@@ -28,40 +20,7 @@ export const getBaseUrl = () => {
   return `http://localhost:${process.env.PORT ?? 3000}`; // dev SSR should use localhost
 };
 
-export const trpc = createTRPCNext<AppRouter>({
-  ssr: true,
-  ssrPrepass,
-  config() {
-    const url = `${getBaseUrl()}/api/trpc`;
-    const transformer = superjson;
-
-    return {
-      links: [
-        loggerLink({
-          enabled: (opts) =>
-            process.env.NODE_ENV === 'development' ||
-            (opts.direction === 'down' && opts.result instanceof Error),
-        }),
-        splitLink({
-          condition: (op) => op.type === 'subscription',
-          true: httpSubscriptionLink({ url, transformer }),
-          false: httpLink({ url, transformer }),
-        }),
-      ],
-      queryClientConfig: {
-        defaultOptions: {
-          queries: {
-            refetchOnMount: false,
-            refetchOnWindowFocus: process.env.NODE_ENV === 'development',
-            refetchOnReconnect: false,
-          },
-        },
-      },
-      abortOnUnmount: true,
-    };
-  },
-  transformer: superjson,
-});
+export const trpc = createTRPCReact<AppRouter>();
 
 export type RouterInputs = inferRouterInputs<AppRouter>;
 

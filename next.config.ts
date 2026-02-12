@@ -18,11 +18,6 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       {
-        source: '/',
-        destination: '/mtc',
-        permanent: true,
-      },
-      {
         source: '/vehicles/:slug',
         destination: `/mtc/vehicles/:slug`,
         permanent: true,
@@ -31,6 +26,15 @@ const nextConfig: NextConfig = {
         source: '/:path((?!md/).*\\.md)',
         destination: '/md/:path',
         permanent: true,
+      },
+    ];
+  },
+
+  async rewrites() {
+    return [
+      {
+        source: '/sitemap.md.xml',
+        destination: '/sitemap-md.xml',
       },
     ];
   },

@@ -1,20 +1,20 @@
-import { useRouter } from 'next/router';
+import { usePathname } from 'next/navigation';
 import React from 'react';
 
 import { tabs } from '@/components/layout/navigation/tabs';
 import { usePlaceInitials } from '@/hooks/usePlaceInitials';
 
 export function useCurrentTab() {
-  const router = useRouter();
+  const pathname = usePathname();
   const initials = usePlaceInitials();
 
   const currentTab = React.useMemo(() => {
     if (!initials) return;
 
     for (const tab of Object.values(tabs)) {
-      if (router.asPath.startsWith(`/${initials}${tab.path}`)) return tab;
+      if (pathname.startsWith(`/${initials}${tab.path}`)) return tab;
     }
-  }, [router.asPath, initials]);
+  }, [pathname, initials]);
 
   return currentTab;
 }

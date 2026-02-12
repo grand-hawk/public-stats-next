@@ -1,4 +1,5 @@
-import Head from 'next/head';
+'use client';
+
 import React from 'react';
 import { createContext, useContext } from 'react';
 
@@ -54,7 +55,7 @@ export function PageMetaHead() {
   const twitterCard = pageMeta.twitterCard ?? 'summary';
 
   return (
-    <Head>
+    <>
       {pageMeta.exactTitle ? (
         <title>{pageMeta.exactTitle}</title>
       ) : (
@@ -71,6 +72,6 @@ export function PageMetaHead() {
           <meta content={ogDescription} name="twitter:description" />
         </>
       )}
-    </Head>
+    </>
   );
 }

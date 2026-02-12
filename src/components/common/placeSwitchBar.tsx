@@ -1,3 +1,5 @@
+'use client';
+
 import {
   createListCollection,
   Flex,
@@ -5,7 +7,7 @@ import {
   Select,
   Span,
 } from '@chakra-ui/react';
-import { useRouter } from 'next/router';
+import { usePathname, useRouter } from 'next/navigation';
 import React from 'react';
 
 import { useCurrentTab } from '@/hooks/useCurrentTab';
@@ -20,6 +22,7 @@ export default function PlaceSwitchBar({
   overwriteTabLabel?: string;
 }) {
   const router = useRouter();
+  const pathname = usePathname();
   const config = useSuspenseConfig();
   const currentInitials = usePlaceInitials();
   const currentTab = useCurrentTab();
@@ -67,14 +70,13 @@ export default function PlaceSwitchBar({
           }}
           onValueChange={(details) => {
             const selectedInitials = details.value[0];
-            if (selectedInitials !== currentInitials)
-              router.push({
-                pathname: router.pathname,
-                query: {
-                  ...router.query,
-                  place: selectedInitials,
-                },
-              });
+            if (selectedInitials !== currentInitials) {
+              const newPath = pathname.replace(
+                `/${currentInitials}`,
+                `/${selectedInitials}`,
+              );
+              router.push(newPath);
+            }
           }}
         >
           <Select.HiddenSelect />

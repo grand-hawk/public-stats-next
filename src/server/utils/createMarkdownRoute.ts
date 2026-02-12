@@ -6,9 +6,9 @@ import { processHtmlToMarkdown } from '@/server/utils/processHtmlTomarkdown';
 import { getExtension } from '@/utils/extensions';
 import { getBaseUrl } from '@/utils/trpc';
 
-import type { GetServerSidePropsContext, GetServerSidePropsResult } from 'next';
+import type { NextRequest } from 'next/server';
 
-export function createMarkdownRoute() {
+export function createMarkdownRouteHandler() {
   async function revalidate(htmlUrl: string) {
     const htmlResponse = await ky.get(htmlUrl, { throwHttpErrors: false });
     if (!htmlResponse.ok) return null;
@@ -24,16 +24,18 @@ export function createMarkdownRoute() {
     revalidate,
   });
 
-  async function getServerSideProps({
-    res,
-    resolvedUrl,
-  }: GetServerSidePropsContext): Promise<GetServerSidePropsResult<{}>> {
-    const [path] = resolvedUrl.split('?');
+  return async function handler(
+    _request: NextRequest,
+    resolvedUrl: string,
+  ): Promise<Response> {
+    const [urlPath] = resolvedUrl.split('?');
 
-    if (getExtension(path) !== '.md') return { notFound: true };
+    if (getExtension(urlPath) !== '.md') {
+      return new Response(null, { status: 404 });
+    }
 
     const htmlUrl = new URL(
-      path.replace(/^\/md\//, '').replace(/\.md$/, ''),
+      urlPath.replace(/^\/md\//, '').replace(/\.md$/, ''),
       getBaseUrl(),
     );
     htmlUrl.hash = '';
@@ -45,7 +47,9 @@ export function createMarkdownRoute() {
       .head(htmlUrlString)
       .then((response) => response.ok)
       .catch(() => false);
-    if (!headSuccess) return { notFound: true };
+    if (!headSuccess) {
+      return new Response(null, { status: 404 });
+    }
 
     let markdown = await cache.get(htmlUrlString);
     if (!markdown) {
@@ -53,22 +57,17 @@ export function createMarkdownRoute() {
       cache.set(htmlUrlString, markdown);
     }
 
-    if (markdown === null) return { notFound: true };
+    if (markdown === null) {
+      return new Response(null, { status: 404 });
+    }
 
-    res.setHeader('Link', `<${htmlUrlString}>; rel="canonical"`);
-    res.setHeader('X-Robots-Tag', 'noindex');
-    res.setHeader('content-type', 'text/markdown; charset=utf-8');
-    res.setHeader(
-      'cache-control',
-      'public, max-age=3600, stale-while-revalidate=86400',
-    );
-
-    res.write(markdown);
-
-    res.end();
-
-    return { props: {} };
-  }
-
-  return getServerSideProps;
+    return new Response(markdown, {
+      headers: {
+        Link: `<${htmlUrlString}>; rel="canonical"`,
+        'X-Robots-Tag': 'noindex',
+        'content-type': 'text/markdown; charset=utf-8',
+        'cache-control': 'public, max-age=3600, stale-while-revalidate=86400',
+      },
+    });
+  };
 }
