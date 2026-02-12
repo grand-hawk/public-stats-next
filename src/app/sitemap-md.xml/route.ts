@@ -7,6 +7,8 @@ import { getLoadouts } from '@generated/loadouts';
 import { getShells } from '@generated/shells';
 import { getVehicles } from '@generated/vehicles';
 
+export const dynamic = 'force-dynamic';
+
 function getMdPaths() {
   const config = getConfig();
   const vehicles = getVehicles();

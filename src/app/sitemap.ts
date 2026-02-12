@@ -8,6 +8,9 @@ import { getVehicles } from '@generated/vehicles';
 
 import type { MetadataRoute } from 'next';
 
+export const dynamic = 'force-dynamic';
+export const revalidate = 604800; // 1 week
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const config = getConfig();
   const vehicles = getVehicles();
