@@ -1,4 +1,4 @@
-# M18 Super Hellcat
+# 90mm GMC Super Hellcat
 
 ## Description
 

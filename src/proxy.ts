@@ -6,6 +6,9 @@ import slug from 'slug';
 import type { NextRequest } from 'next/server';
 
 export function proxy(request: NextRequest) {
+  if (request.nextUrl.pathname === '/')
+    return NextResponse.redirect(new URL('/mtc', request.url), 308);
+
   const vehicle = request.nextUrl.pathname.split('/')[3];
   if (vehicle) {
     const vehicleSlug = slug(decodeURIComponent(vehicle));
@@ -18,5 +21,5 @@ export function proxy(request: NextRequest) {
 }
 
 export const config = {
-  matcher: '/:place/vehicles/:vehicle',
+  matcher: ['/', '/:place/vehicles/:vehicle'],
 };

@@ -1,4 +1,4 @@
-# PUMA IFV
+# PUMA
 
 ## Description
 

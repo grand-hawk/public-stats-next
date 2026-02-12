@@ -1,4 +1,4 @@
-# Kornet D
+# Kornet D GAZ Tigr
 
 ## Description
 

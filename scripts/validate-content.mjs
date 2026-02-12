@@ -121,6 +121,19 @@ for (const filepath of files) {
         `Line ${i + 1}: content in "${currentSection}" doesn't match required format — got "${line.trim()}"`,
       );
 
+    // range: left must be strictly less than right
+    if (rule && rule.test(line.trim())) {
+      const rangeMatch = line.trim().match(/:\s*(~?\d+)-(~?\d+)$/);
+      if (rangeMatch) {
+        const left = parseInt(rangeMatch[1].replace('~', ''), 10);
+        const right = parseInt(rangeMatch[2].replace('~', ''), 10);
+        if (left >= right)
+          errors.push(
+            `Line ${i + 1}: armor range must have left < right, got ${rangeMatch[1]}-${rangeMatch[2]}`,
+          );
+      }
+    }
+
     if (!sectionContent.has(currentSection))
       sectionContent.set(currentSection, []);
     sectionContent.get(currentSection).push(line.trim());
@@ -132,11 +145,10 @@ for (const filepath of files) {
     vehicleName &&
     descriptionText.trim() &&
     !descriptionText.toLowerCase().includes(vehicleName.toLowerCase())
-  ) {
+  )
     errors.push(
       `Description must mention the vehicle name "${vehicleName}" when not empty`,
     );
-  }
 
   report(filepath, errors);
 }

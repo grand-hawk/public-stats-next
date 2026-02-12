@@ -1,4 +1,4 @@
-# Merkava Mk.1
+# Merkava Mk.1B
 
 ## Description
 

@@ -1,4 +1,4 @@
-# pickupTruck
+# MiKi Truck Company Model 1
 
 ## Description
 

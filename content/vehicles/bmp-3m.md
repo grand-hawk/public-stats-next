@@ -1,4 +1,4 @@
-# BMP-3M
+# BMP-3M Arena
 
 ## Description
 

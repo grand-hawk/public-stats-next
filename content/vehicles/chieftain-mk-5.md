@@ -1,4 +1,4 @@
-# Chieftain Mk 5
+# Chieftain Mk.5
 
 ## Description
 

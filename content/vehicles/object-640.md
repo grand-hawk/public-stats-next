@@ -1,4 +1,4 @@
-# Object 640
+# Object 640 "Black Eagle"
 
 ## Description
 

@@ -1,4 +1,4 @@
-# Kornet D-1
+# Kornet D BMD-4M
 
 ## Description
 

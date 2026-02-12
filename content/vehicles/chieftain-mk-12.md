@@ -1,4 +1,4 @@
-# Chieftain Mk 12
+# Chieftain Mk.12
 
 ## Description
 

@@ -23,7 +23,7 @@ const vehicles = await ky.get(`${prefixUrl}/vehicles.json`).json<Vehicles>();
 const gameIds = new Set<string>();
 const gameIdToName = new Map<string, string>();
 
-for (const place of Object.values(vehicles.data)) {
+for (const place of Object.values(vehicles.data))
   for (const [name, vehicle] of Object.entries(place.data) as [
     string,
     VehiclesPlaceDataVehicle,
@@ -31,7 +31,6 @@ for (const place of Object.values(vehicles.data)) {
     gameIds.add(vehicle.info.gameId);
     gameIdToName.set(vehicle.info.gameId, name);
   }
-}
 
 if (!existsSync(CONTENT_DIR)) await mkdir(CONTENT_DIR, { recursive: true });
 
@@ -63,9 +62,7 @@ if (extraFiles.length > 0) {
   console.warn(
     `Warning: ${extraFiles.length} file(s) in ${CONTENT_DIR} have no matching vehicle in the API:`,
   );
-  for (const f of extraFiles.sort()) {
-    console.warn(`  - ${f}.md`);
-  }
+  for (const f of extraFiles.sort()) console.warn(`  - ${f}.md`);
 }
 
 console.log(`Done: ${created} created, ${skipped} skipped (already exist)`);

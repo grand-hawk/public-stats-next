@@ -1,4 +1,4 @@
-# Ka-52M
+# Ka-52M Alligator-M
 
 ## Description
 

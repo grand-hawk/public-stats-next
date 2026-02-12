@@ -1,4 +1,4 @@
-# Centurion Mk 10
+# Centurion Mk.10
 
 ## Description
 
