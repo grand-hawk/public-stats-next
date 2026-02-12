@@ -20,6 +20,7 @@
   "dependencies": {
     "@chakra-ui/charts": "^3.32.0",
     "@chakra-ui/react": "^3.32.0",
+    "@emotion/cache": "^11.14.0",
     "@emotion/react": "^11.14.0",
     "@robertsspaceindustries/sub": "^1.0.9",
     "@t3-oss/env-nextjs": "^0.13.10",
