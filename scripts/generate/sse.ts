@@ -1,6 +1,7 @@
 import EventEmitter from 'node:events';
 
 import { EventSource } from 'eventsource';
+import { Agent, fetch as undiciFetch } from 'undici';
 
 declare const EdgeRuntime: string | undefined;
 
@@ -9,6 +10,8 @@ const version: string = '{{version}}';
 
 export const sse = new EventEmitter();
 sse.setMaxListeners(0);
+
+const http1Dispatcher = new Agent({ allowH2: false });
 
 if (
   process.env.NEXT_RUNTIME !== 'edge' &&
@@ -25,7 +28,10 @@ if (
   let retryCount = 0;
 
   function createEventSource() {
-    const eventSource = new EventSource(sseUrl);
+    const eventSource = new EventSource(sseUrl, {
+      fetch: (input, init) =>
+        undiciFetch(input, { ...init, dispatcher: http1Dispatcher }),
+    });
 
     eventSource.onopen = () => {
       console.log('SSE connection opened');
