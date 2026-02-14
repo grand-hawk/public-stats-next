@@ -1,14 +1,20 @@
 import { Box, Flex, Input, Link, NumberInput, Text } from '@chakra-ui/react';
 import { useVirtualizer } from '@tanstack/react-virtual';
 import React from 'react';
-import { LuChevronDown, LuChevronUp, LuDownload } from 'react-icons/lu';
+import {
+  LuChevronDown,
+  LuChevronUp,
+  LuCircleHelp,
+  LuDownload,
+} from 'react-icons/lu';
 
 import VehicleIcon from '@/components/features/vehicles/vehicleIcon';
 import { simplifyString } from '@/utils/simplifyString';
 
-import { palettes } from './palettes';
+import { palettes } from '../palettes';
+import { RangeSlider } from './slider';
 
-import type { Palette } from './palettes';
+import type { Palette } from '../palettes';
 import type { ArmorAngle } from '@/utils/getVehicleImage';
 
 interface VehicleOption {
@@ -43,6 +49,7 @@ export interface ArmorControlsProps {
   onMaxDepthChange: (v: number) => void;
   onMinChange: (v: number) => void;
   onMinDepthChange: (v: number) => void;
+  onOpenTour: () => void;
   onPaletteChange: (p: Palette) => void;
   onRicochetAngleChange: (v: number) => void;
   onSave: () => void;
@@ -89,57 +96,6 @@ const VehicleListItem = React.memo(function VehicleListItem({
   );
 });
 
-// CSS for range inputs (brutalist, no border radius)
-const SLIDER_CSS = `
-  input[type="range"].armor-slider {
-    -webkit-appearance: none;
-    appearance: none;
-    background: transparent;
-    cursor: pointer;
-    width: 100%;
-    height: 20px;
-    margin: 0;
-  }
-  input[type="range"].armor-slider::-webkit-slider-runnable-track {
-    height: 4px;
-    background: var(--chakra-colors-border-muted, #333);
-    border: none;
-    border-radius: 0;
-  }
-  input[type="range"].armor-slider::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    height: 14px;
-    width: 8px;
-    background: var(--chakra-colors-fg-muted, #aaa);
-    border: 1px solid var(--chakra-colors-border-muted, #555);
-    border-radius: 0;
-    margin-top: -5px;
-    cursor: grab;
-  }
-  input[type="range"].armor-slider::-webkit-slider-thumb:active {
-    cursor: grabbing;
-    background: var(--chakra-colors-fg, #fff);
-  }
-  input[type="range"].armor-slider::-moz-range-track {
-    height: 4px;
-    background: var(--chakra-colors-border-muted, #333);
-    border: none;
-    border-radius: 0;
-  }
-  input[type="range"].armor-slider::-moz-range-thumb {
-    height: 14px;
-    width: 8px;
-    background: var(--chakra-colors-fg-muted, #aaa);
-    border: 1px solid var(--chakra-colors-border-muted, #555);
-    border-radius: 0;
-    cursor: grab;
-  }
-  input[type="range"].armor-slider::-moz-range-thumb:active {
-    cursor: grabbing;
-    background: var(--chakra-colors-fg, #fff);
-  }
-`;
-
 export default function ArmorControls({
   angle,
   autoRange,
@@ -156,6 +112,7 @@ export default function ArmorControls({
   onMaxDepthChange,
   onMinChange,
   onMinDepthChange,
+  onOpenTour,
   onPaletteChange,
   onRicochetAngleChange,
   onSave,
@@ -195,9 +152,8 @@ export default function ArmorControls({
       if (
         containerRef.current &&
         !containerRef.current.contains(e.target as Node)
-      ) {
+      )
         setIsOpen(false);
-      }
     }
     document.addEventListener('mousedown', handler);
     return () => document.removeEventListener('mousedown', handler);
@@ -225,8 +181,6 @@ export default function ArmorControls({
       height={{ base: 'auto', md: '100%' }}
       minHeight="0"
     >
-      <style dangerouslySetInnerHTML={{ __html: SLIDER_CSS }} />
-
       <Flex
         _hover={{ background: 'whiteAlpha.50' }}
         alignItems="center"
@@ -275,6 +229,7 @@ export default function ArmorControls({
           <Box
             ref={containerRef}
             borderBottomWidth="1px"
+            data-tour="vehicle"
             padding={3}
             position="relative"
           >
@@ -357,7 +312,7 @@ export default function ArmorControls({
             gap={0}
             overflowY={{ base: 'hidden', md: 'auto' }}
           >
-            <Box borderBottomWidth="1px" padding={3}>
+            <Box borderBottomWidth="1px" data-tour="angle" padding={3}>
               <Text color="fg.muted" fontSize="xs" marginBottom={1}>
                 Angle
               </Text>
@@ -370,37 +325,37 @@ export default function ArmorControls({
                 gridTemplateColumns="repeat(3, 1fr)"
                 width="100%"
               >
-                {ANGLES.map((a) => (
+                {ANGLES.map((angle) => (
                   <Box
-                    key={a.value}
+                    key={angle.value}
                     as="button"
                     background={
-                      angle === a.value ? 'whiteAlpha.200' : 'transparent'
+                      angle === angle.value ? 'whiteAlpha.200' : 'transparent'
                     }
                     borderColor="border.muted"
                     borderLeftWidth="1px"
                     borderTopWidth="1px"
-                    color={angle === a.value ? 'fg' : 'fg.muted'}
+                    color={angle === angle.value ? 'fg' : 'fg.muted'}
                     cursor="pointer"
                     flex={1}
                     fontSize="xs"
-                    fontWeight={angle === a.value ? 'medium' : 'normal'}
+                    fontWeight={angle === angle.value ? 'medium' : 'normal'}
                     paddingX={2}
                     paddingY={1.5}
                     textAlign="center"
                     transition="all 0.1s"
                     _hover={{ background: 'whiteAlpha.100', color: 'fg' }}
-                    onClick={() => onAngleChange(a.value)}
+                    onClick={() => onAngleChange(angle.value)}
                   >
-                    {a.label}
+                    {angle.label}
                   </Box>
                 ))}
               </Box>
             </Box>
 
-            {/* ricochet angle + depth */}
             <Box
               borderBottomWidth="1px"
+              data-tour="depth"
               display="flex"
               flexDirection="column"
               gap={3}
@@ -415,16 +370,12 @@ export default function ArmorControls({
                     {ricochetAngle.toFixed(1)}°
                   </Text>
                 </Flex>
-                <input
-                  className="armor-slider"
+                <RangeSlider
                   max={90}
                   min={75}
                   step={0.5}
-                  type="range"
                   value={ricochetAngle}
-                  onChange={(e) =>
-                    onRicochetAngleChange(Number(e.target.value))
-                  }
+                  onChange={onRicochetAngleChange}
                 />
               </div>
 
@@ -442,17 +393,14 @@ export default function ArmorControls({
                     >
                       Min
                     </Text>
-                    <input
-                      className="armor-slider"
+                    <RangeSlider
                       max={effectiveMaxDepth}
                       min={0}
                       step={effectiveMaxDepth / 200}
-                      type="range"
                       value={minDepth}
-                      onChange={(e) => {
-                        const v = Number(e.target.value);
-                        onMinDepthChange(Math.min(v, maxDepth));
-                      }}
+                      onChange={(v: number) =>
+                        onMinDepthChange(Math.min(v, maxDepth))
+                      }
                     />
                   </Flex>
                   <Flex alignItems="center" gap={2}>
@@ -464,26 +412,23 @@ export default function ArmorControls({
                     >
                       Max
                     </Text>
-                    <input
-                      className="armor-slider"
+                    <RangeSlider
                       max={effectiveMaxDepth}
                       min={0}
                       step={effectiveMaxDepth / 200}
-                      type="range"
                       value={Math.min(maxDepth, effectiveMaxDepth)}
-                      onChange={(e) => {
-                        const v = Number(e.target.value);
-                        onMaxDepthChange(Math.max(v, minDepth));
-                      }}
+                      onChange={(v: number) =>
+                        onMaxDepthChange(Math.max(v, minDepth))
+                      }
                     />
                   </Flex>
                 </Flex>
               </div>
             </Box>
 
-            {/* range + palette */}
             <Box
               borderBottomWidth="1px"
+              data-tour="range"
               display="flex"
               flexDirection="column"
               gap={3}
@@ -581,7 +526,26 @@ export default function ArmorControls({
               </div>
             </Box>
 
-            <Box padding={3}>
+            <Flex data-tour="save" gap={2} padding={3}>
+              <Flex
+                _hover={{ color: 'fg', background: 'whiteAlpha.100' }}
+                alignItems="center"
+                as="button"
+                borderColor="border.muted"
+                borderWidth="1px"
+                color="fg.muted"
+                cursor="pointer"
+                flex={1}
+                fontSize="xs"
+                gap={2}
+                justifyContent="center"
+                paddingX={3}
+                paddingY={1.5}
+                onClick={onSave}
+              >
+                <LuDownload size={14} />
+                Save image
+              </Flex>
               <Flex
                 _hover={{ color: 'fg', background: 'whiteAlpha.100' }}
                 alignItems="center"
@@ -591,17 +555,14 @@ export default function ArmorControls({
                 color="fg.muted"
                 cursor="pointer"
                 fontSize="xs"
-                gap={2}
                 justifyContent="center"
-                paddingX={3}
+                paddingX={2}
                 paddingY={1.5}
-                width="100%"
-                onClick={onSave}
+                onClick={onOpenTour}
               >
-                <LuDownload size={14} />
-                Save image
+                <LuCircleHelp size={14} />
               </Flex>
-            </Box>
+            </Flex>
 
             <Box borderTopWidth="1px" marginTop="auto" padding={3}>
               <Text color="fg.subtle" fontSize="2xs" lineHeight="1.4">

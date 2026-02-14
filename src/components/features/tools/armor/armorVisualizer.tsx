@@ -2,11 +2,14 @@ import { Box } from '@chakra-ui/react';
 import { useQueryState } from 'nuqs';
 import React from 'react';
 
+import { usePersistStoreIsHydrated } from '@/hooks/usePersistStoreIsHydrated';
 import { useSuspenseConfig } from '@/hooks/useSuspenseConfig';
+import { useArmorStore } from '@/stores/armor';
 import { getNameFromInitials, getPlaceFromName } from '@/utils/placeUtils';
 import { trpc } from '@/utils/trpc';
 
 import ArmorCanvas from './armorCanvas';
+import ArmorTour from './armorTour';
 import ArmorControls from './controls';
 import { palettes } from './palettes';
 import { useArmorProcessor } from './useArmorProcessor';
@@ -33,6 +36,28 @@ export default function ArmorVisualizer() {
   const [maxDepth, setMaxDepth] = React.useState(Infinity);
 
   const saveRef = React.useRef<(() => void) | null>(null);
+
+  const { setTourSeen, tourSeen } = useArmorStore();
+  const hydrated = usePersistStoreIsHydrated(useArmorStore);
+  const [tourOpen, setTourOpen] = React.useState(false);
+
+  React.useEffect(() => {
+    if (hydrated && !tourSeen) {
+      setTourOpen(true);
+    }
+  }, [hydrated, tourSeen]);
+
+  const handleTourOpenChange = React.useCallback(
+    (open: boolean) => {
+      setTourOpen(open);
+      if (!open) setTourSeen(true);
+    },
+    [setTourSeen],
+  );
+
+  const handleOpenTour = React.useCallback(() => {
+    setTourOpen(true);
+  }, []);
 
   const {
     canvas,
@@ -113,6 +138,7 @@ export default function ArmorVisualizer() {
         onMaxDepthChange={setMaxDepth}
         onMinChange={setMinMm}
         onMinDepthChange={setMinDepth}
+        onOpenTour={handleOpenTour}
         onPaletteChange={setPalette}
         onRicochetAngleChange={setRicochetAngle}
         onSave={handleSave}
@@ -121,6 +147,12 @@ export default function ArmorVisualizer() {
         ricochetAngle={ricochetAngle}
         selectedSlug={vehicleSlug}
         vehicles={vehicleList}
+      />
+
+      <ArmorTour
+        hasVehicle={vehicleSlug != null}
+        open={tourOpen}
+        onOpenChange={handleTourOpenChange}
       />
 
       <Box
