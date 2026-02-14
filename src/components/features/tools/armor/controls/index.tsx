@@ -325,29 +325,29 @@ export default function ArmorControls({
                 gridTemplateColumns="repeat(3, 1fr)"
                 width="100%"
               >
-                {ANGLES.map((angle) => (
+                {ANGLES.map((a) => (
                   <Box
-                    key={angle.value}
+                    key={a.value}
                     as="button"
                     background={
-                      angle === angle.value ? 'whiteAlpha.200' : 'transparent'
+                      angle === a.value ? 'whiteAlpha.200' : 'transparent'
                     }
                     borderColor="border.muted"
                     borderLeftWidth="1px"
                     borderTopWidth="1px"
-                    color={angle === angle.value ? 'fg' : 'fg.muted'}
+                    color={angle === a.value ? 'fg' : 'fg.muted'}
                     cursor="pointer"
                     flex={1}
                     fontSize="xs"
-                    fontWeight={angle === angle.value ? 'medium' : 'normal'}
+                    fontWeight={angle === a.value ? 'medium' : 'normal'}
                     paddingX={2}
                     paddingY={1.5}
                     textAlign="center"
                     transition="all 0.1s"
                     _hover={{ background: 'whiteAlpha.100', color: 'fg' }}
-                    onClick={() => onAngleChange(angle.value)}
+                    onClick={() => onAngleChange(a.value)}
                   >
-                    {angle.label}
+                    {a.label}
                   </Box>
                 ))}
               </Box>
