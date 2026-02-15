@@ -33,7 +33,10 @@ if (
     };
 
     eventSource.onerror = (error) => {
-      console.error('SSE connection error:', error);
+      console.error('SSE connection error:', error, {
+        url: sseUrl,
+        readyState: eventSource.readyState,
+      });
       eventSource.close();
 
       const delay = Math.min(baseDelay * Math.pow(2, retryCount), maxDelay);
