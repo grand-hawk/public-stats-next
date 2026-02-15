@@ -71,7 +71,7 @@ await Promise.all(
     outputContent += '\n';
     outputContent += `import { sse } from './sse';\n`;
     outputContent += '\n';
-    outputContent += `const noPoolAgent = new Agent({ pipelining: 0 });\n`;
+    outputContent += `const noPoolAgent = new Agent({ pipelining: 0, keepAliveTimeout: 10 });\n`;
     outputContent += `const dataKy = ky.extend({\n`;
     outputContent += `  fetch: (input: RequestInfo | URL, init?: RequestInit) =>\n`;
     outputContent += `    fetch(input, { ...init, dispatcher: noPoolAgent } as RequestInit),\n`;
