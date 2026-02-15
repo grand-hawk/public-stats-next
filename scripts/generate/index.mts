@@ -67,8 +67,15 @@ await Promise.all(
     outputContent += `import { existsSync } from 'node:fs';\n`;
     outputContent += `import { mkdir, readFile, writeFile } from 'node:fs/promises';\n`;
     outputContent += `import ky, { HTTPError } from 'ky';\n`;
+    outputContent += `import { Agent } from 'undici';\n`;
     outputContent += '\n';
     outputContent += `import { sse } from './sse';\n`;
+    outputContent += '\n';
+    outputContent += `const noPoolAgent = new Agent({ pipelining: 0 });\n`;
+    outputContent += `const dataKy = ky.extend({\n`;
+    outputContent += `  fetch: (input: RequestInfo | URL, init?: RequestInit) =>\n`;
+    outputContent += `    fetch(input, { ...init, dispatcher: noPoolAgent } as RequestInit),\n`;
+    outputContent += `});\n`;
     outputContent += '\n';
     outputContent += compiledTypes;
     outputContent += '\n';
@@ -95,7 +102,7 @@ await Promise.all(
     outputContent += `  if (cached?.etag) headers['If-None-Match'] = cached.etag;\n`;
     outputContent += `  \n`;
     outputContent += `  try {\n`;
-    outputContent += `    const response = await ky.get('${prefixUrl}/${dataFile}', { headers, throwHttpErrors: true });\n`;
+    outputContent += `    const response = await dataKy.get('${prefixUrl}/${dataFile}', { headers, throwHttpErrors: true });\n`;
     outputContent += `    const data = await response.json<Default>();\n`;
     outputContent += `    const etag = response.headers.get('etag') || '';\n`;
     outputContent += `    \n`;
