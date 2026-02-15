@@ -62,7 +62,7 @@ export default function VehicleDataInfo() {
 
       <HStack>
         <Icon as={MdCode} />
-        <span title="The internal ID of the vehicle, useful for the loadout editor">
+        <span>
           ID: &quot;{vehicle.info.gameId}&quot;
         </span>
       </HStack>
