@@ -15,26 +15,6 @@ const nextConfig: NextConfig = {
     optimizePackageImports: ['@chakra-ui/react'],
   },
 
-  async redirects() {
-    return [
-      {
-        source: '/',
-        destination: '/mtc',
-        permanent: true,
-      },
-      {
-        source: '/vehicles/:slug',
-        destination: `/mtc/vehicles/:slug`,
-        permanent: true,
-      },
-      {
-        source: '/:path((?!md/).*\\.md)',
-        destination: '/md/:path',
-        permanent: true,
-      },
-    ];
-  },
-
   assetPrefix: process.env.ASSET_PREFIX,
 
   images: {
