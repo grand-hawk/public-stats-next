@@ -526,7 +526,7 @@ export default function ArmorControls({
               </div>
             </Box>
 
-            <Flex data-tour="save" gap={2} padding={3}>
+            <Flex gap={2} padding={3}>
               <Flex
                 _hover={{ color: 'fg', background: 'whiteAlpha.100' }}
                 alignItems="center"

@@ -33,13 +33,8 @@ const STEPS: TourStep[] = [
   {
     target: 'range',
     title: 'Range & palette',
-    description: 'Toggle between automatically chosen range or manually set range, and choose a color palette.',
-    placement: 'right',
-  },
-  {
-    target: 'save',
-    title: 'Save image',
-    description: 'Export the current view as a PNG image.',
+    description:
+      'Toggle between automatically chosen range or manually set range, and choose a color palette.',
     placement: 'right',
   },
 ];
