@@ -1,8 +1,9 @@
-import { Link, Table } from '@chakra-ui/react';
+import { HStack, Link, Table } from '@chakra-ui/react';
 import NextLink from 'next/link';
 import React from 'react';
 import slug from 'slug';
 
+import TeamIcon from '@/components/icons/teams';
 import SectionMarker from '@/components/wiki/sectionMarker';
 import TitledCard from '@/components/wiki/titledCard';
 import { usePlaceInitials } from '@/hooks/usePlaceInitials';
@@ -87,14 +88,17 @@ export default function VehicleAvailability({
                 }}
               >
                 <Table.Cell>
-                  <Link asChild variant="underline">
-                    <NextLink
-                      href={`/${initials}/teams/${slug(team)}`}
-                      prefetch={false}
-                    >
-                      {team}
-                    </NextLink>
-                  </Link>
+                  <HStack gap={1.5}>
+                    <TeamIcon team={team} />
+                    <Link asChild variant="underline">
+                      <NextLink
+                        href={`/${initials}/teams/${slug(team)}`}
+                        prefetch={false}
+                      >
+                        {team}
+                      </NextLink>
+                    </Link>
+                  </HStack>
                 </Table.Cell>
 
                 {loadouts.map((loadout) => (
