@@ -18,12 +18,14 @@ export async function processHtmlToMarkdown(html: string) {
 
   for (const style of target.querySelectorAll('style')) style.remove();
   for (const img of target.querySelectorAll('img, svg')) img.remove();
+  for (const br of target.querySelectorAll('br')) br.replaceWith(' ');
   for (const link of target.querySelectorAll('a'))
     link.setAttribute('href', setExtension(`/md${link.attributes.href}`, 'md'));
 
-  const markdown = convert(
+  let markdown = convert(
     target.children.map((child) => child.toString()).join(''),
     {
+      brInTables: false,
       encoding: 'utf-8',
       preprocessing: {
         enabled: true,
@@ -31,6 +33,7 @@ export async function processHtmlToMarkdown(html: string) {
     },
   );
 
+  markdown = markdown.replace(/<br\s*\/?>/gi, ' ');
   const formattedMarkdown = await formatMarkdown(markdown);
 
   return formattedMarkdown;
