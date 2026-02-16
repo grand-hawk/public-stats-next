@@ -27,11 +27,7 @@ export default function InternalHead() {
   return (
     <Head>
       <title>{formatTitle(currentTab?.label, initials)}</title>
-      <link
-        href="/favicon.ico"
-        rel="icon"
-        type="image/x-icon"
-      />
+      <link href="/favicon.ico" rel="icon" type="image/x-icon" />
 
       <meta content="website" property="og:type" />
       <meta content="index,follow" name="robots" />

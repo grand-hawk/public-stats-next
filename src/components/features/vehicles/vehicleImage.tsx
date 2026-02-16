@@ -63,7 +63,7 @@ export default function VehicleImage({
               : NORMAL_BLUR
         }
         placeholder="blur"
-        alt={`${name}, ${noCase(type || "perspective")}, in Multicrew Tank Combat`}
+        alt={`${name}, ${noCase(type || 'perspective')}, in Multicrew Tank Combat`}
         src={getVehicleImage(slug, type)}
         style={{
           objectFit: 'cover',
