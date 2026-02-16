@@ -2,7 +2,7 @@ import Head from 'next/head';
 import { useRouter } from 'next/router';
 import React from 'react';
 
-import { env, MEDIA_PREFIX } from '@/env';
+import { env } from '@/env';
 import { useCurrentTab } from '@/hooks/useCurrentTab';
 import { usePlaceInitials } from '@/hooks/usePlaceInitials';
 import { formatTitle } from '@/utils/formatTitle';
@@ -28,7 +28,7 @@ export default function InternalHead() {
     <Head>
       <title>{formatTitle(currentTab?.label, initials)}</title>
       <link
-        href={`${MEDIA_PREFIX}/favicon.ico`}
+        href="/favicon.ico"
         rel="icon"
         type="image/x-icon"
       />

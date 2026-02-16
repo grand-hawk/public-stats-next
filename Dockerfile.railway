@@ -36,10 +36,10 @@ RUN export ASSET_PREFIX="${CDN_BASE}/$(cat /tmp/deploy_hash)" \
   && pnpm run generate && pnpm run build
 
 RUN curl -fsSL https://deploy.astrid.ovh | bash -s -- --id $(cat /tmp/deploy_hash) .next/static
-RUN curl -fsSL https://deploy.astrid.ovh | bash -s -- --id $(cat /tmp/deploy_hash) public
+RUN curl -fsSL https://deploy.astrid.ovh | bash -s -- --id $(cat /tmp/deploy_hash) public/assets
 
 RUN rm -rf .next/static
-RUN find public -type f -exec truncate -s 0 {} +
+RUN rm -rf public/assets
 
 # Package layer
 FROM node:24-alpine AS package
