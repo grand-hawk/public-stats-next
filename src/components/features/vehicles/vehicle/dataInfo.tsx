@@ -6,7 +6,9 @@ import { MdCode } from 'react-icons/md';
 
 import { useVehicle } from '@/hooks/providers/vehicle';
 
-export default function VehicleDataInfo() {
+import type { StackProps } from '@chakra-ui/react';
+
+export default function VehicleDataInfo({ ...props }: StackProps) {
   const vehicle = useVehicle();
 
   const lastRetrievedDate = new Date(vehicle.info.lastRetrieved);
@@ -34,6 +36,7 @@ export default function VehicleDataInfo() {
         },
       }}
       gap={2}
+      {...props}
     >
       {addedDate && (
         <HStack>
@@ -62,9 +65,7 @@ export default function VehicleDataInfo() {
 
       <HStack>
         <Icon as={MdCode} />
-        <span>
-          ID: &quot;{vehicle.info.gameId}&quot;
-        </span>
+        <span>ID: &quot;{vehicle.info.gameId}&quot;</span>
       </HStack>
     </Stack>
   );
