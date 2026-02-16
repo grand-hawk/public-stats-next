@@ -129,7 +129,7 @@ for (const filepath of files) {
         const right = parseInt(rangeMatch[2].replace('~', ''), 10);
         if (left >= right)
           errors.push(
-            `Line ${i + 1}: armor range must have left < right, got ${rangeMatch[1]}-${rangeMatch[2]}`,
+            `Line ${i + 1}: armour range must have left < right, got ${rangeMatch[1]}-${rangeMatch[2]}`,
           );
       }
     }

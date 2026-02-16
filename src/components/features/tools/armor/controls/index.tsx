@@ -567,7 +567,7 @@ export default function ArmorControls({
             <Box borderTopWidth="1px" marginTop="auto" padding={3}>
               <Text color="fg.subtle" fontSize="2xs" lineHeight="1.4">
                 The provided visualization may not be used for bug reports, use
-                the armor tools in-game instead. Data is estimated and may not
+                the armour tools in-game instead. Data is estimated and may not
                 be accurate. If thickness differs significantly from in-game,
                 you may report this as a wiki bug in the{' '}
                 <Link

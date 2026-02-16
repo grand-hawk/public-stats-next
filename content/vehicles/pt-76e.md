@@ -5,7 +5,7 @@
 The **PT-76E** is a Light Tank and a modernized amphibious variant of the PT-76 family, with a new turret, 57 mm autocannon, and improved fire control. It retains the classic hull and swimming capability of the series. Weighing 14 tonnes, it is crewed by three: driver, gunner, and commander. The **UTD-20** diesel produces 300 hp for 21.4 hp/t, 60 km/h on land and 10.2 km/h afloat.\
 Main armament is the **57mm AU-220** autocannon with HE and AP, plus a coaxial **7.62mm PKT**; the turret has a stabilizer and smoke grenades. The gunner has a laser rangefinder and FCS with lead, and 1x, 5x, and 12x zoom. An engine smoke system is fitted. The PT-76E offers better firepower and accuracy than the PT-76B while keeping amphibious mobility and light weight.
 
-## Armor
+## Armour
 
 Left cheek: 20-180
 Right cheek: 20-180

@@ -6,8 +6,8 @@ import PageMeta from '@/components/layout/pageMeta';
 
 export default function ArmorPage() {
   return (
-    <PageMeta title="Armor visualizer">
-      <Layout hidePlaceDropdown noPadding overwriteTabLabel="Armor visualizer">
+    <PageMeta title="Armour visualizer">
+      <Layout hidePlaceDropdown noPadding overwriteTabLabel="Armour visualizer">
         <ArmorVisualizer />
       </Layout>
     </PageMeta>

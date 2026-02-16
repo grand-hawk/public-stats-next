@@ -21,13 +21,13 @@ const STEPS: TourStep[] = [
     target: 'angle',
     title: 'Change angle',
     description:
-      'Switch the viewing angle to see armor from different directions.',
+      'Switch the viewing angle to see armour from different directions.',
     placement: 'right',
   },
   {
     target: 'depth',
     title: 'Depth filter',
-    description: 'Use depth sliders to isolate specific armor layers.',
+    description: 'Use depth sliders to isolate specific armour layers.',
     placement: 'right',
   },
   {

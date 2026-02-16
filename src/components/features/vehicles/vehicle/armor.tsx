@@ -42,7 +42,7 @@ export default function VehicleArmor() {
   const vehicle = useVehicle();
   const initials = usePlaceInitials()!;
 
-  const armor = vehicle.content?.Armor;
+  const armor = vehicle.content?.Armour;
 
   const fields = React.useMemo(() => {
     if (!armor) return;
@@ -64,9 +64,9 @@ export default function VehicleArmor() {
   if (!fields) return null;
   return (
     <>
-      <SectionMarker name="Armor" />
+      <SectionMarker name="Armour" />
 
-      <TitledCard as="section" title="Armor" withAnchor innerPadding={4}>
+      <TitledCard as="section" title="Armour" withAnchor innerPadding={4}>
         <Stack gap={4}>
           <StatsRoot>
             {fields.map(([key, value]) => (
@@ -92,7 +92,7 @@ export default function VehicleArmor() {
               href={`/${initials}/armor?vehicle=${vehicle.info.slug}`}
               prefetch={false}
             >
-              Open armor visualizer
+              Open armour visualizer
               <TbChevronRight />
             </NextLink>
           </Button>

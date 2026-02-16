@@ -41,8 +41,8 @@ function computeMarkers(
   // Powertrain section
   if (driveData) markers.push({ name: 'Powertrain', slug: 'powertrain' });
 
-  // Armor section
-  if (vehicle.content?.Armor) markers.push({ name: 'Armor', slug: 'armor' });
+  // Armour section
+  if (vehicle.content?.Armour) markers.push({ name: 'Armour', slug: 'armour' });
 
   // Defenses section
   const essModule = getOneModuleOfType('ESS', assembledModules);

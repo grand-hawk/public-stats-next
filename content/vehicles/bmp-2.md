@@ -5,7 +5,7 @@
 The **BMP-2** is an Infantry Fighting Vehicle that succeeded the **BMP-1** in Soviet service during the 1980s, trading the low-pressure 73 mm gun for a stabilized **30mm 2A42** autocannon with high elevation for engaging infantry and low-flying aircraft. It became one of the most widely used IFVs of the Cold War and remains in service in many countries. The 14.5 t tracked hull is amphibious (65 km/h on land, 7 km/h afloat) and powered by a **UTD-20** diesel producing 300 hp (20.7 hp/t), with a crew of three and seven passengers.\
 Armament includes the 30 mm cannon and **7.62mm PKT**, with optional **9M113 Konkurs** (or 9M113M) ATGMs; the gunner has a 6× sight and the commander a 5× cupola sight, with stabilizers but no laser rangefinder or thermals. An engine smoke system is fitted for defensive screening.
 
-## Armor
+## Armour
 
 Left cheek: 29-57
 Right cheek: 24-70

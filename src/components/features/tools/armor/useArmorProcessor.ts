@@ -77,7 +77,7 @@ function isRicochetStripe(x: number, y: number): boolean {
 async function fetchAndParseMtca(url: string): Promise<RawArmorData> {
   const response = await fetch(url);
   if (!response.ok)
-    throw new Error(`Failed to fetch armor data (${response.status})`);
+    throw new Error(`Failed to fetch armour data (${response.status})`);
   const buffer = await response.arrayBuffer();
 
   const view = new DataView(buffer);
@@ -87,7 +87,7 @@ async function fetchAndParseMtca(url: string): Promise<RawArmorData> {
     view.getUint8(2),
     view.getUint8(3),
   );
-  if (magic !== 'MTCA') throw new Error('Invalid armor data format');
+  if (magic !== 'MTCA') throw new Error('Invalid armour data format');
 
   const rows = view.getUint16(5);
   const cols = view.getUint16(7);
@@ -181,7 +181,7 @@ export function useArmorProcessor(
       .catch((err) => {
         if (cancelled) return;
         setError(
-          err instanceof Error ? err.message : 'Failed to load armor data',
+          err instanceof Error ? err.message : 'Failed to load armour data',
         );
         setLoading(false);
       });

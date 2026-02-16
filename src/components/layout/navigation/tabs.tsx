@@ -77,13 +77,13 @@ export const tabs: Record<string, Tab> = {
       <Icon as={MdOutlineSsidChart} height={5} width={5} {...props} />
     ),
   },
-  armor: {
-    label: 'Armor',
-    longLabel: 'Armor visualizer',
+  armour: {
+    label: 'Armour',
+    longLabel: 'Armour visualizer',
     path: '/armor',
     color: 'teal.500',
     description:
-      'Visualize vehicle armor thickness with customizable color maps.',
+      'Visualize vehicle armour thickness with customizable color maps.',
     icon: (props: IconProps) => (
       <Icon as={LuShield} height={5} width={5} {...props} />
     ),
@@ -100,4 +100,4 @@ export const secondaryTabKeys = [
   'kdr',
   'winrate',
 ] as const satisfies (keyof typeof tabs)[];
-export const toolsTabKeys = ['armor'] as const satisfies (keyof typeof tabs)[];
+export const toolsTabKeys = ['armour'] as const satisfies (keyof typeof tabs)[];
