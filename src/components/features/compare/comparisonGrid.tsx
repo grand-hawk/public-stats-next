@@ -31,9 +31,10 @@ export default function ComparisonGrid<T>({
   return (
     <Box
       backgroundColor="bg.panel"
+      borderBottomWidth="1px"
       borderLeftWidth={{ base: 0, md: '1px' }}
       borderRightWidth={{ base: 0, md: '1px' }}
-      borderYWidth="1px"
+      borderTopWidth={{ base: 0, md: '1px' }}
       maxWidth={maxWidth}
       overflowX="auto"
       width="100%"

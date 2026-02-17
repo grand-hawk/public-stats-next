@@ -143,7 +143,12 @@ export default function VehicleComparison() {
 
   return (
     <Stack gap={0} width="100%" height="100%" overflow="auto">
-      <Flex borderBottomWidth="1px" gap={1} padding={2}>
+      <Flex
+        borderBottomWidth="1px"
+        gap={1}
+        paddingX={{ base: 2, md: 3 }}
+        paddingY={2}
+      >
         <ModeButton
           active={mode === 'vehicles'}
           onClick={() => {
@@ -169,9 +174,8 @@ export default function VehicleComparison() {
       <Box
         maxWidth="5xl"
         marginX="auto"
-        padding={{ base: 0, md: 3 }}
-        paddingTop={{ base: 0, md: 3 }}
-        paddingBottom={{ base: 4, md: 6 }}
+        paddingY={{ base: 2, md: 3 }}
+        paddingX={{ base: 2, md: 3 }}
         width="100%"
       >
         {mode === 'vehicles' ? (
