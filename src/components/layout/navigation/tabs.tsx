@@ -2,7 +2,7 @@ import { Icon } from '@chakra-ui/react';
 import React from 'react';
 import { GiArtilleryShell } from 'react-icons/gi';
 import { ImTable } from 'react-icons/im';
-import { LuShield } from 'react-icons/lu';
+import { LuGitCompareArrows, LuShield } from 'react-icons/lu';
 import { MdFlag, MdOutlineSsidChart, MdViewList } from 'react-icons/md';
 import { TbTank } from 'react-icons/tb';
 
@@ -77,6 +77,17 @@ export const tabs: Record<string, Tab> = {
       <Icon as={MdOutlineSsidChart} height={5} width={5} {...props} />
     ),
   },
+  compare: {
+    label: 'Compare',
+    longLabel: 'Vehicle comparison',
+    path: '/compare',
+    color: 'yellow.500',
+    description:
+      'Compare stats and characteristics of multiple vehicles side by side.',
+    icon: (props: IconProps) => (
+      <Icon as={LuGitCompareArrows} height={5} width={5} {...props} />
+    ),
+  },
   armour: {
     label: 'Armour',
     longLabel: 'Armour visualizer',
@@ -100,4 +111,7 @@ export const secondaryTabKeys = [
   'kdr',
   'winrate',
 ] as const satisfies (keyof typeof tabs)[];
-export const toolsTabKeys = ['armour'] as const satisfies (keyof typeof tabs)[];
+export const toolsTabKeys = [
+  'compare',
+  'armour',
+] as const satisfies (keyof typeof tabs)[];
