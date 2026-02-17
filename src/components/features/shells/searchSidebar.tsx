@@ -16,11 +16,9 @@ import type { ListItem } from '@/components/layout/searchLayout/searchSidebar/li
 const ShellListName = React.memo(function ShellListName({
   displayType,
   name,
-  type,
 }: {
   name: string;
   displayType: string;
-  type: string;
 }) {
   const shellIcon = getShellIcon(displayType);
 
@@ -29,7 +27,7 @@ const ShellListName = React.memo(function ShellListName({
   return (
     <HStack justifyContent="space-between" width="100%">
       {name}
-      <ShellIcon alt={type} src={shellIcon} />
+      <ShellIcon alt={name} src={shellIcon} />
     </HStack>
   );
 });
@@ -104,7 +102,6 @@ export default function ShellsSearchSidebar() {
               <ShellListName
                 name={shell.name}
                 displayType={shell.displayType}
-                type={shell.type}
               />
             ),
             slug: shell.slug,
