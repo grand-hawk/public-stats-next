@@ -25,7 +25,7 @@ export default function ColumnHeader({
       position="relative"
     >
       {children}
-      
+
       <Flex
         _hover={{ color: 'fg', background: 'whiteAlpha.200' }}
         alignItems="center"
