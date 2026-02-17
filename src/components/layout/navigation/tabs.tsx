@@ -79,11 +79,10 @@ export const tabs: Record<string, Tab> = {
   },
   compare: {
     label: 'Compare',
-    longLabel: 'Vehicle comparison',
     path: '/compare',
     color: 'yellow.500',
     description:
-      'Compare stats and characteristics of multiple vehicles side by side.',
+      'Compare stats and characteristics of multiple vehicles or shells side by side.',
     icon: (props: IconProps) => (
       <Icon as={LuGitCompareArrows} height={5} width={5} {...props} />
     ),
