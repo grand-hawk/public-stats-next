@@ -10,6 +10,7 @@ import {
 import AddColumnHeader from '@/components/features/compare/addColumnHeader';
 import ColumnHeader from '@/components/features/compare/columnHeader';
 import ComparisonGrid from '@/components/features/compare/comparisonGrid';
+import VehicleColumnConfig from '@/components/features/compare/vehicleColumnConfig';
 import { buildVehicleSections } from '@/components/features/compare/vehicleStats';
 import VehicleIcon from '@/components/features/vehicles/vehicleIcon';
 import { assembleModules } from '@/utils/alterations';
@@ -32,13 +33,28 @@ export default function VehicleComparisonTable({
   onRemove,
   vehicles,
 }: VehicleComparisonTableProps) {
+  const [alterationsMap, setAlterationsMap] = React.useState<
+    Record<string, Record<string, boolean>>
+  >({});
+
+  const handleAlterationsChange = React.useCallback(
+    (slug: string, alterations: Record<string, boolean>) => {
+      setAlterationsMap((prev) => ({ ...prev, [slug]: alterations }));
+    },
+    [],
+  );
+
   const assembled = React.useMemo<AssembledVehicle[]>(
     () =>
-      vehicles.map((vehicle) => ({
-        vehicle,
-        modules: assembleModules(vehicle, {}),
-      })),
-    [vehicles],
+      vehicles.map((vehicle) => {
+        const enabled = alterationsMap[vehicle.info.slug] ?? {};
+        return {
+          vehicle,
+          modules: assembleModules(vehicle, enabled),
+          enabledAlterations: enabled,
+        };
+      }),
+    [vehicles, alterationsMap],
   );
 
   const sections = React.useMemo(() => buildVehicleSections(), []);
@@ -101,7 +117,18 @@ export default function VehicleComparisonTable({
       headerCells={vehicles.map((vehicle) => ({
         key: vehicle.info.slug,
         content: (
-          <ColumnHeader onRemove={() => onRemove(vehicle.info.slug)}>
+          <ColumnHeader
+            extra={
+              <VehicleColumnConfig
+                enabledAlterations={alterationsMap[vehicle.info.slug] ?? {}}
+                vehicle={vehicle}
+                onAlterationsChange={(alts) =>
+                  handleAlterationsChange(vehicle.info.slug, alts)
+                }
+              />
+            }
+            onRemove={() => onRemove(vehicle.info.slug)}
+          >
             <VehicleIcon size={20} slug={vehicle.info.slug} />
             <Text fontSize="sm" fontWeight="medium" lineHeight="tight" truncate>
               {vehicle.info.name}

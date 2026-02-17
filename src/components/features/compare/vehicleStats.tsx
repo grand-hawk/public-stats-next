@@ -16,6 +16,7 @@ import type { assembleModules } from '@/utils/alterations';
 export interface AssembledVehicle {
   vehicle: DetailedVehicle;
   modules: ReturnType<typeof assembleModules>;
+  enabledAlterations: Record<string, boolean>;
 }
 
 function stat(
