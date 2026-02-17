@@ -64,11 +64,13 @@ const VehicleListItem = React.memo(function VehicleListItem({
   isSelected,
   name,
   onClick,
+  slug,
   style,
 }: {
   isSelected: boolean;
   name: string;
   onClick: () => void;
+  slug: string;
   style: React.CSSProperties;
 }) {
   return (
@@ -78,6 +80,7 @@ const VehicleListItem = React.memo(function VehicleListItem({
       background={isSelected ? 'whiteAlpha.100' : 'transparent'}
       cursor="pointer"
       fontSize="sm"
+      gap={2}
       left={0}
       overflow="hidden"
       paddingX={3}
@@ -89,6 +92,7 @@ const VehicleListItem = React.memo(function VehicleListItem({
       whiteSpace="nowrap"
       onClick={onClick}
     >
+      <VehicleIcon size={18} slug={slug} />
       <Text overflow="hidden" textOverflow="ellipsis">
         {name}
       </Text>
@@ -291,6 +295,7 @@ export default function ArmorControls({
                             key={v.slug}
                             isSelected={v.slug === selectedSlug}
                             name={v.name}
+                            slug={v.slug}
                             style={{
                               height: `${virtualItem.size}px`,
                               transform: `translateY(${virtualItem.start}px)`,
