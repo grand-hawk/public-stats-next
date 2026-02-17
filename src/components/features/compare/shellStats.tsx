@@ -1,6 +1,8 @@
 import { FormatNumber } from '@chakra-ui/react';
 import React from 'react';
 
+import { relPenetration } from '@/utils/penetration';
+
 import type { SectionDef, StatDef } from '@/components/features/compare/types';
 import type { DetailedShell } from '@/server/api/trpc/routers/shells';
 
@@ -38,6 +40,13 @@ export function buildShellSections(): SectionDef<DetailedShell>[] {
             style="unit"
             unit="millimeter"
             value={s.maxPenetration}
+          />
+        )),
+        stat('30° penetration', (s) => (
+          <FormatNumber
+            style="unit"
+            unit="millimeter"
+            value={Math.round(relPenetration(s.maxPenetration, 30))}
           />
         )),
         stat('Projectile diameter', (s) =>
