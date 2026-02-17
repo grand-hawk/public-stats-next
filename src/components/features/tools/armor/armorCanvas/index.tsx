@@ -1,6 +1,8 @@
-import { Box, Flex, Spinner, Text } from '@chakra-ui/react';
+import { Box, Flex, Text } from '@chakra-ui/react';
 import React from 'react';
 import { LuRotateCcw } from 'react-icons/lu';
+
+import { ProgressBar, ProgressRoot } from '@/components/ui/progress';
 
 import { samplePalette } from '../palettes';
 import { RICOCHET_DARK, RICOCHET_LIGHT } from '../useArmorProcessor';
@@ -14,6 +16,7 @@ interface ArmorCanvasProps {
   angle: ArmorAngle;
   canvas: HTMLCanvasElement | null;
   detectedMaxDepth: number;
+  downloadProgress: number | null;
   error: string | null;
   loading: boolean;
   maxDepth: number;
@@ -49,6 +52,7 @@ export default function ArmorCanvas({
   angle,
   canvas,
   detectedMaxDepth,
+  downloadProgress,
   error,
   loading,
   maxDepth,
@@ -513,8 +517,25 @@ export default function ArmorCanvas({
 
   if (loading)
     return (
-      <Flex alignItems="center" height="100%" justifyContent="center">
-        <Spinner size="lg" />
+      <Flex
+        alignItems="center"
+        flexDirection="column"
+        gap={4}
+        height="100%"
+        justifyContent="center"
+        paddingX={8}
+      >
+        <ProgressRoot
+          max={100}
+          value={downloadProgress ?? undefined}
+          width="100%"
+          maxW="320px"
+        >
+          <ProgressBar borderRadius={0} overflow="hidden" />
+        </ProgressRoot>
+        <Text color="fg.muted" fontSize="sm">
+          Downloading armour data…
+        </Text>
       </Flex>
     );
 

@@ -64,6 +64,7 @@ export default function ArmorVisualizer() {
     detectedMax,
     detectedMaxDepth,
     detectedMin,
+    downloadProgress,
     error,
     loading,
     thicknessAt,
@@ -164,6 +165,7 @@ export default function ArmorVisualizer() {
           angle={angle}
           canvas={canvas}
           detectedMaxDepth={detectedMaxDepth}
+          downloadProgress={downloadProgress}
           error={error}
           loading={loading}
           maxDepth={maxDepth}

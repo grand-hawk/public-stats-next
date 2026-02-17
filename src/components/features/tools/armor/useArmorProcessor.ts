@@ -22,6 +22,7 @@ export interface ArmorProcessorResult {
   detectedMax: number;
   detectedMaxDepth: number;
   detectedMin: number;
+  downloadProgress: number | null;
   error: string | null;
   loading: boolean;
   thicknessAt: (x: number, y: number) => number | 'ricochet' | null;
@@ -74,13 +75,51 @@ function isRicochetStripe(x: number, y: number): boolean {
   return (x + y) % STRIPE_SPACING < STRIPE_WIDTH;
 }
 
-async function fetchAndParseMtca(url: string): Promise<RawArmorData> {
+async function fetchAndParseMtca(
+  url: string,
+  onProgress?: (percent: number) => void,
+): Promise<RawArmorData> {
   const response = await fetch(url);
   if (!response.ok)
     throw new Error(`Failed to fetch armour data (${response.status})`);
-  const buffer = await response.arrayBuffer();
 
-  const view = new DataView(buffer);
+  const contentLength = response.headers.get('Content-Length');
+  const total = contentLength ? parseInt(contentLength, 10) : null;
+  const reader = response.body!.getReader();
+
+  const chunks: Uint8Array[] = [];
+  let receivedLength = 0;
+
+  while (true) {
+    const { done, value } = await reader.read();
+    if (done) break;
+
+    chunks.push(value);
+    receivedLength += value.length;
+
+    if (onProgress) {
+      const percent =
+        total && total > 0
+          ? Math.round((receivedLength / total) * 100)
+          : Math.min(95, Math.round((receivedLength / 500_000) * 90));
+      onProgress(percent);
+    }
+  }
+
+  if (onProgress) onProgress(100);
+
+  const combined = new Uint8Array(receivedLength);
+  let position = 0;
+  for (const chunk of chunks) {
+    combined.set(chunk, position);
+    position += chunk.length;
+  }
+
+  const view = new DataView(
+    combined.buffer,
+    combined.byteOffset,
+    combined.byteLength,
+  );
   const magic = String.fromCharCode(
     view.getUint8(0),
     view.getUint8(1),
@@ -139,6 +178,9 @@ export function useArmorProcessor(
   } = options;
 
   const [loading, setLoading] = React.useState(false);
+  const [downloadProgress, setDownloadProgress] = React.useState<number | null>(
+    null,
+  );
   const [error, setError] = React.useState<string | null>(null);
   const [rawData, setRawData] = React.useState<RawArmorData | null>(null);
   const [detectedMin, setDetectedMin] = React.useState(0);
@@ -152,15 +194,21 @@ export function useArmorProcessor(
     if (!slug) {
       setRawData(null);
       rawDataRef.current = null;
+      setLoading(false);
+      setDownloadProgress(null);
       return;
     }
 
     let cancelled = false;
     setLoading(true);
+    setDownloadProgress(0);
     setError(null);
 
     fetchAndParseMtca(
       `https://cdn.astrid.ovh/public-stats-images/${slug}/${angle}_armor.mtca`,
+      (percent) => {
+        if (!cancelled) setDownloadProgress(percent);
+      },
     )
       .then((data) => {
         if (cancelled) return;
@@ -177,6 +225,7 @@ export function useArmorProcessor(
         setRawData(data);
         setDetectedMaxDepth(Math.ceil(maxD));
         setLoading(false);
+        setDownloadProgress(null);
       })
       .catch((err) => {
         if (cancelled) return;
@@ -184,6 +233,7 @@ export function useArmorProcessor(
           err instanceof Error ? err.message : 'Failed to load armour data',
         );
         setLoading(false);
+        setDownloadProgress(null);
       });
 
     return () => {
@@ -332,6 +382,7 @@ export function useArmorProcessor(
     detectedMax,
     detectedMaxDepth,
     detectedMin,
+    downloadProgress,
     error,
     loading,
     thicknessAt,
