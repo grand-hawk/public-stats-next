@@ -16,73 +16,75 @@ function getMdPaths() {
   const shells = getShells();
 
   const paths: Array<{ path: string; changefreq: string }> = [];
-  const placeName = config.data.primaryPlace;
+  const placeNames = config.data.placeNames;
 
-  const initials = config.data.placeNameInitials[placeName];
-  const placeId = config.data.placeIds[placeName];
+  for (const placeName of placeNames) {
+    const initials = config.data.placeNameInitials[placeName];
+    const placeId = config.data.placeIds[placeName];
 
-  const vehiclesPlace = vehicles.data[placeId];
-  const vehicleSlugs = Object.values(vehiclesPlace.data).map(
-    (v) => v.info.slug,
-  );
-  const loadoutsPlace = loadouts.data[placeId];
-  const shellsPlace = shells.data[placeId];
+    const vehiclesPlace = vehicles.data[placeId];
+    const vehicleSlugs = Object.values(vehiclesPlace.data).map(
+      (v) => v.info.slug,
+    );
+    const loadoutsPlace = loadouts.data[placeId];
+    const shellsPlace = shells.data[placeId];
 
-  // main place md page
-  paths.push({
-    path: `md/${initials}/index.md`,
-    changefreq: 'weekly',
-  });
-
-  // kdr page
-  paths.push({
-    path: `md/${initials}/kdr.md`,
-    changefreq: 'weekly',
-  });
-
-  // vehicles
-  paths.push({
-    path: `md/${initials}/vehicles.md`,
-    changefreq: 'weekly',
-  });
-  for (const vehicleSlug of vehicleSlugs)
+    // main place md page
     paths.push({
-      path: `md/${initials}/vehicles/${vehicleSlug}.md`,
-      changefreq: 'monthly',
+      path: `md/${initials}/index.md`,
+      changefreq: 'weekly',
     });
 
-  // teams
-  paths.push({
-    path: `md/${initials}/teams.md`,
-    changefreq: 'weekly',
-  });
-  for (const team of loadoutsPlace.metadata.teams)
+    // kdr page
     paths.push({
-      path: `md/${initials}/teams/${slug(team)}.md`,
-      changefreq: 'monthly',
+      path: `md/${initials}/kdr.md`,
+      changefreq: 'weekly',
     });
 
-  // loadouts
-  paths.push({
-    path: `md/${initials}/loadouts.md`,
-    changefreq: 'weekly',
-  });
-  for (const loadoutName of loadoutsPlace.metadata.loadouts)
+    // vehicles
     paths.push({
-      path: `md/${initials}/loadouts/${slug(loadoutName)}.md`,
-      changefreq: 'monthly',
+      path: `md/${initials}/vehicles.md`,
+      changefreq: 'weekly',
     });
+    for (const vehicleSlug of vehicleSlugs)
+      paths.push({
+        path: `md/${initials}/vehicles/${vehicleSlug}.md`,
+        changefreq: 'monthly',
+      });
 
-  // shells
-  paths.push({
-    path: `md/${initials}/shells.md`,
-    changefreq: 'weekly',
-  });
-  for (const shellSlug of Object.keys(shellsPlace.metadata.slugs))
+    // teams
     paths.push({
-      path: `md/${initials}/shells/${shellSlug}.md`,
-      changefreq: 'monthly',
+      path: `md/${initials}/teams.md`,
+      changefreq: 'weekly',
     });
+    for (const team of loadoutsPlace.metadata.teams)
+      paths.push({
+        path: `md/${initials}/teams/${slug(team)}.md`,
+        changefreq: 'monthly',
+      });
+
+    // loadouts
+    paths.push({
+      path: `md/${initials}/loadouts.md`,
+      changefreq: 'weekly',
+    });
+    for (const loadoutName of loadoutsPlace.metadata.loadouts)
+      paths.push({
+        path: `md/${initials}/loadouts/${slug(loadoutName)}.md`,
+        changefreq: 'monthly',
+      });
+
+    // shells
+    paths.push({
+      path: `md/${initials}/shells.md`,
+      changefreq: 'weekly',
+    });
+    for (const shellSlug of Object.keys(shellsPlace.metadata.slugs))
+      paths.push({
+        path: `md/${initials}/shells/${shellSlug}.md`,
+        changefreq: 'monthly',
+      });
+  }
 
   return paths;
 }
