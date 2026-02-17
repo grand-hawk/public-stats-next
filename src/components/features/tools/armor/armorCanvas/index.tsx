@@ -454,22 +454,24 @@ export default function ArmorCanvas({
     }
 
     // ricochet swatch
-    const swatchX = pad + legendBarWidth + 10;
-    for (let sy = 0; sy < legendBarHeight; sy += 1)
-      for (let sx = 0; sx < 10; sx += 1) {
-        const stripe = (sx + sy) % 6 < 2;
-        const c = stripe ? RICOCHET_LIGHT : RICOCHET_DARK;
-        ctx.fillStyle = `rgb(${c.r},${c.g},${c.b})`;
-        ctx.fillRect(swatchX + sx, y + sy, 1, 1);
-      }
+    if (ricochetAngle !== 90) {
+      const swatchX = pad + legendBarWidth + 10;
+      for (let sy = 0; sy < legendBarHeight; sy += 1)
+        for (let sx = 0; sx < 10; sx += 1) {
+          const stripe = (sx + sy) % 6 < 2;
+          const c = stripe ? RICOCHET_LIGHT : RICOCHET_DARK;
+          ctx.fillStyle = `rgb(${c.r},${c.g},${c.b})`;
+          ctx.fillRect(swatchX + sx, y + sy, 1, 1);
+        }
 
-    ctx.fillStyle = '#aaa';
-    ctx.font = '10px monospace';
-    ctx.fillText(
-      `Ricochet (≥${ricochetAngle}°)`,
-      swatchX + 14,
-      y + legendBarHeight - 1,
-    );
+      ctx.fillStyle = '#aaa';
+      ctx.font = '10px monospace';
+      ctx.fillText(
+        `Ricochet (≥${ricochetAngle}°)`,
+        swatchX + 14,
+        y + legendBarHeight - 1,
+      );
+    }
 
     // legend labels
     y += legendBarHeight;
