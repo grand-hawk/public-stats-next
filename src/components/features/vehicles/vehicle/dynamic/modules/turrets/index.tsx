@@ -3,10 +3,9 @@ import React from 'react';
 import Turret from '@/components/features/vehicles/vehicle/dynamic/modules/turrets/turret';
 import SectionMarker from '@/components/wiki/sectionMarker';
 import { useDynamicData } from '@/hooks/providers/dynamicData';
-import {
-  getTurretsWithNamesSorted,
-  type TurretWithName,
-} from '@/utils/turrets';
+import { getTurretsWithNamesSorted } from '@/utils/turrets';
+
+import type { TurretWithName } from '@/utils/turrets';
 
 export type { TurretWithName };
 
