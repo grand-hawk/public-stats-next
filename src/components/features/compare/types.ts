@@ -7,5 +7,6 @@ export interface StatDef<T> {
 
 export interface SectionDef<T> {
   title: string;
+  titleGetter?: (item: T) => React.ReactNode;
   stats: StatDef<T>[];
 }

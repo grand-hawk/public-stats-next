@@ -72,20 +72,40 @@ export default function ComparisonGrid<T>({
               <Box borderBottomWidth="1px" css={{ gridColumn: '1 / -1' }} />
             )}
 
-            <Box css={{ gridColumn: '1 / -1' }}>
-              <Text
-                background="bg.panel"
-                fontSize="sm"
-                fontWeight="medium"
-                left={0}
-                paddingX={3}
-                paddingY={2}
-                position="sticky"
-                width="fit-content"
-              >
+            <Box background="bg.panel" left={0} position="sticky" zIndex={1}>
+              <Text fontSize="sm" fontWeight="medium" paddingX={3} paddingY={2}>
                 {section.title}
               </Text>
             </Box>
+
+            {section.titleGetter
+              ? items.map((item, j) => (
+                  <Box
+                    key={j}
+                    alignItems="center"
+                    borderLeftWidth="1px"
+                    display="flex"
+                    fontSize="sm"
+                    justifyContent="center"
+                    paddingX={3}
+                    paddingY={2}
+                  >
+                    {section.titleGetter!(item)}
+                  </Box>
+                ))
+              : null}
+
+            {section.titleGetter && hasAddColumn && (
+              <Box borderLeftWidth="1px" />
+            )}
+
+            {!section.titleGetter && (
+              <Box
+                css={{
+                  gridColumn: `2 / -1`,
+                }}
+              />
+            )}
 
             <Box borderBottomWidth="1px" css={{ gridColumn: '1 / -1' }} />
 

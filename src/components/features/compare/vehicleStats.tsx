@@ -18,6 +18,7 @@ export interface AssembledVehicle {
   vehicle: DetailedVehicle;
   modules: ReturnType<typeof assembleModules>;
   enabledAlterations: Record<string, boolean>;
+  onAlterationsChange: (alterations: Record<string, boolean>) => void;
 }
 
 function stat(

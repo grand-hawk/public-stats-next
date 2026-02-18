@@ -6,13 +6,11 @@ import { HEADER_ROW_HEIGHT } from '@/components/features/compare';
 
 export interface ColumnHeaderProps {
   children: React.ReactNode;
-  extra?: React.ReactNode;
   onRemove: () => void;
 }
 
 export default function ColumnHeader({
   children,
-  extra,
   onRemove,
 }: ColumnHeaderProps) {
   return (
@@ -33,22 +31,19 @@ export default function ColumnHeader({
         {children}
       </Flex>
 
-      <Flex alignItems="center" flexShrink={0} gap={0.5} marginLeft={1}>
-        {extra}
-
-        <Flex
-          _hover={{ color: 'fg', background: 'whiteAlpha.200' }}
-          alignItems="center"
-          as="button"
-          color="fg.muted"
-          cursor="pointer"
-          flexShrink={0}
-          justifyContent="center"
-          padding={0.5}
-          onClick={onRemove}
-        >
-          <LuX size={14} />
-        </Flex>
+      <Flex
+        _hover={{ color: 'fg', background: 'whiteAlpha.200' }}
+        alignItems="center"
+        as="button"
+        color="fg.muted"
+        cursor="pointer"
+        flexShrink={0}
+        justifyContent="center"
+        marginLeft={1}
+        padding={0.5}
+        onClick={onRemove}
+      >
+        <LuX size={14} />
       </Flex>
     </Flex>
   );
