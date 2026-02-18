@@ -10,6 +10,11 @@ export const env = createEnv({
     NODE_ENV: z
       .enum(['development', 'test', 'production'])
       .default('development'),
+
+    DISALLOW_INDEXING: z
+      .string()
+      .default('false')
+      .transform((val) => val === 'true'),
   },
 
   /**
@@ -33,6 +38,8 @@ export const env = createEnv({
    */
   runtimeEnv: {
     NODE_ENV: process.env.NODE_ENV,
+
+    DISALLOW_INDEXING: process.env.DISALLOW_INDEXING,
 
     NEXT_PUBLIC_ANALYTICS_DOMAIN: process.env.NEXT_PUBLIC_ANALYTICS_DOMAIN,
     NEXT_PUBLIC_ANALYTICS_ID: process.env.NEXT_PUBLIC_ANALYTICS_ID,
