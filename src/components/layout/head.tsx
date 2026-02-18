@@ -22,7 +22,9 @@ export default function InternalHead() {
   const initials = usePlaceInitials();
   const currentTab = useCurrentTab();
   const router = useRouter();
-  const canonicalUrl = `${getBaseUrl()}${router.asPath.split('?')[0]}`;
+  const basePath = router.asPath.split('?')[0];
+  const hasQueryParams = router.asPath.includes('?');
+  const canonicalUrl = `${getBaseUrl()}${basePath}`;
 
   return (
     <Head>
@@ -30,7 +32,10 @@ export default function InternalHead() {
       <link href="/favicon.ico" rel="icon" type="image/x-icon" />
 
       <meta content="website" property="og:type" />
-      <meta content="index,follow" name="robots" />
+      <meta
+        content={hasQueryParams ? 'noindex,follow' : 'index,follow'}
+        name="robots"
+      />
       <meta content={formatTitle(null, initials)} property="og:site_name" />
       <meta content="en_US" property="og:locale" />
       <link rel="canonical" href={canonicalUrl} />

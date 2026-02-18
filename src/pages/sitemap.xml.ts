@@ -84,8 +84,19 @@ function getPaths() {
       priority: '0.6',
     });
 
-  // shells
+  // tools
+  paths.push({
+    path: `${initials}/armor`,
+    changefreq: 'monthly',
+    priority: '0.5',
+  });
+  paths.push({
+    path: `${initials}/compare`,
+    changefreq: 'monthly',
+    priority: '0.5',
+  });
 
+  // shells
   paths.push({
     path: `${initials}/shells`,
     changefreq: 'weekly',
