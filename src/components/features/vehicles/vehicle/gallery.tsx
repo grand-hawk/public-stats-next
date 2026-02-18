@@ -95,6 +95,7 @@ export default function VehicleGallery() {
             name={vehicle.info.name}
             slug={vehicle.info.slug}
             type={currentImageType}
+            fetchPriority="high"
             fill
             sizes="(max-width: 768px) 100vw, 800px"
             style={{ objectFit: isTransparent ? 'contain' : 'cover' }}
