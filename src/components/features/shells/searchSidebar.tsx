@@ -48,8 +48,9 @@ export default function ShellsSearchSidebar() {
     for (const [weapon, shells] of Object.entries(shellsList)) {
       map.set(weapon, simplifyString(weapon));
       for (const shell of shells) {
-        if (!map.has(shell.name))
+        if (!map.has(shell.name)) {
           map.set(shell.name, simplifyString(shell.name));
+        }
         for (const vehicle of shell.vehicles) {
           if (!map.has(vehicle)) map.set(vehicle, simplifyString(vehicle));
         }
@@ -65,12 +66,13 @@ export default function ShellsSearchSidebar() {
     const filtered: typeof shellsList = {};
 
     for (const [weapon, shells] of Object.entries(shellsList)) {
-      if (simplifiedStrings.get(weapon)!.includes(simplifiedQuery))
+      if (simplifiedStrings.get(weapon)!.includes(simplifiedQuery)) {
         filtered[weapon] = shells;
-      else {
+      } else {
         const matchingShells = shells.filter((shell) => {
-          if (simplifiedStrings.get(shell.name)!.includes(simplifiedQuery))
+          if (simplifiedStrings.get(shell.name)!.includes(simplifiedQuery)) {
             return true;
+          }
 
           return shell.vehicles.some((vehicle) =>
             simplifiedStrings.get(vehicle)!.includes(simplifiedQuery),

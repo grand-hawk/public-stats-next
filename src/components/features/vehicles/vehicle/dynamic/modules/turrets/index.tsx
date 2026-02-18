@@ -19,8 +19,9 @@ export default function Turrets() {
 
   const sortedTurrets = React.useMemo(() => {
     const totalCounts: Record<string, number> = {};
-    for (const turret of turretsWithNames)
+    for (const turret of turretsWithNames) {
       totalCounts[turret.name] = (totalCounts[turret.name] ?? 0) + 1;
+    }
 
     const occurrenceIndex: Record<string, number> = {};
     return turretsWithNames.map((turret) => {

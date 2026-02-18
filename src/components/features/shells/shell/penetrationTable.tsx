@@ -60,11 +60,12 @@ export default function ShellPenetrationTable() {
             {angles.map((angle) => {
               let anglePens = shell.penetrationTable[angle][distance];
 
-              if (mode === 'rel')
+              if (mode === 'rel') {
                 anglePens = anglePens.map(
                   (anglePen) =>
                     anglePen && Math.round(relPenetration(anglePen, angle)),
                 );
+              }
 
               const anglePenCells = anglePens.map((penetration) => (
                 <span key={`${distance}-${angle}-${penetration}`}>

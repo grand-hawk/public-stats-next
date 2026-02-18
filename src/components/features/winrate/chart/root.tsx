@@ -30,7 +30,8 @@ export default function WinrateChartRoot({
   });
 
   if (isPending) return <XSSpinner />;
-  if (!data || data.series.length === 0)
+  if (!data || data.series.length === 0) {
     return <EmptyState title="No data found" minHeight="xs" />;
+  }
   return <WinrateChart data={data} />;
 }

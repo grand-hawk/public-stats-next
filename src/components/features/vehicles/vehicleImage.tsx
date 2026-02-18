@@ -37,7 +37,7 @@ export default function VehicleImage({
     setHasError(false);
   }, [slug]);
 
-  if (hasError)
+  if (hasError) {
     return (
       <Center
         height="100%"
@@ -50,6 +50,7 @@ export default function VehicleImage({
         </Text>
       </Center>
     );
+  }
 
   return (
     <Box asChild objectFit="cover" width="100%" height="100%" userSelect="none">

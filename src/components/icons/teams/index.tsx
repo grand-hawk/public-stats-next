@@ -50,14 +50,15 @@ export default function TeamIcon({ team }: { team: string }) {
     focusable: false,
   };
 
-  if (!TeamIcon)
+  if (!TeamIcon) {
     return (
       <Icon {...iconProps}>
         <BiBorderNone />
       </Icon>
     );
+  }
 
-  if (typeof TeamIcon === 'string')
+  if (typeof TeamIcon === 'string') {
     return (
       <Icon {...iconProps}>
         <NextImage
@@ -68,6 +69,7 @@ export default function TeamIcon({ team }: { team: string }) {
         />
       </Icon>
     );
+  }
 
   return <TeamIcon {...iconProps} />;
 }

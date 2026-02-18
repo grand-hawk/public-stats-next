@@ -31,7 +31,7 @@ export default function PlaceShell() {
   React.useEffect(() => {
     if (!shell) return;
 
-    if (shellQuery !== shellSlug)
+    if (shellQuery !== shellSlug) {
       router.replace({
         pathname: router.pathname,
         query: {
@@ -39,6 +39,7 @@ export default function PlaceShell() {
           shell: shellSlug,
         },
       });
+    }
   }, [router, shell, shellQuery, shellSlug]);
 
   const title = shell

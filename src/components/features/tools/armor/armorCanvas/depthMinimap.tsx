@@ -75,7 +75,7 @@ const DepthMinimap = React.forwardRef<HTMLCanvasElement, DepthMinimapProps>(
       const maxD = detectedMaxDepth || 1;
       const halfExtent = (Math.abs(dx) * w) / 2 + (Math.abs(dy) * h) / 2;
 
-      for (let py = 0; py < h; py += 1)
+      for (let py = 0; py < h; py += 1) {
         for (let px = 0; px < w; px += 1) {
           const i = (py * w + px) * 4;
           if (data[i + 3] === 0) continue;
@@ -91,6 +91,7 @@ const DepthMinimap = React.forwardRef<HTMLCanvasElement, DepthMinimapProps>(
             data[i + 2] = Math.round(data[i + 2] * 0.25);
           }
         }
+      }
 
       ctx.putImageData(imageData, 0, 0);
 

@@ -54,8 +54,9 @@ export default React.memo(function LoadoutVehiclesGrid({
 
       for (const tier of sortedTiers) {
         byTierAndClassification[tier] = {};
-        for (const classification of sortedClassifications)
+        for (const classification of sortedClassifications) {
           byTierAndClassification[tier][classification] = [];
+        }
       }
 
       for (const [vehicleName, vehicle] of vehicleEntries) {
@@ -69,10 +70,11 @@ export default React.memo(function LoadoutVehiclesGrid({
       }
 
       for (const tier of sortedTiers) {
-        for (const classification of sortedClassifications)
+        for (const classification of sortedClassifications) {
           byTierAndClassification[tier][classification].sort((a, b) =>
             a.name.localeCompare(b.name),
           );
+        }
       }
 
       return {
@@ -82,13 +84,14 @@ export default React.memo(function LoadoutVehiclesGrid({
       };
     }, [vehicleEntries]);
 
-  if (vehicleEntries.length === 0)
+  if (vehicleEntries.length === 0) {
     return (
       <EmptyState
         icon={<GrDocumentMissing />}
         title="No vehicles found for this loadout"
       />
     );
+  }
 
   return (
     <Box overflowX="auto">

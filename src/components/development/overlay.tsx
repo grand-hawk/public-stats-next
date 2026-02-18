@@ -146,8 +146,9 @@ export default function DevelopmentOverlay() {
       const newTop = Math.max(0, Math.min(y, window.innerHeight - newHeight));
 
       if (newLeft !== x || newTop !== y) setPosition({ x: newLeft, y: newTop });
-      if (newWidth !== width || newHeight !== height)
+      if (newWidth !== width || newHeight !== height) {
         setSize({ width: newWidth, height: newHeight });
+      }
     };
 
     window.addEventListener('resize', clamp);

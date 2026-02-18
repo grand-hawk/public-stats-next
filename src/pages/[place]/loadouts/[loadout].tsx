@@ -27,7 +27,7 @@ export default function PlaceLoadout() {
   React.useEffect(() => {
     if (!loadout) return;
 
-    if (loadoutQuery !== loadoutSlug)
+    if (loadoutQuery !== loadoutSlug) {
       router.replace({
         pathname: router.pathname,
         query: {
@@ -35,6 +35,7 @@ export default function PlaceLoadout() {
           loadout: loadoutSlug,
         },
       });
+    }
   }, [router, loadoutQuery, loadout, loadoutSlug]);
 
   const title = loadout ? loadout.name : 'Loadout not found';

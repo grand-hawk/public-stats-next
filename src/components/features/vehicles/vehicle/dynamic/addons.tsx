@@ -75,14 +75,16 @@ export default function VehicleDynamicAddons() {
           enabledAlterations,
           selectedLoadout,
         )
-      )
+      ) {
         conflicting.push(alterationName);
+      }
     }
 
-    if (conflicting.length > 0)
+    if (conflicting.length > 0) {
       setAddonsEnabled(
         conflicting.map((alterationName) => [alterationName, false]),
       );
+    }
   }, [
     vehicle.alterations.addons,
     selectedLoadout,

@@ -139,7 +139,7 @@ export function DynamicDataProvider({
       (id) => !prevAddedIdsRef.current.has(id),
     );
 
-    if (newIds.length > 0)
+    if (newIds.length > 0) {
       requestAnimationFrame(() => {
         const firstHighlighted = document.querySelector(
           '[data-module-highlighted]',
@@ -151,6 +151,7 @@ export function DynamicDataProvider({
           });
         }
       });
+    }
 
     prevAddedIdsRef.current = addedModuleIds;
   }, [addedModuleIds]);

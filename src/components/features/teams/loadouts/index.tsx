@@ -35,7 +35,7 @@ export default function TeamLoadouts({ initials, team }: TeamLoadoutsProps) {
       ? loadoutSlugs[loadoutQuery]
       : loadoutNames[0];
 
-  if (loadoutNames.length === 0)
+  if (loadoutNames.length === 0) {
     return (
       <TitledCard as="section" title="Loadouts" withAnchor>
         <EmptyState
@@ -44,6 +44,7 @@ export default function TeamLoadouts({ initials, team }: TeamLoadoutsProps) {
         />
       </TitledCard>
     );
+  }
 
   return (
     <TitledCard

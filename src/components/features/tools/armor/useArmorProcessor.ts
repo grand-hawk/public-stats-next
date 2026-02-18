@@ -80,8 +80,9 @@ async function fetchAndParseMtca(
   onProgress?: (percent: number) => void,
 ): Promise<RawArmorData> {
   const response = await fetch(url);
-  if (!response.ok)
+  if (!response.ok) {
     throw new Error(`Failed to fetch armour data (${response.status})`);
+  }
 
   const contentLength = response.headers.get('Content-Length');
   const total = contentLength ? parseInt(contentLength, 10) : null;
@@ -253,8 +254,9 @@ export function useArmorProcessor(
 
       let sum = 0;
       for (const layer of pixel.layers) {
-        if (layer.depth >= minDepth && layer.depth <= maxDepth)
+        if (layer.depth >= minDepth && layer.depth <= maxDepth) {
           sum += layer.thickness;
+        }
       }
 
       if (sum > 0 || pixel.layers.length > 0) {
@@ -368,8 +370,9 @@ export function useArmorProcessor(
 
       let total = 0;
       for (const layer of pixel.layers) {
-        if (layer.depth >= minDepth && layer.depth <= maxDepth)
+        if (layer.depth >= minDepth && layer.depth <= maxDepth) {
           total += layer.thickness;
+        }
       }
 
       return total;

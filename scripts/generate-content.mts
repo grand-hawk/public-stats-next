@@ -23,7 +23,7 @@ const vehicles = await ky.get(`${prefixUrl}/vehicles.json`).json<Vehicles>();
 const gameIds = new Set<string>();
 const gameIdToName = new Map<string, string>();
 
-for (const place of Object.values(vehicles.data))
+for (const place of Object.values(vehicles.data)) {
   for (const [name, vehicle] of Object.entries(place.data) as [
     string,
     VehiclesPlaceDataVehicle,
@@ -31,6 +31,7 @@ for (const place of Object.values(vehicles.data))
     gameIds.add(vehicle.info.gameId);
     gameIdToName.set(vehicle.info.gameId, name);
   }
+}
 
 if (!existsSync(CONTENT_DIR)) await mkdir(CONTENT_DIR, { recursive: true });
 

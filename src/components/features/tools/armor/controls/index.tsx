@@ -156,8 +156,9 @@ export default function ArmorControls({
       if (
         containerRef.current &&
         !containerRef.current.contains(e.target as Node)
-      )
+      ) {
         setIsOpen(false);
+      }
     }
     document.addEventListener('mousedown', handler);
     return () => document.removeEventListener('mousedown', handler);

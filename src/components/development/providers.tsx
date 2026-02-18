@@ -64,7 +64,7 @@ export default React.memo(function ProvidersDebug() {
       (data as { modules?: Record<string, unknown> }).modules ||
       data;
 
-    if (typeof modules === 'object' && modules !== null)
+    if (typeof modules === 'object' && modules !== null) {
       for (const [id, module] of Object.entries(modules)) {
         if (
           module &&
@@ -78,6 +78,7 @@ export default React.memo(function ProvidersDebug() {
           idToType[normalizedId.replace('#/modules/', '')] = type;
         }
       }
+    }
 
     return rawLines.map((line) => {
       const strings = line.match(/"([^"]+)"/g);
@@ -88,8 +89,9 @@ export default React.memo(function ProvidersDebug() {
         const normalizedId = id.replace(/^#\/module\//, '#/modules/');
         const type = idToType[normalizedId] || idToType[id];
 
-        if (type && !line.trim().startsWith(`"${id}": {`))
+        if (type && !line.trim().startsWith(`"${id}": {`)) {
           return `${line} // ${type}`;
+        }
       }
       return line;
     });
@@ -171,18 +173,21 @@ export default React.memo(function ProvidersDebug() {
 
         if (line.trim().startsWith(`"${highlightedModule}": {`)) {
           const indent = line.match(/^\s*/)?.[0] || '';
-          for (let i = index + 1; i < lines.length; i += 1)
+          for (let i = index + 1; i < lines.length; i += 1) {
             if (lines[i]!.startsWith(`${indent}}`)) {
               declarationRange = { start: lineNumber, end: i + 1 };
               break;
             }
+          }
         }
       }
     }
 
-    if (declarationRange)
-      for (let i = declarationRange.start; i <= declarationRange.end; i += 1)
+    if (declarationRange) {
+      for (let i = declarationRange.start; i <= declarationRange.end; i += 1) {
         result.add(i);
+      }
+    }
 
     return Array.from(result).sort((a, b) => a - b);
   }, [lines, highlightedModule]);
@@ -260,8 +265,9 @@ export default React.memo(function ProvidersDebug() {
                 .replace(/^"|"$/g, '')
                 .replace(/^#\/module\//, '#/modules/');
 
-              if (text?.startsWith('#/modules/'))
+              if (text?.startsWith('#/modules/')) {
                 setHighlightedModule(text === highlightedModule ? null : text);
+              }
             }}
             position="relative"
             ref={containerRef}

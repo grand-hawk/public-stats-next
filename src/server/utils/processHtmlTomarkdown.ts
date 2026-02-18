@@ -19,8 +19,9 @@ export async function processHtmlToMarkdown(html: string) {
   for (const style of target.querySelectorAll('style')) style.remove();
   for (const img of target.querySelectorAll('img, svg')) img.remove();
   for (const br of target.querySelectorAll('br')) br.replaceWith(' ');
-  for (const link of target.querySelectorAll('a'))
+  for (const link of target.querySelectorAll('a')) {
     link.setAttribute('href', setExtension(`/md${link.attributes.href}`, 'md'));
+  }
 
   let markdown = convert(
     target.children.map((child) => child.toString()).join(''),

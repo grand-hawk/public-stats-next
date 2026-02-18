@@ -57,7 +57,7 @@ function updateModulesFromAlterations(
         delete modules[add];
       }
 
-      if (debug)
+      if (debug) {
         for (const remove of alteration.changes.remove) {
           const targetModule = modules[remove] as
             | (VehiclesPlaceDataVehicleModule & {
@@ -74,6 +74,7 @@ function updateModulesFromAlterations(
             modules.$debug!.added[remove].push(reason);
           }
         }
+      }
     }
 
     if (isEnabled) {
@@ -88,7 +89,7 @@ function updateModulesFromAlterations(
         delete modules[remove];
       }
 
-      if (debug)
+      if (debug) {
         for (const add of alteration.changes.add) {
           const targetModule = modules[add] as
             | (VehiclesPlaceDataVehicleModule & {
@@ -105,6 +106,7 @@ function updateModulesFromAlterations(
             modules.$debug!.added[add].push(reason);
           }
         }
+      }
     }
   }
 
@@ -221,10 +223,11 @@ export function alterationIsConflicting(
     selectedLoadout &&
     alteration.loadout !== undefined &&
     alteration.loadout !== selectedLoadout
-  )
+  ) {
     return true;
+  }
 
-  if (alteration.category)
+  if (alteration.category) {
     for (const [otherName, isEnabled] of Object.entries(enabledAlterations)) {
       if (!isEnabled) continue;
 
@@ -234,6 +237,7 @@ export function alterationIsConflicting(
 
       if (other.category && other.category === alteration.category) return true;
     }
+  }
 
   return false;
 }

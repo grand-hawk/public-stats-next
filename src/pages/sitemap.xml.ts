@@ -51,12 +51,13 @@ function getPaths() {
     changefreq: 'weekly',
     priority: '0.9',
   });
-  for (const vehicleSlug of Object.keys(vehicleSlugs))
+  for (const vehicleSlug of Object.keys(vehicleSlugs)) {
     paths.push({
       path: `${initials}/vehicles/${vehicleSlug}`,
       changefreq: 'monthly',
       priority: '0.6',
     });
+  }
 
   // teams
   paths.push({
@@ -64,12 +65,13 @@ function getPaths() {
     changefreq: 'weekly',
     priority: '0.8',
   });
-  for (const team of loadoutsPlace.metadata.teams)
+  for (const team of loadoutsPlace.metadata.teams) {
     paths.push({
       path: `${initials}/teams/${slug(team)}`,
       changefreq: 'monthly',
       priority: '0.6',
     });
+  }
 
   // loadouts
   paths.push({
@@ -77,12 +79,13 @@ function getPaths() {
     changefreq: 'weekly',
     priority: '0.8',
   });
-  for (const loadoutName of loadoutsPlace.metadata.loadouts)
+  for (const loadoutName of loadoutsPlace.metadata.loadouts) {
     paths.push({
       path: `${initials}/loadouts/${slug(loadoutName)}`,
       changefreq: 'monthly',
       priority: '0.6',
     });
+  }
 
   // tools
   paths.push({
@@ -102,12 +105,13 @@ function getPaths() {
     changefreq: 'weekly',
     priority: '0.8',
   });
-  for (const shellSlug of Object.keys(shellsPlace.metadata.slugs))
+  for (const shellSlug of Object.keys(shellsPlace.metadata.slugs)) {
     paths.push({
       path: `${initials}/shells/${shellSlug}`,
       changefreq: 'monthly',
       priority: '0.5',
     });
+  }
 
   return paths;
 }

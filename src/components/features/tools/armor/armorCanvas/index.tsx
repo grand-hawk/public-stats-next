@@ -39,13 +39,14 @@ function drawRicochetSwatch(canvas: HTMLCanvasElement, w: number, h: number) {
 
   const ctx = canvas.getContext('2d')!;
 
-  for (let y = 0; y < h; y += 1)
+  for (let y = 0; y < h; y += 1) {
     for (let x = 0; x < w; x += 1) {
       const stripe = (x + y) % 6 < 2;
       const c = stripe ? RICOCHET_LIGHT : RICOCHET_DARK;
       ctx.fillStyle = `rgb(${c.r},${c.g},${c.b})`;
       ctx.fillRect(x, y, 1, 1);
     }
+  }
 }
 
 export default function ArmorCanvas({
@@ -473,13 +474,14 @@ export default function ArmorCanvas({
     // ricochet swatch
     if (ricochetAngle !== 90) {
       const swatchX = pad + legendBarWidth + 10;
-      for (let sy = 0; sy < legendBarHeight; sy += 1)
+      for (let sy = 0; sy < legendBarHeight; sy += 1) {
         for (let sx = 0; sx < 10; sx += 1) {
           const stripe = (sx + sy) % 6 < 2;
           const c = stripe ? RICOCHET_LIGHT : RICOCHET_DARK;
           ctx.fillStyle = `rgb(${c.r},${c.g},${c.b})`;
           ctx.fillRect(swatchX + sx, y + sy, 1, 1);
         }
+      }
 
       ctx.fillStyle = '#aaa';
       ctx.font = '10px monospace';
@@ -528,7 +530,7 @@ export default function ArmorCanvas({
 
   const isZoomed = zoom !== 1 || pan.x !== 0 || pan.y !== 0;
 
-  if (loading)
+  if (loading) {
     return (
       <Flex
         alignItems="center"
@@ -551,8 +553,9 @@ export default function ArmorCanvas({
         </Text>
       </Flex>
     );
+  }
 
-  if (error)
+  if (error) {
     return (
       <Flex
         alignItems="center"
@@ -566,8 +569,9 @@ export default function ArmorCanvas({
         </Text>
       </Flex>
     );
+  }
 
-  if (!canvas)
+  if (!canvas) {
     return (
       <Flex
         alignItems="center"
@@ -581,6 +585,7 @@ export default function ArmorCanvas({
         </Text>
       </Flex>
     );
+  }
 
   return (
     <Flex direction="column" height="100%" minHeight="0">

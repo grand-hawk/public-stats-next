@@ -111,8 +111,9 @@ export const vehiclesRouter = createTRPCRouter({
 
       const availability: VehicleAvailability = {};
       for (const [loadoutName, loadout] of Object.entries(loadoutsPlace.data)) {
-        if (vehicleName in loadout.vehicles)
+        if (vehicleName in loadout.vehicles) {
           availability[loadoutName] = loadout.vehicles[vehicleName];
+        }
       }
 
       const namedVehicle: DetailedVehicle = {

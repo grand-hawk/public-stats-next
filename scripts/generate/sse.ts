@@ -50,10 +50,11 @@ if (
 
       console.log('SSE updates:', files.join(', '));
 
-      for (const file of files)
+      for (const file of files) {
         await Promise.allSettled(
           sse.listeners(file).map((callback) => Promise.resolve(callback())),
         );
+      }
 
       sse.emit('_settled');
     });

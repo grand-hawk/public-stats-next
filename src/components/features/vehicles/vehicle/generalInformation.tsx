@@ -170,7 +170,7 @@ export default function VehicleGeneralInformation({
                 <HStack gap={1}>
                   {vehicle.info.supportedClasses.map((className) => {
                     const Icon = classIcons[className];
-                    if (Icon)
+                    if (Icon) {
                       return (
                         <ToggleTip
                           closeDelay={50}
@@ -181,6 +181,7 @@ export default function VehicleGeneralInformation({
                           <Icon boxSize="1em" />
                         </ToggleTip>
                       );
+                    }
                   })}
                 </HStack>
               </Stat>

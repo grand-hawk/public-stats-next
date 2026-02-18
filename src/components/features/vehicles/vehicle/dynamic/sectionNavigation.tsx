@@ -22,11 +22,12 @@ function computeMarkers(
   // General
   markers.push({ name: 'General information', slug: 'general-information' });
 
-  if (isAvailable)
+  if (isAvailable) {
     markers.push({
       name: 'In-game availability',
       slug: 'in-game-availability',
     });
+  }
 
   // Vehicle section
   const driveData = getOneModuleOfType('DriveData', assembledModules);
@@ -42,8 +43,9 @@ function computeMarkers(
   // Defenses section
   const essModule = getOneModuleOfType('ESS', assembledModules);
   const ewModule = getOneModuleOfType('EW', assembledModules);
-  if (essModule || ewModule)
+  if (essModule || ewModule) {
     markers.push({ name: 'Defenses', slug: 'defenses' });
+  }
 
   // Turrets section
   const sortedTurrets = getTurretsWithNamesSorted(assembledModules);
@@ -96,11 +98,12 @@ export default function SectionNavigation() {
 
     const observer = new IntersectionObserver(
       (entries) => {
-        for (const entry of entries)
+        for (const entry of entries) {
           if (entry.isIntersecting) {
             setActiveSlug(entry.target.id);
             break;
           }
+        }
       },
       { rootMargin: '0px 0px -90% 0px' },
     );

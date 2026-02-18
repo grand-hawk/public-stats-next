@@ -40,13 +40,14 @@ function readFromDisk(slug: string): VehicleContent | null {
 
 const contentIndex = isDev ? null : new Map<string, VehicleContent>();
 
-if (contentIndex)
+if (contentIndex) {
   for (const file of readdirSync(CONTENT_DIR)) {
     if (!file.endsWith('.md')) continue;
     const slug = file.replace(/\.md$/, '');
     const raw = readFileSync(path.join(CONTENT_DIR, file), 'utf-8');
     contentIndex.set(slug, parseSections(raw));
   }
+}
 
 export const getVehicleContent = (slug: string): VehicleContent | null =>
   isDev ? readFromDisk(slug) : (contentIndex!.get(slug) ?? null);

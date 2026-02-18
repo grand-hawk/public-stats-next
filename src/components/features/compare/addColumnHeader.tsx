@@ -58,8 +58,9 @@ export default function AddColumnHeader<T extends { slug: string }>({
       if (
         containerRef.current &&
         !containerRef.current.contains(e.target as Node)
-      )
+      ) {
         setIsOpen(false);
+      }
     }
     document.addEventListener('mousedown', handler);
     return () => document.removeEventListener('mousedown', handler);
