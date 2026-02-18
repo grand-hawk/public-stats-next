@@ -380,11 +380,24 @@ export default function ArmorCanvas({
     [zoom, pan, getCenterOffset, showTouchTooltip, updateTooltip],
   );
 
-  const handleTouchEnd = React.useCallback(() => {
-    lastTouchDist.current = null;
-    lastTouchCenter.current = null;
-    touchDragging.current = false;
-  }, []);
+  const handleTouchEnd = React.useCallback(
+    (event: React.TouchEvent) => {
+      if (event.touches.length === 1) {
+        const t = event.touches[0];
+        touchPanStart.current = {
+          x: t.clientX,
+          y: t.clientY,
+          panX: pan.x,
+          panY: pan.y,
+        };
+      } else if (event.touches.length === 0) updateTooltip(0, 0, null);
+
+      lastTouchDist.current = null;
+      lastTouchCenter.current = null;
+      touchDragging.current = false;
+    },
+    [pan.x, pan.y, updateTooltip],
+  );
 
   React.useEffect(() => {
     const el = viewportRef.current;

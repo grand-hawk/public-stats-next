@@ -128,7 +128,7 @@ export default function ArmorControls({
 }: ArmorControlsProps) {
   const [query, setQuery] = React.useState('');
   const [isOpen, setIsOpen] = React.useState(false);
-  const [mobileExpanded, setMobileExpanded] = React.useState(false);
+  const [mobileExpanded, setMobileExpanded] = React.useState(true);
   const containerRef = React.useRef<HTMLDivElement>(null);
   const inputRef = React.useRef<HTMLInputElement>(null);
   const listRef = React.useRef<HTMLDivElement>(null);
