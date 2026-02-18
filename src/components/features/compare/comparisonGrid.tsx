@@ -141,13 +141,15 @@ export default function ComparisonGrid<T>({
                     return (
                       <Box
                         key={j}
+                        alignItems="center"
                         borderBottomWidth={isLast ? 0 : '1px'}
                         borderLeftWidth="1px"
                         borderStyle="dashed"
+                        display="flex"
                         fontSize="sm"
+                        justifyContent="center"
                         paddingX={3}
                         paddingY={2}
-                        textAlign="center"
                       >
                         {value ?? '—'}
                       </Box>

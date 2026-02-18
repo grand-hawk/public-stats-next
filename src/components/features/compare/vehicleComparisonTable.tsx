@@ -1,7 +1,6 @@
 import {
   Checkbox,
   createListCollection,
-  Flex,
   Portal,
   Select,
   Text,
@@ -250,26 +249,28 @@ export default function VehicleComparisonTable({
             const cost = addon.cost;
 
             return (
-              <Flex alignItems="center" gap={1.5} justifyContent="center">
-                <Checkbox.Root
-                  checked={isEnabled}
-                  disabled={isDisabled}
-                  size="sm"
-                  onCheckedChange={(details) => {
-                    const next = { ...a.enabledAlterations };
-                    if (details.checked) next[addonName] = true;
-                    else delete next[addonName];
-                    a.onAlterationsChange(next);
-                  }}
-                >
-                  <Checkbox.HiddenInput />
-                  <Checkbox.Control borderRadius="none">
-                    {isEnabled && <MdOutlineCheck />}
-                  </Checkbox.Control>
-                </Checkbox.Root>
-
+              <Checkbox.Root
+                alignItems="center"
+                checked={isEnabled}
+                cursor={isDisabled ? 'not-allowed' : 'pointer'}
+                disabled={isDisabled}
+                display="inline-flex"
+                gap={1.5}
+                justifyContent="center"
+                size="sm"
+                onCheckedChange={(details) => {
+                  const next = { ...a.enabledAlterations };
+                  if (details.checked) next[addonName] = true;
+                  else delete next[addonName];
+                  a.onAlterationsChange(next);
+                }}
+              >
+                <Checkbox.HiddenInput />
+                <Checkbox.Control borderRadius="none">
+                  {isEnabled && <MdOutlineCheck />}
+                </Checkbox.Control>
                 {cost !== undefined && (
-                  <Text
+                  <Checkbox.Label
                     color="fg.muted"
                     css={{ fontVariantNumeric: 'tabular-nums' }}
                     fontSize="xs"
@@ -277,9 +278,9 @@ export default function VehicleComparisonTable({
                     textAlign="right"
                   >
                     {cost}
-                  </Text>
+                  </Checkbox.Label>
                 )}
-              </Flex>
+              </Checkbox.Root>
             );
           },
         })),
