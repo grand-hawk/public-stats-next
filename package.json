@@ -15,7 +15,8 @@
     "content:generate": "tsx scripts/generate-content.mts",
     "content:validate": "node scripts/validate-content.mjs",
     "generate": "rimraf generated && cross-env NODE_ENV=development tsx scripts/generate/index.mts 1.0.0",
-    "postinstall": "node scripts/run-if-missing.mjs generated \"pnpm run generate\""
+    "postinstall": "node scripts/run-if-missing.mjs generated \"pnpm run generate\"",
+    "prepare": "husky"
   },
   "dependencies": {
     "@chakra-ui/charts": "^3.33.0",
@@ -83,6 +84,7 @@
     "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-react-hooks": "^7.0.1",
     "eslint-plugin-sort-destructure-keys": "^2.0.0",
+    "husky": "^9.1.7",
     "json-schema-to-typescript": "^15.0.4",
     "prettier-eslint": "17.0.0-alpha.1",
     "rimraf": "^6.1.2",
