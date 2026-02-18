@@ -112,11 +112,6 @@ export function buildVehicleSections(): SectionDef<AssembledVehicle>[] {
           if (!drive) return '—';
           return drive.data.engine.name;
         }),
-        stat('Type', (a) => {
-          const drive = getOneModuleOfType('DriveData', a.modules);
-          if (!drive) return '—';
-          return drive.data.engine.type;
-        }),
         stat('Horsepower', (a) => {
           const drive = getOneModuleOfType('DriveData', a.modules);
           if (!drive) return '—';
