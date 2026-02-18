@@ -5,13 +5,8 @@ import slug from 'slug';
 
 import { useDynamicData } from '@/hooks/providers/dynamicData';
 import { useVehicle } from '@/hooks/providers/vehicle';
-import {
-  getAllModulesOfType,
-  getOneModuleFromReferences,
-  getOneModuleOfType,
-} from '@/utils/alterations';
-
-import { getTurretPriorityIndex } from './modules/turrets';
+import { getOneModuleOfType } from '@/utils/alterations';
+import { getTurretsWithNamesSorted } from '@/utils/turrets';
 
 import type { DynamicDataContext } from '@/hooks/providers/dynamicData';
 import type { SectionMarker } from '@/hooks/providers/sectionMarkers';
@@ -51,25 +46,8 @@ function computeMarkers(
     markers.push({ name: 'Defenses', slug: 'defenses' });
 
   // Turrets section
-  const turrets = getAllModulesOfType('Turret', assembledModules);
-  if (turrets.length > 0) {
-    const turretsWithNames = turrets.map((turret) => {
-      let name = 'Turret';
-      const control = getOneModuleFromReferences<'Seat'>(
-        turret.data.control,
-        assembledModules,
-      );
-      if (control) name = `${control.data.name} turret`;
-      return { name, ...turret };
-    });
-
-    const sortedTurrets = [...turretsWithNames].sort((a, b) => {
-      const aPriority = getTurretPriorityIndex(a.name);
-      const bPriority = getTurretPriorityIndex(b.name);
-      if (aPriority !== bPriority) return aPriority - bPriority;
-      return a.name.localeCompare(b.name);
-    });
-
+  const sortedTurrets = getTurretsWithNamesSorted(assembledModules);
+  if (sortedTurrets.length > 0) {
     markers.push({ name: 'Turrets', slug: slug(sortedTurrets[0].name) });
   }
 

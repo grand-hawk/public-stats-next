@@ -8,6 +8,7 @@ import {
   getOneModuleOfType,
 } from '@/utils/alterations';
 import { capitalizeFirst } from '@/utils/capitalizeFirst';
+import { getTurretsWithNamesSorted } from '@/utils/turrets';
 
 import type { SectionDef, StatDef } from '@/components/features/compare/types';
 import type { DetailedVehicle } from '@/server/api/trpc/routers/vehicles';
@@ -24,6 +25,23 @@ function stat(
   getter: (a: AssembledVehicle) => React.ReactNode,
 ): StatDef<AssembledVehicle> {
   return { label, getter };
+}
+
+function getPrimaryTurret(a: AssembledVehicle) {
+  const sorted = getTurretsWithNamesSorted(a.modules);
+  return sorted[0] ?? null;
+}
+
+function getPrimaryWeapon(a: AssembledVehicle) {
+  const turret = getPrimaryTurret(a);
+  if (!turret) return null;
+
+  const weapons = getModulesByReferences<'Weapon'>(
+    turret.data.weapons,
+    a.modules,
+  ).filter((w) => w.data.name !== 'Smoke Grenade' && w.data.name !== 'Flares');
+
+  return weapons[0] ?? null;
 }
 
 export function buildVehicleSections(): SectionDef<AssembledVehicle>[] {
@@ -184,8 +202,7 @@ export function buildVehicleSections(): SectionDef<AssembledVehicle>[] {
           return turrets.some((t) => t.data.maws) ? 'Yes' : 'No';
         }),
         stat('Horizontal speed', (a) => {
-          const turrets = getAllModulesOfType('Turret', a.modules);
-          const primary = turrets[0];
+          const primary = getPrimaryTurret(a);
           if (!primary) return '—';
           if (primary.data.traverse.speed.horizontal === 0) return 'Fixed';
           return (
@@ -197,8 +214,7 @@ export function buildVehicleSections(): SectionDef<AssembledVehicle>[] {
           );
         }),
         stat('Vertical speed', (a) => {
-          const turrets = getAllModulesOfType('Turret', a.modules);
-          const primary = turrets[0];
+          const primary = getPrimaryTurret(a);
           if (!primary) return '—';
           if (primary.data.traverse.speed.vertical === 0) return 'Fixed';
           return (
@@ -215,51 +231,26 @@ export function buildVehicleSections(): SectionDef<AssembledVehicle>[] {
       title: 'Main weapon',
       stats: [
         stat('Name', (a) => {
-          const turrets = getAllModulesOfType('Turret', a.modules);
-          const primary = turrets[0];
-          if (!primary) return '—';
-          const weapons = getModulesByReferences<'Weapon'>(
-            primary.data.weapons,
-            a.modules,
-          ).filter(
-            (w) => w.data.name !== 'Smoke Grenade' && w.data.name !== 'Flares',
-          );
-          if (weapons.length === 0) return '—';
-          return weapons[0].data.name;
+          const weapon = getPrimaryWeapon(a);
+          return weapon?.data.name ?? '—';
         }),
         stat('Reload speed', (a) => {
-          const turrets = getAllModulesOfType('Turret', a.modules);
-          const primary = turrets[0];
-          if (!primary) return '—';
-          const weapons = getModulesByReferences<'Weapon'>(
-            primary.data.weapons,
-            a.modules,
-          ).filter(
-            (w) => w.data.name !== 'Smoke Grenade' && w.data.name !== 'Flares',
-          );
-          if (weapons.length === 0) return '—';
+          const weapon = getPrimaryWeapon(a);
+          if (!weapon) return '—';
           return (
             <FormatNumber
               style="unit"
               unit="second"
               unitDisplay="narrow"
-              value={weapons[0].data.reloadSpeed}
+              value={weapon.data.reloadSpeed}
             />
           );
         }),
         stat('Magazine size', (a) => {
-          const turrets = getAllModulesOfType('Turret', a.modules);
-          const primary = turrets[0];
-          if (!primary) return '—';
-          const weapons = getModulesByReferences<'Weapon'>(
-            primary.data.weapons,
-            a.modules,
-          ).filter(
-            (w) => w.data.name !== 'Smoke Grenade' && w.data.name !== 'Flares',
-          );
-          if (weapons.length === 0) return '—';
+          const weapon = getPrimaryWeapon(a);
+          if (!weapon) return '—';
           const magazine = getOneModuleFromReferences<'Magazine'>(
-            weapons[0].data.magazine,
+            weapon.data.magazine,
             a.modules,
           );
           return magazine ? <FormatNumber value={magazine.data.size} /> : '—';
