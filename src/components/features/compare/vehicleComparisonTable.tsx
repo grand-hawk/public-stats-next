@@ -46,12 +46,14 @@ function getSelectedLoadout(
 export interface VehicleComparisonTableProps {
   vehicles: DetailedVehicle[];
   allVehicles: ListVehicle[];
+  loadingCount?: number;
   onAdd: (slug: string) => void;
   onRemove: (slug: string) => void;
 }
 
 export default function VehicleComparisonTable({
   allVehicles,
+  loadingCount = 0,
   onAdd,
   onRemove,
   vehicles,
@@ -87,9 +89,9 @@ export default function VehicleComparisonTable({
     () => vehicles.map((vehicle) => vehicle.info.slug),
     [vehicles],
   );
-  const isFull = vehicles.length >= MAX_COMPARE_ITEMS;
+  const isFull = vehicles.length + loadingCount >= MAX_COMPARE_ITEMS;
   const hasAddColumn = !isFull;
-  const totalColumns = vehicles.length + (hasAddColumn ? 1 : 0);
+  const totalColumns = vehicles.length + loadingCount + (hasAddColumn ? 1 : 0);
 
   const maxWidth =
     totalColumns <= 1
@@ -328,6 +330,7 @@ export default function VehicleComparisonTable({
       }))}
       itemCount={vehicles.length}
       items={assembled}
+      loadingCount={loadingCount}
       maxWidth={maxWidth}
       sections={gridSections}
     />

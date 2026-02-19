@@ -1,4 +1,4 @@
-import { Box, Text } from '@chakra-ui/react';
+import { Box, Skeleton, Text } from '@chakra-ui/react';
 import React from 'react';
 
 import { HEADER_ROW_HEIGHT } from '@/components/features/compare';
@@ -14,6 +14,7 @@ export interface ComparisonGridProps<T> {
   addColumn: React.ReactNode;
   sections: SectionDef<T>[];
   items: T[];
+  loadingCount?: number;
   maxWidth?: string;
 }
 
@@ -23,10 +24,12 @@ export default function ComparisonGrid<T>({
   headerCells,
   itemCount,
   items,
+  loadingCount = 0,
   maxWidth,
   sections,
 }: ComparisonGridProps<T>) {
-  const totalColumns = itemCount + (hasAddColumn ? 1 : 0);
+  const totalColumns = itemCount + loadingCount + (hasAddColumn ? 1 : 0);
+  const skeletonIndices = Array.from({ length: loadingCount }, (_, i) => i);
 
   return (
     <Box
@@ -56,6 +59,19 @@ export default function ComparisonGrid<T>({
         {headerCells.map(({ content, key }) => (
           <Box key={key} borderLeftWidth="1px">
             {content}
+          </Box>
+        ))}
+        {skeletonIndices.map((i) => (
+          <Box
+            key={`skeleton-header-${i}`}
+            alignItems="center"
+            borderLeftWidth="1px"
+            display="flex"
+            height={HEADER_ROW_HEIGHT}
+            justifyContent="center"
+            paddingX={3}
+          >
+            <Skeleton height="4" width="70%" />
           </Box>
         ))}
         {hasAddColumn && (
@@ -92,6 +108,12 @@ export default function ComparisonGrid<T>({
                   >
                     {section.titleGetter!(item)}
                   </Box>
+                ))
+              : null}
+
+            {section.titleGetter
+              ? skeletonIndices.map((i) => (
+                  <Box key={`skeleton-title-${i}`} borderLeftWidth="1px" />
                 ))
               : null}
 
@@ -155,6 +177,22 @@ export default function ComparisonGrid<T>({
                       </Box>
                     );
                   })}
+
+                  {skeletonIndices.map((i) => (
+                    <Box
+                      key={`skeleton-${i}`}
+                      alignItems="center"
+                      borderBottomWidth={isLast ? 0 : '1px'}
+                      borderLeftWidth="1px"
+                      borderStyle="dashed"
+                      display="flex"
+                      justifyContent="center"
+                      paddingX={3}
+                      paddingY={2}
+                    >
+                      <Skeleton height="3.5" width="60%" />
+                    </Box>
+                  ))}
 
                   {hasAddColumn && (
                     <Box

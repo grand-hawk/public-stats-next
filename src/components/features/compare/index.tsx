@@ -36,7 +36,10 @@ function VehicleDataLoader({
   slugs,
 }: {
   slugs: string[];
-  children: (vehicles: DetailedVehicle[]) => React.ReactNode;
+  children: (
+    vehicles: DetailedVehicle[],
+    loadingCount: number,
+  ) => React.ReactNode;
 }) {
   const place = usePlace()!;
 
@@ -44,14 +47,12 @@ function VehicleDataLoader({
     slugs.map((slug) => t.vehicles.bySlug({ placeId: place.placeId, slug })),
   );
 
-  const isLoading = queries.some((q) => q.isLoading);
+  const loadingCount = queries.filter((q) => q.isLoading).length;
   const vehicles = queries
     .map((q) => q.data)
     .filter((vehicle): vehicle is DetailedVehicle => vehicle != null);
 
-  if (isLoading) return <CenterSpinner />;
-
-  return <>{children(vehicles)}</>;
+  return <>{children(vehicles, loadingCount)}</>;
 }
 
 function ShellDataLoader({
@@ -59,7 +60,7 @@ function ShellDataLoader({
   slugs,
 }: {
   slugs: string[];
-  children: (shells: DetailedShell[]) => React.ReactNode;
+  children: (shells: DetailedShell[], loadingCount: number) => React.ReactNode;
 }) {
   const place = usePlace()!;
 
@@ -67,14 +68,12 @@ function ShellDataLoader({
     slugs.map((slug) => t.shells.bySlug({ placeId: place.placeId, slug })),
   );
 
-  const isLoading = queries.some((q) => q.isLoading);
+  const loadingCount = queries.filter((q) => q.isLoading).length;
   const shells = queries
     .map((q) => q.data)
     .filter((s): s is DetailedShell => s != null);
 
-  if (isLoading) return <CenterSpinner />;
-
-  return <>{children(shells)}</>;
+  return <>{children(shells, loadingCount)}</>;
 }
 
 export default function VehicleComparison() {
@@ -181,10 +180,11 @@ export default function VehicleComparison() {
         {mode === 'vehicles' ? (
           <Suspense fallback={<CenterSpinner />}>
             <VehicleDataLoader slugs={selectedVehicleSlugs}>
-              {(vehicles) => (
+              {(vehicles, loadingCount) => (
                 <VehicleComparisonTable
-                  vehicles={vehicles}
                   allVehicles={vehicleList}
+                  loadingCount={loadingCount}
+                  vehicles={vehicles}
                   onAdd={handleAddVehicle}
                   onRemove={handleRemoveVehicle}
                 />
@@ -194,10 +194,11 @@ export default function VehicleComparison() {
         ) : (
           <Suspense fallback={<CenterSpinner />}>
             <ShellDataLoader slugs={selectedShellSlugs}>
-              {(shells) => (
+              {(shells, loadingCount) => (
                 <ShellComparisonTable
-                  shells={shells}
                   allShells={flatShells}
+                  loadingCount={loadingCount}
+                  shells={shells}
                   onAdd={handleAddShell}
                   onRemove={handleRemoveShell}
                 />

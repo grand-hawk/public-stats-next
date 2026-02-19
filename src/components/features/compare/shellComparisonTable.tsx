@@ -26,12 +26,14 @@ export interface ShellListItem {
 export interface ShellComparisonTableProps {
   shells: DetailedShell[];
   allShells: ShellListItem[];
+  loadingCount?: number;
   onAdd: (slug: string) => void;
   onRemove: (slug: string) => void;
 }
 
 export default function ShellComparisonTable({
   allShells,
+  loadingCount = 0,
   onAdd,
   onRemove,
   shells,
@@ -41,9 +43,9 @@ export default function ShellComparisonTable({
     () => shells.map((shell) => shell.slug),
     [shells],
   );
-  const isFull = shells.length >= MAX_COMPARE_ITEMS;
+  const isFull = shells.length + loadingCount >= MAX_COMPARE_ITEMS;
   const hasAddColumn = !isFull;
-  const totalColumns = shells.length + (hasAddColumn ? 1 : 0);
+  const totalColumns = shells.length + loadingCount + (hasAddColumn ? 1 : 0);
 
   const maxWidth =
     totalColumns <= 1
@@ -111,6 +113,7 @@ export default function ShellComparisonTable({
       })}
       itemCount={shells.length}
       items={shells}
+      loadingCount={loadingCount}
       maxWidth={maxWidth}
       sections={sections.map((sec) => ({
         title: sec.title,
