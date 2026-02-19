@@ -16,6 +16,7 @@ export const getKeywords = (place: Place) => [
   'Statistics',
   'Stats',
   'Data',
+  'Wiki',
 ];
 
 export default function InternalHead() {

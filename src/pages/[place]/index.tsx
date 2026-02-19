@@ -23,7 +23,7 @@ export default function Place() {
   const description = `Vehicle stats, shell performance, team compositions, and more for ${place.placeName}.`;
 
   return (
-    <PageMeta exactTitle={`${place.placeName} Stats`} description={description}>
+    <PageMeta exactTitle={`${place.placeName} Wiki`} description={description}>
       <Layout overwriteTabLabel="">
         <Flex
           flexDirection="column"
