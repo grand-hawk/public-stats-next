@@ -38,10 +38,7 @@ export default function ShellComparisonTable({
   onRemove,
   shells,
 }: ShellComparisonTableProps) {
-  const sections = React.useMemo(
-    () => buildShellSections(shells),
-    [shells],
-  );
+  const sections = React.useMemo(() => buildShellSections(shells), [shells]);
   const selectedSlugs = React.useMemo(
     () => shells.map((shell) => shell.slug),
     [shells],
