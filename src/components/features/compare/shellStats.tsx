@@ -65,13 +65,6 @@ export function buildShellSections(
         '—'
       ),
     ),
-    ...(hasEraTip
-      ? [
-          stat('ERA tip', (s) =>
-            s.eraTip ? <FormatNumber value={s.eraTip} /> : '—',
-          ),
-        ]
-      : []),
   ];
 
   return [
@@ -150,6 +143,13 @@ export function buildShellSections(
             '—'
           ),
         ),
+        ...(hasEraTip
+          ? [
+              stat('ERA tip', (s) =>
+                s.eraTip ? <FormatNumber value={s.eraTip} /> : '—',
+              ),
+            ]
+          : []),
       ],
     },
     {
