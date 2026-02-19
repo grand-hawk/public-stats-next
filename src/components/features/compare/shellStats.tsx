@@ -49,6 +49,13 @@ export function buildShellSections(): SectionDef<DetailedShell>[] {
             value={Math.round(relPenetration(s.maxPenetration, 30))}
           />
         )),
+        stat('60° penetration', (s) => (
+          <FormatNumber
+            style="unit"
+            unit="millimeter"
+            value={Math.round(relPenetration(s.maxPenetration, 60))}
+          />
+        )),
         stat('Projectile diameter', (s) =>
           s.projectileDiameter ? (
             <FormatNumber
