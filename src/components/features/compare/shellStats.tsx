@@ -13,7 +13,67 @@ function stat(
   return { label, getter };
 }
 
-export function buildShellSections(): SectionDef<DetailedShell>[] {
+export function buildShellSections(
+  shells: DetailedShell[],
+): SectionDef<DetailedShell>[] {
+  const hasEraTip = shells.some((s) => s.eraTip);
+  const damageStats = [
+    stat('Base damage', (s) => (
+      <>
+        <FormatNumber value={s.damage} /> HP
+      </>
+    )),
+    stat('Explosive mass', (s) =>
+      s.explosive ? (
+        <FormatNumber style="unit" unit="kilogram" value={s.explosive.mass} />
+      ) : (
+        '—'
+      ),
+    ),
+    stat('Explosion radius', (s) =>
+      s.explosive?.radius ? (
+        <FormatNumber
+          maximumFractionDigits={3}
+          style="unit"
+          unit="meter"
+          value={s.explosive.radius}
+        />
+      ) : (
+        '—'
+      ),
+    ),
+    stat('Kill radius', (s) =>
+      s.explosive?.killRadius ? (
+        <FormatNumber
+          style="unit"
+          unit="meter"
+          value={s.explosive.killRadius}
+        />
+      ) : (
+        '—'
+      ),
+    ),
+    stat('Submunitions', (s) =>
+      s.cluster ? <FormatNumber value={s.cluster.submunitions} /> : '—',
+    ),
+    stat('Shrapnel multiplier', (s) =>
+      s.shrapMultiplier ? (
+        <>
+          <FormatNumber value={s.shrapMultiplier} />x
+        </>
+      ) : (
+        '—'
+      ),
+    ),
+    ...(hasEraTip
+      ? [
+          stat('ERA tip', (s) =>
+            s.eraTip ? <FormatNumber value={s.eraTip} /> : '—',
+          ),
+        ]
+      : []),
+  ];
+
   return [
     {
       title: 'General',
@@ -94,63 +154,7 @@ export function buildShellSections(): SectionDef<DetailedShell>[] {
     },
     {
       title: 'Damage',
-      stats: [
-        stat('Base damage', (s) => (
-          <>
-            <FormatNumber value={s.damage} /> HP
-          </>
-        )),
-        stat('Explosive mass', (s) =>
-          s.explosive ? (
-            <FormatNumber
-              style="unit"
-              unit="kilogram"
-              value={s.explosive.mass}
-            />
-          ) : (
-            '—'
-          ),
-        ),
-        stat('Explosion radius', (s) =>
-          s.explosive?.radius ? (
-            <FormatNumber
-              maximumFractionDigits={3}
-              style="unit"
-              unit="meter"
-              value={s.explosive.radius}
-            />
-          ) : (
-            '—'
-          ),
-        ),
-        stat('Kill radius', (s) =>
-          s.explosive?.killRadius ? (
-            <FormatNumber
-              maximumFractionDigits={3}
-              style="unit"
-              unit="meter"
-              value={s.explosive.killRadius}
-            />
-          ) : (
-            '—'
-          ),
-        ),
-        stat('Submunitions', (s) =>
-          s.cluster ? <FormatNumber value={s.cluster.submunitions} /> : '—',
-        ),
-        stat('Shrapnel multiplier', (s) =>
-          s.shrapMultiplier ? (
-            <>
-              <FormatNumber value={s.shrapMultiplier} />x
-            </>
-          ) : (
-            '—'
-          ),
-        ),
-        stat('ERA tip', (s) =>
-          s.eraTip ? <FormatNumber value={s.eraTip} /> : '—',
-        ),
-      ],
+      stats: damageStats,
     },
     {
       title: 'Missile',
