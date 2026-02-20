@@ -9,7 +9,7 @@ The **120mm RUAG L50** is fed by an autoloader (11 rounds ready, 27 in the hull)
 
 Left cheek: 22-47
 Right cheek: 17-32
-Lower front plate: 96-174
+Lower front plate: 79-180
 Upper front plate: 198-372
 Hull side: 44-73
 Mantlet: 303-717
