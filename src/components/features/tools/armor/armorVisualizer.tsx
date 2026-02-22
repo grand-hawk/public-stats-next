@@ -120,7 +120,10 @@ export default function ArmorVisualizer() {
       return;
     }
     const fraction =
-      angle === 'front'
+      angle === 'front' ||
+      angle === 'left' ||
+      angle === 'right' ||
+      angle === 'back'
         ? 0.5
         : angle === 'front_30' || angle === 'front_-30'
           ? 0.75
