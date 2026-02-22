@@ -2,6 +2,7 @@ import { FormatNumber } from '@chakra-ui/react';
 import React from 'react';
 
 import { relPenetration } from '@/utils/penetration';
+import { getFirstLosPenetrationAtAngle } from '@/utils/shellPenetration';
 
 import type { SectionDef, StatDef } from '@/components/features/compare/types';
 import type { DetailedShell } from '@/server/api/trpc/routers/shells';
@@ -92,21 +93,36 @@ export function buildShellSections(
           <FormatNumber
             style="unit"
             unit="millimeter"
-            value={s.maxPenetration}
+            value={
+              getFirstLosPenetrationAtAngle(s.penetrationTable, 0) ??
+              s.maxPenetration
+            }
           />
         )),
         stat('30° penetration', (s) => (
           <FormatNumber
             style="unit"
             unit="millimeter"
-            value={Math.round(relPenetration(s.maxPenetration, 30))}
+            value={Math.round(
+              relPenetration(
+                getFirstLosPenetrationAtAngle(s.penetrationTable, 30) ??
+                  s.maxPenetration,
+                30,
+              ),
+            )}
           />
         )),
         stat('60° penetration', (s) => (
           <FormatNumber
             style="unit"
             unit="millimeter"
-            value={Math.round(relPenetration(s.maxPenetration, 60))}
+            value={Math.round(
+              relPenetration(
+                getFirstLosPenetrationAtAngle(s.penetrationTable, 60) ??
+                  s.maxPenetration,
+                60,
+              ),
+            )}
           />
         )),
         stat('Projectile diameter', (s) =>

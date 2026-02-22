@@ -5,18 +5,18 @@ import { Switch } from '@/components/ui/switch';
 import { StatsCell, StatsRoot, StatsRow } from '@/components/wiki/stats';
 import TitledCard from '@/components/wiki/titledCard';
 import { useShell } from '@/hooks/providers/shell';
-import { relPenetration } from '@/utils/penetration';
+import {
+  getPenetrationAngles,
+  getPenetrationCells,
+  getPenetrationDistances,
+} from '@/utils/shellPenetration';
 
 export default function ShellPenetrationTable() {
   const shell = useShell();
   const [mode, setMode] = React.useState<'los' | 'rel'>('rel');
 
-  const angles = Object.keys(shell.penetrationTable)
-    .map(Number)
-    .sort((a, b) => a - b);
-  const distances = Object.keys(shell.penetrationTable[angles[0]])
-    .map(Number)
-    .sort((a, b) => a - b);
+  const angles = getPenetrationAngles(shell.penetrationTable);
+  const distances = getPenetrationDistances(shell.penetrationTable, angles[0]);
 
   return (
     <TitledCard
@@ -58,14 +58,12 @@ export default function ShellPenetrationTable() {
               <FormatNumber style="unit" unit="meter" value={distance} />
             </StatsCell>
             {angles.map((angle) => {
-              let anglePens = shell.penetrationTable[angle][distance];
-
-              if (mode === 'rel') {
-                anglePens = anglePens.map(
-                  (anglePen) =>
-                    anglePen && Math.round(relPenetration(anglePen, angle)),
-                );
-              }
+              const anglePens = getPenetrationCells(
+                shell.penetrationTable,
+                angle,
+                distance,
+                mode,
+              );
 
               const anglePenCells = anglePens.map((penetration) => (
                 <span key={`${distance}-${angle}-${penetration}`}>
