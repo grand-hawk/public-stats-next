@@ -1,7 +1,9 @@
 import React from 'react';
 
+import { parseMtca } from './mtca';
 import { samplePalette } from './palettes';
 
+import type { RawArmorData } from './mtca';
 import type { Palette } from './palettes';
 import type { ArmorAngle } from '@/utils/getVehicleImage';
 
@@ -26,27 +28,6 @@ export interface ArmorProcessorResult {
   error: string | null;
   loading: boolean;
   thicknessAt: (x: number, y: number) => number | 'ricochet' | null;
-}
-
-interface Layer {
-  depth: number;
-  thickness: number;
-}
-
-interface PixelData {
-  angle: number;
-  layers: Layer[];
-}
-
-interface RawArmorData {
-  cols: number;
-  pixels: (PixelData | null)[];
-  rows: number;
-}
-
-function decodeAngle(encoded: number): number {
-  if (encoded === 0) return 0;
-  return 75 + (encoded - 1) * 0.0625;
 }
 
 const STRIPE_SPACING = 6;
@@ -121,46 +102,7 @@ async function fetchAndParseMtca(
     combined.byteOffset,
     combined.byteLength,
   );
-  const magic = String.fromCharCode(
-    view.getUint8(0),
-    view.getUint8(1),
-    view.getUint8(2),
-    view.getUint8(3),
-  );
-  if (magic !== 'MTCA') throw new Error('Invalid armour data format');
-
-  const rows = view.getUint16(5);
-  const cols = view.getUint16(7);
-
-  let offset = 9;
-  const pixels: (PixelData | null)[] = new Array(rows * cols);
-
-  for (let i = 0; i < rows * cols; i += 1) {
-    const angleByte = view.getUint8(offset);
-    offset += 1;
-    const count = view.getUint8(offset);
-    offset += 1;
-
-    if (angleByte === 0 && count === 0) {
-      pixels[i] = null;
-      continue;
-    }
-
-    const angle = decodeAngle(angleByte);
-    const layers: Layer[] = [];
-
-    for (let j = 0; j < count; j += 1) {
-      const thickness = view.getUint16(offset);
-      offset += 2;
-      const depth = view.getFloat64(offset);
-      offset += 8;
-      layers.push({ depth, thickness });
-    }
-
-    pixels[i] = { angle, layers };
-  }
-
-  return { cols, pixels, rows };
+  return parseMtca(view);
 }
 
 export function useArmorProcessor(
