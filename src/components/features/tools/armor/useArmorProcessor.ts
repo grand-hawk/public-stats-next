@@ -3,17 +3,24 @@ import React from 'react';
 import { parseMtca } from './mtca';
 import { samplePalette } from './palettes';
 
-import type { RawArmorData } from './mtca';
+import type { DamageModule, RawArmorData } from './mtca';
 import type { Palette } from './palettes';
 import type { ArmorAngle } from '@/utils/getVehicleImage';
+
+export interface PixelTooltipData {
+  moduleHits: { name: string; thickness: number }[];
+  total: number;
+}
 
 export interface ArmorProcessorOptions {
   angle: ArmorAngle;
   autoRange: boolean;
+  hiddenModules: ReadonlySet<number>;
   maxDepth: number;
   maxMm: number;
   minDepth: number;
   minMm: number;
+  overrideData: RawArmorData | null;
   palette: Palette;
   ricochetAngle: number;
   slug: string | null;
@@ -27,7 +34,9 @@ export interface ArmorProcessorResult {
   downloadProgress: number | null;
   error: string | null;
   loading: boolean;
-  thicknessAt: (x: number, y: number) => number | 'ricochet' | null;
+  modules: DamageModule[];
+  thicknessAt: (x: number, y: number) => PixelTooltipData | 'ricochet' | null;
+  version: number | null;
 }
 
 const STRIPE_SPACING = 6;
@@ -111,10 +120,12 @@ export function useArmorProcessor(
   const {
     angle,
     autoRange,
+    hiddenModules,
     maxDepth,
     maxMm,
     minDepth,
     minMm,
+    overrideData,
     palette,
     ricochetAngle,
     slug,
@@ -134,6 +145,24 @@ export function useArmorProcessor(
   const rawDataRef = React.useRef<RawArmorData | null>(null);
 
   React.useEffect(() => {
+    if (overrideData) {
+      let maxD = 0;
+      for (const pixel of overrideData.pixels) {
+        if (!pixel) continue;
+        for (const layer of pixel.layers) {
+          if (layer.depth > maxD) maxD = layer.depth;
+        }
+      }
+
+      rawDataRef.current = overrideData;
+      setRawData(overrideData);
+      setDetectedMaxDepth(Math.ceil(maxD));
+      setLoading(false);
+      setDownloadProgress(null);
+      setError(null);
+      return;
+    }
+
     if (!slug) {
       setRawData(null);
       rawDataRef.current = null;
@@ -182,7 +211,7 @@ export function useArmorProcessor(
     return () => {
       cancelled = true;
     };
-  }, [slug, angle]);
+  }, [slug, angle, overrideData]);
 
   React.useEffect(() => {
     if (!rawData) return;
@@ -196,7 +225,15 @@ export function useArmorProcessor(
 
       let sum = 0;
       for (const layer of pixel.layers) {
-        if (layer.depth >= minDepth && layer.depth <= maxDepth) {
+        if (layer.moduleIndex > 0) {
+          if (hiddenModules.has(layer.moduleIndex)) continue;
+
+          if (layer.depth >= minDepth && layer.depth <= maxDepth) {
+            sum += layer.thickness;
+          }
+        } else {
+          if (layer.depth < minDepth || layer.depth > maxDepth) continue;
+
           sum += layer.thickness;
         }
       }
@@ -220,7 +257,7 @@ export function useArmorProcessor(
 
     setDetectedMin(min);
     setDetectedMax(percentile95);
-  }, [rawData, ricochetAngle, minDepth, maxDepth]);
+  }, [rawData, ricochetAngle, minDepth, maxDepth, hiddenModules]);
 
   React.useEffect(() => {
     if (!rawData) {
@@ -264,19 +301,52 @@ export function useArmorProcessor(
 
         let total = 0;
         let hasInRange = false;
+        let hasModule = false;
+
         for (const layer of pixel.layers) {
-          if (layer.depth >= minDepth && layer.depth <= maxDepth) {
-            total += layer.thickness;
+          if (layer.moduleIndex > 0) {
+            if (hiddenModules.has(layer.moduleIndex)) continue;
+
+            hasModule = true;
             hasInRange = true;
+            if (layer.depth >= minDepth && layer.depth <= maxDepth) {
+              total += layer.thickness;
+            }
+          } else {
+            if (layer.depth < minDepth || layer.depth > maxDepth) continue;
+
+            hasInRange = true;
+            total += layer.thickness;
           }
         }
 
-        const t = range > 0 ? (total - effectiveMin) / range : 0;
-        const color = samplePalette(palette, t);
-        dst[di] = color.r;
-        dst[di + 1] = color.g;
-        dst[di + 2] = color.b;
-        dst[di + 3] = pixel.layers.length > 0 && !hasInRange ? 60 : 255;
+        if (total > 0) {
+          const t = range > 0 ? (total - effectiveMin) / range : 0;
+          const color = samplePalette(palette, t);
+          if (hasModule) {
+            const s = palette.moduleShift;
+            dst[di] = Math.min(255, color.r + s.r);
+            dst[di + 1] = Math.min(255, color.g + s.g);
+            dst[di + 2] = Math.min(255, color.b + s.b);
+          } else {
+            dst[di] = color.r;
+            dst[di + 1] = color.g;
+            dst[di + 2] = color.b;
+          }
+          dst[di + 3] = 255;
+        } else if (hasInRange && hasModule) {
+          dst[di] = palette.moduleColor.r;
+          dst[di + 1] = palette.moduleColor.g;
+          dst[di + 2] = palette.moduleColor.b;
+          dst[di + 3] = 140;
+        } else {
+          const t = range > 0 ? (0 - effectiveMin) / range : 0;
+          const color = samplePalette(palette, t);
+          dst[di] = color.r;
+          dst[di + 1] = color.g;
+          dst[di + 2] = color.b;
+          dst[di + 3] = pixel.layers.length > 0 && !hasInRange ? 60 : 255;
+        }
       }
     }
 
@@ -293,10 +363,11 @@ export function useArmorProcessor(
     ricochetAngle,
     minDepth,
     maxDepth,
+    hiddenModules,
   ]);
 
   const thicknessAt = React.useCallback(
-    (x: number, y: number): number | 'ricochet' | null => {
+    (x: number, y: number): PixelTooltipData | 'ricochet' | null => {
       const raw = rawDataRef.current;
       if (!raw) return null;
 
@@ -311,16 +382,43 @@ export function useArmorProcessor(
       if (pixel.angle > 0 && pixel.angle >= ricochetAngle) return 'ricochet';
 
       let total = 0;
+      const moduleHits: PixelTooltipData['moduleHits'] = [];
+
       for (const layer of pixel.layers) {
-        if (layer.depth >= minDepth && layer.depth <= maxDepth) {
+        if (layer.moduleIndex > 0) {
+          if (hiddenModules.has(layer.moduleIndex)) continue;
+
+          if (layer.depth >= minDepth && layer.depth <= maxDepth) {
+            total += layer.thickness;
+          }
+        } else {
+          if (layer.depth < minDepth || layer.depth > maxDepth) continue;
+
           total += layer.thickness;
+        }
+
+        if (layer.moduleIndex > 0) {
+          const mod = raw.modules[layer.moduleIndex - 1];
+          if (mod) {
+            const existing = moduleHits.find((h) => h.name === mod.name);
+            if (existing) existing.thickness += layer.thickness;
+            else {
+              moduleHits.push({
+                name: mod.name,
+                thickness: layer.thickness,
+              });
+            }
+          }
         }
       }
 
-      return total;
+      return { moduleHits, total };
     },
-    [ricochetAngle, minDepth, maxDepth],
+    [ricochetAngle, minDepth, maxDepth, hiddenModules],
   );
+
+  const modules = rawData?.modules ?? [];
+  const version = rawData?.version ?? null;
 
   return {
     canvas: outputCanvas,
@@ -330,6 +428,8 @@ export function useArmorProcessor(
     downloadProgress,
     error,
     loading,
+    modules,
     thicknessAt,
+    version,
   };
 }

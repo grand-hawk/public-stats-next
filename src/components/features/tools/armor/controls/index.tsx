@@ -11,9 +11,11 @@ import {
 import VehicleIcon from '@/components/features/vehicles/vehicleIcon';
 import { simplifyString } from '@/utils/simplifyString';
 
+import { groupModules } from '../moduleGroups';
 import { palettes } from '../palettes';
 import { RangeSlider } from './slider';
 
+import type { DamageModule } from '../mtca';
 import type { Palette } from '../palettes';
 import type { ArmorAngle } from '@/utils/getVehicleImage';
 
@@ -39,12 +41,15 @@ export interface ArmorControlsProps {
   detectedMax: number;
   detectedMaxDepth: number;
   detectedMin: number;
+  hiddenModules: ReadonlySet<number>;
   maxDepth: number;
   maxMm: number;
   minDepth: number;
   minMm: number;
+  modules: DamageModule[];
   onAngleChange: (angle: ArmorAngle) => void;
   onAutoRangeChange: (v: boolean) => void;
+  onClearUpload: () => void;
   onMaxChange: (v: number) => void;
   onMaxDepthChange: (v: number) => void;
   onMinChange: (v: number) => void;
@@ -54,10 +59,15 @@ export interface ArmorControlsProps {
   onRicochetAngleChange: (v: number) => void;
   onSave: () => void;
   onSelectVehicle: (slug: string) => void;
+  onToggleModule: (moduleIndices: number[]) => void;
+  onUploadFile: (file: File) => void;
+  overrideFileName: string | null;
   palette: Palette;
   ricochetAngle: number;
   selectedSlug: string | null;
+  uploadError: string | null;
   vehicles: VehicleOption[];
+  version: number | null;
 }
 
 const VehicleListItem = React.memo(function VehicleListItem({
@@ -106,12 +116,15 @@ export default function ArmorControls({
   detectedMax,
   detectedMaxDepth,
   detectedMin,
+  hiddenModules,
   maxDepth,
   maxMm,
   minDepth,
   minMm,
+  modules,
   onAngleChange,
   onAutoRangeChange,
+  onClearUpload,
   onMaxChange,
   onMaxDepthChange,
   onMinChange,
@@ -121,10 +134,15 @@ export default function ArmorControls({
   onRicochetAngleChange,
   onSave,
   onSelectVehicle,
+  onToggleModule,
+  onUploadFile,
+  overrideFileName,
   palette,
   ricochetAngle,
   selectedSlug,
+  uploadError,
   vehicles,
+  version,
 }: ArmorControlsProps) {
   const [query, setQuery] = React.useState('');
   const [isOpen, setIsOpen] = React.useState(false);
@@ -132,6 +150,7 @@ export default function ArmorControls({
   const containerRef = React.useRef<HTMLDivElement>(null);
   const inputRef = React.useRef<HTMLInputElement>(null);
   const listRef = React.useRef<HTMLDivElement>(null);
+  const fileInputRef = React.useRef<HTMLInputElement>(null);
 
   const filtered = React.useMemo(() => {
     if (!query) return vehicles;
@@ -310,6 +329,74 @@ export default function ArmorControls({
                 </Box>
               )}
             </Box>
+
+            {process.env.NODE_ENV === 'development' && (
+              <>
+                <input
+                  ref={fileInputRef}
+                  accept=".mtca"
+                  hidden
+                  type="file"
+                  onChange={(event) => {
+                    const file = event.target.files?.[0];
+                    if (file) onUploadFile(file);
+                    event.target.value = '';
+                  }}
+                />
+
+                {overrideFileName ? (
+                  <Flex direction="column" gap={1} marginTop={2}>
+                    <Flex alignItems="center" gap={2}>
+                      <Text
+                        color="teal.300"
+                        flex={1}
+                        fontSize="2xs"
+                        overflow="hidden"
+                        textOverflow="ellipsis"
+                        whiteSpace="nowrap"
+                      >
+                        {overrideFileName}
+                      </Text>
+                      <Box
+                        _hover={{ color: 'fg' }}
+                        as="button"
+                        color="fg.subtle"
+                        cursor="pointer"
+                        fontSize="2xs"
+                        onClick={onClearUpload}
+                      >
+                        clear
+                      </Box>
+                    </Flex>
+                    {version != null && (
+                      <Text color="fg.subtle" fontSize="2xs">
+                        v{version}
+                      </Text>
+                    )}
+                  </Flex>
+                ) : (
+                  <Text
+                    _hover={{ color: 'fg.muted' }}
+                    as="button"
+                    color="fg.subtle"
+                    cursor="pointer"
+                    display="block"
+                    fontSize="2xs"
+                    marginTop={1.5}
+                    textAlign="left"
+                    onClick={() => fileInputRef.current?.click()}
+                  >
+                    or upload .mtca
+                  </Text>
+                )}
+
+                {uploadError && (
+                  <Text color="red.400" fontSize="2xs" marginTop={1}>
+                    {uploadError}
+                  </Text>
+                )}
+              </>
+            )}
           </Box>
 
           <Flex
@@ -358,6 +445,60 @@ export default function ArmorControls({
                 ))}
               </Box>
             </Box>
+
+            {modules.length > 0 && (
+              <Box borderBottomWidth="1px" padding={3}>
+                <Text color="fg.muted" fontSize="xs" marginBottom={2}>
+                  Damage modules
+                </Text>
+                <Flex direction="column" gap={1.5}>
+                  {groupModules(modules).map((group) => {
+                    const isHidden = group.indices.every((idx) =>
+                      hiddenModules.has(idx),
+                    );
+                    const mc = palette.moduleColor;
+
+                    return (
+                      <Flex
+                        key={group.label}
+                        _hover={{ background: 'whiteAlpha.50' }}
+                        alignItems="center"
+                        cursor="pointer"
+                        gap={2}
+                        marginX={-1}
+                        paddingX={1}
+                        paddingY={0.5}
+                        onClick={() => onToggleModule(group.indices)}
+                      >
+                        <Box
+                          borderRadius="sm"
+                          flexShrink={0}
+                          height="10px"
+                          opacity={isHidden ? 0.25 : 1}
+                          style={{
+                            background: `rgb(${mc.r},${mc.g},${mc.b})`,
+                          }}
+                          transition="opacity 0.1s"
+                          width="10px"
+                        />
+                        <Text
+                          color={isHidden ? 'fg.subtle' : 'fg.muted'}
+                          fontSize="2xs"
+                          lineHeight="1.2"
+                          overflow="hidden"
+                          textDecoration={isHidden ? 'line-through' : 'none'}
+                          textOverflow="ellipsis"
+                          transition="color 0.1s"
+                          whiteSpace="nowrap"
+                        >
+                          {group.label}
+                        </Text>
+                      </Flex>
+                    );
+                  })}
+                </Flex>
+              </Box>
+            )}
 
             <Box
               borderBottomWidth="1px"

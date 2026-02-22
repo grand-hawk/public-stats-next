@@ -31,11 +31,11 @@ export function parseMtcaV1(view: DataView): RawArmorData {
       offset += 2;
       const depth = view.getFloat64(offset);
       offset += 8;
-      layers.push({ depth, thickness });
+      layers.push({ depth, moduleIndex: 0, thickness });
     }
 
     pixels[i] = { angle, layers };
   }
 
-  return { cols, pixels, rows };
+  return { cols, modules: [], pixels, rows, version: 1 };
 }

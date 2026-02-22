@@ -10,6 +10,7 @@ import DepthMinimap from './depthMinimap';
 import HorizontalLegend from './horizontalLegend';
 
 import type { Palette } from '../palettes';
+import type { PixelTooltipData } from '../useArmorProcessor';
 import type { ArmorAngle } from '@/utils/getVehicleImage';
 
 interface ArmorCanvasProps {
@@ -27,7 +28,7 @@ interface ArmorCanvasProps {
   palette: Palette;
   ricochetAngle: number;
   slug: string | null;
-  thicknessAt: (x: number, y: number) => number | 'ricochet' | null;
+  thicknessAt: (x: number, y: number) => PixelTooltipData | 'ricochet' | null;
 }
 
 const BASE_SCALE_FACTOR = 0.85;
@@ -47,6 +48,23 @@ function drawRicochetSwatch(canvas: HTMLCanvasElement, w: number, h: number) {
       ctx.fillRect(x, y, 1, 1);
     }
   }
+}
+
+function formatTooltip(val: PixelTooltipData): string {
+  if (val.total === 0 && val.moduleHits.length > 0) {
+    return val.moduleHits.map((h) => h.name).join(', ');
+  }
+
+  let text = `${val.total} mm`;
+  if (val.moduleHits.length > 0) {
+    text +=
+      ' · ' +
+      val.moduleHits
+        .map((h) => (h.thickness > 0 ? `${h.name} (${h.thickness}mm)` : h.name))
+        .join(', ');
+  }
+
+  return text;
 }
 
 export default function ArmorCanvas({
@@ -158,6 +176,37 @@ export default function ArmorCanvas({
     [],
   );
 
+  const resolveTooltip = React.useCallback(
+    (clientX: number, clientY: number) => {
+      const display = displayRef.current;
+      const viewport = viewportRef.current;
+      if (!display || !viewport || !canvas) return null;
+
+      const vpRect = viewport.getBoundingClientRect();
+      const screenX = clientX - vpRect.left;
+      const screenY = clientY - vpRect.top;
+
+      const canvasRect = display.getBoundingClientRect();
+      const canvasX = clientX - canvasRect.left;
+      const canvasY = clientY - canvasRect.top;
+
+      const scaleX = canvas.width / canvasRect.width;
+      const scaleY = canvas.height / canvasRect.height;
+      const px = canvasX * scaleX;
+      const py = canvasY * scaleY;
+
+      const val = thicknessAt(px, py);
+      const text =
+        val === null
+          ? null
+          : val === 'ricochet'
+            ? 'Ricochet'
+            : formatTooltip(val);
+      return { screenX, screenY, text };
+    },
+    [canvas, thicknessAt],
+  );
+
   const handleWheel = React.useCallback(
     (event: React.WheelEvent) => {
       event.preventDefault();
@@ -216,31 +265,10 @@ export default function ArmorCanvas({
         return;
       }
 
-      const display = displayRef.current;
-      const viewport = viewportRef.current;
-      if (!display || !viewport || !canvas) return;
-
-      const vpRect = viewport.getBoundingClientRect();
-      const screenX = event.clientX - vpRect.left;
-      const screenY = event.clientY - vpRect.top;
-
-      const canvasRect = display.getBoundingClientRect();
-      const canvasX = event.clientX - canvasRect.left;
-      const canvasY = event.clientY - canvasRect.top;
-
-      const scaleX = canvas.width / canvasRect.width;
-      const scaleY = canvas.height / canvasRect.height;
-      const px = canvasX * scaleX;
-      const py = canvasY * scaleY;
-
-      const val = thicknessAt(px, py);
-      updateTooltip(
-        screenX,
-        screenY,
-        val === null ? null : val === 'ricochet' ? 'Ricochet' : `${val} mm`,
-      );
+      const result = resolveTooltip(event.clientX, event.clientY);
+      if (result) updateTooltip(result.screenX, result.screenY, result.text);
     },
-    [canvas, thicknessAt, updateTooltip],
+    [resolveTooltip, updateTooltip],
   );
 
   const handleMouseUp = React.useCallback(() => {
@@ -258,31 +286,10 @@ export default function ArmorCanvas({
 
   const showTouchTooltip = React.useCallback(
     (clientX: number, clientY: number) => {
-      const display = displayRef.current;
-      const viewport = viewportRef.current;
-      if (!display || !viewport || !canvas) return;
-
-      const vpRect = viewport.getBoundingClientRect();
-      const screenX = clientX - vpRect.left;
-      const screenY = clientY - vpRect.top;
-
-      const canvasRect = display.getBoundingClientRect();
-      const canvasX = clientX - canvasRect.left;
-      const canvasY = clientY - canvasRect.top;
-
-      const scaleX = canvas.width / canvasRect.width;
-      const scaleY = canvas.height / canvasRect.height;
-      const px = canvasX * scaleX;
-      const py = canvasY * scaleY;
-
-      const val = thicknessAt(px, py);
-      updateTooltip(
-        screenX,
-        screenY,
-        val === null ? null : val === 'ricochet' ? 'Ricochet' : `${val} mm`,
-      );
+      const result = resolveTooltip(clientX, clientY);
+      if (result) updateTooltip(result.screenX, result.screenY, result.text);
     },
-    [canvas, thicknessAt, updateTooltip],
+    [resolveTooltip, updateTooltip],
   );
 
   const handleTouchStart = React.useCallback(

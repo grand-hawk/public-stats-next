@@ -11,9 +11,11 @@ import { trpc } from '@/utils/trpc';
 import ArmorCanvas from './armorCanvas';
 import ArmorTour from './armorTour';
 import ArmorControls from './controls';
+import { parseMtca } from './mtca';
 import { palettes } from './palettes';
 import { useArmorProcessor } from './useArmorProcessor';
 
+import type { RawArmorData } from './mtca';
 import type { ArmorAngle } from '@/utils/getVehicleImage';
 
 export default function ArmorVisualizer() {
@@ -34,6 +36,16 @@ export default function ArmorVisualizer() {
   const [ricochetAngle, setRicochetAngle] = React.useState(82.5);
   const [minDepth, setMinDepth] = React.useState(0);
   const [maxDepth, setMaxDepth] = React.useState(Infinity);
+  const [hiddenModules, setHiddenModules] = React.useState<ReadonlySet<number>>(
+    () => new Set(),
+  );
+  const [overrideData, setOverrideData] = React.useState<RawArmorData | null>(
+    null,
+  );
+  const [overrideFileName, setOverrideFileName] = React.useState<string | null>(
+    null,
+  );
+  const [uploadError, setUploadError] = React.useState<string | null>(null);
 
   const saveRef = React.useRef<(() => void) | null>(null);
 
@@ -59,6 +71,22 @@ export default function ArmorVisualizer() {
     setTourOpen(true);
   }, []);
 
+  React.useEffect(() => {
+    setHiddenModules(new Set());
+  }, [vehicleSlug, angle]);
+
+  const handleToggleModule = React.useCallback((moduleIndices: number[]) => {
+    setHiddenModules((prev) => {
+      const next = new Set(prev);
+      const allHidden = moduleIndices.every((i) => next.has(i));
+      for (const i of moduleIndices) {
+        if (allHidden) next.delete(i);
+        else next.add(i);
+      }
+      return next;
+    });
+  }, []);
+
   const {
     canvas,
     detectedMax,
@@ -67,14 +95,18 @@ export default function ArmorVisualizer() {
     downloadProgress,
     error,
     loading,
+    modules,
     thicknessAt,
+    version,
   } = useArmorProcessor({
     angle,
     autoRange,
+    hiddenModules,
     maxDepth,
     maxMm,
     minDepth,
     minMm,
+    overrideData,
     palette,
     ricochetAngle,
     slug: vehicleSlug,
@@ -100,9 +132,38 @@ export default function ArmorVisualizer() {
   const effectiveMax = autoRange ? detectedMax : maxMm;
 
   const handleSelectVehicle = React.useCallback(
-    (slug: string) => void setVehicleSlug(slug),
+    (slug: string) => {
+      setOverrideData(null);
+      setOverrideFileName(null);
+      setUploadError(null);
+      void setVehicleSlug(slug);
+    },
     [setVehicleSlug],
   );
+
+  const handleUploadFile = React.useCallback(async (file: File) => {
+    try {
+      const buffer = await file.arrayBuffer();
+      const view = new DataView(buffer);
+      const data = parseMtca(view);
+      setOverrideData(data);
+      setOverrideFileName(file.name);
+      setUploadError(null);
+      setHiddenModules(new Set());
+    } catch (err) {
+      setUploadError(
+        err instanceof Error ? err.message : 'Failed to parse file',
+      );
+      setOverrideData(null);
+      setOverrideFileName(null);
+    }
+  }, []);
+
+  const handleClearUpload = React.useCallback(() => {
+    setOverrideData(null);
+    setOverrideFileName(null);
+    setUploadError(null);
+  }, []);
 
   const handleSave = React.useCallback(() => {
     saveRef.current?.();
@@ -129,12 +190,15 @@ export default function ArmorVisualizer() {
         detectedMax={detectedMax}
         detectedMaxDepth={detectedMaxDepth}
         detectedMin={detectedMin}
+        hiddenModules={hiddenModules}
         maxDepth={maxDepth}
         maxMm={maxMm}
         minDepth={minDepth}
         minMm={minMm}
+        modules={modules}
         onAngleChange={setAngle}
         onAutoRangeChange={setAutoRange}
+        onClearUpload={handleClearUpload}
         onMaxChange={setMaxMm}
         onMaxDepthChange={setMaxDepth}
         onMinChange={setMinMm}
@@ -144,10 +208,15 @@ export default function ArmorVisualizer() {
         onRicochetAngleChange={setRicochetAngle}
         onSave={handleSave}
         onSelectVehicle={handleSelectVehicle}
+        onToggleModule={handleToggleModule}
+        onUploadFile={handleUploadFile}
+        overrideFileName={overrideFileName}
         palette={palette}
         ricochetAngle={ricochetAngle}
         selectedSlug={vehicleSlug}
+        uploadError={uploadError}
         vehicles={vehicleList}
+        version={version}
       />
 
       <ArmorTour
