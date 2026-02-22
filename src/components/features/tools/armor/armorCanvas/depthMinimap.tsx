@@ -61,7 +61,7 @@ const DepthMinimap = React.forwardRef<HTMLCanvasElement, DepthMinimapProps>(
       canvas.width = w;
       canvas.height = h;
 
-      const ctx = canvas.getContext('2d')!;
+      const ctx = canvas.getContext('2d', { willReadFrequently: true })!;
       ctx.clearRect(0, 0, w, h);
       ctx.drawImage(img, 0, 0, w, h);
 
