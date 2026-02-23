@@ -20,7 +20,6 @@ import ComparisonGrid from '@/components/features/compare/comparisonGrid';
 import { buildVehicleSections } from '@/components/features/compare/vehicleStats';
 import VehicleIcon from '@/components/features/vehicles/vehicleIcon';
 import {
-  alterationHasChanges,
   alterationIsConflicting,
   assembleModules,
 } from '@/utils/alterations';
@@ -119,8 +118,8 @@ export default function VehicleComparisonTable({
   const allAddonNames = React.useMemo(() => {
     const names = new Set<string>();
     for (const v of vehicles) {
-      for (const [name, addon] of Object.entries(v.alterations.addons)) {
-        if (alterationHasChanges(addon)) names.add(name);
+      for (const name of Object.keys(v.alterations.addons)) {
+        names.add(name);
       }
     }
     return [...names].sort();
@@ -234,7 +233,7 @@ export default function VehicleComparisonTable({
           label: addonName.replace(/\(cosmetic\)$/i, '').trim(),
           getter: (a: AssembledVehicle) => {
             const addon = a.vehicle.alterations.addons[addonName];
-            if (!addon || !alterationHasChanges(addon)) return null;
+            if (!addon) return null;
 
             const isEnabled = !!a.enabledAlterations[addonName];
             const selectedLoadout = getSelectedLoadout(
