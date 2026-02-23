@@ -1,5 +1,6 @@
 import { Box, Flex, Link, Stack } from '@chakra-ui/react';
 import React from 'react';
+import { LuMaximize2 } from 'react-icons/lu';
 
 import ArmorCanvas from '@/components/features/tools/armor/armorCanvas';
 import { groupModules } from '@/components/features/tools/armor/moduleGroups';
@@ -145,11 +146,15 @@ export default function VehicleArmorPreview({
       )}
 
       <Link
+        alignItems="center"
         alignSelf="end"
+        display="inline-flex"
         fontSize="sm"
+        gap={1.5}
         href={`/${place}/armor?vehicle=${vehicle.info.slug}`}
       >
-        View full visualiser →
+        <LuMaximize2 size={13} />
+        View full visualizer
       </Link>
     </Stack>
   );
