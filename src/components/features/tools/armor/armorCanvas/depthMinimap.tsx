@@ -11,6 +11,7 @@ interface DepthMinimapProps {
   detectedMaxDepth: number;
   maxDepth: number;
   minDepth: number;
+  size?: number;
   slug: string;
 }
 
@@ -22,7 +23,7 @@ const ARROW_COLOR = 'rgba(255,255,255,0.9)';
 
 const DepthMinimap = React.forwardRef<HTMLCanvasElement, DepthMinimapProps>(
   function DepthMinimap(
-    { angle, detectedMaxDepth, maxDepth, minDepth, slug },
+    { angle, detectedMaxDepth, maxDepth, minDepth, size, slug },
     ref,
   ) {
     const internalRef = React.useRef<HTMLCanvasElement>(null);
@@ -55,7 +56,8 @@ const DepthMinimap = React.forwardRef<HTMLCanvasElement, DepthMinimapProps>(
       const img = imgRef.current;
       if (!canvas || !img || !loaded) return;
 
-      const scale = Math.min(MAX_DIM / img.width, MAX_DIM / img.height);
+      const dim = size ?? MAX_DIM;
+      const scale = Math.min(dim / img.width, dim / img.height);
       const w = Math.round(img.width * scale);
       const h = Math.round(img.height * scale);
       canvas.width = w;
@@ -160,7 +162,7 @@ const DepthMinimap = React.forwardRef<HTMLCanvasElement, DepthMinimapProps>(
       ctx.strokeStyle = ARROW_COLOR;
       ctx.lineWidth = 2;
       ctx.stroke();
-    }, [canvasRef, loaded, angle, minDepth, maxDepth, detectedMaxDepth]);
+    }, [canvasRef, loaded, angle, minDepth, maxDepth, detectedMaxDepth, size]);
 
     if (!loaded) return null;
 

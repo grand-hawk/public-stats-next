@@ -1,7 +1,7 @@
 import ky from 'ky';
 import Cache from 'stale-lru-cache';
 
-import { env } from '@/env';
+import { IS_DEV } from '@/env';
 import { processHtmlToMarkdown } from '@/server/utils/processHtmlTomarkdown';
 import { getExtension } from '@/utils/extensions';
 import { getBaseUrl } from '@/utils/trpc';
@@ -19,8 +19,8 @@ export function createMarkdownRoute() {
   }
 
   const cache = new Cache({
-    maxAge: env.NODE_ENV === 'development' ? 0 : 3600,
-    staleWhileRevalidate: env.NODE_ENV === 'development' ? 0 : 86400,
+    maxAge: IS_DEV ? 0 : 3600,
+    staleWhileRevalidate: IS_DEV ? 0 : 86400,
     revalidate,
   });
 

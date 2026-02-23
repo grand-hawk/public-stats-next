@@ -8,6 +8,8 @@ import { createTRPCNext } from '@trpc/next';
 import { ssrPrepass } from '@trpc/next/ssrPrepass';
 import superjson from 'superjson';
 
+import { IS_DEV } from '@/env';
+
 import type { AppRouter } from '@/server/api/trpc/router';
 import type { inferRouterInputs, inferRouterOutputs } from '@trpc/server';
 
@@ -39,7 +41,7 @@ export const trpc = createTRPCNext<AppRouter>({
       links: [
         loggerLink({
           enabled: (opts) =>
-            process.env.NODE_ENV === 'development' ||
+            IS_DEV ||
             (opts.direction === 'down' && opts.result instanceof Error),
         }),
         splitLink({
@@ -52,7 +54,7 @@ export const trpc = createTRPCNext<AppRouter>({
         defaultOptions: {
           queries: {
             refetchOnMount: false,
-            refetchOnWindowFocus: process.env.NODE_ENV === 'development',
+            refetchOnWindowFocus: IS_DEV,
             refetchOnReconnect: false,
           },
         },

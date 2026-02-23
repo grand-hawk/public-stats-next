@@ -36,6 +36,7 @@ export interface ArmorProcessorResult {
   loading: boolean;
   modules: DamageModule[];
   thicknessAt: (x: number, y: number) => PixelTooltipData | 'ricochet' | null;
+  usedModuleIndices: ReadonlySet<number>;
   version: number | null;
 }
 
@@ -67,7 +68,7 @@ function isRicochetStripe(x: number, y: number): boolean {
 
 async function fetchAndParseMtca(
   url: string,
-  onProgress?: (percent: number) => void,
+  onProgress?: (percentage: number) => void,
 ): Promise<RawArmorData> {
   const response = await fetch(url);
   if (!response.ok) {
@@ -89,11 +90,11 @@ async function fetchAndParseMtca(
     receivedLength += value.length;
 
     if (onProgress) {
-      const percent =
+      const percentage =
         total && total > 0
           ? Math.round((receivedLength / total) * 100)
           : Math.min(95, Math.round((receivedLength / 500_000) * 90));
-      onProgress(percent);
+      onProgress(percentage);
     }
   }
 
@@ -178,8 +179,8 @@ export function useArmorProcessor(
 
     fetchAndParseMtca(
       `https://cdn.astrid.ovh/public-stats-images/${slug}/${angle}_armor.mtca`,
-      (percent) => {
-        if (!cancelled) setDownloadProgress(percent);
+      (percentage) => {
+        if (!cancelled) setDownloadProgress(percentage);
       },
     )
       .then((data) => {
@@ -417,6 +418,18 @@ export function useArmorProcessor(
     [ricochetAngle, minDepth, maxDepth, hiddenModules],
   );
 
+  const usedModuleIndices = React.useMemo(() => {
+    if (!rawData) return new Set<number>();
+    const used = new Set<number>();
+    for (const pixel of rawData.pixels) {
+      if (!pixel) continue;
+      for (const layer of pixel.layers) {
+        if (layer.moduleIndex > 0) used.add(layer.moduleIndex);
+      }
+    }
+    return used;
+  }, [rawData]);
+
   const modules = rawData?.modules ?? [];
   const version = rawData?.version ?? null;
 
@@ -430,6 +443,7 @@ export function useArmorProcessor(
     loading,
     modules,
     thicknessAt,
+    usedModuleIndices,
     version,
   };
 }

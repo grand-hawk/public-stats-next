@@ -19,10 +19,7 @@ import ColumnHeader from '@/components/features/compare/columnHeader';
 import ComparisonGrid from '@/components/features/compare/comparisonGrid';
 import { buildVehicleSections } from '@/components/features/compare/vehicleStats';
 import VehicleIcon from '@/components/features/vehicles/vehicleIcon';
-import {
-  alterationIsConflicting,
-  assembleModules,
-} from '@/utils/alterations';
+import { alterationIsConflicting, assembleModules } from '@/utils/alterations';
 import { simplifyString } from '@/utils/simplifyString';
 
 import type { SectionDef } from '@/components/features/compare/types';

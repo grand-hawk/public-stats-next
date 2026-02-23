@@ -2,6 +2,7 @@ import { Box } from '@chakra-ui/react';
 import { useQueryState } from 'nuqs';
 import React from 'react';
 
+import { IS_DEV } from '@/env';
 import { usePersistStoreIsHydrated } from '@/hooks/usePersistStoreIsHydrated';
 import { useSuspenseConfig } from '@/hooks/useSuspenseConfig';
 import { useArmorStore } from '@/stores/armor';
@@ -16,7 +17,6 @@ import { palettes } from './palettes';
 import { useArmorProcessor } from './useArmorProcessor';
 
 import type { RawArmorData } from './mtca';
-import type { ArmorAngle } from '@/utils/getVehicleImage';
 
 export default function ArmorVisualizer() {
   const config = useSuspenseConfig();
@@ -28,14 +28,17 @@ export default function ArmorVisualizer() {
   });
 
   const [vehicleSlug, setVehicleSlug] = useQueryState('vehicle');
-  const [angle, setAngle] = React.useState<ArmorAngle>('front');
+  const angle = useArmorStore((s) => s.angle);
+  const setAngle = useArmorStore((s) => s.setAngle);
+  const maxDepth = useArmorStore((s) => s.maxDepth);
+  const setMaxDepth = useArmorStore((s) => s.setMaxDepth);
+  const minDepth = useArmorStore((s) => s.minDepth);
+  const setMinDepth = useArmorStore((s) => s.setMinDepth);
   const [minMm, setMinMm] = React.useState(0);
   const [maxMm, setMaxMm] = React.useState(1000);
   const [autoRange, setAutoRange] = React.useState(true);
   const [palette, setPalette] = React.useState(palettes[0]);
   const [ricochetAngle, setRicochetAngle] = React.useState(82.5);
-  const [minDepth, setMinDepth] = React.useState(0);
-  const [maxDepth, setMaxDepth] = React.useState(Infinity);
   const [hiddenModules, setHiddenModules] = React.useState<ReadonlySet<number>>(
     () => new Set(),
   );
@@ -54,9 +57,7 @@ export default function ArmorVisualizer() {
   const [tourOpen, setTourOpen] = React.useState(false);
 
   React.useEffect(() => {
-    if (hydrated && !tourSeen) {
-      setTourOpen(true);
-    }
+    if (hydrated && !tourSeen) setTourOpen(true);
   }, [hydrated, tourSeen]);
 
   const handleTourOpenChange = React.useCallback(
@@ -97,6 +98,7 @@ export default function ArmorVisualizer() {
     loading,
     modules,
     thicknessAt,
+    usedModuleIndices,
     version,
   } = useArmorProcessor({
     angle,
@@ -112,6 +114,27 @@ export default function ArmorVisualizer() {
     slug: vehicleSlug,
   });
 
+  const { data: armorMeta } = trpc.vehicles.armorMeta.useQuery(
+    { slug: vehicleSlug ?? '' },
+    { enabled: vehicleSlug !== null },
+  );
+
+  const utils = trpc.useUtils();
+  const { mutate: setFrontArmorDepthMutation } =
+    trpc.vehicles.setFrontArmorDepth.useMutation({
+      onSuccess: () => {
+        utils.vehicles.armorMeta.invalidate({ slug: vehicleSlug ?? '' });
+      },
+    });
+
+  const handleSetFrontArmorDepth = React.useCallback(
+    (percentage: number) => {
+      if (!vehicleSlug || overrideData) return;
+      setFrontArmorDepthMutation({ slug: vehicleSlug, value: percentage });
+    },
+    [vehicleSlug, overrideData, setFrontArmorDepthMutation],
+  );
+
   // when data loads or angle changes, reset depth range
   React.useEffect(() => {
     setMinDepth(0);
@@ -119,17 +142,26 @@ export default function ArmorVisualizer() {
       setMaxDepth(Infinity);
       return;
     }
+    const frontFraction =
+      armorMeta?.frontArmorDepth != null
+        ? armorMeta.frontArmorDepth / 100
+        : 0.5;
     const fraction =
-      angle === 'front' ||
-      angle === 'left' ||
-      angle === 'right' ||
-      angle === 'back'
-        ? 0.5
-        : angle === 'front_30' || angle === 'front_-30'
-          ? 0.75
-          : 1;
+      angle === 'front'
+        ? frontFraction
+        : angle === 'left' || angle === 'right' || angle === 'back'
+          ? 0.5
+          : angle === 'front_30' || angle === 'front_-30'
+            ? 0.75
+            : 1;
     setMaxDepth(detectedMaxDepth * fraction);
-  }, [detectedMaxDepth, angle]);
+  }, [
+    detectedMaxDepth,
+    angle,
+    armorMeta?.frontArmorDepth,
+    setMaxDepth,
+    setMinDepth,
+  ]);
 
   const effectiveMin = autoRange ? detectedMin : minMm;
   const effectiveMax = autoRange ? detectedMax : maxMm;
@@ -172,6 +204,32 @@ export default function ArmorVisualizer() {
     saveRef.current?.();
   }, []);
 
+  const setDebugDetectedMaxDepth = useArmorStore((s) => s.setDetectedMaxDepth);
+  const setDebugSlug = useArmorStore((s) => s.setSlug);
+  const setDebugVehicles = useArmorStore((s) => s.setVehicles);
+  const setDebugOnSelectVehicle = useArmorStore((s) => s.setOnSelectVehicle);
+  const setDebugOnSetFrontArmorDepth = useArmorStore(
+    (s) => s.setOnSetFrontArmorDepth,
+  );
+
+  React.useEffect(() => {
+    setDebugDetectedMaxDepth(detectedMaxDepth);
+  }, [detectedMaxDepth, setDebugDetectedMaxDepth]);
+  React.useEffect(() => {
+    setDebugSlug(vehicleSlug);
+  }, [vehicleSlug, setDebugSlug]);
+  React.useEffect(() => {
+    setDebugVehicles(vehicleList);
+  }, [vehicleList, setDebugVehicles]);
+  React.useEffect(() => {
+    setDebugOnSelectVehicle(handleSelectVehicle);
+  }, [handleSelectVehicle, setDebugOnSelectVehicle]);
+  React.useEffect(() => {
+    setDebugOnSetFrontArmorDepth(
+      IS_DEV && !overrideData ? handleSetFrontArmorDepth : null,
+    );
+  }, [overrideData, handleSetFrontArmorDepth, setDebugOnSetFrontArmorDepth]);
+
   return (
     <Box
       display="grid"
@@ -199,6 +257,7 @@ export default function ArmorVisualizer() {
         minDepth={minDepth}
         minMm={minMm}
         modules={modules}
+        usedModuleIndices={usedModuleIndices}
         onAngleChange={setAngle}
         onAutoRangeChange={setAutoRange}
         onClearUpload={handleClearUpload}

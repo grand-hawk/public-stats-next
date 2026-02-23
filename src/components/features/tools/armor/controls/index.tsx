@@ -9,6 +9,7 @@ import {
 } from 'react-icons/lu';
 
 import VehicleIcon from '@/components/features/vehicles/vehicleIcon';
+import { IS_DEV } from '@/env';
 import { simplifyString } from '@/utils/simplifyString';
 
 import { groupModules } from '../moduleGroups';
@@ -47,6 +48,7 @@ export interface ArmorControlsProps {
   minDepth: number;
   minMm: number;
   modules: DamageModule[];
+  usedModuleIndices: ReadonlySet<number>;
   onAngleChange: (angle: ArmorAngle) => void;
   onAutoRangeChange: (v: boolean) => void;
   onClearUpload: () => void;
@@ -141,6 +143,7 @@ export default function ArmorControls({
   ricochetAngle,
   selectedSlug,
   uploadError,
+  usedModuleIndices,
   vehicles,
   version,
 }: ArmorControlsProps) {
@@ -330,7 +333,7 @@ export default function ArmorControls({
               )}
             </Box>
 
-            {process.env.NODE_ENV === 'development' && (
+            {IS_DEV && (
               <>
                 <input
                   ref={fileInputRef}
@@ -446,56 +449,80 @@ export default function ArmorControls({
               </Box>
             </Box>
 
-            {modules.length > 0 && (
+            {usedModuleIndices.size > 0 && (
               <Box borderBottomWidth="1px" padding={3}>
-                <Text color="fg.muted" fontSize="xs" marginBottom={2}>
-                  Damage modules
-                </Text>
+                <Flex alignItems="center" marginBottom={2}>
+                  <Text color="fg.muted" fontSize="xs">
+                    Damage modules
+                  </Text>
+                  <Box
+                    _hover={{ color: 'fg.muted' }}
+                    as="button"
+                    color="fg.subtle"
+                    cursor="pointer"
+                    fontSize="2xs"
+                    marginLeft="auto"
+                    onClick={() =>
+                      onToggleModule(Array.from(usedModuleIndices))
+                    }
+                  >
+                    {usedModuleIndices.size > 0 &&
+                    Array.from(usedModuleIndices).every((i) =>
+                      hiddenModules.has(i),
+                    )
+                      ? 'show all'
+                      : 'hide all'}
+                  </Box>
+                </Flex>
                 <Flex direction="column" gap={1.5}>
-                  {groupModules(modules).map((group) => {
-                    const isHidden = group.indices.every((idx) =>
-                      hiddenModules.has(idx),
-                    );
-                    const mc = palette.moduleColor;
+                  {groupModules(modules)
+                    .filter((group) =>
+                      group.indices.some((i) => usedModuleIndices.has(i)),
+                    )
+                    .map((group) => {
+                      const isHidden = group.indices.every((idx) =>
+                        hiddenModules.has(idx),
+                      );
+                      const mc = palette.moduleColor;
 
-                    return (
-                      <Flex
-                        key={group.label}
-                        _hover={{ background: 'whiteAlpha.50' }}
-                        alignItems="center"
-                        cursor="pointer"
-                        gap={2}
-                        marginX={-1}
-                        paddingX={1}
-                        paddingY={0.5}
-                        onClick={() => onToggleModule(group.indices)}
-                      >
-                        <Box
-                          borderRadius="sm"
-                          flexShrink={0}
-                          height="10px"
-                          opacity={isHidden ? 0.25 : 1}
-                          style={{
-                            background: `rgb(${mc.r},${mc.g},${mc.b})`,
-                          }}
-                          transition="opacity 0.1s"
-                          width="10px"
-                        />
-                        <Text
-                          color={isHidden ? 'fg.subtle' : 'fg.muted'}
-                          fontSize="2xs"
-                          lineHeight="1.2"
-                          overflow="hidden"
-                          textDecoration={isHidden ? 'line-through' : 'none'}
-                          textOverflow="ellipsis"
-                          transition="color 0.1s"
-                          whiteSpace="nowrap"
+                      return (
+                        <Flex
+                          key={group.label}
+                          _hover={{ background: 'whiteAlpha.50' }}
+                          alignItems="center"
+                          cursor="pointer"
+                          gap={2}
+                          marginX={-1}
+                          paddingX={1}
+                          paddingY={0.5}
+                          onClick={() => onToggleModule(group.indices)}
                         >
-                          {group.label}
-                        </Text>
-                      </Flex>
-                    );
-                  })}
+                          <Box
+                            borderRadius="sm"
+                            flexShrink={0}
+                            height="10px"
+                            opacity={isHidden ? 0.25 : 1}
+                            style={{
+                              background: `rgb(${mc.r},${mc.g},${mc.b})`,
+                            }}
+                            transition="opacity 0.1s"
+                            width="10px"
+                          />
+                          <Text
+                            color={isHidden ? 'fg.subtle' : 'fg.muted'}
+                            fontSize="2xs"
+                            lineHeight="1.2"
+                            overflow="hidden"
+                            textDecoration={isHidden ? 'line-through' : 'none'}
+                            textOverflow="ellipsis"
+                            transition="color 0.1s"
+                            whiteSpace="nowrap"
+                          >
+                            {group.label}
+                          </Text>
+                        </Flex>
+                      );
+                    })}
                 </Flex>
               </Box>
             )}

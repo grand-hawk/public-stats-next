@@ -47,12 +47,61 @@ for (const filepath of files) {
     continue;
   }
 
-  const lines = content.split('\n');
+  // parse and validate frontmatter
+  let body = content;
+  let bodyLineOffset = 1;
+  if (content.startsWith('---\n')) {
+    const fmEnd = content.indexOf('\n---\n', 4);
+    if (fmEnd === -1) {
+      errors.push('Frontmatter block opened with --- but never closed');
+    } else {
+      const yamlText = content.slice(4, fmEnd);
+      const bodySlice = content.slice(fmEnd + 5);
+      body = bodySlice.trimStart();
+      const firstBodyIdx = bodySlice.search(/\S/);
+      const firstBodyCharPos =
+        firstBodyIdx >= 0 ? fmEnd + 5 + firstBodyIdx : fmEnd + 5;
+      bodyLineOffset =
+        1 + (content.slice(0, firstBodyCharPos).match(/\n/g)?.length ?? 0);
+
+      let parsedFm;
+      try {
+        parsedFm = parse(yamlText);
+      } catch (e) {
+        errors.push(`Frontmatter YAML parse error: ${e.message}`);
+      }
+
+      if (parsedFm != null && typeof parsedFm === 'object') {
+        const knownKeys = new Set(['frontArmorDepth']);
+        for (const key of Object.keys(parsedFm)) {
+          if (!knownKeys.has(key))
+            errors.push(`Frontmatter: unknown key "${key}"`);
+        }
+
+        if ('frontArmorDepth' in parsedFm) {
+          const val = parsedFm.frontArmorDepth;
+          if (typeof val !== 'number' || !Number.isFinite(val))
+            errors.push(
+              `frontArmorDepth must be a number, got ${JSON.stringify(val)}`,
+            );
+          else if (val < 0 || val > 100)
+            errors.push(
+              `frontArmorDepth must be between 0 and 100, got ${val}`,
+            );
+        }
+      }
+    }
+  }
+
+  const lines = body.split('\n');
+  const lineNum = (bodyLine) => bodyLineOffset + bodyLine - 1;
 
   // check for consecutive blank lines
   for (let i = 0; i < lines.length - 1; i += 1) {
     if (lines[i].trim() === '' && lines[i + 1].trim() === '')
-      errors.push(`Line ${i + 2}: consecutive blank lines are not allowed`);
+      errors.push(
+        `Line ${lineNum(i + 2)}: consecutive blank lines are not allowed`,
+      );
   }
 
   // must start with an h1
@@ -67,7 +116,7 @@ for (const filepath of files) {
   const h1s = headings.filter(({ line }) => /^# [^#]/.test(line));
   if (h1s.length > 1)
     errors.push(
-      `Only one # heading allowed, found ${h1s.length} (lines ${h1s.map((h) => h.num).join(', ')})`,
+      `Only one # heading allowed, found ${h1s.length} (lines ${h1s.map((h) => lineNum(h.num)).join(', ')})`,
     );
 
   // check ## sections (the only restricted heading level)
@@ -77,11 +126,11 @@ for (const filepath of files) {
     const sectionName = line.replace(/^## /, '').trim();
     if (!allowedNames.includes(sectionName))
       errors.push(
-        `Line ${num}: unknown section "## ${sectionName}" (allowed: ${allowedNames.join(', ')})`,
+        `Line ${lineNum(num)}: unknown section "## ${sectionName}" (allowed: ${allowedNames.join(', ')})`,
       );
     if (seenSections.has(sectionName))
       errors.push(
-        `Line ${num}: duplicate section "## ${sectionName}" (first at line ${seenSections.get(sectionName)})`,
+        `Line ${lineNum(num)}: duplicate section "## ${sectionName}" (first at line ${lineNum(seenSections.get(sectionName))})`,
       );
     else seenSections.set(sectionName, num);
   }
@@ -110,7 +159,7 @@ for (const filepath of files) {
     // content outside of any ## section
     if (!currentSection) {
       errors.push(
-        `Line ${i + 1}: content outside of a section — should be under a ## heading`,
+        `Line ${lineNum(i + 1)}: content outside of a section — should be under a ## heading`,
       );
       continue;
     }
@@ -118,7 +167,7 @@ for (const filepath of files) {
     const rule = rulesByName[currentSection];
     if (rule && !rule.test(line.trim()))
       errors.push(
-        `Line ${i + 1}: content in "${currentSection}" doesn't match required format — got "${line.trim()}"`,
+        `Line ${lineNum(i + 1)}: content in "${currentSection}" doesn't match required format — got "${line.trim()}"`,
       );
 
     // range: left must be strictly less than right
@@ -129,7 +178,7 @@ for (const filepath of files) {
         const right = parseInt(rangeMatch[2].replace('~', ''), 10);
         if (left >= right)
           errors.push(
-            `Line ${i + 1}: armour range must have left < right, got ${rangeMatch[1]}-${rangeMatch[2]}`,
+            `Line ${lineNum(i + 1)}: armour range must have left < right, got ${rangeMatch[1]}-${rangeMatch[2]}`,
           );
       }
     }

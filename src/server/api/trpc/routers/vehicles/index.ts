@@ -1,9 +1,16 @@
+import fs from 'node:fs';
+import path from 'node:path';
+
 import { TRPCError } from '@trpc/server';
 import slug from 'slug';
 import z from 'zod';
 
+import { IS_DEV } from '@/env';
 import { createTRPCRouter, publicProcedure } from '@/server/api/trpc/context';
-import { getVehicleContent } from '@/server/utils/vehicleContent';
+import {
+  getVehicleContent,
+  getVehicleMeta,
+} from '@/server/utils/vehicleContent';
 import { getVehicleImage } from '@/utils/getVehicleImage';
 import { getBaseUrl } from '@/utils/trpc';
 import { getConfig } from '@generated/config';
@@ -12,7 +19,10 @@ import { getLoadouts } from '@generated/loadouts';
 import { getVehicles } from '@generated/vehicles';
 import { getVehiclesLd } from '@generated/vehicles_ld';
 
-import type { VehicleContent } from '@/server/utils/vehicleContent';
+import type {
+  VehicleContent,
+  VehicleMeta,
+} from '@/server/utils/vehicleContent';
 import type { PlaceId } from '@generated/config';
 import type { KdrPlaceDataVehicle } from '@generated/kdr';
 import type { LoadoutsPlaceDataLoadoutVehicle } from '@generated/loadouts';
@@ -45,6 +55,17 @@ export type DetailedVehicle = VehiclesPlaceDataVehicle & {
     vehicle: WithContext<Vehicle>;
   }>;
 };
+
+function resolveContentSlug(vehicleSlug: string): string | null {
+  const vehicles = getVehicles();
+  for (const place of Object.values(vehicles.data)) {
+    const vehicleName = place.metadata.slugs[vehicleSlug];
+    if (vehicleName) {
+      return slug(place.data[vehicleName].info.gameId);
+    }
+  }
+  return null;
+}
 
 export const vehiclesRouter = createTRPCRouter({
   list: publicProcedure
@@ -156,5 +177,33 @@ export const vehiclesRouter = createTRPCRouter({
       };
 
       return namedVehicle;
+    }),
+
+  armorMeta: publicProcedure
+    .input(z.object({ slug: z.string() }))
+    .query(({ input }): VehicleMeta => {
+      const contentSlug = resolveContentSlug(input.slug);
+      return contentSlug ? (getVehicleMeta(contentSlug) ?? {}) : {};
+    }),
+
+  setFrontArmorDepth: publicProcedure
+    .input(z.object({ slug: z.string(), value: z.number().min(0).max(100) }))
+    .mutation(({ input }) => {
+      if (!IS_DEV) throw new TRPCError({ code: 'UNAUTHORIZED' });
+
+      const contentSlug = resolveContentSlug(input.slug);
+      if (!contentSlug) throw new TRPCError({ code: 'NOT_FOUND' });
+
+      const filepath = path.join('content/vehicles', `${contentSlug}.md`);
+      if (!fs.existsSync(filepath)) throw new TRPCError({ code: 'NOT_FOUND' });
+
+      const raw = fs.readFileSync(filepath, 'utf-8');
+      const fmEnd = raw.startsWith('---\n') ? raw.indexOf('\n---\n', 4) : -1;
+      const body = fmEnd !== -1 ? raw.slice(fmEnd + 5) : raw;
+      fs.writeFileSync(
+        filepath,
+        `---\nfrontArmorDepth: ${Math.round(input.value)}\n---\n\n${body.trimStart()}`,
+        'utf-8',
+      );
     }),
 });

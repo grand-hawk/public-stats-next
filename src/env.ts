@@ -62,3 +62,5 @@ export const env = createEnv({
 });
 
 export const MEDIA_PREFIX = env.NEXT_PUBLIC_MEDIA_PREFIX ?? '';
+
+export const IS_DEV = process.env.NODE_ENV === 'development';
