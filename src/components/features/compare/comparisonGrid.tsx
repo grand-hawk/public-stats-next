@@ -136,10 +136,12 @@ export default function ComparisonGrid<T>({
               return (
                 <React.Fragment key={stat.label}>
                   <Box
+                    alignItems="center"
                     background="bg.panel"
                     borderBottomWidth={isLast ? 0 : '1px'}
                     borderStyle="dashed"
                     color="fg.muted"
+                    display="flex"
                     fontSize="sm"
                     left={0}
                     paddingLeft={3}
