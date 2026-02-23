@@ -168,13 +168,7 @@ export default function ArmorVisualizer() {
             ? 0.75
             : 1;
     setMaxDepth(detectedMaxDepth * fraction);
-  }, [
-    detectedMaxDepth,
-    angle,
-    frontArmorDepth,
-    setMaxDepth,
-    setMinDepth,
-  ]);
+  }, [detectedMaxDepth, angle, frontArmorDepth, setMaxDepth, setMinDepth]);
 
   const effectiveMin = autoRange ? detectedMin : minMm;
   const effectiveMax = autoRange ? detectedMax : maxMm;

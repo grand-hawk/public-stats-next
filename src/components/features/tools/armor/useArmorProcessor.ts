@@ -418,7 +418,8 @@ export function useArmorProcessor(
       }
 
       moduleHits.sort(
-        (a, b) => (moduleMinDepth.get(a.name) ?? 0) - (moduleMinDepth.get(b.name) ?? 0),
+        (a, b) =>
+          (moduleMinDepth.get(a.name) ?? 0) - (moduleMinDepth.get(b.name) ?? 0),
       );
 
       return { moduleHits, total };
