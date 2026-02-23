@@ -325,10 +325,11 @@ export function useArmorProcessor(
           const t = range > 0 ? (total - effectiveMin) / range : 0;
           const color = samplePalette(palette, t);
           if (hasModule) {
-            const s = palette.moduleShift;
-            dst[di] = Math.min(255, color.r + s.r);
-            dst[di + 1] = Math.min(255, color.g + s.g);
-            dst[di + 2] = Math.min(255, color.b + s.b);
+            const k = 0.4;
+            const mc = palette.moduleColor;
+            dst[di] = Math.round(color.r * (1 - k) + mc.r * k);
+            dst[di + 1] = Math.round(color.g * (1 - k) + mc.g * k);
+            dst[di + 2] = Math.round(color.b * (1 - k) + mc.b * k);
           } else {
             dst[di] = color.r;
             dst[di + 1] = color.g;
