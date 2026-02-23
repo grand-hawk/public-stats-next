@@ -9,13 +9,11 @@ import { useArmorProcessor } from '@/components/features/tools/armor/useArmorPro
 import { useVehicle } from '@/hooks/providers/vehicle';
 import { useRouterQuery } from '@/hooks/useRouterQuery';
 
-const PALETTE = palettes[0];
-
 function isNetworkGood(): boolean {
-  const conn = (
+  const connection = (
     navigator as Navigator & { connection?: { effectiveType?: string } }
   ).connection;
-  return !conn || conn.effectiveType === '4g';
+  return connection?.effectiveType === '4g';
 }
 
 export default function VehicleArmorPreview({
@@ -51,7 +49,7 @@ export default function VehicleArmorPreview({
     minDepth: 0,
     minMm: 0,
     overrideData: null,
-    palette: PALETTE,
+    palette: palettes[0],
     ricochetAngle: 85,
     slug: loaded && frontArmorDepth != null ? vehicle.info.slug : null,
   });
@@ -137,7 +135,7 @@ export default function VehicleArmorPreview({
             minDepth={0}
             minMm={0}
             onSaveRef={onSaveRef}
-            palette={PALETTE}
+            palette={palettes[0]}
             ricochetAngle={85}
             slug={vehicle.info.slug}
             thicknessAt={thicknessAt}
