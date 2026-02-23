@@ -49,7 +49,7 @@ export default function VehicleArmorPreview({
     minDepth: 0,
     minMm: 0,
     overrideData: null,
-    palette: palettes[0],
+    palette: palettes[2],
     ricochetAngle: 85,
     slug: loaded && frontArmorDepth != null ? vehicle.info.slug : null,
   });
@@ -135,7 +135,7 @@ export default function VehicleArmorPreview({
             minDepth={0}
             minMm={0}
             onSaveRef={onSaveRef}
-            palette={palettes[0]}
+            palette={palettes[2]}
             ricochetAngle={85}
             slug={vehicle.info.slug}
             thicknessAt={thicknessAt}
