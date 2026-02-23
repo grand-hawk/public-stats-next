@@ -126,16 +126,20 @@ export default function ArmorVisualizer() {
     setHiddenModules(hidden);
   }, [modules]);
 
-  const { data: armorMeta } = trpc.vehicles.armorMeta.useQuery(
-    { slug: vehicleSlug ?? '' },
+  const { data: selectedVehicle } = trpc.vehicles.bySlug.useQuery(
+    { placeId: rvPlace.placeId, slug: vehicleSlug ?? '' },
     { enabled: vehicleSlug !== null },
   );
+  const frontArmorDepth = selectedVehicle?.info.frontArmorDepth;
 
   const utils = trpc.useUtils();
   const { mutate: setFrontArmorDepthMutation } =
     trpc.vehicles.setFrontArmorDepth.useMutation({
       onSuccess: () => {
-        utils.vehicles.armorMeta.invalidate({ slug: vehicleSlug ?? '' });
+        utils.vehicles.bySlug.invalidate({
+          placeId: rvPlace.placeId,
+          slug: vehicleSlug ?? '',
+        });
       },
     });
 
@@ -154,10 +158,7 @@ export default function ArmorVisualizer() {
       setMaxDepth(Infinity);
       return;
     }
-    const frontFraction =
-      armorMeta?.frontArmorDepth != null
-        ? armorMeta.frontArmorDepth / 100
-        : 0.5;
+    const frontFraction = frontArmorDepth != null ? frontArmorDepth / 100 : 0.5;
     const fraction =
       angle === 'front'
         ? frontFraction
@@ -170,7 +171,7 @@ export default function ArmorVisualizer() {
   }, [
     detectedMaxDepth,
     angle,
-    armorMeta?.frontArmorDepth,
+    frontArmorDepth,
     setMaxDepth,
     setMinDepth,
   ]);

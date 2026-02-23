@@ -1,8 +1,13 @@
+import dynamic from 'next/dynamic';
 import React from 'react';
 
-import ArmorVisualizer from '@/components/features/tools/armor/armorVisualizer';
 import Layout from '@/components/layout/layout';
 import PageMeta from '@/components/layout/pageMeta';
+
+const ArmorVisualizer = dynamic(
+  () => import('@/components/features/tools/armor/armorVisualizer'),
+  { ssr: false },
+);
 
 export default function ArmorPage() {
   return (

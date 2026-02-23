@@ -30,7 +30,7 @@ export const moduleGroupRules: ModuleGroupRule[] = [
   },
   {
     label: 'Turret barrels',
-    match: (n) => /Turret\d+Barrel/i.test(n),
+    match: (n) => /Turret\d+Barrel/i.test(n) || /Barrel$/i.test(n),
     initiallyHidden: true,
   },
   {
@@ -49,6 +49,11 @@ export const moduleGroupRules: ModuleGroupRule[] = [
   {
     label: 'Engine',
     match: (n) => n === 'Engine',
+    initiallyHidden: true,
+  },
+  {
+    label: 'Transmission',
+    match: (n) => n === 'Transmission',
     initiallyHidden: true,
   },
 ];

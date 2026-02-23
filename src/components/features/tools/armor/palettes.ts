@@ -39,10 +39,10 @@ export const palettes: Palette[] = [
   {
     moduleColor: { r: 255, g: 0, b: 255 },
     moduleShift: { r: 0, g: 0, b: 0 },
-    name: 'Green to Red',
+    name: 'Cool to Hot',
     stops: [
-      { r: 76, g: 175, b: 80 },
-      { r: 205, g: 220, b: 57 },
+      { r: 33, g: 150, b: 243 },
+      { r: 0, g: 188, b: 212 },
       { r: 255, g: 235, b: 59 },
       { r: 255, g: 152, b: 0 },
       { r: 244, g: 67, b: 54 },
@@ -51,10 +51,10 @@ export const palettes: Palette[] = [
   {
     moduleColor: { r: 255, g: 0, b: 255 },
     moduleShift: { r: 0, g: 0, b: 0 },
-    name: 'Cool to Hot',
+    name: 'Green to Red',
     stops: [
-      { r: 33, g: 150, b: 243 },
-      { r: 0, g: 188, b: 212 },
+      { r: 76, g: 175, b: 80 },
+      { r: 205, g: 220, b: 57 },
       { r: 255, g: 235, b: 59 },
       { r: 255, g: 152, b: 0 },
       { r: 244, g: 67, b: 54 },

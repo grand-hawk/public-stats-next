@@ -1,14 +1,16 @@
 import { FormatNumber, Stack } from '@chakra-ui/react';
-import NextLink from 'next/link';
+import dynamic from 'next/dynamic';
 import React from 'react';
-import { TbChevronRight } from 'react-icons/tb';
 
-import { Button } from '@/components/ui/button';
 import SectionMarker from '@/components/wiki/sectionMarker';
 import { StatsCell, StatsRoot, StatsRow } from '@/components/wiki/stats';
 import TitledCard from '@/components/wiki/titledCard';
 import { useVehicle } from '@/hooks/providers/vehicle';
-import { usePlaceInitials } from '@/hooks/usePlaceInitials';
+
+const VehicleArmorPreview = dynamic(
+  () => import('@/components/features/vehicles/vehicle/armorPreview'),
+  { ssr: false },
+);
 
 const FIELD_ORDER = [
   'Lower front plate',
@@ -40,7 +42,7 @@ function ArmorNumber({ armor }: { armor: ArmorValue }) {
 
 export default function VehicleArmor() {
   const vehicle = useVehicle();
-  const initials = usePlaceInitials()!;
+  const frontArmorDepth = vehicle.info.frontArmorDepth;
 
   const armor = vehicle.content?.Armour;
 
@@ -61,41 +63,35 @@ export default function VehicleArmor() {
     );
   }, [armor]);
 
-  if (!fields) return null;
+  if (!fields && frontArmorDepth == null) return null;
   return (
     <>
       <SectionMarker name="Armour" />
 
       <TitledCard as="section" title="Armour" withAnchor innerPadding={4}>
         <Stack gap={4}>
-          <StatsRoot>
-            {fields.map(([key, value]) => (
-              <StatsRow key={key}>
-                <StatsCell asTitle>{key}</StatsCell>
-                <StatsCell>
-                  {Array.isArray(value) ? (
-                    <>
-                      <ArmorNumber armor={value[0]} />
-                      –
-                      <ArmorNumber armor={value[1]} />
-                    </>
-                  ) : (
-                    <ArmorNumber armor={value} />
-                  )}
-                </StatsCell>
-              </StatsRow>
-            ))}
-          </StatsRoot>
+          {fields && (
+            <StatsRoot>
+              {fields.map(([key, value]) => (
+                <StatsRow key={key}>
+                  <StatsCell asTitle>{key}</StatsCell>
+                  <StatsCell>
+                    {Array.isArray(value) ? (
+                      <>
+                        <ArmorNumber armor={value[0]} />
+                        –
+                        <ArmorNumber armor={value[1]} />
+                      </>
+                    ) : (
+                      <ArmorNumber armor={value} />
+                    )}
+                  </StatsCell>
+                </StatsRow>
+              ))}
+            </StatsRoot>
+          )}
 
-          <Button asChild variant="surface" alignSelf="start" data-md-ignore>
-            <NextLink
-              href={`/${initials}/armor?vehicle=${vehicle.info.slug}`}
-              prefetch={false}
-            >
-              Open armour visualizer
-              <TbChevronRight />
-            </NextLink>
-          </Button>
+          <VehicleArmorPreview frontArmorDepth={frontArmorDepth} />
         </Stack>
       </TitledCard>
     </>

@@ -16,7 +16,9 @@ import type { ArmorAngle } from '@/utils/getVehicleImage';
 interface ArmorCanvasProps {
   angle: ArmorAngle;
   canvas: HTMLCanvasElement | null;
+  compact?: boolean;
   detectedMaxDepth: number;
+  disablePanZoom?: boolean;
   downloadProgress: number | null;
   error: string | null;
   loading: boolean;
@@ -70,7 +72,9 @@ function formatTooltip(val: PixelTooltipData): string {
 export default function ArmorCanvas({
   angle,
   canvas,
+  compact,
   detectedMaxDepth,
+  disablePanZoom,
   downloadProgress,
   error,
   loading,
@@ -209,6 +213,8 @@ export default function ArmorCanvas({
 
   const handleWheel = React.useCallback(
     (event: React.WheelEvent) => {
+      if (disablePanZoom) return;
+
       event.preventDefault();
       updateTooltip(0, 0, null);
 
@@ -234,12 +240,13 @@ export default function ArmorCanvas({
       setZoom(newZoom);
       setPan({ x: newPanX, y: newPanY });
     },
-    [zoom, pan, getCenterOffset, updateTooltip],
+    [disablePanZoom, zoom, pan, getCenterOffset, updateTooltip],
   );
 
   const handleMouseDown = React.useCallback(
     (event: React.MouseEvent) => {
-      if (event.button !== 0) return;
+      if (disablePanZoom || event.button !== 0) return;
+
       isDraggingRef.current = true;
       setDragging(true);
       dragStart.current = {
@@ -250,7 +257,7 @@ export default function ArmorCanvas({
       };
       updateTooltip(0, 0, null);
     },
-    [pan, updateTooltip],
+    [disablePanZoom, pan, updateTooltip],
   );
 
   const handleMouseMove = React.useCallback(
@@ -294,6 +301,8 @@ export default function ArmorCanvas({
 
   const handleTouchStart = React.useCallback(
     (event: React.TouchEvent) => {
+      if (disablePanZoom) return;
+
       event.preventDefault();
       if (event.touches.length === 1) {
         const t = event.touches[0];
@@ -322,11 +331,13 @@ export default function ArmorCanvas({
         };
       }
     },
-    [pan, showTouchTooltip, updateTooltip],
+    [disablePanZoom, pan, showTouchTooltip, updateTooltip],
   );
 
   const handleTouchMove = React.useCallback(
     (event: React.TouchEvent) => {
+      if (disablePanZoom) return;
+
       event.preventDefault();
 
       if (event.touches.length === 1 && lastTouchDist.current === null) {
@@ -385,7 +396,14 @@ export default function ArmorCanvas({
         lastTouchCenter.current = { x: centerX, y: centerY };
       }
     },
-    [zoom, pan, getCenterOffset, showTouchTooltip, updateTooltip],
+    [
+      disablePanZoom,
+      zoom,
+      pan,
+      getCenterOffset,
+      showTouchTooltip,
+      updateTooltip,
+    ],
   );
 
   const handleTouchEnd = React.useCallback(
@@ -596,87 +614,95 @@ export default function ArmorCanvas({
 
   return (
     <Flex direction="column" height="100%" minHeight="0">
-      <Flex
-        alignItems="flex-start"
-        direction="column"
-        flexShrink={0}
-        gap={2}
-        paddingBottom={2}
-        paddingTop={{ base: 3, md: 6 }}
-        paddingX={{ base: 3, md: 6 }}
-      >
-        <Text
-          color="fg"
-          fontSize="lg"
-          fontWeight="medium"
-          letterSpacing="wide"
-          textTransform="uppercase"
+      {(!compact || !disablePanZoom) && (
+        <Flex
+          alignItems="flex-start"
+          direction="column"
+          flexShrink={0}
+          gap={2}
+          paddingBottom={2}
+          paddingTop={compact ? 1 : { base: 3, md: 6 }}
+          paddingX={{ base: 3, md: 6 }}
         >
-          KE effective thickness at LOS
-        </Text>
-
-        <Flex alignItems="center" gap={3} maxWidth="360px" width="100%">
-          <HorizontalLegend maxMm={maxMm} minMm={minMm} palette={palette} />
-
-          <Flex alignItems="center" flexShrink={0} gap={1}>
-            <canvas
-              ref={ricochetSwatchRef}
-              style={{
-                width: '10px',
-                height: '10px',
-                imageRendering: 'pixelated',
-                display: 'block',
-              }}
-            />
-            <Text color="fg.muted" fontSize="2xs" whiteSpace="nowrap">
-              Ricochet (≥{ricochetAngle}°)
+          {!compact && (
+            <Text
+              color="fg"
+              fontSize="lg"
+              fontWeight="medium"
+              letterSpacing="wide"
+              textTransform="uppercase"
+            >
+              KE effective thickness at LOS
             </Text>
-          </Flex>
+          )}
+
+          {!compact && (
+            <Flex alignItems="center" gap={3} maxWidth="360px" width="100%">
+              <HorizontalLegend maxMm={maxMm} minMm={minMm} palette={palette} />
+
+              <Flex alignItems="center" flexShrink={0} gap={1}>
+                <canvas
+                  ref={ricochetSwatchRef}
+                  style={{
+                    width: '10px',
+                    height: '10px',
+                    imageRendering: 'pixelated',
+                    display: 'block',
+                  }}
+                />
+                <Text color="fg.muted" fontSize="2xs" whiteSpace="nowrap">
+                  Ricochet (≥{ricochetAngle}°)
+                </Text>
+              </Flex>
+            </Flex>
+          )}
+
+          {!compact && slug && canvas && (
+            <DepthMinimap
+              ref={minimapRef}
+              angle={angle}
+              detectedMaxDepth={detectedMaxDepth}
+              maxDepth={maxDepth}
+              minDepth={minDepth}
+              slug={slug}
+            />
+          )}
+
+          {!disablePanZoom && (
+            <Box minHeight="24px">
+              <Flex
+                _hover={{ color: 'fg', background: 'whiteAlpha.100' }}
+                alignItems="center"
+                as="button"
+                borderColor="border.muted"
+                borderWidth="1px"
+                color="fg.muted"
+                cursor={isZoomed ? 'pointer' : 'default'}
+                fontSize="2xs"
+                gap={1}
+                opacity={isZoomed ? 1 : 0}
+                paddingX={2}
+                paddingY={1}
+                pointerEvents={isZoomed ? 'auto' : 'none'}
+                visibility={isZoomed ? 'visible' : 'hidden'}
+                onClick={resetView}
+              >
+                <LuRotateCcw size={12} />
+                Reset view
+              </Flex>
+            </Box>
+          )}
         </Flex>
-
-        {slug && canvas && (
-          <DepthMinimap
-            ref={minimapRef}
-            angle={angle}
-            detectedMaxDepth={detectedMaxDepth}
-            maxDepth={maxDepth}
-            minDepth={minDepth}
-            slug={slug}
-          />
-        )}
-
-        <Box minHeight="24px">
-          <Flex
-            _hover={{ color: 'fg', background: 'whiteAlpha.100' }}
-            alignItems="center"
-            as="button"
-            borderColor="border.muted"
-            borderWidth="1px"
-            color="fg.muted"
-            cursor={isZoomed ? 'pointer' : 'default'}
-            fontSize="2xs"
-            gap={1}
-            opacity={isZoomed ? 1 : 0}
-            paddingX={2}
-            paddingY={1}
-            pointerEvents={isZoomed ? 'auto' : 'none'}
-            visibility={isZoomed ? 'visible' : 'hidden'}
-            onClick={resetView}
-          >
-            <LuRotateCcw size={12} />
-            Reset view
-          </Flex>
-        </Box>
-      </Flex>
+      )}
 
       <Box
         ref={viewportRef}
-        cursor={dragging ? 'grabbing' : 'grab'}
+        cursor={disablePanZoom ? 'default' : dragging ? 'grabbing' : 'grab'}
         flex={1}
         minHeight="0"
         overflow="hidden"
         position="relative"
-        css={{ touchAction: 'none' }}
+        css={{ touchAction: disablePanZoom ? 'auto' : 'none' }}
         onMouseDown={handleMouseDown}
         onMouseLeave={handleMouseLeave}
         onMouseMove={handleMouseMove}

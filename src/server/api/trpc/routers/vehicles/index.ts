@@ -19,10 +19,7 @@ import { getLoadouts } from '@generated/loadouts';
 import { getVehicles } from '@generated/vehicles';
 import { getVehiclesLd } from '@generated/vehicles_ld';
 
-import type {
-  VehicleContent,
-  VehicleMeta,
-} from '@/server/utils/vehicleContent';
+import type { VehicleContent } from '@/server/utils/vehicleContent';
 import type { PlaceId } from '@generated/config';
 import type { KdrPlaceDataVehicle } from '@generated/kdr';
 import type { LoadoutsPlaceDataLoadoutVehicle } from '@generated/loadouts';
@@ -44,6 +41,7 @@ export type VehicleAvailability = Record<
 
 export type DetailedVehicle = VehiclesPlaceDataVehicle & {
   info: {
+    frontArmorDepth?: number;
     name: string;
     lastRetrieved: string;
     availability: VehicleAvailability;
@@ -137,16 +135,18 @@ export const vehiclesRouter = createTRPCRouter({
         }
       }
 
+      const contentSlug = slug(vehicle.info.gameId);
       const namedVehicle: DetailedVehicle = {
         ...vehicle,
         info: {
           ...vehicle.info,
+          frontArmorDepth: getVehicleMeta(contentSlug)?.frontArmorDepth,
           name: vehicleName,
           lastRetrieved: vehicles.metadata.date,
           availability,
           kdr: kdrPlace.data.all_time[vehicleName],
         },
-        content: getVehicleContent(slug(vehicle.info.gameId)) || undefined,
+        content: getVehicleContent(contentSlug) || undefined,
         linkedData: {
           breadcrumbs: {
             '@context': 'https://schema.org',
@@ -177,13 +177,6 @@ export const vehiclesRouter = createTRPCRouter({
       };
 
       return namedVehicle;
-    }),
-
-  armorMeta: publicProcedure
-    .input(z.object({ slug: z.string() }))
-    .query(({ input }): VehicleMeta => {
-      const contentSlug = resolveContentSlug(input.slug);
-      return contentSlug ? (getVehicleMeta(contentSlug) ?? {}) : {};
     }),
 
   setFrontArmorDepth: publicProcedure
