@@ -247,7 +247,7 @@ export default function VehicleComparisonTable({
               selectedLoadout,
             );
             const isDisabled = !isEnabled && isConflicting;
-            const cost = addon.cost;
+            const cost = addon.cost ?? 0;
 
             return (
               <Checkbox.Root
@@ -270,17 +270,15 @@ export default function VehicleComparisonTable({
                 <Checkbox.Control borderRadius="none">
                   {isEnabled && <MdOutlineCheck />}
                 </Checkbox.Control>
-                {cost !== undefined && (
-                  <Checkbox.Label
-                    color="fg.muted"
-                    css={{ fontVariantNumeric: 'tabular-nums' }}
-                    fontSize="xs"
-                    minWidth="3.5ch"
-                    textAlign="right"
-                  >
-                    {cost}
-                  </Checkbox.Label>
-                )}
+                <Checkbox.Label
+                  color="fg.muted"
+                  css={{ fontVariantNumeric: 'tabular-nums' }}
+                  fontSize="xs"
+                  minWidth="3.5ch"
+                  textAlign="right"
+                >
+                  {cost}
+                </Checkbox.Label>
               </Checkbox.Root>
             );
           },
