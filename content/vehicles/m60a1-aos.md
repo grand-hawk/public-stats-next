@@ -1,3 +1,7 @@
+---
+frontArmorDepth: 56
+---
+
 # M60A1 Add-On Stabilization
 
 ## Description
