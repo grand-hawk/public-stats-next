@@ -1,4 +1,4 @@
-import { Flex, Icon, Text } from '@chakra-ui/react';
+import { Flex, Icon, Text, useToken } from '@chakra-ui/react';
 import NextLink from 'next/link';
 import React from 'react';
 import { TbChevronRight } from 'react-icons/tb';
@@ -25,6 +25,8 @@ export default function SidebarItem({
   label,
   onClick,
 }: SidebarItemProps) {
+  const [resolvedColor] = useToken('colors', [color]);
+
   return (
     <NextLink href={href} onClick={onClick} style={{ textDecoration: 'none' }}>
       <Flex
@@ -36,16 +38,17 @@ export default function SidebarItem({
         cursor="pointer"
         transition="all 0.15s"
         borderLeftWidth="2px"
-        borderLeftColor={active ? color : 'transparent'}
-        background={active ? 'whiteAlpha.50' : 'transparent'}
+        borderLeftColor="transparent"
+        data-active={active || undefined}
+        background="transparent"
         _hover={{
           background: 'whiteAlpha.100',
-          borderLeftColor: color,
+          borderLeftColor: 'var(--item-color)',
           '& .sidebar-item-text': { color: 'fg' },
           '& .sidebar-item-icon': {
-            borderColor: `color-mix(in srgb, ${color} 40%, transparent)`,
-            background: `color-mix(in srgb, ${color} 10%, transparent)`,
-            color: color,
+            borderColor: `color-mix(in srgb, var(--item-color) 40%, transparent)`,
+            background: `color-mix(in srgb, var(--item-color) 10%, transparent)`,
+            color: 'var(--item-color)',
           },
           '& .sidebar-item-chevron': {
             opacity: 1,
@@ -53,6 +56,20 @@ export default function SidebarItem({
             color: 'fg.muted',
           },
         }}
+        _active={{
+          borderLeftColor: 'var(--item-color)',
+          background: 'whiteAlpha.100',
+          '& .sidebar-item-icon': {
+            borderColor: `color-mix(in srgb, var(--item-color) 40%, transparent)`,
+            background: `color-mix(in srgb, var(--item-color) 10%, transparent)`,
+            color: 'var(--item-color)',
+          },
+          '& .sidebar-item-text': {
+            fontWeight: 'medium',
+            color: 'fg',
+          },
+        }}
+        style={{ '--item-color': resolvedColor } as React.CSSProperties}
       >
         <Flex
           className="sidebar-item-icon"
@@ -62,18 +79,10 @@ export default function SidebarItem({
           height={8}
           flexShrink={0}
           borderWidth="1px"
-          borderColor={
-            active
-              ? `color-mix(in srgb, ${color} 40%, transparent)`
-              : 'whiteAlpha.100'
-          }
-          background={
-            active
-              ? `color-mix(in srgb, ${color} 10%, transparent)`
-              : 'transparent'
-          }
+          borderColor="whiteAlpha.100"
+          background="transparent"
           transition="all 0.15s"
-          color={active ? color : 'fg.muted'}
+          color="fg.muted"
         >
           <IconComponent />
         </Flex>
@@ -83,8 +92,8 @@ export default function SidebarItem({
             <Text
               className="sidebar-item-text"
               fontSize="sm"
-              fontWeight={active ? 'medium' : 'normal'}
-              color={active ? 'fg' : 'fg.muted'}
+              fontWeight="normal"
+              color="fg.muted"
               flex={1}
               whiteSpace="nowrap"
               transition="color 0.15s"
