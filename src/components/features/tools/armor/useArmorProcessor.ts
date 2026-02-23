@@ -226,15 +226,7 @@ export function useArmorProcessor(
 
       let sum = 0;
       for (const layer of pixel.layers) {
-        if (layer.moduleIndex > 0) {
-          if (hiddenModules.has(layer.moduleIndex)) continue;
-
-          if (layer.depth >= minDepth && layer.depth <= maxDepth) {
-            sum += layer.thickness;
-          }
-        } else {
-          if (layer.depth < minDepth || layer.depth > maxDepth) continue;
-
+        if (layer.depth >= minDepth && layer.depth <= maxDepth) {
           sum += layer.thickness;
         }
       }
@@ -306,12 +298,17 @@ export function useArmorProcessor(
 
         for (const layer of pixel.layers) {
           if (layer.moduleIndex > 0) {
-            if (hiddenModules.has(layer.moduleIndex)) continue;
-
-            hasModule = true;
-            hasInRange = true;
-            if (layer.depth >= minDepth && layer.depth <= maxDepth) {
-              total += layer.thickness;
+            if (hiddenModules.has(layer.moduleIndex)) {
+              if (layer.depth >= minDepth && layer.depth <= maxDepth) {
+                hasInRange = true;
+                total += layer.thickness;
+              }
+            } else {
+              hasModule = true;
+              hasInRange = true;
+              if (layer.depth >= minDepth && layer.depth <= maxDepth) {
+                total += layer.thickness;
+              }
             }
           } else {
             if (layer.depth < minDepth || layer.depth > maxDepth) continue;
@@ -389,8 +386,6 @@ export function useArmorProcessor(
 
       for (const layer of pixel.layers) {
         if (layer.moduleIndex > 0) {
-          if (hiddenModules.has(layer.moduleIndex)) continue;
-
           if (layer.depth >= minDepth && layer.depth <= maxDepth) {
             total += layer.thickness;
           }
@@ -400,7 +395,7 @@ export function useArmorProcessor(
           total += layer.thickness;
         }
 
-        if (layer.moduleIndex > 0) {
+        if (layer.moduleIndex > 0 && !hiddenModules.has(layer.moduleIndex)) {
           const mod = raw.modules[layer.moduleIndex - 1];
           if (mod) {
             const existing = moduleHits.find((h) => h.name === mod.name);
