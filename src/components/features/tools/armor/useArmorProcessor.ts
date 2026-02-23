@@ -384,6 +384,7 @@ export function useArmorProcessor(
 
       let total = 0;
       const moduleHits: PixelTooltipData['moduleHits'] = [];
+      const moduleMinDepth = new Map<string, number>();
 
       for (const layer of pixel.layers) {
         if (layer.moduleIndex > 0) {
@@ -402,16 +403,22 @@ export function useArmorProcessor(
           const mod = raw.modules[layer.moduleIndex - 1];
           if (mod) {
             const existing = moduleHits.find((h) => h.name === mod.name);
-            if (existing) existing.thickness += layer.thickness;
-            else {
+            if (existing) {
+              existing.thickness += layer.thickness;
+            } else {
               moduleHits.push({
                 name: mod.name,
                 thickness: layer.thickness,
               });
+              moduleMinDepth.set(mod.name, layer.depth);
             }
           }
         }
       }
+
+      moduleHits.sort(
+        (a, b) => (moduleMinDepth.get(a.name) ?? 0) - (moduleMinDepth.get(b.name) ?? 0),
+      );
 
       return { moduleHits, total };
     },

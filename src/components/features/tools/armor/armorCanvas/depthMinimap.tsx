@@ -33,6 +33,8 @@ const DepthMinimap = React.forwardRef<HTMLCanvasElement, DepthMinimapProps>(
     const imgRef = React.useRef<HTMLImageElement | null>(null);
 
     React.useEffect(() => {
+      setLoaded(false);
+
       const img = new Image();
       img.crossOrigin = 'anonymous';
       img.src = getVehicleImage(slug, 'top_armor', true);

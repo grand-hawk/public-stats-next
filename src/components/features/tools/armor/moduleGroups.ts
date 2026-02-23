@@ -1,22 +1,56 @@
 import type { DamageModule } from './mtca';
 
 export interface ModuleGroupRule {
+  initiallyHidden?: boolean;
   label: string;
   match: (name: string) => boolean;
 }
 
 export interface ModuleGroup {
   indices: number[];
+  initiallyHidden: boolean;
   label: string;
 }
 
 export const moduleGroupRules: ModuleGroupRule[] = [
-  { label: 'Tracks', match: (n) => /track/i.test(n) },
-  { label: 'Turret rings', match: (n) => /Turret\d+Ring/i.test(n) },
-  { label: 'Turret breeches', match: (n) => /Turret\d+Breech/i.test(n) },
-  { label: 'Turret barrels', match: (n) => /Turret\d+Barrel/i.test(n) },
-  { label: 'Ammo models', match: (n) => /AmmoModel\d+/i.test(n) },
-  { label: 'Sights', match: (n) => /Turret.*Sight/i.test(n) },
+  {
+    label: 'Tracks',
+    match: (n) => /track/i.test(n),
+    initiallyHidden: true,
+  },
+  {
+    label: 'Turret rings',
+    match: (n) => /Turret\d+Ring/i.test(n),
+    initiallyHidden: true,
+  },
+  {
+    label: 'Turret breeches',
+    match: (n) => /Turret\d+Breech/i.test(n),
+    initiallyHidden: true,
+  },
+  {
+    label: 'Turret barrels',
+    match: (n) => /Turret\d+Barrel/i.test(n),
+    initiallyHidden: true,
+  },
+  {
+    label: 'Ammo models',
+    match: (n) => /AmmoModel\d+/i.test(n),
+  },
+  {
+    label: 'Sights',
+    match: (n) => /Turret.*Sight/i.test(n),
+  },
+  {
+    label: 'APS',
+    match: (n) => /APS.*/i.test(n),
+    initiallyHidden: true,
+  },
+  {
+    label: 'Engine',
+    match: (n) => n === 'Engine',
+    initiallyHidden: true,
+  },
 ];
 
 export function groupModules(modules: DamageModule[]): ModuleGroup[] {
@@ -31,12 +65,22 @@ export function groupModules(modules: DamageModule[]): ModuleGroup[] {
         claimed.add(i);
       }
     }
-    if (indices.length > 0) groups.push({ indices, label: rule.label });
+    if (indices.length > 0) {
+      groups.push({
+        indices,
+        initiallyHidden: rule.initiallyHidden ?? false,
+        label: rule.label,
+      });
+    }
   }
 
   for (let i = 0; i < modules.length; i++) {
     if (!claimed.has(i)) {
-      groups.push({ indices: [i + 1], label: modules[i].name });
+      groups.push({
+        indices: [i + 1],
+        initiallyHidden: false,
+        label: modules[i].name,
+      });
     }
   }
 

@@ -12,6 +12,7 @@ import { trpc } from '@/utils/trpc';
 import ArmorCanvas from './armorCanvas';
 import ArmorTour from './armorTour';
 import ArmorControls from './controls';
+import { groupModules } from './moduleGroups';
 import { parseMtca } from './mtca';
 import { palettes } from './palettes';
 import { useArmorProcessor } from './useArmorProcessor';
@@ -113,6 +114,17 @@ export default function ArmorVisualizer() {
     ricochetAngle,
     slug: vehicleSlug,
   });
+
+  React.useEffect(() => {
+    if (!modules.length) return;
+    const hidden = new Set<number>();
+    for (const group of groupModules(modules)) {
+      if (group.initiallyHidden) {
+        for (const idx of group.indices) hidden.add(idx);
+      }
+    }
+    setHiddenModules(hidden);
+  }, [modules]);
 
   const { data: armorMeta } = trpc.vehicles.armorMeta.useQuery(
     { slug: vehicleSlug ?? '' },
