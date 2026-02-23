@@ -1,5 +1,5 @@
 import {
-  httpLink,
+  httpBatchLink,
   httpSubscriptionLink,
   loggerLink,
   splitLink,
@@ -47,7 +47,7 @@ export const trpc = createTRPCNext<AppRouter>({
         splitLink({
           condition: (op) => op.type === 'subscription',
           true: httpSubscriptionLink({ url, transformer }),
-          false: httpLink({ url, transformer }),
+          false: httpBatchLink({ url, transformer }),
         }),
       ],
       queryClientConfig: {
