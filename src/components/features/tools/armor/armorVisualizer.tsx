@@ -73,7 +73,7 @@ export default function ArmorVisualizer() {
 
   React.useEffect(() => {
     setHiddenModules(new Set());
-  }, [vehicleSlug, angle]);
+  }, [vehicleSlug]);
 
   const handleToggleModule = React.useCallback((moduleIndices: number[]) => {
     setHiddenModules((prev) => {
