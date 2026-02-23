@@ -152,7 +152,7 @@ export default function VehicleArmorPreview({
         href={`/${place}/armor?vehicle=${vehicle.info.slug}`}
       >
         <LuMaximize2 size={13} />
-        View full visualizer
+        Open armour visualizer
       </Link>
     </Stack>
   );
