@@ -37,8 +37,8 @@ interface ArmorStore {
   onSelectVehicle: ((slug: string) => void) | null;
   setOnSelectVehicle(fn: ((slug: string) => void) | null): void;
 
-  onSetFrontArmorDepth: ((percentage: number) => void) | null;
-  setOnSetFrontArmorDepth(fn: ((percentage: number) => void) | null): void;
+  onSetFrontArmorDepth: ((percent: number) => void) | null;
+  setOnSetFrontArmorDepth(fn: ((percent: number) => void) | null): void;
 }
 
 export const useArmorStore = create<ArmorStore>()(

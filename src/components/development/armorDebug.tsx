@@ -34,7 +34,7 @@ export default function ArmorDebug() {
 
     return () => observer.disconnect();
   }, []);
-  const depthPercentage =
+  const depthPercent =
     detectedMaxDepth > 0 ? Math.round((maxDepth / detectedMaxDepth) * 100) : 0;
 
   const handlePrev = React.useCallback(() => {
@@ -120,12 +120,12 @@ export default function ArmorDebug() {
           size="xs"
           variant="surface"
           onClick={() => {
-            onSetFrontArmorDepth(depthPercentage);
+            onSetFrontArmorDepth(depthPercent);
             handleNext();
           }}
         >
           <LuSave />
-          Save {depthPercentage}% depth
+          Save {depthPercent}% depth
         </Button>
       )}
 
@@ -135,7 +135,7 @@ export default function ArmorDebug() {
             Max depth
           </Text>
           <Text color="fg" fontSize="xs" marginLeft="auto">
-            {depthPercentage}%
+            {depthPercent}%
           </Text>
         </Flex>
         <RangeSlider

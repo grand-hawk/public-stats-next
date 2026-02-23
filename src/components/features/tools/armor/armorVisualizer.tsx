@@ -128,9 +128,9 @@ export default function ArmorVisualizer() {
     });
 
   const handleSetFrontArmorDepth = React.useCallback(
-    (percentage: number) => {
+    (percent: number) => {
       if (!vehicleSlug || overrideData) return;
-      setFrontArmorDepthMutation({ slug: vehicleSlug, value: percentage });
+      setFrontArmorDepthMutation({ slug: vehicleSlug, value: percent });
     },
     [vehicleSlug, overrideData, setFrontArmorDepthMutation],
   );

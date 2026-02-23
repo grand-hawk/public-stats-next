@@ -68,7 +68,7 @@ function isRicochetStripe(x: number, y: number): boolean {
 
 async function fetchAndParseMtca(
   url: string,
-  onProgress?: (percentage: number) => void,
+  onProgress?: (percent: number) => void,
 ): Promise<RawArmorData> {
   const response = await fetch(url);
   if (!response.ok) {
@@ -90,11 +90,11 @@ async function fetchAndParseMtca(
     receivedLength += value.length;
 
     if (onProgress) {
-      const percentage =
+      const percent =
         total && total > 0
           ? Math.round((receivedLength / total) * 100)
           : Math.min(95, Math.round((receivedLength / 500_000) * 90));
-      onProgress(percentage);
+      onProgress(percent);
     }
   }
 
@@ -179,8 +179,8 @@ export function useArmorProcessor(
 
     fetchAndParseMtca(
       `https://cdn.astrid.ovh/public-stats-images/${slug}/${angle}_armor.mtca`,
-      (percentage) => {
-        if (!cancelled) setDownloadProgress(percentage);
+      (percent) => {
+        if (!cancelled) setDownloadProgress(percent);
       },
     )
       .then((data) => {
