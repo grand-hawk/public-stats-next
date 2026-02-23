@@ -56,6 +56,10 @@ export const moduleGroupRules: ModuleGroupRule[] = [
     match: (n) => n === 'Transmission',
     initiallyHidden: true,
   },
+  {
+    label: 'FuelTank',
+    match: (n) => n === 'FuelTank',
+  },
 ];
 
 export function groupModules(modules: DamageModule[]): ModuleGroup[] {

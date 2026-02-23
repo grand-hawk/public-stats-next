@@ -414,7 +414,9 @@ export default function ArmorCanvas({
           panX: pan.x,
           panY: pan.y,
         };
-      } else if (event.touches.length === 0) updateTooltip(0, 0, null);
+      } else if (event.touches.length === 0) {
+        if (touchDragging.current) updateTooltip(0, 0, null);
+      }
 
       lastTouchDist.current = null;
       lastTouchCenter.current = null;
