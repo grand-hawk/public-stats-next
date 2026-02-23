@@ -1,4 +1,4 @@
-import { Box, Flex, Text } from '@chakra-ui/react';
+import { Box, Flex, Portal, Text } from '@chakra-ui/react';
 import React from 'react';
 import { LuRotateCcw } from 'react-icons/lu';
 
@@ -165,17 +165,19 @@ export default function ArmorCanvas({
   }, []);
 
   const updateTooltip = React.useCallback(
-    (screenX: number, screenY: number, value: string | null) => {
-      const el = tooltipRef.current;
-      if (!el) return;
+    (clientX: number, clientY: number, value: string | null) => {
+      const element = tooltipRef.current;
+      if (!element) return;
+
       if (value === null || isDraggingRef.current) {
-        el.style.display = 'none';
+        element.style.display = 'none';
         return;
       }
-      el.style.display = 'block';
-      el.style.left = `${screenX + 16}px`;
-      el.style.top = `${screenY - 12}px`;
-      el.textContent = value;
+
+      element.style.display = 'block';
+      element.style.left = `${clientX + 16}px`;
+      element.style.top = `${clientY - 12}px`;
+      element.textContent = value;
     },
     [],
   );
@@ -185,10 +187,6 @@ export default function ArmorCanvas({
       const display = displayRef.current;
       const viewport = viewportRef.current;
       if (!display || !viewport || !canvas) return null;
-
-      const vpRect = viewport.getBoundingClientRect();
-      const screenX = clientX - vpRect.left;
-      const screenY = clientY - vpRect.top;
 
       const canvasRect = display.getBoundingClientRect();
       const canvasX = clientX - canvasRect.left;
@@ -206,7 +204,7 @@ export default function ArmorCanvas({
           : val === 'ricochet'
             ? 'Ricochet'
             : formatTooltip(val);
-      return { screenX, screenY, text };
+      return { clientX, clientY, text };
     },
     [canvas, thicknessAt],
   );
@@ -273,7 +271,7 @@ export default function ArmorCanvas({
       }
 
       const result = resolveTooltip(event.clientX, event.clientY);
-      if (result) updateTooltip(result.screenX, result.screenY, result.text);
+      if (result) updateTooltip(result.clientX, result.clientY, result.text);
     },
     [resolveTooltip, updateTooltip],
   );
@@ -294,7 +292,7 @@ export default function ArmorCanvas({
   const showTouchTooltip = React.useCallback(
     (clientX: number, clientY: number) => {
       const result = resolveTooltip(clientX, clientY);
-      if (result) updateTooltip(result.screenX, result.screenY, result.text);
+      if (result) updateTooltip(result.clientX, result.clientY, result.text);
     },
     [resolveTooltip, updateTooltip],
   );
@@ -732,7 +730,9 @@ export default function ArmorCanvas({
             />
           </Box>
         </Flex>
+      </Box>
 
+      <Portal>
         <Box
           ref={tooltipRef}
           background="bg.panel"
@@ -744,11 +744,11 @@ export default function ArmorCanvas({
           paddingX={2}
           paddingY={1}
           pointerEvents="none"
-          position="absolute"
+          position="fixed"
           whiteSpace="nowrap"
-          zIndex={20}
+          zIndex={9999}
         />
-      </Box>
+      </Portal>
     </Flex>
   );
 }
