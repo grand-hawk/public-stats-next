@@ -34,7 +34,11 @@ export const moduleGroupRules: ModuleGroupRule[] = [
     initiallyHidden: true,
   },
   {
-    label: 'Ammo models',
+    label: 'Ammo blowout',
+    match: (n) => /AmmoModel\d+BlowoutDoor/i.test(n),
+  },
+  {
+    label: 'Ammo',
     match: (n) => /AmmoModel\d+/i.test(n),
   },
   {
