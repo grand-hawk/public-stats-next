@@ -61,7 +61,7 @@ export const moduleGroupRules: ModuleGroupRule[] = [
     initiallyHidden: true,
   },
   {
-    label: 'FuelTank',
+    label: 'Fuel tank',
     match: (n) => n === 'FuelTank',
   },
 ];
