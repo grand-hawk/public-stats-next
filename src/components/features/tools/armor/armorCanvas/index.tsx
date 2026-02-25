@@ -407,10 +407,10 @@ export default function ArmorCanvas({
   const handleTouchEnd = React.useCallback(
     (event: React.TouchEvent) => {
       if (event.touches.length === 1) {
-        const t = event.touches[0];
+        const touch = event.touches[0];
         touchPanStart.current = {
-          x: t.clientX,
-          y: t.clientY,
+          x: touch.clientX,
+          y: touch.clientY,
           panX: pan.x,
           panY: pan.y,
         };
