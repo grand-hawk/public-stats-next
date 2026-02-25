@@ -71,19 +71,19 @@ export default function ArmorTour({
   React.useLayoutEffect(() => {
     if (!open) return;
 
-    const el = document.querySelector(
+    const element = document.querySelector(
       `[data-tour="${STEPS[step].target}"]`,
     ) as HTMLElement | null;
 
     const measure = () => {
-      setRect(el ? el.getBoundingClientRect() : null);
+      setRect(element ? element.getBoundingClientRect() : null);
     };
 
     measure();
 
-    if (el) {
-      el.style.position = 'relative';
-      el.style.zIndex = '10001';
+    if (element) {
+      element.style.position = 'relative';
+      element.style.zIndex = '10001';
     }
 
     const observer = new ResizeObserver(measure);
@@ -91,9 +91,9 @@ export default function ArmorTour({
     window.addEventListener('scroll', measure, true);
 
     return () => {
-      if (el) {
-        el.style.position = '';
-        el.style.zIndex = '';
+      if (element) {
+        element.style.position = '';
+        element.style.zIndex = '';
       }
       observer.disconnect();
       window.removeEventListener('scroll', measure, true);

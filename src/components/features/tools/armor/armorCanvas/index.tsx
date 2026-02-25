@@ -426,8 +426,8 @@ export default function ArmorCanvas({
   );
 
   React.useEffect(() => {
-    const el = viewportRef.current;
-    if (!el) return;
+    const element = viewportRef.current;
+    if (!element) return;
 
     const onWheel = (event: WheelEvent) =>
       handleWheel(event as unknown as React.WheelEvent);
@@ -436,16 +436,31 @@ export default function ArmorCanvas({
     const onTouchMove = (event: TouchEvent) =>
       handleTouchMove(event as unknown as React.TouchEvent);
 
-    el.addEventListener('wheel', onWheel, { passive: false });
-    el.addEventListener('touchstart', onTouchStart, { passive: false });
-    el.addEventListener('touchmove', onTouchMove, { passive: false });
+    element.addEventListener('wheel', onWheel, { passive: false });
+    element.addEventListener('touchstart', onTouchStart, { passive: false });
+    element.addEventListener('touchmove', onTouchMove, { passive: false });
 
     return () => {
-      el.removeEventListener('wheel', onWheel);
-      el.removeEventListener('touchstart', onTouchStart);
-      el.removeEventListener('touchmove', onTouchMove);
+      element.removeEventListener('wheel', onWheel);
+      element.removeEventListener('touchstart', onTouchStart);
+      element.removeEventListener('touchmove', onTouchMove);
     };
   }, [handleWheel, handleTouchStart, handleTouchMove]);
+
+  React.useEffect(() => {
+    const onScroll = () => updateTooltip(0, 0, null);
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    document.addEventListener('scroll', onScroll, {
+      passive: true,
+      capture: true,
+    });
+
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+      document.removeEventListener('scroll', onScroll, { capture: true });
+    };
+  }, [updateTooltip]);
 
   const resetView = React.useCallback(() => {
     setZoom(1);
