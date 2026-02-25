@@ -14,6 +14,7 @@ export interface SidebarItemProps {
   active?: boolean;
   collapsed?: boolean;
   onClick?: () => void;
+  prefetch?: true;
 }
 
 export default function SidebarItem({
@@ -24,11 +25,17 @@ export default function SidebarItem({
   icon: IconComponent,
   label,
   onClick,
+  prefetch,
 }: SidebarItemProps) {
   const [resolvedColor] = useToken('colors', [color]);
 
   return (
-    <NextLink href={href} onClick={onClick} style={{ textDecoration: 'none' }}>
+    <NextLink
+      href={href}
+      onClick={onClick}
+      style={{ textDecoration: 'none' }}
+      prefetch={prefetch}
+    >
       <Flex
         alignItems="center"
         gap={3}

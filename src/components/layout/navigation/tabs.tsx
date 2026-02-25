@@ -14,9 +14,10 @@ export interface Tab {
   label: string;
   longLabel?: string;
   path: string;
-  icon: IconType | ((props: IconProps) => ReactNode);
   color: string;
   description: string;
+  icon: IconType | ((props: IconProps) => ReactNode);
+  prefetch?: true;
 }
 
 export const tabs: Record<string, Tab> = {
@@ -29,6 +30,7 @@ export const tabs: Record<string, Tab> = {
     icon: (props: IconProps) => (
       <Icon as={TbTank} height={5} width={5} {...props} />
     ),
+    prefetch: true,
   },
   shells: {
     label: 'Shells',

@@ -40,6 +40,7 @@ export default function SidebarNav({ collapsed, onNavigate }: SidebarNavProps) {
             icon={tab.icon}
             label={tab.label}
             onClick={onNavigate}
+            prefetch={tab.prefetch}
           />
         );
       })}
