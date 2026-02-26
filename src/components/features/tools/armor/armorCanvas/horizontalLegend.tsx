@@ -1,9 +1,9 @@
 import { Box, Flex, Text } from '@chakra-ui/react';
 import React from 'react';
 
-import { samplePalette } from '../palettes';
+import { samplePalette } from '@/components/features/tools/armor/palettes';
 
-import type { Palette } from '../palettes';
+import type { Palette } from '@/components/features/tools/armor/palettes';
 
 const LEGEND_WIDTH = 256;
 

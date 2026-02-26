@@ -8,16 +8,16 @@ import {
   LuDownload,
 } from 'react-icons/lu';
 
+import { RangeSlider } from '@/components/features/tools/armor/controls/slider';
+import { groupModules } from '@/components/features/tools/armor/moduleGroups';
+import { palettes } from '@/components/features/tools/armor/palettes';
 import VehicleIcon from '@/components/features/vehicles/vehicleIcon';
 import { IS_DEV } from '@/env';
 import { simplifyString } from '@/utils/simplifyString';
 
-import { groupModules } from '../moduleGroups';
-import { palettes } from '../palettes';
-import { RangeSlider } from './slider';
 
-import type { DamageModule } from '../mtca';
-import type { Palette } from '../palettes';
+import type { DamageModule } from '@/components/features/tools/armor/mtca';
+import type { Palette } from '@/components/features/tools/armor/palettes';
 import type { ArmorAngle } from '@/utils/getVehicleImage';
 
 interface VehicleOption {

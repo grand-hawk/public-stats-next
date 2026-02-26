@@ -2,15 +2,18 @@ import { Box, Flex, Portal, Text } from '@chakra-ui/react';
 import React from 'react';
 import { LuRotateCcw } from 'react-icons/lu';
 
+
+import DepthMinimap from '@/components/features/tools/armor/armorCanvas/depthMinimap';
+import HorizontalLegend from '@/components/features/tools/armor/armorCanvas/horizontalLegend';
+import { samplePalette } from '@/components/features/tools/armor/palettes';
+import {
+  RICOCHET_DARK,
+  RICOCHET_LIGHT,
+} from '@/components/features/tools/armor/useArmorProcessor';
 import { ProgressBar, ProgressRoot } from '@/components/ui/progress';
 
-import { samplePalette } from '../palettes';
-import { RICOCHET_DARK, RICOCHET_LIGHT } from '../useArmorProcessor';
-import DepthMinimap from './depthMinimap';
-import HorizontalLegend from './horizontalLegend';
-
-import type { Palette } from '../palettes';
-import type { PixelTooltipData } from '../useArmorProcessor';
+import type { Palette } from '@/components/features/tools/armor/palettes';
+import type { PixelTooltipData } from '@/components/features/tools/armor/useArmorProcessor';
 import type { ArmorAngle } from '@/utils/getVehicleImage';
 
 interface ArmorCanvasProps {

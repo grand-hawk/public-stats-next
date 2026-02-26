@@ -1,4 +1,4 @@
-import type { DamageModule } from './mtca';
+import type { DamageModule } from '@/components/features/tools/armor/mtca';
 
 export interface ModuleGroupRule {
   initiallyHidden?: boolean;

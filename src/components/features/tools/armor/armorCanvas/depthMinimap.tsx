@@ -1,8 +1,8 @@
 import React from 'react';
 
+import { getViewAngleRad } from '@/components/features/tools/armor/useArmorProcessor';
 import { getVehicleImage } from '@/utils/getVehicleImage';
 
-import { getViewAngleRad } from '../useArmorProcessor';
 
 import type { ArmorAngle } from '@/utils/getVehicleImage';
 

@@ -1,7 +1,7 @@
-import { samplePalette } from './palettes';
+import { samplePalette } from '@/components/features/tools/armor/palettes';
 
-import type { RawArmorData } from './mtca';
-import type { Palette } from './palettes';
+import type { RawArmorData } from '@/components/features/tools/armor/mtca';
+import type { Palette } from '@/components/features/tools/armor/palettes';
 
 const STRIPE_SPACING = 6;
 const STRIPE_WIDTH = 2;

@@ -1,14 +1,14 @@
 import React from 'react';
 
-import { ARMOR_CDN_BASE } from './constants';
-import { parseMtca } from './mtca';
+import { ARMOR_CDN_BASE } from '@/components/features/tools/armor/constants';
+import { parseMtca } from '@/components/features/tools/armor/mtca';
 import {
   computeDetectedRange,
   renderHeatmapToImageData,
-} from './renderArmorHeatmap';
+} from '@/components/features/tools/armor/renderArmorHeatmap';
 
-import type { DamageModule, RawArmorData } from './mtca';
-import type { Palette } from './palettes';
+import type { DamageModule, RawArmorData } from '@/components/features/tools/armor/mtca';
+import type { Palette } from '@/components/features/tools/armor/palettes';
 import type { ArmorAngle } from '@/utils/getVehicleImage';
 
 export interface PixelTooltipData {
@@ -44,7 +44,7 @@ export interface ArmorProcessorResult {
   version: number | null;
 }
 
-export { RICOCHET_DARK, RICOCHET_LIGHT } from './renderArmorHeatmap';
+export { RICOCHET_DARK, RICOCHET_LIGHT } from '@/components/features/tools/armor/renderArmorHeatmap';
 
 export function getViewAngleRad(angle: ArmorAngle): number {
   switch (angle) {

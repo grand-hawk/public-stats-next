@@ -1,4 +1,9 @@
-import type { DamageModule, Layer, PixelData, RawArmorData } from './types';
+import type {
+  DamageModule,
+  Layer,
+  PixelData,
+  RawArmorData,
+} from '@/components/features/tools/armor/mtca/types';
 
 function decodeAngle(encoded: number): number {
   if (encoded === 0) return 0;

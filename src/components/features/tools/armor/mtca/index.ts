@@ -1,9 +1,14 @@
-import { parseMtcaV1 } from './v1';
-import { parseMtcaV2 } from './v2';
+import { parseMtcaV1 } from '@/components/features/tools/armor/mtca/v1';
+import { parseMtcaV2 } from '@/components/features/tools/armor/mtca/v2';
 
-import type { RawArmorData } from './types';
+import type { RawArmorData } from '@/components/features/tools/armor/mtca/types';
 
-export type { DamageModule, Layer, PixelData, RawArmorData } from './types';
+export type {
+  DamageModule,
+  Layer,
+  PixelData,
+  RawArmorData,
+} from '@/components/features/tools/armor/mtca/types';
 
 export function parseMtca(view: DataView): RawArmorData {
   const magic = String.fromCharCode(

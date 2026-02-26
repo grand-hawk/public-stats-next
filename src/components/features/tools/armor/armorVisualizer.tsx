@@ -2,6 +2,14 @@ import { Box } from '@chakra-ui/react';
 import { useQueryState } from 'nuqs';
 import React from 'react';
 
+
+import ArmorCanvas from '@/components/features/tools/armor/armorCanvas';
+import ArmorTour from '@/components/features/tools/armor/armorTour';
+import ArmorControls from '@/components/features/tools/armor/controls';
+import { groupModules } from '@/components/features/tools/armor/moduleGroups';
+import { parseMtca } from '@/components/features/tools/armor/mtca';
+import { palettes } from '@/components/features/tools/armor/palettes';
+import { useArmorProcessor } from '@/components/features/tools/armor/useArmorProcessor';
 import { IS_DEV } from '@/env';
 import { usePersistStoreIsHydrated } from '@/hooks/usePersistStoreIsHydrated';
 import { useSuspenseConfig } from '@/hooks/useSuspenseConfig';
@@ -9,15 +17,7 @@ import { useArmorStore } from '@/stores/armor';
 import { getNameFromInitials, getPlaceFromName } from '@/utils/placeUtils';
 import { trpc } from '@/utils/trpc';
 
-import ArmorCanvas from './armorCanvas';
-import ArmorTour from './armorTour';
-import ArmorControls from './controls';
-import { groupModules } from './moduleGroups';
-import { parseMtca } from './mtca';
-import { palettes } from './palettes';
-import { useArmorProcessor } from './useArmorProcessor';
-
-import type { RawArmorData } from './mtca';
+import type { RawArmorData } from '@/components/features/tools/armor/mtca';
 
 export default function ArmorVisualizer() {
   const config = useSuspenseConfig();

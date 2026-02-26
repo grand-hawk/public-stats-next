@@ -123,6 +123,18 @@ export default defineConfig([
           'newlines-between': 'always',
         },
       ],
+      'no-restricted-imports': [
+        'error',
+        {
+          patterns: [
+            {
+              group: ['.*'],
+              message:
+                'Relative imports are not allowed. Use the @/ path alias instead.',
+            },
+          ],
+        },
+      ],
       'sort-destructure-keys/sort-destructure-keys': 'error',
       'react-hooks/incompatible-library': 'off',
       curly: ['error', 'multi-line'],

@@ -9,9 +9,9 @@ import {
 import React from 'react';
 import { LuArrowUpRight } from 'react-icons/lu';
 
+import ArmorDebug from '@/components/development/armorDebug';
 import { useDevelopmentStore } from '@/stores/development';
 
-import ArmorDebug from './armorDebug';
 
 import type { BundledLanguage, BundledTheme, HighlighterGeneric } from 'shiki';
 
