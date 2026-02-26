@@ -156,7 +156,7 @@ async function writeThumbnail(slug: string) {
     .toBuffer();
   const outputDir = path.join('armor-output', slug);
   await mkdir(outputDir, { recursive: true });
-  const outputPath = path.join(outputDir, 'thumbnail.png');
+  const outputPath = path.join(outputDir, 'armor_thumbnail.png');
   await writeFile(outputPath, optimized);
 }
 
