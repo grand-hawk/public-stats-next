@@ -4,6 +4,7 @@ import path from 'node:path';
 import { createCanvas, ImageData } from '@napi-rs/canvas';
 import pAll from 'p-all';
 import sharp from 'sharp';
+import slug from 'slug';
 
 import {
   ARMOR_CDN_BASE,
@@ -21,6 +22,7 @@ import {
   RICOCHET_LIGHT,
   renderHeatmapToImageData,
 } from '@/components/features/tools/armor/renderArmorHeatmap';
+import { getVehicleMeta } from '@/server/utils/vehicleContent';
 import { getNameFromInitials, getPlaceFromName } from '@/utils/placeUtils';
 import { getConfig } from '@generated/config';
 import { getVehicles } from '@generated/vehicles';
@@ -45,8 +47,20 @@ function extractVehicleSlugs(): string[] {
   return [...slugs].sort((a, b) => a.localeCompare(b));
 }
 
-async function fetchArmorMtca(slug: string): Promise<ArrayBuffer> {
-  const url = `${ARMOR_CDN_BASE}/${slug}/${DEFAULT_ARMOR_ANGLE}_armor.mtca`;
+function getContentSlug(vehicleSlug: string): string | null {
+  const vehicles = getVehicles();
+  for (const place of Object.values(vehicles.data)) {
+    const vehicleName = place.metadata.slugs[vehicleSlug];
+    if (vehicleName) {
+      const vehicle = place.data[vehicleName];
+      return vehicle ? slug(vehicle.info.gameId) : null;
+    }
+  }
+  return null;
+}
+
+async function fetchArmorMtca(vehicleSlug: string): Promise<ArrayBuffer> {
+  const url = `${ARMOR_CDN_BASE}/${vehicleSlug}/${DEFAULT_ARMOR_ANGLE}_armor.mtca`;
   const res = await fetch(url);
   if (!res.ok) {
     throw new Error(`Failed to fetch armour data: ${res.status} ${url}`);
@@ -54,12 +68,29 @@ async function fetchArmorMtca(slug: string): Promise<ArrayBuffer> {
   return res.arrayBuffer();
 }
 
-async function renderArmorCanvas(slug: string) {
-  const buffer = await fetchArmorMtca(slug);
+function getDetectedMaxDepth(rawData: Awaited<ReturnType<typeof parseMtca>>) {
+  let maxD = 0;
+  for (const pixel of rawData.pixels) {
+    if (!pixel) continue;
+    for (const layer of pixel.layers) {
+      if (layer.depth > maxD) maxD = layer.depth;
+    }
+  }
+  return Math.ceil(maxD);
+}
+
+async function renderArmorCanvas(vehicleSlug: string) {
+  const buffer = await fetchArmorMtca(vehicleSlug);
   const rawData = parseMtca(new DataView(buffer));
 
   const minDepth = 0;
-  const maxDepth = Infinity;
+  const detectedMaxDepth = getDetectedMaxDepth(rawData);
+  const contentSlug = getContentSlug(vehicleSlug) ?? vehicleSlug;
+  const frontArmorDepth = getVehicleMeta(contentSlug)?.frontArmorDepth;
+  const frontFraction =
+    frontArmorDepth != null ? frontArmorDepth / 100 : 0.5;
+  const maxDepth = detectedMaxDepth * frontFraction;
+
   const { max: detectedMax, min: detectedMin } = computeDetectedRange(
     rawData,
     DEFAULT_RICOCHET_ANGLE,
@@ -148,25 +179,25 @@ async function renderArmorCanvas(slug: string) {
   return canvas;
 }
 
-async function writeThumbnail(slug: string) {
-  const canvas = await renderArmorCanvas(slug);
+async function writeThumbnail(vehicleSlug: string) {
+  const canvas = await renderArmorCanvas(vehicleSlug);
   const pngBuffer = canvas.encodeSync('png');
   const optimized = await sharp(pngBuffer)
     .png({ compressionLevel: 9 })
     .toBuffer();
-  const outputDir = path.join('armor-output', slug);
+  const outputDir = path.join('armor-output', vehicleSlug);
   await mkdir(outputDir, { recursive: true });
   const outputPath = path.join(outputDir, 'armor_thumbnail.png');
   await writeFile(outputPath, optimized);
 }
 
 await pAll(
-  extractVehicleSlugs().map((slug) => async () => {
+  extractVehicleSlugs().map((vehicleSlug) => async () => {
     try {
-      await writeThumbnail(slug);
-      console.log(`✓ ${slug}`);
+      await writeThumbnail(vehicleSlug);
+      console.log(`✓ ${vehicleSlug}`);
     } catch (err) {
-      console.error(`✗ ${slug}`);
+      console.error(`✗ ${vehicleSlug}`);
       console.error(err);
     }
   }),
