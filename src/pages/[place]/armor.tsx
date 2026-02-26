@@ -23,7 +23,6 @@ export default function ArmorPage() {
 
   return (
     <PageMeta
-      description="Interactive armour thickness heatmap visualiser for Multicrew Tank Combat vehicles"
       ogImage={ogImage}
       title="Armour visualizer"
       twitterCard={ogImage ? 'summary_large_image' : undefined}
