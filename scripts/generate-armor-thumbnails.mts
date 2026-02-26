@@ -3,6 +3,7 @@ import path from 'node:path';
 
 import { createCanvas, ImageData } from '@napi-rs/canvas';
 import pAll from 'p-all';
+import sharp from 'sharp';
 
 import {
   ARMOR_CDN_BASE,
@@ -149,10 +150,14 @@ async function renderArmorCanvas(slug: string) {
 
 async function writeThumbnail(slug: string) {
   const canvas = await renderArmorCanvas(slug);
+  const pngBuffer = canvas.encodeSync('png');
+  const optimized = await sharp(pngBuffer)
+    .png({ compressionLevel: 9 })
+    .toBuffer();
   const outputDir = path.join('armor-output', slug);
   await mkdir(outputDir, { recursive: true });
   const outputPath = path.join(outputDir, 'thumbnail.png');
-  await writeFile(outputPath, canvas.encodeSync('png'));
+  await writeFile(outputPath, optimized);
 }
 
 await pAll(
