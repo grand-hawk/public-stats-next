@@ -1,7 +1,11 @@
 import React from 'react';
 
+import { ARMOR_CDN_BASE } from './constants';
 import { parseMtca } from './mtca';
-import { samplePalette } from './palettes';
+import {
+  computeDetectedRange,
+  renderHeatmapToImageData,
+} from './renderArmorHeatmap';
 
 import type { DamageModule, RawArmorData } from './mtca';
 import type { Palette } from './palettes';
@@ -40,10 +44,7 @@ export interface ArmorProcessorResult {
   version: number | null;
 }
 
-const STRIPE_SPACING = 6;
-const STRIPE_WIDTH = 2;
-export const RICOCHET_LIGHT = { b: 150, g: 150, r: 150 };
-export const RICOCHET_DARK = { b: 60, g: 60, r: 60 };
+export { RICOCHET_DARK, RICOCHET_LIGHT } from './renderArmorHeatmap';
 
 export function getViewAngleRad(angle: ArmorAngle): number {
   switch (angle) {
@@ -60,10 +61,6 @@ export function getViewAngleRad(angle: ArmorAngle): number {
     default:
       return 0;
   }
-}
-
-function isRicochetStripe(x: number, y: number): boolean {
-  return (x + y) % STRIPE_SPACING < STRIPE_WIDTH;
 }
 
 async function fetchAndParseMtca(
@@ -178,7 +175,7 @@ export function useArmorProcessor(
     setError(null);
 
     fetchAndParseMtca(
-      `https://cdn.astrid.ovh/public-stats-images/${slug}/${angle}_armor.mtca`,
+      `${ARMOR_CDN_BASE}/${slug}/${angle}_armor.mtca`,
       (percent) => {
         if (!cancelled) setDownloadProgress(percent);
       },
@@ -217,39 +214,14 @@ export function useArmorProcessor(
   React.useEffect(() => {
     if (!rawData) return;
 
-    let min = Infinity;
-    const thicknesses: number[] = [];
-
-    for (const pixel of rawData.pixels) {
-      if (!pixel) continue;
-      if (pixel.angle > 0 && pixel.angle >= ricochetAngle) continue;
-
-      let sum = 0;
-      for (const layer of pixel.layers) {
-        if (layer.depth >= minDepth && layer.depth <= maxDepth) {
-          sum += layer.thickness;
-        }
-      }
-
-      if (sum > 0 || pixel.layers.length > 0) {
-        if (sum < min) min = sum;
-        thicknesses.push(sum);
-      }
-    }
-
-    if (min === Infinity || thicknesses.length === 0) {
-      setDetectedMin(0);
-      setDetectedMax(1000);
-      return;
-    }
-
-    thicknesses.sort((a, b) => a - b);
-    const percentileIndex = Math.floor(thicknesses.length * 0.95);
-    const percentile95 =
-      thicknesses[percentileIndex] ?? thicknesses[thicknesses.length - 1];
-
+    const { max, min } = computeDetectedRange(
+      rawData,
+      ricochetAngle,
+      minDepth,
+      maxDepth,
+    );
     setDetectedMin(min);
-    setDetectedMax(percentile95);
+    setDetectedMax(max);
   }, [rawData, ricochetAngle, minDepth, maxDepth, hiddenModules]);
 
   React.useEffect(() => {
@@ -260,96 +232,23 @@ export function useArmorProcessor(
 
     const effectiveMin = autoRange ? detectedMin : minMm;
     const effectiveMax = autoRange ? detectedMax : maxMm;
-    const range = effectiveMax - effectiveMin;
+    const { data, height, width } = renderHeatmapToImageData(rawData, {
+      minMm: effectiveMin,
+      maxMm: effectiveMax,
+      palette,
+      ricochetAngle,
+      minDepth,
+      maxDepth,
+      hiddenModules,
+    });
 
     const canvas = document.createElement('canvas');
-    canvas.width = rawData.cols;
-    canvas.height = rawData.rows;
+    canvas.width = width;
+    canvas.height = height;
     const ctx = canvas.getContext('2d')!;
-    const output = ctx.createImageData(rawData.cols, rawData.rows);
-    const dst = output.data;
-
-    for (let row = 0; row < rawData.rows; row += 1) {
-      for (let col = 0; col < rawData.cols; col += 1) {
-        const idx = row * rawData.cols + col;
-        const pixel = rawData.pixels[idx];
-        const di = idx * 4;
-
-        if (!pixel) {
-          dst[di] = 0;
-          dst[di + 1] = 0;
-          dst[di + 2] = 0;
-          dst[di + 3] = 0;
-          continue;
-        }
-
-        if (pixel.angle > 0 && pixel.angle >= ricochetAngle) {
-          const c = isRicochetStripe(col, row) ? RICOCHET_LIGHT : RICOCHET_DARK;
-          dst[di] = c.r;
-          dst[di + 1] = c.g;
-          dst[di + 2] = c.b;
-          dst[di + 3] = 255;
-          continue;
-        }
-
-        let total = 0;
-        let hasInRange = false;
-        let hasModule = false;
-
-        for (const layer of pixel.layers) {
-          if (layer.moduleIndex > 0) {
-            if (hiddenModules.has(layer.moduleIndex)) {
-              if (layer.depth >= minDepth && layer.depth <= maxDepth) {
-                hasInRange = true;
-                total += layer.thickness;
-              }
-            } else {
-              hasModule = true;
-              hasInRange = true;
-              if (layer.depth >= minDepth && layer.depth <= maxDepth) {
-                total += layer.thickness;
-              }
-            }
-          } else {
-            if (layer.depth < minDepth || layer.depth > maxDepth) continue;
-
-            hasInRange = true;
-            total += layer.thickness;
-          }
-        }
-
-        if (total > 0) {
-          const t = range > 0 ? (total - effectiveMin) / range : 0;
-          const color = samplePalette(palette, t);
-          if (hasModule) {
-            const k = 0.4;
-            const mc = palette.moduleColor;
-            dst[di] = Math.round(color.r * (1 - k) + mc.r * k);
-            dst[di + 1] = Math.round(color.g * (1 - k) + mc.g * k);
-            dst[di + 2] = Math.round(color.b * (1 - k) + mc.b * k);
-          } else {
-            dst[di] = color.r;
-            dst[di + 1] = color.g;
-            dst[di + 2] = color.b;
-          }
-          dst[di + 3] = 255;
-        } else if (hasInRange && hasModule) {
-          dst[di] = palette.moduleColor.r;
-          dst[di + 1] = palette.moduleColor.g;
-          dst[di + 2] = palette.moduleColor.b;
-          dst[di + 3] = 140;
-        } else {
-          const t = range > 0 ? (0 - effectiveMin) / range : 0;
-          const color = samplePalette(palette, t);
-          dst[di] = color.r;
-          dst[di + 1] = color.g;
-          dst[di + 2] = color.b;
-          dst[di + 3] = pixel.layers.length > 0 && !hasInRange ? 60 : 255;
-        }
-      }
-    }
-
-    ctx.putImageData(output, 0, 0);
+    const imageData = ctx.createImageData(width, height);
+    imageData.data.set(data);
+    ctx.putImageData(imageData, 0, 0);
     setOutputCanvas(canvas);
   }, [
     rawData,
