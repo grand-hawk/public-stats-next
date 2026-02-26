@@ -13,6 +13,7 @@ export interface PageMetaValues {
   exactTitle?: string;
   description?: string;
   ogDescription?: string;
+  ogImage?: string;
   twitterCard?: 'summary' | 'summary_large_image';
 }
 
@@ -23,6 +24,7 @@ export default function PageMeta({
   description,
   exactTitle,
   ogDescription,
+  ogImage,
   title,
   twitterCard,
 }: PageMetaValues & { children: ReactNode }) {
@@ -33,6 +35,7 @@ export default function PageMeta({
     exactTitle: exactTitle ?? parent.exactTitle,
     description: description ?? parent.description,
     ogDescription: ogDescription ?? parent.ogDescription,
+    ogImage: ogImage ?? parent.ogImage,
     twitterCard: twitterCard ?? parent.twitterCard,
   };
 
@@ -64,6 +67,16 @@ export function PageMetaHead() {
       {title && <meta content={title} property="og:title" />}
       {title && <meta content={title} name="twitter:title" />}
       <meta content={twitterCard} name="twitter:card" />
+      {pageMeta.ogImage && (
+        <>
+          <meta content={pageMeta.ogImage} property="og:image" />
+          <meta
+            content={`image/${pageMeta.ogImage.split('.').pop()}`}
+            property="og:image:type"
+          />
+          <meta content={pageMeta.ogImage} name="twitter:image" />
+        </>
+      )}
       {description && <meta content={description} name="description" />}
       {ogDescription && (
         <>
