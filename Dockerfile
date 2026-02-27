@@ -1,7 +1,7 @@
 # Build layer
 FROM node:25 AS build
 
-RUN corepack enable && corepack prepare pnpm@10 --activate
+RUN npm install -g pnpm@10
 
 COPY . /build
 WORKDIR /build
