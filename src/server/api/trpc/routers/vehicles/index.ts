@@ -11,13 +11,11 @@ import {
   getVehicleContent,
   getVehicleMeta,
 } from '@/server/utils/vehicleContent';
-import { getVehicleImage } from '@/utils/getVehicleImage';
 import { getBaseUrl } from '@/utils/trpc';
 import { getConfig } from '@generated/config';
 import { getKdr } from '@generated/kdr';
 import { getLoadouts } from '@generated/loadouts';
 import { getVehicles } from '@generated/vehicles';
-import { getVehiclesLd } from '@generated/vehicles_ld';
 
 import type { VehicleContent } from '@/server/utils/vehicleContent';
 import type { PlaceId } from '@generated/config';
@@ -108,7 +106,6 @@ export const vehiclesRouter = createTRPCRouter({
       const vehicles = getVehicles();
       const loadouts = getLoadouts();
       const kdr = getKdr();
-      const vehiclesLd = getVehiclesLd();
       const { data: config } = getConfig();
 
       const vehiclesPlace = vehicles.data[input.placeId as PlaceId];
@@ -119,9 +116,6 @@ export const vehiclesRouter = createTRPCRouter({
 
       const loadoutsPlace = loadouts.data[input.placeId as PlaceId];
       const kdrPlace = kdr.data[input.placeId as PlaceId];
-      const linkedData = vehiclesLd.data[
-        input.placeId as PlaceId
-      ] as unknown as Record<string, WithContext<Vehicle>>;
 
       const vehicle = vehiclesPlace.data[vehicleName];
       const initials =
@@ -164,14 +158,6 @@ export const vehiclesRouter = createTRPCRouter({
                 name: vehicleName,
               },
             ],
-          },
-          vehicle: {
-            ...linkedData[vehicleName],
-            url: new URL(
-              `${initials}/vehicles/${input.slug}`,
-              baseUrl,
-            ).toString(),
-            image: getVehicleImage(input.slug),
           },
         },
       };

@@ -51,10 +51,8 @@ export default function PlaceVehicle() {
         <Head>
           <meta
             content={[
-              ...(
-                (vehicle.linkedData.vehicle?.keywords as string | undefined) ||
-                ''
-              ).split(','),
+              'Vehicle',
+              vehicle.info.type,
               vehicle.info.name,
               ...getKeywords(place),
             ].join(',')}
