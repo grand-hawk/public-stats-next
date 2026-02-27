@@ -37,6 +37,7 @@ let hasErrors = false;
 
 for (const filepath of files) {
   const errors = [];
+  const warnings = [];
   let content;
 
   try {
@@ -199,15 +200,27 @@ for (const filepath of files) {
       `Description must mention the vehicle name "${vehicleName}" when not empty`,
     );
 
-  report(filepath, errors);
+  if (!descriptionText.trim())
+    warnings.push('Description section is empty');
+
+  const armourContent = sectionContent.get('Armour')?.join(' ') ?? '';
+  if (!armourContent.trim())
+    warnings.push('Armour section is empty');
+
+  report(filepath, errors, warnings);
 }
 
-function report(filepath, errors) {
-  if (errors.length === 0) return;
-  hasErrors = true;
-  consola.error(
-    `${filepath}:\n${errors.map((error) => `  - ${error}`).join('\n')}`,
-  );
+function report(filepath, errors, warnings = []) {
+  if (errors.length > 0) {
+    hasErrors = true;
+    consola.error(
+      `${filepath}:\n${errors.map((e) => `  - ${e}`).join('\n')}`,
+    );
+  }
+  if (warnings.length > 0)
+    consola.warn(
+      `${filepath}:\n${warnings.map((w) => `  - ${w}`).join('\n')}`,
+    );
 }
 
 if (hasErrors) {
