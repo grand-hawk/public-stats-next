@@ -1,12 +1,17 @@
 import { Box } from '@chakra-ui/react';
-import React, { Suspense } from 'react';
+import dynamic from 'next/dynamic';
+import React from 'react';
 
 import { CenterSpinner } from '@/components/common/spinners';
 import { SEARCH_INPUT_HEIGHT } from '@/components/layout/searchLayout/searchSidebar/input';
-import SearchList from '@/components/layout/searchLayout/searchSidebar/list';
 import { useSidebarStore } from '@/stores/sidebar';
 
 import type { SearchListProps } from '@/components/layout/searchLayout/searchSidebar/list';
+
+const SearchList = dynamic(
+  () => import('@/components/layout/searchLayout/searchSidebar/list'),
+  { ssr: false, loading: () => <CenterSpinner /> },
+);
 
 export interface SearchSidebarProps {
   children?: React.ReactNode;
@@ -44,9 +49,7 @@ export default function SearchSidebar({
     >
       <div>{children}</div>
 
-      <Suspense fallback={<CenterSpinner />}>
-        <SearchList {...searchListProps} />
-      </Suspense>
+      <SearchList {...searchListProps} />
     </Box>
   );
 }
