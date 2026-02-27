@@ -2,7 +2,6 @@ import { Box, Flex, Portal, Text } from '@chakra-ui/react';
 import React from 'react';
 import { LuRotateCcw } from 'react-icons/lu';
 
-
 import DepthMinimap from '@/components/features/tools/armor/armorCanvas/depthMinimap';
 import HorizontalLegend from '@/components/features/tools/armor/armorCanvas/horizontalLegend';
 import { samplePalette } from '@/components/features/tools/armor/palettes';

@@ -10,7 +10,6 @@ import { teamsRouter } from '@/server/api/trpc/routers/teams';
 import { vehiclesRouter } from '@/server/api/trpc/routers/vehicles';
 import { winrateRouter } from '@/server/api/trpc/routers/winrate';
 
-
 export const appRouter = createTRPCRouter({
   config: configRouter,
   kdr: kdrRouter,

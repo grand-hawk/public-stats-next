@@ -3,7 +3,6 @@ import React from 'react';
 import { getViewAngleRad } from '@/components/features/tools/armor/useArmorProcessor';
 import { getVehicleImage } from '@/utils/getVehicleImage';
 
-
 import type { ArmorAngle } from '@/utils/getVehicleImage';
 
 interface DepthMinimapProps {

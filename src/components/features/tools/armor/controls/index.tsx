@@ -15,7 +15,6 @@ import VehicleIcon from '@/components/features/vehicles/vehicleIcon';
 import { IS_DEV } from '@/env';
 import { simplifyString } from '@/utils/simplifyString';
 
-
 import type { DamageModule } from '@/components/features/tools/armor/mtca';
 import type { Palette } from '@/components/features/tools/armor/palettes';
 import type { ArmorAngle } from '@/utils/getVehicleImage';

@@ -200,12 +200,10 @@ for (const filepath of files) {
       `Description must mention the vehicle name "${vehicleName}" when not empty`,
     );
 
-  if (!descriptionText.trim())
-    warnings.push('Description section is empty');
+  if (!descriptionText.trim()) warnings.push('Description section is empty');
 
   const armourContent = sectionContent.get('Armour')?.join(' ') ?? '';
-  if (!armourContent.trim())
-    warnings.push('Armour section is empty');
+  if (!armourContent.trim()) warnings.push('Armour section is empty');
 
   report(filepath, errors, warnings);
 }
@@ -213,14 +211,10 @@ for (const filepath of files) {
 function report(filepath, errors, warnings = []) {
   if (errors.length > 0) {
     hasErrors = true;
-    consola.error(
-      `${filepath}:\n${errors.map((e) => `  - ${e}`).join('\n')}`,
-    );
+    consola.error(`${filepath}:\n${errors.map((e) => `  - ${e}`).join('\n')}`);
   }
   if (warnings.length > 0)
-    consola.warn(
-      `${filepath}:\n${warnings.map((w) => `  - ${w}`).join('\n')}`,
-    );
+    consola.warn(`${filepath}:\n${warnings.map((w) => `  - ${w}`).join('\n')}`);
 }
 
 if (hasErrors) {

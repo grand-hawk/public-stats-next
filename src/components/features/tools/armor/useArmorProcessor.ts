@@ -7,7 +7,10 @@ import {
   renderHeatmapToImageData,
 } from '@/components/features/tools/armor/renderArmorHeatmap';
 
-import type { DamageModule, RawArmorData } from '@/components/features/tools/armor/mtca';
+import type {
+  DamageModule,
+  RawArmorData,
+} from '@/components/features/tools/armor/mtca';
 import type { Palette } from '@/components/features/tools/armor/palettes';
 import type { ArmorAngle } from '@/utils/getVehicleImage';
 
@@ -44,7 +47,10 @@ export interface ArmorProcessorResult {
   version: number | null;
 }
 
-export { RICOCHET_DARK, RICOCHET_LIGHT } from '@/components/features/tools/armor/renderArmorHeatmap';
+export {
+  RICOCHET_DARK,
+  RICOCHET_LIGHT,
+} from '@/components/features/tools/armor/renderArmorHeatmap';
 
 export function getViewAngleRad(angle: ArmorAngle): number {
   switch (angle) {

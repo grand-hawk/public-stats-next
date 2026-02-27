@@ -87,8 +87,7 @@ async function renderArmorCanvas(vehicleSlug: string) {
   const detectedMaxDepth = getDetectedMaxDepth(rawData);
   const contentSlug = getContentSlug(vehicleSlug) ?? vehicleSlug;
   const frontArmorDepth = getVehicleMeta(contentSlug)?.frontArmorDepth;
-  const frontFraction =
-    frontArmorDepth != null ? frontArmorDepth / 100 : 0.5;
+  const frontFraction = frontArmorDepth != null ? frontArmorDepth / 100 : 0.5;
   const maxDepth = detectedMaxDepth * frontFraction;
 
   const { max: detectedMax, min: detectedMin } = computeDetectedRange(

@@ -2,7 +2,6 @@ import { Box } from '@chakra-ui/react';
 import { useQueryState } from 'nuqs';
 import React from 'react';
 
-
 import ArmorCanvas from '@/components/features/tools/armor/armorCanvas';
 import ArmorTour from '@/components/features/tools/armor/armorTour';
 import ArmorControls from '@/components/features/tools/armor/controls';
