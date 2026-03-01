@@ -35,9 +35,14 @@ const ShellListName = React.memo(function ShellListName({
 export default function ShellsSearchSidebar() {
   const place = usePlace()!;
   const shellQuery = useRouterQuery('shell');
+  const qFromUrl = useRouterQuery('q');
   const query = useShellsSearchStore((s) => s.query);
   const deferredQuery = React.useDeferredValue(query);
   const setQuery = useShellsSearchStore((s) => s.setQuery);
+
+  React.useEffect(() => {
+    if (qFromUrl) setQuery(qFromUrl);
+  }, [qFromUrl, setQuery]);
 
   const [shellsList] = trpc.shells.list.useSuspenseQuery({
     placeId: place.placeId,

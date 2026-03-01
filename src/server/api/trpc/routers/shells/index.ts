@@ -90,6 +90,10 @@ export const shellsRouter = createTRPCRouter({
                 '@type': 'ListItem',
                 position: 2,
                 name: weapon,
+                item: new URL(
+                  `${initials}/shells?q=${encodeURIComponent(weapon)}`,
+                  baseUrl,
+                ).toString(),
               },
               {
                 '@type': 'ListItem',
