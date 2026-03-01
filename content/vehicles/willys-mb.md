@@ -10,3 +10,7 @@ The **Willys MB** is a Transport Vehicle — the iconic American World War II je
 The gunner operates a stabilized **12.7mm M2** machine gun on a ring mount with 1x optics; the vehicle has no armour to speak of and relies on speed and small size to avoid engagement.
 
 ## Armour
+
+Lower front plate: 0-5
+Upper front plate: 0
+Hull side: 0-5

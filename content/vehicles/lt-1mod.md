@@ -10,3 +10,10 @@ The **LT-1Mod** is a Light Tank presented as a “Special Edition” one-man veh
 Armament is a **30mm 2A42M** autocannon (AP and HE) and a **9M133 Kornet** ATGM launcher with four ready rounds; the driver’s turret has a laser rangefinder, FCS with lead and tracking, and 4x–12x zoom but no thermals. The turret is stabilised with -15° to 60° elevation. The vehicle is lightly protected and relies on speed and firepower.
 
 ## Armour
+
+Left cheek: 0-7
+Right cheek: 5-9
+Lower front plate: 22-158
+Upper front plate: 17-175
+Hull side: 8-34
+Mantlet: 26-55
