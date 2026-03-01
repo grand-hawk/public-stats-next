@@ -72,8 +72,11 @@ export default function ArmorVisualizer() {
     setTourOpen(true);
   }, []);
 
+  const prevModuleNamesRef = React.useRef('');
+
   React.useEffect(() => {
     setHiddenModules(new Set());
+    prevModuleNamesRef.current = '';
   }, [vehicleSlug]);
 
   const handleToggleModule = React.useCallback((moduleIndices: number[]) => {
@@ -116,6 +119,11 @@ export default function ArmorVisualizer() {
 
   React.useEffect(() => {
     if (!modules.length) return;
+
+    const key = modules.map((m) => m.name).join('\0');
+    if (key === prevModuleNamesRef.current) return;
+    prevModuleNamesRef.current = key;
+
     const hidden = new Set<number>();
     for (const group of groupModules(modules)) {
       if (group.initiallyHidden) {
@@ -191,6 +199,7 @@ export default function ArmorVisualizer() {
       setOverrideFileName(file.name);
       setUploadError(null);
       setHiddenModules(new Set());
+      prevModuleNamesRef.current = '';
     } catch (err) {
       setUploadError(
         err instanceof Error ? err.message : 'Failed to parse file',
