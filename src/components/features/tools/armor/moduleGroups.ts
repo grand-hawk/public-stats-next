@@ -73,7 +73,7 @@ export function groupModules(modules: DamageModule[]): ModuleGroup[] {
   for (const rule of moduleGroupRules) {
     const indices: number[] = [];
     for (let i = 0; i < modules.length; i++) {
-      if (rule.match(modules[i].name)) {
+      if (!claimed.has(i) && rule.match(modules[i].name)) {
         indices.push(i + 1);
         claimed.add(i);
       }
