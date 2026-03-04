@@ -11,6 +11,7 @@ import {
   DEFAULT_ARMOR_ANGLE,
   DEFAULT_RICOCHET_ANGLE,
 } from '@/components/features/tools/armor/constants';
+import { groupModules } from '@/components/features/tools/armor/moduleGroups';
 import { parseMtca } from '@/components/features/tools/armor/mtca';
 import {
   palettes,
@@ -105,7 +106,11 @@ async function renderArmorCanvas(vehicleSlug: string) {
     ricochetAngle: DEFAULT_RICOCHET_ANGLE,
     minDepth,
     maxDepth,
-    hiddenModules: new Set(),
+    hiddenModules: new Set(
+      groupModules(rawData.modules)
+        .filter((g) => g.initiallyHidden)
+        .flatMap((g) => g.indices),
+    ),
   });
 
   const pad = 8;
