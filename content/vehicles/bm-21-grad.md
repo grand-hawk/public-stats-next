@@ -10,3 +10,10 @@ The **BM-21 Grad** is a Rocket Artillery system mounted on a 6×6 truck, one of 
 The launcher has 7 deg/s horizontal and 5 deg/s vertical traverse with elevation from -2° to 55°, and a 6 s reload cycle. No rangefinder or fire control beyond the 1× sight is modelled in the data; in practice, Grad batteries rely on external targeting and fire-control assets.
 
 ## Armour
+
+Left cheek: 5-10
+Right cheek: 5-10
+Lower front plate: 0-26
+Upper front plate: 0-26
+Hull side: 0-13
+Mantlet: 5
