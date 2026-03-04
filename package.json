@@ -14,7 +14,7 @@
     "format": "prettier . -w",
     "fix": "pnpm run eslint --fix && pnpm run format",
     "content:generate": "tsx scripts/generate-content.mts",
-    "content:validate": "node scripts/validate-content.mjs",
+    "content:validate": "tsx scripts/validate-content.mts",
     "generate-armor-thumbnails": "tsx scripts/generate-armor-thumbnails.mts",
     "generate": "rimraf generated && cross-env NODE_ENV=development tsx scripts/generate/index.mts 1.0.0",
     "postinstall": "node scripts/run-if-missing.mjs generated \"pnpm run generate\"",

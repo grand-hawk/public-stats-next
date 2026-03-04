@@ -1,11 +1,12 @@
 import { existsSync } from 'node:fs';
 import { mkdir, readdir, readFile, writeFile } from 'node:fs/promises';
 
-import ky from 'ky';
 import slug from 'slug';
 import { parse } from 'yaml';
 
-import type { Vehicles, VehiclesPlaceDataVehicle } from '@generated/vehicles';
+import { getVehicles } from '@generated/vehicles';
+
+import type { VehiclesPlaceDataVehicle } from '@generated/vehicles';
 
 const CONTENT_DIR = 'content/vehicles';
 const CONFIG_PATH = 'content/config.yml';
@@ -15,11 +16,7 @@ const sections: { name: string }[] = config.vehicles.sections;
 const body = sections.map((s) => `## ${s.name}\n`).join('\n');
 const template = (name: string) => `# ${name}\n\n${body}`;
 
-const environment =
-  process.env.DATA_ENV || process.env.NODE_ENV || 'development';
-const prefixUrl = `https://public-stats-data.multicrew.dev/${environment}/1.0.0`;
-
-const vehicles = await ky.get(`${prefixUrl}/vehicles.json`).json<Vehicles>();
+const vehicles = getVehicles();
 const gameIds = new Set<string>();
 const gameIdToName = new Map<string, string>();
 
