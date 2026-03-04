@@ -6,8 +6,7 @@ frontArmorDepth: 59
 
 ## Description
 
-The **Panther EVO** is a Main Battle Tank based of a proposition by Rheinmetal to upgrade older Leopard 2's with the turret of the KF-51 panther, it features the 130 mm gun, autoloader, and full suite of modern optics and active protection found on the KF-51. Weighing 55.4 tonnes, it is crewed by three: driver, gunner, and commander. The **MTU MB 873 Ka-501** diesel delivers 1,500 hp for 27.1 hp/t and 68 km/h forward (31 km/h reverse), with neutral steering and an automatic gearbox.\
-Main armament is the **130mm Rh130 L/51** with a 4-second autoloader and **12.7mm RMG**; the vehicle has laser warning, stabilizer, and smoke grenades. The gunner has a laser rangefinder, Gen 3 thermals, and FCS with lead and tracking; the commander has a thermals-equipped CITV and CROWS with FCS. The oversized turret and modern firepower make the Panther EVO a high-tier MBT with strong survivability and fire control.
+The **Panther EVO** is a Main Battle Tank based on a Rheinmetall proposal to upgrade older Leopard 2s with the turret of the KF-51 Panther. It features the 130 mm gun, autoloader, and full suite of modern optics and active protection found on the KF-51. Weighing 55.4 tonnes, it is crewed by three: driver, gunner, and commander. The **MTU MB 873 Ka-501** diesel delivers 1,500 hp for 27.1 hp/t and 68 km/h forward (31 km/h reverse), with neutral steering and an automatic gearbox.\
 
 ## Armour
 
