@@ -8,7 +8,7 @@ frontArmorDepth: 46
 
 The **M551 Sheridan** is a Light Tank and airborne-capable armoured vehicle developed by the United States in the 1960s, armed with a 152 mm gun-launcher that could fire the **MGM-51 Shillelagh** missile and conventional rounds. It was designed for rapid deployment by air and saw service in Vietnam and later in Operation Just Cause. The 15.3-tonne tracked vehicle is crewed by four and is powered by a **6V53T-5301** diesel producing 300 hp for 19.6 hp/t and 69 km/h.\
 The stabilized **152mm M81E1** fires HEAT (M409A1), Shillelagh, smoke (M625A1), and HE (M657A2) with a 12-second reload; a coaxial **7.62mm M73** and commander's **12.7mm M2** are fitted. The vehicle has smoke grenades and 8x/12x sights but no laser rangefinder or thermals.
-This vehicle features two add-ons: **76mm M32** and **Vismod**. The 76mm M32 add-on is free and replaces the 152mm M81E1 gun with the 76mm M32 cannon; this completely shifts the vehicle's armament profile, replacing the stock ammunition with M331A2 APDS, M352 HE, and M361 Smoke. The Vismod add-on costs 10 points and provides a visual overhaul by adding decorative bags and an IR spotlight to the turret, along with protective armor shields for the commander's machine gun.
+This vehicle features two addons: **76mm M32** and **Vismod**. The 76mm M32 addon is free and replaces the 152mm M81E1 gun with the 76mm M32 cannon; this completely shifts the vehicle's armament profile, replacing the stock ammunition with M331A2 APDS, M352 HE, and M361 Smoke. The Vismod addon costs 10 points and provides a visual overhaul by adding decorative bags and an IR spotlight to the turret, along with protective armor shields for the commander's machine gun.
 
 ## Armour
 
