@@ -188,6 +188,7 @@ export default function VehicleColumnConfig({
                     addons,
                     enabledAlterations,
                     selectedLoadout,
+                    Object.keys(loadouts),
                   );
                   const isDisabled = !isEnabled && isConflicting;
 

@@ -60,7 +60,11 @@ export default function VehicleDynamicAddons() {
     vehicle.alterations.loadouts,
   ]);
 
-  // Scan and remove incompatible addons
+  const definedLoadouts = React.useMemo(
+    () => Object.keys(vehicle.alterations.loadouts),
+    [vehicle.alterations.loadouts],
+  );
+
   React.useEffect(() => {
     const conflicting: string[] = [];
 
@@ -74,6 +78,7 @@ export default function VehicleDynamicAddons() {
           vehicle.alterations.addons,
           enabledAlterations,
           selectedLoadout,
+          definedLoadouts,
         )
       ) {
         conflicting.push(alterationName);
@@ -90,6 +95,7 @@ export default function VehicleDynamicAddons() {
     selectedLoadout,
     enabledAlterations,
     enabledCategories,
+    definedLoadouts,
     setAddonsEnabled,
   ]);
 
@@ -115,6 +121,7 @@ export default function VehicleDynamicAddons() {
             vehicle.alterations.addons,
             enabledAlterations,
             selectedLoadout,
+            definedLoadouts,
           );
           const isDisabled = !isEnabled && isConflicting;
 

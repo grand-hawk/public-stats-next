@@ -242,6 +242,7 @@ export default function VehicleComparisonTable({
               a.vehicle.alterations.addons,
               a.enabledAlterations,
               selectedLoadout,
+              Object.keys(a.vehicle.alterations.loadouts),
             );
             const isDisabled = !isEnabled && isConflicting;
             const cost = addon.cost ?? 0;
