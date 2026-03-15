@@ -42,6 +42,7 @@ export default function PlaceLoadouts() {
                   <Box height="120px" position="relative" width="100%">
                     <Image
                       alt={`${loadout.name} loadout thumbnail`}
+                      fetchPriority="high"
                       fill
                       priority
                       sizes="(max-width: 768px) 100vw, 300px"

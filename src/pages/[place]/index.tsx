@@ -13,17 +13,25 @@ import PageMeta from '@/components/layout/pageMeta';
 import NavCard from '@/components/wiki/navCard';
 import SectionDivider from '@/components/wiki/sectionDivider';
 import { usePlace } from '@/hooks/usePlace';
+import { trpc } from '@/utils/trpc';
 
 export default function Place() {
+  const utils = trpc.useUtils();
   const place = usePlace();
   const router = useRouter();
 
-  if (!place) return null;
+  React.useEffect(() => {
+    if (!place) return;
+
+    utils.vehicles.list.prefetch({ placeId: place.placeId });
+  }, [place, utils]);
+
+  if (!place) return;
 
   const description = `Vehicle stats, shell performance, team compositions, and more for ${place.placeName}.`;
 
   return (
-    <PageMeta exactTitle={`${place.placeName} Stats`} description={description}>
+    <PageMeta exactTitle={`${place.placeName} Wiki`} description={description}>
       <Layout overwriteTabLabel="">
         <Flex
           flexDirection="column"

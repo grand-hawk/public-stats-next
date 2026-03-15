@@ -5,6 +5,8 @@ export interface ColorStop {
 }
 
 export interface Palette {
+  moduleColor: ColorStop;
+  moduleShift: ColorStop;
   name: string;
   stops: ColorStop[];
 }
@@ -32,18 +34,11 @@ export function samplePalette(palette: Palette, t: number): ColorStop {
     b: Math.round(lerp(a.b, b.b, frac)),
   };
 }
+
 export const palettes: Palette[] = [
   {
-    name: 'Green to Red',
-    stops: [
-      { r: 76, g: 175, b: 80 },
-      { r: 205, g: 220, b: 57 },
-      { r: 255, g: 235, b: 59 },
-      { r: 255, g: 152, b: 0 },
-      { r: 244, g: 67, b: 54 },
-    ],
-  },
-  {
+    moduleColor: { r: 255, g: 0, b: 255 },
+    moduleShift: { r: 0, g: 0, b: 0 },
     name: 'Cool to Hot',
     stops: [
       { r: 33, g: 150, b: 243 },
@@ -54,6 +49,20 @@ export const palettes: Palette[] = [
     ],
   },
   {
+    moduleColor: { r: 255, g: 0, b: 255 },
+    moduleShift: { r: 0, g: 0, b: 0 },
+    name: 'Green to Red',
+    stops: [
+      { r: 76, g: 175, b: 80 },
+      { r: 205, g: 220, b: 57 },
+      { r: 255, g: 235, b: 59 },
+      { r: 255, g: 152, b: 0 },
+      { r: 244, g: 67, b: 54 },
+    ],
+  },
+  {
+    moduleColor: { r: 0, g: 255, b: 255 },
+    moduleShift: { r: 0, g: 0, b: 0 },
     name: 'Inferno',
     stops: [
       { r: 0, g: 0, b: 4 },
@@ -64,6 +73,8 @@ export const palettes: Palette[] = [
     ],
   },
   {
+    moduleColor: { r: 255, g: 0, b: 255 },
+    moduleShift: { r: 0, g: 0, b: 0 },
     name: 'Grayscale',
     stops: [
       { r: 240, g: 240, b: 240 },

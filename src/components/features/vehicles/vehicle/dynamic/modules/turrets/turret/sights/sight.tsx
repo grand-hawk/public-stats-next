@@ -18,11 +18,12 @@ type SightZoomType = NonNullable<SightZoom[keyof SightZoom]>;
 function convertSightZoom(zoom: SightZoomType) {
   const suffix = zoom.fov ? '°' : 'x';
 
-  if ('steps' in zoom)
+  if ('steps' in zoom) {
     return [...zoom.steps]
       .sort((a, b) => (zoom.fov ? b - a : a - b))
       .map((step) => `${step}${suffix}`)
       .join(', ');
+  }
 
   if (zoom.min === zoom.max) return `${zoom.min}${suffix}`;
   return zoom.fov
@@ -74,18 +75,20 @@ export default function Sight({
     ? convertSightZoom(sight.zoom.thermal)
     : undefined;
 
-  if (baseZoom && sight.zoom.base!.fov)
+  if (baseZoom && sight.zoom.base!.fov) {
     baseZoom = (
       <>
         {baseZoom} {fovTooltip}
       </>
     );
-  if (thermalZoom && sight.zoom.thermal!.fov)
+  }
+  if (thermalZoom && sight.zoom.thermal!.fov) {
     thermalZoom = (
       <>
         {thermalZoom} {fovTooltip}
       </>
     );
+  }
 
   const baseAspectRatio = sight.zoom.base?.aspectRatio;
   const thermalAspectRatio = sight.zoom.thermal?.aspectRatio;

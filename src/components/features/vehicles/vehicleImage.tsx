@@ -1,4 +1,5 @@
 import { Center, Text, Box } from '@chakra-ui/react';
+import { noCase } from 'change-case';
 import NextImage from 'next/image';
 import React from 'react';
 
@@ -36,7 +37,7 @@ export default function VehicleImage({
     setHasError(false);
   }, [slug]);
 
-  if (hasError)
+  if (hasError) {
     return (
       <Center
         height="100%"
@@ -49,6 +50,7 @@ export default function VehicleImage({
         </Text>
       </Center>
     );
+  }
 
   return (
     <Box asChild objectFit="cover" width="100%" height="100%" userSelect="none">
@@ -62,7 +64,7 @@ export default function VehicleImage({
               : NORMAL_BLUR
         }
         placeholder="blur"
-        alt={`Image of the "${name}" in Multicrew Tank Combat`}
+        alt={`${name}, ${noCase(type || 'perspective')}, in Multicrew Tank Combat`}
         src={getVehicleImage(slug, type)}
         style={{
           objectFit: 'cover',

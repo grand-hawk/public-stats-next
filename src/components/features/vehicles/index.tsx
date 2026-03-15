@@ -53,7 +53,7 @@ export default function Vehicle({ vehicle }: { vehicle: DetailedVehicle }) {
           >
             <SectionNavigation />
             <VehicleDynamicSidebar />
-            <VehicleDataInfo />
+            <VehicleDataInfo data-md-ignore />
           </Stack>
 
           <Stack gap={4} minW="0">

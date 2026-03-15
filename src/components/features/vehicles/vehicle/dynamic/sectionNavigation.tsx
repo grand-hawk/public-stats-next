@@ -5,13 +5,8 @@ import slug from 'slug';
 
 import { useDynamicData } from '@/hooks/providers/dynamicData';
 import { useVehicle } from '@/hooks/providers/vehicle';
-import {
-  getAllModulesOfType,
-  getOneModuleFromReferences,
-  getOneModuleOfType,
-} from '@/utils/alterations';
-
-import { getTurretPriorityIndex } from './modules/turrets';
+import { getOneModuleOfType } from '@/utils/alterations';
+import { getTurretsWithNamesSorted } from '@/utils/turrets';
 
 import type { DynamicDataContext } from '@/hooks/providers/dynamicData';
 import type { SectionMarker } from '@/hooks/providers/sectionMarkers';
@@ -27,11 +22,12 @@ function computeMarkers(
   // General
   markers.push({ name: 'General information', slug: 'general-information' });
 
-  if (isAvailable)
+  if (isAvailable) {
     markers.push({
       name: 'In-game availability',
       slug: 'in-game-availability',
     });
+  }
 
   // Vehicle section
   const driveData = getOneModuleOfType('DriveData', assembledModules);
@@ -41,35 +37,19 @@ function computeMarkers(
   // Powertrain section
   if (driveData) markers.push({ name: 'Powertrain', slug: 'powertrain' });
 
-  // Armor section
-  if (vehicle.content?.Armor) markers.push({ name: 'Armor', slug: 'armor' });
+  // Armour section
+  if (vehicle.content?.Armour) markers.push({ name: 'Armour', slug: 'armour' });
 
   // Defenses section
   const essModule = getOneModuleOfType('ESS', assembledModules);
   const ewModule = getOneModuleOfType('EW', assembledModules);
-  if (essModule || ewModule)
+  if (essModule || ewModule) {
     markers.push({ name: 'Defenses', slug: 'defenses' });
+  }
 
   // Turrets section
-  const turrets = getAllModulesOfType('Turret', assembledModules);
-  if (turrets.length > 0) {
-    const turretsWithNames = turrets.map((turret) => {
-      let name = 'Turret';
-      const control = getOneModuleFromReferences<'Seat'>(
-        turret.data.control,
-        assembledModules,
-      );
-      if (control) name = `${control.data.name} turret`;
-      return { name, ...turret };
-    });
-
-    const sortedTurrets = [...turretsWithNames].sort((a, b) => {
-      const aPriority = getTurretPriorityIndex(a.name);
-      const bPriority = getTurretPriorityIndex(b.name);
-      if (aPriority !== bPriority) return aPriority - bPriority;
-      return a.name.localeCompare(b.name);
-    });
-
+  const sortedTurrets = getTurretsWithNamesSorted(assembledModules);
+  if (sortedTurrets.length > 0) {
     markers.push({ name: 'Turrets', slug: slug(sortedTurrets[0].name) });
   }
 
@@ -118,11 +98,12 @@ export default function SectionNavigation() {
 
     const observer = new IntersectionObserver(
       (entries) => {
-        for (const entry of entries)
+        for (const entry of entries) {
           if (entry.isIntersecting) {
             setActiveSlug(entry.target.id);
             break;
           }
+        }
       },
       { rootMargin: '0px 0px -90% 0px' },
     );

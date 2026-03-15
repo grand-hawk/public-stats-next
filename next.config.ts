@@ -18,11 +18,6 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       {
-        source: '/vehicles/:slug',
-        destination: `/mtc/vehicles/:slug`,
-        permanent: true,
-      },
-      {
         source: '/:path((?!md/).*\\.md)',
         destination: '/md/:path',
         permanent: true,

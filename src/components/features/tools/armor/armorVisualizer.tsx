@@ -2,16 +2,21 @@ import { Box } from '@chakra-ui/react';
 import { useQueryState } from 'nuqs';
 import React from 'react';
 
+import ArmorCanvas from '@/components/features/tools/armor/armorCanvas';
+import ArmorTour from '@/components/features/tools/armor/armorTour';
+import ArmorControls from '@/components/features/tools/armor/controls';
+import { groupModules } from '@/components/features/tools/armor/moduleGroups';
+import { parseMtca } from '@/components/features/tools/armor/mtca';
+import { palettes } from '@/components/features/tools/armor/palettes';
+import { useArmorProcessor } from '@/components/features/tools/armor/useArmorProcessor';
+import { IS_DEV } from '@/env';
+import { usePersistStoreIsHydrated } from '@/hooks/usePersistStoreIsHydrated';
 import { useSuspenseConfig } from '@/hooks/useSuspenseConfig';
+import { useArmorStore } from '@/stores/armor';
 import { getNameFromInitials, getPlaceFromName } from '@/utils/placeUtils';
 import { trpc } from '@/utils/trpc';
 
-import ArmorCanvas from './armorCanvas';
-import ArmorControls from './controls';
-import { palettes } from './palettes';
-import { useArmorProcessor } from './useArmorProcessor';
-
-import type { ArmorAngle } from '@/utils/getVehicleImage';
+import type { RawArmorData } from '@/components/features/tools/armor/mtca';
 
 export default function ArmorVisualizer() {
   const config = useSuspenseConfig();
@@ -23,36 +28,135 @@ export default function ArmorVisualizer() {
   });
 
   const [vehicleSlug, setVehicleSlug] = useQueryState('vehicle');
-  const [angle, setAngle] = React.useState<ArmorAngle>('front');
+  const angle = useArmorStore((s) => s.angle);
+  const setAngle = useArmorStore((s) => s.setAngle);
+  const maxDepth = useArmorStore((s) => s.maxDepth);
+  const setMaxDepth = useArmorStore((s) => s.setMaxDepth);
+  const minDepth = useArmorStore((s) => s.minDepth);
+  const setMinDepth = useArmorStore((s) => s.setMinDepth);
   const [minMm, setMinMm] = React.useState(0);
   const [maxMm, setMaxMm] = React.useState(1000);
   const [autoRange, setAutoRange] = React.useState(true);
   const [palette, setPalette] = React.useState(palettes[0]);
   const [ricochetAngle, setRicochetAngle] = React.useState(82.5);
-  const [minDepth, setMinDepth] = React.useState(0);
-  const [maxDepth, setMaxDepth] = React.useState(Infinity);
+  const [hiddenModules, setHiddenModules] = React.useState<ReadonlySet<number>>(
+    () => new Set(),
+  );
+  const [overrideData, setOverrideData] = React.useState<RawArmorData | null>(
+    null,
+  );
+  const [overrideFileName, setOverrideFileName] = React.useState<string | null>(
+    null,
+  );
+  const [uploadError, setUploadError] = React.useState<string | null>(null);
 
   const saveRef = React.useRef<(() => void) | null>(null);
+
+  const { setTourSeen, tourSeen } = useArmorStore();
+  const hydrated = usePersistStoreIsHydrated(useArmorStore);
+  const [tourOpen, setTourOpen] = React.useState(false);
+
+  React.useEffect(() => {
+    if (hydrated && !tourSeen) setTourOpen(true);
+  }, [hydrated, tourSeen]);
+
+  const handleTourOpenChange = React.useCallback(
+    (open: boolean) => {
+      setTourOpen(open);
+      if (!open) setTourSeen(true);
+    },
+    [setTourSeen],
+  );
+
+  const handleOpenTour = React.useCallback(() => {
+    setTourOpen(true);
+  }, []);
+
+  const prevModuleNamesRef = React.useRef('');
+
+  React.useEffect(() => {
+    setHiddenModules(new Set());
+    prevModuleNamesRef.current = '';
+  }, [vehicleSlug]);
+
+  const handleToggleModule = React.useCallback((moduleIndices: number[]) => {
+    setHiddenModules((prev) => {
+      const next = new Set(prev);
+      const allHidden = moduleIndices.every((i) => next.has(i));
+      for (const i of moduleIndices) {
+        if (allHidden) next.delete(i);
+        else next.add(i);
+      }
+      return next;
+    });
+  }, []);
 
   const {
     canvas,
     detectedMax,
     detectedMaxDepth,
     detectedMin,
+    downloadProgress,
     error,
     loading,
+    modules,
     thicknessAt,
+    usedModuleIndices,
+    version,
   } = useArmorProcessor({
     angle,
     autoRange,
+    hiddenModules,
     maxDepth,
     maxMm,
     minDepth,
     minMm,
+    overrideData,
     palette,
     ricochetAngle,
     slug: vehicleSlug,
   });
+
+  React.useEffect(() => {
+    if (!modules.length) return;
+
+    const key = modules.map((m) => m.name).join('\0');
+    if (key === prevModuleNamesRef.current) return;
+    prevModuleNamesRef.current = key;
+
+    const hidden = new Set<number>();
+    for (const group of groupModules(modules)) {
+      if (group.initiallyHidden) {
+        for (const idx of group.indices) hidden.add(idx);
+      }
+    }
+    setHiddenModules(hidden);
+  }, [modules]);
+
+  const { data: selectedVehicle } = trpc.vehicles.bySlug.useQuery(
+    { placeId: rvPlace.placeId, slug: vehicleSlug ?? '' },
+    { enabled: vehicleSlug !== null },
+  );
+  const frontArmorDepth = selectedVehicle?.info.frontArmorDepth;
+
+  const utils = trpc.useUtils();
+  const { mutate: setFrontArmorDepthMutation } =
+    trpc.vehicles.setFrontArmorDepth.useMutation({
+      onSuccess: () => {
+        utils.vehicles.bySlug.invalidate({
+          placeId: rvPlace.placeId,
+          slug: vehicleSlug ?? '',
+        });
+      },
+    });
+
+  const handleSetFrontArmorDepth = React.useCallback(
+    (percent: number) => {
+      if (!vehicleSlug || overrideData) return;
+      setFrontArmorDepthMutation({ slug: vehicleSlug, value: percent });
+    },
+    [vehicleSlug, overrideData, setFrontArmorDepthMutation],
+  );
 
   // when data loads or angle changes, reset depth range
   React.useEffect(() => {
@@ -61,26 +165,85 @@ export default function ArmorVisualizer() {
       setMaxDepth(Infinity);
       return;
     }
+    const frontFraction = frontArmorDepth != null ? frontArmorDepth / 100 : 0.5;
     const fraction =
       angle === 'front'
-        ? 0.5
-        : angle === 'front_30' || angle === 'front_-30'
-          ? 0.75
-          : 1;
+        ? frontFraction
+        : angle === 'left' || angle === 'right' || angle === 'back'
+          ? 0.5
+          : angle === 'front_30' || angle === 'front_-30'
+            ? 0.75
+            : 1;
     setMaxDepth(detectedMaxDepth * fraction);
-  }, [detectedMaxDepth, angle]);
+  }, [detectedMaxDepth, angle, frontArmorDepth, setMaxDepth, setMinDepth]);
 
   const effectiveMin = autoRange ? detectedMin : minMm;
   const effectiveMax = autoRange ? detectedMax : maxMm;
 
   const handleSelectVehicle = React.useCallback(
-    (slug: string) => void setVehicleSlug(slug),
+    (slug: string) => {
+      setOverrideData(null);
+      setOverrideFileName(null);
+      setUploadError(null);
+      void setVehicleSlug(slug);
+    },
     [setVehicleSlug],
   );
+
+  const handleUploadFile = React.useCallback(async (file: File) => {
+    try {
+      const buffer = await file.arrayBuffer();
+      const view = new DataView(buffer);
+      const data = parseMtca(view);
+      setOverrideData(data);
+      setOverrideFileName(file.name);
+      setUploadError(null);
+      setHiddenModules(new Set());
+      prevModuleNamesRef.current = '';
+    } catch (err) {
+      setUploadError(
+        err instanceof Error ? err.message : 'Failed to parse file',
+      );
+      setOverrideData(null);
+      setOverrideFileName(null);
+    }
+  }, []);
+
+  const handleClearUpload = React.useCallback(() => {
+    setOverrideData(null);
+    setOverrideFileName(null);
+    setUploadError(null);
+  }, []);
 
   const handleSave = React.useCallback(() => {
     saveRef.current?.();
   }, []);
+
+  const setDebugDetectedMaxDepth = useArmorStore((s) => s.setDetectedMaxDepth);
+  const setDebugSlug = useArmorStore((s) => s.setSlug);
+  const setDebugVehicles = useArmorStore((s) => s.setVehicles);
+  const setDebugOnSelectVehicle = useArmorStore((s) => s.setOnSelectVehicle);
+  const setDebugOnSetFrontArmorDepth = useArmorStore(
+    (s) => s.setOnSetFrontArmorDepth,
+  );
+
+  React.useEffect(() => {
+    setDebugDetectedMaxDepth(detectedMaxDepth);
+  }, [detectedMaxDepth, setDebugDetectedMaxDepth]);
+  React.useEffect(() => {
+    setDebugSlug(vehicleSlug);
+  }, [vehicleSlug, setDebugSlug]);
+  React.useEffect(() => {
+    setDebugVehicles(vehicleList);
+  }, [vehicleList, setDebugVehicles]);
+  React.useEffect(() => {
+    setDebugOnSelectVehicle(handleSelectVehicle);
+  }, [handleSelectVehicle, setDebugOnSelectVehicle]);
+  React.useEffect(() => {
+    setDebugOnSetFrontArmorDepth(
+      IS_DEV && !overrideData ? handleSetFrontArmorDepth : null,
+    );
+  }, [overrideData, handleSetFrontArmorDepth, setDebugOnSetFrontArmorDepth]);
 
   return (
     <Box
@@ -103,24 +266,40 @@ export default function ArmorVisualizer() {
         detectedMax={detectedMax}
         detectedMaxDepth={detectedMaxDepth}
         detectedMin={detectedMin}
+        hiddenModules={hiddenModules}
         maxDepth={maxDepth}
         maxMm={maxMm}
         minDepth={minDepth}
         minMm={minMm}
+        modules={modules}
+        usedModuleIndices={usedModuleIndices}
         onAngleChange={setAngle}
         onAutoRangeChange={setAutoRange}
+        onClearUpload={handleClearUpload}
         onMaxChange={setMaxMm}
         onMaxDepthChange={setMaxDepth}
         onMinChange={setMinMm}
         onMinDepthChange={setMinDepth}
+        onOpenTour={handleOpenTour}
         onPaletteChange={setPalette}
         onRicochetAngleChange={setRicochetAngle}
         onSave={handleSave}
         onSelectVehicle={handleSelectVehicle}
+        onToggleModule={handleToggleModule}
+        onUploadFile={handleUploadFile}
+        overrideFileName={overrideFileName}
         palette={palette}
         ricochetAngle={ricochetAngle}
         selectedSlug={vehicleSlug}
+        uploadError={uploadError}
         vehicles={vehicleList}
+        version={version}
+      />
+
+      <ArmorTour
+        hasVehicle={vehicleSlug != null}
+        open={tourOpen}
+        onOpenChange={handleTourOpenChange}
       />
 
       <Box
@@ -132,6 +311,7 @@ export default function ArmorVisualizer() {
           angle={angle}
           canvas={canvas}
           detectedMaxDepth={detectedMaxDepth}
+          downloadProgress={downloadProgress}
           error={error}
           loading={loading}
           maxDepth={maxDepth}

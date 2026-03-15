@@ -72,7 +72,7 @@ export default function VehiclesSearchSidebar() {
     type Group = { label: string; isTeam?: boolean; vehicles?: ListVehicle[] };
     const groups: Group[] = [];
 
-    if (!groupByTeam && !groupByRole)
+    if (!groupByTeam && !groupByRole) {
       return filteredVehicleList.map((vehicle) => ({
         type: 'item',
         value: {
@@ -86,6 +86,7 @@ export default function VehiclesSearchSidebar() {
           ),
         },
       }));
+    }
 
     if (!groupByTeam && groupByRole) {
       const roles: Record<string, ListVehicle[]> = {};
@@ -96,12 +97,15 @@ export default function VehiclesSearchSidebar() {
         roles[vehicle.role].push(vehicle);
       }
 
-      for (const role of Object.keys(roles).sort((a, b) => a.localeCompare(b)))
+      for (const role of Object.keys(roles).sort((a, b) =>
+        a.localeCompare(b),
+      )) {
         groups.push({
           label: role,
           isTeam: false,
           vehicles: roles[role].sort((a, b) => a.name.localeCompare(b.name)),
         });
+      }
     } else if (groupByTeam && !groupByRole) {
       const teams: Record<string, ListVehicle[]> = {};
 
@@ -111,12 +115,15 @@ export default function VehiclesSearchSidebar() {
         teams[vehicle.team].push(vehicle);
       }
 
-      for (const team of Object.keys(teams).sort((a, b) => a.localeCompare(b)))
+      for (const team of Object.keys(teams).sort((a, b) =>
+        a.localeCompare(b),
+      )) {
         groups.push({
           label: team,
           isTeam: true,
           vehicles: teams[team].sort((a, b) => a.name.localeCompare(b.name)),
         });
+      }
     } else {
       const teams: Record<string, ListVehicle[]> = {};
 
@@ -141,12 +148,13 @@ export default function VehiclesSearchSidebar() {
 
         for (const role of Object.keys(roles).sort((a, b) =>
           a.localeCompare(b),
-        ))
+        )) {
           groups.push({
             label: role,
             isTeam: false,
             vehicles: roles[role].sort((a, b) => a.name.localeCompare(b.name)),
           });
+        }
       }
     }
 
@@ -160,7 +168,7 @@ export default function VehiclesSearchSidebar() {
       });
 
       if (group.vehicles && group.vehicles.length > 0) {
-        for (const vehicle of group.vehicles)
+        for (const vehicle of group.vehicles) {
           result.push({
             type: 'item',
             value: {
@@ -174,6 +182,7 @@ export default function VehiclesSearchSidebar() {
               ),
             },
           });
+        }
       }
     }
 

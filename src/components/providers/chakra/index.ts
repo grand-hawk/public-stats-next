@@ -1,1 +1,1 @@
-export { Provider as ChakraProvider } from './provider';
+export { Provider as ChakraProvider } from '@/components/providers/chakra/provider';

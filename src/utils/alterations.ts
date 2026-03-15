@@ -20,6 +20,7 @@ function updateModulesFromAlterations(
   enabledAlterations: Record<string, boolean>,
   debug?: boolean,
   selectedLoadout?: string | null,
+  definedLoadoutNames?: Set<string>,
 ): ModulesDictionary {
   const modules: ModulesDictionary = JSON.parse(JSON.stringify(sourceModules));
 
@@ -28,9 +29,10 @@ function updateModulesFromAlterations(
   for (const [alterationName, alteration] of Object.entries(alterations)) {
     const isActuallyEnabled = !!enabledAlterations[alterationName];
     const isCompatible =
-      !selectedLoadout ||
       !alteration.loadout ||
-      alteration.loadout === selectedLoadout;
+      alteration.loadout === selectedLoadout ||
+      (selectedLoadout === null &&
+        !(definedLoadoutNames?.has(alteration.loadout) ?? false));
 
     const isEnabled = isActuallyEnabled && isCompatible;
 
@@ -38,7 +40,7 @@ function updateModulesFromAlterations(
       !isCompatible && alteration.loadout ? alteration.loadout : alterationName;
     const reasonSuffix = `is disabled`;
 
-    if (!isEnabled) {
+    if (isCompatible && !isEnabled) {
       if (debug && !isCompatible && alteration.loadout) {
         modules.$debug!.removed[alterationName] ||= [];
         modules.$debug!.removed[alterationName].push(
@@ -57,7 +59,7 @@ function updateModulesFromAlterations(
         delete modules[add];
       }
 
-      if (debug)
+      if (debug) {
         for (const remove of alteration.changes.remove) {
           const targetModule = modules[remove] as
             | (VehiclesPlaceDataVehicleModule & {
@@ -74,6 +76,7 @@ function updateModulesFromAlterations(
             modules.$debug!.added[remove].push(reason);
           }
         }
+      }
     }
 
     if (isEnabled) {
@@ -88,7 +91,7 @@ function updateModulesFromAlterations(
         delete modules[remove];
       }
 
-      if (debug)
+      if (debug) {
         for (const add of alteration.changes.add) {
           const targetModule = modules[add] as
             | (VehiclesPlaceDataVehicleModule & {
@@ -105,6 +108,7 @@ function updateModulesFromAlterations(
             modules.$debug!.added[add].push(reason);
           }
         }
+      }
     }
   }
 
@@ -117,6 +121,7 @@ export function assembleModules(
   debug?: boolean,
 ): ModulesDictionary {
   const loadoutNames = Object.keys(vehicle.alterations.loadouts);
+  const definedLoadoutNames = new Set(loadoutNames);
   const selectedLoadoutName =
     loadoutNames.find((name) => enabledAlterations[name]) || null;
 
@@ -130,6 +135,7 @@ export function assembleModules(
         { [selectedLoadoutName]: true },
         debug,
         selectedLoadoutName,
+        definedLoadoutNames,
       )
     : vehicle.modules;
 
@@ -139,6 +145,7 @@ export function assembleModules(
     enabledAlterations,
     debug,
     selectedLoadoutName,
+    definedLoadoutNames,
   );
 
   return postAddonModules;
@@ -216,15 +223,17 @@ export function alterationIsConflicting(
   alterations: VehiclesPlaceDataVehicleAlterations,
   enabledAlterations: Record<string, boolean>,
   selectedLoadout: string | null,
+  definedLoadouts?: string[],
 ) {
   if (
-    selectedLoadout &&
     alteration.loadout !== undefined &&
     alteration.loadout !== selectedLoadout
-  )
-    return true;
+  ) {
+    if (selectedLoadout !== null) return true;
+    if (definedLoadouts?.includes(alteration.loadout)) return true;
+  }
 
-  if (alteration.category)
+  if (alteration.category) {
     for (const [otherName, isEnabled] of Object.entries(enabledAlterations)) {
       if (!isEnabled) continue;
 
@@ -234,6 +243,7 @@ export function alterationIsConflicting(
 
       if (other.category && other.category === alteration.category) return true;
     }
+  }
 
   return false;
 }

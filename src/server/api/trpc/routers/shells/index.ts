@@ -39,7 +39,6 @@ export const shellsRouter = createTRPCRouter({
               name: shell.name,
               slug: shell.slug,
               vehicles: shell.vehicles,
-              type: shell.type,
               displayType: shell.displayType,
             })),
           ]),
@@ -91,6 +90,10 @@ export const shellsRouter = createTRPCRouter({
                 '@type': 'ListItem',
                 position: 2,
                 name: weapon,
+                item: new URL(
+                  `${initials}/shells?q=${encodeURIComponent(weapon)}`,
+                  baseUrl,
+                ).toString(),
               },
               {
                 '@type': 'ListItem',

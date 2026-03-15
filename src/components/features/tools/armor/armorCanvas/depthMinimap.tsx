@@ -1,8 +1,7 @@
 import React from 'react';
 
+import { getViewAngleRad } from '@/components/features/tools/armor/useArmorProcessor';
 import { getVehicleImage } from '@/utils/getVehicleImage';
-
-import { getViewAngleRad } from '../useArmorProcessor';
 
 import type { ArmorAngle } from '@/utils/getVehicleImage';
 
@@ -11,6 +10,7 @@ interface DepthMinimapProps {
   detectedMaxDepth: number;
   maxDepth: number;
   minDepth: number;
+  size?: number;
   slug: string;
 }
 
@@ -22,7 +22,7 @@ const ARROW_COLOR = 'rgba(255,255,255,0.9)';
 
 const DepthMinimap = React.forwardRef<HTMLCanvasElement, DepthMinimapProps>(
   function DepthMinimap(
-    { angle, detectedMaxDepth, maxDepth, minDepth, slug },
+    { angle, detectedMaxDepth, maxDepth, minDepth, size, slug },
     ref,
   ) {
     const internalRef = React.useRef<HTMLCanvasElement>(null);
@@ -32,6 +32,8 @@ const DepthMinimap = React.forwardRef<HTMLCanvasElement, DepthMinimapProps>(
     const imgRef = React.useRef<HTMLImageElement | null>(null);
 
     React.useEffect(() => {
+      setLoaded(false);
+
       const img = new Image();
       img.crossOrigin = 'anonymous';
       img.src = getVehicleImage(slug, 'top_armor', true);
@@ -55,13 +57,14 @@ const DepthMinimap = React.forwardRef<HTMLCanvasElement, DepthMinimapProps>(
       const img = imgRef.current;
       if (!canvas || !img || !loaded) return;
 
-      const scale = Math.min(MAX_DIM / img.width, MAX_DIM / img.height);
+      const dim = size ?? MAX_DIM;
+      const scale = Math.min(dim / img.width, dim / img.height);
       const w = Math.round(img.width * scale);
       const h = Math.round(img.height * scale);
       canvas.width = w;
       canvas.height = h;
 
-      const ctx = canvas.getContext('2d')!;
+      const ctx = canvas.getContext('2d', { willReadFrequently: true })!;
       ctx.clearRect(0, 0, w, h);
       ctx.drawImage(img, 0, 0, w, h);
 
@@ -75,7 +78,7 @@ const DepthMinimap = React.forwardRef<HTMLCanvasElement, DepthMinimapProps>(
       const maxD = detectedMaxDepth || 1;
       const halfExtent = (Math.abs(dx) * w) / 2 + (Math.abs(dy) * h) / 2;
 
-      for (let py = 0; py < h; py += 1)
+      for (let py = 0; py < h; py += 1) {
         for (let px = 0; px < w; px += 1) {
           const i = (py * w + px) * 4;
           if (data[i + 3] === 0) continue;
@@ -91,6 +94,7 @@ const DepthMinimap = React.forwardRef<HTMLCanvasElement, DepthMinimapProps>(
             data[i + 2] = Math.round(data[i + 2] * 0.25);
           }
         }
+      }
 
       ctx.putImageData(imageData, 0, 0);
 
@@ -159,7 +163,7 @@ const DepthMinimap = React.forwardRef<HTMLCanvasElement, DepthMinimapProps>(
       ctx.strokeStyle = ARROW_COLOR;
       ctx.lineWidth = 2;
       ctx.stroke();
-    }, [canvasRef, loaded, angle, minDepth, maxDepth, detectedMaxDepth]);
+    }, [canvasRef, loaded, angle, minDepth, maxDepth, detectedMaxDepth, size]);
 
     if (!loaded) return null;
 

@@ -19,7 +19,8 @@ export type VehicleImageType =
   | BaseVehicleImageType
   | `${BaseVehicleImageType}_transparent`
   | ArmorImageType
-  | 'icon';
+  | 'icon'
+  | 'armor_thumbnail';
 
 export function getVehicleImage(
   slug: string,

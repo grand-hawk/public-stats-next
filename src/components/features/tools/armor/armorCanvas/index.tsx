@@ -1,19 +1,27 @@
-import { Box, Flex, Spinner, Text } from '@chakra-ui/react';
+import { Box, Flex, Portal, Text } from '@chakra-ui/react';
 import React from 'react';
 import { LuRotateCcw } from 'react-icons/lu';
 
-import { samplePalette } from '../palettes';
-import { RICOCHET_DARK, RICOCHET_LIGHT } from '../useArmorProcessor';
-import DepthMinimap from './depthMinimap';
-import HorizontalLegend from './horizontalLegend';
+import DepthMinimap from '@/components/features/tools/armor/armorCanvas/depthMinimap';
+import HorizontalLegend from '@/components/features/tools/armor/armorCanvas/horizontalLegend';
+import { samplePalette } from '@/components/features/tools/armor/palettes';
+import {
+  RICOCHET_DARK,
+  RICOCHET_LIGHT,
+} from '@/components/features/tools/armor/useArmorProcessor';
+import { ProgressBar, ProgressRoot } from '@/components/ui/progress';
 
-import type { Palette } from '../palettes';
+import type { Palette } from '@/components/features/tools/armor/palettes';
+import type { PixelTooltipData } from '@/components/features/tools/armor/useArmorProcessor';
 import type { ArmorAngle } from '@/utils/getVehicleImage';
 
 interface ArmorCanvasProps {
   angle: ArmorAngle;
   canvas: HTMLCanvasElement | null;
+  compact?: boolean;
   detectedMaxDepth: number;
+  disablePanZoom?: boolean;
+  downloadProgress: number | null;
   error: string | null;
   loading: boolean;
   maxDepth: number;
@@ -24,7 +32,7 @@ interface ArmorCanvasProps {
   palette: Palette;
   ricochetAngle: number;
   slug: string | null;
-  thicknessAt: (x: number, y: number) => number | 'ricochet' | null;
+  thicknessAt: (x: number, y: number) => PixelTooltipData | 'ricochet' | null;
 }
 
 const BASE_SCALE_FACTOR = 0.85;
@@ -36,19 +44,40 @@ function drawRicochetSwatch(canvas: HTMLCanvasElement, w: number, h: number) {
 
   const ctx = canvas.getContext('2d')!;
 
-  for (let y = 0; y < h; y += 1)
+  for (let y = 0; y < h; y += 1) {
     for (let x = 0; x < w; x += 1) {
       const stripe = (x + y) % 6 < 2;
       const c = stripe ? RICOCHET_LIGHT : RICOCHET_DARK;
       ctx.fillStyle = `rgb(${c.r},${c.g},${c.b})`;
       ctx.fillRect(x, y, 1, 1);
     }
+  }
+}
+
+function formatTooltip(val: PixelTooltipData): string {
+  if (val.total === 0 && val.moduleHits.length > 0) {
+    return val.moduleHits.map((h) => h.name).join(', ');
+  }
+
+  let text = `${val.total} mm`;
+  if (val.moduleHits.length > 0) {
+    text +=
+      ' · ' +
+      val.moduleHits
+        .map((h) => (h.thickness > 0 ? `${h.name} (${h.thickness}mm)` : h.name))
+        .join(', ');
+  }
+
+  return text;
 }
 
 export default function ArmorCanvas({
   angle,
   canvas,
+  compact,
   detectedMaxDepth,
+  disablePanZoom,
+  downloadProgress,
   error,
   loading,
   maxDepth,
@@ -138,23 +167,54 @@ export default function ArmorCanvas({
   }, []);
 
   const updateTooltip = React.useCallback(
-    (screenX: number, screenY: number, value: string | null) => {
-      const el = tooltipRef.current;
-      if (!el) return;
+    (clientX: number, clientY: number, value: string | null) => {
+      const element = tooltipRef.current;
+      if (!element) return;
+
       if (value === null || isDraggingRef.current) {
-        el.style.display = 'none';
+        element.style.display = 'none';
         return;
       }
-      el.style.display = 'block';
-      el.style.left = `${screenX + 16}px`;
-      el.style.top = `${screenY - 12}px`;
-      el.textContent = value;
+
+      element.style.display = 'block';
+      element.style.left = `${clientX + 16}px`;
+      element.style.top = `${clientY - 12}px`;
+      element.textContent = value;
     },
     [],
   );
 
+  const resolveTooltip = React.useCallback(
+    (clientX: number, clientY: number) => {
+      const display = displayRef.current;
+      const viewport = viewportRef.current;
+      if (!display || !viewport || !canvas) return null;
+
+      const canvasRect = display.getBoundingClientRect();
+      const canvasX = clientX - canvasRect.left;
+      const canvasY = clientY - canvasRect.top;
+
+      const scaleX = canvas.width / canvasRect.width;
+      const scaleY = canvas.height / canvasRect.height;
+      const px = canvasX * scaleX;
+      const py = canvasY * scaleY;
+
+      const val = thicknessAt(px, py);
+      const text =
+        val === null
+          ? null
+          : val === 'ricochet'
+            ? 'Ricochet'
+            : formatTooltip(val);
+      return { clientX, clientY, text };
+    },
+    [canvas, thicknessAt],
+  );
+
   const handleWheel = React.useCallback(
     (event: React.WheelEvent) => {
+      if (disablePanZoom) return;
+
       event.preventDefault();
       updateTooltip(0, 0, null);
 
@@ -180,12 +240,13 @@ export default function ArmorCanvas({
       setZoom(newZoom);
       setPan({ x: newPanX, y: newPanY });
     },
-    [zoom, pan, getCenterOffset, updateTooltip],
+    [disablePanZoom, zoom, pan, getCenterOffset, updateTooltip],
   );
 
   const handleMouseDown = React.useCallback(
     (event: React.MouseEvent) => {
-      if (event.button !== 0) return;
+      if (disablePanZoom || event.button !== 0) return;
+
       isDraggingRef.current = true;
       setDragging(true);
       dragStart.current = {
@@ -196,7 +257,7 @@ export default function ArmorCanvas({
       };
       updateTooltip(0, 0, null);
     },
-    [pan, updateTooltip],
+    [disablePanZoom, pan, updateTooltip],
   );
 
   const handleMouseMove = React.useCallback(
@@ -211,31 +272,10 @@ export default function ArmorCanvas({
         return;
       }
 
-      const display = displayRef.current;
-      const viewport = viewportRef.current;
-      if (!display || !viewport || !canvas) return;
-
-      const vpRect = viewport.getBoundingClientRect();
-      const screenX = event.clientX - vpRect.left;
-      const screenY = event.clientY - vpRect.top;
-
-      const canvasRect = display.getBoundingClientRect();
-      const canvasX = event.clientX - canvasRect.left;
-      const canvasY = event.clientY - canvasRect.top;
-
-      const scaleX = canvas.width / canvasRect.width;
-      const scaleY = canvas.height / canvasRect.height;
-      const px = canvasX * scaleX;
-      const py = canvasY * scaleY;
-
-      const val = thicknessAt(px, py);
-      updateTooltip(
-        screenX,
-        screenY,
-        val === null ? null : val === 'ricochet' ? 'Ricochet' : `${val} mm`,
-      );
+      const result = resolveTooltip(event.clientX, event.clientY);
+      if (result) updateTooltip(result.clientX, result.clientY, result.text);
     },
-    [canvas, thicknessAt, updateTooltip],
+    [resolveTooltip, updateTooltip],
   );
 
   const handleMouseUp = React.useCallback(() => {
@@ -253,35 +293,16 @@ export default function ArmorCanvas({
 
   const showTouchTooltip = React.useCallback(
     (clientX: number, clientY: number) => {
-      const display = displayRef.current;
-      const viewport = viewportRef.current;
-      if (!display || !viewport || !canvas) return;
-
-      const vpRect = viewport.getBoundingClientRect();
-      const screenX = clientX - vpRect.left;
-      const screenY = clientY - vpRect.top;
-
-      const canvasRect = display.getBoundingClientRect();
-      const canvasX = clientX - canvasRect.left;
-      const canvasY = clientY - canvasRect.top;
-
-      const scaleX = canvas.width / canvasRect.width;
-      const scaleY = canvas.height / canvasRect.height;
-      const px = canvasX * scaleX;
-      const py = canvasY * scaleY;
-
-      const val = thicknessAt(px, py);
-      updateTooltip(
-        screenX,
-        screenY,
-        val === null ? null : val === 'ricochet' ? 'Ricochet' : `${val} mm`,
-      );
+      const result = resolveTooltip(clientX, clientY);
+      if (result) updateTooltip(result.clientX, result.clientY, result.text);
     },
-    [canvas, thicknessAt, updateTooltip],
+    [resolveTooltip, updateTooltip],
   );
 
   const handleTouchStart = React.useCallback(
     (event: React.TouchEvent) => {
+      if (disablePanZoom) return;
+
       event.preventDefault();
       if (event.touches.length === 1) {
         const t = event.touches[0];
@@ -310,11 +331,13 @@ export default function ArmorCanvas({
         };
       }
     },
-    [pan, showTouchTooltip, updateTooltip],
+    [disablePanZoom, pan, showTouchTooltip, updateTooltip],
   );
 
   const handleTouchMove = React.useCallback(
     (event: React.TouchEvent) => {
+      if (disablePanZoom) return;
+
       event.preventDefault();
 
       if (event.touches.length === 1 && lastTouchDist.current === null) {
@@ -373,18 +396,40 @@ export default function ArmorCanvas({
         lastTouchCenter.current = { x: centerX, y: centerY };
       }
     },
-    [zoom, pan, getCenterOffset, showTouchTooltip, updateTooltip],
+    [
+      disablePanZoom,
+      zoom,
+      pan,
+      getCenterOffset,
+      showTouchTooltip,
+      updateTooltip,
+    ],
   );
 
-  const handleTouchEnd = React.useCallback(() => {
-    lastTouchDist.current = null;
-    lastTouchCenter.current = null;
-    touchDragging.current = false;
-  }, []);
+  const handleTouchEnd = React.useCallback(
+    (event: React.TouchEvent) => {
+      if (event.touches.length === 1) {
+        const touch = event.touches[0];
+        touchPanStart.current = {
+          x: touch.clientX,
+          y: touch.clientY,
+          panX: pan.x,
+          panY: pan.y,
+        };
+      } else if (event.touches.length === 0) {
+        if (touchDragging.current) updateTooltip(0, 0, null);
+      }
+
+      lastTouchDist.current = null;
+      lastTouchCenter.current = null;
+      touchDragging.current = false;
+    },
+    [pan.x, pan.y, updateTooltip],
+  );
 
   React.useEffect(() => {
-    const el = viewportRef.current;
-    if (!el) return;
+    const element = viewportRef.current;
+    if (!element) return;
 
     const onWheel = (event: WheelEvent) =>
       handleWheel(event as unknown as React.WheelEvent);
@@ -393,16 +438,31 @@ export default function ArmorCanvas({
     const onTouchMove = (event: TouchEvent) =>
       handleTouchMove(event as unknown as React.TouchEvent);
 
-    el.addEventListener('wheel', onWheel, { passive: false });
-    el.addEventListener('touchstart', onTouchStart, { passive: false });
-    el.addEventListener('touchmove', onTouchMove, { passive: false });
+    element.addEventListener('wheel', onWheel, { passive: false });
+    element.addEventListener('touchstart', onTouchStart, { passive: false });
+    element.addEventListener('touchmove', onTouchMove, { passive: false });
 
     return () => {
-      el.removeEventListener('wheel', onWheel);
-      el.removeEventListener('touchstart', onTouchStart);
-      el.removeEventListener('touchmove', onTouchMove);
+      element.removeEventListener('wheel', onWheel);
+      element.removeEventListener('touchstart', onTouchStart);
+      element.removeEventListener('touchmove', onTouchMove);
     };
   }, [handleWheel, handleTouchStart, handleTouchMove]);
+
+  React.useEffect(() => {
+    const onScroll = () => updateTooltip(0, 0, null);
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    document.addEventListener('scroll', onScroll, {
+      passive: true,
+      capture: true,
+    });
+
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+      document.removeEventListener('scroll', onScroll, { capture: true });
+    };
+  }, [updateTooltip]);
 
   const resetView = React.useCallback(() => {
     setZoom(1);
@@ -454,22 +514,25 @@ export default function ArmorCanvas({
     }
 
     // ricochet swatch
-    const swatchX = pad + legendBarWidth + 10;
-    for (let sy = 0; sy < legendBarHeight; sy += 1)
-      for (let sx = 0; sx < 10; sx += 1) {
-        const stripe = (sx + sy) % 6 < 2;
-        const c = stripe ? RICOCHET_LIGHT : RICOCHET_DARK;
-        ctx.fillStyle = `rgb(${c.r},${c.g},${c.b})`;
-        ctx.fillRect(swatchX + sx, y + sy, 1, 1);
+    if (ricochetAngle !== 90) {
+      const swatchX = pad + legendBarWidth + 10;
+      for (let sy = 0; sy < legendBarHeight; sy += 1) {
+        for (let sx = 0; sx < 10; sx += 1) {
+          const stripe = (sx + sy) % 6 < 2;
+          const c = stripe ? RICOCHET_LIGHT : RICOCHET_DARK;
+          ctx.fillStyle = `rgb(${c.r},${c.g},${c.b})`;
+          ctx.fillRect(swatchX + sx, y + sy, 1, 1);
+        }
       }
 
-    ctx.fillStyle = '#aaa';
-    ctx.font = '10px monospace';
-    ctx.fillText(
-      `Ricochet (≥${ricochetAngle}°)`,
-      swatchX + 14,
-      y + legendBarHeight - 1,
-    );
+      ctx.fillStyle = '#aaa';
+      ctx.font = '10px monospace';
+      ctx.fillText(
+        `Ricochet (≥${ricochetAngle}°)`,
+        swatchX + 14,
+        y + legendBarHeight - 1,
+      );
+    }
 
     // legend labels
     y += legendBarHeight;
@@ -509,14 +572,32 @@ export default function ArmorCanvas({
 
   const isZoomed = zoom !== 1 || pan.x !== 0 || pan.y !== 0;
 
-  if (loading)
+  if (loading) {
     return (
-      <Flex alignItems="center" height="100%" justifyContent="center">
-        <Spinner size="lg" />
+      <Flex
+        alignItems="center"
+        flexDirection="column"
+        gap={4}
+        height="100%"
+        justifyContent="center"
+        paddingX={8}
+      >
+        <ProgressRoot
+          max={100}
+          value={downloadProgress ?? undefined}
+          width="100%"
+          maxW="320px"
+        >
+          <ProgressBar borderRadius={0} overflow="hidden" />
+        </ProgressRoot>
+        <Text color="fg.muted" fontSize="sm">
+          Downloading armour data…
+        </Text>
       </Flex>
     );
+  }
 
-  if (error)
+  if (error) {
     return (
       <Flex
         alignItems="center"
@@ -530,8 +611,9 @@ export default function ArmorCanvas({
         </Text>
       </Flex>
     );
+  }
 
-  if (!canvas)
+  if (!canvas) {
     return (
       <Flex
         alignItems="center"
@@ -545,90 +627,99 @@ export default function ArmorCanvas({
         </Text>
       </Flex>
     );
+  }
 
   return (
     <Flex direction="column" height="100%" minHeight="0">
-      <Flex
-        alignItems="flex-start"
-        direction="column"
-        flexShrink={0}
-        gap={2}
-        paddingBottom={2}
-        paddingTop={{ base: 3, md: 6 }}
-        paddingX={{ base: 3, md: 6 }}
-      >
-        <Text
-          color="fg"
-          fontSize="lg"
-          fontWeight="medium"
-          letterSpacing="wide"
-          textTransform="uppercase"
+      {(!compact || !disablePanZoom) && (
+        <Flex
+          alignItems="flex-start"
+          direction="column"
+          flexShrink={0}
+          gap={2}
+          paddingBottom={2}
+          paddingTop={compact ? 1 : { base: 3, md: 6 }}
+          paddingX={{ base: 3, md: 6 }}
         >
-          KE effective thickness at LOS
-        </Text>
-
-        <Flex alignItems="center" gap={3} maxWidth="360px" width="100%">
-          <HorizontalLegend maxMm={maxMm} minMm={minMm} palette={palette} />
-
-          <Flex alignItems="center" flexShrink={0} gap={1}>
-            <canvas
-              ref={ricochetSwatchRef}
-              style={{
-                width: '10px',
-                height: '10px',
-                imageRendering: 'pixelated',
-                display: 'block',
-              }}
-            />
-            <Text color="fg.muted" fontSize="2xs" whiteSpace="nowrap">
-              Ricochet (≥{ricochetAngle}°)
+          {!compact && (
+            <Text
+              color="fg"
+              fontSize="lg"
+              fontWeight="medium"
+              letterSpacing="wide"
+              textTransform="uppercase"
+            >
+              KE effective thickness at LOS
             </Text>
-          </Flex>
+          )}
+
+          {!compact && (
+            <Flex alignItems="center" gap={3} maxWidth="360px" width="100%">
+              <HorizontalLegend maxMm={maxMm} minMm={minMm} palette={palette} />
+
+              <Flex alignItems="center" flexShrink={0} gap={1}>
+                <canvas
+                  ref={ricochetSwatchRef}
+                  style={{
+                    width: '10px',
+                    height: '10px',
+                    imageRendering: 'pixelated',
+                    display: 'block',
+                  }}
+                />
+                <Text color="fg.muted" fontSize="2xs" whiteSpace="nowrap">
+                  Ricochet (≥{ricochetAngle}°)
+                </Text>
+              </Flex>
+            </Flex>
+          )}
+
+          {!compact && slug && canvas && (
+            <DepthMinimap
+              ref={minimapRef}
+              angle={angle}
+              detectedMaxDepth={detectedMaxDepth}
+              maxDepth={maxDepth}
+              minDepth={minDepth}
+              slug={slug}
+            />
+          )}
+
+          {!disablePanZoom && (
+            <Box minHeight="24px">
+              <Flex
+                _hover={{ color: 'fg', background: 'whiteAlpha.100' }}
+                alignItems="center"
+                as="button"
+                borderColor="border.muted"
+                borderWidth="1px"
+                color="fg.muted"
+                cursor={isZoomed ? 'pointer' : 'default'}
+                fontSize="2xs"
+                gap={1}
+                opacity={isZoomed ? 1 : 0}
+                paddingX={2}
+                paddingY={1}
+                pointerEvents={isZoomed ? 'auto' : 'none'}
+                visibility={isZoomed ? 'visible' : 'hidden'}
+                onClick={resetView}
+              >
+                <LuRotateCcw size={12} />
+                Reset view
+              </Flex>
+            </Box>
+          )}
         </Flex>
-
-        {slug && canvas && (
-          <DepthMinimap
-            ref={minimapRef}
-            angle={angle}
-            detectedMaxDepth={detectedMaxDepth}
-            maxDepth={maxDepth}
-            minDepth={minDepth}
-            slug={slug}
-          />
-        )}
-
-        <Box minHeight="24px">
-          <Flex
-            _hover={{ color: 'fg', background: 'whiteAlpha.100' }}
-            alignItems="center"
-            as="button"
-            borderColor="border.muted"
-            borderWidth="1px"
-            color="fg.muted"
-            cursor={isZoomed ? 'pointer' : 'default'}
-            fontSize="2xs"
-            gap={1}
-            opacity={isZoomed ? 1 : 0}
-            paddingX={2}
-            paddingY={1}
-            pointerEvents={isZoomed ? 'auto' : 'none'}
-            visibility={isZoomed ? 'visible' : 'hidden'}
-            onClick={resetView}
-          >
-            <LuRotateCcw size={12} />
-            Reset view
-          </Flex>
-        </Box>
-      </Flex>
+      )}
 
       <Box
         ref={viewportRef}
-        cursor={dragging ? 'grabbing' : 'grab'}
+        cursor={disablePanZoom ? 'default' : dragging ? 'grabbing' : 'grab'}
         flex={1}
         minHeight="0"
         overflow="hidden"
         position="relative"
-        css={{ touchAction: 'none' }}
+        css={{ touchAction: disablePanZoom ? 'auto' : 'none' }}
         onMouseDown={handleMouseDown}
         onMouseLeave={handleMouseLeave}
         onMouseMove={handleMouseMove}
@@ -658,7 +749,9 @@ export default function ArmorCanvas({
             />
           </Box>
         </Flex>
+      </Box>
 
+      <Portal>
         <Box
           ref={tooltipRef}
           background="bg.panel"
@@ -670,11 +763,11 @@ export default function ArmorCanvas({
           paddingX={2}
           paddingY={1}
           pointerEvents="none"
-          position="absolute"
+          position="fixed"
           whiteSpace="nowrap"
-          zIndex={20}
+          zIndex={9999}
         />
-      </Box>
+      </Portal>
     </Flex>
   );
 }

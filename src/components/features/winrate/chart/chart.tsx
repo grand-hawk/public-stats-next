@@ -5,6 +5,7 @@ import {
   Legend,
   Line,
   LineChart,
+  ReferenceArea,
   ReferenceLine,
   Tooltip,
   XAxis,
@@ -20,6 +21,34 @@ export default function WinrateChart({
 }) {
   const chart = useChart(data);
 
+  const timestampKey = chart.key('timestamp');
+
+  const weekendAreas = React.useMemo(() => {
+    const areas: { x1: number; x2: number }[] = [];
+    let areaStart: number | null = null;
+    let previousTimestamp: number | null = null;
+
+    for (const point of chart.data) {
+      const timestamp = point[timestampKey] as number;
+      const day = new Date(timestamp * 1_000).getUTCDay();
+      const isWeekend = day === 0 || day === 5 || day === 6;
+
+      if (isWeekend && areaStart === null) {
+        areaStart = timestamp;
+      } else if (!isWeekend && areaStart !== null) {
+        areas.push({ x1: areaStart, x2: previousTimestamp! });
+        areaStart = null;
+      }
+      previousTimestamp = timestamp;
+    }
+
+    if (areaStart !== null && previousTimestamp !== null) {
+      areas.push({ x1: areaStart, x2: previousTimestamp });
+    }
+
+    return areas;
+  }, [chart.data, timestampKey]);
+
   const dateFormatter = (value: unknown) =>
     chart.formatDate({ month: 'short', day: 'numeric' })(
       new Date(Number(value) * 1_000).toISOString(),
@@ -28,6 +57,17 @@ export default function WinrateChart({
   return (
     <Chart.Root chart={chart} maxHeight="sm" marginTop="calc(16px * 2)">
       <LineChart data={chart.data}>
+        {weekendAreas.map((area) => (
+          <ReferenceArea
+            key={area.x1}
+            x1={area.x1}
+            x2={area.x2}
+            fill={chart.color('bg.muted')}
+            fillOpacity={0.5}
+            stroke="none"
+          />
+        ))}
+
         <CartesianGrid stroke={chart.color('border')} vertical={false} />
 
         <XAxis

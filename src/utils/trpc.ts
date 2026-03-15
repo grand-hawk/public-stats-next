@@ -1,5 +1,5 @@
 import {
-  httpLink,
+  httpBatchLink,
   httpSubscriptionLink,
   loggerLink,
   splitLink,
@@ -7,6 +7,8 @@ import {
 import { createTRPCNext } from '@trpc/next';
 import { ssrPrepass } from '@trpc/next/ssrPrepass';
 import superjson from 'superjson';
+
+import { IS_DEV } from '@/env';
 
 import type { AppRouter } from '@/server/api/trpc/router';
 import type { inferRouterInputs, inferRouterOutputs } from '@trpc/server';
@@ -39,20 +41,20 @@ export const trpc = createTRPCNext<AppRouter>({
       links: [
         loggerLink({
           enabled: (opts) =>
-            process.env.NODE_ENV === 'development' ||
+            IS_DEV ||
             (opts.direction === 'down' && opts.result instanceof Error),
         }),
         splitLink({
           condition: (op) => op.type === 'subscription',
           true: httpSubscriptionLink({ url, transformer }),
-          false: httpLink({ url, transformer }),
+          false: httpBatchLink({ url, transformer }),
         }),
       ],
       queryClientConfig: {
         defaultOptions: {
           queries: {
             refetchOnMount: false,
-            refetchOnWindowFocus: process.env.NODE_ENV === 'development',
+            refetchOnWindowFocus: IS_DEV,
             refetchOnReconnect: false,
           },
         },

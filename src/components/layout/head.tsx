@@ -2,7 +2,7 @@ import Head from 'next/head';
 import { useRouter } from 'next/router';
 import React from 'react';
 
-import { env, MEDIA_PREFIX } from '@/env';
+import { env } from '@/env';
 import { useCurrentTab } from '@/hooks/useCurrentTab';
 import { usePlaceInitials } from '@/hooks/usePlaceInitials';
 import { formatTitle } from '@/utils/formatTitle';
@@ -16,25 +16,27 @@ export const getKeywords = (place: Place) => [
   'Statistics',
   'Stats',
   'Data',
+  'Wiki',
 ];
 
 export default function InternalHead() {
   const initials = usePlaceInitials();
   const currentTab = useCurrentTab();
   const router = useRouter();
-  const canonicalUrl = `${getBaseUrl()}${router.asPath.split('?')[0]}`;
+  const basePath = router.asPath.split('?')[0];
+  const hasQueryParams = router.asPath.includes('?');
+  const canonicalUrl = `${getBaseUrl()}${basePath}`;
 
   return (
     <Head>
       <title>{formatTitle(currentTab?.label, initials)}</title>
-      <link
-        href={`${MEDIA_PREFIX}/favicon.ico`}
-        rel="icon"
-        type="image/x-icon"
-      />
+      <link href="/favicon.ico" rel="icon" type="image/x-icon" />
 
       <meta content="website" property="og:type" />
-      <meta content="index,follow" name="robots" />
+      <meta
+        content={hasQueryParams ? 'noindex,follow' : 'index,follow'}
+        name="robots"
+      />
       <meta content={formatTitle(null, initials)} property="og:site_name" />
       <meta content="en_US" property="og:locale" />
       <link rel="canonical" href={canonicalUrl} />

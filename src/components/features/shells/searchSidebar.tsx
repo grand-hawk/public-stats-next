@@ -16,11 +16,9 @@ import type { ListItem } from '@/components/layout/searchLayout/searchSidebar/li
 const ShellListName = React.memo(function ShellListName({
   displayType,
   name,
-  type,
 }: {
   name: string;
   displayType: string;
-  type: string;
 }) {
   const shellIcon = getShellIcon(displayType);
 
@@ -29,7 +27,7 @@ const ShellListName = React.memo(function ShellListName({
   return (
     <HStack justifyContent="space-between" width="100%">
       {name}
-      <ShellIcon alt={type} src={shellIcon} />
+      <ShellIcon alt={name} src={shellIcon} />
     </HStack>
   );
 });
@@ -37,9 +35,14 @@ const ShellListName = React.memo(function ShellListName({
 export default function ShellsSearchSidebar() {
   const place = usePlace()!;
   const shellQuery = useRouterQuery('shell');
+  const qFromUrl = useRouterQuery('q');
   const query = useShellsSearchStore((s) => s.query);
   const deferredQuery = React.useDeferredValue(query);
   const setQuery = useShellsSearchStore((s) => s.setQuery);
+
+  React.useEffect(() => {
+    if (qFromUrl) setQuery(qFromUrl);
+  }, [qFromUrl, setQuery]);
 
   const [shellsList] = trpc.shells.list.useSuspenseQuery({
     placeId: place.placeId,
@@ -50,8 +53,9 @@ export default function ShellsSearchSidebar() {
     for (const [weapon, shells] of Object.entries(shellsList)) {
       map.set(weapon, simplifyString(weapon));
       for (const shell of shells) {
-        if (!map.has(shell.name))
+        if (!map.has(shell.name)) {
           map.set(shell.name, simplifyString(shell.name));
+        }
         for (const vehicle of shell.vehicles) {
           if (!map.has(vehicle)) map.set(vehicle, simplifyString(vehicle));
         }
@@ -67,12 +71,13 @@ export default function ShellsSearchSidebar() {
     const filtered: typeof shellsList = {};
 
     for (const [weapon, shells] of Object.entries(shellsList)) {
-      if (simplifiedStrings.get(weapon)!.includes(simplifiedQuery))
+      if (simplifiedStrings.get(weapon)!.includes(simplifiedQuery)) {
         filtered[weapon] = shells;
-      else {
+      } else {
         const matchingShells = shells.filter((shell) => {
-          if (simplifiedStrings.get(shell.name)!.includes(simplifiedQuery))
+          if (simplifiedStrings.get(shell.name)!.includes(simplifiedQuery)) {
             return true;
+          }
 
           return shell.vehicles.some((vehicle) =>
             simplifiedStrings.get(vehicle)!.includes(simplifiedQuery),
@@ -104,7 +109,6 @@ export default function ShellsSearchSidebar() {
               <ShellListName
                 name={shell.name}
                 displayType={shell.displayType}
-                type={shell.type}
               />
             ),
             slug: shell.slug,

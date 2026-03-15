@@ -9,6 +9,7 @@ import {
 import React from 'react';
 import { LuArrowUpRight } from 'react-icons/lu';
 
+import ArmorDebug from '@/components/development/armorDebug';
 import { useDevelopmentStore } from '@/stores/development';
 
 import type { BundledLanguage, BundledTheme, HighlighterGeneric } from 'shiki';
@@ -29,7 +30,10 @@ const shikiAdapter = createShikiAdapter<
 export default React.memo(function ProvidersDebug() {
   const containerRef = React.useRef<HTMLDivElement>(null);
   const scrollRef = React.useRef<HTMLPreElement>(null);
-  const items = React.useMemo(() => ['DynamicData', 'Shell', 'Vehicle'], []);
+  const items = React.useMemo(
+    () => ['DynamicData', 'Shell', 'Vehicle', 'Armor'],
+    [],
+  );
 
   const debugData = useDevelopmentStore((s) => s.debugData);
   const highlightedModule = useDevelopmentStore(
@@ -64,7 +68,7 @@ export default React.memo(function ProvidersDebug() {
       (data as { modules?: Record<string, unknown> }).modules ||
       data;
 
-    if (typeof modules === 'object' && modules !== null)
+    if (typeof modules === 'object' && modules !== null) {
       for (const [id, module] of Object.entries(modules)) {
         if (
           module &&
@@ -78,6 +82,7 @@ export default React.memo(function ProvidersDebug() {
           idToType[normalizedId.replace('#/modules/', '')] = type;
         }
       }
+    }
 
     return rawLines.map((line) => {
       const strings = line.match(/"([^"]+)"/g);
@@ -88,8 +93,9 @@ export default React.memo(function ProvidersDebug() {
         const normalizedId = id.replace(/^#\/module\//, '#/modules/');
         const type = idToType[normalizedId] || idToType[id];
 
-        if (type && !line.trim().startsWith(`"${id}": {`))
+        if (type && !line.trim().startsWith(`"${id}": {`)) {
           return `${line} // ${type}`;
+        }
       }
       return line;
     });
@@ -171,18 +177,21 @@ export default React.memo(function ProvidersDebug() {
 
         if (line.trim().startsWith(`"${highlightedModule}": {`)) {
           const indent = line.match(/^\s*/)?.[0] || '';
-          for (let i = index + 1; i < lines.length; i += 1)
+          for (let i = index + 1; i < lines.length; i += 1) {
             if (lines[i]!.startsWith(`${indent}}`)) {
               declarationRange = { start: lineNumber, end: i + 1 };
               break;
             }
+          }
         }
       }
     }
 
-    if (declarationRange)
-      for (let i = declarationRange.start; i <= declarationRange.end; i += 1)
+    if (declarationRange) {
+      for (let i = declarationRange.start; i <= declarationRange.end; i += 1) {
         result.add(i);
+      }
+    }
 
     return Array.from(result).sort((a, b) => a - b);
   }, [lines, highlightedModule]);
@@ -226,7 +235,7 @@ export default React.memo(function ProvidersDebug() {
               ))}
             </Tabs.List>
 
-            {declarationLine && (
+            {declarationLine && activeItem !== 'Armor' && (
               <IconButton
                 size="2xs"
                 variant="ghost"
@@ -239,93 +248,100 @@ export default React.memo(function ProvidersDebug() {
             )}
           </Box>
 
-          <CodeBlock.Root
-            borderRadius="none"
-            code={code}
-            display="flex"
-            flex="1"
-            flexDirection="column"
-            height="100%"
-            maxHeight="100%"
-            border="none"
-            language="jsonc"
-            meta={{ highlightLines: highlightedLines }}
-            onClick={(event: React.MouseEvent) => {
-              const target = event.target as HTMLElement;
-              const span = target.closest('span');
-              if (!span || span.classList.contains('line')) return;
-
-              const text = span.textContent
-                ?.trim()
-                .replace(/^"|"$/g, '')
-                .replace(/^#\/module\//, '#/modules/');
-
-              if (text?.startsWith('#/modules/'))
-                setHighlightedModule(text === highlightedModule ? null : text);
-            }}
-            position="relative"
-            ref={containerRef}
-            width="100%"
-            css={{
-              '--code-block-highlight-border': 'colors.blue.500',
-              '& [data-line][data-highlight]:after': {
-                background: 'blue.400/10',
-                pointerEvents: 'none',
-              },
-            }}
-          >
-            <CodeBlock.Content
+          {activeItem === 'Armor' ? (
+            <ArmorDebug />
+          ) : (
+            <CodeBlock.Root
+              borderRadius="none"
+              code={code}
               display="flex"
               flex="1"
               flexDirection="column"
-              overflow="hidden"
-              paddingRight={lineCount > 10 ? '14px' : '0'}
-            >
-              <CodeBlock.Code
-                flex="1"
-                overflowX="hidden"
-                overflowY="scroll"
-                padding="none"
-                ref={scrollRef}
-                whiteSpace="pre-wrap"
-                wordBreak="break-all"
-              >
-                <CodeBlock.CodeText />
-              </CodeBlock.Code>
-            </CodeBlock.Content>
+              height="100%"
+              maxHeight="100%"
+              border="none"
+              language="jsonc"
+              meta={{ highlightLines: highlightedLines }}
+              onClick={(event: React.MouseEvent) => {
+                const target = event.target as HTMLElement;
+                const span = target.closest('span');
+                if (!span || span.classList.contains('line')) return;
 
-            {lineCount > 10 && (
-              <Box
-                backgroundColor="bg.muted"
-                borderLeftWidth="1px"
-                bottom="0"
-                onClick={(event: React.MouseEvent) => {
-                  const rect = event.currentTarget.getBoundingClientRect();
-                  const clickPos = (event.clientY - rect.top) / rect.height;
-                  scrollToLine(Math.floor(clickPos * lineCount));
-                }}
-                position="absolute"
-                right="0"
-                top="0"
-                width="14px"
-                zIndex="2"
+                const text = span.textContent
+                  ?.trim()
+                  .replace(/^"|"$/g, '')
+                  .replace(/^#\/module\//, '#/modules/');
+
+                if (text?.startsWith('#/modules/')) {
+                  setHighlightedModule(
+                    text === highlightedModule ? null : text,
+                  );
+                }
+              }}
+              position="relative"
+              ref={containerRef}
+              width="100%"
+              css={{
+                '--code-block-highlight-border': 'colors.blue.500',
+                '& [data-line][data-highlight]:after': {
+                  background: 'blue.400/10',
+                  pointerEvents: 'none',
+                },
+              }}
+            >
+              <CodeBlock.Content
+                display="flex"
+                flex="1"
+                flexDirection="column"
+                overflow="hidden"
+                paddingRight={lineCount > 10 ? '14px' : '0'}
               >
-                {highlightedLines.map((line) => (
-                  <Box
-                    backgroundColor={
-                      line === declarationLine ? 'teal.500' : 'blue.500'
-                    }
-                    height={line === declarationLine ? '4px' : '2px'}
-                    key={line}
-                    position="absolute"
-                    top={`${(line / lineCount) * 100}%`}
-                    width="100%"
-                    zIndex={line === declarationLine ? '3' : '2'}
-                  />
-                ))}
-              </Box>
-            )}
-          </CodeBlock.Root>
+                <CodeBlock.Code
+                  flex="1"
+                  overflowX="hidden"
+                  overflowY="scroll"
+                  padding="none"
+                  ref={scrollRef}
+                  whiteSpace="pre-wrap"
+                  wordBreak="break-all"
+                >
+                  <CodeBlock.CodeText />
+                </CodeBlock.Code>
+              </CodeBlock.Content>
+
+              {lineCount > 10 && (
+                <Box
+                  backgroundColor="bg.muted"
+                  borderLeftWidth="1px"
+                  bottom="0"
+                  onClick={(event: React.MouseEvent) => {
+                    const rect = event.currentTarget.getBoundingClientRect();
+                    const clickPos = (event.clientY - rect.top) / rect.height;
+                    scrollToLine(Math.floor(clickPos * lineCount));
+                  }}
+                  position="absolute"
+                  right="0"
+                  top="0"
+                  width="14px"
+                  zIndex="2"
+                >
+                  {highlightedLines.map((line) => (
+                    <Box
+                      backgroundColor={
+                        line === declarationLine ? 'teal.500' : 'blue.500'
+                      }
+                      height={line === declarationLine ? '4px' : '2px'}
+                      key={line}
+                      position="absolute"
+                      top={`${(line / lineCount) * 100}%`}
+                      width="100%"
+                      zIndex={line === declarationLine ? '3' : '2'}
+                    />
+                  ))}
+                </Box>
+              )}
+            </CodeBlock.Root>
+          )}
         </Tabs.RootProvider>
       </CodeBlock.AdapterProvider>
     </Box>

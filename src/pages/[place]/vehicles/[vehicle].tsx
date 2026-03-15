@@ -2,6 +2,7 @@ import { Flex, Stack } from '@chakra-ui/react';
 import Head from 'next/head';
 import React from 'react';
 import { GrDocumentMissing } from 'react-icons/gr';
+import stripMarkdown from 'remove-markdown';
 import slug from 'slug';
 
 import Vehicle from '@/components/features/vehicles';
@@ -32,7 +33,7 @@ export default function PlaceVehicle() {
   const descriptionQuote =
     vehicle &&
     vehicle.info.description &&
-    `"${vehicle.content?.Description || vehicle.info.description}"`;
+    `"${vehicle.content?.Description ? stripMarkdown(vehicle.content.Description) : vehicle.info.description}"`;
 
   return (
     <PageMeta
@@ -50,10 +51,8 @@ export default function PlaceVehicle() {
         <Head>
           <meta
             content={[
-              ...(
-                (vehicle.linkedData.vehicle?.keywords as string | undefined) ||
-                ''
-              ).split(','),
+              'Vehicle',
+              vehicle.info.type,
               vehicle.info.name,
               ...getKeywords(place),
             ].join(',')}

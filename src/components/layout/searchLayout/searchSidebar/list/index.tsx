@@ -92,7 +92,7 @@ export default function SearchList({
             },
           } as const;
 
-          if (listItem.type === 'divider')
+          if (listItem.type === 'divider') {
             return (
               <SearchListDividerItem
                 key={virtualItem.key}
@@ -102,6 +102,7 @@ export default function SearchList({
                 {...baseProps}
               />
             );
+          }
           return (
             <SearchLinkListItem
               key={virtualItem.key}

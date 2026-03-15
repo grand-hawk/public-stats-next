@@ -27,7 +27,7 @@ export default function PlaceTeam() {
   React.useEffect(() => {
     if (!team) return;
 
-    if (teamQuery !== teamSlug)
+    if (teamQuery !== teamSlug) {
       router.replace({
         pathname: router.pathname,
         query: {
@@ -35,6 +35,7 @@ export default function PlaceTeam() {
           team: teamSlug,
         },
       });
+    }
   }, [router, teamQuery, team, teamSlug]);
 
   const title = team ? team.name : 'Team not found';

@@ -22,6 +22,15 @@ export const selectRecipe = defineSlotRecipe({
   },
   variants: {
     size: {
+      xs: {
+        trigger: {
+          paddingInline: 2,
+          paddingBlock: 1,
+        },
+        indicatorGroup: {
+          paddingInline: 2,
+        },
+      },
       sm: {
         control: {
           padding: 2,

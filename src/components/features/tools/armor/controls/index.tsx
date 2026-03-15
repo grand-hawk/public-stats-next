@@ -1,14 +1,22 @@
 import { Box, Flex, Input, Link, NumberInput, Text } from '@chakra-ui/react';
 import { useVirtualizer } from '@tanstack/react-virtual';
 import React from 'react';
-import { LuChevronDown, LuChevronUp, LuDownload } from 'react-icons/lu';
+import {
+  LuChevronDown,
+  LuChevronUp,
+  LuCircleHelp,
+  LuDownload,
+} from 'react-icons/lu';
 
+import { RangeSlider } from '@/components/features/tools/armor/controls/slider';
+import { groupModules } from '@/components/features/tools/armor/moduleGroups';
+import { palettes } from '@/components/features/tools/armor/palettes';
 import VehicleIcon from '@/components/features/vehicles/vehicleIcon';
+import { IS_DEV } from '@/env';
 import { simplifyString } from '@/utils/simplifyString';
 
-import { palettes } from './palettes';
-
-import type { Palette } from './palettes';
+import type { DamageModule } from '@/components/features/tools/armor/mtca';
+import type { Palette } from '@/components/features/tools/armor/palettes';
 import type { ArmorAngle } from '@/utils/getVehicleImage';
 
 interface VehicleOption {
@@ -33,35 +41,47 @@ export interface ArmorControlsProps {
   detectedMax: number;
   detectedMaxDepth: number;
   detectedMin: number;
+  hiddenModules: ReadonlySet<number>;
   maxDepth: number;
   maxMm: number;
   minDepth: number;
   minMm: number;
+  modules: DamageModule[];
+  usedModuleIndices: ReadonlySet<number>;
   onAngleChange: (angle: ArmorAngle) => void;
   onAutoRangeChange: (v: boolean) => void;
+  onClearUpload: () => void;
   onMaxChange: (v: number) => void;
   onMaxDepthChange: (v: number) => void;
   onMinChange: (v: number) => void;
   onMinDepthChange: (v: number) => void;
+  onOpenTour: () => void;
   onPaletteChange: (p: Palette) => void;
   onRicochetAngleChange: (v: number) => void;
   onSave: () => void;
   onSelectVehicle: (slug: string) => void;
+  onToggleModule: (moduleIndices: number[]) => void;
+  onUploadFile: (file: File) => void;
+  overrideFileName: string | null;
   palette: Palette;
   ricochetAngle: number;
   selectedSlug: string | null;
+  uploadError: string | null;
   vehicles: VehicleOption[];
+  version: number | null;
 }
 
 const VehicleListItem = React.memo(function VehicleListItem({
   isSelected,
   name,
   onClick,
+  slug,
   style,
 }: {
   isSelected: boolean;
   name: string;
   onClick: () => void;
+  slug: string;
   style: React.CSSProperties;
 }) {
   return (
@@ -71,6 +91,7 @@ const VehicleListItem = React.memo(function VehicleListItem({
       background={isSelected ? 'whiteAlpha.100' : 'transparent'}
       cursor="pointer"
       fontSize="sm"
+      gap={2}
       left={0}
       overflow="hidden"
       paddingX={3}
@@ -82,6 +103,7 @@ const VehicleListItem = React.memo(function VehicleListItem({
       whiteSpace="nowrap"
       onClick={onClick}
     >
+      <VehicleIcon size={18} slug={slug} />
       <Text overflow="hidden" textOverflow="ellipsis">
         {name}
       </Text>
@@ -89,88 +111,48 @@ const VehicleListItem = React.memo(function VehicleListItem({
   );
 });
 
-// CSS for range inputs (brutalist, no border radius)
-const SLIDER_CSS = `
-  input[type="range"].armor-slider {
-    -webkit-appearance: none;
-    appearance: none;
-    background: transparent;
-    cursor: pointer;
-    width: 100%;
-    height: 20px;
-    margin: 0;
-  }
-  input[type="range"].armor-slider::-webkit-slider-runnable-track {
-    height: 4px;
-    background: var(--chakra-colors-border-muted, #333);
-    border: none;
-    border-radius: 0;
-  }
-  input[type="range"].armor-slider::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    height: 14px;
-    width: 8px;
-    background: var(--chakra-colors-fg-muted, #aaa);
-    border: 1px solid var(--chakra-colors-border-muted, #555);
-    border-radius: 0;
-    margin-top: -5px;
-    cursor: grab;
-  }
-  input[type="range"].armor-slider::-webkit-slider-thumb:active {
-    cursor: grabbing;
-    background: var(--chakra-colors-fg, #fff);
-  }
-  input[type="range"].armor-slider::-moz-range-track {
-    height: 4px;
-    background: var(--chakra-colors-border-muted, #333);
-    border: none;
-    border-radius: 0;
-  }
-  input[type="range"].armor-slider::-moz-range-thumb {
-    height: 14px;
-    width: 8px;
-    background: var(--chakra-colors-fg-muted, #aaa);
-    border: 1px solid var(--chakra-colors-border-muted, #555);
-    border-radius: 0;
-    cursor: grab;
-  }
-  input[type="range"].armor-slider::-moz-range-thumb:active {
-    cursor: grabbing;
-    background: var(--chakra-colors-fg, #fff);
-  }
-`;
-
 export default function ArmorControls({
   angle,
   autoRange,
   detectedMax,
   detectedMaxDepth,
   detectedMin,
+  hiddenModules,
   maxDepth,
   maxMm,
   minDepth,
   minMm,
+  modules,
   onAngleChange,
   onAutoRangeChange,
+  onClearUpload,
   onMaxChange,
   onMaxDepthChange,
   onMinChange,
   onMinDepthChange,
+  onOpenTour,
   onPaletteChange,
   onRicochetAngleChange,
   onSave,
   onSelectVehicle,
+  onToggleModule,
+  onUploadFile,
+  overrideFileName,
   palette,
   ricochetAngle,
   selectedSlug,
+  uploadError,
+  usedModuleIndices,
   vehicles,
+  version,
 }: ArmorControlsProps) {
   const [query, setQuery] = React.useState('');
   const [isOpen, setIsOpen] = React.useState(false);
-  const [mobileExpanded, setMobileExpanded] = React.useState(false);
+  const [mobileExpanded, setMobileExpanded] = React.useState(true);
   const containerRef = React.useRef<HTMLDivElement>(null);
   const inputRef = React.useRef<HTMLInputElement>(null);
   const listRef = React.useRef<HTMLDivElement>(null);
+  const fileInputRef = React.useRef<HTMLInputElement>(null);
 
   const filtered = React.useMemo(() => {
     if (!query) return vehicles;
@@ -225,8 +207,6 @@ export default function ArmorControls({
       height={{ base: 'auto', md: '100%' }}
       minHeight="0"
     >
-      <style dangerouslySetInnerHTML={{ __html: SLIDER_CSS }} />
-
       <Flex
         _hover={{ background: 'whiteAlpha.50' }}
         alignItems="center"
@@ -275,6 +255,7 @@ export default function ArmorControls({
           <Box
             ref={containerRef}
             borderBottomWidth="1px"
+            data-tour="vehicle"
             padding={3}
             position="relative"
           >
@@ -336,6 +317,7 @@ export default function ArmorControls({
                             key={v.slug}
                             isSelected={v.slug === selectedSlug}
                             name={v.name}
+                            slug={v.slug}
                             style={{
                               height: `${virtualItem.size}px`,
                               transform: `translateY(${virtualItem.start}px)`,
@@ -349,6 +331,74 @@ export default function ArmorControls({
                 </Box>
               )}
             </Box>
+
+            {IS_DEV && (
+              <>
+                <input
+                  ref={fileInputRef}
+                  accept=".mtca"
+                  hidden
+                  type="file"
+                  onChange={(event) => {
+                    const file = event.target.files?.[0];
+                    if (file) onUploadFile(file);
+                    event.target.value = '';
+                  }}
+                />
+
+                {overrideFileName ? (
+                  <Flex direction="column" gap={1} marginTop={2}>
+                    <Flex alignItems="center" gap={2}>
+                      <Text
+                        color="teal.300"
+                        flex={1}
+                        fontSize="2xs"
+                        overflow="hidden"
+                        textOverflow="ellipsis"
+                        whiteSpace="nowrap"
+                      >
+                        {overrideFileName}
+                      </Text>
+                      <Box
+                        _hover={{ color: 'fg' }}
+                        as="button"
+                        color="fg.subtle"
+                        cursor="pointer"
+                        fontSize="2xs"
+                        onClick={onClearUpload}
+                      >
+                        clear
+                      </Box>
+                    </Flex>
+                    {version != null && (
+                      <Text color="fg.subtle" fontSize="2xs">
+                        v{version}
+                      </Text>
+                    )}
+                  </Flex>
+                ) : (
+                  <Text
+                    _hover={{ color: 'fg.muted' }}
+                    as="button"
+                    color="fg.subtle"
+                    cursor="pointer"
+                    display="block"
+                    fontSize="2xs"
+                    marginTop={1.5}
+                    textAlign="left"
+                    onClick={() => fileInputRef.current?.click()}
+                  >
+                    or upload .mtca
+                  </Text>
+                )}
+
+                {uploadError && (
+                  <Text color="red.400" fontSize="2xs" marginTop={1}>
+                    {uploadError}
+                  </Text>
+                )}
+              </>
+            )}
           </Box>
 
           <Flex
@@ -357,7 +407,7 @@ export default function ArmorControls({
             gap={0}
             overflowY={{ base: 'hidden', md: 'auto' }}
           >
-            <Box borderBottomWidth="1px" padding={3}>
+            <Box borderBottomWidth="1px" data-tour="angle" padding={3}>
               <Text color="fg.muted" fontSize="xs" marginBottom={1}>
                 Angle
               </Text>
@@ -398,9 +448,87 @@ export default function ArmorControls({
               </Box>
             </Box>
 
-            {/* ricochet angle + depth */}
+            {usedModuleIndices.size > 0 && (
+              <Box borderBottomWidth="1px" padding={3}>
+                <Flex alignItems="center" marginBottom={2}>
+                  <Text color="fg.muted" fontSize="xs">
+                    Damage modules
+                  </Text>
+                  <Box
+                    _hover={{ color: 'fg.muted' }}
+                    as="button"
+                    color="fg.subtle"
+                    cursor="pointer"
+                    fontSize="2xs"
+                    marginLeft="auto"
+                    onClick={() =>
+                      onToggleModule(Array.from(usedModuleIndices))
+                    }
+                  >
+                    {usedModuleIndices.size > 0 &&
+                    Array.from(usedModuleIndices).every((i) =>
+                      hiddenModules.has(i),
+                    )
+                      ? 'show all'
+                      : 'hide all'}
+                  </Box>
+                </Flex>
+                <Flex direction="column" gap={1.5}>
+                  {groupModules(modules)
+                    .filter((group) =>
+                      group.indices.some((i) => usedModuleIndices.has(i)),
+                    )
+                    .map((group) => {
+                      const isHidden = group.indices.every((idx) =>
+                        hiddenModules.has(idx),
+                      );
+                      const mc = palette.moduleColor;
+
+                      return (
+                        <Flex
+                          key={group.label}
+                          _hover={{ background: 'whiteAlpha.50' }}
+                          alignItems="center"
+                          cursor="pointer"
+                          gap={2}
+                          marginX={-1}
+                          paddingX={1}
+                          paddingY={0.5}
+                          onClick={() => onToggleModule(group.indices)}
+                        >
+                          <Box
+                            borderRadius="sm"
+                            flexShrink={0}
+                            height="10px"
+                            opacity={isHidden ? 0.25 : 1}
+                            style={{
+                              background: `rgb(${mc.r},${mc.g},${mc.b})`,
+                            }}
+                            transition="opacity 0.1s"
+                            width="10px"
+                          />
+                          <Text
+                            color={isHidden ? 'fg.subtle' : 'fg.muted'}
+                            fontSize="2xs"
+                            lineHeight="1.2"
+                            overflow="hidden"
+                            textDecoration={isHidden ? 'line-through' : 'none'}
+                            textOverflow="ellipsis"
+                            transition="color 0.1s"
+                            whiteSpace="nowrap"
+                          >
+                            {group.label}
+                          </Text>
+                        </Flex>
+                      );
+                    })}
+                </Flex>
+              </Box>
+            )}
+
             <Box
               borderBottomWidth="1px"
+              data-tour="depth"
               display="flex"
               flexDirection="column"
               gap={3}
@@ -415,16 +543,12 @@ export default function ArmorControls({
                     {ricochetAngle.toFixed(1)}°
                   </Text>
                 </Flex>
-                <input
-                  className="armor-slider"
+                <RangeSlider
                   max={90}
                   min={75}
                   step={0.5}
-                  type="range"
                   value={ricochetAngle}
-                  onChange={(e) =>
-                    onRicochetAngleChange(Number(e.target.value))
-                  }
+                  onChange={onRicochetAngleChange}
                 />
               </div>
 
@@ -442,17 +566,14 @@ export default function ArmorControls({
                     >
                       Min
                     </Text>
-                    <input
-                      className="armor-slider"
+                    <RangeSlider
                       max={effectiveMaxDepth}
                       min={0}
                       step={effectiveMaxDepth / 200}
-                      type="range"
                       value={minDepth}
-                      onChange={(e) => {
-                        const v = Number(e.target.value);
-                        onMinDepthChange(Math.min(v, maxDepth));
-                      }}
+                      onChange={(v: number) =>
+                        onMinDepthChange(Math.min(v, maxDepth))
+                      }
                     />
                   </Flex>
                   <Flex alignItems="center" gap={2}>
@@ -464,26 +585,23 @@ export default function ArmorControls({
                     >
                       Max
                     </Text>
-                    <input
-                      className="armor-slider"
+                    <RangeSlider
                       max={effectiveMaxDepth}
                       min={0}
                       step={effectiveMaxDepth / 200}
-                      type="range"
                       value={Math.min(maxDepth, effectiveMaxDepth)}
-                      onChange={(e) => {
-                        const v = Number(e.target.value);
-                        onMaxDepthChange(Math.max(v, minDepth));
-                      }}
+                      onChange={(v: number) =>
+                        onMaxDepthChange(Math.max(v, minDepth))
+                      }
                     />
                   </Flex>
                 </Flex>
               </div>
             </Box>
 
-            {/* range + palette */}
             <Box
               borderBottomWidth="1px"
+              data-tour="range"
               display="flex"
               flexDirection="column"
               gap={3}
@@ -581,7 +699,26 @@ export default function ArmorControls({
               </div>
             </Box>
 
-            <Box padding={3}>
+            <Flex gap={2} padding={3}>
+              <Flex
+                _hover={{ color: 'fg', background: 'whiteAlpha.100' }}
+                alignItems="center"
+                as="button"
+                borderColor="border.muted"
+                borderWidth="1px"
+                color="fg.muted"
+                cursor="pointer"
+                flex={1}
+                fontSize="xs"
+                gap={2}
+                justifyContent="center"
+                paddingX={3}
+                paddingY={1.5}
+                onClick={onSave}
+              >
+                <LuDownload size={14} />
+                Save image
+              </Flex>
               <Flex
                 _hover={{ color: 'fg', background: 'whiteAlpha.100' }}
                 alignItems="center"
@@ -591,22 +728,19 @@ export default function ArmorControls({
                 color="fg.muted"
                 cursor="pointer"
                 fontSize="xs"
-                gap={2}
                 justifyContent="center"
-                paddingX={3}
+                paddingX={2}
                 paddingY={1.5}
-                width="100%"
-                onClick={onSave}
+                onClick={onOpenTour}
               >
-                <LuDownload size={14} />
-                Save image
+                <LuCircleHelp size={14} />
               </Flex>
-            </Box>
+            </Flex>
 
             <Box borderTopWidth="1px" marginTop="auto" padding={3}>
               <Text color="fg.subtle" fontSize="2xs" lineHeight="1.4">
                 The provided visualization may not be used for bug reports, use
-                the armor tools in-game instead. Data is estimated and may not
+                the armour tools in-game instead. Data is estimated and may not
                 be accurate. If thickness differs significantly from in-game,
                 you may report this as a wiki bug in the{' '}
                 <Link

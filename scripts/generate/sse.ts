@@ -33,7 +33,10 @@ if (
     };
 
     eventSource.onerror = (error) => {
-      console.error('SSE connection error:', error);
+      console.error('SSE connection error:', error, {
+        url: sseUrl,
+        readyState: eventSource.readyState,
+      });
       eventSource.close();
 
       const delay = Math.min(baseDelay * Math.pow(2, retryCount), maxDelay);
@@ -47,10 +50,11 @@ if (
 
       console.log('SSE updates:', files.join(', '));
 
-      for (const file of files)
+      for (const file of files) {
         await Promise.allSettled(
           sse.listeners(file).map((callback) => Promise.resolve(callback())),
         );
+      }
 
       sse.emit('_settled');
     });

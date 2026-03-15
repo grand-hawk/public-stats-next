@@ -1,7 +1,7 @@
 # Build layer
-FROM node:24 AS build
+FROM node:25 AS build
 
-RUN corepack enable && corepack prepare pnpm@10 --activate
+RUN npm install -g pnpm@10
 
 COPY . /build
 WORKDIR /build
@@ -21,6 +21,7 @@ ENV NEXT_OUTPUT=standalone
 # Env variables needed for build
 ARG RAILWAY_GIT_COMMIT_SHA
 ARG RAILWAY_SERVICE_ID
+ARG RAILWAY_ENVIRONMENT_ID
 ARG NEXT_PUBLIC_ANALYTICS_DOMAIN
 ARG NEXT_PUBLIC_ANALYTICS_ID
 
@@ -28,19 +29,20 @@ ARG NEXT_PUBLIC_ANALYTICS_ID
 ARG DEPLOY_API_KEY
 ARG CDN_BASE
 ARG NEXT_PUBLIC_IMAGE_LOADER
-ENV ASSET_PREFIX="${CDN_BASE}/${RAILWAY_GIT_COMMIT_SHA}"
-ENV NEXT_PUBLIC_MEDIA_PREFIX="${ASSET_PREFIX}"
+RUN echo -n "${RAILWAY_GIT_COMMIT_SHA}${RAILWAY_SERVICE_ID}${RAILWAY_ENVIRONMENT_ID}" | sha256sum | head -c 32 > /tmp/deploy_hash
 
-RUN pnpm run generate && pnpm run build
+RUN export ASSET_PREFIX="${CDN_BASE}/$(cat /tmp/deploy_hash)" \
+  && export NEXT_PUBLIC_MEDIA_PREFIX="${ASSET_PREFIX}" \
+  && pnpm run generate && pnpm run build
 
-RUN curl -fsSL https://deploy.astrid.ovh | bash -s -- .next/static
-RUN curl -fsSL https://deploy.astrid.ovh | bash -s -- public
+RUN curl -fsSL https://deploy.astrid.ovh | bash -s -- --id $(cat /tmp/deploy_hash) .next/static
+RUN curl -fsSL https://deploy.astrid.ovh | bash -s -- --id $(cat /tmp/deploy_hash) public/assets
 
 RUN rm -rf .next/static
-RUN find public -type f -exec truncate -s 0 {} +
+RUN rm -rf public/assets
 
 # Package layer
-FROM node:24-alpine AS package
+FROM platformatic/node-caged:25-alpine AS package
 
 RUN apk --no-cache add curl
 

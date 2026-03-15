@@ -24,6 +24,7 @@ import { capitalizeFirst } from '@/utils/capitalizeFirst';
 import type { BoxProps, IconProps } from '@chakra-ui/react';
 
 const COLLAPSED_MAX_HEIGHT = 150;
+const COLLAPSE_THRESHOLD = COLLAPSED_MAX_HEIGHT + 50;
 
 const classIcons: Record<string, (props: IconProps) => React.ReactNode> = {
   Engineer: EngineerIcon,
@@ -58,7 +59,7 @@ export default function VehicleGeneralInformation({
     if (!contentRef.current) return;
     const height = contentRef.current.scrollHeight;
     setContentHeight(height);
-    setNeedsExpand(height > COLLAPSED_MAX_HEIGHT);
+    setNeedsExpand(height > COLLAPSE_THRESHOLD);
   }, [customDescription]);
 
   React.useEffect(() => {
@@ -86,10 +87,14 @@ export default function VehicleGeneralInformation({
                   overflow="hidden"
                   position="relative"
                   css={{
-                    maxHeight: isExpanded
-                      ? `${contentHeight}px`
-                      : `${COLLAPSED_MAX_HEIGHT}px`,
-                    transition: skipTransition ? 'none' : 'max-height 0.3s ease',
+                    maxHeight: needsExpand
+                      ? isExpanded
+                        ? `${contentHeight}px`
+                        : `${COLLAPSED_MAX_HEIGHT}px`
+                      : 'none',
+                    transition: skipTransition
+                      ? 'none'
+                      : 'max-height 0.3s ease',
                   }}
                 >
                   <Box asChild {...baseContentProps}>
@@ -165,7 +170,7 @@ export default function VehicleGeneralInformation({
                 <HStack gap={1}>
                   {vehicle.info.supportedClasses.map((className) => {
                     const Icon = classIcons[className];
-                    if (Icon)
+                    if (Icon) {
                       return (
                         <ToggleTip
                           closeDelay={50}
@@ -176,6 +181,7 @@ export default function VehicleGeneralInformation({
                           <Icon boxSize="1em" />
                         </ToggleTip>
                       );
+                    }
                   })}
                 </HStack>
               </Stat>

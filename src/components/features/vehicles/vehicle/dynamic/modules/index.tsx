@@ -11,8 +11,9 @@ import { useDynamicData } from '@/hooks/providers/dynamicData';
 export default function VehicleDynamicModules() {
   const { assembledModules } = useDynamicData();
 
-  if (Object.keys(assembledModules).length === 0)
+  if (Object.keys(assembledModules).length === 0) {
     return <EmptyState title="No modules available for this vehicle" />;
+  }
 
   return (
     <>

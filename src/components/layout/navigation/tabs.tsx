@@ -2,7 +2,7 @@ import { Icon } from '@chakra-ui/react';
 import React from 'react';
 import { GiArtilleryShell } from 'react-icons/gi';
 import { ImTable } from 'react-icons/im';
-import { LuShield } from 'react-icons/lu';
+import { LuGitCompareArrows, LuShield } from 'react-icons/lu';
 import { MdFlag, MdOutlineSsidChart, MdViewList } from 'react-icons/md';
 import { TbTank } from 'react-icons/tb';
 
@@ -14,9 +14,10 @@ export interface Tab {
   label: string;
   longLabel?: string;
   path: string;
-  icon: IconType | ((props: IconProps) => ReactNode);
   color: string;
   description: string;
+  icon: IconType | ((props: IconProps) => ReactNode);
+  prefetch?: true;
 }
 
 export const tabs: Record<string, Tab> = {
@@ -29,6 +30,7 @@ export const tabs: Record<string, Tab> = {
     icon: (props: IconProps) => (
       <Icon as={TbTank} height={5} width={5} {...props} />
     ),
+    prefetch: true,
   },
   shells: {
     label: 'Shells',
@@ -77,13 +79,23 @@ export const tabs: Record<string, Tab> = {
       <Icon as={MdOutlineSsidChart} height={5} width={5} {...props} />
     ),
   },
-  armor: {
-    label: 'Armor',
-    longLabel: 'Armor visualizer',
+  compare: {
+    label: 'Compare',
+    path: '/compare',
+    color: 'yellow.500',
+    description:
+      'Compare stats and characteristics of multiple vehicles or shells side by side.',
+    icon: (props: IconProps) => (
+      <Icon as={LuGitCompareArrows} height={5} width={5} {...props} />
+    ),
+  },
+  armour: {
+    label: 'Armour',
+    longLabel: 'Armour visualizer',
     path: '/armor',
     color: 'teal.500',
     description:
-      'Visualize vehicle armor thickness with customizable color maps.',
+      'Visualize vehicle armour thickness with customizable color maps.',
     icon: (props: IconProps) => (
       <Icon as={LuShield} height={5} width={5} {...props} />
     ),
@@ -100,4 +112,7 @@ export const secondaryTabKeys = [
   'kdr',
   'winrate',
 ] as const satisfies (keyof typeof tabs)[];
-export const toolsTabKeys = ['armor'] as const satisfies (keyof typeof tabs)[];
+export const toolsTabKeys = [
+  'compare',
+  'armour',
+] as const satisfies (keyof typeof tabs)[];

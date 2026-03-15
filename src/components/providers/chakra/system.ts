@@ -1,7 +1,7 @@
 import { createSystem, defaultConfig, defineConfig } from '@chakra-ui/react';
 import { GeistMono } from 'geist/font/mono';
 
-import { recipes, slotRecipes } from './recipes';
+import { recipes, slotRecipes } from '@/components/providers/chakra/recipes';
 
 const config = defineConfig({
   globalCss: {

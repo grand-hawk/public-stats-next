@@ -84,8 +84,19 @@ export default function Sidebar() {
         <DrawerBackdrop />
 
         <DrawerContent>
-          <DrawerHeader borderBottomWidth="1px" paddingY={3}>
-            <MTC height={6} width={6} />
+          <DrawerHeader borderBottomWidth="1px" paddingY={3} paddingEnd={14}>
+            <NextLink
+              href={`/${initials}`}
+              onClick={() => setMobileOpen(false)}
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                textDecoration: 'none',
+                width: '100%',
+              }}
+            >
+              <MTC height={6} width={6} />
+            </NextLink>
           </DrawerHeader>
 
           <DrawerCloseTrigger />

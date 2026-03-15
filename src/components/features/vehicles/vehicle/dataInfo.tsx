@@ -1,15 +1,15 @@
 import { HStack, Icon, Stack } from '@chakra-ui/react';
 import React from 'react';
-import { BsDatabaseFillCheck } from 'react-icons/bs';
 import { IoMdAdd } from 'react-icons/io';
 import { MdCode } from 'react-icons/md';
 
 import { useVehicle } from '@/hooks/providers/vehicle';
 
-export default function VehicleDataInfo() {
+import type { StackProps } from '@chakra-ui/react';
+
+export default function VehicleDataInfo({ ...props }: StackProps) {
   const vehicle = useVehicle();
 
-  const lastRetrievedDate = new Date(vehicle.info.lastRetrieved);
   const addedDate = vehicle.info.addedDate && new Date(vehicle.info.addedDate);
 
   return (
@@ -34,6 +34,7 @@ export default function VehicleDataInfo() {
         },
       }}
       gap={2}
+      {...props}
     >
       {addedDate && (
         <HStack>
@@ -48,23 +49,8 @@ export default function VehicleDataInfo() {
       )}
 
       <HStack>
-        <Icon as={BsDatabaseFillCheck} />
-        <span>
-          Data as of:{' '}
-          <span
-            title={lastRetrievedDate.toLocaleString()}
-            suppressHydrationWarning
-          >
-            {lastRetrievedDate.toLocaleDateString()}
-          </span>
-        </span>
-      </HStack>
-
-      <HStack>
         <Icon as={MdCode} />
-        <span title="The internal ID of the vehicle, useful for the loadout editor">
-          ID: &quot;{vehicle.info.gameId}&quot;
-        </span>
+        <span>ID: &quot;{vehicle.info.gameId}&quot;</span>
       </HStack>
     </Stack>
   );

@@ -31,7 +31,7 @@ export default function PlaceShell() {
   React.useEffect(() => {
     if (!shell) return;
 
-    if (shellQuery !== shellSlug)
+    if (shellQuery !== shellSlug) {
       router.replace({
         pathname: router.pathname,
         query: {
@@ -39,9 +39,14 @@ export default function PlaceShell() {
           shell: shellSlug,
         },
       });
+    }
   }, [router, shell, shellQuery, shellSlug]);
 
-  const title = shell ? `${shell.weapon} - ${shell.name}` : 'Shell not found';
+  const title = shell
+    ? shell.weapon === shell.name
+      ? shell.name
+      : `${shell.weapon} - ${shell.name}`
+    : 'Shell not found';
   const description = shell
     ? `${shell.weapon} - ${shell.name} shell statistics for ${place.placeName}`
     : undefined;

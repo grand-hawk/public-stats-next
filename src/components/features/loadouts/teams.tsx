@@ -31,7 +31,7 @@ export default function LoadoutTeams({ initials, loadout }: LoadoutTeamsProps) {
   const selectedTeam =
     teamQuery && teamSlugs[teamQuery] ? teamSlugs[teamQuery] : teamNames[0];
 
-  if (teamNames.length === 0)
+  if (teamNames.length === 0) {
     return (
       <TitledCard as="section" title="Teams" withAnchor>
         <EmptyState
@@ -40,6 +40,7 @@ export default function LoadoutTeams({ initials, loadout }: LoadoutTeamsProps) {
         />
       </TitledCard>
     );
+  }
 
   return (
     <TitledCard as="section" innerPadding={0} title="Teams" withAnchor>

@@ -1,5 +1,6 @@
 import { Box, Heading, HStack, Span } from '@chakra-ui/react';
 import React from 'react';
+import { LuGitCompareArrows } from 'react-icons/lu';
 import { MdOutlineOpenInFull } from 'react-icons/md';
 import { SiFandom } from 'react-icons/si';
 import slug from 'slug';
@@ -8,14 +9,17 @@ import IconLink from '@/components/common/buttonIconLink';
 import ButtonMarkdownLink from '@/components/common/buttonMarkdownLink';
 import EditPagePopover from '@/components/common/editPagePopover';
 import FakeDescription from '@/components/common/fakeDescription';
+import HeaderToolbar from '@/components/common/headerToolbar';
 import VehicleImage from '@/components/features/vehicles/vehicleImage';
 import TeamIcon from '@/components/icons/teams';
 import { env } from '@/env';
 import { useVehicle } from '@/hooks/providers/vehicle';
+import { usePlaceInitials } from '@/hooks/usePlaceInitials';
 import { getVehicleImage } from '@/utils/getVehicleImage';
 
 export default function VehicleHeader() {
   const vehicle = useVehicle();
+  const initials = usePlaceInitials();
 
   return (
     <Box
@@ -45,19 +49,7 @@ export default function VehicleHeader() {
           sizes="(min-width: 80rem) 1000px, (min-width: 60rem) 800px, 600px"
         />
 
-        <HStack
-          bottom={2}
-          css={{
-            '& > *': {
-              height: 9,
-              width: 9,
-            },
-          }}
-          flexDirection="row-reverse"
-          position="absolute"
-          right={2}
-          role="toolbar"
-        >
+        <HeaderToolbar placement="bottom" uniformSize>
           <IconLink
             href={getVehicleImage(
               vehicle.info.slug,
@@ -76,6 +68,15 @@ export default function VehicleHeader() {
           </IconLink>
 
           <ButtonMarkdownLink />
+
+          <IconLink
+            href={`/${initials}/compare?tab=vehicles&vehicles=${vehicle.info.slug}`}
+            size="sm"
+            title="Compare"
+            variant="surface"
+          >
+            <LuGitCompareArrows />
+          </IconLink>
 
           {vehicle.content && !env.NEXT_PUBLIC_STACKBLITZ && (
             <EditPagePopover
@@ -97,7 +98,7 @@ export default function VehicleHeader() {
               <SiFandom />
             </IconLink>
           )}
-        </HStack>
+        </HeaderToolbar>
       </Box>
 
       <Box as="section" backgroundColor="bg.subtle" padding={6}>

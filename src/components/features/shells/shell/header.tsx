@@ -1,14 +1,19 @@
-import { Box, Heading, HStack, Span, Stack } from '@chakra-ui/react';
+import { Box, Heading, Span, Stack } from '@chakra-ui/react';
 import React from 'react';
+import { LuGitCompareArrows } from 'react-icons/lu';
 
+import IconLink from '@/components/common/buttonIconLink';
 import ButtonMarkdownLink from '@/components/common/buttonMarkdownLink';
+import HeaderToolbar from '@/components/common/headerToolbar';
 import ShellIcon from '@/components/features/shells/shellIcon';
 import { getShellIcon } from '@/components/icons/shells';
 import Stat from '@/components/wiki/stat';
 import { useShell } from '@/hooks/providers/shell';
+import { usePlaceInitials } from '@/hooks/usePlaceInitials';
 
 export default function ShellHeader() {
   const shell = useShell();
+  const initials = usePlaceInitials();
 
   const shellIcon = React.useMemo(() => {
     return getShellIcon(shell.displayType);
@@ -38,9 +43,17 @@ export default function ShellHeader() {
         padding={6}
         position="relative"
       >
-        <HStack position="absolute" right={2} role="toolbar" top={2}>
+        <HeaderToolbar uniformSize>
           <ButtonMarkdownLink />
-        </HStack>
+          <IconLink
+            href={`/${initials}/compare?tab=shells&shells=${shell.slug}`}
+            size="sm"
+            title="Compare"
+            variant="surface"
+          >
+            <LuGitCompareArrows />
+          </IconLink>
+        </HeaderToolbar>
 
         <div>
           {shell.weapon !== shell.name && (

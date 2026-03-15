@@ -2,5 +2,5 @@ vehicles:
   sections:
     - name: Description
 
-    - name: Armor
+    - name: Armour
       lineRule: '^(Lower front plate|Upper front plate|Hull side|Left cheek|Right cheek|Mantlet): ~?\d+(-~?\d+)?$'
