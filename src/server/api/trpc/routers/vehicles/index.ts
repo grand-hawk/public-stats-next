@@ -79,6 +79,7 @@ export const vehiclesRouter = createTRPCRouter({
       const dateNow = Date.now();
 
       return Object.entries(vehiclesData)
+        .filter(([, data]) => !data.info.unlisted)
         .map(
           ([name, data]) =>
             ({

@@ -17,7 +17,8 @@ const body = sections.map((s) => `## ${s.name}\n`).join('\n');
 const template = (name: string) => `# ${name}\n\n${body}`;
 
 const vehicles = getVehicles();
-const gameIds = new Set<string>();
+const listedGameIds = new Set<string>();
+const unlistedGameIds = new Set<string>();
 const gameIdToName = new Map<string, string>();
 
 for (const place of Object.values(vehicles.data)) {
@@ -25,8 +26,15 @@ for (const place of Object.values(vehicles.data)) {
     string,
     VehiclesPlaceDataVehicle,
   ][]) {
-    gameIds.add(vehicle.info.gameId);
-    gameIdToName.set(vehicle.info.gameId, name);
+    const gameId = vehicle.info.gameId;
+    if (vehicle.info.unlisted) {
+      if (!listedGameIds.has(gameId)) unlistedGameIds.add(gameId);
+      continue;
+    }
+
+    listedGameIds.add(gameId);
+    unlistedGameIds.delete(gameId);
+    gameIdToName.set(gameId, name);
   }
 }
 
@@ -35,7 +43,7 @@ if (!existsSync(CONTENT_DIR)) await mkdir(CONTENT_DIR, { recursive: true });
 let created = 0;
 let skipped = 0;
 
-for (const gameId of [...gameIds].sort()) {
+for (const gameId of [...listedGameIds].sort()) {
   const filename = `${slug(gameId)}.md`;
   const filepath = `${CONTENT_DIR}/${filename}`;
 
@@ -49,12 +57,13 @@ for (const gameId of [...gameIds].sort()) {
   created += 1;
 }
 
-const expectedSlugs = new Set([...gameIds].map((id) => slug(id)));
+const expectedSlugs = new Set([...listedGameIds].map((id) => slug(id)));
+const unlistedSlugs = new Set([...unlistedGameIds].map((id) => slug(id)));
 const existingFiles = await readdir(CONTENT_DIR);
 const extraFiles = existingFiles
   .filter((f) => f.endsWith('.md'))
   .map((f) => f.replace(/\.md$/, ''))
-  .filter((s) => !expectedSlugs.has(s));
+  .filter((s) => !expectedSlugs.has(s) && !unlistedSlugs.has(s));
 
 if (extraFiles.length > 0) {
   console.warn(

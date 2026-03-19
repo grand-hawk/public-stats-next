@@ -22,7 +22,13 @@ function getPaths() {
   const initials = config.data.placeNameInitials[placeName];
   const placeId = config.data.placeIds[placeName];
 
-  const vehicleSlugs = vehicles.data[placeId].metadata.slugs;
+  const vehiclesPlace = vehicles.data[placeId];
+  const vehicleSlugs = Object.entries(vehiclesPlace.metadata.slugs)
+    .filter(([, vehicleName]) => {
+      const vehicle = vehiclesPlace.data[vehicleName];
+      return vehicle && !vehicle.info.unlisted;
+    })
+    .map(([vehicleSlug]) => vehicleSlug);
   const loadoutsPlace = loadouts.data[placeId];
   const shellsPlace = shells.data[placeId];
 
@@ -51,7 +57,7 @@ function getPaths() {
     changefreq: 'weekly',
     priority: '0.9',
   });
-  for (const vehicleSlug of Object.keys(vehicleSlugs)) {
+  for (const vehicleSlug of vehicleSlugs) {
     paths.push({
       path: `${initials}/vehicles/${vehicleSlug}`,
       changefreq: 'monthly',

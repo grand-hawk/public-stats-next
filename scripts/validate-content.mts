@@ -15,16 +15,26 @@ const CONFIG_PATH = 'content/config.yml';
 const consola = createConsola({ formatOptions: { date: false } });
 
 const vehicles = getVehicles();
-const gameIds = new Set<string>();
+const listedGameIds = new Set<string>();
+const unlistedGameIds = new Set<string>();
 for (const place of Object.values(vehicles.data ?? {})) {
   const placeData = place?.data as
     | Record<string, VehiclesPlaceDataVehicle>
     | undefined;
   for (const vehicle of Object.values(placeData ?? {})) {
-    if (vehicle?.info?.gameId) gameIds.add(vehicle.info.gameId);
+    if (!vehicle?.info?.gameId) continue;
+    const gameId = vehicle.info.gameId;
+    if (vehicle.info.unlisted) {
+      if (!listedGameIds.has(gameId)) unlistedGameIds.add(gameId);
+      continue;
+    }
+
+    listedGameIds.add(gameId);
+    unlistedGameIds.delete(gameId);
   }
 }
-const expectedSlugs = new Set([...gameIds].map((id) => slug(id)));
+const expectedSlugs = new Set([...listedGameIds].map((id) => slug(id)));
+const unlistedSlugs = new Set([...unlistedGameIds].map((id) => slug(id)));
 
 interface ConfigSection {
   name: string;
@@ -48,6 +58,9 @@ if (files.length === 0) {
     .filter((f) => f.endsWith('.md'))
     .map((f) => path.join(CONTENT_DIR, f));
 }
+files = files.filter(
+  (file) => !unlistedSlugs.has(path.basename(file, '.md')),
+);
 
 if (files.length === 0) {
   consola.info('No files to validate');

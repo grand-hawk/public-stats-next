@@ -23,9 +23,9 @@ function getMdPaths() {
     const placeId = config.data.placeIds[placeName];
 
     const vehiclesPlace = vehicles.data[placeId];
-    const vehicleSlugs = Object.values(vehiclesPlace.data).map(
-      (v) => v.info.slug,
-    );
+    const vehicleSlugs = Object.values(vehiclesPlace.data)
+      .filter((vehicle) => !vehicle.info.unlisted)
+      .map((vehicle) => vehicle.info.slug);
     const loadoutsPlace = loadouts.data[placeId];
     const shellsPlace = shells.data[placeId];
 

@@ -23,6 +23,7 @@ async function revalidate(placeName: PlaceName) {
   if (!vehiclesData) return null;
 
   const entries = Object.entries(vehiclesData)
+    .filter(([, data]) => !data.info.unlisted)
     .map(([name, data]) => ({
       name: `[${escapeMarkdownLink(name)}](/md/${place.initials}/vehicles/${data.info.slug}.md)`,
       team: data.info.team,
