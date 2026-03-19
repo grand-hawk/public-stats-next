@@ -17,7 +17,9 @@ const consola = createConsola({ formatOptions: { date: false } });
 const vehicles = getVehicles();
 const gameIds = new Set<string>();
 for (const place of Object.values(vehicles.data ?? {})) {
-  const placeData = place?.data as Record<string, VehiclesPlaceDataVehicle> | undefined;
+  const placeData = place?.data as
+    | Record<string, VehiclesPlaceDataVehicle>
+    | undefined;
   for (const vehicle of Object.values(placeData ?? {})) {
     if (vehicle?.info?.gameId) gameIds.add(vehicle.info.gameId);
   }
@@ -61,9 +63,7 @@ for (const filepath of files) {
   const warnings: string[] = [];
   const fileSlug = path.basename(filepath, '.md');
   if (!expectedSlugs.has(fileSlug)) {
-    report(filepath, [
-      'Vehicle no longer exists in API — delete this file',
-    ]);
+    report(filepath, ['Vehicle no longer exists in API — delete this file']);
     continue;
   }
 
@@ -103,20 +103,22 @@ for (const filepath of files) {
       if (parsedFm != null && typeof parsedFm === 'object') {
         const knownKeys = new Set(['frontArmorDepth']);
         for (const key of Object.keys(parsedFm)) {
-          if (!knownKeys.has(key))
-            {errors.push(`Frontmatter: unknown key "${key}"`);}
+          if (!knownKeys.has(key)) {
+            errors.push(`Frontmatter: unknown key "${key}"`);
+          }
         }
 
         if ('frontArmorDepth' in parsedFm) {
           const val = parsedFm.frontArmorDepth;
-          if (typeof val !== 'number' || !Number.isFinite(val))
-            {errors.push(
+          if (typeof val !== 'number' || !Number.isFinite(val)) {
+            errors.push(
               `frontArmorDepth must be a number, got ${JSON.stringify(val)}`,
-            );}
-          else if (val < 0 || val > 100)
-            {errors.push(
+            );
+          } else if (val < 0 || val > 100) {
+            errors.push(
               `frontArmorDepth must be between 0 and 100, got ${val}`,
-            );}
+            );
+          }
         }
       }
     }
@@ -127,15 +129,17 @@ for (const filepath of files) {
 
   // check for consecutive blank lines
   for (let i = 0; i < lines.length - 1; i += 1) {
-    if (lines[i].trim() === '' && lines[i + 1].trim() === '')
-      {errors.push(
+    if (lines[i].trim() === '' && lines[i + 1].trim() === '') {
+      errors.push(
         `Line ${lineNum(i + 2)}: consecutive blank lines are not allowed`,
-      );}
+      );
+    }
   }
 
   // must start with an h1
-  if (!lines[0]?.startsWith('# ') || lines[0].startsWith('## '))
-    {errors.push('File must start with a single # heading (vehicle name)');}
+  if (!lines[0]?.startsWith('# ') || lines[0].startsWith('## ')) {
+    errors.push('File must start with a single # heading (vehicle name)');
+  }
 
   const headings = lines
     .map((line, i) => ({ line, num: i + 1 }))
@@ -143,31 +147,34 @@ for (const filepath of files) {
 
   // only one h1 allowed
   const h1s = headings.filter(({ line }) => /^# [^#]/.test(line));
-  if (h1s.length > 1)
-    {errors.push(
+  if (h1s.length > 1) {
+    errors.push(
       `Only one # heading allowed, found ${h1s.length} (lines ${h1s.map((h) => lineNum(h.num)).join(', ')})`,
-    );}
+    );
+  }
 
   // check ## sections (the only restricted heading level)
   const h2s = headings.filter(({ line }) => /^## [^#]/.test(line));
   const seenSections = new Map<string, number>();
   for (const { line, num } of h2s) {
     const sectionName = line.replace(/^## /, '').trim();
-    if (!allowedNames.includes(sectionName))
-      {errors.push(
+    if (!allowedNames.includes(sectionName)) {
+      errors.push(
         `Line ${lineNum(num)}: unknown section "## ${sectionName}" (allowed: ${allowedNames.join(', ')})`,
-      );}
-    if (seenSections.has(sectionName))
-      {errors.push(
+      );
+    }
+    if (seenSections.has(sectionName)) {
+      errors.push(
         `Line ${lineNum(num)}: duplicate section "## ${sectionName}" (first at line ${seenSections.get(sectionName)!})`,
-      );}
-    else seenSections.set(sectionName, num);
+      );
+    } else seenSections.set(sectionName, num);
   }
 
   // check all required sections are present
   for (const name of allowedNames) {
-    if (!seenSections.has(name))
-      {errors.push(`Missing required section "## ${name}"`);}
+    if (!seenSections.has(name)) {
+      errors.push(`Missing required section "## ${name}"`);
+    }
   }
 
   // validate line rules and collect Description content
@@ -194,10 +201,11 @@ for (const filepath of files) {
     }
 
     const rule = rulesByName[currentSection];
-    if (rule && !rule.test(line.trim()))
-      {errors.push(
+    if (rule && !rule.test(line.trim())) {
+      errors.push(
         `Line ${lineNum(i + 1)}: content in "${currentSection}" doesn't match required format — got "${line.trim()}"`,
-      );}
+      );
+    }
 
     // range: left must be strictly less than right; standalone 0 not allowed
     if (rule && rule.test(line.trim())) {
@@ -206,21 +214,27 @@ for (const filepath of files) {
       if (rangeMatch) {
         const left = parseInt(rangeMatch[1].replace('~', ''), 10);
         const right = parseInt(rangeMatch[2].replace('~', ''), 10);
-        if (left >= right)
-          {errors.push(
+        if (left >= right) {
+          errors.push(
             `Line ${lineNum(i + 1)}: armour range must have left < right, got ${rangeMatch[1]}-${rangeMatch[2]}`,
-          );}
+          );
+        }
       } else if (currentSection === 'Armour') {
         const singleMatch = trimmed.match(/:\s*(~?\d+)$/);
-        if (singleMatch && parseInt(singleMatch[1].replace('~', ''), 10) === 0)
-          {errors.push(
+        if (
+          singleMatch &&
+          parseInt(singleMatch[1].replace('~', ''), 10) === 0
+        ) {
+          errors.push(
             `Line ${lineNum(i + 1)}: armour cannot be standalone 0 (use 0-5 for a range if needed)`,
-          );}
+          );
+        }
       }
     }
 
-    if (!sectionContent.has(currentSection))
-      {sectionContent.set(currentSection, []);}
+    if (!sectionContent.has(currentSection)) {
+      sectionContent.set(currentSection, []);
+    }
     sectionContent.get(currentSection)!.push(line.trim());
   }
 
@@ -230,10 +244,11 @@ for (const filepath of files) {
     vehicleName &&
     descriptionText.trim() &&
     !descriptionText.toLowerCase().includes(vehicleName.toLowerCase())
-  )
-    {errors.push(
+  ) {
+    errors.push(
       `Description must mention the vehicle name "${vehicleName}" when not empty`,
-    );}
+    );
+  }
 
   if (!descriptionText.trim()) warnings.push('Description section is empty');
 
@@ -252,8 +267,9 @@ function report(
     hasErrors = true;
     consola.error(`${filepath}:\n${errors.map((e) => `  - ${e}`).join('\n')}`);
   }
-  if (warnings.length > 0)
-    {consola.warn(`${filepath}:\n${warnings.map((w) => `  - ${w}`).join('\n')}`);}
+  if (warnings.length > 0) {
+    consola.warn(`${filepath}:\n${warnings.map((w) => `  - ${w}`).join('\n')}`);
+  }
 }
 
 if (hasErrors) {
