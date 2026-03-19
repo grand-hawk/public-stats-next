@@ -47,6 +47,12 @@ export default function PlaceVehicle() {
       ogDescription={descriptionQuote || undefined}
       twitterCard={vehicle && image ? 'summary_large_image' : undefined}
     >
+      {vehicle?.info.unlisted && (
+        <Head>
+          <meta content="noindex" name="robots" />
+        </Head>
+      )}
+
       {vehicle && image && (
         <Head>
           <meta
