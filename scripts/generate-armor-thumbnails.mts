@@ -37,7 +37,9 @@ function extractVehicleSlugs(): string[] {
   const vehicles = getVehicles();
   const slugs = new Set<string>();
   const placeVehicles = vehicles.data?.[rvPlace.placeId]?.data;
-  const entries = placeVehicles ? Object.values(placeVehicles) : [];
+  const entries = placeVehicles
+    ? Object.values(placeVehicles).filter((v) => !v?.info.unlisted)
+    : [];
   for (const vehicle of entries) {
     const slug = vehicle?.info?.slug;
     if (typeof slug === 'string' && slug.length > 0) {
