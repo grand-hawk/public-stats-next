@@ -6,6 +6,7 @@ import { BiBorderNone } from 'react-icons/bi';
 import EagleTeamIcon from '@/components/icons/teams/eagle';
 import FelidTeamIcon from '@/components/icons/teams/felid';
 import FishTeamIcon from '@/components/icons/teams/fish';
+import StateOfGazelTeamIcon from '@/components/icons/teams/gazel';
 import HawkTeamIcon from '@/components/icons/teams/hawk';
 import NightingaleTeamIcon from '@/components/icons/teams/nightingale';
 import PigeonTeamIcon from '@/components/icons/teams/pigeon';
@@ -23,6 +24,7 @@ export const teamIcons: Record<
   'Eagle Federation': EagleTeamIcon,
   'Eagle Republic': EagleTeamIcon,
   'FISH State': FishTeamIcon,
+  'State of Gazel': StateOfGazelTeamIcon,
   'Hawk Republic': HawkTeamIcon,
   'Schwalbenheim Kingdom': SchwalbenheimKingdomTeamIcon,
   'Schwalbenheim Republic': SchwalbenheimRepublicTeamIcon,
