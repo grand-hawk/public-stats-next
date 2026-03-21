@@ -58,9 +58,7 @@ if (files.length === 0) {
     .filter((f) => f.endsWith('.md'))
     .map((f) => path.join(CONTENT_DIR, f));
 }
-files = files.filter(
-  (file) => !unlistedSlugs.has(path.basename(file, '.md')),
-);
+files = files.filter((file) => !unlistedSlugs.has(path.basename(file, '.md')));
 
 if (files.length === 0) {
   consola.info('No files to validate');
