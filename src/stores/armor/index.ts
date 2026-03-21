@@ -26,11 +26,13 @@ interface ArmorStore {
   vehicles: Array<{
     name: string;
     slug: string;
+    frontArmorDepth?: number;
   }>;
   setVehicles(
     vehicles: Array<{
       name: string;
       slug: string;
+      frontArmorDepth?: number;
     }>,
   ): void;
 

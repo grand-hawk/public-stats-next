@@ -30,6 +30,7 @@ export interface ListVehicle {
   team: string;
   role: string;
   new?: boolean;
+  frontArmorDepth?: number;
 }
 
 export type VehicleAvailability = Record<
@@ -91,6 +92,12 @@ export const vehiclesRouter = createTRPCRouter({
                 ? dateNow - new Date(data.info.addedDate).getTime() <
                   1_000 * 60 * 60 * 24 * 31
                 : undefined,
+              ...(IS_DEV
+                ? {
+                    frontArmorDepth: getVehicleMeta(slug(data.info.gameId))
+                      ?.frontArmorDepth,
+                  }
+                : {}),
             }) satisfies ListVehicle,
         )
         .sort((a, b) => a.name.localeCompare(b.name)) as ListVehicle[];

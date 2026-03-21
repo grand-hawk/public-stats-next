@@ -3,8 +3,8 @@ import React from 'react';
 import { LuChevronLeft, LuChevronRight, LuSave } from 'react-icons/lu';
 
 import DepthMinimap from '@/components/features/tools/armor/armorCanvas/depthMinimap';
-import { RangeSlider } from '@/components/features/tools/armor/controls/slider';
 import { Button } from '@/components/ui/button';
+import { IS_DEV } from '@/env';
 import { useArmorStore } from '@/stores/armor';
 
 export default function ArmorDebug() {
@@ -12,14 +12,16 @@ export default function ArmorDebug() {
   const detectedMaxDepth = useArmorStore((s) => s.detectedMaxDepth);
   const maxDepth = useArmorStore((s) => s.maxDepth);
   const minDepth = useArmorStore((s) => s.minDepth);
-  const setMaxDepth = useArmorStore((s) => s.setMaxDepth);
   const onSelectVehicle = useArmorStore((s) => s.onSelectVehicle);
   const onSetFrontArmorDepth = useArmorStore((s) => s.onSetFrontArmorDepth);
   const slug = useArmorStore((s) => s.slug);
   const vehicles = useArmorStore((s) => s.vehicles);
 
   const currentIndex = vehicles.findIndex((v) => v.slug === slug);
-  const effectiveMaxDepth = detectedMaxDepth || 100;
+  const missingInitialDepth = React.useMemo(
+    () => vehicles.filter((v) => v.frontArmorDepth == null),
+    [vehicles],
+  );
 
   const containerRef = React.useRef<HTMLDivElement>(null);
   const [containerWidth, setContainerWidth] = React.useState(220);
@@ -129,23 +131,57 @@ export default function ArmorDebug() {
         </Button>
       )}
 
-      <div>
-        <Flex alignItems="center" marginBottom={2}>
-          <Text color="fg.muted" fontSize="xs">
-            Max depth
+      {IS_DEV && (
+        <Box>
+          <Text color="fg.muted" fontSize="xs" marginBottom={2}>
+            These vehicles don&apos;t have initial depth yet
           </Text>
-          <Text color="fg" fontSize="xs" marginLeft="auto">
-            {depthPercent}%
-          </Text>
-        </Flex>
-        <RangeSlider
-          max={effectiveMaxDepth}
-          min={0}
-          step={effectiveMaxDepth / 200}
-          value={Math.min(maxDepth, effectiveMaxDepth)}
-          onChange={(v: number) => setMaxDepth(Math.max(v, minDepth))}
-        />
-      </div>
+          {missingInitialDepth.length === 0 ? (
+            <Text color="fg.subtle" fontSize="2xs">
+              None
+            </Text>
+          ) : (
+            <Box
+              as="ul"
+              display="flex"
+              flexDirection="column"
+              gap={1}
+              listStyleType="none"
+              margin={0}
+              maxHeight="160px"
+              overflowY="auto"
+              padding={0}
+            >
+              {missingInitialDepth.map((v) => (
+                <Box
+                  as="li"
+                  key={v.slug}
+                  _hover={
+                    onSelectVehicle
+                      ? { background: 'whiteAlpha.50' }
+                      : undefined
+                  }
+                  borderRadius="sm"
+                  cursor={onSelectVehicle ? 'pointer' : 'default'}
+                  onClick={() => onSelectVehicle?.(v.slug)}
+                  paddingX={1}
+                  paddingY={0.5}
+                >
+                  <Text
+                    color="fg"
+                    fontSize="2xs"
+                    overflow="hidden"
+                    textOverflow="ellipsis"
+                    whiteSpace="nowrap"
+                  >
+                    {v.name}
+                  </Text>
+                </Box>
+              ))}
+            </Box>
+          )}
+        </Box>
+      )}
     </Flex>
   );
 }
