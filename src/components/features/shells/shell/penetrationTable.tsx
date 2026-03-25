@@ -65,8 +65,8 @@ export default function ShellPenetrationTable() {
                 mode,
               );
 
-              const anglePenCells = anglePens.map((penetration) => (
-                <span key={`${distance}-${angle}-${penetration}`}>
+              const anglePenCells = anglePens.map((penetration, index) => (
+                <span key={`${mode}-${distance}-${angle}-${index}`}>
                   {penetration ? (
                     <FormatNumber
                       style="unit"
