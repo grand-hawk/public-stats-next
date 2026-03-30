@@ -17,7 +17,7 @@ Determine which vehicles need descriptions. The user may specify:
 - A batch (e.g., "all vehicles without descriptions")
 - A filtered set (e.g., "all tanks", "all Hawk Republic vehicles")
 
-To find vehicles missing descriptions, look for files in `content/vehicles/` where `## Description` is immediately followed by a blank line and then `## Armor` (or end of file) with no content between them.
+To find vehicles missing descriptions, look for files in `content/vehicles/` where `## Description` is immediately followed by a blank line and then `## Armour` / `## Armor` (or end of file) with no real prose between them.
 
 ### 2. Gather facts
 
@@ -54,16 +54,17 @@ Weave those details into flowing prose; don't mirror whole tables.
 
 - Team name
 - Obtainment method (Free/Premium)
-- Price / coin cost
+- Price / coin cost for the base vehicle listing
 - Loadout era (Cold War, WW2, etc.)
 - Tier placement
 - In-game availability table
-- Addon details
 - Armor values / thickness
+
+Addon upgrades may be summarized in **separate paragraph(s)** after the main description (point costs, what each addon does), consistent with existing pages such as `amx-13.md` and `fv510-warrior.md`.
 
 ### 4. Write the description
 
-Insert the description in `content/vehicles/<file>.md` between `## Description` and whatever follows it (usually `## Armor` or end of file).
+Insert the description in `content/vehicles/<file>.md` between `## Description` and whatever follows it (usually `## Armour` or `## Armor`).
 
 **Style**: Wiki-style encyclopedic, third-person, factual. Similar to a Wikipedia article's opening paragraph about a military vehicle.
 
@@ -92,6 +93,13 @@ Insert the description in `content/vehicles/<file>.md` between `## Description` 
 - Only bold a name on its **first mention**. Subsequent references use plain text.
 - The vehicle's own name in the opening sentence should be bolded.
 
+**Formatting — line breaks in source (`\`)**:
+
+- After `## Description`, leave one blank line, then start the prose (same as other vehicle pages in this repo).
+- Split the **main** description (history, mobility, then armament / sights / features) across editor lines by ending a line with a **trailing backslash** `\` immediately before the newline. Continue on the next line with no extra blank line between those parts — typically the first chunk ends after mobility (weight, engine, speed, transmission), and the next line opens with armament, FCS, and optics. That keeps long copy readable in the file without starting a new markdown paragraph between those chunks.
+- Do **not** put a `\` after the last line of the main description block (the line that finishes armament, optional kit mentions, etc.).
+- **Addon prose** (e.g. “This vehicle features…”, point costs, behaviour): start **new paragraph(s)** after the main block — no trailing `\` on the line before them. Multiple addon paragraphs are separated by blank lines as usual.
+
 **Rules**:
 
 - Refer to the vehicle by its display name (the H1 in `content/vehicles/<file>.md`), not the filename.
@@ -99,7 +107,7 @@ Insert the description in `content/vehicles/<file>.md` between `## Description` 
 - Don't list every stat — weave the important ones into flowing prose.
 - Mention the crew count and key roles naturally (e.g., "operated by a crew of four").
 - When describing weapons, use full designations when you have them (e.g., "100mm D-10TS2" not only "100mm gun").
-- Do NOT include pricing, team, loadout, tier, or obtainment info — the page already shows these.
+- Do NOT include base-vehicle pricing, team, loadout tier, or obtainment info in the main prose — the page already shows these (addon point costs belong in the addon paragraph when you write one).
 
 ### 5. Batch processing
 
@@ -119,9 +127,10 @@ When processing multiple vehicles:
 
 ## Description
 
-The **T-55AD** is a Main Battle Tank and a modernized variant of the Soviet T-55 series, one of the most widely produced tank families in history. Originally developed in the late 1950s by the Kharkiv design bureau, the T-55 saw service across dozens of nations; the AD variant introduced the **Drozd** active protection system — the world's first operational APS — to counter the growing threat of anti-tank guided missiles during the Cold War. Operated by a crew of four and riding on a tracked chassis weighing 38 tonnes, it is powered by a **ChTZ V-55V** diesel engine producing 580 horsepower for a 15.3 hp/t power-to-weight ratio and a top speed of 50 km/h. The main armament is a stabilized **100mm D-10TS2** cannon equipped with a laser rangefinder and fire control system, supplemented by a coaxial **7.62mm PKT** and a roof-mounted **12.7mm NSVT** machine gun. The Drozd APS provides frontal protection with four dual-charge launchers capable of intercepting incoming projectiles traveling between 70 and 700 m/s. The vehicle also features an engine smoke system for additional screening when withdrawing from engagements.
+The **T-55AD** is a Main Battle Tank and a modernized variant of the Soviet T-55 series, one of the most widely produced tank families in history. Originally developed in the late 1950s by the Kharkiv design bureau, the T-55 saw service across dozens of nations; the AD variant introduced the **Drozd** active protection system — the world's first operational APS — to counter the growing threat of anti-tank guided missiles during the Cold War. Operated by a crew of four and riding on a tracked chassis weighing 38 tonnes, it is powered by a **ChTZ V-55V** diesel engine producing 580 horsepower for a 15.3 hp/t power-to-weight ratio and a top speed of 50 km/h.\
+The main armament is a stabilized **100mm D-10TS2** cannon equipped with a laser rangefinder and fire control system, supplemented by a coaxial **7.62mm PKT** and a roof-mounted **12.7mm NSVT** machine gun. The Drozd APS provides frontal protection with four dual-charge launchers capable of intercepting incoming projectiles traveling between 70 and 700 m/s. The vehicle also features an engine smoke system for additional screening when withdrawing from engagements.
 
-## Armor
+## Armour
 ```
 
 ### Example: Tiger I
@@ -131,9 +140,10 @@ The **T-55AD** is a Main Battle Tank and a modernized variant of the Soviet T-55
 
 ## Description
 
-The **Tiger I** is a Heavy Tank, formally designated Panzerkampfwagen VI Tiger Ausf. E, produced by Henschel & Sohn for Nazi Germany beginning in 1942. It earned a fearsome reputation on the Eastern and Western Fronts for its thick armor and powerful gun, though its weight and mechanical complexity limited production numbers to roughly 1,350 units. In-game, it is a heavily armored tracked vehicle weighing 57.3 tonnes, crewed by five — a driver, gunner, bow gunner, commander, and loader. The **MB HL230 P45** engine delivers 690 horsepower, though the substantial mass limits its power-to-weight ratio to 12 hp/t and top speed to 45 km/h; neutral steering helps compensate when maneuvering in tight spaces. Its primary armament is the formidable **88mm KwK36** cannon, complemented by two **7.92mm MG34** machine guns — one coaxial and one in the bow position. The turret features smoke grenades for defensive screening but lacks a stabilizer or modern fire control aids, relying on a 2.5x telescope sight.
+The **Tiger I** is a Heavy Tank, formally designated Panzerkampfwagen VI Tiger Ausf. E, produced by Henschel & Sohn for Nazi Germany beginning in 1942. It earned a fearsome reputation on the Eastern and Western Fronts for its thick armor and powerful gun, though its weight and mechanical complexity limited production numbers to roughly 1,350 units. In-game, it is a heavily armored tracked vehicle weighing 57.3 tonnes, crewed by five — a driver, gunner, bow gunner, commander, and loader. The **MB HL230 P45** engine delivers 690 horsepower, though the substantial mass limits its power-to-weight ratio to 12 hp/t and top speed to 45 km/h; neutral steering helps compensate when maneuvering in tight spaces.\
+Its primary armament is the formidable **88mm KwK36** cannon, complemented by two **7.92mm MG34** machine guns — one coaxial and one in the bow position. The turret features smoke grenades for defensive screening but lacks a stabilizer or modern fire control aids, relying on a 2.5x telescope sight.
 
-## Armor
+## Armour
 ```
 
 ### Example: 2S14 Zhalo-S
@@ -143,7 +153,8 @@ The **Tiger I** is a Heavy Tank, formally designated Panzerkampfwagen VI Tiger A
 
 ## Description
 
-The **2S14 Zhalo-S** is a wheeled Tank Destroyer built on the BTR-70 chassis, developed in the Soviet Union during the 1980s as a lightweight, rapidly deployable anti-armor platform. The project sought to mount a high-velocity gun on an amphibious wheeled hull for use by airborne and reconnaissance units, though it never entered full serial production. Weighing just 12.5 tonnes, it is crewed by a driver, gunner, commander, and one passenger, and is fully amphibious at 4 km/h. Twin **ZMZ-4905** diesel engines produce a combined 240 horsepower, yielding an impressive 19.2 hp/t power-to-weight ratio and a top road speed of 80 km/h. Its primary weapon is the **85mm 2A62** cannon fed by an autoloader with a rapid 2.4-second reload cycle, carrying a mix of HE, APFSDS, and HEAT ammunition. The fire control system provides 6x magnification, though the vehicle lacks a laser rangefinder. Lightly protected by design, the Zhalo-S relies on speed and mobility rather than armor to survive on the battlefield.
+The **2S14 Zhalo-S** is a wheeled Tank Destroyer built on the BTR-70 chassis, developed in the Soviet Union during the 1980s as a lightweight, rapidly deployable anti-armor platform. The project sought to mount a high-velocity gun on an amphibious wheeled hull for use by airborne and reconnaissance units, though it never entered full serial production. Weighing just 12.5 tonnes, it is crewed by a driver, gunner, commander, and one passenger, and is fully amphibious at 4 km/h. Twin **ZMZ-4905** diesel engines produce a combined 240 horsepower, yielding an impressive 19.2 hp/t power-to-weight ratio and a top road speed of 80 km/h.\
+Its primary weapon is the **85mm 2A62** cannon fed by an autoloader with a rapid 2.4-second reload cycle, carrying a mix of HE, APFSDS, and HEAT ammunition. The fire control system provides 6x magnification, though the vehicle lacks a laser rangefinder. Lightly protected by design, the Zhalo-S relies on speed and mobility rather than armor to survive on the battlefield.
 
-## Armor
+## Armour
 ```
