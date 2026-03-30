@@ -18,7 +18,9 @@ import { ToggleTip } from '@/components/ui/toggle-tip';
 import SectionMarker from '@/components/wiki/sectionMarker';
 import Stat from '@/components/wiki/stat';
 import TitledCard from '@/components/wiki/titledCard';
+import { useDynamicData } from '@/hooks/providers/dynamicData';
 import { useVehicle } from '@/hooks/providers/vehicle';
+import { getAllModulesOfType } from '@/utils/alterations';
 import { capitalizeFirst } from '@/utils/capitalizeFirst';
 
 import type { BoxProps, IconProps } from '@chakra-ui/react';
@@ -46,6 +48,15 @@ export default function VehicleGeneralInformation({
   isAvailable: boolean;
 }) {
   const vehicle = useVehicle();
+  const { assembledModules } = useDynamicData();
+
+  const hasPassengerSeats = React.useMemo(() => {
+    const seats = getAllModulesOfType('Seat', assembledModules);
+    return seats.some((s) => s.data.name === 'Passenger');
+  }, [assembledModules]);
+
+  const showExtraInfantryIcon =
+    hasPassengerSeats && !vehicle.info.supportedClasses.includes('Infantry');
 
   const customDescription = vehicle.content?.Description;
 
@@ -183,6 +194,25 @@ export default function VehicleGeneralInformation({
                       );
                     }
                   })}
+                  {showExtraInfantryIcon && (
+                    <>
+                      <Span
+                        color="fg.muted"
+                        fontSize="sm"
+                        lineHeight="1"
+                        marginRight={-0.75}
+                      >
+                        +
+                      </Span>
+                      <ToggleTip
+                        closeDelay={50}
+                        content="Infantry (as passenger)"
+                        openDelay={50}
+                      >
+                        <InfantryIcon boxSize="1em" />
+                      </ToggleTip>
+                    </>
+                  )}
                 </HStack>
               </Stat>
             )}
