@@ -13,6 +13,6 @@ The **Namer 30** is a heavy infantry fighting vehicle based upon the Merkava Mk.
 Left cheek: 10-49
 Right cheek: 10-47
 Lower front plate: 224-407
-Upper front plate: 77-2260
+Upper front plate: 77-563
 Hull side: 87-254
 Mantlet: 12
