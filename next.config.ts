@@ -28,6 +28,7 @@ const nextConfig: NextConfig = {
   assetPrefix: process.env.ASSET_PREFIX,
 
   images: {
+    unoptimized: process.env.NODE_ENV === 'development',
     loader: process.env.NEXT_PUBLIC_IMAGE_LOADER ? 'custom' : 'default',
     loaderFile: process.env.NEXT_PUBLIC_IMAGE_LOADER
       ? './src/images.js'
