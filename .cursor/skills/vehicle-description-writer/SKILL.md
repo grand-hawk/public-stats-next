@@ -31,22 +31,22 @@ Stats arrive as vehicle markdown (same layout you would have had in standalone d
 
 **Use in the description** (for prose context):
 
-| Data point | Location in file |
-|---|---|
-| Vehicle name | `# Header` |
-| Role | `Role` definition list |
-| Locomotion | Under `General information` (Tracked/Wheeled) |
-| Amphibious | Under `General information` (if present) |
-| Weight | `Vehicle` table |
-| Crew count + roles | `Vehicle` table (Driver, Gunner, Commander, etc.) |
-| Max speed | `Vehicle` table (Forward/Backward) |
-| Engine | `Powertrain` table |
-| Horsepower + hp/t | `Powertrain` table |
-| Main weapon(s) | Weapon headers under turret sections (e.g., `#### [100mm D-10TS2]`) |
-| Secondary weapon(s) | Additional weapon headers (MGs, ATGMs, etc.) |
-| Notable features | `Feature:` lines (Stabilizer, FCS, Smoke grenades, APS) |
-| Defenses | `Defenses` section (smoke system, jammers) |
-| Sights/optics | Rangefinder type, zoom levels, thermals |
+| Data point          | Location in file                                                    |
+| ------------------- | ------------------------------------------------------------------- |
+| Vehicle name        | `# Header`                                                          |
+| Role                | `Role` definition list                                              |
+| Locomotion          | Under `General information` (Tracked/Wheeled)                       |
+| Amphibious          | Under `General information` (if present)                            |
+| Weight              | `Vehicle` table                                                     |
+| Crew count + roles  | `Vehicle` table (Driver, Gunner, Commander, etc.)                   |
+| Max speed           | `Vehicle` table (Forward/Backward)                                  |
+| Engine              | `Powertrain` table                                                  |
+| Horsepower + hp/t   | `Powertrain` table                                                  |
+| Main weapon(s)      | Weapon headers under turret sections (e.g., `#### [100mm D-10TS2]`) |
+| Secondary weapon(s) | Additional weapon headers (MGs, ATGMs, etc.)                        |
+| Notable features    | `Feature:` lines (Stabilizer, FCS, Smoke grenades, APS)             |
+| Defenses            | `Defenses` section (smoke system, jammers)                          |
+| Sights/optics       | Rangefinder type, zoom levels, thermals                             |
 
 Weave those details into flowing prose; don't mirror whole tables.
 
