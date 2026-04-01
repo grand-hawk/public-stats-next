@@ -10,12 +10,86 @@ import type { PlaceId } from '@generated/config';
 import type { ShellsPlaceDataShell } from '@generated/shells';
 import type { BreadcrumbList, WithContext } from 'schema-dts';
 
-export type DetailedShell = ShellsPlaceDataShell & {
+export interface ListedShellBase {
+  displayType: string;
+  name: string;
+  slug: string;
+  vehicles: string[];
+}
+
+export interface ListedShellForBrowse extends ListedShellBase {
+  damage: number;
+  explosiveMass: number;
+  hasExplosive: boolean;
+  hasIRCCM: boolean;
+  isLaser: boolean;
+  isUnjammable: boolean;
+  mass: number;
+  maxPenetration: number;
+  velocity: number;
+}
+
+export type ShellsListForBrowse = Record<string, ListedShellForBrowse[]>;
+
+function listShells(
+  placeId: PlaceId,
+  forBrowse: false,
+): Record<string, ListedShellBase[]>;
+function listShells(
+  placeId: PlaceId,
+  forBrowse: true,
+): Record<string, ListedShellForBrowse[]>;
+function listShells(
+  placeId: PlaceId,
+  forBrowse: boolean,
+): Record<string, ListedShellBase[] | ListedShellForBrowse[]> {
+  const shells = getShells();
+
+  const shellsData = shells.data[placeId]?.data;
+  if (!shellsData) throw new TRPCError({ code: 'NOT_FOUND' });
+
+  return Object.fromEntries(
+    Object.entries(shellsData)
+      .sort((a, b) => a[0].localeCompare(b[0]))
+      .map(([weapon, shellArr]) => [
+        weapon,
+        shellArr.map((shell) => {
+          if (!forBrowse) {
+            const base: ListedShellBase = {
+              displayType: shell.displayType,
+              name: shell.name,
+              slug: shell.slug,
+              vehicles: shell.vehicles,
+            };
+            return base;
+          }
+          const row: ListedShellForBrowse = {
+            damage: shell.damage,
+            displayType: shell.displayType,
+            explosiveMass: shell.explosive?.mass ?? 0,
+            hasExplosive: !!shell.explosive,
+            hasIRCCM: shell.missile?.irccm ?? false,
+            isLaser: shell.laser ?? false,
+            isUnjammable: shell.missile?.unjammable ?? false,
+            mass: shell.mass,
+            maxPenetration: shell.maxPenetration,
+            name: shell.name,
+            slug: shell.slug,
+            vehicles: shell.vehicles,
+            velocity: shell.velocity,
+          };
+          return row;
+        }),
+      ]),
+  ) as Record<string, ListedShellBase[] | ListedShellForBrowse[]>;
+}
+
+export interface DetailedShell extends ShellsPlaceDataShell {
   weapon: string;
   linkedData: Partial<{
     breadcrumbs: WithContext<BreadcrumbList>;
   }>;
-};
+}
 
 export const shellsRouter = createTRPCRouter({
   list: publicProcedure
@@ -24,26 +98,15 @@ export const shellsRouter = createTRPCRouter({
         placeId: z.string(),
       }),
     )
-    .query(({ input }) => {
-      const shells = getShells();
+    .query(({ input }) => listShells(input.placeId as PlaceId, false)),
 
-      const shellsData = shells.data[input.placeId as PlaceId]?.data;
-      if (!shellsData) throw new TRPCError({ code: 'NOT_FOUND' });
-
-      return Object.fromEntries(
-        Object.entries(shellsData)
-          .sort((a, b) => a[0].localeCompare(b[0]))
-          .map(([weapon, shells]) => [
-            weapon,
-            shells.map((shell) => ({
-              name: shell.name,
-              slug: shell.slug,
-              vehicles: shell.vehicles,
-              displayType: shell.displayType,
-            })),
-          ]),
-      );
-    }),
+  listForBrowse: publicProcedure
+    .input(
+      z.object({
+        placeId: z.string(),
+      }),
+    )
+    .query(({ input }) => listShells(input.placeId as PlaceId, true)),
 
   bySlug: publicProcedure
     .input(

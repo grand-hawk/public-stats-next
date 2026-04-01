@@ -12,6 +12,7 @@ import {
   getVehicleMeta,
 } from '@/server/utils/vehicleContent';
 import { getBaseUrl } from '@/utils/trpc';
+import { getClassification } from '@/utils/vehicleClassification';
 import { getConfig } from '@generated/config';
 import { getKdr } from '@generated/kdr';
 import { getLoadouts } from '@generated/loadouts';
@@ -21,16 +22,39 @@ import type { VehicleContent } from '@/server/utils/vehicleContent';
 import type { PlaceId } from '@generated/config';
 import type { KdrPlaceDataVehicle } from '@generated/kdr';
 import type { LoadoutsPlaceDataLoadoutVehicle } from '@generated/loadouts';
-import type { VehiclesPlaceDataVehicle } from '@generated/vehicles';
+import type {
+  VehiclesPlaceDataVehicle,
+  VehiclesPlaceDataVehicleInfo,
+  VehiclesPlaceDataVehicleModule,
+} from '@generated/vehicles';
 import type { BreadcrumbList, Vehicle, WithContext } from 'schema-dts';
 
-export interface ListVehicle {
-  name: string;
-  slug: string;
-  team: string;
-  role: string;
-  new?: boolean;
+type Mod<T extends VehiclesPlaceDataVehicleModule['type']> = Extract<
+  VehiclesPlaceDataVehicleModule,
+  { type: T }
+>;
+
+type ListVehicleFieldsFromInfo = Pick<
+  VehiclesPlaceDataVehicleInfo,
+  'amphibious' | 'locomotion' | 'role' | 'slug' | 'supportedClasses' | 'team'
+>;
+
+type VehiclePremiumType = NonNullable<
+  VehiclesPlaceDataVehicleInfo['premium']
+>['type'];
+
+export interface ListVehicle extends ListVehicleFieldsFromInfo {
+  classification: string;
+  forwardSpeed: number;
   frontArmorDepth?: number;
+  hasAPS: boolean;
+  hasESS: boolean;
+  hasStabilizer: boolean;
+  hasThermal: boolean;
+  name: string;
+  new?: boolean;
+  premium?: VehiclePremiumType;
+  seatCount: number;
 }
 
 export type VehicleAvailability = Record<
@@ -81,25 +105,50 @@ export const vehiclesRouter = createTRPCRouter({
 
       return Object.entries(vehiclesData)
         .filter(([, data]) => !data.info.unlisted)
-        .map(
-          ([name, data]) =>
-            ({
-              name,
-              slug: data.info.slug,
-              team: data.info.team,
-              role: data.info.role,
-              new: data.info.addedDate
-                ? dateNow - new Date(data.info.addedDate).getTime() <
-                  1_000 * 60 * 60 * 24 * 31
-                : undefined,
-              ...(IS_DEV
-                ? {
-                    frontArmorDepth: getVehicleMeta(slug(data.info.gameId))
-                      ?.frontArmorDepth,
-                  }
-                : {}),
-            }) satisfies ListVehicle,
-        )
+        .map(([name, data]) => {
+          const mods = Object.values(data.modules);
+          const turrets = mods
+            .filter((m): m is Mod<'Turret'> => m.type === 'Turret')
+            .map((m) => m.data);
+          const driveDatas = mods
+            .filter((m): m is Mod<'DriveData'> => m.type === 'DriveData')
+            .map((m) => m.data);
+
+          const seats = mods.filter((m): m is Mod<'Seat'> => m.type === 'Seat');
+
+          return {
+            amphibious: data.info.amphibious,
+            classification: getClassification(data.info.role),
+            forwardSpeed:
+              driveDatas.length > 0
+                ? Math.max(...driveDatas.map((d) => d.engine.forwardSpeed))
+                : 0,
+            hasAPS: mods.some((m) => m.type === 'APS'),
+            hasESS: mods
+              .filter((m): m is Mod<'ESS'> => m.type === 'ESS')
+              .some((m) => m.data.present),
+            hasStabilizer: turrets.some((t) => t.stabilizer),
+            hasThermal: turrets.some((t) => t.sights.some((s) => !!s.thermal)),
+            locomotion: data.info.locomotion,
+            name,
+            new: data.info.addedDate
+              ? dateNow - new Date(data.info.addedDate).getTime() <
+                1_000 * 60 * 60 * 24 * 31
+              : undefined,
+            premium: data.info.premium?.type,
+            role: data.info.role,
+            seatCount: seats.length,
+            slug: data.info.slug,
+            supportedClasses: data.info.supportedClasses,
+            team: data.info.team,
+            ...(IS_DEV
+              ? {
+                  frontArmorDepth: getVehicleMeta(slug(data.info.gameId))
+                    ?.frontArmorDepth,
+                }
+              : {}),
+          } satisfies ListVehicle;
+        })
         .sort((a, b) => a.name.localeCompare(b.name)) as ListVehicle[];
     }),
 

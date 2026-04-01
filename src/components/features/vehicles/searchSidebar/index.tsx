@@ -69,7 +69,11 @@ export default function VehiclesSearchSidebar() {
   }, [vehicleList, deferredQuery, simplifiedNames]);
 
   const list: ListItem[] = React.useMemo(() => {
-    interface Group { label: string; isTeam?: boolean; vehicles?: ListVehicle[] }
+    interface Group {
+      label: string;
+      isTeam?: boolean;
+      vehicles?: ListVehicle[];
+    }
     const groups: Group[] = [];
 
     if (!groupByTeam && !groupByRole) {
