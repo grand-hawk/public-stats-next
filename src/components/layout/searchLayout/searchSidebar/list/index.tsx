@@ -12,20 +12,20 @@ import { useRouterQuery } from '@/hooks/useRouterQuery';
 
 const ITEM_HEIGHT = 35;
 
-export type DividerListItem = {
+export interface DividerListItem {
   type: 'divider';
   label: string;
   isTeam?: boolean;
   emphasized?: boolean;
-};
+}
 
-export type LinkListItem = {
+export interface LinkListItem {
   type: 'item';
   value: {
     name: React.ReactNode;
     slug: string;
   };
-};
+}
 
 export type ListItem = DividerListItem | LinkListItem;
 

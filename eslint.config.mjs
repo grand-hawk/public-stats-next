@@ -85,6 +85,7 @@ export default defineConfig([
           disallowTypeAnnotations: false,
         },
       ],
+      '@typescript-eslint/consistent-type-definitions': ['error', 'interface'],
       '@typescript-eslint/no-unused-vars': [
         'error',
         {
