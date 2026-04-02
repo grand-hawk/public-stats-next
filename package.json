@@ -62,7 +62,7 @@
   "devDependencies": {
     "@eslint/eslintrc": "latest",
     "@napi-rs/canvas": "^0.1.97",
-    "@next/bundle-analyzer": "^16.2.1",
+    "@next/bundle-analyzer": "^16.2.2",
     "@next/eslint-plugin-next": "^16.2.1",
     "@swc/helpers": "^0.5.19",
     "@types/node": "^25.3.3",
