@@ -10,3 +10,10 @@ The **Ka-52M Alligator-M** is an Attack Helicopter and a modernized variant of t
 The co-pilot turret mounts a stabilized **30mm 2A42M** cannon and **9M127M Vikhr-1** ATGMs, with a laser rangefinder, third-generation white-hot thermals, and a fire control system with lead and tracking (1.2x–60x zoom). Defensive equipment includes a laser warning system and missile approach warning system. Optional addons include B-13L rocket pods and UPK-23 gunpods for increased firepower.
 
 ## Armour
+
+Left cheek: 3-18
+Right cheek: 3-18
+Lower front plate: 2-12
+Upper front plate: 3-20
+Hull side: 2-14
+Mantlet: 3-16

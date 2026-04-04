@@ -10,3 +10,10 @@ The **MH-6** is a Utility Helicopter, the military designation for the **MD Heli
 An addon equips it with an **M134** minigun and **Hydra-70** rockets for armed escort or light attack. The pilot turret has a simple 0.7x sight with no rangefinder or fire control. The MH-6 trades payload and protection for agility and low signature, typical of special-operations light helicopters.
 
 ## Armour
+
+Left cheek: 2-14
+Right cheek: 2-14
+Lower front plate: 1-8
+Upper front plate: 2-12
+Hull side: 1-10
+Mantlet: 2-10

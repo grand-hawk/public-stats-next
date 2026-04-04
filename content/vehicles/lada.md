@@ -10,3 +10,7 @@ The **Lada** is a Transport Vehicle based on the Soviet and Russian **VAZ** (Lad
 This vehicle features a single addon: **Lada 2017**. The Lada 2017 addon costs 100 points and swaps the stock VAZ-2105 engine for the more powerful VAZ-2103 unit. This modification increases the engine output from 63 hp to 75 hp, subsequently boosting the power-to-weight ratio from 60 hp/t to 71.4 hp/t. While this provides a noticeable improvement in overall acceleration and climbing capability, it is balanced by a slight reduction in the engine's maximum operating range, with the redline dropping from 5600 RPM to 5400 RPM.
 
 ## Armour
+
+Lower front plate: 0-3
+Upper front plate: 0-30
+Hull side: 0-5

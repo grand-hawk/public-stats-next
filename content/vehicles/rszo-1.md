@@ -10,3 +10,7 @@ The **RSZO-1** is a Rocket Artillery vehicle, a wheeled multiple rocket launcher
 The main armament is the **Rocketetet** system with 16 HE rockets and a 6 s reload; the commander operates elevation and traverse with a simple 1x sight. Minimal armour and no secondary weapons make it dependent on positioning and support.
 
 ## Armour
+
+Lower front plate: 1-9
+Upper front plate: 1-14
+Hull side: 1-10

@@ -6,3 +6,7 @@ The **M14 Jacob** is an ATGM carrier built on an **M113**-type tracked chassis, 
 The gunner’s turret is stabilized and mounts the Spike system with a fire control system, lead computation, and Gen 3 thermals (4x–40x zoom). Light armour and high mobility make it suited to shoot-and-scoot tactics from hull-down or concealed positions.
 
 ## Armour
+
+Lower front plate: 11-23
+Upper front plate: 16-27
+Hull side: 14-24

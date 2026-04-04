@@ -10,3 +10,10 @@ The **Mi-8AMTSh** is a Utility Helicopter, a Russian armed transport variant of 
 The co-pilot station has a stabilizer and a main sight with a laser rangefinder and 3.3×–10× zoom for guiding optional addon armament such as the **9M114 Shturm** or **9M14M** ATGMs and **S-8KOM** rocket pods; the pilot has a 0.7× sight and a flare dispenser for countermeasures. As a utility platform, the Mi-8AMTSh emphasizes transport and flexible weapon loads rather than built-in fixed armament.
 
 ## Armour
+
+Left cheek: 3-18
+Right cheek: 3-18
+Lower front plate: 2-12
+Upper front plate: 3-20
+Hull side: 2-14
+Mantlet: 3-16

@@ -10,3 +10,10 @@ The **AH-64D** is an Attack Helicopter and the Longbow variant of the **AH-64 Ap
 The crew of two — pilot and co-pilot/gunner — operate a **30mm M230E-1** chain gun under the co-pilot’s station (1,200 rounds) and **AGM-114K Hellfire II** ATGMs (eight rounds); the pilot’s station carries **LAU-105A** pylons with **AIM-9M** air-to-air missiles and **M229 Hydra-70** rocket pods (38 rockets). The co-pilot has a stabilizer, laser rangefinder, FCS with lead and tracking, and Gen 2 thermals (3×–63.5× zoom); both stations have laser and missile warning systems, and the pilot can deploy flares. The AH-64D remains one of the most capable attack helicopters in service.
 
 ## Armour
+
+Left cheek: 3-18
+Right cheek: 3-18
+Lower front plate: 2-12
+Upper front plate: 3-20
+Hull side: 2-14
+Mantlet: 3-16

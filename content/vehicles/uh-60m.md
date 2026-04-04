@@ -9,3 +9,10 @@ frontArmorDepth: 50
 The **UH-60M Blackhawk** is a Utility Helicopter — the modernized Black Hawk variant fielded by the US Army from the mid-2000s, with improved avionics, durability, and mission flexibility for troop transport, medevac, and special operations. In-game it is an aerial vehicle with seating for twelve: one pilot, one co-pilot, and ten passengers. The pilot position has flare dispensers for defensive countermeasures and a 0.7x sight; the helicopter carries no fixed guns or heavy armament in the base configuration and is used for insertion, transport, and support. Addons such as the Pavehawk and AN/ALQ-144 expand its role with additional sensors and countermeasures.
 
 ## Armour
+
+Left cheek: 3-18
+Right cheek: 3-18
+Lower front plate: 2-12
+Upper front plate: 3-20
+Hull side: 2-14
+Mantlet: 3-16
