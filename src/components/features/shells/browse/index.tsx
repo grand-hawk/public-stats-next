@@ -1,13 +1,14 @@
 import {
   Box,
   Icon,
+  IconButton,
   Input,
   Stack,
   StackSeparator,
   Text,
 } from '@chakra-ui/react';
 import React from 'react';
-import { LuX } from 'react-icons/lu';
+import { LuSlidersHorizontal, LuX } from 'react-icons/lu';
 
 import {
   DAMAGE_BANDS,
@@ -24,6 +25,17 @@ import {
 } from '@/components/features/shells/browse/filterBands';
 import SidebarFilterGroup from '@/components/features/shells/browse/sidebarFilterGroup';
 import VirtualShellResults from '@/components/features/shells/browse/virtualShellResults';
+import { SEARCH_INPUT_HEIGHT } from '@/components/layout/searchLayout/searchSidebar/input';
+import {
+  DrawerBackdrop,
+  DrawerBody,
+  DrawerCloseTrigger,
+  DrawerContent,
+  DrawerHeader,
+  DrawerRoot,
+  DrawerTitle,
+  DrawerTrigger,
+} from '@/components/ui/drawer';
 import UIToggleChip from '@/components/ui/toggleChip';
 import { usePlace } from '@/hooks/usePlace';
 import { simplifyString } from '@/utils/simplifyString';
@@ -154,7 +166,7 @@ export default function ShellsSearch() {
     propUnjammable,
   ]);
 
-  const hasFilters = !!(
+  const hasFilterChips = !!(
     selectedMass.size > 0 ||
     selectedExpMass.size > 0 ||
     selectedDamage.size > 0 ||
@@ -165,6 +177,8 @@ export default function ShellsSearch() {
     propIRCCM ||
     propUnjammable
   );
+
+  const hasFilters = hasFilterChips || !!query;
 
   function clearAll() {
     setSelectedMass(new Set());
@@ -189,6 +203,125 @@ export default function ShellsSearch() {
       return next;
     });
   }
+
+  const filterSections = (
+    <Stack
+      align="stretch"
+      gap={0}
+      separator={<StackSeparator borderColor="whiteAlpha.100" />}
+    >
+      <SidebarFilterGroup
+        hasActive={selectedMass.size > 0}
+        title="Mass (kg)"
+        onClear={() => setSelectedMass(new Set())}
+      >
+        {MASS_BANDS.map((band) => (
+          <ToggleChip
+            key={band.key}
+            active={selectedMass.has(band.key)}
+            onClick={() => toggle(setSelectedMass, band.key)}
+          >
+            {band.label}
+          </ToggleChip>
+        ))}
+      </SidebarFilterGroup>
+
+      <SidebarFilterGroup
+        hasActive={selectedExpMass.size > 0}
+        title="Explosive mass (kg)"
+        onClear={() => setSelectedExpMass(new Set())}
+      >
+        {EXP_MASS_BANDS.map((band) => (
+          <ToggleChip
+            key={band.key}
+            active={selectedExpMass.has(band.key)}
+            onClick={() => toggle(setSelectedExpMass, band.key)}
+          >
+            {band.label}
+          </ToggleChip>
+        ))}
+      </SidebarFilterGroup>
+
+      <SidebarFilterGroup
+        hasActive={selectedDamage.size > 0}
+        title="Damage"
+        onClear={() => setSelectedDamage(new Set())}
+      >
+        {DAMAGE_BANDS.map((band) => (
+          <ToggleChip
+            key={band.key}
+            active={selectedDamage.has(band.key)}
+            onClick={() => toggle(setSelectedDamage, band.key)}
+          >
+            {band.label}
+          </ToggleChip>
+        ))}
+      </SidebarFilterGroup>
+
+      <SidebarFilterGroup
+        hasActive={selectedPen.size > 0}
+        title="Penetration (mm)"
+        onClear={() => setSelectedPen(new Set())}
+      >
+        {PEN_BANDS.map((band) => (
+          <ToggleChip
+            key={band.key}
+            active={selectedPen.has(band.key)}
+            onClick={() => toggle(setSelectedPen, band.key)}
+          >
+            {band.label}
+          </ToggleChip>
+        ))}
+      </SidebarFilterGroup>
+
+      <SidebarFilterGroup
+        hasActive={selectedVel.size > 0}
+        title="Velocity (m/s)"
+        onClear={() => setSelectedVel(new Set())}
+      >
+        {VEL_BANDS.map((band) => (
+          <ToggleChip
+            key={band.key}
+            active={selectedVel.has(band.key)}
+            onClick={() => toggle(setSelectedVel, band.key)}
+          >
+            {band.label}
+          </ToggleChip>
+        ))}
+      </SidebarFilterGroup>
+
+      <SidebarFilterGroup
+        hasActive={propLaser || propExplosive || propIRCCM || propUnjammable}
+        paddingBottom={3}
+        title="Properties"
+        onClear={() => {
+          setPropLaser(false);
+          setPropExplosive(false);
+          setPropIRCCM(false);
+          setPropUnjammable(false);
+        }}
+      >
+        <ToggleChip active={propLaser} onClick={() => setPropLaser((p) => !p)}>
+          Laser
+        </ToggleChip>
+        <ToggleChip
+          active={propExplosive}
+          onClick={() => setPropExplosive((p) => !p)}
+        >
+          Explosive
+        </ToggleChip>
+        <ToggleChip active={propIRCCM} onClick={() => setPropIRCCM((p) => !p)}>
+          IRCCM
+        </ToggleChip>
+        <ToggleChip
+          active={propUnjammable}
+          onClick={() => setPropUnjammable((p) => !p)}
+        >
+          Unjammable
+        </ToggleChip>
+      </SidebarFilterGroup>
+    </Stack>
+  );
 
   return (
     <Box
@@ -215,7 +348,7 @@ export default function ShellsSearch() {
           <Input
             autoComplete="off"
             borderRadius="none"
-            height="48px"
+            height={SEARCH_INPUT_HEIGHT}
             placeholder="Search..."
             value={query}
             variant="subtle"
@@ -244,136 +377,99 @@ export default function ShellsSearch() {
           )}
         </Box>
 
-        <Stack
-          align="stretch"
-          flex={1}
-          gap={0}
-          minHeight={0}
-          overflowY="auto"
-          separator={<StackSeparator borderColor="whiteAlpha.100" />}
-        >
-          <SidebarFilterGroup
-            hasActive={selectedMass.size > 0}
-            title="Mass (kg)"
-            onClear={() => setSelectedMass(new Set())}
-          >
-            {MASS_BANDS.map((band) => (
-              <ToggleChip
-                key={band.key}
-                active={selectedMass.has(band.key)}
-                onClick={() => toggle(setSelectedMass, band.key)}
-              >
-                {band.label}
-              </ToggleChip>
-            ))}
-          </SidebarFilterGroup>
-
-          <SidebarFilterGroup
-            hasActive={selectedExpMass.size > 0}
-            title="Explosive mass (kg)"
-            onClear={() => setSelectedExpMass(new Set())}
-          >
-            {EXP_MASS_BANDS.map((band) => (
-              <ToggleChip
-                key={band.key}
-                active={selectedExpMass.has(band.key)}
-                onClick={() => toggle(setSelectedExpMass, band.key)}
-              >
-                {band.label}
-              </ToggleChip>
-            ))}
-          </SidebarFilterGroup>
-
-          <SidebarFilterGroup
-            hasActive={selectedDamage.size > 0}
-            title="Damage"
-            onClear={() => setSelectedDamage(new Set())}
-          >
-            {DAMAGE_BANDS.map((band) => (
-              <ToggleChip
-                key={band.key}
-                active={selectedDamage.has(band.key)}
-                onClick={() => toggle(setSelectedDamage, band.key)}
-              >
-                {band.label}
-              </ToggleChip>
-            ))}
-          </SidebarFilterGroup>
-
-          <SidebarFilterGroup
-            hasActive={selectedPen.size > 0}
-            title="Penetration (mm)"
-            onClear={() => setSelectedPen(new Set())}
-          >
-            {PEN_BANDS.map((band) => (
-              <ToggleChip
-                key={band.key}
-                active={selectedPen.has(band.key)}
-                onClick={() => toggle(setSelectedPen, band.key)}
-              >
-                {band.label}
-              </ToggleChip>
-            ))}
-          </SidebarFilterGroup>
-
-          <SidebarFilterGroup
-            hasActive={selectedVel.size > 0}
-            title="Velocity (m/s)"
-            onClear={() => setSelectedVel(new Set())}
-          >
-            {VEL_BANDS.map((band) => (
-              <ToggleChip
-                key={band.key}
-                active={selectedVel.has(band.key)}
-                onClick={() => toggle(setSelectedVel, band.key)}
-              >
-                {band.label}
-              </ToggleChip>
-            ))}
-          </SidebarFilterGroup>
-
-          <SidebarFilterGroup
-            hasActive={
-              propLaser || propExplosive || propIRCCM || propUnjammable
-            }
-            paddingBottom={3}
-            title="Properties"
-            onClear={() => {
-              setPropLaser(false);
-              setPropExplosive(false);
-              setPropIRCCM(false);
-              setPropUnjammable(false);
-            }}
-          >
-            <ToggleChip
-              active={propLaser}
-              onClick={() => setPropLaser((p) => !p)}
-            >
-              Laser
-            </ToggleChip>
-            <ToggleChip
-              active={propExplosive}
-              onClick={() => setPropExplosive((p) => !p)}
-            >
-              Explosive
-            </ToggleChip>
-            <ToggleChip
-              active={propIRCCM}
-              onClick={() => setPropIRCCM((p) => !p)}
-            >
-              IRCCM
-            </ToggleChip>
-            <ToggleChip
-              active={propUnjammable}
-              onClick={() => setPropUnjammable((p) => !p)}
-            >
-              Unjammable
-            </ToggleChip>
-          </SidebarFilterGroup>
-        </Stack>
+        <Box flex={1} minHeight={0} overflowY="auto">
+          {filterSections}
+        </Box>
       </Box>
 
       <Box display="flex" flexDirection="column" minHeight={0} minWidth={0}>
+        <Box
+          alignItems="stretch"
+          borderBottomWidth="1px"
+          borderColor="whiteAlpha.100"
+          display={{ base: 'flex', md: 'none' }}
+          flexShrink={0}
+        >
+          <Input
+            autoComplete="off"
+            borderRadius="none"
+            flex={1}
+            height={SEARCH_INPUT_HEIGHT}
+            placeholder="Search..."
+            value={query}
+            variant="subtle"
+            onChange={(e) => setQuery(e.target.value)}
+          />
+
+          <Box position="relative">
+            <DrawerRoot placement="bottom">
+              <DrawerTrigger asChild>
+                <IconButton
+                  aria-label="Filters"
+                  backgroundColor="bg.muted"
+                  borderRadius="none"
+                  height={SEARCH_INPUT_HEIGHT}
+                  variant="ghost"
+                  width={SEARCH_INPUT_HEIGHT}
+                  _hover={{ backgroundColor: 'whiteAlpha.100' }}
+                >
+                  <LuSlidersHorizontal />
+                </IconButton>
+              </DrawerTrigger>
+
+              <DrawerBackdrop />
+
+              <DrawerContent maxHeight="75vh">
+                <DrawerHeader
+                  alignItems="center"
+                  borderBottomWidth="1px"
+                  display="flex"
+                  justifyContent="space-between"
+                  paddingEnd={12}
+                  paddingY={2.5}
+                >
+                  <DrawerTitle fontSize="sm">Filters</DrawerTitle>
+                  {hasFilterChips && (
+                    <Box
+                      as="button"
+                      alignItems="center"
+                      color="fg.muted"
+                      cursor="pointer"
+                      display="flex"
+                      fontSize="2xs"
+                      gap={1}
+                      _hover={{ color: 'orange.400' }}
+                      onClick={clearAll}
+                    >
+                      <Icon as={LuX} boxSize="10px" />
+                      clear all
+                    </Box>
+                  )}
+                </DrawerHeader>
+
+                <DrawerCloseTrigger />
+
+                <DrawerBody overflowY="auto" padding={0}>
+                  {filterSections}
+                </DrawerBody>
+              </DrawerContent>
+            </DrawerRoot>
+
+            {hasFilterChips && (
+              <Box
+                background="orange.400"
+                borderRadius="full"
+                height="6px"
+                pointerEvents="none"
+                position="absolute"
+                right="6px"
+                top="6px"
+                width="6px"
+              />
+            )}
+          </Box>
+        </Box>
+
         {Object.keys(filtered).length === 0 ? (
           <Box
             backgroundColor="bg"

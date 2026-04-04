@@ -8,6 +8,8 @@ import type { ListVehicle } from '@/server/api/trpc/routers/vehicles';
 
 const ROW_GAP = 12;
 const ROW_HEIGHT = 163 + ROW_GAP;
+const MIN_CARD_WIDTH_PX = 260;
+const MAX_COLUMNS = 4;
 
 export default function VirtualGrid({
   placeInitials,
@@ -17,14 +19,19 @@ export default function VirtualGrid({
   vehicles: ListVehicle[];
 }) {
   const scrollRef = React.useRef<HTMLDivElement>(null);
-  const [columns, setColumns] = React.useState(3);
+  const [columns, setColumns] = React.useState(1);
 
   React.useLayoutEffect(() => {
     const scrollElement = scrollRef.current;
     if (!scrollElement) return;
 
     function columnCountForWidth(width: number) {
-      return Math.min(4, Math.max(2, Math.floor(width / 185)));
+      for (let n = MAX_COLUMNS; n >= 1; n -= 1) {
+        const gapTotal = (n - 1) * ROW_GAP;
+        const cell = (width - gapTotal) / n;
+        if (cell >= MIN_CARD_WIDTH_PX) return n;
+      }
+      return 1;
     }
     setColumns(columnCountForWidth(scrollElement.clientWidth));
 

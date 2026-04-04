@@ -78,6 +78,7 @@ export default React.memo(function VehicleCard({
             color="fg.subtle"
             fontSize="2xs"
             letterSpacing="0.07em"
+            lineClamp={1}
             textTransform="uppercase"
           >
             {role}
