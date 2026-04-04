@@ -57,7 +57,7 @@
     "xmlbuilder2": "^4.0.3",
     "yaml": "^2.8.2",
     "zod": "^4.3.6",
-    "zustand": "^5.0.11"
+    "zustand": "^5.0.12"
   },
   "devDependencies": {
     "@eslint/eslintrc": "latest",
