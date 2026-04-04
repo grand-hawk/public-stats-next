@@ -73,7 +73,7 @@ export default React.memo(function ShellCard({
           </HStack>
 
           <HStack
-            color="fg.muted"
+            color="fg"
             flexWrap="wrap"
             fontFamily="mono"
             fontSize="xs"
@@ -82,11 +82,11 @@ export default React.memo(function ShellCard({
             letterSpacing="tight"
           >
             <Text as="span">{maxPenetration} mm pen</Text>
-            <Text as="span" color="whiteAlpha.300">
+            <Text as="span" color="whiteAlpha.400">
               ·
             </Text>
             <Text as="span">{velocity} m/s</Text>
-            <Text as="span" color="whiteAlpha.300">
+            <Text as="span" color="whiteAlpha.400">
               ·
             </Text>
             <Text as="span">{damage} dmg</Text>

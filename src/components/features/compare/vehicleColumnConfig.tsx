@@ -135,7 +135,7 @@ export default function VehicleColumnConfig({
           <Stack gap={2}>
             {hasLoadouts && (
               <Stack gap={1.5}>
-                <Text color="fg.muted" fontSize="xs" fontWeight="semibold">
+                <Text color="fg.subtle" fontSize="xs" fontWeight="semibold">
                   Loadout
                 </Text>
                 <Select.Root
@@ -175,7 +175,7 @@ export default function VehicleColumnConfig({
 
             {hasAddons && (
               <Stack gap={1.5}>
-                <Text color="fg.muted" fontSize="xs" fontWeight="semibold">
+                <Text color="fg.subtle" fontSize="xs" fontWeight="semibold">
                   Addons
                 </Text>
                 {sortedAddons.map(([addonName, addon]) => {

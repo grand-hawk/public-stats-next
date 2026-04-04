@@ -76,8 +76,8 @@ export default React.memo(function VehicleCard({
           </HStack>
           <Text
             color="fg.subtle"
-            fontSize="2xs"
-            letterSpacing="0.07em"
+            fontSize="xs"
+            letterSpacing="0.05em"
             lineClamp={1}
             textTransform="uppercase"
           >

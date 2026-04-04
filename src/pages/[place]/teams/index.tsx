@@ -19,7 +19,7 @@ export default function PlaceTeams() {
             <Heading as="h1" size="2xl">
               Teams
             </Heading>
-            <Text color="fg.muted">
+            <Text color="fg.subtle">
               Browse faction vehicle selections and compositions.
             </Text>
           </Stack>

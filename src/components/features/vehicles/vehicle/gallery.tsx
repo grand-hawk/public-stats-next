@@ -51,7 +51,7 @@ export default function VehicleGallery() {
 
   const transparentSwitch = (
     <HStack gap={2}>
-      <Box fontSize="xs" color="fg.muted">
+      <Box fontSize="xs" color="fg.subtle">
         <label htmlFor="gallery-transparent">Transparent</label>
       </Box>
       <Switch.Root

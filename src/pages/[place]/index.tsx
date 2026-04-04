@@ -77,7 +77,7 @@ export default function Place() {
               </Heading>
 
               <Text
-                color="fg.muted"
+                color="fg.subtle"
                 fontSize="md"
                 maxWidth="xl"
                 css={{

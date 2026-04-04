@@ -21,7 +21,7 @@ export default function PlaceLoadouts() {
             <Heading as="h1" size="2xl">
               Loadouts
             </Heading>
-            <Text color="fg.muted">
+            <Text color="fg.subtle">
               Explore era-based loadouts and compare team compositions.
             </Text>
           </Stack>
@@ -52,7 +52,7 @@ export default function PlaceLoadouts() {
                   </Box>
                   <Stack gap={1} padding={3}>
                     <Text fontWeight="semibold">{loadout.name}</Text>
-                    <Text color="fg.muted" fontSize="sm">
+                    <Text color="fg.subtle" fontSize="sm">
                       {loadout.description}
                     </Text>
                   </Stack>

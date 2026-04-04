@@ -6,8 +6,9 @@ import VehicleCard from '@/components/features/vehicles/browse/card';
 
 import type { ListVehicle } from '@/server/api/trpc/routers/vehicles';
 
-const ROW_GAP = 12;
-const ROW_HEIGHT = 163 + ROW_GAP;
+/** Same value for column-gap between cards and padding between virtual rows (matches shells browse). */
+const GRID_GAP = 12;
+const ROW_HEIGHT = 163 + GRID_GAP;
 const MIN_CARD_WIDTH_PX = 260;
 const MAX_COLUMNS = 4;
 
@@ -27,7 +28,7 @@ export default function VirtualGrid({
 
     function columnCountForWidth(width: number) {
       for (let n = MAX_COLUMNS; n >= 1; n -= 1) {
-        const gapTotal = (n - 1) * ROW_GAP;
+        const gapTotal = (n - 1) * GRID_GAP;
         const cell = (width - gapTotal) / n;
         if (cell >= MIN_CARD_WIDTH_PX) return n;
       }
@@ -70,12 +71,13 @@ export default function VirtualGrid({
           return (
             <Box
               key={virtualRow.key}
+              columnGap={`${GRID_GAP}px`}
               display="grid"
-              gap={`${ROW_GAP}px`}
               left={0}
-              paddingBottom={`${ROW_GAP}px`}
+              paddingBottom={`${GRID_GAP}px`}
               position="absolute"
               right={0}
+              rowGap={0}
               top={0}
               style={{
                 gridTemplateColumns: `repeat(${columns}, 1fr)`,

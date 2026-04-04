@@ -89,7 +89,7 @@ export default function SidebarItem({
           borderColor="whiteAlpha.100"
           background="transparent"
           transition="all 0.15s"
-          color="fg.muted"
+          color="fg.subtle"
         >
           <IconComponent />
         </Flex>
@@ -100,7 +100,7 @@ export default function SidebarItem({
               className="sidebar-item-text"
               fontSize="sm"
               fontWeight="normal"
-              color="fg.muted"
+              color="fg/80"
               flex={1}
               whiteSpace="nowrap"
               transition="color 0.15s"

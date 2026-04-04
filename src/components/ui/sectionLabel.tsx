@@ -29,9 +29,9 @@ export default function SectionLabel({
     >
       <Text
         color="fg.subtle"
-        fontSize="2xs"
-        fontWeight="bold"
-        letterSpacing="0.12em"
+        fontSize="xs"
+        fontWeight="semibold"
+        letterSpacing="0.08em"
         textTransform="uppercase"
       >
         {title}
@@ -39,9 +39,9 @@ export default function SectionLabel({
       {hasActive && (
         <Box
           as="button"
-          color="fg.muted"
+          color="fg.subtle"
           cursor="pointer"
-          fontSize="2xs"
+          fontSize="xs"
           _hover={{ color: a.clearHover }}
           onClick={onClear}
         >

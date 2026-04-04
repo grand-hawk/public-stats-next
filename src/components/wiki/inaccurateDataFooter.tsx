@@ -7,7 +7,7 @@ export default function InaccurateDataFooter() {
       <Span color="fg.subtle" fontSize="xs">
         Spotted inaccurate or incomplete data? Report this in our{' '}
         <Link
-          color="fg.muted"
+          color="fg.subtle"
           href="https://discord.gg/multicrew"
           rel="nofollow noopener"
           target="_blank"

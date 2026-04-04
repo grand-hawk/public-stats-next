@@ -26,7 +26,7 @@ export default function SidebarButton({
       cursor="pointer"
       transition="all 0.15s"
       background={active ? 'whiteAlpha.100' : 'transparent'}
-      color="fg.muted"
+      color="fg.subtle"
       _hover={{ background: 'whiteAlpha.100', color: 'fg' }}
       onClick={onClick}
       aria-label={label}

@@ -121,7 +121,7 @@ export default function NavCard({
           </Flex>
 
           <Text
-            color="fg.muted"
+            color="fg.subtle"
             fontSize={featured ? 'md' : 'sm'}
             lineHeight="tall"
             flex={1}

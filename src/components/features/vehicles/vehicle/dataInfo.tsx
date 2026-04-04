@@ -27,7 +27,7 @@ export default function VehicleDataInfo({ ...props }: StackProps) {
       padding={2}
       fontSize="xs"
       borderColor="border/75"
-      color="fg.muted"
+      color="fg.subtle"
       css={{
         '& span': {
           lineHeight: 'shorter',

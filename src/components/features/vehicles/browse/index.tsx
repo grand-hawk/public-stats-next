@@ -386,10 +386,10 @@ export default function VehiclesSearch() {
               alignItems="center"
               borderColor="whiteAlpha.100"
               borderTopWidth="1px"
-              color="fg.muted"
+              color="fg.subtle"
               cursor="pointer"
               display="flex"
-              fontSize="2xs"
+              fontSize="xs"
               gap={1}
               paddingX={3}
               paddingY={1.5}
@@ -464,10 +464,10 @@ export default function VehiclesSearch() {
                     <Box
                       as="button"
                       alignItems="center"
-                      color="fg.muted"
+                      color="fg.subtle"
                       cursor="pointer"
                       display="flex"
-                      fontSize="2xs"
+                      fontSize="xs"
                       gap={1}
                       _hover={{ color: 'blue.400' }}
                       onClick={clearAll}

@@ -110,7 +110,7 @@ export default React.memo(function LoadoutVehiclesGrid({
           position="sticky"
           zIndex={1}
         >
-          <Span color="fg.muted" fontSize="xs" fontWeight="semibold">
+          <Span color="fg.subtle" fontSize="xs" fontWeight="semibold">
             Tier
           </Span>
         </Box>
@@ -147,7 +147,7 @@ export default React.memo(function LoadoutVehiclesGrid({
               position="sticky"
               zIndex={1}
             >
-              <Span color="fg.muted" fontSize="sm" fontWeight="semibold">
+              <Span color="fg.subtle" fontSize="sm" fontWeight="semibold">
                 {tier}
               </Span>
             </Box>

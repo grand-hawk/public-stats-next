@@ -10,7 +10,7 @@ export default function SectionDivider({ label }: SectionDividerProps) {
     <Flex alignItems="center" gap={3} marginBottom={4}>
       <Box height="1px" flex={1} maxWidth="40px" background="whiteAlpha.300" />
       <Text
-        color="fg.muted"
+        color="fg.subtle"
         fontSize="xs"
         fontWeight="medium"
         textTransform="uppercase"

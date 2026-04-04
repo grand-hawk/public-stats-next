@@ -18,7 +18,7 @@ export default function SidebarLicense(props: SidebarLicenseProps) {
           href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed"
           target="_blank"
           rel="noopener noreferrer"
-          color="fg.muted"
+          color="fg.subtle"
           _hover={{ color: 'fg' }}
         >
           CC BY-NC-ND 4.0
@@ -29,7 +29,7 @@ export default function SidebarLicense(props: SidebarLicenseProps) {
           href="https://www.multicrew.dev"
           target="_blank"
           rel="noopener noreferrer"
-          color="fg.muted"
+          color="fg.subtle"
           _hover={{ color: 'fg' }}
         >
           multicrew.dev

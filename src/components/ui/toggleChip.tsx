@@ -39,10 +39,10 @@ export default function ToggleChip({
       backgroundColor={active ? a.activeBg : 'transparent'}
       borderColor={active ? a.activeBorder : 'whiteAlpha.100'}
       borderWidth="1px"
-      color={active ? a.activeColor : 'fg.muted'}
+      color={active ? a.activeColor : 'fg/80'}
       cursor="pointer"
       display="flex"
-      fontSize="2xs"
+      fontSize="xs"
       gap={1}
       justifyContent="center"
       paddingX={1.5}
