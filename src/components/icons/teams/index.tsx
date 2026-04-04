@@ -40,6 +40,7 @@ export const teamIcons: Record<
   'Republic of Chantecler': 'republic-of-chantecler.png',
   'Talitiainen Republic': 'talitiainen-republic.png',
   'The Leonic Commonwealth': 'the-leonic-commonwealth.png',
+  'Kingdom of Falconia': 'kingdom-of-falconia.png',
 };
 
 export default function TeamIcon({ team }: { team: string }) {
