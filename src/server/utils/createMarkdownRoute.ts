@@ -41,10 +41,12 @@ export function createMarkdownRoute() {
 
     const htmlUrlString = htmlUrl.toString();
 
-    const headSuccess = await ky
-      .head(htmlUrlString)
-      .then((response) => response.ok)
-      .catch(() => false);
+    const headSuccess =
+      IS_DEV ||
+      (await ky
+        .head(htmlUrlString)
+        .then((response) => response.ok)
+        .catch(() => false));
     if (!headSuccess) return { notFound: true };
 
     let markdown = await cache.get(htmlUrlString);
