@@ -6,7 +6,8 @@ frontArmorDepth: 50
 
 ## Description
 
-The **MiKi Truck Company Model 1 ARMOURED** is an up-armoured Pickup Truck based on the same manufacturer's light pickup. The added protection increases weight to 5.5 tonnes while retaining seating for two — driver and one passenger — and the same **3VZ-E V6** diesel producing 150 horsepower, for a 27.3 hp/t ratio and a top speed of 110 km/h forward and 15 km/h reverse. The vehicle trades some power-to-weight for improved survivability against small arms and fragments.
+The **MiKi Truck Company Model 1 ARMOURED** is a Pickup Truck upgrade of the baseline Model 1, wrapping the same two-seat wheeled package in supplementary plating for duties that keep crews closer to incoming fire. The layout remains a driver and passenger only, preserving the pickup’s narrow footprint for urban streets and supply routes even as protection is increased. Gross weight climbs to 5.5 tonnes while the **3VZ-E V6** diesel still outputs 150 horsepower, cutting power-to-weight to 27.3 hp/t but maintaining 110 km/h forward and 15 km/h reverse performance on the same five-forward, one-reverse driveline.\
+Although ballistic coverage improves markedly over the unarmoured truck, the vehicle still lacks integrated heavy armament or active countermeasures, so it is best employed for escorted patrols, convoy legs where fragment and small-arms resistance matters, and tasks that prize crew protection over raw acceleration.
 
 ## Armour
 
