@@ -15,11 +15,42 @@ import { EmptyState } from '@/components/ui/empty-state';
 import { SectionMarkersProvider } from '@/hooks/providers/sectionMarkers';
 import { usePlace } from '@/hooks/usePlace';
 import { useRouterQuery } from '@/hooks/useRouterQuery';
+import { prefetchPlaceSession } from '@/server/utils/prefetchPlaceSession';
 import { getVehicleImage } from '@/utils/getVehicleImage';
+import { stripTrailingMdFromRouteSegment } from '@/utils/stripTrailingMdFromRouteSegment';
 import { trpc } from '@/utils/trpc';
 
+import type { GetServerSideProps } from 'next';
+
+export const getServerSideProps: GetServerSideProps = async (ctx) => {
+  const placeParam = ctx.params?.place;
+  const vehicleParam = ctx.params?.vehicle;
+  if (typeof placeParam !== 'string' || typeof vehicleParam !== 'string') {
+    return { props: {} };
+  }
+
+  const session = await prefetchPlaceSession(placeParam);
+  if (!session) return { props: {} };
+
+  const { helpers, place } = session;
+  const vehicleSlug = slug(stripTrailingMdFromRouteSegment(vehicleParam));
+
+  await helpers.vehicles.bySlug.prefetch({
+    placeId: place.placeId,
+    slug: vehicleSlug,
+  });
+
+  return {
+    props: {
+      trpcState: helpers.dehydrate(),
+    },
+  };
+};
+
 export default function PlaceVehicle() {
-  const vehicleQuery = useRouterQuery('vehicle')!;
+  const vehicleQuery = stripTrailingMdFromRouteSegment(
+    useRouterQuery('vehicle')!,
+  );
   const vehicleSlug = slug(vehicleQuery);
   const place = usePlace()!;
 

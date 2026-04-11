@@ -15,11 +15,42 @@ import { EmptyState } from '@/components/ui/empty-state';
 import InaccurateDataFooter from '@/components/wiki/inaccurateDataFooter';
 import { usePlace } from '@/hooks/usePlace';
 import { useRouterQuery } from '@/hooks/useRouterQuery';
+import { prefetchPlaceSession } from '@/server/utils/prefetchPlaceSession';
+import { stripTrailingMdFromRouteSegment } from '@/utils/stripTrailingMdFromRouteSegment';
 import { trpc } from '@/utils/trpc';
+
+import type { GetServerSideProps } from 'next';
+
+export const getServerSideProps: GetServerSideProps = async (ctx) => {
+  const placeParam = ctx.params?.place;
+  const shellParam = ctx.params?.shell;
+  if (typeof placeParam !== 'string' || typeof shellParam !== 'string') {
+    return { props: {} };
+  }
+
+  const session = await prefetchPlaceSession(placeParam);
+  if (!session) return { props: {} };
+
+  const { helpers, place } = session;
+  const shellSlug = slug(stripTrailingMdFromRouteSegment(shellParam));
+
+  await helpers.shells.bySlug.prefetch({
+    placeId: place.placeId,
+    slug: shellSlug,
+  });
+
+  return {
+    props: {
+      trpcState: helpers.dehydrate(),
+    },
+  };
+};
 
 export default function PlaceShell() {
   const router = useRouter();
-  const shellQuery = useRouterQuery('shell')!;
+  const shellQuery = stripTrailingMdFromRouteSegment(
+    useRouterQuery('shell')!,
+  );
   const shellSlug = slug(shellQuery);
   const place = usePlace()!;
 

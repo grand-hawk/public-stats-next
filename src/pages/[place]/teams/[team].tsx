@@ -11,11 +11,40 @@ import PageMeta from '@/components/layout/pageMeta';
 import { EmptyState } from '@/components/ui/empty-state';
 import { usePlace } from '@/hooks/usePlace';
 import { useRouterQuery } from '@/hooks/useRouterQuery';
+import { prefetchPlaceSession } from '@/server/utils/prefetchPlaceSession';
+import { stripTrailingMdFromRouteSegment } from '@/utils/stripTrailingMdFromRouteSegment';
 import { trpc } from '@/utils/trpc';
+
+import type { GetServerSideProps } from 'next';
+
+export const getServerSideProps: GetServerSideProps = async (ctx) => {
+  const placeParam = ctx.params?.place;
+  const teamParam = ctx.params?.team;
+  if (typeof placeParam !== 'string' || typeof teamParam !== 'string') {
+    return { props: {} };
+  }
+
+  const session = await prefetchPlaceSession(placeParam);
+  if (!session) return { props: {} };
+
+  const { helpers, place } = session;
+  const teamSlug = slugify(stripTrailingMdFromRouteSegment(teamParam));
+
+  await helpers.teams.bySlug.prefetch({
+    placeId: place.placeId,
+    slug: teamSlug,
+  });
+
+  return {
+    props: {
+      trpcState: helpers.dehydrate(),
+    },
+  };
+};
 
 export default function PlaceTeam() {
   const router = useRouter();
-  const teamQuery = useRouterQuery('team')!;
+  const teamQuery = stripTrailingMdFromRouteSegment(useRouterQuery('team')!);
   const teamSlug = slugify(teamQuery);
   const place = usePlace()!;
 

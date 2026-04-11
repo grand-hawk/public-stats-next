@@ -11,11 +11,42 @@ import PageMeta from '@/components/layout/pageMeta';
 import { EmptyState } from '@/components/ui/empty-state';
 import { usePlace } from '@/hooks/usePlace';
 import { useRouterQuery } from '@/hooks/useRouterQuery';
+import { prefetchPlaceSession } from '@/server/utils/prefetchPlaceSession';
+import { stripTrailingMdFromRouteSegment } from '@/utils/stripTrailingMdFromRouteSegment';
 import { trpc } from '@/utils/trpc';
+
+import type { GetServerSideProps } from 'next';
+
+export const getServerSideProps: GetServerSideProps = async (ctx) => {
+  const placeParam = ctx.params?.place;
+  const loadoutParam = ctx.params?.loadout;
+  if (typeof placeParam !== 'string' || typeof loadoutParam !== 'string') {
+    return { props: {} };
+  }
+
+  const session = await prefetchPlaceSession(placeParam);
+  if (!session) return { props: {} };
+
+  const { helpers, place } = session;
+  const loadoutSlug = slugify(stripTrailingMdFromRouteSegment(loadoutParam));
+
+  await helpers.loadouts.bySlug.prefetch({
+    placeId: place.placeId,
+    slug: loadoutSlug,
+  });
+
+  return {
+    props: {
+      trpcState: helpers.dehydrate(),
+    },
+  };
+};
 
 export default function PlaceLoadout() {
   const router = useRouter();
-  const loadoutQuery = useRouterQuery('loadout')!;
+  const loadoutQuery = stripTrailingMdFromRouteSegment(
+    useRouterQuery('loadout')!,
+  );
   const loadoutSlug = slugify(loadoutQuery);
   const place = usePlace()!;
 
