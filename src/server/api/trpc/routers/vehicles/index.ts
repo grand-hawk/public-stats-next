@@ -49,6 +49,7 @@ export interface ListVehicle extends ListVehicleFieldsFromInfo {
   frontArmorDepth?: number;
   hasAPS: boolean;
   hasESS: boolean;
+  hasJammer: boolean;
   hasStabilizer: boolean;
   hasThermal: boolean;
   name: string;
@@ -127,6 +128,9 @@ export const vehiclesRouter = createTRPCRouter({
             hasESS: mods
               .filter((m): m is Mod<'ESS'> => m.type === 'ESS')
               .some((m) => m.data.present),
+            hasJammer: mods
+              .filter((m): m is Mod<'EW'> => m.type === 'EW')
+              .some((m) => m.data.ied || m.data.drone),
             hasStabilizer: turrets.some((t) => t.stabilizer),
             hasThermal: turrets.some((t) => t.sights.some((s) => !!s.thermal)),
             locomotion: data.info.locomotion,

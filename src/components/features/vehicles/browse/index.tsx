@@ -50,6 +50,7 @@ export default function VehiclesSearch() {
   const [featureAPS, setFeatureAPS] = React.useState(false);
   const [featureAmphibious, setFeatureAmphibious] = React.useState(false);
   const [featureESS, setFeatureESS] = React.useState(false);
+  const [featureJammer, setFeatureJammer] = React.useState(false);
   const [featureStabilizer, setFeatureStabilizer] = React.useState(false);
   const [featureThermal, setFeatureThermal] = React.useState(false);
 
@@ -115,6 +116,7 @@ export default function VehiclesSearch() {
       if (featureAPS && !v.hasAPS) return false;
       if (featureAmphibious && !v.amphibious) return false;
       if (featureESS && !v.hasESS) return false;
+      if (featureJammer && !v.hasJammer) return false;
       if (featureStabilizer && !v.hasStabilizer) return false;
       if (featureThermal && !v.hasThermal) return false;
       if (deferredQuery) {
@@ -134,6 +136,7 @@ export default function VehiclesSearch() {
     featureAPS,
     featureAmphibious,
     featureESS,
+    featureJammer,
     featureStabilizer,
     featureThermal,
   ]);
@@ -146,6 +149,7 @@ export default function VehiclesSearch() {
     featureAPS ||
     featureAmphibious ||
     featureESS ||
+    featureJammer ||
     featureStabilizer ||
     featureThermal;
 
@@ -159,6 +163,7 @@ export default function VehiclesSearch() {
     setFeatureAPS(false);
     setFeatureAmphibious(false);
     setFeatureESS(false);
+    setFeatureJammer(false);
     setFeatureStabilizer(false);
     setFeatureThermal(false);
     setQuery('');
@@ -276,6 +281,7 @@ export default function VehiclesSearch() {
             featureAPS ||
             featureAmphibious ||
             featureESS ||
+            featureJammer ||
             featureStabilizer ||
             featureThermal
           }
@@ -284,6 +290,7 @@ export default function VehiclesSearch() {
             setFeatureAPS(false);
             setFeatureAmphibious(false);
             setFeatureESS(false);
+            setFeatureJammer(false);
             setFeatureStabilizer(false);
             setFeatureThermal(false);
           }}
@@ -318,6 +325,12 @@ export default function VehiclesSearch() {
             onClick={() => setFeatureESS((p) => !p)}
           >
             ESS
+          </ToggleChip>
+          <ToggleChip
+            active={featureJammer}
+            onClick={() => setFeatureJammer((p) => !p)}
+          >
+            Jammer
           </ToggleChip>
         </Box>
       </Box>
