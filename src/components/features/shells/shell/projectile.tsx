@@ -79,6 +79,16 @@ export default function ShellProjectile() {
             <FormatNumber value={shell.reloadMultiplier} />x
           </Stat>
         )}
+
+        {shell.dispersion && (
+          <Stat label="Angular dispersion (1σ)">
+            <FormatNumber
+              value={shell.dispersion * (Math.PI / 180) * 1000}
+              maximumFractionDigits={2}
+            />{' '}
+            mrad
+          </Stat>
+        )}
       </Box>
     </TitledCard>
   );
