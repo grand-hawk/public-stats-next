@@ -18,7 +18,7 @@ const config = defineConfig({
       },
     },
     '*::selection': {
-      backgroundColor: 'blue.600/60',
+      backgroundColor: 'whiteAlpha.300',
     },
   },
   theme: {
@@ -39,8 +39,20 @@ const config = defineConfig({
     semanticTokens: {
       colors: {
         bg: {
+          DEFAULT: {
+            value: '#0b0b0c',
+          },
+          subtle: {
+            value: '#131315',
+          },
           muted: {
-            value: '#1a1a1a',
+            value: '#18181b',
+          },
+          emphasized: {
+            value: '#232328',
+          },
+          panel: {
+            value: '#131315',
           },
         },
       },

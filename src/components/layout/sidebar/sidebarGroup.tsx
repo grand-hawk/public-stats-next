@@ -1,4 +1,4 @@
-import { Box, Text } from '@chakra-ui/react';
+import { Box, Flex, Text } from '@chakra-ui/react';
 import React from 'react';
 
 export interface SidebarGroupProps {
@@ -13,42 +13,31 @@ export default function SidebarGroup({
   label,
 }: SidebarGroupProps) {
   return (
-    <div>
+    <Box marginTop={label ? 3 : 0}>
       {label && (
-        <Box
-          height={collapsed ? '16px' : '28px'}
-          display="flex"
+        <Flex
           alignItems="center"
+          height={collapsed ? '10px' : '18px'}
           paddingX={3}
-          position="relative"
           transition="height 0.15s"
         >
           <Text
-            fontSize="xs"
-            fontWeight="medium"
-            color="fg.subtle"
-            textTransform="uppercase"
-            letterSpacing="wide"
-            whiteSpace="nowrap"
+            color="fg.muted"
+            fontSize="9px"
+            fontWeight="semibold"
+            letterSpacing="0.2em"
+            lineHeight="1"
             opacity={collapsed ? 0 : 1}
+            textTransform="uppercase"
             transition="opacity 0.15s"
+            whiteSpace="nowrap"
           >
             {label}
           </Text>
-
-          <Box
-            position="absolute"
-            left={3}
-            right={3}
-            height="1px"
-            background="whiteAlpha.100"
-            opacity={collapsed ? 1 : 0}
-            transition="opacity 0.15s"
-          />
-        </Box>
+        </Flex>
       )}
 
-      <div>{children}</div>
-    </div>
+      <Box>{children}</Box>
+    </Box>
   );
 }

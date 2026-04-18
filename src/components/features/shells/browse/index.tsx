@@ -112,15 +112,17 @@ export default function ShellsSearch() {
       propExplosive ||
       propIRCCM ||
       propUnjammable;
-    const q = deferredQuery ? simplifyString(deferredQuery) : null;
+    const normalizedQuery = deferredQuery
+      ? simplifyString(deferredQuery)
+      : null;
 
-    if (!hasAnyFilter && !q) return shellsList;
+    if (!hasAnyFilter && !normalizedQuery) return shellsList;
 
     const result: typeof shellsList = {};
 
     for (const [weapon, shells] of Object.entries(shellsList)) {
-      const weaponMatchesQuery = q
-        ? simplifiedStrings.get(weapon)?.includes(q)
+      const weaponMatchesQuery = normalizedQuery
+        ? simplifiedStrings.get(weapon)?.includes(normalizedQuery)
         : true;
 
       const matching = shells.filter((shell) => {
@@ -139,11 +141,13 @@ export default function ShellsSearch() {
         if (propExplosive && !shell.hasExplosive) return false;
         if (propIRCCM && !shell.hasIRCCM) return false;
         if (propUnjammable && !shell.isUnjammable) return false;
-        if (!q) return true;
+        if (!normalizedQuery) return true;
         if (weaponMatchesQuery) return true;
         return (
-          simplifiedStrings.get(shell.name)?.includes(q) ||
-          shell.vehicles.some((v) => simplifiedStrings.get(v)?.includes(q))
+          simplifiedStrings.get(shell.name)?.includes(normalizedQuery) ||
+          shell.vehicles.some((vehicleName) =>
+            simplifiedStrings.get(vehicleName)?.includes(normalizedQuery),
+          )
         );
       });
 
@@ -304,15 +308,18 @@ export default function ShellsSearch() {
         <ToggleChip active={propLaser} onClick={() => setPropLaser((p) => !p)}>
           Laser
         </ToggleChip>
+
         <ToggleChip
           active={propExplosive}
           onClick={() => setPropExplosive((p) => !p)}
         >
           Explosive
         </ToggleChip>
+
         <ToggleChip active={propIRCCM} onClick={() => setPropIRCCM((p) => !p)}>
           IRCCM
         </ToggleChip>
+
         <ToggleChip
           active={propUnjammable}
           onClick={() => setPropUnjammable((p) => !p)}
@@ -354,6 +361,7 @@ export default function ShellsSearch() {
             variant="subtle"
             onChange={(e) => setQuery(e.target.value)}
           />
+
           {hasFilters && (
             <Box
               as="button"
