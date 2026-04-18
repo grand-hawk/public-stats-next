@@ -1,174 +1,65 @@
-import { Box, Flex, Grid, Heading, Text } from '@chakra-ui/react';
-import { useRouter } from 'next/router';
+import { Flex } from '@chakra-ui/react';
 import React from 'react';
 
+import ClassesSection from '@/components/features/home/classesSection';
+import LoadoutsSection from '@/components/features/home/loadoutsSection';
+import NewestHero from '@/components/features/home/newestHero';
+import Separator from '@/components/features/home/separator';
+import { VEHICLE_CLASS_CATEGORIES } from '@/components/features/vehicles/classCategories';
 import Layout from '@/components/layout/layout';
-import {
-  primaryTabKeys,
-  secondaryTabKeys,
-  tabs,
-  toolsTabKeys,
-} from '@/components/layout/navigation/tabs';
 import PageMeta from '@/components/layout/pageMeta';
-import NavCard from '@/components/wiki/navCard';
-import SectionDivider from '@/components/wiki/sectionDivider';
 import { usePlace } from '@/hooks/usePlace';
 import { trpc } from '@/utils/trpc';
 
 export default function Place() {
-  const utils = trpc.useUtils();
   const place = usePlace();
-  const router = useRouter();
+  if (!place) return null;
 
-  React.useEffect(() => {
-    if (!place) return;
+  const [home] = trpc.home.place.useSuspenseQuery({ placeId: place.placeId });
+  const { classCounts, loadouts, newest } = home;
 
-    utils.vehicles.list.prefetch({ placeId: place.placeId });
-  }, [place, utils]);
-
-  if (!place) return;
-
-  const description = `Vehicle stats, shell performance, team compositions, and more for ${place.placeName}.`;
+  const classes = VEHICLE_CLASS_CATEGORIES.filter(
+    (c) => c.slug !== 'artillery',
+  );
 
   return (
-    <PageMeta exactTitle={`${place.placeName} Wiki`} description={description}>
+    <PageMeta
+      exactTitle={`${place.placeName} Wiki`}
+      description={`Vehicle stats, shell data and armor maps for ${place.placeName}.`}
+    >
       <Layout overwriteTabLabel="">
         <Flex
-          flexDirection="column"
-          gap={10}
-          marginX="auto"
+          direction="column"
+          gap={{ base: 6, md: 8 }}
           maxWidth="6xl"
-          paddingY={8}
-          position="relative"
+          marginX="auto"
         >
-          <Box position="relative">
-            <Box
-              position="absolute"
-              top={0}
-              left={0}
-              right={0}
-              bottom={0}
-              opacity={0.03}
-              pointerEvents="none"
-              css={{
-                backgroundImage: `
-                  linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px),
-                  linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px)
-                `,
-                backgroundSize: '40px 40px',
-              }}
-            />
+          <ClassesSection
+            classCounts={classCounts}
+            classes={classes}
+            initials={place.initials}
+          />
 
-            <Flex direction="column" gap={3} position="relative">
-              <Heading
-                size="3xl"
-                fontWeight="bold"
-                letterSpacing="tight"
-                lineHeight="1.1"
-                css={{
-                  animation: 'heroFadeIn 0.6s ease-out',
-                  '@keyframes heroFadeIn': {
-                    from: { opacity: 0, transform: 'translateY(-10px)' },
-                    to: { opacity: 1, transform: 'translateY(0)' },
-                  },
-                }}
-              >
-                {place.placeName}
-              </Heading>
+          {loadouts.length > 0 && (
+            <>
+              <Separator />
 
-              <Text
-                color="fg.subtle"
-                fontSize="md"
-                maxWidth="xl"
-                css={{
-                  animation: 'heroFadeIn 0.6s ease-out 0.1s both',
-                  '@keyframes heroFadeIn': {
-                    from: { opacity: 0, transform: 'translateY(-10px)' },
-                    to: { opacity: 1, transform: 'translateY(0)' },
-                  },
-                }}
-              >
-                Vehicle stats, shell performance, team compositions, and more.
-              </Text>
-            </Flex>
+              <LoadoutsSection initials={place.initials} loadouts={loadouts} />
+            </>
+          )}
 
-            <Box
-              position="absolute"
-              top={-2}
-              right={0}
-              width="80px"
-              height="80px"
-              borderTopWidth="2px"
-              borderRightWidth="2px"
-              borderColor="whiteAlpha.100"
-              display={{ base: 'none', md: 'block' }}
-            />
-          </Box>
+          {newest && (
+            <>
+              <Separator />
 
-          <div>
-            <Grid
-              templateColumns={{ base: '1fr', md: 'repeat(2, 1fr)' }}
-              gap={5}
-            >
-              {primaryTabKeys.map((key) => {
-                const item = tabs[key];
-                return (
-                  <NavCard
-                    key={key}
-                    item={item}
-                    featured
-                    onClick={() =>
-                      router.push(`/${place.initials}${item.path}`)
-                    }
-                  />
-                );
-              })}
-            </Grid>
-          </div>
-
-          <div>
-            <SectionDivider label="Analytics" />
-
-            <Grid
-              templateColumns={{ base: '1fr', md: 'repeat(2, 1fr)' }}
-              gap={5}
-            >
-              {secondaryTabKeys.map((key) => {
-                const item = tabs[key];
-                return (
-                  <NavCard
-                    key={key}
-                    item={item}
-                    onClick={() =>
-                      router.push(`/${place.initials}${item.path}`)
-                    }
-                  />
-                );
-              })}
-            </Grid>
-          </div>
-
-          <div>
-            <SectionDivider label="Tools" />
-
-            <Grid
-              templateColumns={{ base: '1fr', md: 'repeat(2, 1fr)' }}
-              gap={5}
-            >
-              {toolsTabKeys.map((key) => {
-                const item = tabs[key];
-                return (
-                  <NavCard
-                    key={key}
-                    item={item}
-                    onClick={() =>
-                      router.push(`/${place.initials}${item.path}`)
-                    }
-                  />
-                );
-              })}
-            </Grid>
-          </div>
+              <NewestHero
+                initials={place.initials}
+                name={newest.name}
+                role={newest.role}
+                slug={newest.slug}
+              />
+            </>
+          )}
         </Flex>
       </Layout>
     </PageMeta>
