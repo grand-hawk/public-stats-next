@@ -4,9 +4,8 @@ import React from 'react';
 
 import VehicleCard from '@/components/features/vehicles/browse/card';
 
-import type { ListVehicle } from '@/server/api/trpc/routers/vehicles';
+import type { SearchedVehicle } from '@/server/api/trpc/routers/vehicles';
 
-/** Same value for column-gap between cards and padding between virtual rows (matches shells browse). */
 const GRID_GAP = 12;
 const ROW_HEIGHT = 163 + GRID_GAP;
 const MIN_CARD_WIDTH_PX = 260;
@@ -17,7 +16,7 @@ export default function VirtualGrid({
   vehicles,
 }: {
   placeInitials: string;
-  vehicles: ListVehicle[];
+  vehicles: SearchedVehicle[];
 }) {
   const scrollRef = React.useRef<HTMLDivElement>(null);
   const [columns, setColumns] = React.useState(1);

@@ -3,6 +3,7 @@ import superjson from 'superjson';
 
 import { createTRPCRouter } from '@/server/api/trpc/context';
 import { configRouter } from '@/server/api/trpc/routers/config';
+import { homeRouter } from '@/server/api/trpc/routers/home';
 import { kdrRouter } from '@/server/api/trpc/routers/kdr';
 import { loadoutsRouter } from '@/server/api/trpc/routers/loadouts';
 import { shellsRouter } from '@/server/api/trpc/routers/shells';
@@ -12,6 +13,7 @@ import { winrateRouter } from '@/server/api/trpc/routers/winrate';
 
 export const appRouter = createTRPCRouter({
   config: configRouter,
+  home: homeRouter,
   kdr: kdrRouter,
   loadouts: loadoutsRouter,
   shells: shellsRouter,

@@ -2,8 +2,8 @@ import { TRPCError } from '@trpc/server';
 import slug from 'slug';
 import { z } from 'zod';
 
-import { MEDIA_PREFIX } from '@/env';
 import { createTRPCRouter, publicProcedure } from '@/server/api/trpc/context';
+import { getLoadoutListItems } from '@/server/utils/loadoutsList';
 import { getLoadouts } from '@generated/loadouts';
 import { getVehicles } from '@generated/vehicles';
 
@@ -21,27 +21,12 @@ export interface Loadout {
   };
 }
 
+export type { LoadoutListItem } from '@/server/utils/loadoutsList';
+
 export const loadoutsRouter = createTRPCRouter({
   list: publicProcedure
     .input(z.object({ placeId: z.string() }))
-    .query(({ input }) => {
-      const loadouts = getLoadouts();
-
-      const loadoutsPlace = loadouts.data[input.placeId as PlaceId];
-      if (!loadoutsPlace) throw new TRPCError({ code: 'NOT_FOUND' });
-
-      return loadoutsPlace.metadata.loadouts.map((loadoutName) => {
-        const loadoutSlug = slug(loadoutName);
-        const loadoutData = loadoutsPlace.data[loadoutName];
-
-        return {
-          description: loadoutData?.description ?? '',
-          name: loadoutName,
-          slug: loadoutSlug,
-          thumbnail: `${MEDIA_PREFIX}/assets/loadouts/thumbnails/${loadoutSlug}.png`,
-        };
-      });
-    }),
+    .query(({ input }) => getLoadoutListItems(input.placeId as PlaceId)),
 
   bySlug: publicProcedure
     .input(
@@ -50,7 +35,7 @@ export const loadoutsRouter = createTRPCRouter({
         slug: z.string(),
       }),
     )
-    .query(({ input }) => {
+    .query(({ input }): Loadout | null => {
       const loadouts = getLoadouts();
       const vehicles = getVehicles();
 

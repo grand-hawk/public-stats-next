@@ -6,3 +6,7 @@ export const SPEED_BANDS = [
 ] as const;
 
 export type SpeedBand = (typeof SPEED_BANDS)[number]['key'];
+
+export const SPEED_TEST = new Map<string, (s: number) => boolean>(
+  SPEED_BANDS.map((b) => [b.key, b.test]),
+);

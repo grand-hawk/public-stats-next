@@ -1,4 +1,4 @@
-import { Box, Icon, IconButton, Input, Text } from '@chakra-ui/react';
+import { Box, Icon, IconButton, Input, Spinner, Text } from '@chakra-ui/react';
 import React from 'react';
 import { LuSlidersHorizontal, LuX } from 'react-icons/lu';
 
@@ -18,9 +18,8 @@ import {
 import SectionLabel from '@/components/ui/sectionLabel';
 import ToggleChip from '@/components/ui/toggleChip';
 import { usePlace } from '@/hooks/usePlace';
-import { simplifyString } from '@/utils/simplifyString';
+import { sortedArray } from '@/utils/sortedSet';
 import { trpc } from '@/utils/trpc';
-import { classificationOrder } from '@/utils/vehicleClassification';
 
 import type { SpeedBand } from '@/components/features/vehicles/browse/speedBands';
 
@@ -31,15 +30,20 @@ const OBTAINMENT_LABELS: Record<string, string> = {
   money: 'Shop',
 };
 
-export default function VehiclesSearch() {
+export interface VehiclesSearchProps {
+  defaultClassifications?: string[];
+}
+
+export default function VehiclesSearch({
+  defaultClassifications,
+}: VehiclesSearchProps = {}) {
   const place = usePlace()!;
 
   const [query, setQuery] = React.useState('');
-  const deferredQuery = React.useDeferredValue(query);
 
   const [selectedClassifications, setSelectedClassifications] = React.useState<
     Set<string>
-  >(() => new Set());
+  >(() => new Set(defaultClassifications));
   const [selectedSpeedBands, setSelectedSpeedBands] = React.useState<
     Set<SpeedBand>
   >(() => new Set());
@@ -54,92 +58,46 @@ export default function VehiclesSearch() {
   const [featureStabilizer, setFeatureStabilizer] = React.useState(false);
   const [featureThermal, setFeatureThermal] = React.useState(false);
 
-  const [vehicleList] = trpc.vehicles.list.useSuspenseQuery({
+  const [facets] = trpc.vehicles.searchFacets.useSuspenseQuery({
     placeId: place.placeId,
   });
 
-  const { allClasses, classifications, obtainments } = React.useMemo(() => {
-    const classMap = new Map<string, number>();
-    const obtMap = new Map<string, number>();
-    const classSet = new Set<string>();
+  const searchInput = React.useMemo(
+    () => ({
+      amphibious: featureAmphibious,
+      aps: featureAPS,
+      classifications: sortedArray(selectedClassifications),
+      crewClasses: sortedArray(crewClasses),
+      ess: featureESS,
+      jammer: featureJammer,
+      obtainments: sortedArray(selectedObtainments),
+      placeId: place.placeId,
+      query,
+      speedBands: sortedArray(selectedSpeedBands),
+      stabilizer: featureStabilizer,
+      thermal: featureThermal,
+    }),
+    [
+      crewClasses,
+      featureAPS,
+      featureAmphibious,
+      featureESS,
+      featureJammer,
+      featureStabilizer,
+      featureThermal,
+      place.placeId,
+      query,
+      selectedClassifications,
+      selectedObtainments,
+      selectedSpeedBands,
+    ],
+  );
 
-    for (const v of vehicleList) {
-      classMap.set(v.classification, (classMap.get(v.classification) ?? 0) + 1);
-      const obtKey = v.premium ?? 'free';
-      obtMap.set(obtKey, (obtMap.get(obtKey) ?? 0) + 1);
-      for (const c of v.supportedClasses) classSet.add(c);
-    }
+  const deferredInput = React.useDeferredValue(searchInput);
 
-    return {
-      allClasses: [...classSet].sort(),
-      classifications: classificationOrder
-        .filter((c) => c !== 'Other' && classMap.has(c))
-        .map((c) => [c, classMap.get(c)!] as const),
-      obtainments: [...obtMap.entries()].sort((a, b) =>
-        a[0].localeCompare(b[0]),
-      ),
-    };
-  }, [vehicleList]);
-
-  const simplifiedNames = React.useMemo(() => {
-    const map = new Map<string, string>();
-    for (const v of vehicleList) map.set(v.slug, simplifyString(v.name));
-    return map;
-  }, [vehicleList]);
-
-  const filtered = React.useMemo(() => {
-    return vehicleList.filter((v) => {
-      if (
-        selectedClassifications.size > 0 &&
-        !selectedClassifications.has(v.classification)
-      ) {
-        return false;
-      }
-      if (selectedSpeedBands.size > 0) {
-        const inAnyBand = [...selectedSpeedBands].some((key) =>
-          SPEED_BANDS.find((b) => b.key === key)?.test(v.forwardSpeed),
-        );
-        if (!inAnyBand) return false;
-      }
-      if (
-        selectedObtainments.size > 0 &&
-        !selectedObtainments.has(v.premium ?? 'free')
-      ) {
-        return false;
-      }
-      if (
-        crewClasses.size > 0 &&
-        !v.supportedClasses.some((c) => crewClasses.has(c))
-      ) {
-        return false;
-      }
-      if (featureAPS && !v.hasAPS) return false;
-      if (featureAmphibious && !v.amphibious) return false;
-      if (featureESS && !v.hasESS) return false;
-      if (featureJammer && !v.hasJammer) return false;
-      if (featureStabilizer && !v.hasStabilizer) return false;
-      if (featureThermal && !v.hasThermal) return false;
-      if (deferredQuery) {
-        const q = simplifyString(deferredQuery);
-        if (!simplifiedNames.get(v.slug)!.includes(q)) return false;
-      }
-      return true;
-    });
-  }, [
-    vehicleList,
-    deferredQuery,
-    simplifiedNames,
-    selectedClassifications,
-    selectedSpeedBands,
-    selectedObtainments,
-    crewClasses,
-    featureAPS,
-    featureAmphibious,
-    featureESS,
-    featureJammer,
-    featureStabilizer,
-    featureThermal,
-  ]);
+  const [filtered, filteredQuery] =
+    trpc.vehicles.search.useSuspenseQuery(deferredInput);
+  const isSearching = filteredQuery.isFetching || searchInput !== deferredInput;
 
   const hasFilterChips =
     selectedClassifications.size > 0 ||
@@ -214,7 +172,7 @@ export default function VehiclesSearch() {
           onClear={() => setSelectedClassifications(new Set())}
         />
         <Box display="grid" gap={1} gridTemplateColumns="1fr 1fr" paddingX={3}>
-          {classifications.map(([cls]) => (
+          {facets.classifications.map(([cls]) => (
             <ToggleChip
               key={cls}
               active={selectedClassifications.has(cls)}
@@ -245,7 +203,7 @@ export default function VehiclesSearch() {
         </Box>
       </Box>
 
-      {allClasses.length > 0 && (
+      {facets.crewClasses.length > 0 && (
         <Box
           borderColor="whiteAlpha.100"
           borderTopWidth="1px"
@@ -262,7 +220,7 @@ export default function VehiclesSearch() {
             gridTemplateColumns="1fr 1fr"
             paddingX={3}
           >
-            {allClasses.map((cls) => (
+            {facets.crewClasses.map((cls) => (
               <ToggleChip
                 key={cls}
                 active={crewClasses.has(cls)}
@@ -335,7 +293,7 @@ export default function VehiclesSearch() {
         </Box>
       </Box>
 
-      {obtainments.length > 1 && (
+      {facets.obtainments.length > 1 && (
         <Box
           borderColor="whiteAlpha.100"
           borderTopWidth="1px"
@@ -347,7 +305,7 @@ export default function VehiclesSearch() {
             onClear={() => setSelectedObtainments(new Set())}
           />
           <Box display="flex" flexWrap="wrap" gap={1} paddingX={3}>
-            {obtainments.map(([obt]) => (
+            {facets.obtainments.map(([obt]) => (
               <ToggleChip
                 key={obt}
                 active={selectedObtainments.has(obt)}
@@ -393,27 +351,38 @@ export default function VehiclesSearch() {
             variant="subtle"
             onChange={(e) => setQuery(e.target.value)}
           />
-          {hasFilters && (
-            <Box
-              as="button"
-              alignItems="center"
-              borderColor="whiteAlpha.100"
-              borderTopWidth="1px"
-              color="fg.subtle"
-              cursor="pointer"
-              display="flex"
-              fontSize="xs"
-              gap={1}
-              paddingX={3}
-              paddingY={1.5}
-              width="100%"
-              _hover={{ color: 'blue.400' }}
-              onClick={clearAll}
-            >
-              <Icon as={LuX} boxSize="10px" flexShrink={0} />
-              clear all filters
-            </Box>
-          )}
+
+          <Box
+            as="button"
+            alignItems="center"
+            aria-hidden={!hasFilters}
+            borderColor="whiteAlpha.100"
+            borderTopWidth="1px"
+            color="fg.subtle"
+            cursor={hasFilters ? 'pointer' : 'default'}
+            display="flex"
+            fontSize="xs"
+            gap={1}
+            paddingX={3}
+            paddingY={1.5}
+            pointerEvents={hasFilters ? 'auto' : 'none'}
+            tabIndex={hasFilters ? 0 : -1}
+            visibility={hasFilters ? 'visible' : 'hidden'}
+            width="100%"
+            _hover={{ color: 'blue.400' }}
+            onClick={clearAll}
+          >
+            <Icon as={LuX} boxSize="10px" flexShrink={0} />
+            clear all filters
+            {isSearching && (
+              <Spinner
+                borderWidth="1px"
+                color="fg.subtle"
+                marginLeft="auto"
+                size="xs"
+              />
+            )}
+          </Box>
         </Box>
 
         <Box flex={1} overflowY="auto">
