@@ -98,7 +98,10 @@ export const shellsRouter = createTRPCRouter({
         placeId: z.string(),
       }),
     )
-    .query(({ input }) => listShells(input.placeId as PlaceId, false)),
+    .query(
+      ({ input }): Record<string, ListedShellBase[]> =>
+        listShells(input.placeId as PlaceId, false),
+    ),
 
   listForBrowse: publicProcedure
     .input(
@@ -106,7 +109,10 @@ export const shellsRouter = createTRPCRouter({
         placeId: z.string(),
       }),
     )
-    .query(({ input }) => listShells(input.placeId as PlaceId, true)),
+    .query(
+      ({ input }): ShellsListForBrowse =>
+        listShells(input.placeId as PlaceId, true),
+    ),
 
   bySlug: publicProcedure
     .input(
@@ -115,7 +121,7 @@ export const shellsRouter = createTRPCRouter({
         slug: z.string(),
       }),
     )
-    .query(({ input }) => {
+    .query(({ input }): DetailedShell | null => {
       const shells = getShells();
       const config = getConfig();
 

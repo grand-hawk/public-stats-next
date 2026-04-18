@@ -24,10 +24,15 @@ export interface Team {
   };
 }
 
+export interface TeamListEntry {
+  name: string;
+  slug: string;
+}
+
 export const teamsRouter = createTRPCRouter({
   list: publicProcedure
     .input(z.object({ placeId: z.string() }))
-    .query(({ input }) => {
+    .query(({ input }): TeamListEntry[] => {
       const loadouts = getLoadouts();
 
       const loadoutsPlace = loadouts.data[input.placeId as PlaceId];
@@ -46,7 +51,7 @@ export const teamsRouter = createTRPCRouter({
         slug: z.string(),
       }),
     )
-    .query(({ input }) => {
+    .query(({ input }): Team | null => {
       const loadouts = getLoadouts();
       const vehicles = getVehicles();
 

@@ -24,7 +24,7 @@ export const kdrRouter = createTRPCRouter({
         placeId: z.string(),
       }),
     )
-    .query(({ input }) => {
+    .query(({ input }): Record<keyof KdrPlaceData, DetailedKdrItem[]> => {
       const kdr = getKdr();
       const vehicles = getVehicles();
 
