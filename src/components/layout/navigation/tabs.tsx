@@ -106,7 +106,6 @@ export const primaryTabKeys = [
   'vehicles',
   'shells',
   'teams',
-  'loadouts',
 ] as const satisfies (keyof typeof tabs)[];
 export const secondaryTabKeys = [
   'kdr',

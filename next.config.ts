@@ -22,6 +22,11 @@ const nextConfig: NextConfig = {
         destination: '/md/:path',
         permanent: true,
       },
+      {
+        source: '/:place/loadouts',
+        destination: '/:place',
+        permanent: false,
+      },
     ];
   },
 
