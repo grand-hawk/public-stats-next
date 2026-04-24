@@ -65,14 +65,9 @@ function getMdPaths() {
       });
     }
 
-    // loadouts
-    paths.push({
-      path: `md/${initials}/loadouts.md`,
-      changefreq: 'weekly',
-    });
-    for (const loadoutName of loadoutsPlace.metadata.loadouts) {
+    for (const loadout of loadoutsPlace.metadata.loadouts) {
       paths.push({
-        path: `md/${initials}/loadouts/${slug(loadoutName)}.md`,
+        path: `md/${initials}/loadouts/${slug(loadout)}.md`,
         changefreq: 'monthly',
       });
     }

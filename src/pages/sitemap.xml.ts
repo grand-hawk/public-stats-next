@@ -1,6 +1,13 @@
 import slug from 'slug';
 import { create } from 'xmlbuilder2';
 
+import {
+  indexableTabKeys,
+  primaryTabKeys,
+  secondaryTabKeys,
+  tabs,
+  toolsTabKeys,
+} from '@/components/layout/navigation/tabs';
 import { getBaseUrl } from '@/utils/trpc';
 import { getConfig } from '@generated/config';
 import { getLoadouts } from '@generated/loadouts';
@@ -9,14 +16,32 @@ import { getVehicles } from '@generated/vehicles';
 
 import type { GetServerSidePropsContext, GetServerSidePropsResult } from 'next';
 
-function getPaths() {
+interface SitemapEntry {
+  path: string;
+  changefreq: string;
+  priority: string;
+}
+
+function tabPriority(key: (typeof indexableTabKeys)[number]): SitemapEntry {
+  if ((primaryTabKeys as readonly string[]).includes(key)) {
+    return { path: '', changefreq: 'weekly', priority: '0.9' };
+  }
+  if ((secondaryTabKeys as readonly string[]).includes(key)) {
+    return { path: '', changefreq: 'weekly', priority: '0.8' };
+  }
+  if ((toolsTabKeys as readonly string[]).includes(key)) {
+    return { path: '', changefreq: 'monthly', priority: '0.5' };
+  }
+  return { path: '', changefreq: 'monthly', priority: '0.5' };
+}
+
+function getPaths(): SitemapEntry[] {
   const config = getConfig();
   const vehicles = getVehicles();
   const loadouts = getLoadouts();
   const shells = getShells();
 
-  const paths: Array<{ path: string; changefreq: string; priority: string }> =
-    [];
+  const paths: SitemapEntry[] = [];
   const placeName = config.data.primaryPlace;
 
   const initials = config.data.placeNameInitials[placeName];
@@ -32,31 +57,22 @@ function getPaths() {
   const loadoutsPlace = loadouts.data[placeId];
   const shellsPlace = shells.data[placeId];
 
-  // main place page
   paths.push({
     path: `${initials}`,
     changefreq: 'weekly',
     priority: '1',
   });
 
-  // kdr and winrate pages
-  paths.push({
-    path: `${initials}/kdr`,
-    changefreq: 'weekly',
-    priority: '0.8',
-  });
-  paths.push({
-    path: `${initials}/winrate`,
-    changefreq: 'weekly',
-    priority: '0.8',
-  });
+  for (const key of indexableTabKeys) {
+    const tab = tabs[key];
+    const { changefreq, priority } = tabPriority(key);
+    paths.push({
+      path: `${initials}${tab.path}`,
+      changefreq,
+      priority,
+    });
+  }
 
-  // vehicles
-  paths.push({
-    path: `${initials}/vehicles`,
-    changefreq: 'weekly',
-    priority: '0.9',
-  });
   for (const vehicleSlug of vehicleSlugs) {
     paths.push({
       path: `${initials}/vehicles/${vehicleSlug}`,
@@ -65,12 +81,6 @@ function getPaths() {
     });
   }
 
-  // teams
-  paths.push({
-    path: `${initials}/teams`,
-    changefreq: 'weekly',
-    priority: '0.8',
-  });
   for (const team of loadoutsPlace.metadata.teams) {
     paths.push({
       path: `${initials}/teams/${slug(team)}`,
@@ -79,38 +89,14 @@ function getPaths() {
     });
   }
 
-  // loadouts
-  paths.push({
-    path: `${initials}/loadouts`,
-    changefreq: 'weekly',
-    priority: '0.8',
-  });
-  for (const loadoutName of loadoutsPlace.metadata.loadouts) {
+  for (const loadout of loadoutsPlace.metadata.loadouts) {
     paths.push({
-      path: `${initials}/loadouts/${slug(loadoutName)}`,
+      path: `${initials}/loadouts/${slug(loadout)}`,
       changefreq: 'monthly',
       priority: '0.6',
     });
   }
 
-  // tools
-  paths.push({
-    path: `${initials}/armor`,
-    changefreq: 'monthly',
-    priority: '0.5',
-  });
-  paths.push({
-    path: `${initials}/compare`,
-    changefreq: 'monthly',
-    priority: '0.5',
-  });
-
-  // shells
-  paths.push({
-    path: `${initials}/shells`,
-    changefreq: 'weekly',
-    priority: '0.8',
-  });
   for (const shellSlug of Object.keys(shellsPlace.metadata.slugs)) {
     paths.push({
       path: `${initials}/shells/${shellSlug}`,
