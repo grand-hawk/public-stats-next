@@ -66,7 +66,9 @@ function buildIndex(placeId: PlaceId): Fuse<IndexedItem> {
 
   const teamNames = new Set<string>(loadoutsPlace.metadata.teams);
   for (const vehicle of Object.values(vehiclesPlace.data)) {
-    if (vehicle.info.team) teamNames.add(vehicle.info.team);
+    if (vehicle.info.team && !vehicle.info.unlisted) {
+      teamNames.add(vehicle.info.team);
+    }
   }
   for (const team of teamNames) {
     items.push({
