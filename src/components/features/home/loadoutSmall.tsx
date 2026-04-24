@@ -27,17 +27,10 @@ export default function LoadoutSmall({
       transition="border-color 0.2s"
       _hover={{
         borderColor: 'whiteAlpha.300',
-        '& .e-img': { opacity: 1 },
       }}
     >
       <NextLink href={href} prefetch={false}>
-        <Box
-          className="e-img"
-          position="absolute"
-          inset={0}
-          opacity={0.8}
-          transition="opacity 0.3s"
-        >
+        <Box className="e-img" position="absolute" inset={0}>
           <NextImage
             fill
             alt=""

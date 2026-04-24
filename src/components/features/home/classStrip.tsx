@@ -30,7 +30,7 @@ export default function ClassStrip({
       borderWidth="1px"
       borderColor="whiteAlpha.100"
       _hover={{
-        '& .cs-image': { opacity: 1, transform: 'scale(1.05)' },
+        '& .cs-image': { transform: 'scale(1.05)' },
         '& .cs-label': { color: 'white' },
       }}
     >
@@ -40,8 +40,7 @@ export default function ClassStrip({
             className="cs-image"
             position="absolute"
             inset={0}
-            opacity={0.85}
-            transition="all 0.5s ease"
+            transition="transform 0.5s ease"
           >
             <NextImage
               fill
@@ -101,8 +100,8 @@ export default function ClassStrip({
           bottom={0}
           top={0}
           display={{ base: 'none', md: 'flex' }}
-          alignItems="flex-start"
-          paddingTop={4}
+          alignItems="flex-end"
+          paddingBottom={4}
           paddingLeft={3}
         >
           <Heading

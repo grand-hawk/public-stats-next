@@ -2,6 +2,7 @@ import { Flex } from '@chakra-ui/react';
 import React from 'react';
 
 import LoadoutSmall from '@/components/features/home/loadoutSmall';
+import { loadoutDisplayName } from '@/utils/loadoutDisplayName';
 
 export default function LoadoutsSection({
   initials,
@@ -22,7 +23,7 @@ export default function LoadoutsSection({
           key={loadout.slug}
           description={loadout.description}
           href={`/${initials}/loadouts/${loadout.slug}`}
-          name={loadout.name}
+          name={loadoutDisplayName(loadout.name)}
           thumbnail={loadout.thumbnail}
         />
       ))}

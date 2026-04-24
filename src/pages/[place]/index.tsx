@@ -8,6 +8,7 @@ import Separator from '@/components/features/home/separator';
 import { VEHICLE_CLASS_CATEGORIES } from '@/components/features/vehicles/classCategories';
 import Layout from '@/components/layout/layout';
 import PageMeta from '@/components/layout/pageMeta';
+import SiteSearchHero from '@/components/layout/search/siteSearchHero';
 import { usePlace } from '@/hooks/usePlace';
 import { trpc } from '@/utils/trpc';
 
@@ -31,9 +32,11 @@ export default function Place() {
         <Flex
           direction="column"
           gap={{ base: 6, md: 8 }}
-          maxWidth="6xl"
           marginX="auto"
+          maxWidth="6xl"
         >
+          <SiteSearchHero />
+
           <ClassesSection
             classCounts={classCounts}
             classes={classes}
