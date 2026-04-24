@@ -23,7 +23,6 @@ export function useSiteSearch({ onSelect }: UseSiteSearchOptions = {}) {
   const { data: results = [], isFetching } = trpc.search.query.useQuery(
     {
       placeId: place?.placeId ?? '',
-      initials: place?.initials ?? '',
       q: trimmed,
     },
     {

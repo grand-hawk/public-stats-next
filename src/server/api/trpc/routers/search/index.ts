@@ -6,6 +6,7 @@ import { indexableTabKeys, tabs } from '@/components/layout/navigation/tabs';
 import { IS_DEV } from '@/env';
 import { createTRPCRouter, publicProcedure } from '@/server/api/trpc/context';
 import { loadoutDisplayName } from '@/utils/loadoutDisplayName';
+import { getConfig } from '@generated/config';
 import { getLoadouts } from '@generated/loadouts';
 import { getShells } from '@generated/shells';
 import { getVehicles } from '@generated/vehicles';
@@ -27,12 +28,15 @@ interface IndexedItem extends SearchResult {
   searchText: string;
 }
 
-const indexCache = new Map<string, Fuse<IndexedItem>>();
+const indexCache = new Map<PlaceId, Fuse<IndexedItem>>();
 
-function buildIndex(placeId: PlaceId, initials: string): Fuse<IndexedItem> {
+function buildIndex(placeId: PlaceId): Fuse<IndexedItem> {
   const items: IndexedItem[] = [];
 
   const vehiclesPlace = getVehicles().data[placeId]!;
+  const loadoutsPlace = getLoadouts().data[placeId]!;
+  const initials =
+    getConfig().data.placeNameInitials[loadoutsPlace.metadata.placeName];
   for (const [name, vehicle] of Object.entries(vehiclesPlace.data)) {
     const info = vehicle.info;
     items.push({
@@ -59,7 +63,6 @@ function buildIndex(placeId: PlaceId, initials: string): Fuse<IndexedItem> {
     }
   }
 
-  const loadoutsPlace = getLoadouts().data[placeId]!;
   const teamNames = new Set<string>(loadoutsPlace.metadata.teams);
   for (const vehicle of Object.values(vehiclesPlace.data)) {
     if (vehicle.info.team) teamNames.add(vehicle.info.team);
@@ -112,13 +115,13 @@ function buildIndex(placeId: PlaceId, initials: string): Fuse<IndexedItem> {
   });
 }
 
-function getIndex(placeId: PlaceId, initials: string) {
-  const key = `${placeId}::${initials}`;
-  if (IS_DEV) return buildIndex(placeId, initials);
-  const cached = indexCache.get(key);
+function getIndex(placeId: PlaceId) {
+  if (IS_DEV) return buildIndex(placeId);
+  const cached = indexCache.get(placeId);
   if (cached) return cached;
-  const fresh = buildIndex(placeId, initials);
-  indexCache.set(key, fresh);
+
+  const fresh = buildIndex(placeId);
+  indexCache.set(placeId, fresh);
   return fresh;
 }
 
@@ -129,12 +132,11 @@ export const searchRouter = createTRPCRouter({
     .input(
       z.object({
         placeId: z.string(),
-        initials: z.string(),
         q: z.string().min(1).max(100),
       }),
     )
     .query(({ input }): SearchResult[] => {
-      const fuse = getIndex(input.placeId as PlaceId, input.initials);
+      const fuse = getIndex(input.placeId as PlaceId);
       return fuse
         .search(input.q, { limit: RESULT_LIMIT * 4 })
         .map(({ item }) => ({
