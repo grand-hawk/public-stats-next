@@ -16,9 +16,12 @@ export default function ClassesSection({
 }) {
   return (
     <Flex
-      direction={{ base: 'column', md: 'row' }}
+      direction="row"
       gap={2}
-      height={{ base: 'auto', md: '340px' }}
+      height="340px"
+      overflowX="auto"
+      flexWrap="nowrap"
+      _scrollbar={{ height: '2px' }}
     >
       {classes.map((category) => (
         <ClassStrip

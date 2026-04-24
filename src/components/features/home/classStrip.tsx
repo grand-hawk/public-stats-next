@@ -23,8 +23,8 @@ export default function ClassStrip({
       asChild
       position="relative"
       overflow="hidden"
-      flex={1}
-      minHeight={{ base: '100px', md: '100%' }}
+      flex={{ base: '0 0 60%', sm: '0 0 240px', md: '1 0 160px' }}
+      height="100%"
       colorPalette={accent}
       backgroundColor="bg.subtle"
       borderWidth="1px"

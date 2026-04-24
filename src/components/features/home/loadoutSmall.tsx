@@ -22,7 +22,7 @@ export default function LoadoutSmall({
       backgroundColor="bg.subtle"
       borderWidth="1px"
       borderColor="whiteAlpha.100"
-      flex={1}
+      flex={{ base: '1 0 100%', md: '1 1 200px' }}
       minHeight="110px"
       transition="border-color 0.2s"
       _hover={{
