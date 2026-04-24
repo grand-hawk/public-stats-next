@@ -39,6 +39,7 @@ function buildIndex(placeId: PlaceId): Fuse<IndexedItem> {
     getConfig().data.placeNameInitials[loadoutsPlace.metadata.placeName];
   for (const [name, vehicle] of Object.entries(vehiclesPlace.data)) {
     const info = vehicle.info;
+    if (info.unlisted) continue;
     items.push({
       type: 'vehicle',
       title: name,
