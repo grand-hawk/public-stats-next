@@ -1,50 +1,34 @@
-import { Box, Heading, HStack, Stack } from '@chakra-ui/react';
-import NextLink from 'next/link';
+import { Flex, Heading, HStack } from '@chakra-ui/react';
 import React from 'react';
 
 import ButtonMarkdownLink from '@/components/common/buttonMarkdownLink';
-import {
-  BreadcrumbCurrentLink,
-  BreadcrumbLink,
-  BreadcrumbRoot,
-} from '@/components/ui/breadcrumb';
+import EditPagePopover from '@/components/common/editPagePopover';
+import { env } from '@/env';
+import { loadoutDisplayName } from '@/utils/loadoutDisplayName';
 
 interface LoadoutHeaderProps {
-  initials: string;
   name: string;
+  slug: string;
 }
 
-export default function LoadoutHeader({ initials, name }: LoadoutHeaderProps) {
+export default function LoadoutHeader({ name, slug }: LoadoutHeaderProps) {
   return (
-    <Box
-      borderBottomWidth="1px"
-      borderLeftWidth={{ base: 0, md: '1px' }}
-      borderRightWidth={{ base: 0, md: '1px' }}
-      borderTopWidth={{ base: 0, md: '1px' }}
-      width="100%"
+    <Flex
+      as="header"
+      alignItems="center"
+      gap={3}
+      justifyContent="space-between"
     >
-      <Stack
-        as="section"
-        backgroundColor="bg.subtle"
-        gap={3}
-        padding={6}
-        position="relative"
-      >
-        <HStack position="absolute" right={2} role="toolbar" top={2}>
-          <ButtonMarkdownLink />
-        </HStack>
+      <Heading as="h1" id="loadout-page-title" minWidth={0} size="2xl">
+        {loadoutDisplayName(name)}
+      </Heading>
 
-        <BreadcrumbRoot separator="/" size="sm">
-          <BreadcrumbLink asChild>
-            <NextLink href={`/${initials}/loadouts`}>Loadouts</NextLink>
-          </BreadcrumbLink>
-          <BreadcrumbCurrentLink>{name}</BreadcrumbCurrentLink>
-        </BreadcrumbRoot>
-
-        <Heading as="h1" id="loadout-page-title" size="2xl">
-          {name}
-        </Heading>
-      </Stack>
-    </Box>
+      <HStack flexShrink={0} role="toolbar">
+        {!env.NEXT_PUBLIC_STACKBLITZ && (
+          <EditPagePopover filePath={`content/loadouts/${slug}.md`} />
+        )}
+        <ButtonMarkdownLink />
+      </HStack>
+    </Flex>
   );
 }

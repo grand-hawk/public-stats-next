@@ -3,22 +3,33 @@ import slug from 'slug';
 import { z } from 'zod';
 
 import { createTRPCRouter, publicProcedure } from '@/server/api/trpc/context';
+import { createContentCollection } from '@/server/utils/contentCollection';
 import { getLoadoutListItems } from '@/server/utils/loadoutsList';
+import { computeRelatedPages } from '@/server/utils/relatedPages';
+import { getConfig } from '@generated/config';
 import { getLoadouts } from '@generated/loadouts';
 import { getVehicles } from '@generated/vehicles';
 
+import type { RelatedPageItem } from '@/server/utils/relatedPages';
 import type { PlaceId } from '@generated/config';
 import type { LoadoutsPlaceDataLoadoutVehicleTeam } from '@generated/loadouts';
 import type { VehiclesPlaceDataVehicleInfo } from '@generated/vehicles';
+
+const loadoutCollection = createContentCollection<Record<string, never>>({
+  dir: 'content/loadouts',
+  parseMeta: () => ({}),
+});
 
 export type LoadoutVehicle = LoadoutsPlaceDataLoadoutVehicleTeam &
   Pick<VehiclesPlaceDataVehicleInfo, 'premium' | 'role' | 'slug'>;
 
 export interface Loadout {
   name: string;
+  description?: string;
   teams: {
     [team: string]: Record<string, LoadoutVehicle>;
   };
+  relatedPages: RelatedPageItem[];
 }
 
 export type { LoadoutListItem } from '@/server/utils/loadoutsList';
@@ -77,9 +88,18 @@ export const loadoutsRouter = createTRPCRouter({
         }
       }
 
+      const content = loadoutCollection.get(input.slug);
+      const description = content?.body || undefined;
+      const placeId = input.placeId as PlaceId;
+      const { data: config } = getConfig();
+      const initials =
+        config.placeNameInitials[loadouts.data[placeId]!.metadata.placeName];
+
       return {
         name: loadoutName,
+        description,
         teams: loadoutTeams,
+        relatedPages: computeRelatedPages(description, placeId, initials),
       } satisfies Loadout;
     }),
 });

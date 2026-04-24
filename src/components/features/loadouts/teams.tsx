@@ -33,7 +33,7 @@ export default function LoadoutTeams({ initials, loadout }: LoadoutTeamsProps) {
 
   if (teamNames.length === 0) {
     return (
-      <TitledCard as="section" title="Teams" withAnchor>
+      <TitledCard as="section" title="Team vehicles" withAnchor>
         <EmptyState
           icon={<GrDocumentMissing />}
           title="This loadout has no teams"
@@ -43,7 +43,7 @@ export default function LoadoutTeams({ initials, loadout }: LoadoutTeamsProps) {
   }
 
   return (
-    <TitledCard as="section" innerPadding={0} title="Teams" withAnchor>
+    <TitledCard as="section" innerPadding={0} title="Team vehicles" withAnchor>
       <Box data-md-ignore>
         <Tabs.Root
           lazyMount

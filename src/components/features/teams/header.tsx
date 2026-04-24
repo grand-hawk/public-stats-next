@@ -1,54 +1,37 @@
-import { Box, Heading, HStack, Stack } from '@chakra-ui/react';
-import NextLink from 'next/link';
+import { Flex, Heading, HStack } from '@chakra-ui/react';
 import React from 'react';
 
 import ButtonMarkdownLink from '@/components/common/buttonMarkdownLink';
+import EditPagePopover from '@/components/common/editPagePopover';
 import TeamIcon from '@/components/icons/teams';
-import {
-  BreadcrumbCurrentLink,
-  BreadcrumbLink,
-  BreadcrumbRoot,
-} from '@/components/ui/breadcrumb';
+import { env } from '@/env';
 
 interface TeamHeaderProps {
-  initials: string;
   name: string;
+  slug: string;
 }
 
-export default function TeamHeader({ initials, name }: TeamHeaderProps) {
+export default function TeamHeader({ name, slug }: TeamHeaderProps) {
   return (
-    <Box
-      borderBottomWidth="1px"
-      borderLeftWidth={{ base: 0, md: '1px' }}
-      borderRightWidth={{ base: 0, md: '1px' }}
-      borderTopWidth={{ base: 0, md: '1px' }}
-      width="100%"
+    <Flex
+      as="header"
+      alignItems="center"
+      gap={3}
+      justifyContent="space-between"
     >
-      <Stack
-        as="section"
-        backgroundColor="bg.subtle"
-        gap={3}
-        padding={6}
-        position="relative"
-      >
-        <HStack position="absolute" right={2} role="toolbar" top={2}>
-          <ButtonMarkdownLink />
-        </HStack>
+      <HStack minWidth={0}>
+        <TeamIcon team={name} />
+        <Heading as="h1" id="team-page-title" size="2xl">
+          {name}
+        </Heading>
+      </HStack>
 
-        <BreadcrumbRoot separator="/" size="sm">
-          <BreadcrumbLink asChild>
-            <NextLink href={`/${initials}/teams`}>Teams</NextLink>
-          </BreadcrumbLink>
-          <BreadcrumbCurrentLink>{name}</BreadcrumbCurrentLink>
-        </BreadcrumbRoot>
-
-        <HStack>
-          <TeamIcon team={name} />
-          <Heading as="h1" id="team-page-title" size="2xl">
-            {name}
-          </Heading>
-        </HStack>
-      </Stack>
-    </Box>
+      <HStack flexShrink={0} role="toolbar">
+        {!env.NEXT_PUBLIC_STACKBLITZ && (
+          <EditPagePopover filePath={`content/teams/${slug}.md`} />
+        )}
+        <ButtonMarkdownLink />
+      </HStack>
+    </Flex>
   );
 }

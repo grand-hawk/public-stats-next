@@ -1,4 +1,5 @@
 import { chakra } from '@chakra-ui/react';
+import { GeistSans } from 'geist/font/sans';
 
 const TRAILING_PSEUDO_REGEX = /(::?[\w-]+(?:\([^)]*\))?)+$/;
 const EXCLUDE_CLASSNAME = '.not-prose';
@@ -17,6 +18,7 @@ export function inWhere<T extends string>(selector: T): T {
 export const Prose = chakra('div', {
   base: {
     color: 'fg.muted',
+    fontFamily: GeistSans.style.fontFamily,
     maxWidth: '65ch',
     fontSize: 'sm',
     lineHeight: '1.7em',
@@ -34,10 +36,14 @@ export const Prose = chakra('div', {
     [inWhere('& a')]: {
       color: 'fg',
       textDecoration: 'underline',
-      textUnderlineOffset: '3px',
-      textDecorationThickness: '2px',
-      textDecorationColor: 'border.muted',
-      fontWeight: '500',
+      textUnderlineOffset: '2px',
+      textDecorationThickness: '1px',
+      textDecorationColor: 'fg.muted',
+      fontWeight: 'inherit',
+      transition: 'text-decoration-color 0.15s',
+    },
+    [inWhere('& a:hover')]: {
+      textDecorationColor: 'currentColor',
     },
     [inWhere('& strong')]: {
       fontWeight: '600',
@@ -100,13 +106,14 @@ export const Prose = chakra('div', {
       paddingBottom: '0.15em',
       paddingInlineEnd: '0.35em',
       paddingInlineStart: '0.35em',
-      fontFamily: 'inherit',
+      fontFamily: 'mono',
       color: 'fg.muted',
       '--shadow': 'colors.border',
       boxShadow: '0 0 0 1px var(--shadow), 0 1px 0 1px var(--shadow)',
     },
     [inWhere('& code')]: {
       fontSize: '0.925em',
+      fontFamily: 'mono',
       bg: 'bg.muted',
       letterSpacing: '-0.01em',
       lineHeight: '1',
@@ -274,10 +281,10 @@ export const Prose = chakra('div', {
   variants: {
     size: {
       md: {
-        fontSize: 'sm',
+        fontSize: 'md',
       },
       lg: {
-        fontSize: 'md',
+        fontSize: 'lg',
       },
     },
   },

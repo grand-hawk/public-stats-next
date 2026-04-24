@@ -8,6 +8,7 @@ import slug from 'slug';
 import LoadoutVehiclesGrid from '@/components/features/teams/loadouts/grid';
 import { EmptyState } from '@/components/ui/empty-state';
 import TitledCard from '@/components/wiki/titledCard';
+import { loadoutDisplayName } from '@/utils/loadoutDisplayName';
 import { slugifyArray } from '@/utils/slugifyArray';
 
 import type { Team } from '@/server/api/trpc/routers/teams';
@@ -50,7 +51,7 @@ export default function TeamLoadouts({ initials, team }: TeamLoadoutsProps) {
     <TitledCard
       as="section"
       innerPadding={0}
-      title="Vehicle selection"
+      title="Playable vehicles"
       withAnchor
     >
       <Box data-md-ignore>
@@ -75,7 +76,7 @@ export default function TeamLoadouts({ initials, team }: TeamLoadoutsProps) {
                   textStyle="sm"
                   value={loadout}
                 >
-                  {loadout}
+                  {loadoutDisplayName(loadout)}
                 </Tabs.Trigger>
               ))}
             </Tabs.List>
@@ -97,7 +98,7 @@ export default function TeamLoadouts({ initials, team }: TeamLoadoutsProps) {
           const vehicles = Object.entries(team.loadouts[loadoutName]);
           return (
             <React.Fragment key={loadoutName}>
-              <h3>{loadoutName}</h3>
+              <h3>{loadoutDisplayName(loadoutName)}</h3>
               <table>
                 <thead>
                   <tr>
