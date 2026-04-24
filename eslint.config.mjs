@@ -51,6 +51,7 @@ export default defineConfig([
     ignores: [
       '**/.next/**',
       '**/node_modules/**',
+      '.temp/**',
       'generated/**',
       'public/**',
       'coverage/**',

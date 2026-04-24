@@ -20,7 +20,9 @@ export async function processHtmlToMarkdown(html: string) {
   for (const img of target.querySelectorAll('img, svg')) img.remove();
   for (const br of target.querySelectorAll('br')) br.replaceWith(' ');
   for (const link of target.querySelectorAll('a')) {
-    link.setAttribute('href', setExtension(`/md${link.attributes.href}`, 'md'));
+    const href = link.attributes.href;
+    if (!href || /^(?:[a-z][a-z0-9+.-]*:|\/\/)/i.test(href)) continue;
+    link.setAttribute('href', setExtension(`/md${href}`, 'md'));
   }
 
   let markdown = convert(

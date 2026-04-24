@@ -35,5 +35,5 @@
     "scripts/generate/sse.ts",
     "src/images.js"
   ],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules", ".temp"]
 }
