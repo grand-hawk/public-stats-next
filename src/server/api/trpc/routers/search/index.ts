@@ -127,6 +127,9 @@ function getIndex(placeId: PlaceId) {
 }
 
 const RESULT_LIMIT = 8;
+const TYPE_SCORE_PENALTY: Partial<Record<SearchResultType, number>> = {
+  shell: 0.15,
+};
 
 export const searchRouter = createTRPCRouter({
   query: publicProcedure
@@ -140,13 +143,18 @@ export const searchRouter = createTRPCRouter({
       const fuse = getIndex(input.placeId as PlaceId);
       return fuse
         .search(input.q, { limit: RESULT_LIMIT * 4 })
+        .map((r) => ({
+          item: r.item,
+          score: (r.score ?? 1) + (TYPE_SCORE_PENALTY[r.item.type] ?? 0),
+        }))
+        .sort((a, b) => a.score - b.score)
+        .slice(0, RESULT_LIMIT)
         .map(({ item }) => ({
           type: item.type,
           title: item.title,
           subtitle: item.subtitle,
           href: item.href,
           page: item.page,
-        }))
-        .slice(0, RESULT_LIMIT);
+        }));
     }),
 });
