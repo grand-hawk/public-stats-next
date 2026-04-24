@@ -20,8 +20,10 @@ import Stat from '@/components/wiki/stat';
 import TitledCard from '@/components/wiki/titledCard';
 import { useDynamicData } from '@/hooks/providers/dynamicData';
 import { useVehicle } from '@/hooks/providers/vehicle';
+import { usePlace } from '@/hooks/usePlace';
 import { getAllModulesOfType } from '@/utils/alterations';
 import { capitalizeFirst } from '@/utils/capitalizeFirst';
+import { applyWikilinks } from '@/utils/wikilinks';
 
 import type { BoxProps, IconProps } from '@chakra-ui/react';
 
@@ -58,7 +60,13 @@ export default function VehicleGeneralInformation({
   const showExtraInfantryIcon =
     hasPassengerSeats && !vehicle.info.supportedClasses.includes('Infantry');
 
-  const customDescription = vehicle.content?.Description;
+  const place = usePlace()!;
+
+  const rawDescription = vehicle.content?.Description;
+  const customDescription = React.useMemo(() => {
+    if (!rawDescription) return undefined;
+    return applyWikilinks(rawDescription, place.initials);
+  }, [rawDescription, place.initials]);
 
   const contentRef = React.useRef<HTMLDivElement>(null);
   const [isExpanded, setIsExpanded] = React.useState(false);

@@ -12,16 +12,10 @@ import { LuSlidersHorizontal, LuX } from 'react-icons/lu';
 
 import {
   DAMAGE_BANDS,
-  DAMAGE_TEST,
   EXP_MASS_BANDS,
-  EXP_MASS_TEST,
   MASS_BANDS,
-  MASS_TEST,
-  matchesAny,
   PEN_BANDS,
-  PEN_TEST,
   VEL_BANDS,
-  VEL_TEST,
 } from '@/components/features/shells/browse/filterBands';
 import SidebarFilterGroup from '@/components/features/shells/browse/sidebarFilterGroup';
 import VirtualShellResults from '@/components/features/shells/browse/virtualShellResults';
@@ -38,7 +32,7 @@ import {
 } from '@/components/ui/drawer';
 import UIToggleChip from '@/components/ui/toggleChip';
 import { usePlace } from '@/hooks/usePlace';
-import { simplifyString } from '@/utils/simplifyString';
+import { sortedArray } from '@/utils/sortedSet';
 import { trpc } from '@/utils/trpc';
 
 import type {
@@ -81,94 +75,38 @@ export default function ShellsSearch() {
   const [propIRCCM, setPropIRCCM] = React.useState(false);
   const [propUnjammable, setPropUnjammable] = React.useState(false);
 
-  const [shellsList] = trpc.shells.listForBrowse.useSuspenseQuery({
-    placeId: place.placeId,
-  });
+  const searchInput = React.useMemo(
+    () => ({
+      damage: sortedArray(selectedDamage),
+      explosive: propExplosive,
+      explosiveMass: sortedArray(selectedExpMass),
+      irccm: propIRCCM,
+      laser: propLaser,
+      mass: sortedArray(selectedMass),
+      penetration: sortedArray(selectedPen),
+      placeId: place.placeId,
+      query: deferredQuery,
+      unjammable: propUnjammable,
+      velocity: sortedArray(selectedVel),
+    }),
+    [
+      deferredQuery,
+      place.placeId,
+      propExplosive,
+      propIRCCM,
+      propLaser,
+      propUnjammable,
+      selectedDamage,
+      selectedExpMass,
+      selectedMass,
+      selectedPen,
+      selectedVel,
+    ],
+  );
 
-  const simplifiedStrings = React.useMemo(() => {
-    const map = new Map<string, string>();
-    for (const [weapon, shells] of Object.entries(shellsList)) {
-      map.set(weapon, simplifyString(weapon));
-      for (const shell of shells) {
-        if (!map.has(shell.name)) {
-          map.set(shell.name, simplifyString(shell.name));
-        }
-        for (const vehicle of shell.vehicles) {
-          if (!map.has(vehicle)) map.set(vehicle, simplifyString(vehicle));
-        }
-      }
-    }
-    return map;
-  }, [shellsList]);
+  const deferredInput = React.useDeferredValue(searchInput);
 
-  const filtered = React.useMemo(() => {
-    const hasAnyFilter =
-      selectedMass.size > 0 ||
-      selectedExpMass.size > 0 ||
-      selectedDamage.size > 0 ||
-      selectedPen.size > 0 ||
-      selectedVel.size > 0 ||
-      propLaser ||
-      propExplosive ||
-      propIRCCM ||
-      propUnjammable;
-    const normalizedQuery = deferredQuery
-      ? simplifyString(deferredQuery)
-      : null;
-
-    if (!hasAnyFilter && !normalizedQuery) return shellsList;
-
-    const result: typeof shellsList = {};
-
-    for (const [weapon, shells] of Object.entries(shellsList)) {
-      const weaponMatchesQuery = normalizedQuery
-        ? simplifiedStrings.get(weapon)?.includes(normalizedQuery)
-        : true;
-
-      const matching = shells.filter((shell) => {
-        if (!matchesAny(MASS_TEST, selectedMass, shell.mass)) return false;
-        if (!matchesAny(EXP_MASS_TEST, selectedExpMass, shell.explosiveMass)) {
-          return false;
-        }
-        if (!matchesAny(DAMAGE_TEST, selectedDamage, shell.damage)) {
-          return false;
-        }
-        if (!matchesAny(PEN_TEST, selectedPen, shell.maxPenetration)) {
-          return false;
-        }
-        if (!matchesAny(VEL_TEST, selectedVel, shell.velocity)) return false;
-        if (propLaser && !shell.isLaser) return false;
-        if (propExplosive && !shell.hasExplosive) return false;
-        if (propIRCCM && !shell.hasIRCCM) return false;
-        if (propUnjammable && !shell.isUnjammable) return false;
-        if (!normalizedQuery) return true;
-        if (weaponMatchesQuery) return true;
-        return (
-          simplifiedStrings.get(shell.name)?.includes(normalizedQuery) ||
-          shell.vehicles.some((vehicleName) =>
-            simplifiedStrings.get(vehicleName)?.includes(normalizedQuery),
-          )
-        );
-      });
-
-      if (matching.length > 0) result[weapon] = matching;
-    }
-
-    return result;
-  }, [
-    shellsList,
-    deferredQuery,
-    simplifiedStrings,
-    selectedMass,
-    selectedExpMass,
-    selectedDamage,
-    selectedPen,
-    selectedVel,
-    propLaser,
-    propExplosive,
-    propIRCCM,
-    propUnjammable,
-  ]);
+  const [filtered] = trpc.shells.search.useSuspenseQuery(deferredInput);
 
   const hasFilterChips = !!(
     selectedMass.size > 0 ||

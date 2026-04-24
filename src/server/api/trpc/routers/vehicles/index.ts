@@ -12,6 +12,7 @@ import {
   getVehicleContent,
   getVehicleMeta,
 } from '@/server/utils/vehicleContent';
+import { isRecentlyAdded } from '@/utils/isRecentlyAdded';
 import { simplifyString } from '@/utils/simplifyString';
 import { getBaseUrl } from '@/utils/trpc';
 import {
@@ -39,37 +40,14 @@ type Mod<T extends VehiclesPlaceDataVehicleModule['type']> = Extract<
   { type: T }
 >;
 
-type ListVehicleFieldsFromInfo = Pick<
-  VehiclesPlaceDataVehicleInfo,
-  'amphibious' | 'locomotion' | 'role' | 'slug' | 'supportedClasses' | 'team'
->;
-
-type VehiclePremiumType = NonNullable<
-  VehiclesPlaceDataVehicleInfo['premium']
->['type'];
-
-export interface ListVehicle extends ListVehicleFieldsFromInfo {
-  addedDate?: string;
-  classification: string;
-  forwardSpeed: number;
-  frontArmorDepth?: number;
-  hasAPS: boolean;
-  hasESS: boolean;
-  hasJammer: boolean;
-  hasStabilizer: boolean;
-  hasThermal: boolean;
+export interface ListVehicle {
   name: string;
   new?: boolean;
-  premium?: VehiclePremiumType;
-  seatCount: number;
-}
-
-export interface SearchedVehicle {
-  name: string;
-  new?: boolean;
+  premium?: NonNullable<VehiclesPlaceDataVehicleInfo['premium']>['type'];
   role: string;
   slug: string;
   team: string;
+  frontArmorDepth?: number;
 }
 
 export interface VehicleSearchFacets {
@@ -110,7 +88,7 @@ interface SearchEntry {
   obtainment: string;
   simplifiedName: string;
   supportedClasses: string[];
-  vehicle: SearchedVehicle;
+  vehicle: ListVehicle;
 }
 
 const searchIndexCache = new Map<PlaceId, SearchEntry[]>();
@@ -123,9 +101,6 @@ function buildSearchIndex(placeId: PlaceId): SearchEntry[] {
   const vehiclesData = vehicles.data[placeId]?.data;
   if (!vehiclesData) throw new TRPCError({ code: 'NOT_FOUND' });
 
-  const dateNow = Date.now();
-  const thirtyOneDays = 1_000 * 60 * 60 * 24 * 31;
-
   const entries: SearchEntry[] = Object.entries(vehiclesData)
     .filter(([, data]) => !data.info.unlisted)
     .map(([name, data]) => {
@@ -136,10 +111,6 @@ function buildSearchIndex(placeId: PlaceId): SearchEntry[] {
       const driveDatas = mods
         .filter((m): m is Mod<'DriveData'> => m.type === 'DriveData')
         .map((m) => m.data);
-
-      const isNew = data.info.addedDate
-        ? dateNow - new Date(data.info.addedDate).getTime() < thirtyOneDays
-        : false;
 
       return {
         amphibious: data.info.amphibious,
@@ -162,7 +133,8 @@ function buildSearchIndex(placeId: PlaceId): SearchEntry[] {
         supportedClasses: data.info.supportedClasses,
         vehicle: {
           name,
-          new: isNew || undefined,
+          new: isRecentlyAdded(data.info.addedDate),
+          premium: data.info.premium?.type,
           role: data.info.role,
           slug: data.info.slug,
           team: data.info.team,
@@ -217,10 +189,7 @@ export const vehiclesRouter = createTRPCRouter({
           entry.classification,
           (classMap.get(entry.classification) ?? 0) + 1,
         );
-        obtMap.set(
-          entry.obtainment,
-          (obtMap.get(entry.obtainment) ?? 0) + 1,
-        );
+        obtMap.set(entry.obtainment, (obtMap.get(entry.obtainment) ?? 0) + 1);
         for (const supportedClass of entry.supportedClasses) {
           classSet.add(supportedClass);
         }
@@ -263,18 +232,16 @@ export const vehiclesRouter = createTRPCRouter({
         thermal: z.boolean().default(false),
       }),
     )
-    .query(({ input }): SearchedVehicle[] => {
+    .query(({ input }): ListVehicle[] => {
       const entries = buildSearchIndex(input.placeId as PlaceId);
 
       const classifications = new Set(input.classifications);
       const speedBands = new Set(input.speedBands);
       const obtainments = new Set(input.obtainments);
       const crewClasses = new Set(input.crewClasses);
-      const normalizedQuery = input.query
-        ? simplifyString(input.query)
-        : null;
+      const normalizedQuery = input.query ? simplifyString(input.query) : null;
 
-      const result: SearchedVehicle[] = [];
+      const result: ListVehicle[] = [];
 
       for (const entry of entries) {
         if (
@@ -286,10 +253,7 @@ export const vehiclesRouter = createTRPCRouter({
         if (!matchesAnyBand(SPEED_TEST, speedBands, entry.forwardSpeed)) {
           continue;
         }
-        if (
-          obtainments.size > 0 &&
-          !obtainments.has(entry.obtainment)
-        ) {
+        if (obtainments.size > 0 && !obtainments.has(entry.obtainment)) {
           continue;
         }
         if (
@@ -326,64 +290,26 @@ export const vehiclesRouter = createTRPCRouter({
       }),
     )
     .query(({ input }): ListVehicle[] => {
-      const vehicles = getVehicles();
-
-      const vehiclesData = vehicles.data[input.placeId as PlaceId]?.data;
+      const vehiclesData = getVehicles().data[input.placeId as PlaceId]?.data;
       if (!vehiclesData) throw new TRPCError({ code: 'NOT_FOUND' });
-
-      const dateNow = Date.now();
 
       return Object.entries(vehiclesData)
         .filter(([, data]) => !data.info.unlisted)
-        .map(([name, data]) => {
-          const mods = Object.values(data.modules);
-          const turrets = mods
-            .filter((m): m is Mod<'Turret'> => m.type === 'Turret')
-            .map((m) => m.data);
-          const driveDatas = mods
-            .filter((m): m is Mod<'DriveData'> => m.type === 'DriveData')
-            .map((m) => m.data);
-
-          const seats = mods.filter((m): m is Mod<'Seat'> => m.type === 'Seat');
-
-          return {
-            addedDate: data.info.addedDate,
-            amphibious: data.info.amphibious,
-            classification: getClassification(data.info.role),
-            forwardSpeed:
-              driveDatas.length > 0
-                ? Math.max(...driveDatas.map((d) => d.engine.forwardSpeed))
-                : 0,
-            hasAPS: mods.some((m) => m.type === 'APS'),
-            hasESS: mods
-              .filter((m): m is Mod<'ESS'> => m.type === 'ESS')
-              .some((m) => m.data.present),
-            hasJammer: mods
-              .filter((m): m is Mod<'EW'> => m.type === 'EW')
-              .some((m) => m.data.ied || m.data.drone),
-            hasStabilizer: turrets.some((t) => t.stabilizer),
-            hasThermal: turrets.some((t) => t.sights.some((s) => !!s.thermal)),
-            locomotion: data.info.locomotion,
-            name,
-            new: data.info.addedDate
-              ? dateNow - new Date(data.info.addedDate).getTime() <
-                1_000 * 60 * 60 * 24 * 31
-              : undefined,
-            premium: data.info.premium?.type,
-            role: data.info.role,
-            seatCount: seats.length,
-            slug: data.info.slug,
-            supportedClasses: data.info.supportedClasses,
-            team: data.info.team,
-            ...(IS_DEV
-              ? {
-                  frontArmorDepth: getVehicleMeta(slug(data.info.gameId))
-                    ?.frontArmorDepth,
-                }
-              : {}),
-          } satisfies ListVehicle;
-        })
-        .sort((a, b) => a.name.localeCompare(b.name)) as ListVehicle[];
+        .map(([name, data]) => ({
+          name,
+          new: isRecentlyAdded(data.info.addedDate),
+          premium: data.info.premium?.type,
+          role: data.info.role,
+          slug: data.info.slug,
+          team: data.info.team,
+          ...(IS_DEV
+            ? {
+                frontArmorDepth: getVehicleMeta(slug(data.info.gameId))
+                  ?.frontArmorDepth,
+              }
+            : {}),
+        }))
+        .sort((a, b) => a.name.localeCompare(b.name));
     }),
 
   bySlug: publicProcedure
