@@ -17,6 +17,10 @@ import { MdRefresh } from 'react-icons/md';
 
 import MTC from '@/components/icons/mtc';
 import { primaryTabKeys, tabs } from '@/components/layout/navigation/tabs';
+import {
+  SiteSearchHost,
+  SiteSearchIconTrigger,
+} from '@/components/layout/search/siteSearch';
 import SidebarButton from '@/components/layout/sidebar/sidebarButton';
 import SidebarLicense from '@/components/layout/sidebar/sidebarLicense';
 import SidebarNav from '@/components/layout/sidebar/sidebarNav';
@@ -112,7 +116,7 @@ export default function Sidebar() {
       </DrawerRoot>
 
       <Flex gap={1}>
-        {primaryTabKeys.slice(0, 4).map((key) => {
+        {primaryTabKeys.slice(0, 3).map((key) => {
           const tab = tabs[key];
           const Icon = tab.icon;
           const isActive = currentTab?.path === tab.path;
@@ -131,6 +135,7 @@ export default function Sidebar() {
             </IconButton>
           );
         })}
+        <SiteSearchIconTrigger size="lg" />
       </Flex>
     </Flex>
   );
@@ -145,13 +150,22 @@ export default function Sidebar() {
       transition="width 0.2s"
       overflow="hidden"
     >
-      <NextLink href={`/${initials}`} style={{ textDecoration: 'none' }}>
-        <Flex
-          alignItems="center"
-          gap={2}
-          paddingX={3}
-          height="37px"
-          borderBottomWidth="1px"
+      <Flex
+        alignItems="center"
+        borderBottomWidth="1px"
+        height="37px"
+        justifyContent="space-between"
+        paddingLeft={3}
+        paddingRight={0}
+      >
+        <NextLink
+          href={`/${initials}`}
+          style={{
+            alignItems: 'center',
+            display: 'flex',
+            gap: 8,
+            textDecoration: 'none',
+          }}
         >
           <MTC height={7} width={7} />
           {!isCollapsed && (
@@ -159,8 +173,9 @@ export default function Sidebar() {
               Wiki
             </Text>
           )}
-        </Flex>
-      </NextLink>
+        </NextLink>
+        {!isCollapsed && <SiteSearchIconTrigger />}
+      </Flex>
 
       <Box
         flex={1}
@@ -214,6 +229,7 @@ export default function Sidebar() {
     <>
       {desktopSidebar}
       {mobileNav}
+      <SiteSearchHost />
     </>
   );
 }

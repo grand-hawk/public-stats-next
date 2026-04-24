@@ -115,3 +115,9 @@ export const toolsTabKeys = [
   'compare',
   'armour',
 ] as const satisfies (keyof typeof tabs)[];
+
+export const indexableTabKeys = [
+  ...primaryTabKeys,
+  ...secondaryTabKeys,
+  ...toolsTabKeys,
+] as const satisfies (keyof typeof tabs)[];

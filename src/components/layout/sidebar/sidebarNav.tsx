@@ -13,7 +13,7 @@ import { usePlaceInitials } from '@/hooks/usePlaceInitials';
 
 const sidebarGroups = [
   { keys: primaryTabKeys, label: undefined },
-  { keys: secondaryTabKeys, label: 'Analytics' },
+  { keys: secondaryTabKeys, label: 'Statistics' },
   { keys: toolsTabKeys, label: 'Tools' },
 ];
 

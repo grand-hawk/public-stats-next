@@ -6,6 +6,7 @@ import { configRouter } from '@/server/api/trpc/routers/config';
 import { homeRouter } from '@/server/api/trpc/routers/home';
 import { kdrRouter } from '@/server/api/trpc/routers/kdr';
 import { loadoutsRouter } from '@/server/api/trpc/routers/loadouts';
+import { searchRouter } from '@/server/api/trpc/routers/search';
 import { shellsRouter } from '@/server/api/trpc/routers/shells';
 import { teamsRouter } from '@/server/api/trpc/routers/teams';
 import { vehiclesRouter } from '@/server/api/trpc/routers/vehicles';
@@ -16,6 +17,7 @@ export const appRouter = createTRPCRouter({
   home: homeRouter,
   kdr: kdrRouter,
   loadouts: loadoutsRouter,
+  search: searchRouter,
   shells: shellsRouter,
   teams: teamsRouter,
   vehicles: vehiclesRouter,

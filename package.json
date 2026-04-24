@@ -33,6 +33,7 @@
     "@trpc/react-query": "11.13.4",
     "@trpc/server": "11.13.4",
     "eventsource": "^4.1.0",
+    "fuse.js": "^7.3.0",
     "geist": "^1.7.0",
     "html-to-markdown-node": "^2.18.0",
     "immer": "^11.1.4",
