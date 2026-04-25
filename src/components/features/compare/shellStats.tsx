@@ -19,9 +19,14 @@ export function buildShellSections(
 ): SectionDef<DetailedShell>[] {
   const hasEraTip = shells.some((s) => s.eraTip);
   const damageStats = [
-    stat('Base damage', (s) => (
+    stat('Max damage', (s) => (
       <>
         <FormatNumber value={s.damage} /> HP
+      </>
+    )),
+    stat('Humanoid damage', (s) => (
+      <>
+        <FormatNumber value={s.humanoidDamage} /> HP
       </>
     )),
     stat('Explosive mass', (s) =>

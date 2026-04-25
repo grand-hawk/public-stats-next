@@ -17,8 +17,12 @@ export default function ShellDamage() {
         gapY={2}
         gridTemplateColumns="repeat(auto-fit, minmax(10rem, 1fr))"
       >
-        <Stat label="Base damage">
+        <Stat label="Max damage">
           <FormatNumber value={shell.damage} /> HP
+        </Stat>
+
+        <Stat label="Humanoid damage">
+          <FormatNumber value={shell.humanoidDamage} /> HP
         </Stat>
 
         {shell.explosive && (
