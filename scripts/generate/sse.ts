@@ -14,7 +14,9 @@ if (
   process.env.NEXT_RUNTIME !== 'edge' &&
   typeof EdgeRuntime !== 'string' &&
   environment !== 'development' &&
-  process.env.NEXT_PUBLIC_STACKBLITZ !== 'true'
+  process.env.NEXT_PUBLIC_STACKBLITZ !== 'true' &&
+  process.env.SKIP_SSE !== 'true' &&
+  !process.env.CI
 ) {
   const sseUrl =
     process.env.SSE_URL ??
