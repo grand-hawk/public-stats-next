@@ -132,6 +132,13 @@ export default function APS() {
                   <FormatNumber style="percent" value={aps.data.resistance} />
                 </StatsCell>
               </StatsRow>
+
+              {aps.data.interceptsDrones === true && (
+                <StatsRow>
+                  <StatsCell>Intercepts drones</StatsCell>
+                  <StatsCell>Yes</StatsCell>
+                </StatsRow>
+              )}
             </StatsRoot>
           </TitledCard>
         );

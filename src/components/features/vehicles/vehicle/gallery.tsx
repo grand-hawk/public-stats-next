@@ -210,6 +210,12 @@ export default function VehicleGallery() {
                 <td>{getVehicleImage(vehicle.info.slug, type, false)}</td>
               </tr>
             ))}
+            <tr>
+              <td>Armor</td>
+              <td>
+                {getVehicleImage(vehicle.info.slug, 'armor_thumbnail', false)}
+              </td>
+            </tr>
           </tbody>
         </table>
       </div>
