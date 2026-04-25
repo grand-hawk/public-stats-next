@@ -63,7 +63,7 @@ export default function PageIcon({
     if (page.type === 'team') {
       return (
         <ThumbnailFrame>
-          <TeamIcon team={page.name} />
+          <TeamIcon size={9} team={page.name} />
         </ThumbnailFrame>
       );
     }
@@ -85,9 +85,9 @@ export default function PageIcon({
       return (
         <ThumbnailFrame>
           {src ? (
-            <ShellIcon alt="" size={24} src={src} />
+            <ShellIcon alt="" size={36} src={src} />
           ) : (
-            <GiArtilleryShell />
+            <GiArtilleryShell size={36} />
           )}
         </ThumbnailFrame>
       );

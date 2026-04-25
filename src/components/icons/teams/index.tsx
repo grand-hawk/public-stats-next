@@ -43,12 +43,18 @@ export const teamIcons: Record<
   'Kingdom of Falconia': 'kingdom-of-falconia.png',
 };
 
-export default function TeamIcon({ team }: { team: string }) {
+export default function TeamIcon({
+  size = 5,
+  team,
+}: {
+  team: string;
+  size?: IconProps['boxSize'];
+}) {
   const TeamIcon = teamIcons[team];
 
   const iconProps: IconProps = {
-    height: 5,
-    width: 5,
+    height: size,
+    width: size,
     'aria-hidden': true,
     focusable: false,
   };
