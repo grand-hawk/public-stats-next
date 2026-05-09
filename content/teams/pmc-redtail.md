@@ -1,5 +1,0 @@
----
-lore: true
----
-
-# PMC Redtail
