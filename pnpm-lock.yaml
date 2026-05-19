@@ -154,8 +154,8 @@ importers:
         specifier: ^5.1.6
         version: 5.1.6
       '@types/umami-browser':
-        specifier: ^2.18.0
-        version: 2.18.0
+        specifier: ^2.18.1
+        version: 2.18.1
       '@typescript-eslint/eslint-plugin':
         specifier: ^8.55.0
         version: 8.55.0(@typescript-eslint/parser@8.56.1(eslint@9.39.2)(typescript@5.9.3))(eslint@9.39.2)(typescript@5.9.3)
@@ -1219,8 +1219,8 @@ packages:
   '@types/stale-lru-cache@5.1.6':
     resolution: {integrity: sha512-d1b8juBLQOjOtN4zy6ISgsMxCO6n8bjtUUIPlgFY069CC9YcusT29v+dtIV9QaZQHoodIar7Ll9tIgb1O9nLlg==}
 
-  '@types/umami-browser@2.18.0':
-    resolution: {integrity: sha512-baePU5zcSW3YeeNw0/lvX0LvjnRXWxcZzg1KMmrByda4tsmo6A3gFXusL2MXeqJgE/3T+pbanbMpJjzvCSqj9A==}
+  '@types/umami-browser@2.18.1':
+    resolution: {integrity: sha512-djccTpTXRVodrhGaz59NSMHA9d1cb+jexVsigb+I1bdHFn+N7TTlBesKujrL8tuSWVRsdSE4WM67mTGv3FCWfQ==}
 
   '@types/unist@2.0.11':
     resolution: {integrity: sha512-CmBKiL6NNo/OqgmMn95Fk9Whlp2mtvIv+KNpQKN2F4SjvrEesubTRWGYSg+BnWZOnlCaSTU1sMpsBOzgbYhnsA==}
@@ -4722,7 +4722,7 @@ snapshots:
 
   '@types/stale-lru-cache@5.1.6': {}
 
-  '@types/umami-browser@2.18.0': {}
+  '@types/umami-browser@2.18.1': {}
 
   '@types/unist@2.0.11': {}
 
