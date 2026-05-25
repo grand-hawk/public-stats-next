@@ -15,13 +15,13 @@ export default function SidebarLicense(props: SidebarLicenseProps) {
         whiteSpace="nowrap"
       >
         <Link
-          href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed"
+          href="https://creativecommons.org/licenses/by-nc/4.0/deed"
           target="_blank"
           rel="noopener noreferrer"
           color="fg.subtle"
           _hover={{ color: 'fg' }}
         >
-          CC BY-NC-ND 4.0
+          CC BY-NC 4.0
         </Link>
         <br />
         by{' '}
