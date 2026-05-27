@@ -56,7 +56,7 @@ export default function WinrateChart({
 
   return (
     <Chart.Root chart={chart} maxHeight="sm" marginTop="calc(16px * 2)">
-      <LineChart data={chart.data}>
+      <LineChart data={chart.data} responsive>
         {weekendAreas.map((area) => (
           <ReferenceArea
             key={area.x1}
