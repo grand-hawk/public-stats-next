@@ -2,13 +2,17 @@ import { Badge, Box, HStack, Text } from '@chakra-ui/react';
 import NextLink from 'next/link';
 import React from 'react';
 
+import PremiumIcon from '@/components/features/vehicles/premiumIcon';
 import VehicleImage from '@/components/features/vehicles/vehicleImage';
 import TeamIcon from '@/components/icons/teams';
+
+import type { PremiumType } from '@/components/features/vehicles/premiumIcon';
 
 interface VehicleCardProps {
   href: string;
   isNew?: boolean;
   name: string;
+  premium?: PremiumType;
   role: string;
   slug: string;
   team: string;
@@ -18,6 +22,7 @@ export default React.memo(function VehicleCard({
   href,
   isNew,
   name,
+  premium,
   role,
   slug,
   team,
@@ -70,9 +75,10 @@ export default React.memo(function VehicleCard({
             <Text fontSize="xs" fontWeight="semibold" lineClamp={1} flex={1}>
               {name}
             </Text>
-            <Box flexShrink={0}>
+            <HStack flexShrink={0} gap={1}>
+              <PremiumIcon premium={premium} />
               <TeamIcon team={team} />
-            </Box>
+            </HStack>
           </HStack>
           <Text
             color="fg.subtle"

@@ -1,9 +1,8 @@
-import { Box, Flex, Icon, Span, Stack } from '@chakra-ui/react';
+import { Box, Flex, Span, Stack } from '@chakra-ui/react';
 import NextLink from 'next/link';
 import React from 'react';
-import { IoMdGift } from 'react-icons/io';
-import { MdOutlineAttachMoney, MdWorkspacePremium } from 'react-icons/md';
 
+import PremiumIcon from '@/components/features/vehicles/premiumIcon';
 import VehicleImage from '@/components/features/vehicles/vehicleImage';
 
 import type { TeamVehicle } from '@/server/api/trpc/routers/teams';
@@ -14,24 +13,11 @@ interface VehicleCellProps {
   vehicle: TeamVehicle;
 }
 
-const premiumConfig: Record<
-  NonNullable<TeamVehicle['premiumType']>,
-  { color: string; icon: React.ComponentType }
-> = {
-  coins: { color: 'yellow.400', icon: MdWorkspacePremium },
-  money: { color: 'green.400', icon: MdOutlineAttachMoney },
-  badge: { color: 'purple.400', icon: IoMdGift },
-};
-
 export default function VehicleCell({
   initials,
   name,
   vehicle,
 }: VehicleCellProps) {
-  const config = vehicle.premiumType
-    ? premiumConfig[vehicle.premiumType]
-    : null;
-
   return (
     <NextLink href={`/${initials}/vehicles/${vehicle.slug}`} prefetch={false}>
       <Stack
@@ -57,11 +43,7 @@ export default function VehicleCell({
           >
             {name}
           </Span>
-          {config && (
-            <Icon boxSize="14px" color={config.color} flexShrink={0}>
-              <config.icon />
-            </Icon>
-          )}
+          <PremiumIcon premium={vehicle.premiumType} />
         </Flex>
       </Stack>
     </NextLink>

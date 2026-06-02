@@ -89,6 +89,7 @@ export default function VirtualGrid({
                   href={`/${placeInitials}/vehicles/${vehicle.slug}`}
                   isNew={vehicle.new}
                   name={vehicle.name}
+                  premium={vehicle.premium}
                   role={vehicle.role}
                   slug={vehicle.slug}
                   team={vehicle.team}
