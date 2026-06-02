@@ -325,7 +325,10 @@ for (const filepath of vehicleFiles) {
         }
       } else if (currentSection === 'Armour') {
         const singleMatch = trimmed.match(/:\s*(~?\d+)$/);
-        if (singleMatch && parseInt(singleMatch[1].replace('~', ''), 10) === 0) {
+        if (
+          singleMatch &&
+          parseInt(singleMatch[1].replace('~', ''), 10) === 0
+        ) {
           errors.push(
             `Line ${lineNum(i + 1)}: armour cannot be standalone 0 (use 0-5 for a range if needed)`,
           );

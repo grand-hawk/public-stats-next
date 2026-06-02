@@ -29,7 +29,12 @@ export default function VehicleCell({
         width="100%"
       >
         <Box height="80px" position="relative" width="100%">
-          <VehicleImage height={80} name={name} slug={vehicle.slug} width={200} />
+          <VehicleImage
+            height={80}
+            name={name}
+            slug={vehicle.slug}
+            width={200}
+          />
         </Box>
 
         <Flex alignItems="center" padding={1.5} width="100%">
