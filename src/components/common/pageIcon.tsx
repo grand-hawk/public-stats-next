@@ -56,7 +56,7 @@ export default function PageIcon({
     if (page.type === 'vehicle') {
       return (
         <Box flexShrink={0} height="48px" position="relative" width="80px">
-          <VehicleImage fill name={page.name} sizes="80px" slug={page.slug} />
+          <VehicleImage height={48} name={page.name} slug={page.slug} width={80} />
         </Box>
       );
     }

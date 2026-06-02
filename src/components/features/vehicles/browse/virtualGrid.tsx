@@ -20,23 +20,30 @@ export default function VirtualGrid({
 }) {
   const scrollRef = React.useRef<HTMLDivElement>(null);
   const [columns, setColumns] = React.useState(1);
+  const [imageWidth, setImageWidth] = React.useState(MIN_CARD_WIDTH_PX);
 
   React.useLayoutEffect(() => {
     const scrollElement = scrollRef.current;
     if (!scrollElement) return;
 
-    function columnCountForWidth(width: number) {
+    function applyLayout(width: number) {
       for (let n = MAX_COLUMNS; n >= 1; n -= 1) {
         const gapTotal = (n - 1) * GRID_GAP;
         const cell = (width - gapTotal) / n;
-        if (cell >= MIN_CARD_WIDTH_PX) return n;
+        if (cell >= MIN_CARD_WIDTH_PX) {
+          setColumns(n);
+          setImageWidth(Math.ceil(cell));
+          return;
+        }
       }
-      return 1;
+      setColumns(1);
+      setImageWidth(Math.ceil(width));
     }
-    setColumns(columnCountForWidth(scrollElement.clientWidth));
+
+    applyLayout(scrollElement.clientWidth);
 
     const resizeObserver = new ResizeObserver(([entry]) => {
-      setColumns(columnCountForWidth(entry.contentRect.width));
+      applyLayout(entry.contentRect.width);
     });
     resizeObserver.observe(scrollElement);
     return () => resizeObserver.disconnect();
@@ -87,6 +94,7 @@ export default function VirtualGrid({
                 <VehicleCard
                   key={vehicle.slug}
                   href={`/${placeInitials}/vehicles/${vehicle.slug}`}
+                  imageWidth={imageWidth}
                   isNew={vehicle.new}
                   name={vehicle.name}
                   premium={vehicle.premium}

@@ -54,10 +54,10 @@ export default function ListVehicles({
             >
               <Box height="80px" position="relative" width="100%">
                 <VehicleImage
-                  fill
+                  height={80}
                   name={vehicle.name}
-                  sizes="200px"
                   slug={vehicle.slug}
+                  width={140}
                 />
               </Box>
 
