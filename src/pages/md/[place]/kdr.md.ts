@@ -55,7 +55,7 @@ async function revalidate(placeName: PlaceName) {
   ];
 
   const dataRows = aggregatedVehicles.map((vehicle) => [
-    `[${escapeMarkdownLink(vehicle.name)}](/md/${place.initials}/vehicles/${vehicle.slug}.md)`,
+    `[${escapeMarkdownLink(vehicle.name)}](/${place.initials}/vehicles/${vehicle.slug}.md)`,
     ...KDR_RANGE_ITEMS.flatMap((range) => {
       const rangeKey = range.value as keyof KdrPlaceData;
       const vehicleData = vehicle[rangeKey];

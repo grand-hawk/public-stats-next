@@ -25,7 +25,7 @@ async function revalidate(placeName: PlaceName) {
     return `## ${weapon}\n\n${markdownTable([
       ['Shell name', 'Type'],
       ...shells.map((shell) => [
-        `[${escapeMarkdownLink(shell.name)}](/md/${place.initials}/shells/${shell.slug}.md)`,
+        `[${escapeMarkdownLink(shell.name)}](/${place.initials}/shells/${shell.slug}.md)`,
         shell.type,
       ]),
     ])}`;

@@ -31,7 +31,7 @@ async function revalidate(placeName: PlaceName) {
         .map(([name]) => name);
 
       return [
-        `[${escapeMarkdownLink(team)}](/md/${place.initials}/teams/${encodeURIComponent(team)}.md)`,
+        `[${escapeMarkdownLink(team)}](/${place.initials}/teams/${encodeURIComponent(team)}.md)`,
         teamLoadouts.join(', '),
       ];
     }),

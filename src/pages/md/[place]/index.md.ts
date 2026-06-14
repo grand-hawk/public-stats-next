@@ -25,7 +25,7 @@ async function revalidate(placeName: PlaceName) {
   if (!shellsData) return null;
 
   const links = LINKS.map(
-    ({ file, label }) => `- [${label}](/md/${place.initials}/${file})`,
+    ({ file, label }) => `- [${label}](/${place.initials}/${file})`,
   ).join('\n');
 
   const markdown = await formatMarkdown(`# ${place.placeName}\n\n${links}`);

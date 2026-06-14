@@ -18,11 +18,6 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       {
-        source: '/:path((?!md/).*\\.md)',
-        destination: '/md/:path',
-        permanent: true,
-      },
-      {
         source: '/:place/loadouts',
         destination: '/:place',
         permanent: false,

@@ -29,7 +29,7 @@ async function revalidate(placeName: PlaceName) {
       const loadout = loadoutsData.data[loadoutName];
 
       return [
-        `[${escapeMarkdownLink(loadoutName)}](/md/${place.initials}/loadouts/${encodeURIComponent(loadoutName)}.md)`,
+        `[${escapeMarkdownLink(loadoutName)}](/${place.initials}/loadouts/${encodeURIComponent(loadoutName)}.md)`,
         loadout?.teams.join(', ') ?? '',
         loadout?.description ?? '',
       ];
