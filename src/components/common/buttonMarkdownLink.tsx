@@ -16,7 +16,7 @@ export default function ButtonMarkdownLink() {
       linkProps={{
         target: '_blank',
       }}
-      href={setExtension(`/md${asPath}`, 'md')}
+      href={setExtension(`/${asPath}`, 'md')}
       rel="nofollow"
       size="sm"
       title="View as markdown"
