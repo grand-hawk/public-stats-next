@@ -14,7 +14,7 @@ import CrewmanIcon from '@/components/icons/classes/crewman';
 import EngineerIcon from '@/components/icons/classes/engineer';
 import InfantryIcon from '@/components/icons/classes/infantry';
 import { inWhere, Prose } from '@/components/ui/prose';
-import { ToggleTip } from '@/components/ui/toggle-tip';
+import { InfoTip, ToggleTip } from '@/components/ui/toggle-tip';
 import SectionMarker from '@/components/wiki/sectionMarker';
 import Stat from '@/components/wiki/stat';
 import TitledCard from '@/components/wiki/titledCard';
@@ -183,6 +183,19 @@ export default function VehicleGeneralInformation({
             </Stat>
 
             {vehicle.info.amphibious && <Stat label="Amphibious">Yes</Stat>}
+
+            {vehicle.info.hullBreak && (
+              <Stat
+                label={
+                  <HStack gap={1}>
+                    Hull break
+                    <InfoTip>Explodes when its engine is destroyed</InfoTip>
+                  </HStack>
+                }
+              >
+                Yes
+              </Stat>
+            )}
 
             {vehicle.info.supportedClasses.length > 0 && (
               <Stat label="Supported classes" valueProps={{ height: '100%' }}>
