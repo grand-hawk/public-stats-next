@@ -48,7 +48,13 @@ export default function ShellsSearch() {
       subtitle={`From the ${place.placeName} wiki`}
       title="Shells"
     >
-      <FilterSheet activeCount={filters.activeCount} resultLabel={resultLabel}>
+      <FilterSheet
+        activeCount={filters.activeCount}
+        query={filters.query}
+        resultLabel={resultLabel}
+        searchPlaceholder="Search shells"
+        onQueryChange={filters.setQuery}
+      >
         {filterPanel}
       </FilterSheet>
 

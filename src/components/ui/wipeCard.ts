@@ -9,7 +9,7 @@ import {
 
 import type { SystemStyleObject } from '@chakra-ui/react';
 
-export type WipeDirection = 'up' | 'right';
+export type WipeDirection = 'down' | 'up' | 'right';
 
 export interface WipeState {
   duration: string;
@@ -20,11 +20,13 @@ export interface WipeState {
 const VISIBLE_CLIP_PATH = 'inset(-48px -48px -48px -48px)';
 
 const HIDDEN_CLIP_PATH: Record<WipeDirection, string> = {
+  down: 'inset(-48px -48px 100% -48px)',
   up: 'inset(100% -48px -48px -48px)',
   right: 'inset(-48px 100% -48px -48px)',
 };
 
 const HIDDEN_TRANSFORM: Record<WipeDirection, string> = {
+  down: 'translateY(-8px)',
   up: 'translateY(8px)',
   right: 'translateX(-8px)',
 };

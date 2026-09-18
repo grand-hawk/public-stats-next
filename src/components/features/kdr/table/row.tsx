@@ -18,8 +18,8 @@ export function gridCss(showRank: boolean) {
       : 'minmax(0, 1fr) 88px 120px 120px',
     [NARROW_MEDIA]: {
       gridTemplateColumns: showRank
-        ? '40px minmax(0, 1fr) 92px'
-        : 'minmax(0, 1fr) 92px',
+        ? '40px minmax(0, 1fr) 88px 104px 104px'
+        : 'minmax(0, 1fr) 88px 104px 104px',
     },
   } as const;
 }
@@ -40,7 +40,6 @@ export const NUMBER_CELL_CSS = {
 export const COUNT_CELL_CSS = {
   ...NUMBER_CELL_CSS,
   color: 'fg.muted',
-  [NARROW_MEDIA]: { display: 'none' },
 } as const;
 
 const RANK_CELL_CSS = {

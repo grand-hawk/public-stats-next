@@ -51,7 +51,13 @@ export default function VehiclesSearch({
       subtitle={`From the ${place.placeName} wiki`}
       title={title}
     >
-      <FilterSheet activeCount={filters.activeCount} resultLabel={resultLabel}>
+      <FilterSheet
+        activeCount={filters.activeCount}
+        query={filters.query}
+        resultLabel={resultLabel}
+        searchPlaceholder="Search vehicles"
+        onQueryChange={filters.setQuery}
+      >
         {filterPanel}
       </FilterSheet>
 

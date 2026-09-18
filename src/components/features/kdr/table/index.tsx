@@ -11,6 +11,7 @@ import slug from 'slug';
 
 import KdrTableHeader from '@/components/features/kdr/table/header';
 import KdrTableRow from '@/components/features/kdr/table/row';
+import { NARROW_MEDIA } from '@/components/layout/shell/constants';
 import { EmptyState } from '@/components/ui/empty-state';
 import { RAISED_FRAME_CSS } from '@/components/ui/styles';
 import { usePlace } from '@/hooks/usePlace';
@@ -71,29 +72,35 @@ export default function KdrTable({ range }: { range: keyof KdrPlaceData }) {
       aria-label={`Vehicle kill death ratio table for ${place.placeName}`}
       className="mtc-frame"
       role="table"
-      css={{ ...RAISED_FRAME_CSS, marginBlockStart: '24px' }}
+      css={{
+        ...RAISED_FRAME_CSS,
+        marginBlockStart: '24px',
+        [NARROW_MEDIA]: { overflowX: 'auto' },
+      }}
     >
-      <KdrTableHeader
-        headers={table.getHeaderGroups()[0].headers}
-        showRank={showRank}
-        sorting={sorting}
-      />
+      <Box css={{ [NARROW_MEDIA]: { minWidth: '520px' } }} role="presentation">
+        <KdrTableHeader
+          headers={table.getHeaderGroups()[0].headers}
+          showRank={showRank}
+          sorting={sorting}
+        />
 
-      <Box role="rowgroup">
-        {rows.map((row, index) => (
-          <KdrTableRow
-            key={row.id}
-            deaths={row.original.deaths}
-            href={`/${initials}/vehicles/${slug(row.original.vehicle)}`}
-            isLast={index === rows.length - 1}
-            kdr={row.original.kdr}
-            kills={row.original.kills}
-            rank={index + 1}
-            showRank={showRank}
-            team={row.original.team}
-            vehicle={row.original.vehicle}
-          />
-        ))}
+        <Box role="rowgroup">
+          {rows.map((row, index) => (
+            <KdrTableRow
+              key={row.id}
+              deaths={row.original.deaths}
+              href={`/${initials}/vehicles/${slug(row.original.vehicle)}`}
+              isLast={index === rows.length - 1}
+              kdr={row.original.kdr}
+              kills={row.original.kills}
+              rank={index + 1}
+              showRank={showRank}
+              team={row.original.team}
+              vehicle={row.original.vehicle}
+            />
+          ))}
+        </Box>
       </Box>
     </Box>
   );

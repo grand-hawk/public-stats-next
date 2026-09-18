@@ -5,6 +5,7 @@ import { LuSlidersHorizontal, LuX } from 'react-icons/lu';
 
 import { useDismiss } from '@/components/layout/rail/useDismiss';
 import { DESKTOP_MEDIA } from '@/components/layout/shell/constants';
+import SearchField from '@/components/ui/searchField';
 import {
   FOCUS_RING_CSS,
   GLASS_SURFACE_CSS,
@@ -20,7 +21,10 @@ import {
 export interface FilterSheetProps {
   activeCount: number;
   children: React.ReactNode;
+  onQueryChange: (value: string) => void;
+  query: string;
   resultLabel: string;
+  searchPlaceholder?: string;
 }
 
 const BAR_CSS = {
@@ -29,24 +33,26 @@ const BAR_CSS = {
   zIndex: 20,
   display: 'flex',
   alignItems: 'center',
-  justifyContent: 'space-between',
-  gap: '12px',
-  minHeight: '52px',
-  marginBlockEnd: '12px',
+  gap: '8px',
+  minHeight: '56px',
   marginInline: '-16px',
   paddingInline: '16px',
   backgroundColor: 'var(--color-surface-0)',
   borderBlockEndWidth: '1px',
   borderBlockEndStyle: 'solid',
   borderBlockEndColor: 'var(--border-color-subtle)',
-  color: 'fg.muted',
-  fontSize: '0.875rem',
-  lineHeight: '1.375rem',
-  fontVariantNumeric: 'tabular-nums',
   '@media (min-width: 640px)': {
     marginInline: '-24px',
     paddingInline: '24px',
   },
+} as const;
+
+const COUNT_CSS = {
+  marginBlock: '8px 12px',
+  color: 'fg.muted',
+  fontSize: '0.875rem',
+  lineHeight: '1.375rem',
+  fontVariantNumeric: 'tabular-nums',
 } as const;
 
 const TRIGGER_CSS = {
@@ -54,7 +60,7 @@ const TRIGGER_CSS = {
   alignItems: 'center',
   gap: '6px',
   flexShrink: 0,
-  height: '36px',
+  height: '40px',
   paddingInline: '12px',
   backgroundColor: 'var(--color-surface-2)',
   borderRadius: '4px',
@@ -110,12 +116,17 @@ const CLOSE_CSS = {
 export default function FilterSheet({
   activeCount,
   children,
+  onQueryChange,
+  query,
   resultLabel,
+  searchPlaceholder,
 }: FilterSheetProps) {
   const router = useRouter();
+  const barRef = React.useRef<HTMLDivElement>(null);
   const cardRef = React.useRef<HTMLDivElement>(null);
   const triggerRef = React.useRef<HTMLButtonElement>(null);
   const [open, setOpen] = React.useState(false);
+  const [cardTop, setCardTop] = React.useState(64);
   const wipe = useWipe(open);
 
   useDismiss({
@@ -143,14 +154,22 @@ export default function FilterSheet({
 
   return (
     <Box css={{ display: 'contents', [DESKTOP_MEDIA]: { display: 'none' } }}>
-      <Box css={BAR_CSS}>
-        <Text as="span">{resultLabel}</Text>
+      <Box ref={barRef} css={BAR_CSS}>
+        <SearchField
+          placeholder={searchPlaceholder}
+          value={query}
+          onChange={onQueryChange}
+        />
         <chakra.button
           ref={triggerRef}
           aria-expanded={open}
           css={TRIGGER_CSS}
           type="button"
-          onClick={() => setOpen((previous) => !previous)}
+          onClick={() => {
+            const bar = barRef.current?.getBoundingClientRect();
+            if (bar) setCardTop(Math.round(bar.bottom) + 8);
+            setOpen((previous) => !previous);
+          }}
         >
           <Icon as={LuSlidersHorizontal} boxSize="16px" />
           <Text as="span">Filters</Text>
@@ -162,6 +181,8 @@ export default function FilterSheet({
         </chakra.button>
       </Box>
 
+      <Text css={COUNT_CSS}>{resultLabel}</Text>
+
       <Box aria-hidden css={wipeBackdropCss(wipe)} />
 
       <Box
@@ -170,12 +191,12 @@ export default function FilterSheet({
         role="dialog"
         css={{
           ...GLASS_SURFACE_CSS,
-          ...wipeCardCss(wipe, 'up'),
+          ...wipeCardCss(wipe, 'down'),
           left: '8px',
           right: '8px',
-          bottom: '65px',
+          top: `${cardTop}px`,
           zIndex: 340,
-          maxHeight: 'calc(100dvh - 57px - 96px)',
+          maxHeight: `calc(100dvh - ${cardTop}px - 57px - 16px)`,
           boxShadow: 'var(--box-shadow-large)',
           '@media (prefers-reduced-transparency: reduce)': {
             backgroundColor: 'var(--color-surface-1)',
