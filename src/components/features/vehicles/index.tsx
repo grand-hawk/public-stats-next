@@ -42,7 +42,7 @@ export default function Vehicle({ vehicle }: { vehicle: DetailedVehicle }) {
         >
           <Stack
             as="aside"
-            gap={4}
+            gap={0}
             gridColumn="2"
             gridRow="1"
             hideBelow="2xl"
@@ -53,7 +53,7 @@ export default function Vehicle({ vehicle }: { vehicle: DetailedVehicle }) {
           >
             <SectionNavigation />
             <VehicleDynamicSidebar />
-            <VehicleDataInfo data-md-ignore />
+            <VehicleDataInfo data-md-ignore marginTop={8} />
           </Stack>
 
           <Stack gap={0} minW="0">
