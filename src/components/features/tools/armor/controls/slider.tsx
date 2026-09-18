@@ -9,6 +9,35 @@ export interface RangeSliderProps {
   value: number;
 }
 
+const TRACK_CSS = {
+  height: '4px',
+  border: 'none',
+  borderRadius: '9999px',
+  background:
+    'linear-gradient(to right,' +
+    ' var(--color-progressive) 0 var(--armor-slider-fill),' +
+    ' var(--color-surface-3) var(--armor-slider-fill) 100%)',
+} as const;
+
+const THUMB_CSS = {
+  boxSizing: 'border-box',
+  height: '14px',
+  width: '14px',
+  background: 'var(--color-emphasized)',
+  border: '1px solid var(--border-color-base)',
+  borderRadius: '9999px',
+  boxShadow: '0 0 0 0 transparent',
+  cursor: 'grab',
+  transition:
+    'box-shadow 100ms var(--transition-timing-function-ease, ease),' +
+    ' background-color 100ms var(--transition-timing-function-ease, ease)',
+} as const;
+
+const THUMB_RING = {
+  boxShadow:
+    '0 0 0 4px color-mix(in oklch, var(--color-progressive) 25%, transparent)',
+} as const;
+
 export function RangeSlider({
   max,
   min,
@@ -16,6 +45,10 @@ export function RangeSlider({
   step,
   value,
 }: RangeSliderProps) {
+  const span = max - min;
+  const ratio = span > 0 ? (value - min) / span : 0;
+  const fill = `${Math.min(100, Math.max(0, ratio * 100))}%`;
+
   return (
     <Input
       appearance="none"
@@ -23,54 +56,31 @@ export function RangeSlider({
       border="none"
       cursor="pointer"
       width="100%"
-      height="20px"
+      height="24px"
       margin={0}
       max={max}
       min={min}
       step={step}
       type="range"
       value={value}
+      style={{ '--armor-slider-fill': fill } as React.CSSProperties}
       css={{
-        '&::-webkit-slider-runnable-track': {
-          height: '4px',
-          background: 'border.muted',
-          border: 'none',
-          borderRadius: 0,
-        },
+        padding: 0,
+        '&:focus': { outline: 'none', boxShadow: 'none' },
+        '&::-webkit-slider-runnable-track': TRACK_CSS,
+        '&::-moz-range-track': TRACK_CSS,
         '&::-webkit-slider-thumb': {
           WebkitAppearance: 'none',
-          height: '14px',
-          width: '8px',
-          background: 'fg.muted',
-          border: '1px solid',
-          borderColor: 'border.muted',
-          borderRadius: 0,
           marginTop: '-5px',
-          cursor: 'grab',
+          ...THUMB_CSS,
         },
-        '&::-webkit-slider-thumb:active': {
-          cursor: 'grabbing',
-          background: 'fg',
-        },
-        '&::-moz-range-track': {
-          height: '4px',
-          background: 'border.muted',
-          border: 'none',
-          borderRadius: 0,
-        },
-        '&::-moz-range-thumb': {
-          height: '14px',
-          width: '8px',
-          background: 'fg.muted',
-          border: '1px solid',
-          borderColor: 'border.muted',
-          borderRadius: 0,
-          cursor: 'grab',
-        },
-        '&::-moz-range-thumb:active': {
-          cursor: 'grabbing',
-          background: 'fg',
-        },
+        '&::-moz-range-thumb': THUMB_CSS,
+        '&:hover::-webkit-slider-thumb': THUMB_RING,
+        '&:hover::-moz-range-thumb': THUMB_RING,
+        '&:focus-visible::-webkit-slider-thumb': THUMB_RING,
+        '&:focus-visible::-moz-range-thumb': THUMB_RING,
+        '&:active::-webkit-slider-thumb': { ...THUMB_RING, cursor: 'grabbing' },
+        '&:active::-moz-range-thumb': { ...THUMB_RING, cursor: 'grabbing' },
       }}
       onChange={(e) => onChange(Number(e.target.value))}
     />

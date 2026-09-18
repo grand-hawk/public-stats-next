@@ -1,4 +1,4 @@
-import { Flex, FormatNumber, Span, Stack } from '@chakra-ui/react';
+import { FormatNumber, Stack } from '@chakra-ui/react';
 import dynamic from 'next/dynamic';
 import React from 'react';
 
@@ -8,6 +8,7 @@ import {
   gearLabel,
   gearWord,
 } from '@/components/features/vehicles/vehicle/dynamic/modules/gearing/shared';
+import ChartCard from '@/components/wiki/chartCard';
 import { StatsCell, StatsRoot, StatsRow } from '@/components/wiki/stats';
 import TitledCard from '@/components/wiki/titledCard';
 import { useDynamicData } from '@/hooks/providers/dynamicData';
@@ -71,28 +72,6 @@ function GearRows({
   ));
 }
 
-function ChartCaption({
-  children,
-  tooltip,
-}: {
-  children: React.ReactNode;
-  tooltip: string;
-}) {
-  return (
-    <Flex alignItems="center" gap={1}>
-      <Span color="fg.muted" fontSize="sm">
-        {children}
-      </Span>
-      <InfoTooltip
-        content={tooltip}
-        iconProps={{
-          color: 'fg.muted',
-        }}
-      />
-    </Flex>
-  );
-}
-
 export default function Gearing() {
   const { assembledModules } = useDynamicData();
 
@@ -106,11 +85,8 @@ export default function Gearing() {
 
   return (
     <TitledCard
-      backgroundColor="bg.muted"
-      closedByDefault
       collapsible
       headingAs="h3"
-      innerPadding={2}
       moduleId={driveData.id}
       title="Gearing"
       withAnchor="Powertrain gearing"
@@ -173,30 +149,30 @@ export default function Gearing() {
         </StatsRoot>
 
         {!driveline.stepless && gears.forward.length > 0 && (
-          <Stack gap={1}>
-            <ChartCaption tooltip="Where the engine sits at each road speed. Each line runs from idle to redline in that gear, so the drop between lines is the RPM lost on an upshift">
-              Engine speed
-            </ChartCaption>
+          <ChartCard
+            title="Engine speed"
+            tooltip="Where the engine sits at each road speed. Each line runs from idle to redline in that gear, so the drop between lines is the RPM lost on an upshift"
+          >
             <GearingChart
               gears={gears.forward}
               idleRPM={engine.idleRPM}
               maxRPM={engine.maxRPM}
               vmax={vmax}
             />
-          </Stack>
+          </ChartCard>
         )}
 
         {tractiveEffort.gears.length > 0 && (
-          <Stack gap={1}>
-            <ChartCaption tooltip="Pull is the force at the tracks, as a multiple of the vehicle's weight. A gear can hold a grade wherever its curve sits above that grade's dashed line">
-              Pull
-            </ChartCaption>
+          <ChartCard
+            title="Pull"
+            tooltip="Pull is the force at the tracks, as a multiple of the vehicle's weight. A gear can hold a grade wherever its curve sits above that grade's dashed line"
+          >
             <TractiveEffortChart
               stepless={driveline.stepless}
               tractiveEffort={tractiveEffort}
               vmax={vmax}
             />
-          </Stack>
+          </ChartCard>
         )}
       </Stack>
     </TitledCard>

@@ -7,17 +7,34 @@ import { trpc } from '@/utils/trpc';
 import type { SearchResult } from '@/server/api/trpc/routers/search';
 
 interface UseSiteSearchOptions {
+  onClose?: () => void;
   onSelect?: () => void;
 }
 
-export function useSiteSearch({ onSelect }: UseSiteSearchOptions = {}) {
+export const SEARCH_INPUT_ID = 'site-search-input';
+export const SEARCH_LISTBOX_ID = 'site-search-listbox';
+
+export function optionId(index: number) {
+  return `site-search-option-${index}`;
+}
+
+export function useSiteSearch({
+  onClose,
+  onSelect,
+}: UseSiteSearchOptions = {}) {
   const place = usePlace();
   const router = useRouter();
+  const listRef = React.useRef<HTMLDivElement>(null);
   const [query, setQuery] = React.useState('');
-  const deferredQuery = React.useDeferredValue(query);
+  const [debounced, setDebounced] = React.useState('');
   const [activeIndex, setActiveIndex] = React.useState(0);
 
-  const trimmed = deferredQuery.trim();
+  React.useEffect(() => {
+    const id = window.setTimeout(() => setDebounced(query), 120);
+    return () => window.clearTimeout(id);
+  }, [query]);
+
+  const trimmed = debounced.trim();
   const enabled = !!place && trimmed.length >= 2;
 
   const { data: results = [], isFetching } = trpc.search.query.useQuery(
@@ -36,42 +53,74 @@ export function useSiteSearch({ onSelect }: UseSiteSearchOptions = {}) {
     setActiveIndex(0);
   }, [trimmed]);
 
-  const navigate = React.useCallback(
-    (result: SearchResult) => {
-      onSelect?.();
-      router.push(result.href);
-    },
-    [onSelect, router],
-  );
+  React.useEffect(() => {
+    const node = listRef.current?.querySelector(`#${optionId(activeIndex)}`);
+    node?.scrollIntoView({ block: 'nearest' });
+  }, [activeIndex, results]);
 
-  const handleKeyDown = React.useCallback(
-    (event: React.KeyboardEvent<HTMLInputElement>) => {
-      if (results.length === 0) return;
-      if (event.key === 'ArrowDown') {
-        event.preventDefault();
-        setActiveIndex((i) => (i + 1) % results.length);
-      } else if (event.key === 'ArrowUp') {
-        event.preventDefault();
-        setActiveIndex((i) => (i - 1 + results.length) % results.length);
-      } else if (event.key === 'Enter') {
-        event.preventDefault();
-        const r = results[activeIndex];
-        if (r) navigate(r);
-      }
-    },
-    [activeIndex, navigate, results],
-  );
+  const activeId = results[activeIndex] ? optionId(activeIndex) : undefined;
 
-  const reset = React.useCallback(() => {
+  const navigate = (result: SearchResult, newTab = false) => {
+    if (newTab) {
+      window.open(result.href, '_blank', 'noopener,noreferrer');
+      return;
+    }
+    onSelect?.();
+    router.push(result.href);
+  };
+
+  const reset = () => {
     setQuery('');
+    setDebounced('');
     setActiveIndex(0);
-  }, []);
+  };
+
+  const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
+    if (event.key === 'Escape') {
+      event.preventDefault();
+      event.stopPropagation();
+      if (query.length > 0) {
+        reset();
+        return;
+      }
+      onClose?.();
+      return;
+    }
+
+    if (event.key === 'Tab') {
+      event.preventDefault();
+      onClose?.();
+      return;
+    }
+
+    if (results.length === 0) return;
+
+    if (event.key === 'ArrowDown') {
+      event.preventDefault();
+      setActiveIndex((i) => (i + 1) % results.length);
+    } else if (event.key === 'ArrowUp') {
+      event.preventDefault();
+      setActiveIndex((i) => (i - 1 + results.length) % results.length);
+    } else if (event.key === 'Home') {
+      event.preventDefault();
+      setActiveIndex(0);
+    } else if (event.key === 'End') {
+      event.preventDefault();
+      setActiveIndex(results.length - 1);
+    } else if (event.key === 'Enter') {
+      event.preventDefault();
+      const result = results[activeIndex];
+      if (result) navigate(result, event.metaKey || event.ctrlKey);
+    }
+  };
 
   return {
+    activeId,
     activeIndex,
     enabled,
     handleKeyDown,
     isFetching,
+    listRef,
     navigate,
     query,
     reset,

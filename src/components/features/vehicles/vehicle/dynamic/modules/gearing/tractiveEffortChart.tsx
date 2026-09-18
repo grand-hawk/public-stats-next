@@ -1,22 +1,14 @@
-import { Chart, useChart } from '@chakra-ui/charts';
+import { useChart } from '@chakra-ui/charts';
 import React from 'react';
-import {
-  CartesianGrid,
-  Legend,
-  Line,
-  LineChart,
-  ReferenceLine,
-  Tooltip,
-  XAxis,
-  YAxis,
-} from 'recharts';
+import { ReferenceLine } from 'recharts';
 
+import GearingChartShell from '@/components/features/vehicles/vehicle/dynamic/modules/gearing/chartShell';
 import {
-  CHART_MARGIN,
   gearSeries,
   speedGrid,
 } from '@/components/features/vehicles/vehicle/dynamic/modules/gearing/shared';
 
+import type { GearingChartRow } from '@/components/features/vehicles/vehicle/dynamic/modules/gearing/chartShell';
 import type { VehiclesPlaceDataVehicleDriveDataMetrics } from '@generated/vehicles';
 
 type Points =
@@ -55,7 +47,7 @@ export default function TractiveEffortChart({
   );
 
   const data = speeds.map((kmh) => {
-    const row: Record<string, number | null> = { kmh };
+    const row: GearingChartRow = { kmh };
 
     for (const gear of gears) {
       row[`gear${gear.gear}`] = pullAt(gear.points, kmh);
@@ -67,89 +59,25 @@ export default function TractiveEffortChart({
   const chart = useChart({ data, series: gearSeries(gears, stepless) });
 
   return (
-    <Chart.Root chart={chart} maxHeight="2xs">
-      <LineChart data={chart.data} margin={CHART_MARGIN} responsive>
-        <CartesianGrid stroke={chart.color('border')} vertical={false} />
-
-        <XAxis
-          axisLine={false}
-          dataKey={chart.key('kmh')}
-          domain={[0, 'dataMax']}
-          height={40}
-          stroke={chart.color('border')}
-          tickLine={false}
-          type="number"
-          label={{
-            fill: chart.color('fg.muted'),
-            position: 'insideBottom',
-            value: 'Speed (km/h)',
-          }}
-        />
-
-        <YAxis
-          axisLine={false}
-          stroke={chart.color('border')}
-          tickLine={false}
-          tickMargin={10}
-          width={72}
-          label={{
-            angle: -90,
-            fill: chart.color('fg.muted'),
-            position: 'insideLeft',
-            style: { textAnchor: 'middle' },
-            value: 'Pull (× weight)',
-          }}
-        />
-
-        <Tooltip
-          animationDuration={100}
-          content={
-            <Chart.Tooltip
-              formatter={(value: number, name: string) => [` ${value}`, name]}
-              labelFormatter={(label) => `${label} km/h`}
-            />
-          }
-          cursor={false}
-        />
-
-        {gradeDemands.map((demand) => (
-          <ReferenceLine
-            key={demand.gradePercent}
-            stroke={chart.color('border.emphasized')}
-            strokeDasharray="4 4"
-            y={demand.teOverWeight}
-            label={{
-              fill: chart.color('fg.muted'),
-              position: 'right',
-              value: `${demand.gradePercent}%`,
-            }}
-          />
-        ))}
-
+    <GearingChartShell
+      chart={chart}
+      formatValue={(value) => ` ${value}`}
+      vmax={vmax}
+      yLabel="Pull (× weight)"
+    >
+      {gradeDemands.map((demand) => (
         <ReferenceLine
-          stroke={chart.color('fg.muted')}
-          strokeDasharray="2 2"
-          x={vmax}
+          key={demand.gradePercent}
+          stroke={chart.color('border.emphasized')}
+          strokeDasharray="4 4"
+          y={demand.teOverWeight}
           label={{
             fill: chart.color('fg.muted'),
-            position: 'top',
-            value: 'Vmax',
+            position: 'right',
+            value: `${demand.gradePercent}%`,
           }}
         />
-
-        <Legend content={<Chart.Legend />} />
-
-        {chart.series.map((item) => (
-          <Line
-            key={item.name}
-            dataKey={chart.key(item.name)}
-            dot={false}
-            isAnimationActive={false}
-            stroke={chart.color(item.color)}
-            strokeWidth={2}
-          />
-        ))}
-      </LineChart>
-    </Chart.Root>
+      ))}
+    </GearingChartShell>
   );
 }

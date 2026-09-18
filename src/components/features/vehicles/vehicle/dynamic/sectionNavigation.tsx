@@ -1,4 +1,4 @@
-import { Button, Stack } from '@chakra-ui/react';
+import { Box, Span, Stack } from '@chakra-ui/react';
 import NextLink from 'next/link';
 import React from 'react';
 import slug from 'slug';
@@ -18,8 +18,6 @@ function computeMarkers(
   isAvailable: boolean,
 ): SectionMarker[] {
   const markers: SectionMarker[] = [];
-
-  // General
   markers.push({ name: 'General information', slug: 'general-information' });
 
   if (isAvailable) {
@@ -29,39 +27,31 @@ function computeMarkers(
     });
   }
 
-  // Vehicle section
   const driveData = getOneModuleOfType('DriveData', assembledModules);
   const seat = getOneModuleOfType('Seat', assembledModules);
   if (driveData || seat) markers.push({ name: 'Vehicle', slug: 'vehicle' });
 
-  // Powertrain section
   if (driveData) markers.push({ name: 'Powertrain', slug: 'powertrain' });
 
-  // Performance section
   if (driveData?.data.metrics) {
     markers.push({ name: 'Performance', slug: 'performance' });
   }
 
-  // Armour section
   if (vehicle.info.damageModules) {
-    // damageModules is only present when armor is also present
     markers.push({ name: 'Armour', slug: 'armour' });
   }
 
-  // Defenses section
   const essModule = getOneModuleOfType('ESS', assembledModules);
   const ewModule = getOneModuleOfType('EW', assembledModules);
   if (essModule || ewModule) {
     markers.push({ name: 'Defenses', slug: 'defenses' });
   }
 
-  // Turrets section
   const sortedTurrets = getTurretsWithNamesSorted(assembledModules);
   if (sortedTurrets.length > 0) {
     markers.push({ name: 'Turrets', slug: slug(sortedTurrets[0].name) });
   }
 
-  // Gallery
   markers.push({ name: 'Gallery', slug: 'gallery' });
 
   return markers;
@@ -122,32 +112,57 @@ export default function SectionNavigation() {
 
   if (markers.length === 0) return null;
   return (
-    <Stack as="nav" gap={0} hideBelow="xl" data-md-ignore>
-      {markers.map((marker) => {
-        const isActive = activeSlug === marker.slug;
+    <Stack gap={2} hideBelow="xl" data-md-ignore>
+      <Span
+        color="fg.muted"
+        css={{ fontSize: '0.875rem', lineHeight: '1.375rem' }}
+      >
+        On this page
+      </Span>
 
-        return (
-          <Button
-            asChild
-            borderLeftColor={isActive ? 'colorPalette.solid' : 'transparent'}
-            borderLeftWidth="2px"
-            borderRadius={0}
-            fontWeight={isActive ? 'medium' : 'normal'}
-            justifyContent="flex-start"
-            key={marker.slug}
-            size="sm"
-            backgroundColor={{
-              base: 'bg.panel',
-              _hover: 'bg.muted',
-            }}
-            variant="subtle"
-          >
-            <NextLink href={`#${marker.slug}`} shallow>
-              {marker.name}
-            </NextLink>
-          </Button>
-        );
-      })}
+      <Stack
+        as="nav"
+        gap={0}
+        css={{
+          borderInlineStartWidth: '1px',
+          borderInlineStartStyle: 'solid',
+          borderColor: 'var(--border-color-subtle)',
+        }}
+      >
+        {markers.map((marker) => {
+          const isActive = activeSlug === marker.slug;
+
+          return (
+            <Box
+              asChild
+              key={marker.slug}
+              css={{
+                display: 'flex',
+                alignItems: 'center',
+                height: '32px',
+                marginInlineStart: '-1px',
+                padding: '0 11px',
+                borderInlineStartWidth: '2px',
+                borderInlineStartStyle: 'solid',
+                borderColor: isActive
+                  ? 'var(--color-progressive)'
+                  : 'transparent',
+                borderRadius: '0 4px 4px 0',
+                color: isActive ? 'var(--color-progressive)' : 'fg.muted',
+                fontSize: '0.875rem',
+                fontWeight: 500,
+                lineHeight: '1.375rem',
+                textDecoration: 'none',
+                '&:hover': { backgroundColor: 'quiet.hover' },
+              }}
+            >
+              <NextLink href={`#${marker.slug}`} shallow>
+                {marker.name}
+              </NextLink>
+            </Box>
+          );
+        })}
+      </Stack>
     </Stack>
   );
 }

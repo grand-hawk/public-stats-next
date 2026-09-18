@@ -10,7 +10,6 @@ import VehicleDynamicSidebar from '@/components/features/vehicles/vehicle/dynami
 import VehicleGallery from '@/components/features/vehicles/vehicle/gallery';
 import VehicleGeneralInformation from '@/components/features/vehicles/vehicle/generalInformation';
 import VehicleHeader from '@/components/features/vehicles/vehicle/header';
-import InaccurateDataFooter from '@/components/wiki/inaccurateDataFooter';
 import { DynamicDataProvider } from '@/hooks/providers/dynamicData';
 import { VehicleContext } from '@/hooks/providers/vehicle';
 
@@ -43,36 +42,36 @@ export default function Vehicle({ vehicle }: { vehicle: DetailedVehicle }) {
         >
           <Stack
             as="aside"
-            gap={4}
+            gap={0}
             gridColumn="2"
             gridRow="1"
             hideBelow="2xl"
+            marginTop="32px"
             maxHeight="max-content"
             position="sticky"
-            top={4}
+            top="64px"
           >
             <SectionNavigation />
             <VehicleDynamicSidebar />
-            <VehicleDataInfo data-md-ignore />
+            <VehicleDataInfo data-md-ignore marginTop={8} />
           </Stack>
 
-          <Stack gap={4} minW="0">
+          <Stack gap={0} minW="0">
             <VehicleGeneralInformation isAvailable={vehicleIsAvailable} />
             <VehicleAvailability
               availability={vehicle.info.availability}
               isAvailable={vehicleIsAvailable}
             />
             {hasSidebarContent && (
-              <Stack hideFrom="2xl" gap={4} minW="0">
+              <Stack hideFrom="2xl" gap={0} minW="0">
                 <VehicleDynamicSidebar />
               </Stack>
             )}
             <VehicleDynamicData />
             <VehicleGallery />
-            <Box hideFrom="2xl">
+            <Box hideFrom="2xl" marginTop={8}>
               <VehicleDataInfo />
             </Box>
-            <InaccurateDataFooter />
           </Stack>
         </Box>
       </DynamicDataProvider>

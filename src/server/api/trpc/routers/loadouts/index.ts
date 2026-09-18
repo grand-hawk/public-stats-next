@@ -2,6 +2,7 @@ import { TRPCError } from '@trpc/server';
 import slug from 'slug';
 import { z } from 'zod';
 
+import { MEDIA_PREFIX } from '@/env';
 import { createTRPCRouter, publicProcedure } from '@/server/api/trpc/context';
 import { createContentCollection } from '@/server/utils/contentCollection';
 import { getLoadoutListItems } from '@/server/utils/loadoutsList';
@@ -26,13 +27,13 @@ export type LoadoutVehicle = LoadoutsPlaceDataLoadoutVehicleTeam &
 export interface Loadout {
   name: string;
   description?: string;
+  tagline?: string;
+  thumbnail: string;
   teams: {
     [team: string]: Record<string, LoadoutVehicle>;
   };
   relatedPages: RelatedPageItem[];
 }
-
-export type { LoadoutListItem } from '@/server/utils/loadoutsList';
 
 export const loadoutsRouter = createTRPCRouter({
   list: publicProcedure
@@ -98,8 +99,14 @@ export const loadoutsRouter = createTRPCRouter({
       return {
         name: loadoutName,
         description,
+        tagline: loadoutData.description || undefined,
+        thumbnail: `${MEDIA_PREFIX}/assets/loadouts/thumbnails/${input.slug}.png`,
         teams: loadoutTeams,
-        relatedPages: computeRelatedPages(description, placeId, initials),
+        relatedPages: computeRelatedPages(
+          placeId,
+          initials,
+          `/loadouts/${input.slug}`,
+        ),
       } satisfies Loadout;
     }),
 });

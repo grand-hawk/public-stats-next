@@ -1,10 +1,9 @@
-import { Box, Flex, Span, Stack } from '@chakra-ui/react';
 import NextLink from 'next/link';
 import React from 'react';
 import { GrDocumentMissing } from 'react-icons/gr';
 
-import PremiumIcon from '@/components/features/vehicles/premiumIcon';
-import VehicleImage from '@/components/features/vehicles/vehicleImage';
+import VehicleCell from '@/components/features/teams/loadouts/vehicleCell';
+import VehicleCellGrid from '@/components/features/teams/loadouts/vehicleCellGrid';
 import { EmptyState } from '@/components/ui/empty-state';
 import TitledCard from '@/components/wiki/titledCard';
 
@@ -31,64 +30,19 @@ export default function ListVehicles({
   }
 
   return (
-    <TitledCard as="section" innerPadding={3} title="Lore vehicles" withAnchor>
-      <Box
-        data-md-ignore
-        display="grid"
-        gap={2}
-        gridTemplateColumns="repeat(auto-fill, minmax(140px, 1fr))"
-      >
+    <TitledCard as="section" title="Lore vehicles" withAnchor>
+      <VehicleCellGrid>
         {vehicles.map((vehicle) => (
-          <NextLink
+          <VehicleCell
             key={vehicle.slug}
-            href={`/${initials}/vehicles/${vehicle.slug}`}
-            prefetch={false}
-          >
-            <Stack
-              _hover={{ backgroundColor: 'bg.emphasized' }}
-              backgroundColor="bg.muted"
-              gap={0}
-              overflow="hidden"
-              transition="background-color 0.15s"
-              width="100%"
-            >
-              <Box height="80px" position="relative" width="100%">
-                <VehicleImage
-                  height={80}
-                  name={vehicle.name}
-                  slug={vehicle.slug}
-                  width={140}
-                />
-              </Box>
-
-              <Flex alignItems="center" padding={1.5} width="100%">
-                <Stack flex={1} gap={0} minWidth={0}>
-                  <Span
-                    fontSize="xs"
-                    lineHeight="short"
-                    overflow="hidden"
-                    textOverflow="ellipsis"
-                    whiteSpace="nowrap"
-                  >
-                    {vehicle.name}
-                  </Span>
-                  <Span
-                    color="fg.muted"
-                    fontSize="2xs"
-                    lineHeight="short"
-                    overflow="hidden"
-                    textOverflow="ellipsis"
-                    whiteSpace="nowrap"
-                  >
-                    {vehicle.role}
-                  </Span>
-                </Stack>
-                <PremiumIcon premium={vehicle.premium} />
-              </Flex>
-            </Stack>
-          </NextLink>
+            initials={initials}
+            name={vehicle.name}
+            premium={vehicle.premium}
+            role={vehicle.role}
+            slug={vehicle.slug}
+          />
         ))}
-      </Box>
+      </VehicleCellGrid>
 
       <div data-md-show style={{ display: 'none' }}>
         <table>

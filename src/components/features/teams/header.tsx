@@ -1,37 +1,21 @@
-import { Flex, Heading, HStack } from '@chakra-ui/react';
+import { Span } from '@chakra-ui/react';
 import React from 'react';
 
-import ButtonMarkdownLink from '@/components/common/buttonMarkdownLink';
-import EditPagePopover from '@/components/common/editPagePopover';
 import TeamIcon from '@/components/icons/teams';
-import { env } from '@/env';
+import ArticleTitle from '@/components/wiki/articleTitle';
 
 interface TeamHeaderProps {
+  lore: boolean;
   name: string;
-  slug: string;
 }
 
-export default function TeamHeader({ name, slug }: TeamHeaderProps) {
+export default function TeamHeader({ lore, name }: TeamHeaderProps) {
   return (
-    <Flex
-      as="header"
-      alignItems="center"
-      gap={3}
-      justifyContent="space-between"
-    >
-      <HStack minWidth={0}>
-        <TeamIcon team={name} />
-        <Heading as="h1" id="team-page-title" size="2xl">
-          {name}
-        </Heading>
-      </HStack>
-
-      <HStack flexShrink={0} role="toolbar">
-        {!env.NEXT_PUBLIC_STACKBLITZ && (
-          <EditPagePopover filePath={`content/teams/${slug}.md`} />
-        )}
-        <ButtonMarkdownLink />
-      </HStack>
-    </Flex>
+    <ArticleTitle
+      icon={<TeamIcon size="24px" team={name} />}
+      id="team-page-title"
+      meta={<Span>{lore ? 'Lore team' : 'Playable team'}</Span>}
+      title={name}
+    />
   );
 }

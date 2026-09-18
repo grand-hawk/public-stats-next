@@ -22,7 +22,7 @@ export function StatsRow({
       className={withPaddingTop ? 'with-padding-top' : undefined}
       css={{
         '& .chakra-table__cell:nth-of-type(1)': {
-          paddingInlineStart: withPaddingLeft ? 6 : undefined,
+          paddingInlineStart: withPaddingLeft ? '32px' : undefined,
         },
         ...css,
       }}

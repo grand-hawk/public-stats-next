@@ -1,5 +1,6 @@
-import { SegmentGroup } from '@chakra-ui/react';
 import React from 'react';
+
+import { Pill, PillGroup } from '@/components/ui/pillGroup';
 
 import type { KdrPlaceData } from '@generated/kdr';
 
@@ -22,21 +23,16 @@ export default function KdrRangeSelect({
   setRange: (value: string | null) => void;
 }) {
   return (
-    <SegmentGroup.Root
-      marginLeft="auto"
-      size="sm"
-      value={range}
-      width="max-content"
-      onValueChange={(details) => setRange(details.value)}
-    >
-      <SegmentGroup.Indicator />
-
+    <PillGroup label="K/D time range">
       {KDR_RANGE_ITEMS.map((item) => (
-        <SegmentGroup.Item key={item.value} value={item.value}>
-          <SegmentGroup.ItemText>{item.label}</SegmentGroup.ItemText>
-          <SegmentGroup.ItemHiddenInput />
-        </SegmentGroup.Item>
+        <Pill
+          key={item.value}
+          selected={item.value === range}
+          onClick={() => setRange(item.value)}
+        >
+          {item.label}
+        </Pill>
       ))}
-    </SegmentGroup.Root>
+    </PillGroup>
   );
 }

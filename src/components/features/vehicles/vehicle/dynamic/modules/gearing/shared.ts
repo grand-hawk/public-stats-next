@@ -1,4 +1,4 @@
-export const GEAR_COLORS = [
+const GEAR_COLORS = [
   'blue.solid',
   'orange.solid',
   'green.solid',

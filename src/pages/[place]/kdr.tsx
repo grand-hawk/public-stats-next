@@ -1,4 +1,4 @@
-import { Flex, Stack } from '@chakra-ui/react';
+import { Box } from '@chakra-ui/react';
 import { useQueryState } from 'nuqs';
 import React from 'react';
 
@@ -6,30 +6,40 @@ import KdrRangeSelect, {
   KDR_RANGE_ITEMS,
 } from '@/components/features/kdr/rangeSelect';
 import KdrTable from '@/components/features/kdr/table';
+import ArticlePage from '@/components/layout/articlePage';
 import Layout from '@/components/layout/layout';
+import ArticleTitle from '@/components/wiki/articleTitle';
+import { usePlace } from '@/hooks/usePlace';
 
 import type { KdrPlaceData } from '@generated/kdr';
 
+const TABLE_MEASURE = '720px';
+
 export default function PlaceKdr() {
+  const place = usePlace()!;
   const [range, setRange] = useQueryState('range');
 
-  const normalizedRange = React.useMemo(() => {
-    const fallback = 'all_time';
-    if (!range) return fallback;
-
-    return KDR_RANGE_ITEMS.some((item) => item.value === range)
+  const normalizedRange = (
+    range && KDR_RANGE_ITEMS.some((item) => item.value === range)
       ? range
-      : fallback;
-  }, [range]) as keyof KdrPlaceData;
+      : 'all_time'
+  ) as keyof KdrPlaceData;
 
   return (
-    <Layout>
-      <Flex justifyContent="center">
-        <Stack as="main" gap={4} maxWidth="2xl" width="100%">
-          <KdrRangeSelect range={normalizedRange} setRange={setRange} />
+    <Layout noPadding>
+      <ArticlePage placeName={place.placeName} titleId="kdr-page-title">
+        <Box maxWidth={TABLE_MEASURE} width="100%">
+          <ArticleTitle
+            actions={
+              <KdrRangeSelect range={normalizedRange} setRange={setRange} />
+            }
+            id="kdr-page-title"
+            title="K/D table"
+          />
+
           <KdrTable range={normalizedRange} />
-        </Stack>
-      </Flex>
+        </Box>
+      </ArticlePage>
     </Layout>
   );
 }

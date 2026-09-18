@@ -18,9 +18,7 @@ export default function Weapons({
   return (
     <TitledCard
       as="section"
-      backgroundColor="bg.muted"
       collapsible
-      innerPadding={2}
       moduleId={turret.id}
       title="Weapons"
       withAnchor={`${turret.name}-weapons`}

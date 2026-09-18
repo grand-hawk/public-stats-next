@@ -20,7 +20,6 @@ export default function Defenses() {
       <TitledCard
         as="section"
         collapsible
-        innerPadding={4}
         moduleId={essModule?.id || ewModule?.id}
         title="Defenses"
         withAnchor

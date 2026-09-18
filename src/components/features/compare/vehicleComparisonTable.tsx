@@ -1,51 +1,28 @@
-import {
-  Checkbox,
-  createListCollection,
-  Portal,
-  Select,
-  Text,
-} from '@chakra-ui/react';
+import { Text } from '@chakra-ui/react';
 import React from 'react';
-import { MdOutlineCheck } from 'react-icons/md';
 
+import AddColumn from '@/components/features/compare/addColumn';
+import { buildAddonsSection } from '@/components/features/compare/addonsSection';
+import ColumnHeader from '@/components/features/compare/columnHeader';
+import ComparisonTable from '@/components/features/compare/comparisonTable';
 import {
-  COMPARE_MAX_WIDTH_MEDIUM,
-  COMPARE_MAX_WIDTH_SMALL,
   MAX_COMPARE_ITEMS,
   VEHICLE_LIST_ITEM_HEIGHT_PX,
-} from '@/components/features/compare';
-import AddColumnHeader from '@/components/features/compare/addColumnHeader';
-import ColumnHeader from '@/components/features/compare/columnHeader';
-import ComparisonGrid from '@/components/features/compare/comparisonGrid';
+} from '@/components/features/compare/constants';
+import VehicleColumnConfig from '@/components/features/compare/vehicleColumnConfig';
 import { buildVehicleSections } from '@/components/features/compare/vehicleStats';
 import VehicleIcon from '@/components/features/vehicles/vehicleIcon';
-import { alterationIsConflicting, assembleModules } from '@/utils/alterations';
+import VehicleImage from '@/components/features/vehicles/vehicleImage';
+import { usePlace } from '@/hooks/usePlace';
+import { assembleModules } from '@/utils/alterations';
 import { simplifyString } from '@/utils/simplifyString';
 
 import type { SectionDef } from '@/components/features/compare/types';
 import type { AssembledVehicle } from '@/components/features/compare/vehicleStats';
-import type { DetailedVehicle } from '@/server/api/trpc/routers/vehicles';
-import type { ListVehicle } from '@/server/api/trpc/routers/vehicles';
-
-const NO_LOADOUT = '<none>';
-
-function getSelectedLoadout(
-  vehicle: DetailedVehicle,
-  enabledAlterations: Record<string, boolean>,
-): string | null {
-  for (const name of Object.keys(vehicle.alterations.loadouts)) {
-    if (enabledAlterations[name]) return name;
-  }
-  return null;
-}
-
-export interface VehicleComparisonTableProps {
-  vehicles: DetailedVehicle[];
-  allVehicles: ListVehicle[];
-  loadingCount?: number;
-  onAdd: (slug: string) => void;
-  onRemove: (slug: string) => void;
-}
+import type {
+  DetailedVehicle,
+  ListVehicle,
+} from '@/server/api/trpc/routers/vehicles';
 
 export default function VehicleComparisonTable({
   allVehicles,
@@ -53,7 +30,14 @@ export default function VehicleComparisonTable({
   onAdd,
   onRemove,
   vehicles,
-}: VehicleComparisonTableProps) {
+}: {
+  allVehicles: ListVehicle[];
+  loadingCount?: number;
+  vehicles: DetailedVehicle[];
+  onAdd: (slug: string) => void;
+  onRemove: (slug: string) => void;
+}) {
+  const place = usePlace()!;
   const [alterationsMap, setAlterationsMap] = React.useState<
     Record<string, Record<string, boolean>>
   >({});
@@ -85,16 +69,6 @@ export default function VehicleComparisonTable({
     () => vehicles.map((vehicle) => vehicle.info.slug),
     [vehicles],
   );
-  const isFull = vehicles.length + loadingCount >= MAX_COMPARE_ITEMS;
-  const hasAddColumn = !isFull;
-  const totalColumns = vehicles.length + loadingCount + (hasAddColumn ? 1 : 0);
-
-  const maxWidth =
-    totalColumns <= 1
-      ? COMPARE_MAX_WIDTH_SMALL
-      : totalColumns <= 2
-        ? COMPARE_MAX_WIDTH_MEDIUM
-        : undefined;
 
   const matchesVehicleQuery = React.useCallback(
     (vehicle: ListVehicle, simplified: string) =>
@@ -102,232 +76,84 @@ export default function VehicleComparisonTable({
     [],
   );
 
-  const allLoadoutNames = React.useMemo(() => {
-    const names = new Set<string>();
-    for (const v of vehicles) {
-      for (const name of Object.keys(v.alterations.loadouts)) {
-        names.add(name);
-      }
-    }
-    return [...names].sort();
-  }, [vehicles]);
-
   const allAddonNames = React.useMemo(() => {
     const names = new Set<string>();
-    for (const v of vehicles) {
-      for (const name of Object.keys(v.alterations.addons)) {
+    for (const vehicle of vehicles) {
+      for (const name of Object.keys(vehicle.alterations.addons)) {
         names.add(name);
       }
     }
     return [...names].sort();
   }, [vehicles]);
 
-  const gridSections = React.useMemo(() => {
-    const mapSection = (s: SectionDef<AssembledVehicle>) => ({
-      title: s.title,
-      stats: s.stats.map((st) => ({
-        label: st.label,
-        getter: (a: AssembledVehicle) => st.getter(a),
-      })),
-    });
-
+  const sections = React.useMemo(() => {
     const [generalSection, ...restSections] = statSections;
-    const sections: SectionDef<AssembledVehicle>[] = [
-      mapSection(generalSection),
-    ];
-
-    if (allLoadoutNames.length > 0) {
-      sections.push({
-        title: 'Loadout',
-        stats: [
-          {
-            label: 'Loadout',
-            getter: (a) => {
-              const vehicleLoadouts = a.vehicle.alterations.loadouts;
-              const hasAny = Object.keys(vehicleLoadouts).length > 0;
-              if (!hasAny) return '—';
-
-              const selected = getSelectedLoadout(
-                a.vehicle,
-                a.enabledAlterations,
-              );
-
-              const collection = createListCollection({
-                items: [
-                  { value: NO_LOADOUT, label: 'None' },
-                  ...Object.keys(vehicleLoadouts).map((name) => ({
-                    value: name,
-                    label: name,
-                  })),
-                ],
-              });
-
-              return (
-                <Select.Root
-                  collection={collection}
-                  lazyMount
-                  size="xs"
-                  value={selected ? [selected] : [NO_LOADOUT]}
-                  width="100%"
-                  onValueChange={(details) => {
-                    const value = details.value[0];
-                    const next: Record<string, boolean> = {};
-                    if (value !== NO_LOADOUT) next[value] = true;
-                    for (const [name, enabled] of Object.entries(
-                      a.enabledAlterations,
-                    )) {
-                      if (name in vehicleLoadouts) continue;
-                      if (enabled) next[name] = true;
-                    }
-                    a.onAlterationsChange(next);
-                  }}
-                >
-                  <Select.HiddenSelect />
-                  <Select.Control>
-                    <Select.Trigger>
-                      <Select.ValueText />
-                    </Select.Trigger>
-                    <Select.IndicatorGroup paddingInline={2}>
-                      <Select.Indicator />
-                    </Select.IndicatorGroup>
-                  </Select.Control>
-                  <Portal>
-                    <Select.Positioner>
-                      <Select.Content>
-                        {collection.items.map((item) => (
-                          <Select.Item key={item.value} item={item}>
-                            {item.label}
-                          </Select.Item>
-                        ))}
-                      </Select.Content>
-                    </Select.Positioner>
-                  </Portal>
-                </Select.Root>
-              );
-            },
-          },
-        ],
-      });
-    }
+    const result: SectionDef<AssembledVehicle>[] = [generalSection];
 
     if (allAddonNames.length > 0) {
-      sections.push({
-        title: 'Addons',
-        titleGetter: (a) => {
-          let total = 0;
-          for (const addonName of allAddonNames) {
-            if (!a.enabledAlterations[addonName]) continue;
-            const addon = a.vehicle.alterations.addons[addonName];
-            if (addon?.cost) total += addon.cost;
-          }
-          return total > 0 ? (
-            <Text color="fg.muted" fontSize="xs">
-              {total} pts
-            </Text>
-          ) : null;
-        },
-        stats: allAddonNames.map((addonName) => ({
-          label: addonName.replace(/\(cosmetic\)$/i, '').trim(),
-          getter: (a: AssembledVehicle) => {
-            const addon = a.vehicle.alterations.addons[addonName];
-            if (!addon) return null;
-
-            const isEnabled = !!a.enabledAlterations[addonName];
-            const selectedLoadout = getSelectedLoadout(
-              a.vehicle,
-              a.enabledAlterations,
-            );
-            const isConflicting = alterationIsConflicting(
-              addon,
-              a.vehicle.alterations.addons,
-              a.enabledAlterations,
-              selectedLoadout,
-              Object.keys(a.vehicle.alterations.loadouts),
-            );
-            const isDisabled = !isEnabled && isConflicting;
-            const cost = addon.cost ?? 0;
-
-            return (
-              <Checkbox.Root
-                alignItems="center"
-                checked={isEnabled}
-                cursor={isDisabled ? 'not-allowed' : 'pointer'}
-                disabled={isDisabled}
-                display="inline-flex"
-                gap={1.5}
-                justifyContent="center"
-                size="sm"
-                onCheckedChange={(details) => {
-                  const next = { ...a.enabledAlterations };
-                  if (details.checked) next[addonName] = true;
-                  else delete next[addonName];
-                  a.onAlterationsChange(next);
-                }}
-              >
-                <Checkbox.HiddenInput />
-                <Checkbox.Control borderRadius="none">
-                  {isEnabled && <MdOutlineCheck />}
-                </Checkbox.Control>
-                <Checkbox.Label
-                  color="fg.muted"
-                  css={{ fontVariantNumeric: 'tabular-nums' }}
-                  fontSize="xs"
-                  minWidth="3.5ch"
-                  textAlign="right"
-                >
-                  {cost}
-                </Checkbox.Label>
-              </Checkbox.Root>
-            );
-          },
-        })),
-      });
+      result.push(buildAddonsSection(allAddonNames));
     }
 
-    for (const s of restSections) sections.push(mapSection(s));
+    return [...result, ...restSections];
+  }, [statSections, allAddonNames]);
 
-    return sections;
-  }, [statSections, allLoadoutNames, allAddonNames]);
+  const isFull = vehicles.length + loadingCount >= MAX_COMPARE_ITEMS;
 
   return (
-    <ComparisonGrid<AssembledVehicle>
-      addColumn={
-        <AddColumnHeader
-          addLabel="Add"
-          emptyMessage="No vehicles found"
-          itemHeight={VEHICLE_LIST_ITEM_HEIGHT_PX}
-          items={allVehicles}
-          matchesQuery={matchesVehicleQuery}
-          placeholder="Search..."
-          renderItem={(vehicle) => (
-            <>
-              <VehicleIcon size={18} slug={vehicle.slug} />
-              <Text fontSize="sm" overflow="hidden" textOverflow="ellipsis">
-                {vehicle.name}
-              </Text>
-            </>
-          )}
-          selectedSlugs={selectedSlugs}
-          onAdd={onAdd}
-        />
+    <ComparisonTable<AssembledVehicle>
+      addAction={
+        isFull ? undefined : (
+          <AddColumn
+            addLabel="Add vehicle"
+            emptyMessage="No vehicles found"
+            itemHeight={VEHICLE_LIST_ITEM_HEIGHT_PX}
+            items={allVehicles}
+            matchesQuery={matchesVehicleQuery}
+            placeholder="Search vehicles"
+            renderItem={(vehicle) => (
+              <>
+                <VehicleIcon size={18} slug={vehicle.slug} />
+                <Text as="span" overflow="hidden" textOverflow="ellipsis">
+                  {vehicle.name}
+                </Text>
+              </>
+            )}
+            selectedSlugs={selectedSlugs}
+            onAdd={onAdd}
+          />
+        )
       }
-      hasAddColumn={hasAddColumn}
-      headerCells={vehicles.map((vehicle) => ({
-        key: vehicle.info.slug,
+      emptyMessage="Add two or more vehicles to compare them."
+      headerCells={assembled.map((item) => ({
+        key: item.vehicle.info.slug,
         content: (
-          <ColumnHeader onRemove={() => onRemove(vehicle.info.slug)}>
-            <VehicleIcon size={20} slug={vehicle.info.slug} />
-            <Text fontSize="sm" fontWeight="medium" lineHeight="tight" truncate>
-              {vehicle.info.name}
-            </Text>
+          <ColumnHeader
+            href={`/${place.initials}/vehicles/${item.vehicle.info.slug}`}
+            media={
+              <VehicleImage
+                fill
+                name={item.vehicle.info.name}
+                placeholder="empty"
+                sizes="300px"
+                slug={item.vehicle.info.slug}
+              />
+            }
+            name={item.vehicle.info.name}
+            removeLabel={`Remove ${item.vehicle.info.name}`}
+            subtitle={item.vehicle.info.role}
+            onRemove={() => onRemove(item.vehicle.info.slug)}
+          >
+            <VehicleColumnConfig
+              enabledAlterations={item.enabledAlterations}
+              vehicle={item.vehicle}
+              onAlterationsChange={item.onAlterationsChange}
+            />
           </ColumnHeader>
         ),
       }))}
-      itemCount={vehicles.length}
       items={assembled}
       loadingCount={loadingCount}
-      maxWidth={maxWidth}
-      sections={gridSections}
+      sections={sections}
     />
   );
 }

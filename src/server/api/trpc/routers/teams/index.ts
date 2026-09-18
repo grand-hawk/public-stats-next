@@ -7,6 +7,7 @@ import { computeRelatedPages } from '@/server/utils/relatedPages';
 import { isRecentlyAdded } from '@/utils/isRecentlyAdded';
 import { getConfig } from '@generated/config';
 import { getLoadouts } from '@generated/loadouts';
+import { getTeams } from '@generated/teams';
 import { getVehicles } from '@generated/vehicles';
 
 import type { ListVehicle } from '@/server/api/trpc/routers/vehicles';
@@ -35,6 +36,7 @@ export interface TeamVehicle
 
 export interface Team {
   name: string;
+  color?: string;
   description?: string;
   lore: boolean;
   loadouts: {
@@ -47,10 +49,38 @@ export interface Team {
 export interface TeamListEntry {
   name: string;
   slug: string;
+  color?: string;
+  loadouts: string[];
   lore: boolean;
 }
 
-function collectTeamNames(placeId: PlaceId) {
+const HEX_COLOR = /^#[0-9a-f]{3,8}$/i;
+
+function getTeamColor(placeId: PlaceId, teamName: string) {
+  const color = getTeams().data[placeId]?.data.find(
+    (team) => team.name === teamName,
+  )?.color;
+
+  return color && HEX_COLOR.test(color) ? color : undefined;
+}
+
+function collectLoadoutsByTeam(placeId: PlaceId) {
+  const loadoutsPlace = getLoadouts().data[placeId]!;
+  const byTeam: Record<string, string[]> = {};
+
+  for (const loadoutName of loadoutsPlace.metadata.loadouts) {
+    const loadout = loadoutsPlace.data[loadoutName];
+    if (!loadout) continue;
+
+    for (const team of loadout.teams) {
+      (byTeam[team] ??= []).push(loadoutName);
+    }
+  }
+
+  return byTeam;
+}
+
+export function collectTeamNames(placeId: PlaceId) {
   const loadoutsPlace = getLoadouts().data[placeId]!;
   const vehiclesPlace = getVehicles().data[placeId]!;
 
@@ -68,12 +98,16 @@ export const teamsRouter = createTRPCRouter({
   list: publicProcedure
     .input(z.object({ placeId: z.string() }))
     .query(({ input }): TeamListEntry[] => {
-      const { all, playable } = collectTeamNames(input.placeId as PlaceId);
+      const placeId = input.placeId as PlaceId;
+      const { all, playable } = collectTeamNames(placeId);
+      const loadoutsByTeam = collectLoadoutsByTeam(placeId);
 
       return [...all]
         .map((team) => ({
           name: team,
           slug: slug(team),
+          color: getTeamColor(placeId, team),
+          loadouts: loadoutsByTeam[team] ?? [],
           lore: !playable.has(team),
         }))
         .sort((a, b) => {
@@ -169,11 +203,16 @@ export const teamsRouter = createTRPCRouter({
 
       return {
         name: teamName,
+        color: getTeamColor(placeId, teamName),
         description,
         lore: isLore,
         loadouts: teamLoadouts,
         loreVehicles,
-        relatedPages: computeRelatedPages(description, placeId, initials),
+        relatedPages: computeRelatedPages(
+          placeId,
+          initials,
+          `/teams/${input.slug}`,
+        ),
       } satisfies Team;
     }),
 });

@@ -41,12 +41,13 @@ export default function Weapon({
 
   return (
     <InlineCard
+      flush
       moduleId={weapon.id}
       title={weapon.data.name}
       withAnchor={`${turretName}-weapon-${nameSlug}`}
       headingAs="h4"
     >
-      <StatsRoot>
+      <StatsRoot flush>
         <StatsRow>
           <StatsCell>Reload speed</StatsCell>
           <StatsCell>

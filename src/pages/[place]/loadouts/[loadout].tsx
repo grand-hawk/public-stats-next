@@ -1,55 +1,43 @@
-import { Box, Flex, Stack } from '@chakra-ui/react';
-import { useRouter } from 'next/router';
+import { Box } from '@chakra-ui/react';
 import React from 'react';
-import { GrDocumentMissing } from 'react-icons/gr';
-import Markdown from 'react-markdown';
 import slugify from 'slug';
 
-import ArticleToc from '@/components/common/articleToc';
 import RelatedPages from '@/components/common/relatedPages';
 import LoadoutHeader from '@/components/features/loadouts/header';
 import LoadoutTeams from '@/components/features/loadouts/teams';
+import ArticleNotFound from '@/components/layout/articleNotFound';
+import ArticlePage from '@/components/layout/articlePage';
 import Layout from '@/components/layout/layout';
 import PageMeta from '@/components/layout/pageMeta';
-import { EmptyState } from '@/components/ui/empty-state';
-import { Prose } from '@/components/ui/prose';
+import ArticleProse from '@/components/wiki/articleProse';
+import { useCanonicalSlug } from '@/hooks/useCanonicalSlug';
 import { usePlace } from '@/hooks/usePlace';
 import { useRouterQuery } from '@/hooks/useRouterQuery';
-import { articleMarkdownComponents } from '@/utils/articleMarkdown';
+import { useSwapSlug } from '@/hooks/useSwapSlug';
 import { loadoutDisplayName } from '@/utils/loadoutDisplayName';
 import { trpc } from '@/utils/trpc';
 import { applyWikilinks } from '@/utils/wikilinks';
 
 export default function PlaceLoadout() {
-  const router = useRouter();
   const loadoutQuery = useRouterQuery('loadout')!;
   const loadoutSlug = slugify(loadoutQuery);
   const place = usePlace()!;
 
-  const articleRef = React.useRef<HTMLDivElement>(null);
+  const utils = trpc.useUtils();
+  const { isStale, shownSlug } = useSwapSlug(loadoutSlug, (nextSlug) =>
+    utils.loadouts.bySlug.prefetch({ placeId: place.placeId, slug: nextSlug }),
+  );
 
   const [loadout] = trpc.loadouts.bySlug.useSuspenseQuery({
     placeId: place.placeId,
-    slug: loadoutSlug,
+    slug: shownSlug,
   });
+
+  useCanonicalSlug('loadout', loadoutSlug, !!loadout);
 
   const linkedDescription = loadout?.description
     ? applyWikilinks(loadout.description, place.initials)
     : undefined;
-
-  React.useEffect(() => {
-    if (!loadout) return;
-
-    if (loadoutQuery !== loadoutSlug) {
-      router.replace({
-        pathname: router.pathname,
-        query: {
-          ...router.query,
-          loadout: loadoutSlug,
-        },
-      });
-    }
-  }, [router, loadoutQuery, loadout, loadoutSlug]);
 
   const displayName = loadout ? loadoutDisplayName(loadout.name) : null;
   const title = displayName ?? 'Loadout not found';
@@ -59,70 +47,35 @@ export default function PlaceLoadout() {
 
   return (
     <PageMeta title={title} description={description}>
-      <Layout noPadding overwriteTabLabel={displayName ?? undefined}>
-        {loadout ? (
-          <Flex
-            justifyContent="center"
-            marginBottom={{ base: 4, md: 0 }}
-            paddingX={{ base: 4, md: 6, lg: 8 }}
-            paddingY={{ base: 0, md: 2, lg: 4 }}
+      <Layout noPadding>
+        {loadout && displayName ? (
+          <ArticlePage
+            bandImage={loadout.thumbnail}
+            markdownTarget
+            placeName={place.placeName}
+            stickyTitle={displayName}
+            swapId={shownSlug}
+            swapStale={isStale}
+            titleId="loadout-page-title"
           >
-            <Box
-              display="flex"
-              gap={4}
-              maxWidth={{
-                base: '4xl',
-                '2xl':
-                  'calc(var(--chakra-sizes-4xl) + var(--chakra-sizes-3xs) + var(--chakra-spacing-4))',
-              }}
-              width="100%"
-            >
-              <Stack
-                aria-labelledby="loadout-page-title"
-                as="article"
-                data-md-target
-                flex="1"
-                gap={4}
-                maxWidth="4xl"
-                minWidth={0}
-                ref={articleRef}
-              >
-                <LoadoutHeader name={loadout.name} slug={loadoutSlug} />
-
-                {linkedDescription && (
-                  <Prose color="fg/90" maxWidth="none" size="md">
-                    <Markdown components={articleMarkdownComponents}>
-                      {linkedDescription}
-                    </Markdown>
-                  </Prose>
-                )}
-
-                <LoadoutTeams initials={place.initials} loadout={loadout} />
-
-                <RelatedPages items={loadout.relatedPages} />
-              </Stack>
-
-              <Box
-                as="aside"
-                data-md-ignore
-                flexShrink={0}
-                hideBelow="2xl"
-                maxHeight="max-content"
-                position="sticky"
-                top={4}
-                width="var(--chakra-sizes-3xs)"
-              >
-                <ArticleToc articleRef={articleRef} />
-              </Box>
-            </Box>
-          </Flex>
-        ) : (
-          <Flex alignItems="center" height="100%">
-            <EmptyState
-              icon={<GrDocumentMissing />}
-              title="Loadout not found"
+            <LoadoutHeader
+              name={loadout.name}
+              tagline={loadout.tagline}
+              thumbnail={loadout.thumbnail}
             />
-          </Flex>
+
+            {linkedDescription && (
+              <Box marginBlockStart="24px">
+                <ArticleProse>{linkedDescription}</ArticleProse>
+              </Box>
+            )}
+
+            <LoadoutTeams initials={place.initials} loadout={loadout} />
+
+            <RelatedPages items={loadout.relatedPages} />
+          </ArticlePage>
+        ) : (
+          <ArticleNotFound title="Loadout not found" />
         )}
       </Layout>
     </PageMeta>

@@ -1,11 +1,11 @@
-import { Box } from '@chakra-ui/react';
 import { NuqsAdapter } from 'nuqs/adapters/next/pages';
 import React, { Suspense } from 'react';
 
-import { CenterSpinner } from '@/components/common/spinners';
 import DevelopmentOverlay from '@/components/development/overlay';
 import SvgSymbols from '@/components/icons/symbols';
 import InternalHead from '@/components/layout/head';
+import RouteFallback from '@/components/layout/routeFallback';
+import RouteProgress from '@/components/layout/routeProgress';
 import { ChakraProvider } from '@/components/providers/chakra';
 import Umami from '@/components/providers/umami';
 import { Toaster } from '@/components/ui/toaster';
@@ -23,13 +23,9 @@ export function App({ Component, pageProps }: AppProps) {
 
       <ChakraProvider>
         <NuqsAdapter>
-          <Suspense
-            fallback={
-              <Box height="100svh">
-                <CenterSpinner />
-              </Box>
-            }
-          >
+          <RouteProgress />
+
+          <Suspense fallback={<RouteFallback height="100svh" />}>
             <Component {...pageProps} />
           </Suspense>
         </NuqsAdapter>

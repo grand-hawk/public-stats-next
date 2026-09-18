@@ -4,6 +4,13 @@ import React from 'react';
 
 import InfoTooltip from '@/components/common/infoTooltip';
 import { XSSpinner } from '@/components/common/spinners';
+import {
+  degreesOfGrade,
+  Gradient,
+  Group,
+  Seconds,
+} from '@/components/features/vehicles/vehicle/dynamic/modules/performance/parts';
+import ChartCard from '@/components/wiki/chartCard';
 import SectionMarker from '@/components/wiki/sectionMarker';
 import { StatsCell, StatsRoot, StatsRow } from '@/components/wiki/stats';
 import TitledCard from '@/components/wiki/titledCard';
@@ -19,67 +26,6 @@ const AccelerationChart = dynamic(
   },
 );
 
-const degreesOfGrade = (percent: number) =>
-  (Math.atan(percent / 100) * 180) / Math.PI;
-
-function Gradient({ degrees, percent }: { degrees: number; percent: number }) {
-  return (
-    <>
-      <FormatNumber
-        maximumFractionDigits={0}
-        style="unit"
-        unit="percent"
-        value={percent}
-      />{' '}
-      (
-      <FormatNumber
-        maximumFractionDigits={0}
-        style="unit"
-        unit="degree"
-        unitDisplay="narrow"
-        value={degrees}
-      />
-      )
-    </>
-  );
-}
-
-function Seconds({ value }: { value: number }) {
-  return (
-    <FormatNumber
-      maximumFractionDigits={1}
-      style="unit"
-      unit="second"
-      value={value}
-    />
-  );
-}
-
-function Group({
-  children,
-  moduleId,
-  title,
-}: {
-  children: React.ReactNode;
-  moduleId: string;
-  title: string;
-}) {
-  return (
-    <TitledCard
-      backgroundColor="bg.muted"
-      closedByDefault
-      collapsible
-      headingAs="h3"
-      innerPadding={2}
-      moduleId={moduleId}
-      title={title}
-      withAnchor={`Performance ${title}`}
-    >
-      <StatsRoot>{children}</StatsRoot>
-    </TitledCard>
-  );
-}
-
 export default function Performance() {
   const { assembledModules } = useDynamicData();
 
@@ -88,8 +34,7 @@ export default function Performance() {
 
   if (!driveData || !metrics) return null;
 
-  // `reverse` is required by the schema but absent from published data — keep it
-  // optional-chained until the payload catches up, or every vehicle here throws.
+  // `reverse` is missing from published data despite the schema: keep it optional
   const { acceleration, braking, driveline, grades, pivot, reverse } = metrics;
   const gradeSpeeds = [
     [10, grades.at10.kmh],
@@ -104,7 +49,6 @@ export default function Performance() {
       <TitledCard
         as="section"
         collapsible
-        innerPadding={4}
         moduleId={driveData.id}
         title="Performance"
         withAnchor
@@ -112,12 +56,14 @@ export default function Performance() {
         <Stack gap={4}>
           {acceleration.curve.length > 0 &&
             !!acceleration.curveIntervalSeconds && (
-              <AccelerationChart
-                curve={acceleration.curve}
-                intervalSeconds={acceleration.curveIntervalSeconds}
-                reverseCurve={reverse?.curve}
-                reverseIntervalSeconds={reverse?.curveIntervalSeconds}
-              />
+              <ChartCard title="Acceleration">
+                <AccelerationChart
+                  curve={acceleration.curve}
+                  intervalSeconds={acceleration.curveIntervalSeconds}
+                  reverseCurve={reverse?.curve}
+                  reverseIntervalSeconds={reverse?.curveIntervalSeconds}
+                />
+              </ChartCard>
             )}
 
           <StatsRoot>

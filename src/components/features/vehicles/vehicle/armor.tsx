@@ -18,7 +18,7 @@ export default function VehicleArmor() {
     <>
       <SectionMarker name="Armour" />
 
-      <TitledCard as="section" title="Armour" withAnchor innerPadding={4}>
+      <TitledCard as="section" title="Armour" withAnchor>
         <VehicleArmorPreview
           frontArmorDepth={vehicle.info.frontArmorDepth ?? 50}
         />

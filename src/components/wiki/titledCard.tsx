@@ -1,40 +1,33 @@
-import {
-  Box,
-  Collapsible,
-  Flex,
-  Heading,
-  Icon,
-  Link,
-  Separator,
-} from '@chakra-ui/react';
-import NextLink from 'next/link';
+import { Box, Collapsible, Icon } from '@chakra-ui/react';
 import React from 'react';
-import {
-  MdExpandLess,
-  MdInfoOutline,
-  MdOutlineExpandMore,
-} from 'react-icons/md';
+import { MdInfoOutline } from 'react-icons/md';
 import slug from 'slug';
 
 import ModuleIdSelect from '@/components/development/moduleIdSelect';
 import { ToggleTip } from '@/components/ui/toggle-tip';
+import CardCollapseTrigger from '@/components/wiki/cardCollapseTrigger';
+import CardHeading, { HEADING_LEVEL_CSS } from '@/components/wiki/cardHeading';
 import { useDynamicData } from '@/hooks/providers/dynamicData';
 
 import type { BoxProps, HeadingProps } from '@chakra-ui/react';
 
-export const ParentHighlightedContext = React.createContext(false);
+const ParentHighlightedContext = React.createContext(false);
 export const useParentHighlighted = () =>
   React.useContext(ParentHighlightedContext);
 
+const HEADING_LEVEL_MARGIN: Record<string, string> = {
+  h2: '32px',
+  h3: '24px',
+  h4: '20px',
+};
+
 export interface TitledCardProps extends BoxProps {
   title: string;
-  innerPadding?: BoxProps['padding'];
   withAnchor?: boolean | string;
   moduleId?: string;
   tooltip?: string;
   collapsible?: boolean | 'force';
   closedByDefault?: boolean;
-  keepBorder?: boolean;
   endAddon?: React.ReactNode;
   headingAs?: HeadingProps['as'];
   children?: React.ReactNode;
@@ -46,8 +39,6 @@ export default function TitledCard({
   collapsible = false,
   endAddon,
   headingAs,
-  innerPadding = 6,
-  keepBorder,
   moduleId,
   title,
   tooltip,
@@ -72,6 +63,8 @@ export default function TitledCard({
   const titleSlug =
     typeof withAnchor === 'string' ? slug(withAnchor) : slug(title);
 
+  const level = typeof headingAs === 'string' ? headingAs : 'h2';
+
   React.useLayoutEffect(() => {
     if (!withAnchor || !collapsible) return;
 
@@ -88,128 +81,83 @@ export default function TitledCard({
 
   const header = (
     <Box
-      alignItems="center"
-      display="grid"
-      gridTemplateColumns="max-content 1fr"
+      css={{
+        display: 'flex',
+        alignItems: 'center',
+        gap: '8px',
+        marginBlockStart: HEADING_LEVEL_MARGIN[level] ?? '32px',
+        marginBlockEnd: '12px',
+      }}
     >
-      <Heading
-        fontWeight="medium"
+      <CardHeading
+        as={level}
         id={titleSlug}
-        marginX={3}
-        marginY={2}
-        scrollMarginTop={4}
-        size="sm"
-        as={headingAs}
-      >
-        {withAnchor ? (
-          <Link asChild>
-            <NextLink
-              href={`#${titleSlug}`}
-              shallow
-              onClick={() => {
-                if (collapsible) setIsExpanded(true);
-              }}
-            >
-              {title}
-            </NextLink>
-          </Link>
-        ) : (
-          title
-        )}
+        title={title}
+        withAnchor={withAnchor}
+        onAnchorClick={collapsible ? () => setIsExpanded(true) : undefined}
+        typography={{
+          ...(HEADING_LEVEL_CSS[level] ?? HEADING_LEVEL_CSS.h2),
+          fontWeight: 500,
+        }}
+      />
 
-        {tooltip && (
-          <ToggleTip
-            closeDelay={50}
-            content={tooltip}
-            openDelay={50}
-            positioning={{ placement: 'top' }}
-          >
-            <Icon marginLeft={2}>
-              <MdInfoOutline />
-            </Icon>
-          </ToggleTip>
-        )}
-
-        <ModuleIdSelect moduleId={moduleId} />
-      </Heading>
-
-      {collapsible && (
-        <Collapsible.Trigger
-          aria-label={isExpanded ? 'Collapse card' : 'Expand card'}
-          display={
-            collapsible !== 'force'
-              ? 'var(--columns-if-possible-display-trigger)'
-              : undefined
-          }
-          height="100%"
-          paddingLeft={1}
+      {tooltip && (
+        <ToggleTip
+          closeDelay={50}
+          content={tooltip}
+          openDelay={50}
+          positioning={{ placement: 'top' }}
         >
-          <Flex justifyContent="flex-end">
-            <Icon marginX={2}>
-              {isExpanded ? <MdExpandLess /> : <MdOutlineExpandMore />}
-            </Icon>
-          </Flex>
-        </Collapsible.Trigger>
+          <Icon color="fg.muted">
+            <MdInfoOutline />
+          </Icon>
+        </ToggleTip>
       )}
 
-      {endAddon && (
-        <Box marginLeft="auto" marginRight={3}>
-          {endAddon}
-        </Box>
-      )}
+      <ModuleIdSelect moduleId={moduleId} />
+
+      <Box
+        css={{
+          display: 'flex',
+          alignItems: 'center',
+          gap: '8px',
+          marginInlineStart: 'auto',
+        }}
+      >
+        {endAddon}
+
+        {collapsible && <CardCollapseTrigger expanded={isExpanded} />}
+      </Box>
     </Box>
   );
 
   const content = (
-    <>
-      <Separator />
-
-      <Box aria-labelledby={titleSlug} padding={innerPadding}>
-        {isHighlighted ? (
-          <ParentHighlightedContext.Provider value={true}>
-            {children}
-          </ParentHighlightedContext.Provider>
-        ) : (
-          children
-        )}
-      </Box>
-    </>
+    <Box
+      aria-labelledby={titleSlug}
+      css={{
+        '& .mtc-frame': {
+          outline: isHighlighted ? '2px solid' : undefined,
+          outlineColor: highlightColor,
+          outlineOffset: isHighlighted ? '-2px' : undefined,
+          transition: 'outline 0.3s ease-in-out',
+        },
+      }}
+    >
+      {isHighlighted ? (
+        <ParentHighlightedContext.Provider value={true}>
+          {children}
+        </ParentHighlightedContext.Provider>
+      ) : (
+        children
+      )}
+    </Box>
   );
 
   return (
     <Box
-      backgroundColor="bg.panel"
-      borderLeftWidth={
-        keepBorder
-          ? '1px'
-          : {
-              base: 0,
-              md: '1px',
-            }
-      }
-      borderRightWidth={
-        keepBorder
-          ? '1px'
-          : {
-              base: 0,
-              md: '1px',
-            }
-      }
-      borderYWidth="1px"
       className="mtc-titled-card"
       data-module-highlighted={isHighlighted || undefined}
-      outline={isHighlighted ? '2px solid' : undefined}
-      outlineColor={highlightColor}
-      outlineOffset={isHighlighted ? '-1px' : undefined}
       {...props}
-      css={{
-        ...props.css,
-        '& .mtc-titled-card': {
-          borderLeftWidth: '1px',
-          borderRightWidth: '1px',
-        },
-        transition: 'outline 0.3s ease-in-out',
-      }}
     >
       <Collapsible.Root
         open={isExpanded}

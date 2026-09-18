@@ -1,12 +1,11 @@
-import { Flex, Span } from '@chakra-ui/react';
+import { Box, Flex } from '@chakra-ui/react';
 import NextLink from 'next/link';
 import React from 'react';
 
 import TeamIcon from '@/components/icons/teams';
-import { Button } from '@/components/ui/button';
+import { QUIET_ROW_CSS } from '@/components/ui/styles';
 
-import type { ButtonProps } from '@/components/ui/button';
-import type { FlexProps } from '@chakra-ui/react';
+import type { BoxProps, FlexProps } from '@chakra-ui/react';
 import type { LinkProps as NextLinkProps } from 'next/link';
 
 const baseItemProps = {
@@ -17,34 +16,40 @@ const baseItemProps = {
 } as const;
 
 export const SearchListDividerItem = React.memo(function SearchListDividerItem({
-  emphasized,
   isTeam,
   label,
   ...props
 }: FlexProps & {
   label: string;
   isTeam?: boolean;
-  emphasized?: boolean;
 }) {
   return (
     <Flex
       alignItems="center"
-      backgroundColor={isTeam || emphasized ? 'bg.emphasized' : 'bg.muted'}
+      color="fg.muted"
       flexDirection="row"
-      fontSize="sm"
-      gap={2}
-      lineHeight="short"
-      paddingLeft={2}
       {...baseItemProps}
       {...props}
+      css={{
+        fontSize: '0.75rem',
+        fontWeight: 500,
+        lineHeight: '1.25rem',
+        gap: '8px',
+        paddingBlock: '12px 4px',
+        paddingInline: '12px',
+        textTransform: 'none',
+        letterSpacing: 'normal',
+        whiteSpace: 'nowrap',
+        overflow: 'hidden',
+      }}
     >
-      {isTeam && <TeamIcon team={label} />}
+      {isTeam && <TeamIcon size="16px" team={label} />}
       {label}
     </Flex>
   );
 });
 
-export interface SearchLinkListItemProps extends ButtonProps {
+export interface SearchLinkListItemProps extends BoxProps {
   active?: boolean;
   children: React.ReactNode;
   href: NextLinkProps['href'];
@@ -56,34 +61,40 @@ export const SearchLinkListItem = React.memo(function SearchLinkListItem({
   href,
   ...props
 }: SearchLinkListItemProps) {
+  const rowCss = {
+    ...QUIET_ROW_CSS,
+    gap: '8px',
+    paddingInline: '12px',
+    whiteSpace: 'nowrap',
+    overflow: 'hidden',
+    color: active ? 'fg.emphasized' : 'fg',
+    backgroundColor: active ? 'quiet.active' : 'transparent',
+    transition:
+      'background-color 100ms var(--transition-timing-function-ease, ease)',
+    '&:hover': {
+      backgroundColor: active ? 'quiet.active' : 'quiet.hover',
+      textDecoration: 'none',
+    },
+    '&:active': { backgroundColor: 'quiet.active' },
+    '&:focus-visible': {
+      outline: '1px solid var(--outline-color-progressive--focus)',
+      outlineOffset: '-1px',
+    },
+  } as const;
+
+  if (active) {
+    return (
+      <Box aria-current="page" {...baseItemProps} {...props} css={rowCss}>
+        {children}
+      </Box>
+    );
+  }
+
   return (
-    <Button
-      _hover={{
-        backgroundColor: active ? 'colorPalette.100' : undefined,
-      }}
-      asChild
-      backgroundColor={active ? 'colorPalette.100' : undefined}
-      justifyContent="flex-start"
-      variant={active ? 'solid' : 'ghost'}
-      {...baseItemProps}
-      {...props}
-      css={{
-        ...props.css,
-        '& img': {
-          filter: active ? 'brightness(0)' : undefined,
-        },
-        '& .chakra-badge': {
-          colorPalette: active ? 'gray' : undefined,
-        },
-      }}
-    >
-      {active ? (
-        <Span>{children}</Span>
-      ) : (
-        <NextLink href={href} prefetch={false} shallow>
-          {children}
-        </NextLink>
-      )}
-    </Button>
+    <Box asChild {...baseItemProps} {...props} css={rowCss}>
+      <NextLink href={href} prefetch={false} shallow>
+        {children}
+      </NextLink>
+    </Box>
   );
 });

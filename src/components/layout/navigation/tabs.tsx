@@ -1,8 +1,15 @@
 import { Icon } from '@chakra-ui/react';
 import React from 'react';
+import { FaDiscord } from 'react-icons/fa6';
 import { GiArtilleryShell } from 'react-icons/gi';
 import { ImTable } from 'react-icons/im';
-import { LuGitCompareArrows, LuShield } from 'react-icons/lu';
+import {
+  LuGitCompareArrows,
+  LuGithub,
+  LuGlobe,
+  LuScale,
+  LuShield,
+} from 'react-icons/lu';
 import { MdFlag, MdOutlineSsidChart, MdViewList } from 'react-icons/md';
 import { TbTank } from 'react-icons/tb';
 
@@ -121,3 +128,67 @@ export const indexableTabKeys = [
   ...secondaryTabKeys,
   ...toolsTabKeys,
 ] as const satisfies (keyof typeof tabs)[];
+
+export type TabKey = keyof typeof tabs;
+
+export interface ExternalLink {
+  label: string;
+  href: string;
+  icon: IconType;
+}
+
+export const externalLinks = {
+  discord: {
+    label: 'Discord',
+    href: 'https://discord.gg/multicrew',
+    icon: FaDiscord,
+  },
+  multicrew: {
+    label: 'multicrew.dev',
+    href: 'https://www.multicrew.dev',
+    icon: LuGlobe,
+  },
+  github: {
+    label: 'GitHub',
+    href: 'https://github.com/grand-hawk/public-stats-next',
+    icon: LuGithub,
+  },
+  license: {
+    label: 'CC BY-NC 4.0',
+    href: 'https://creativecommons.org/licenses/by-nc/4.0/deed',
+    icon: LuScale,
+  },
+} satisfies Record<string, ExternalLink>;
+
+export type MenuEntry =
+  { type: 'tab'; key: TabKey } | { type: 'external'; link: ExternalLink };
+
+export interface MenuGroup {
+  label: string;
+  entries: MenuEntry[];
+}
+
+export const menuGroups: MenuGroup[] = [
+  {
+    label: 'Browse',
+    entries: [
+      { type: 'tab', key: 'vehicles' },
+      { type: 'tab', key: 'shells' },
+      { type: 'tab', key: 'teams' },
+    ],
+  },
+  {
+    label: 'Statistics',
+    entries: [
+      { type: 'tab', key: 'kdr' },
+      { type: 'tab', key: 'winrate' },
+    ],
+  },
+  {
+    label: 'Tools',
+    entries: [
+      { type: 'tab', key: 'compare' },
+      { type: 'tab', key: 'armour' },
+    ],
+  },
+];

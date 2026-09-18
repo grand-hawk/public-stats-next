@@ -2,7 +2,7 @@ import { Box } from '@chakra-ui/react';
 import React, { Suspense } from 'react';
 
 import { CenterSpinner } from '@/components/common/spinners';
-import { SEARCH_INPUT_HEIGHT } from '@/components/layout/searchLayout/searchSidebar/input';
+import { SEARCH_BAR_HEIGHT } from '@/components/layout/searchLayout/searchSidebar/input';
 
 export interface SearchLayoutProps {
   children?: React.ReactNode;
@@ -15,8 +15,8 @@ export default function SearchLayout({ children, sidebar }: SearchLayoutProps) {
       display="grid"
       gridTemplateColumns={{
         base: '1fr',
-        md: '22rem 1fr',
-        lg: 'var(--chakra-sizes-sm) 1fr',
+        md: '280px 1fr',
+        lg: '320px 1fr',
       }}
       gridTemplateRows={{
         base: '1fr',
@@ -32,7 +32,7 @@ export default function SearchLayout({ children, sidebar }: SearchLayoutProps) {
 
       <Box
         as="main"
-        marginBottom={{ base: SEARCH_INPUT_HEIGHT, md: 0 }}
+        marginBottom={{ base: SEARCH_BAR_HEIGHT, md: 0 }}
         minHeight="0"
         overflow="auto"
       >

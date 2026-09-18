@@ -1,16 +1,15 @@
-import { Badge, Box, HStack, Text } from '@chakra-ui/react';
+import { Box, HStack, Text } from '@chakra-ui/react';
 import NextLink from 'next/link';
 import React from 'react';
 
 import PremiumIcon from '@/components/features/vehicles/premiumIcon';
 import VehicleImage from '@/components/features/vehicles/vehicleImage';
 import TeamIcon from '@/components/icons/teams';
+import { DURATION_BASE, EASE } from '@/components/layout/shell/constants';
 
 import type { PremiumType } from '@/components/features/vehicles/premiumIcon';
 
-const CARD_IMAGE_HEIGHT = 110;
-const CARD_IMAGE_WIDTH = 400;
-const CARD_HEIGHT = 163;
+const CARD_HEIGHT = 182;
 
 interface VehicleCardProps {
   href: string;
@@ -22,6 +21,67 @@ interface VehicleCardProps {
   team: string;
 }
 
+const CARD_CSS = {
+  position: 'relative',
+  display: 'flex',
+  flexDirection: 'column',
+  minWidth: 0,
+  overflow: 'clip',
+  backgroundColor: 'var(--color-surface-1)',
+  borderWidth: '1px',
+  borderStyle: 'solid',
+  borderColor: 'border',
+  borderRadius: '8px',
+  boxShadow: 'none',
+  contentVisibility: 'auto',
+  containIntrinsicSize: `auto ${CARD_HEIGHT}px`,
+  transitionProperty: 'border-color, background-color',
+  transitionDuration: DURATION_BASE,
+  transitionTimingFunction: EASE,
+  '&:hover': {
+    borderColor: 'border.emphasized',
+    backgroundColor: 'var(--color-surface-2)',
+    textDecoration: 'none',
+  },
+  '&:hover img': { transform: 'var(--transform-image-hover)' },
+  '@media (prefers-reduced-motion: reduce)': {
+    transitionDuration: '0ms',
+    '&:hover img': { transform: 'none' },
+  },
+} as const;
+
+const MEDIA_CSS = {
+  position: 'relative',
+  aspectRatio: '16 / 9',
+  overflow: 'hidden',
+  backgroundColor: 'var(--color-surface-2)',
+  '& img': {
+    transitionProperty: 'transform',
+    transitionDuration: '200ms',
+    transitionTimingFunction: EASE,
+  },
+} as const;
+
+const BADGE_CSS = {
+  position: 'absolute',
+  top: '8px',
+  left: '8px',
+  display: 'inline-flex',
+  alignItems: 'center',
+  gap: '4px',
+  padding: '4px 8px',
+  backgroundColor: 'var(--color-surface-1)',
+  borderWidth: '1px',
+  borderStyle: 'solid',
+  borderColor: 'border.subtle',
+  borderRadius: '4px',
+  color: 'fg.emphasized',
+  fontSize: '0.875rem',
+  fontWeight: 500,
+  lineHeight: 1,
+  whiteSpace: 'nowrap',
+} as const;
+
 export default React.memo(function VehicleCard({
   href,
   isNew,
@@ -32,69 +92,50 @@ export default React.memo(function VehicleCard({
   team,
 }: VehicleCardProps) {
   return (
-    <Box
-      asChild
-      display="block"
-      overflow="hidden"
-      borderWidth="1px"
-      borderColor="whiteAlpha.100"
-      transition="border-color 0.2s"
-      css={{
-        containIntrinsicSize: `auto ${CARD_HEIGHT}px`,
-        contentVisibility: 'auto',
-      }}
-      _hover={{
-        borderColor: 'blue.500',
-        textDecoration: 'none',
-      }}
-    >
+    <Box asChild css={CARD_CSS}>
       <NextLink href={href} prefetch={false}>
-        <Box
-          position="relative"
-          height={`${CARD_IMAGE_HEIGHT}px`}
-          overflow="hidden"
-          backgroundColor="blackAlpha.500"
-        >
+        <Box css={MEDIA_CSS}>
           <VehicleImage
             fill
             name={name}
-            sizes={`(max-width: 767px) 100vw, ${CARD_IMAGE_WIDTH}px`}
+            sizes="(max-width: 639px) 100vw, 360px"
             slug={slug}
             type="perspective"
           />
-          {isNew && (
-            <Badge
-              colorPalette="blue"
-              position="absolute"
-              size="sm"
-              top={1.5}
-              left={1.5}
-            >
-              NEW
-            </Badge>
-          )}
-          <Box
-            position="absolute"
-            bottom={0}
-            left={0}
-            right={0}
-            height="36px"
-            pointerEvents="none"
-            background="linear-gradient(to top, var(--chakra-colors-bg-subtle), transparent)"
-          />
+          {isNew && <Box css={BADGE_CSS}>New</Box>}
         </Box>
 
-        <Box backgroundColor="bg.subtle" paddingX={2.5} paddingY={2}>
-          <HStack gap={1} justifyContent="space-between" marginBottom={0.5}>
-            <Text fontSize="xs" fontWeight="semibold" lineClamp={1} flex={1}>
+        <Box
+          css={{
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '0px',
+            padding: '8px 12px 10px',
+          }}
+        >
+          <HStack gap="8px">
+            <Text
+              color="fg.emphasized"
+              css={{
+                flex: 1,
+                fontSize: '14px',
+                fontWeight: 500,
+                lineHeight: '20px',
+              }}
+              lineClamp={1}
+            >
               {name}
             </Text>
-            <HStack flexShrink={0} gap={1}>
-              <PremiumIcon premium={premium} />
-              <TeamIcon team={team} />
+            <HStack flexShrink={0} gap="4px">
+              <PremiumIcon boxSize="16px" premium={premium} />
+              <TeamIcon size="16px" team={team} />
             </HStack>
           </HStack>
-          <Text color="fg.subtle" fontSize="xs" lineClamp={1}>
+          <Text
+            color="fg.muted"
+            css={{ fontSize: '12px', lineHeight: '18px' }}
+            lineClamp={1}
+          >
             {role}
           </Text>
         </Box>

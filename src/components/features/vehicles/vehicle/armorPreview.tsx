@@ -3,9 +3,10 @@ import React from 'react';
 import { LuMaximize2 } from 'react-icons/lu';
 
 import ArmorCanvas from '@/components/features/tools/armor/armorCanvas';
-import { groupModules } from '@/components/features/tools/armor/moduleGroups';
 import { palettes } from '@/components/features/tools/armor/palettes';
 import { useArmorProcessor } from '@/components/features/tools/armor/useArmorProcessor';
+import { useHiddenModules } from '@/components/features/tools/armor/useHiddenModules';
+import { RAISED_FRAME_CSS } from '@/components/ui/styles';
 import { useVehicle } from '@/hooks/providers/vehicle';
 import { useRouterQuery } from '@/hooks/useRouterQuery';
 
@@ -26,9 +27,7 @@ export default function VehicleArmorPreview({
   const containerRef = React.useRef<HTMLDivElement>(null);
   const onSaveRef = React.useRef<(() => void) | null>(null);
 
-  const [hiddenModules, setHiddenModules] = React.useState<ReadonlySet<number>>(
-    () => new Set(),
-  );
+  const { applyDefaults, hiddenModules } = useHiddenModules(vehicle.info.slug);
   const [loaded, setLoaded] = React.useState(false);
   const [maxDepth, setMaxDepth] = React.useState(Infinity);
 
@@ -73,15 +72,8 @@ export default function VehicleArmorPreview({
   }, []);
 
   React.useEffect(() => {
-    if (!modules.length) return;
-    const hidden = new Set<number>();
-    for (const group of groupModules(modules)) {
-      if (group.initiallyHidden) {
-        for (const idx of group.indices) hidden.add(idx);
-      }
-    }
-    setHiddenModules(hidden);
-  }, [modules]);
+    applyDefaults(modules);
+  }, [applyDefaults, modules]);
 
   React.useEffect(() => {
     if (detectedMaxDepth > 0) {
@@ -94,21 +86,21 @@ export default function VehicleArmorPreview({
       {!loaded ? (
         <Flex
           alignItems="center"
-          borderColor="border.muted"
-          borderWidth="1px"
           direction="column"
           gap={2}
           height="400px"
           justifyContent="center"
+          css={RAISED_FRAME_CSS}
         >
           <Box
             _hover={{ background: 'whiteAlpha.100', color: 'fg' }}
             as="button"
-            borderColor="border.muted"
+            borderColor="border"
+            borderRadius="4px"
             borderWidth="1px"
             color="fg.muted"
             cursor="pointer"
-            fontSize="xs"
+            fontSize="sm"
             paddingX={3}
             paddingY={1.5}
             transition="all 0.1s"
@@ -118,7 +110,7 @@ export default function VehicleArmorPreview({
           </Box>
         </Flex>
       ) : (
-        <Box height="400px">
+        <Box css={RAISED_FRAME_CSS} height="400px" overflow="hidden">
           <ArmorCanvas
             angle="front"
             canvas={canvas}
@@ -148,6 +140,11 @@ export default function VehicleArmorPreview({
         fontSize="sm"
         gap={1.5}
         href={`/${place}/armor?vehicle=${vehicle.info.slug}`}
+        css={{
+          color: 'var(--color-progressive)',
+          textDecoration: 'none',
+          '&:hover': { textDecoration: 'underline' },
+        }}
       >
         <LuMaximize2 size={13} />
         Open armour visualizer

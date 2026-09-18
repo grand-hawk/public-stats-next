@@ -1,7 +1,7 @@
-import { Box, FormatNumber } from '@chakra-ui/react';
+import { FormatNumber } from '@chakra-ui/react';
 import React from 'react';
 
-import Stat from '@/components/wiki/stat';
+import Stat, { StatGrid } from '@/components/wiki/stat';
 import TitledCard from '@/components/wiki/titledCard';
 import { useShell } from '@/hooks/providers/shell';
 
@@ -10,12 +10,7 @@ export default function ShellProjectile() {
 
   return (
     <TitledCard as="section" title="Projectile" withAnchor>
-      <Box
-        display="grid"
-        gapX={6}
-        gapY={2}
-        gridTemplateColumns="repeat(auto-fit, minmax(10rem, 1fr))"
-      >
+      <StatGrid>
         <Stat label="Mass">
           <FormatNumber style="unit" unit="kilogram" value={shell.mass} />
         </Stat>
@@ -89,7 +84,7 @@ export default function ShellProjectile() {
             mrad
           </Stat>
         )}
-      </Box>
+      </StatGrid>
     </TitledCard>
   );
 }

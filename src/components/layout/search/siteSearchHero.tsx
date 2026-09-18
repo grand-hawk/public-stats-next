@@ -1,125 +1,83 @@
-import { Box, Flex, Input, Spinner, Text } from '@chakra-ui/react';
+import { Box, Flex } from '@chakra-ui/react';
 import React from 'react';
 import { LuSearch } from 'react-icons/lu';
 
-import SearchResults from '@/components/layout/search/searchResults';
-import { useSiteSearch } from '@/components/layout/search/useSiteSearch';
-import { useSearchStore } from '@/stores/search';
+import { NARROW_MEDIA } from '@/components/layout/shell/constants';
+import { openSiteSearch } from '@/stores/search';
 
-export default function SiteSearchHero() {
-  const containerRef = React.useRef<HTMLDivElement>(null);
-  const inputRef = React.useRef<HTMLInputElement>(null);
-  const [focused, setFocused] = React.useState(false);
-  const setHeroFocus = useSearchStore((s) => s.setHeroFocus);
-
-  const controller = useSiteSearch({
-    onSelect: () => {
-      setFocused(false);
-      inputRef.current?.blur();
-    },
-  });
-  const { enabled, handleKeyDown, isFetching, query, setQuery } = controller;
-
-  React.useEffect(() => {
-    setHeroFocus(() => {
-      inputRef.current?.focus();
-      inputRef.current?.select();
-    });
-    return () => setHeroFocus(null);
-  }, [setHeroFocus]);
-
-  React.useEffect(() => {
-    if (!focused) return;
-    const onMouseDown = (event: MouseEvent) => {
-      if (!containerRef.current?.contains(event.target as Node)) {
-        setFocused(false);
-      }
-    };
-    const onKey = (event: KeyboardEvent) => {
-      if (event.key === 'Escape') {
-        setFocused(false);
-        inputRef.current?.blur();
-      }
-    };
-    window.addEventListener('mousedown', onMouseDown);
-    window.addEventListener('keydown', onKey);
-    return () => {
-      window.removeEventListener('mousedown', onMouseDown);
-      window.removeEventListener('keydown', onKey);
-    };
-  }, [focused]);
-
-  const showPanel = focused && (enabled || query.length > 0);
-
+export default function SiteSearchHero({
+  label = 'Search the MTC wiki',
+}: {
+  label?: string;
+}) {
   return (
-    <Box
-      ref={containerRef}
+    <Flex
+      alignItems="center"
+      className="citizen-search-trigger"
+      gap="16px"
       marginX="auto"
-      maxWidth="2xl"
-      position="relative"
-      width="100%"
+      role="button"
+      tabIndex={0}
+      onClick={openSiteSearch}
+      onKeyDown={(event) => {
+        if (event.key !== 'Enter' && event.key !== ' ') return;
+        event.preventDefault();
+        openSiteSearch();
+      }}
+      css={{
+        width: '100%',
+        maxWidth: '820px',
+        height: '4rem',
+        paddingInline: '24px',
+        fontSize: '1.125rem',
+        borderRadius: '12px',
+        cursor: 'pointer',
+        color: '#adadad',
+        backgroundColor: '#171717',
+        borderWidth: '1px',
+        borderStyle: 'solid',
+        borderColor: '#373737',
+        transition: 'border-color 0.25s ease, box-shadow 0.25s ease',
+        '&:hover, &:focus-visible': {
+          outline: 'none',
+          borderColor: 'var(--color-progressive)',
+          boxShadow:
+            '0 0 0 3px color-mix(in oklch, var(--color-progressive) 16%, transparent)',
+        },
+        [NARROW_MEDIA]: {
+          height: '3rem',
+          paddingInline: '16px',
+          fontSize: '0.875rem',
+          borderRadius: '8px',
+        },
+      }}
     >
-      <Flex
-        alignItems="center"
-        backgroundColor="bg.subtle"
-        borderColor={focused ? 'border.inverted' : 'border.emphasized'}
-        borderWidth="1px"
-        color={focused ? 'fg' : 'fg.subtle'}
-        gap={3}
-        height={{ base: 12, md: 14 }}
-        onClick={() => inputRef.current?.focus()}
-        paddingX={5}
-        transition="all 0.15s"
-        _hover={{ borderColor: 'border.inverted', color: 'fg' }}
+      <Box asChild flexShrink={0} opacity={0.9}>
+        <LuSearch size={16} />
+      </Box>
+      <Box minWidth={0} overflow="hidden" textOverflow="ellipsis" truncate>
+        {label}
+      </Box>
+      <Box
+        as="kbd"
+        css={{
+          display: 'inline-block',
+          marginLeft: 'auto',
+          padding: '4px 8px',
+          fontFamily: 'var(--font-family-monospace)',
+          fontSize: '12px',
+          lineHeight: 1,
+          color: '#9b9b9b',
+          background: 'none',
+          borderWidth: '1px',
+          borderStyle: 'solid',
+          borderColor: 'rgba(173, 173, 173, 0.4)',
+          borderRadius: '4px',
+          [NARROW_MEDIA]: { display: 'none' },
+        }}
       >
-        <LuSearch size={20} />
-        <Input
-          ref={inputRef}
-          aria-label="Search"
-          border="none"
-          color="fg"
-          flex={1}
-          fontSize={{ base: 'sm', md: 'md' }}
-          onChange={(e) => setQuery(e.target.value)}
-          onFocus={() => setFocused(true)}
-          onKeyDown={handleKeyDown}
-          outline="none"
-          padding={0}
-          placeholder="Search vehicles, shells, teams..."
-          value={query}
-          _focus={{ boxShadow: 'none' }}
-          _placeholder={{ color: 'fg.subtle' }}
-        />
-        {isFetching && enabled && <Spinner size="sm" />}
-        {!focused && (
-          <Text
-            color="fg.subtle"
-            display={{ base: 'none', md: 'block' }}
-            fontFamily="mono"
-            fontSize="xs"
-            letterSpacing="wider"
-          >
-            Ctrl K
-          </Text>
-        )}
-      </Flex>
-
-      {showPanel && (
-        <Box
-          backgroundColor="bg"
-          borderColor="border.emphasized"
-          borderWidth="1px"
-          borderTopWidth={0}
-          boxShadow="lg"
-          left={0}
-          position="absolute"
-          right={0}
-          top="100%"
-          zIndex={10}
-        >
-          <SearchResults controller={controller} maxHeight="50vh" />
-        </Box>
-      )}
-    </Box>
+        /
+      </Box>
+    </Flex>
   );
 }

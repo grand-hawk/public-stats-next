@@ -1,20 +1,18 @@
-import { Flex, FormatNumber, Group, Link, Table } from '@chakra-ui/react';
+import { Box } from '@chakra-ui/react';
 import {
   createColumnHelper,
-  flexRender,
   getCoreRowModel,
   getSortedRowModel,
   useReactTable,
 } from '@tanstack/react-table';
-import NextLink from 'next/link';
 import React from 'react';
 import { GrDocumentMissing } from 'react-icons/gr';
-import { TiArrowSortedDown, TiArrowSortedUp } from 'react-icons/ti';
 import slug from 'slug';
 
+import KdrTableHeader from '@/components/features/kdr/table/header';
 import KdrTableRow from '@/components/features/kdr/table/row';
-import TeamIcon from '@/components/icons/teams';
 import { EmptyState } from '@/components/ui/empty-state';
+import { RAISED_FRAME_CSS } from '@/components/ui/styles';
 import { usePlace } from '@/hooks/usePlace';
 import { usePlaceInitials } from '@/hooks/usePlaceInitials';
 import { trpc } from '@/utils/trpc';
@@ -24,6 +22,13 @@ import type { KdrPlaceData } from '@generated/kdr';
 import type { SortingState } from '@tanstack/react-table';
 
 const columnHelper = createColumnHelper<DetailedKdrItem>();
+
+const COLUMNS = [
+  columnHelper.accessor('vehicle', { header: 'Vehicle' }),
+  columnHelper.accessor('kdr', { header: 'K/D', sortDescFirst: true }),
+  columnHelper.accessor('kills', { header: 'Kills', sortDescFirst: true }),
+  columnHelper.accessor('deaths', { header: 'Deaths', sortDescFirst: true }),
+];
 
 export default function KdrTable({ range }: { range: keyof KdrPlaceData }) {
   const place = usePlace()!;
@@ -35,56 +40,9 @@ export default function KdrTable({ range }: { range: keyof KdrPlaceData }) {
   const [kdrData] = trpc.kdr.table.useSuspenseQuery({ placeId: place.placeId });
   const kdr = kdrData[range];
 
-  const columns = React.useMemo(
-    () => [
-      columnHelper.accessor('vehicle', {
-        header: () => 'Vehicle',
-        cell: (info) => {
-          const vehicle = info.getValue();
-          const vehicleSlug = slug(vehicle);
-
-          return (
-            <Flex alignItems="center" gap={2}>
-              <TeamIcon team={info.row.original.team} />
-
-              <Link asChild>
-                <NextLink
-                  href={`/${initials}/vehicles/${vehicleSlug}`}
-                  prefetch={false}
-                >
-                  {vehicle}
-                </NextLink>
-              </Link>
-            </Flex>
-          );
-        },
-      }),
-      columnHelper.accessor('kdr', {
-        header: () => 'K/D',
-        cell: (info) => (
-          <FormatNumber
-            maximumFractionDigits={2}
-            minimumFractionDigits={2}
-            value={info.getValue()}
-          />
-        ),
-        sortDescFirst: true,
-      }),
-      columnHelper.accessor('kills', {
-        header: () => 'Kills',
-        cell: (info) => <FormatNumber value={info.getValue()} />,
-      }),
-      columnHelper.accessor('deaths', {
-        header: () => 'Deaths',
-        cell: (info) => <FormatNumber value={info.getValue()} />,
-      }),
-    ],
-    [initials],
-  );
-
   const table = useReactTable({
     data: kdr,
-    columns,
+    columns: COLUMNS,
     getCoreRowModel: getCoreRowModel(),
     getSortedRowModel: getSortedRowModel(),
     getRowId: (row) => row.vehicle,
@@ -94,106 +52,49 @@ export default function KdrTable({ range }: { range: keyof KdrPlaceData }) {
     },
   });
 
-  return kdr.length > 0 ? (
-    <Table.Root
+  if (kdr.length === 0) {
+    return (
+      <EmptyState
+        icon={<GrDocumentMissing />}
+        marginBlockStart="24px"
+        title="No K/D data available"
+      />
+    );
+  }
+
+  const showRank =
+    sorting.length === 1 && sorting[0].id === 'kdr' && sorting[0].desc;
+  const rows = table.getRowModel().rows;
+
+  return (
+    <Box
       aria-label={`Vehicle kill death ratio table for ${place.placeName}`}
-      css={{
-        '& .chakra-table__row': {
-          height: '40px',
-        },
-        '& .chakra-table__cell:not(:nth-of-type(1))': {
-          fontFamily: 'mono',
-          fontVariantNumeric: 'tabular-nums',
-        },
-      }}
-      showColumnBorder
-      variant="outline"
+      className="mtc-frame"
+      role="table"
+      css={{ ...RAISED_FRAME_CSS, marginBlockStart: '24px' }}
     >
-      <Table.Header>
-        {table.getHeaderGroups().map((headerGroup) => (
-          <Table.Row key={headerGroup.id} data-id={headerGroup.id}>
-            {headerGroup.headers.map((header) => {
-              const isSorted = header.column.getIsSorted();
-              const canSort = header.column.getCanSort();
+      <KdrTableHeader
+        headers={table.getHeaderGroups()[0].headers}
+        showRank={showRank}
+        sorting={sorting}
+      />
 
-              return (
-                <Table.ColumnHeader
-                  key={header.id}
-                  aria-sort={
-                    isSorted === 'asc'
-                      ? 'ascending'
-                      : isSorted === 'desc'
-                        ? 'descending'
-                        : 'none'
-                  }
-                  data-id={header.id}
-                  userSelect="none"
-                >
-                  {canSort ? (
-                    <Flex
-                      alignItems="center"
-                      as="button"
-                      cursor="pointer"
-                      gap={1}
-                      userSelect="none"
-                      onClick={header.column.getToggleSortingHandler()}
-                    >
-                      {flexRender(
-                        header.column.columnDef.header,
-                        header.getContext(),
-                      )}
-
-                      <Group
-                        css={{
-                          '& svg': {
-                            width: 3.5,
-                            height: 3.5,
-                            marginY: -0.5,
-                          },
-                        }}
-                        flexDirection="column"
-                        gap={0}
-                        marginLeft={1}
-                      >
-                        <TiArrowSortedUp
-                          color={isSorted === 'asc' ? 'white' : 'gray'}
-                        />
-                        <TiArrowSortedDown
-                          color={isSorted === 'desc' ? 'white' : 'gray'}
-                        />
-                      </Group>
-                    </Flex>
-                  ) : (
-                    <Flex
-                      alignItems="center"
-                      gap={1}
-                      justifyContent="flex-start"
-                    >
-                      {flexRender(
-                        header.column.columnDef.header,
-                        header.getContext(),
-                      )}
-                    </Flex>
-                  )}
-                </Table.ColumnHeader>
-              );
-            })}
-          </Table.Row>
-        ))}
-      </Table.Header>
-
-      <Table.Body>
-        {table.getRowModel().rows.map((row) => (
+      <Box role="rowgroup">
+        {rows.map((row, index) => (
           <KdrTableRow
             key={row.id}
-            initials={initials}
-            range={range}
-            row={row}
+            deaths={row.original.deaths}
+            href={`/${initials}/vehicles/${slug(row.original.vehicle)}`}
+            isLast={index === rows.length - 1}
+            kdr={row.original.kdr}
+            kills={row.original.kills}
+            rank={index + 1}
+            showRank={showRank}
+            team={row.original.team}
+            vehicle={row.original.vehicle}
           />
         ))}
-      </Table.Body>
-    </Table.Root>
-  ) : (
-    <EmptyState icon={<GrDocumentMissing />} title="No K/D data available" />
+      </Box>
+    </Box>
   );
 }

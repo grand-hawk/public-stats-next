@@ -22,7 +22,7 @@ export default function ShellPenetrationTable() {
     <TitledCard
       as="section"
       endAddon={
-        <HStack data-md-ignore>
+        <HStack color="fg.muted" fontSize="sm" gap={2} data-md-ignore>
           LOS
           <Switch
             checked={mode === 'rel'}
@@ -34,7 +34,6 @@ export default function ShellPenetrationTable() {
           REL
         </HStack>
       }
-      innerPadding={4}
       title="Penetration"
       withAnchor
     >
@@ -42,7 +41,7 @@ export default function ShellPenetrationTable() {
         <StatsRow>
           <StatsCell asTitle>Distance/Angle</StatsCell>
           {angles.map((angle) => (
-            <StatsCell key={angle}>
+            <StatsCell asTitle key={angle}>
               <FormatNumber
                 style="unit"
                 unit="degree"

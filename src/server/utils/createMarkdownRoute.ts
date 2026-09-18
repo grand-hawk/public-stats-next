@@ -1,12 +1,30 @@
 import ky from 'ky';
-import Cache from 'stale-lru-cache';
 
-import { IS_DEV } from '@/env';
+import { createCache } from '@/server/utils/createCache';
 import { processHtmlToMarkdown } from '@/server/utils/processHtmlTomarkdown';
 import { getExtension } from '@/utils/extensions';
+import { getNameFromInitials } from '@/utils/placeUtils';
 import { getBaseUrl, getInternalUrl } from '@/utils/trpc';
+import { getConfig } from '@generated/config';
 
+import type { PlaceName } from '@generated/config';
 import type { GetServerSidePropsContext, GetServerSidePropsResult } from 'next';
+
+type Response = GetServerSidePropsContext['res'];
+
+function sendMarkdown(res: Response, markdown: string, canonicalUrl: string) {
+  res.setHeader('Link', `<${canonicalUrl}>; rel="canonical"`);
+  res.setHeader('X-Robots-Tag', 'noindex');
+  res.setHeader('content-type', 'text/markdown; charset=utf-8');
+  res.setHeader(
+    'cache-control',
+    'public, max-age=3600, stale-while-revalidate=86400',
+  );
+
+  res.write(markdown);
+
+  res.end();
+}
 
 export function createMarkdownRoute() {
   async function revalidate(htmlUrl: string) {
@@ -18,13 +36,9 @@ export function createMarkdownRoute() {
     return processHtmlToMarkdown(html);
   }
 
-  const cache = new Cache({
-    maxAge: IS_DEV ? 0 : 3600,
-    staleWhileRevalidate: IS_DEV ? 0 : 86400,
-    revalidate,
-  });
+  const cache = createCache<string, string | null>(revalidate);
 
-  async function getServerSideProps({
+  return async function getServerSideProps({
     res,
     resolvedUrl,
   }: GetServerSidePropsContext): Promise<GetServerSidePropsResult<{}>> {
@@ -34,7 +48,6 @@ export function createMarkdownRoute() {
 
     const htmlPath = path.replace(/^\/md\//, '').replace(/\.md$/, '');
     const htmlUrlString = new URL(htmlPath, getInternalUrl()).toString();
-    const canonicalUrl = new URL(htmlPath, getBaseUrl()).toString();
 
     const headSuccess = await ky
       .head(htmlUrlString)
@@ -50,20 +63,46 @@ export function createMarkdownRoute() {
 
     if (markdown === null) return { notFound: true };
 
-    res.setHeader('Link', `<${canonicalUrl}>; rel="canonical"`);
-    res.setHeader('X-Robots-Tag', 'noindex');
-    res.setHeader('content-type', 'text/markdown; charset=utf-8');
-    res.setHeader(
-      'cache-control',
-      'public, max-age=3600, stale-while-revalidate=86400',
-    );
-
-    res.write(markdown);
-
-    res.end();
+    sendMarkdown(res, markdown, new URL(htmlPath, getBaseUrl()).toString());
 
     return { props: {} };
-  }
+  };
+}
 
-  return getServerSideProps;
+export function createPlaceMarkdownRoute(
+  section: string | null,
+  render: (placeName: PlaceName) => Promise<string | null>,
+) {
+  const cache = createCache<PlaceName, string | null>(render);
+
+  return async function getServerSideProps({
+    params,
+    res,
+  }: GetServerSidePropsContext): Promise<GetServerSidePropsResult<{}>> {
+    const { place: initials } = params || {};
+    if (!initials || typeof initials !== 'string') return { notFound: true };
+
+    const { data: config } = getConfig();
+    const placeName = getNameFromInitials(config, initials);
+    if (!placeName) return { notFound: true };
+
+    let markdown = await cache.get(placeName);
+    if (!markdown) {
+      markdown = await render(placeName);
+      cache.set(placeName, markdown);
+    }
+
+    if (markdown === null) return { notFound: true };
+
+    sendMarkdown(
+      res,
+      markdown,
+      new URL(
+        section ? `${initials}/${section}` : initials,
+        getBaseUrl(),
+      ).toString(),
+    );
+
+    return { props: {} };
+  };
 }

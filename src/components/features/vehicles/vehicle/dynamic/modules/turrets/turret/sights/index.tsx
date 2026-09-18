@@ -9,9 +9,7 @@ import type { TurretWithName } from '@/components/features/vehicles/vehicle/dyna
 export default function Sights({ turret }: { turret: TurretWithName }) {
   return (
     <TitledCard
-      backgroundColor="bg.muted"
       collapsible
-      innerPadding={2}
       moduleId={turret.id}
       title="Sights"
       withAnchor={`${turret.name}-sights`}
