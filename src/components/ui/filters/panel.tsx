@@ -1,8 +1,8 @@
 import { Box, Text, chakra } from '@chakra-ui/react';
 import React from 'react';
 
-import FilterSearchField from '@/components/ui/filters/searchField';
 import { CLEAR_BUTTON_CSS } from '@/components/ui/filters/styles';
+import SearchField from '@/components/ui/searchField';
 import { TRUNCATE_CSS } from '@/components/ui/styles';
 
 export interface FilterPanelProps {
@@ -54,7 +54,7 @@ export default function FilterPanel({
   return (
     <Box css={PANEL_CSS}>
       <Box padding="8px">
-        <FilterSearchField
+        <SearchField
           placeholder={searchPlaceholder}
           value={query}
           onChange={onQueryChange}

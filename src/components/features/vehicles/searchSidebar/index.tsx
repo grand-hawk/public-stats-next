@@ -62,7 +62,7 @@ export default function VehiclesSearchSidebar() {
         placeholder="Filter vehicles"
         queryKey="vehicle"
         value={query}
-        onChange={(details) => setQuery(details.target.value)}
+        onChange={setQuery}
       />
       <VehicleSearchConfig />
     </SearchSidebar>

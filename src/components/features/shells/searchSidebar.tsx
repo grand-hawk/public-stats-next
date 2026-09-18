@@ -135,7 +135,7 @@ export default function ShellsSearchSidebar() {
         placeholder="Filter shells"
         queryKey="shell"
         value={query}
-        onChange={(details) => setQuery(details.target.value)}
+        onChange={setQuery}
       />
     </SearchSidebar>
   );

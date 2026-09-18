@@ -1,16 +1,13 @@
-import { Box, Flex, IconButton, Input, Presence } from '@chakra-ui/react';
+import { Flex, IconButton, Presence } from '@chakra-ui/react';
 import React from 'react';
-import { LuSearch } from 'react-icons/lu';
 import { MdExpandLess } from 'react-icons/md';
 import { MdOutlineExpandMore } from 'react-icons/md';
 
-import { FOCUS_RING_CSS, QUIET_INTERACTIVE_CSS } from '@/components/ui/styles';
+import SearchField, { SEARCH_FIELD_HEIGHT } from '@/components/ui/searchField';
+import { QUIET_INTERACTIVE_CSS } from '@/components/ui/styles';
 import { useRouterQuery } from '@/hooks/useRouterQuery';
 import { useSidebarStore } from '@/stores/sidebar';
 
-import type { InputProps } from '@chakra-ui/react';
-
-const SEARCH_FIELD_HEIGHT = '40px';
 export const SEARCH_BAR_HEIGHT = '56px';
 
 export default function SearchInput({
@@ -20,8 +17,8 @@ export default function SearchInput({
   queryKey,
   value,
 }: {
-  value: InputProps['value'];
-  onChange: InputProps['onChange'];
+  value: string;
+  onChange: (value: string) => void;
   queryKey: string;
   noButton?: boolean;
   placeholder?: string;
@@ -43,57 +40,14 @@ export default function SearchInput({
       padding="8px"
       width="100%"
     >
-      <Box flex="1" minWidth={0} position="relative">
-        <Box
-          asChild
-          color="fg.muted"
-          left="12px"
-          pointerEvents="none"
-          position="absolute"
-          top="50%"
-          transform="translateY(-50%)"
-        >
-          <LuSearch size={16} />
-        </Box>
-
-        <Input
-          placeholder={placeholder}
-          unstyled
-          value={value}
-          css={{
-            width: '100%',
-            height: SEARCH_FIELD_HEIGHT,
-            paddingInlineStart: '36px',
-            paddingInlineEnd: '12px',
-            fontSize: '0.875rem',
-            lineHeight: '1.375rem',
-            color: 'var(--color-base)',
-            backgroundColor: 'var(--color-surface-1)',
-            borderWidth: '1px',
-            borderStyle: 'solid',
-            borderColor: 'var(--border-color-interactive)',
-            borderRadius: '4px',
-            boxShadow: 'inset 0 0 0 1px transparent',
-            transitionProperty:
-              'background-color, color, border-color, box-shadow',
-            transitionDuration: '250ms',
-            transitionTimingFunction:
-              'var(--transition-timing-function-ease, ease)',
-            '&::placeholder': { color: 'var(--color-placeholder)' },
-            '&:hover': {
-              borderColor: 'var(--border-color-interactive--hover)',
-            },
-            '&:focus, &:focus-visible': {
-              ...FOCUS_RING_CSS,
-              borderColor: 'var(--border-color-progressive--focus)',
-            },
-          }}
-          onChange={onChange}
-          onSelect={() => {
-            if (!isOpen) setOpen(true);
-          }}
-        />
-      </Box>
+      <SearchField
+        placeholder={placeholder}
+        value={value}
+        onChange={onChange}
+        onSelect={() => {
+          if (!isOpen) setOpen(true);
+        }}
+      />
 
       <Presence present={!noButton}>
         <IconButton

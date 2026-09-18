@@ -2,7 +2,7 @@ import { Box, Text, chakra } from '@chakra-ui/react';
 import { useVirtualizer } from '@tanstack/react-virtual';
 import React from 'react';
 
-import FilterSearchField from '@/components/ui/filters/searchField';
+import SearchField from '@/components/ui/searchField';
 import { FOCUS_RING_CSS, QUIET_INTERACTIVE_CSS } from '@/components/ui/styles';
 import { simplifyString } from '@/utils/simplifyString';
 
@@ -71,7 +71,7 @@ export default function PickerList<T extends { slug: string }>({
   return (
     <>
       <Box padding="8px">
-        <FilterSearchField
+        <SearchField
           placeholder={placeholder}
           value={query}
           onChange={setQuery}
