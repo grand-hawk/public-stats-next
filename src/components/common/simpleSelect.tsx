@@ -16,7 +16,7 @@ export default function SimpleSelect({
 }: {
   allowEmpty?: boolean;
   items: string[];
-  label: string;
+  label?: string;
   noValueLabel?: string;
   value: string | null;
   onValueChange: (value: string | null) => void;
@@ -47,7 +47,7 @@ export default function SimpleSelect({
 
   return (
     <Field.Root>
-      <Field.Label>{label}</Field.Label>
+      {label && <Field.Label>{label}</Field.Label>}
 
       <Select.Root
         collection={collection}
@@ -71,10 +71,10 @@ export default function SimpleSelect({
         <Select.Control>
           <Select.Trigger>
             <Select.ValueText />
-            <Select.IndicatorGroup paddingInline={2}>
-              <Select.Indicator />
-            </Select.IndicatorGroup>
           </Select.Trigger>
+          <Select.IndicatorGroup>
+            <Select.Indicator />
+          </Select.IndicatorGroup>
         </Select.Control>
 
         <Portal>
@@ -83,6 +83,7 @@ export default function SimpleSelect({
               {collection.items.map((item) => (
                 <Select.Item key={item.value} item={item}>
                   {item.label}
+                  <Select.ItemIndicator />
                 </Select.Item>
               ))}
             </Select.Content>

@@ -1,32 +1,9 @@
 import { Portal, Select, createListCollection } from '@chakra-ui/react';
 import React from 'react';
 
-import { FOCUS_RING_CSS } from '@/components/ui/styles';
-
 import type { DetailedVehicle } from '@/server/api/trpc/routers/vehicles';
-import type { SystemStyleObject } from '@chakra-ui/react';
 
 const NO_LOADOUT = '<none>';
-
-const ROOT_CSS: SystemStyleObject = {
-  width: '100%',
-  borderColor: 'var(--border-color-interactive)',
-  borderRadius: '4px',
-  '&:hover': { borderColor: 'var(--border-color-interactive--hover)' },
-  '&:focus-within': {
-    ...FOCUS_RING_CSS,
-    outline: 'none',
-    borderColor: 'var(--border-color-progressive--focus)',
-  },
-};
-
-const TRIGGER_CSS: SystemStyleObject = {
-  minHeight: '32px',
-  paddingInline: '8px',
-  fontSize: '0.875rem',
-  lineHeight: '1.375rem',
-  '&:focus-visible': { outline: 'none', boxShadow: 'none' },
-};
 
 export function getSelectedLoadout(
   vehicle: DetailedVehicle,
@@ -66,8 +43,8 @@ export default function VehicleColumnConfig({
       lazyMount
       aria-label={`Loadout for ${vehicle.info.name}`}
       collection={collection}
-      css={ROOT_CSS}
       size="xs"
+      width="100%"
       value={selected ? [selected] : [NO_LOADOUT]}
       onValueChange={(details) => {
         const value = details.value[0];
@@ -82,10 +59,10 @@ export default function VehicleColumnConfig({
     >
       <Select.HiddenSelect />
       <Select.Control>
-        <Select.Trigger css={TRIGGER_CSS}>
+        <Select.Trigger>
           <Select.ValueText />
         </Select.Trigger>
-        <Select.IndicatorGroup paddingInline={2}>
+        <Select.IndicatorGroup>
           <Select.Indicator />
         </Select.IndicatorGroup>
       </Select.Control>
@@ -96,6 +73,7 @@ export default function VehicleColumnConfig({
             {collection.items.map((item) => (
               <Select.Item key={item.value} item={item}>
                 {item.label}
+                <Select.ItemIndicator />
               </Select.Item>
             ))}
           </Select.Content>

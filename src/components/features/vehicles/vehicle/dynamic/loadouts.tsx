@@ -1,28 +1,13 @@
-import { createListCollection, Portal, Select } from '@chakra-ui/react';
 import React from 'react';
 
+import SimpleSelect from '@/components/common/simpleSelect';
 import TitledCard from '@/components/wiki/titledCard';
 import { useDynamicData } from '@/hooks/providers/dynamicData';
 import { useVehicle } from '@/hooks/providers/vehicle';
 
-const NO_VALUE = '<none>';
-
 export default function VehicleDynamicLoadouts() {
   const vehicle = useVehicle();
   const { selectedLoadout, setSelectedLoadout } = useDynamicData();
-
-  const loadoutCollection = createListCollection({
-    items: [
-      {
-        value: NO_VALUE,
-        label: 'None',
-      },
-      ...Object.keys(vehicle.alterations.loadouts).map((loadout) => ({
-        value: loadout,
-        label: loadout,
-      })),
-    ],
-  });
 
   return (
     <TitledCard
@@ -30,47 +15,14 @@ export default function VehicleDynamicLoadouts() {
       tooltip="Select version of the vehicle in a certain loadout"
       withAnchor="loadout-config"
     >
-      <Select.Root
-        collection={loadoutCollection}
-        lazyMount
+      <SimpleSelect
+        aria-label="Loadout"
+        items={Object.keys(vehicle.alterations.loadouts)}
         maxWidth="20rem"
-        size="sm"
-        value={selectedLoadout === null ? [NO_VALUE] : [selectedLoadout]}
+        value={selectedLoadout}
         width="100%"
-        onValueChange={(details) =>
-          setSelectedLoadout(
-            details.value[0] === NO_VALUE ? null : details.value[0],
-          )
-        }
-      >
-        <Select.HiddenSelect />
-
-        <Select.Control>
-          <Select.Trigger
-            css={{
-              backgroundColor: 'var(--color-surface-1)',
-              borderColor: 'var(--border-color-interactive)',
-            }}
-          >
-            <Select.ValueText />
-          </Select.Trigger>
-          <Select.IndicatorGroup paddingInline={2}>
-            <Select.Indicator />
-          </Select.IndicatorGroup>
-        </Select.Control>
-
-        <Portal>
-          <Select.Positioner>
-            <Select.Content>
-              {loadoutCollection.items.map((item) => (
-                <Select.Item key={item.label} item={item}>
-                  {item.label}
-                </Select.Item>
-              ))}
-            </Select.Content>
-          </Select.Positioner>
-        </Portal>
-      </Select.Root>
+        onValueChange={setSelectedLoadout}
+      />
     </TitledCard>
   );
 }
