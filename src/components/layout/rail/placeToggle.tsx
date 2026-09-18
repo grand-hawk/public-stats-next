@@ -4,10 +4,15 @@ import { LuFlaskConical } from 'react-icons/lu';
 
 import RailButton from '@/components/layout/rail/railButton';
 import { toaster } from '@/components/ui/toaster';
+import { Tooltip } from '@/components/ui/tooltip';
 import { usePlaceInitials } from '@/hooks/usePlaceInitials';
 import { useSuspenseConfig } from '@/hooks/useSuspenseConfig';
 
-export default function PlaceToggle() {
+export default function PlaceToggle({
+  direction,
+}: {
+  direction: 'column' | 'row';
+}) {
   const router = useRouter();
   const config = useSuspenseConfig();
   const currentInitials = usePlaceInitials();
@@ -24,6 +29,8 @@ export default function PlaceToggle() {
   const next = places[(currentIndex + 1) % places.length];
   const nextIsLive = next === places[0];
 
+  const staging = currentIndex === 0 ? next : places[currentIndex];
+
   const switchPlace = async () => {
     await router.push({
       pathname: router.pathname,
@@ -38,13 +45,22 @@ export default function PlaceToggle() {
   };
 
   return (
-    <RailButton
-      active={currentIndex !== 0}
-      aria-pressed={currentIndex !== 0}
-      label={`Switch to ${next.placeName}`}
-      onClick={switchPlace}
+    <Tooltip
+      content={staging.placeName}
+      positioning={{
+        placement: direction === 'column' ? 'right' : 'top',
+        gutter: 8,
+      }}
     >
-      <LuFlaskConical />
-    </RailButton>
+      <RailButton
+        active={currentIndex !== 0}
+        aria-pressed={currentIndex !== 0}
+        label={`Switch to ${next.placeName}`}
+        title={undefined}
+        onClick={switchPlace}
+      >
+        <LuFlaskConical />
+      </RailButton>
+    </Tooltip>
   );
 }

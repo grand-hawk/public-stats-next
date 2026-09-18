@@ -39,7 +39,7 @@ export default function Rail({
       <RailPrimaryItems direction="column" triggerRef={triggerRef} />
 
       <Flex direction="column" gap="4px" marginTop="auto">
-        <RailSecondaryItems />
+        <RailSecondaryItems direction="column" />
       </Flex>
     </Flex>
   );

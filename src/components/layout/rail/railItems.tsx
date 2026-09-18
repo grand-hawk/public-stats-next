@@ -50,7 +50,11 @@ export function RailPrimaryItems({
   );
 }
 
-export function RailSecondaryItems() {
+export function RailSecondaryItems({
+  direction,
+}: {
+  direction: 'column' | 'row';
+}) {
   const debugEnabled = useDebugEnabled();
   const utils = trpc.useUtils();
   const { isOverlayOpen, toggleOverlay } = useDevelopmentStore();
@@ -73,7 +77,7 @@ export function RailSecondaryItems() {
         </RailButton>
       )}
 
-      <PlaceToggle />
+      <PlaceToggle direction={direction} />
     </>
   );
 }
