@@ -12,6 +12,10 @@ import {
 } from '@/components/features/home/palette';
 import SiteSearchHero from '@/components/layout/search/siteSearchHero';
 import { NARROW_MEDIA } from '@/components/layout/shell/constants';
+import { MEDIA_PREFIX } from '@/env';
+
+const HERO_POSTER_SRC = `${MEDIA_PREFIX}/assets/home/hero.jpg`;
+const HERO_VIDEO_SRC = `${MEDIA_PREFIX}/assets/home/hero.mp4`;
 
 export default function HomeHero({
   initials,
@@ -52,7 +56,7 @@ export default function HomeHero({
         css={{
           position: 'absolute',
           inset: 0,
-          backgroundImage: "url('/assets/home/hero.jpg')",
+          backgroundImage: `url('${HERO_POSTER_SRC}')`,
           backgroundPosition: 'center 60%',
           backgroundSize: 'cover',
           '& video': {
@@ -75,9 +79,9 @@ export default function HomeHero({
           loop
           muted
           playsInline
-          poster="/assets/home/hero.jpg"
+          poster={HERO_POSTER_SRC}
           preload="metadata"
-          src="/assets/home/hero.mp4"
+          src={HERO_VIDEO_SRC}
           tabIndex={-1}
         />
       </Box>
