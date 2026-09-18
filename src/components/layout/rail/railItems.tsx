@@ -4,6 +4,7 @@ import { MdRefresh } from 'react-icons/md';
 
 import HamburgerIcon from '@/components/layout/rail/hamburgerIcon';
 import PlaceToggle from '@/components/layout/rail/placeToggle';
+import RailQuickLinks from '@/components/layout/rail/quickLinks';
 import RailButton from '@/components/layout/rail/railButton';
 import { env } from '@/env';
 import { useDebugEnabled } from '@/hooks/useDebugEnv';
@@ -13,8 +14,10 @@ import { openSiteSearch } from '@/stores/search';
 import { trpc } from '@/utils/trpc';
 
 export function RailPrimaryItems({
+  direction,
   triggerRef,
 }: {
+  direction: 'column' | 'row';
   triggerRef: React.RefObject<HTMLButtonElement | null>;
 }) {
   const menuOpen = useMenuStore((s) => s.open);
@@ -29,6 +32,8 @@ export function RailPrimaryItems({
       >
         <LuSearch />
       </RailButton>
+
+      <RailQuickLinks direction={direction} />
 
       <RailButton
         ref={triggerRef}

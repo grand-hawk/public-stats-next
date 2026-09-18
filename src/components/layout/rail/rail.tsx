@@ -36,7 +36,7 @@ export default function Rail({
         <RailHomeLink />
       </Box>
 
-      <RailPrimaryItems triggerRef={triggerRef} />
+      <RailPrimaryItems direction="column" triggerRef={triggerRef} />
 
       <Flex direction="column" gap="4px" marginTop="auto">
         <RailSecondaryItems />

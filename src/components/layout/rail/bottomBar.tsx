@@ -38,7 +38,7 @@ export default function BottomBar({
           <RailHomeLink />
         </Box>
 
-        <RailPrimaryItems triggerRef={triggerRef} />
+        <RailPrimaryItems direction="row" triggerRef={triggerRef} />
       </Flex>
 
       <Flex alignItems="center" gap="4px">
