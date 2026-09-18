@@ -28,14 +28,17 @@ export function SiteSearchHost() {
 
   React.useEffect(() => {
     const onKeyDown = (event: KeyboardEvent) => {
-      if (isEditableTarget(event.target)) return;
       const isCmdK =
         (event.metaKey || event.ctrlKey) &&
         !event.altKey &&
         !event.shiftKey &&
         event.key.toLowerCase() === 'k';
       const isSlash =
-        event.key === '/' && !event.metaKey && !event.ctrlKey && !event.altKey;
+        event.key === '/' &&
+        !event.metaKey &&
+        !event.ctrlKey &&
+        !event.altKey &&
+        !isEditableTarget(event.target);
       if (!isCmdK && !isSlash) return;
       event.preventDefault();
       if (useSearchStore.getState().open) {

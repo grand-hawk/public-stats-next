@@ -16,7 +16,6 @@ export default function TeamHeader({ lore, name }: TeamHeaderProps) {
       id="team-page-title"
       meta={<Span>{lore ? 'Lore team' : 'Playable team'}</Span>}
       title={name}
-      titleLabel="Team name"
     />
   );
 }

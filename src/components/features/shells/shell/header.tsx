@@ -19,7 +19,6 @@ export default function ShellHeader() {
     <ArticleTitle
       id="shell-page-title"
       title={shell.name}
-      titleLabel="Shell name"
       actions={
         <PageActions>
           <ShellHeaderActions shell={shell} />

@@ -9,7 +9,6 @@ export interface ArticleTitleProps {
   id?: string;
   meta?: React.ReactNode;
   title: string;
-  titleLabel?: string;
 }
 
 export default function ArticleTitle({
@@ -18,7 +17,6 @@ export default function ArticleTitle({
   id,
   meta,
   title,
-  titleLabel,
 }: ArticleTitleProps) {
   const place = usePlace();
 
@@ -44,7 +42,6 @@ export default function ArticleTitle({
           {icon}
 
           <Heading
-            aria-label={titleLabel}
             as="h1"
             color="fg.emphasized"
             id={id}

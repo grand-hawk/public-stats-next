@@ -27,7 +27,6 @@ export default function VehicleHeader() {
       <ArticleTitle
         id="vehicle-page-title"
         title={vehicle.info.name}
-        titleLabel="Vehicle name"
         actions={
           <PageActions>
             <VehicleHeaderActions vehicle={vehicle} />

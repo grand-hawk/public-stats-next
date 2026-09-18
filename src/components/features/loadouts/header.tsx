@@ -23,7 +23,6 @@ export default function LoadoutHeader({
         id="loadout-page-title"
         meta={tagline ? <Span>{tagline}</Span> : undefined}
         title={loadoutDisplayName(name)}
-        titleLabel="Loadout name"
       />
 
       <Box
