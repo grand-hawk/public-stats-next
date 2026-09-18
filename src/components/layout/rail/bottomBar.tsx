@@ -42,7 +42,7 @@ export default function BottomBar({
       </Flex>
 
       <Flex alignItems="center" gap="4px">
-        <RailSecondaryItems placement="top-end" />
+        <RailSecondaryItems />
       </Flex>
     </Flex>
   );

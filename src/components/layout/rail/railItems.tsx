@@ -3,7 +3,7 @@ import { LuBug, LuSearch } from 'react-icons/lu';
 import { MdRefresh } from 'react-icons/md';
 
 import HamburgerIcon from '@/components/layout/rail/hamburgerIcon';
-import PlaceMenu from '@/components/layout/rail/placeMenu';
+import PlaceToggle from '@/components/layout/rail/placeToggle';
 import RailButton from '@/components/layout/rail/railButton';
 import { env } from '@/env';
 import { useDebugEnabled } from '@/hooks/useDebugEnv';
@@ -45,11 +45,7 @@ export function RailPrimaryItems({
   );
 }
 
-export function RailSecondaryItems({
-  placement,
-}: {
-  placement?: 'right-end' | 'top-end';
-}) {
+export function RailSecondaryItems() {
   const debugEnabled = useDebugEnabled();
   const utils = trpc.useUtils();
   const { isOverlayOpen, toggleOverlay } = useDevelopmentStore();
@@ -72,7 +68,7 @@ export function RailSecondaryItems({
         </RailButton>
       )}
 
-      <PlaceMenu placement={placement} />
+      <PlaceToggle />
     </>
   );
 }
