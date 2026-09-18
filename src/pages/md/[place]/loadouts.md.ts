@@ -1,4 +1,5 @@
 import { markdownTable } from 'markdown-table';
+import slugify from 'slug';
 
 import { createPlaceMarkdownRoute } from '@/server/utils/createMarkdownRoute';
 import {
@@ -27,7 +28,7 @@ async function render(placeName: PlaceName) {
       const loadout = loadoutsData.data[loadoutName];
 
       return [
-        `[${escapeMarkdownLink(loadoutName)}](/${place.initials}/loadouts/${encodeURIComponent(loadoutName)}.md)`,
+        `[${escapeMarkdownLink(loadoutName)}](/${place.initials}/loadouts/${slugify(loadoutName)}.md)`,
         loadout?.teams.join(', ') ?? '',
         loadout?.description ?? '',
       ];

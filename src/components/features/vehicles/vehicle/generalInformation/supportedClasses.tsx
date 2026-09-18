@@ -31,6 +31,12 @@ export default function SupportedClasses() {
 
   return (
     <HStack gap={1}>
+      <Span data-md-show display="none">
+        {[
+          ...vehicle.info.supportedClasses,
+          ...(showExtraInfantryIcon ? ['Infantry (as passenger)'] : []),
+        ].join(', ')}
+      </Span>
       {vehicle.info.supportedClasses.map((className) => {
         const Icon = classIcons[className];
         if (Icon) {

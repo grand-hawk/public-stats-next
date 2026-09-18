@@ -37,7 +37,7 @@ async function render(placeName: PlaceName) {
 
     aggregatedVehicles.push({
       name,
-      slug: name,
+      slug,
       all_time: kdrData.all_time[name],
       recent: kdrData.recent[name],
     });

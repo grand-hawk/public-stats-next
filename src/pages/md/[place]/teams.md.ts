@@ -1,4 +1,5 @@
 import { markdownTable } from 'markdown-table';
+import slugify from 'slug';
 
 import { createPlaceMarkdownRoute } from '@/server/utils/createMarkdownRoute';
 import {
@@ -29,7 +30,7 @@ async function render(placeName: PlaceName) {
         .map(([name]) => name);
 
       return [
-        `[${escapeMarkdownLink(team)}](/${place.initials}/teams/${encodeURIComponent(team)}.md)`,
+        `[${escapeMarkdownLink(team)}](/${place.initials}/teams/${slugify(team)}.md)`,
         teamLoadouts.join(', '),
       ];
     }),

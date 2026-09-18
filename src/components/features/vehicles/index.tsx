@@ -42,6 +42,7 @@ export default function Vehicle({ vehicle }: { vehicle: DetailedVehicle }) {
         >
           <Stack
             as="aside"
+            data-md-ignore
             gap={0}
             gridColumn="2"
             gridRow="1"
