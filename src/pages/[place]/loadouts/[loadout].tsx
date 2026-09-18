@@ -50,7 +50,6 @@ export default function PlaceLoadout() {
       <Layout noPadding>
         {loadout && displayName ? (
           <ArticlePage
-            bandImage={loadout.thumbnail}
             markdownTarget
             placeName={place.placeName}
             stickyTitle={displayName}
@@ -58,11 +57,7 @@ export default function PlaceLoadout() {
             swapStale={isStale}
             titleId="loadout-page-title"
           >
-            <LoadoutHeader
-              name={loadout.name}
-              tagline={loadout.tagline}
-              thumbnail={loadout.thumbnail}
-            />
+            <LoadoutHeader name={loadout.name} tagline={loadout.tagline} />
 
             {linkedDescription && (
               <Box marginBlockStart="24px">
