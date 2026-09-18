@@ -14,6 +14,7 @@ import {
   SPEED_BANDS,
   WEIGHT_BANDS,
 } from '@/utils/filters/vehicleBands';
+import { obtainmentLabel } from '@/utils/obtainment';
 
 import type { VehicleFilters } from '@/components/features/vehicles/browse/useVehicleFilters';
 import type { LabelledKey } from '@/components/ui/filters/options';
@@ -28,13 +29,6 @@ export interface VehicleFilterPanelProps {
   pending: boolean;
   resultLabel: string;
 }
-
-const OBTAINMENT_LABELS: Record<string, string> = {
-  badge: 'Badge',
-  coins: 'Premium',
-  free: 'Free',
-  money: 'Shop',
-};
 
 const LOCOMOTION_LABELS: Record<string, string> = {
   aerial: 'Aerial',
@@ -173,7 +167,7 @@ export default function VehicleFilterPanel({
           defaultOpen={false}
           options={facetOptions(
             facets.obtainments,
-            (key) => OBTAINMENT_LABELS[key] ?? key,
+            obtainmentLabel,
           )}
           selected={filters.obtainments.selected}
           title="Obtainment"

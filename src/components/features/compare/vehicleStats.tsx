@@ -8,6 +8,7 @@ import {
   getOneModuleOfType,
 } from '@/utils/alterations';
 import { capitalizeFirst } from '@/utils/capitalizeFirst';
+import { obtainmentLabel } from '@/utils/obtainment';
 import { getTurretsWithNamesSorted } from '@/utils/turrets';
 
 import type { SectionDef, StatDef } from '@/components/features/compare/types';
@@ -116,10 +117,7 @@ export function buildVehicleSections(): SectionDef<AssembledVehicle>[] {
             !!a.vehicle.info.availability &&
             Object.keys(a.vehicle.info.availability).length > 0;
           if (!isAvailable) return 'Dev-spawner only';
-          if (!a.vehicle.info.premium) return 'Free';
-          if (a.vehicle.info.premium.type === 'coins') return 'Premium';
-          if (a.vehicle.info.premium.type === 'money') return 'Shop';
-          return 'Badge';
+          return obtainmentLabel(a.vehicle.info.premium?.type);
         }),
       ],
     },

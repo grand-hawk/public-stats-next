@@ -9,6 +9,7 @@ import Stat, { StatGrid } from '@/components/wiki/stat';
 import TitledCard from '@/components/wiki/titledCard';
 import { useVehicle } from '@/hooks/providers/vehicle';
 import { capitalizeFirst } from '@/utils/capitalizeFirst';
+import { obtainmentLabel } from '@/utils/obtainment';
 
 export default function VehicleGeneralInformation({
   isAvailable,
@@ -53,15 +54,7 @@ export default function VehicleGeneralInformation({
 
             <Stat label="Obtainment">
               {isAvailable
-                ? !vehicle.info.premium
-                  ? 'Free'
-                  : vehicle.info.premium.type === 'coins'
-                    ? 'Premium'
-                    : vehicle.info.premium.type === 'money'
-                      ? 'Shop'
-                      : vehicle.info.premium.type === 'badge'
-                        ? 'Badge'
-                        : 'Quest'
+                ? obtainmentLabel(vehicle.info.premium?.type)
                 : 'Dev-spawner only'}
             </Stat>
 

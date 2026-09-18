@@ -98,6 +98,10 @@ const config = defineConfig({
   },
   theme: {
     keyframes: {
+      'browse-sidebar-grow': {
+        from: { maxHeight: 'calc(100dvh - 120px)' },
+        to: { maxHeight: '100dvh' },
+      },
       'citizen-palette-in': {
         from: {
           opacity: 0,

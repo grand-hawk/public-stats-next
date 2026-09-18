@@ -29,6 +29,8 @@ const CONTENT_CSS = {
   overflowWrap: 'break-word',
 } as const;
 
+const SIDEBAR_TOP_OFFSET = '120px';
+
 const SIDEBAR_CSS = {
   display: 'none',
   [DESKTOP_MEDIA]: {
@@ -39,11 +41,18 @@ const SIDEBAR_CSS = {
     alignSelf: 'start',
     position: 'sticky',
     top: 0,
-    maxHeight: '100dvh',
+    maxHeight: `calc(100dvh - ${SIDEBAR_TOP_OFFSET})`,
     marginTop: '12px',
-    paddingBlock: '8px',
+    paddingBlock: '8px 24px',
     overflowY: 'auto',
-    overscrollBehavior: 'contain',
+    '@supports (animation-timeline: scroll())': {
+      animationName: 'browse-sidebar-grow',
+      animationDuration: 'auto',
+      animationTimingFunction: 'linear',
+      animationFillMode: 'both',
+      animationTimeline: 'scroll(nearest block)',
+      animationRange: `0px ${SIDEBAR_TOP_OFFSET}`,
+    },
   },
 } as const;
 
