@@ -4,8 +4,17 @@ import React from 'react';
 import { samplePalette } from '@/components/features/tools/armor/palettes';
 
 import type { Palette } from '@/components/features/tools/armor/palettes';
+import type { SystemStyleObject } from '@chakra-ui/react';
 
 const LEGEND_WIDTH = 256;
+
+const LABEL_CSS: SystemStyleObject = {
+  flexShrink: 0,
+  color: 'fg.muted',
+  fontSize: '0.75rem',
+  lineHeight: '1.25rem',
+  fontVariantNumeric: 'tabular-nums',
+};
 
 export default function HorizontalLegend({
   maxMm,
@@ -57,14 +66,14 @@ export default function HorizontalLegend({
   const handleMouseLeave = React.useCallback(() => setHoverInfo(null), []);
 
   return (
-    <Flex alignItems="center" flex={1} gap={1} minWidth={0} position="relative">
-      <Text
-        color="fg.muted"
-        flexShrink={0}
-        fontFamily="mono"
-        fontSize="2xs"
-        fontVariantNumeric="tabular-nums"
-      >
+    <Flex
+      alignItems="center"
+      flex={1}
+      gap="8px"
+      minWidth={0}
+      position="relative"
+    >
+      <Text as="span" css={LABEL_CSS}>
         {minMm} mm
       </Text>
 
@@ -76,39 +85,40 @@ export default function HorizontalLegend({
             height: '12px',
             imageRendering: 'pixelated',
             display: 'block',
+            borderRadius: '4px',
           }}
           onMouseLeave={handleMouseLeave}
           onMouseMove={handleMouseMove}
         />
         {hoverInfo && (
           <Text
-            background="bg.panel"
-            borderColor="border.muted"
-            borderWidth="1px"
-            fontFamily="mono"
-            fontSize="2xs"
-            fontVariantNumeric="tabular-nums"
             left={`${hoverInfo.x}px`}
-            paddingX={1}
             pointerEvents="none"
             position="absolute"
-            top="calc(100% + 4px)"
+            top="calc(100% + 6px)"
             transform="translateX(-50%)"
             whiteSpace="nowrap"
             zIndex={10}
+            css={{
+              paddingBlock: '2px',
+              paddingInline: '8px',
+              borderWidth: '1px',
+              borderStyle: 'solid',
+              borderColor: 'var(--border-color-base)',
+              borderRadius: '4px',
+              backgroundColor: 'var(--color-surface-2)',
+              color: 'fg.emphasized',
+              fontSize: '0.75rem',
+              lineHeight: '1.25rem',
+              fontVariantNumeric: 'tabular-nums',
+            }}
           >
             {hoverInfo.value}
           </Text>
         )}
       </Box>
 
-      <Text
-        color="fg.muted"
-        flexShrink={0}
-        fontFamily="mono"
-        fontSize="2xs"
-        fontVariantNumeric="tabular-nums"
-      >
+      <Text as="span" css={LABEL_CSS}>
         {maxMm} mm
       </Text>
     </Flex>

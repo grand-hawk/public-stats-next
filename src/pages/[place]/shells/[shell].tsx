@@ -1,46 +1,42 @@
-import { Flex, Stack } from '@chakra-ui/react';
 import Head from 'next/head';
-import { useRouter } from 'next/router';
 import React from 'react';
-import { GrDocumentMissing } from 'react-icons/gr';
 import slug from 'slug';
 
+import PageActions from '@/components/common/pageActions';
 import Shell from '@/components/features/shells';
 import ShellsSearchSidebar from '@/components/features/shells/searchSidebar';
+import ShellHeaderActions from '@/components/features/shells/shell/headerActions';
+import ArticleNotFound from '@/components/layout/articleNotFound';
+import ArticlePage from '@/components/layout/articlePage';
 import { getKeywords } from '@/components/layout/head';
 import Layout from '@/components/layout/layout';
+import { linkedDataScripts } from '@/components/layout/linkedData';
 import PageMeta from '@/components/layout/pageMeta';
 import SearchLayout from '@/components/layout/searchLayout/layout';
-import { EmptyState } from '@/components/ui/empty-state';
-import InaccurateDataFooter from '@/components/wiki/inaccurateDataFooter';
+import { useCanonicalSlug } from '@/hooks/useCanonicalSlug';
 import { usePlace } from '@/hooks/usePlace';
 import { useRouterQuery } from '@/hooks/useRouterQuery';
+import { useSwapSlug } from '@/hooks/useSwapSlug';
 import { trpc } from '@/utils/trpc';
 
 export default function PlaceShell() {
-  const router = useRouter();
   const shellQuery = useRouterQuery('shell')!;
   const shellSlug = slug(shellQuery);
   const place = usePlace()!;
 
+  const utils = trpc.useUtils();
+  const { isStale, shownSlug: deferredSlug } = useSwapSlug(
+    shellSlug,
+    (nextSlug) =>
+      utils.shells.bySlug.prefetch({ placeId: place.placeId, slug: nextSlug }),
+  );
+
   const [shell] = trpc.shells.bySlug.useSuspenseQuery({
     placeId: place.placeId,
-    slug: shellSlug,
+    slug: deferredSlug,
   });
 
-  React.useEffect(() => {
-    if (!shell) return;
-
-    if (shellQuery !== shellSlug) {
-      router.replace({
-        pathname: router.pathname,
-        query: {
-          ...router.query,
-          shell: shellSlug,
-        },
-      });
-    }
-  }, [router, shell, shellQuery, shellSlug]);
+  useCanonicalSlug('shell', shellSlug, !!shell);
 
   const title = shell
     ? shell.weapon === shell.name
@@ -62,57 +58,30 @@ export default function PlaceShell() {
             name="keywords"
           />
 
-          {Object.entries(shell.linkedData).map(([key, linkedData]) => (
-            <script
-              key={key}
-              dangerouslySetInnerHTML={{
-                __html: JSON.stringify(linkedData).replace(/</g, '\\u003c'),
-              }}
-              data-linked-data={key}
-              type="application/ld+json"
-            />
-          ))}
+          {linkedDataScripts(shell.linkedData)}
         </Head>
       )}
 
       <Layout noPadding>
         <SearchLayout sidebar={<ShellsSearchSidebar />}>
           {shell ? (
-            <Flex
-              justifyContent="center"
-              marginBottom={{
-                base: 4,
-                md: 0,
-              }}
-              padding={{
-                base: 0,
-                md: 2,
-                lg: 4,
-              }}
+            <ArticlePage
+              actions={
+                <PageActions iconOnly>
+                  <ShellHeaderActions shell={shell} />
+                </PageActions>
+              }
+              markdownTarget
+              placeName={place.placeName}
+              stickyTitle={shell.name}
+              swapId={deferredSlug}
+              swapStale={isStale}
+              titleId="shell-page-title"
             >
-              <Stack
-                aria-labelledby="shell-page-title"
-                as="article"
-                gap={4}
-                maxWidth={{
-                  md: '4xl',
-                  lg: '2xl',
-                }}
-                width="100%"
-                data-md-target
-              >
-                <Shell shell={shell} />
-
-                <InaccurateDataFooter />
-              </Stack>
-            </Flex>
+              <Shell shell={shell} />
+            </ArticlePage>
           ) : (
-            <Flex alignItems="center" height="100%">
-              <EmptyState
-                icon={<GrDocumentMissing />}
-                title="Shell not found"
-              />
-            </Flex>
+            <ArticleNotFound title="Shell not found" />
           )}
         </SearchLayout>
       </Layout>

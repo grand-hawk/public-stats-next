@@ -1,18 +1,20 @@
-import { Box, Heading, HStack, Span } from '@chakra-ui/react';
+import { Box, HStack, Span, Stack } from '@chakra-ui/react';
+import NextLink from 'next/link';
 import React from 'react';
-import { LuGitCompareArrows } from 'react-icons/lu';
-import { MdOutlineOpenInFull } from 'react-icons/md';
-import { SiFandom } from 'react-icons/si';
 import slug from 'slug';
 
-import IconLink from '@/components/common/buttonIconLink';
-import ButtonMarkdownLink from '@/components/common/buttonMarkdownLink';
-import EditPagePopover from '@/components/common/editPagePopover';
 import FakeDescription from '@/components/common/fakeDescription';
-import HeaderToolbar from '@/components/common/headerToolbar';
-import VehicleImage from '@/components/features/vehicles/vehicleImage';
+import ImageExpandGlyph, {
+  IMAGE_EXPAND_REVEAL_CSS,
+} from '@/components/common/imageExpandGlyph';
+import PageActions from '@/components/common/pageActions';
+import VehicleHeaderActions from '@/components/features/vehicles/vehicle/headerActions';
+import VehicleImage, {
+  VEHICLE_BANNER_SIZES,
+} from '@/components/features/vehicles/vehicleImage';
 import TeamIcon from '@/components/icons/teams';
-import { env } from '@/env';
+import { RAISED_FRAME_CSS } from '@/components/ui/styles';
+import ArticleTitle from '@/components/wiki/articleTitle';
 import { useVehicle } from '@/hooks/providers/vehicle';
 import { usePlaceInitials } from '@/hooks/usePlaceInitials';
 import { getVehicleImage } from '@/utils/getVehicleImage';
@@ -20,110 +22,73 @@ import { getVehicleImage } from '@/utils/getVehicleImage';
 export default function VehicleHeader() {
   const vehicle = useVehicle();
   const initials = usePlaceInitials();
-
   return (
-    <Box
-      borderBottomWidth="1px"
-      borderLeftWidth={{
-        base: 0,
-        md: '1px',
-      }}
-      borderRightWidth={{
-        base: 0,
-        md: '1px',
-      }}
-      borderTopWidth={{
-        base: 0,
-        md: '1px',
-      }}
-      width="100%"
-    >
-      <Box aspectRatio="3/1" backgroundColor="bg.panel" position="relative">
-        <VehicleImage
-          name={vehicle.info.name}
-          slug={vehicle.info.slug}
-          type="perspective_banner"
-          fetchPriority="high"
-          fill
-          preload
-          sizes="(min-width: 80rem) 1000px, (min-width: 60rem) 800px, 600px"
-        />
+    <Stack gap={4}>
+      <ArticleTitle
+        id="vehicle-page-title"
+        title={vehicle.info.name}
+        titleLabel="Vehicle name"
+        actions={
+          <PageActions>
+            <VehicleHeaderActions vehicle={vehicle} />
+          </PageActions>
+        }
+        meta={
+          <>
+            <HStack gap={2}>
+              <TeamIcon size="16px" team={vehicle.info.team} />
+              <FakeDescription name="Team">
+                <Box
+                  asChild
+                  css={{
+                    color: 'var(--color-progressive)',
+                    textDecoration: 'none',
+                    '&:hover': { textDecoration: 'underline' },
+                  }}
+                >
+                  <NextLink
+                    href={`/${initials}/teams/${slug(vehicle.info.team)}`}
+                    prefetch={false}
+                  >
+                    {vehicle.info.team}
+                  </NextLink>
+                </Box>
+              </FakeDescription>
+            </HStack>
 
-        <HeaderToolbar placement="bottom" uniformSize>
-          <IconLink
+            <FakeDescription name="Role">
+              <Span>{vehicle.info.role}</Span>
+            </FakeDescription>
+          </>
+        }
+      />
+
+      <Box css={RAISED_FRAME_CSS} overflow="hidden" width="100%">
+        <Box
+          aspectRatio="3/1"
+          backgroundColor="var(--color-surface-1)"
+          css={IMAGE_EXPAND_REVEAL_CSS}
+          position="relative"
+        >
+          <VehicleImage
+            name={vehicle.info.name}
+            slug={vehicle.info.slug}
+            type="perspective_banner"
+            fetchPriority="high"
+            fill
+            preload
+            sizes={VEHICLE_BANNER_SIZES}
+          />
+
+          <ImageExpandGlyph
             href={getVehicleImage(
               vehicle.info.slug,
               'perspective_banner',
               false,
             )}
-            linkProps={{
-              target: '_blank',
-            }}
-            rel="nofollow"
-            size="sm"
-            title="Open full image"
-            variant="surface"
-          >
-            <MdOutlineOpenInFull />
-          </IconLink>
-
-          <ButtonMarkdownLink />
-
-          <IconLink
-            href={`/${initials}/compare?tab=vehicles&vehicles=${vehicle.info.slug}`}
-            size="sm"
-            title="Compare"
-            variant="surface"
-          >
-            <LuGitCompareArrows />
-          </IconLink>
-
-          {vehicle.content && !env.NEXT_PUBLIC_STACKBLITZ && (
-            <EditPagePopover
-              filePath={`content/vehicles/${slug(vehicle.info.gameId)}.md`}
-            />
-          )}
-
-          {vehicle.info.externalLinks.Fandom && (
-            <IconLink
-              href={vehicle.info.externalLinks.Fandom}
-              linkProps={{
-                target: '_blank',
-              }}
-              rel="nofollow"
-              size="sm"
-              title="Fandom"
-              variant="surface"
-            >
-              <SiFandom />
-            </IconLink>
-          )}
-        </HeaderToolbar>
+          />
+        </Box>
       </Box>
-
-      <Box as="section" backgroundColor="bg.subtle" padding={6}>
-        <HStack>
-          <TeamIcon team={vehicle.info.team} />
-          <FakeDescription name="Team">
-            <Span fontSize="sm" lineHeight="short">
-              {vehicle.info.team}
-            </Span>
-          </FakeDescription>
-        </HStack>
-
-        <Heading
-          size="2xl"
-          aria-label="Vehicle name"
-          as="h1"
-          id="vehicle-page-title"
-        >
-          {vehicle.info.name}
-        </Heading>
-
-        <FakeDescription name="Role">
-          <Span color="gray.100">{vehicle.info.role}</Span>
-        </FakeDescription>
-      </Box>
-    </Box>
+    </Stack>
   );
 }

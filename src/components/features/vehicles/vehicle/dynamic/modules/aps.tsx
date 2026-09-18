@@ -23,11 +23,9 @@ export default function APS() {
             key={aps.id}
             as="section"
             collapsible
-            innerPadding={4}
             moduleId={aps.id}
             title={title}
             withAnchor
-            closedByDefault
           >
             <StatsRoot>
               <StatsRow>

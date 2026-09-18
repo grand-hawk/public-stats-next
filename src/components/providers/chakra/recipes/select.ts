@@ -6,18 +6,19 @@ export const selectRecipe = defineSlotRecipe({
   base: {
     root: {
       borderWidth: '1px',
+      borderRadius: 'sm',
     },
     trigger: {
       border: 'none',
-      borderRadius: 'none',
+      borderRadius: 'sm',
       minHeight: 'unset',
       paddingInline: 'unset',
     },
     content: {
-      borderRadius: 'none',
+      borderRadius: 'md',
     },
     item: {
-      borderRadius: 'none',
+      borderRadius: 'sm',
     },
   },
   variants: {

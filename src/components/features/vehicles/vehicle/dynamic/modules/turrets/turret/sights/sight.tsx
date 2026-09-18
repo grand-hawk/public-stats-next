@@ -95,19 +95,30 @@ export default function Sight({
 
   return (
     <InlineCard
+      flush
       headingAs="h4"
       moduleId={moduleId}
       title={sight.name}
       withAnchor={`${turretName}-sight-${sightIndex + 1}`}
     >
-      <Stack gap={4}>
+      <Stack gap={0}>
         {features.length > 0 && (
-          <Flex flexWrap="wrap" gap={2}>
+          <Flex flexWrap="wrap" gap={2} padding="16px">
             {features}
           </Flex>
         )}
 
-        <StatsRoot>
+        <StatsRoot
+          flush
+          frameProps={
+            features.length > 0
+              ? {
+                  borderBlockStartWidth: '1px',
+                  borderColor: 'var(--border-color-base)',
+                }
+              : undefined
+          }
+        >
           <StatsRow>
             <StatsCell>Rangefinder</StatsCell>
             <StatsCell>{sight.rangefinder}</StatsCell>

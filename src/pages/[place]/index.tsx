@@ -1,14 +1,23 @@
-import { Flex } from '@chakra-ui/react';
+import { Box } from '@chakra-ui/react';
 import React from 'react';
 
-import ClassesSection from '@/components/features/home/classesSection';
-import LoadoutsSection from '@/components/features/home/loadoutsSection';
-import NewestHero from '@/components/features/home/newestHero';
-import Separator from '@/components/features/home/separator';
-import { VEHICLE_CLASS_CATEGORIES } from '@/components/features/vehicles/classCategories';
+import {
+  Band,
+  BandGrid,
+  BandInner,
+  spanAside,
+  spanFull,
+} from '@/components/features/home/grid';
+import Ground from '@/components/features/home/ground';
+import HomeHero from '@/components/features/home/hero';
+import HighlightsBand from '@/components/features/home/highlightsBand';
+import LinkCard from '@/components/features/home/linkCard';
+import LoadoutsCard from '@/components/features/home/loadoutsCard';
+import ToolsCard from '@/components/features/home/toolsCard';
 import Layout from '@/components/layout/layout';
 import PageMeta from '@/components/layout/pageMeta';
-import SiteSearchHero from '@/components/layout/search/siteSearchHero';
+import { FOOTER_PUSH_MIN_HEIGHT } from '@/components/layout/shell/constants';
+import SiteFooter from '@/components/layout/siteFooter';
 import { usePlace } from '@/hooks/usePlace';
 import { trpc } from '@/utils/trpc';
 
@@ -18,52 +27,60 @@ export default function Place() {
 
   const [home] = trpc.home.place.useSuspenseQuery({ placeId: place.placeId });
   const { classCounts, loadouts, newest } = home;
-
-  const classes = VEHICLE_CLASS_CATEGORIES.filter(
-    (c) => c.slug !== 'artillery',
-  );
+  const { initials, placeName } = place;
+  const hasLoadouts = loadouts.length > 0;
 
   return (
     <PageMeta
-      exactTitle={`${place.placeName} Wiki`}
-      description={`Vehicle stats, shell data and armor maps for ${place.placeName}.`}
+      exactTitle={`${placeName} Wiki`}
+      description={`Vehicle stats, shell data and armor maps for ${placeName}.`}
     >
-      <Layout overwriteTabLabel="">
-        <Flex
-          direction="column"
-          gap={{ base: 6, md: 8 }}
-          marginX="auto"
-          maxWidth="6xl"
+      <Layout noPadding>
+        <Box
+          isolation="isolate"
+          minHeight={FOOTER_PUSH_MIN_HEIGHT}
+          position="relative"
         >
-          <SiteSearchHero />
+          <Ground />
 
-          <ClassesSection
+          <HomeHero initials={initials} placeName={placeName} />
+
+          <HighlightsBand
             classCounts={classCounts}
-            classes={classes}
-            initials={place.initials}
+            initials={initials}
+            newest={newest}
           />
 
-          {loadouts.length > 0 && (
-            <>
-              <Separator />
+          <Band css={{ paddingBlockEnd: '16px' }}>
+            <BandInner>
+              <BandGrid>
+                <ToolsCard initials={initials} />
 
-              <LoadoutsSection initials={place.initials} loadouts={loadouts} />
-            </>
-          )}
+                <LinkCard
+                  action="Browse shells"
+                  body="Penetration, velocity and damage for every round in the game."
+                  css={{ ...spanAside }}
+                  href={`/${initials}/shells`}
+                  title="Shells"
+                />
 
-          {newest && (
-            <>
-              <Separator />
+                {hasLoadouts && (
+                  <LoadoutsCard initials={initials} loadouts={loadouts} />
+                )}
 
-              <NewestHero
-                initials={place.initials}
-                name={newest.name}
-                role={newest.role}
-                slug={newest.slug}
-              />
-            </>
-          )}
-        </Flex>
+                <LinkCard
+                  action="Browse teams"
+                  body="Every faction and the vehicles it fields in each era."
+                  css={hasLoadouts ? { ...spanAside } : { ...spanFull }}
+                  href={`/${initials}/teams`}
+                  title="Teams"
+                />
+              </BandGrid>
+            </BandInner>
+          </Band>
+
+          <SiteFooter placeName={placeName} />
+        </Box>
       </Layout>
     </PageMeta>
   );

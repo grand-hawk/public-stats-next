@@ -12,6 +12,8 @@ import {
   YAxis,
 } from 'recharts';
 
+import { CHART_HEIGHT } from '@/components/features/winrate/chart/constants';
+
 import type { RouterOutputs } from '@/utils/trpc';
 
 export default function WinrateChart({
@@ -55,34 +57,42 @@ export default function WinrateChart({
     );
 
   return (
-    <Chart.Root chart={chart} maxHeight="sm" marginTop="calc(16px * 2)">
-      <LineChart data={chart.data} responsive>
+    <Chart.Root chart={chart} height={CHART_HEIGHT}>
+      <LineChart
+        data={chart.data}
+        margin={{ top: 24, right: 8, bottom: 0, left: 0 }}
+        responsive
+      >
         {weekendAreas.map((area) => (
           <ReferenceArea
             key={area.x1}
             x1={area.x1}
             x2={area.x2}
             fill={chart.color('bg.muted')}
-            fillOpacity={0.5}
+            fillOpacity={0.45}
             stroke="none"
           />
         ))}
 
-        <CartesianGrid stroke={chart.color('border')} vertical={false} />
+        <CartesianGrid stroke={chart.color('border.subtle')} vertical={false} />
 
         <XAxis
           axisLine={false}
           dataKey={chart.key('timestamp')}
-          stroke={chart.color('border')}
+          stroke={chart.color('border.subtle')}
+          tick={{ fill: chart.color('fg.muted'), fontSize: 12 }}
           tickFormatter={dateFormatter}
+          tickLine={false}
         />
         <YAxis
           axisLine={false}
           domain={[0, 100]}
-          stroke={chart.color('border')}
+          stroke={chart.color('border.subtle')}
+          tick={{ fill: chart.color('fg.muted'), fontSize: 12 }}
           tickFormatter={(value) => `${value}%`}
           tickLine={false}
           tickMargin={10}
+          width={48}
         />
 
         <Tooltip

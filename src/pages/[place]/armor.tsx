@@ -27,7 +27,7 @@ export default function ArmorPage() {
       title="Armour visualizer"
       twitterCard={ogImage ? 'summary_large_image' : undefined}
     >
-      <Layout hidePlaceDropdown noPadding overwriteTabLabel="Armour visualizer">
+      <Layout noPadding>
         <ArmorVisualizer />
       </Layout>
     </PageMeta>

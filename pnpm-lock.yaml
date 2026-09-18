@@ -56,9 +56,6 @@ importers:
       fuse.js:
         specifier: ^7.5.0
         version: 7.5.0
-      geist:
-        specifier: ^1.7.2
-        version: 1.7.2(next@16.3.1(patch_hash=1c13ea754d0d5284fe5e491a2f39611fce3a51873b2d332cb3e839769ca5bf11)(@babel/core@7.29.7)(@types/node@26.2.0)(babel-plugin-react-compiler@1.0.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))
       html-to-markdown-node:
         specifier: ^2.18.0
         version: 2.18.0
@@ -2435,11 +2432,6 @@ packages:
   fuse.js@7.5.0:
     resolution: {integrity: sha512-sQtrEfA+ez/3G0cCZecF70oqpCRttCexYUG4mUrtWL49ULUzUyxokt5kyqwtKzj1270RaKih+hcP3qLcumccow==}
     engines: {node: '>=10'}
-
-  geist@1.7.2:
-    resolution: {integrity: sha512-Gu5lDFa3pLRyoBlBPf0QIFHVdWAnpco7fS1bJm41jyLPFoguBgiubseUN2oLXMgqZ7uxAxDoXcHMhCY/fOTTgg==}
-    peerDependencies:
-      next: '>=13.2.0'
 
   generator-function@2.0.1:
     resolution: {integrity: sha512-SFdFmIJi+ybC0vjlHN0ZGVGHc3lgE0DxPAT0djjVg+kjOnSqclqmj0KQ7ykTOLP6YxoqOvuAODGdcHJn+43q3g==}
@@ -6532,10 +6524,6 @@ snapshots:
   functions-have-names@1.2.3: {}
 
   fuse.js@7.5.0: {}
-
-  geist@1.7.2(next@16.3.1(patch_hash=1c13ea754d0d5284fe5e491a2f39611fce3a51873b2d332cb3e839769ca5bf11)(@babel/core@7.29.7)(@types/node@26.2.0)(babel-plugin-react-compiler@1.0.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)):
-    dependencies:
-      next: 16.3.1(patch_hash=1c13ea754d0d5284fe5e491a2f39611fce3a51873b2d332cb3e839769ca5bf11)(@babel/core@7.29.7)(@types/node@26.2.0)(babel-plugin-react-compiler@1.0.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
 
   generator-function@2.0.1: {}
 

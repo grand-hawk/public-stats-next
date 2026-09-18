@@ -2,186 +2,157 @@ import { Box, Span, Stack } from '@chakra-ui/react';
 import React from 'react';
 import { GrDocumentMissing } from 'react-icons/gr';
 
+import { organizeVehicles } from '@/components/features/teams/loadouts/organizeVehicles';
 import VehicleCell from '@/components/features/teams/loadouts/vehicleCell';
 import { EmptyState } from '@/components/ui/empty-state';
-import {
-  classificationOrder,
-  getClassification,
-} from '@/utils/vehicleClassification';
+import { RAISED_FRAME_CSS } from '@/components/ui/styles';
 
-import type { Team, TeamVehicle } from '@/server/api/trpc/routers/teams';
+import type { GridVehicle } from '@/components/features/teams/loadouts/organizeVehicles';
+import type { SystemStyleObject } from '@chakra-ui/react';
 
-interface LoadoutVehiclesGridProps {
-  initials: string;
-  vehicles: Team['loadouts'][string];
-}
+const FRAME_CSS: SystemStyleObject = {
+  ...RAISED_FRAME_CSS,
+  overflow: 'auto hidden',
+  width: '100%',
+};
 
-interface OrganizedVehicle {
-  name: string;
-  premiumType?: NonNullable<TeamVehicle['premiumType']>;
-  slug: string;
-  vehicle: TeamVehicle;
-}
+const LABEL_CSS: SystemStyleObject = {
+  color: 'fg.emphasized',
+  fontSize: '0.875rem',
+  fontWeight: 600,
+  lineHeight: '1.375rem',
+};
+
+const HEAD_CSS: SystemStyleObject = {
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  backgroundColor: 'var(--color-surface-2)',
+  padding: '8px 12px',
+};
 
 export default React.memo(function LoadoutVehiclesGrid({
   initials,
   vehicles,
-}: LoadoutVehiclesGridProps) {
+}: {
+  initials: string;
+  vehicles: Record<string, GridVehicle>;
+}) {
   const vehicleEntries = React.useMemo(
     () => Object.entries(vehicles),
     [vehicles],
   );
 
-  const { classifications, tiers, vehiclesByTierAndClassification } =
-    React.useMemo(() => {
-      const classificationsSet = new Set<string>();
-      const tiersSet = new Set<number>();
-
-      for (const [, vehicle] of vehicleEntries) {
-        classificationsSet.add(getClassification(vehicle.role));
-        tiersSet.add(vehicle.tier);
-      }
-
-      const sortedClassifications = classificationOrder.filter((c) =>
-        classificationsSet.has(c),
-      );
-      const sortedTiers = Array.from(tiersSet).sort((a, b) => a - b);
-
-      const byTierAndClassification: Record<
-        number,
-        Record<string, OrganizedVehicle[]>
-      > = {};
-
-      for (const tier of sortedTiers) {
-        byTierAndClassification[tier] = {};
-        for (const classification of sortedClassifications) {
-          byTierAndClassification[tier][classification] = [];
-        }
-      }
-
-      for (const [vehicleName, vehicle] of vehicleEntries) {
-        const classification = getClassification(vehicle.role);
-        byTierAndClassification[vehicle.tier][classification].push({
-          name: vehicleName,
-          premiumType: vehicle.premiumType,
-          slug: vehicle.slug,
-          vehicle,
-        });
-      }
-
-      for (const tier of sortedTiers) {
-        for (const classification of sortedClassifications) {
-          byTierAndClassification[tier][classification].sort((a, b) =>
-            a.name.localeCompare(b.name),
-          );
-        }
-      }
-
-      return {
-        classifications: sortedClassifications,
-        tiers: sortedTiers,
-        vehiclesByTierAndClassification: byTierAndClassification,
-      };
-    }, [vehicleEntries]);
+  const { byTierAndClassification, classifications, tiers } = React.useMemo(
+    () => organizeVehicles(vehicleEntries),
+    [vehicleEntries],
+  );
 
   if (vehicleEntries.length === 0) {
     return (
-      <EmptyState
-        icon={<GrDocumentMissing />}
-        title="No vehicles found for this loadout"
-      />
+      <Box css={FRAME_CSS}>
+        <EmptyState
+          icon={<GrDocumentMissing />}
+          title="No vehicles found for this loadout"
+        />
+      </Box>
     );
   }
 
   return (
-    <Box overflowX="auto">
+    <Box css={FRAME_CSS}>
       <Box
         display="grid"
-        gap={0}
-        gridTemplateColumns={`auto repeat(${classifications.length}, minmax(140px, 1fr))`}
+        gridTemplateColumns={`auto repeat(${classifications.length}, minmax(152px, 1fr))`}
         minWidth="fit-content"
       >
         <Box
-          backgroundColor="bg.emphasized"
-          borderBottomWidth="1px"
-          borderRightWidth="1px"
-          left={0}
-          padding={3}
-          position="sticky"
-          zIndex={1}
+          css={{
+            ...HEAD_CSS,
+            position: 'sticky',
+            insetInlineStart: 0,
+            zIndex: 2,
+            borderInlineEndWidth: '1px',
+            borderInlineEndStyle: 'solid',
+            borderColor: 'var(--border-color-subtle)',
+          }}
         >
-          <Span color="fg.subtle" fontSize="xs" fontWeight="semibold">
-            Tier
-          </Span>
+          <Span css={LABEL_CSS}>Tier</Span>
         </Box>
+
         {classifications.map((classification, index) => (
           <Box
             key={classification}
-            alignItems="center"
-            backgroundColor="bg.emphasized"
-            borderBottomWidth="1px"
-            borderRightWidth={
-              index === classifications.length - 1 ? '0' : '1px'
-            }
-            display="flex"
-            justifyContent="center"
-            padding={3}
+            css={{
+              ...HEAD_CSS,
+              borderInlineEndWidth:
+                index === classifications.length - 1 ? 0 : '1px',
+              borderInlineEndStyle: 'solid',
+              borderColor: 'var(--border-color-subtle)',
+            }}
           >
-            <Span fontSize="sm" fontWeight="semibold">
-              {classification}
-            </Span>
+            <Span css={LABEL_CSS}>{classification}</Span>
           </Box>
         ))}
 
-        {tiers.map((tier, tierIndex) => (
-          <React.Fragment key={tier}>
-            <Box
-              alignItems="center"
-              backgroundColor="bg.muted"
-              borderBottomWidth={tierIndex === tiers.length - 1 ? '0' : '1px'}
-              borderRightWidth="1px"
-              display="flex"
-              justifyContent="center"
-              left={0}
-              padding={3}
-              position="sticky"
-              zIndex={1}
-            >
-              <Span color="fg.subtle" fontSize="sm" fontWeight="semibold">
-                {tier}
-              </Span>
-            </Box>
+        {tiers.map((tier, tierIndex) => {
+          const rowBorderColor =
+            tierIndex === 0
+              ? 'var(--border-color-base)'
+              : 'var(--border-color-subtle)';
 
-            {classifications.map((classification, classIndex) => {
-              const cellVehicles =
-                vehiclesByTierAndClassification[tier][classification];
+          return (
+            <React.Fragment key={tier}>
+              <Box
+                css={{
+                  ...HEAD_CSS,
+                  position: 'sticky',
+                  insetInlineStart: 0,
+                  zIndex: 1,
+                  borderBlockStartWidth: '1px',
+                  borderBlockStartStyle: 'solid',
+                  borderInlineEndWidth: '1px',
+                  borderInlineEndStyle: 'solid',
+                  borderColor: rowBorderColor,
+                }}
+              >
+                <Span css={LABEL_CSS}>{tier}</Span>
+              </Box>
 
-              return (
+              {classifications.map((classification, classIndex) => (
                 <Box
                   key={`${tier}-${classification}`}
-                  borderBottomWidth={
-                    tierIndex === tiers.length - 1 ? '0' : '1px'
-                  }
-                  borderRightWidth={
-                    classIndex === classifications.length - 1 ? '0' : '1px'
-                  }
-                  padding={2}
+                  css={{
+                    padding: '8px',
+                    borderBlockStartWidth: '1px',
+                    borderBlockStartStyle: 'solid',
+                    borderInlineEndWidth:
+                      classIndex === classifications.length - 1 ? 0 : '1px',
+                    borderInlineEndStyle: 'solid',
+                    borderColor: rowBorderColor,
+                  }}
                 >
-                  <Stack gap={2}>
-                    {cellVehicles.map((item) => (
-                      <VehicleCell
-                        key={item.slug}
-                        initials={initials}
-                        name={item.name}
-                        vehicle={item.vehicle}
-                      />
-                    ))}
+                  <Stack gap="8px">
+                    {byTierAndClassification[tier][classification].map(
+                      (item) => (
+                        <VehicleCell
+                          key={item.slug}
+                          initials={initials}
+                          name={item.name}
+                          slug={item.slug}
+                          premium={
+                            item.vehicle.premiumType ??
+                            item.vehicle.premium?.type
+                          }
+                        />
+                      ),
+                    )}
                   </Stack>
                 </Box>
-              );
-            })}
-          </React.Fragment>
-        ))}
+              ))}
+            </React.Fragment>
+          );
+        })}
       </Box>
     </Box>
   );

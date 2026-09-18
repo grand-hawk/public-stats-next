@@ -5,18 +5,36 @@ import React from 'react';
 import ArmorCanvas from '@/components/features/tools/armor/armorCanvas';
 import ArmorTour from '@/components/features/tools/armor/armorTour';
 import ArmorControls from '@/components/features/tools/armor/controls';
-import { groupModules } from '@/components/features/tools/armor/moduleGroups';
-import { parseMtca } from '@/components/features/tools/armor/mtca';
 import { palettes } from '@/components/features/tools/armor/palettes';
+import { useArmorDebugBridge } from '@/components/features/tools/armor/useArmorDebugBridge';
 import { useArmorProcessor } from '@/components/features/tools/armor/useArmorProcessor';
+import { useArmorTour } from '@/components/features/tools/armor/useArmorTour';
+import { useArmorUpload } from '@/components/features/tools/armor/useArmorUpload';
+import { useFrontArmorDepth } from '@/components/features/tools/armor/useFrontArmorDepth';
+import { useHiddenModules } from '@/components/features/tools/armor/useHiddenModules';
 import { IS_DEV } from '@/env';
-import { usePersistStoreIsHydrated } from '@/hooks/usePersistStoreIsHydrated';
 import { useSuspenseConfig } from '@/hooks/useSuspenseConfig';
 import { useArmorStore } from '@/stores/armor';
 import { getNameFromInitials, getPlaceFromName } from '@/utils/placeUtils';
 import { trpc } from '@/utils/trpc';
 
-import type { RawArmorData } from '@/components/features/tools/armor/mtca';
+import type { ArmorAngle } from '@/utils/getVehicleImage';
+
+function depthFractionFor(angle: ArmorAngle, frontFraction: number) {
+  switch (angle) {
+    case 'front':
+      return frontFraction;
+    case 'left':
+    case 'right':
+    case 'back':
+      return 0.5;
+    case 'front_30':
+    case 'front_-30':
+      return 0.75;
+    default:
+      return 1;
+  }
+}
 
 export default function ArmorVisualizer() {
   const config = useSuspenseConfig();
@@ -39,57 +57,25 @@ export default function ArmorVisualizer() {
   const [autoRange, setAutoRange] = React.useState(true);
   const [palette, setPalette] = React.useState(palettes[0]);
   const [ricochetAngle, setRicochetAngle] = React.useState(82.5);
-  const [hiddenModules, setHiddenModules] = React.useState<ReadonlySet<number>>(
-    () => new Set(),
-  );
-  const [overrideData, setOverrideData] = React.useState<RawArmorData | null>(
-    null,
-  );
-  const [overrideFileName, setOverrideFileName] = React.useState<string | null>(
-    null,
-  );
-  const [uploadError, setUploadError] = React.useState<string | null>(null);
 
   const saveRef = React.useRef<(() => void) | null>(null);
 
-  const { setTourSeen, tourSeen } = useArmorStore();
-  const hydrated = usePersistStoreIsHydrated(useArmorStore);
-  const [tourOpen, setTourOpen] = React.useState(false);
+  const tour = useArmorTour();
 
-  React.useEffect(() => {
-    if (hydrated && !tourSeen) setTourOpen(true);
-  }, [hydrated, tourSeen]);
+  const {
+    applyDefaults: applyModuleDefaults,
+    hiddenModules,
+    reset: resetHiddenModules,
+    toggle: toggleModules,
+  } = useHiddenModules(vehicleSlug);
 
-  const handleTourOpenChange = React.useCallback(
-    (open: boolean) => {
-      setTourOpen(open);
-      if (!open) setTourSeen(true);
-    },
-    [setTourSeen],
-  );
-
-  const handleOpenTour = React.useCallback(() => {
-    setTourOpen(true);
-  }, []);
-
-  const prevModuleNamesRef = React.useRef('');
-
-  React.useEffect(() => {
-    setHiddenModules(new Set());
-    prevModuleNamesRef.current = '';
-  }, [vehicleSlug]);
-
-  const handleToggleModule = React.useCallback((moduleIndices: number[]) => {
-    setHiddenModules((prev) => {
-      const next = new Set(prev);
-      const allHidden = moduleIndices.every((i) => next.has(i));
-      for (const i of moduleIndices) {
-        if (allHidden) next.delete(i);
-        else next.add(i);
-      }
-      return next;
-    });
-  }, []);
+  const {
+    clear: clearUpload,
+    data: overrideData,
+    error: uploadError,
+    fileName: overrideFileName,
+    upload: uploadFile,
+  } = useArmorUpload(resetHiddenModules);
 
   const {
     canvas,
@@ -118,143 +104,59 @@ export default function ArmorVisualizer() {
   });
 
   React.useEffect(() => {
-    if (!modules.length) return;
+    applyModuleDefaults(modules);
+  }, [applyModuleDefaults, modules]);
 
-    const key = modules.map((m) => m.name).join('\0');
-    if (key === prevModuleNamesRef.current) return;
-    prevModuleNamesRef.current = key;
-
-    const hidden = new Set<number>();
-    for (const group of groupModules(modules)) {
-      if (group.initiallyHidden) {
-        for (const idx of group.indices) hidden.add(idx);
-      }
-    }
-    setHiddenModules(hidden);
-  }, [modules]);
-
-  const { data: selectedVehicle } = trpc.vehicles.bySlug.useQuery(
-    { placeId: rvPlace.placeId, slug: vehicleSlug ?? '' },
-    { enabled: vehicleSlug !== null },
-  );
-  const frontArmorDepth = selectedVehicle?.info.frontArmorDepth;
-
-  const utils = trpc.useUtils();
-  const { mutate: setFrontArmorDepthMutation } =
-    trpc.vehicles.setFrontArmorDepth.useMutation({
-      onSuccess: () => {
-        utils.vehicles.bySlug.invalidate({
-          placeId: rvPlace.placeId,
-          slug: vehicleSlug ?? '',
-        });
-      },
-    });
-
-  const handleSetFrontArmorDepth = React.useCallback(
-    (percent: number) => {
-      if (!vehicleSlug || overrideData) return;
-      setFrontArmorDepthMutation({ slug: vehicleSlug, value: percent });
-    },
-    [vehicleSlug, overrideData, setFrontArmorDepthMutation],
+  const { frontArmorDepth, setFrontArmorDepth } = useFrontArmorDepth(
+    rvPlace.placeId,
+    vehicleSlug,
+    IS_DEV && !overrideData,
   );
 
-  // when data loads or angle changes, reset depth range
   React.useEffect(() => {
     setMinDepth(0);
     if (!detectedMaxDepth) {
       setMaxDepth(Infinity);
       return;
     }
-    const frontFraction = frontArmorDepth != null ? frontArmorDepth / 100 : 0.5;
-    const fraction =
-      angle === 'front'
-        ? frontFraction
-        : angle === 'left' || angle === 'right' || angle === 'back'
-          ? 0.5
-          : angle === 'front_30' || angle === 'front_-30'
-            ? 0.75
-            : 1;
-    setMaxDepth(detectedMaxDepth * fraction);
+    setMaxDepth(
+      detectedMaxDepth *
+        depthFractionFor(
+          angle,
+          frontArmorDepth != null ? frontArmorDepth / 100 : 0.5,
+        ),
+    );
   }, [detectedMaxDepth, angle, frontArmorDepth, setMaxDepth, setMinDepth]);
-
-  const effectiveMin = autoRange ? detectedMin : minMm;
-  const effectiveMax = autoRange ? detectedMax : maxMm;
 
   const handleSelectVehicle = React.useCallback(
     (slug: string) => {
-      setOverrideData(null);
-      setOverrideFileName(null);
-      setUploadError(null);
+      clearUpload();
       void setVehicleSlug(slug);
     },
-    [setVehicleSlug],
+    [clearUpload, setVehicleSlug],
   );
 
-  const handleUploadFile = React.useCallback(async (file: File) => {
-    try {
-      const buffer = await file.arrayBuffer();
-      const view = new DataView(buffer);
-      const data = parseMtca(view);
-      setOverrideData(data);
-      setOverrideFileName(file.name);
-      setUploadError(null);
-      setHiddenModules(new Set());
-      prevModuleNamesRef.current = '';
-    } catch (err) {
-      setUploadError(
-        err instanceof Error ? err.message : 'Failed to parse file',
-      );
-      setOverrideData(null);
-      setOverrideFileName(null);
-    }
-  }, []);
-
-  const handleClearUpload = React.useCallback(() => {
-    setOverrideData(null);
-    setOverrideFileName(null);
-    setUploadError(null);
-  }, []);
+  const handleClearVehicle = React.useCallback(() => {
+    void setVehicleSlug(null);
+  }, [setVehicleSlug]);
 
   const handleSave = React.useCallback(() => {
     saveRef.current?.();
   }, []);
 
-  const setDebugDetectedMaxDepth = useArmorStore((s) => s.setDetectedMaxDepth);
-  const setDebugSlug = useArmorStore((s) => s.setSlug);
-  const setDebugVehicles = useArmorStore((s) => s.setVehicles);
-  const setDebugOnSelectVehicle = useArmorStore((s) => s.setOnSelectVehicle);
-  const setDebugOnSetFrontArmorDepth = useArmorStore(
-    (s) => s.setOnSetFrontArmorDepth,
-  );
-
-  React.useEffect(() => {
-    setDebugDetectedMaxDepth(detectedMaxDepth);
-  }, [detectedMaxDepth, setDebugDetectedMaxDepth]);
-  React.useEffect(() => {
-    setDebugSlug(vehicleSlug);
-  }, [vehicleSlug, setDebugSlug]);
-  React.useEffect(() => {
-    setDebugVehicles(vehicleList);
-  }, [vehicleList, setDebugVehicles]);
-  React.useEffect(() => {
-    setDebugOnSelectVehicle(handleSelectVehicle);
-  }, [handleSelectVehicle, setDebugOnSelectVehicle]);
-  React.useEffect(() => {
-    setDebugOnSetFrontArmorDepth(
-      IS_DEV && !overrideData ? handleSetFrontArmorDepth : null,
-    );
-  }, [overrideData, handleSetFrontArmorDepth, setDebugOnSetFrontArmorDepth]);
+  useArmorDebugBridge({
+    detectedMaxDepth,
+    slug: vehicleSlug,
+    vehicles: vehicleList,
+    onSelectVehicle: handleSelectVehicle,
+    onSetFrontArmorDepth: setFrontArmorDepth,
+  });
 
   return (
     <Box
       display="grid"
-      gridTemplateColumns={{
-        base: '1fr',
-        md: '280px 1fr',
-      }}
-      gridTemplateRows={{
-        md: '1fr',
-      }}
+      gridTemplateColumns={{ base: '1fr', md: '300px 1fr' }}
+      gridTemplateRows={{ md: '1fr' }}
       height={{ md: '100%' }}
       minHeight="0"
       overflow={{ md: 'clip' }}
@@ -272,34 +174,35 @@ export default function ArmorVisualizer() {
         minDepth={minDepth}
         minMm={minMm}
         modules={modules}
-        usedModuleIndices={usedModuleIndices}
-        onAngleChange={setAngle}
-        onAutoRangeChange={setAutoRange}
-        onClearUpload={handleClearUpload}
-        onMaxChange={setMaxMm}
-        onMaxDepthChange={setMaxDepth}
-        onMinChange={setMinMm}
-        onMinDepthChange={setMinDepth}
-        onOpenTour={handleOpenTour}
-        onPaletteChange={setPalette}
-        onRicochetAngleChange={setRicochetAngle}
-        onSave={handleSave}
-        onSelectVehicle={handleSelectVehicle}
-        onToggleModule={handleToggleModule}
-        onUploadFile={handleUploadFile}
         overrideFileName={overrideFileName}
         palette={palette}
         ricochetAngle={ricochetAngle}
         selectedSlug={vehicleSlug}
         uploadError={uploadError}
+        usedModuleIndices={usedModuleIndices}
         vehicles={vehicleList}
         version={version}
+        onAngleChange={setAngle}
+        onAutoRangeChange={setAutoRange}
+        onClearUpload={clearUpload}
+        onClearVehicle={handleClearVehicle}
+        onMaxChange={setMaxMm}
+        onMaxDepthChange={setMaxDepth}
+        onMinChange={setMinMm}
+        onMinDepthChange={setMinDepth}
+        onOpenTour={tour.openTour}
+        onPaletteChange={setPalette}
+        onRicochetAngleChange={setRicochetAngle}
+        onSave={handleSave}
+        onSelectVehicle={handleSelectVehicle}
+        onToggleModule={toggleModules}
+        onUploadFile={uploadFile}
       />
 
       <ArmorTour
         hasVehicle={vehicleSlug != null}
-        open={tourOpen}
-        onOpenChange={handleTourOpenChange}
+        open={tour.open}
+        onOpenChange={tour.onOpenChange}
       />
 
       <Box
@@ -315,9 +218,9 @@ export default function ArmorVisualizer() {
           error={error}
           loading={loading}
           maxDepth={maxDepth}
-          maxMm={effectiveMax}
+          maxMm={autoRange ? detectedMax : maxMm}
           minDepth={minDepth}
-          minMm={effectiveMin}
+          minMm={autoRange ? detectedMin : minMm}
           onSaveRef={saveRef}
           palette={palette}
           ricochetAngle={ricochetAngle}

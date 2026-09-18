@@ -8,7 +8,6 @@ export interface ToggleTipProps extends ChakraPopover.RootProps {
   portalRef?: React.RefObject<HTMLElement>;
   content?: React.ReactNode;
   contentProps?: ChakraPopover.ContentProps;
-  // hover support props
   openDelay?: number;
   closeDelay?: number;
   disabled?: boolean;

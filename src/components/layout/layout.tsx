@@ -1,86 +1,70 @@
 import { Box, Flex } from '@chakra-ui/react';
 import React, { Suspense } from 'react';
 
-import PlaceSwitchBar from '@/components/common/placeSwitchBar';
-import { CenterSpinner } from '@/components/common/spinners';
 import { PageMetaHead } from '@/components/layout/pageMeta';
-import Sidebar from '@/components/layout/sidebar';
+import BottomBar from '@/components/layout/rail/bottomBar';
+import MenuCard from '@/components/layout/rail/menuCard';
+import Rail from '@/components/layout/rail/rail';
+import RouteFallback, {
+  RouteContentReady,
+} from '@/components/layout/routeFallback';
+import { SiteSearchHost } from '@/components/layout/search/siteSearch';
 
 import type { BoxProps } from '@chakra-ui/react';
 
-export const LAYOUT_SHIFT_MEDIA = 'md';
-
 export interface LayoutProps extends BoxProps {
   children?: React.ReactNode;
-  hidePlaceDropdown?: boolean;
-  hidePlaceSelector?: boolean;
   noPadding?: boolean;
-  overwriteTabLabel?: string;
 }
 
-export default function Layout({
-  children,
-  hidePlaceDropdown,
-  hidePlaceSelector,
-  noPadding,
-  overwriteTabLabel,
-  ...props
-}: LayoutProps) {
+export default function Layout({ children, noPadding, ...props }: LayoutProps) {
+  const menuTriggerRef = React.useRef<HTMLButtonElement>(null);
+
   return (
     <>
       <PageMetaHead />
 
-      <Flex justifyContent="center">
+      <Flex
+        css={{
+          flexDirection: 'column',
+          '@media (min-width: 1120px)': { flexDirection: 'row' },
+        }}
+        height="100svh"
+        overflow="clip"
+        width="100%"
+      >
+        <Rail triggerRef={menuTriggerRef} />
+
         <Box
           as="main"
-          display="grid"
-          gridTemplateColumns={{
-            md: 'max-content 1fr',
+          flex={1}
+          minHeight={0}
+          minWidth={0}
+          overflow="auto"
+          padding={noPadding ? undefined : { base: 2, md: 4 }}
+          {...props}
+          css={{
+            '& > *': {
+              animation:
+                'citizen-fade-in 260ms cubic-bezier(0.05, 0.7, 0.1, 1) backwards',
+            },
+            '@media (prefers-reduced-motion: reduce)': {
+              '& > *': { animation: 'none' },
+            },
+            ...props.css,
           }}
-          gridTemplateRows={{
-            base: '1fr max-content',
-            md: '1fr',
-          }}
-          height="100svh"
-          maxWidth="1920px"
-          overflow="clip"
-          width="100%"
         >
-          <Sidebar />
-
-          <Box
-            display="grid"
-            gridTemplateRows="max-content 1fr"
-            minHeight="0"
-            overflow="clip"
-          >
-            {!hidePlaceSelector && (
-              <PlaceSwitchBar
-                hideDropdown={hidePlaceDropdown}
-                overwriteTabLabel={overwriteTabLabel}
-              />
-            )}
-
-            <Box
-              gridRow="2"
-              minHeight="0"
-              overflow="auto"
-              padding={
-                noPadding
-                  ? undefined
-                  : {
-                      base: 2,
-                      md: 4,
-                    }
-              }
-              paddingTop={noPadding ? undefined : 4}
-              {...props}
-            >
-              <Suspense fallback={<CenterSpinner />}>{children}</Suspense>
-            </Box>
-          </Box>
+          <Suspense fallback={<RouteFallback />}>
+            {children}
+            <RouteContentReady />
+          </Suspense>
         </Box>
+
+        <BottomBar triggerRef={menuTriggerRef} />
       </Flex>
+
+      <MenuCard triggerRef={menuTriggerRef} />
+      <SiteSearchHost />
     </>
   );
 }

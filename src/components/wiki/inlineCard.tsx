@@ -1,9 +1,10 @@
-import { Box, Heading, Link } from '@chakra-ui/react';
-import NextLink from 'next/link';
+import { Box } from '@chakra-ui/react';
 import React from 'react';
 import slug from 'slug';
 
 import ModuleIdSelect from '@/components/development/moduleIdSelect';
+import { RAISED_FRAME_CSS } from '@/components/ui/styles';
+import CardHeading from '@/components/wiki/cardHeading';
 import { useParentHighlighted } from '@/components/wiki/titledCard';
 import { useDynamicData } from '@/hooks/providers/dynamicData';
 
@@ -11,8 +12,9 @@ import type { BoxProps, HeadingProps } from '@chakra-ui/react';
 
 export interface InlineCardProps extends BoxProps {
   children?: React.ReactNode;
+  endAddon?: React.ReactNode;
+  flush?: boolean;
   headingAs?: HeadingProps['as'];
-  innerPadding?: BoxProps['padding'];
   moduleId?: string;
   title: string;
   withAnchor?: boolean | string;
@@ -20,8 +22,9 @@ export interface InlineCardProps extends BoxProps {
 
 export default function InlineCard({
   children,
+  endAddon,
+  flush,
   headingAs,
-  innerPadding = 4,
   moduleId,
   title,
   withAnchor,
@@ -44,51 +47,64 @@ export default function InlineCard({
       : undefined;
   const isHighlighted = !parentHighlighted && !!highlightColor;
 
+  const level = typeof headingAs === 'string' ? headingAs : 'h4';
+
   return (
     <Box
-      borderLeftWidth="1px"
-      borderRadius="none"
-      borderRightWidth="1px"
-      borderYWidth="1px"
-      marginTop={2}
-      padding={innerPadding}
-      position="relative"
+      className="mtc-frame"
       data-module-highlighted={isHighlighted || undefined}
-      outline={isHighlighted ? '2px solid' : undefined}
-      outlineColor={isHighlighted ? highlightColor : undefined}
-      outlineOffset={isHighlighted ? '-1px' : undefined}
       {...props}
       css={{
+        ...RAISED_FRAME_CSS,
+        overflow: 'hidden',
         ...props.css,
+        outline: isHighlighted ? '2px solid' : undefined,
+        outlineColor: isHighlighted ? highlightColor : undefined,
+        outlineOffset: isHighlighted ? '-2px' : undefined,
         transition: 'outline 0.3s ease-in-out',
       }}
     >
-      <Heading
-        as={headingAs}
-        backgroundColor="currentBg"
-        color="fg"
-        fontWeight="medium"
-        id={titleSlug}
-        insetInlineStart={2}
-        paddingX={2}
-        position="absolute"
-        size="sm"
-        top={-2.5}
+      <Box
+        css={{
+          display: 'flex',
+          alignItems: 'center',
+          gap: '8px',
+          backgroundColor: 'var(--color-surface-2)',
+          borderBlockEndWidth: '1px',
+          borderBlockEndStyle: 'solid',
+          borderColor: 'var(--border-color-base)',
+          padding: '10px 16px',
+        }}
       >
-        {withAnchor ? (
-          <Link asChild>
-            <NextLink href={`#${titleSlug}`} shallow>
-              {title}
-            </NextLink>
-          </Link>
-        ) : (
-          title
-        )}
+        <CardHeading
+          as={level}
+          id={titleSlug}
+          title={title}
+          withAnchor={withAnchor}
+          typography={{
+            fontSize: '0.875rem',
+            fontWeight: 600,
+            lineHeight: '1.375rem',
+          }}
+        />
 
         <ModuleIdSelect moduleId={moduleId} />
-      </Heading>
 
-      <Box aria-labelledby={titleSlug} marginTop={1}>
+        {endAddon && (
+          <Box
+            css={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '8px',
+              marginInlineStart: 'auto',
+            }}
+          >
+            {endAddon}
+          </Box>
+        )}
+      </Box>
+
+      <Box aria-labelledby={titleSlug} padding={flush ? 0 : '16px'}>
         {children}
       </Box>
     </Box>

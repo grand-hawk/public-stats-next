@@ -1,10 +1,10 @@
-import { HStack } from '@chakra-ui/react';
 import React from 'react';
 
 import ShellIcon from '@/components/features/shells/shellIcon';
 import { getShellIcon } from '@/components/icons/shells';
 import SearchSidebar from '@/components/layout/searchLayout/searchSidebar';
 import SearchInput from '@/components/layout/searchLayout/searchSidebar/input';
+import SearchRowLabel from '@/components/layout/searchLayout/searchSidebar/rowLabel';
 import { usePlace } from '@/hooks/usePlace';
 import { useRouterQuery } from '@/hooks/useRouterQuery';
 import { useShellsSearchStore } from '@/stores/shells/search';
@@ -25,10 +25,10 @@ const ShellListName = React.memo(function ShellListName({
   if (!shellIcon) return name;
 
   return (
-    <HStack justifyContent="space-between" width="100%">
-      {name}
-      <ShellIcon alt={name} src={shellIcon} />
-    </HStack>
+    <SearchRowLabel
+      icon={<ShellIcon alt={name} src={shellIcon} />}
+      name={name}
+    />
   );
 });
 
@@ -98,7 +98,6 @@ export default function ShellsSearchSidebar() {
       result.push({
         type: 'divider',
         label: weapon,
-        emphasized: true,
       });
 
       for (const shell of shells) {
@@ -133,6 +132,7 @@ export default function ShellsSearchSidebar() {
     >
       <SearchInput
         noButton={isSearching}
+        placeholder="Filter shells"
         queryKey="shell"
         value={query}
         onChange={(details) => setQuery(details.target.value)}

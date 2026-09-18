@@ -2,7 +2,7 @@ import { Box, Flex } from '@chakra-ui/react';
 import NextImage from 'next/image';
 import React from 'react';
 import { GiArtilleryShell } from 'react-icons/gi';
-import { LuArrowRight, LuFlag } from 'react-icons/lu';
+import { LuArrowRight } from 'react-icons/lu';
 import { MdViewList } from 'react-icons/md';
 import { TbTank } from 'react-icons/tb';
 
@@ -124,15 +124,4 @@ export const PAGE_TYPE_LABELS: Record<PageRef['type'], string> = {
   team: 'Team',
   loadout: 'Loadout',
   page: 'Page',
-};
-
-export const PAGE_TYPE_FALLBACK_ICONS: Record<
-  PageRef['type'],
-  React.ReactNode
-> = {
-  vehicle: <TbTank />,
-  shell: <GiArtilleryShell />,
-  team: <LuFlag />,
-  loadout: <MdViewList />,
-  page: <LuArrowRight />,
 };

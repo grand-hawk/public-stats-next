@@ -4,6 +4,7 @@ import VehicleArmor from '@/components/features/vehicles/vehicle/armor';
 import APS from '@/components/features/vehicles/vehicle/dynamic/modules/aps';
 import Defenses from '@/components/features/vehicles/vehicle/dynamic/modules/defenses';
 import Performance from '@/components/features/vehicles/vehicle/dynamic/modules/performance';
+import Powertrain from '@/components/features/vehicles/vehicle/dynamic/modules/powertrain';
 import Turrets from '@/components/features/vehicles/vehicle/dynamic/modules/turrets';
 import Vehicle from '@/components/features/vehicles/vehicle/dynamic/modules/vehicle';
 import { EmptyState } from '@/components/ui/empty-state';
@@ -19,6 +20,7 @@ export default function VehicleDynamicModules() {
   return (
     <>
       <Vehicle />
+      <Powertrain />
       <Performance />
       <VehicleArmor />
       <Defenses />

@@ -1,45 +1,26 @@
-import type {
-  Layer,
-  PixelData,
-  RawArmorData,
-} from '@/components/features/tools/armor/mtca/types';
+import { readPixels } from '@/components/features/tools/armor/mtca/pixels';
 
-function decodeAngle(encoded: number): number {
-  if (encoded === 0) return 0;
-  return 75 + (encoded - 1) * 0.0625;
-}
+import type { LayerReader } from '@/components/features/tools/armor/mtca/pixels';
+import type { RawArmorData } from '@/components/features/tools/armor/mtca/types';
+
+const LAYER_READER: LayerReader = {
+  size: 10,
+  read: (view, offset) => ({
+    depth: view.getFloat64(offset + 2),
+    moduleIndex: 0,
+    thickness: view.getUint16(offset),
+  }),
+};
 
 export function parseMtcaV1(view: DataView): RawArmorData {
   const rows = view.getUint16(5);
   const cols = view.getUint16(7);
 
-  let offset = 9;
-  const pixels: (PixelData | null)[] = new Array(rows * cols);
-
-  for (let i = 0; i < rows * cols; i += 1) {
-    const angleByte = view.getUint8(offset);
-    offset += 1;
-    const count = view.getUint8(offset);
-    offset += 1;
-
-    if (angleByte === 0 && count === 0) {
-      pixels[i] = null;
-      continue;
-    }
-
-    const angle = decodeAngle(angleByte);
-    const layers: Layer[] = [];
-
-    for (let j = 0; j < count; j += 1) {
-      const thickness = view.getUint16(offset);
-      offset += 2;
-      const depth = view.getFloat64(offset);
-      offset += 8;
-      layers.push({ depth, moduleIndex: 0, thickness });
-    }
-
-    pixels[i] = { angle, layers };
-  }
-
-  return { cols, modules: [], pixels, rows, version: 1 };
+  return {
+    cols,
+    modules: [],
+    pixels: readPixels(view, 9, rows, cols, LAYER_READER),
+    rows,
+    version: 1,
+  };
 }

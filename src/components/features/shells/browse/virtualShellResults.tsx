@@ -2,22 +2,23 @@ import { Box } from '@chakra-ui/react';
 import { useVirtualizer } from '@tanstack/react-virtual';
 import React from 'react';
 
-import ShellCard from '@/components/features/shells/browse/card';
+import ShellRow, {
+  HEADING_HEIGHT,
+  ROW_HEIGHT,
+  ShellColumnsRow,
+} from '@/components/features/shells/browse/row';
 import WeaponHeader from '@/components/features/shells/browse/weaponHeader';
+import { useScrollElement } from '@/hooks/useScrollElement';
 
 import type {
   ListedShellForBrowse,
   ShellsListForBrowse,
 } from '@/server/api/trpc/routers/shells';
 
-const EST_HEADER = 52;
-const EST_HEADER_AFTER_FIRST = 104;
-const EST_GRID_ROW = 188;
-const WEAPON_SECTION_GAP = 12;
-
 type FlatRow =
-  | { isFirstWeapon: boolean; kind: 'header'; weapon: string }
-  | { isLastInWeapon: boolean; kind: 'grid'; shells: ListedShellForBrowse[] };
+  | { kind: 'columns'; weapon: string }
+  | { kind: 'heading'; weapon: string }
+  | { isLast: boolean; kind: 'shell'; shell: ListedShellForBrowse };
 
 export default function VirtualShellResults({
   filtered,
@@ -26,149 +27,99 @@ export default function VirtualShellResults({
   filtered: ShellsListForBrowse;
   placeInitials: string;
 }) {
-  const scrollRef = React.useRef<HTMLDivElement>(null);
-  const [columns, setColumns] = React.useState(3);
-
-  React.useLayoutEffect(() => {
-    const scrollElement = scrollRef.current;
-    if (!scrollElement) return;
-
-    function columnCountForWidth(width: number) {
-      if (width < 480) return 1;
-      if (width < 1280) return 2;
-      return 3;
-    }
-    setColumns(columnCountForWidth(scrollElement.clientWidth));
-
-    const resizeObserver = new ResizeObserver(([entry]) => {
-      setColumns(columnCountForWidth(entry.contentRect.width));
-    });
-    resizeObserver.observe(scrollElement);
-    return () => resizeObserver.disconnect();
-  }, []);
+  const listRef = React.useRef<HTMLDivElement>(null);
+  const scrollElement = useScrollElement(listRef);
+  const [scrollMargin, setScrollMargin] = React.useState(0);
 
   const flatRows = React.useMemo(() => {
     const rows: FlatRow[] = [];
 
-    const entries = Object.entries(filtered);
-    for (let weaponIndex = 0; weaponIndex < entries.length; weaponIndex++) {
-      const [weapon, shells] = entries[weaponIndex]!;
-      const isFirstWeapon = weaponIndex === 0;
-
-      rows.push({
-        isFirstWeapon,
-        kind: 'header',
-        weapon,
-      });
-
-      const numGridRows = Math.ceil(shells.length / columns);
-      for (let gridRowIndex = 0; gridRowIndex < numGridRows; gridRowIndex++) {
-        const start = gridRowIndex * columns;
+    for (const [weapon, shells] of Object.entries(filtered)) {
+      rows.push({ kind: 'heading', weapon });
+      rows.push({ kind: 'columns', weapon });
+      shells.forEach((shell, index) => {
         rows.push({
-          isLastInWeapon: gridRowIndex === numGridRows - 1,
-          kind: 'grid',
-          shells: shells.slice(start, start + columns),
+          isLast: index === shells.length - 1,
+          kind: 'shell',
+          shell,
         });
-      }
+      });
     }
 
     return rows;
-  }, [columns, filtered]);
+  }, [filtered]);
+
+  React.useLayoutEffect(() => {
+    const node = listRef.current;
+    if (!node || !scrollElement) return;
+
+    const measure = () => {
+      const offset =
+        node.getBoundingClientRect().top -
+        scrollElement.getBoundingClientRect().top +
+        scrollElement.scrollTop;
+      setScrollMargin(offset);
+    };
+
+    measure();
+    const observer = new ResizeObserver(measure);
+    observer.observe(scrollElement);
+    return () => observer.disconnect();
+  }, [scrollElement]);
 
   const virtualizer = useVirtualizer({
     count: flatRows.length,
-    estimateSize: (index) => {
-      const row = flatRows[index];
-      if (!row) return EST_GRID_ROW;
-
-      if (row.kind === 'header') {
-        return row.isFirstWeapon ? EST_HEADER : EST_HEADER_AFTER_FIRST;
-      }
-
-      const trailingSpace = row.isLastInWeapon ? 0 : 12;
-      return EST_GRID_ROW + trailingSpace;
-    },
+    estimateSize: (index) =>
+      flatRows[index]?.kind === 'heading' ? HEADING_HEIGHT : ROW_HEIGHT,
     getItemKey: (index) => {
       const row = flatRows[index];
       if (!row) return String(index);
-
-      if (row.kind === 'header') return `h:${row.weapon}`;
-
-      return `g:${row.shells.map((shell) => shell.slug).join(':')}`;
+      if (row.kind === 'heading') return `h:${row.weapon}`;
+      if (row.kind === 'columns') return `c:${row.weapon}`;
+      return `s:${row.shell.slug}`;
     },
-    getScrollElement: () => scrollRef.current,
-    overscan: 4,
+    getScrollElement: () => scrollElement,
+    overscan: 8,
+    scrollMargin,
   });
 
   return (
     <Box
-      ref={scrollRef}
-      backgroundColor="bg"
-      flex={1}
-      minHeight={0}
-      overflowY="auto"
-      paddingBottom={6}
-      paddingTop={{ base: 4, md: 5 }}
-      paddingX={{ base: 4, md: 6 }}
+      ref={listRef}
+      position="relative"
+      style={{ height: `${virtualizer.getTotalSize()}px` }}
     >
-      <Box
-        position="relative"
-        style={{ height: `${virtualizer.getTotalSize()}px` }}
-      >
-        {virtualizer.getVirtualItems().map((virtualRow) => {
-          const row = flatRows[virtualRow.index];
-          if (!row) return null;
+      {virtualizer.getVirtualItems().map((virtualRow) => {
+        const row = flatRows[virtualRow.index];
+        if (!row) return null;
 
-          if (row.kind === 'header') {
-            return (
-              <Box
-                key={virtualRow.key}
-                ref={virtualizer.measureElement}
-                data-index={virtualRow.index}
-                paddingTop={row.isFirstWeapon ? 0 : WEAPON_SECTION_GAP}
-                position="absolute"
-                left={0}
-                right={0}
-                top={0}
-                style={{ transform: `translateY(${virtualRow.start}px)` }}
-              >
-                <WeaponHeader weapon={row.weapon} />
-              </Box>
-            );
-          }
-
-          return (
-            <Box
-              key={virtualRow.key}
-              ref={virtualizer.measureElement}
-              data-index={virtualRow.index}
-              display="grid"
-              gap="12px"
-              paddingBottom={row.isLastInWeapon ? 0 : '12px'}
-              position="absolute"
-              left={0}
-              right={0}
-              top={0}
-              style={{
-                gridTemplateColumns: `repeat(${columns}, minmax(0, 1fr))`,
-                transform: `translateY(${virtualRow.start}px)`,
-              }}
-            >
-              {row.shells.map((shell) => (
-                <ShellCard
-                  key={shell.slug}
-                  damage={shell.damage}
-                  displayType={shell.displayType}
-                  href={`/${placeInitials}/shells/${shell.slug}`}
-                  maxPenetration={shell.maxPenetration}
-                  name={shell.name}
-                  velocity={shell.velocity}
-                />
-              ))}
-            </Box>
-          );
-        })}
-      </Box>
+        return (
+          <Box
+            key={virtualRow.key}
+            left={0}
+            position="absolute"
+            right={0}
+            top={0}
+            style={{
+              transform: `translateY(${virtualRow.start - scrollMargin}px)`,
+            }}
+          >
+            {row.kind === 'heading' && <WeaponHeader weapon={row.weapon} />}
+            {row.kind === 'columns' && <ShellColumnsRow />}
+            {row.kind === 'shell' && (
+              <ShellRow
+                damage={row.shell.damage}
+                displayType={row.shell.displayType}
+                href={`/${placeInitials}/shells/${row.shell.slug}`}
+                isLast={row.isLast}
+                maxPenetration={row.shell.maxPenetration}
+                name={row.shell.name}
+                velocity={row.shell.velocity}
+              />
+            )}
+          </Box>
+        );
+      })}
     </Box>
   );
 }

@@ -58,8 +58,7 @@ function pickHomeNewest(
 }
 
 function placeHomePayload(placeId: PlaceId): PlaceHomePayload {
-  const vehicles = getVehicles();
-  const vehiclesData = vehicles.data[placeId]?.data;
+  const vehiclesData = getVehicles().data[placeId]?.data;
   if (!vehiclesData) throw new TRPCError({ code: 'NOT_FOUND' });
 
   const classCounts: Record<string, number> = {};

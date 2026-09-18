@@ -3,6 +3,7 @@ import React from 'react';
 import { IoMdAdd } from 'react-icons/io';
 import { MdCode } from 'react-icons/md';
 
+import { RAISED_FRAME_CSS } from '@/components/ui/styles';
 import { useVehicle } from '@/hooks/providers/vehicle';
 
 import type { StackProps } from '@chakra-ui/react';
@@ -14,21 +15,11 @@ export default function VehicleDataInfo({ ...props }: StackProps) {
 
   return (
     <Stack
-      backgroundColor="bg.subtle/75"
-      borderLeftWidth={{
-        base: 0,
-        md: '1px',
-      }}
-      borderRightWidth={{
-        base: 0,
-        md: '1px',
-      }}
-      borderYWidth="1px"
-      padding={2}
+      color="fg.muted"
       fontSize="xs"
-      borderColor="border/75"
-      color="fg.subtle"
+      padding={3}
       css={{
+        ...RAISED_FRAME_CSS,
         '& span': {
           lineHeight: 'shorter',
         },

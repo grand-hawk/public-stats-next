@@ -1,9 +1,9 @@
-import { Flex } from '@chakra-ui/react';
 import NextLink from 'next/link';
 import React from 'react';
 import slug from 'slug';
 
-import { Button } from '@/components/ui/button';
+import VehicleCell from '@/components/features/teams/loadouts/vehicleCell';
+import VehicleCellGrid from '@/components/features/teams/loadouts/vehicleCellGrid';
 import TitledCard from '@/components/wiki/titledCard';
 import { useShell } from '@/hooks/providers/shell';
 import { usePlaceInitials } from '@/hooks/usePlaceInitials';
@@ -16,28 +16,32 @@ export default function ShellVehicles() {
   return (
     <TitledCard
       as="section"
-      innerPadding={4}
       title="Vehicles with this shell"
       withAnchor="vehicles"
     >
-      <Flex flexWrap="wrap" gap={2} as="ul">
-        {shell.vehicles.map((vehicle) => {
-          const vehicleSlug = slug(vehicle);
+      <VehicleCellGrid>
+        {shell.vehicles.map((vehicle) => (
+          <VehicleCell
+            key={vehicle}
+            initials={initials}
+            name={vehicle}
+            slug={slug(vehicle)}
+          />
+        ))}
+      </VehicleCellGrid>
 
-          return (
-            <li key={vehicle}>
-              <Button asChild variant="surface">
-                <NextLink
-                  href={`/${initials}/vehicles/${vehicleSlug}`}
-                  prefetch={false}
-                >
-                  {vehicle}
-                </NextLink>
-              </Button>
-            </li>
-          );
-        })}
-      </Flex>
+      <ul data-md-show style={{ display: 'none' }}>
+        {shell.vehicles.map((vehicle) => (
+          <li key={vehicle}>
+            <NextLink
+              href={`/${initials}/vehicles/${slug(vehicle)}`}
+              prefetch={false}
+            >
+              {vehicle}
+            </NextLink>
+          </li>
+        ))}
+      </ul>
     </TitledCard>
   );
 }

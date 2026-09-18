@@ -10,11 +10,7 @@ export interface StatsCellProps extends TableCellProps {
 
 export function StatsCell({ asTitle, children, ...props }: StatsCellProps) {
   return (
-    <Table.Cell
-      color={asTitle ? 'fg' : undefined}
-      fontWeight={asTitle ? 'medium' : undefined}
-      {...props}
-    >
+    <Table.Cell data-title={asTitle || undefined} {...props}>
       {children}
     </Table.Cell>
   );

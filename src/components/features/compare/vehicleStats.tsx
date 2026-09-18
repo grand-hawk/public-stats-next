@@ -21,11 +21,13 @@ export interface AssembledVehicle {
   onAlterationsChange: (alterations: Record<string, boolean>) => void;
 }
 
-function stat(
-  label: string,
-  getter: (a: AssembledVehicle) => React.ReactNode,
-): StatDef<AssembledVehicle> {
-  return { label, getter };
+type Drive = NonNullable<ReturnType<typeof getDrive>>['data'];
+type Turret = NonNullable<ReturnType<typeof getPrimaryTurret>>['data'];
+type Turrets = ReturnType<typeof getAllModulesOfType<'Turret'>>;
+type Weapon = NonNullable<ReturnType<typeof getPrimaryWeapon>>['data'];
+
+function getDrive(a: AssembledVehicle) {
+  return getOneModuleOfType('DriveData', a.modules);
 }
 
 function getPrimaryTurret(a: AssembledVehicle) {
@@ -43,6 +45,56 @@ function getPrimaryWeapon(a: AssembledVehicle) {
   ).filter((w) => w.data.name !== 'Smoke Grenade' && w.data.name !== 'Flares');
 
   return weapons[0] ?? null;
+}
+
+function stat(
+  label: string,
+  getter: (a: AssembledVehicle) => React.ReactNode,
+): StatDef<AssembledVehicle> {
+  return { label, getter };
+}
+
+function driveStat(label: string, getter: (drive: Drive) => React.ReactNode) {
+  return stat(label, (a) => {
+    const drive = getDrive(a);
+    return drive ? getter(drive.data) : '—';
+  });
+}
+
+function turretsStat(
+  label: string,
+  getter: (turrets: Turrets) => React.ReactNode,
+) {
+  return stat(label, (a) => getter(getAllModulesOfType('Turret', a.modules)));
+}
+
+function primaryTurretStat(
+  label: string,
+  getter: (turret: Turret) => React.ReactNode,
+) {
+  return stat(label, (a) => {
+    const turret = getPrimaryTurret(a);
+    return turret ? getter(turret.data) : '—';
+  });
+}
+
+function weaponStat(
+  label: string,
+  getter: (weapon: Weapon, a: AssembledVehicle) => React.ReactNode,
+) {
+  return stat(label, (a) => {
+    const weapon = getPrimaryWeapon(a);
+    return weapon ? getter(weapon.data, a) : '—';
+  });
+}
+
+function speed(value: number) {
+  return <FormatNumber style="unit" unit="kilometer-per-hour" value={value} />;
+}
+
+function traverseSpeed(value: number) {
+  if (value === 0) return 'Fixed';
+  return <FormatNumber style="unit" unit="degree-per-second" value={value} />;
 }
 
 export function buildVehicleSections(): SectionDef<AssembledVehicle>[] {
@@ -74,184 +126,92 @@ export function buildVehicleSections(): SectionDef<AssembledVehicle>[] {
     {
       title: 'Vehicle',
       stats: [
-        stat('Weight', (a) => {
-          const drive = getOneModuleOfType('DriveData', a.modules);
-          if (!drive) return '—';
-          return (
-            <>
-              <FormatNumber maximumFractionDigits={1} value={drive.data.mass} />{' '}
-              t
-            </>
-          );
-        }),
+        driveStat('Weight', (drive) => (
+          <>
+            <FormatNumber maximumFractionDigits={1} value={drive.mass} /> t
+          </>
+        )),
         stat('Seats', (a) => {
           const seats = getAllModulesOfType('Seat', a.modules);
           return seats.length > 0 ? <FormatNumber value={seats.length} /> : '—';
         }),
-        stat('Forward speed', (a) => {
-          const drive = getOneModuleOfType('DriveData', a.modules);
-          if (!drive) return '—';
-          return (
-            <FormatNumber
-              style="unit"
-              unit="kilometer-per-hour"
-              value={drive.data.engine.forwardSpeed}
-            />
-          );
-        }),
-        stat('Reverse speed', (a) => {
-          const drive = getOneModuleOfType('DriveData', a.modules);
-          if (!drive) return '—';
-          return (
-            <FormatNumber
-              style="unit"
-              unit="kilometer-per-hour"
-              value={drive.data.engine.reverseSpeed}
-            />
-          );
-        }),
-        stat('Amphibious speed', (a) => {
-          const drive = getOneModuleOfType('DriveData', a.modules);
-          if (!drive?.data.engine.amphibiousSpeed) return '—';
-          return (
-            <FormatNumber
-              style="unit"
-              unit="kilometer-per-hour"
-              value={drive.data.engine.amphibiousSpeed}
-            />
-          );
-        }),
+        driveStat('Forward speed', (drive) => speed(drive.engine.forwardSpeed)),
+        driveStat('Reverse speed', (drive) => speed(drive.engine.reverseSpeed)),
+        driveStat('Amphibious speed', (drive) =>
+          drive.engine.amphibiousSpeed
+            ? speed(drive.engine.amphibiousSpeed)
+            : '—',
+        ),
       ],
     },
     {
       title: 'Powertrain',
       stats: [
-        stat('Engine', (a) => {
-          const drive = getOneModuleOfType('DriveData', a.modules);
-          if (!drive) return '—';
-          return drive.data.engine.name;
-        }),
-        stat('Horsepower', (a) => {
-          const drive = getOneModuleOfType('DriveData', a.modules);
-          if (!drive) return '—';
-          return (
-            <>
-              <FormatNumber value={drive.data.engine.horsepower} /> PS
-            </>
-          );
-        }),
-        stat('Max RPM', (a) => {
-          const drive = getOneModuleOfType('DriveData', a.modules);
-          if (!drive) return '—';
-          return (
-            <>
-              <FormatNumber value={drive.data.engine.maxRPM} /> RPM
-            </>
-          );
-        }),
-        stat('Power-to-weight', (a) => {
-          const drive = getOneModuleOfType('DriveData', a.modules);
-          if (!drive) return '—';
-          return (
-            <>
-              <FormatNumber
-                maximumFractionDigits={1}
-                value={drive.data.engine.horsepower / drive.data.mass}
-              />{' '}
-              PS/t
-            </>
-          );
-        }),
-        stat('Forward gears', (a) => {
-          const drive = getOneModuleOfType('DriveData', a.modules);
-          if (!drive) return '—';
-          return drive.data.transmission.forwardGears;
-        }),
-        stat('Reverse gears', (a) => {
-          const drive = getOneModuleOfType('DriveData', a.modules);
-          if (!drive) return '—';
-          return drive.data.transmission.reverseGears;
-        }),
-        stat('Neutral steering', (a) => {
-          const drive = getOneModuleOfType('DriveData', a.modules);
-          if (!drive) return '—';
-          return drive.data.transmission.neutralSteering ? 'Yes' : 'No';
-        }),
+        driveStat('Engine', (drive) => drive.engine.name),
+        driveStat('Horsepower', (drive) => (
+          <>
+            <FormatNumber value={drive.engine.horsepower} /> PS
+          </>
+        )),
+        driveStat('Max RPM', (drive) => (
+          <>
+            <FormatNumber value={drive.engine.maxRPM} /> RPM
+          </>
+        )),
+        driveStat('Power-to-weight', (drive) => (
+          <>
+            <FormatNumber
+              maximumFractionDigits={1}
+              value={drive.engine.horsepower / drive.mass}
+            />{' '}
+            PS/t
+          </>
+        )),
+        driveStat('Forward gears', (drive) => drive.transmission.forwardGears),
+        driveStat('Reverse gears', (drive) => drive.transmission.reverseGears),
+        driveStat('Neutral steering', (drive) =>
+          drive.transmission.neutralSteering ? 'Yes' : 'No',
+        ),
       ],
     },
     {
       title: 'Turrets',
       stats: [
-        stat('Count', (a) => {
-          const turrets = getAllModulesOfType('Turret', a.modules);
-          return turrets.length > 0 ? (
-            <FormatNumber value={turrets.length} />
-          ) : (
-            '—'
-          );
-        }),
-        stat('Stabilizer', (a) => {
-          const turrets = getAllModulesOfType('Turret', a.modules);
-          return turrets.some((t) => t.data.stabilizer) ? 'Yes' : 'No';
-        }),
-        stat('LWS', (a) => {
-          const turrets = getAllModulesOfType('Turret', a.modules);
-          return turrets.some((t) => t.data.lws) ? 'Yes' : 'No';
-        }),
-        stat('MAWS', (a) => {
-          const turrets = getAllModulesOfType('Turret', a.modules);
-          return turrets.some((t) => t.data.maws) ? 'Yes' : 'No';
-        }),
-        stat('Horizontal speed', (a) => {
-          const primary = getPrimaryTurret(a);
-          if (!primary) return '—';
-          if (primary.data.traverse.speed.horizontal === 0) return 'Fixed';
-          return (
-            <FormatNumber
-              style="unit"
-              unit="degree-per-second"
-              value={primary.data.traverse.speed.horizontal}
-            />
-          );
-        }),
-        stat('Vertical speed', (a) => {
-          const primary = getPrimaryTurret(a);
-          if (!primary) return '—';
-          if (primary.data.traverse.speed.vertical === 0) return 'Fixed';
-          return (
-            <FormatNumber
-              style="unit"
-              unit="degree-per-second"
-              value={primary.data.traverse.speed.vertical}
-            />
-          );
-        }),
+        turretsStat('Count', (turrets) =>
+          turrets.length > 0 ? <FormatNumber value={turrets.length} /> : '—',
+        ),
+        turretsStat('Stabilizer', (turrets) =>
+          turrets.some((t) => t.data.stabilizer) ? 'Yes' : 'No',
+        ),
+        turretsStat('LWS', (turrets) =>
+          turrets.some((t) => t.data.lws) ? 'Yes' : 'No',
+        ),
+        turretsStat('MAWS', (turrets) =>
+          turrets.some((t) => t.data.maws) ? 'Yes' : 'No',
+        ),
+        primaryTurretStat('Horizontal speed', (turret) =>
+          traverseSpeed(turret.traverse.speed.horizontal),
+        ),
+        primaryTurretStat('Vertical speed', (turret) =>
+          traverseSpeed(turret.traverse.speed.vertical),
+        ),
       ],
     },
     {
       title: 'Main weapon',
       stats: [
-        stat('Name', (a) => {
-          const weapon = getPrimaryWeapon(a);
-          return weapon?.data.name ?? '—';
-        }),
-        stat('Reload speed', (a) => {
-          const weapon = getPrimaryWeapon(a);
-          if (!weapon) return '—';
-          return (
-            <FormatNumber
-              style="unit"
-              unit="second"
-              unitDisplay="narrow"
-              value={weapon.data.reloadSpeed}
-            />
-          );
-        }),
-        stat('Magazine size', (a) => {
-          const weapon = getPrimaryWeapon(a);
-          if (!weapon) return '—';
+        weaponStat('Name', (weapon) => weapon.name ?? '—'),
+        weaponStat('Reload speed', (weapon) => (
+          <FormatNumber
+            style="unit"
+            unit="second"
+            unitDisplay="narrow"
+            value={weapon.reloadSpeed}
+          />
+        )),
+        weaponStat('Magazine size', (weapon, a) => {
           const magazine = getOneModuleFromReferences<'Magazine'>(
-            weapon.data.magazine,
+            weapon.magazine,
             a.modules,
           );
           return magazine ? <FormatNumber value={magazine.data.size} /> : '—';

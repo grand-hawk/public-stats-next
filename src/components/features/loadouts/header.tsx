@@ -1,34 +1,57 @@
-import { Flex, Heading, HStack } from '@chakra-ui/react';
+import { Box, Span, Stack } from '@chakra-ui/react';
+import NextImage from 'next/image';
 import React from 'react';
 
-import ButtonMarkdownLink from '@/components/common/buttonMarkdownLink';
-import EditPagePopover from '@/components/common/editPagePopover';
-import { env } from '@/env';
+import { NARROW_MEDIA } from '@/components/layout/shell/constants';
+import ArticleTitle from '@/components/wiki/articleTitle';
 import { loadoutDisplayName } from '@/utils/loadoutDisplayName';
 
 interface LoadoutHeaderProps {
   name: string;
-  slug: string;
+  tagline?: string;
+  thumbnail: string;
 }
 
-export default function LoadoutHeader({ name, slug }: LoadoutHeaderProps) {
+export default function LoadoutHeader({
+  name,
+  tagline,
+  thumbnail,
+}: LoadoutHeaderProps) {
   return (
-    <Flex
-      as="header"
-      alignItems="center"
-      gap={3}
-      justifyContent="space-between"
-    >
-      <Heading as="h1" id="loadout-page-title" minWidth={0} size="2xl">
-        {loadoutDisplayName(name)}
-      </Heading>
+    <Stack gap="16px">
+      <ArticleTitle
+        id="loadout-page-title"
+        meta={tagline ? <Span>{tagline}</Span> : undefined}
+        title={loadoutDisplayName(name)}
+        titleLabel="Loadout name"
+      />
 
-      <HStack flexShrink={0} role="toolbar">
-        {!env.NEXT_PUBLIC_STACKBLITZ && (
-          <EditPagePopover filePath={`content/loadouts/${slug}.md`} />
-        )}
-        <ButtonMarkdownLink />
-      </HStack>
-    </Flex>
+      <Box
+        backgroundColor="var(--color-surface-1)"
+        borderColor="border"
+        borderRadius="8px"
+        borderWidth="1px"
+        data-md-ignore
+        overflow="hidden"
+        width="100%"
+      >
+        <Box
+          css={{
+            position: 'relative',
+            aspectRatio: '3 / 1',
+            [NARROW_MEDIA]: { aspectRatio: '16 / 9' },
+          }}
+        >
+          <NextImage
+            alt=""
+            fetchPriority="high"
+            fill
+            sizes="(max-width: 1119px) 100vw, 1080px"
+            src={thumbnail}
+            style={{ objectFit: 'cover' }}
+          />
+        </Box>
+      </Box>
+    </Stack>
   );
 }

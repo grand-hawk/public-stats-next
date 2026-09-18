@@ -1,5 +1,4 @@
 import { chakra } from '@chakra-ui/react';
-import { GeistSans } from 'geist/font/sans';
 
 const TRAILING_PSEUDO_REGEX = /(::?[\w-]+(?:\([^)]*\))?)+$/;
 const EXCLUDE_CLASSNAME = '.not-prose';
@@ -18,7 +17,7 @@ export function inWhere<T extends string>(selector: T): T {
 export const Prose = chakra('div', {
   base: {
     color: 'fg.muted',
-    fontFamily: GeistSans.style.fontFamily,
+    fontFamily: 'body',
     maxWidth: '65ch',
     fontSize: 'sm',
     lineHeight: '1.7em',

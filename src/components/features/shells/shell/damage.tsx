@@ -1,8 +1,8 @@
-import { Box, FormatNumber } from '@chakra-ui/react';
+import { FormatNumber } from '@chakra-ui/react';
 import React from 'react';
 
-import InfoTooltip from '@/components/common/infoTooltip';
-import Stat from '@/components/wiki/stat';
+import TipStat from '@/components/features/shells/shell/tipStat';
+import Stat, { StatGrid } from '@/components/wiki/stat';
 import TitledCard from '@/components/wiki/titledCard';
 import { useShell } from '@/hooks/providers/shell';
 
@@ -11,12 +11,7 @@ export default function ShellDamage() {
 
   return (
     <TitledCard as="section" title="Damage" withAnchor>
-      <Box
-        display="grid"
-        gapX={6}
-        gapY={2}
-        gridTemplateColumns="repeat(auto-fit, minmax(10rem, 1fr))"
-      >
+      <StatGrid>
         <Stat label="Max damage">
           <FormatNumber value={shell.damage} /> HP
         </Stat>
@@ -36,13 +31,9 @@ export default function ShellDamage() {
             </Stat>
 
             {shell.explosive.radius && (
-              <Stat
-                label={
-                  <>
-                    Explosion radius
-                    <InfoTooltip content="This is the radius of the explosion, and not the kill radius. Drop-off applies in-game" />
-                  </>
-                }
+              <TipStat
+                label="Explosion radius"
+                tip="This is the radius of the explosion, and not the kill radius. Drop-off applies in-game"
               >
                 <FormatNumber
                   maximumFractionDigits={3}
@@ -50,17 +41,13 @@ export default function ShellDamage() {
                   unit="meter"
                   value={shell.explosive.radius}
                 />
-              </Stat>
+              </TipStat>
             )}
 
             {shell.explosive.killRadius && (
-              <Stat
-                label={
-                  <>
-                    Kill radius
-                    <InfoTooltip content="This is the maximum distance from the center of the explosion where humanoid death is guaranteed" />
-                  </>
-                }
+              <TipStat
+                label="Kill radius"
+                tip="This is the maximum distance from the center of the explosion where humanoid death is guaranteed"
               >
                 <FormatNumber
                   maximumFractionDigits={3}
@@ -68,17 +55,15 @@ export default function ShellDamage() {
                   unit="meter"
                   value={shell.explosive.killRadius}
                 />
-              </Stat>
+              </TipStat>
             )}
           </>
         )}
 
         {shell.cluster && (
-          <>
-            <Stat label="Submunitions">
-              <FormatNumber value={shell.cluster.submunitions} />
-            </Stat>
-          </>
+          <Stat label="Submunitions">
+            <FormatNumber value={shell.cluster.submunitions} />
+          </Stat>
         )}
 
         {shell.shrapMultiplier && (
@@ -88,18 +73,14 @@ export default function ShellDamage() {
         )}
 
         {shell.eraTip && (
-          <Stat
-            label={
-              <>
-                ERA tip
-                <InfoTooltip content="ERA tip reduces ERA effectiveness against the penetrator" />
-              </>
-            }
+          <TipStat
+            label="ERA tip"
+            tip="ERA tip reduces ERA effectiveness against the penetrator"
           >
             <FormatNumber value={shell.eraTip} />
-          </Stat>
+          </TipStat>
         )}
-      </Box>
+      </StatGrid>
     </TitledCard>
   );
 }

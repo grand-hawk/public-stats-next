@@ -1,42 +1,21 @@
-import { Box, Tabs } from '@chakra-ui/react';
-import NextLink from 'next/link';
-import { useQueryState } from 'nuqs';
 import React from 'react';
 import { GrDocumentMissing } from 'react-icons/gr';
-import slug from 'slug';
 
-import LoadoutVehiclesGrid from '@/components/features/teams/loadouts/grid';
+import VehicleTierTabs from '@/components/features/teams/loadouts/vehicleTierTabs';
 import { EmptyState } from '@/components/ui/empty-state';
 import TitledCard from '@/components/wiki/titledCard';
 import { loadoutDisplayName } from '@/utils/loadoutDisplayName';
-import { slugifyArray } from '@/utils/slugifyArray';
 
 import type { Team } from '@/server/api/trpc/routers/teams';
 
-interface TeamLoadoutsProps {
+export default function TeamLoadouts({
+  initials,
+  team,
+}: {
   initials: string;
   team: Team;
-}
-
-export default function TeamLoadouts({ initials, team }: TeamLoadoutsProps) {
-  const loadoutNames = React.useMemo(
-    () => Object.keys(team.loadouts),
-    [team.loadouts],
-  );
-
-  const loadoutSlugs = React.useMemo(
-    () => slugifyArray(loadoutNames),
-    [loadoutNames],
-  );
-
-  const [loadoutQuery, setLoadoutQuery] = useQueryState('loadout');
-
-  const selectedLoadout =
-    loadoutQuery && loadoutSlugs[loadoutQuery]
-      ? loadoutSlugs[loadoutQuery]
-      : loadoutNames[0];
-
-  if (loadoutNames.length === 0) {
+}) {
+  if (Object.keys(team.loadouts).length === 0) {
     return (
       <TitledCard as="section" title="Loadouts" withAnchor>
         <EmptyState
@@ -48,86 +27,14 @@ export default function TeamLoadouts({ initials, team }: TeamLoadoutsProps) {
   }
 
   return (
-    <TitledCard
-      as="section"
-      innerPadding={0}
-      title="Playable vehicles"
-      withAnchor
-    >
-      <Box data-md-ignore>
-        <Tabs.Root
-          lazyMount
-          onValueChange={(e) => setLoadoutQuery(slug(e.value))}
-          value={selectedLoadout}
-        >
-          <Box
-            _scrollbar={{ height: '2px' }}
-            borderBottomWidth="1px"
-            overflowX="auto"
-            overflowY="hidden"
-            paddingX={3}
-          >
-            <Tabs.List border="0">
-              {loadoutNames.map((loadout) => (
-                <Tabs.Trigger
-                  colorPalette="teal"
-                  flexShrink={0}
-                  key={loadout}
-                  textStyle="sm"
-                  value={loadout}
-                >
-                  {loadoutDisplayName(loadout)}
-                </Tabs.Trigger>
-              ))}
-            </Tabs.List>
-          </Box>
-
-          {loadoutNames.map((loadout) => (
-            <Tabs.Content key={loadout} padding={0} value={loadout}>
-              <LoadoutVehiclesGrid
-                initials={initials}
-                vehicles={team.loadouts[loadout]}
-              />
-            </Tabs.Content>
-          ))}
-        </Tabs.Root>
-      </Box>
-
-      <div data-md-show style={{ display: 'none' }}>
-        {loadoutNames.map((loadoutName) => {
-          const vehicles = Object.entries(team.loadouts[loadoutName]);
-          return (
-            <React.Fragment key={loadoutName}>
-              <h3>{loadoutDisplayName(loadoutName)}</h3>
-              <table>
-                <thead>
-                  <tr>
-                    <th>Vehicle</th>
-                    <th>Role</th>
-                    <th>Tier</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {vehicles.map(([name, vehicle]) => (
-                    <tr key={name}>
-                      <td>
-                        <NextLink
-                          href={`/${initials}/vehicles/${vehicle.slug}`}
-                          prefetch={false}
-                        >
-                          {name}
-                        </NextLink>
-                      </td>
-                      <td>{vehicle.role}</td>
-                      <td>{vehicle.tier}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </React.Fragment>
-          );
-        })}
-      </div>
+    <TitledCard as="section" title="Playable vehicles" withAnchor>
+      <VehicleTierTabs
+        groups={team.loadouts}
+        initials={initials}
+        queryKey="loadout"
+        renderHeading={loadoutDisplayName}
+        renderLabel={loadoutDisplayName}
+      />
     </TitledCard>
   );
 }

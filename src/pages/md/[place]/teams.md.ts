@@ -1,19 +1,17 @@
 import { markdownTable } from 'markdown-table';
 
-import { createCache } from '@/server/utils/createCache';
+import { createPlaceMarkdownRoute } from '@/server/utils/createMarkdownRoute';
 import {
   escapeMarkdownLink,
   formatMarkdown,
 } from '@/server/utils/formatMarkdown';
-import { getNameFromInitials, getPlaceFromName } from '@/utils/placeUtils';
-import { getBaseUrl } from '@/utils/trpc';
+import { getPlaceFromName } from '@/utils/placeUtils';
 import { getConfig } from '@generated/config';
 import { getLoadouts } from '@generated/loadouts';
 
 import type { PlaceName } from '@generated/config';
-import type { GetServerSidePropsContext } from 'next';
 
-async function revalidate(placeName: PlaceName) {
+async function render(placeName: PlaceName) {
   const loadouts = getLoadouts();
   const { data: config } = getConfig();
   const place = getPlaceFromName(config, placeName);
@@ -37,49 +35,10 @@ async function revalidate(placeName: PlaceName) {
     }),
   ]);
 
-  const markdown = await formatMarkdown(`# Teams\n\n${table}`);
-
-  return markdown;
+  return formatMarkdown(`# Teams\n\n${table}`);
 }
 
-const cache = createCache(revalidate);
-
-export async function getServerSideProps({
-  params,
-  res,
-}: GetServerSidePropsContext) {
-  const { place: initials } = params || {};
-  if (!initials || typeof initials !== 'string') return { notFound: true };
-
-  const { data: config } = getConfig();
-  const placeName = getNameFromInitials(config, initials);
-  if (!placeName) return { notFound: true };
-
-  let markdown = await cache.get(placeName);
-  if (!markdown) {
-    markdown = await revalidate(placeName);
-    cache.set(placeName, markdown);
-  }
-
-  if (markdown === null) return { notFound: true };
-
-  const baseUrl = getBaseUrl();
-  const canonicalUrl = new URL(`${initials}/teams`, baseUrl).toString();
-
-  res.setHeader('Link', `<${canonicalUrl}>; rel="canonical"`);
-  res.setHeader('X-Robots-Tag', 'noindex');
-  res.setHeader('content-type', 'text/markdown; charset=utf-8');
-  res.setHeader(
-    'cache-control',
-    'public, max-age=3600, stale-while-revalidate=86400',
-  );
-
-  res.write(markdown);
-
-  res.end();
-
-  return { props: {} };
-}
+export const getServerSideProps = createPlaceMarkdownRoute('teams', render);
 
 export default function Teams() {
   return null;

@@ -13,9 +13,23 @@ export default function Feature({
   description?: string;
 }) {
   const content = (
-    <HStack borderWidth="1px" paddingX={4} paddingY={2} width="fit-content">
+    <HStack
+      color="fg"
+      gap={1.5}
+      width="fit-content"
+      css={{
+        backgroundColor: 'var(--color-surface-3)',
+        borderColor: 'var(--border-color-base)',
+        borderRadius: '4px',
+        borderWidth: '1px',
+        fontSize: '12px',
+        fontWeight: 500,
+        lineHeight: '20px',
+        padding: '2px 8px',
+      }}
+    >
       {icon}
-      <Span fontSize="sm">
+      <Span>
         <VisuallyHidden>Feature: </VisuallyHidden>
         {name}
       </Span>

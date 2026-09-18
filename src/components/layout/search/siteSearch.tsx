@@ -1,65 +1,69 @@
-import { IconButton } from '@chakra-ui/react';
 import React from 'react';
-import { LuSearch } from 'react-icons/lu';
 
-import SiteSearchDialog from '@/components/layout/search/siteSearchDialog';
-import { useSearchStore } from '@/stores/search';
+import SiteSearchPalette from '@/components/layout/search/siteSearchPalette';
+import { SEARCH_INPUT_ID } from '@/components/layout/search/useSiteSearch';
+import { openSiteSearch, useSearchStore } from '@/stores/search';
+
+const NON_EDITABLE_INPUT_TYPES = new Set([
+  'submit',
+  'reset',
+  'checkbox',
+  'radio',
+  'button',
+]);
+
+function isEditableTarget(target: EventTarget | null) {
+  if (!(target instanceof HTMLElement)) return false;
+  if (target.isContentEditable) return true;
+  if (target instanceof HTMLInputElement) {
+    return !NON_EDITABLE_INPUT_TYPES.has(target.type);
+  }
+  const tag = target.tagName;
+  return tag === 'TEXTAREA' || tag === 'SELECT';
+}
 
 export function SiteSearchHost() {
   const open = useSearchStore((s) => s.open);
-  const setOpen = useSearchStore((s) => s.setOpen);
+  const openerRef = React.useRef<HTMLElement | null>(null);
 
   React.useEffect(() => {
     const onKeyDown = (event: KeyboardEvent) => {
-      if ((event.metaKey || event.ctrlKey) && event.key.toLowerCase() === 'k') {
-        event.preventDefault();
-        const {
-          heroFocus,
-          open: isOpen,
-          setOpen: set,
-        } = useSearchStore.getState();
-        if (isOpen) {
-          set(false);
-          return;
-        }
-        if (heroFocus) {
-          heroFocus();
-          return;
-        }
-        set(true);
+      if (isEditableTarget(event.target)) return;
+      const isCmdK =
+        (event.metaKey || event.ctrlKey) &&
+        !event.altKey &&
+        !event.shiftKey &&
+        event.key.toLowerCase() === 'k';
+      const isSlash =
+        event.key === '/' && !event.metaKey && !event.ctrlKey && !event.altKey;
+      if (!isCmdK && !isSlash) return;
+      event.preventDefault();
+      if (useSearchStore.getState().open) {
+        document.getElementById(SEARCH_INPUT_ID)?.focus();
+        return;
       }
+      openSiteSearch();
     };
-    window.addEventListener('keydown', onKeyDown);
-    return () => window.removeEventListener('keydown', onKeyDown);
+    window.addEventListener('keydown', onKeyDown, true);
+    return () => window.removeEventListener('keydown', onKeyDown, true);
   }, []);
 
-  return <SiteSearchDialog open={open} onOpenChange={setOpen} />;
-}
-
-interface SiteSearchIconTriggerProps {
-  size?: 'sm' | 'md' | 'lg';
-}
-
-export function SiteSearchIconTrigger({
-  size = 'sm',
-}: SiteSearchIconTriggerProps = {}) {
-  const onClick = React.useCallback(() => {
-    const { heroFocus, setOpen } = useSearchStore.getState();
-    if (heroFocus) {
-      heroFocus();
-      return;
-    }
-    setOpen(true);
-  }, []);
-
-  return (
-    <IconButton
-      aria-label="Search"
-      onClick={onClick}
-      size={size}
-      variant="ghost"
-    >
-      <LuSearch />
-    </IconButton>
+  React.useEffect(
+    () =>
+      useSearchStore.subscribe((state, previous) => {
+        if (!state.open || previous.open) return;
+        const active = document.activeElement;
+        openerRef.current = active instanceof HTMLElement ? active : null;
+      }),
+    [],
   );
+
+  React.useEffect(() => {
+    if (open) return;
+    const opener = openerRef.current;
+    openerRef.current = null;
+    if (opener?.isConnected) opener.focus();
+  }, [open]);
+
+  return <SiteSearchPalette />;
 }

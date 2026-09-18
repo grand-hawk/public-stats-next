@@ -28,7 +28,10 @@ export default function PlaceVehiclesByClass() {
       description={`Browse all ${category.label.toLowerCase()} vehicles in ${place.placeName}: ${category.description}`}
     >
       <Layout noPadding>
-        <VehiclesSearch defaultClassifications={[category.name]} />
+        <VehiclesSearch
+          defaultClassifications={[category.name]}
+          title={`${category.label} vehicles`}
+        />
       </Layout>
     </PageMeta>
   );

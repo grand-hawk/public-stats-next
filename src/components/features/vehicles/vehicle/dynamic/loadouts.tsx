@@ -26,7 +26,6 @@ export default function VehicleDynamicLoadouts() {
 
   return (
     <TitledCard
-      innerPadding={4}
       title="Loadout"
       tooltip="Select version of the vehicle in a certain loadout"
       withAnchor="loadout-config"
@@ -34,6 +33,7 @@ export default function VehicleDynamicLoadouts() {
       <Select.Root
         collection={loadoutCollection}
         lazyMount
+        maxWidth="20rem"
         size="sm"
         value={selectedLoadout === null ? [NO_VALUE] : [selectedLoadout]}
         width="100%"
@@ -46,7 +46,12 @@ export default function VehicleDynamicLoadouts() {
         <Select.HiddenSelect />
 
         <Select.Control>
-          <Select.Trigger>
+          <Select.Trigger
+            css={{
+              backgroundColor: 'var(--color-surface-1)',
+              borderColor: 'var(--border-color-interactive)',
+            }}
+          >
             <Select.ValueText />
           </Select.Trigger>
           <Select.IndicatorGroup paddingInline={2}>

@@ -10,13 +10,12 @@ import {
 import { usePlace } from '@/hooks/usePlace';
 import { useRouterQuery } from '@/hooks/useRouterQuery';
 
-const ITEM_HEIGHT = 35;
+const ITEM_HEIGHT = 36;
 
 export interface DividerListItem {
   type: 'divider';
   label: string;
   isTeam?: boolean;
-  emphasized?: boolean;
 }
 
 export interface LinkListItem {
@@ -74,7 +73,13 @@ export default function SearchList({
   });
 
   return (
-    <Box ref={parentRef} height="100%" overflow="auto" scrollBehavior="unset">
+    <Box
+      ref={parentRef}
+      height="100%"
+      overflow="auto"
+      scrollBehavior="unset"
+      css={{ paddingInline: '8px', paddingBottom: '8px' }}
+    >
       <Box
         position="relative"
         scrollBehavior="revert"
@@ -96,7 +101,6 @@ export default function SearchList({
             return (
               <SearchListDividerItem
                 key={virtualItem.key}
-                emphasized={listItem.emphasized}
                 isTeam={listItem.isTeam}
                 label={listItem.label}
                 {...baseProps}

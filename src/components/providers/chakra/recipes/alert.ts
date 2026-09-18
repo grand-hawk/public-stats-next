@@ -5,7 +5,7 @@ export const alertRecipe = defineSlotRecipe({
   slots: alertAnatomy.keys(),
   base: {
     root: {
-      borderRadius: 'none',
+      borderRadius: 'md',
     },
   },
 });

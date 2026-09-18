@@ -5,10 +5,10 @@ export const toastRecipe = defineSlotRecipe({
   slots: toastAnatomy.keys(),
   base: {
     root: {
-      borderRadius: 'none',
+      borderRadius: 'md',
     },
     actionTrigger: {
-      borderRadius: 'none',
+      borderRadius: 'sm',
       cursor: 'pointer',
       marginTop: 'auto',
     },

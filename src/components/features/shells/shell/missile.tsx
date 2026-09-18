@@ -1,8 +1,8 @@
-import { Box, FormatNumber } from '@chakra-ui/react';
+import { FormatNumber } from '@chakra-ui/react';
 import React from 'react';
 
-import InfoTooltip from '@/components/common/infoTooltip';
-import Stat from '@/components/wiki/stat';
+import TipStat from '@/components/features/shells/shell/tipStat';
+import Stat, { StatGrid } from '@/components/wiki/stat';
 import TitledCard from '@/components/wiki/titledCard';
 import { useShell } from '@/hooks/providers/shell';
 
@@ -12,12 +12,7 @@ export default function ShellMissile() {
   if (!shell.missile) return null;
   return (
     <TitledCard as="section" title="Missile" withAnchor>
-      <Box
-        display="grid"
-        gapX={6}
-        gapY={2}
-        gridTemplateColumns="repeat(auto-fit, minmax(10rem, 1fr))"
-      >
+      <StatGrid>
         {shell.missile.boostTime && (
           <Stat label="Boost time">
             <FormatNumber
@@ -30,16 +25,9 @@ export default function ShellMissile() {
         )}
 
         {shell.missile.irccm && (
-          <Stat
-            label={
-              <>
-                IRCCM
-                <InfoTooltip content="Infrared counter countermeasures" />
-              </>
-            }
-          >
+          <TipStat label="IRCCM" tip="Infrared counter countermeasures">
             Yes
-          </Stat>
+          </TipStat>
         )}
 
         {shell.missile.limit !== undefined && (
@@ -62,18 +50,14 @@ export default function ShellMissile() {
         {shell.missile.unjammable && <Stat label="Unjammable">Yes</Stat>}
 
         {shell.laser && (
-          <Stat
-            label={
-              <>
-                Laser guidance
-                <InfoTooltip content="Ammunition guided by laser, triggers LWS" />
-              </>
-            }
+          <TipStat
+            label="Laser guidance"
+            tip="Ammunition guided by laser, triggers LWS"
           >
             Yes
-          </Stat>
+          </TipStat>
         )}
-      </Box>
+      </StatGrid>
     </TitledCard>
   );
 }

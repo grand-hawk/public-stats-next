@@ -1,41 +1,28 @@
-import { Box, Flex, Input, Link, NumberInput, Text } from '@chakra-ui/react';
-import { useVirtualizer } from '@tanstack/react-virtual';
+import { Box, Flex } from '@chakra-ui/react';
 import React from 'react';
+
+import { AngleSection } from '@/components/features/tools/armor/controls/angleSection';
+import { ControlsFooter } from '@/components/features/tools/armor/controls/footer';
+import { MobileHeader } from '@/components/features/tools/armor/controls/mobileHeader';
+import { ModulesSection } from '@/components/features/tools/armor/controls/modulesSection';
+import { PaletteSection } from '@/components/features/tools/armor/controls/paletteSection';
+import { RangeSection } from '@/components/features/tools/armor/controls/rangeSection';
 import {
-  LuChevronDown,
-  LuChevronUp,
-  LuCircleHelp,
-  LuDownload,
-} from 'react-icons/lu';
+  DepthSection,
+  RicochetSection,
+} from '@/components/features/tools/armor/controls/sliderSections';
+import {
+  DESKTOP_MEDIA,
+  MOBILE_MEDIA,
+} from '@/components/features/tools/armor/controls/styles';
+import { VehiclePicker } from '@/components/features/tools/armor/controls/vehiclePicker';
 
-import { RangeSlider } from '@/components/features/tools/armor/controls/slider';
-import { groupModules } from '@/components/features/tools/armor/moduleGroups';
-import { palettes } from '@/components/features/tools/armor/palettes';
-import VehicleIcon from '@/components/features/vehicles/vehicleIcon';
-import { IS_DEV } from '@/env';
-import { simplifyString } from '@/utils/simplifyString';
-
+import type { VehicleOption } from '@/components/features/tools/armor/controls/vehiclePicker';
 import type { DamageModule } from '@/components/features/tools/armor/mtca';
 import type { Palette } from '@/components/features/tools/armor/palettes';
 import type { ArmorAngle } from '@/utils/getVehicleImage';
 
-interface VehicleOption {
-  name: string;
-  slug: string;
-}
-
-const ANGLES: { label: string; value: ArmorAngle }[] = [
-  { label: 'Front', value: 'front' },
-  { label: 'Front -30', value: 'front_-30' },
-  { label: 'Front 30', value: 'front_30' },
-  { label: 'Left', value: 'left' },
-  { label: 'Right', value: 'right' },
-  { label: 'Back', value: 'back' },
-];
-
-const ITEM_HEIGHT = 34;
-
-export interface ArmorControlsProps {
+interface ArmorControlsProps {
   angle: ArmorAngle;
   autoRange: boolean;
   detectedMax: number;
@@ -51,6 +38,7 @@ export interface ArmorControlsProps {
   onAngleChange: (angle: ArmorAngle) => void;
   onAutoRangeChange: (v: boolean) => void;
   onClearUpload: () => void;
+  onClearVehicle: () => void;
   onMaxChange: (v: number) => void;
   onMaxDepthChange: (v: number) => void;
   onMinChange: (v: number) => void;
@@ -71,46 +59,6 @@ export interface ArmorControlsProps {
   version: number | null;
 }
 
-const VehicleListItem = React.memo(function VehicleListItem({
-  isSelected,
-  name,
-  onClick,
-  slug,
-  style,
-}: {
-  isSelected: boolean;
-  name: string;
-  onClick: () => void;
-  slug: string;
-  style: React.CSSProperties;
-}) {
-  return (
-    <Flex
-      _hover={{ background: 'whiteAlpha.100' }}
-      alignItems="center"
-      background={isSelected ? 'whiteAlpha.100' : 'transparent'}
-      cursor="pointer"
-      fontSize="sm"
-      gap={2}
-      left={0}
-      overflow="hidden"
-      paddingX={3}
-      paddingY={1.5}
-      position="absolute"
-      right={0}
-      style={style}
-      top={0}
-      whiteSpace="nowrap"
-      onClick={onClick}
-    >
-      <VehicleIcon size={18} slug={slug} />
-      <Text overflow="hidden" textOverflow="ellipsis">
-        {name}
-      </Text>
-    </Flex>
-  );
-});
-
 export default function ArmorControls({
   angle,
   autoRange,
@@ -126,6 +74,7 @@ export default function ArmorControls({
   onAngleChange,
   onAutoRangeChange,
   onClearUpload,
+  onClearVehicle,
   onMaxChange,
   onMaxDepthChange,
   onMinChange,
@@ -146,95 +95,36 @@ export default function ArmorControls({
   vehicles,
   version,
 }: ArmorControlsProps) {
-  const [query, setQuery] = React.useState('');
-  const [isOpen, setIsOpen] = React.useState(false);
   const [mobileExpanded, setMobileExpanded] = React.useState(true);
-  const containerRef = React.useRef<HTMLDivElement>(null);
-  const inputRef = React.useRef<HTMLInputElement>(null);
-  const listRef = React.useRef<HTMLDivElement>(null);
-  const fileInputRef = React.useRef<HTMLInputElement>(null);
-
-  const filtered = React.useMemo(() => {
-    if (!query) return vehicles;
-    const simplified = simplifyString(query);
-    return vehicles.filter((v) => simplifyString(v.name).includes(simplified));
-  }, [vehicles, query]);
-
-  const rowVirtualizer = useVirtualizer({
-    count: filtered.length,
-    getScrollElement: () => listRef.current,
-    estimateSize: () => ITEM_HEIGHT,
-    overscan: 8,
-  });
 
   const selectedName = React.useMemo(
     () => vehicles.find((v) => v.slug === selectedSlug)?.name ?? '',
     [vehicles, selectedSlug],
   );
 
-  React.useEffect(() => {
-    function handler(e: MouseEvent) {
-      if (
-        containerRef.current &&
-        !containerRef.current.contains(e.target as Node)
-      ) {
-        setIsOpen(false);
-      }
-    }
-    document.addEventListener('mousedown', handler);
-    return () => document.removeEventListener('mousedown', handler);
-  }, []);
-
-  const handleItemClick = React.useCallback(
-    (slug: string) => {
-      onSelectVehicle(slug);
-      setQuery('');
-      setIsOpen(false);
-      inputRef.current?.blur();
-    },
-    [onSelectVehicle],
-  );
-
-  const effectiveMaxDepth = detectedMaxDepth || 100;
-
   return (
     <Flex
       as="aside"
-      borderBottomWidth={{ base: '1px', md: 0 }}
-      borderRightWidth={{ base: 0, md: '1px' }}
       direction="column"
-      gap={0}
       height={{ base: 'auto', md: '100%' }}
       minHeight="0"
+      css={{
+        backgroundColor: 'var(--color-surface-0)',
+        [DESKTOP_MEDIA]: {
+          borderInlineEnd: '1px solid var(--border-color-base)',
+        },
+        [MOBILE_MEDIA]: {
+          borderBottom: '1px solid var(--border-color-base)',
+        },
+      }}
     >
-      <Flex
-        _hover={{ background: 'whiteAlpha.50' }}
-        alignItems="center"
-        as="button"
-        borderBottomWidth={mobileExpanded ? '1px' : 0}
-        cursor="pointer"
-        display={{ base: 'flex', md: 'none' }}
-        gap={2}
-        justifyContent="space-between"
-        paddingX={3}
-        paddingY={2.5}
-        onClick={() => setMobileExpanded((v) => !v)}
-      >
-        <Flex alignItems="center" gap={2}>
-          {selectedSlug && <VehicleIcon size={18} slug={selectedSlug} />}
-          <Text fontSize="sm" fontWeight="medium">
-            {selectedName || 'Settings'}
-          </Text>
-          <Text color="fg.muted" fontSize="xs">
-            · {ANGLES.find((a) => a.value === angle)?.label}
-          </Text>
-        </Flex>
-        {mobileExpanded ? (
-          <LuChevronUp size={16} />
-        ) : (
-          <LuChevronDown size={16} />
-        )}
-      </Flex>
+      <MobileHeader
+        angle={angle}
+        expanded={mobileExpanded}
+        selectedName={selectedName}
+        selectedSlug={selectedSlug}
+        onToggle={() => setMobileExpanded((v) => !v)}
+      />
 
       <Box
         display={{ base: 'grid', md: 'flex' }}
@@ -252,522 +142,68 @@ export default function ArmorControls({
           minHeight="0"
           overflow="hidden"
         >
-          <Box
-            ref={containerRef}
-            borderBottomWidth="1px"
-            data-tour="vehicle"
-            padding={3}
-            position="relative"
-          >
-            <Text color="fg.muted" fontSize="xs" marginBottom={1}>
-              Vehicle
-            </Text>
-            <Box position="relative">
-              <Input
-                ref={inputRef}
-                background="transparent"
-                borderColor="border.muted"
-                borderRadius="0"
-                borderWidth="1px"
-                fontSize="sm"
-                height="32px"
-                paddingLeft="8px"
-                paddingRight="8px"
-                placeholder="Search vehicles..."
-                size="sm"
-                value={isOpen ? query : selectedName}
-                width="100%"
-                onChange={(e) => {
-                  setQuery(e.target.value);
-                  if (!isOpen) setIsOpen(true);
-                }}
-                onFocus={() => {
-                  setIsOpen(true);
-                  setQuery('');
-                }}
-              />
-              {isOpen && (
-                <Box
-                  ref={listRef}
-                  background="bg.panel"
-                  borderColor="border.muted"
-                  borderWidth="1px"
-                  boxShadow="lg"
-                  left={0}
-                  maxHeight="280px"
-                  overflowY="auto"
-                  position="absolute"
-                  right={0}
-                  top="calc(100% - 1px)"
-                  zIndex={50}
-                >
-                  {filtered.length === 0 ? (
-                    <Text color="fg.muted" fontSize="sm" padding={3}>
-                      No vehicles found
-                    </Text>
-                  ) : (
-                    <Box
-                      position="relative"
-                      style={{ height: `${rowVirtualizer.getTotalSize()}px` }}
-                    >
-                      {rowVirtualizer.getVirtualItems().map((virtualItem) => {
-                        const v = filtered[virtualItem.index];
-                        return (
-                          <VehicleListItem
-                            key={v.slug}
-                            isSelected={v.slug === selectedSlug}
-                            name={v.name}
-                            slug={v.slug}
-                            style={{
-                              height: `${virtualItem.size}px`,
-                              transform: `translateY(${virtualItem.start}px)`,
-                            }}
-                            onClick={() => handleItemClick(v.slug)}
-                          />
-                        );
-                      })}
-                    </Box>
-                  )}
-                </Box>
-              )}
-            </Box>
-
-            {IS_DEV && (
-              <>
-                <input
-                  ref={fileInputRef}
-                  accept=".mtca"
-                  hidden
-                  type="file"
-                  onChange={(event) => {
-                    const file = event.target.files?.[0];
-                    if (file) onUploadFile(file);
-                    event.target.value = '';
-                  }}
-                />
-
-                {overrideFileName ? (
-                  <Flex direction="column" gap={1} marginTop={2}>
-                    <Flex alignItems="center" gap={2}>
-                      <Text
-                        color="teal.300"
-                        flex={1}
-                        fontSize="2xs"
-                        overflow="hidden"
-                        textOverflow="ellipsis"
-                        whiteSpace="nowrap"
-                      >
-                        {overrideFileName}
-                      </Text>
-                      <Box
-                        _hover={{ color: 'fg' }}
-                        as="button"
-                        color="fg.subtle"
-                        cursor="pointer"
-                        fontSize="2xs"
-                        onClick={onClearUpload}
-                      >
-                        clear
-                      </Box>
-                    </Flex>
-                    {version != null && (
-                      <Text color="fg.subtle" fontSize="2xs">
-                        v{version}
-                      </Text>
-                    )}
-                  </Flex>
-                ) : (
-                  <Text
-                    _hover={{ color: 'fg.muted' }}
-                    as="button"
-                    color="fg.subtle"
-                    cursor="pointer"
-                    display="block"
-                    fontSize="2xs"
-                    marginTop={1.5}
-                    textAlign="left"
-                    onClick={() => fileInputRef.current?.click()}
-                  >
-                    or upload .mtca
-                  </Text>
-                )}
-
-                {uploadError && (
-                  <Text color="red.400" fontSize="2xs" marginTop={1}>
-                    {uploadError}
-                  </Text>
-                )}
-              </>
-            )}
-          </Box>
+          <VehiclePicker
+            overrideFileName={overrideFileName}
+            selectedName={selectedName}
+            selectedSlug={selectedSlug}
+            uploadError={uploadError}
+            vehicles={vehicles}
+            version={version}
+            onClearUpload={onClearUpload}
+            onClearVehicle={onClearVehicle}
+            onSelectVehicle={onSelectVehicle}
+            onUploadFile={onUploadFile}
+          />
 
           <Flex
             direction="column"
             flex={1}
-            gap={0}
+            minHeight="0"
             overflowY={{ base: 'hidden', md: 'auto' }}
+            css={{ paddingInline: '12px' }}
           >
-            <Box borderBottomWidth="1px" data-tour="angle" padding={3}>
-              <Text color="fg.muted" fontSize="xs" marginBottom={1}>
-                Angle
-              </Text>
-              <Box
-                borderColor="border.muted"
-                borderRightWidth="1px"
-                borderBottomWidth="1px"
-                display="grid"
-                gap={0}
-                gridTemplateColumns="repeat(3, 1fr)"
-                width="100%"
-              >
-                {ANGLES.map((a) => (
-                  <Box
-                    key={a.value}
-                    as="button"
-                    background={
-                      angle === a.value ? 'whiteAlpha.200' : 'transparent'
-                    }
-                    borderColor="border.muted"
-                    borderLeftWidth="1px"
-                    borderTopWidth="1px"
-                    color={angle === a.value ? 'fg' : 'fg.muted'}
-                    cursor="pointer"
-                    flex={1}
-                    fontSize="xs"
-                    fontWeight={angle === a.value ? 'medium' : 'normal'}
-                    paddingX={2}
-                    paddingY={1.5}
-                    textAlign="center"
-                    transition="all 0.1s"
-                    _hover={{ background: 'whiteAlpha.100', color: 'fg' }}
-                    onClick={() => onAngleChange(a.value)}
-                  >
-                    {a.label}
-                  </Box>
-                ))}
-              </Box>
-            </Box>
+            <AngleSection angle={angle} onAngleChange={onAngleChange} />
 
             {usedModuleIndices.size > 0 && (
-              <Box borderBottomWidth="1px" padding={3}>
-                <Flex alignItems="center" marginBottom={2}>
-                  <Text color="fg.muted" fontSize="xs">
-                    Damage modules
-                  </Text>
-                  <Box
-                    _hover={{ color: 'fg.muted' }}
-                    as="button"
-                    color="fg.subtle"
-                    cursor="pointer"
-                    fontSize="2xs"
-                    marginLeft="auto"
-                    onClick={() =>
-                      onToggleModule(Array.from(usedModuleIndices))
-                    }
-                  >
-                    {usedModuleIndices.size > 0 &&
-                    Array.from(usedModuleIndices).every((i) =>
-                      hiddenModules.has(i),
-                    )
-                      ? 'show all'
-                      : 'hide all'}
-                  </Box>
-                </Flex>
-                <Flex direction="column" gap={1.5}>
-                  {groupModules(modules)
-                    .filter((group) =>
-                      group.indices.some((i) => usedModuleIndices.has(i)),
-                    )
-                    .map((group) => {
-                      const isHidden = group.indices.every((idx) =>
-                        hiddenModules.has(idx),
-                      );
-                      const mc = palette.moduleColor;
-
-                      return (
-                        <Flex
-                          key={group.label}
-                          _hover={{ background: 'whiteAlpha.50' }}
-                          alignItems="center"
-                          cursor="pointer"
-                          gap={2}
-                          marginX={-1}
-                          paddingX={1}
-                          paddingY={0.5}
-                          onClick={() => onToggleModule(group.indices)}
-                        >
-                          <Box
-                            borderRadius="sm"
-                            flexShrink={0}
-                            height="10px"
-                            opacity={isHidden ? 0.25 : 1}
-                            style={{
-                              background: `rgb(${mc.r},${mc.g},${mc.b})`,
-                            }}
-                            transition="opacity 0.1s"
-                            width="10px"
-                          />
-                          <Text
-                            color={isHidden ? 'fg.subtle' : 'fg.muted'}
-                            fontSize="2xs"
-                            lineHeight="1.2"
-                            overflow="hidden"
-                            textDecoration={isHidden ? 'line-through' : 'none'}
-                            textOverflow="ellipsis"
-                            transition="color 0.1s"
-                            whiteSpace="nowrap"
-                          >
-                            {group.label}
-                          </Text>
-                        </Flex>
-                      );
-                    })}
-                </Flex>
-              </Box>
+              <ModulesSection
+                hiddenModules={hiddenModules}
+                modules={modules}
+                palette={palette}
+                usedModuleIndices={usedModuleIndices}
+                onToggleModule={onToggleModule}
+              />
             )}
 
-            <Box
-              borderBottomWidth="1px"
-              data-tour="depth"
-              display="flex"
-              flexDirection="column"
-              gap={3}
-              padding={3}
-            >
-              <div>
-                <Flex alignItems="center" marginBottom={2}>
-                  <Text color="fg.muted" fontSize="xs">
-                    Ricochet angle
-                  </Text>
-                  <Text
-                    color="fg"
-                    fontFamily="mono"
-                    fontSize="xs"
-                    fontVariantNumeric="tabular-nums"
-                    marginLeft="auto"
-                  >
-                    {ricochetAngle.toFixed(1)}°
-                  </Text>
-                </Flex>
-                <RangeSlider
-                  max={90}
-                  min={75}
-                  step={0.5}
-                  value={ricochetAngle}
-                  onChange={onRicochetAngleChange}
-                />
-              </div>
+            <RicochetSection
+              ricochetAngle={ricochetAngle}
+              onRicochetAngleChange={onRicochetAngleChange}
+            />
 
-              <div>
-                <Text color="fg.muted" fontSize="xs" marginBottom={2}>
-                  Depth
-                </Text>
-                <Flex direction="column" gap={1}>
-                  <Flex alignItems="center" gap={2}>
-                    <Text
-                      color="fg.subtle"
-                      fontSize="2xs"
-                      flexShrink={0}
-                      width="28px"
-                    >
-                      Min
-                    </Text>
-                    <RangeSlider
-                      max={effectiveMaxDepth}
-                      min={0}
-                      step={effectiveMaxDepth / 200}
-                      value={minDepth}
-                      onChange={(v: number) =>
-                        onMinDepthChange(Math.min(v, maxDepth))
-                      }
-                    />
-                  </Flex>
-                  <Flex alignItems="center" gap={2}>
-                    <Text
-                      color="fg.subtle"
-                      fontSize="2xs"
-                      flexShrink={0}
-                      width="28px"
-                    >
-                      Max
-                    </Text>
-                    <RangeSlider
-                      max={effectiveMaxDepth}
-                      min={0}
-                      step={effectiveMaxDepth / 200}
-                      value={Math.min(maxDepth, effectiveMaxDepth)}
-                      onChange={(v: number) =>
-                        onMaxDepthChange(Math.max(v, minDepth))
-                      }
-                    />
-                  </Flex>
-                </Flex>
-              </div>
-            </Box>
+            <DepthSection
+              detectedMaxDepth={detectedMaxDepth}
+              maxDepth={maxDepth}
+              minDepth={minDepth}
+              onMaxDepthChange={onMaxDepthChange}
+              onMinDepthChange={onMinDepthChange}
+            />
 
-            <Box
-              borderBottomWidth="1px"
-              data-tour="range"
-              display="flex"
-              flexDirection="column"
-              gap={3}
-              padding={3}
-            >
-              <div>
-                <Flex alignItems="center" marginBottom={1}>
-                  <Text color="fg.muted" fontSize="xs">
-                    Range (mm)
-                  </Text>
-                  <Box
-                    as="button"
-                    background={autoRange ? 'teal.500/15' : 'whiteAlpha.50'}
-                    borderColor={autoRange ? 'teal.500/40' : 'border.muted'}
-                    borderWidth="1px"
-                    color={autoRange ? 'teal.300' : 'fg.muted'}
-                    cursor="pointer"
-                    fontSize="2xs"
-                    lineHeight="1"
-                    marginLeft="auto"
-                    paddingX={1.5}
-                    paddingY={0.5}
-                    transition="all 0.1s"
-                    _hover={{
-                      background: autoRange ? 'teal.500/25' : 'whiteAlpha.100',
-                    }}
-                    onClick={() => onAutoRangeChange(!autoRange)}
-                  >
-                    {autoRange ? 'AUTO' : 'MANUAL'}
-                  </Box>
-                </Flex>
+            <RangeSection
+              autoRange={autoRange}
+              detectedMax={detectedMax}
+              detectedMin={detectedMin}
+              maxMm={maxMm}
+              minMm={minMm}
+              onAutoRangeChange={onAutoRangeChange}
+              onMaxChange={onMaxChange}
+              onMinChange={onMinChange}
+            />
 
-                <Flex alignItems="center" gap={2}>
-                  <NumberInput.Root
-                    borderRadius="0"
-                    disabled={autoRange}
-                    min={0}
-                    size="sm"
-                    value={String(autoRange ? detectedMin : minMm)}
-                    width="100%"
-                    onValueChange={(d) => onMinChange(Number(d.value))}
-                  >
-                    <NumberInput.Input
-                      borderRadius="0"
-                      fontFamily="mono"
-                      fontVariantNumeric="tabular-nums"
-                    />
-                  </NumberInput.Root>
-                  <Text color="fg.muted" fontSize="sm" flexShrink={0}>
-                    —
-                  </Text>
-                  <NumberInput.Root
-                    borderRadius="0"
-                    disabled={autoRange}
-                    min={0}
-                    size="sm"
-                    value={String(autoRange ? detectedMax : maxMm)}
-                    width="100%"
-                    onValueChange={(d) => onMaxChange(Number(d.value))}
-                  >
-                    <NumberInput.Input
-                      borderRadius="0"
-                      fontFamily="mono"
-                      fontVariantNumeric="tabular-nums"
-                    />
-                  </NumberInput.Root>
-                </Flex>
-              </div>
+            <PaletteSection
+              palette={palette}
+              onPaletteChange={onPaletteChange}
+            />
 
-              <div>
-                <Text color="fg.muted" fontSize="xs" marginBottom={2}>
-                  Palette
-                </Text>
-                <Flex direction="column" gap={1}>
-                  {palettes.map((p) => (
-                    <Flex
-                      key={p.name}
-                      _hover={{ background: 'whiteAlpha.100' }}
-                      alignItems="center"
-                      borderColor={
-                        palette.name === p.name ? 'teal.500' : 'transparent'
-                      }
-                      borderWidth="2px"
-                      cursor="pointer"
-                      gap={3}
-                      padding={1.5}
-                      onClick={() => onPaletteChange(p)}
-                    >
-                      <Box
-                        css={{
-                          background: `linear-gradient(to right, ${p.stops.map((s, i) => `rgb(${s.r},${s.g},${s.b}) ${(i / (p.stops.length - 1)) * 100}%`).join(', ')})`,
-                        }}
-                        flexShrink={0}
-                        height="16px"
-                        width="48px"
-                      />
-                      <Text color="fg.muted" fontSize="xs">
-                        {p.name}
-                      </Text>
-                    </Flex>
-                  ))}
-                </Flex>
-              </div>
-            </Box>
-
-            <Flex gap={2} padding={3}>
-              <Flex
-                _hover={{ color: 'fg', background: 'whiteAlpha.100' }}
-                alignItems="center"
-                as="button"
-                borderColor="border.muted"
-                borderWidth="1px"
-                color="fg.muted"
-                cursor="pointer"
-                flex={1}
-                fontSize="xs"
-                gap={2}
-                justifyContent="center"
-                paddingX={3}
-                paddingY={1.5}
-                onClick={onSave}
-              >
-                <LuDownload size={14} />
-                Save image
-              </Flex>
-              <Flex
-                _hover={{ color: 'fg', background: 'whiteAlpha.100' }}
-                alignItems="center"
-                as="button"
-                borderColor="border.muted"
-                borderWidth="1px"
-                color="fg.muted"
-                cursor="pointer"
-                fontSize="xs"
-                justifyContent="center"
-                paddingX={2}
-                paddingY={1.5}
-                onClick={onOpenTour}
-              >
-                <LuCircleHelp size={14} />
-              </Flex>
-            </Flex>
-
-            <Box borderTopWidth="1px" marginTop="auto" padding={3}>
-              <Text color="fg.subtle" fontSize="2xs" lineHeight="1.4">
-                The provided visualization may not be used for bug reports, use
-                the armour tools in-game instead. Data is estimated and may not
-                be accurate. If thickness differs significantly from in-game,
-                you may report this as a wiki bug in the{' '}
-                <Link
-                  color="fg.muted"
-                  href="https://discord.gg/multicrew"
-                  rel="nofollow noopener"
-                  target="_blank"
-                >
-                  Discord
-                </Link>
-                .
-              </Text>
-            </Box>
+            <ControlsFooter onOpenTour={onOpenTour} onSave={onSave} />
           </Flex>
         </Flex>
       </Box>
