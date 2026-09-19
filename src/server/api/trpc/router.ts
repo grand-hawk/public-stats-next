@@ -5,6 +5,7 @@ import { createTRPCRouter } from '@/server/api/trpc/context';
 import { articlesRouter } from '@/server/api/trpc/routers/articles';
 import { configRouter } from '@/server/api/trpc/routers/config';
 import { homeRouter } from '@/server/api/trpc/routers/home';
+import { infantryWeaponsRouter } from '@/server/api/trpc/routers/infantryWeapons';
 import { kdrRouter } from '@/server/api/trpc/routers/kdr';
 import { loadoutsRouter } from '@/server/api/trpc/routers/loadouts';
 import { searchRouter } from '@/server/api/trpc/routers/search';
@@ -17,6 +18,7 @@ export const appRouter = createTRPCRouter({
   articles: articlesRouter,
   config: configRouter,
   home: homeRouter,
+  infantryWeapons: infantryWeaponsRouter,
   kdr: kdrRouter,
   loadouts: loadoutsRouter,
   search: searchRouter,

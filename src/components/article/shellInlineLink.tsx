@@ -9,10 +9,12 @@ import { usePlaceInitials } from '@/hooks/usePlaceInitials';
 const ICON_SIZE = 16;
 
 export default function ShellInlineLink({
+  basePath = '/shells',
   children,
   displayType,
   slug,
 }: {
+  basePath?: string;
   children: React.ReactNode;
   displayType: string;
   slug: string;
@@ -31,11 +33,15 @@ export default function ShellInlineLink({
         whiteSpace: 'nowrap',
       }}
     >
-      <NextLink href={`/${initials}/shells/${slug}`} prefetch={false}>
+      <NextLink href={`/${initials}${basePath}/${slug}`} prefetch={false}>
         {icon && (
           <ShellIcon
             alt=""
-            css={{ flex: 'none', width: `${ICON_SIZE}px`, height: `${ICON_SIZE}px` }}
+            css={{
+              flex: 'none',
+              width: `${ICON_SIZE}px`,
+              height: `${ICON_SIZE}px`,
+            }}
             size={ICON_SIZE}
             src={icon}
           />

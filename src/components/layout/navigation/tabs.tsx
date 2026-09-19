@@ -13,6 +13,8 @@ import {
 import { MdFlag, MdOutlineSsidChart, MdViewList } from 'react-icons/md';
 import { TbTank } from 'react-icons/tb';
 
+import InfantryIcon from '@/components/icons/classes/infantry';
+
 import type { IconProps } from '@chakra-ui/react';
 import type { ReactNode } from 'react';
 import type { IconType } from 'react-icons/lib';
@@ -47,6 +49,16 @@ export const tabs: Record<string, Tab> = {
       'View shell performance, penetration values, and damage characteristics.',
     icon: (props: IconProps) => (
       <Icon as={GiArtilleryShell} height={5} width={5} {...props} />
+    ),
+  },
+  infantryWeapons: {
+    label: 'Infantry weapons',
+    path: '/weapons',
+    color: 'orange.500',
+    description:
+      'Penetration, damage and availability of every rifle, machine gun and launcher.',
+    icon: (props: IconProps) => (
+      <InfantryIcon height={5} width={5} {...props} />
     ),
   },
   teams: {
@@ -112,6 +124,7 @@ export const tabs: Record<string, Tab> = {
 export const primaryTabKeys = [
   'vehicles',
   'shells',
+  'infantryWeapons',
   'teams',
 ] as const satisfies (keyof typeof tabs)[];
 export const secondaryTabKeys = [
@@ -175,6 +188,7 @@ export const menuGroups: MenuGroup[] = [
       { type: 'tab', key: 'vehicles' },
       { type: 'tab', key: 'teams' },
       { type: 'tab', key: 'shells' },
+      { type: 'tab', key: 'infantryWeapons' },
     ],
   },
   {

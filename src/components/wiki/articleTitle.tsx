@@ -1,10 +1,12 @@
 import { Box, Heading, Text } from '@chakra-ui/react';
 import React from 'react';
 
+import { NARROW_MEDIA } from '@/components/layout/shell/constants';
 import { usePlace } from '@/hooks/usePlace';
 
 export interface ArticleTitleProps {
   actions?: React.ReactNode;
+  aside?: React.ReactNode;
   icon?: React.ReactNode;
   id?: string;
   meta?: React.ReactNode;
@@ -13,6 +15,7 @@ export interface ArticleTitleProps {
 
 export default function ArticleTitle({
   actions,
+  aside,
   icon,
   id,
   meta,
@@ -28,6 +31,7 @@ export default function ArticleTitle({
         alignItems: 'flex-start',
         justifyContent: 'space-between',
         gap: '16px',
+        ...(aside && { flexWrap: 'wrap' }),
       }}
     >
       <Box flexGrow={1} minWidth={0}>
@@ -87,6 +91,20 @@ export default function ArticleTitle({
           </Box>
         )}
       </Box>
+
+      {aside && (
+        <Box
+          css={{
+            flex: 'none',
+            width: '320px',
+            maxWidth: '40%',
+            '& figure': { margin: 0 },
+            [NARROW_MEDIA]: { width: '100%', maxWidth: '100%', order: -1 },
+          }}
+        >
+          {aside}
+        </Box>
+      )}
 
       {actions}
     </Box>

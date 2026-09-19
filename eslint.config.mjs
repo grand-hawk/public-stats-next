@@ -52,6 +52,8 @@ export default defineConfig([
       '**/.next/**',
       '**/node_modules/**',
       '.temp/**',
+      'scripts/weapon-renders/**',
+      'weapon-renders/**',
       'generated/**',
       'public/**',
       'coverage/**',

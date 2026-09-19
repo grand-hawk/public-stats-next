@@ -16,7 +16,7 @@ export default function ShellDamage() {
           <FormatNumber value={shell.damage} /> HP
         </Stat>
 
-        <Stat label="Humanoid damage">
+        <Stat label="Player damage">
           <FormatNumber value={shell.humanoidDamage} /> HP
         </Stat>
 

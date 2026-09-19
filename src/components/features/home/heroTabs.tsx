@@ -14,6 +14,7 @@ import { NARROW_MEDIA } from '@/components/layout/shell/constants';
 const HERO_TABS = [
   { label: 'Vehicles', path: '/vehicles' },
   { label: 'Shells', path: '/shells' },
+  { label: 'Weapons', path: '/weapons' },
   { label: 'Teams', path: '/teams' },
   { label: 'K/D', path: '/kdr' },
   { label: 'Winrate', path: '/winrate' },

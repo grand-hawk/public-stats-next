@@ -11,6 +11,7 @@ import {
 import { listArticles } from '@/server/utils/articles';
 import { getBaseUrl } from '@/utils/trpc';
 import { getConfig } from '@generated/config';
+import { getInfantryWeapons } from '@generated/infantry_weapons';
 import { getKdr } from '@generated/kdr';
 import { getLoadouts } from '@generated/loadouts';
 import { getShells } from '@generated/shells';
@@ -150,6 +151,18 @@ function getPaths(): SitemapEntry[] {
       changefreq: 'monthly',
       priority: '0.6',
       lastmod: loadoutsDate,
+    });
+  }
+
+  const infantryWeaponsPlace = getInfantryWeapons().data[placeId];
+  for (const weaponSlug of Object.keys(
+    infantryWeaponsPlace?.metadata.slugs ?? {},
+  )) {
+    paths.push({
+      path: `${initials}/weapons/${weaponSlug}`,
+      changefreq: 'monthly',
+      priority: '0.5',
+      lastmod: getInfantryWeapons().metadata.date,
     });
   }
 

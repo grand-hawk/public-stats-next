@@ -24,7 +24,7 @@ export function buildShellSections(
         <FormatNumber value={s.damage} /> HP
       </>
     )),
-    stat('Humanoid damage', (s) => (
+    stat('Player damage', (s) => (
       <>
         <FormatNumber value={s.humanoidDamage} /> HP
       </>

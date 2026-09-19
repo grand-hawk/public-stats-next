@@ -14,12 +14,14 @@ export default function Figure({
   alt,
   caption,
   float,
+  floatWidth = 220,
   src,
   wide = false,
 }: {
   alt: string;
   caption?: React.ReactNode;
   float?: 'right';
+  floatWidth?: number;
   src: StaticImageData;
   wide?: boolean;
 }) {
@@ -32,7 +34,7 @@ export default function Figure({
         maxWidth: wide ? '100%' : '720px',
         ...(float && {
           float,
-          width: '220px',
+          width: `${floatWidth}px`,
           maxWidth: '40%',
           marginBlock: '4px 16px',
           marginInlineStart: '24px',
@@ -64,7 +66,7 @@ export default function Figure({
           placeholder={src.blurDataURL ? 'blur' : 'empty'}
           sizes={
             float
-              ? '(max-width: 639px) 100vw, 220px'
+              ? `(max-width: 639px) 100vw, ${floatWidth}px`
               : wide
                 ? '(max-width: 1120px) 100vw, 1080px'
                 : '720px'

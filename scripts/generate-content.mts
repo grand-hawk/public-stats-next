@@ -4,6 +4,7 @@ import { mkdir, readdir, readFile, writeFile } from 'node:fs/promises';
 import slug from 'slug';
 import { parse } from 'yaml';
 
+import { getInfantryWeapons } from '@generated/infantry_weapons';
 import { getLoadouts } from '@generated/loadouts';
 import { getVehicles } from '@generated/vehicles';
 
@@ -12,6 +13,7 @@ import type { VehiclesPlaceDataVehicle } from '@generated/vehicles';
 const VEHICLES_DIR = 'content/vehicles';
 const TEAMS_DIR = 'content/teams';
 const LOADOUTS_DIR = 'content/loadouts';
+const WEAPONS_DIR = 'content/weapons';
 const CONFIG_PATH = 'content/config.yml';
 
 function splitFrontmatter(raw: string): { header: string; body: string } {
@@ -211,9 +213,23 @@ const loadoutStats = await syncCollection({
   orphanRefreshTitle: titleizeSlug,
 });
 
+const weaponNames = new Set<string>();
+for (const place of Object.values(getInfantryWeapons().data)) {
+  for (const name of Object.keys(place.data)) weaponNames.add(name);
+}
+
+const weaponStats = await syncCollection({
+  dir: WEAPONS_DIR,
+  kind: 'weapon',
+  names: weaponNames,
+  initialContent: (name) => `# ${name}
+`,
+  refreshExisting: true,
+});
+
 const summary = (label: string, s: SyncStats) =>
   `${label} ${s.created} created / ${s.updated} updated / ${s.skipped} skipped`;
 
 console.log(
-  `Done: ${summary('vehicles', vehicleStats)}; ${summary('teams', teamStats)}; ${summary('loadouts', loadoutStats)}`,
+  `Done: ${summary('vehicles', vehicleStats)}; ${summary('teams', teamStats)}; ${summary('loadouts', loadoutStats)}; ${summary('weapons', weaponStats)}`,
 );

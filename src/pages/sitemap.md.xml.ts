@@ -4,6 +4,7 @@ import { create } from 'xmlbuilder2';
 import { listArticles } from '@/server/utils/articles';
 import { getBaseUrl } from '@/utils/trpc';
 import { getConfig } from '@generated/config';
+import { getInfantryWeapons } from '@generated/infantry_weapons';
 import { getLoadouts } from '@generated/loadouts';
 import { getShells } from '@generated/shells';
 import { getVehicles } from '@generated/vehicles';
@@ -81,6 +82,19 @@ function getMdPaths() {
     for (const shellSlug of Object.keys(shellsPlace.metadata.slugs)) {
       paths.push({
         path: `md/${initials}/shells/${shellSlug}.md`,
+        changefreq: 'monthly',
+      });
+    }
+
+    paths.push({
+      path: `md/${initials}/weapons.md`,
+      changefreq: 'weekly',
+    });
+    for (const weaponSlug of Object.keys(
+      getInfantryWeapons().data[placeId]?.metadata.slugs ?? {},
+    )) {
+      paths.push({
+        path: `md/${initials}/weapons/${weaponSlug}.md`,
         changefreq: 'monthly',
       });
     }

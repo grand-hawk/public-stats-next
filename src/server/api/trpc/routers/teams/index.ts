@@ -56,7 +56,7 @@ export interface TeamListEntry {
 
 const HEX_COLOR = /^#[0-9a-f]{3,8}$/i;
 
-function getTeamColor(placeId: PlaceId, teamName: string) {
+export function getTeamColor(placeId: PlaceId, teamName: string) {
   const color = getTeams().data[placeId]?.data.find(
     (team) => team.name === teamName,
   )?.color;

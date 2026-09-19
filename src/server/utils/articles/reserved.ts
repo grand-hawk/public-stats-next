@@ -2,6 +2,7 @@ export const RESERVED_SLUGS = new Set([
   'api',
   'armor',
   'compare',
+  'weapons',
   'kdr',
   'loadouts',
   'md',

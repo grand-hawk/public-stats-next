@@ -13,6 +13,7 @@ import type { VehiclesPlaceDataVehicle } from '@generated/vehicles';
 const VEHICLES_DIR = 'content/vehicles';
 const TEAMS_DIR = 'content/teams';
 const LOADOUTS_DIR = 'content/loadouts';
+const WEAPONS_DIR = 'content/weapons';
 const CONFIG_PATH = 'content/config.yml';
 
 const consola = createConsola({ formatOptions: { date: false } });
@@ -25,8 +26,7 @@ const validLoadoutSlugs = new Set<string>();
 
 for (const place of Object.values(getVehicles().data ?? {})) {
   const placeData = place?.data as
-    | Record<string, VehiclesPlaceDataVehicle>
-    | undefined;
+    Record<string, VehiclesPlaceDataVehicle> | undefined;
   for (const vehicle of Object.values(placeData ?? {})) {
     if (!vehicle?.info?.gameId) continue;
     const { gameId, team, unlisted } = vehicle.info;
@@ -157,13 +157,19 @@ if (argFiles.length === 0) {
   simpleFiles = [
     ...(await readMdDir(TEAMS_DIR)),
     ...(await readMdDir(LOADOUTS_DIR)),
+    ...(await readMdDir(WEAPONS_DIR)),
   ];
 } else {
   vehicleFiles = [];
   simpleFiles = [];
   for (const f of argFiles) {
-    if (f.includes(TEAMS_DIR) || f.includes(LOADOUTS_DIR)) simpleFiles.push(f);
-    else vehicleFiles.push(f);
+    if (
+      f.includes(TEAMS_DIR) ||
+      f.includes(LOADOUTS_DIR) ||
+      f.includes(WEAPONS_DIR)
+    ) {
+      simpleFiles.push(f);
+    } else vehicleFiles.push(f);
   }
 }
 vehicleFiles = vehicleFiles.filter(

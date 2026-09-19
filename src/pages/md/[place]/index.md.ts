@@ -8,6 +8,7 @@ import { getShells } from '@generated/shells';
 import type { PlaceName } from '@generated/config';
 
 const LINKS = [
+  { file: 'weapons.md', label: 'Infantry weapons' },
   { file: 'kdr.md', label: 'K/D table' },
   { file: 'loadouts.md', label: 'Loadouts' },
   { file: 'shells.md', label: 'Shells' },

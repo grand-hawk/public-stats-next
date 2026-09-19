@@ -8,6 +8,7 @@ groups:
     label: Weapons and ammunition
     tabs:
       - shells
+      - infantryWeapons
   - key: gameplay
     label: Gameplay
     tabs: []
