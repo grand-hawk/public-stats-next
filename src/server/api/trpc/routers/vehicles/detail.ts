@@ -1,6 +1,7 @@
 import { TRPCError } from '@trpc/server';
 import slug from 'slug';
 
+import { getVehicleLineage } from '@/server/api/trpc/routers/vehicles/lineage';
 import {
   getVehicleContent,
   getVehicleMeta,
@@ -60,6 +61,7 @@ export function getVehicleBySlug(
       lastRetrieved: vehicles.metadata.date,
       availability,
       kdr: kdrPlace.data.all_time[vehicleName],
+      lineage: getVehicleLineage(placeId, vehicleName),
       teamColor:
         teamColor && /^#[0-9a-f]{3,8}$/i.test(teamColor)
           ? teamColor

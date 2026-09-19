@@ -3,6 +3,7 @@ groups:
     label: Vehicles
     tabs:
       - vehicles
+      - vehicleFamilies
       - teams
   - key: weapons
     label: Weapons and ammunition

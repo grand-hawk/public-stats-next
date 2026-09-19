@@ -1,7 +1,11 @@
 import { useRouter } from 'next/router';
 import { LuFileText } from 'react-icons/lu';
 
-import { menuGroups, tabs } from '@/components/layout/navigation/tabs';
+import {
+  menuGroups,
+  primaryTabKeys,
+  tabs,
+} from '@/components/layout/navigation/tabs';
 import { useCurrentTab } from '@/hooks/useCurrentTab';
 import { usePlaceInitials } from '@/hooks/usePlaceInitials';
 import { trpc } from '@/utils/trpc';
@@ -23,6 +27,7 @@ export interface ResolvedMenuGroup {
 }
 
 const BROWSE_GROUPS = new Set(['vehicles', 'weapons']);
+const SECOND_COLUMN_TABS = new Set(['vehicleFamilies']);
 
 export interface MenuColumns {
   pages: ResolvedMenuGroup[];
@@ -73,7 +78,9 @@ export function useMenuLinks(): MenuColumns {
   const pages: ResolvedMenuGroup[] = [];
   for (const group of navigation) {
     const links = group.links.flatMap((link): MenuLink[] =>
-      link.kind === 'tab' && link.tabKey in tabs
+      link.kind === 'tab' &&
+      link.tabKey in tabs &&
+      !SECOND_COLUMN_TABS.has(link.tabKey)
         ? [tabLink(link.tabKey as TabKey)]
         : [],
     );
@@ -83,10 +90,25 @@ export function useMenuLinks(): MenuColumns {
     else pages.push({ label: group.label, links });
   }
 
+  const railOrder = primaryTabKeys.map(
+    (key) => `/${initials}${tabs[key].path}`,
+  );
+  const rank = (link: MenuLink) => {
+    const index = railOrder.indexOf(link.href);
+    return index === -1 ? railOrder.length : index;
+  };
+  pages[0]?.links.sort((a, b) => rank(a) - rank(b));
+
   const articles = navigation.map((group) => ({
     label: group.label,
     links: group.links.flatMap((link): MenuLink[] => {
-      if (link.kind !== 'article' || !link.nav) return [];
+      if (link.kind === 'tab') {
+        return SECOND_COLUMN_TABS.has(link.tabKey) && link.tabKey in tabs
+          ? [tabLink(link.tabKey as TabKey)]
+          : [];
+      }
+
+      if (!link.nav) return [];
 
       const href = `/${initials}/${link.slug}`;
       return [

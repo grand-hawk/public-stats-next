@@ -47,6 +47,36 @@ export type VehicleAvailability = Record<
   LoadoutsPlaceDataLoadoutVehicle
 >;
 
+export interface LineageVehicle {
+  name: string;
+  premium?: NonNullable<VehiclesPlaceDataVehicleInfo['premium']>['type'];
+  role: string;
+  slug: string;
+  team: string;
+}
+
+export interface VehicleLineage {
+  family?: { name: string; slug: string };
+  variantOf?: { name: string; slug: string };
+  variants: LineageVehicle[];
+}
+
+export interface VehicleFamilySummary {
+  count: number;
+  name: string;
+  slug: string;
+  teams: string[];
+}
+
+export interface VehicleFamily {
+  name: string;
+  placeName: string;
+  slug: string;
+  related: VehicleFamilySummary[];
+  teamColor?: string;
+  vehicles: LineageVehicle[];
+}
+
 export type DetailedVehicle = VehiclesPlaceDataVehicle & {
   info: {
     frontArmorDepth?: number;
@@ -54,6 +84,7 @@ export type DetailedVehicle = VehiclesPlaceDataVehicle & {
     lastRetrieved: string;
     availability: VehicleAvailability;
     kdr: KdrPlaceDataVehicle;
+    lineage: VehicleLineage;
     teamColor?: string;
   };
   content?: VehicleContent;

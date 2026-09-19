@@ -8,6 +8,10 @@ import { computeVehicleFacets } from '@/server/api/trpc/routers/vehicles/facets'
 import { setFrontArmorDepth } from '@/server/api/trpc/routers/vehicles/frontArmor';
 import { vehicleSearchInput } from '@/server/api/trpc/routers/vehicles/input';
 import {
+  getVehicleFamily,
+  listVehicleFamilies,
+} from '@/server/api/trpc/routers/vehicles/lineage';
+import {
   listVehicles,
   searchVehicles,
 } from '@/server/api/trpc/routers/vehicles/lists';
@@ -15,14 +19,19 @@ import {
 import type {
   DetailedVehicle,
   ListVehicle,
+  VehicleFamily,
+  VehicleFamilySummary,
   VehicleSearchFacets,
 } from '@/server/api/trpc/routers/vehicles/types';
 import type { PlaceId } from '@generated/config';
 
 export type {
   DetailedVehicle,
+  LineageVehicle,
   ListVehicle,
   VehicleAvailability,
+  VehicleFamily,
+  VehicleFamilySummary,
   VehicleFeatureKey,
   VehicleSearchFacets,
 } from '@/server/api/trpc/routers/vehicles/types';
@@ -46,6 +55,18 @@ export const vehiclesRouter = createTRPCRouter({
     .input(z.object({ placeId: z.string(), slug: z.string() }))
     .query(({ input }): DetailedVehicle | null =>
       getVehicleBySlug(input.placeId as PlaceId, input.slug),
+    ),
+
+  families: publicProcedure
+    .input(z.object({ placeId: z.string() }))
+    .query(({ input }): VehicleFamilySummary[] =>
+      listVehicleFamilies(input.placeId as PlaceId),
+    ),
+
+  familyBySlug: publicProcedure
+    .input(z.object({ placeId: z.string(), slug: z.string() }))
+    .query(({ input }): VehicleFamily | null =>
+      getVehicleFamily(input.placeId as PlaceId, input.slug),
     ),
 
   setFrontArmorDepth: publicProcedure

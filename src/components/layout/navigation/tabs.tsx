@@ -10,7 +10,12 @@ import {
   LuScale,
   LuShield,
 } from 'react-icons/lu';
-import { MdFlag, MdOutlineSsidChart, MdViewList } from 'react-icons/md';
+import {
+  MdAccountTree,
+  MdFlag,
+  MdOutlineSsidChart,
+  MdViewList,
+} from 'react-icons/md';
 import { TbTank } from 'react-icons/tb';
 
 import InfantryIcon from '@/components/icons/classes/infantry';
@@ -59,6 +64,16 @@ export const tabs: Record<string, Tab> = {
       'Penetration, damage and availability of every rifle, machine gun and launcher.',
     icon: (props: IconProps) => (
       <InfantryIcon height={5} width={5} {...props} />
+    ),
+  },
+  vehicleFamilies: {
+    label: 'Families',
+    longLabel: 'Vehicle families',
+    path: '/vehicles/family',
+    color: 'blue.500',
+    description: 'Every design line in the game and the vehicles in it.',
+    icon: (props: IconProps) => (
+      <Icon as={MdAccountTree} height={5} width={5} {...props} />
     ),
   },
   teams: {
