@@ -81,7 +81,7 @@ export default function InfantryWeaponsBrowse() {
                       <td>
                         <ShellInlineLink
                           basePath={INFANTRY_WEAPONS_PATH}
-                          displayType={weapon.displayType ?? ''}
+                          displayType={weapon.icon}
                           slug={weapon.slug}
                         >
                           {weapon.name}

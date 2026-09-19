@@ -18,6 +18,7 @@ export type PageRef =
   | { type: 'team'; name: string }
   | { type: 'loadout'; slug: string }
   | { type: 'shell'; shellType: string }
+  | { type: 'weapon'; shellType: string }
   | { type: 'article' }
   | { type: 'page' };
 
@@ -86,7 +87,7 @@ export default function PageIcon({
         </Box>
       );
     }
-    if (page.type === 'shell') {
+    if (page.type === 'shell' || page.type === 'weapon') {
       const src = getShellIcon(page.shellType);
       return (
         <ThumbnailFrame>
@@ -109,7 +110,7 @@ export default function PageIcon({
     return <VehicleIcon size={iconSize} slug={page.slug} />;
   }
   if (page.type === 'team') return <TeamIcon team={page.name} />;
-  if (page.type === 'shell') {
+  if (page.type === 'shell' || page.type === 'weapon') {
     const src = getShellIcon(page.shellType);
     if (src) return <ShellIcon alt="" size={iconSize} src={src} />;
     return <GiArtilleryShell />;
@@ -123,6 +124,7 @@ export default function PageIcon({
 export const PAGE_TYPE_LABELS: Record<PageRef['type'], string> = {
   vehicle: 'Vehicle',
   shell: 'Shell',
+  weapon: 'Infantry weapon',
   team: 'Team',
   loadout: 'Loadout',
   article: 'Article',

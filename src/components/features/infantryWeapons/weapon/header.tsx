@@ -17,7 +17,7 @@ export default function InfantryWeaponHeader() {
   const category = INFANTRY_WEAPON_CATEGORIES.find(
     (entry) => entry.key === weapon.category,
   );
-  const shellIcon = projectile ? getShellIcon(projectile.displayType) : null;
+  const shellIcon = getShellIcon(weapon.icon);
   const usesDefault = weapon.projectiles.some((entry) => entry.default);
   const tandem = weapon.projectiles.some((entry) =>
     entry.type.toUpperCase().includes('TANDEM'),

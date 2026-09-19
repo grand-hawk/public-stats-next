@@ -90,6 +90,20 @@ export function rateOfFireLabel(weapon: {
   return weapon.rpm ? `${weapon.rpm}/min` : 'Unknown';
 }
 
+export function infantryWeaponIcon(projectile?: {
+  displayType: string;
+  type: string;
+}) {
+  if (!projectile) return '';
+
+  const type = projectile.type.toUpperCase();
+  if (type.includes('SURFACE-TO-AIR')) return 'AAM';
+  if (type.includes('F&F')) return 'F&F Top Attack ATGM';
+  if (type.includes('TANDEM')) return 'ATGM TANDEM';
+  if (projectile.displayType === 'HEAT') return 'ROCKET';
+  return projectile.displayType;
+}
+
 export function fireModeLabel(mode: InfantryWeaponFireMode) {
   return FIRE_MODE_LABELS[mode];
 }

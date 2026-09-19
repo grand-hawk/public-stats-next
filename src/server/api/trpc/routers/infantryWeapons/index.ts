@@ -7,6 +7,7 @@ import { getTeamColor } from '@/server/api/trpc/routers/teams';
 import { getWeaponContent } from '@/server/utils/weaponContent';
 import {
   infantryWeaponCategory,
+  infantryWeaponIcon,
   rateOfFireLabel,
 } from '@/utils/infantryWeapons';
 import { getInfantryWeapons } from '@generated/infantry_weapons';
@@ -32,6 +33,7 @@ export interface DetailedInfantryWeapon extends Omit<
   availability: InfantryWeaponAvailability[];
   category: InfantryWeaponCategoryKey;
   description?: string;
+  icon: string;
   image?: WeaponImage;
   teamColor?: string;
   unlimitedReserve?: boolean;
@@ -39,7 +41,7 @@ export interface DetailedInfantryWeapon extends Omit<
 
 export interface TeamWeapon {
   class: string;
-  displayType?: string;
+  icon: string;
   name: string;
   slot: InfantryWeaponSlot;
   slug: string;
@@ -48,8 +50,8 @@ export interface TeamWeapon {
 
 export interface ListedInfantryWeapon {
   category: InfantryWeaponCategoryKey;
-  displayType?: string;
   humanoidDamage?: number;
+  icon: string;
   loadouts: string[];
   magazineSize?: number;
   maxPenetration?: number;
@@ -73,8 +75,8 @@ export function listInfantryWeapons(placeId: PlaceId): ListedInfantryWeapon[] {
 
       return {
         category: infantryWeaponCategory(projectile),
-        displayType: projectile?.displayType,
         humanoidDamage: projectile?.humanoidDamage,
+        icon: infantryWeaponIcon(projectile),
         loadouts: [
           ...new Set(weapon.availability.map((entry) => entry.loadout)),
         ],
@@ -108,7 +110,7 @@ export function listTeamWeapons(
       )
       .map((entry) => ({
         class: entry.class,
-        displayType: weapon.projectiles[0]?.displayType,
+        icon: infantryWeaponIcon(weapon.projectiles[0]),
         name: weapon.name,
         slot: entry.slot,
         slug: weapon.slug,
@@ -137,6 +139,7 @@ export function getInfantryWeaponBySlug(
       teamSlug: entry.team ? slug(entry.team) : undefined,
     })),
     category: infantryWeaponCategory(weapon.projectiles[0]),
+    icon: infantryWeaponIcon(weapon.projectiles[0]),
     ...getWeaponContent(weapon.slug, weapon.name),
     teamColor:
       teams.size === 1 && onlyTeam

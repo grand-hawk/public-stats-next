@@ -7,7 +7,10 @@ import { IS_DEV } from '@/env';
 import { createTRPCRouter, publicProcedure } from '@/server/api/trpc/context';
 import { listArticles } from '@/server/utils/articles';
 import { GLOSSARY_SLUG, getGlossary } from '@/server/utils/articles/glossary';
-import { INFANTRY_WEAPONS_PATH } from '@/utils/infantryWeapons';
+import {
+  INFANTRY_WEAPONS_PATH,
+  infantryWeaponIcon,
+} from '@/utils/infantryWeapons';
 import { loadoutDisplayName } from '@/utils/loadoutDisplayName';
 import { getConfig } from '@generated/config';
 import { getInfantryWeapons } from '@generated/infantry_weapons';
@@ -72,13 +75,11 @@ function buildIndex(placeId: PlaceId): Fuse<IndexedItem> {
   for (const weapon of Object.values(infantryWeaponsPlace?.data ?? {})) {
     const projectile = weapon.projectiles[0];
     items.push({
-      type: 'shell',
+      type: 'weapon',
       title: weapon.name,
-      subtitle: [projectile?.type, 'Infantry weapon']
-        .filter(Boolean)
-        .join(' · '),
+      subtitle: projectile?.type,
       href: `/${initials}${INFANTRY_WEAPONS_PATH}/${weapon.slug}`,
-      page: { type: 'shell', shellType: projectile?.displayType ?? '' },
+      page: { type: 'weapon', shellType: infantryWeaponIcon(projectile) },
       searchText: [weapon.name, projectile?.type, 'infantry weapon'].join(' '),
     });
   }

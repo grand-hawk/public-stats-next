@@ -143,7 +143,7 @@ export default function WeaponTierGrid({ weapons }: { weapons: TeamWeapon[] }) {
                         <Box key={`${weapon.slug}-${weapon.slot}`}>
                           <ShellInlineLink
                             basePath={INFANTRY_WEAPONS_PATH}
-                            displayType={weapon.displayType ?? ''}
+                            displayType={weapon.icon}
                             slug={weapon.slug}
                           >
                             {weapon.name}
