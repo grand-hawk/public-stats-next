@@ -124,7 +124,7 @@ export default function PageIcon({
 export const PAGE_TYPE_LABELS: Record<PageRef['type'], string> = {
   vehicle: 'Vehicle',
   shell: 'Shell',
-  weapon: 'Infantry weapon',
+  weapon: 'Weapon',
   team: 'Team',
   loadout: 'Loadout',
   article: 'Article',
