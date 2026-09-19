@@ -44,7 +44,7 @@ export default function VehicleDataInfo({ ...props }: StackProps) {
             Family:{' '}
             <Box asChild css={LINK_CSS}>
               <NextLink
-                href={`/${initials}/vehicles/family/${family.slug}`}
+                href={`/${initials}/vehicles/families/${family.slug}`}
                 prefetch={false}
               >
                 {family.name}

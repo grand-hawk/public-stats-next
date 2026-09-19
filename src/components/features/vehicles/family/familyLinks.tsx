@@ -41,7 +41,7 @@ export default function FamilyLinks({
       {families.map((family) => (
         <Box asChild key={family.slug} css={ROW_CSS}>
           <NextLink
-            href={`/${initials}/vehicles/family/${family.slug}`}
+            href={`/${initials}/vehicles/families/${family.slug}`}
             prefetch={false}
           >
             <TeamFlagStrip slots={3} teams={family.teams} />

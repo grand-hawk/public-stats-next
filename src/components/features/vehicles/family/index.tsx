@@ -88,7 +88,7 @@ export default function VehicleFamily({
                 }}
               >
                 <NextLink
-                  href={`/${initials}/vehicles/family`}
+                  href={`/${initials}/vehicles/families`}
                   prefetch={false}
                 >
                   All families

@@ -69,7 +69,7 @@ export const tabs: Record<string, Tab> = {
   vehicleFamilies: {
     label: 'Families',
     longLabel: 'Vehicle families',
-    path: '/vehicles/family',
+    path: '/vehicles/families',
     color: 'blue.500',
     description: 'Every design line in the game and the vehicles in it.',
     icon: (props: IconProps) => (

@@ -42,6 +42,20 @@ export function useMenuLinks(): MenuColumns {
 
   const currentPath = router.asPath.split(/[?#]/)[0];
 
+  const activePath = Object.values(tabs).reduce<string | undefined>(
+    (longest, tab) => {
+      const prefix = `/${initials}${tab.path}`;
+      const rest = currentPath.slice(prefix.length);
+
+      if (!currentPath.startsWith(prefix) || (rest && !rest.startsWith('/'))) {
+        return longest;
+      }
+
+      return !longest || tab.path.length > longest.length ? tab.path : longest;
+    },
+    undefined,
+  );
+
   const tabLink = (key: TabKey): MenuLink => {
     const tab = tabs[key];
 
@@ -49,7 +63,7 @@ export function useMenuLinks(): MenuColumns {
       label: tab.longLabel ?? tab.label,
       href: `/${initials}${tab.path}`,
       icon: tab.icon,
-      active: currentTab?.path === tab.path,
+      active: (activePath ?? currentTab?.path) === tab.path,
       external: false,
       prefetch: tab.prefetch,
     };
