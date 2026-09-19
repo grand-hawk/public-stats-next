@@ -2,6 +2,7 @@ import { Box, Link, Quote, Span, Text } from '@chakra-ui/react';
 import React from 'react';
 import Markdown from 'react-markdown';
 
+import { MarkdownAnchor } from '@/components/common/externalLink';
 import { inWhere, Prose } from '@/components/ui/prose';
 import { useVehicle } from '@/hooks/providers/vehicle';
 import { usePlace } from '@/hooks/usePlace';
@@ -106,6 +107,9 @@ export default function VehicleDescription() {
                 >
                   <Markdown
                     components={{
+                      a: ({ children, href }) => (
+                        <MarkdownAnchor href={href}>{children}</MarkdownAnchor>
+                      ),
                       p: ({ children }) => <Span>{children}</Span>,
                     }}
                   >

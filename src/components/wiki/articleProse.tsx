@@ -2,6 +2,7 @@ import { Box } from '@chakra-ui/react';
 import React from 'react';
 import Markdown from 'react-markdown';
 
+import { EXTERNAL_LINK_MARK_CSS } from '@/components/common/externalLink';
 import { HEADING_LEVEL_CSS } from '@/components/wiki/cardHeading';
 import { articleMarkdownComponents } from '@/utils/articleMarkdown';
 
@@ -42,6 +43,7 @@ export const ARTICLE_PROSE_CSS: SystemStyleObject = {
       textDecoration: 'underline',
     },
   },
+  ...EXTERNAL_LINK_MARK_CSS,
 };
 
 export default function ArticleProse({ children }: { children: string }) {

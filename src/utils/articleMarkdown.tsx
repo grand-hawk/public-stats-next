@@ -1,6 +1,8 @@
 import React from 'react';
 import slugify from 'slug';
 
+import { MarkdownAnchor } from '@/components/common/externalLink';
+
 import type { Components } from 'react-markdown';
 
 export function headingText(children: React.ReactNode): string {
@@ -19,6 +21,9 @@ function isFirstLine(
 }
 
 export const articleMarkdownComponents: Components = {
+  a: ({ children, href }) => (
+    <MarkdownAnchor href={href}>{children}</MarkdownAnchor>
+  ),
   h1: ({ children, node, ...props }) => {
     if (isFirstLine(node)) return null;
     return <h1 {...props}>{children}</h1>;

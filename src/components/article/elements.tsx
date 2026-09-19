@@ -3,11 +3,10 @@ import NextLink from 'next/link';
 import React from 'react';
 import slugify from 'slug';
 
+import ExternalLink, { isExternalHref } from '@/components/common/externalLink';
 import { IS_DEV } from '@/env';
 import { usePlaceInitials } from '@/hooks/usePlaceInitials';
 import { headingText } from '@/utils/articleMarkdown';
-
-const EXTERNAL_HREF = /^(?:[a-z][a-z0-9+.-]*:|\/\/)/i;
 
 const HEADING_ANCHOR_CSS = {
   color: 'inherit !important',
@@ -44,17 +43,11 @@ export function ArticleAnchor({
 }: React.ComponentProps<'a'>) {
   const initials = usePlaceInitials();
 
-  if (EXTERNAL_HREF.test(href)) {
+  if (isExternalHref(href)) {
     return (
-      <a
-        {...props}
-        data-external
-        href={href}
-        rel="noopener noreferrer"
-        target="_blank"
-      >
+      <ExternalLink {...props} href={href}>
         {children}
-      </a>
+      </ExternalLink>
     );
   }
 

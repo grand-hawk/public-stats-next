@@ -22,11 +22,6 @@ export const ARTICLE_MDX_CSS: SystemStyleObject = {
   },
   '& > :first-child': { marginBlockStart: 0 },
   '& > :last-child': { marginBlockEnd: 0 },
-  '& a[data-external]::after': {
-    content: '"\\2197"',
-    marginInlineStart: '2px',
-    fontSize: '0.75em',
-  },
   '& code': {
     padding: '1px 4px',
     borderRadius: '4px',
