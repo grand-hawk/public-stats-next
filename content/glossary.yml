@@ -41,7 +41,7 @@ terms:
     article: tandem-warhead
     label: Tandem resistance
     section: armour
-    definition: How much of a panel's HEAT protection still works against a tandem warhead. Old ERA keeps none of it. The newest panels keep most of it. The same value also resists anti-ERA rounds.
+    definition: How much of a panel's HEAT protection still works against a tandem warhead. For example, Kontakt-1 keeps 0% of it, Kontakt-5 keeps 15% and Relikt front panels keep 80%. A panel with more tandem resistance also loses less of its protection to an anti-ERA round.
   - id: eraTip
     article: anti-era-round
     label: Anti-ERA round

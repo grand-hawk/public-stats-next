@@ -1,6 +1,6 @@
 ---
 title: Penetration
-summary: What reduces the penetration of a round, covering distance, angle, overmatch, multiple plates and walls.
+summary: What reduces the penetration of a round, covering distance, angle, overmatch, multiple plates and walls, and how the figures are calculated.
 group: weapons
 order: 80
 aliases:
@@ -23,7 +23,7 @@ The range counts the whole flight, including any <WikiLink to="ricochet">ricoche
 
 A steep hit makes the armour thicker (see <WikiLink to="line-of-sight-thickness" />). For solid shot it also costs the round some of its own penetration. The penalty stops getting worse past 75°. HEAT and HE pay no angle penalty.
 
-Long-rod APFSDS is the exception among solid shot. It loses nothing to the slope, and even gains a little: about 17% at 60°.
+Long-rod APFSDS is the exception among solid shot. It loses nothing to the slope, and even gains a little: about 17% at 60°. The gain is the angle term of the Lanz-Odermatt formula, described under [How the figures are calculated](#how-the-figures-are-calculated).
 
 ## Overmatch
 
@@ -40,3 +40,36 @@ If the plate took more than 75% of its penetration, the round slows down as well
 Walls, buildings and terrain count as armour: 30 mm for every metre of material. Only solid shot goes through them, including machine gun bullets. Every other round stops at the first wall.
 
 A wall or building never counts as more than about 54 mm, however thick it is.
+
+## How the figures are calculated
+
+The penetration of a round comes from the real projectile. Which method is used depends on the kind of round.
+
+| Round                      | Method                                                  |
+| -------------------------- | ------------------------------------------------------- |
+| Full-calibre AP and APHE   | De Marre formula                                        |
+| APFSDS                     | Lanz-Odermatt formula                                   |
+| HEAT warheads and missiles | Published figures for the real weapon                   |
+| HE                         | Worked out from the amount of explosive the shell holds |
+
+### De Marre
+
+The De Marre formula dates from 1886 and estimates what a full-calibre steel shell goes through from its muzzle velocity, mass and calibre:
+
+<Formula>
+  penetration = (velocity ÷ K)<sup>1.43</sup> × shell mass<sup>0.71</sup> ÷
+  calibre<sup>1.07</sup>
+</Formula>
+
+K is a constant for the quality of the shell and of the armour. A heavier or faster shell goes through more, and a wider shell of the same mass goes through less. The War Thunder wiki has [a longer explanation of the formula](https://wiki.warthunder.com/jacob_de_marre).
+
+### Lanz-Odermatt
+
+A long-rod penetrator does not behave like a full-calibre shell, and De Marre gives wrong answers for it. APFSDS uses the Lanz-Odermatt formula instead, which was fitted to firing trials of tungsten and depleted uranium rods:
+
+<Formula>
+  penetration = a × rod length × cos(angle)<sup>−0.225</sup> × √(rod density ÷
+  armour density) × exp(−(s ÷ velocity)<sup>2</sup>)
+</Formula>
+
+The value a depends on how long the rod is for its width. The value s depends on the rod material and the hardness of the armour. The negative power on the angle is what gives APFSDS its gain against sloped plates. You can try the formula with your own numbers in the [Lanz-Odermatt calculator on longrods.ch](https://www.longrods.ch/perfcalc.php).
