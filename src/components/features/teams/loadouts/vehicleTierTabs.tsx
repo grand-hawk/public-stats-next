@@ -5,11 +5,8 @@ import React from 'react';
 import slug from 'slug';
 
 import LoadoutVehiclesGrid from '@/components/features/teams/loadouts/grid';
-import {
-  TABS_ROOT_CSS,
-  WikiTabTrigger,
-  WikiTabsList,
-} from '@/components/wiki/tabs';
+import { WikiTabTrigger, WikiTabsList } from '@/components/wiki/tabs';
+import { useAnchoredTabs } from '@/hooks/useAnchoredTabs';
 import { slugifyArray } from '@/utils/slugifyArray';
 
 import type { GridVehicle } from '@/components/features/teams/loadouts/organizeVehicles';
@@ -37,14 +34,18 @@ export default function VehicleTierTabs({
       ? nameSlugs[selectedSlug]
       : names[0];
 
+  const { mark, ref } = useAnchoredTabs<HTMLDivElement>(selected);
+
   return (
     <>
-      <Box data-md-ignore>
+      <Box ref={ref} data-md-ignore>
         <Tabs.Root
-          css={TABS_ROOT_CSS}
           lazyMount
           variant="plain"
-          onValueChange={(e) => setSelectedSlug(slug(e.value))}
+          onValueChange={(e) => {
+            mark();
+            setSelectedSlug(slug(e.value));
+          }}
           value={selected}
         >
           <WikiTabsList>

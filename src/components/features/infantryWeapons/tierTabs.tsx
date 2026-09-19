@@ -5,11 +5,8 @@ import React from 'react';
 import slug from 'slug';
 
 import WeaponTierGrid from '@/components/features/infantryWeapons/tierGrid';
-import {
-  TABS_ROOT_CSS,
-  WikiTabTrigger,
-  WikiTabsList,
-} from '@/components/wiki/tabs';
+import { WikiTabTrigger, WikiTabsList } from '@/components/wiki/tabs';
+import { useAnchoredTabs } from '@/hooks/useAnchoredTabs';
 import { INFANTRY_WEAPONS_PATH, slotLabel } from '@/utils/infantryWeapons';
 import { slugifyArray } from '@/utils/slugifyArray';
 
@@ -38,14 +35,18 @@ export default function WeaponTierTabs({
       ? nameSlugs[selectedSlug]
       : names[0];
 
+  const { mark, ref } = useAnchoredTabs<HTMLDivElement>(selected);
+
   return (
     <>
-      <Box data-md-ignore>
+      <Box ref={ref} data-md-ignore>
         <Tabs.Root
-          css={TABS_ROOT_CSS}
           lazyMount
           variant="plain"
-          onValueChange={(event) => setSelectedSlug(slug(event.value))}
+          onValueChange={(event) => {
+            mark();
+            setSelectedSlug(slug(event.value));
+          }}
           value={selected}
         >
           <WikiTabsList>

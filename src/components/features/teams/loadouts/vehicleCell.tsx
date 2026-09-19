@@ -22,8 +22,6 @@ const TILE_CSS: SystemStyleObject = {
   borderColor: 'border.subtle',
   borderRadius: '4px',
   overflow: 'hidden',
-  contentVisibility: 'auto',
-  containIntrinsicSize: 'auto 140px',
   transitionProperty: 'border-color, background-color',
   transitionDuration: DURATION_BASE,
   transitionTimingFunction: EASE,

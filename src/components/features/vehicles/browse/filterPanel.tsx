@@ -165,10 +165,7 @@ export default function VehicleFilterPanel({
       {facets.obtainments.length > 1 && (
         <FilterOptionGroup
           defaultOpen={false}
-          options={facetOptions(
-            facets.obtainments,
-            obtainmentLabel,
-          )}
+          options={facetOptions(facets.obtainments, obtainmentLabel)}
           selected={filters.obtainments.selected}
           title="Obtainment"
           onClear={filters.obtainments.clear}

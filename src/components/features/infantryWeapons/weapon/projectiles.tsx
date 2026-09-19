@@ -7,11 +7,7 @@ import ShellDamage from '@/components/features/shells/shell/damage';
 import ShellMissile from '@/components/features/shells/shell/missile';
 import ShellPenetrationTable from '@/components/features/shells/shell/penetrationTable';
 import ShellProjectile from '@/components/features/shells/shell/projectile';
-import {
-  TABS_ROOT_CSS,
-  WikiTabTrigger,
-  WikiTabsList,
-} from '@/components/wiki/tabs';
+import { WikiTabTrigger, WikiTabsList } from '@/components/wiki/tabs';
 import { useInfantryWeapon } from '@/hooks/providers/infantryWeapon';
 import { ShellContext } from '@/hooks/providers/shell';
 
@@ -42,7 +38,6 @@ export default function InfantryWeaponProjectiles() {
       {shells.length > 1 && (
         <Box data-md-ignore marginBlockStart="24px">
           <Tabs.Root
-            css={TABS_ROOT_CSS}
             variant="plain"
             onValueChange={(event) => setMode(event.value)}
             value={selected.slug}
