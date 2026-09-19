@@ -6,6 +6,7 @@ import RelatedPages from '@/components/common/relatedPages';
 import TeamHeader from '@/components/features/teams/header';
 import TeamLoadouts from '@/components/features/teams/loadouts';
 import TeamLoreVehicles from '@/components/features/teams/loreVehicles';
+import TeamWeapons from '@/components/features/teams/weapons';
 import ArticleNotFound from '@/components/layout/articleNotFound';
 import ArticlePage from '@/components/layout/articlePage';
 import Layout from '@/components/layout/layout';
@@ -67,6 +68,10 @@ export default function PlaceTeam() {
 
             {!team.lore && (
               <TeamLoadouts initials={place.initials} team={team} />
+            )}
+
+            {!team.lore && (
+              <TeamWeapons initials={place.initials} team={team} />
             )}
 
             <TeamLoreVehicles

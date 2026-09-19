@@ -4,6 +4,7 @@ import { z } from 'zod';
 
 import { MEDIA_PREFIX } from '@/env';
 import { createTRPCRouter, publicProcedure } from '@/server/api/trpc/context';
+import { listTeamWeapons } from '@/server/api/trpc/routers/infantryWeapons';
 import { createContentCollection } from '@/server/utils/contentCollection';
 import { getLoadoutListItems } from '@/server/utils/loadoutsList';
 import { computeRelatedPages } from '@/server/utils/relatedPages';
@@ -11,6 +12,7 @@ import { getConfig } from '@generated/config';
 import { getLoadouts } from '@generated/loadouts';
 import { getVehicles } from '@generated/vehicles';
 
+import type { TeamWeapon } from '@/server/api/trpc/routers/infantryWeapons';
 import type { RelatedPageItem } from '@/server/utils/relatedPages';
 import type { PlaceId } from '@generated/config';
 import type { LoadoutsPlaceDataLoadoutVehicleTeam } from '@generated/loadouts';
@@ -31,6 +33,9 @@ export interface Loadout {
   thumbnail: string;
   teams: {
     [team: string]: Record<string, LoadoutVehicle>;
+  };
+  weapons: {
+    [team: string]: TeamWeapon[];
   };
   relatedPages: RelatedPageItem[];
 }
@@ -92,6 +97,15 @@ export const loadoutsRouter = createTRPCRouter({
       const content = loadoutCollection.get(input.slug);
       const description = content?.body || undefined;
       const placeId = input.placeId as PlaceId;
+
+      const loadoutWeapons: Loadout['weapons'] = Object.fromEntries(
+        loadoutData.teams
+          .map((teamName) => [
+            teamName,
+            listTeamWeapons(placeId, loadoutName, teamName),
+          ])
+          .filter(([, weapons]) => weapons.length > 0),
+      );
       const { data: config } = getConfig();
       const initials =
         config.placeNameInitials[loadouts.data[placeId]!.metadata.placeName];
@@ -102,6 +116,7 @@ export const loadoutsRouter = createTRPCRouter({
         tagline: loadoutData.description || undefined,
         thumbnail: `${MEDIA_PREFIX}/assets/loadouts/thumbnails/${input.slug}.png`,
         teams: loadoutTeams,
+        weapons: loadoutWeapons,
         relatedPages: computeRelatedPages(
           placeId,
           initials,

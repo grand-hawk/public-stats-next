@@ -2,6 +2,7 @@ import slug from 'slug';
 import { z } from 'zod';
 
 import { createTRPCRouter, publicProcedure } from '@/server/api/trpc/context';
+import { listTeamWeapons } from '@/server/api/trpc/routers/infantryWeapons';
 import { createContentCollection } from '@/server/utils/contentCollection';
 import { computeRelatedPages } from '@/server/utils/relatedPages';
 import { isRecentlyAdded } from '@/utils/isRecentlyAdded';
@@ -10,6 +11,7 @@ import { getLoadouts } from '@generated/loadouts';
 import { getTeams } from '@generated/teams';
 import { getVehicles } from '@generated/vehicles';
 
+import type { TeamWeapon } from '@/server/api/trpc/routers/infantryWeapons';
 import type { ListVehicle } from '@/server/api/trpc/routers/vehicles';
 import type { RelatedPageItem } from '@/server/utils/relatedPages';
 import type { PlaceId } from '@generated/config';
@@ -41,6 +43,9 @@ export interface Team {
   lore: boolean;
   loadouts: {
     [loadout: string]: Record<string, TeamVehicle>;
+  };
+  weapons: {
+    [loadout: string]: TeamWeapon[];
   };
   loreVehicles: ListVehicle[];
   relatedPages: RelatedPageItem[];
@@ -178,6 +183,15 @@ export const teamsRouter = createTRPCRouter({
           .filter(([_, vehicles]) => Object.keys(vehicles).length > 0),
       );
 
+      const teamWeapons: Team['weapons'] = Object.fromEntries(
+        includedLoadouts
+          .map(([loadoutName]) => [
+            loadoutName,
+            listTeamWeapons(placeId, loadoutName, teamName),
+          ])
+          .filter(([, weapons]) => weapons.length > 0),
+      );
+
       const loreVehicles: ListVehicle[] = Object.entries(vehiclesPlace.data)
         .filter(
           ([_, vehicle]) =>
@@ -207,6 +221,7 @@ export const teamsRouter = createTRPCRouter({
         description,
         lore: isLore,
         loadouts: teamLoadouts,
+        weapons: teamWeapons,
         loreVehicles,
         relatedPages: computeRelatedPages(
           placeId,

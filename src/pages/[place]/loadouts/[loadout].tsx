@@ -5,6 +5,7 @@ import slugify from 'slug';
 import RelatedPages from '@/components/common/relatedPages';
 import LoadoutHeader from '@/components/features/loadouts/header';
 import LoadoutTeams from '@/components/features/loadouts/teams';
+import LoadoutWeapons from '@/components/features/loadouts/weapons';
 import ArticleNotFound from '@/components/layout/articleNotFound';
 import ArticlePage from '@/components/layout/articlePage';
 import Layout from '@/components/layout/layout';
@@ -66,6 +67,7 @@ export default function PlaceLoadout() {
             )}
 
             <LoadoutTeams initials={place.initials} loadout={loadout} />
+            <LoadoutWeapons initials={place.initials} loadout={loadout} />
 
             <RelatedPages items={loadout.relatedPages} />
           </ArticlePage>

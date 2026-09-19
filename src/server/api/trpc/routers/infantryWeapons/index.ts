@@ -15,6 +15,7 @@ import type { WeaponImage } from '@/server/utils/weaponContent';
 import type { InfantryWeaponCategoryKey } from '@/utils/infantryWeapons';
 import type { PlaceId } from '@generated/config';
 import type {
+  InfantryWeaponSlot,
   InfantryWeaponsPlaceDataWeapon,
   InfantryWeaponsPlaceDataWeaponAvailability,
 } from '@generated/infantry_weapons';
@@ -34,6 +35,15 @@ export interface DetailedInfantryWeapon extends Omit<
   image?: WeaponImage;
   teamColor?: string;
   unlimitedReserve?: boolean;
+}
+
+export interface TeamWeapon {
+  class: string;
+  displayType?: string;
+  name: string;
+  slot: InfantryWeaponSlot;
+  slug: string;
+  tier: number;
 }
 
 export interface ListedInfantryWeapon {
@@ -80,6 +90,31 @@ export function listInfantryWeapons(placeId: PlaceId): ListedInfantryWeapon[] {
       };
     })
     .sort((a, b) => a.name.localeCompare(b.name, undefined, { numeric: true }));
+}
+
+export function listTeamWeapons(
+  placeId: PlaceId,
+  loadout: string,
+  team: string,
+): TeamWeapon[] {
+  const place = getInfantryWeapons().data[placeId];
+  if (!place) return [];
+
+  return Object.values(place.data).flatMap((weapon) =>
+    weapon.availability
+      .filter(
+        (entry) =>
+          entry.loadout === loadout && (!entry.team || entry.team === team),
+      )
+      .map((entry) => ({
+        class: entry.class,
+        displayType: weapon.projectiles[0]?.displayType,
+        name: weapon.name,
+        slot: entry.slot,
+        slug: weapon.slug,
+        tier: entry.tier ?? 1,
+      })),
+  );
 }
 
 export function getInfantryWeaponBySlug(
