@@ -6,10 +6,7 @@ import { ShellList } from '@/components/article/shellQuery';
 import { usePlace } from '@/hooks/usePlace';
 import { trpc } from '@/utils/trpc';
 
-import type {
-  EraPanelVehicle,
-  Range,
-} from '@/server/utils/articles/eraPanels';
+import type { EraPanelVehicle, Range } from '@/server/utils/articles/eraPanels';
 
 const MANY_VEHICLES = 20;
 
@@ -53,6 +50,22 @@ function spread(values: number[]): Range {
   return [Math.min(...values), Math.max(...values)];
 }
 
+function againstHeat({ heat, ke }: { heat: number; ke: number }) {
+  return ke + heat;
+}
+
+function againstTandem({
+  antiTandem,
+  heat,
+  ke,
+}: {
+  antiTandem: number;
+  heat: number;
+  ke: number;
+}) {
+  return Math.round(ke + heat * antiTandem);
+}
+
 function removedShare(tip: number, antiTandem: number) {
   return Math.min(Math.max(tip * (1 - antiTandem ** 2), 0), 1);
 }
@@ -94,12 +107,8 @@ export default function EraPanelTable({
     const rows = panels.named
       .map((panel) => ({
         label: panel.label,
-        heat: spread(panel.variants.map(({ heat, ke }) => ke + heat)),
-        tandem: spread(
-          panel.variants.map(({ antiTandem, heat, ke }) =>
-            Math.round(ke + heat * antiTandem),
-          ),
-        ),
+        heat: spread(panel.variants.map(againstHeat)),
+        tandem: spread(panel.variants.map(againstTandem)),
         kept: panel.antiTandem,
       }))
       .sort((a, b) => a.kept[1] - b.kept[1] || a.heat[1] - b.heat[1]);
@@ -173,7 +182,7 @@ export default function EraPanelTable({
             <th>Panel</th>
             <th>Against solid shot</th>
             <th>Against HEAT</th>
-            <th>Against tandem</th>
+            <th>Against tandem HEAT</th>
             <th>Vehicles</th>
           </tr>
         </thead>
@@ -182,8 +191,12 @@ export default function EraPanelTable({
             <tr key={panel.label}>
               <td>{panel.label}</td>
               <td>{formatRange(panel.ke, ' mm')}</td>
-              <td>{formatRange(panel.heat, ' mm')}</td>
-              <td>{formatResistance(panel.antiTandem)}</td>
+              <td>
+                {formatRange(spread(panel.variants.map(againstHeat)), ' mm')}
+              </td>
+              <td>
+                {formatRange(spread(panel.variants.map(againstTandem)), ' mm')}
+              </td>
               <td>
                 {panel.vehicles.length > MANY_VEHICLES ? (
                   `${panel.vehicles.length} vehicles`
@@ -208,7 +221,7 @@ export default function EraPanelTable({
           <th>Vehicle and panel</th>
           <th>Against solid shot</th>
           <th>Against HEAT</th>
-          <th>Against tandem</th>
+          <th>Against tandem HEAT</th>
         </tr>
       </thead>
       <tbody>
@@ -222,8 +235,8 @@ export default function EraPanelTable({
               , {panel.suffix}
             </td>
             <td>{panel.ke} mm</td>
-            <td>{panel.heat} mm</td>
-            <td>{formatResistance([panel.antiTandem, panel.antiTandem])}</td>
+            <td>{againstHeat(panel)} mm</td>
+            <td>{againstTandem(panel)} mm</td>
           </tr>
         ))}
       </tbody>
