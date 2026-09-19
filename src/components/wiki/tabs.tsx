@@ -57,6 +57,10 @@ const TRIGGER_CSS: SystemStyleObject = {
   '@media (prefers-reduced-motion: reduce)': { transitionDuration: '0ms' },
 };
 
+export const TABS_ROOT_CSS: SystemStyleObject = {
+  '& [role="tabpanel"]': { overflowAnchor: 'none' },
+};
+
 export function WikiTabsList({ children }: { children: React.ReactNode }) {
   return (
     <Box css={LIST_WRAP_CSS}>

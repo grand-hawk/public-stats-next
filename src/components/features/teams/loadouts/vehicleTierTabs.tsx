@@ -5,7 +5,11 @@ import React from 'react';
 import slug from 'slug';
 
 import LoadoutVehiclesGrid from '@/components/features/teams/loadouts/grid';
-import { WikiTabTrigger, WikiTabsList } from '@/components/wiki/tabs';
+import {
+  TABS_ROOT_CSS,
+  WikiTabTrigger,
+  WikiTabsList,
+} from '@/components/wiki/tabs';
 import { slugifyArray } from '@/utils/slugifyArray';
 
 import type { GridVehicle } from '@/components/features/teams/loadouts/organizeVehicles';
@@ -37,6 +41,7 @@ export default function VehicleTierTabs({
     <>
       <Box data-md-ignore>
         <Tabs.Root
+          css={TABS_ROOT_CSS}
           lazyMount
           variant="plain"
           onValueChange={(e) => setSelectedSlug(slug(e.value))}

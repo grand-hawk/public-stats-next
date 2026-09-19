@@ -5,7 +5,11 @@ import React from 'react';
 import slug from 'slug';
 
 import WeaponTierGrid from '@/components/features/infantryWeapons/tierGrid';
-import { WikiTabTrigger, WikiTabsList } from '@/components/wiki/tabs';
+import {
+  TABS_ROOT_CSS,
+  WikiTabTrigger,
+  WikiTabsList,
+} from '@/components/wiki/tabs';
 import { INFANTRY_WEAPONS_PATH, slotLabel } from '@/utils/infantryWeapons';
 import { slugifyArray } from '@/utils/slugifyArray';
 
@@ -38,6 +42,7 @@ export default function WeaponTierTabs({
     <>
       <Box data-md-ignore>
         <Tabs.Root
+          css={TABS_ROOT_CSS}
           lazyMount
           variant="plain"
           onValueChange={(event) => setSelectedSlug(slug(event.value))}
