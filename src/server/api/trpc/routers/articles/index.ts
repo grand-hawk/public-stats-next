@@ -1,8 +1,13 @@
 import { TRPCError } from '@trpc/server';
 import { z } from 'zod';
 
+import { ERA_PANEL_NAMES } from '@/content/eraPanelNames';
 import { createTRPCRouter, publicProcedure } from '@/server/api/trpc/context';
 import { getArticle, listArticles } from '@/server/utils/articles';
+import {
+  groupEraPanels,
+  sourcesFromVehicles,
+} from '@/server/utils/articles/eraPanels';
 import { getGlossary } from '@/server/utils/articles/glossary';
 import { getNavigation } from '@/server/utils/articles/navigation';
 import { resolveRefs } from '@/server/utils/articles/resolve';
@@ -10,9 +15,14 @@ import { queryShells } from '@/server/utils/articles/shellQuery';
 import { computeRelatedPages } from '@/server/utils/relatedPages';
 import { getBaseUrl } from '@/utils/trpc';
 import { getConfig } from '@generated/config';
+import { getLoadouts } from '@generated/loadouts';
 import { getShells } from '@generated/shells';
 import { getVehicles } from '@generated/vehicles';
 
+import type {
+  EraPanelVehicle,
+  EraPanels,
+} from '@/server/utils/articles/eraPanels';
 import type { GlossaryTerm } from '@/server/utils/articles/glossary';
 import type { NavGroup, NavLink } from '@/server/utils/articles/navigation';
 import type { ArticleMeta, OutlineItem } from '@/server/utils/articles/parse';
@@ -110,6 +120,41 @@ export const articlesRouter = createTRPCRouter({
         typeIncludes: input.typeIncludes,
       }),
     ),
+
+  eraPanels: publicProcedure
+    .input(z.object({ placeId: z.string() }))
+    .query(({ input }): EraPanels => {
+      const placeId = input.placeId as PlaceId;
+      const inLoadout = new Set<string>();
+      for (const loadout of Object.values(
+        getLoadouts().data[placeId]?.data ?? {},
+      )) {
+        for (const name of Object.keys(loadout.vehicles)) inLoadout.add(name);
+      }
+
+      const available = new Map<string, EraPanelVehicle>();
+      for (const [name, vehicle] of Object.entries(
+        getVehicles().data[placeId]?.data ?? {},
+      )) {
+        if (!inLoadout.has(name)) continue;
+        available.set(vehicle.info.gameId, { name, slug: vehicle.info.slug });
+      }
+
+      const exported = sourcesFromVehicles(
+        getVehicles().data[placeId]?.data ?? {},
+      );
+
+      const eraTips = Object.values(getShells().data[placeId]?.data ?? {})
+        .flat()
+        .flatMap((shell) => (shell.eraTip ? [shell.eraTip] : []));
+
+      return groupEraPanels(
+        exported ?? [],
+        ERA_PANEL_NAMES,
+        available,
+        eraTips,
+      );
+    }),
 
   navigation: publicProcedure.query((): NavGroup[] => getNavigation()),
 

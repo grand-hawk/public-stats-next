@@ -1,0 +1,45 @@
+export interface EraPanelName {
+  label?: string;
+  suffix?: string;
+  except?: string[];
+}
+
+export const ERA_PANEL_NAMES: Record<string, EraPanelName> = {
+  '3/237/0': { label: 'Kontakt-1', except: ['M1A1'] },
+  '72/192/0.15': { label: 'Kontakt-5' },
+  '72/192/0.5': { label: 'Relikt, side panels' },
+  '150/210/0.8': { label: 'Relikt, front panels' },
+  '155/210/0.8': { label: 'Relikt, front panels' },
+  '165/225/0.85': { label: 'Monolith' },
+  '114/246/0.6': { label: 'Kaktus' },
+  '12/348/0.66': { label: '4S22 and 4S24' },
+  '95/145/0.7': { label: 'Nozh' },
+  '105/160/0.85': { label: 'Duplet' },
+  '10/140/0.05': { label: 'ERAWA-1' },
+  '72/298/0.4': { label: 'ERAWA-2' },
+  '70/160/0.15': { label: 'FY-2' },
+  '70/160/0.5': { label: 'FY-2' },
+  '30/180/0.5': { label: 'FY-4' },
+  '60/340/0.5': { label: 'FY-4' },
+  '108/222/0.5': { label: 'FY-4' },
+  '150/210/0.85': { label: 'FY-5' },
+  '12/438/0.66': { label: 'ARAT-1' },
+  '20/550/0.66': { label: 'ARAT-1' },
+  '20/165/0.8': { label: 'ARAT-2' },
+  '20/250/0.8': { label: 'ROMOR-A' },
+  '20/280/0.9': { label: 'NERA' },
+  '30/210/0.66': { label: 'NERA' },
+  '40/150/0.9': { label: 'Composite screens' },
+  '70/280/0.9': { label: 'Composite screens' },
+  '90/180/0.9': { label: 'Composite screens' },
+  '90/360/0.9': { label: 'Composite screens' },
+  '4/10/0': { label: 'Rubber skirts and flaps' },
+  '4/16/0': { label: 'Rubber skirts and flaps' },
+  '8/10/0': { label: 'Rubber skirts and flaps' },
+  '5/145/0.1': { suffix: 'light turret ERA' },
+  '56/224/0.1': { suffix: 'hull and light turret ERA' },
+  '84/336/0.15': { suffix: 'heavy turret ERA' },
+  '84/336/0.25': { suffix: 'front hull, side and medium turret ERA' },
+  '110/480/0.5': { suffix: 'heavy turret ERA' },
+  '60/690/0.66': { suffix: 'heavy side ERA' },
+};

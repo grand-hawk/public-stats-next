@@ -46,26 +46,10 @@ Ordinary HEAT rounds get no anti-ERA effect. For HEAT, see <WikiLink to="tandem-
 
 ## Rounds
 
-| ERA tip | Rounds                      |
-| ------- | --------------------------- |
-| 0.15    | <ShellList eraTip={0.15} /> |
-| 0.4     | <ShellList eraTip={0.4} />  |
-| 1       | <ShellList eraTip={1} />    |
-| 1.66    | <ShellList eraTip={1.66} /> |
-| 2       | <ShellList eraTip={2} />    |
+<EraPanelTable kind="eraTipRounds" />
 
 ## Protection removed
 
-How much of its protection against solid shot each panel loses, by the ERA tip of the round that hits it:
+How much of its protection against solid shot each panel loses. The columns are the ERA tip of the round that hits it.
 
-| Panel                          | 0.15 | 0.4 | 1    | 1.66 | 2    |
-| ------------------------------ | ---- | --- | ---- | ---- | ---- |
-| Kontakt-1, rubber skirts       | 15%  | 40% | 100% | 100% | 100% |
-| Kontakt-5                      | 15%  | 39% | 98%  | 100% | 100% |
-| ERAWA-2                        | 13%  | 34% | 84%  | 100% | 100% |
-| Relikt side panels, FY-2, FY-4 | 11%  | 30% | 75%  | 100% | 100% |
-| 4S22 and 4S24, ARAT-1, NERA    | 8%   | 23% | 56%  | 94%  | 100% |
-| Nozh                           | 8%   | 20% | 51%  | 85%  | 100% |
-| Relikt front panels, ARAT-2    | 5%   | 14% | 36%  | 60%  | 72%  |
-| Monolith, Duplet               | 4%   | 11% | 28%  | 46%  | 56%  |
-| Composite screens              | 3%   | 8%  | 19%  | 32%  | 38%  |
+<EraPanelTable kind="antiEra" />

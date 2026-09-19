@@ -6,6 +6,7 @@ import {
   ArticleImage,
   ArticleTable,
 } from '@/components/article/elements';
+import EraPanelTable from '@/components/article/eraPanelTable';
 import Figure from '@/components/article/figure';
 import Formula from '@/components/article/formula';
 import GlossaryList from '@/components/article/glossaryList';
@@ -31,6 +32,7 @@ export const articleMdxComponents: MDXComponents = {
   table: ArticleTable,
   Callout,
   ClassLink,
+  EraPanelTable,
   Figure,
   Formula,
   GlossaryList,

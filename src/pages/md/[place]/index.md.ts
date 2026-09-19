@@ -1,3 +1,4 @@
+import { getNavigation } from '@/server/utils/articles/navigation';
 import { createPlaceMarkdownRoute } from '@/server/utils/createMarkdownRoute';
 import { formatMarkdown } from '@/server/utils/formatMarkdown';
 import { getPlaceFromName } from '@/utils/placeUtils';
@@ -26,7 +27,21 @@ async function render(placeName: PlaceName) {
     ({ file, label }) => `- [${label}](/${place.initials}/${file})`,
   ).join('\n');
 
-  return formatMarkdown(`# ${place.placeName}\n\n${links}`);
+  const articles = getNavigation().flatMap((group) => {
+    const items = group.links.flatMap((link) =>
+      link.kind === 'article'
+        ? [
+            `- [${link.title}](/${place.initials}/${link.slug}.md): ${link.summary}`,
+          ]
+        : [],
+    );
+
+    return items.length > 0 ? [`## ${group.label}\n\n${items.join('\n')}`] : [];
+  });
+
+  return formatMarkdown(
+    [`# ${place.placeName}`, links, ...articles].join('\n\n'),
+  );
 }
 
 export const getServerSideProps = createPlaceMarkdownRoute(null, render);
