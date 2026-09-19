@@ -42,12 +42,12 @@ function buildIndex(placeId: PlaceId): PageIndex {
   );
 
   const byPath = new Map<string, IndexedPage>();
-  sources.forEach(({ body, page, path, title }, position) => {
+  sources.forEach(({ body, outbound, page, path, title }, position) => {
     byPath.set(path, {
       path,
       title,
       page,
-      outbound: extractWikilinkRefs(body).map((ref) => ref.path),
+      outbound: outbound ?? extractWikilinkRefs(body).map((ref) => ref.path),
       vector: vectors[position]!,
     });
   });

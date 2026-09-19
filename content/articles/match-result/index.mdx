@@ -1,0 +1,45 @@
+---
+title: Match result
+summary: How the match result is decided, with example scores and the XP bonus for each result.
+group: gameplay
+order: 40
+updated: 2026-09-19
+---
+
+The **match result** is decided when the match ends. The game takes the team with the best <Term id="teamScore" /> and compares it with the average score of the other teams. How far ahead that team is sets the result for everyone.
+
+| The leading team is        | Leading team sees | Other teams see |
+| -------------------------- | ----------------- | --------------- |
+| At least double the others | Total Victory     | Total Defeat    |
+| At least 10% ahead         | Victory           | Defeat          |
+| At least 5% ahead          | Minor Victory     | Minor Defeat    |
+| Less than 5% ahead         | Inconclusive      | Inconclusive    |
+
+A match can also end early: if one team is ahead by 3 to 1 or more when 15 minutes remain, it stops there.
+
+## Examples
+
+With two teams:
+
+| Your team | Enemy team | Your result   |
+| --------- | ---------- | ------------- |
+| 24,000    | 11,000     | Total Victory |
+| 18,000    | 15,000     | Victory       |
+| 15,900    | 15,000     | Minor Victory |
+| 15,300    | 15,000     | Inconclusive  |
+| 12,000    | 15,000     | Defeat        |
+
+With three teams, the leader is compared with the average of the other two. For example, a team on 20,000 against teams on 12,000 and 6,000 is compared with 9,000. That is more than double, which makes it a Total Victory.
+
+## XP bonus for winning
+
+Players on the winning team get bonus XP on top of what they earned in the match. The bonus depends on the result, not on the exact scores.
+
+| Result        | Bonus XP |
+| ------------- | -------- |
+| Total Victory | +100%    |
+| Victory       | +20%     |
+| Minor Victory | +10%     |
+| Inconclusive  | None     |
+
+The bonus does not raise the Money you earn.

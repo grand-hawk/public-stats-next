@@ -1,6 +1,7 @@
 import slug from 'slug';
 import { create } from 'xmlbuilder2';
 
+import { listArticles } from '@/server/utils/articles';
 import { getBaseUrl } from '@/utils/trpc';
 import { getConfig } from '@generated/config';
 import { getLoadouts } from '@generated/loadouts';
@@ -80,6 +81,13 @@ function getMdPaths() {
     for (const shellSlug of Object.keys(shellsPlace.metadata.slugs)) {
       paths.push({
         path: `md/${initials}/shells/${shellSlug}.md`,
+        changefreq: 'monthly',
+      });
+    }
+
+    for (const article of listArticles()) {
+      paths.push({
+        path: `md/${initials}/${article.slug}.md`,
         changefreq: 'monthly',
       });
     }

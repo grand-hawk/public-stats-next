@@ -1,0 +1,23 @@
+groups:
+  - key: vehicles
+    label: Vehicles
+    tabs:
+      - vehicles
+      - teams
+  - key: weapons
+    label: Weapons and ammunition
+    tabs:
+      - shells
+  - key: gameplay
+    label: Gameplay
+    tabs: []
+  - key: statistics
+    label: Statistics
+    tabs:
+      - kdr
+      - winrate
+  - key: tools
+    label: Tools
+    tabs:
+      - compare
+      - armour

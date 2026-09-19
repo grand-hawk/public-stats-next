@@ -1,0 +1,40 @@
+---
+title: Line-of-sight thickness
+summary: How the angle of a hit changes the armour a round has to get through, and how composite armour is measured.
+group: weapons
+order: 20
+aliases:
+  - los-thickness
+  - composite-armour
+updated: 2026-09-19
+---
+
+**Line-of-sight thickness** is the armour a round really has to get through once the angle of the hit is counted. The steeper the hit, the more armour is in the way.
+
+## How much the angle adds
+
+| Angle of the hit | A 100 mm plate counts as |
+| ---------------- | ------------------------ |
+| 0° (flat on)     | 100 mm                   |
+| 30°              | 115 mm                   |
+| 45°              | 141 mm                   |
+| 60°              | 200 mm                   |
+| 70°              | 292 mm                   |
+
+The plate's thickness is divided by the cosine of the impact angle. Its <Term id="ke" /> and any <Term id="ce" /> are added together first.
+
+This is why you angle your hull, and why you aim for the flattest plate you can see.
+
+A steep hit also takes away some of the round's own penetration. See the <WikiLink to="penetration#angle-penalty">angle penalty</WikiLink> and <WikiLink to="penetration#overmatch">overmatch</WikiLink>.
+
+## Parts that ignore the angle
+
+- **Engines, fuel tanks, transmissions and batteries** are equally tough from every direction.
+- **Gun breeches** never count as more than 100 mm.
+- **Composite armour** is measured a different way. See below.
+
+## Composite armour
+
+Composite armour is measured by how far the round travels through the block, and not by a flat thickness. The distance travelled inside the block is multiplied by the block's composite value. A hit at an angle, or along the length of the block, meets more protection.
+
+Composite blocks can have extra <Term id="ce" /> on top. Top-attack EFP warheads ignore that bonus.

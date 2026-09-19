@@ -1,0 +1,101 @@
+terms:
+  - id: ke
+    label: Kinetic protection
+    section: armour
+    definition: How thick a plate counts as against solid shot such as AP and APFSDS, in millimetres of steel. Every plate has this value, and it counts against every kind of round.
+  - id: ce
+    label: HEAT protection
+    section: armour
+    definition: Extra thickness that some plates and panels have against HEAT warheads only. Solid shot ignores it.
+  - id: los
+    article: line-of-sight-thickness
+    label: Line-of-sight thickness
+    section: armour
+    definition: How much armour a round really has to get through once the angle of the hit is counted. A plate hit at 60° is worth twice its flat thickness.
+  - id: composite
+    article: line-of-sight-thickness#composite-armour
+    label: Composite armour
+    section: armour
+    definition: Armour that gets stronger the further a round has to travel through it. The same block protects better when hit at an angle or along its length.
+  - id: era
+    article: explosive-reactive-armour
+    label: ERA
+    section: armour
+    definition: Explosive reactive armour. In the game the same rules cover every add-on panel that is used up by a hit, including rubber flaps, side skirts, NERA and composite screens. A panel protects in full against the shot that destroys it, then it is gone.
+  - id: nera
+    article: explosive-reactive-armour
+    label: NERA
+    section: armour
+    definition: Non-explosive reactive armour. It works like an ERA panel with its own protection values.
+  - id: slat
+    article: slat-armour
+    label: Slat armour
+    section: armour
+    definition: A cage around the vehicle. It weakens HEAT warheads and can stop an infantry rocket outright. It does nothing against solid shot.
+  - id: tandem
+    article: tandem-warhead
+    label: Tandem warhead
+    section: armour
+    definition: A HEAT warhead with a small charge in front that sets off ERA early. The main charge then meets less of the panel's HEAT protection.
+  - id: antiTandem
+    article: tandem-warhead
+    label: Tandem resistance
+    section: armour
+    definition: How much of a panel's HEAT protection still works against a tandem warhead. Old ERA keeps none of it. The newest panels keep most of it. The same value also resists anti-ERA rounds.
+  - id: eraTip
+    article: anti-era-round
+    label: Anti-ERA round
+    section: armour
+    definition: A round built to get past ERA, such as M829A3 or DM53. Its ERA tip value, shown on the shell page, is how much of a panel's kinetic protection it removes.
+  - id: overmatch
+    article: penetration#overmatch
+    label: Overmatch
+    section: penetration
+    definition: When a full-calibre shell is wider than the plate is thick, the plate's slope stops mattering much. Big guns go through thin angled plates.
+  - id: normalisation
+    article: penetration#angle-penalty
+    label: Angle penalty
+    section: penetration
+    definition: The penetration a round loses for hitting at an angle, on top of the extra armour the angle gives the target. Long-rod APFSDS is the exception and copes with slopes well.
+  - id: ricochet
+    article: ricochet
+    label: Ricochet
+    section: penetration
+    definition: A round glancing off without going in. Each shell page lists the angle at which that round starts to bounce.
+  - id: spall
+    article: damage#spall
+    label: Spall
+    section: penetration
+    definition: The spray of fragments inside a vehicle after a round gets through. Heavier shells and hits that only just got through throw more of it.
+  - id: spallLiner
+    article: damage#spall
+    label: Spall liner
+    section: penetration
+    definition: An inner lining that catches spall. It counts as six times its real thickness against fragments.
+  - id: cookOff
+    label: Cook-off
+    section: damage
+    definition: What happens when an ammo rack takes too much damage. An ordinary rack burns for about 5 seconds and then the vehicle explodes. A blowout rack burns its rounds away and the vehicle survives.
+  - id: blowout
+    label: Blowout rack
+    section: damage
+    definition: An ammo rack behind a blowout door. When it cooks off it loses one round every second and the vehicle survives, as long as the door is intact. If the door is destroyed, the vehicle explodes.
+  - id: knockout
+    label: Knockout
+    section: damage
+    definition: Crew in a seat are knocked out, not killed, by normal damage. A teammate can revive them from outside with a bandage. If the whole crew is knocked out, everyone dies.
+  - id: playerScore
+    article: player-score
+    label: Player score
+    section: matches
+    definition: Your own score for the current match. It unlocks vehicle tiers and starts again from zero every match.
+  - id: tier
+    article: tier
+    label: Tier
+    section: matches
+    definition: The player score you need before you can spawn a vehicle. It is a threshold and not a price. Spawning never spends your score.
+  - id: teamScore
+    article: team-score
+    label: Team score
+    section: matches
+    definition: The number that decides the match. Every point your team holds adds to it each second. 25% of every kill reward is added as well.

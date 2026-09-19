@@ -6,6 +6,7 @@ import ShellHeaderActions from '@/components/features/shells/shell/headerActions
 import ShellIcon from '@/components/features/shells/shellIcon';
 import { getShellIcon } from '@/components/icons/shells';
 import ArticleTitle from '@/components/wiki/articleTitle';
+import StatArticleLink from '@/components/wiki/statArticleLink';
 import { useShell } from '@/hooks/providers/shell';
 
 export default function ShellHeader() {
@@ -34,6 +35,14 @@ export default function ShellHeader() {
             <Span>{shell.type}</Span>
             {shellIcon && <ShellIcon alt="" size={20} src={shellIcon} />}
           </HStack>
+
+          {shell.type.toUpperCase().includes('TANDEM') && (
+            <StatArticleLink article="tandem">Tandem warhead</StatArticleLink>
+          )}
+
+          {shell.eraTip && (
+            <StatArticleLink article="antiEra">Anti-ERA round</StatArticleLink>
+          )}
         </>
       }
     />

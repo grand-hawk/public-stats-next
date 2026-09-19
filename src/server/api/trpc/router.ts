@@ -2,6 +2,7 @@ import { createServerSideHelpers } from '@trpc/react-query/server';
 import superjson from 'superjson';
 
 import { createTRPCRouter } from '@/server/api/trpc/context';
+import { articlesRouter } from '@/server/api/trpc/routers/articles';
 import { configRouter } from '@/server/api/trpc/routers/config';
 import { homeRouter } from '@/server/api/trpc/routers/home';
 import { kdrRouter } from '@/server/api/trpc/routers/kdr';
@@ -13,6 +14,7 @@ import { vehiclesRouter } from '@/server/api/trpc/routers/vehicles';
 import { winrateRouter } from '@/server/api/trpc/routers/winrate';
 
 export const appRouter = createTRPCRouter({
+  articles: articlesRouter,
   config: configRouter,
   home: homeRouter,
   kdr: kdrRouter,

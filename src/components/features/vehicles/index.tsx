@@ -10,6 +10,7 @@ import VehicleDynamicSidebar from '@/components/features/vehicles/vehicle/dynami
 import VehicleGallery from '@/components/features/vehicles/vehicle/gallery';
 import VehicleGeneralInformation from '@/components/features/vehicles/vehicle/generalInformation';
 import VehicleHeader from '@/components/features/vehicles/vehicle/header';
+import Navbox from '@/components/wiki/navbox';
 import { DynamicDataProvider } from '@/hooks/providers/dynamicData';
 import { VehicleContext } from '@/hooks/providers/vehicle';
 
@@ -70,6 +71,7 @@ export default function Vehicle({ vehicle }: { vehicle: DetailedVehicle }) {
             )}
             <VehicleDynamicData />
             <VehicleGallery />
+            <Navbox group="vehicles" />
             <Box hideFrom="2xl" marginTop={8}>
               <VehicleDataInfo />
             </Box>

@@ -12,7 +12,7 @@ export default function ShellDamage() {
   return (
     <TitledCard as="section" title="Damage" withAnchor>
       <StatGrid>
-        <Stat label="Max damage">
+        <Stat article="damage" label="Max damage">
           <FormatNumber value={shell.damage} /> HP
         </Stat>
 
@@ -74,8 +74,9 @@ export default function ShellDamage() {
 
         {shell.eraTip && (
           <TipStat
+            article="antiEra"
             label="ERA tip"
-            tip="ERA tip reduces ERA effectiveness against the penetrator"
+            tip="How much of an ERA panel's protection against solid shot this round removes. Modern panels resist part of it, which is why some rounds go above 1."
           >
             <FormatNumber value={shell.eraTip} />
           </TipStat>

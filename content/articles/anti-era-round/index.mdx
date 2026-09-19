@@ -1,0 +1,71 @@
+---
+title: Anti-ERA round
+summary: Rounds built to get past ERA, their ERA tip values, and how much protection they remove from each panel.
+group: weapons
+order: 60
+updated: 2026-09-19
+---
+
+An **anti-ERA round** is a round built to get past <WikiLink to="explosive-reactive-armour">ERA</WikiLink>. A normal round has to get through the panel's full protection and then the plate behind it. An anti-ERA round gets through the panel as if part of it, or all of it, was not there.
+
+Most anti-ERA rounds are APFSDS with a special tip. A few top-attack missiles and shells have the same ability. Their warheads meet a panel's kinetic protection the way solid shot does, and not its HEAT protection.
+
+Every one of these rounds has an **ERA tip** value on its shell page. APFSDS rounds that have one are also labelled "anti-ERA" in their type.
+
+## How it works
+
+The ERA tip value is how much of a panel's protection against solid shot the round removes. A round with an ERA tip of 1 removes all of it from an old panel. A round with 0.15 removes 15%.
+
+Modern panels fight back. The panel's <Term id="antiTandem" />, the same value that protects it from tandem warheads, reduces the effect. Against Kontakt-5 the reduction is tiny. Against Relikt, Duplet and Monolith it is large. That is what ERA tips above 1 are for.
+
+The exact amount, for any round against any panel:
+
+<Formula>
+  protection removed = ERA tip × (1 − tandem resistance<sup>2</sup>)
+</Formula>
+
+The result never goes above 100%.
+
+Tandem resistance is the "Against tandem" figure on the <WikiLink to="explosive-reactive-armour">ERA page</WikiLink>, written as a fraction. For <ShellLink name="DM53" /> against a Relikt front panel that is 0.4 × (1 − 0.8<sup>2</sup>), which comes to 14%.
+
+An example with Kontakt-5:
+
+| Round                       | ERA tip | Protection the panel loses |
+| --------------------------- | ------- | -------------------------- |
+| Any round without a tip     | None    | 0%                         |
+| <ShellLink name="DM53" />   | 0.4     | 39%                        |
+| <ShellLink name="M829A3" /> | 1       | 98%                        |
+
+Ordinary HEAT rounds get no anti-ERA effect. For HEAT, see <WikiLink to="tandem-warhead" />.
+
+<Callout type="warning" title="Only the first thing it touches counts">
+  The tip only works on the first destructible part the round hits. If a rubber
+  skirt or an external fuel tank sits in front of the real ERA, the skirt soaks
+  up the effect and the ERA behind it works at full strength.
+</Callout>
+
+## Rounds
+
+| ERA tip | Rounds                      |
+| ------- | --------------------------- |
+| 0.15    | <ShellList eraTip={0.15} /> |
+| 0.4     | <ShellList eraTip={0.4} />  |
+| 1       | <ShellList eraTip={1} />    |
+| 1.66    | <ShellList eraTip={1.66} /> |
+| 2       | <ShellList eraTip={2} />    |
+
+## Protection removed
+
+How much of its protection against solid shot each panel loses, by the ERA tip of the round that hits it:
+
+| Panel                          | 0.15 | 0.4 | 1    | 1.66 | 2    |
+| ------------------------------ | ---- | --- | ---- | ---- | ---- |
+| Kontakt-1, rubber skirts       | 15%  | 40% | 100% | 100% | 100% |
+| Kontakt-5                      | 15%  | 39% | 98%  | 100% | 100% |
+| ERAWA-2                        | 13%  | 34% | 84%  | 100% | 100% |
+| Relikt side panels, FY-2, FY-4 | 11%  | 30% | 75%  | 100% | 100% |
+| 4S22 and 4S24, ARAT-1, NERA    | 8%   | 23% | 56%  | 94%  | 100% |
+| Nozh                           | 8%   | 20% | 51%  | 85%  | 100% |
+| Relikt front panels, ARAT-2    | 5%   | 14% | 36%  | 60%  | 72%  |
+| Monolith, Duplet               | 4%   | 11% | 28%  | 46%  | 56%  |
+| Composite screens              | 3%   | 8%  | 19%  | 32%  | 38%  |

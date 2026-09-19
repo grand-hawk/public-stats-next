@@ -2,7 +2,7 @@ import { Box, Flex } from '@chakra-ui/react';
 import NextImage from 'next/image';
 import React from 'react';
 import { GiArtilleryShell } from 'react-icons/gi';
-import { LuArrowRight } from 'react-icons/lu';
+import { LuArrowRight, LuFileText } from 'react-icons/lu';
 import { MdViewList } from 'react-icons/md';
 import { TbTank } from 'react-icons/tb';
 
@@ -18,6 +18,7 @@ export type PageRef =
   | { type: 'team'; name: string }
   | { type: 'loadout'; slug: string }
   | { type: 'shell'; shellType: string }
+  | { type: 'article' }
   | { type: 'page' };
 
 interface PageIconProps {
@@ -99,7 +100,7 @@ export default function PageIcon({
     }
     return (
       <ThumbnailFrame>
-        <LuArrowRight />
+        {page.type === 'article' ? <LuFileText size={20} /> : <LuArrowRight />}
       </ThumbnailFrame>
     );
   }
@@ -114,6 +115,7 @@ export default function PageIcon({
     return <GiArtilleryShell />;
   }
   if (page.type === 'loadout') return <MdViewList />;
+  if (page.type === 'article') return <LuFileText />;
   if (page.type === 'page') return <LuArrowRight />;
   return <TbTank />;
 }
@@ -123,5 +125,6 @@ export const PAGE_TYPE_LABELS: Record<PageRef['type'], string> = {
   shell: 'Shell',
   team: 'Team',
   loadout: 'Loadout',
+  article: 'Article',
   page: 'Page',
 };

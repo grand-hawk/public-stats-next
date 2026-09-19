@@ -3,10 +3,12 @@ import NextLink from 'next/link';
 import React from 'react';
 import slug from 'slug';
 
+import MainArticle from '@/components/article/mainArticle';
 import TeamIcon from '@/components/icons/teams';
 import SectionMarker from '@/components/wiki/sectionMarker';
 import { WIKITABLE_CSS, WikiTableFrame } from '@/components/wiki/stats';
 import TitledCard from '@/components/wiki/titledCard';
+import { STAT_ARTICLES } from '@/content/statLinks';
 import { usePlaceInitials } from '@/hooks/usePlaceInitials';
 
 import type { VehicleAvailability } from '@/server/api/trpc/routers/vehicles';
@@ -43,6 +45,8 @@ export default function VehicleAvailability({
       <SectionMarker name="In-game availability" />
 
       <TitledCard as="section" title="In-game availability" withAnchor>
+        <MainArticle label="See also" to={STAT_ARTICLES.tier} />
+
         <WikiTableFrame>
           <Table.Root
             aria-label="Vehicle in-game availability across loadouts and teams"

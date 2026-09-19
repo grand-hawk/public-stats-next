@@ -13,6 +13,7 @@ import HomeHero from '@/components/features/home/hero';
 import HighlightsBand from '@/components/features/home/highlightsBand';
 import LinkCard from '@/components/features/home/linkCard';
 import LoadoutsCard from '@/components/features/home/loadoutsCard';
+import SubjectCard from '@/components/features/home/subjectCard';
 import ToolsCard from '@/components/features/home/toolsCard';
 import Layout from '@/components/layout/layout';
 import PageMeta from '@/components/layout/pageMeta';
@@ -26,14 +27,17 @@ export default function Place() {
   if (!place) return null;
 
   const [home] = trpc.home.place.useSuspenseQuery({ placeId: place.placeId });
+  const [navigation] = trpc.articles.navigation.useSuspenseQuery();
   const { classCounts, loadouts, newest } = home;
   const { initials, placeName } = place;
   const hasLoadouts = loadouts.length > 0;
+  const weapons = navigation.find((group) => group.key === 'weapons');
+  const gameplay = navigation.find((group) => group.key === 'gameplay');
 
   return (
     <PageMeta
       exactTitle={`${placeName} Wiki`}
-      description={`Vehicle stats, shell data and armor maps for ${placeName}.`}
+      description={`Vehicle stats, shell data, armor maps and game mechanics for ${placeName}.`}
     >
       <Layout noPadding>
         <Box
@@ -56,13 +60,21 @@ export default function Place() {
               <BandGrid>
                 <ToolsCard initials={initials} />
 
-                <LinkCard
-                  action="Browse shells"
-                  body="Penetration, velocity and damage for every round in the game."
-                  css={{ ...spanAside }}
-                  href={`/${initials}/shells`}
-                  title="Shells"
-                />
+                {weapons ? (
+                  <SubjectCard
+                    css={{ ...spanAside }}
+                    group={weapons}
+                    initials={initials}
+                  />
+                ) : (
+                  <LinkCard
+                    action="Browse shells"
+                    body="Penetration, velocity and damage for every round in the game."
+                    css={{ ...spanAside }}
+                    href={`/${initials}/shells`}
+                    title="Shells"
+                  />
+                )}
 
                 {hasLoadouts && (
                   <LoadoutsCard initials={initials} loadouts={loadouts} />
@@ -75,6 +87,15 @@ export default function Place() {
                   href={`/${initials}/teams`}
                   title="Teams"
                 />
+
+                {gameplay && gameplay.links.length > 0 && (
+                  <SubjectCard
+                    columns={2}
+                    css={{ ...spanFull }}
+                    group={gameplay}
+                    initials={initials}
+                  />
+                )}
               </BandGrid>
             </BandInner>
           </Band>

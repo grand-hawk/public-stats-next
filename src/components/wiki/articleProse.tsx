@@ -7,7 +7,7 @@ import { articleMarkdownComponents } from '@/utils/articleMarkdown';
 
 import type { SystemStyleObject } from '@chakra-ui/react';
 
-const ARTICLE_PROSE_CSS: SystemStyleObject = {
+export const ARTICLE_PROSE_CSS: SystemStyleObject = {
   fontSize: '1rem',
   lineHeight: '1.625rem',
   overflowWrap: 'break-word',

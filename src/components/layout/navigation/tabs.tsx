@@ -173,8 +173,8 @@ export const menuGroups: MenuGroup[] = [
     label: 'Browse',
     entries: [
       { type: 'tab', key: 'vehicles' },
-      { type: 'tab', key: 'shells' },
       { type: 'tab', key: 'teams' },
+      { type: 'tab', key: 'shells' },
     ],
   },
   {

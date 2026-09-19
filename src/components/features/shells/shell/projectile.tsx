@@ -23,7 +23,7 @@ export default function ShellProjectile() {
           />
         </Stat>
 
-        <Stat label="Max penetration">
+        <Stat article="maxPenetration" label="Max penetration">
           <FormatNumber
             style="unit"
             unit="millimeter"
@@ -52,7 +52,7 @@ export default function ShellProjectile() {
         )}
 
         {shell.ricochetAngle && (
-          <Stat label="Ricochet angle">
+          <Stat article="ricochetAngle" label="Ricochet angle">
             <FormatNumber
               style="unit"
               unit="degree"

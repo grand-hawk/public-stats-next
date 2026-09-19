@@ -72,6 +72,12 @@ export const trpc = createTRPCNext<AppRouter>({
       abortOnUnmount: true,
     };
   },
+  responseMeta({ clientErrors }) {
+    const isNotFound = clientErrors.some(
+      (error) => error.data?.code === 'NOT_FOUND',
+    );
+    return isNotFound ? { status: 404 } : {};
+  },
   transformer: superjson,
 });
 

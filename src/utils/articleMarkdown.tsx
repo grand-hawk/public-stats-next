@@ -3,7 +3,7 @@ import slugify from 'slug';
 
 import type { Components } from 'react-markdown';
 
-function headingText(children: React.ReactNode): string {
+export function headingText(children: React.ReactNode): string {
   if (typeof children === 'string') return children;
   if (Array.isArray(children)) return children.map(headingText).join('');
   if (React.isValidElement<{ children?: React.ReactNode }>(children)) {

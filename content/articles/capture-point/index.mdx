@@ -1,0 +1,44 @@
+---
+title: Capture point
+summary: How capture points are taken and held, covering capture times, who counts towards a capture, and abandoned points.
+group: gameplay
+order: 20
+updated: 2026-09-19
+---
+
+import pointB from './dustbowl-2-b.png';
+
+<Figure
+  float="right"
+  src={pointB}
+  alt="A transparent dome over a car park marks the capture zone of point B"
+  caption="The zone of point B on Dustbowl 2."
+/>
+
+A **capture point** is a zone on the map that a team can take and hold. In <WikiLink to="conquest" />, every point your team holds adds to its <Term id="teamScore" />.
+
+## Capturing
+
+Once a second, the game counts the players of each team inside the zone. What matters is your advantage: your head count minus everyone else's combined.
+
+| Situation                         | What happens                                                 |
+| --------------------------------- | ------------------------------------------------------------ |
+| You have more players in the zone | The capture moves your way, faster the bigger your advantage |
+| Equal numbers                     | The point is contested and nothing moves                     |
+| Nobody is there                   | See [Leaving a point](#leaving-a-point)                      |
+
+With an advantage of one player, a neutral point takes 30 seconds to capture. A point the enemy owns takes 60 seconds: 30 to bring it down to neutral and 30 more to make it yours.
+
+More players make it quicker. For example, three players against none capture a neutral point in 10 seconds.
+
+Capturing a point gives up to 250 <WikiLink to="player-score">player score</WikiLink>, split by how much of the capture you did.
+
+## Vehicles count their whole crew
+
+If any seated crew member of a vehicle is inside the zone, everyone in that vehicle counts. A full tank parked on the edge of a point is worth as much as the same crew standing in the middle of it on foot.
+
+## Leaving a point
+
+A point that was only partly captured and then left empty slowly rolls back to neutral, at the same speed a single player would capture it.
+
+A point that is fully yours never decays. It stays yours until the enemy comes and takes it. Finish a capture before you leave: a half-captured point is lost, and a full one holds itself.

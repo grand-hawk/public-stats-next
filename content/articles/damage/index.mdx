@@ -1,0 +1,52 @@
+---
+title: Damage
+summary: What a round does after it penetrates, covering spare penetration, spall, HEAT jets and explosions.
+group: weapons
+order: 110
+aliases:
+  - module-damage
+  - spall
+  - blast-damage
+updated: 2026-09-19
+---
+
+**Damage** is what a round does once it is through the armour. Getting through is only half the job: what the round does inside decides whether the target keeps fighting.
+
+## Spare penetration
+
+How much damage a round does to the part it hits depends on how much penetration it had to spare.
+
+| The round                                       | Damage it does    |
+| ----------------------------------------------- | ----------------- |
+| Has plenty of penetration left after the armour | Full damage       |
+| Only just got through                           | 35% of its damage |
+
+Everything in between scales with the penetration left over. If you can choose, shoot the plate your round beats easily, not the one it barely beats.
+
+A hit that fails to penetrate can still do 35% of its damage to the part it struck, as long as the plate is thin compared with the round.
+
+## Spall
+
+Spall is the spray of fragments that comes off the inside of a plate when a round gets through it.
+
+- Heavier shells throw more fragments.
+- A hit that only just got through throws more than one that went through easily.
+- Each fragment can go through up to 10 mm of armour.
+
+A spall liner is an inner lining that catches fragments. It counts as six times its real thickness against spall.
+
+## HEAT jets
+
+A HEAT jet fades quickly once it is inside, losing 20% of its penetration for every metre. Everything in its line takes full damage, crew included.
+
+## Explosions
+
+An explosion does damage twice: once from fragments and once from the pressure wave.
+
+| Infantry stance | Damage taken |
+| --------------- | ------------ |
+| Standing        | 100%         |
+| Crouching       | 75%          |
+| Prone           | 50%          |
+
+A blast can't hurt a vehicle part whose armour is thicker than the blast's own penetration. That is why high explosive does little to a tank's hull.

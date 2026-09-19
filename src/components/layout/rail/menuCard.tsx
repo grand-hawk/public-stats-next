@@ -1,7 +1,9 @@
 import { Box } from '@chakra-ui/react';
 import React from 'react';
 
-import MenuRow from '@/components/layout/rail/menuRow';
+import MenuColumn, {
+  MENU_COLUMNS_MEDIA,
+} from '@/components/layout/rail/menuColumn';
 import { useDismiss } from '@/components/layout/rail/useDismiss';
 import { useMenuLinks } from '@/components/layout/rail/useMenuLinks';
 import { DESKTOP_MEDIA } from '@/components/layout/shell/constants';
@@ -23,7 +25,8 @@ export default function MenuCard({
   const cardRef = React.useRef<HTMLDivElement>(null);
   const open = useMenuStore((s) => s.open);
   const close = useMenuStore((s) => s.close);
-  const groups = useMenuLinks();
+  const { articles, pages } = useMenuLinks();
+  const hasArticles = articles.length > 0;
   const wipe = useWipe(open);
 
   useDismiss({ cardRef, onDismiss: close, open, triggerRef });
@@ -64,7 +67,7 @@ export default function MenuCard({
             left: '64px',
             right: 'unset',
             bottom: 'unset',
-            width: '232px',
+            width: hasArticles ? '480px' : '232px',
             maxHeight: 'calc(100dvh - 16px)',
             zIndex: 50,
             ...wipeDirectionCss(wipe, 'right'),
@@ -78,29 +81,40 @@ export default function MenuCard({
             maxHeight: 'inherit',
           }}
         >
-          <Box css={{ padding: '6px' }}>
-            {groups.map((group) => (
+          <Box
+            css={{
+              display: 'grid',
+              gridTemplateColumns: 'minmax(0, 1fr)',
+              [MENU_COLUMNS_MEDIA]: {
+                gridTemplateColumns: hasArticles
+                  ? 'minmax(0, 1fr) minmax(0, 1fr)'
+                  : 'minmax(0, 1fr)',
+              },
+              [DESKTOP_MEDIA]: {
+                gridTemplateColumns: hasArticles
+                  ? '232px minmax(0, 1fr)'
+                  : 'minmax(0, 1fr)',
+              },
+            }}
+          >
+            <MenuColumn groups={pages} />
+
+            {hasArticles && (
               <Box
-                aria-label={group.label}
-                as="nav"
-                key={group.label}
                 css={{
-                  '&:not(:first-of-type)': {
-                    marginBlockStart: '6px',
-                    paddingBlockStart: '6px',
-                    borderBlockStartWidth: '1px',
-                    borderBlockStartStyle: 'solid',
-                    borderBlockStartColor: 'var(--border-color-subtle)',
+                  borderBlockStartWidth: '1px',
+                  borderBlockStartStyle: 'solid',
+                  borderColor: 'var(--border-color-subtle)',
+                  [MENU_COLUMNS_MEDIA]: {
+                    borderBlockStartWidth: 0,
+                    borderInlineStartWidth: '1px',
+                    borderInlineStartStyle: 'solid',
                   },
                 }}
               >
-                <Box as="ul" css={{ margin: 0, listStyle: 'none' }}>
-                  {group.links.map((link) => (
-                    <MenuRow key={link.href + link.label} link={link} />
-                  ))}
-                </Box>
+                <MenuColumn labelled groups={articles} />
               </Box>
-            ))}
+            )}
           </Box>
         </Box>
       </Box>

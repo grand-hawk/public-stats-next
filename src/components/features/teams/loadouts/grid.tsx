@@ -6,6 +6,7 @@ import { organizeVehicles } from '@/components/features/teams/loadouts/organizeV
 import VehicleCell from '@/components/features/teams/loadouts/vehicleCell';
 import { EmptyState } from '@/components/ui/empty-state';
 import { RAISED_FRAME_CSS } from '@/components/ui/styles';
+import StatArticleLink from '@/components/wiki/statArticleLink';
 
 import type { GridVehicle } from '@/components/features/teams/loadouts/organizeVehicles';
 import type { SystemStyleObject } from '@chakra-ui/react';
@@ -77,7 +78,9 @@ export default React.memo(function LoadoutVehiclesGrid({
             borderColor: 'var(--border-color-subtle)',
           }}
         >
-          <Span css={LABEL_CSS}>Tier</Span>
+          <Span css={LABEL_CSS}>
+            <StatArticleLink article="tier">Tier</StatArticleLink>
+          </Span>
         </Box>
 
         {classifications.map((classification, index) => (

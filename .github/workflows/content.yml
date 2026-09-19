@@ -4,6 +4,9 @@ on:
   pull_request:
     paths:
       - 'content/**/*.md'
+      - 'content/**/*.mdx'
+      - 'content/*.yml'
+      - 'src/content/articleModules.ts'
 
 jobs:
   validate:
@@ -43,3 +46,6 @@ jobs:
         run: echo "$FILES" | tr '\n' ' ' | xargs pnpm content:validate
         env:
           FILES: ${{ steps.changed.outputs.files }}
+
+      - name: Validate articles
+        run: pnpm content:validate:articles

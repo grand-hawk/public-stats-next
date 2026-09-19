@@ -1,9 +1,11 @@
 import { FormatNumber, HStack, Stack } from '@chakra-ui/react';
 import React from 'react';
 
+import MainArticle from '@/components/article/mainArticle';
 import { Switch } from '@/components/ui/switch';
 import { StatsCell, StatsRoot, StatsRow } from '@/components/wiki/stats';
 import TitledCard from '@/components/wiki/titledCard';
+import { STAT_ARTICLES } from '@/content/statLinks';
 import { useShell } from '@/hooks/providers/shell';
 import {
   getPenetrationAngles,
@@ -37,6 +39,8 @@ export default function ShellPenetrationTable() {
       title="Penetration"
       withAnchor
     >
+      <MainArticle to={STAT_ARTICLES.maxPenetration} />
+
       <StatsRoot>
         <StatsRow>
           <StatsCell asTitle>Distance/Angle</StatsCell>

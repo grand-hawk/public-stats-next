@@ -1,8 +1,10 @@
 import dynamic from 'next/dynamic';
 import React from 'react';
 
+import MainArticle from '@/components/article/mainArticle';
 import SectionMarker from '@/components/wiki/sectionMarker';
 import TitledCard from '@/components/wiki/titledCard';
+import { STAT_ARTICLES } from '@/content/statLinks';
 import { useVehicle } from '@/hooks/providers/vehicle';
 
 const VehicleArmorPreview = dynamic(
@@ -19,6 +21,8 @@ export default function VehicleArmor() {
       <SectionMarker name="Armour" />
 
       <TitledCard as="section" title="Armour" withAnchor>
+        <MainArticle to={STAT_ARTICLES.armour} />
+
         <VehicleArmorPreview
           frontArmorDepth={vehicle.info.frontArmorDepth ?? 50}
         />

@@ -1,8 +1,7 @@
-import { Box, Span, Stack } from '@chakra-ui/react';
-import NextLink from 'next/link';
 import React from 'react';
 import slug from 'slug';
 
+import OnThisPage from '@/components/wiki/onThisPage';
 import { useDynamicData } from '@/hooks/providers/dynamicData';
 import { useVehicle } from '@/hooks/providers/vehicle';
 import { getOneModuleOfType } from '@/utils/alterations';
@@ -60,7 +59,6 @@ function computeMarkers(
 export default function SectionNavigation() {
   const vehicle = useVehicle();
   const { assembledModules } = useDynamicData();
-  const [activeSlug, setActiveSlug] = React.useState<string | null>(null);
 
   const isAvailable =
     !!vehicle.info.availability &&
@@ -71,98 +69,5 @@ export default function SectionNavigation() {
     [vehicle, assembledModules, isAvailable],
   );
 
-  React.useEffect(() => {
-    if (markers.length === 0) return;
-
-    const isCurrentSlugValid =
-      activeSlug && markers.some((m) => m.slug === activeSlug);
-    if (isCurrentSlugValid) return;
-
-    const hash = window.location.hash.slice(1);
-    const matchingMarker = markers.find((m) => m.slug === hash);
-
-    setActiveSlug(matchingMarker ? hash : markers[0].slug);
-
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [markers]);
-
-  React.useEffect(() => {
-    if (markers.length === 0) return;
-
-    const elements = markers
-      .map((marker) => document.getElementById(marker.slug))
-      .filter(Boolean) as HTMLElement[];
-    if (elements.length === 0) return;
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        for (const entry of entries) {
-          if (entry.isIntersecting) {
-            setActiveSlug(entry.target.id);
-            break;
-          }
-        }
-      },
-      { rootMargin: '0px 0px -90% 0px' },
-    );
-
-    for (const element of elements) observer.observe(element);
-    return () => observer.disconnect();
-  }, [markers]);
-
-  if (markers.length === 0) return null;
-  return (
-    <Stack gap={2} hideBelow="xl" data-md-ignore>
-      <Span
-        color="fg.muted"
-        css={{ fontSize: '0.875rem', lineHeight: '1.375rem' }}
-      >
-        On this page
-      </Span>
-
-      <Stack
-        as="nav"
-        gap={0}
-        css={{
-          borderInlineStartWidth: '1px',
-          borderInlineStartStyle: 'solid',
-          borderColor: 'var(--border-color-subtle)',
-        }}
-      >
-        {markers.map((marker) => {
-          const isActive = activeSlug === marker.slug;
-
-          return (
-            <Box
-              asChild
-              key={marker.slug}
-              css={{
-                display: 'flex',
-                alignItems: 'center',
-                height: '32px',
-                marginInlineStart: '-1px',
-                padding: '0 11px',
-                borderInlineStartWidth: '2px',
-                borderInlineStartStyle: 'solid',
-                borderColor: isActive
-                  ? 'var(--color-progressive)'
-                  : 'transparent',
-                borderRadius: '0 4px 4px 0',
-                color: isActive ? 'var(--color-progressive)' : 'fg.muted',
-                fontSize: '0.875rem',
-                fontWeight: 500,
-                lineHeight: '1.375rem',
-                textDecoration: 'none',
-                '&:hover': { backgroundColor: 'quiet.hover' },
-              }}
-            >
-              <NextLink href={`#${marker.slug}`} shallow>
-                {marker.name}
-              </NextLink>
-            </Box>
-          );
-        })}
-      </Stack>
-    </Stack>
-  );
+  return <OnThisPage hideBelow="xl" markers={markers} />;
 }

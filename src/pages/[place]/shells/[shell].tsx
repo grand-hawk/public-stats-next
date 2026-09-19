@@ -13,6 +13,7 @@ import Layout from '@/components/layout/layout';
 import { linkedDataScripts } from '@/components/layout/linkedData';
 import PageMeta from '@/components/layout/pageMeta';
 import SearchLayout from '@/components/layout/searchLayout/layout';
+import Navbox from '@/components/wiki/navbox';
 import { useCanonicalSlug } from '@/hooks/useCanonicalSlug';
 import { usePlace } from '@/hooks/usePlace';
 import { useRouterQuery } from '@/hooks/useRouterQuery';
@@ -79,6 +80,7 @@ export default function PlaceShell() {
               titleId="shell-page-title"
             >
               <Shell shell={shell} />
+              <Navbox group="weapons" />
             </ArticlePage>
           ) : (
             <ArticleNotFound title="Shell not found" />

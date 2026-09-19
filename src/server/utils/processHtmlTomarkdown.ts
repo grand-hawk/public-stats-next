@@ -57,6 +57,13 @@ function flattenDefinitionLists(target: HTMLElement) {
   }
 }
 
+function captionFigures(target: HTMLElement) {
+  for (const figure of target.querySelectorAll('figure')) {
+    const caption = figure.querySelector('figcaption')?.innerHTML.trim();
+    figure.replaceWith(caption ? `<p><em>Figure: ${caption}</em></p>` : '');
+  }
+}
+
 function addMissingTableHeaders(target: HTMLElement) {
   for (const table of target.querySelectorAll('table')) {
     if (table.querySelector('thead')) continue;
@@ -126,9 +133,14 @@ export async function processHtmlToMarkdown(html: string) {
     node.removeAttribute('hidden');
   }
 
+  captionFigures(target);
+
   for (const style of target.querySelectorAll('style')) style.remove();
   for (const img of target.querySelectorAll('img, svg')) img.remove();
   for (const br of target.querySelectorAll('br')) br.replaceWith(' ');
+  for (const sup of target.querySelectorAll('sup')) {
+    sup.replaceWith(`^${sup.text}`);
+  }
   for (const term of target.querySelectorAll('dt')) {
     term.removeAttribute('style');
   }

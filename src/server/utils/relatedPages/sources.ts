@@ -1,5 +1,10 @@
 import slug from 'slug';
 
+import { listArticles } from '@/server/utils/articles';
+import {
+  GLOSSARY_SLUG,
+  getGlossary,
+} from '@/server/utils/articles/glossary';
 import { createContentCollection } from '@/server/utils/contentCollection';
 import { loadoutDisplayName } from '@/utils/loadoutDisplayName';
 import { getLoadouts } from '@generated/loadouts';
@@ -14,6 +19,7 @@ export interface PageSource {
   page: PageRef;
   body: string;
   keywords: string;
+  outbound?: string[];
 }
 
 const bodies = {
@@ -35,6 +41,40 @@ export function collectSources(placeId: PlaceId): PageSource[] {
   const sources: PageSource[] = [];
   const vehiclesPlace = getVehicles().data[placeId];
   const loadoutsPlace = getLoadouts().data[placeId];
+
+  const slugByGameId = new Map<string, string>();
+  for (const { info } of Object.values(vehiclesPlace?.data ?? {})) {
+    if (!info.unlisted) slugByGameId.set(info.gameId, info.slug);
+  }
+
+  const termArticles = new Map(
+    getGlossary().flatMap((term) =>
+      term.article ? [[term.id, term.article.split('#')[0]] as const] : [],
+    ),
+  );
+
+  for (const article of listArticles()) {
+    sources.push({
+      path: `/${article.slug}`,
+      title: article.meta.title,
+      page: { type: 'article' },
+      body: article.text,
+      keywords: article.meta.summary,
+      outbound: [
+        ...article.refs.articles.map((ref) => `/${ref.slug}`),
+        ...article.refs.terms.flatMap((id) => {
+          const target = termArticles.get(id);
+          return target ? [`/${target}`] : [];
+        }),
+        ...(article.refs.terms.length > 0 ? [`/${GLOSSARY_SLUG}`] : []),
+        ...article.refs.teams.map((team) => `/teams/${slug(team)}`),
+        ...article.refs.vehicles.flatMap((id) => {
+          const vehicleSlug = slugByGameId.get(id);
+          return vehicleSlug ? [`/vehicles/${vehicleSlug}`] : [];
+        }),
+      ],
+    });
+  }
 
   for (const [name, vehicle] of Object.entries(vehiclesPlace?.data ?? {})) {
     const { info } = vehicle;

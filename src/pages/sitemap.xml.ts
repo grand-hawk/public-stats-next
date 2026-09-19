@@ -8,6 +8,7 @@ import {
   tabs,
   toolsTabKeys,
 } from '@/components/layout/navigation/tabs';
+import { listArticles } from '@/server/utils/articles';
 import { getBaseUrl } from '@/utils/trpc';
 import { getConfig } from '@generated/config';
 import { getKdr } from '@generated/kdr';
@@ -111,6 +112,15 @@ function getPaths(): SitemapEntry[] {
       changefreq,
       priority,
       lastmod: latestDate,
+    });
+  }
+
+  for (const article of listArticles()) {
+    paths.push({
+      path: `${initials}/${article.slug}`,
+      changefreq: 'monthly',
+      priority: '0.8',
+      lastmod: article.meta.updated,
     });
   }
 

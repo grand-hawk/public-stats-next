@@ -1,6 +1,9 @@
 import { Box, Stat as ChakraStat } from '@chakra-ui/react';
 import React from 'react';
 
+import StatArticleLink from '@/components/wiki/statArticleLink';
+
+import type { StatArticleKey } from '@/content/statLinks';
 import type { BoxProps } from '@chakra-ui/react';
 
 export function StatGrid({ children, ...props }: BoxProps) {
@@ -26,6 +29,7 @@ export function StatGrid({ children, ...props }: BoxProps) {
 }
 
 export interface StatProps {
+  article?: StatArticleKey;
   children: React.ReactNode;
   label: React.ReactNode;
   rootProps?: ChakraStat.RootProps;
@@ -34,6 +38,7 @@ export interface StatProps {
 }
 
 export default function Stat({
+  article,
   children,
   label,
   labelProps,
@@ -52,7 +57,11 @@ export default function Stat({
           ...labelProps?.css,
         }}
       >
-        {label}
+        {article ? (
+          <StatArticleLink article={article}>{label}</StatArticleLink>
+        ) : (
+          label
+        )}
       </ChakraStat.Label>
 
       <ChakraStat.ValueText

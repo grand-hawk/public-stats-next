@@ -5,6 +5,8 @@ import { z } from 'zod';
 import { indexableTabKeys, tabs } from '@/components/layout/navigation/tabs';
 import { IS_DEV } from '@/env';
 import { createTRPCRouter, publicProcedure } from '@/server/api/trpc/context';
+import { listArticles } from '@/server/utils/articles';
+import { GLOSSARY_SLUG, getGlossary } from '@/server/utils/articles/glossary';
 import { loadoutDisplayName } from '@/utils/loadoutDisplayName';
 import { getConfig } from '@generated/config';
 import { getLoadouts } from '@generated/loadouts';
@@ -89,6 +91,38 @@ function buildIndex(placeId: PlaceId): Fuse<IndexedItem> {
       href: `/${initials}/loadouts/${loadoutSlug}`,
       page: { type: 'loadout', slug: loadoutSlug },
       searchText: [displayName, loadoutName].join(' '),
+    });
+  }
+
+  for (const article of listArticles()) {
+    items.push({
+      type: 'article',
+      title: article.meta.title,
+      subtitle: article.meta.summary,
+      href: `/${initials}/${article.slug}`,
+      page: { type: 'article' },
+      searchText: [
+        article.meta.title,
+        article.meta.summary,
+        ...article.outline.map((heading) => heading.text),
+      ].join(' '),
+    });
+  }
+
+  const articleTitles = new Set(
+    listArticles().map((article) => article.meta.title.toLowerCase()),
+  );
+
+  for (const term of getGlossary()) {
+    if (articleTitles.has(term.label.toLowerCase())) continue;
+
+    items.push({
+      type: 'article',
+      title: term.label,
+      subtitle: term.definition,
+      href: `/${initials}/${term.article ?? `${GLOSSARY_SLUG}#${term.anchor}`}`,
+      page: { type: 'article' },
+      searchText: [term.label, term.id].join(' '),
     });
   }
 
