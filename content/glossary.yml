@@ -51,22 +51,22 @@ terms:
     article: penetration#overmatch
     label: Overmatch
     section: penetration
-    definition: When a full-calibre shell is wider than the plate is thick, the plate's slope stops mattering much. Big guns go through thin angled plates.
+    definition: A full-calibre shell that is wide compared with the plate it hits loses slightly less penetration to the angle. The effect is small.
   - id: normalisation
     article: penetration#angle-penalty
     label: Angle penalty
     section: penetration
-    definition: The penetration a round loses for hitting at an angle, on top of the extra armour the angle gives the target. Long-rod APFSDS is the exception and copes with slopes well.
+    definition: The penetration solid shot loses for hitting at an angle, on top of the extra armour the angle gives the target. Long-rod APFSDS is the exception and loses nothing.
   - id: ricochet
     article: ricochet
     label: Ricochet
     section: penetration
-    definition: A round glancing off without going in. Each shell page lists the angle at which that round starts to bounce.
+    definition: A round glancing off without going in. Each shell page lists a ricochet angle. At that angle or steeper the round can bounce.
   - id: spall
     article: damage#spall
     label: Spall
     section: penetration
-    definition: The spray of fragments inside a vehicle after a round gets through. Heavier shells and hits that only just got through throw more of it.
+    definition: The spray of fragments inside a vehicle after a round gets through. Each fragment can get through up to 10 mm of armour.
   - id: spallLiner
     article: damage#spall
     label: Spall liner

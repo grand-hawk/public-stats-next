@@ -16,28 +16,31 @@ updated: 2026-09-19
 
 How much damage a round does to the part it hits depends on how much penetration it had to spare.
 
-| The round                                       | Damage it does    |
-| ----------------------------------------------- | ----------------- |
-| Has plenty of penetration left after the armour | Full damage       |
-| Only just got through                           | 35% of its damage |
+| Penetration left after the armour | Damage it does    |
+| --------------------------------- | ----------------- |
+| All of it                         | Full damage       |
+| Half                              | 50% of its damage |
+| 35% or less                       | 35% of its damage |
 
-Everything in between scales with the penetration left over. If you can choose, shoot the plate your round beats easily, not the one it barely beats.
+If you can choose, shoot the plate your round beats easily, not the one it barely beats.
 
-A hit that fails to penetrate can still do 35% of its damage to the part it struck, as long as the plate is thin compared with the round.
+A hit that fails to penetrate can still do 35% of its damage. This only applies to a part that can be damaged, such as a module or an add-on panel. The round needs penetration at least equal to the armour of the part. Engines, fuel tanks, transmissions, batteries and turret rings are easier: about 29% of their armour is enough.
 
 ## Spall
 
 Spall is the spray of fragments that comes off the inside of a plate when a round gets through it.
 
-- Heavier shells throw more fragments.
-- A hit that only just got through throws more than one that went through easily.
-- Each fragment can go through up to 10 mm of armour.
+- Most tank shells throw the same number of fragments. The count tops out at a 2 kg shell.
+- A plate that is very thin compared with the round, under 10% of its penetration, throws fewer.
+- Each fragment can go through up to 10 mm of armour, and less towards the edge of the spray.
 
-A spall liner is an inner lining that catches fragments. It counts as six times its real thickness against spall.
+A spall liner is an inner lining that catches fragments. It counts as six times its real thickness against spall, and a round that strikes a liner makes no spall at all.
 
 ## HEAT jets
 
-A HEAT jet fades quickly once it is inside, losing 20% of its penetration for every metre. Everything in its line takes full damage, crew included.
+A HEAT jet fades once it is inside, losing 20% of its penetration for every metre after the first 0.7 m. Every module and crew member along its line is hit.
+
+Modules take the same damage as from any other penetrating round, with the same 35% floor. Crew damage scales with the penetration the jet has left, with no floor.
 
 ## Explosions
 

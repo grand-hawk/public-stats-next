@@ -18,11 +18,14 @@ import slat from './t-90m-slat.png';
   caption="Slat armour around the rear of a T-90M's turret and hull."
 />
 
-| Hit by                | What slat armour does                                                   |
-| --------------------- | ----------------------------------------------------------------------- |
-| HEAT shell or missile | Takes about 16% off its penetration                                     |
-| Top-attack EFP        | Takes 40% off its penetration                                           |
-| Infantry rocket       | 40% chance to stop it outright. Otherwise takes 40% off its penetration |
-| Solid shot            | Nothing                                                                 |
+Every cage has a slat value. It is 40% on most vehicles, 20% on a few and 60% on one.
+
+| Hit by                                                    | What slat armour does                                         |
+| --------------------------------------------------------- | ------------------------------------------------------------- |
+| Infantry rocket                                           | A chance equal to the slat value to stop it outright          |
+| HEAT jet that reaches the cage after the warhead went off | Takes 16% off its penetration at the usual slat value         |
+| EFP that reaches the cage after the warhead went off      | Takes 40% off its penetration at the usual slat value         |
+| HEAT shell, missile or EFP that strikes the cage itself   | Almost nothing. It only loses the few millimetres of the cage |
+| Solid shot                                                | Nothing                                                       |
 
 In the Modern loadout, crew can also place slat armour on their own vehicle.
