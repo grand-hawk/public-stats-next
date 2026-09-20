@@ -18,7 +18,6 @@ const HERO_TABS = [
   { label: 'Teams', path: '/teams' },
   { label: 'K/D', path: '/kdr' },
   { label: 'Winrate', path: '/winrate' },
-  { label: 'Armour', path: '/armor' },
 ];
 
 export default function HeroTabs({ initials }: { initials: string }) {
