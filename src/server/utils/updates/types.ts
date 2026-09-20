@@ -19,7 +19,18 @@ export interface UpdateMediaBlock {
   loop: boolean;
 }
 
-export type UpdateBlock = UpdateProseBlock | UpdateMediaBlock;
+export interface UpdateGalleryItem {
+  media: UpdateMedia;
+  caption?: string;
+}
+
+export interface UpdateGalleryBlock {
+  kind: 'gallery';
+  items: UpdateGalleryItem[];
+}
+
+export type UpdateBlock =
+  UpdateProseBlock | UpdateMediaBlock | UpdateGalleryBlock;
 
 export interface UpdateSummary {
   slug: string;

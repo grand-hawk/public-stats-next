@@ -70,6 +70,17 @@ function normaliseBlock(value: unknown, base?: string): UpdateBlock | null {
     };
   }
 
+  if (raw.blockType === 'gallery' && Array.isArray(raw.items)) {
+    const items = raw.items.flatMap((entry) => {
+      const item = asRecord(entry);
+      const media = normaliseMedia(item?.file, base);
+
+      return media ? [{ media, caption: asString(item?.caption) }] : [];
+    });
+
+    return items.length > 0 ? { kind: 'gallery', items } : null;
+  }
+
   return null;
 }
 

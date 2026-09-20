@@ -142,3 +142,35 @@ test('media kind comes from the file itself', () => {
   assert.equal(isVideo({ ...IMAGE, mimeType: 'video/mp4' }), true);
   assert.equal(isVideo(IMAGE), false);
 });
+
+test('a gallery keeps its items in order, dropping any without a file', () => {
+  const update = normaliseUpdate({
+    ...DOC,
+    content: [
+      {
+        blockType: 'gallery',
+        items: [
+          { file: IMAGE, caption: 'First' },
+          { file: null, caption: 'Broken' },
+          { file: { ...IMAGE, url: 'https://files.example/two.png' } },
+        ],
+      },
+    ],
+  });
+
+  const block = update?.blocks[0];
+
+  assert.equal(block?.kind, 'gallery');
+  assert.equal(block?.kind === 'gallery' && block.items.length, 2);
+  assert.equal(block?.kind === 'gallery' && block.items[0].caption, 'First');
+  assert.equal(block?.kind === 'gallery' && block.items[1].caption, undefined);
+});
+
+test('a gallery with nothing usable is dropped', () => {
+  const update = normaliseUpdate({
+    ...DOC,
+    content: [{ blockType: 'gallery', items: [{ file: null }] }],
+  });
+
+  assert.deepEqual(update?.blocks, []);
+});
