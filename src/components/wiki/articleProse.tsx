@@ -34,6 +34,7 @@ export const ARTICLE_PROSE_CSS: SystemStyleObject = {
   '& ol': { listStyleType: 'decimal' },
   '& li': { marginBlock: '4px' },
   '& strong': { color: 'fg.emphasized', fontWeight: 600 },
+  '& em': { fontStyle: 'italic' },
   '& a': {
     color: 'var(--color-progressive)',
     textDecoration: 'none',
