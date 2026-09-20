@@ -1,0 +1,59 @@
+---
+title: Active protection system
+summary: Active protection systems, the rounds each one shoots down, what still gets through, and the vehicles that carry each system.
+group: weapons
+order: 45
+aliases:
+  - aps
+updated: 2026-09-20
+---
+
+import arenaM from './t-90m-arena-m.png';
+
+<Figure
+  wide
+  src={arenaM}
+  alt="A T-90M with its Arena-M coverage drawn as a blue dome, the launchers outlined in blue and the radars in red"
+  caption="Arena-M on a T-90M. The blue dome is the area its launchers cover. Launchers are outlined in blue, radars in red."
+/>
+
+An **active protection system** (**APS**) is a set of launchers that shoot down a round before it reaches the vehicle. A launcher fires at a round that comes within about 10 m of it and then reloads. HEAT, missiles, rockets and HE are destroyed where they are stopped. Solid shot keeps going with part of its penetration taken off. The system is a layer in front of <Term id="era" /> and the armour itself: a round it misses, or one it only weakens, still has to get past both.
+
+## What gets shot down
+
+A launcher only fires at a round that is heading at the vehicle and travelling no faster than the system's limit. Anything faster goes straight through. The speed to compare is the one on the [shell page](/shells).
+
+| Round              | Speed              |
+| ------------------ | ------------------ |
+| APFSDS             | 1,200 to 2,000 m/s |
+| HEAT-FS            | 700 to 1,500 m/s   |
+| ATGM               | 100 to 1,030 m/s   |
+| Top-attack missile | 50 to 600 m/s      |
+| Infantry rocket    | 50 to 740 m/s      |
+
+Very light rounds such as machine-gun fire are ignored.
+
+<ApsTable kind="stops" />
+
+What happens to a round the system catches depends on the round.
+
+| Round                               | Result                                                                             |
+| ----------------------------------- | ---------------------------------------------------------------------------------- |
+| Solid shot (AP, APFSDS, APDS, APCR) | Keeps going with the penetration loss in the table above                           |
+| HEAT and tandem HEAT                | Destroyed about 10 m short of the vehicle. A small blast with 10% of its explosive |
+| HE, HESH and APHE                   | Destroyed about 10 m short of the vehicle. Bursts there with 90% of its explosive  |
+| FPV drone                           | Shot down as it enters the bubble, on the systems that target drones               |
+
+For example, Trophy stops rounds up to 1,000 m/s and takes 10% off solid shot. An APFSDS round is faster than that and is never engaged. A HEAT-FS round at 900 m/s is destroyed 10 m short of the tank. Iron Fist reaches 2,000 m/s, and the same APFSDS is engaged there: a 600 mm round arrives with 360 mm.
+
+Against a vehicle with a system that stops HEAT, bring solid shot, or fire from a side the launchers do not cover. Against a system that reaches solid shot, the round still arrives, and the plate behind decides the rest.
+
+## Charges and coverage
+
+Each launcher carries its own charges, and once they are gone it stays out. A launcher only covers an arc in front of itself, and where the launchers sit on the vehicle decides which sides are protected. When several launchers can reach the same round, the one closest to it fires.
+
+<ApsTable kind="coverage" />
+
+For example, Trophy has two or three launchers with three charges each. Arena on the <VehicleLink id="T-80UM-1" /> has 32 launchers with one charge each: it keeps firing until the launchers facing the shooter are empty.
+
+The launchers are tied to a radar on the vehicle. The launchers themselves cannot be damaged. The radar can be destroyed like any other module, and every launcher on it stops firing. An ammo crate refills launchers one charge at a time, listed under Protection. Crew in a vehicle with a missile warning system see an APS warning on their HUD with the direction each launcher fired in.

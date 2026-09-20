@@ -4,6 +4,7 @@ import { z } from 'zod';
 import { ERA_PANEL_NAMES } from '@/content/eraPanelNames';
 import { createTRPCRouter, publicProcedure } from '@/server/api/trpc/context';
 import { getArticle, listArticles } from '@/server/utils/articles';
+import { groupApsSystems } from '@/server/utils/articles/aps';
 import {
   groupEraPanels,
   sourcesFromVehicles,
@@ -20,6 +21,7 @@ import { getLoadouts } from '@generated/loadouts';
 import { getShells } from '@generated/shells';
 import { getVehicles } from '@generated/vehicles';
 
+import type { ApsSystem } from '@/server/utils/articles/aps';
 import type {
   EraPanelVehicle,
   EraPanels,
@@ -48,6 +50,25 @@ function getInitials(placeId: PlaceId): string | undefined {
   const placeName = getNameFromPlaceId(data, placeId);
 
   return placeName ? data.placeNameInitials[placeName] : undefined;
+}
+
+function availableVehicles(placeId: PlaceId) {
+  const inLoadout = new Set<string>();
+  for (const loadout of Object.values(
+    getLoadouts().data[placeId]?.data ?? {},
+  )) {
+    for (const name of Object.keys(loadout.vehicles)) inLoadout.add(name);
+  }
+
+  const available = new Map<string, EraPanelVehicle>();
+  for (const [name, vehicle] of Object.entries(
+    getVehicles().data[placeId]?.data ?? {},
+  )) {
+    if (!inLoadout.has(name)) continue;
+    available.set(vehicle.info.gameId, { name, slug: vehicle.info.slug });
+  }
+
+  return available;
 }
 
 export const articlesRouter = createTRPCRouter({
@@ -130,24 +151,21 @@ export const articlesRouter = createTRPCRouter({
       }),
     ),
 
+  aps: publicProcedure
+    .input(z.object({ placeId: z.string() }))
+    .query(({ input }): ApsSystem[] => {
+      const placeId = input.placeId as PlaceId;
+      return groupApsSystems(
+        getVehicles().data[placeId]?.data ?? {},
+        availableVehicles(placeId),
+      );
+    }),
+
   eraPanels: publicProcedure
     .input(z.object({ placeId: z.string() }))
     .query(({ input }): EraPanels => {
       const placeId = input.placeId as PlaceId;
-      const inLoadout = new Set<string>();
-      for (const loadout of Object.values(
-        getLoadouts().data[placeId]?.data ?? {},
-      )) {
-        for (const name of Object.keys(loadout.vehicles)) inLoadout.add(name);
-      }
-
-      const available = new Map<string, EraPanelVehicle>();
-      for (const [name, vehicle] of Object.entries(
-        getVehicles().data[placeId]?.data ?? {},
-      )) {
-        if (!inLoadout.has(name)) continue;
-        available.set(vehicle.info.gameId, { name, slug: vehicle.info.slug });
-      }
+      const available = availableVehicles(placeId);
 
       const exported = sourcesFromVehicles(
         getVehicles().data[placeId]?.data ?? {},

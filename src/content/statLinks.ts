@@ -1,5 +1,6 @@
 export const STAT_ARTICLES = {
   antiEra: 'anti-era-round',
+  aps: 'active-protection-system',
   armour: 'armour-and-penetration',
   damage: 'damage',
   maxPenetration: 'penetration',

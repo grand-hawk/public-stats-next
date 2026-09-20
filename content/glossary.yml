@@ -32,6 +32,11 @@ terms:
     label: Slat armour
     section: armour
     definition: A cage around the vehicle. It weakens HEAT warheads and can stop an infantry rocket outright. It does nothing against solid shot.
+  - id: aps
+    article: active-protection-system
+    label: APS
+    section: armour
+    definition: Active protection system. Launchers that shoot down a round a few metres before it reaches the vehicle. HEAT, missiles and HE are destroyed. Solid shot keeps going with part of its penetration taken off.
   - id: tandem
     article: tandem-warhead
     label: Tandem warhead

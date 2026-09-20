@@ -1,3 +1,4 @@
+import ApsTable from '@/components/article/apsTable';
 import Callout from '@/components/article/callout';
 import {
   ArticleAnchor,
@@ -30,6 +31,7 @@ export const articleMdxComponents: MDXComponents = {
   h3: ArticleH3,
   img: ArticleImage,
   table: ArticleTable,
+  ApsTable,
   Callout,
   ClassLink,
   EraPanelTable,

@@ -1,9 +1,11 @@
 import { FormatNumber } from '@chakra-ui/react';
 import React from 'react';
 
+import MainArticle from '@/components/article/mainArticle';
 import InfoTooltip from '@/components/common/infoTooltip';
 import { StatsCell, StatsRoot, StatsRow } from '@/components/wiki/stats';
 import TitledCard from '@/components/wiki/titledCard';
+import { STAT_ARTICLES } from '@/content/statLinks';
 import { useDynamicData } from '@/hooks/providers/dynamicData';
 import { getAllModulesOfType } from '@/utils/alterations';
 
@@ -27,6 +29,7 @@ export default function APS() {
             title={title}
             withAnchor
           >
+            <MainArticle to={STAT_ARTICLES.aps} />
             <StatsRoot>
               <StatsRow>
                 <StatsCell>Horizontal limits</StatsCell>

@@ -6,6 +6,9 @@ import type { ComponentType } from 'react';
 type ArticleModule = ComponentType<React.ComponentProps<MDXContent>>;
 
 export const articleModules: Record<string, ArticleModule> = {
+  'active-protection-system': dynamic(
+    () => import('../../content/articles/active-protection-system/index.mdx'),
+  ),
   'anti-era-round': dynamic(
     () => import('../../content/articles/anti-era-round/index.mdx'),
   ),
