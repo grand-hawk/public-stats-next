@@ -1,4 +1,4 @@
-import { Box, Span, Stack, Text } from '@chakra-ui/react';
+import { Box, Span, Text } from '@chakra-ui/react';
 import React from 'react';
 
 import UpdateBlocks from '@/components/features/updates/blocks';
@@ -50,15 +50,9 @@ export default function UpdateEntry({
 
       <UpdateNeighbours initials={initials} next={next} previous={previous} />
 
-      <Stack gap="20px" marginBlockStart="24px">
-        {update.summary ? (
-          <Text color="fg.emphasized" fontSize="1.0625rem">
-            {update.summary}
-          </Text>
-        ) : null}
-
+      <Box marginBlockStart="24px">
         <UpdateBlocks blocks={update.blocks} />
-      </Stack>
+      </Box>
     </>
   );
 }
