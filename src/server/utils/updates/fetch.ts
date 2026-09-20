@@ -4,13 +4,14 @@ import {
   normaliseList,
   normaliseUpdate,
 } from '@/server/utils/updates/normalise';
+import { resolveVehicleLinks } from '@/server/utils/updates/vehicleLinks';
 
 import type {
   Update,
   UpdateSummary,
   UpdateView,
 } from '@/server/utils/updates/types';
-import type { PlaceName } from '@generated/config';
+import type { PlaceId, PlaceName } from '@generated/config';
 
 const LIST_LIMIT = 50;
 
@@ -37,10 +38,12 @@ export async function fetchUpdates(
   );
 }
 
+type Neighbours = Pick<UpdateView, 'next' | 'previous'>;
+
 async function neighbours(
   placeName: PlaceName,
   update: Update,
-): Promise<Omit<UpdateView, 'update'>> {
+): Promise<Neighbours> {
   if (update.draft) return {};
 
   const updates = await fetchUpdates(placeName);
@@ -52,6 +55,7 @@ async function neighbours(
 
 export async function fetchUpdate(
   placeName: PlaceName,
+  placeId: PlaceId,
   slug: string,
   { preview = false }: { preview?: boolean } = {},
 ): Promise<UpdateView | null> {
@@ -77,5 +81,9 @@ export async function fetchUpdate(
 
   if (update.draft && !preview) return null;
 
-  return { update, ...(await neighbours(placeName, update)) };
+  return {
+    update,
+    ...(await neighbours(placeName, update)),
+    vehicles: resolveVehicleLinks(update.blocks, placeId),
+  };
 }

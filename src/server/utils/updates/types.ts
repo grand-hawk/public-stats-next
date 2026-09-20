@@ -46,6 +46,7 @@ export interface Update extends UpdateSummary {
 
 export interface UpdateView {
   update: Update;
+  vehicles: Record<string, string>;
   previous?: UpdateSummary;
   next?: UpdateSummary;
 }

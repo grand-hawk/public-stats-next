@@ -13,11 +13,13 @@ export default function UpdateEntry({
   next,
   previous,
   update,
+  vehicles,
 }: {
   initials: string;
   next?: UpdateSummary;
   previous?: UpdateSummary;
   update: Update;
+  vehicles: Record<string, string>;
 }) {
   return (
     <>
@@ -51,7 +53,7 @@ export default function UpdateEntry({
       <UpdateNeighbours initials={initials} next={next} previous={previous} />
 
       <Box marginBlockStart="24px">
-        <UpdateBlocks blocks={update.blocks} />
+        <UpdateBlocks blocks={update.blocks} vehicles={vehicles} />
       </Box>
     </>
   );

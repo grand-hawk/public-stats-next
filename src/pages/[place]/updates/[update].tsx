@@ -35,7 +35,7 @@ export default function PlaceUpdate() {
     );
   }
 
-  const { next, previous, update } = view;
+  const { next, previous, update, vehicles } = view;
 
   return (
     <PageMeta
@@ -60,6 +60,7 @@ export default function PlaceUpdate() {
             next={next}
             previous={previous}
             update={update}
+            vehicles={vehicles}
           />
         </ArticlePage>
       </Layout>

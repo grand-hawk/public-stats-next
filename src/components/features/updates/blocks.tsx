@@ -7,8 +7,16 @@ import UpdateProse from '@/components/features/updates/prose';
 
 import type { UpdateBlock } from '@/server/utils/updates/types';
 
-function Block({ block }: { block: UpdateBlock }) {
-  if (block.kind === 'prose') return <UpdateProse>{block.text}</UpdateProse>;
+function Block({
+  block,
+  vehicles,
+}: {
+  block: UpdateBlock;
+  vehicles: Record<string, string>;
+}) {
+  if (block.kind === 'prose') {
+    return <UpdateProse vehicles={vehicles}>{block.text}</UpdateProse>;
+  }
 
   if (block.kind === 'gallery') return <UpdateGallery items={block.items} />;
 
@@ -30,11 +38,17 @@ function Block({ block }: { block: UpdateBlock }) {
   );
 }
 
-export default function UpdateBlocks({ blocks }: { blocks: UpdateBlock[] }) {
+export default function UpdateBlocks({
+  blocks,
+  vehicles,
+}: {
+  blocks: UpdateBlock[];
+  vehicles: Record<string, string>;
+}) {
   return (
     <Stack gap="20px">
       {blocks.map((block, index) => (
-        <Block block={block} key={index} />
+        <Block block={block} key={index} vehicles={vehicles} />
       ))}
     </Stack>
   );

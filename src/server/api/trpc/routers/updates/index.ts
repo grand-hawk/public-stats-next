@@ -43,7 +43,7 @@ export const updatesRouter = createTRPCRouter({
       const place = placeName(input.placeId);
       if (!place) return null;
 
-      return fetchUpdate(place, input.slug, {
+      return fetchUpdate(place, input.placeId as PlaceId, input.slug, {
         preview: isPreviewAuthorised(
           input.preview,
           input.slug,

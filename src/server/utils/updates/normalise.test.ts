@@ -10,7 +10,9 @@ import {
   isPreviewAuthorised,
   previewToken,
 } from '@/server/utils/updates/previewToken';
+import { vehicleTargetsIn } from '@/server/utils/updates/vehicleLinks';
 import { isVideo, videoAttributes } from '@/utils/updateMedia';
+import { normaliseTarget } from '@/utils/vehicleLink';
 
 const IMAGE = {
   url: 'https://files.example/shot.png',
@@ -173,4 +175,39 @@ test('a gallery with nothing usable is dropped', () => {
   });
 
   assert.deepEqual(update?.blocks, []);
+});
+
+test('vehicle targets are pulled out of prose links', () => {
+  assert.deepEqual(
+    vehicleTargetsIn(
+      'The [Namer APC](vehicle:Namer APC) and the [T-72B3](vehicle:t-72b3), plus [an article](/rv/conquest) and [Namer again](vehicle:Namer APC).',
+    ),
+    ['Namer APC', 't-72b3'],
+  );
+});
+
+test('targets match regardless of case and spacing', () => {
+  assert.equal(normaliseTarget('  Namer APC '), 'namer apc');
+});
+
+test('bracketed targets are found too, for names with spaces', () => {
+  assert.deepEqual(
+    vehicleTargetsIn('The [Wiesel 1A4](<vehicle:Wiesel 1A4>) got armour.'),
+    ['Wiesel 1A4'],
+  );
+});
+
+test('a bracketed target keeps brackets that are part of the name', () => {
+  assert.deepEqual(
+    vehicleTargetsIn(
+      'The [Achzarit Mk.2 (RCWS-30)](<vehicle:Achzarit Mk.2 (RCWS-30)>) and the [Maus](vehicle:Maus).',
+    ),
+    ['Achzarit Mk.2 (RCWS-30)', 'Maus'],
+  );
+});
+
+test('a percent encoded target matches the plain one', () => {
+  assert.equal(normaliseTarget('Wiesel%201A4'), 'wiesel 1a4');
+  assert.equal(normaliseTarget('Wiesel 1A4'), 'wiesel 1a4');
+  assert.equal(normaliseTarget('100%'), '100%');
 });
