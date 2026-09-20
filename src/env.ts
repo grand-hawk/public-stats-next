@@ -15,6 +15,10 @@ export const env = createEnv({
       .string()
       .default('false')
       .transform((val) => val === 'true'),
+
+    CMS_URL: z.string().url().optional(),
+    CMS_TOKEN: z.string().optional(),
+    UPDATES_PREVIEW_SECRET: z.string().optional(),
   },
 
   /**
@@ -40,6 +44,10 @@ export const env = createEnv({
     NODE_ENV: process.env.NODE_ENV,
 
     DISALLOW_INDEXING: process.env.DISALLOW_INDEXING,
+
+    CMS_URL: process.env.CMS_URL,
+    CMS_TOKEN: process.env.CMS_TOKEN,
+    UPDATES_PREVIEW_SECRET: process.env.UPDATES_PREVIEW_SECRET,
 
     NEXT_PUBLIC_ANALYTICS_DOMAIN: process.env.NEXT_PUBLIC_ANALYTICS_DOMAIN,
     NEXT_PUBLIC_ANALYTICS_ID: process.env.NEXT_PUBLIC_ANALYTICS_ID,

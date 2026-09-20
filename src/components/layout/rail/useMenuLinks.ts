@@ -39,6 +39,7 @@ export function useMenuLinks(): MenuColumns {
   const currentTab = useCurrentTab();
   const router = useRouter();
   const { data: navigation } = trpc.articles.navigation.useQuery({ initials });
+  const { data: updatesEnabled } = trpc.updates.enabled.useQuery();
 
   const currentPath = router.asPath.split(/[?#]/)[0];
 
@@ -69,22 +70,32 @@ export function useMenuLinks(): MenuColumns {
     };
   };
 
+  const visible = (link: MenuLink) =>
+    updatesEnabled !== false || !link.href.endsWith(`/${initials}/updates`);
+
+  const prune = (groups: ResolvedMenuGroup[]) =>
+    groups
+      .map((group) => ({ ...group, links: group.links.filter(visible) }))
+      .filter((group) => group.links.length > 0);
+
   if (!navigation) {
     return {
-      pages: menuGroups.map((group) => ({
-        label: group.label,
-        links: group.entries.map((entry): MenuLink => {
-          if (entry.type === 'tab') return tabLink(entry.key);
+      pages: prune(
+        menuGroups.map((group) => ({
+          label: group.label,
+          links: group.entries.map((entry): MenuLink => {
+            if (entry.type === 'tab') return tabLink(entry.key);
 
-          return {
-            label: entry.link.label,
-            href: entry.link.href,
-            icon: entry.link.icon,
-            active: false,
-            external: true,
-          };
-        }),
-      })),
+            return {
+              label: entry.link.label,
+              href: entry.link.href,
+              icon: entry.link.icon,
+              active: false,
+              external: true,
+            };
+          }),
+        })),
+      ),
       articles: [],
     };
   }
@@ -138,7 +149,7 @@ export function useMenuLinks(): MenuColumns {
   }));
 
   return {
-    pages: pages.filter((group) => group.links.length > 0),
-    articles: articles.filter((group) => group.links.length > 0),
+    pages: prune(pages),
+    articles: prune(articles),
   };
 }

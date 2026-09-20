@@ -6,7 +6,7 @@ import {
   BandGrid,
   BandInner,
   spanAside,
-  spanFull,
+  spanRead,
 } from '@/components/features/home/grid';
 import Ground from '@/components/features/home/ground';
 import HomeHero from '@/components/features/home/hero';
@@ -15,6 +15,7 @@ import LinkCard from '@/components/features/home/linkCard';
 import LoadoutsCard from '@/components/features/home/loadoutsCard';
 import SubjectCard from '@/components/features/home/subjectCard';
 import ToolsCard from '@/components/features/home/toolsCard';
+import UpdatesCard from '@/components/features/home/updatesCard';
 import Layout from '@/components/layout/layout';
 import PageMeta from '@/components/layout/pageMeta';
 import { FOOTER_PUSH_MIN_HEIGHT } from '@/components/layout/shell/constants';
@@ -30,11 +31,68 @@ export default function Place() {
   const [navigation] = trpc.articles.navigation.useSuspenseQuery({
     initials: place.initials,
   });
+  const [updates] = trpc.updates.list.useSuspenseQuery({
+    placeId: place.placeId,
+  });
   const { classCounts, loadouts, newest } = home;
   const { initials, placeName } = place;
   const hasLoadouts = loadouts.length > 0;
   const weapons = navigation.find((group) => group.key === 'weapons');
   const gameplay = navigation.find((group) => group.key === 'gameplay');
+
+  const wide = [
+    <ToolsCard initials={initials} key="tools" />,
+    hasLoadouts ? (
+      <LoadoutsCard initials={initials} key="loadouts" loadouts={loadouts} />
+    ) : null,
+    gameplay && gameplay.links.length > 0 ? (
+      <SubjectCard
+        columns={2}
+        css={{ ...spanRead }}
+        group={gameplay}
+        initials={initials}
+        key="gameplay"
+      />
+    ) : null,
+  ].filter(Boolean);
+
+  const aside = [
+    weapons ? (
+      <SubjectCard
+        css={{ ...spanAside }}
+        group={weapons}
+        initials={initials}
+        key="weapons"
+      />
+    ) : (
+      <LinkCard
+        action="Browse shells"
+        body="Penetration, velocity and damage for every round in the game."
+        css={{ ...spanAside }}
+        href={`/${initials}/shells`}
+        key="shells"
+        title="Shells"
+      />
+    ),
+    updates.length > 0 ? (
+      <UpdatesCard
+        css={{ ...spanAside }}
+        initials={initials}
+        key="updates"
+        updates={updates}
+      />
+    ) : null,
+    <LinkCard
+      action="Browse teams"
+      body="Every faction and the vehicles it fields in each era."
+      css={{ ...spanAside }}
+      href={`/${initials}/teams`}
+      key="teams"
+      title="Teams"
+    />,
+  ].filter(Boolean);
+
+  const rows = Math.max(wide.length, aside.length);
 
   return (
     <PageMeta
@@ -60,44 +118,12 @@ export default function Place() {
           <Band css={{ paddingBlockEnd: '16px' }}>
             <BandInner>
               <BandGrid>
-                <ToolsCard initials={initials} />
-
-                {weapons ? (
-                  <SubjectCard
-                    css={{ ...spanAside }}
-                    group={weapons}
-                    initials={initials}
-                  />
-                ) : (
-                  <LinkCard
-                    action="Browse shells"
-                    body="Penetration, velocity and damage for every round in the game."
-                    css={{ ...spanAside }}
-                    href={`/${initials}/shells`}
-                    title="Shells"
-                  />
-                )}
-
-                {hasLoadouts && (
-                  <LoadoutsCard initials={initials} loadouts={loadouts} />
-                )}
-
-                <LinkCard
-                  action="Browse teams"
-                  body="Every faction and the vehicles it fields in each era."
-                  css={hasLoadouts ? { ...spanAside } : { ...spanFull }}
-                  href={`/${initials}/teams`}
-                  title="Teams"
-                />
-
-                {gameplay && gameplay.links.length > 0 && (
-                  <SubjectCard
-                    columns={2}
-                    css={{ ...spanFull }}
-                    group={gameplay}
-                    initials={initials}
-                  />
-                )}
+                {Array.from({ length: rows }, (_, row) => (
+                  <React.Fragment key={row}>
+                    {wide[row]}
+                    {aside[row]}
+                  </React.Fragment>
+                ))}
               </BandGrid>
             </BandInner>
           </Band>

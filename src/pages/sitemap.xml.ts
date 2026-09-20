@@ -9,6 +9,7 @@ import {
   toolsTabKeys,
 } from '@/components/layout/navigation/tabs';
 import { listArticles } from '@/server/utils/articles';
+import { fetchUpdates } from '@/server/utils/updates/fetch';
 import { getBaseUrl } from '@/utils/trpc';
 import { getConfig } from '@generated/config';
 import { getInfantryWeapons } from '@generated/infantry_weapons';
@@ -51,7 +52,7 @@ function tabPriority(key: (typeof indexableTabKeys)[number]): TabPriority {
   return { changefreq: 'monthly', priority: '0.5' };
 }
 
-function getPaths(): SitemapEntry[] {
+async function getPaths(): Promise<SitemapEntry[]> {
   const config = getConfig();
   const vehicles = getVehicles();
   const loadouts = getLoadouts();
@@ -125,6 +126,25 @@ function getPaths(): SitemapEntry[] {
     });
   }
 
+  const updates = await fetchUpdates(placeName);
+  if (updates.length > 0) {
+    paths.push({
+      path: `${initials}/updates`,
+      changefreq: 'weekly',
+      priority: '0.7',
+      lastmod: updates[0].date.slice(0, 10),
+    });
+  }
+
+  for (const update of updates) {
+    paths.push({
+      path: `${initials}/updates/${update.slug}`,
+      changefreq: 'monthly',
+      priority: '0.6',
+      lastmod: update.date.slice(0, 10),
+    });
+  }
+
   rankedVehicles.forEach(([vehicleSlug, vehicleName], rank) => {
     paths.push({
       path: `${initials}/vehicles/${vehicleSlug}`,
@@ -178,9 +198,9 @@ function getPaths(): SitemapEntry[] {
   return paths;
 }
 
-export function getServerSideProps({
+export async function getServerSideProps({
   res,
-}: GetServerSidePropsContext): GetServerSidePropsResult<{}> {
+}: GetServerSidePropsContext): Promise<GetServerSidePropsResult<{}>> {
   const doc = create({
     version: '1.0',
     encoding: 'UTF-8',
@@ -190,7 +210,7 @@ export function getServerSideProps({
   });
 
   const baseUrl = getBaseUrl();
-  const paths = getPaths();
+  const paths = await getPaths();
 
   for (const { changefreq, lastmod, path, priority } of paths) {
     const url = doc.ele('url');

@@ -11,6 +11,7 @@ import { loadoutsRouter } from '@/server/api/trpc/routers/loadouts';
 import { searchRouter } from '@/server/api/trpc/routers/search';
 import { shellsRouter } from '@/server/api/trpc/routers/shells';
 import { teamsRouter } from '@/server/api/trpc/routers/teams';
+import { updatesRouter } from '@/server/api/trpc/routers/updates';
 import { vehiclesRouter } from '@/server/api/trpc/routers/vehicles';
 import { winrateRouter } from '@/server/api/trpc/routers/winrate';
 
@@ -24,6 +25,7 @@ export const appRouter = createTRPCRouter({
   search: searchRouter,
   shells: shellsRouter,
   teams: teamsRouter,
+  updates: updatesRouter,
   vehicles: vehiclesRouter,
   winrate: winrateRouter,
 });

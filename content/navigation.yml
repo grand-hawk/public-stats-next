@@ -13,6 +13,10 @@ groups:
   - key: gameplay
     label: Gameplay
     tabs: []
+  - key: game
+    label: Game
+    tabs:
+      - updates
   - key: statistics
     label: Statistics
     tabs:

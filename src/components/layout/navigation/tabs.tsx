@@ -13,6 +13,7 @@ import {
 import {
   MdAccountTree,
   MdFlag,
+  MdNewReleases,
   MdOutlineSsidChart,
   MdViewList,
 } from 'react-icons/md';
@@ -123,6 +124,15 @@ export const tabs: Record<string, Tab> = {
       <Icon as={LuGitCompareArrows} height={5} width={5} {...props} />
     ),
   },
+  updates: {
+    label: 'Updates',
+    path: '/updates',
+    color: 'pink.500',
+    description: 'What changed in each game update.',
+    icon: (props: IconProps) => (
+      <Icon as={MdNewReleases} height={5} width={5} {...props} />
+    ),
+  },
   armour: {
     label: 'Armour',
     longLabel: 'Armour visualizer',
@@ -146,6 +156,9 @@ export const secondaryTabKeys = [
   'kdr',
   'winrate',
 ] as const satisfies (keyof typeof tabs)[];
+export const otherTabKeys = [
+  'updates',
+] as const satisfies (keyof typeof tabs)[];
 export const toolsTabKeys = [
   'compare',
   'armour',
@@ -155,6 +168,7 @@ export const indexableTabKeys = [
   ...primaryTabKeys,
   ...secondaryTabKeys,
   ...toolsTabKeys,
+  ...otherTabKeys,
 ] as const satisfies (keyof typeof tabs)[];
 
 export type TabKey = keyof typeof tabs;
@@ -204,6 +218,15 @@ export const menuGroups: MenuGroup[] = [
       { type: 'tab', key: 'teams' },
       { type: 'tab', key: 'shells' },
       { type: 'tab', key: 'infantryWeapons' },
+    ],
+  },
+  {
+    label: 'Game',
+    entries: [
+      {
+        type: 'tab',
+        key: 'updates',
+      },
     ],
   },
   {
