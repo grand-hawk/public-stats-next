@@ -14,6 +14,8 @@ import type { VehiclesData } from '@generated/vehicles';
 
 type VehiclesPlace = VehiclesData[PlaceId];
 
+const familySlug = (name: string) => slug(name.replaceAll('/', '-'));
+
 const byName = (a: LineageVehicle, b: LineageVehicle) =>
   a.name.localeCompare(b.name, undefined, { numeric: true });
 
@@ -79,7 +81,7 @@ export function getVehicleLineage(
   const family = familyOf(place, vehicleName);
 
   return {
-    family: family ? { name: family, slug: slug(family) } : undefined,
+    family: family ? { name: family, slug: familySlug(family) } : undefined,
     variantOf:
       baseName && listed(place, baseName)
         ? { name: baseName, slug: place.data[baseName].info.slug }
@@ -98,7 +100,7 @@ function summarise(
   return {
     count: present.length,
     name,
-    slug: slug(name),
+    slug: familySlug(name),
     teams: [
       ...new Set(present.map((member) => place.data[member].info.team)),
     ].sort((a, b) => a.localeCompare(b)),
@@ -117,13 +119,13 @@ export function listVehicleFamilies(placeId: PlaceId): VehicleFamilySummary[] {
 
 export function getVehicleFamily(
   placeId: PlaceId,
-  familySlug: string,
+  wanted: string,
 ): VehicleFamily | null {
   const place = getVehicles().data[placeId];
   if (!place) return null;
 
   const entry = Object.entries(place.metadata.families ?? {}).find(
-    ([name]) => slug(name) === familySlug,
+    ([name]) => familySlug(name) === wanted,
   );
   if (!entry) return null;
 
@@ -133,23 +135,34 @@ export function getVehicleFamily(
     .map((member) => toLineageVehicle(place, member))
     .sort(byName);
 
-  const teams = new Set(vehicles.map((vehicle) => vehicle.team));
-  const [team] = teams;
-  const teamColor =
-    teams.size === 1
-      ? getTeams().data[placeId]?.data.find((entry) => entry.name === team)
-          ?.color
-      : undefined;
+  const counts = new Map<string, number>();
+  for (const vehicle of vehicles) {
+    counts.set(vehicle.team, (counts.get(vehicle.team) ?? 0) + 1);
+  }
 
-  const teamList = [...teams];
+  const ranked = [...counts].sort(
+    ([teamA, a], [teamB, b]) => b - a || teamA.localeCompare(teamB),
+  );
+  const [first, second] = ranked;
+  const primaryTeam =
+    first && (!second || first[1] > second[1]) ? first[0] : undefined;
+
+  const teamColor = primaryTeam
+    ? getTeams().data[placeId]?.data.find((entry) => entry.name === primaryTeam)
+        ?.color
+    : undefined;
+
+  const teamList = [...counts.keys()];
   const related = listVehicleFamilies(placeId)
-    .filter((candidate) => candidate.slug !== familySlug)
+    .filter((candidate) => candidate.slug !== wanted)
     .map((candidate) => ({
       candidate,
       shared: candidate.teams.filter((entry) => teamList.includes(entry))
         .length,
     }))
-    .sort((a, b) => b.shared - a.shared || b.candidate.count - a.candidate.count)
+    .sort(
+      (a, b) => b.shared - a.shared || b.candidate.count - a.candidate.count,
+    )
     .slice(0, 8)
     .map(({ candidate }) => candidate);
 
@@ -157,7 +170,7 @@ export function getVehicleFamily(
     name,
     placeName: place.metadata.placeName,
     related,
-    slug: familySlug,
+    slug: wanted,
     teamColor:
       teamColor && /^#[0-9a-f]{3,8}$/i.test(teamColor) ? teamColor : undefined,
     vehicles,
