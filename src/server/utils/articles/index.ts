@@ -5,6 +5,7 @@ import { IS_DEV } from '@/env';
 import { parseArticle } from '@/server/utils/articles/parse';
 
 import type { ParsedArticle } from '@/server/utils/articles/parse';
+import type { PlaceName } from '@generated/config';
 
 export const ARTICLES_DIR = 'content/articles';
 const ARTICLE_FILE = 'index.mdx';
@@ -50,14 +51,29 @@ function getIndex(): ArticleIndex {
   return cached;
 }
 
-export function getArticle(slugOrAlias: string): ParsedArticle | null {
-  const { aliases, bySlug } = getIndex();
-  return bySlug.get(aliases.get(slugOrAlias) ?? slugOrAlias) ?? null;
+function inPlace(article: ParsedArticle, placeName?: PlaceName): boolean {
+  return (
+    !placeName ||
+    article.meta.places.length === 0 ||
+    article.meta.places.includes(placeName)
+  );
 }
 
-export function listArticles(): ParsedArticle[] {
-  return [...getIndex().bySlug.values()].sort(
-    (a, b) =>
-      a.meta.order - b.meta.order || a.meta.title.localeCompare(b.meta.title),
-  );
+export function getArticle(
+  slugOrAlias: string,
+  placeName?: PlaceName,
+): ParsedArticle | null {
+  const { aliases, bySlug } = getIndex();
+  const article = bySlug.get(aliases.get(slugOrAlias) ?? slugOrAlias);
+
+  return article && inPlace(article, placeName) ? article : null;
+}
+
+export function listArticles(placeName?: PlaceName): ParsedArticle[] {
+  return [...getIndex().bySlug.values()]
+    .filter((article) => inPlace(article, placeName))
+    .sort(
+      (a, b) =>
+        a.meta.order - b.meta.order || a.meta.title.localeCompare(b.meta.title),
+    );
 }

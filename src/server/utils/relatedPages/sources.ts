@@ -1,12 +1,11 @@
 import slug from 'slug';
 
 import { listArticles } from '@/server/utils/articles';
-import {
-  GLOSSARY_SLUG,
-  getGlossary,
-} from '@/server/utils/articles/glossary';
+import { GLOSSARY_SLUG, getGlossary } from '@/server/utils/articles/glossary';
 import { createContentCollection } from '@/server/utils/contentCollection';
 import { loadoutDisplayName } from '@/utils/loadoutDisplayName';
+import { getNameFromPlaceId } from '@/utils/placeUtils';
+import { getConfig } from '@generated/config';
 import { getLoadouts } from '@generated/loadouts';
 import { getVehicles } from '@generated/vehicles';
 
@@ -53,7 +52,9 @@ export function collectSources(placeId: PlaceId): PageSource[] {
     ),
   );
 
-  for (const article of listArticles()) {
+  const placeName = getNameFromPlaceId(getConfig().data, placeId) ?? undefined;
+
+  for (const article of listArticles(placeName)) {
     sources.push({
       path: `/${article.slug}`,
       title: article.meta.title,

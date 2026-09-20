@@ -112,7 +112,7 @@ function buildIndex(placeId: PlaceId): Fuse<IndexedItem> {
     });
   }
 
-  for (const article of listArticles()) {
+  for (const article of listArticles(loadoutsPlace.metadata.placeName)) {
     items.push({
       type: 'article',
       title: article.meta.title,
@@ -128,7 +128,9 @@ function buildIndex(placeId: PlaceId): Fuse<IndexedItem> {
   }
 
   const articleTitles = new Set(
-    listArticles().map((article) => article.meta.title.toLowerCase()),
+    listArticles(loadoutsPlace.metadata.placeName).map((article) =>
+      article.meta.title.toLowerCase(),
+    ),
   );
 
   for (const term of getGlossary()) {

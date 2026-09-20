@@ -6,6 +6,7 @@ import { IS_DEV } from '@/env';
 import { listArticles } from '@/server/utils/articles';
 
 import type { ParsedArticle } from '@/server/utils/articles/parse';
+import type { PlaceName } from '@generated/config';
 
 export const NAVIGATION_PATH = 'content/navigation.yml';
 
@@ -65,15 +66,13 @@ export function buildNavigation(
       ...tabs.map((tabKey): NavLink => ({ kind: 'tab', tabKey })),
       ...articles
         .filter((article) => article.meta.group === key)
-        .map(
-          (article): NavLink => ({
-            kind: 'article',
-            slug: article.slug,
-            title: article.meta.title,
-            summary: article.meta.summary,
-            nav: article.meta.nav,
-          }),
-        ),
+        .map((article): NavLink => ({
+          kind: 'article',
+          slug: article.slug,
+          title: article.meta.title,
+          summary: article.meta.summary,
+          nav: article.meta.nav,
+        })),
     ],
   }));
 }
@@ -89,6 +88,6 @@ export function getNavigationConfig(): NavGroupConfig[] {
   return cachedGroups;
 }
 
-export function getNavigation(): NavGroup[] {
-  return buildNavigation(getNavigationConfig(), listArticles());
+export function getNavigation(placeName?: PlaceName): NavGroup[] {
+  return buildNavigation(getNavigationConfig(), listArticles(placeName));
 }

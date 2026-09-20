@@ -1,8 +1,16 @@
-import type { ConfigData, PlaceName } from '@generated/config';
+import type { ConfigData, PlaceId, PlaceName } from '@generated/config';
 
 export function getNameFromInitials(data: ConfigData, initials: string) {
   const name = Object.entries(data.placeNameInitials).find(
     ([_, value]) => value === initials,
+  )?.[0] as PlaceName | undefined;
+
+  return name || null;
+}
+
+export function getNameFromPlaceId(data: ConfigData, placeId: PlaceId) {
+  const name = Object.entries(data.placeIds).find(
+    ([_, value]) => value === placeId,
   )?.[0] as PlaceName | undefined;
 
   return name || null;

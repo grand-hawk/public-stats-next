@@ -38,7 +38,7 @@ export function useMenuLinks(): MenuColumns {
   const initials = usePlaceInitials();
   const currentTab = useCurrentTab();
   const router = useRouter();
-  const { data: navigation } = trpc.articles.navigation.useQuery();
+  const { data: navigation } = trpc.articles.navigation.useQuery({ initials });
 
   const currentPath = router.asPath.split(/[?#]/)[0];
 

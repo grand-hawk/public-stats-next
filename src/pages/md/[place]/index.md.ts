@@ -28,7 +28,7 @@ async function render(placeName: PlaceName) {
     ({ file, label }) => `- [${label}](/${place.initials}/${file})`,
   ).join('\n');
 
-  const articles = getNavigation().flatMap((group) => {
+  const articles = getNavigation(placeName).flatMap((group) => {
     const items = group.links.flatMap((link) =>
       link.kind === 'article'
         ? [

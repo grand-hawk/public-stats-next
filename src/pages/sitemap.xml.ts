@@ -116,7 +116,7 @@ function getPaths(): SitemapEntry[] {
     });
   }
 
-  for (const article of listArticles()) {
+  for (const article of listArticles(placeName)) {
     paths.push({
       path: `${initials}/${article.slug}`,
       changefreq: 'monthly',

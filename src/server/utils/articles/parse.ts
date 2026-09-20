@@ -16,6 +16,7 @@ export interface ArticleMeta {
   order: number;
   nav: boolean;
   aliases: string[];
+  places: string[];
   updated: string;
   draft: boolean;
 }
@@ -83,6 +84,7 @@ const META_KEYS = new Set([
   'order',
   'nav',
   'aliases',
+  'places',
   'updated',
   'draft',
 ]);
@@ -145,6 +147,13 @@ function parseMeta(raw: Record<string, unknown>): {
     updated = raw.updated;
   } else errors.push('Frontmatter: "updated" must be a YYYY-MM-DD date');
 
+  const places = Array.isArray(raw.places)
+    ? raw.places.filter((place): place is string => typeof place === 'string')
+    : [];
+  if (raw.places !== undefined && !Array.isArray(raw.places)) {
+    errors.push('Frontmatter: "places" must be a list');
+  }
+
   const aliases = Array.isArray(raw.aliases)
     ? raw.aliases.filter((alias): alias is string => typeof alias === 'string')
     : [];
@@ -160,6 +169,7 @@ function parseMeta(raw: Record<string, unknown>): {
       order: typeof raw.order === 'number' ? raw.order : 100,
       nav: raw.nav === true,
       aliases,
+      places,
       updated,
       draft: raw.draft === true,
     },

@@ -13,6 +13,7 @@ import { getNavigation } from '@/server/utils/articles/navigation';
 import { resolveRefs } from '@/server/utils/articles/resolve';
 import { queryShells } from '@/server/utils/articles/shellQuery';
 import { computeRelatedPages } from '@/server/utils/relatedPages';
+import { getNameFromInitials, getNameFromPlaceId } from '@/utils/placeUtils';
 import { getBaseUrl } from '@/utils/trpc';
 import { getConfig } from '@generated/config';
 import { getLoadouts } from '@generated/loadouts';
@@ -43,14 +44,10 @@ export interface Article {
 export type { GlossaryTerm, NavGroup, NavLink, OutlineItem, ResolvedRefs };
 
 function getInitials(placeId: PlaceId): string | undefined {
-  const { placeIds, placeNameInitials } = getConfig().data;
-  const placeName = Object.entries(placeIds).find(
-    ([, id]) => id === placeId,
-  )?.[0];
+  const { data } = getConfig();
+  const placeName = getNameFromPlaceId(data, placeId);
 
-  return placeName
-    ? placeNameInitials[placeName as keyof typeof placeNameInitials]
-    : undefined;
+  return placeName ? data.placeNameInitials[placeName] : undefined;
 }
 
 export const articlesRouter = createTRPCRouter({
@@ -58,12 +55,16 @@ export const articlesRouter = createTRPCRouter({
     .input(z.object({ placeId: z.string(), slug: z.string().max(200) }))
     .query(({ input }): Article | null => {
       const placeId = input.placeId as PlaceId;
-      const article = getArticle(input.slug);
+      const placeName = getNameFromPlaceId(getConfig().data, placeId);
+      const article = placeName ? getArticle(input.slug, placeName) : null;
       const initials = getInitials(placeId);
       if (!article || !initials) return null;
 
       const articleTitles = new Map(
-        listArticles().map(({ meta, slug }) => [slug, meta.title]),
+        listArticles(placeName ?? undefined).map(({ meta, slug }) => [
+          slug,
+          meta.title,
+        ]),
       );
 
       return {
@@ -98,9 +99,17 @@ export const articlesRouter = createTRPCRouter({
     }),
 
   assertExists: publicProcedure
-    .input(z.object({ slug: z.string().max(200) }))
+    .input(z.object({ placeId: z.string(), slug: z.string().max(200) }))
     .query(({ input }): true => {
-      if (!getArticle(input.slug)) throw new TRPCError({ code: 'NOT_FOUND' });
+      const placeName = getNameFromPlaceId(
+        getConfig().data,
+        input.placeId as PlaceId,
+      );
+
+      if (!placeName || !getArticle(input.slug, placeName)) {
+        throw new TRPCError({ code: 'NOT_FOUND' });
+      }
+
       return true;
     }),
 
@@ -156,7 +165,13 @@ export const articlesRouter = createTRPCRouter({
       );
     }),
 
-  navigation: publicProcedure.query((): NavGroup[] => getNavigation()),
+  navigation: publicProcedure
+    .input(z.object({ initials: z.string().max(10) }))
+    .query(({ input }): NavGroup[] =>
+      getNavigation(
+        getNameFromInitials(getConfig().data, input.initials) ?? undefined,
+      ),
+    ),
 
   glossary: publicProcedure.query((): GlossaryTerm[] => getGlossary()),
 });

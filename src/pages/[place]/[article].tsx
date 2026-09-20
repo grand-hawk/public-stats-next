@@ -40,7 +40,10 @@ export default function PlaceArticle() {
     utils.articles.bySlug.prefetch({ placeId: place.placeId, slug: nextSlug }),
   );
 
-  trpc.articles.assertExists.useQuery({ slug: articleSlug }, { retry: false });
+  trpc.articles.assertExists.useQuery(
+    { placeId: place.placeId, slug: articleSlug },
+    { retry: false },
+  );
 
   const [article] = trpc.articles.bySlug.useSuspenseQuery({
     placeId: place.placeId,

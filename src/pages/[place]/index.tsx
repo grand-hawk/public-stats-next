@@ -27,7 +27,9 @@ export default function Place() {
   if (!place) return null;
 
   const [home] = trpc.home.place.useSuspenseQuery({ placeId: place.placeId });
-  const [navigation] = trpc.articles.navigation.useSuspenseQuery();
+  const [navigation] = trpc.articles.navigation.useSuspenseQuery({
+    initials: place.initials,
+  });
   const { classCounts, loadouts, newest } = home;
   const { initials, placeName } = place;
   const hasLoadouts = loadouts.length > 0;

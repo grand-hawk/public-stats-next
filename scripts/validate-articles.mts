@@ -16,10 +16,7 @@ import {
   NAVIGATION_PATH,
   parseNavigation,
 } from '@/server/utils/articles/navigation';
-import {
-  ARTICLE_SLUG,
-  RESERVED_SLUGS,
-} from '@/server/utils/articles/reserved';
+import { ARTICLE_SLUG, RESERVED_SLUGS } from '@/server/utils/articles/reserved';
 import { getConfig } from '@generated/config';
 import { getLoadouts } from '@generated/loadouts';
 import { getShells } from '@generated/shells';
@@ -62,7 +59,8 @@ const anchorsBySlug = new Map(
 );
 for (const term of glossary) anchorsBySlug.get(GLOSSARY_SLUG)?.add(term.anchor);
 
-const { placeIds, primaryPlace } = getConfig().data;
+const { placeIds, placeNames, primaryPlace } = getConfig().data;
+const knownPlaces = new Set<string>(placeNames);
 const primaryPlaceId = placeIds[primaryPlace];
 const gameIds = new Set<string>();
 const primaryGameIds = new Set<string>();
@@ -157,6 +155,12 @@ for (const article of articles) {
       file,
       `Group "${article.meta.group}" is not defined in ${NAVIGATION_PATH}`,
     );
+  }
+
+  for (const place of article.meta.places) {
+    if (!knownPlaces.has(place)) {
+      note(errors, file, `Place "${place}" does not exist`);
+    }
   }
 
   const headingIds = new Set<string>();
@@ -271,7 +275,11 @@ for (const [key, target] of Object.entries(STAT_ARTICLES)) {
   const before = errors.get(STAT_LINKS_PATH)?.length ?? 0;
   checkTarget(STAT_LINKS_PATH, slug, anchor);
   if ((errors.get(STAT_LINKS_PATH)?.length ?? 0) > before) {
-    note(errors, STAT_LINKS_PATH, `"${key}" points at a missing page or section`);
+    note(
+      errors,
+      STAT_LINKS_PATH,
+      `"${key}" points at a missing page or section`,
+    );
   }
 }
 

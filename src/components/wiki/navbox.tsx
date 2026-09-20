@@ -40,7 +40,7 @@ function resolveLink(link: NavLink, initials: string) {
 export default function Navbox({ group }: { group: string }) {
   const initials = usePlaceInitials();
   const router = useRouter();
-  const [groups] = trpc.articles.navigation.useSuspenseQuery();
+  const [groups] = trpc.articles.navigation.useSuspenseQuery({ initials });
 
   const navGroup = groups.find((candidate) => candidate.key === group);
   if (!navGroup || navGroup.links.length < 2) return null;

@@ -99,7 +99,7 @@ function getMdPaths() {
       });
     }
 
-    for (const article of listArticles()) {
+    for (const article of listArticles(placeName)) {
       paths.push({
         path: `md/${initials}/${article.slug}.md`,
         changefreq: 'monthly',
