@@ -112,12 +112,3 @@ export function normaliseList(value: unknown): UpdateSummary[] {
     .map((doc) => normaliseSummary(doc))
     .filter((update): update is UpdateSummary => update !== null);
 }
-
-export function isPreviewAuthorised(
-  provided: string | undefined,
-  expected: string | undefined,
-): boolean {
-  if (!provided || !expected) return false;
-
-  return provided === expected;
-}

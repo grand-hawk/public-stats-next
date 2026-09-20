@@ -2,11 +2,14 @@ import assert from 'node:assert/strict';
 import { test } from 'node:test';
 
 import {
-  isPreviewAuthorised,
   normaliseList,
   normaliseMedia,
   normaliseUpdate,
 } from '@/server/utils/updates/normalise';
+import {
+  isPreviewAuthorised,
+  previewToken,
+} from '@/server/utils/updates/previewToken';
 import { isVideo, videoAttributes } from '@/utils/updateMedia';
 
 const IMAGE = {
@@ -97,12 +100,24 @@ test('normaliseList survives a failed or empty response', () => {
   );
 });
 
-test('a draft is only revealed for an exact secret match', () => {
-  assert.equal(isPreviewAuthorised('secret', 'secret'), true);
-  assert.equal(isPreviewAuthorised('wrong', 'secret'), false);
-  assert.equal(isPreviewAuthorised(undefined, 'secret'), false);
-  assert.equal(isPreviewAuthorised('secret', undefined), false);
-  assert.equal(isPreviewAuthorised('', ''), false);
+test('the preview token is derived from the slug and matches the CMS', () => {
+  assert.equal(previewToken('hotfix', 's3cret'), '4cfbaa9386bcc967');
+  assert.equal(previewToken('ticket-conquest', 's3cret'), 'e91938da54c3a4cc');
+  assert.notEqual(
+    previewToken('hotfix', 's3cret'),
+    previewToken('other', 's3cret'),
+  );
+});
+
+test('a draft is only revealed for its own token', () => {
+  const token = previewToken('hotfix', 's3cret');
+
+  assert.equal(isPreviewAuthorised(token, 'hotfix', 's3cret'), true);
+  assert.equal(isPreviewAuthorised(token, 'other', 's3cret'), false);
+  assert.equal(isPreviewAuthorised(token, 'hotfix', 'wrong-secret'), false);
+  assert.equal(isPreviewAuthorised('s3cret', 'hotfix', 's3cret'), false);
+  assert.equal(isPreviewAuthorised(undefined, 'hotfix', 's3cret'), false);
+  assert.equal(isPreviewAuthorised(token, 'hotfix', undefined), false);
 });
 
 test('a looping clip plays itself with no controls', () => {

@@ -4,7 +4,7 @@ import { env } from '@/env';
 import { createTRPCRouter, publicProcedure } from '@/server/api/trpc/context';
 import { hasCms } from '@/server/utils/cms';
 import { fetchUpdate, fetchUpdates } from '@/server/utils/updates/fetch';
-import { isPreviewAuthorised } from '@/server/utils/updates/normalise';
+import { isPreviewAuthorised } from '@/server/utils/updates/previewToken';
 import { getNameFromPlaceId } from '@/utils/placeUtils';
 import { getConfig } from '@generated/config';
 
@@ -44,7 +44,11 @@ export const updatesRouter = createTRPCRouter({
       if (!place) return null;
 
       return fetchUpdate(place, input.slug, {
-        preview: isPreviewAuthorised(input.preview, env.UPDATES_PREVIEW_SECRET),
+        preview: isPreviewAuthorised(
+          input.preview,
+          input.slug,
+          env.UPDATES_PREVIEW_SECRET,
+        ),
       });
     }),
 });
