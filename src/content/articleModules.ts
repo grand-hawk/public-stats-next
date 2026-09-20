@@ -43,5 +43,8 @@ export const articleModules: Record<string, ArticleModule> = {
   'team-score': dynamic(
     () => import('../../content/articles/team-score/index.mdx'),
   ),
+  'ticket-conquest': dynamic(
+    () => import('../../content/articles/ticket-conquest/index.mdx'),
+  ),
   tier: dynamic(() => import('../../content/articles/tier/index.mdx')),
 };
