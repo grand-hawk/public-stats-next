@@ -6,7 +6,7 @@ order: 80
 aliases:
   - overmatch
   - shooting-through-cover
-updated: 2026-09-19
+updated: 2026-09-20
 ---
 
 **Penetration** is how much armour a round can get through. The figure on a [shell page](/shells) is the best case: point blank against a flat plate. This page covers what takes away from it.
@@ -61,7 +61,7 @@ The De Marre formula dates from 1886 and estimates what a full-calibre steel she
   calibre<sup>1.07</sup>
 </Formula>
 
-K is a constant for the quality of the shell and of the armour. A heavier or faster shell goes through more, and a wider shell of the same mass goes through less. The War Thunder wiki has [a longer explanation of the formula](https://wiki.warthunder.com/jacob_de_marre).
+_K_ is a constant for the quality of the shell and of the armour. A heavier or faster shell goes through more, and a wider shell of the same mass goes through less. The War Thunder wiki has [a longer explanation of the formula](https://wiki.warthunder.com/jacob_de_marre).
 
 ### Lanz-Odermatt
 
@@ -72,4 +72,15 @@ A long-rod penetrator does not behave like a full-calibre shell, and De Marre gi
   armour density) × exp(−(s ÷ velocity)<sup>2</sup>)
 </Formula>
 
-The value a depends on how long the rod is for its width. The value s depends on the rod material and the hardness of the armour. The negative power on the angle is what gives APFSDS its gain against sloped plates. You can try the formula with your own numbers in the [Lanz-Odermatt calculator on longrods.ch](https://www.longrods.ch/perfcalc.php).
+The value _a_ depends on how long the rod is for its width. The value _s_ depends on the rod material and the hardness of the armour. The negative power on the angle is what gives APFSDS its gain against sloped plates. You can try the formula with your own numbers in the [Lanz-Odermatt calculator on longrods.ch](https://www.longrods.ch/perfcalc.php).
+
+Multicrew Tank Combat uses these settings:
+
+| Field              | Default | What MTC uses                                                |
+| ------------------ | ------- | ------------------------------------------------------------ |
+| Frustum length     | 80      | 0                                                            |
+| Penetrator density | 17,200  | 18,600 kg/m³ for depleted uranium, 17,500 kg/m³ for tungsten |
+| Target hardness    | 237 BHN | 260 BHN                                                      |
+| Obliquity          | 60°     | 0°                                                           |
+
+Put in the rod's own length, diameter and impact speed, not the whole round's. Steel rods also need their own hardness. Leave the rest as it opens.
