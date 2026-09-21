@@ -35,9 +35,11 @@ interface IndexedItem extends SearchResult {
   searchText: string;
 }
 
-const indexCache = new Map<PlaceId, Fuse<IndexedItem>>();
+const compact = (text: string) => text.toLowerCase().replace(/[^a-z0-9]+/g, '');
 
-function buildIndex(placeId: PlaceId): Fuse<IndexedItem> {
+const indexCache = new Map<PlaceId, ReturnType<typeof buildIndex>>();
+
+function buildIndex(placeId: PlaceId) {
   const items: IndexedItem[] = [];
 
   const vehiclesPlace = getVehicles().data[placeId]!;
@@ -160,16 +162,23 @@ function buildIndex(placeId: PlaceId): Fuse<IndexedItem> {
     });
   }
 
-  return new Fuse(items, {
-    keys: [
-      { name: 'title', weight: 2 },
-      { name: 'searchText', weight: 1 },
-    ],
-    threshold: 0.4,
-    ignoreLocation: true,
-    includeScore: true,
-    minMatchCharLength: 2,
-  });
+  return new Fuse(
+    items.map((item) => ({
+      ...item,
+      textKey: compact(item.searchText),
+      titleKey: compact(item.title),
+    })),
+    {
+      keys: [
+        { name: 'titleKey', weight: 2 },
+        { name: 'textKey', weight: 1 },
+      ],
+      threshold: 0.4,
+      ignoreLocation: true,
+      includeScore: true,
+      minMatchCharLength: 2,
+    },
+  );
 }
 
 function getIndex(placeId: PlaceId) {
@@ -198,7 +207,7 @@ export const searchRouter = createTRPCRouter({
     .query(({ input }): SearchResult[] => {
       const fuse = getIndex(input.placeId as PlaceId);
       return fuse
-        .search(input.q, { limit: RESULT_LIMIT * 4 })
+        .search(compact(input.q), { limit: RESULT_LIMIT * 4 })
         .map((r) => ({
           item: r.item,
           score: (r.score ?? 1) + (TYPE_SCORE_PENALTY[r.item.type] ?? 0),
