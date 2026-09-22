@@ -87,6 +87,33 @@ function KindTable({
     );
   }
 
+  if (kind === 'drone') {
+    return (
+      <ArticleTable>
+        <thead>
+          <tr>
+            <th>Placeable</th>
+            <th>Damage</th>
+            <th>Penetration</th>
+          </tr>
+        </thead>
+        <tbody>
+          {rows.map((placeable) => (
+            <tr key={placeable.slug}>
+              {nameCell(placeable)}
+              <td>{placeable.damage ?? 'None'}</td>
+              <td>
+                {placeable.maxPenetration === undefined
+                  ? 'None'
+                  : `${placeable.maxPenetration} mm`}
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </ArticleTable>
+    );
+  }
+
   if (kind === 'offensive') {
     return (
       <ArticleTable>

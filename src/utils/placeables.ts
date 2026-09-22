@@ -38,6 +38,11 @@ export const PLACEABLE_KINDS: PlaceableKindInfo[] = [
     label: 'Explosives',
     description: 'Charges that are placed on a target and set off.',
   },
+  {
+    key: 'drone',
+    label: 'Drones',
+    description: 'Scouting and kamikaze drones, flown from a tool once placed.',
+  },
 ];
 
 export function placeableDisplayName(name: string) {
