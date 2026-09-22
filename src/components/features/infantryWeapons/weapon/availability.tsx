@@ -15,7 +15,6 @@ import type { InfantryWeaponAvailability } from '@/server/api/trpc/routers/infan
 
 function requirement(entry: InfantryWeaponAvailability) {
   const parts: string[] = [];
-  if (entry.level) parts.push(`Level ${entry.level}`);
   if (entry.gamepass) parts.push('Gamepass');
   return parts.join(', ');
 }
