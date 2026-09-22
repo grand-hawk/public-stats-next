@@ -2,6 +2,7 @@ import { TRPCError } from '@trpc/server';
 
 import { getBaseUrl } from '@/utils/trpc';
 import { getConfig } from '@generated/config';
+import { getPlaceables } from '@generated/placeables';
 import { getShells } from '@generated/shells';
 
 import type { DetailedShell } from '@/server/api/trpc/routers/shells/types';
@@ -27,8 +28,14 @@ export function getShellBySlug(
     getConfig().data.placeNameInitials[shellsPlace.metadata.placeName];
   const baseUrl = getBaseUrl();
 
+  const placeablesPlace = getPlaceables().data[placeId];
+
   return {
     ...shell,
+    placeables: shell.placeables.flatMap((name) => {
+      const placeable = placeablesPlace?.data[name];
+      return placeable ? [{ name, slug: placeable.slug }] : [];
+    }),
     weapon,
     linkedData: {
       breadcrumbs: {

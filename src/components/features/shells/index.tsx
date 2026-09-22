@@ -5,6 +5,7 @@ import ShellDamage from '@/components/features/shells/shell/damage';
 import ShellHeader from '@/components/features/shells/shell/header';
 import ShellMissile from '@/components/features/shells/shell/missile';
 import ShellPenetrationTable from '@/components/features/shells/shell/penetrationTable';
+import ShellPlaceables from '@/components/features/shells/shell/placeables';
 import ShellProjectile from '@/components/features/shells/shell/projectile';
 import ShellVehicles from '@/components/features/shells/shell/vehicles';
 import { ShellContext } from '@/hooks/providers/shell';
@@ -22,6 +23,7 @@ export default function Shell({ shell }: { shell: DetailedShell }) {
       <ShellMissile />
       <ShellPenetrationTable />
       <ShellVehicles />
+      <ShellPlaceables />
     </ShellContext.Provider>
   );
 }

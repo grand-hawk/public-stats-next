@@ -51,7 +51,14 @@ export interface BrowseWeaponGroup {
   weapon: string;
 }
 
-export interface DetailedShell extends ShellsPlaceDataShell {
+export interface ShellPlaceable {
+  name: string;
+  slug: string;
+}
+
+export interface DetailedShell
+  extends Omit<ShellsPlaceDataShell, 'placeables'> {
+  placeables: ShellPlaceable[];
   weapon: string;
   linkedData: Partial<{
     breadcrumbs: WithContext<BreadcrumbList>;

@@ -16,7 +16,7 @@ export default function TeamWeapons({
   if (Object.keys(team.weapons).length === 0) return null;
 
   return (
-    <TitledCard as="section" title="Infantry weapons" withAnchor>
+    <TitledCard as="section" title="Infantry items" withAnchor>
       <WeaponTierTabs
         groups={team.weapons}
         initials={initials}

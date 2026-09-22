@@ -3,8 +3,10 @@ export const STAT_ARTICLES = {
   aps: 'active-protection-system',
   armour: 'armour-and-penetration',
   damage: 'damage',
+  era: 'explosive-reactive-armour',
   maxPenetration: 'penetration',
   ricochetAngle: 'ricochet',
+  slat: 'slat-armour',
   tandem: 'tandem-warhead',
   tier: 'tier',
 } as const;

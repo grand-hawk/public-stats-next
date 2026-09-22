@@ -6,11 +6,14 @@ import { createTRPCRouter, publicProcedure } from '@/server/api/trpc/context';
 import { getTeamColor } from '@/server/api/trpc/routers/teams';
 import { getWeaponContent } from '@/server/utils/weaponContent';
 import {
+  INFANTRY_WEAPONS_PATH,
   infantryWeaponCategory,
   infantryWeaponIcon,
   rateOfFireLabel,
 } from '@/utils/infantryWeapons';
+import { PLACEABLES_PATH, placeableDisplayName } from '@/utils/placeables';
 import { getInfantryWeapons } from '@generated/infantry_weapons';
+import { getPlaceables } from '@generated/placeables';
 
 import type { WeaponImage } from '@/server/utils/weaponContent';
 import type { InfantryWeaponCategoryKey } from '@/utils/infantryWeapons';
@@ -43,6 +46,7 @@ export interface TeamWeapon {
   class: string;
   icon: string;
   name: string;
+  path: string;
   slot: InfantryWeaponSlot;
   slug: string;
   tier: number;
@@ -112,10 +116,39 @@ export function listTeamWeapons(
         class: entry.class,
         icon: infantryWeaponIcon(weapon.projectiles[0]),
         name: weapon.name,
+        path: INFANTRY_WEAPONS_PATH,
         slot: entry.slot,
         slug: weapon.slug,
         tier: entry.tier ?? 1,
       })),
+  );
+}
+
+export function listTeamPlaceables(
+  placeId: PlaceId,
+  loadout: string,
+  team: string,
+): TeamWeapon[] {
+  const place = getPlaceables().data[placeId];
+  if (!place) return [];
+
+  return Object.values(place.data).flatMap((placeable) =>
+    placeable.availability.flatMap((entry) => {
+      if (entry.via !== 'loadout' || entry.loadout !== loadout) return [];
+      if (entry.team && entry.team !== team) return [];
+
+      return [
+        {
+          class: entry.class,
+          icon: infantryWeaponIcon(placeable.projectiles?.[0]),
+          name: placeableDisplayName(placeable.name),
+          path: PLACEABLES_PATH,
+          slot: entry.slot,
+          slug: placeable.slug,
+          tier: entry.tier,
+        },
+      ];
+    }),
   );
 }
 

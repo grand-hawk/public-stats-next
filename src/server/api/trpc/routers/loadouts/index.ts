@@ -4,7 +4,10 @@ import { z } from 'zod';
 
 import { MEDIA_PREFIX } from '@/env';
 import { createTRPCRouter, publicProcedure } from '@/server/api/trpc/context';
-import { listTeamWeapons } from '@/server/api/trpc/routers/infantryWeapons';
+import {
+  listTeamPlaceables,
+  listTeamWeapons,
+} from '@/server/api/trpc/routers/infantryWeapons';
 import { createContentCollection } from '@/server/utils/contentCollection';
 import { getLoadoutListItems } from '@/server/utils/loadoutsList';
 import { computeRelatedPages } from '@/server/utils/relatedPages';
@@ -102,7 +105,10 @@ export const loadoutsRouter = createTRPCRouter({
         loadoutData.teams
           .map((teamName) => [
             teamName,
-            listTeamWeapons(placeId, loadoutName, teamName),
+            [
+              ...listTeamWeapons(placeId, loadoutName, teamName),
+              ...listTeamPlaceables(placeId, loadoutName, teamName),
+            ],
           ])
           .filter(([, weapons]) => weapons.length > 0),
       );

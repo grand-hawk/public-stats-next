@@ -2,10 +2,11 @@ import { Box, Flex } from '@chakra-ui/react';
 import NextImage from 'next/image';
 import React from 'react';
 import { GiArtilleryShell } from 'react-icons/gi';
-import { LuArrowRight, LuFileText } from 'react-icons/lu';
+import { LuArrowRight, LuFileText, LuHammer } from 'react-icons/lu';
 import { MdViewList } from 'react-icons/md';
 import { TbTank } from 'react-icons/tb';
 
+import PlaceableImage from '@/components/features/placeables/placeableImage';
 import ShellIcon from '@/components/features/shells/shellIcon';
 import VehicleIcon from '@/components/features/vehicles/vehicleIcon';
 import VehicleImage from '@/components/features/vehicles/vehicleImage';
@@ -19,6 +20,7 @@ export type PageRef =
   | { type: 'loadout'; slug: string }
   | { type: 'shell'; shellType: string }
   | { type: 'weapon'; shellType: string }
+  | { type: 'placeable'; name: string; slug: string }
   | { type: 'article' }
   | { type: 'page' };
 
@@ -99,6 +101,19 @@ export default function PageIcon({
         </ThumbnailFrame>
       );
     }
+    if (page.type === 'placeable') {
+      return (
+        <ThumbnailFrame>
+          <PlaceableImage
+            fill
+            fallbackText=""
+            name={page.name}
+            sizes="80px"
+            slug={page.slug}
+          />
+        </ThumbnailFrame>
+      );
+    }
     return (
       <ThumbnailFrame>
         {page.type === 'article' ? <LuFileText size={20} /> : <LuArrowRight />}
@@ -116,6 +131,7 @@ export default function PageIcon({
     return <GiArtilleryShell />;
   }
   if (page.type === 'loadout') return <MdViewList />;
+  if (page.type === 'placeable') return <LuHammer />;
   if (page.type === 'article') return <LuFileText />;
   if (page.type === 'page') return <LuArrowRight />;
   return <TbTank />;
@@ -125,6 +141,7 @@ export const PAGE_TYPE_LABELS: Record<PageRef['type'], string> = {
   vehicle: 'Vehicle',
   shell: 'Shell',
   weapon: 'Weapon',
+  placeable: 'Placeable',
   team: 'Team',
   loadout: 'Loadout',
   article: 'Article',

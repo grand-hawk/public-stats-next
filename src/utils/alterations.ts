@@ -7,7 +7,7 @@ import type {
   VehiclesPlaceDataVehicleModuleReference,
 } from '@generated/vehicles';
 
-type ModulesDictionary = VehiclesPlaceDataVehicle['modules'] & {
+export type ModulesDictionary = VehiclesPlaceDataVehicle['modules'] & {
   $debug?: {
     added: Record<string, string[]>;
     removed: Record<string, string[]>;

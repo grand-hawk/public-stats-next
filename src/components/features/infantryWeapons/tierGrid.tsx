@@ -6,7 +6,7 @@ import ShellInlineLink from '@/components/article/shellInlineLink';
 import { EmptyState } from '@/components/ui/empty-state';
 import { RAISED_FRAME_CSS } from '@/components/ui/styles';
 import StatArticleLink from '@/components/wiki/statArticleLink';
-import { INFANTRY_WEAPONS_PATH, slotLabel } from '@/utils/infantryWeapons';
+import { slotIndex, slotLabel } from '@/utils/infantryWeapons';
 
 import type { TeamWeapon } from '@/server/api/trpc/routers/infantryWeapons';
 import type { SystemStyleObject } from '@chakra-ui/react';
@@ -41,8 +41,11 @@ const BORDER_CSS: SystemStyleObject = {
   borderInlineEndStyle: 'solid',
 };
 
-function byName(a: TeamWeapon, b: TeamWeapon) {
-  return a.name.localeCompare(b.name, undefined, { numeric: true });
+function bySlotThenName(a: TeamWeapon, b: TeamWeapon) {
+  return (
+    slotIndex(a.slot) - slotIndex(b.slot) ||
+    a.name.localeCompare(b.name, undefined, { numeric: true })
+  );
 }
 
 export default function WeaponTierGrid({ weapons }: { weapons: TeamWeapon[] }) {
@@ -138,11 +141,11 @@ export default function WeaponTierGrid({ weapons }: { weapons: TeamWeapon[] }) {
                         (weapon) =>
                           weapon.tier === tier && weapon.class === name,
                       )
-                      .sort(byName)
+                      .sort(bySlotThenName)
                       .map((weapon) => (
                         <Box key={`${weapon.slug}-${weapon.slot}`}>
                           <ShellInlineLink
-                            basePath={INFANTRY_WEAPONS_PATH}
+                            basePath={weapon.path}
                             displayType={weapon.icon}
                             slug={weapon.slug}
                           >

@@ -7,6 +7,7 @@ import {
   LuGitCompareArrows,
   LuGithub,
   LuGlobe,
+  LuHammer,
   LuScale,
   LuShield,
 } from 'react-icons/lu';
@@ -65,6 +66,16 @@ export const tabs: Record<string, Tab> = {
       'Penetration, damage and availability of every rifle, machine gun and launcher.',
     icon: (props: IconProps) => (
       <InfantryIcon height={5} width={5} {...props} />
+    ),
+  },
+  placeables: {
+    label: 'Placeables',
+    path: '/placeables',
+    color: 'orange.500',
+    description:
+      'Emplacements, vehicle armour, structures and explosives you put down yourself.',
+    icon: (props: IconProps) => (
+      <Icon as={LuHammer} height={5} width={5} {...props} />
     ),
   },
   vehicleFamilies: {
@@ -150,6 +161,7 @@ export const primaryTabKeys = [
   'vehicles',
   'shells',
   'infantryWeapons',
+  'placeables',
   'teams',
 ] as const satisfies (keyof typeof tabs)[];
 export const secondaryTabKeys = [
@@ -218,6 +230,7 @@ export const menuGroups: MenuGroup[] = [
       { type: 'tab', key: 'teams' },
       { type: 'tab', key: 'shells' },
       { type: 'tab', key: 'infantryWeapons' },
+      { type: 'tab', key: 'placeables' },
     ],
   },
   {

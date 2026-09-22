@@ -32,7 +32,8 @@ export function getTurretsWithNamesSorted(
       turret.data.control,
       modules,
     );
-    if (control) name = `${control.data.name} turret`;
+    if (control && control.data.name !== 'Control')
+      {name = `${control.data.name} turret`;}
     return { ...turret, name } as TurretWithName;
   });
 

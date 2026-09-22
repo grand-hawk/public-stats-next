@@ -112,6 +112,17 @@ export function slotLabel(slot: InfantryWeaponSlot) {
   return SLOT_LABELS[slot];
 }
 
+const SLOT_ORDER: InfantryWeaponSlot[] = [
+  'Primary',
+  'Secondary',
+  'Tertiary',
+  'PassiveTools',
+];
+
+export function slotIndex(slot: InfantryWeaponSlot) {
+  return SLOT_ORDER.indexOf(slot);
+}
+
 export function sightMagnification(fov: number) {
   const half = (degrees: number) => Math.tan((degrees * Math.PI) / 360);
   return half(BASE_FOV) / half(fov);

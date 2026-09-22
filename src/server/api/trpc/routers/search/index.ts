@@ -12,9 +12,15 @@ import {
   infantryWeaponIcon,
 } from '@/utils/infantryWeapons';
 import { loadoutDisplayName } from '@/utils/loadoutDisplayName';
+import {
+  PLACEABLES_PATH,
+  placeableDisplayName,
+  placeableKindLabel,
+} from '@/utils/placeables';
 import { getConfig } from '@generated/config';
 import { getInfantryWeapons } from '@generated/infantry_weapons';
 import { getLoadouts } from '@generated/loadouts';
+import { getPlaceables } from '@generated/placeables';
 import { getShells } from '@generated/shells';
 import { getVehicles } from '@generated/vehicles';
 
@@ -83,6 +89,27 @@ function buildIndex(placeId: PlaceId) {
       href: `/${initials}${INFANTRY_WEAPONS_PATH}/${weapon.slug}`,
       page: { type: 'weapon', shellType: infantryWeaponIcon(projectile) },
       searchText: [weapon.name, projectile?.type, 'infantry weapon'].join(' '),
+    });
+  }
+
+  const placeablesPlace = getPlaceables().data[placeId];
+  for (const placeable of Object.values(placeablesPlace?.data ?? {})) {
+    items.push({
+      type: 'placeable',
+      title: placeableDisplayName(placeable.name),
+      subtitle: placeableKindLabel(placeable.kind),
+      href: `/${initials}${PLACEABLES_PATH}/${placeable.slug}`,
+      page: {
+        type: 'placeable',
+        name: placeableDisplayName(placeable.name),
+        slug: placeable.slug,
+      },
+      searchText: [
+        placeableDisplayName(placeable.name),
+        placeable.name,
+        placeableKindLabel(placeable.kind),
+        'placeable',
+      ].join(' '),
     });
   }
 

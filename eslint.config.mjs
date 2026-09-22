@@ -54,6 +54,8 @@ export default defineConfig([
       '.temp/**',
       'scripts/weapon-renders/**',
       'weapon-renders/**',
+      'scripts/placeable-renders/**',
+      'placeable-renders/**',
       'generated/**',
       'public/**',
       'coverage/**',

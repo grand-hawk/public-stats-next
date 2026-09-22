@@ -2,7 +2,10 @@ import slug from 'slug';
 import { z } from 'zod';
 
 import { createTRPCRouter, publicProcedure } from '@/server/api/trpc/context';
-import { listTeamWeapons } from '@/server/api/trpc/routers/infantryWeapons';
+import {
+  listTeamPlaceables,
+  listTeamWeapons,
+} from '@/server/api/trpc/routers/infantryWeapons';
 import { createContentCollection } from '@/server/utils/contentCollection';
 import { computeRelatedPages } from '@/server/utils/relatedPages';
 import { isRecentlyAdded } from '@/utils/isRecentlyAdded';
@@ -187,7 +190,10 @@ export const teamsRouter = createTRPCRouter({
         includedLoadouts
           .map(([loadoutName]) => [
             loadoutName,
-            listTeamWeapons(placeId, loadoutName, teamName),
+            [
+              ...listTeamWeapons(placeId, loadoutName, teamName),
+              ...listTeamPlaceables(placeId, loadoutName, teamName),
+            ],
           ])
           .filter(([, weapons]) => weapons.length > 0),
       );
