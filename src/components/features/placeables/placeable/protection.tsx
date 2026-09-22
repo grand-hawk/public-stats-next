@@ -126,7 +126,7 @@ export default function PlaceableProtection() {
 
   return (
     <TitledCard as="section" title="Protection" withAnchor>
-      {special.some((panel) => panel.heat !== undefined) && (
+      {special.some((panel) => panel.era) && (
         <MainArticle to={STAT_ARTICLES.era} />
       )}
 
