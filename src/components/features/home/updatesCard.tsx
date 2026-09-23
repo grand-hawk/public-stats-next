@@ -1,16 +1,20 @@
-import { Box, Flex, Span, Stack } from '@chakra-ui/react';
+import { Box, Span, Stack } from '@chakra-ui/react';
 import NextLink from 'next/link';
 import React from 'react';
 
-import ActionButton from '@/components/features/home/actionButton';
-import { Card, CardPad, CardTitle } from '@/components/features/home/card';
+import {
+  Card,
+  CardMore,
+  CardPad,
+  CardTitle,
+} from '@/components/features/home/card';
 import { FOCUS_RING_CSS } from '@/components/ui/styles';
 import { formatUpdateDate, updateDateLabel } from '@/utils/updateDate';
 
 import type { UpdateSummary } from '@/server/utils/updates/types';
 import type { SystemStyleObject } from '@chakra-ui/react';
 
-const SHOWN = 4;
+const SHOWN = 3;
 
 const ROW_CSS: SystemStyleObject = {
   alignItems: 'baseline',
@@ -62,9 +66,11 @@ export default function UpdatesCard({
           ))}
         </Stack>
 
-        <Flex marginTop="auto" paddingTop="16px">
-          <ActionButton href={`/${initials}/updates`}>All updates</ActionButton>
-        </Flex>
+        <CardMore>
+          <NextLink href={`/${initials}/updates`} prefetch={false}>
+            See all updates
+          </NextLink>
+        </CardMore>
       </CardPad>
     </Card>
   );

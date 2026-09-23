@@ -4,7 +4,6 @@ import NextLink from 'next/link';
 import React from 'react';
 
 import { Card, CardPad, Kicker } from '@/components/features/home/card';
-import { spanRead } from '@/components/features/home/grid';
 import {
   HERO_TEXT,
   HERO_TEXT_MUTED,
@@ -30,7 +29,7 @@ export default function LoadoutsCard({
   }[];
 }) {
   return (
-    <Card css={{ ...spanRead }}>
+    <Card>
       <CardPad>
         <Kicker>Loadouts</Kicker>
         <Flex

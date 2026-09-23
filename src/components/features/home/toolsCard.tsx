@@ -1,7 +1,6 @@
 import React from 'react';
 
 import { Card, CardPad, Kicker } from '@/components/features/home/card';
-import { spanRead } from '@/components/features/home/grid';
 import { LinkRow, LinkRowGrid } from '@/components/features/home/linkRows';
 import { tabs } from '@/components/layout/navigation/tabs';
 
@@ -14,7 +13,7 @@ const TOOLS = [
 
 export default function ToolsCard({ initials }: { initials: string }) {
   return (
-    <Card css={{ ...spanRead }}>
+    <Card>
       <CardPad>
         <Kicker>Tools</Kicker>
 
