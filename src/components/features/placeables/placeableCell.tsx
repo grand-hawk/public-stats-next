@@ -37,7 +37,6 @@ const TILE_CSS: SystemStyleObject = {
   },
 };
 
-// the renders are transparent and vary in shape, so contain them rather than crop
 const MEDIA_CSS: SystemStyleObject = {
   position: 'relative',
   aspectRatio: '4 / 3',

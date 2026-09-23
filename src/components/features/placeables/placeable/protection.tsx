@@ -116,7 +116,6 @@ function PanelTable({ panels }: { panels: Panel[] }) {
 
 export default function PlaceableProtection() {
   const placeable = usePlaceable();
-  // drones carry a bare zero thickness panel, which is nothing worth a stat
   const panels = (placeable.armour ?? []).filter(
     (panel) => !panel.composite && (panel.thickness > 0 || !isPlain(panel)),
   );
