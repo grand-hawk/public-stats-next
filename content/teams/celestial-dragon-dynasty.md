@@ -4,4 +4,4 @@ lore: true
 
 # Celestial Dragon Dynasty
 
-The **Celestial Dragon Dynasty** represents modern-day [China](https://en.wikipedia.org/wiki/China) in the [[/loadouts/modern Modern]] loadout.
+The **Celestial Dragon Dynasty** represents the great dynastic power of the far east in the [[/loadouts/modern Modern]] loadout.
