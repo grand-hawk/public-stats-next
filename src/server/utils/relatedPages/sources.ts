@@ -95,7 +95,9 @@ export function collectSources(placeId: PlaceId): PageSource[] {
   const playableTeams = new Set(loadoutsPlace.metadata.teams);
   const teamNames = new Set(playableTeams);
   for (const vehicle of Object.values(vehiclesPlace?.data ?? {})) {
-    if (vehicle.info.team) teamNames.add(vehicle.info.team);
+    if (vehicle.info.team && !vehicle.info.unlisted) {
+      teamNames.add(vehicle.info.team);
+    }
   }
 
   for (const name of teamNames) {
