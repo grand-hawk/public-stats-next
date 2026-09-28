@@ -5,7 +5,7 @@ import React from 'react';
 import PlaceableImage from '@/components/features/placeables/placeableImage';
 import { DURATION_BASE, EASE } from '@/components/layout/shell/constants';
 import { FOCUS_RING_CSS, TRUNCATE_CSS } from '@/components/ui/styles';
-import { PLACEABLES_PATH, placeableDisplayName } from '@/utils/placeables';
+import { PLACEABLES_PATH } from '@/utils/placeables';
 
 import type { SystemStyleObject } from '@chakra-ui/react';
 
@@ -59,15 +59,13 @@ const NAME_CSS: SystemStyleObject = {
 
 export default function PlaceableCell({
   initials,
-  name,
   slug,
+  title,
 }: {
   initials: string;
-  name: string;
   slug: string;
+  title: string;
 }) {
-  const label = placeableDisplayName(name);
-
   return (
     <Box asChild css={TILE_CSS}>
       <NextLink
@@ -77,7 +75,7 @@ export default function PlaceableCell({
         <Box css={MEDIA_CSS}>
           <PlaceableImage
             fill
-            name={label}
+            name={title}
             placeholder="empty"
             sizes="200px"
             slug={slug}
@@ -85,8 +83,8 @@ export default function PlaceableCell({
         </Box>
 
         <Box padding="5px 8px 6px" width="100%">
-          <Span color="fg.emphasized" css={NAME_CSS} title={label}>
-            {label}
+          <Span color="fg.emphasized" css={NAME_CSS} title={title}>
+            {title}
           </Span>
         </Box>
       </NextLink>

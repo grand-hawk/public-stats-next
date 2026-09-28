@@ -2,10 +2,12 @@ import { closeSync, existsSync, openSync, readSync } from 'node:fs';
 import path from 'node:path';
 
 import { createContentCollection } from '@/server/utils/contentCollection';
+import { placeableDisplayName } from '@/utils/placeables';
 
 export interface PlaceableMeta {
   imageAlt?: string;
   imageCaption?: string;
+  title?: string;
 }
 
 export interface PlaceableImage {
@@ -29,11 +31,19 @@ const placeableCollection = createContentCollection<PlaceableMeta>({
     imageAlt: typeof raw.imageAlt === 'string' ? raw.imageAlt : undefined,
     imageCaption:
       typeof raw.imageCaption === 'string' ? raw.imageCaption : undefined,
+    title: typeof raw.title === 'string' ? raw.title : undefined,
   }),
 });
 
 function stripTitle(body: string) {
   return body.replace(/^# [^\n]*\n*/, '').trim();
+}
+
+export function getPlaceableTitle(placeableSlug: string, name: string) {
+  return (
+    placeableCollection.get(placeableSlug)?.meta.title ??
+    placeableDisplayName(name)
+  );
 }
 
 function readPngSize(file: string) {
@@ -67,7 +77,7 @@ export function getPlaceableContent(placeableSlug: string, name: string) {
   const image: PlaceableImage | undefined = size
     ? {
         ...size,
-        alt: entry?.meta.imageAlt ?? name,
+        alt: entry?.meta.imageAlt ?? getPlaceableTitle(placeableSlug, name),
         caption: entry?.meta.imageCaption,
         path: `/assets/placeables/${placeableSlug}.png`,
         turntable: existsSync(turntable)
@@ -76,5 +86,9 @@ export function getPlaceableContent(placeableSlug: string, name: string) {
       }
     : undefined;
 
-  return { description: description || undefined, image };
+  return {
+    description: description || undefined,
+    image,
+    title: getPlaceableTitle(placeableSlug, name),
+  };
 }

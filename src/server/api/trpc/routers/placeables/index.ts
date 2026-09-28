@@ -4,7 +4,10 @@ import z from 'zod';
 
 import { createTRPCRouter, publicProcedure } from '@/server/api/trpc/context';
 import { getTeamColor } from '@/server/api/trpc/routers/teams';
-import { getPlaceableContent } from '@/server/utils/placeableContent';
+import {
+  getPlaceableContent,
+  getPlaceableTitle,
+} from '@/server/utils/placeableContent';
 import { getAllModulesOfType } from '@/utils/alterations';
 import { getPlaceables } from '@generated/placeables';
 
@@ -19,28 +22,28 @@ import type {
   PlaceablesPlaceDataPlaceableLoadoutAvailability,
 } from '@generated/placeables';
 
-export interface PlaceableBuildAvailability
-  extends PlaceablesPlaceDataPlaceableBuildAvailability {
+export interface PlaceableBuildAvailability extends PlaceablesPlaceDataPlaceableBuildAvailability {
   cap: number;
   loadoutSlug?: string;
 }
 
-export interface PlaceableLoadoutAvailability
-  extends PlaceablesPlaceDataPlaceableLoadoutAvailability {
+export interface PlaceableLoadoutAvailability extends PlaceablesPlaceDataPlaceableLoadoutAvailability {
   loadoutSlug: string;
   teamSlug?: string;
 }
 
 export type PlaceableAvailability =
-  | PlaceableBuildAvailability
-  | PlaceableLoadoutAvailability;
+  PlaceableBuildAvailability | PlaceableLoadoutAvailability;
 
-export interface DetailedPlaceable
-  extends Omit<PlaceablesPlaceDataPlaceable, 'availability'> {
+export interface DetailedPlaceable extends Omit<
+  PlaceablesPlaceDataPlaceable,
+  'availability'
+> {
   availability: PlaceableAvailability[];
   description?: string;
   image?: PlaceableImage;
   teamColor?: string;
+  title: string;
 }
 
 export interface ListedPlaceable {
@@ -55,6 +58,7 @@ export interface ListedPlaceable {
   name: string;
   slug: string;
   tier?: number;
+  title: string;
   weapons: string[];
 }
 
@@ -119,13 +123,16 @@ export function listPlaceables(placeId: PlaceId): ListedPlaceable[] {
         name: placeable.name,
         slug: placeable.slug,
         tier: placeable.availability.find((entry) => !isBuild(entry))?.tier,
+        title: getPlaceableTitle(placeable.slug, placeable.name),
         weapons:
           weapons.length > 0
             ? weapons
             : projectiles.map((projectile) => projectile.name),
       };
     })
-    .sort((a, b) => a.name.localeCompare(b.name, undefined, { numeric: true }));
+    .sort((a, b) =>
+      a.title.localeCompare(b.title, undefined, { numeric: true }),
+    );
 }
 
 export function getPlaceableBySlug(

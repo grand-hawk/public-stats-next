@@ -1,5 +1,6 @@
 import { TRPCError } from '@trpc/server';
 
+import { getPlaceableTitle } from '@/server/utils/placeableContent';
 import { getBaseUrl } from '@/utils/trpc';
 import { getConfig } from '@generated/config';
 import { getPlaceables } from '@generated/placeables';
@@ -34,7 +35,15 @@ export function getShellBySlug(
     ...shell,
     placeables: shell.placeables.flatMap((name) => {
       const placeable = placeablesPlace?.data[name];
-      return placeable ? [{ name, slug: placeable.slug }] : [];
+      return placeable
+        ? [
+            {
+              name,
+              slug: placeable.slug,
+              title: getPlaceableTitle(placeable.slug, name),
+            },
+          ]
+        : [];
     }),
     weapon,
     linkedData: {

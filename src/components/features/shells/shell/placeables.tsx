@@ -6,7 +6,7 @@ import VehicleCellGrid from '@/components/features/teams/loadouts/vehicleCellGri
 import TitledCard from '@/components/wiki/titledCard';
 import { useShell } from '@/hooks/providers/shell';
 import { usePlaceInitials } from '@/hooks/usePlaceInitials';
-import { PLACEABLES_PATH, placeableDisplayName } from '@/utils/placeables';
+import { PLACEABLES_PATH } from '@/utils/placeables';
 
 export default function ShellPlaceables() {
   const initials = usePlaceInitials()!;
@@ -25,7 +25,7 @@ export default function ShellPlaceables() {
           <PlaceableCell
             key={placeable.slug}
             initials={initials}
-            name={placeable.name}
+            title={placeable.title}
             slug={placeable.slug}
           />
         ))}
@@ -38,7 +38,7 @@ export default function ShellPlaceables() {
               href={`/${initials}${PLACEABLES_PATH}/${placeable.slug}`}
               prefetch={false}
             >
-              {placeableDisplayName(placeable.name)}
+              {placeable.title}
             </NextLink>
           </li>
         ))}

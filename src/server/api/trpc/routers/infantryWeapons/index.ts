@@ -4,6 +4,7 @@ import z from 'zod';
 
 import { createTRPCRouter, publicProcedure } from '@/server/api/trpc/context';
 import { getTeamColor } from '@/server/api/trpc/routers/teams';
+import { getPlaceableTitle } from '@/server/utils/placeableContent';
 import { getWeaponContent } from '@/server/utils/weaponContent';
 import {
   INFANTRY_WEAPONS_PATH,
@@ -11,7 +12,7 @@ import {
   infantryWeaponIcon,
   rateOfFireLabel,
 } from '@/utils/infantryWeapons';
-import { PLACEABLES_PATH, placeableDisplayName } from '@/utils/placeables';
+import { PLACEABLES_PATH } from '@/utils/placeables';
 import { getInfantryWeapons } from '@generated/infantry_weapons';
 import { getPlaceables } from '@generated/placeables';
 
@@ -141,7 +142,7 @@ export function listTeamPlaceables(
         {
           class: entry.class,
           icon: infantryWeaponIcon(placeable.projectiles?.[0]),
-          name: placeableDisplayName(placeable.name),
+          name: getPlaceableTitle(placeable.slug, placeable.name),
           path: PLACEABLES_PATH,
           slot: entry.slot,
           slug: placeable.slug,

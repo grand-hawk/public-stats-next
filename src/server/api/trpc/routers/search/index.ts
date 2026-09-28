@@ -7,16 +7,13 @@ import { IS_DEV } from '@/env';
 import { createTRPCRouter, publicProcedure } from '@/server/api/trpc/context';
 import { listArticles } from '@/server/utils/articles';
 import { GLOSSARY_SLUG, getGlossary } from '@/server/utils/articles/glossary';
+import { getPlaceableTitle } from '@/server/utils/placeableContent';
 import {
   INFANTRY_WEAPONS_PATH,
   infantryWeaponIcon,
 } from '@/utils/infantryWeapons';
 import { loadoutDisplayName } from '@/utils/loadoutDisplayName';
-import {
-  PLACEABLES_PATH,
-  placeableDisplayName,
-  placeableKindLabel,
-} from '@/utils/placeables';
+import { PLACEABLES_PATH, placeableKindLabel } from '@/utils/placeables';
 import { getConfig } from '@generated/config';
 import { getInfantryWeapons } from '@generated/infantry_weapons';
 import { getLoadouts } from '@generated/loadouts';
@@ -94,18 +91,20 @@ function buildIndex(placeId: PlaceId) {
 
   const placeablesPlace = getPlaceables().data[placeId];
   for (const placeable of Object.values(placeablesPlace?.data ?? {})) {
+    const title = getPlaceableTitle(placeable.slug, placeable.name);
+
     items.push({
       type: 'placeable',
-      title: placeableDisplayName(placeable.name),
+      title,
       subtitle: placeableKindLabel(placeable.kind),
       href: `/${initials}${PLACEABLES_PATH}/${placeable.slug}`,
       page: {
         type: 'placeable',
-        name: placeableDisplayName(placeable.name),
+        name: title,
         slug: placeable.slug,
       },
       searchText: [
-        placeableDisplayName(placeable.name),
+        title,
         placeable.name,
         placeableKindLabel(placeable.kind),
         'placeable',

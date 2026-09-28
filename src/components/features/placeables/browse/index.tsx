@@ -8,11 +8,7 @@ import { ARTICLE_MDX_CSS } from '@/components/article/prose';
 import TitledCard from '@/components/wiki/titledCard';
 import { usePlace } from '@/hooks/usePlace';
 import { loadoutDisplayName } from '@/utils/loadoutDisplayName';
-import {
-  PLACEABLE_KINDS,
-  PLACEABLES_PATH,
-  placeableDisplayName,
-} from '@/utils/placeables';
+import { PLACEABLE_KINDS, PLACEABLES_PATH } from '@/utils/placeables';
 import { trpc } from '@/utils/trpc';
 
 import type { ListedPlaceable } from '@/server/api/trpc/routers/placeables';
@@ -55,7 +51,7 @@ function KindTable({
         href={`/${place.initials}${PLACEABLES_PATH}/${placeable.slug}`}
         prefetch={false}
       >
-        {placeableDisplayName(placeable.name)}
+        {placeable.title}
       </NextLink>
     </td>
   );

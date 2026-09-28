@@ -13,10 +13,7 @@ import { useCanonicalSlug } from '@/hooks/useCanonicalSlug';
 import { usePlace } from '@/hooks/usePlace';
 import { useRouterQuery } from '@/hooks/useRouterQuery';
 import { useSwapSlug } from '@/hooks/useSwapSlug';
-import {
-  placeableDisplayName,
-  placeableKindLabel,
-} from '@/utils/placeables';
+import { placeableKindLabel } from '@/utils/placeables';
 import { trpc } from '@/utils/trpc';
 
 export default function PlacePlaceable() {
@@ -39,7 +36,7 @@ export default function PlacePlaceable() {
 
   useCanonicalSlug('placeable', placeableSlug, !!placeable);
 
-  const name = placeable ? placeableDisplayName(placeable.name) : undefined;
+  const name = placeable?.title;
   const title = name ?? 'Placeable not found';
   const description = placeable
     ? `${name}, a ${placeableKindLabel(placeable.kind).toLowerCase()} placeable in ${place.placeName}`

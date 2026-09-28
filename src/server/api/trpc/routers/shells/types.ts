@@ -54,10 +54,13 @@ export interface BrowseWeaponGroup {
 export interface ShellPlaceable {
   name: string;
   slug: string;
+  title: string;
 }
 
-export interface DetailedShell
-  extends Omit<ShellsPlaceDataShell, 'placeables'> {
+export interface DetailedShell extends Omit<
+  ShellsPlaceDataShell,
+  'placeables'
+> {
   placeables: ShellPlaceable[];
   weapon: string;
   linkedData: Partial<{

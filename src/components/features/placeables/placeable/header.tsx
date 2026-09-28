@@ -4,11 +4,7 @@ import React from 'react';
 import PlaceableTurntable from '@/components/features/placeables/placeable/turntable';
 import ArticleTitle from '@/components/wiki/articleTitle';
 import { usePlaceable } from '@/hooks/providers/placeable';
-import {
-  buildToolLabel,
-  placeableDisplayName,
-  placeableKindLabel,
-} from '@/utils/placeables';
+import { buildToolLabel, placeableKindLabel } from '@/utils/placeables';
 
 export default function PlaceableHeader() {
   const placeable = usePlaceable();
@@ -25,7 +21,7 @@ export default function PlaceableHeader() {
     <ArticleTitle
       aside={<PlaceableTurntable />}
       id="placeable-page-title"
-      title={placeableDisplayName(placeable.name)}
+      title={placeable.title}
       meta={
         <>
           <Span>{placeableKindLabel(placeable.kind)}</Span>
