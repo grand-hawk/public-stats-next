@@ -1,7 +1,6 @@
 import React from 'react';
 
 import { ContextCapturer } from '@/components/development/contextCapturer';
-import PlaceableDescription from '@/components/features/placeables/placeable/about';
 import PlaceableAvailability from '@/components/features/placeables/placeable/availability';
 import PlaceableHeader from '@/components/features/placeables/placeable/header';
 import PlaceableProtection from '@/components/features/placeables/placeable/protection';
@@ -21,7 +20,6 @@ export default function Placeable({
       <ContextCapturer contextKey="Placeable" data={placeable} />
 
       <PlaceableHeader />
-      <PlaceableDescription />
       <PlaceableAvailability />
       <PlaceableProtection />
       <PlaceableTurrets />

@@ -1,6 +1,7 @@
 import { Span } from '@chakra-ui/react';
 import React from 'react';
 
+import PlaceableDescription from '@/components/features/placeables/placeable/about';
 import PlaceableTurntable from '@/components/features/placeables/placeable/turntable';
 import ArticleTitle from '@/components/wiki/articleTitle';
 import { usePlaceable } from '@/hooks/providers/placeable';
@@ -30,6 +31,8 @@ export default function PlaceableHeader() {
           ))}
         </>
       }
-    />
+    >
+      <PlaceableDescription />
+    </ArticleTitle>
   );
 }

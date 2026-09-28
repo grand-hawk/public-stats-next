@@ -7,6 +7,7 @@ import { usePlace } from '@/hooks/usePlace';
 export interface ArticleTitleProps {
   actions?: React.ReactNode;
   aside?: React.ReactNode;
+  children?: React.ReactNode;
   icon?: React.ReactNode;
   id?: string;
   meta?: React.ReactNode;
@@ -16,6 +17,7 @@ export interface ArticleTitleProps {
 export default function ArticleTitle({
   actions,
   aside,
+  children,
   icon,
   id,
   meta,
@@ -34,7 +36,7 @@ export default function ArticleTitle({
         ...(aside && { flexWrap: 'wrap' }),
       }}
     >
-      <Box flexGrow={1} minWidth={0}>
+      <Box flexBasis={aside ? 0 : undefined} flexGrow={1} minWidth={0}>
         <Box
           css={{
             display: 'flex',
@@ -90,6 +92,8 @@ export default function ArticleTitle({
             {meta}
           </Box>
         )}
+
+        {children}
       </Box>
 
       {aside && (

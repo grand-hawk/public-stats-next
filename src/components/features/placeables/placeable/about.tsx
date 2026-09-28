@@ -13,7 +13,7 @@ export default function PlaceableDescription() {
   if (!placeable.description) return null;
 
   return (
-    <Box marginBlockStart="24px">
+    <Box marginBlockStart="16px">
       <ArticleProse>
         {applyWikilinks(placeable.description, initials)}
       </ArticleProse>
