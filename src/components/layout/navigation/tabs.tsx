@@ -65,7 +65,7 @@ export const tabs: Record<string, Tab> = {
     description:
       'Penetration, damage and availability of every rifle, machine gun and launcher.',
     icon: (props: IconProps) => (
-      <InfantryIcon height={5} width={5} {...props} />
+      <InfantryIcon height={6} width={6} {...props} />
     ),
   },
   placeables: {
