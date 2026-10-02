@@ -1,6 +1,7 @@
 import { Box, HStack, Icon, Stack } from '@chakra-ui/react';
 import NextLink from 'next/link';
 import React from 'react';
+import { BsDatabaseFillCheck } from 'react-icons/bs';
 import { IoMdAdd } from 'react-icons/io';
 import { MdAccountTree, MdCode, MdSubdirectoryArrowRight } from 'react-icons/md';
 
@@ -22,6 +23,7 @@ export default function VehicleDataInfo({ ...props }: StackProps) {
   const { family, variantOf } = vehicle.info.lineage;
 
   const addedDate = vehicle.info.addedDate && new Date(vehicle.info.addedDate);
+  const lastUpdated = new Date(vehicle.info.lastRetrieved);
 
   return (
     <Stack
@@ -82,6 +84,16 @@ export default function VehicleDataInfo({ ...props }: StackProps) {
           </span>
         </HStack>
       )}
+
+      <HStack>
+        <Icon as={BsDatabaseFillCheck} />
+        <span>
+          Last updated:{' '}
+          <span title={lastUpdated.toLocaleString()} suppressHydrationWarning>
+            {lastUpdated.toLocaleDateString()}
+          </span>
+        </span>
+      </HStack>
 
       <HStack>
         <Icon as={MdCode} />
