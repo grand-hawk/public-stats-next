@@ -5,6 +5,7 @@ import {
   Legend,
   Line,
   LineChart,
+  ReferenceLine,
   Tooltip,
   XAxis,
   YAxis,
@@ -52,6 +53,14 @@ export default function AccelerationChart({
   addCurve(curve, intervalSeconds, 'kmh');
   if (reverse) addCurve(reverse.curve, reverse.intervalSeconds, 'reverseKmh');
 
+  const maxSeconds = Math.max(0, ...bySeconds.keys());
+  const timeMarkers = [0, 5, 10, 15, 20, 30, 45, 60, 90].filter(
+    (seconds) => seconds <= maxSeconds,
+  );
+  for (let seconds = 120; seconds <= maxSeconds; seconds *= 2) {
+    timeMarkers.push(seconds);
+  }
+
   const chart = useChart({
     data: [...bySeconds.values()].sort((a, b) => a.seconds - b.seconds),
     series: [
@@ -71,16 +80,34 @@ export default function AccelerationChart({
   return (
     <Chart.Root chart={chart} maxHeight="2xs">
       <LineChart data={chart.data} responsive>
-        <CartesianGrid stroke={chart.color('border')} vertical={false} />
+        <CartesianGrid
+          stroke={chart.color('border.emphasized')}
+          strokeDasharray="3 3"
+          vertical={false}
+        />
+
+        {timeMarkers.map((seconds) => (
+          <ReferenceLine
+            key={seconds}
+            stroke={chart.color('border.emphasized')}
+            strokeDasharray="3 3"
+            x={seconds}
+          />
+        ))}
 
         <XAxis
-          axisLine={false}
+          axisLine={{ stroke: chart.color('border.emphasized') }}
           dataKey={chart.key('seconds')}
           domain={[0, 'dataMax']}
           height={40}
           stroke={chart.color('border')}
           tickFormatter={(value) => `${value}s`}
-          tickLine={false}
+          interval="preserveStartEnd"
+          minTickGap={8}
+          tick={{ fill: chart.color('fg.muted'), fontSize: 12 }}
+          ticks={timeMarkers}
+          tickLine={{ stroke: chart.color('border.emphasized') }}
+          tickMargin={8}
           type="number"
           label={{
             fill: chart.color('fg.muted'),
@@ -89,10 +116,11 @@ export default function AccelerationChart({
           }}
         />
         <YAxis
-          axisLine={false}
+          axisLine={{ stroke: chart.color('border.emphasized') }}
           stroke={chart.color('border')}
           tickFormatter={(value) => `${value}`}
-          tickLine={false}
+          tick={{ fill: chart.color('fg.muted'), fontSize: 12 }}
+          tickLine={{ stroke: chart.color('border.emphasized') }}
           tickMargin={10}
           width={64}
           label={{
@@ -115,7 +143,10 @@ export default function AccelerationChart({
               labelFormatter={(label) => `${label}s`}
             />
           }
-          cursor={false}
+          cursor={{
+            stroke: chart.color('fg.muted'),
+            strokeDasharray: '3 3',
+          }}
         />
 
         {reverse && <Legend content={<Chart.Legend />} />}

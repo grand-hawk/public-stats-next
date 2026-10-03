@@ -62,6 +62,7 @@ export default function TractiveEffortChart({
     <GearingChartShell
       chart={chart}
       formatValue={(value) => ` ${value}`}
+      horizontalGrid={false}
       vmax={vmax}
       yLabel="Pull (× weight)"
     >

@@ -21,6 +21,7 @@ export default function GearingChartShell({
   chart,
   children,
   formatValue,
+  horizontalGrid = true,
   vmax,
   yDomain,
   yLabel,
@@ -30,20 +31,29 @@ export default function GearingChartShell({
   vmax: number;
   yLabel: string;
   children?: React.ReactNode;
+  horizontalGrid?: boolean;
   yDomain?: [number, number];
 }) {
   return (
     <Chart.Root chart={chart} maxHeight="2xs">
       <LineChart data={chart.data} margin={CHART_MARGIN} responsive>
-        <CartesianGrid stroke={chart.color('border')} vertical={false} />
+        <CartesianGrid
+          horizontal={horizontalGrid}
+          stroke={chart.color('border.emphasized')}
+          strokeDasharray="3 3"
+        />
 
         <XAxis
-          axisLine={false}
+          axisLine={{ stroke: chart.color('border.emphasized') }}
           dataKey={chart.key('kmh')}
           domain={[0, 'dataMax']}
           height={40}
           stroke={chart.color('border')}
-          tickLine={false}
+          minTickGap={24}
+          tick={{ fill: chart.color('fg.muted'), fontSize: 12 }}
+          tickCount={7}
+          tickLine={{ stroke: chart.color('border.emphasized') }}
+          tickMargin={8}
           type="number"
           label={{
             fill: chart.color('fg.muted'),
@@ -53,10 +63,11 @@ export default function GearingChartShell({
         />
 
         <YAxis
-          axisLine={false}
+          axisLine={{ stroke: chart.color('border.emphasized') }}
           domain={yDomain}
           stroke={chart.color('border')}
-          tickLine={false}
+          tick={{ fill: chart.color('fg.muted'), fontSize: 12 }}
+          tickLine={{ stroke: chart.color('border.emphasized') }}
           tickMargin={10}
           width={72}
           label={{
@@ -79,7 +90,10 @@ export default function GearingChartShell({
               labelFormatter={(label) => `${label} km/h`}
             />
           }
-          cursor={false}
+          cursor={{
+            stroke: chart.color('fg.muted'),
+            strokeDasharray: '3 3',
+          }}
         />
 
         {children}

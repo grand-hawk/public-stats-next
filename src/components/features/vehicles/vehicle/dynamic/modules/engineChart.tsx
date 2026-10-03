@@ -67,7 +67,11 @@ export default function EngineChart({
         margin={{ bottom: 0, left: 0, right: 0, top: 20 }}
         responsive
       >
-        <CartesianGrid stroke={chart.color('border')} vertical={false} />
+        <CartesianGrid
+          stroke={chart.color('border.emphasized')}
+          strokeDasharray="3 3"
+          yAxisId="power"
+        />
 
         {hasOutputTorque && (
           <ReferenceLine
@@ -85,12 +89,16 @@ export default function EngineChart({
         )}
 
         <XAxis
-          axisLine={false}
+          axisLine={{ stroke: chart.color('border.emphasized') }}
           dataKey={chart.key('rpm')}
           domain={['dataMin', 'dataMax']}
           height={40}
           stroke={chart.color('border')}
-          tickLine={false}
+          minTickGap={24}
+          tick={{ fill: chart.color('fg.muted'), fontSize: 12 }}
+          tickCount={7}
+          tickLine={{ stroke: chart.color('border.emphasized') }}
+          tickMargin={8}
           type="number"
           label={{
             fill: chart.color('fg.muted'),
@@ -99,9 +107,10 @@ export default function EngineChart({
           }}
         />
         <YAxis
-          axisLine={false}
+          axisLine={{ stroke: chart.color('border.emphasized') }}
           stroke={chart.color('border')}
-          tickLine={false}
+          tick={{ fill: chart.color('fg.muted'), fontSize: 12 }}
+          tickLine={{ stroke: chart.color('border.emphasized') }}
           tickMargin={10}
           width={64}
           yAxisId="power"
@@ -114,10 +123,11 @@ export default function EngineChart({
           }}
         />
         <YAxis
-          axisLine={false}
+          axisLine={{ stroke: chart.color('border.emphasized') }}
           orientation="right"
           stroke={chart.color('border')}
-          tickLine={false}
+          tick={{ fill: chart.color('fg.muted'), fontSize: 12 }}
+          tickLine={{ stroke: chart.color('border.emphasized') }}
           tickMargin={10}
           width={72}
           yAxisId="torque"
@@ -142,7 +152,10 @@ export default function EngineChart({
               labelFormatter={(label) => `${label} RPM`}
             />
           }
-          cursor={false}
+          cursor={{
+            stroke: chart.color('fg.muted'),
+            strokeDasharray: '3 3',
+          }}
         />
 
         <Legend content={<Chart.Legend />} />
