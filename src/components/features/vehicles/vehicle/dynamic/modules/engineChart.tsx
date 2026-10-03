@@ -24,7 +24,9 @@ export default function EngineChart({
   points,
 }: {
   idleRPM: number;
-  points: VehiclesPlaceDataVehicleDriveDataMetrics['engine']['points'];
+  points: NonNullable<
+    VehiclesPlaceDataVehicleDriveDataMetrics['engine']
+  >['points'];
 }) {
   const hasOutputTorque = points.some(
     (point) => point.outputTorqueNm !== undefined,

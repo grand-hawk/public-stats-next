@@ -34,13 +34,15 @@ export default function Performance() {
 
   if (!driveData || !metrics) return null;
 
-  // `reverse` is missing from published data despite the schema: keep it optional
   const { acceleration, braking, driveline, grades, pivot, reverse } = metrics;
-  const gradeSpeeds = [
-    [10, grades.at10.kmh],
-    [30, grades.at30.kmh],
-    [60, grades.at60.kmh],
-  ] as const;
+
+  const gradeSpeeds = grades
+    ? ([
+        [10, grades.at10.kmh],
+        [30, grades.at30.kmh],
+        [60, grades.at60.kmh],
+      ] as const)
+    : [];
 
   return (
     <>
@@ -54,7 +56,8 @@ export default function Performance() {
         withAnchor
       >
         <Stack gap={4}>
-          {acceleration.curve.length > 0 &&
+          {acceleration &&
+            acceleration.curve.length > 0 &&
             !!acceleration.curveIntervalSeconds && (
               <ChartCard title="Acceleration">
                 <AccelerationChart
@@ -67,7 +70,7 @@ export default function Performance() {
             )}
 
           <StatsRoot>
-            {acceleration.to30 !== undefined && (
+            {acceleration?.to30 !== undefined && (
               <StatsRow>
                 <StatsCell>0–30 km/h</StatsCell>
                 <StatsCell>
@@ -75,7 +78,7 @@ export default function Performance() {
                 </StatsCell>
               </StatsRow>
             )}
-            {acceleration.to50 !== undefined && (
+            {acceleration?.to50 !== undefined && (
               <StatsRow>
                 <StatsCell>0–50 km/h</StatsCell>
                 <StatsCell>
@@ -91,7 +94,7 @@ export default function Performance() {
                 </StatsCell>
               </StatsRow>
             )}
-            {acceleration.toTop !== undefined && (
+            {acceleration?.toTop !== undefined && (
               <StatsRow>
                 <StatsCell>0–Vmax</StatsCell>
                 <StatsCell>
@@ -117,67 +120,71 @@ export default function Performance() {
             )}
           </StatsRoot>
 
-          <Group moduleId={driveData.id} title="Braking">
-            <StatsRow>
-              <StatsCell>Deceleration</StatsCell>
-              <StatsCell>
-                <FormatNumber
-                  maximumFractionDigits={1}
-                  value={braking.decelMs2}
-                />{' '}
-                m/s²
-              </StatsCell>
-            </StatsRow>
-            <StatsRow>
-              <StatsCell>Vmax–0</StatsCell>
-              <StatsCell>
-                <FormatNumber
-                  maximumFractionDigits={1}
-                  style="unit"
-                  unit="meter"
-                  value={braking.stopFromTopMeters}
-                />
-              </StatsCell>
-            </StatsRow>
-          </Group>
-
-          <Group moduleId={driveData.id} title="Gradeability">
-            <StatsRow>
-              <StatsCell>
-                Max gradient{' '}
-                <InfoTooltip
-                  content="The steepest slope the vehicle can physically climb, limited by traction or available power"
-                  iconProps={{
-                    color: 'fg.muted',
-                  }}
-                />
-              </StatsCell>
-              <StatsCell>
-                <Gradient
-                  degrees={grades.ceiling.degrees}
-                  percent={grades.ceiling.percent}
-                />
-              </StatsCell>
-            </StatsRow>
-            {gradeSpeeds.map(([percent, kmh]) => (
-              <StatsRow key={percent}>
+          {braking && (
+            <Group moduleId={driveData.id} title="Braking">
+              <StatsRow>
+                <StatsCell>Deceleration</StatsCell>
                 <StatsCell>
-                  <Gradient
-                    degrees={degreesOfGrade(percent)}
-                    percent={percent}
-                  />
+                  <FormatNumber
+                    maximumFractionDigits={1}
+                    value={braking.decelMs2}
+                  />{' '}
+                  m/s²
                 </StatsCell>
+              </StatsRow>
+              <StatsRow>
+                <StatsCell>Vmax–0</StatsCell>
                 <StatsCell>
                   <FormatNumber
                     maximumFractionDigits={1}
                     style="unit"
-                    unit="kilometer-per-hour"
-                    value={kmh}
+                    unit="meter"
+                    value={braking.stopFromTopMeters}
                   />
                 </StatsCell>
               </StatsRow>
-            ))}
-          </Group>
+            </Group>
+          )}
+
+          {grades && (
+            <Group moduleId={driveData.id} title="Gradeability">
+              <StatsRow>
+                <StatsCell>
+                  Max gradient{' '}
+                  <InfoTooltip
+                    content="The steepest slope the vehicle can physically climb, limited by traction or available power"
+                    iconProps={{
+                      color: 'fg.muted',
+                    }}
+                  />
+                </StatsCell>
+                <StatsCell>
+                  <Gradient
+                    degrees={grades.ceiling.degrees}
+                    percent={grades.ceiling.percent}
+                  />
+                </StatsCell>
+              </StatsRow>
+              {gradeSpeeds.map(([percent, kmh]) => (
+                <StatsRow key={percent}>
+                  <StatsCell>
+                    <Gradient
+                      degrees={degreesOfGrade(percent)}
+                      percent={percent}
+                    />
+                  </StatsCell>
+                  <StatsCell>
+                    <FormatNumber
+                      maximumFractionDigits={1}
+                      style="unit"
+                      unit="kilometer-per-hour"
+                      value={kmh}
+                    />
+                  </StatsCell>
+                </StatsRow>
+              ))}
+            </Group>
+          )}
 
           {pivot && (
             <Group moduleId={driveData.id} title="Manoeuvrability">

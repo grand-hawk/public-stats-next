@@ -27,6 +27,9 @@ export default function Powertrain() {
   const driveData = getOneModuleOfType('DriveData', assembledModules);
 
   if (!driveData) return null;
+
+  const engineMetrics = driveData.data.metrics?.engine;
+
   return (
     <>
       <SectionMarker name="Powertrain" />
@@ -72,11 +75,11 @@ export default function Powertrain() {
             </StatsRow>
           </StatsRoot>
 
-          {driveData.data.metrics && (
+          {engineMetrics && (
             <ChartCard title="Engine output">
               <EngineChart
-                idleRPM={driveData.data.metrics.engine.idleRPM}
-                points={driveData.data.metrics.engine.points}
+                idleRPM={engineMetrics.idleRPM}
+                points={engineMetrics.points}
               />
             </ChartCard>
           )}

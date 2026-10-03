@@ -11,8 +11,11 @@ import {
 import type { GearingChartRow } from '@/components/features/vehicles/vehicle/dynamic/modules/gearing/chartShell';
 import type { VehiclesPlaceDataVehicleDriveDataMetrics } from '@generated/vehicles';
 
-type Points =
-  VehiclesPlaceDataVehicleDriveDataMetrics['tractiveEffort']['gears'][number]['points'];
+type TractiveEffort = NonNullable<
+  VehiclesPlaceDataVehicleDriveDataMetrics['tractiveEffort']
+>;
+
+type Points = TractiveEffort['gears'][number]['points'];
 
 function pullAt(points: Points, kmh: number) {
   const last = points[points.length - 1];
@@ -36,7 +39,7 @@ export default function TractiveEffortChart({
   vmax,
 }: {
   stepless: boolean;
-  tractiveEffort: VehiclesPlaceDataVehicleDriveDataMetrics['tractiveEffort'];
+  tractiveEffort: TractiveEffort;
   vmax: number;
 }) {
   const { gears, gradeDemands } = tractiveEffort;

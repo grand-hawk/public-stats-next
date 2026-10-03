@@ -9,7 +9,7 @@ import {
 } from '@/components/features/vehicles/vehicle/dynamic/modules/gearing/shared';
 
 import type { GearingChartRow } from '@/components/features/vehicles/vehicle/dynamic/modules/gearing/chartShell';
-import type { VehiclesPlaceDataVehicleDriveDataMetrics } from '@generated/vehicles';
+import type { VehiclesPlaceDataVehicleDriveDataGear } from '@generated/vehicles';
 
 export default function GearingChart({
   gears,
@@ -17,7 +17,7 @@ export default function GearingChart({
   maxRPM,
   vmax,
 }: {
-  gears: VehiclesPlaceDataVehicleDriveDataMetrics['gears']['forward'];
+  gears: VehiclesPlaceDataVehicleDriveDataGear[];
   idleRPM: number;
   maxRPM: number;
   vmax: number;
