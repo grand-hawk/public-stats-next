@@ -1,7 +1,6 @@
 import { Icon } from '@chakra-ui/react';
 import React from 'react';
 import { FaDiscord } from 'react-icons/fa6';
-import { GiArtilleryShell } from 'react-icons/gi';
 import { ImTable } from 'react-icons/im';
 import {
   LuGitCompareArrows,
@@ -20,7 +19,9 @@ import {
 } from 'react-icons/md';
 import { TbTank } from 'react-icons/tb';
 
+import ShellIcon from '@/components/features/shells/shellIcon';
 import InfantryIcon from '@/components/icons/classes/infantry';
+import { getShellIcon } from '@/components/icons/shells';
 
 import type { IconProps } from '@chakra-ui/react';
 import type { ReactNode } from 'react';
@@ -55,7 +56,9 @@ export const tabs: Record<string, Tab> = {
     description:
       'View shell performance, penetration values, and damage characteristics.',
     icon: (props: IconProps) => (
-      <Icon as={GiArtilleryShell} height={5} width={5} {...props} />
+      <Icon asChild height="28px" width="28px" {...props}>
+        <ShellIcon alt="" size={28} src={getShellIcon('AP')!} />
+      </Icon>
     ),
   },
   infantryWeapons: {
@@ -65,7 +68,12 @@ export const tabs: Record<string, Tab> = {
     description:
       'Penetration, damage and availability of every rifle, machine gun and launcher.',
     icon: (props: IconProps) => (
-      <InfantryIcon height={6} width={6} {...props} />
+      <InfantryIcon
+        height="28px"
+        width="28px"
+        transform="rotate(35deg) scaleX(-1)"
+        {...props}
+      />
     ),
   },
   placeables: {
