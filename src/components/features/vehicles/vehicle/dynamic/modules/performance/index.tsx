@@ -86,14 +86,6 @@ export default function Performance() {
                 </StatsCell>
               </StatsRow>
             )}
-            {acceleration?.to32mph !== undefined && (
-              <StatsRow>
-                <StatsCell>0–32 mph</StatsCell>
-                <StatsCell>
-                  <Seconds value={acceleration.to32mph} />
-                </StatsCell>
-              </StatsRow>
-            )}
             {acceleration?.toTop !== undefined && (
               <StatsRow>
                 <StatsCell>0–Vmax</StatsCell>
