@@ -9,6 +9,7 @@ import {
 } from '@/utils/alterations';
 import { capitalizeFirst } from '@/utils/capitalizeFirst';
 import { obtainmentLabel } from '@/utils/obtainment';
+import { TRANSMISSION_TYPE_LABELS } from '@/utils/transmissionType';
 import { getTurretsWithNamesSorted } from '@/utils/turrets';
 
 import type { SectionDef, StatDef } from '@/components/features/compare/types';
@@ -165,6 +166,11 @@ export function buildVehicleSections(): SectionDef<AssembledVehicle>[] {
             PS/t
           </>
         )),
+        driveStat('Transmission', (drive) =>
+          drive.metrics
+            ? TRANSMISSION_TYPE_LABELS[drive.metrics.driveline.transmissionType]
+            : '—',
+        ),
         driveStat('Forward gears', (drive) => drive.transmission.forwardGears),
         driveStat('Reverse gears', (drive) => drive.transmission.reverseGears),
         driveStat('Neutral steering', (drive) =>

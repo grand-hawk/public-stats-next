@@ -11,6 +11,7 @@ import { StatsCell, StatsRoot, StatsRow } from '@/components/wiki/stats';
 import TitledCard from '@/components/wiki/titledCard';
 import { useDynamicData } from '@/hooks/providers/dynamicData';
 import { getOneModuleOfType } from '@/utils/alterations';
+import { TRANSMISSION_TYPE_LABELS } from '@/utils/transmissionType';
 
 const EngineChart = dynamic(
   () =>
@@ -102,6 +103,18 @@ export default function Powertrain() {
                 )}
               </StatsCell>
             </StatsRow>
+            {driveData.data.metrics && (
+              <StatsRow withPaddingLeft>
+                <StatsCell>Type</StatsCell>
+                <StatsCell>
+                  {
+                    TRANSMISSION_TYPE_LABELS[
+                      driveData.data.metrics.driveline.transmissionType
+                    ]
+                  }
+                </StatsCell>
+              </StatsRow>
+            )}
             <StatsRow withPaddingLeft>
               <StatsCell>Forward gears</StatsCell>
               <StatsCell>{driveData.data.transmission.forwardGears}</StatsCell>
