@@ -137,12 +137,6 @@ export default function Powertrain() {
                 <StatsCell>Yes</StatsCell>
               </StatsRow>
             )}
-            {driveData.data.transmission.automatic && (
-              <StatsRow withPaddingLeft>
-                <StatsCell>Automatic gearbox</StatsCell>
-                <StatsCell>Yes</StatsCell>
-              </StatsRow>
-            )}
           </StatsRoot>
 
           <Gearing />
