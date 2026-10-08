@@ -24,15 +24,6 @@ const GearingChart = dynamic(
   },
 );
 
-const TractiveEffortChart = dynamic(
-  () =>
-    import('@/components/features/vehicles/vehicle/dynamic/modules/gearing/tractiveEffortChart'),
-  {
-    ssr: false,
-    loading: () => <XSSpinner />,
-  },
-);
-
 const REDLINE_TOOLTIP =
   'Speed each gear reaches at maximum RPM. Top gear sits slightly above Vmax, which the vehicle reaches before redline';
 
@@ -47,9 +38,9 @@ export default function Gearing() {
 
   if (!driveData || !metrics) return null;
 
-  const { driveline, engine, gears, tractiveEffort } = metrics;
+  const { driveline, engine, gears } = metrics;
 
-  if (!gears && !tractiveEffort?.gears.length) return null;
+  if (!gears) return null;
 
   const vmax = driveData.data.engine.forwardSpeed;
 
@@ -129,19 +120,6 @@ export default function Gearing() {
               gears={gears.forward}
               idleRPM={engine.idleRPM}
               maxRPM={engine.maxRPM}
-              vmax={vmax}
-            />
-          </ChartCard>
-        )}
-
-        {tractiveEffort && tractiveEffort.gears.length > 0 && (
-          <ChartCard
-            title="Pull"
-            tooltip="Pull is the force at the tracks, as a multiple of the vehicle's weight. A gear can hold a grade wherever its curve sits above that grade's dashed line"
-          >
-            <TractiveEffortChart
-              stepless={driveline.stepless}
-              tractiveEffort={tractiveEffort}
               vmax={vmax}
             />
           </ChartCard>
