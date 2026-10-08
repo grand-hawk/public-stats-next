@@ -34,7 +34,7 @@ export default function Performance() {
 
   if (!driveData || !metrics) return null;
 
-  const { acceleration, braking, driveline, grades, pivot, reverse } = metrics;
+  const { acceleration, braking, grades, pivot, reverse } = metrics;
 
   const gradeSpeeds = grades
     ? ([
@@ -102,28 +102,7 @@ export default function Performance() {
                 </StatsCell>
               </StatsRow>
             )}
-            {driveline.shiftSeconds > 0 && (
-              <StatsRow>
-                <StatsCell>Shift time</StatsCell>
-                <StatsCell>
-                  <Seconds value={driveline.shiftSeconds} />
-                </StatsCell>
-              </StatsRow>
-            )}
-          </StatsRoot>
-
-          {braking && (
-            <Group moduleId={driveData.id} title="Braking">
-              <StatsRow>
-                <StatsCell>Deceleration</StatsCell>
-                <StatsCell>
-                  <FormatNumber
-                    maximumFractionDigits={1}
-                    value={braking.decelMs2}
-                  />{' '}
-                  m/s²
-                </StatsCell>
-              </StatsRow>
+            {braking && (
               <StatsRow>
                 <StatsCell>Vmax–0</StatsCell>
                 <StatsCell>
@@ -135,8 +114,8 @@ export default function Performance() {
                   />
                 </StatsCell>
               </StatsRow>
-            </Group>
-          )}
+            )}
+          </StatsRoot>
 
           {grades && (
             <Group moduleId={driveData.id} title="Gradeability">
