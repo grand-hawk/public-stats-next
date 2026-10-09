@@ -40,6 +40,7 @@ export function listVehicles(placeId: PlaceId): ListVehicle[] {
   return Object.entries(vehiclesData)
     .filter(([, data]) => !data.info.unlisted)
     .map(([name, data]) => ({
+      alias: data.info.alias,
       name,
       new: isRecentlyAdded(data.info.addedDate),
       premium: data.info.premium?.type,

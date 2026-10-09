@@ -25,6 +25,7 @@ export default function VehicleHeader() {
   return (
     <Stack gap={4}>
       <ArticleTitle
+        alias={vehicle.info.alias}
         id="vehicle-page-title"
         title={vehicle.info.name}
         actions={

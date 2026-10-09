@@ -24,9 +24,12 @@ export default function VehiclesSearchSidebar() {
   });
 
   const simplifiedNames = React.useMemo(() => {
-    const map = new Map<string, string>();
+    const map = new Map<string, string[]>();
     for (const vehicle of vehicleList) {
-      map.set(vehicle.slug, simplifyString(vehicle.name));
+      map.set(
+        vehicle.slug,
+        [vehicle.name, vehicle.alias ?? ''].map(simplifyString).filter(Boolean),
+      );
     }
     return map;
   }, [vehicleList]);
@@ -37,7 +40,9 @@ export default function VehiclesSearchSidebar() {
     const simplifiedQuery = simplifyString(deferredQuery);
 
     return vehicleList.filter((vehicle) =>
-      simplifiedNames.get(vehicle.slug)!.includes(simplifiedQuery),
+      simplifiedNames
+        .get(vehicle.slug)!
+        .some((name) => name.includes(simplifiedQuery)),
     );
   }, [vehicleList, deferredQuery, simplifiedNames]);
 

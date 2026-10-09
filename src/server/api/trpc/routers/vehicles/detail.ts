@@ -29,7 +29,11 @@ export function getVehicleBySlug(
   const vehiclesPlace = vehicles.data[placeId];
   if (!vehiclesPlace) throw new TRPCError({ code: 'NOT_FOUND' });
 
-  const vehicleName = vehiclesPlace.metadata.slugs[vehicleSlug];
+  const vehicleName =
+    vehiclesPlace.metadata.slugs[vehicleSlug] ??
+    Object.entries(vehiclesPlace.data).find(
+      ([, { info }]) => info.alias && slug(info.alias) === vehicleSlug,
+    )?.[0];
   if (!vehicleName) return null;
 
   const loadoutsPlace = getLoadouts().data[placeId];

@@ -58,7 +58,7 @@ function buildIndex(placeId: PlaceId) {
       subtitle: [info.role, info.team].filter(Boolean).join(' · '),
       href: `/${initials}/vehicles/${info.slug}`,
       page: { type: 'vehicle', name, slug: info.slug },
-      searchText: [name, info.role, info.team, info.type].join(' '),
+      searchText: [name, info.alias, info.role, info.team, info.type].join(' '),
     });
   }
 

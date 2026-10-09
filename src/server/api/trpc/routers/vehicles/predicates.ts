@@ -83,5 +83,7 @@ export function buildVehicleQueryPredicate(
 ): VehiclePredicate {
   const normalizedQuery = input.query ? simplifyString(input.query) : null;
   return (entry) =>
-    !normalizedQuery || entry.simplifiedName.includes(normalizedQuery);
+    !normalizedQuery ||
+    entry.simplifiedName.includes(normalizedQuery) ||
+    !!entry.simplifiedAlias?.includes(normalizedQuery);
 }

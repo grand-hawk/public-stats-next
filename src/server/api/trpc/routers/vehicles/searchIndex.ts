@@ -97,9 +97,11 @@ export function buildSearchIndex(placeId: PlaceId): SearchEntry[] {
             ? Math.max(...powered.map((d) => d.engine.horsepower / d.mass))
             : 0,
         rosters: rosterIndex.get(name) ?? [],
+        simplifiedAlias: data.info.alias && simplifyString(data.info.alias),
         simplifiedName: simplifyString(name),
         supportedClasses: data.info.supportedClasses,
         vehicle: {
+          alias: data.info.alias,
           name,
           new: isRecentlyAdded(data.info.addedDate),
           premium: data.info.premium?.type,

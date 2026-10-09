@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import { useRouter } from 'next/router';
 import React from 'react';
 import stripMarkdown from 'remove-markdown';
 import slug from 'slug';
@@ -26,6 +27,7 @@ export default function PlaceVehicle() {
   const vehicleQuery = useRouterQuery('vehicle')!;
   const vehicleSlug = slug(vehicleQuery);
   const place = usePlace()!;
+  const router = useRouter();
 
   const utils = trpc.useUtils();
   const { isStale, shownSlug: deferredSlug } = useSwapSlug(
@@ -44,6 +46,12 @@ export default function PlaceVehicle() {
     placeId: place.placeId,
     slug: deferredSlug,
   });
+
+  const canonicalSlug = vehicle?.info.slug;
+  React.useEffect(() => {
+    if (isStale || !canonicalSlug || canonicalSlug === deferredSlug) return;
+    router.replace(`/${place.initials}/vehicles/${canonicalSlug}`);
+  }, [canonicalSlug, deferredSlug, isStale, place.initials, router]);
 
   const title = vehicle ? vehicle.info.name : 'Vehicle not found';
   const image = vehicle ? getVehicleImage(vehicle.info.slug) : null;
