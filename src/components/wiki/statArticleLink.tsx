@@ -3,6 +3,7 @@ import NextLink from 'next/link';
 import React from 'react';
 
 import { STAT_ARTICLES } from '@/content/statLinks';
+import { useArticleTitle } from '@/hooks/useArticleTitle';
 import { usePlaceInitials } from '@/hooks/usePlaceInitials';
 
 import type { StatArticleKey } from '@/content/statLinks';
@@ -24,10 +25,14 @@ export default function StatArticleLink({
   children: React.ReactNode;
 }) {
   const initials = usePlaceInitials();
+  const target = STAT_ARTICLES[article];
+  const available = useArticleTitle(target.split('#')[0]) !== undefined;
+
+  if (!available) return children;
 
   return (
     <Box asChild css={LINK_CSS}>
-      <NextLink href={`/${initials}/${STAT_ARTICLES[article]}`} prefetch={false}>
+      <NextLink href={`/${initials}/${target}`} prefetch={false}>
         {children}
       </NextLink>
     </Box>
