@@ -125,19 +125,14 @@ export function assembleModules(
   const selectedLoadoutName =
     loadoutNames.find((name) => enabledAlterations[name]) || null;
 
-  const postLoadoutModules = selectedLoadoutName
-    ? updateModulesFromAlterations(
-        vehicle.modules,
-        {
-          [selectedLoadoutName]:
-            vehicle.alterations.loadouts[selectedLoadoutName],
-        },
-        { [selectedLoadoutName]: true },
-        debug,
-        selectedLoadoutName,
-        definedLoadoutNames,
-      )
-    : vehicle.modules;
+  const postLoadoutModules = updateModulesFromAlterations(
+    vehicle.modules,
+    vehicle.alterations.loadouts,
+    selectedLoadoutName ? { [selectedLoadoutName]: true } : {},
+    debug,
+    selectedLoadoutName,
+    definedLoadoutNames,
+  );
 
   const postAddonModules = updateModulesFromAlterations(
     postLoadoutModules,
