@@ -61,34 +61,36 @@ for (const term of glossary) anchorsBySlug.get(GLOSSARY_SLUG)?.add(term.anchor);
 
 const { placeIds, placeNames, primaryPlace } = getConfig().data;
 const knownPlaces = new Set<string>(placeNames);
-const primaryPlaceId = placeIds[primaryPlace];
 const gameIds = new Set<string>();
-const primaryGameIds = new Set<string>();
-const loadoutGameIds = new Set<string>();
-const loadoutVehicleNames = new Set<string>();
+const placeGameIds = new Map<string, Set<string>>();
+const loadoutGameIds = new Map<string, Set<string>>();
 const teamSlugs = new Set<string>();
 
-for (const loadout of Object.values(
-  getLoadouts().data[primaryPlaceId]?.data ?? {},
-)) {
-  for (const name of Object.keys(loadout?.vehicles ?? {})) {
-    loadoutVehicleNames.add(name);
+for (const placeName of placeNames) {
+  const placeId = placeIds[placeName];
+  const loadoutVehicleNames = new Set<string>();
+  for (const loadout of Object.values(
+    getLoadouts().data[placeId]?.data ?? {},
+  )) {
+    for (const name of Object.keys(loadout?.vehicles ?? {})) {
+      loadoutVehicleNames.add(name);
+    }
   }
-}
 
-for (const [placeId, place] of Object.entries(getVehicles().data ?? {})) {
-  const placeVehicles = (place?.data ?? {}) as Record<
+  const ids = new Set<string>();
+  const loadoutIds = new Set<string>();
+  const placeVehicles = (getVehicles().data?.[placeId]?.data ?? {}) as Record<
     string,
     VehiclesPlaceDataVehicle
   >;
   for (const [name, vehicle] of Object.entries(placeVehicles)) {
     gameIds.add(vehicle.info.gameId);
-    if (placeId === primaryPlaceId && loadoutVehicleNames.has(name)) {
-      loadoutGameIds.add(vehicle.info.gameId);
-    }
-    if (placeId === primaryPlaceId) primaryGameIds.add(vehicle.info.gameId);
+    ids.add(vehicle.info.gameId);
+    if (loadoutVehicleNames.has(name)) loadoutIds.add(vehicle.info.gameId);
     if (vehicle.info.team) teamSlugs.add(slugify(vehicle.info.team));
   }
+  placeGameIds.set(placeName, ids);
+  loadoutGameIds.set(placeName, loadoutIds);
 }
 for (const place of Object.values(getLoadouts().data ?? {})) {
   for (const team of place?.metadata?.teams ?? []) teamSlugs.add(slugify(team));
@@ -126,7 +128,8 @@ function claimSlug(slug: string, file: string, kind: string) {
     note(errors, file, `${kind} "${slug}" collides with a reserved route`);
   }
   const owner = seenSlugs.get(slug);
-  if (owner) note(errors, file, `${kind} "${slug}" is already used by ${owner}`);
+  if (owner)
+    {note(errors, file, `${kind} "${slug}" is already used by ${owner}`);}
   else seenSlugs.set(slug, file);
 }
 
@@ -212,13 +215,23 @@ for (const article of articles) {
 
   if (!hasGameData) continue;
 
+  const articlePlaces =
+    article.meta.places.length > 0 ? article.meta.places : [primaryPlace];
   for (const id of article.refs.vehicles) {
     if (!gameIds.has(id)) {
       note(warnings, file, `Vehicle id "${id}" does not exist in any place`);
-    } else if (!primaryGameIds.has(id)) {
-      note(warnings, file, `Vehicle id "${id}" is not in ${primaryPlace}`);
-    } else if (!loadoutGameIds.has(id)) {
-      note(errors, file, `Vehicle "${id}" is not in any public loadout`);
+      continue;
+    }
+    for (const place of articlePlaces) {
+      if (!placeGameIds.get(place)?.has(id)) {
+        note(warnings, file, `Vehicle id "${id}" is not in ${place}`);
+      } else if (!loadoutGameIds.get(place)?.has(id)) {
+        note(
+          errors,
+          file,
+          `Vehicle "${id}" is not in a public loadout in ${place}`,
+        );
+      }
     }
   }
 
