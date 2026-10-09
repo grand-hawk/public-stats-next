@@ -53,7 +53,11 @@ export default function Powertrain() {
             </StatsRow>
             <StatsRow withPaddingLeft>
               <StatsCell>Type</StatsCell>
-              <StatsCell>{driveData.data.engine.type}</StatsCell>
+              <StatsCell>
+                {/^(Diesel|Gasoline|Turbine)/.exec(
+                  driveData.data.engine.type,
+                )?.[1] ?? driveData.data.engine.type}
+              </StatsCell>
             </StatsRow>
             <StatsRow withPaddingLeft>
               <StatsCell>Max RPM</StatsCell>
