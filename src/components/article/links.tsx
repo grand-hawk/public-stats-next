@@ -27,9 +27,14 @@ function InternalLink({
   );
 }
 
-export function VehicleLink({ children, id }: LinkProps & { id: string }) {
+export function VehicleLink({
+  children,
+  id,
+  plain,
+}: LinkProps & { id: string; plain?: boolean }) {
   const vehicle = useArticle().refs.vehicles[id];
   if (!vehicle) return <>{children ?? id}</>;
+  if (plain) return <>{children ?? vehicle.name}</>;
 
   return (
     <InternalLink path={`/vehicles/${vehicle.slug}`}>
