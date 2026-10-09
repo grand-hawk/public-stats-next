@@ -140,7 +140,8 @@ export default function Powertrain() {
                 </StatsCell>
               </StatsRow>
             )}
-            {driveData.data.transmission.neutralSteering && (
+            {(driveData.data.metrics?.driveline.canPivot ??
+              driveData.data.transmission.neutralSteering) && (
               <StatsRow withPaddingLeft>
                 <StatsCell>
                   <StatArticleLink article="neutralSteering">
