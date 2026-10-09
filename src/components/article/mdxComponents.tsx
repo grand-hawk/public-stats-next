@@ -1,3 +1,5 @@
+import { Kbd } from '@chakra-ui/react';
+
 import ApsTable from '@/components/article/apsTable';
 import Callout from '@/components/article/callout';
 import {
@@ -39,6 +41,7 @@ export const articleMdxComponents: MDXComponents = {
   Formula,
   GlossaryList,
   ImageNeeded,
+  Kbd,
   MainArticle,
   ShellLink,
   ShellList,
