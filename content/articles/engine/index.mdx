@@ -1,0 +1,51 @@
+---
+title: Engine
+summary: How vehicle engines work, covering diesel, gasoline and gas turbine engines, power-to-weight and engine braking.
+group: vehicles
+order: 10
+nav: true
+places:
+  - Rainy Valley
+updated: 2026-10-09
+---
+
+The **engine** makes the power that moves a vehicle. The Powertrain card on a vehicle page lists the engine with its type, its highest engine speed, its horsepower and its power-to-weight ratio. The Engine output chart shows its torque and power across that speed range. The <WikiLink to="transmission">transmission</WikiLink> turns that power into pulling force at the tracks or wheels.
+
+## Types of engine
+
+Every engine is a diesel, a gasoline engine or a gas turbine. Many engines also have their own torque curve, which is what the Engine output chart shows.
+
+|                   | Diesel                                                          | Gasoline                                                            | Gas turbine                                           |
+| ----------------- | --------------------------------------------------------------- | ------------------------------------------------------------------- | ----------------------------------------------------- |
+| Strongest pull    | At 65% of its top engine speed                                  | At 70% of its top engine speed                                      | From a standstill                                     |
+| Idle to full revs | About 1 second                                                  | About half a second                                                 | 2.5 to 4.5 seconds                                    |
+| Engine braking    | Strong                                                          | Medium                                                              | Almost none                                           |
+| Examples          | <VehicleLink id="T-72B" />, <VehicleLink id="Chieftain Mk 5" /> | <VehicleLink id="Panther G" />, <VehicleLink id="M4A2E8 Sherman" /> | <VehicleLink id="M1A1" />, <VehicleLink id="T-80U" /> |
+
+A diesel or gasoline engine pulls well from idle, and the vehicle moves off the moment you press <Kbd>W</Kbd>. A gas turbine does not.
+
+## Gas turbines
+
+A gas turbine has two halves. The gas generator burns the fuel and has to spool up to speed. The power turbine drives the gearbox and is not tied to the gas generator. At idle the gas generator makes almost nothing, and it takes time to wind up when you press <Kbd>W</Kbd>: about 2.5 seconds on the [M1 Abrams family](/vehicles/families/m1-abrams) and 4.5 seconds on the [T-80 family](/vehicles/families/t-80).
+
+Once spooled up, a turbine pulls hardest when the vehicle is barely moving. At a standstill the M1 gets 200% of its rated torque from the turbine alone, and the T-80 210%. The extra fades as the vehicle picks up speed.
+
+For example, the <VehicleLink id="M1 Abrams" /> and the <VehicleLink id="Leopard 2A4" /> have almost the same power-to-weight ratio. The <VehicleLink id="Leopard 2A4" plain /> reaches 30 km/h in 4.4 seconds and pivots 180° in 5.9 seconds. The M1 takes 6.1 and 9.0 seconds. Part of the gap is the turbine spooling up, which a diesel never has to do.
+
+Turbines barely slow the vehicle when you lift off.
+
+## Power-to-weight ratio
+
+The power-to-weight ratio is the engine's horsepower divided by the vehicle's weight in tonnes. It is the best single guide to how quickly a vehicle accelerates and how fast it climbs. A tank with 27 hp/t, such as the <VehicleLink id="Leopard 2A4" plain />, pulls away far harder than one with 13 hp/t, such as the <VehicleLink id="Panther G" plain />.
+
+The horsepower on the Powertrain card is the engine's rated figure. Older ratings were measured on a bare engine, and the engine delivers less once it is fitted in the vehicle. A diesel without its own curve delivers 85% of its rating, and a gasoline engine without one 80%. Engines with their own curve use the figure for that engine.
+
+## Engine braking
+
+Lifting off the throttle lets the engine slow the vehicle down. A diesel brakes hard, a gasoline engine less, and a gas turbine hardly at all. An automatic gearbox whose torque converter is slipping passes on only 30% of it. Gearboxes with a retarder add a strong brake of their own (see <WikiLink to="transmission#retarder">retarder</WikiLink>).
+
+Rolling resistance also slows every vehicle down, tracked vehicles about twice as much as wheeled ones. A vehicle that has lost a track rolls on bare road wheels and is dragged to a stop.
+
+## Damage
+
+A damaged engine or transmission pulls with less force. Pulling force, engine braking and pivoting force all scale with the health of both. For example, an engine at 50% health with an undamaged transmission gives 50% of the pull, and with the transmission also at 50% it gives 25%. A destroyed engine gives none.

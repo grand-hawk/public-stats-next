@@ -20,6 +20,7 @@ export const articleModules: Record<string, ArticleModule> = {
   ),
   conquest: dynamic(() => import('../../content/articles/conquest/index.mdx')),
   damage: dynamic(() => import('../../content/articles/damage/index.mdx')),
+  engine: dynamic(() => import('../../content/articles/engine/index.mdx')),
   'explosive-reactive-armour': dynamic(
     () => import('../../content/articles/explosive-reactive-armour/index.mdx'),
   ),
@@ -40,6 +41,7 @@ export const articleModules: Record<string, ArticleModule> = {
   'slat-armour': dynamic(
     () => import('../../content/articles/slat-armour/index.mdx'),
   ),
+  steering: dynamic(() => import('../../content/articles/steering/index.mdx')),
   'tandem-warhead': dynamic(
     () => import('../../content/articles/tandem-warhead/index.mdx'),
   ),
@@ -50,4 +52,7 @@ export const articleModules: Record<string, ArticleModule> = {
     () => import('../../content/articles/ticket-conquest/index.mdx'),
   ),
   tier: dynamic(() => import('../../content/articles/tier/index.mdx')),
+  transmission: dynamic(
+    () => import('../../content/articles/transmission/index.mdx'),
+  ),
 };

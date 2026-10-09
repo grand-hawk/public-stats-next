@@ -1,0 +1,111 @@
+---
+title: Transmission
+summary: How vehicle gearboxes work, covering manual, automatic, continuously variable and electric drives, shifting, gear ratios, torque converters, retarders and how steep a slope a vehicle can climb.
+group: vehicles
+order: 20
+nav: true
+places:
+  - Rainy Valley
+aliases:
+  - gearbox
+  - gradeability
+updated: 2026-10-09
+---
+
+The **transmission** (gearbox) turns the power of the <WikiLink to="engine">engine</WikiLink> into pulling force at the tracks or wheels. Every vehicle has its own gearbox, with its own gears and way of shifting. The Powertrain card on a vehicle page names the transmission, its type and its number of gears. The Gearing card lists every gear with its ratio and the fastest the vehicle goes in it.
+
+## Shifting
+
+<Kbd>E</Kbd> shifts up and <Kbd>Q</Kbd> shifts down. The gear lever on screen
+can also be dragged through its gate while holding <Kbd>Left Shift</Kbd>, and
+<Kbd>Left Ctrl</Kbd> works the range lever on vehicles that have one.
+<Kbd>W</Kbd> is the accelerator in every gear, including reverse. <Kbd>S</Kbd>
+is only the brake: it never selects reverse. Reverse sits below neutral, and
+<Kbd>W</Kbd> drives backward in it.
+
+A gearbox refuses a downshift that would push the engine past its top speed. You cannot drop from top gear into 1st to brake. The downshift goes through once the vehicle has slowed to the lower gear's top speed. A shift into reverse while moving forward, or the other way round, is refused for the same reason.
+
+A vehicle spawned for a solo crew shifts by itself, whatever its gearbox. <Kbd>S</Kbd> then brakes to a stop and backs up.
+
+## Gears
+
+Every gear has a top speed, shown on the Gearing card. It is where the engine reaches its highest speed in that gear. In top gear that is the vehicle's Vmax. A lower gear pulls harder and tops out sooner.
+
+On most tanks, 1st gear is low enough to pull 65% of the vehicle's weight, enough for the steepest slopes a tank can climb. Wheeled vehicles have a normal 1st gear instead.
+
+Most vehicles have one or two reverse gears. A few have many more, such as the <VehicleLink id="T-84U" />: its reversing gear gives it five reverse gears and up to 31 km/h backwards.
+
+## Types of transmission
+
+| Type                       | How it drives                                                     | Examples                                                                                      |
+| -------------------------- | ----------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
+| Manual                     | You pick every gear, and the drive cuts out while you shift       | <VehicleLink id="T-34" />, <VehicleLink id="T-72B" />, <VehicleLink id="M4A2E8 Sherman" />    |
+| Automated manual           | A manual gearbox that shifts itself                               | <VehicleLink id="T-90M" />, <VehicleLink id="T-14 Armata" />                                  |
+| Torque converter automatic | Shifts itself, and multiplies the engine's pull when moving off   | <VehicleLink id="Type 90" />, <VehicleLink id="Merkava Mk.4M" />, <VehicleLink id="ZTZ99A" /> |
+| Hydromechanical            | No fixed gears, with a few speed ranges                           | <VehicleLink id="M2A2" />, <VehicleLink id="M270" />                                          |
+| CVT                        | No fixed gears at all                                             | <VehicleLink id="Abrams X" />, <VehicleLink id="Object 450" />                                |
+| Electric                   | The engine runs a generator, and electric motors drive the tracks | <VehicleLink id="Maus" />, <VehicleLink id="Tiger P" />, <VehicleLink id="Elefant" />         |
+
+### Manual
+
+A manual gearbox stays in the gear you pick. Starting in too high a gear bogs the engine down to 12% of its pull.
+
+The clutch slips while the vehicle pulls away. Lifting off in gear lets the vehicle slow to a crawl at idle instead of stopping. Below that crawl nothing holds the vehicle. On a slope it rolls back until you brake.
+
+Some vehicles shift by hand through an H-shaped gate. The <VehicleLink id="T-90M" plain />'s automatic shifting will not drop into 6th, 5th or 4th when the engine would over-rev, and leaves the lower gears to you.
+
+### Automatic
+
+An automatic gearbox has a selector instead of single gears. The usual one is R, N and D: <Kbd>E</Kbd> moves from R to N to D, and <Kbd>Q</Kbd> back. In D the gearbox shifts up and down by itself. It drops a gear when you floor the throttle and the lower gear pulls harder. It does not shift up while braking.
+
+Some vehicles have more positions, and each one limits which gears the gearbox can use.
+
+| Vehicle                                          | Positions                                                                          |
+| ------------------------------------------------ | ---------------------------------------------------------------------------------- |
+| [M1 Abrams family](/vehicles/families/m1-abrams) | D uses gears 2 to 4 and moves off in 2nd. L uses gears 1 to 4 and moves off in 1st |
+| <VehicleLink id="GTK Boxer FLW 200" />           | D uses gears 2 to 7 and moves off in 2nd. 1 holds 1st                              |
+| <VehicleLink id="Type 10" />                     | D uses every range. L holds the first range                                        |
+| <VehicleLink id="M113" />                        | 1-3, 2-3, 1-2 and 1                                                                |
+
+An automatic in gear with the pedal up creeps forward at walking pace. Stopped on a slope in gear, it holds the vehicle without the brake.
+
+### Torque converter
+
+A torque converter is a fluid coupling between the engine and the gearbox. While the vehicle is moving off, it multiplies the engine's pull. The figure is largest at a standstill and fades out as the vehicle speeds up. Some gearboxes then lock the converter up to stop it slipping. The Allison CD-850 never locks, and always loses a little pull to slip.
+
+| Gearbox                                                                            | Pull at a standstill |
+| ---------------------------------------------------------------------------------- | -------------------- |
+| GM Torqmatic (<VehicleLink id="M18 Hellcat" />, <VehicleLink id="M26 Pershing" />) | 480%                 |
+| Allison CD-850 (<VehicleLink id="M48 Patton" />)                                   | 400%                 |
+| ZF 4 HP 250 (<VehicleLink id="Leopard 1A5" />)                                     | 280%                 |
+| BMP-3 hydromechanical (<VehicleLink id="BMP-3" />)                                 | 270%                 |
+| RENK HSWL 354 (<VehicleLink id="Leopard 2A4" />)                                   | 250%                 |
+| SNT Dynamics EST15K (<VehicleLink id="K2" />)                                      | 230%                 |
+| David Brown TN54E (<VehicleLink id="Challenger 2" />)                              | 220%                 |
+
+The <VehicleLink id="M1 Abrams" /> has an Allison X1100 at 220%, and the extra pull of its gas turbine at a standstill comes on top of that (see <WikiLink to="engine#gas-turbines">gas turbines</WikiLink>).
+
+### Continuously variable and hydromechanical
+
+These gearboxes have no fixed gears. The engine stays at the speed that gives the power you ask for, and the drive never cuts out. A hydromechanical gearbox still has a few speed ranges. On the [M2 Bradley family](/vehicles/families/m2-bradley), L holds the first range, which keeps speed low and brakes hard when you lift off.
+
+They neither creep nor roll back: in D they hold the vehicle on a slope.
+
+### Electric drive
+
+With electric drive, the engine turns a generator and an electric motor drives each track. Engine speed follows the throttle, not the vehicle's speed. There are no gears and no shifts. Each track has its own motor, which also steers the vehicle.
+
+## Retarder
+
+A retarder is a brake built into the gearbox. When you lift off, it makes engine braking 250% as strong. The RENK HSWL gearboxes of the [Leopard 2 family](/vehicles/families/leopard-2), the <VehicleLink id="Panther KF51" />, the <VehicleLink id="PUMA IFV" /> and the <VehicleLink id="KF41 Lynx" /> have one, as does the <VehicleLink id="Leclerc S21" />.
+
+## Gradeability
+
+Gradeability is how steep a slope a vehicle can climb. The steepest slope has one of two limits:
+
+| Limit    | What it means                                                      |
+| -------- | ------------------------------------------------------------------ |
+| Traction | The tracks or wheels slip before the engine runs out of pull       |
+| Power    | The engine and gearbox cannot pull the vehicle up anything steeper |
+
+Some vehicles can keep climbing a slope they cannot start on. When a vehicle with a manual gearbox pulls away, its engine runs close to idle, where it pulls less than at speed. If it stops on a steep slope, it may not be able to move off again. A torque converter or a gas turbine does not have this problem: both pull hardest from a standstill.

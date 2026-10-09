@@ -1,0 +1,89 @@
+---
+title: Steering
+summary: How vehicles turn, covering the steering controls, neutral steering, each type of tracked steering, wheeled steering and broken tracks.
+group: vehicles
+order: 30
+nav: true
+places:
+  - Rainy Valley
+updated: 2026-10-09
+---
+
+**Steering** is how a vehicle turns. A tracked vehicle turns by running its inner track slower than its outer track, and a wheeled vehicle turns its wheels. The Powertrain card on a vehicle page names the steering of each vehicle. How tight it turns comes from that steering, the gear and the speed, not from a set figure. The <WikiLink to="transmission">transmission</WikiLink> and the steering work together: on many tanks the gear you are in changes the turn.
+
+## Controls
+
+| Keys                                                                                   | In gear                                                                                        | In neutral                           |
+| -------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ------------------------------------ |
+| <span style={{ whiteSpace: 'nowrap' }}><Kbd>W</Kbd> + <Kbd>A</Kbd>/<Kbd>D</Kbd></span> | Drives and turns                                                                               | Neutral steers, on vehicles that can |
+| <span style={{ whiteSpace: 'nowrap' }}><Kbd>A</Kbd>/<Kbd>D</Kbd> alone</span>          | The outer track drives and the inner track is braked. The vehicle turns around its inner track | Neutral steers, on vehicles that can |
+| <span style={{ whiteSpace: 'nowrap' }}><Kbd>S</Kbd> + <Kbd>A</Kbd>/<Kbd>D</Kbd></span> | Brakes and turns as hard as the steering allows                                                | Brakes                               |
+
+<Kbd>A</Kbd>/<Kbd>D</Kbd> alone gives the tightest turn a tracked vehicle has in
+gear, and from a standstill it swings the vehicle around its inner track. It
+also scrubs off speed. <Kbd>W</Kbd> + <Kbd>A</Kbd>/<Kbd>D</Kbd> keeps the
+vehicle driving through the turn.
+
+A gamepad stick or the touch thumbstick moves the steering only as far as you push it, which gives a wider turn than the keys.
+
+Tracks grip sideways less well than tyres. A tracked vehicle turned hard at speed slides wide of the turn its steering asks for, and the turn costs it speed.
+
+## Neutral steering
+
+Neutral steering turns a tracked vehicle about its centre: the outer track runs forward and the inner track runs backward. Select neutral and hold <Kbd>A</Kbd> or <Kbd>D</Kbd>. The Powertrain card shows Neutral steering for the vehicles that can, and the Manoeuvrability group gives their pivot rate.
+
+On vehicles with a hydrostatic differential, holding <Kbd>W</Kbd> as well neutral steers faster.
+
+## Types of tracked steering
+
+### Clutch-brake steering
+
+The steering lever first disconnects the inner track from the engine, then brakes it. A hard turn brakes the inner track and the vehicle loses speed. <Kbd>W</Kbd> + <Kbd>A</Kbd>/<Kbd>D</Kbd> uses a gentler turn that depends on the gear. These vehicles cannot neutral steer.
+
+Examples: <VehicleLink id="T-34-85" />, <VehicleLink id="Pz IV H" />, <VehicleLink id="KV-1E" />, <VehicleLink id="BT-5" />.
+
+### Two-stage planetary
+
+The lever has two positions. The first slows the inner track through a reduction gear, which gives the same wide turn in every gear. The second stops the inner track for a tight turn. <Kbd>W</Kbd> + <Kbd>A</Kbd>/<Kbd>D</Kbd> uses the first position, except in 1st gear, where it uses the second. <Kbd>A</Kbd>/<Kbd>D</Kbd> alone and <Kbd>S</Kbd> + <Kbd>A</Kbd>/<Kbd>D</Kbd> always use the second. These vehicles cannot neutral steer.
+
+Examples: <VehicleLink id="T-55" />, <VehicleLink id="T-62" />, <VehicleLink id="ZTZ96A" />, <VehicleLink id="BMP-2" />.
+
+### Planetary side gearboxes
+
+Each track has its own gearbox. Steering drops the inner track one gear below the outer one, and the turn changes from gear to gear. In 1st gear and reverse there is no lower gear, and the inner track is braked instead.
+
+Most of these tanks cannot neutral steer. A few can, with the inner track in reverse while the outer runs forward. The Powertrain card shows which.
+
+Examples: <VehicleLink id="T-72B" />, <VehicleLink id="T-80U" />, <VehicleLink id="T-90M" />. With neutral steering: <VehicleLink id="T-84 Oplot-M" />, <VehicleLink id="Al-Khalid-I" />.
+
+### Controlled differential
+
+A controlled differential slows the inner track and passes the power it takes away to the outer track. The vehicle keeps its speed through a turn instead of braking. Several designs share this label:
+
+| Design                       | How it turns                                                             | Examples                                                                                                  |
+| ---------------------------- | ------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------- |
+| Merritt-Brown                | One turn per gear, wider in higher gears. Neutral steers                 | <VehicleLink id="Centurion Mk 10" />, <VehicleLink id="Churchill VII" />, <VehicleLink id="Cromwell V" /> |
+| Allison cross-drive          | One turn per gear. Neutral steers                                        | <VehicleLink id="M48 Patton" />, <VehicleLink id="Merkava Mk.1" />                                        |
+| German two-radius            | Half the lever gives a wide turn, full lever a tight one. Neutral steers | <VehicleLink id="Panther G" />, <VehicleLink id="Tiger I" />                                              |
+| Fixed-ratio differential     | The same turn in every gear. Cannot neutral steer                        | <VehicleLink id="M4A1 Sherman" />, <VehicleLink id="M113" />                                              |
+| Other regenerative gearboxes | One turn per gear. Most neutral steer                                    | <VehicleLink id="Chieftain Mk 5" />, <VehicleLink id="Leopard 1A5" />, <VehicleLink id="Type 87" />       |
+
+### Hydrostatic differential
+
+A hydraulic pump and motor add a speed difference between the tracks on top of the drive. The turn follows the lever smoothly, with one circle per gear at speed, and it tightens as the vehicle slows. Nearly every vehicle with this steering can neutral steer.
+
+Examples: <VehicleLink id="Leopard 2A4" />, <VehicleLink id="M1 Abrams" />, <VehicleLink id="Challenger 2" />, <VehicleLink id="Type 90" />, <VehicleLink id="K2" />, <VehicleLink id="BMP-3" />.
+
+### Electric drive
+
+The Powertrain card of the <VehicleLink id="Maus" />, the <VehicleLink id="Tiger P" /> and the <VehicleLink id="Elefant" /> shows a hydrostatic differential. They steer with an electric motor on each track instead (see <WikiLink to="transmission#electric-drive">electric drive</WikiLink>). Pushing the lever further slows the inner motor, and at full lever runs it backward: the <VehicleLink id="Maus" plain /> then turns about its centre even in gear. All three can neutral steer.
+
+## Wheeled vehicles
+
+A wheeled vehicle steers with its front wheels. The faster it goes, the wider it turns, which keeps it from sliding out. Wheeled vehicles cannot neutral steer, with two exceptions that skid-steer like a tank: the <VehicleLink id="AMX-10RC" /> and the <VehicleLink id="BTR-90" />.
+
+The <VehicleLink id="GTK Boxer FLW 200" /> also brakes its inner wheels when steering hard at low speed, which tightens the turn.
+
+## Broken tracks
+
+A track at 20 health or less is broken. That side stops driving, and the vehicle rolls on its bare road wheels, which drag. The vehicle pulls toward the broken side and can only steer with the other track. Engine and transmission damage weaken the steering as well (see <WikiLink to="engine#damage">damage</WikiLink>).
