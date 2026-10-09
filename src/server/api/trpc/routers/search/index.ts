@@ -238,7 +238,10 @@ export const searchRouter = createTRPCRouter({
           item: r.item,
           score: (r.score ?? 1) + (TYPE_SCORE_PENALTY[r.item.type] ?? 0),
         }))
-        .sort((a, b) => a.score - b.score)
+        .sort(
+          (a, b) =>
+            a.score - b.score || a.item.title.length - b.item.title.length,
+        )
         .slice(0, RESULT_LIMIT)
         .map(({ item }) => ({
           type: item.type,
