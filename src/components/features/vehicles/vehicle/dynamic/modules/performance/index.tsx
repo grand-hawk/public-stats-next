@@ -12,6 +12,7 @@ import {
 } from '@/components/features/vehicles/vehicle/dynamic/modules/performance/parts';
 import ChartCard from '@/components/wiki/chartCard';
 import SectionMarker from '@/components/wiki/sectionMarker';
+import StatArticleLink from '@/components/wiki/statArticleLink';
 import { StatsCell, StatsRoot, StatsRow } from '@/components/wiki/stats';
 import TitledCard from '@/components/wiki/titledCard';
 import { useDynamicData } from '@/hooks/providers/dynamicData';
@@ -121,7 +122,9 @@ export default function Performance() {
             <Group moduleId={driveData.id} title="Gradeability">
               <StatsRow>
                 <StatsCell>
-                  Max gradient{' '}
+                  <StatArticleLink article="gradeability">
+                    Max gradient
+                  </StatArticleLink>{' '}
                   <InfoTooltip
                     content="The steepest slope the vehicle can physically climb, limited by traction or available power"
                     iconProps={{
@@ -160,7 +163,11 @@ export default function Performance() {
           {pivot && (
             <Group moduleId={driveData.id} title="Manoeuvrability">
               <StatsRow>
-                <StatsCell>Pivot rate</StatsCell>
+                <StatsCell>
+                  <StatArticleLink article="neutralSteering">
+                    Pivot rate
+                  </StatArticleLink>
+                </StatsCell>
                 <StatsCell>
                   <FormatNumber
                     maximumFractionDigits={1}

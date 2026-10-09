@@ -7,6 +7,7 @@ import { XSSpinner } from '@/components/common/spinners';
 import Gearing from '@/components/features/vehicles/vehicle/dynamic/modules/gearing';
 import ChartCard from '@/components/wiki/chartCard';
 import SectionMarker from '@/components/wiki/sectionMarker';
+import StatArticleLink from '@/components/wiki/statArticleLink';
 import { StatsCell, StatsRoot, StatsRow } from '@/components/wiki/stats';
 import TitledCard from '@/components/wiki/titledCard';
 import { useDynamicData } from '@/hooks/providers/dynamicData';
@@ -45,7 +46,9 @@ export default function Powertrain() {
         <Stack gap={4}>
           <StatsRoot>
             <StatsRow>
-              <StatsCell asTitle>Engine</StatsCell>
+              <StatsCell asTitle>
+                <StatArticleLink article="engine">Engine</StatArticleLink>
+              </StatsCell>
               <StatsCell>{driveData.data.engine.name}</StatsCell>
             </StatsRow>
             <StatsRow withPaddingLeft>
@@ -87,7 +90,11 @@ export default function Powertrain() {
 
           <StatsRoot>
             <StatsRow>
-              <StatsCell asTitle>Transmission</StatsCell>
+              <StatsCell asTitle>
+                <StatArticleLink article="transmission">
+                  Transmission
+                </StatArticleLink>
+              </StatsCell>
               <StatsCell>
                 {driveData.data.metrics?.driveline.transmissionName}
                 {driveData.data.metrics?.driveline.genericTransmission && (
@@ -125,7 +132,9 @@ export default function Powertrain() {
             </StatsRow>
             {driveData.data.metrics && (
               <StatsRow withPaddingLeft>
-                <StatsCell>Steering</StatsCell>
+                <StatsCell>
+                  <StatArticleLink article="steering">Steering</StatArticleLink>
+                </StatsCell>
                 <StatsCell>
                   {driveData.data.metrics.driveline.steeringName}
                 </StatsCell>
@@ -133,7 +142,11 @@ export default function Powertrain() {
             )}
             {driveData.data.transmission.neutralSteering && (
               <StatsRow withPaddingLeft>
-                <StatsCell>Neutral steering</StatsCell>
+                <StatsCell>
+                  <StatArticleLink article="neutralSteering">
+                    Neutral steering
+                  </StatArticleLink>
+                </StatsCell>
                 <StatsCell>Yes</StatsCell>
               </StatsRow>
             )}
