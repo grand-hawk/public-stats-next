@@ -1,5 +1,3 @@
-import { Kbd } from '@chakra-ui/react';
-
 import ApsTable from '@/components/article/apsTable';
 import Callout from '@/components/article/callout';
 import {
@@ -14,6 +12,7 @@ import Figure from '@/components/article/figure';
 import Formula from '@/components/article/formula';
 import GlossaryList from '@/components/article/glossaryList';
 import ImageNeeded from '@/components/article/imageNeeded';
+import Kbd from '@/components/article/kbd';
 import {
   ClassLink,
   ShellLink,
