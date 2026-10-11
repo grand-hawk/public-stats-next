@@ -3,7 +3,7 @@ import { LuBug, LuSearch } from 'react-icons/lu';
 import { MdRefresh } from 'react-icons/md';
 
 import HamburgerIcon from '@/components/layout/rail/hamburgerIcon';
-import PlaceToggle from '@/components/layout/rail/placeToggle';
+import PreferencesButton from '@/components/layout/rail/preferencesButton';
 import RailQuickLinks from '@/components/layout/rail/quickLinks';
 import RailButton from '@/components/layout/rail/railButton';
 import { env } from '@/env';
@@ -51,9 +51,9 @@ export function RailPrimaryItems({
 }
 
 export function RailSecondaryItems({
-  direction,
+  preferencesTriggerRef,
 }: {
-  direction: 'column' | 'row';
+  preferencesTriggerRef: React.RefObject<HTMLButtonElement | null>;
 }) {
   const debugEnabled = useDebugEnabled();
   const utils = trpc.useUtils();
@@ -77,7 +77,7 @@ export function RailSecondaryItems({
         </RailButton>
       )}
 
-      <PlaceToggle direction={direction} />
+      <PreferencesButton triggerRef={preferencesTriggerRef} />
     </>
   );
 }

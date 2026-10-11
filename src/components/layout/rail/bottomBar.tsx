@@ -9,8 +9,10 @@ import {
 import { DESKTOP_MEDIA, RAIL_WIDTH } from '@/components/layout/shell/constants';
 
 export default function BottomBar({
+  preferencesTriggerRef,
   triggerRef,
 }: {
+  preferencesTriggerRef: React.RefObject<HTMLButtonElement | null>;
   triggerRef: React.RefObject<HTMLButtonElement | null>;
 }) {
   return (
@@ -42,7 +44,7 @@ export default function BottomBar({
       </Flex>
 
       <Flex alignItems="center" gap="4px">
-        <RailSecondaryItems direction="row" />
+        <RailSecondaryItems preferencesTriggerRef={preferencesTriggerRef} />
       </Flex>
     </Flex>
   );

@@ -90,10 +90,10 @@ export default function VehicleArmorPreview({
           gap={2}
           height="400px"
           justifyContent="center"
-          css={RAISED_FRAME_CSS}
+          css={{ ...RAISED_FRAME_CSS, colorScheme: 'dark' }}
         >
           <Box
-            _hover={{ background: 'whiteAlpha.100', color: 'fg' }}
+            _hover={{ background: 'quiet.hover', color: 'fg' }}
             as="button"
             borderColor="border"
             borderRadius="4px"
@@ -110,7 +110,11 @@ export default function VehicleArmorPreview({
           </Box>
         </Flex>
       ) : (
-        <Box css={RAISED_FRAME_CSS} height="400px" overflow="hidden">
+        <Box
+          css={{ ...RAISED_FRAME_CSS, colorScheme: 'dark' }}
+          height="400px"
+          overflow="hidden"
+        >
           <ArmorCanvas
             angle="front"
             canvas={canvas}

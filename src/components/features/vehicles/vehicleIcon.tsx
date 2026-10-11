@@ -25,7 +25,7 @@ export default React.memo(function VehicleIcon({
   if (hasError) return null;
 
   return (
-    <Image asChild {...props}>
+    <Image asChild filter="var(--filter-icon-invert)" {...props}>
       <NextImage
         alt=""
         height={size}

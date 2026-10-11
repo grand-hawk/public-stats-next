@@ -19,7 +19,7 @@ export function useDismiss({
       if (cardRef.current?.contains(target)) return;
       if (triggerRef.current?.contains(target)) return;
       const trigger = (target as Element)?.closest?.(
-        '[aria-controls="citizen-drawer-card"]',
+        `[aria-controls="${cardRef.current?.id}"]`,
       );
       if (trigger) return;
       onDismiss();

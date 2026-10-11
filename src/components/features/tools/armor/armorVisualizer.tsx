@@ -206,9 +206,11 @@ export default function ArmorVisualizer() {
       />
 
       <Box
+        backgroundColor="bg"
         height={{ base: '70svh', md: 'auto' }}
         minHeight="0"
         overflow="hidden"
+        css={{ colorScheme: 'dark' }}
       >
         <ArmorCanvas
           angle={angle}

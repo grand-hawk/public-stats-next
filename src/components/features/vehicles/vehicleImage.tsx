@@ -73,7 +73,7 @@ export default function VehicleImage({
         backgroundColor="blackAlpha.200"
         userSelect="none"
       >
-        <Text color="whiteAlpha.400" fontSize="2xs" fontWeight="bold">
+        <Text color="fg.subtle" fontSize="2xs" fontWeight="bold">
           {fallbackText}
         </Text>
       </Center>

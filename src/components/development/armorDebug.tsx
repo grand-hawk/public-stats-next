@@ -65,7 +65,7 @@ export default function ArmorDebug() {
     <Flex direction="column" gap={3} height="100%" overflowY="auto" padding={3}>
       <Flex alignItems="center" gap={2}>
         <Box
-          _hover={{ background: 'whiteAlpha.100', color: 'fg' }}
+          _hover={{ background: 'quiet.hover', color: 'fg' }}
           as="button"
           borderColor="border.muted"
           borderWidth="1px"
@@ -93,7 +93,7 @@ export default function ArmorDebug() {
           )}
         </Text>
         <Box
-          _hover={{ background: 'whiteAlpha.100', color: 'fg' }}
+          _hover={{ background: 'quiet.hover', color: 'fg' }}
           as="button"
           borderColor="border.muted"
           borderWidth="1px"
@@ -158,7 +158,7 @@ export default function ArmorDebug() {
                   key={v.slug}
                   _hover={
                     onSelectVehicle
-                      ? { background: 'whiteAlpha.50' }
+                      ? { background: 'quiet.hover' }
                       : undefined
                   }
                   borderRadius="sm"

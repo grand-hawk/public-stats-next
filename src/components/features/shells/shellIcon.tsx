@@ -17,7 +17,7 @@ export default React.memo(function ShellIcon({
   ...props
 }: ShellIconProps) {
   return (
-    <Image asChild {...props}>
+    <Image asChild filter="var(--filter-icon-invert)" {...props}>
       <NextImage alt={alt} height={size} src={src} width={size} />
     </Image>
   );

@@ -26,15 +26,20 @@ const ref = (name: string) => ({ value: `var(${name})` });
 const config = defineConfig({
   globalCss: {
     ':root': {
-      colorScheme: 'dark',
+      colorScheme: 'light',
       ...citizenRootVars,
-      ...citizenDarkVars,
+      '--filter-icon-invert': 'invert(1) hue-rotate(180deg)',
       '--scrollbar-thumb':
         'color-mix(in oklch, var(--color-base) 22%, transparent)',
       '--scrollbar-thumb--hover':
         'color-mix(in oklch, var(--color-base) 40%, transparent)',
       '--scrollbar-thumb--active':
         'color-mix(in oklch, var(--color-base) 55%, transparent)',
+    },
+    ':root:not(.light)': {
+      colorScheme: 'dark',
+      ...citizenDarkVars,
+      '--filter-icon-invert': 'none',
     },
     ...citizenPagePadding,
     html: {

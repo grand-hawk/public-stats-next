@@ -179,6 +179,7 @@ export default function ArmorCanvas({
           zIndex={9999}
           css={{
             ...OVERLAY_CARD_CSS,
+            colorScheme: 'dark',
             paddingBlock: '4px',
             paddingInline: '10px',
             boxShadow: 'var(--box-shadow-medium)',

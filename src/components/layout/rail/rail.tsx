@@ -9,8 +9,10 @@ import {
 import { DESKTOP_MEDIA, RAIL_WIDTH } from '@/components/layout/shell/constants';
 
 export default function Rail({
+  preferencesTriggerRef,
   triggerRef,
 }: {
+  preferencesTriggerRef: React.RefObject<HTMLButtonElement | null>;
   triggerRef: React.RefObject<HTMLButtonElement | null>;
 }) {
   return (
@@ -39,7 +41,7 @@ export default function Rail({
       <RailPrimaryItems direction="column" triggerRef={triggerRef} />
 
       <Flex direction="column" gap="4px" marginTop="auto">
-        <RailSecondaryItems direction="column" />
+        <RailSecondaryItems preferencesTriggerRef={preferencesTriggerRef} />
       </Flex>
     </Flex>
   );

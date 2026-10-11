@@ -7,18 +7,27 @@ import { NARROW_MEDIA } from '@/components/layout/shell/constants';
 const MASK =
   'linear-gradient(to bottom, rgba(0,0,0,0.9), rgba(0,0,0,0.35) 55%, transparent)';
 
+const LIGHT_STRENGTH = 0.35;
+
+function tint(light: string, dark: string, pct: number) {
+  const mix = (color: string, p: number) =>
+    `color-mix(in oklch, ${color} ${p}%, transparent)`;
+  return `light-dark(${mix(light, pct * LIGHT_STRENGTH)}, ${mix(dark, pct)})`;
+}
+
 const ACCENT_GLOW =
   'radial-gradient(60% 100% at 30% 0%,' +
-  ' color-mix(in oklch, var(--color-progressive) 14%, transparent), transparent 70%)';
+  ` ${tint('var(--color-progressive)', 'var(--color-progressive)', 14)}, transparent 70%)`;
 
 function teamGlow(color: string, narrow = false) {
   const lifted = `oklch(from ${color} max(l, 0.55) c h)`;
+  const deep = `oklch(from ${color} min(l, 0.6) c h)`;
   const shape = narrow ? '140% 100% at 20% 0%' : '70% 100% at 25% 0%';
   const glow = narrow ? 20 : 44;
   const wash = narrow ? 5 : 14;
   return (
-    `radial-gradient(${shape}, color-mix(in oklch, ${lifted} ${glow}%, transparent), transparent 72%),` +
-    ` linear-gradient(to bottom, color-mix(in oklch, ${lifted} ${wash}%, transparent), transparent 80%)`
+    `radial-gradient(${shape}, ${tint(deep, lifted, glow)}, transparent 72%),` +
+    ` linear-gradient(to bottom, ${tint(deep, lifted, wash)}, transparent 80%)`
   );
 }
 

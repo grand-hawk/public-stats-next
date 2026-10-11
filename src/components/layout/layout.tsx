@@ -4,6 +4,7 @@ import React, { Suspense } from 'react';
 import { PageMetaHead } from '@/components/layout/pageMeta';
 import BottomBar from '@/components/layout/rail/bottomBar';
 import MenuCard from '@/components/layout/rail/menuCard';
+import PreferencesCard from '@/components/layout/rail/preferencesCard';
 import Rail from '@/components/layout/rail/rail';
 import RouteFallback, {
   RouteContentReady,
@@ -19,6 +20,7 @@ export interface LayoutProps extends BoxProps {
 
 export default function Layout({ children, noPadding, ...props }: LayoutProps) {
   const menuTriggerRef = React.useRef<HTMLButtonElement>(null);
+  const preferencesTriggerRef = React.useRef<HTMLButtonElement>(null);
 
   return (
     <>
@@ -33,7 +35,10 @@ export default function Layout({ children, noPadding, ...props }: LayoutProps) {
         overflow="clip"
         width="100%"
       >
-        <Rail triggerRef={menuTriggerRef} />
+        <Rail
+          preferencesTriggerRef={preferencesTriggerRef}
+          triggerRef={menuTriggerRef}
+        />
 
         <Box
           as="main"
@@ -60,10 +65,14 @@ export default function Layout({ children, noPadding, ...props }: LayoutProps) {
           </Suspense>
         </Box>
 
-        <BottomBar triggerRef={menuTriggerRef} />
+        <BottomBar
+          preferencesTriggerRef={preferencesTriggerRef}
+          triggerRef={menuTriggerRef}
+        />
       </Flex>
 
       <MenuCard triggerRef={menuTriggerRef} />
+      <PreferencesCard triggerRef={preferencesTriggerRef} />
       <SiteSearchHost />
     </>
   );
