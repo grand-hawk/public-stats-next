@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 import slug from 'slug';
 
+import { BRANCH_COOKIE } from '@/utils/branchCookie';
 import { getNameFromInitials } from '@/utils/placeUtils';
 import { getConfig } from '@generated/config';
 
@@ -20,7 +21,9 @@ const slugifiedCollections = new Set([
 export function proxy(req: NextRequest) {
   const { pathname } = req.nextUrl;
 
-  let redirect = pathname.startsWith('/vehicles') ? `/mtc${pathname}` : pathname;
+  let redirect = pathname.startsWith('/vehicles')
+    ? `/mtc${pathname}`
+    : pathname;
 
   const parts = redirect.split('/').filter(Boolean);
   if (parts.length >= 3 && slugifiedCollections.has(parts[parts.length - 2])) {
@@ -43,7 +46,23 @@ export function proxy(req: NextRequest) {
   if (!initials) return;
 
   const { data } = getConfig();
-  if (getNameFromInitials(data, initials)) return;
+  if (!getNameFromInitials(data, initials)) {
+    return NextResponse.rewrite(new URL('/404', req.url), { status: 404 });
+  }
 
-  return NextResponse.rewrite(new URL('/404', req.url), { status: 404 });
+  const [live] = Object.values(data.placeNameInitials);
+  const branch = req.cookies.get(BRANCH_COOKIE)?.value;
+  if (
+    initials === live &&
+    branch &&
+    branch !== live &&
+    getNameFromInitials(data, branch)
+  ) {
+    const url = req.nextUrl.clone();
+    url.pathname = `/${branch}${pathname.slice(initials.length + 1)}`;
+    return NextResponse.redirect(url, {
+      status: 307,
+      headers: { 'cache-control': 'private, no-store' },
+    });
+  }
 }

@@ -3,6 +3,7 @@ import { useRouter } from 'next/router';
 import { toaster } from '@/components/ui/toaster';
 import { usePlaceInitials } from '@/hooks/usePlaceInitials';
 import { useSuspenseConfig } from '@/hooks/useSuspenseConfig';
+import { setBranchCookie } from '@/utils/branchCookie';
 
 export function usePlaceSwitch() {
   const router = useRouter();
@@ -18,6 +19,7 @@ export function usePlaceSwitch() {
 
   const setPlace = async (next: (typeof places)[number]) => {
     if (next === current) return;
+    setBranchCookie(next === places[0] ? null : next.initials);
     await router.push({
       pathname: router.pathname,
       query: { ...router.query, place: next.initials },
