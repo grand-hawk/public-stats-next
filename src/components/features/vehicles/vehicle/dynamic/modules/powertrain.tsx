@@ -12,6 +12,7 @@ import { StatsCell, StatsRoot, StatsRow } from '@/components/wiki/stats';
 import TitledCard from '@/components/wiki/titledCard';
 import { useDynamicData } from '@/hooks/providers/dynamicData';
 import { getOneModuleOfType } from '@/utils/alterations';
+import { fromHorsepower, POWER_UNIT_LABELS } from '@/utils/powerUnit';
 import { TRANSMISSION_TYPE_LABELS } from '@/utils/transmissionType';
 
 const EngineChart = dynamic(
@@ -32,9 +33,17 @@ export default function Powertrain() {
 
   const engineMetrics = driveData.data.metrics?.engine;
   const netHorsepower = driveData.data.metrics?.driveline.netHorsepower;
+
+  const { horsepower } = driveData.data.engine;
+  const powerUnit = driveData.data.engine.powerUnit ?? 'HP';
+  const powerLabel = POWER_UNIT_LABELS[powerUnit];
+
   const netMatchesGross =
     netHorsepower !== undefined &&
-    Math.round(netHorsepower) === Math.round(driveData.data.engine.horsepower);
+    Math.round(netHorsepower) === Math.round(horsepower);
+
+  const showHpEquivalent = powerUnit !== 'HP';
+  const showNet = netHorsepower !== undefined && !netMatchesGross;
 
   return (
     <>
@@ -80,22 +89,41 @@ export default function Powertrain() {
             <StatsRow withPaddingLeft>
               <StatsCell>Horsepower</StatsCell>
               <StatsCell>
-                <FormatNumber value={driveData.data.engine.horsepower} /> hp
-                {netHorsepower !== undefined && (
-                  <>
-                    {netMatchesGross ? (
-                      ' net'
-                    ) : (
-                      <Text as="span" color="fg.muted">
-                        {' '}
-                        (
+                <FormatNumber
+                  maximumFractionDigits={0}
+                  value={fromHorsepower(horsepower, powerUnit)}
+                />{' '}
+                {powerLabel}
+                {netMatchesGross && !showHpEquivalent && ' net'}
+                {(showHpEquivalent || showNet) && (
+                  <Text as="span" color="fg.muted">
+                    {' '}
+                    (
+                    {showHpEquivalent && (
+                      <>
+                        <FormatNumber
+                          maximumFractionDigits={0}
+                          value={horsepower}
+                        />{' '}
+                        hp{netMatchesGross && ' net'}
+                      </>
+                    )}
+                    {showHpEquivalent && showNet && ', '}
+                    {showNet && (
+                      <>
                         <FormatNumber
                           maximumFractionDigits={0}
                           value={netHorsepower}
                         />{' '}
-                        hp net)
-                      </Text>
-                    )}{' '}
+                        hp net
+                      </>
+                    )}
+                    )
+                  </Text>
+                )}
+                {netHorsepower !== undefined && (
+                  <>
+                    {' '}
                     <InfoTooltip
                       content="Net is what actually reaches the drivetrain once the engine is installed, after fan and accessory losses"
                       iconProps={{
@@ -111,7 +139,7 @@ export default function Powertrain() {
               <StatsCell>
                 <FormatNumber
                   maximumFractionDigits={1}
-                  value={driveData.data.engine.horsepower / driveData.data.mass}
+                  value={horsepower / driveData.data.mass}
                 />{' '}
                 hp/t
               </StatsCell>

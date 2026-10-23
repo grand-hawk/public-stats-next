@@ -149,7 +149,7 @@ export function buildVehicleSections(): SectionDef<AssembledVehicle>[] {
         driveStat('Engine', (drive) => drive.engine.name),
         driveStat('Horsepower', (drive) => (
           <>
-            <FormatNumber value={drive.engine.horsepower} /> PS
+            <FormatNumber value={drive.engine.horsepower} /> hp
           </>
         )),
         driveStat('Max RPM', (drive) => (
@@ -163,7 +163,7 @@ export function buildVehicleSections(): SectionDef<AssembledVehicle>[] {
               maximumFractionDigits={1}
               value={drive.engine.horsepower / drive.mass}
             />{' '}
-            PS/t
+            hp/t
           </>
         )),
         driveStat('Transmission', (drive) =>
