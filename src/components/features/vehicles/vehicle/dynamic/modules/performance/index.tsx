@@ -10,6 +10,9 @@ import {
   Group,
   Seconds,
 } from '@/components/features/vehicles/vehicle/dynamic/modules/performance/parts';
+import Timing, {
+  integerDigits,
+} from '@/components/features/vehicles/vehicle/dynamic/modules/performance/timing';
 import ChartCard from '@/components/wiki/chartCard';
 import SectionMarker from '@/components/wiki/sectionMarker';
 import StatArticleLink from '@/components/wiki/statArticleLink';
@@ -35,7 +38,18 @@ export default function Performance() {
 
   if (!driveData || !metrics) return null;
 
-  const { acceleration, grades, pivot, reverse } = metrics;
+  const { acceleration, grades, pivot, reverse, spooledAcceleration } = metrics;
+
+  const spooledDigits = Math.max(
+    0,
+    ...[
+      spooledAcceleration?.to30,
+      spooledAcceleration?.to50,
+      spooledAcceleration?.toTop,
+    ]
+      .filter((value) => value !== undefined)
+      .map(integerDigits),
+  );
 
   const gradeSpeeds = grades
     ? ([
@@ -66,6 +80,10 @@ export default function Performance() {
                   intervalSeconds={acceleration.curveIntervalSeconds}
                   reverseCurve={reverse?.curve}
                   reverseIntervalSeconds={reverse?.curveIntervalSeconds}
+                  spooledCurve={spooledAcceleration?.curve}
+                  spooledIntervalSeconds={
+                    spooledAcceleration?.curveIntervalSeconds
+                  }
                 />
               </ChartCard>
             )}
@@ -75,7 +93,11 @@ export default function Performance() {
               <StatsRow>
                 <StatsCell>0–30 km/h</StatsCell>
                 <StatsCell>
-                  <Seconds value={acceleration.to30} />
+                  <Timing
+                    spooled={spooledAcceleration?.to30}
+                    spooledDigits={spooledDigits}
+                    value={acceleration.to30}
+                  />
                 </StatsCell>
               </StatsRow>
             )}
@@ -83,7 +105,11 @@ export default function Performance() {
               <StatsRow>
                 <StatsCell>0–50 km/h</StatsCell>
                 <StatsCell>
-                  <Seconds value={acceleration.to50} />
+                  <Timing
+                    spooled={spooledAcceleration?.to50}
+                    spooledDigits={spooledDigits}
+                    value={acceleration.to50}
+                  />
                 </StatsCell>
               </StatsRow>
             )}
@@ -91,7 +117,11 @@ export default function Performance() {
               <StatsRow>
                 <StatsCell>0–Vmax</StatsCell>
                 <StatsCell>
-                  <Seconds value={acceleration.toTop} />
+                  <Timing
+                    spooled={spooledAcceleration?.toTop}
+                    spooledDigits={spooledDigits}
+                    value={acceleration.toTop}
+                  />
                 </StatsCell>
               </StatsRow>
             )}

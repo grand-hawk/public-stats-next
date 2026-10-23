@@ -13,11 +13,13 @@ import {
 
 const FORWARD_LABEL = 'Forward';
 const REVERSE_LABEL = 'Reverse';
+const SPOOLED_LABEL = 'Spooled';
 
 interface Row {
   kmh?: number;
   reverseKmh?: number;
   seconds: number;
+  spooledKmh?: number;
 }
 
 export default function AccelerationChart({
@@ -25,22 +27,30 @@ export default function AccelerationChart({
   intervalSeconds,
   reverseCurve,
   reverseIntervalSeconds,
+  spooledCurve,
+  spooledIntervalSeconds,
 }: {
   curve: number[];
   intervalSeconds: number;
   reverseCurve?: number[];
   reverseIntervalSeconds?: number;
+  spooledCurve?: number[];
+  spooledIntervalSeconds?: number;
 }) {
   const reverse =
     reverseCurve?.length && reverseIntervalSeconds
       ? { curve: reverseCurve, intervalSeconds: reverseIntervalSeconds }
+      : null;
+  const spooled =
+    spooledCurve?.length && spooledIntervalSeconds
+      ? { curve: spooledCurve, intervalSeconds: spooledIntervalSeconds }
       : null;
 
   const bySeconds = new Map<number, Row>();
   const addCurve = (
     values: number[],
     interval: number,
-    key: 'kmh' | 'reverseKmh',
+    key: 'kmh' | 'reverseKmh' | 'spooledKmh',
   ) => {
     values.forEach((kmh, index) => {
       const seconds = Number(((index + 1) * interval).toFixed(2));
@@ -51,6 +61,7 @@ export default function AccelerationChart({
   };
 
   addCurve(curve, intervalSeconds, 'kmh');
+  if (spooled) addCurve(spooled.curve, spooled.intervalSeconds, 'spooledKmh');
   if (reverse) addCurve(reverse.curve, reverse.intervalSeconds, 'reverseKmh');
 
   const maxSeconds = Math.max(0, ...bySeconds.keys());
@@ -65,6 +76,16 @@ export default function AccelerationChart({
     data: [...bySeconds.values()].sort((a, b) => a.seconds - b.seconds),
     series: [
       { color: 'blue.solid', label: FORWARD_LABEL, name: 'kmh' },
+      ...(spooled
+        ? [
+            {
+              color: 'teal.solid',
+              label: SPOOLED_LABEL,
+              name: 'spooledKmh' as const,
+              strokeDasharray: '6 3',
+            },
+          ]
+        : []),
       ...(reverse
         ? [
             {
@@ -149,7 +170,7 @@ export default function AccelerationChart({
           }}
         />
 
-        {reverse && <Legend content={<Chart.Legend />} />}
+        {(reverse || spooled) && <Legend content={<Chart.Legend />} />}
 
         {chart.series.map((item) => (
           <Line
@@ -159,6 +180,7 @@ export default function AccelerationChart({
             isAnimationActive={false}
             key={item.name}
             stroke={chart.color(item.color)}
+            strokeDasharray={item.strokeDasharray}
             strokeWidth={2}
           />
         ))}
