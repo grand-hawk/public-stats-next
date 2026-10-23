@@ -35,7 +35,7 @@ export default function Performance() {
 
   if (!driveData || !metrics) return null;
 
-  const { acceleration, braking, grades, pivot, reverse } = metrics;
+  const { acceleration, grades, pivot, reverse } = metrics;
 
   const gradeSpeeds = grades
     ? ([
@@ -100,19 +100,6 @@ export default function Performance() {
                 <StatsCell>0–Vmax (reverse)</StatsCell>
                 <StatsCell>
                   <Seconds value={reverse.toTop} />
-                </StatsCell>
-              </StatsRow>
-            )}
-            {braking && (
-              <StatsRow>
-                <StatsCell>Vmax–0</StatsCell>
-                <StatsCell>
-                  <FormatNumber
-                    maximumFractionDigits={1}
-                    style="unit"
-                    unit="meter"
-                    value={braking.stopFromTopMeters}
-                  />
                 </StatsCell>
               </StatsRow>
             )}
