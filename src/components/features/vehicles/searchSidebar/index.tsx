@@ -28,7 +28,9 @@ export default function VehiclesSearchSidebar() {
     for (const vehicle of vehicleList) {
       map.set(
         vehicle.slug,
-        [vehicle.name, vehicle.alias ?? ''].map(simplifyString).filter(Boolean),
+        [vehicle.name, ...(vehicle.aliases ?? [])]
+          .map(simplifyString)
+          .filter(Boolean),
       );
     }
     return map;

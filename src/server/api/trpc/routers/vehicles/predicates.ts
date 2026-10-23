@@ -85,5 +85,5 @@ export function buildVehicleQueryPredicate(
   return (entry) =>
     !normalizedQuery ||
     entry.simplifiedName.includes(normalizedQuery) ||
-    !!entry.simplifiedAlias?.includes(normalizedQuery);
+    entry.simplifiedAliases.some((alias) => alias.includes(normalizedQuery));
 }

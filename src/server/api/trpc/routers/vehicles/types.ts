@@ -8,7 +8,7 @@ import type {
 import type { BreadcrumbList, Vehicle, WithContext } from 'schema-dts';
 
 export interface ListVehicle {
-  alias?: string;
+  aliases?: string[];
   name: string;
   new?: boolean;
   premium?: NonNullable<VehiclesPlaceDataVehicleInfo['premium']>['type'];
@@ -117,7 +117,7 @@ export interface SearchEntry {
   obtainment: string;
   powerToWeight: number;
   rosters: VehicleRoster[];
-  simplifiedAlias?: string;
+  simplifiedAliases: string[];
   simplifiedName: string;
   supportedClasses: string[];
   vehicle: ListVehicle;

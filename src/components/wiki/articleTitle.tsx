@@ -6,7 +6,7 @@ import { usePlace } from '@/hooks/usePlace';
 
 export interface ArticleTitleProps {
   actions?: React.ReactNode;
-  alias?: string;
+  aliases?: string[];
   aside?: React.ReactNode;
   children?: React.ReactNode;
   icon?: React.ReactNode;
@@ -17,7 +17,7 @@ export interface ArticleTitleProps {
 
 export default function ArticleTitle({
   actions,
-  alias,
+  aliases,
   aside,
   children,
   icon,
@@ -66,7 +66,7 @@ export default function ArticleTitle({
           </Heading>
         </Box>
 
-        {alias && (
+        {!!aliases?.length && (
           <Text
             color="fg.muted"
             css={{
@@ -75,7 +75,7 @@ export default function ArticleTitle({
               marginBlockStart: '2px',
             }}
           >
-            Also known as {alias}
+            Also known as {aliases.join(', ')}
           </Text>
         )}
 

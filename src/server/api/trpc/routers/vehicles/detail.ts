@@ -31,8 +31,8 @@ export function getVehicleBySlug(
 
   const vehicleName =
     vehiclesPlace.metadata.slugs[vehicleSlug] ??
-    Object.entries(vehiclesPlace.data).find(
-      ([, { info }]) => info.alias && slug(info.alias) === vehicleSlug,
+    Object.entries(vehiclesPlace.data).find(([, { info }]) =>
+      info.alias?.some((alias) => slug(alias) === vehicleSlug),
     )?.[0];
   if (!vehicleName) return null;
 
