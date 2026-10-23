@@ -59,6 +59,14 @@ export default function Powertrain() {
                 )?.[1] ?? driveData.data.engine.type}
               </StatsCell>
             </StatsRow>
+            {engineMetrics && (
+              <StatsRow withPaddingLeft>
+                <StatsCell>Idle RPM</StatsCell>
+                <StatsCell>
+                  <FormatNumber value={engineMetrics.idleRPM} /> RPM
+                </StatsCell>
+              </StatsRow>
+            )}
             <StatsRow withPaddingLeft>
               <StatsCell>Max RPM</StatsCell>
               <StatsCell>
