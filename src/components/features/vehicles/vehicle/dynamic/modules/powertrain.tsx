@@ -1,4 +1,4 @@
-import { FormatNumber, Stack } from '@chakra-ui/react';
+import { FormatNumber, Stack, Text } from '@chakra-ui/react';
 import dynamic from 'next/dynamic';
 import React from 'react';
 
@@ -31,6 +31,10 @@ export default function Powertrain() {
   if (!driveData) return null;
 
   const engineMetrics = driveData.data.metrics?.engine;
+  const netHorsepower = driveData.data.metrics?.driveline.netHorsepower;
+  const netMatchesGross =
+    netHorsepower !== undefined &&
+    Math.round(netHorsepower) === Math.round(driveData.data.engine.horsepower);
 
   return (
     <>
@@ -77,6 +81,29 @@ export default function Powertrain() {
               <StatsCell>Horsepower</StatsCell>
               <StatsCell>
                 <FormatNumber value={driveData.data.engine.horsepower} /> hp
+                {netHorsepower !== undefined && (
+                  <>
+                    {netMatchesGross ? (
+                      ' net'
+                    ) : (
+                      <Text as="span" color="fg.muted">
+                        {' '}
+                        (
+                        <FormatNumber
+                          maximumFractionDigits={0}
+                          value={netHorsepower}
+                        />{' '}
+                        hp net)
+                      </Text>
+                    )}{' '}
+                    <InfoTooltip
+                      content="Net is what actually reaches the drivetrain once the engine is installed, after fan and accessory losses"
+                      iconProps={{
+                        color: 'fg.muted',
+                      }}
+                    />
+                  </>
+                )}
               </StatsCell>
             </StatsRow>
             <StatsRow withPaddingLeft>
